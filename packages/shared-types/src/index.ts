@@ -1,31 +1,41 @@
 export interface Person {
   id: string;
   name: string;
-  era: string;
-  description: string;
+  era?: string;
+  birth_year?: number;
+  death_year?: number;
+  description?: string;
+  type: 'person';
 }
 
 export interface Event {
   id: string;
   title: string;
-  time_start: number;
-  time_end: number;
-  description: string;
-  dynasty: string;
-  impact_level: number;
+  start_year?: number;
+  end_year?: number;
+  dynasty?: string;
+  description?: string;
+  impact_level?: number;
+  type: 'event';
 }
 
-export type RelationshipType = 'enemy' | 'ally' | 'ruler' | 'cause-effect' | 'participant';
-
-export interface Relationship {
-  id: string;
-  source: string; // id of Person or Event
-  target: string; // id of Person or Event
-  type: RelationshipType;
+export interface Edge {
+  source: string; // id of node
+  target: string; // id of node
+  type: string; // enemy / ally / participated / causes / etc.
   description?: string;
 }
 
-export interface GraphData {
+export interface GraphResponse {
   nodes: Array<Person | Event>;
-  links: Relationship[];
+  edges: Edge[];
+}
+
+export interface EventDetail extends Event {
+  related_people: {
+    person: Person;
+    role: string;
+  }[];
+  cause_events: Event[];
+  effect_events: Event[];
 }

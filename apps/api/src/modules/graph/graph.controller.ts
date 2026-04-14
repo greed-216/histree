@@ -1,13 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { GraphService } from './graph.service';
-import type { GraphData } from '@histree/shared-types';
+import type { GraphResponse } from '@histree/shared-types';
 
-@Controller('api/graph')
+@Controller('api/v1/graph')
 export class GraphController {
   constructor(private readonly graphService: GraphService) {}
 
-  @Get('demo')
-  async getDemoGraph(): Promise<GraphData> {
-    return this.graphService.getDemoGraphData();
+  @Get('person/:id')
+  async getPersonGraph(@Param('id') id: string): Promise<GraphResponse> {
+    return this.graphService.getPersonGraph(id);
   }
 }

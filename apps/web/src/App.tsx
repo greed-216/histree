@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import { useTranslation } from 'react-i18next';
 import type { GraphData, Person, Event } from '@histree/shared-types';
-import './App.css';
 
 // Type guard helpers
 const isPerson = (node: Person | Event): node is Person => 'era' in node;
@@ -211,24 +210,38 @@ const Graph: React.FC = () => {
 function App() {
   const { t, i18n } = useTranslation();
 
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'zh' ? 'en' : 'zh');
-  };
-
   return (
     <div className="min-h-screen bg-slate-50 p-6 md:p-12 font-sans">
       <div className="max-w-5xl mx-auto space-y-6">
-        <div className="flex justify-between items-end">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
           <div>
             <h1 className="text-4xl font-bold text-slate-800 tracking-tight mb-2">{t('title')}</h1>
             <p className="text-slate-500 text-lg">{t('subtitle')}</p>
           </div>
-          <button 
-            onClick={toggleLanguage}
-            className="px-4 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 text-sm rounded-lg shadow-sm transition-colors cursor-pointer"
-          >
-            {t('langToggle')}
-          </button>
+          
+          {/* Improved Language Toggle */}
+          <div className="flex bg-slate-200/60 p-1 rounded-lg shrink-0 self-start md:self-auto">
+            <button 
+              onClick={() => i18n.changeLanguage('zh')}
+              className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all cursor-pointer ${
+                i18n.language === 'zh' 
+                  ? 'bg-white text-slate-800 shadow-sm' 
+                  : 'text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              中文
+            </button>
+            <button 
+              onClick={() => i18n.changeLanguage('en')}
+              className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all cursor-pointer ${
+                i18n.language === 'en' 
+                  ? 'bg-white text-slate-800 shadow-sm' 
+                  : 'text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </div>
         
         <Graph />

@@ -11,7 +11,6 @@ const resources = {
       event: '事件',
       failedToFetch: '获取图谱数据失败，使用降级模拟数据。',
       loading: '加载中...',
-      langToggle: 'English',
       // Mock data translations
       'Liu Bei': '刘备',
       'Zhuge Liang': '诸葛亮',
@@ -37,7 +36,6 @@ const resources = {
       event: 'Event',
       failedToFetch: 'Failed to fetch graph data, using mock data fallback.',
       loading: 'Loading...',
-      langToggle: '中文',
       // Mock data remains as is
       'Liu Bei': 'Liu Bei',
       'Zhuge Liang': 'Zhuge Liang',

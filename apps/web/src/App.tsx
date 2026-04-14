@@ -1,35 +1,35 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import { useTranslation } from 'react-i18next';
-import type { GraphData, Person, Event } from '@histree/shared-types';
+import type { GraphResponse, Person, Event } from '@histree/shared-types';
 
 // Type guard helpers
-const isPerson = (node: Person | Event): node is Person => 'era' in node;
+const isPerson = (node: Person | Event): node is Person => node.type === 'person';
 
 const Graph: React.FC = () => {
   const { t } = useTranslation();
   const svgRef = useRef<SVGSVGElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [data, setData] = useState<GraphData | null>(null);
+  const [data, setData] = useState<GraphResponse | null>(null);
 
   useEffect(() => {
     // Fetch data from backend
-    fetch(import.meta.env.VITE_API_URL || 'http://localhost:3000/api/graph/demo')
+    fetch(import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1/graph/person/00000000-0000-0000-0000-000000000001')
       .then((res) => res.json())
-      .then((data: GraphData) => setData(data))
+      .then((data: GraphResponse) => setData(data))
       .catch((err) => {
         console.warn('Failed to fetch graph data, using mock data fallback:', err);
         // Provide mock data
         setData({
           nodes: [
-            { id: 'p1', name: 'Liu Bei', era: 'Three Kingdoms', description: 'Founder of Shu Han' } as Person,
-            { id: 'p2', name: 'Zhuge Liang', era: 'Three Kingdoms', description: 'Chancellor of Shu Han' } as Person,
-            { id: 'e1', title: 'Battle of Red Cliffs', time_start: 208, time_end: 208, description: 'Decisive battle at the end of the Han dynasty', dynasty: 'Eastern Han', impact_level: 10 } as Event,
+            { id: 'p1', name: 'Liu Bei', era: 'Three Kingdoms', description: 'Founder of Shu Han', type: 'person' },
+            { id: 'p2', name: 'Zhuge Liang', era: 'Three Kingdoms', description: 'Chancellor of Shu Han', type: 'person' },
+            { id: 'e1', title: 'Battle of Red Cliffs', start_year: 208, end_year: 208, description: 'Decisive battle at the end of the Han dynasty', dynasty: 'Eastern Han', impact_level: 10, type: 'event' },
           ],
-          links: [
-            { id: 'r1', source: 'p1', target: 'p2', type: 'ruler', description: 'Liu Bei recruited Zhuge Liang' },
-            { id: 'r2', source: 'p2', target: 'e1', type: 'participant', description: 'Zhuge Liang planned the alliance' },
-            { id: 'r3', source: 'p1', target: 'e1', type: 'participant', description: 'Liu Bei led allied forces' },
+          edges: [
+            { source: 'p1', target: 'p2', type: 'ruler', description: 'Liu Bei recruited Zhuge Liang' },
+            { source: 'p2', target: 'e1', type: 'participant', description: 'Zhuge Liang planned the alliance' },
+            { source: 'p1', target: 'e1', type: 'participant', description: 'Liu Bei led allied forces' },
           ]
         });
       });
@@ -69,10 +69,10 @@ const Graph: React.FC = () => {
 
     // We must clone nodes and links so D3 doesn't mutate our React state directly
     const nodes = data.nodes.map(d => Object.create(d));
-    const links = data.links.map(d => Object.create(d));
+    const edges = data.edges.map(d => Object.create(d));
 
     const simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id((d: any) => d.id).distance(180))
+      .force('link', d3.forceLink(edges).id((d: any) => d.id).distance(180))
       .force('charge', d3.forceManyBody().strength(-800))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('collide', d3.forceCollide().radius(50));
@@ -80,7 +80,7 @@ const Graph: React.FC = () => {
     // Links container
     const linkGroup = svg.append('g').attr('class', 'links');
     const link = linkGroup.selectAll('line')
-      .data(links)
+      .data(edges)
       .join('line')
       .attr('stroke', '#cbd5e1')
       .attr('stroke-width', 2)
@@ -88,7 +88,7 @@ const Graph: React.FC = () => {
 
     // Link Labels
     const linkLabel = linkGroup.selectAll('text')
-      .data(links)
+      .data(edges)
       .join('text')
       .attr('class', 'link-label')
       .text((d: any) => t(d.type))
@@ -113,7 +113,7 @@ const Graph: React.FC = () => {
         tooltip.transition().duration(200).style('opacity', 1);
         tooltip.html(`
           <div class="font-bold text-slate-800 mb-1">${t(isPerson(d) ? d.name : d.title)}</div>
-          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? t('Era: ') + t(d.era) : t('Time: ') + d.time_start}</div>
+          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? t('Era: ') + t(d.era || '') : t('Time: ') + (d.start_year || '')}</div>
           <div class="text-sm text-slate-600">${t(d.description)}</div>
         `)
           .style('left', (event.pageX + 15) + 'px')

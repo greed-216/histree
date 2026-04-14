@@ -12,10 +12,25 @@ const Graph: React.FC = () => {
 
   useEffect(() => {
     // Fetch data from backend
-    fetch('http://localhost:3000/api/graph/demo')
+    fetch(import.meta.env.VITE_API_URL || 'http://localhost:3000/api/graph/demo')
       .then((res) => res.json())
       .then((data: GraphData) => setData(data))
-      .catch((err) => console.error('Failed to fetch graph data:', err));
+      .catch((err) => {
+        console.warn('Failed to fetch graph data, using mock data fallback:', err);
+        // Provide mock data so the D3 visualization works on GitHub Pages
+        setData({
+          nodes: [
+            { id: 'p1', name: 'Liu Bei', era: 'Three Kingdoms', description: 'Founder of Shu Han' } as Person,
+            { id: 'p2', name: 'Zhuge Liang', era: 'Three Kingdoms', description: 'Chancellor of Shu Han' } as Person,
+            { id: 'e1', title: 'Battle of Red Cliffs', time_start: 208, time_end: 208, description: 'Decisive battle at the end of the Han dynasty', dynasty: 'Eastern Han', impact_level: 10 } as Event,
+          ],
+          links: [
+            { id: 'r1', source: 'p1', target: 'p2', type: 'ruler', description: 'Liu Bei recruited Zhuge Liang' },
+            { id: 'r2', source: 'p2', target: 'e1', type: 'participant', description: 'Zhuge Liang planned the alliance' },
+            { id: 'r3', source: 'p1', target: 'e1', type: 'participant', description: 'Liu Bei led allied forces' },
+          ]
+        });
+      });
   }, []);
 
   useEffect(() => {

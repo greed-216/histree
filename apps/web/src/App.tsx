@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import { useTranslation } from 'react-i18next';
 import type { GraphData, Person, Event } from '@histree/shared-types';
 import './App.css';
 
@@ -7,7 +8,9 @@ import './App.css';
 const isPerson = (node: Person | Event): node is Person => 'era' in node;
 
 const Graph: React.FC = () => {
+  const { t } = useTranslation();
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [data, setData] = useState<GraphData | null>(null);
 
   useEffect(() => {
@@ -17,7 +20,7 @@ const Graph: React.FC = () => {
       .then((data: GraphData) => setData(data))
       .catch((err) => {
         console.warn('Failed to fetch graph data, using mock data fallback:', err);
-        // Provide mock data so the D3 visualization works on GitHub Pages
+        // Provide mock data
         setData({
           nodes: [
             { id: 'p1', name: 'Liu Bei', era: 'Three Kingdoms', description: 'Founder of Shu Han' } as Person,
@@ -34,54 +37,110 @@ const Graph: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!data || !svgRef.current) return;
+    if (!data || !svgRef.current || !containerRef.current) return;
 
-    const width = 800;
+    const width = containerRef.current.clientWidth || 800;
     const height = 600;
 
     const svg = d3.select(svgRef.current)
-      .attr('viewBox', [0, 0, width, height])
-      .style('background', '#f9f9f9')
-      .style('border', '1px solid #ccc');
+      .attr('viewBox', [0, 0, width, height]);
 
     svg.selectAll('*').remove();
 
-    // Setup simulation
+    // Tooltip div
+    d3.select(containerRef.current).selectAll('.d3-tooltip').remove();
+    const tooltip = d3.select(containerRef.current)
+      .append('div')
+      .attr('class', 'd3-tooltip');
+
+    // Arrow markers
+    svg.append('defs').append('marker')
+      .attr('id', 'arrowhead')
+      .attr('viewBox', '-0 -5 10 10')
+      .attr('refX', 28) // Shift arrow back so it doesn't hide under node
+      .attr('refY', 0)
+      .attr('orient', 'auto')
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('xoverflow', 'visible')
+      .append('svg:path')
+      .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+      .attr('fill', '#94a3b8')
+      .style('stroke','none');
+
     // We must clone nodes and links so D3 doesn't mutate our React state directly
     const nodes = data.nodes.map(d => Object.create(d));
     const links = data.links.map(d => Object.create(d));
 
     const simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id((d: any) => d.id).distance(150))
-      .force('charge', d3.forceManyBody().strength(-400))
-      .force('center', d3.forceCenter(width / 2, height / 2));
+      .force('link', d3.forceLink(links).id((d: any) => d.id).distance(180))
+      .force('charge', d3.forceManyBody().strength(-800))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collide', d3.forceCollide().radius(50));
 
-    const link = svg.append('g')
-      .attr('stroke', '#999')
-      .attr('stroke-opacity', 0.6)
-      .selectAll('line')
+    // Links container
+    const linkGroup = svg.append('g').attr('class', 'links');
+    const link = linkGroup.selectAll('line')
       .data(links)
       .join('line')
-      .attr('stroke-width', 2);
+      .attr('stroke', '#cbd5e1')
+      .attr('stroke-width', 2)
+      .attr('marker-end', 'url(#arrowhead)');
 
-    const node = svg.append('g')
-      .attr('stroke', '#fff')
-      .attr('stroke-width', 1.5)
-      .selectAll('circle')
-      .data(nodes)
-      .join('circle')
-      .attr('r', 20)
-      .attr('fill', (d: any) => isPerson(d) ? '#1f77b4' : '#ff7f0e')
-      .call(drag(simulation) as any);
-
-    // Labels
-    const labels = svg.append('g')
-      .selectAll('text')
-      .data(nodes)
+    // Link Labels
+    const linkLabel = linkGroup.selectAll('text')
+      .data(links)
       .join('text')
-      .text((d: any) => isPerson(d) ? d.name : d.title)
+      .attr('class', 'link-label')
+      .text((d: any) => t(d.type))
+      .attr('font-size', '10px')
+      .attr('fill', '#64748b')
+      .attr('text-anchor', 'middle')
+      .attr('dy', -4);
+
+    // Nodes container
+    const nodeGroup = svg.append('g').attr('class', 'nodes');
+    const node = nodeGroup.selectAll('g')
+      .data(nodes)
+      .join('g')
+      .attr('class', 'node')
+      .call(drag(simulation) as any)
+      .on('mouseover', (event, d: any) => {
+        d3.select(event.currentTarget).select('circle')
+          .transition().duration(200)
+          .attr('stroke', '#3b82f6')
+          .attr('stroke-width', 3);
+        
+        tooltip.transition().duration(200).style('opacity', 1);
+        tooltip.html(`
+          <div class="font-bold text-slate-800 mb-1">${t(isPerson(d) ? d.name : d.title)}</div>
+          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? t('Era: ') + t(d.era) : t('Time: ') + d.time_start}</div>
+          <div class="text-sm text-slate-600">${t(d.description)}</div>
+        `)
+          .style('left', (event.pageX + 15) + 'px')
+          .style('top', (event.pageY - 28) + 'px');
+      })
+      .on('mouseout', (event) => {
+        d3.select(event.currentTarget).select('circle')
+          .transition().duration(200)
+          .attr('stroke', '#fff')
+          .attr('stroke-width', 2);
+        tooltip.transition().duration(500).style('opacity', 0);
+      });
+
+    node.append('circle')
+      .attr('r', 24)
+      .attr('fill', (d: any) => isPerson(d) ? '#38bdf8' : '#fb923c') // sky-400 and orange-400
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 2)
+      .attr('filter', 'drop-shadow(0px 2px 4px rgba(0,0,0,0.1))');
+
+    node.append('text')
+      .text((d: any) => t(isPerson(d) ? d.name : d.title))
       .attr('font-size', '12px')
-      .attr('dx', 25)
+      .attr('font-weight', '500')
+      .attr('fill', '#334155')
+      .attr('dx', 30)
       .attr('dy', 4);
 
     simulation.on('tick', () => {
@@ -90,17 +149,15 @@ const Graph: React.FC = () => {
         .attr('y1', (d: any) => d.source.y)
         .attr('x2', (d: any) => d.target.x)
         .attr('y2', (d: any) => d.target.y);
+      
+      linkLabel
+        .attr('x', (d: any) => (d.source.x + d.target.x) / 2)
+        .attr('y', (d: any) => (d.source.y + d.target.y) / 2);
 
-      node
-        .attr('cx', (d: any) => d.x)
-        .attr('cy', (d: any) => d.y);
-
-      labels
-        .attr('x', (d: any) => d.x)
-        .attr('y', (d: any) => d.y);
+      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
     });
 
-  }, [data]);
+  }, [data, t]);
 
   // Drag function for d3 nodes
   const drag = (simulation: d3.Simulation<any, any>) => {
@@ -127,24 +184,59 @@ const Graph: React.FC = () => {
       .on('end', dragended);
   };
 
+  if (!data) return <div className="flex justify-center items-center h-64 text-slate-400">{t('loading')}</div>;
+
   return (
-    <div className="Graph-container">
-      <h2>Histree MVP Demo</h2>
-      <svg ref={svgRef} width={800} height={600}></svg>
-      <div style={{ marginTop: '1rem' }}>
-        <span style={{ color: '#1f77b4', marginRight: '1rem' }}>● Person</span>
-        <span style={{ color: '#ff7f0e' }}>● Event</span>
+    <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden" ref={containerRef}>
+      <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+        <h2 className="text-lg font-semibold text-slate-700">{t('demoTitle')}</h2>
+        <div className="flex gap-4 text-sm">
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-3 rounded-full bg-sky-400 inline-block shadow-sm"></span>
+            <span className="text-slate-600">{t('person')}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-3 h-3 rounded-full bg-orange-400 inline-block shadow-sm"></span>
+            <span className="text-slate-600">{t('event')}</span>
+          </div>
+        </div>
+      </div>
+      <div className="relative">
+        <svg ref={svgRef} className="w-full h-[600px] cursor-grab active:cursor-grabbing"></svg>
       </div>
     </div>
   );
 };
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'zh' ? 'en' : 'zh');
+  };
+
   return (
-    <div className="App" style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1>Histree</h1>
-      <p>A graph-driven platform for exploring Chinese history.</p>
-      <Graph />
+    <div className="min-h-screen bg-slate-50 p-6 md:p-12 font-sans">
+      <div className="max-w-5xl mx-auto space-y-6">
+        <div className="flex justify-between items-end">
+          <div>
+            <h1 className="text-4xl font-bold text-slate-800 tracking-tight mb-2">{t('title')}</h1>
+            <p className="text-slate-500 text-lg">{t('subtitle')}</p>
+          </div>
+          <button 
+            onClick={toggleLanguage}
+            className="px-4 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 text-sm rounded-lg shadow-sm transition-colors cursor-pointer"
+          >
+            {t('langToggle')}
+          </button>
+        </div>
+        
+        <Graph />
+        
+        <footer className="text-center text-slate-400 text-sm pt-8">
+          © {new Date().getFullYear()} Histree MVP
+        </footer>
+      </div>
     </div>
   );
 }

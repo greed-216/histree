@@ -11,6 +11,10 @@ const resources = {
       event: '事件',
       failedToFetch: '获取图谱数据失败，使用降级模拟数据。',
       loading: '加载中...',
+      loginAdmin: '管理员登录',
+      logout: '退出登录',
+      loginRequired: '请输入管理员账号登录',
+      adminStatus: '已登录 (Admin)',
       // Mock data translations
       'Liu Bei': '刘备',
       'Zhuge Liang': '诸葛亮',
@@ -36,6 +40,10 @@ const resources = {
       event: 'Event',
       failedToFetch: 'Failed to fetch graph data, using mock data fallback.',
       loading: 'Loading...',
+      loginAdmin: 'Admin Login',
+      logout: 'Logout',
+      loginRequired: 'Please login with your admin account',
+      adminStatus: 'Logged in (Admin)',
       // Mock data remains as is
       'Liu Bei': 'Liu Bei',
       'Zhuge Liang': 'Zhuge Liang',

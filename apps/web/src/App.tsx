@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import { useTranslation } from 'react-i18next';
 import type { GraphResponse, Person, Event } from '@histree/shared-types';
+import { supabase } from './supabaseClient';
+import { AuthModal } from './AuthModal';
+import { UserIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
 
 // Type guard helpers
 const isPerson = (node: Person | Event): node is Person => node.type === 'person';
@@ -209,6 +212,29 @@ const Graph: React.FC = () => {
 
 function App() {
   const { t, i18n } = useTranslation();
+  const [session, setSession] = useState<any>(null);
+  const [isAuthModalOpen, setAuthModalOpen] = useState(false);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if (session) {
+        setAuthModalOpen(false); // Close modal automatically upon login
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 p-6 md:p-12 font-sans">
@@ -219,8 +245,37 @@ function App() {
             <p className="text-slate-500 text-lg">{t('subtitle')}</p>
           </div>
           
-          {/* Improved Language Toggle */}
-          <div className="flex bg-slate-200/60 p-1 rounded-lg shrink-0 self-start md:self-auto">
+          {/* Auth and Language Toggle */}
+          <div className="flex flex-col md:flex-row gap-3 md:gap-4 shrink-0 self-start md:self-auto items-end md:items-center">
+            
+            {/* Auth Section */}
+            {session ? (
+              <div className="flex items-center gap-3 bg-white px-3 py-1.5 rounded-lg shadow-sm border border-slate-200">
+                <div className="flex items-center gap-1.5 text-sm font-medium text-emerald-600">
+                  <UserIcon className="w-4 h-4" />
+                  <span>{t('adminStatus')}</span>
+                </div>
+                <div className="w-px h-4 bg-slate-200"></div>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-1 text-sm text-slate-500 hover:text-rose-500 transition-colors cursor-pointer"
+                  title={t('logout')}
+                >
+                  <ArrowRightOnRectangleIcon className="w-4 h-4" />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setAuthModalOpen(true)}
+                className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer shadow-sm"
+              >
+                <UserIcon className="w-4 h-4" />
+                {t('loginAdmin')}
+              </button>
+            )}
+
+            {/* Language Toggle */}
+          <div className="flex bg-slate-200/60 p-1 rounded-lg">
             <button 
               onClick={() => i18n.changeLanguage('zh')}
               className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all cursor-pointer ${
@@ -239,12 +294,14 @@ function App() {
                   : 'text-slate-500 hover:text-slate-700'
               }`}
             >
-              EN
-            </button>
+              EN</button>
+            </div>
           </div>
         </div>
         
         <Graph />
+        
+        <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
         
         <footer className="text-center text-slate-400 text-sm pt-8">
           © {new Date().getFullYear()} Histree MVP

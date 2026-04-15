@@ -10,7 +10,9 @@ export const EventsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL?.replace('/graph/person/00000000-0000-0000-0000-000000000001', '/event') || 'http://localhost:3000/api/v1/event')
+    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+
+    fetch(`${apiBase}/event`)
       .then(res => res.json())
       .then(data => {
         setEvents(data);

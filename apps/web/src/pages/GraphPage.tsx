@@ -22,8 +22,10 @@ export const GraphPage: React.FC = () => {
     if (!id) return;
     setLoading(true);
     setSelectedNode(null);
-    
-    fetch(import.meta.env.VITE_API_URL?.replace('/graph/person/00000000-0000-0000-0000-000000000001', `/graph/${id}`) || `http://localhost:3000/api/v1/graph/${id}`)
+
+    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+
+    fetch(`${apiBase}/graph/${id}`)
       .then(res => res.json())
       .then((data: GraphResponse) => {
         setData(data);

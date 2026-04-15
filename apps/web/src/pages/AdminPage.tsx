@@ -94,8 +94,8 @@ export const AdminPage: React.FC = () => {
     formData.append('file', file);
 
     try {
-      const baseUrl = import.meta.env.VITE_API_URL?.replace('/graph/person/00000000-0000-0000-0000-000000000001', '') || 'http://localhost:3000/api/v1';
-      const res = await fetch(`${baseUrl}/upload`, {
+      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+      const res = await fetch(`${apiBase}/upload`, {
         method: 'POST',
         body: formData,
       });

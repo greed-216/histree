@@ -44,7 +44,9 @@ const resources = {
       'participant': '参与者',
       'Liu Bei recruited Zhuge Liang': '刘备三顾茅庐请诸葛亮出山',
       'Zhuge Liang planned the alliance': '诸葛亮促成孙刘联盟',
-      'Liu Bei led allied forces': '刘备率领联军'
+      'Liu Bei led allied forces': '刘备率领联军',
+      'Failed to upload image.': '图片上传失败。',
+      'or upload': '或上传文件'
     }
   },
   en: {
@@ -89,7 +91,9 @@ const resources = {
       'participant': 'Participant',
       'Liu Bei recruited Zhuge Liang': 'Liu Bei recruited Zhuge Liang',
       'Zhuge Liang planned the alliance': 'Zhuge Liang planned the alliance',
-      'Liu Bei led allied forces': 'Liu Bei led allied forces'
+      'Liu Bei led allied forces': 'Liu Bei led allied forces',
+      'Failed to upload image.': 'Failed to upload image.',
+      'or upload': 'or upload',
     }
   }
 };

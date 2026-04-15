@@ -7,6 +7,7 @@ import { EventModule } from './modules/event/event.module';
 import { TimelineModule } from './modules/timeline/timeline.module';
 import { PersonModule } from './modules/person/person.module';
 import { SupabaseModule } from './modules/supabase/supabase.module';
+import { UploadModule } from './modules/upload/upload.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { SupabaseModule } from './modules/supabase/supabase.module';
     GraphModule,
     EventModule,
     PersonModule,
-    TimelineModule
+    TimelineModule,
+    UploadModule
   ],
   controllers: [AppController],
   providers: [AppService],

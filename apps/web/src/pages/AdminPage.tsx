@@ -16,6 +16,7 @@ export const AdminPage: React.FC = () => {
   // Edit states
   const [editingPerson, setEditingPerson] = useState<Partial<Person> | null>(null);
   const [editingEvent, setEditingEvent] = useState<Partial<Event> | null>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
 
   useEffect(() => {
     checkAdminAndLoadData();
@@ -82,6 +83,36 @@ export const AdminPage: React.FC = () => {
     if (!confirm(t('Are you sure you want to delete this event?'))) return;
     await supabase.from('event').delete().eq('id', id);
     fetchData();
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, isPerson: boolean) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const baseUrl = import.meta.env.VITE_API_URL?.replace('/graph/person/00000000-0000-0000-0000-000000000001', '') || 'http://localhost:3000/api/v1';
+      const res = await fetch(`${baseUrl}/upload`, {
+        method: 'POST',
+        body: formData,
+      });
+      if (!res.ok) throw new Error('Upload failed');
+      const data = await res.json();
+      
+      if (isPerson && editingPerson) {
+        setEditingPerson({ ...editingPerson, image_url: data.url });
+      } else if (!isPerson && editingEvent) {
+        setEditingEvent({ ...editingEvent, image_url: data.url });
+      }
+    } catch (err) {
+      console.error('Image upload error:', err);
+      alert(t('Failed to upload image.'));
+    } finally {
+      setUploadingImage(false);
+    }
   };
 
   if (loading) return <div className="p-12 text-center text-slate-500">{t('loading')}</div>;
@@ -189,9 +220,15 @@ export const AdminPage: React.FC = () => {
             <input placeholder={t('Name')} value={editingPerson.name || ''} onChange={e => setEditingPerson({...editingPerson, name: e.target.value})} className="w-full p-2 border rounded-lg" />
             <input placeholder={t('Era')} value={editingPerson.era || ''} onChange={e => setEditingPerson({...editingPerson, era: e.target.value})} className="w-full p-2 border rounded-lg" />
             <textarea placeholder={t('Description')} value={editingPerson.description || ''} onChange={e => setEditingPerson({...editingPerson, description: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
-            <div className="flex items-center gap-2">
-              <PhotoIcon className="w-5 h-5 text-slate-400" />
-              <input placeholder={t('Image URL')} value={editingPerson.image_url || ''} onChange={e => setEditingPerson({...editingPerson, image_url: e.target.value})} className="w-full p-2 border rounded-lg" />
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <PhotoIcon className="w-5 h-5 text-slate-400" />
+                <input placeholder={t('Image URL')} value={editingPerson.image_url || ''} onChange={e => setEditingPerson({...editingPerson, image_url: e.target.value})} className="w-full p-2 border rounded-lg" />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-slate-500 px-7">{t('or upload')}</span>
+                <input type="file" accept="image/*" onChange={e => handleImageUpload(e, true)} disabled={uploadingImage} className="text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-sky-50 file:text-sky-700 hover:file:bg-sky-100 disabled:opacity-50" />
+              </div>
             </div>
             <div className="flex justify-end gap-2 pt-4">
               <button onClick={() => setEditingPerson(null)} className="px-4 py-2 text-slate-500 hover:bg-slate-100 rounded-lg">{t('Cancel')}</button>
@@ -213,9 +250,15 @@ export const AdminPage: React.FC = () => {
             </div>
             <textarea placeholder={t('Description')} value={editingEvent.description || ''} onChange={e => setEditingEvent({...editingEvent, description: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
             
-            <div className="flex items-center gap-2">
-              <PhotoIcon className="w-5 h-5 text-slate-400 shrink-0" />
-              <input placeholder={t('Image URL')} value={editingEvent.image_url || ''} onChange={e => setEditingEvent({...editingEvent, image_url: e.target.value})} className="w-full p-2 border rounded-lg" />
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <PhotoIcon className="w-5 h-5 text-slate-400 shrink-0" />
+                <input placeholder={t('Image URL')} value={editingEvent.image_url || ''} onChange={e => setEditingEvent({...editingEvent, image_url: e.target.value})} className="w-full p-2 border rounded-lg" />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-slate-500 px-7">{t('or upload')}</span>
+                <input type="file" accept="image/*" onChange={e => handleImageUpload(e, false)} disabled={uploadingImage} className="text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100 disabled:opacity-50" />
+              </div>
             </div>
             
             <div className="space-y-2 border-t border-slate-100 pt-4">

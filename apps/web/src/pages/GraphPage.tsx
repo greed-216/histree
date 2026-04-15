@@ -2,8 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import * as d3 from 'd3';
 import { useTranslation } from 'react-i18next';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import type { GraphResponse, Person, Event } from '@histree/shared-types';
-import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon, MapPinIcon } from '@heroicons/react/24/outline';
+
+// Fix leaflet default icon
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
 
 const isPerson = (node: Person | Event): node is Person => node.type === 'person';
 
@@ -73,6 +83,23 @@ export const GraphPage: React.FC = () => {
     const nodes = data.nodes.map(d => Object.create(d));
     const edges = data.edges.map(d => Object.create(d));
 
+    // Create defs for image patterns
+    const defs = svg.select('defs');
+    nodes.forEach((n: any) => {
+      if (n.image_url) {
+        defs.append('pattern')
+          .attr('id', `img-${n.id}`)
+          .attr('patternUnits', 'objectBoundingBox')
+          .attr('width', 1)
+          .attr('height', 1)
+          .append('image')
+          .attr('href', n.image_url)
+          .attr('width', isPerson(n) ? 56 : 64) // diameter for circle, width for rect
+          .attr('height', isPerson(n) ? 56 : 48)
+          .attr('preserveAspectRatio', 'xMidYMid slice');
+      }
+    });
+
     const simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(edges).id((d: any) => d.id).distance(180))
       .force('charge', d3.forceManyBody().strength(-800))
@@ -139,7 +166,7 @@ export const GraphPage: React.FC = () => {
     node.filter((d: any) => isPerson(d))
       .append('circle')
       .attr('r', 28)
-      .attr('fill', '#38bdf8') // sky-400
+      .attr('fill', (d: any) => d.image_url ? `url(#img-${d.id})` : '#38bdf8') // sky-400
       .attr('stroke', (d: any) => d.id === data.center?.id ? '#10b981' : '#fff')
       .attr('stroke-width', (d: any) => d.id === data.center?.id ? 4 : 2)
       .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
@@ -152,7 +179,7 @@ export const GraphPage: React.FC = () => {
       .attr('x', -32)
       .attr('y', -24)
       .attr('rx', 12)
-      .attr('fill', '#fb923c') // orange-400
+      .attr('fill', (d: any) => d.image_url ? `url(#img-${d.id})` : '#fb923c') // orange-400
       .attr('stroke', (d: any) => d.id === data.center?.id ? '#10b981' : '#fff')
       .attr('stroke-width', (d: any) => d.id === data.center?.id ? 4 : 2)
       .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
@@ -252,12 +279,42 @@ export const GraphPage: React.FC = () => {
         </div>
         
         <div className="p-6 flex-1 space-y-8">
+          {selectedNode.image_url && (
+            <div className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+              <img src={selectedNode.image_url} alt={isPerson(selectedNode) ? selectedNode.name : selectedNode.title} className="w-full h-48 object-cover" />
+            </div>
+          )}
+
           <div>
             <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Description')}</h4>
             <p className="text-slate-600 leading-relaxed text-base">
               {selectedNode.description || t('No description available.')}
             </p>
           </div>
+
+          {!isPerson(selectedNode) && selectedNode.location_lat && selectedNode.location_lng && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1">
+                <MapPinIcon className="w-4 h-4" /> {t('Location')} {selectedNode.location_name ? `- ${selectedNode.location_name}` : ''}
+              </h4>
+              <div className="w-full h-48 rounded-xl overflow-hidden border border-slate-200 shadow-sm z-0 relative">
+                <MapContainer 
+                  center={[selectedNode.location_lat, selectedNode.location_lng]} 
+                  zoom={6} 
+                  scrollWheelZoom={false}
+                  style={{ height: '100%', width: '100%' }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  <Marker position={[selectedNode.location_lat, selectedNode.location_lng]}>
+                    {selectedNode.location_name && <Popup>{selectedNode.location_name}</Popup>}
+                  </Marker>
+                </MapContainer>
+              </div>
+            </div>
+          )}
           
           <div>
             <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Related Nodes')}</h4>

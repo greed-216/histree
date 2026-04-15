@@ -5,6 +5,7 @@ export interface Person {
   birth_year?: number;
   death_year?: number;
   description?: string;
+  image_url?: string;
   type: 'person';
 }
 
@@ -16,6 +17,10 @@ export interface Event {
   dynasty?: string;
   description?: string;
   impact_level?: number;
+  image_url?: string;
+  location_lat?: number;
+  location_lng?: number;
+  location_name?: string;
   type: 'event';
 }
 

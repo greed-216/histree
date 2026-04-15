@@ -8,6 +8,8 @@ import { ExplorePage } from './pages/ExplorePage';
 import { GraphPage } from './pages/GraphPage';
 import { PeoplePage } from './pages/PeoplePage';
 import { EventsPage } from './pages/EventsPage';
+import { AdminPage } from './pages/AdminPage';
+import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -69,6 +71,12 @@ function App() {
                 <AcademicCapIcon className="w-4 h-4" />
                 {t('Events')}
               </Link>
+              {session && (
+                <Link to="/admin" className={navLinkClass('/admin')}>
+                  <AdjustmentsHorizontalIcon className="w-4 h-4" />
+                  {t('Admin')}
+                </Link>
+              )}
             </nav>
           </div>
 
@@ -129,6 +137,7 @@ function App() {
           <Route path="/graph/:id" element={<GraphPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/events" element={<EventsPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </main>
 

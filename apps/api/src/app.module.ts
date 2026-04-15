@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { GraphModule } from './modules/graph/graph.module';
 import { EventModule } from './modules/event/event.module';
 import { TimelineModule } from './modules/timeline/timeline.module';
+import { PersonModule } from './modules/person/person.module';
 import { SupabaseModule } from './modules/supabase/supabase.module';
 
 @Module({
@@ -13,6 +14,7 @@ import { SupabaseModule } from './modules/supabase/supabase.module';
     SupabaseModule,
     GraphModule,
     EventModule,
+    PersonModule,
     TimelineModule
   ],
   controllers: [AppController],

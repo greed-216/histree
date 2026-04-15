@@ -8,6 +8,18 @@ export class EventService {
 
   constructor(private supabaseService: SupabaseService) {}
 
+  async getEvents(): Promise<any[]> {
+    const supabase = this.supabaseService.getClient();
+    try {
+      const { data, error } = await supabase.from('event').select('*').order('start_year', { ascending: true });
+      if (error) throw error;
+      return (data || []).map(e => ({ ...e, type: 'event' }));
+    } catch (err) {
+      this.logger.error('Failed to fetch events', err);
+      throw err;
+    }
+  }
+
   async getEventDetail(eventId: string): Promise<EventDetail> {
     const supabase = this.supabaseService.getClient();
 

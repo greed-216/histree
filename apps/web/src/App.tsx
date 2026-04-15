@@ -1,219 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
-import * as d3 from 'd3';
+import { useEffect, useState } from 'react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import type { GraphResponse, Person, Event } from '@histree/shared-types';
 import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
-import { UserIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
-
-// Type guard helpers
-const isPerson = (node: Person | Event): node is Person => node.type === 'person';
-
-const Graph: React.FC = () => {
-  const { t } = useTranslation();
-  const svgRef = useRef<SVGSVGElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [data, setData] = useState<GraphResponse | null>(null);
-
-  useEffect(() => {
-    // Fetch data from backend
-    fetch(import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1/graph/person/00000000-0000-0000-0000-000000000001')
-      .then((res) => res.json())
-      .then((data: GraphResponse) => setData(data))
-      .catch((err) => {
-        console.warn('Failed to fetch graph data, using mock data fallback:', err);
-        // Provide mock data
-        setData({
-          nodes: [
-            { id: 'p1', name: 'Liu Bei', era: 'Three Kingdoms', description: 'Founder of Shu Han', type: 'person' },
-            { id: 'p2', name: 'Zhuge Liang', era: 'Three Kingdoms', description: 'Chancellor of Shu Han', type: 'person' },
-            { id: 'e1', title: 'Battle of Red Cliffs', start_year: 208, end_year: 208, description: 'Decisive battle at the end of the Han dynasty', dynasty: 'Eastern Han', impact_level: 10, type: 'event' },
-          ],
-          edges: [
-            { source: 'p1', target: 'p2', type: 'ruler', description: 'Liu Bei recruited Zhuge Liang' },
-            { source: 'p2', target: 'e1', type: 'participant', description: 'Zhuge Liang planned the alliance' },
-            { source: 'p1', target: 'e1', type: 'participant', description: 'Liu Bei led allied forces' },
-          ]
-        });
-      });
-  }, []);
-
-  useEffect(() => {
-    if (!data || !svgRef.current || !containerRef.current) return;
-
-    const width = containerRef.current.clientWidth || 800;
-    const height = 600;
-
-    const svg = d3.select(svgRef.current)
-      .attr('viewBox', [0, 0, width, height]);
-
-    svg.selectAll('*').remove();
-
-    // Tooltip div
-    d3.select(containerRef.current).selectAll('.d3-tooltip').remove();
-    const tooltip = d3.select(containerRef.current)
-      .append('div')
-      .attr('class', 'd3-tooltip');
-
-    // Arrow markers
-    svg.append('defs').append('marker')
-      .attr('id', 'arrowhead')
-      .attr('viewBox', '-0 -5 10 10')
-      .attr('refX', 28) // Shift arrow back so it doesn't hide under node
-      .attr('refY', 0)
-      .attr('orient', 'auto')
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('xoverflow', 'visible')
-      .append('svg:path')
-      .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-      .attr('fill', '#94a3b8')
-      .style('stroke','none');
-
-    // We must clone nodes and links so D3 doesn't mutate our React state directly
-    const nodes = data.nodes.map(d => Object.create(d));
-    const edges = data.edges.map(d => Object.create(d));
-
-    const simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(edges).id((d: any) => d.id).distance(180))
-      .force('charge', d3.forceManyBody().strength(-800))
-      .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collide', d3.forceCollide().radius(50));
-
-    // Links container
-    const linkGroup = svg.append('g').attr('class', 'links');
-    const link = linkGroup.selectAll('line')
-      .data(edges)
-      .join('line')
-      .attr('stroke', '#cbd5e1')
-      .attr('stroke-width', 2)
-      .attr('marker-end', 'url(#arrowhead)');
-
-    // Link Labels
-    const linkLabel = linkGroup.selectAll('text')
-      .data(edges)
-      .join('text')
-      .attr('class', 'link-label')
-      .text((d: any) => t(d.type))
-      .attr('font-size', '10px')
-      .attr('fill', '#64748b')
-      .attr('text-anchor', 'middle')
-      .attr('dy', -4);
-
-    // Nodes container
-    const nodeGroup = svg.append('g').attr('class', 'nodes');
-    const node = nodeGroup.selectAll('g')
-      .data(nodes)
-      .join('g')
-      .attr('class', 'node')
-      .call(drag(simulation) as any)
-      .on('mouseover', (event, d: any) => {
-        d3.select(event.currentTarget).select('circle')
-          .transition().duration(200)
-          .attr('stroke', '#3b82f6')
-          .attr('stroke-width', 3);
-        
-        tooltip.transition().duration(200).style('opacity', 1);
-        tooltip.html(`
-          <div class="font-bold text-slate-800 mb-1">${t(isPerson(d) ? d.name : d.title)}</div>
-          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? t('Era: ') + t(d.era || '') : t('Time: ') + (d.start_year || '')}</div>
-          <div class="text-sm text-slate-600">${t(d.description)}</div>
-        `)
-          .style('left', (event.pageX + 15) + 'px')
-          .style('top', (event.pageY - 28) + 'px');
-      })
-      .on('mouseout', (event) => {
-        d3.select(event.currentTarget).select('circle')
-          .transition().duration(200)
-          .attr('stroke', '#fff')
-          .attr('stroke-width', 2);
-        tooltip.transition().duration(500).style('opacity', 0);
-      });
-
-    node.append('circle')
-      .attr('r', 24)
-      .attr('fill', (d: any) => isPerson(d) ? '#38bdf8' : '#fb923c') // sky-400 and orange-400
-      .attr('stroke', '#fff')
-      .attr('stroke-width', 2)
-      .attr('filter', 'drop-shadow(0px 2px 4px rgba(0,0,0,0.1))');
-
-    node.append('text')
-      .text((d: any) => t(isPerson(d) ? d.name : d.title))
-      .attr('font-size', '12px')
-      .attr('font-weight', '500')
-      .attr('fill', '#334155')
-      .attr('dx', 30)
-      .attr('dy', 4);
-
-    simulation.on('tick', () => {
-      link
-        .attr('x1', (d: any) => d.source.x)
-        .attr('y1', (d: any) => d.source.y)
-        .attr('x2', (d: any) => d.target.x)
-        .attr('y2', (d: any) => d.target.y);
-      
-      linkLabel
-        .attr('x', (d: any) => (d.source.x + d.target.x) / 2)
-        .attr('y', (d: any) => (d.source.y + d.target.y) / 2);
-
-      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
-    });
-
-  }, [data, t]);
-
-  // Drag function for d3 nodes
-  const drag = (simulation: d3.Simulation<any, any>) => {
-    function dragstarted(event: any) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      event.subject.fx = event.subject.x;
-      event.subject.fy = event.subject.y;
-    }
-
-    function dragged(event: any) {
-      event.subject.fx = event.x;
-      event.subject.fy = event.y;
-    }
-
-    function dragended(event: any) {
-      if (!event.active) simulation.alphaTarget(0);
-      event.subject.fx = null;
-      event.subject.fy = null;
-    }
-
-    return d3.drag()
-      .on('start', dragstarted)
-      .on('drag', dragged)
-      .on('end', dragended);
-  };
-
-  if (!data) return <div className="flex justify-center items-center h-64 text-slate-400">{t('loading')}</div>;
-
-  return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden" ref={containerRef}>
-      <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-        <h2 className="text-lg font-semibold text-slate-700">{t('demoTitle')}</h2>
-        <div className="flex gap-4 text-sm">
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-sky-400 inline-block shadow-sm"></span>
-            <span className="text-slate-600">{t('person')}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-orange-400 inline-block shadow-sm"></span>
-            <span className="text-slate-600">{t('event')}</span>
-          </div>
-        </div>
-      </div>
-      <div className="relative">
-        <svg ref={svgRef} className="w-full h-[600px] cursor-grab active:cursor-grabbing"></svg>
-      </div>
-    </div>
-  );
-};
+import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { ExplorePage } from './pages/ExplorePage';
+import { GraphPage } from './pages/GraphPage';
+import { PeoplePage } from './pages/PeoplePage';
+import { EventsPage } from './pages/EventsPage';
 
 function App() {
   const { t, i18n } = useTranslation();
   const [session, setSession] = useState<any>(null);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -225,7 +25,7 @@ function App() {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (session) {
-        setAuthModalOpen(false); // Close modal automatically upon login
+        setAuthModalOpen(false);
       }
     });
 
@@ -236,29 +36,54 @@ function App() {
     await supabase.auth.signOut();
   };
 
+  const navLinkClass = (path: string) => 
+    `flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+      location.pathname === path || (path !== '/' && location.pathname.startsWith(path))
+        ? 'bg-slate-800 text-white shadow-sm'
+        : 'text-slate-600 hover:bg-slate-200/60 hover:text-slate-900'
+    }`;
+
   return (
-    <div className="min-h-screen bg-slate-50 p-6 md:p-12 font-sans">
-      <div className="max-w-5xl mx-auto space-y-6">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
-          <div>
-            <h1 className="text-4xl font-bold text-slate-800 tracking-tight mb-2">{t('title')}</h1>
-            <p className="text-slate-500 text-lg">{t('subtitle')}</p>
-          </div>
-          
-          {/* Auth and Language Toggle */}
-          <div className="flex flex-col md:flex-row gap-3 md:gap-4 shrink-0 self-start md:self-auto items-end md:items-center">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+      {/* Top Navigation */}
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center shadow-sm">
+                <SparklesIcon className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-slate-800 tracking-tight">Histree</span>
+            </Link>
             
+            <nav className="hidden md:flex items-center gap-2">
+              <Link to="/" className={navLinkClass('/')}>
+                <MapIcon className="w-4 h-4" />
+                {t('Explore')}
+              </Link>
+              <Link to="/people" className={navLinkClass('/people')}>
+                <UserIcon className="w-4 h-4" />
+                {t('People')}
+              </Link>
+              <Link to="/events" className={navLinkClass('/events')}>
+                <AcademicCapIcon className="w-4 h-4" />
+                {t('Events')}
+              </Link>
+            </nav>
+          </div>
+
+          <div className="flex items-center gap-4">
             {/* Auth Section */}
             {session ? (
-              <div className="flex items-center gap-3 bg-white px-3 py-1.5 rounded-lg shadow-sm border border-slate-200">
+              <div className="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-1.5 text-sm font-medium text-emerald-600">
                   <UserIcon className="w-4 h-4" />
-                  <span>{t('adminStatus')}</span>
+                  <span className="hidden sm:inline">{t('adminStatus')}</span>
                 </div>
-                <div className="w-px h-4 bg-slate-200"></div>
+                <div className="w-px h-4 bg-slate-300"></div>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-1 text-sm text-slate-500 hover:text-rose-500 transition-colors cursor-pointer"
+                  className="flex items-center gap-1 text-sm text-slate-500 hover:text-rose-500 transition-colors"
                   title={t('logout')}
                 >
                   <ArrowRightOnRectangleIcon className="w-4 h-4" />
@@ -267,46 +92,51 @@ function App() {
             ) : (
               <button
                 onClick={() => setAuthModalOpen(true)}
-                className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer shadow-sm"
+                className="flex items-center gap-2 text-slate-500 hover:text-slate-800 text-sm font-medium transition-colors"
               >
                 <UserIcon className="w-4 h-4" />
-                {t('loginAdmin')}
+                <span className="hidden sm:inline">{t('loginAdmin')}</span>
               </button>
             )}
 
             {/* Language Toggle */}
-          <div className="flex bg-slate-200/60 p-1 rounded-lg">
-            <button 
-              onClick={() => i18n.changeLanguage('zh')}
-              className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all cursor-pointer ${
-                i18n.language === 'zh' 
-                  ? 'bg-white text-slate-800 shadow-sm' 
-                  : 'text-slate-500 hover:text-slate-700'
-              }`}
-            >
-              中文
-            </button>
-            <button 
-              onClick={() => i18n.changeLanguage('en')}
-              className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all cursor-pointer ${
-                i18n.language === 'en' 
-                  ? 'bg-white text-slate-800 shadow-sm' 
-                  : 'text-slate-500 hover:text-slate-700'
-              }`}
-            >
-              EN</button>
+            <div className="flex bg-slate-200/60 p-1 rounded-lg">
+              <button 
+                onClick={() => i18n.changeLanguage('zh')}
+                className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
+                  i18n.language === 'zh' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                }`}
+              >
+                中
+              </button>
+              <button 
+                onClick={() => i18n.changeLanguage('en')}
+                className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
+                  i18n.language === 'en' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                }`}
+              >
+                EN
+              </button>
             </div>
           </div>
         </div>
-        
-        <Graph />
-        
-        <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
-        
-        <footer className="text-center text-slate-400 text-sm pt-8">
-          © {new Date().getFullYear()} Histree MVP
-        </footer>
-      </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-6 md:py-8">
+        <Routes>
+          <Route path="/" element={<ExplorePage />} />
+          <Route path="/graph/:id" element={<GraphPage />} />
+          <Route path="/people" element={<PeoplePage />} />
+          <Route path="/events" element={<EventsPage />} />
+        </Routes>
+      </main>
+
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
+      
+      <footer className="bg-white border-t border-slate-200 py-6 text-center text-slate-400 text-sm mt-auto">
+        © {new Date().getFullYear()} Histree MVP. Exploring history through graphs.
+      </footer>
     </div>
   );
 }

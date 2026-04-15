@@ -27,6 +27,7 @@ export interface Edge {
 }
 
 export interface GraphResponse {
+  center: Person | Event;
   nodes: Array<Person | Event>;
   edges: Edge[];
 }

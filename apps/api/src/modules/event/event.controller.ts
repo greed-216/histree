@@ -6,6 +6,11 @@ import type { EventDetail } from '@histree/shared-types';
 export class EventController {
   constructor(private readonly eventService: EventService) {}
 
+  @Get()
+  async getEvents(): Promise<EventDetail[]> {
+    return this.eventService.getEvents();
+  }
+
   @Get(':id')
   async getEventDetail(@Param('id') id: string): Promise<EventDetail> {
     return this.eventService.getEventDetail(id);

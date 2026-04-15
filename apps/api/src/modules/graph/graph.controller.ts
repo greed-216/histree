@@ -6,8 +6,8 @@ import type { GraphResponse } from '@histree/shared-types';
 export class GraphController {
   constructor(private readonly graphService: GraphService) {}
 
-  @Get('person/:id')
-  async getPersonGraph(@Param('id') id: string): Promise<GraphResponse> {
-    return this.graphService.getPersonGraph(id);
+  @Get(':id')
+  async getGraph(@Param('id') id: string): Promise<GraphResponse> {
+    return this.graphService.getGraph(id);
   }
 }

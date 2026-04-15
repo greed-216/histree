@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase, supabaseAnonKey, supabaseUrl } from './supabaseClient';
 import { useTranslation } from 'react-i18next';
 import { XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
@@ -11,11 +11,18 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
   const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
+  const isSupabaseReady = Boolean(supabaseUrl && supabaseAnonKey);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+
+    if (!isSupabaseReady) {
+      setError('Supabase auth is not configured (missing VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY).');
+      setLoading(false);
+      return;
+    }
     
     const { error } = await supabase.auth.signInWithPassword({
       email,
@@ -78,7 +85,7 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || !isSupabaseReady}
               className="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-2.5 rounded-lg transition-colors disabled:opacity-70"
             >
               {loading ? 'Logging in...' : 'Sign In'}

@@ -58,7 +58,8 @@ export const ExplorePage: React.FC = () => {
               {loading && <span className="text-sm text-slate-400">{t('loading')}</span>}
               {!loading && recommendedPeople.length === 0 && <span className="text-sm text-slate-400">{t('No people available.')}</span>}
               {recommendedPeople.map((person) => (
-                <Link key={person.id} to={`/graph/${person.id}`} className="px-4 py-2 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-200 rounded-xl text-slate-700 font-medium transition-colors">
+                <Link key={person.id} to={`/graph/${person.id}`} className="inline-flex items-center gap-2 px-3 py-2 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-200 rounded-xl text-slate-700 font-medium transition-colors">
+                  {person.image_url && <img src={person.image_url} alt="" className="w-6 h-6 rounded-full object-cover border border-slate-200" />}
                   {person.name}
                 </Link>
               ))}

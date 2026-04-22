@@ -41,8 +41,12 @@ export const PeoplePage: React.FC = () => {
               to={`/graph/${person.id}`}
               className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition-all group flex items-start gap-4"
             >
-              <div className="w-12 h-12 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 font-bold text-lg group-hover:bg-sky-500 group-hover:text-white transition-colors">
-                {person.name.charAt(0)}
+              <div className="w-14 h-14 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 font-bold text-lg overflow-hidden border border-slate-200 group-hover:border-sky-300 transition-colors">
+                {person.image_url ? (
+                  <img src={person.image_url} alt={person.name} className="w-full h-full object-cover" />
+                ) : (
+                  person.name.charAt(0)
+                )}
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-sky-600 transition-colors">{person.name}</h3>

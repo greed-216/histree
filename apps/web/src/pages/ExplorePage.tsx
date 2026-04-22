@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SparklesIcon, UserIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
+import type { Event, Person } from '@histree/shared-types';
+import { apiFetch } from '../lib/api';
 
 export const ExplorePage: React.FC = () => {
   const { t } = useTranslation();
+  const [people, setPeople] = useState<Person[]>([]);
+  const [events, setEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([
+      apiFetch<Person[]>('/people'),
+      apiFetch<Event[]>('/event'),
+    ])
+      .then(([peopleData, eventsData]) => {
+        setPeople(peopleData);
+        setEvents(eventsData);
+      })
+      .catch((err) => {
+        console.error('Failed to load exploration data:', err);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  const recommendedPeople = people.slice(0, 4);
+  const recommendedEvents = events.slice(0, 4);
+  const featuredNode = useMemo(() => {
+    return events.find((event) => event.impact_level === 5) ?? events[0] ?? people[0];
+  }, [events, people]);
 
   return (
     <div className="flex flex-col items-center justify-center py-12 md:py-24 text-center max-w-2xl mx-auto space-y-12">
@@ -29,8 +55,13 @@ export const ExplorePage: React.FC = () => {
               <UserIcon className="w-4 h-4" /> {t('People')}
             </h3>
             <div className="flex flex-wrap gap-2">
-              <Link to="/graph/00000000-0000-0000-0000-000000000001" className="px-4 py-2 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-200 rounded-xl text-slate-700 font-medium transition-colors">曹操</Link>
-              <Link to="/graph/00000000-0000-0000-0000-000000000002" className="px-4 py-2 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-200 rounded-xl text-slate-700 font-medium transition-colors">刘备</Link>
+              {loading && <span className="text-sm text-slate-400">{t('loading')}</span>}
+              {!loading && recommendedPeople.length === 0 && <span className="text-sm text-slate-400">{t('No people available.')}</span>}
+              {recommendedPeople.map((person) => (
+                <Link key={person.id} to={`/graph/${person.id}`} className="px-4 py-2 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-200 rounded-xl text-slate-700 font-medium transition-colors">
+                  {person.name}
+                </Link>
+              ))}
             </div>
           </div>
           
@@ -39,18 +70,25 @@ export const ExplorePage: React.FC = () => {
               <AcademicCapIcon className="w-4 h-4" /> {t('Events')}
             </h3>
             <div className="flex flex-wrap gap-2">
-              <Link to="/graph/00000000-0000-0000-0000-000000000004" className="px-4 py-2 bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-orange-200 rounded-xl text-slate-700 font-medium transition-colors">官渡之战</Link>
-              <Link to="/graph/00000000-0000-0000-0000-000000000005" className="px-4 py-2 bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-orange-200 rounded-xl text-slate-700 font-medium transition-colors">赤壁之战</Link>
+              {loading && <span className="text-sm text-slate-400">{t('loading')}</span>}
+              {!loading && recommendedEvents.length === 0 && <span className="text-sm text-slate-400">{t('No events available.')}</span>}
+              {recommendedEvents.map((event) => (
+                <Link key={event.id} to={`/graph/${event.id}`} className="px-4 py-2 bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-orange-200 rounded-xl text-slate-700 font-medium transition-colors">
+                  {event.title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-100">
-          <Link to="/graph/00000000-0000-0000-0000-000000000005" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-medium transition-colors shadow-sm">
-            <SparklesIcon className="w-5 h-5" />
-            {t('Random Explore')}
-          </Link>
-        </div>
+        {featuredNode && (
+          <div className="mt-8 pt-8 border-t border-slate-100">
+            <Link to={`/graph/${featuredNode.id}`} className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-medium transition-colors shadow-sm">
+              <SparklesIcon className="w-5 h-5" />
+              {t('Start Exploring')}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

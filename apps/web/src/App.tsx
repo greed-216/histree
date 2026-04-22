@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
 import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
@@ -13,7 +12,6 @@ import { AdminPage } from './pages/AdminPage';
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
 
 function App() {
-  const { t, i18n } = useTranslation();
   const [session, setSession] = useState<any>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
@@ -88,20 +86,20 @@ function App() {
             <nav className="hidden md:flex items-center gap-2">
               <Link to="/" className={navLinkClass('/')}>
                 <MapIcon className="w-4 h-4" />
-                {t('Explore')}
+                探索
               </Link>
               <Link to="/people" className={navLinkClass('/people')}>
                 <UserIcon className="w-4 h-4" />
-                {t('People')}
+                人物
               </Link>
               <Link to="/events" className={navLinkClass('/events')}>
                 <AcademicCapIcon className="w-4 h-4" />
-                {t('Events')}
+                事件
               </Link>
               {isAdmin && (
                 <Link to="/admin" className={navLinkClass('/admin')}>
                   <AdjustmentsHorizontalIcon className="w-4 h-4" />
-                  {t('Admin')}
+                  管理台
                 </Link>
               )}
             </nav>
@@ -113,13 +111,13 @@ function App() {
               <div className="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-1.5 text-sm font-medium text-emerald-600">
                   <UserIcon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{isAdmin ? t('adminStatus') : t('userStatus')}</span>
+                  <span className="hidden sm:inline">{isAdmin ? '已登录（管理员）' : '已登录'}</span>
                 </div>
                 <div className="w-px h-4 bg-slate-300"></div>
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-1 text-sm text-slate-500 hover:text-rose-500 transition-colors"
-                  title={t('logout')}
+                  title="退出登录"
                 >
                   <ArrowRightOnRectangleIcon className="w-4 h-4" />
                 </button>
@@ -130,29 +128,10 @@ function App() {
                 className="flex items-center gap-2 text-slate-500 hover:text-slate-800 text-sm font-medium transition-colors"
               >
                 <UserIcon className="w-4 h-4" />
-                <span className="hidden sm:inline">{t('loginAdmin')}</span>
+                <span className="hidden sm:inline">管理员登录</span>
               </button>
             )}
 
-            {/* Language Toggle */}
-            <div className="flex bg-slate-200/60 p-1 rounded-lg">
-              <button 
-                onClick={() => i18n.changeLanguage('zh')}
-                className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
-                  i18n.language === 'zh' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'
-                }`}
-              >
-                中
-              </button>
-              <button 
-                onClick={() => i18n.changeLanguage('en')}
-                className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
-                  i18n.language === 'en' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'
-                }`}
-              >
-                EN
-              </button>
-            </div>
           </div>
         </div>
       </header>
@@ -171,7 +150,7 @@ function App() {
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
       
       <footer className="bg-white border-t border-slate-200 py-6 text-center text-slate-400 text-sm mt-auto">
-        © {new Date().getFullYear()} Histree MVP. Exploring history through graphs.
+        © {new Date().getFullYear()} Histree 历史之树
       </footer>
     </div>
   );

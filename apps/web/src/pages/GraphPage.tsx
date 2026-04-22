@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import * as d3 from 'd3';
-import { useTranslation } from 'react-i18next';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import type { GraphResponse, Person, Event } from '@histree/shared-types';
 import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { apiFetch } from '../lib/api';
+import { formatDisplayRange, formatDisplayYear, referenceTypeLabel } from '../lib/content';
 
 // Fix leaflet default icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -17,17 +17,12 @@ L.Icon.Default.mergeOptions({
 });
 
 const isPerson = (node: Person | Event): node is Person => node.type === 'person';
-const formatYear = (year?: number) => {
-  if (year === undefined || year === null) return '?';
-  return year < 0 ? `公元前${Math.abs(year)}年` : `${year}年`;
-};
 
 const tagList = (node: Person | Event) => node.tags ?? [];
 
 export const GraphPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { t } = useTranslation();
   const [data, setData] = useState<GraphResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedNode, setSelectedNode] = useState<Person | Event | null>(null);
@@ -125,7 +120,7 @@ export const GraphPage: React.FC = () => {
       .data(edges)
       .join('text')
       .attr('class', 'link-label')
-      .text((d: any) => t(d.type))
+      .text((d: any) => d.type)
       .attr('font-size', '10px')
       .attr('font-weight', (d: any) => d.type === 'causes' ? 'bold' : 'normal')
       .attr('fill', (d: any) => d.type === 'causes' ? '#ef4444' : '#64748b')
@@ -152,8 +147,8 @@ export const GraphPage: React.FC = () => {
         
         tooltip.transition().duration(200).style('opacity', 1);
         tooltip.html(`
-          <div class="font-bold text-slate-800 mb-1">${t(isPerson(d) ? d.name : d.title)}</div>
-          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? t('Era: ') + t(d.era || '') : t('Time: ') + (d.start_year || '')}</div>
+          <div class="font-bold text-slate-800 mb-1">${isPerson(d) ? d.name : d.title}</div>
+          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? `时代：${d.era || '待补充'}` : `时间：${formatDisplayRange(d.start_year, d.end_year)}`}</div>
         `)
           .style('left', (event.pageX + 15) + 'px')
           .style('top', (event.pageY - 28) + 'px');
@@ -189,7 +184,7 @@ export const GraphPage: React.FC = () => {
       .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
 
     node.append('text')
-      .text((d: any) => t(isPerson(d) ? d.name : d.title))
+      .text((d: any) => isPerson(d) ? d.name : d.title)
       .attr('font-size', '12px')
       .attr('font-weight', '600')
       .attr('fill', '#1e293b')
@@ -211,7 +206,7 @@ export const GraphPage: React.FC = () => {
       node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
     });
 
-  }, [data, t, navigate]);
+  }, [data, navigate]);
 
   const drag = (simulation: d3.Simulation<any, any>) => {
     function dragstarted(event: any) {
@@ -232,11 +227,11 @@ export const GraphPage: React.FC = () => {
   };
 
   if (loading) {
-    return <div className="flex justify-center items-center h-96 text-slate-400">{t('loading')}</div>;
+    return <div className="flex justify-center items-center h-96 text-slate-400">加载中...</div>;
   }
 
   if (!data || !selectedNode) {
-    return <div className="flex justify-center items-center h-96 text-slate-400">{t('Node not found')}</div>;
+    return <div className="flex justify-center items-center h-96 text-slate-400">未找到该节点数据</div>;
   }
 
   return (
@@ -250,17 +245,17 @@ export const GraphPage: React.FC = () => {
             </button>
             <h2 className="text-lg font-bold text-slate-700 flex items-center gap-2">
               <MapIcon className="w-5 h-5 text-sky-500" />
-              {t('Interactive Graph')}
+              关系图谱
             </h2>
           </div>
           <div className="flex gap-4 text-sm font-medium">
             <div className="flex items-center gap-2 bg-sky-50 px-2 py-1 rounded-md text-sky-700">
               <span className="w-3 h-3 rounded-full bg-sky-400 inline-block"></span>
-              {t('Person')}
+              人物
             </div>
             <div className="flex items-center gap-2 bg-orange-50 px-2 py-1 rounded-md text-orange-700">
               <span className="w-4 h-3 rounded-sm bg-orange-400 inline-block"></span>
-              {t('Event')}
+              事件
             </div>
           </div>
         </div>
@@ -272,13 +267,13 @@ export const GraphPage: React.FC = () => {
         <div className="p-6 border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur-sm z-10">
           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
             {isPerson(selectedNode) ? <UserIcon className="w-4 h-4" /> : <AcademicCapIcon className="w-4 h-4" />}
-            {isPerson(selectedNode) ? t('Person Details') : t('Event Details')}
+            {isPerson(selectedNode) ? '人物条目' : '事件条目'}
           </h3>
           <h1 className="text-3xl font-extrabold text-slate-800 mb-2">
             {isPerson(selectedNode) ? selectedNode.name : selectedNode.title}
           </h1>
           <div className="inline-flex px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold border border-slate-200">
-            {isPerson(selectedNode) ? selectedNode.era : `${formatYear(selectedNode.start_year)} - ${formatYear(selectedNode.end_year)}`}
+            {isPerson(selectedNode) ? selectedNode.era || '时代待补充' : formatDisplayRange(selectedNode.start_year, selectedNode.end_year)}
           </div>
         </div>
         
@@ -301,65 +296,65 @@ export const GraphPage: React.FC = () => {
 
           {isPerson(selectedNode) && (
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Profile')}</h4>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">人物信息</h4>
               <dl className="grid grid-cols-2 gap-3 text-sm">
                 {selectedNode.courtesy_name && (
                   <div>
-                    <dt className="text-slate-400">{t('Courtesy Name')}</dt>
+                    <dt className="text-slate-400">字</dt>
                     <dd className="font-medium text-slate-700">{selectedNode.courtesy_name}</dd>
                   </div>
                 )}
                 {selectedNode.faction && (
                   <div>
-                    <dt className="text-slate-400">{t('Faction')}</dt>
+                    <dt className="text-slate-400">阵营</dt>
                     <dd className="font-medium text-slate-700">{selectedNode.faction}</dd>
                   </div>
                 )}
                 {selectedNode.native_place && (
                   <div>
-                    <dt className="text-slate-400">{t('Native Place')}</dt>
+                    <dt className="text-slate-400">籍贯</dt>
                     <dd className="font-medium text-slate-700">{selectedNode.native_place}</dd>
                   </div>
                 )}
                 {(selectedNode.birth_year || selectedNode.death_year) && (
                   <div>
-                    <dt className="text-slate-400">{t('Lifespan')}</dt>
-                    <dd className="font-medium text-slate-700">{formatYear(selectedNode.birth_year)} - {formatYear(selectedNode.death_year)}</dd>
+                    <dt className="text-slate-400">生卒</dt>
+                    <dd className="font-medium text-slate-700">{formatDisplayYear(selectedNode.birth_year)} - {formatDisplayYear(selectedNode.death_year)}</dd>
                   </div>
                 )}
               </dl>
               {selectedNode.aliases && selectedNode.aliases.length > 0 && (
                 <div className="mt-3 text-sm text-slate-600">
-                  <span className="text-slate-400">{t('Aliases')}: </span>{selectedNode.aliases.join('、')}
+                  <span className="text-slate-400">别名：</span>{selectedNode.aliases.join('、')}
                 </div>
               )}
             </div>
           )}
 
           <div>
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Description')}</h4>
+            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">概述</h4>
             <p className="text-slate-600 leading-relaxed text-base">
-              {selectedNode.description || t('No description available.')}
+              {selectedNode.description || '暂无描述信息。'}
             </p>
           </div>
 
           {isPerson(selectedNode) && selectedNode.biography && (
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Biography')}</h4>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">生平</h4>
               <p className="text-slate-600 leading-relaxed text-base whitespace-pre-line">{selectedNode.biography}</p>
             </div>
           )}
 
           {isPerson(selectedNode) && selectedNode.historical_evaluation && (
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Historical Evaluation')}</h4>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">历史评价</h4>
               <p className="text-slate-600 leading-relaxed text-base whitespace-pre-line">{selectedNode.historical_evaluation}</p>
             </div>
           )}
 
           {isPerson(selectedNode) && selectedNode.family && selectedNode.family.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Family')}</h4>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">亲属关系</h4>
               <div className="space-y-2">
                 {selectedNode.family.map((item, index) => (
                   <div key={`${item.name}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
@@ -373,7 +368,7 @@ export const GraphPage: React.FC = () => {
 
           {isPerson(selectedNode) && selectedNode.social_relations && selectedNode.social_relations.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Social Relations')}</h4>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">交际关系</h4>
               <div className="space-y-2">
                 {selectedNode.social_relations.map((item, index) => (
                   <div key={`${item.name}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
@@ -385,14 +380,38 @@ export const GraphPage: React.FC = () => {
             </div>
           )}
 
+          {selectedNode.references && selectedNode.references.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">参考资料</h4>
+              <div className="space-y-2">
+                {selectedNode.references.map((reference, index) => (
+                  <div key={`${reference.title}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="text-sm font-semibold text-slate-700">{reference.title}</div>
+                      <span className="shrink-0 px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[11px] text-slate-500">
+                        {referenceTypeLabel(reference.reference_type)}
+                      </span>
+                    </div>
+                    {reference.note && <div className="text-xs text-slate-500 mt-1 leading-relaxed">{reference.note}</div>}
+                    {reference.url && (
+                      <a href={reference.url} target="_blank" rel="noreferrer" className="text-xs text-sky-600 hover:text-sky-700 mt-2 inline-block break-all">
+                        {reference.url}
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {!isPerson(selectedNode) && selectedNode.phases && selectedNode.phases.length > 0 && (
             <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Phases')}</h4>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">事件阶段</h4>
               <div className="space-y-3">
                 {selectedNode.phases.map((phase, index) => (
                   <div key={`${phase.title}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
                     <div className="text-sm font-semibold text-slate-700">{phase.title}</div>
-                    {(phase.start_year || phase.end_year) && <div className="text-xs text-slate-400">{formatYear(phase.start_year)} - {formatYear(phase.end_year)}</div>}
+                    {(phase.start_year || phase.end_year) && <div className="text-xs text-slate-400">{formatDisplayRange(phase.start_year, phase.end_year)}</div>}
                     {phase.description && <div className="text-xs text-slate-500 mt-1 leading-relaxed">{phase.description}</div>}
                   </div>
                 ))}
@@ -403,7 +422,7 @@ export const GraphPage: React.FC = () => {
           {!isPerson(selectedNode) && selectedNode.location_lat && selectedNode.location_lng && (
             <div>
               <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1">
-                <MapPinIcon className="w-4 h-4" /> {t('Location')} {selectedNode.location_name ? `- ${selectedNode.location_name}` : ''}
+                <MapPinIcon className="w-4 h-4" /> 地点{selectedNode.location_name ? ` - ${selectedNode.location_name}` : ''}
               </h4>
               <div className="w-full h-48 rounded-xl overflow-hidden border border-slate-200 shadow-sm z-0 relative">
                 <MapContainer 
@@ -425,7 +444,7 @@ export const GraphPage: React.FC = () => {
           )}
           
           <div>
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Related Nodes')}</h4>
+            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">相关节点</h4>
             <div className="space-y-2">
               {data.nodes.filter(n => n.id !== selectedNode.id).slice(0, 8).map(n => (
                 <Link 
@@ -443,7 +462,7 @@ export const GraphPage: React.FC = () => {
                 </Link>
               ))}
               {data.nodes.length > 9 && (
-                <div className="text-center text-sm text-slate-400 pt-2">+ {data.nodes.length - 9} {t('more nodes in graph')}</div>
+                <div className="text-center text-sm text-slate-400 pt-2">+ {data.nodes.length - 9} 个更多节点仍在图中</div>
               )}
             </div>
           </div>

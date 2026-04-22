@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
 import type { Event } from '@histree/shared-types';
 import { apiFetch } from '../lib/api';
+import { formatDisplayRange, primaryReference } from '../lib/content';
 
 export const EventsPage: React.FC = () => {
-  const { t } = useTranslation();
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,11 +27,11 @@ export const EventsPage: React.FC = () => {
         <div className="p-3 bg-orange-100 rounded-xl text-orange-600">
           <AcademicCapIcon className="w-6 h-6" />
         </div>
-        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">{t('Events Directory')}</h1>
+        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">历史事件</h1>
       </div>
 
       {loading ? (
-        <div className="flex justify-center py-12 text-slate-400">{t('loading')}</div>
+        <div className="flex justify-center py-12 text-slate-400">加载中...</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {events.map(event => (
@@ -46,16 +45,33 @@ export const EventsPage: React.FC = () => {
                   <AcademicCapIcon className="w-5 h-5" />
                 </div>
                 <div className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full border border-slate-200">
-                  {event.start_year || t('Unknown Year')}
+                  {formatDisplayRange(event.start_year, event.end_year)}
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-orange-600 transition-colors">{event.title}</h3>
               {event.description && (
                 <p className="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-4">{event.description}</p>
               )}
-              {event.dynasty && (
-                <div className="inline-block px-2.5 py-1 bg-slate-50 text-slate-500 text-xs font-medium rounded-md border border-slate-100">
-                  {event.dynasty}
+              <div className="flex flex-wrap gap-2">
+                {event.dynasty && (
+                  <div className="inline-block px-2.5 py-1 bg-slate-50 text-slate-500 text-xs font-medium rounded-md border border-slate-100">
+                    {event.dynasty}
+                  </div>
+                )}
+                {event.location_name && (
+                  <div className="inline-block px-2.5 py-1 bg-slate-50 text-slate-500 text-xs font-medium rounded-md border border-slate-100">
+                    {event.location_name}
+                  </div>
+                )}
+                {event.tags?.slice(0, 2).map((tag) => (
+                  <div key={tag} className="inline-block px-2.5 py-1 bg-orange-50 text-orange-600 text-xs font-medium rounded-md border border-orange-100">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+              {primaryReference(event.references) && (
+                <div className="mt-4 text-xs text-orange-700 line-clamp-1">
+                  参考：{primaryReference(event.references)?.title}
                 </div>
               )}
             </Link>

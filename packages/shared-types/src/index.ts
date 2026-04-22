@@ -23,6 +23,7 @@ export interface Person {
     relation: string;
     note?: string;
   }>;
+  references?: ReferenceLink[];
   image_url?: string;
   type: 'person';
 }
@@ -42,6 +43,7 @@ export interface Event {
     end_year?: number;
     description?: string;
   }>;
+  references?: ReferenceLink[];
   image_url?: string;
   location_lat?: number;
   location_lng?: number;
@@ -90,5 +92,12 @@ export interface FactClaim {
   source_id?: string;
   citation?: string;
   confidence?: number;
+  note?: string;
+}
+
+export interface ReferenceLink {
+  title: string;
+  reference_type: 'encyclopedia' | 'primary' | 'reference' | 'scholarship' | 'digital';
+  url?: string;
   note?: string;
 }

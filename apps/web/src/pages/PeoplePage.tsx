@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { UserIcon } from '@heroicons/react/24/outline';
 import type { Person } from '@histree/shared-types';
 import { apiFetch } from '../lib/api';
+import { primaryReference } from '../lib/content';
 
 export const PeoplePage: React.FC = () => {
-  const { t } = useTranslation();
   const [people, setPeople] = useState<Person[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,11 +27,11 @@ export const PeoplePage: React.FC = () => {
         <div className="p-3 bg-sky-100 rounded-xl text-sky-600">
           <UserIcon className="w-6 h-6" />
         </div>
-        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">{t('People Directory')}</h1>
+        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">历史人物</h1>
       </div>
 
       {loading ? (
-        <div className="flex justify-center py-12 text-slate-400">{t('loading')}</div>
+        <div className="flex justify-center py-12 text-slate-400">加载中...</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {people.map(person => (
@@ -50,15 +49,27 @@ export const PeoplePage: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-sky-600 transition-colors">{person.name}</h3>
-                <div className="text-sm text-slate-500 mb-2">{person.era}</div>
+                <div className="text-sm text-slate-500 mb-2">
+                  {person.era || '时代待补充'}
+                  {person.faction ? ` · ${person.faction}` : ''}
+                  {person.native_place ? ` · ${person.native_place}` : ''}
+                </div>
                 {person.description && (
                   <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed">{person.description}</p>
+                )}
+                {person.biography && (
+                  <p className="text-sm text-slate-500 line-clamp-3 leading-relaxed mt-2">{person.biography}</p>
                 )}
                 {person.tags && person.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {person.tags.slice(0, 3).map((tag) => (
                       <span key={tag} className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-xs border border-slate-200">{tag}</span>
                     ))}
+                  </div>
+                )}
+                {primaryReference(person.references) && (
+                  <div className="mt-3 text-xs text-sky-700 line-clamp-1">
+                    参考：{primaryReference(person.references)?.title}
                   </div>
                 )}
               </div>

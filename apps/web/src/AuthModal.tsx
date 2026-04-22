@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { supabase, supabaseAnonKey, supabaseUrl } from './supabaseClient';
-import { useTranslation } from 'react-i18next';
 import { XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
-  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -19,7 +17,7 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
     setError(null);
 
     if (!isSupabaseReady) {
-      setError('Supabase auth is not configured (missing VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY).');
+      setError('Supabase 登录尚未配置，请补充 VITE_SUPABASE_URL 和 VITE_SUPABASE_ANON_KEY。');
       setLoading(false);
       return;
     }
@@ -44,18 +42,18 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
         <div className="flex justify-between items-center p-4 border-b border-slate-100">
           <h3 className="font-semibold text-slate-800 flex items-center gap-2">
             <UserCircleIcon className="w-5 h-5 text-sky-500" />
-            {t('loginAdmin')}
+            管理员登录
           </h3>
           <button onClick={onClose} className="p-1 hover:bg-slate-100 rounded-md transition-colors text-slate-400 hover:text-slate-600">
             <XMarkIcon className="w-5 h-5" />
           </button>
         </div>
         <div className="p-6">
-          <p className="text-sm text-slate-500 mb-6 text-center">{t('loginRequired')}</p>
+          <p className="text-sm text-slate-500 mb-6 text-center">请输入管理员账号密码以进入数据维护界面。</p>
           
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">邮箱</label>
               <input
                 type="email"
                 required
@@ -66,7 +64,7 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Password</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">密码</label>
               <input
                 type="password"
                 required
@@ -88,7 +86,7 @@ export const AuthModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
               disabled={loading || !isSupabaseReady}
               className="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-2.5 rounded-lg transition-colors disabled:opacity-70"
             >
-              {loading ? 'Logging in...' : 'Sign In'}
+              {loading ? '登录中...' : '登录'}
             </button>
           </form>
         </div>

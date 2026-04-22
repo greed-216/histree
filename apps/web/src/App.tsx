@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
 import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { getCurrentUserRole } from './lib/api';
 import { ExplorePage } from './pages/ExplorePage';
 import { GraphPage } from './pages/GraphPage';
 import { PeoplePage } from './pages/PeoplePage';
@@ -14,24 +15,50 @@ import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
 function App() {
   const { t, i18n } = useTranslation();
   const [session, setSession] = useState<any>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    let cancelled = false;
+
+    const refreshAuthState = async (nextSession: any) => {
+      setSession(nextSession);
+      if (!nextSession) {
+        setIsAdmin(false);
+        return;
+      }
+
+      try {
+        const role = await getCurrentUserRole();
+        if (!cancelled) {
+          setIsAdmin(role === 'admin');
+        }
+      } catch (err) {
+        console.error('Failed to resolve current user role:', err);
+        if (!cancelled) {
+          setIsAdmin(false);
+        }
+      }
+    };
+
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
+      refreshAuthState(session);
     });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
+      refreshAuthState(session);
       if (session) {
         setAuthModalOpen(false);
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, []);
 
   const handleLogout = async () => {
@@ -71,7 +98,7 @@ function App() {
                 <AcademicCapIcon className="w-4 h-4" />
                 {t('Events')}
               </Link>
-              {session && (
+              {isAdmin && (
                 <Link to="/admin" className={navLinkClass('/admin')}>
                   <AdjustmentsHorizontalIcon className="w-4 h-4" />
                   {t('Admin')}
@@ -86,7 +113,7 @@ function App() {
               <div className="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-1.5 text-sm font-medium text-emerald-600">
                   <UserIcon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{t('adminStatus')}</span>
+                  <span className="hidden sm:inline">{isAdmin ? t('adminStatus') : t('userStatus')}</span>
                 </div>
                 <div className="w-px h-4 bg-slate-300"></div>
                 <button

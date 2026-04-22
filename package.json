@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No root test suite configured\"",
+    "e2e:smoke": "node scripts/e2e-smoke.mjs"
   },
   "keywords": [],
   "author": "",

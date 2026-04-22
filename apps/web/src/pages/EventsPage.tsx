@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AcademicCapIcon } from '@heroicons/react/24/outline';
 import type { Event } from '@histree/shared-types';
+import { apiFetch } from '../lib/api';
 
 export const EventsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -10,10 +11,7 @@ export const EventsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
-
-    fetch(`${apiBase}/event`)
-      .then(res => res.json())
+    apiFetch<Event[]>('/event')
       .then(data => {
         setEvents(data);
         setLoading(false);

@@ -1,4 +1,4 @@
-import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import type { EventDetail, Person, Event } from '@histree/shared-types';
 import { SupabaseService } from '../supabase/supabase.service';
 
@@ -93,5 +93,56 @@ export class EventService {
       this.logger.error('Failed to fetch event detail from Supabase', err);
       throw err;
     }
+  }
+
+  async createEvent(payload: Partial<Event>): Promise<Event> {
+    if (!payload.title?.trim()) {
+      throw new BadRequestException('Event title is required');
+    }
+
+    const supabase = this.supabaseService.getAdminClient();
+    const { data, error } = await supabase
+      .from('event')
+      .insert(this.toEventRow(payload))
+      .select()
+      .single();
+
+    if (error) {
+      throw error;
+    }
+
+    return { ...data, type: 'event' } as Event;
+  }
+
+  async updateEvent(id: string, payload: Partial<Event>): Promise<Event> {
+    const supabase = this.supabaseService.getAdminClient();
+    const { data, error } = await supabase
+      .from('event')
+      .update(this.toEventRow(payload))
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error || !data) {
+      throw new NotFoundException('Event not found');
+    }
+
+    return { ...data, type: 'event' } as Event;
+  }
+
+  async deleteEvent(id: string): Promise<{ id: string }> {
+    const supabase = this.supabaseService.getAdminClient();
+    const { error } = await supabase.from('event').delete().eq('id', id);
+
+    if (error) {
+      throw error;
+    }
+
+    return { id };
+  }
+
+  private toEventRow(payload: Partial<Event>) {
+    const { id: _id, type: _type, ...row } = payload;
+    return row;
   }
 }

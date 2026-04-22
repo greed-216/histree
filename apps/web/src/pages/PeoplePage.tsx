@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { UserIcon } from '@heroicons/react/24/outline';
 import type { Person } from '@histree/shared-types';
+import { apiFetch } from '../lib/api';
 
 export const PeoplePage: React.FC = () => {
   const { t } = useTranslation();
@@ -10,10 +11,7 @@ export const PeoplePage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
-
-    fetch(`${apiBase}/people`)
-      .then(res => res.json())
+    apiFetch<Person[]>('/people')
       .then(data => {
         setPeople(data);
         setLoading(false);

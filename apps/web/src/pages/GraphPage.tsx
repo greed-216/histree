@@ -6,6 +6,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import type { GraphResponse, Person, Event } from '@histree/shared-types';
 import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { apiFetch } from '../lib/api';
 
 // Fix leaflet default icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -33,10 +34,7 @@ export const GraphPage: React.FC = () => {
     setLoading(true);
     setSelectedNode(null);
 
-    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
-
-    fetch(`${apiBase}/graph/${id}`)
-      .then(res => res.json())
+    apiFetch<GraphResponse>(`/graph/${id}`)
       .then((data: GraphResponse) => {
         setData(data);
         setSelectedNode(data.center);

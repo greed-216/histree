@@ -3,6 +3,7 @@ import { supabase } from '../supabaseClient';
 import { useTranslation } from 'react-i18next';
 import { PlusIcon, TrashIcon, PencilIcon, PhotoIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import type { Person, Event } from '@histree/shared-types';
+import { apiFetch } from '../lib/api';
 
 export const AdminPage: React.FC = () => {
   const { t } = useTranslation();
@@ -39,21 +40,31 @@ export const AdminPage: React.FC = () => {
   };
 
   const fetchData = async () => {
-    const { data: pData } = await supabase.from('person').select('*').order('created_at', { ascending: false });
-    const { data: eData } = await supabase.from('event').select('*').order('start_year', { ascending: true });
-    if (pData) setPeople(pData as Person[]);
-    if (eData) setEvents(eData as Event[]);
+    const [pData, eData] = await Promise.all([
+      apiFetch<Person[]>('/people'),
+      apiFetch<Event[]>('/event'),
+    ]);
+    setPeople(pData);
+    setEvents(eData);
   };
 
   const savePerson = async () => {
     if (!editingPerson?.name) return;
-    const payload = { ...editingPerson };
-    delete payload.type;
-    
-    if (payload.id) {
-      await supabase.from('person').update(payload).eq('id', payload.id);
+
+    if (editingPerson.id) {
+      await apiFetch<Person>(`/people/${editingPerson.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editingPerson),
+        auth: true,
+      });
     } else {
-      await supabase.from('person').insert([payload]);
+      await apiFetch<Person>('/people', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editingPerson),
+        auth: true,
+      });
     }
     setEditingPerson(null);
     fetchData();
@@ -61,19 +72,30 @@ export const AdminPage: React.FC = () => {
 
   const deletePerson = async (id: string) => {
     if (!confirm(t('Are you sure you want to delete this person?'))) return;
-    await supabase.from('person').delete().eq('id', id);
+    await apiFetch<{ id: string }>(`/people/${id}`, {
+      method: 'DELETE',
+      auth: true,
+    });
     fetchData();
   };
 
   const saveEvent = async () => {
     if (!editingEvent?.title) return;
-    const payload = { ...editingEvent };
-    delete payload.type;
 
-    if (payload.id) {
-      await supabase.from('event').update(payload).eq('id', payload.id);
+    if (editingEvent.id) {
+      await apiFetch<Event>(`/event/${editingEvent.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editingEvent),
+        auth: true,
+      });
     } else {
-      await supabase.from('event').insert([payload]);
+      await apiFetch<Event>('/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editingEvent),
+        auth: true,
+      });
     }
     setEditingEvent(null);
     fetchData();
@@ -81,7 +103,10 @@ export const AdminPage: React.FC = () => {
 
   const deleteEvent = async (id: string) => {
     if (!confirm(t('Are you sure you want to delete this event?'))) return;
-    await supabase.from('event').delete().eq('id', id);
+    await apiFetch<{ id: string }>(`/event/${id}`, {
+      method: 'DELETE',
+      auth: true,
+    });
     fetchData();
   };
 
@@ -94,18 +119,16 @@ export const AdminPage: React.FC = () => {
     formData.append('file', file);
 
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
-      const res = await fetch(`${apiBase}/upload`, {
+      const res = await apiFetch<{ url: string }>('/upload', {
         method: 'POST',
         body: formData,
+        auth: true,
       });
-      if (!res.ok) throw new Error('Upload failed');
-      const data = await res.json();
       
       if (isPerson && editingPerson) {
-        setEditingPerson({ ...editingPerson, image_url: data.url });
+        setEditingPerson({ ...editingPerson, image_url: res.url });
       } else if (!isPerson && editingEvent) {
-        setEditingEvent({ ...editingEvent, image_url: data.url });
+        setEditingEvent({ ...editingEvent, image_url: res.url });
       }
     } catch (err) {
       console.error('Image upload error:', err);

@@ -1,5 +1,6 @@
-import { Controller, Post, UseInterceptors, UploadedFile, HttpException, HttpStatus, Headers } from '@nestjs/common';
+import { Controller, Post, UseGuards, UseInterceptors, UploadedFile, HttpException, HttpStatus } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { AdminGuard } from '../../common/guards/admin.guard';
 import { SupabaseService } from '../supabase/supabase.service';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,6 +9,7 @@ export class UploadController {
   constructor(private readonly supabaseService: SupabaseService) {}
 
   @Post()
+  @UseGuards(AdminGuard)
   @UseInterceptors(
     FileInterceptor('file', {
       limits: { fileSize: 5 * 1024 * 1024 },
@@ -20,32 +22,12 @@ export class UploadController {
       },
     }),
   )
-  async uploadFile(@UploadedFile() file: Express.Multer.File, @Headers('authorization') authorization?: string) {
+  async uploadFile(@UploadedFile() file: Express.Multer.File) {
     if (!file) {
       throw new HttpException('No file provided', HttpStatus.BAD_REQUEST);
     }
 
     const adminClient = this.supabaseService.getAdminClient();
-    const token = authorization?.startsWith('Bearer ') ? authorization.slice('Bearer '.length) : undefined;
-    if (!token) {
-      throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
-    }
-
-    const { data: userData, error: userError } = await adminClient.auth.getUser(token);
-    if (userError || !userData?.user) {
-      throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
-    }
-
-    const { data: roleData } = await adminClient
-      .from('user_roles')
-      .select('role')
-      .eq('user_id', userData.user.id)
-      .single();
-
-    if (roleData?.role !== 'admin') {
-      throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
-    }
-
     const fileExt = file.originalname.split('.').pop() || 'png';
     const fileName = `${uuidv4()}.${fileExt}`;
 
@@ -74,7 +56,7 @@ export class UploadController {
           throw new HttpException(retryError.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
       } else {
-      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+        throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
       }
     }
 

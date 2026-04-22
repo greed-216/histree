@@ -1,5 +1,5 @@
 -- Create user roles table to manage admins
-CREATE TABLE public.user_roles (
+CREATE TABLE IF NOT EXISTS public.user_roles (
     user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     role TEXT NOT NULL CHECK (role IN ('admin', 'user')) DEFAULT 'user',
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
@@ -24,21 +24,31 @@ ALTER TABLE public.person_event ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.event_causality ENABLE ROW LEVEL SECURITY;
 
 -- Policies for public.person
+DROP POLICY IF EXISTS "Allow public read access on person" ON public.person;
+DROP POLICY IF EXISTS "Allow admin write access on person" ON public.person;
 CREATE POLICY "Allow public read access on person" ON public.person FOR SELECT USING (true);
 CREATE POLICY "Allow admin write access on person" ON public.person FOR ALL USING (public.is_admin());
 
 -- Policies for public.event
+DROP POLICY IF EXISTS "Allow public read access on event" ON public.event;
+DROP POLICY IF EXISTS "Allow admin write access on event" ON public.event;
 CREATE POLICY "Allow public read access on event" ON public.event FOR SELECT USING (true);
 CREATE POLICY "Allow admin write access on event" ON public.event FOR ALL USING (public.is_admin());
 
 -- Policies for public.person_relationship
+DROP POLICY IF EXISTS "Allow public read access on person_relationship" ON public.person_relationship;
+DROP POLICY IF EXISTS "Allow admin write access on person_relationship" ON public.person_relationship;
 CREATE POLICY "Allow public read access on person_relationship" ON public.person_relationship FOR SELECT USING (true);
 CREATE POLICY "Allow admin write access on person_relationship" ON public.person_relationship FOR ALL USING (public.is_admin());
 
 -- Policies for public.person_event
+DROP POLICY IF EXISTS "Allow public read access on person_event" ON public.person_event;
+DROP POLICY IF EXISTS "Allow admin write access on person_event" ON public.person_event;
 CREATE POLICY "Allow public read access on person_event" ON public.person_event FOR SELECT USING (true);
 CREATE POLICY "Allow admin write access on person_event" ON public.person_event FOR ALL USING (public.is_admin());
 
 -- Policies for public.event_causality
+DROP POLICY IF EXISTS "Allow public read access on event_causality" ON public.event_causality;
+DROP POLICY IF EXISTS "Allow admin write access on event_causality" ON public.event_causality;
 CREATE POLICY "Allow public read access on event_causality" ON public.event_causality FOR SELECT USING (true);
 CREATE POLICY "Allow admin write access on event_causality" ON public.event_causality FOR ALL USING (public.is_admin());

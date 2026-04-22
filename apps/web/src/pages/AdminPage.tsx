@@ -19,6 +19,8 @@ export const AdminPage: React.FC = () => {
   const [editingEvent, setEditingEvent] = useState<Partial<Event> | null>(null);
   const [uploadingImage, setUploadingImage] = useState(false);
 
+  const parseList = (value: string) => value.split(/[,，]/).map((item) => item.trim()).filter(Boolean);
+
   useEffect(() => {
     checkAdminAndLoadData();
   }, []);
@@ -238,11 +240,19 @@ export const AdminPage: React.FC = () => {
       {/* Edit Person Modal */}
       {editingPerson && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
-          <div className="bg-white rounded-2xl w-full max-w-md p-6 space-y-4 shadow-xl">
+          <div className="bg-white rounded-2xl w-full max-w-md p-6 space-y-4 shadow-xl max-h-[90vh] overflow-y-auto">
             <h3 className="text-lg font-bold">{editingPerson.id ? t('Edit Person') : t('Add Person')}</h3>
             <input placeholder={t('Name')} value={editingPerson.name || ''} onChange={e => setEditingPerson({...editingPerson, name: e.target.value})} className="w-full p-2 border rounded-lg" />
             <input placeholder={t('Era')} value={editingPerson.era || ''} onChange={e => setEditingPerson({...editingPerson, era: e.target.value})} className="w-full p-2 border rounded-lg" />
+            <div className="grid grid-cols-2 gap-2">
+              <input placeholder={t('Faction')} value={editingPerson.faction || ''} onChange={e => setEditingPerson({...editingPerson, faction: e.target.value})} className="w-full p-2 border rounded-lg" />
+              <input placeholder={t('Native Place')} value={editingPerson.native_place || ''} onChange={e => setEditingPerson({...editingPerson, native_place: e.target.value})} className="w-full p-2 border rounded-lg" />
+            </div>
+            <input placeholder={t('Aliases')} value={editingPerson.aliases?.join('，') || ''} onChange={e => setEditingPerson({...editingPerson, aliases: parseList(e.target.value)})} className="w-full p-2 border rounded-lg" />
+            <input placeholder={t('Tags')} value={editingPerson.tags?.join('，') || ''} onChange={e => setEditingPerson({...editingPerson, tags: parseList(e.target.value)})} className="w-full p-2 border rounded-lg" />
             <textarea placeholder={t('Description')} value={editingPerson.description || ''} onChange={e => setEditingPerson({...editingPerson, description: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
+            <textarea placeholder={t('Biography')} value={editingPerson.biography || ''} onChange={e => setEditingPerson({...editingPerson, biography: e.target.value})} className="w-full p-2 border rounded-lg" rows={5} />
+            <textarea placeholder={t('Historical Evaluation')} value={editingPerson.historical_evaluation || ''} onChange={e => setEditingPerson({...editingPerson, historical_evaluation: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <PhotoIcon className="w-5 h-5 text-slate-400" />
@@ -272,6 +282,7 @@ export const AdminPage: React.FC = () => {
               <input placeholder={t('Dynasty')} value={editingEvent.dynasty || ''} onChange={e => setEditingEvent({...editingEvent, dynasty: e.target.value})} className="w-full p-2 border rounded-lg" />
             </div>
             <textarea placeholder={t('Description')} value={editingEvent.description || ''} onChange={e => setEditingEvent({...editingEvent, description: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
+            <input placeholder={t('Tags')} value={editingEvent.tags?.join('，') || ''} onChange={e => setEditingEvent({...editingEvent, tags: parseList(e.target.value)})} className="w-full p-2 border rounded-lg" />
             
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">

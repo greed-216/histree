@@ -17,6 +17,12 @@ L.Icon.Default.mergeOptions({
 });
 
 const isPerson = (node: Person | Event): node is Person => node.type === 'person';
+const formatYear = (year?: number) => {
+  if (year === undefined || year === null) return '?';
+  return year < 0 ? `公元前${Math.abs(year)}年` : `${year}年`;
+};
+
+const tagList = (node: Person | Event) => node.tags ?? [];
 
 export const GraphPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -272,7 +278,7 @@ export const GraphPage: React.FC = () => {
             {isPerson(selectedNode) ? selectedNode.name : selectedNode.title}
           </h1>
           <div className="inline-flex px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold border border-slate-200">
-            {isPerson(selectedNode) ? selectedNode.era : `${selectedNode.start_year || '?'} - ${selectedNode.end_year || '?'}`}
+            {isPerson(selectedNode) ? selectedNode.era : `${formatYear(selectedNode.start_year)} - ${formatYear(selectedNode.end_year)}`}
           </div>
         </div>
         
@@ -283,12 +289,116 @@ export const GraphPage: React.FC = () => {
             </div>
           )}
 
+          {tagList(selectedNode).length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {tagList(selectedNode).map((tag) => (
+                <span key={tag} className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {isPerson(selectedNode) && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Profile')}</h4>
+              <dl className="grid grid-cols-2 gap-3 text-sm">
+                {selectedNode.courtesy_name && (
+                  <div>
+                    <dt className="text-slate-400">{t('Courtesy Name')}</dt>
+                    <dd className="font-medium text-slate-700">{selectedNode.courtesy_name}</dd>
+                  </div>
+                )}
+                {selectedNode.faction && (
+                  <div>
+                    <dt className="text-slate-400">{t('Faction')}</dt>
+                    <dd className="font-medium text-slate-700">{selectedNode.faction}</dd>
+                  </div>
+                )}
+                {selectedNode.native_place && (
+                  <div>
+                    <dt className="text-slate-400">{t('Native Place')}</dt>
+                    <dd className="font-medium text-slate-700">{selectedNode.native_place}</dd>
+                  </div>
+                )}
+                {(selectedNode.birth_year || selectedNode.death_year) && (
+                  <div>
+                    <dt className="text-slate-400">{t('Lifespan')}</dt>
+                    <dd className="font-medium text-slate-700">{formatYear(selectedNode.birth_year)} - {formatYear(selectedNode.death_year)}</dd>
+                  </div>
+                )}
+              </dl>
+              {selectedNode.aliases && selectedNode.aliases.length > 0 && (
+                <div className="mt-3 text-sm text-slate-600">
+                  <span className="text-slate-400">{t('Aliases')}: </span>{selectedNode.aliases.join('、')}
+                </div>
+              )}
+            </div>
+          )}
+
           <div>
             <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Description')}</h4>
             <p className="text-slate-600 leading-relaxed text-base">
               {selectedNode.description || t('No description available.')}
             </p>
           </div>
+
+          {isPerson(selectedNode) && selectedNode.biography && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Biography')}</h4>
+              <p className="text-slate-600 leading-relaxed text-base whitespace-pre-line">{selectedNode.biography}</p>
+            </div>
+          )}
+
+          {isPerson(selectedNode) && selectedNode.historical_evaluation && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Historical Evaluation')}</h4>
+              <p className="text-slate-600 leading-relaxed text-base whitespace-pre-line">{selectedNode.historical_evaluation}</p>
+            </div>
+          )}
+
+          {isPerson(selectedNode) && selectedNode.family && selectedNode.family.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Family')}</h4>
+              <div className="space-y-2">
+                {selectedNode.family.map((item, index) => (
+                  <div key={`${item.name}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                    <div className="text-sm font-semibold text-slate-700">{item.name} <span className="text-slate-400 font-normal">/ {item.relation}</span></div>
+                    {item.note && <div className="text-xs text-slate-500 mt-1">{item.note}</div>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {isPerson(selectedNode) && selectedNode.social_relations && selectedNode.social_relations.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Social Relations')}</h4>
+              <div className="space-y-2">
+                {selectedNode.social_relations.map((item, index) => (
+                  <div key={`${item.name}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                    <div className="text-sm font-semibold text-slate-700">{item.name} <span className="text-slate-400 font-normal">/ {item.relation}</span></div>
+                    {item.note && <div className="text-xs text-slate-500 mt-1">{item.note}</div>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!isPerson(selectedNode) && selectedNode.phases && selectedNode.phases.length > 0 && (
+            <div>
+              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">{t('Phases')}</h4>
+              <div className="space-y-3">
+                {selectedNode.phases.map((phase, index) => (
+                  <div key={`${phase.title}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                    <div className="text-sm font-semibold text-slate-700">{phase.title}</div>
+                    {(phase.start_year || phase.end_year) && <div className="text-xs text-slate-400">{formatYear(phase.start_year)} - {formatYear(phase.end_year)}</div>}
+                    {phase.description && <div className="text-xs text-slate-500 mt-1 leading-relaxed">{phase.description}</div>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {!isPerson(selectedNode) && selectedNode.location_lat && selectedNode.location_lng && (
             <div>

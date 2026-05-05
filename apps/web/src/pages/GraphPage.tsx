@@ -6,7 +6,7 @@ import L from 'leaflet';
 import type { GraphResponse, Person, Event } from '@histree/shared-types';
 import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { apiFetch } from '../lib/api';
-import { formatDisplayRange, formatDisplayYear, referenceTypeLabel } from '../lib/content';
+import { edgeTypeLabel, formatDisplayRange, formatDisplayYear, referenceTypeLabel } from '../lib/content';
 
 // Fix leaflet default icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -120,7 +120,7 @@ export const GraphPage: React.FC = () => {
       .data(edges)
       .join('text')
       .attr('class', 'link-label')
-      .text((d: any) => d.type)
+      .text((d: any) => edgeTypeLabel(d.type))
       .attr('font-size', '10px')
       .attr('font-weight', (d: any) => d.type === 'causes' ? 'bold' : 'normal')
       .attr('fill', (d: any) => d.type === 'causes' ? '#ef4444' : '#64748b')

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { PlusIcon, TrashIcon, PencilIcon, PhotoIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import type { Person, Event } from '@histree/shared-types';
+import type { Event, Person, ReferenceLink } from '@histree/shared-types';
 import { apiFetch } from '../lib/api';
+import { referenceTypeLabel } from '../lib/content';
 
 export const AdminPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'people' | 'events'>('people');
@@ -18,6 +19,29 @@ export const AdminPage: React.FC = () => {
   const [uploadingImage, setUploadingImage] = useState(false);
 
   const parseList = (value: string) => value.split(/[,，]/).map((item) => item.trim()).filter(Boolean);
+  const parseNumber = (value: string) => {
+    const trimmed = value.trim();
+    if (!trimmed) return undefined;
+    const parsed = Number(trimmed);
+    return Number.isFinite(parsed) ? parsed : undefined;
+  };
+  const parseReferences = (value: string): ReferenceLink[] =>
+    value
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((line) => {
+        const [title, type, url, note] = line.split('|').map((item) => item.trim());
+        return {
+          title,
+          reference_type: (type as ReferenceLink['reference_type']) || 'reference',
+          url: url || undefined,
+          note: note || undefined,
+        };
+      })
+      .filter((reference) => reference.title);
+  const formatReferences = (references?: ReferenceLink[]) =>
+    references?.map((reference) => [reference.title, reference.reference_type, reference.url ?? '', reference.note ?? ''].join(' | ')).join('\n') ?? '';
 
   useEffect(() => {
     checkAdminAndLoadData();
@@ -34,7 +58,7 @@ export const AdminPage: React.FC = () => {
     const { data: roles } = await supabase.from('user_roles').select('role').eq('user_id', session.user.id).single();
     if (roles?.role === 'admin') {
       setIsAdmin(true);
-      fetchData();
+      await fetchData();
     }
     setLoading(false);
   };
@@ -67,7 +91,7 @@ export const AdminPage: React.FC = () => {
       });
     }
     setEditingPerson(null);
-    fetchData();
+    await fetchData();
   };
 
   const deletePerson = async (id: string) => {
@@ -76,7 +100,7 @@ export const AdminPage: React.FC = () => {
       method: 'DELETE',
       auth: true,
     });
-    fetchData();
+    await fetchData();
   };
 
   const saveEvent = async () => {
@@ -98,7 +122,7 @@ export const AdminPage: React.FC = () => {
       });
     }
     setEditingEvent(null);
-    fetchData();
+    await fetchData();
   };
 
   const deleteEvent = async (id: string) => {
@@ -107,7 +131,7 @@ export const AdminPage: React.FC = () => {
       method: 'DELETE',
       auth: true,
     });
-    fetchData();
+    await fetchData();
   };
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, isPerson: boolean) => {
@@ -175,6 +199,7 @@ export const AdminPage: React.FC = () => {
                 <tr>
                   <th className="px-6 py-3">姓名</th>
                   <th className="px-6 py-3">时代</th>
+                  <th className="px-6 py-3">出处</th>
                   <th className="px-6 py-3">图片</th>
                   <th className="px-6 py-3 text-right">操作</th>
                 </tr>
@@ -184,6 +209,7 @@ export const AdminPage: React.FC = () => {
                   <tr key={p.id} className="hover:bg-slate-50/50">
                     <td className="px-6 py-4 font-semibold text-slate-800">{p.name}</td>
                     <td className="px-6 py-4">{p.era}</td>
+                    <td className="px-6 py-4">{p.references?.length || 0}</td>
                     <td className="px-6 py-4">
                       {p.image_url ? <img src={p.image_url} className="w-8 h-8 rounded-full object-cover border border-slate-200" /> : '-'}
                     </td>
@@ -214,6 +240,7 @@ export const AdminPage: React.FC = () => {
                   <th className="px-6 py-3">标题</th>
                   <th className="px-6 py-3">年份</th>
                   <th className="px-6 py-3">地点</th>
+                  <th className="px-6 py-3">出处</th>
                   <th className="px-6 py-3 text-right">操作</th>
                 </tr>
               </thead>
@@ -223,6 +250,7 @@ export const AdminPage: React.FC = () => {
                     <td className="px-6 py-4 font-semibold text-slate-800">{e.title}</td>
                     <td className="px-6 py-4">{e.start_year}</td>
                     <td className="px-6 py-4">{e.location_name || '-'}</td>
+                    <td className="px-6 py-4">{e.references?.length || 0}</td>
                     <td className="px-6 py-4 text-right space-x-2">
                       <button onClick={() => setEditingEvent(e)} className="p-1.5 text-orange-500 hover:bg-orange-50 rounded-md transition-colors"><PencilIcon className="w-4 h-4" /></button>
                       <button onClick={() => deleteEvent(e.id)} className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-md transition-colors"><TrashIcon className="w-4 h-4" /></button>
@@ -251,6 +279,28 @@ export const AdminPage: React.FC = () => {
             <textarea placeholder="概述" value={editingPerson.description || ''} onChange={e => setEditingPerson({...editingPerson, description: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
             <textarea placeholder="生平" value={editingPerson.biography || ''} onChange={e => setEditingPerson({...editingPerson, biography: e.target.value})} className="w-full p-2 border rounded-lg" rows={5} />
             <textarea placeholder="历史评价" value={editingPerson.historical_evaluation || ''} onChange={e => setEditingPerson({...editingPerson, historical_evaluation: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
+            <div className="space-y-2 rounded-lg border border-slate-200 bg-slate-50 p-3">
+              <div className="text-sm font-medium text-slate-700">参考资料</div>
+              <textarea
+                placeholder="标题 | 类型 | 链接 | 备注&#10;例如：维基百科：管仲 | encyclopedia | https://zh.wikipedia.org/wiki/管仲 | 便于快速定位"
+                value={formatReferences(editingPerson.references)}
+                onChange={e => setEditingPerson({ ...editingPerson, references: parseReferences(e.target.value) })}
+                className="w-full p-2 border rounded-lg bg-white text-sm"
+                rows={5}
+              />
+              <div className="text-xs text-slate-500">
+                类型可填：encyclopedia、primary、reference、scholarship、digital。
+              </div>
+              {editingPerson.references && editingPerson.references.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {editingPerson.references.map((reference, index) => (
+                    <span key={`${reference.title}-${index}`} className="px-2 py-1 rounded-md border border-slate-200 bg-white text-xs text-slate-600">
+                      {reference.title} · {referenceTypeLabel(reference.reference_type)}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
                 <PhotoIcon className="w-5 h-5 text-slate-400" />
@@ -276,11 +326,33 @@ export const AdminPage: React.FC = () => {
             <h3 className="text-lg font-bold">{editingEvent.id ? '编辑事件' : '新增事件'}</h3>
             <input placeholder="标题" value={editingEvent.title || ''} onChange={e => setEditingEvent({...editingEvent, title: e.target.value})} className="w-full p-2 border rounded-lg" />
             <div className="flex gap-2">
-              <input type="number" placeholder="起始年份" value={editingEvent.start_year || ''} onChange={e => setEditingEvent({...editingEvent, start_year: Number(e.target.value)})} className="w-full p-2 border rounded-lg" />
+              <input type="number" placeholder="起始年份" value={editingEvent.start_year ?? ''} onChange={e => setEditingEvent({...editingEvent, start_year: parseNumber(e.target.value)})} className="w-full p-2 border rounded-lg" />
               <input placeholder="时代 / 国家" value={editingEvent.dynasty || ''} onChange={e => setEditingEvent({...editingEvent, dynasty: e.target.value})} className="w-full p-2 border rounded-lg" />
             </div>
             <textarea placeholder="概述" value={editingEvent.description || ''} onChange={e => setEditingEvent({...editingEvent, description: e.target.value})} className="w-full p-2 border rounded-lg" rows={3} />
             <input placeholder="标签（用逗号分隔）" value={editingEvent.tags?.join('，') || ''} onChange={e => setEditingEvent({...editingEvent, tags: parseList(e.target.value)})} className="w-full p-2 border rounded-lg" />
+            <div className="space-y-2 rounded-lg border border-slate-200 bg-slate-50 p-3">
+              <div className="text-sm font-medium text-slate-700">参考资料</div>
+              <textarea
+                placeholder="标题 | 类型 | 链接 | 备注&#10;例如：维基百科：城濮之战 | encyclopedia | https://zh.wikipedia.org/wiki/城濮之战 | 便于快速定位"
+                value={formatReferences(editingEvent.references)}
+                onChange={e => setEditingEvent({ ...editingEvent, references: parseReferences(e.target.value) })}
+                className="w-full p-2 border rounded-lg bg-white text-sm"
+                rows={5}
+              />
+              <div className="text-xs text-slate-500">
+                类型可填：encyclopedia、primary、reference、scholarship、digital。
+              </div>
+              {editingEvent.references && editingEvent.references.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {editingEvent.references.map((reference, index) => (
+                    <span key={`${reference.title}-${index}`} className="px-2 py-1 rounded-md border border-slate-200 bg-white text-xs text-slate-600">
+                      {reference.title} · {referenceTypeLabel(reference.reference_type)}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
             
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
@@ -299,8 +371,8 @@ export const AdminPage: React.FC = () => {
               </div>
               <input placeholder="地点名称" value={editingEvent.location_name || ''} onChange={e => setEditingEvent({...editingEvent, location_name: e.target.value})} className="w-full p-2 border rounded-lg text-sm" />
               <div className="flex gap-2">
-                <input type="number" placeholder="纬度" value={editingEvent.location_lat || ''} onChange={e => setEditingEvent({...editingEvent, location_lat: parseFloat(e.target.value)})} className="w-full p-2 border rounded-lg text-sm" />
-                <input type="number" placeholder="经度" value={editingEvent.location_lng || ''} onChange={e => setEditingEvent({...editingEvent, location_lng: parseFloat(e.target.value)})} className="w-full p-2 border rounded-lg text-sm" />
+                <input type="number" placeholder="纬度" value={editingEvent.location_lat ?? ''} onChange={e => setEditingEvent({...editingEvent, location_lat: parseNumber(e.target.value)})} className="w-full p-2 border rounded-lg text-sm" />
+                <input type="number" placeholder="经度" value={editingEvent.location_lng ?? ''} onChange={e => setEditingEvent({...editingEvent, location_lng: parseNumber(e.target.value)})} className="w-full p-2 border rounded-lg text-sm" />
               </div>
             </div>
 

@@ -30,3 +30,22 @@ export const referenceTypeLabel = (type: ReferenceLink['reference_type']) => {
 
 export const primaryReference = (references?: ReferenceLink[]) =>
   references?.find((reference) => reference.reference_type === 'encyclopedia') ?? references?.[0];
+
+export const edgeTypeLabel = (type: string) => {
+  switch (type) {
+    case 'causes':
+      return '因果';
+    case 'participant':
+      return '参与';
+    case 'ruler':
+      return '统治者';
+    case 'ally':
+      return '同盟';
+    case 'enemy':
+      return '对立';
+    case 'minister':
+      return '臣属';
+    default:
+      return type;
+  }
+};

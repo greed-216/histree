@@ -1,298 +1,537 @@
-# Histree Product Roadmap
+# Histree 项目总规划与路线图
 
-## Product North Star
+## 1. 项目定位
 
-Histree should become a source-aware history knowledge platform. Its core value is not to be another encyclopedia page, but to help readers see how people, institutions, geography, events, texts, and power structures change each other over time.
+Histree 的目标，不是再做一个“中国历史百科页面集合”，而是做一个以图谱为入口、以出处为底座、以时间和空间为骨架的中国史知识平台。
 
-The product should treat data as the durable asset. Graphs, trees, timelines, maps, and institutional diagrams are different lenses over the same verified historical knowledge base.
+它最终要解决的不是“有没有资料”，而是下面几个更难的问题：
 
-## Method: The Four Keys
+1. 一个历史人物究竟应该从哪些维度被理解。
+2. 一个历史事件如何放回它的前因后果、参与者、地理空间和制度结构中。
+3. 一条历史叙述的依据是什么，来自哪本书、哪一条材料、哪一种现代研究。
+4. 同一时期的不同人物、国家、制度、事件，如何在时间线上和地图上被并置比较。
 
-Deng Guangming's well-known "four keys" for studying Chinese history are usually summarized as:
+因此，Histree 的核心资产不是页面，而是可复用、可验证、可扩展的数据层。
 
-- Chronology: 年代学
-- Historical geography: 历史地理
-- Official institutions: 职官制度
-- Bibliography/catalogue studies: 目录学
+## 2. 产品北极星
 
-For Histree, these should become product architecture, not just background theory:
+Histree 应该成为一个“可追溯、可比较、可视化”的中国历史知识系统。
 
-- 目录学 becomes source discovery, citation, edition tracking, and "why do we know this?"
-- 年代学 becomes comparable timelines for people, events, regimes, offices, and institutions.
-- 历史地理 becomes maps, historical place-name changes, administrative regions, routes, and spatial scope.
-- 职官制度 becomes institutional structure: office hierarchy, appointment routes, administrative levels, rank, authority, and operating rules.
+平台的长期价值体现在四点：
 
-The current person-event graph is closest to a catalogue-style entry point: it tells the reader what is related to what. The next stage must add source provenance, time, space, and institutional structure so the graph becomes historically intelligible rather than just visually connected.
+- 用图谱回答“谁和谁、什么和什么有关”。
+- 用时间线回答“先后如何演进、哪些变化同时发生”。
+- 用地图回答“事情发生在哪里、人的活动范围如何变化”。
+- 用出处体系回答“我们为什么这样说、依据是什么”。
 
-Useful references for the framing:
+## 3. 方法论框架
 
-- 中国社会科学网《中国社会科学报》, 方志远, "历史研究的六把钥匙", 2024-12-18.
-- 北京大学新闻网, "邓广铭与二十世纪的宋代史学", notes Deng Guangming's 1956 "four keys" formulation.
-- 中国青年报/中青在线, "一代宗师，北大教授邓广铭", discusses time, place, people, and the four keys.
+项目整体采用邓广铭历史研究“四把钥匙”作为方法论主轴：
 
-## Data Model Roadmap
+- 年代学
+- 历史地理
+- 职官制度
+- 目录学
 
-### 1. Sources and Bibliography
+在 Histree 中，这四者不是背景理论，而应该直接落成产品结构：
 
-Every meaningful fact should eventually be traceable.
+- 年代学 -> 时间线、时间切片图谱、多人并行比较。
+- 历史地理 -> 地图、历史地名、区域范围、路线和活动空间。
+- 职官制度 -> 官职体系、机构层级、任职轨迹、权力结构。
+- 目录学 -> 来源库、引文、事实依据、版本信息、争议记录。
 
-Core tables:
+## 4. 目标用户
 
-- `source`: book/article/database/webpage/archive item.
-- `source_edition`: edition, publisher, year, volume, page range, URL, stable identifier.
-- `citation`: exact reference target, quote, translation, note, confidence.
-- `fact_claim`: typed claim linked to entity or edge, with source and confidence.
-- `entity_source` and `edge_source`: lightweight links for MVP compatibility.
+### 4.1 第一阶段核心用户
 
-Initial source types:
+- 对中国史有稳定兴趣的普通读者
+- 历史内容创作者
+- 历史方向学生
+- 需要快速理解人物关系和事件脉络的研究入门者
 
-- Primary sources: 正史、编年、出土文献、碑志、地方志、文集.
-- Reference works: 辞典、历史地图集、职官表、年表.
-- Modern scholarship: monographs, journal articles, edited volumes.
-- Stable digital resources: CNKI/DOI metadata, 中国哲学书电子化计划, Wikidata as auxiliary, official museum/library pages.
+### 4.2 第二阶段扩展用户
 
-Admin requirements:
+- 历史教师与课程设计者
+- 学术辅助研究用户
+- 数据策展和数字人文方向使用者
 
-- Every node and edge can attach one or more sources.
-- Source note supports page/juan/chapter/entry fields.
-- Mark source role: direct evidence, modern interpretation, disputed, image/media source.
-- Show "unsourced" warnings before publishing.
+## 5. 当前项目现状
 
-### 2. Chronology
+截至目前，项目已经具备一个可运行的图谱型 MVP，包含以下基础能力：
 
-Time is not a single field. It needs uncertainty and comparison.
+### 5.1 已有前台能力
 
-Core tables:
+- 探索首页
+- 人物页
+- 事件页
+- 人物/事件图谱详情页
+- 人物画像展示
+- 事件地点基础地图展示
+- 参考资料展示
 
-- `time_span`: start/end date, precision, calendar system, uncertainty note.
-- `entity_time_span`: lifespan, reign, office tenure, campaign duration, event duration.
-- `timeline_lane`: curated comparative lanes, such as "秦国", "赵国", "楚国", "思想文化".
+### 5.2 已有后台能力
 
-Product views:
+- 管理员登录
+- 人物 CRUD
+- 事件 CRUD
+- 图片上传
+- 人物/事件参考资料字段编辑
 
-- Person lifespan and activity timeline.
-- Event duration and phases.
-- Side-by-side comparison of multiple people.
-- State/dynasty timeline lanes.
-- Time-filtered graph: show only nodes and edges active in a year or range.
+### 5.3 已有数据层能力
 
-Important details:
+- `person`
+- `event`
+- `person_relationship`
+- `person_event`
+- `event_causality`
+- `source`
+- `fact_claim`
+- `user_roles`
+- 图片与地点字段
 
-- Support BCE years.
-- Support approximate dates: circa, before, after, range, disputed.
-- Keep Chinese reign year / lunar date as source notation where available.
+### 5.4 已有内容基础
 
-### 3. Historical Geography
+- 春秋战国 / 战国样例数据
+- 人物基础生平、评价、标签、阵营
+- 事件基础描述、阶段、地点
+- 百科与部分史料参考
 
-Place must support historical names, modern coordinates, and changing administrative scope.
+## 6. 当前主要短板
 
-Core tables:
+MVP 已经“能看”，但距离“能持续建设、能做深、能形成平台”还有明显差距。
 
-- `place`: canonical place, modern coordinate, current administrative location.
-- `place_name`: historical names, period, language/script, source.
-- `geo_region`: polygon or bounding box for states, commanderies, counties, routes, battle areas.
-- `entity_place`: person's activity range, office location, exile route, campaign path, event location.
+### 6.1 产品短板
 
-Product views:
+- 图谱仍偏展示型，缺少筛选、路径、深度控制、上下文导航。
+- 人物和事件信息虽然比最初丰富，但还不够系统化。
+- 时间线视图尚未形成真正可用的主功能。
+- 地图只停留在点位层，缺少历史地理模型。
+- 后台仍然主要维护节点，尚不能完整维护关系网络。
 
-- Event map with exact point and broader involved region.
-- Person activity map across life phases.
-- State/polity territorial map by time slice.
-- Route maps for exile, campaigns, diplomatic missions, migration.
-- Map-linked graph: clicking a place filters related people/events.
+### 6.2 数据短板
 
-Data sources to evaluate:
+- `references` 已能显示和编辑，但来源库与事实级引用尚未闭环。
+- 关系类型仍不够规范，缺少统一字典和校验。
+- 时间、地点、官职仍主要停留在扁平字段阶段。
+- 还没有 draft/published/review 状态。
 
-- 谭其骧《中国历史地图集》 as a reference baseline, respecting copyright limits.
-- CHGIS for historical GIS where usable.
-- Harvard WorldMap / open historical GIS datasets where licensing permits.
-- Wikidata/GeoNames only as auxiliary modern coordinates, never as final authority.
-- Local gazetteers and specialized atlases for period-specific validation.
+### 6.3 工程短板
 
-### 4. Offices, Institutions, and Social Structure
+- 图谱查询仍偏“按需拼接”，后续会遇到性能和复杂度问题。
+- 缺少更完整的后端 DTO、校验和类型约束。
+- 前端仍以页面式拼装为主，缺少更稳定的领域组件层。
+- 测试还不足以覆盖未来的数据编辑复杂度。
 
-职官制度 should expand into the operating structure of society and state.
+## 7. 产品总架构
 
-Core tables:
+Histree 应按六层结构来规划，而不是把所有需求都塞进“人物页”和“事件页”。
 
-- `institution`: court, ministry, commandery, county, army, school, lineage, estate.
-- `office`: office title, rank, parent office, jurisdiction, period, appointment rules.
-- `office_tenure`: person, office, start/end, appointing authority, source.
-- `rank_system`: rank, salary, privilege, civil/military category.
-- `social_group`: ruler, aristocracy, scholar-official, military, commoner, slave, artisan, merchant, etc.
+### 7.1 实体层
 
-Product views:
+基础实体包括：
 
-- Institutional hierarchy tree.
-- Career path timeline for a person.
-- Office-holder list by period.
-- "How the state works" diagrams for a dynasty or state.
-- Relationship between office, geography, and events: who had authority where, when, and over whom.
+- 人物
+- 事件
+- 国家 / 政权 / 阵营
+- 地点
+- 官职
+- 机构
+- 典籍 / 资料 / 研究成果
 
-Initial content suggestion:
+### 7.2 关系层
 
-- Start with Warring States states: ruler, ministers, generals, county/commandery prototypes, reform offices.
-- Then Qin-Han: emperor, three excellencies/nine ministers, commandery-county system, military titles.
-- Later add Tang/Song because source material and office systems are richer but more complex.
+关系层定义实体之间的联系：
 
-## Knowledge Graph Model
+- 人物-人物
+- 人物-事件
+- 事件-事件
+- 人物-官职
+- 官职-机构
+- 实体-地点
+- 实体-来源
 
-Core entities:
+### 7.3 证据层
 
-- Person: names, aliases, lifespan, era, state/dynasty, roles, biography, portraits.
-- Event: title, time range, uncertainty, location, description, impact level, involved parties.
-- Polity or organization: states, dynasties, families, armies, schools of thought.
-- Place: historical place names, modern coordinates, confidence, alternate names.
-- Office and institution: hierarchy, rank, jurisdiction, operating rules.
-- Work or idea: texts, reforms, institutions, strategies, doctrines.
-- Source: citation, author, title, edition, quote, reliability, URL or bibliographic info.
+证据层回答“依据是什么”：
 
-Core edges:
+- source
+- source edition
+- citation
+- fact claim
+- 争议与置信度
 
-- Person to person: ruler-minister, ally, rival, teacher-student, kinship.
-- Person to event: commander, reformer, ruler, envoy, victim, author, participant.
-- Event to event: causes, enables, escalates, responds_to, resolves, precedes.
-- Person/event to polity: rules, serves, attacks, reforms, defects_to.
-- Person to office: holds, appointed_to, promoted_to, dismissed_from.
-- Office to institution: belongs_to, reports_to, supervises.
-- Entity or edge to source: supported_by, disputed_by.
+### 7.4 时间层
 
-## Presentation Roadmap
+时间层回答“何时发生”：
 
-### Graph First
+- 生命周期
+- 任职时间
+- 事件起止
+- 时段比较
+- 不确定年代与约略时间
 
-The graph page should become the main reading surface:
+### 7.5 空间层
 
-- Depth control: 1-hop, 2-hop, curated path.
-- Edge filters: people, events, causality, political relations, offices, geography, sources.
-- Timeline scrubber: show graph state at a year or range.
-- Side panel: selected node details, citations, related paths, map preview.
-- Layout modes: force graph, chronological tree, cause-effect chain, institution tree.
+空间层回答“在哪里发生”：
 
-### Timeline View
+- 点位
+- 区域
+- 历史地名
+- 活动路径
+- 行政层级
 
-Timeline should support comparison, not just listing:
+### 7.6 展示层
 
-- Put multiple people on one timeline.
-- Overlay events, offices, states, reigns, reforms, wars.
-- Support filters by state, region, office, source confidence.
-- Show uncertainty visually, e.g. fuzzy ranges or dotted bars.
+展示层是同一知识底座上的不同视图：
 
-### Map View
+- 图谱
+- 时间线
+- 地图
+- 机构树
+- 来源面板
 
-Maps should explain spatial scope:
+## 8. 内容战略
 
-- Event point plus involved region.
-- Person activity areas by phase.
-- State borders by time slice.
-- Campaign/diplomatic routes.
-- Link map selection to graph and timeline filters.
+内容是这个项目最重要的壁垒，因此必须有清晰的采集与建设策略。
 
-### Institution View
+### 8.1 先做“高关联时期”，不做全史平铺
 
-Institution diagrams should explain structure:
+建议按下面顺序推进：
 
-- Hierarchy tree of offices.
-- Career path through offices.
-- Administrative layers from ruler to local society.
-- Compare institutions across time: e.g. pre-Qin state structures vs Qin-Han bureaucracy.
+1. 春秋战国
+2. 秦汉转型
+3. 东汉末年至三国
+4. 唐宋（作为制度与职官深化期）
 
-### Source View
+理由很直接：
 
-Every content panel should show provenance:
+- 人物关系和事件脉络强
+- 史料传统清晰
+- 更适合图谱表达
+- 便于逐步补充时间、地图、制度维度
 
-- "Sources" tab for each node and edge.
-- Inline footnote markers for key claims.
-- Source quality labels: primary source, reference work, modern scholarship, auxiliary dataset.
-- Disputed claim display: show competing accounts rather than flattening disagreement.
+### 8.2 内容建设原则
 
-## Admin Roadmap
+- 先做“可验证”，再做“可扩张”。
+- 先做“关系密集期”，再做“朝代覆盖”。
+- 先做“骨架完整”，再做“资料堆积”。
 
-### Stage 1: Graph Editing
+### 8.3 每条公开数据的最低标准
 
-- Add relationship CRUD: person-person, person-event, event-event.
-- Add validation: no dangling edges, no duplicate edges, no self-causality.
-- Add entity search and relationship creation from the graph canvas.
+每一个人物或事件公开前，至少要有：
 
-### Stage 2: Source Editing
+- 基本身份信息
+- 一段可读概述
+- 标签
+- 至少一条参考资料
+- 至少一条可追溯的重要依据
 
-- Add source library.
-- Attach citations to entities and edges.
-- Require source notes for published important claims.
-- Add "unsourced / low confidence / disputed" review filters.
+## 9. 数据模型路线
 
-### Stage 3: Time and Place Editing
+### 9.1 第一层：节点可用
 
-- Replace single year/location fields with structured time spans and places.
-- Add precision and uncertainty.
-- Add historical place-name aliases.
-- Add map preview in editor.
+目标：让人物和事件本身足够“像条目”。
 
-### Stage 4: Institution Editing
+重点字段：
 
-- Add offices, institutions, ranks, jurisdictions.
-- Add office tenure editor for people.
-- Add institution tree editor and validation.
+- 人物：字、别名、阵营、籍贯、生卒、生平、评价、标签、亲属、交际关系、参考资料
+- 事件：时间范围、阶段、地点、标签、影响、参考资料
 
-### Stage 5: Content Pipeline
+### 9.2 第二层：来源闭环
 
-- Import CSV/JSON for nodes, edges, sources, citations.
-- Add review workflow for generated/imported data.
-- Keep draft/published states and audit logs.
+目标：让“引用显示”升级为“来源系统”。
 
-## Content Acquisition Plan
+需要补齐：
 
-Start with curated, period-specific corpora:
+- source library
+- source edition
+- citation
+- fact claim
+- entity-source / edge-source
+- 来源角色与置信度
 
-1. Spring and Autumn / Warring States:
-   `左传`, `国语`, `战国策`, `史记`, `资治通鉴` as source anchors, plus modern reference works.
+### 9.3 第三层：时间结构化
 
-2. Qin-Han transition:
-   `史记`, `汉书`, `资治通鉴`, archaeological notes where applicable, maps and office references.
+目标：从年份字段升级为时间模型。
 
-3. Late Eastern Han / Three Kingdoms:
-   `三国志`, Pei Songzhi annotations, `后汉书`, `资治通鉴`.
+需要补齐：
 
-Data workflow:
+- time span
+- precision
+- uncertainty
+- 多时间段挂载
+- 时间线 lane
 
-- Build a source bibliography first.
-- Extract people/events/places/offices with source citations.
-- Add edges only when source-supported or clearly marked as interpretive.
-- Review by period, not by isolated entity.
+### 9.4 第四层：空间结构化
 
-## Engineering Iterations
+目标：从经纬度点位升级为历史地理模型。
 
-### Iteration 1: Consistency and Seeds
+需要补齐：
 
-- Make Explore, People, Events, Admin read from the same data.
-- Add curated seed data for Spring and Autumn / Warring States.
-- Upload portraits and media with source tracking.
-- Add smoke tests for public pages and protected admin writes.
+- place
+- place name
+- geo region
+- entity place
+- 路径和区域范围
 
-### Iteration 2: Source-Aware Schema
+### 9.5 第五层：制度结构化
 
-- Add source, citation, fact claim, entity-source, edge-source tables.
-- Add confidence, status, slug, updated_at, created_by, updated_by.
-- Show source panels on public pages.
+目标：把人物与事件放回政治与社会结构中。
 
-### Iteration 3: Admin Relationship and Source Editing
+需要补齐：
 
-- Add Admin panels for person relationships, event participation, event causality.
-- Add source attachment to all node and edge forms.
-- Add validation and review filters.
+- institution
+- office
+- office tenure
+- rank system
+- social group
 
-### Iteration 4: Timeline and Geography
+## 10. 功能路线图
 
-- Add structured time spans.
-- Add place and historical place-name model.
-- Add timeline comparison page and map filters.
+下面的 roadmap 以“能持续建设”为优先，而不是只追求前端页面数量。
 
-### Iteration 5: Institution System
+### Phase 0：MVP 稳定期（已完成 / 进行中）
 
-- Add offices, institutions, ranks, tenures.
-- Add institution tree and career timeline views.
-- Start with Warring States and Qin-Han institutions.
+目标：把最初的 demo 打磨成可持续迭代的基础版本。
 
-## Immediate Next Step
+已完成或基本完成：
 
-Implement the source-aware schema and admin source library first. Without provenance, adding more data will create technical debt. After that, build relationship editing and structured time/place models so the graph can become a historically meaningful tree, timeline, and map system.
+- 前后端分层
+- 管理员权限收口到 API
+- RLS 加固
+- 人物/事件公共页统一读真实数据
+- 春秋战国样例数据
+- 人物画像上传与展示
+- 人物/事件 richer fields
+- 参考资料展示
+- 管理台来源字段初步维护
+
+### Phase 1：图谱编辑与内容运营基础
+
+目标：让后台真正具备“维护历史图谱”的能力。
+
+交付件：
+
+- 人物关系管理
+- 事件参与关系管理
+- 事件因果关系管理
+- 关系类型字典
+- 重复关系校验
+- dangling edge 校验
+- 草稿 / 发布状态
+- 后台列表增加筛选和搜索
+
+验收标准：
+
+- 管理员可以不写 SQL 就维护完整图谱关系
+- 一个新人物和一条新事件可以从后台完整挂入网络
+
+### Phase 2：来源库与审核流
+
+目标：把“参考资料”升级成真正的出处体系。
+
+交付件：
+
+- source library 管理页
+- fact claim 管理
+- 节点与边的来源挂载
+- 引文定位字段（卷、篇、页码、章节、注）
+- unsourced / low confidence / disputed 标记
+- 内容审核视图
+
+验收标准：
+
+- 重要人物和事件的核心陈述可以追溯到来源
+- 后台可以筛出“无出处条目”与“待审核条目”
+
+### Phase 3：时间线系统
+
+目标：让平台从“关系网络”升级为“演化系统”。
+
+交付件：
+
+- timeline page
+- 人物生命周期条
+- 事件阶段条
+- 多人物并列比较
+- 时间过滤图谱
+- BCE 和约略时间支持
+
+验收标准：
+
+- 用户可以同时比较 2-5 个人物的活动时段
+- 图谱可按时间切片显示
+
+### Phase 4：历史地图系统
+
+目标：让地点从装饰信息升级为解释能力。
+
+交付件：
+
+- place 模型
+- 历史地名别名
+- 人物活动范围
+- 事件位置与影响区域
+- 地图筛选图谱
+- 路线 / 迁徙 / 出奔 / 战役轨迹
+
+验收标准：
+
+- 事件和人物都能从地图视角被理解
+- 同一地点的历史名称变化可记录
+
+### Phase 5：职官制度与机构树
+
+目标：让 Histree 真正进入“四把钥匙”的制度层。
+
+交付件：
+
+- office / institution / tenure 模型
+- 官职体系图
+- 任职轨迹
+- 机构层级图
+- 权力结构说明页
+
+验收标准：
+
+- 用户能看到某人物何时在何机构担任何职
+- 用户能从制度结构理解人物与事件
+
+### Phase 6：搜索、专题与平台化
+
+目标：让平台从单点浏览工具升级为内容平台。
+
+交付件：
+
+- 全局搜索
+- 标签搜索
+- 朝代 / 阵营 / 类型筛选
+- 专题页
+- curated path
+- 导出与分享
+- 内容导入工具
+
+验收标准：
+
+- 平台不再依赖“用户先知道某个人名”才能开始探索
+- 运营与内容建设效率显著提升
+
+## 11. 工程路线图
+
+### 11.1 前端
+
+- 形成领域组件层，而不是继续堆页面逻辑
+- 建立 graph / timeline / map / admin 共用的数据展示组件
+- 引入更稳定的表单状态和校验策略
+
+### 11.2 后端
+
+- 补 DTO 与更明确的输入校验
+- 规范 service 层错误处理
+- 为关系编辑和来源编辑增加专门模块
+- 逐步把图谱聚合查询从“临时拼接”演进成稳定服务
+
+### 11.3 数据库
+
+- 规范关系类型和枚举
+- 增加唯一约束和索引
+- 引入状态字段、审计字段
+- 为时间、空间、制度模型预留表结构
+
+### 11.4 测试与质量
+
+- 保留 smoke 测试
+- 增加 API 层单测
+- 增加后台关键编辑流的 e2e
+- 增加 migration 验证
+
+### 11.5 部署与运维
+
+- 前端继续 GitHub Pages
+- 后端固定部署环境并完成线上验证
+- 建立环境变量文档
+- 建立数据迁移与种子同步流程
+
+## 12. 最近 4 个迭代建议
+
+为了让项目持续推进，我建议最近 4 个迭代按下面顺序执行。
+
+### Iteration A：后台图谱编辑
+
+- 人物关系 CRUD
+- 事件参与 CRUD
+- 事件因果 CRUD
+- 关系类型管理
+
+### Iteration B：来源库闭环
+
+- source 列表页
+- source 新增编辑
+- fact claim 编辑
+- 节点 / 边挂来源
+
+### Iteration C：时间线 MVP
+
+- timeline page
+- 人物并列时间线
+- 事件分期时间线
+- 图谱时间过滤
+
+### Iteration D：地图 MVP
+
+- place 模型
+- 人物活动地点
+- 事件地点页
+- 地图筛选
+
+## 13. 暂不优先的内容
+
+以下方向不是不做，而是不应在当前阶段抢占主线：
+
+- 多语言国际化
+- 用户评论与社区系统
+- 高度复杂的 AI 自动抽取
+- 大而全朝代覆盖
+- 过早做移动端 App
+- 复杂的协作权限体系
+
+## 14. 成功指标
+
+项目不能只看“页面做了多少”，需要有明确指标。
+
+### 14.1 内容指标
+
+- 已建人物数
+- 已建事件数
+- 已建关系数
+- 有出处节点占比
+- 有 fact claim 节点占比
+
+### 14.2 产品指标
+
+- 单次访问图谱点击深度
+- 时间线使用率
+- 地图使用率
+- 从探索页进入详情页比例
+
+### 14.3 运营指标
+
+- 每周新增可发布条目数
+- 每周修订条目数
+- 待审核条目积压量
+
+## 15. 当前建议结论
+
+如果只用一句话概括接下来整个项目的推进原则，那就是：
+
+先把 Histree 做成一个“能持续建设的历史知识底座”，再把图谱、时间线、地图和制度树逐层长出来。
+
+具体执行上，最优先顺序是：
+
+1. 后台完整维护图谱关系
+2. 来源库与事实依据闭环
+3. 时间线系统
+4. 历史地图系统
+5. 职官制度系统
+
+这条路的好处是，数据、功能、内容生产和后续扩展会始终朝同一个方向走，而不会变成一个只会长页面、不会长知识结构的项目。

@@ -8,6 +8,7 @@ import { TimelineModule } from './modules/timeline/timeline.module';
 import { PersonModule } from './modules/person/person.module';
 import { SupabaseModule } from './modules/supabase/supabase.module';
 import { UploadModule } from './modules/upload/upload.module';
+import { RelationshipModule } from './modules/relationship/relationship.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { UploadModule } from './modules/upload/upload.module';
     EventModule,
     PersonModule,
     TimelineModule,
-    UploadModule
+    UploadModule,
+    RelationshipModule,
   ],
   controllers: [AppController],
   providers: [AppService],

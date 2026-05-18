@@ -1,5 +1,5 @@
 import { supabase } from '../supabaseClient';
-import type { Edge, Event, GraphResponse, Person } from '@histree/shared-types';
+import type { Edge, Event, GraphResponse, Person, RelationshipBundle } from '@histree/shared-types';
 
 const API_BASE = import.meta.env.VITE_API_URL as string | undefined;
 
@@ -72,7 +72,29 @@ async function supabasePublicFetch<T>(path: string): Promise<T> {
     return getGraphFromSupabase(id) as Promise<T>;
   }
 
+  if (path === '/relationships') {
+    return getRelationshipsFromSupabase() as Promise<T>;
+  }
+
   throw new Error(`No static Supabase fallback is available for ${path}.`);
+}
+
+async function getRelationshipsFromSupabase(): Promise<RelationshipBundle> {
+  const [personRelationships, personEvents, eventCausalities] = await Promise.all([
+    supabase.from('person_relationship').select('*').order('created_at', { ascending: false }),
+    supabase.from('person_event').select('*').order('created_at', { ascending: false }),
+    supabase.from('event_causality').select('*').order('created_at', { ascending: false }),
+  ]);
+
+  if (personRelationships.error) throw personRelationships.error;
+  if (personEvents.error) throw personEvents.error;
+  if (eventCausalities.error) throw eventCausalities.error;
+
+  return {
+    person_relationships: personRelationships.data ?? [],
+    person_events: personEvents.data ?? [],
+    event_causalities: eventCausalities.data ?? [],
+  };
 }
 
 async function getGraphFromSupabase(id: string): Promise<GraphResponse> {

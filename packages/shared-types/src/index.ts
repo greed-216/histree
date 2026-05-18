@@ -58,6 +58,43 @@ export interface Edge {
   description?: string;
 }
 
+export interface PersonRelationship {
+  id: string;
+  person_a: string;
+  person_b: string;
+  relation_type: string;
+  description?: string;
+  created_at?: string;
+}
+
+export type PersonRelationshipInput = Omit<PersonRelationship, 'id' | 'created_at'>;
+
+export interface PersonEventRelation {
+  id: string;
+  person_id: string;
+  event_id: string;
+  role: string;
+  created_at?: string;
+}
+
+export type PersonEventRelationInput = Omit<PersonEventRelation, 'id' | 'created_at'>;
+
+export interface EventCausalityRelation {
+  id: string;
+  cause_event_id: string;
+  effect_event_id: string;
+  description?: string;
+  created_at?: string;
+}
+
+export type EventCausalityRelationInput = Omit<EventCausalityRelation, 'id' | 'created_at'>;
+
+export interface RelationshipBundle {
+  person_relationships: PersonRelationship[];
+  person_events: PersonEventRelation[];
+  event_causalities: EventCausalityRelation[];
+}
+
 export interface GraphResponse {
   center: Person | Event;
   nodes: Array<Person | Event>;

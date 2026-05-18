@@ -38,3 +38,21 @@ await assertFetch('admin event create rejects anonymous user', `${API_URL}/api/v
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ title: 'Smoke Test Event' }),
 }, (response) => response.status === 401);
+
+await assertFetch('admin person relationship create rejects anonymous user', `${API_URL}/api/v1/relationships/person-relationships`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ person_a: 'person-a', person_b: 'person-b', relation_type: 'ally' }),
+}, (response) => response.status === 401);
+
+await assertFetch('admin person-event create rejects anonymous user', `${API_URL}/api/v1/relationships/person-events`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ person_id: 'person-a', event_id: 'event-a', role: 'participant' }),
+}, (response) => response.status === 401);
+
+await assertFetch('admin event causality create rejects anonymous user', `${API_URL}/api/v1/relationships/event-causalities`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ cause_event_id: 'event-a', effect_event_id: 'event-b' }),
+}, (response) => response.status === 401);

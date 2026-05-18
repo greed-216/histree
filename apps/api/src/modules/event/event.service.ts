@@ -36,15 +36,17 @@ export class EventService {
       }
 
       // 2. Get related people
-      const { data: personEvents } = await supabase
+      const { data: personEvents, error: personEventsError } = await supabase
         .from('person_event')
         .select('role, person_id')
         .eq('event_id', eventId);
+      if (personEventsError) throw personEventsError;
 
       let related_people: any[] = [];
       if (personEvents && personEvents.length > 0) {
         const personIds = personEvents.map(pe => pe.person_id);
-        const { data: peopleData } = await supabase.from('person').select('*').in('id', personIds);
+        const { data: peopleData, error: peopleError } = await supabase.from('person').select('*').in('id', personIds);
+        if (peopleError) throw peopleError;
         
         related_people = personEvents.map(pe => {
           const p = peopleData?.find(p => p.id === pe.person_id);
@@ -56,28 +58,32 @@ export class EventService {
       }
 
       // 3. Get cause events
-      const { data: causeCausalities } = await supabase
+      const { data: causeCausalities, error: causeCausalitiesError } = await supabase
         .from('event_causality')
         .select('cause_event_id')
         .eq('effect_event_id', eventId);
+      if (causeCausalitiesError) throw causeCausalitiesError;
 
       let cause_events: Event[] = [];
       if (causeCausalities && causeCausalities.length > 0) {
         const causeIds = causeCausalities.map(c => c.cause_event_id);
-        const { data: causeData } = await supabase.from('event').select('*').in('id', causeIds);
+        const { data: causeData, error: causeError } = await supabase.from('event').select('*').in('id', causeIds);
+        if (causeError) throw causeError;
         cause_events = (causeData || []).map(e => ({ ...e, type: 'event' } as Event));
       }
 
       // 4. Get effect events
-      const { data: effectCausalities } = await supabase
+      const { data: effectCausalities, error: effectCausalitiesError } = await supabase
         .from('event_causality')
         .select('effect_event_id')
         .eq('cause_event_id', eventId);
+      if (effectCausalitiesError) throw effectCausalitiesError;
 
       let effect_events: Event[] = [];
       if (effectCausalities && effectCausalities.length > 0) {
         const effectIds = effectCausalities.map(c => c.effect_event_id);
-        const { data: effectData } = await supabase.from('event').select('*').in('id', effectIds);
+        const { data: effectData, error: effectError } = await supabase.from('event').select('*').in('id', effectIds);
+        if (effectError) throw effectError;
         effect_events = (effectData || []).map(e => ({ ...e, type: 'event' } as Event));
       }
 

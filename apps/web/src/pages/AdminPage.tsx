@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { PlusIcon, TrashIcon, PencilIcon, PhotoIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import type { Event, Person, ReferenceLink } from '@histree/shared-types';
+import type {
+  Event,
+  EventCausalityRelation,
+  Person,
+  PersonEventRelation,
+  PersonRelationship,
+  ReferenceLink,
+  RelationshipBundle,
+} from '@histree/shared-types';
 import { apiFetch } from '../lib/api';
 import { referenceTypeLabel } from '../lib/content';
 
 export const AdminPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'people' | 'events'>('people');
+  const [activeTab, setActiveTab] = useState<'people' | 'events' | 'relationships'>('people');
   const [people, setPeople] = useState<Person[]>([]);
   const [events, setEvents] = useState<Event[]>([]);
+  const [relationships, setRelationships] = useState<RelationshipBundle>({
+    person_relationships: [],
+    person_events: [],
+    event_causalities: [],
+  });
   
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -16,6 +29,9 @@ export const AdminPage: React.FC = () => {
   // Edit states
   const [editingPerson, setEditingPerson] = useState<Partial<Person> | null>(null);
   const [editingEvent, setEditingEvent] = useState<Partial<Event> | null>(null);
+  const [editingPersonRelationship, setEditingPersonRelationship] = useState<Partial<PersonRelationship> | null>(null);
+  const [editingPersonEvent, setEditingPersonEvent] = useState<Partial<PersonEventRelation> | null>(null);
+  const [editingEventCausality, setEditingEventCausality] = useState<Partial<EventCausalityRelation> | null>(null);
   const [uploadingImage, setUploadingImage] = useState(false);
 
   const parseList = (value: string) => value.split(/[,，]/).map((item) => item.trim()).filter(Boolean);
@@ -64,13 +80,18 @@ export const AdminPage: React.FC = () => {
   };
 
   const fetchData = async () => {
-    const [pData, eData] = await Promise.all([
+    const [pData, eData, relationshipData] = await Promise.all([
       apiFetch<Person[]>('/people'),
       apiFetch<Event[]>('/event'),
+      apiFetch<RelationshipBundle>('/relationships'),
     ]);
     setPeople(pData);
     setEvents(eData);
+    setRelationships(relationshipData);
   };
+
+  const personName = (id?: string) => people.find((person) => person.id === id)?.name ?? id ?? '-';
+  const eventTitle = (id?: string) => events.find((event) => event.id === id)?.title ?? id ?? '-';
 
   const savePerson = async () => {
     if (!editingPerson?.name) return;
@@ -134,6 +155,103 @@ export const AdminPage: React.FC = () => {
     await fetchData();
   };
 
+  const savePersonRelationship = async () => {
+    if (!editingPersonRelationship?.person_a || !editingPersonRelationship.person_b || !editingPersonRelationship.relation_type) return;
+
+    const payload = {
+      person_a: editingPersonRelationship.person_a,
+      person_b: editingPersonRelationship.person_b,
+      relation_type: editingPersonRelationship.relation_type,
+      description: editingPersonRelationship.description,
+    };
+
+    if (editingPersonRelationship.id) {
+      await apiFetch<PersonRelationship>(`/relationships/person-relationships/${editingPersonRelationship.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        auth: true,
+      });
+    } else {
+      await apiFetch<PersonRelationship>('/relationships/person-relationships', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        auth: true,
+      });
+    }
+
+    setEditingPersonRelationship(null);
+    await fetchData();
+  };
+
+  const savePersonEvent = async () => {
+    if (!editingPersonEvent?.person_id || !editingPersonEvent.event_id || !editingPersonEvent.role) return;
+
+    const payload = {
+      person_id: editingPersonEvent.person_id,
+      event_id: editingPersonEvent.event_id,
+      role: editingPersonEvent.role,
+    };
+
+    if (editingPersonEvent.id) {
+      await apiFetch<PersonEventRelation>(`/relationships/person-events/${editingPersonEvent.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        auth: true,
+      });
+    } else {
+      await apiFetch<PersonEventRelation>('/relationships/person-events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        auth: true,
+      });
+    }
+
+    setEditingPersonEvent(null);
+    await fetchData();
+  };
+
+  const saveEventCausality = async () => {
+    if (!editingEventCausality?.cause_event_id || !editingEventCausality.effect_event_id) return;
+
+    const payload = {
+      cause_event_id: editingEventCausality.cause_event_id,
+      effect_event_id: editingEventCausality.effect_event_id,
+      description: editingEventCausality.description,
+    };
+
+    if (editingEventCausality.id) {
+      await apiFetch<EventCausalityRelation>(`/relationships/event-causalities/${editingEventCausality.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        auth: true,
+      });
+    } else {
+      await apiFetch<EventCausalityRelation>('/relationships/event-causalities', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        auth: true,
+      });
+    }
+
+    setEditingEventCausality(null);
+    await fetchData();
+  };
+
+  const deleteRelationship = async (path: string, message: string) => {
+    if (!confirm(message)) return;
+    await apiFetch<{ id: string }>(path, {
+      method: 'DELETE',
+      auth: true,
+    });
+    await fetchData();
+  };
+
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, isPerson: boolean) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -181,6 +299,12 @@ export const AdminPage: React.FC = () => {
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeTab === 'events' ? 'bg-white shadow-sm text-orange-600' : 'text-slate-500 hover:text-slate-700'}`}
           >
             事件
+          </button>
+          <button
+            onClick={() => setActiveTab('relationships')}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeTab === 'relationships' ? 'bg-white shadow-sm text-emerald-600' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            关系
           </button>
         </div>
       </div>
@@ -259,6 +383,188 @@ export const AdminPage: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'relationships' && (
+        <div className="space-y-6">
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+              <h2 className="font-semibold text-slate-700">人物关系</h2>
+              <button
+                onClick={() => setEditingPersonRelationship({
+                  person_a: people[0]?.id,
+                  person_b: people[1]?.id ?? people[0]?.id,
+                  relation_type: '',
+                })}
+                className="flex items-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+                disabled={people.length < 2}
+              >
+                <PlusIcon className="w-4 h-4" /> 新增人物关系
+              </button>
+            </div>
+            {editingPersonRelationship && (
+              <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1fr_1.5fr_auto]">
+                <select value={editingPersonRelationship.person_a || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, person_a: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
+                  {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
+                </select>
+                <select value={editingPersonRelationship.person_b || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, person_b: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
+                  {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
+                </select>
+                <input placeholder="关系类型" value={editingPersonRelationship.relation_type || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, relation_type: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <input placeholder="说明" value={editingPersonRelationship.description || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, description: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <div className="flex gap-2">
+                  <button onClick={() => setEditingPersonRelationship(null)} className="px-3 py-2 text-slate-500 hover:bg-slate-100 rounded-lg text-sm">取消</button>
+                  <button onClick={savePersonRelationship} className="px-3 py-2 bg-emerald-500 text-white rounded-lg text-sm">保存</button>
+                </div>
+              </div>
+            )}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm text-slate-600">
+                <thead className="bg-slate-50 text-slate-500 font-medium">
+                  <tr>
+                    <th className="px-6 py-3">人物 A</th>
+                    <th className="px-6 py-3">人物 B</th>
+                    <th className="px-6 py-3">类型</th>
+                    <th className="px-6 py-3">说明</th>
+                    <th className="px-6 py-3 text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {relationships.person_relationships.map(relationship => (
+                    <tr key={relationship.id} className="hover:bg-slate-50/50">
+                      <td className="px-6 py-4 font-semibold text-slate-800">{personName(relationship.person_a)}</td>
+                      <td className="px-6 py-4 font-semibold text-slate-800">{personName(relationship.person_b)}</td>
+                      <td className="px-6 py-4">{relationship.relation_type}</td>
+                      <td className="px-6 py-4">{relationship.description || '-'}</td>
+                      <td className="px-6 py-4 text-right space-x-2">
+                        <button onClick={() => setEditingPersonRelationship(relationship)} className="p-1.5 text-emerald-500 hover:bg-emerald-50 rounded-md transition-colors"><PencilIcon className="w-4 h-4" /></button>
+                        <button onClick={() => deleteRelationship(`/relationships/person-relationships/${relationship.id}`, '确定要删除这条人物关系吗？')} className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-md transition-colors"><TrashIcon className="w-4 h-4" /></button>
+                      </td>
+                    </tr>
+                  ))}
+                  {relationships.person_relationships.length === 0 && (
+                    <tr><td className="px-6 py-6 text-slate-400" colSpan={5}>暂无人物关系。</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+              <h2 className="font-semibold text-slate-700">事件参与</h2>
+              <button
+                onClick={() => setEditingPersonEvent({ person_id: people[0]?.id, event_id: events[0]?.id, role: '' })}
+                className="flex items-center gap-1 bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+                disabled={people.length === 0 || events.length === 0}
+              >
+                <PlusIcon className="w-4 h-4" /> 新增参与关系
+              </button>
+            </div>
+            {editingPersonEvent && (
+              <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]">
+                <select value={editingPersonEvent.person_id || ''} onChange={e => setEditingPersonEvent({ ...editingPersonEvent, person_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
+                  {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
+                </select>
+                <select value={editingPersonEvent.event_id || ''} onChange={e => setEditingPersonEvent({ ...editingPersonEvent, event_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
+                  {events.map(event => <option key={event.id} value={event.id}>{event.title}</option>)}
+                </select>
+                <input placeholder="角色" value={editingPersonEvent.role || ''} onChange={e => setEditingPersonEvent({ ...editingPersonEvent, role: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <div className="flex gap-2">
+                  <button onClick={() => setEditingPersonEvent(null)} className="px-3 py-2 text-slate-500 hover:bg-slate-100 rounded-lg text-sm">取消</button>
+                  <button onClick={savePersonEvent} className="px-3 py-2 bg-indigo-500 text-white rounded-lg text-sm">保存</button>
+                </div>
+              </div>
+            )}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm text-slate-600">
+                <thead className="bg-slate-50 text-slate-500 font-medium">
+                  <tr>
+                    <th className="px-6 py-3">人物</th>
+                    <th className="px-6 py-3">事件</th>
+                    <th className="px-6 py-3">角色</th>
+                    <th className="px-6 py-3 text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {relationships.person_events.map(relation => (
+                    <tr key={relation.id} className="hover:bg-slate-50/50">
+                      <td className="px-6 py-4 font-semibold text-slate-800">{personName(relation.person_id)}</td>
+                      <td className="px-6 py-4">{eventTitle(relation.event_id)}</td>
+                      <td className="px-6 py-4">{relation.role}</td>
+                      <td className="px-6 py-4 text-right space-x-2">
+                        <button onClick={() => setEditingPersonEvent(relation)} className="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-md transition-colors"><PencilIcon className="w-4 h-4" /></button>
+                        <button onClick={() => deleteRelationship(`/relationships/person-events/${relation.id}`, '确定要删除这条参与关系吗？')} className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-md transition-colors"><TrashIcon className="w-4 h-4" /></button>
+                      </td>
+                    </tr>
+                  ))}
+                  {relationships.person_events.length === 0 && (
+                    <tr><td className="px-6 py-6 text-slate-400" colSpan={4}>暂无事件参与关系。</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+              <h2 className="font-semibold text-slate-700">事件因果</h2>
+              <button
+                onClick={() => setEditingEventCausality({
+                  cause_event_id: events[0]?.id,
+                  effect_event_id: events[1]?.id ?? events[0]?.id,
+                })}
+                className="flex items-center gap-1 bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+                disabled={events.length < 2}
+              >
+                <PlusIcon className="w-4 h-4" /> 新增因果关系
+              </button>
+            </div>
+            {editingEventCausality && (
+              <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1.5fr_auto]">
+                <select value={editingEventCausality.cause_event_id || ''} onChange={e => setEditingEventCausality({ ...editingEventCausality, cause_event_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
+                  {events.map(event => <option key={event.id} value={event.id}>{event.title}</option>)}
+                </select>
+                <select value={editingEventCausality.effect_event_id || ''} onChange={e => setEditingEventCausality({ ...editingEventCausality, effect_event_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
+                  {events.map(event => <option key={event.id} value={event.id}>{event.title}</option>)}
+                </select>
+                <input placeholder="说明" value={editingEventCausality.description || ''} onChange={e => setEditingEventCausality({ ...editingEventCausality, description: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <div className="flex gap-2">
+                  <button onClick={() => setEditingEventCausality(null)} className="px-3 py-2 text-slate-500 hover:bg-slate-100 rounded-lg text-sm">取消</button>
+                  <button onClick={saveEventCausality} className="px-3 py-2 bg-amber-500 text-white rounded-lg text-sm">保存</button>
+                </div>
+              </div>
+            )}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm text-slate-600">
+                <thead className="bg-slate-50 text-slate-500 font-medium">
+                  <tr>
+                    <th className="px-6 py-3">原因事件</th>
+                    <th className="px-6 py-3">结果事件</th>
+                    <th className="px-6 py-3">说明</th>
+                    <th className="px-6 py-3 text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {relationships.event_causalities.map(relation => (
+                    <tr key={relation.id} className="hover:bg-slate-50/50">
+                      <td className="px-6 py-4 font-semibold text-slate-800">{eventTitle(relation.cause_event_id)}</td>
+                      <td className="px-6 py-4">{eventTitle(relation.effect_event_id)}</td>
+                      <td className="px-6 py-4">{relation.description || '-'}</td>
+                      <td className="px-6 py-4 text-right space-x-2">
+                        <button onClick={() => setEditingEventCausality(relation)} className="p-1.5 text-amber-500 hover:bg-amber-50 rounded-md transition-colors"><PencilIcon className="w-4 h-4" /></button>
+                        <button onClick={() => deleteRelationship(`/relationships/event-causalities/${relation.id}`, '确定要删除这条事件因果关系吗？')} className="p-1.5 text-rose-500 hover:bg-rose-50 rounded-md transition-colors"><TrashIcon className="w-4 h-4" /></button>
+                      </td>
+                    </tr>
+                  ))}
+                  {relationships.event_causalities.length === 0 && (
+                    <tr><td className="px-6 py-6 text-slate-400" colSpan={4}>暂无事件因果关系。</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}

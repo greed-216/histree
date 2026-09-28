@@ -25,7 +25,7 @@ export function TopicPage() {
           {data.description}
         </p>
       </header>
-      {events.data && <TopicExplorer key={data.id} events={events.data.filter(e => ids.has(e.id))} people={people.data ?? []} />}
+      {events.data && <TopicExplorer key={data.id} events={[...ids].flatMap(id => events.data!.filter(e => e.id === id))} people={people.data ?? []} />}
       <div className="grid lg:grid-cols-[1fr_260px] gap-12">
         <div className="space-y-12">
           <LoadState {...people} />

@@ -18,7 +18,7 @@ export function TopicExplorer({ events, people }: { events: Event[]; people: Per
     // Undated events remain available and are explicitly labelled, never assigned a fabricated year.
     if (e.start_year == null) return true;
     return (from === '' || (e.end_year ?? e.start_year) >= Number(from)) && (to === '' || e.start_year <= Number(to));
-  }).sort((a, b) => (a.start_year ?? Infinity) - (b.start_year ?? Infinity) || a.title.localeCompare(b.title, 'zh'));
+  }).sort((a, b) => (a.start_year ?? Infinity) - (b.start_year ?? Infinity));
   const selected = visible.find(e => e.id === selectedId) ?? visible[0];
   const participantIds = new Set(relationships.data?.person_events.filter(r => events.some(e => e.id === r.event_id)).map(r => r.person_id));
   if (!events.length) return <section className="reading-card"><h2 className="text-xl font-serif">时间与地点</h2><p className="mt-3 text-slate-500">关联事件整理后，将在这里展示时间线与地图。</p></section>;

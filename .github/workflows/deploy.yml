@@ -32,7 +32,13 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate application and publication policies
+        run: |
+          pnpm test
+          pnpm --filter api build
+          pnpm --filter web lint
 
       - name: Build frontend
         run: pnpm --filter web build

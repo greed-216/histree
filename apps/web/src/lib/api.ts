@@ -1,4 +1,4 @@
-import { supabase } from '../supabaseClient';
+import { supabase, publicSupabase } from '../supabaseClient';
 import type { Edge, Event, GraphResponse, Person, RelationshipBundle } from '@histree/shared-types';
 
 const API_BASE = import.meta.env.VITE_API_URL as string | undefined;
@@ -39,16 +39,34 @@ export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promi
   });
 
   if (!response.ok) {
-    const message = await response.text();
-    throw new Error(message || `Request failed with status ${response.status}`);
+    const body = await response.text();
+    let message = body;
+    try { const parsed = JSON.parse(body); message = Array.isArray(parsed.message) ? parsed.message.join('；') : parsed.message || body; } catch { /* Response may be plain text. */ }
+    throw new Error(message || `请求失败（${response.status}）`);
   }
 
   return response.json() as Promise<T>;
 }
 
 async function supabasePublicFetch<T>(path: string): Promise<T> {
+  if (path === '/topics' || path.startsWith('/topics/')) {
+    const slug = path.startsWith('/topics/') ? decodeURIComponent(path.slice(8)) : null;
+    let query = publicSupabase.from('topic').select('*').eq('status', 'published').order('created_at');
+    if (slug) query = query.eq('slug', slug);
+    const { data, error } = await query;
+    if (error) throw error;
+    if (slug && !data?.length) throw new Error('专题尚未发布或不存在');
+    return (slug ? data![0] : data ?? []) as T;
+  }
+  if (path.startsWith('/evidence/')) {
+    const [, , subject, id] = path.split('/');
+    const { data, error } = await publicSupabase.from('fact_claim').select('*, source:source_id(*)')
+      .eq('status', 'published').eq('subject_table', subject).eq('subject_id', id);
+    if (error) throw error;
+    return (data ?? []) as T;
+  }
   if (path === '/people') {
-    const { data, error } = await supabase
+    const { data, error } = await publicSupabase
       .from('person')
       .select('*')
       .order('created_at', { ascending: false });
@@ -58,7 +76,7 @@ async function supabasePublicFetch<T>(path: string): Promise<T> {
   }
 
   if (path === '/event') {
-    const { data, error } = await supabase
+    const { data, error } = await publicSupabase
       .from('event')
       .select('*')
       .order('start_year', { ascending: true });
@@ -81,9 +99,9 @@ async function supabasePublicFetch<T>(path: string): Promise<T> {
 
 async function getRelationshipsFromSupabase(): Promise<RelationshipBundle> {
   const [personRelationships, personEvents, eventCausalities] = await Promise.all([
-    supabase.from('person_relationship').select('*').order('created_at', { ascending: false }),
-    supabase.from('person_event').select('*').order('created_at', { ascending: false }),
-    supabase.from('event_causality').select('*').order('created_at', { ascending: false }),
+    publicSupabase.from('person_relationship').select('*').order('created_at', { ascending: false }),
+    publicSupabase.from('person_event').select('*').order('created_at', { ascending: false }),
+    publicSupabase.from('event_causality').select('*').order('created_at', { ascending: false }),
   ]);
 
   if (personRelationships.error) throw personRelationships.error;
@@ -98,7 +116,7 @@ async function getRelationshipsFromSupabase(): Promise<RelationshipBundle> {
 }
 
 async function getGraphFromSupabase(id: string): Promise<GraphResponse> {
-  const { data: personData, error: personError } = await supabase
+  const { data: personData, error: personError } = await publicSupabase
     .from('person')
     .select('*')
     .eq('id', id)
@@ -108,7 +126,7 @@ async function getGraphFromSupabase(id: string): Promise<GraphResponse> {
 
   const { data: eventData, error: eventError } = personData
     ? { data: null, error: null }
-    : await supabase.from('event').select('*').eq('id', id).maybeSingle();
+    : await publicSupabase.from('event').select('*').eq('id', id).maybeSingle();
 
   if (eventError) throw eventError;
 
@@ -130,9 +148,9 @@ async function getGraphFromSupabase(id: string): Promise<GraphResponse> {
     relatedPersonIds.add(id);
 
     const [{ data: relsA, error: relsAError }, { data: relsB, error: relsBError }, { data: personEvents, error: personEventsError }] = await Promise.all([
-      supabase.from('person_relationship').select('person_b, relation_type, description').eq('person_a', id),
-      supabase.from('person_relationship').select('person_a, relation_type, description').eq('person_b', id),
-      supabase.from('person_event').select('event_id, role').eq('person_id', id),
+      publicSupabase.from('person_relationship').select('id, person_b, relation_type, description').eq('person_a', id),
+      publicSupabase.from('person_relationship').select('id, person_a, relation_type, description').eq('person_b', id),
+      publicSupabase.from('person_event').select('id, event_id, role').eq('person_id', id),
     ]);
 
     if (relsAError) throw relsAError;
@@ -141,25 +159,25 @@ async function getGraphFromSupabase(id: string): Promise<GraphResponse> {
 
     relsA?.forEach((relationship) => {
       relatedPersonIds.add(relationship.person_b);
-      edges.push({ source: id, target: relationship.person_b, type: relationship.relation_type, description: relationship.description });
+      edges.push({ id: relationship.id, subject_table: 'person_relationship', source: id, target: relationship.person_b, type: relationship.relation_type, description: relationship.description });
     });
 
     relsB?.forEach((relationship) => {
       relatedPersonIds.add(relationship.person_a);
-      edges.push({ source: relationship.person_a, target: id, type: relationship.relation_type, description: relationship.description });
+      edges.push({ id: relationship.id, subject_table: 'person_relationship', source: relationship.person_a, target: id, type: relationship.relation_type, description: relationship.description });
     });
 
     personEvents?.forEach((personEvent) => {
       relatedEventIds.add(personEvent.event_id);
-      edges.push({ source: id, target: personEvent.event_id, type: personEvent.role });
+      edges.push({ id: personEvent.id, subject_table: 'person_event', source: id, target: personEvent.event_id, type: personEvent.role });
     });
   } else {
     relatedEventIds.add(id);
 
     const [{ data: eventPeople, error: eventPeopleError }, { data: effects, error: effectsError }, { data: causes, error: causesError }] = await Promise.all([
-      supabase.from('person_event').select('person_id, role').eq('event_id', id),
-      supabase.from('event_causality').select('effect_event_id, description').eq('cause_event_id', id),
-      supabase.from('event_causality').select('cause_event_id, description').eq('effect_event_id', id),
+      publicSupabase.from('person_event').select('id, person_id, role').eq('event_id', id),
+      publicSupabase.from('event_causality').select('id, effect_event_id, description').eq('cause_event_id', id),
+      publicSupabase.from('event_causality').select('id, cause_event_id, description').eq('effect_event_id', id),
     ]);
 
     if (eventPeopleError) throw eventPeopleError;
@@ -168,17 +186,17 @@ async function getGraphFromSupabase(id: string): Promise<GraphResponse> {
 
     eventPeople?.forEach((eventPerson) => {
       relatedPersonIds.add(eventPerson.person_id);
-      edges.push({ source: eventPerson.person_id, target: id, type: eventPerson.role });
+      edges.push({ id: eventPerson.id, subject_table: 'person_event', source: eventPerson.person_id, target: id, type: eventPerson.role });
     });
 
     effects?.forEach((effect) => {
       relatedEventIds.add(effect.effect_event_id);
-      edges.push({ source: id, target: effect.effect_event_id, type: 'causes', description: effect.description });
+      edges.push({ id: effect.id, subject_table: 'event_causality', source: id, target: effect.effect_event_id, type: 'causes', description: effect.description });
     });
 
     causes?.forEach((cause) => {
       relatedEventIds.add(cause.cause_event_id);
-      edges.push({ source: cause.cause_event_id, target: id, type: 'causes', description: cause.description });
+      edges.push({ id: cause.id, subject_table: 'event_causality', source: cause.cause_event_id, target: id, type: 'causes', description: cause.description });
     });
   }
 
@@ -190,20 +208,20 @@ async function getGraphFromSupabase(id: string): Promise<GraphResponse> {
   return {
     center,
     nodes: [...people, ...events],
-    edges,
+    edges: edges.filter(e => [...people, ...events].some(n => n.id === e.source) && [...people, ...events].some(n => n.id === e.target)),
   };
 }
 
 async function getPeopleByIds(ids: string[]): Promise<Person[]> {
   if (ids.length === 0) return [];
-  const { data, error } = await supabase.from('person').select('*').in('id', ids);
+  const { data, error } = await publicSupabase.from('person').select('*').in('id', ids);
   if (error) throw error;
   return (data ?? []).map((person) => ({ ...person, type: 'person' }) as Person);
 }
 
 async function getEventsByIds(ids: string[]): Promise<Event[]> {
   if (ids.length === 0) return [];
-  const { data, error } = await supabase.from('event').select('*').in('id', ids);
+  const { data, error } = await publicSupabase.from('event').select('*').in('id', ids);
   if (error) throw error;
   return (data ?? []).map((event) => ({ ...event, type: 'event' }) as Event);
 }

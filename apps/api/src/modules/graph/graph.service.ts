@@ -42,39 +42,39 @@ export class GraphService {
         relatedPersonIds.add(id);
         
         // relationships
-        const { data: relsA, error: relsAError } = await supabase.from('person_relationship').select('person_b, relation_type, description').eq('person_a', id);
-        const { data: relsB, error: relsBError } = await supabase.from('person_relationship').select('person_a, relation_type, description').eq('person_b', id);
+        const { data: relsA, error: relsAError } = await supabase.from('person_relationship').select('id, person_b, relation_type, description').eq('person_a', id);
+        const { data: relsB, error: relsBError } = await supabase.from('person_relationship').select('id, person_a, relation_type, description').eq('person_b', id);
         if (relsAError) throw relsAError;
         if (relsBError) throw relsBError;
         
-        relsA?.forEach(r => { relatedPersonIds.add(r.person_b); edges.push({ source: id, target: r.person_b, type: r.relation_type, description: r.description }); });
-        relsB?.forEach(r => { relatedPersonIds.add(r.person_a); edges.push({ source: r.person_a, target: id, type: r.relation_type, description: r.description }); });
+        relsA?.forEach(r => { relatedPersonIds.add(r.person_b); edges.push({ id: r.id, subject_table: 'person_relationship', source: id, target: r.person_b, type: r.relation_type, description: r.description }); });
+        relsB?.forEach(r => { relatedPersonIds.add(r.person_a); edges.push({ id: r.id, subject_table: 'person_relationship', source: r.person_a, target: id, type: r.relation_type, description: r.description }); });
 
         // events
-        const { data: personEvents, error: personEventsError } = await supabase.from('person_event').select('event_id, role').eq('person_id', id);
+        const { data: personEvents, error: personEventsError } = await supabase.from('person_event').select('id, event_id, role').eq('person_id', id);
         if (personEventsError) throw personEventsError;
 
-        personEvents?.forEach(pe => { relatedEventIds.add(pe.event_id); edges.push({ source: id, target: pe.event_id, type: pe.role }); });
+        personEvents?.forEach(pe => { relatedEventIds.add(pe.event_id); edges.push({ id: pe.id, subject_table: 'person_event', source: id, target: pe.event_id, type: pe.role }); });
       } else {
         relatedEventIds.add(id);
 
         // people in this event
-        const { data: eventPeople, error: eventPeopleError } = await supabase.from('person_event').select('person_id, role').eq('event_id', id);
+        const { data: eventPeople, error: eventPeopleError } = await supabase.from('person_event').select('id, person_id, role').eq('event_id', id);
         if (eventPeopleError) throw eventPeopleError;
 
-        eventPeople?.forEach(ep => { relatedPersonIds.add(ep.person_id); edges.push({ source: ep.person_id, target: id, type: ep.role }); });
+        eventPeople?.forEach(ep => { relatedPersonIds.add(ep.person_id); edges.push({ id: ep.id, subject_table: 'person_event', source: ep.person_id, target: id, type: ep.role }); });
 
         // causalities where event is cause
-        const { data: effects, error: effectsError } = await supabase.from('event_causality').select('effect_event_id, description').eq('cause_event_id', id);
+        const { data: effects, error: effectsError } = await supabase.from('event_causality').select('id, effect_event_id, description').eq('cause_event_id', id);
         if (effectsError) throw effectsError;
 
-        effects?.forEach(e => { relatedEventIds.add(e.effect_event_id); edges.push({ source: id, target: e.effect_event_id, type: 'causes', description: e.description }); });
+        effects?.forEach(e => { relatedEventIds.add(e.effect_event_id); edges.push({ id: e.id, subject_table: 'event_causality', source: id, target: e.effect_event_id, type: 'causes', description: e.description }); });
 
         // causalities where event is effect
-        const { data: causes, error: causesError } = await supabase.from('event_causality').select('cause_event_id, description').eq('effect_event_id', id);
+        const { data: causes, error: causesError } = await supabase.from('event_causality').select('id, cause_event_id, description').eq('effect_event_id', id);
         if (causesError) throw causesError;
 
-        causes?.forEach(c => { relatedEventIds.add(c.cause_event_id); edges.push({ source: c.cause_event_id, target: id, type: 'causes', description: c.description }); });
+        causes?.forEach(c => { relatedEventIds.add(c.cause_event_id); edges.push({ id: c.id, subject_table: 'event_causality', source: c.cause_event_id, target: id, type: 'causes', description: c.description }); });
       }
 
       // Fetch the related details
@@ -96,7 +96,7 @@ export class GraphService {
       if (relatedEventIds.size > 0) {
         const { data: causalities, error: causalitiesError } = await supabase
           .from('event_causality')
-          .select('cause_event_id, effect_event_id, description')
+          .select('id, cause_event_id, effect_event_id, description')
           .in('cause_event_id', Array.from(relatedEventIds))
           .in('effect_event_id', Array.from(relatedEventIds));
         if (causalitiesError) throw causalitiesError;
@@ -105,7 +105,7 @@ export class GraphService {
           // Avoid duplicate edge
           const exists = edges.some(e => e.source === c.cause_event_id && e.target === c.effect_event_id);
           if (!exists) {
-            edges.push({ source: c.cause_event_id, target: c.effect_event_id, type: 'causes', description: c.description });
+            edges.push({ id: c.id, subject_table: 'event_causality', source: c.cause_event_id, target: c.effect_event_id, type: 'causes', description: c.description });
           }
         });
       }
@@ -115,7 +115,8 @@ export class GraphService {
         ...eventsData.map(e => ({ ...e, type: 'event' } as Event))
       ];
 
-      return { center: centerNode, nodes, edges };
+      const visible = new Set(nodes.map(n => n.id));
+      return { center: centerNode, nodes, edges: edges.filter(e => visible.has(e.source) && visible.has(e.target)) };
     } catch (err) {
       this.logger.error('Failed to fetch graph data', err);
       throw err;

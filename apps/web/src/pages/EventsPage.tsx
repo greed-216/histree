@@ -8,6 +8,7 @@ import { formatDisplayRange, primaryReference } from '../lib/content';
 export const EventsPage: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     apiFetch<Event[]>('/event')
@@ -17,6 +18,7 @@ export const EventsPage: React.FC = () => {
       })
       .catch(err => {
         console.error(err);
+        setError(true);
         setLoading(false);
       });
   }, []);
@@ -30,6 +32,8 @@ export const EventsPage: React.FC = () => {
         <h1 className="text-3xl font-bold text-slate-800 tracking-tight">历史事件</h1>
       </div>
 
+      <Link to="/search" className="inline-block text-teal-700 text-sm">搜索姓名、别名与标签 →</Link>
+      {error && <p role="alert" className="text-rose-700">加载失败，请刷新重试。</p>}
       {loading ? (
         <div className="flex justify-center py-12 text-slate-400">加载中...</div>
       ) : (
@@ -37,7 +41,7 @@ export const EventsPage: React.FC = () => {
           {events.map(event => (
             <Link 
               key={event.id} 
-              to={`/graph/${event.id}`}
+              to={`/events/${event.id}`}
               className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all group"
             >
               <div className="flex items-center justify-between mb-4">

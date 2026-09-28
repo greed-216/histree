@@ -1,3 +1,4 @@
+import { EditorialModule } from './modules/editorial/editorial.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
@@ -20,6 +21,7 @@ import { RelationshipModule } from './modules/relationship/relationship.module';
     TimelineModule,
     UploadModule,
     RelationshipModule,
+    EditorialModule,
   ],
   controllers: [AppController],
   providers: [AppService],

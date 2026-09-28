@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>Histree 历史之树</title></head>
+<body><p>正在打开历史条目…</p><script>
+// GitHub Pages cannot rewrite nested SPA routes. Preserve the path, query and anchor.
+const target = location.pathname + location.search + location.hash;
+location.replace('/histree/?redirect=' + encodeURIComponent(target));
+</script><noscript>请启用 JavaScript，或<a href="/histree/">返回首页</a>。</noscript></body></html>

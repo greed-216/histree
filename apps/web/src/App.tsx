@@ -1,26 +1,32 @@
-import { useEffect, useState } from 'react';
+import type { Session } from '@supabase/supabase-js';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
 import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { getCurrentUserRole } from './lib/api';
 import { ExplorePage } from './pages/ExplorePage';
-import { GraphPage } from './pages/GraphPage';
+const GraphPage = lazy(() => import('./pages/GraphPage').then(m => ({ default: m.GraphPage })));
 import { PeoplePage } from './pages/PeoplePage';
 import { EventsPage } from './pages/EventsPage';
-import { AdminPage } from './pages/AdminPage';
+const AdminPage = lazy(() => import('./pages/AdminPage').then(m => ({ default: m.AdminPage })));
+const EditorialPage = lazy(() => import('./pages/EditorialPage').then(m => ({ default: m.EditorialPage })));
+import { TopicPage } from './pages/TopicPage';
+import { EntryPage } from './pages/EntryPage';
+import { SearchPage } from './pages/SearchPage';
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
 
 function App() {
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const location = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
 
   useEffect(() => {
     let cancelled = false;
 
-    const refreshAuthState = async (nextSession: any) => {
+    const refreshAuthState = async (nextSession: Session | null) => {
       setSession(nextSession);
       if (!nextSession) {
         setIsAdmin(false);
@@ -71,11 +77,11 @@ function App() {
     }`;
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#faf9f6] flex flex-col font-sans">
       {/* Top Navigation */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 min-h-16 py-3 flex flex-wrap gap-3 items-center justify-between">
+          <div className="contents md:flex md:items-center md:gap-4">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center shadow-sm">
                 <SparklesIcon className="w-5 h-5 text-white" />
@@ -83,7 +89,7 @@ function App() {
               <span className="text-xl font-bold text-slate-800 tracking-tight">Histree</span>
             </Link>
             
-            <nav className="hidden md:flex items-center gap-2">
+            <nav aria-label="主导航" className="order-3 w-full md:order-none md:w-auto flex flex-wrap items-center gap-1">
               <Link to="/" className={navLinkClass('/')}>
                 <MapIcon className="w-4 h-4" />
                 探索
@@ -96,6 +102,7 @@ function App() {
                 <AcademicCapIcon className="w-4 h-4" />
                 事件
               </Link>
+              <Link to="/search" className={navLinkClass('/search')}>搜索</Link>
               {isAdmin && (
                 <Link to="/admin" className={navLinkClass('/admin')}>
                   <AdjustmentsHorizontalIcon className="w-4 h-4" />
@@ -124,6 +131,7 @@ function App() {
               </div>
             ) : (
               <button
+                aria-label="管理员登录"
                 onClick={() => setAuthModalOpen(true)}
                 className="flex items-center gap-2 text-slate-500 hover:text-slate-800 text-sm font-medium transition-colors"
               >
@@ -138,13 +146,19 @@ function App() {
 
       {/* Main Content */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-6 md:py-8">
-        <Routes>
+        <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
+          <Route path="/topics/:slug" element={<TopicPage />} />
+          <Route path="/people/:id" element={<EntryPage />} />
+          <Route path="/events/:id" element={<EntryPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
           <Route path="/graph/:id" element={<GraphPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/admin" element={<AdminPage />} />
-        </Routes>
+          <Route path="*" element={<div className="py-12 text-center">页面不存在。<Link className="text-teal-700" to="/">返回专题探索</Link></div>} />
+        </Routes></Suspense>
       </main>
 
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />

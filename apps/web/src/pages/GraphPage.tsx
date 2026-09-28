@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import * as d3 from 'd3';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import type { GraphResponse, Person, Event } from '@histree/shared-types';
+import type { GraphResponse, Person, Event, Edge } from '@histree/shared-types';
 import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { apiFetch } from '../lib/api';
+import { entryPath } from '../lib/reading';
+import { useResource } from '../hooks/useResource';
 import { edgeTypeLabel, formatDisplayRange, formatDisplayYear, referenceTypeLabel } from '../lib/content';
 
 // Fix leaflet default icon
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+delete (L.Icon.Default.prototype as L.Icon.Default & { _getIconUrl?: unknown })._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
   iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
@@ -20,32 +21,33 @@ const isPerson = (node: Person | Event): node is Person => node.type === 'person
 
 const tagList = (node: Person | Event) => node.tags ?? [];
 
+type GraphNode = (Person | Event) & d3.SimulationNodeDatum;
+type GraphEdge = Omit<Edge, 'source' | 'target'> & { source: GraphNode; target: GraphNode };
+const drag = (simulation: d3.Simulation<GraphNode, GraphEdge>) => {
+    function dragstarted(event: d3.D3DragEvent<SVGGElement, GraphNode, GraphNode>) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
+    }
+    function dragged(event: d3.D3DragEvent<SVGGElement, GraphNode, GraphNode>) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+    function dragended(event: d3.D3DragEvent<SVGGElement, GraphNode, GraphNode>) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+    return d3.drag<SVGGElement, GraphNode>().on('start', dragstarted).on('drag', dragged).on('end', dragended);
+  };
+
 export const GraphPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [data, setData] = useState<GraphResponse | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedNode, setSelectedNode] = useState<Person | Event | null>(null);
-
+  const { data, loading, error } = useResource<GraphResponse>(`/graph/${id}`);
+  const selectedNode = data?.center;
   const svgRef = useRef<SVGSVGElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!id) return;
-    setLoading(true);
-    setSelectedNode(null);
-
-    apiFetch<GraphResponse>(`/graph/${id}`)
-      .then((data: GraphResponse) => {
-        setData(data);
-        setSelectedNode(data.center);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Failed to fetch graph data:', err);
-        setLoading(false);
-      });
-  }, [id]);
 
   useEffect(() => {
     if (!data || !svgRef.current || !containerRef.current) return;
@@ -79,12 +81,14 @@ export const GraphPage: React.FC = () => {
       .attr('fill', '#94a3b8')
       .style('stroke','none');
 
-    const nodes = data.nodes.map(d => Object.create(d));
-    const edges = data.edges.map(d => Object.create(d));
+    const nodes: GraphNode[] = data.nodes.map(d => ({ ...d }));
+    const byId = new Map(nodes.map(n => [n.id, n]));
+    const edges: GraphEdge[] = data.edges.filter(e => byId.has(e.source) && byId.has(e.target))
+      .map(e => ({ ...e, source: byId.get(e.source)!, target: byId.get(e.target)! }));
 
     // Create defs for image patterns
     const defs = svg.select('defs');
-    nodes.forEach((n: any) => {
+    nodes.forEach((n) => {
       if (n.image_url) {
         defs.append('pattern')
           .attr('id', `img-${n.id}`)
@@ -99,8 +103,8 @@ export const GraphPage: React.FC = () => {
       }
     });
 
-    const simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(edges).id((d: any) => d.id).distance(180))
+    const simulation = d3.forceSimulation<GraphNode>(nodes)
+      .force('link', d3.forceLink<GraphNode, GraphEdge>(edges).id((d) => d.id).distance(180))
       .force('charge', d3.forceManyBody().strength(-800))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('collide', d3.forceCollide().radius(60));
@@ -110,9 +114,9 @@ export const GraphPage: React.FC = () => {
     const link = linkGroup.selectAll('line')
       .data(edges)
       .join('line')
-      .attr('stroke', (d: any) => d.type === 'causes' ? '#f87171' : '#cbd5e1')
-      .attr('stroke-width', (d: any) => d.type === 'causes' ? 3 : 2)
-      .attr('stroke-dasharray', (d: any) => d.type === 'causes' ? '4,4' : 'none')
+      .attr('stroke', (d) => d.type === 'causes' ? '#f87171' : '#cbd5e1')
+      .attr('stroke-width', (d) => d.type === 'causes' ? 3 : 2)
+      .attr('stroke-dasharray', (d) => d.type === 'causes' ? '4,4' : 'none')
       .attr('marker-end', 'url(#arrowhead)');
 
     // Link Labels
@@ -120,40 +124,36 @@ export const GraphPage: React.FC = () => {
       .data(edges)
       .join('text')
       .attr('class', 'link-label')
-      .text((d: any) => edgeTypeLabel(d.type))
+      .text((d) => edgeTypeLabel(d.type))
       .attr('font-size', '10px')
-      .attr('font-weight', (d: any) => d.type === 'causes' ? 'bold' : 'normal')
-      .attr('fill', (d: any) => d.type === 'causes' ? '#ef4444' : '#64748b')
+      .attr('font-weight', (d) => d.type === 'causes' ? 'bold' : 'normal')
+      .attr('fill', (d) => d.type === 'causes' ? '#ef4444' : '#64748b')
       .attr('text-anchor', 'middle')
       .attr('dy', -4)
       .style('background', 'white');
 
     // Nodes container
     const nodeGroup = svg.append('g').attr('class', 'nodes');
-    const node = nodeGroup.selectAll('g')
+    const node = nodeGroup.selectAll<SVGGElement, GraphNode>('g')
       .data(nodes)
       .join('g')
       .attr('class', 'node cursor-pointer')
-      .call(drag(simulation) as any)
-      .on('click', (_event, d: any) => {
-        setSelectedNode(d);
+      .call(drag(simulation))
+      .on('click', (_event, d) => {
         navigate(`/graph/${d.id}`);
       })
-      .on('mouseover', (event, d: any) => {
+      .on('mouseover', (event, d) => {
         d3.select(event.currentTarget).select(isPerson(d) ? 'circle' : 'rect')
           .transition().duration(200)
           .attr('stroke', '#3b82f6')
           .attr('stroke-width', 4);
         
         tooltip.transition().duration(200).style('opacity', 1);
-        tooltip.html(`
-          <div class="font-bold text-slate-800 mb-1">${isPerson(d) ? d.name : d.title}</div>
-          <div class="text-xs text-slate-500 mb-1">${isPerson(d) ? `时代：${d.era || '待补充'}` : `时间：${formatDisplayRange(d.start_year, d.end_year)}`}</div>
-        `)
-          .style('left', (event.pageX + 15) + 'px')
-          .style('top', (event.pageY - 28) + 'px');
+        tooltip.text(`${isPerson(d) ? d.name : d.title} · ${isPerson(d) ? d.era || '时代待补充' : formatDisplayRange(d.start_year, d.end_year)}`);
+        const [x, y] = d3.pointer(event, containerRef.current);
+        tooltip.style('left', `${x + 15}px`).style('top', `${y + 15}px`);
       })
-      .on('mouseout', (event, d: any) => {
+      .on('mouseout', (event, d) => {
         d3.select(event.currentTarget).select(isPerson(d) ? 'circle' : 'rect')
           .transition().duration(200)
           .attr('stroke', d.id === data.center?.id ? '#10b981' : '#fff')
@@ -162,73 +162,58 @@ export const GraphPage: React.FC = () => {
       });
 
     // Render Person as Circle
-    node.filter((d: any) => isPerson(d))
+    node.filter((d) => isPerson(d))
       .append('circle')
       .attr('r', 28)
-      .attr('fill', (d: any) => d.image_url ? `url(#img-${d.id})` : '#38bdf8') // sky-400
-      .attr('stroke', (d: any) => d.id === data.center?.id ? '#10b981' : '#fff')
-      .attr('stroke-width', (d: any) => d.id === data.center?.id ? 4 : 2)
+      .attr('fill', (d) => d.image_url ? `url(#img-${d.id})` : '#38bdf8') // sky-400
+      .attr('stroke', (d) => d.id === data.center?.id ? '#10b981' : '#fff')
+      .attr('stroke-width', (d) => d.id === data.center?.id ? 4 : 2)
       .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
 
     // Render Event as Rectangle
-    node.filter((d: any) => !isPerson(d))
+    node.filter((d) => !isPerson(d))
       .append('rect')
       .attr('width', 64)
       .attr('height', 48)
       .attr('x', -32)
       .attr('y', -24)
       .attr('rx', 12)
-      .attr('fill', (d: any) => d.image_url ? `url(#img-${d.id})` : '#fb923c') // orange-400
-      .attr('stroke', (d: any) => d.id === data.center?.id ? '#10b981' : '#fff')
-      .attr('stroke-width', (d: any) => d.id === data.center?.id ? 4 : 2)
+      .attr('fill', (d) => d.image_url ? `url(#img-${d.id})` : '#fb923c') // orange-400
+      .attr('stroke', (d) => d.id === data.center?.id ? '#10b981' : '#fff')
+      .attr('stroke-width', (d) => d.id === data.center?.id ? 4 : 2)
       .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
 
     node.append('text')
-      .text((d: any) => isPerson(d) ? d.name : d.title)
+      .text((d) => isPerson(d) ? d.name : d.title)
       .attr('font-size', '12px')
       .attr('font-weight', '600')
       .attr('fill', '#1e293b')
-      .attr('dx', (d: any) => isPerson(d) ? 34 : 36)
+      .attr('dx', (d) => isPerson(d) ? 34 : 36)
       .attr('dy', 4)
       .style('text-shadow', '0 1px 3px rgba(255,255,255,0.8), 0 -1px 3px rgba(255,255,255,0.8), 1px 0 3px rgba(255,255,255,0.8), -1px 0 3px rgba(255,255,255,0.8)');
 
     simulation.on('tick', () => {
       link
-        .attr('x1', (d: any) => d.source.x)
-        .attr('y1', (d: any) => d.source.y)
-        .attr('x2', (d: any) => d.target.x)
-        .attr('y2', (d: any) => d.target.y);
+        .attr('x1', (d) => (d.source.x ?? 0))
+        .attr('y1', (d) => (d.source.y ?? 0))
+        .attr('x2', (d) => (d.target.x ?? 0))
+        .attr('y2', (d) => (d.target.y ?? 0));
       
       linkLabel
-        .attr('x', (d: any) => (d.source.x + d.target.x) / 2)
-        .attr('y', (d: any) => (d.source.y + d.target.y) / 2);
+        .attr('x', (d) => ((d.source.x ?? 0) + (d.target.x ?? 0)) / 2)
+        .attr('y', (d) => ((d.source.y ?? 0) + (d.target.y ?? 0)) / 2);
 
-      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+      node.attr('transform', (d) => `translate(${d.x},${d.y})`);
     });
 
+    return () => { simulation.stop(); tooltip.remove(); };
   }, [data, navigate]);
-
-  const drag = (simulation: d3.Simulation<any, any>) => {
-    function dragstarted(event: any) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      event.subject.fx = event.subject.x;
-      event.subject.fy = event.subject.y;
-    }
-    function dragged(event: any) {
-      event.subject.fx = event.x;
-      event.subject.fy = event.y;
-    }
-    function dragended(event: any) {
-      if (!event.active) simulation.alphaTarget(0);
-      event.subject.fx = null;
-      event.subject.fy = null;
-    }
-    return d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended);
-  };
 
   if (loading) {
     return <div className="flex justify-center items-center h-96 text-slate-400">加载中...</div>;
   }
+
+  if (error) return <p role="alert" className="py-16 text-center">图谱暂时无法加载，请刷新重试。</p>;
 
   if (!data || !selectedNode) {
     return <div className="flex justify-center items-center h-96 text-slate-400">未找到该节点数据</div>;
@@ -272,6 +257,7 @@ export const GraphPage: React.FC = () => {
           <h1 className="text-3xl font-extrabold text-slate-800 mb-2">
             {isPerson(selectedNode) ? selectedNode.name : selectedNode.title}
           </h1>
+          <Link to={entryPath(selectedNode)} className="block text-teal-700 text-sm mb-4">阅读全文与出处 →</Link>
           <div className="inline-flex px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold border border-slate-200">
             {isPerson(selectedNode) ? selectedNode.era || '时代待补充' : formatDisplayRange(selectedNode.start_year, selectedNode.end_year)}
           </div>

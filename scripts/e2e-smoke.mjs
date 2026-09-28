@@ -56,3 +56,16 @@ await assertFetch('admin event causality create rejects anonymous user', `${API_
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ cause_event_id: 'event-a', effect_event_id: 'event-b' }),
 }, (response) => response.status === 401);
+
+for (const [method, path] of [
+  ['GET', '/editorial/person'],
+  ['GET', '/editorial/fact_claim'],
+  ['POST', '/editorial/topic'],
+  ['PATCH', '/editorial/source/88888888-8888-8888-8888-888888888001'],
+  ['DELETE', '/editorial/fact_claim/77777777-7777-7777-7777-777777777002'],
+]) {
+  await assertFetch(`editorial ${method} rejects anonymous user`, `${API_URL}/api/v1${path}`, {
+    method,
+    ...(method === 'POST' || method === 'PATCH' ? { headers: { 'Content-Type': 'application/json' }, body: '{}' } : {}),
+  }, response => response.status === 401);
+}

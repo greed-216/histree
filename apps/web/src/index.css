@@ -34,3 +34,15 @@
   transition: opacity 0.2s;
   z-index: 10;
 }
+
+@layer components {
+  .reading-hero { background: #173e39; color: #fffdf5; }
+  .eyebrow { @apply text-xs tracking-widest text-stone-500 font-medium; }
+  .reading-card { @apply bg-white border border-stone-200 rounded-2xl p-6 transition-colors hover:border-stone-300; }
+  .reading-input { @apply w-full border border-stone-300 rounded-xl px-4 py-3 bg-white text-slate-800; }
+  .reading-heading { @apply text-2xl font-serif mb-5; }
+  .reading-prose { @apply text-base md:text-lg leading-9 text-slate-700 whitespace-pre-line; }
+}
+:focus-visible { outline: 2px solid #0f766e; outline-offset: 4px; }
+button, summary { cursor: pointer; }
+button:disabled { cursor: wait; opacity: .5; }

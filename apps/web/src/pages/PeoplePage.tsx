@@ -8,6 +8,7 @@ import { primaryReference } from '../lib/content';
 export const PeoplePage: React.FC = () => {
   const [people, setPeople] = useState<Person[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     apiFetch<Person[]>('/people')
@@ -17,6 +18,7 @@ export const PeoplePage: React.FC = () => {
       })
       .catch(err => {
         console.error(err);
+        setError(true);
         setLoading(false);
       });
   }, []);
@@ -30,6 +32,8 @@ export const PeoplePage: React.FC = () => {
         <h1 className="text-3xl font-bold text-slate-800 tracking-tight">历史人物</h1>
       </div>
 
+      <Link to="/search" className="inline-block text-teal-700 text-sm">搜索姓名、别名与标签 →</Link>
+      {error && <p role="alert" className="text-rose-700">加载失败，请刷新重试。</p>}
       {loading ? (
         <div className="flex justify-center py-12 text-slate-400">加载中...</div>
       ) : (
@@ -37,7 +41,7 @@ export const PeoplePage: React.FC = () => {
           {people.map(person => (
             <Link 
               key={person.id} 
-              to={`/graph/${person.id}`}
+              to={`/people/${person.id}`}
               className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition-all group flex items-start gap-4"
             >
               <div className="w-14 h-14 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 font-bold text-lg overflow-hidden border border-slate-200 group-hover:border-sky-300 transition-colors">

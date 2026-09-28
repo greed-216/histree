@@ -1,3 +1,4 @@
+import { publicationStatus } from '../../common/publication';
 import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import type { EventDetail, Person, Event } from '@histree/shared-types';
 import { SupabaseService } from '../supabase/supabase.service';
@@ -149,6 +150,7 @@ export class EventService {
 
   private toEventRow(payload: Partial<Event>) {
     const { id: _id, type: _type, ...row } = payload;
+    publicationStatus(row.status);
     return row;
   }
 }

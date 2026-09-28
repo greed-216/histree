@@ -1,115 +1,98 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { SparklesIcon, UserIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
-import type { Event, Person } from '@histree/shared-types';
-import { apiFetch } from '../lib/api';
-import { formatDisplayRange, primaryReference } from '../lib/content';
-
-export const ExplorePage: React.FC = () => {
-  const [people, setPeople] = useState<Person[]>([]);
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    Promise.all([
-      apiFetch<Person[]>('/people'),
-      apiFetch<Event[]>('/event'),
-    ])
-      .then(([peopleData, eventsData]) => {
-        setPeople(peopleData);
-        setEvents(eventsData);
-      })
-      .catch((err) => {
-        console.error('Failed to load exploration data:', err);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
-  const recommendedPeople = people.slice(0, 4);
-  const recommendedEvents = events.slice(0, 4);
-  const featuredNode = useMemo(() => {
-    return events.find((event) => event.impact_level === 5) ?? events[0] ?? people[0];
-  }, [events, people]);
-
+import { Link } from "react-router-dom";
+import type { Topic } from "@histree/shared-types";
+import { useResource } from "../hooks/useResource";
+import { LoadState } from "../components/Reading";
+export function ExplorePage() {
+  const topics = useResource<Topic[]>("/topics");
   return (
-    <div className="flex flex-col items-center justify-center py-12 md:py-24 text-center max-w-2xl mx-auto space-y-12">
-      <div className="space-y-6">
-        <div className="inline-flex items-center justify-center p-4 bg-sky-100 rounded-3xl mb-4">
-          <SparklesIcon className="w-12 h-12 text-sky-500" />
+    <div className="space-y-12 pb-12">
+      <section className="reading-hero relative overflow-hidden rounded-3xl px-7 py-12 md:px-14 md:py-20">
+        <div className="relative z-10 max-w-2xl">
+          <p className="eyebrow text-teal-200!">HISTREE / 历史之树</p>
+          <h1 className="mt-6 text-4xl md:text-6xl leading-tight font-serif">
+            从一个问题，
+            <br />
+            走进一段历史。
+          </h1>
+          <p className="mt-6 text-teal-50/80 leading-8 max-w-lg">
+            读人物的选择，看事件的脉络。沿着关系探索，在史料中寻找依据。
+          </p>
+          <form
+            action={`${import.meta.env.BASE_URL}search`}
+            className="mt-8 flex gap-2 max-w-lg"
+          >
+            <label htmlFor="home-search" className="sr-only">
+              搜索历史人物、事件或专题
+            </label>
+            <input
+              id="home-search"
+              name="q"
+              placeholder="搜索人物、事件、专题…"
+              className="min-w-0 flex-1 bg-white text-slate-800 rounded-xl px-4 py-3"
+            />
+            <button className="rounded-xl px-5 py-3 bg-amber-100 text-stone-900 font-medium">
+              搜索
+            </button>
+          </form>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-slate-800 tracking-tight">
-          Histree 历史之树
-        </h1>
-        <p className="text-xl text-slate-500 max-w-lg mx-auto">
-          以人物、事件、关系和出处为核心，逐步搭建面向中国史的知识图谱平台。
-        </p>
-      </div>
-
-      <div className="w-full bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-        <h2 className="text-lg font-semibold text-slate-700 mb-6">推荐探索</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-3 text-left">
-            <h3 className="text-sm font-medium text-slate-400 flex items-center gap-2">
-              <UserIcon className="w-4 h-4" /> 人物
-            </h3>
-            <div className="grid grid-cols-1 gap-2">
-              {loading && <span className="text-sm text-slate-400">加载中...</span>}
-              {!loading && recommendedPeople.length === 0 && <span className="text-sm text-slate-400">暂无人物数据</span>}
-              {recommendedPeople.map((person) => (
-                <Link key={person.id} to={`/graph/${person.id}`} className="flex items-start gap-3 px-3 py-3 bg-slate-50 hover:bg-sky-50 border border-slate-200 hover:border-sky-200 rounded-xl text-slate-700 transition-colors">
-                  {person.image_url ? (
-                    <img src={person.image_url} alt={person.name} className="w-10 h-10 rounded-full object-cover border border-slate-200 shrink-0" />
-                  ) : (
-                    <div className="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-semibold shrink-0">
-                      {person.name.charAt(0)}
-                    </div>
-                  )}
-                  <div className="min-w-0">
-                    <div className="font-semibold text-slate-800">{person.name}</div>
-                    <div className="text-xs text-slate-500 mt-0.5">{person.era || '时代待补充'}{person.faction ? ` · ${person.faction}` : ''}</div>
-                    {primaryReference(person.references) && (
-                      <div className="text-xs text-sky-700 mt-1 line-clamp-1">
-                        参考：{primaryReference(person.references)?.title}
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-          
-          <div className="space-y-3 text-left">
-            <h3 className="text-sm font-medium text-slate-400 flex items-center gap-2">
-              <AcademicCapIcon className="w-4 h-4" /> 事件
-            </h3>
-            <div className="grid grid-cols-1 gap-2">
-              {loading && <span className="text-sm text-slate-400">加载中...</span>}
-              {!loading && recommendedEvents.length === 0 && <span className="text-sm text-slate-400">暂无事件数据</span>}
-              {recommendedEvents.map((event) => (
-                <Link key={event.id} to={`/graph/${event.id}`} className="block px-4 py-3 bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-orange-200 rounded-xl text-slate-700 transition-colors">
-                  <div className="font-semibold text-slate-800">{event.title}</div>
-                  <div className="text-xs text-slate-500 mt-0.5">{formatDisplayRange(event.start_year, event.end_year)}{event.dynasty ? ` · ${event.dynasty}` : ''}</div>
-                  {primaryReference(event.references) && (
-                    <div className="text-xs text-orange-700 mt-1 line-clamp-1">
-                      参考：{primaryReference(event.references)?.title}
-                    </div>
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
+        <div
+          aria-hidden="true"
+          className="absolute -right-12 -bottom-24 text-[280px] font-serif text-white/5 select-none"
+        >
+          史
         </div>
-
-        {featuredNode && (
-          <div className="mt-8 pt-8 border-t border-slate-100">
-            <Link to={`/graph/${featuredNode.id}`} className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-medium transition-colors shadow-sm">
-              <SparklesIcon className="w-5 h-5" />
-              开始探索
+      </section>
+      <section>
+        <div className="flex items-end justify-between mb-6">
+          <div>
+            <p className="eyebrow">从这里开始</p>
+            <h2 className="text-2xl font-serif mt-2">沿着专题阅读</h2>
+          </div>
+          <Link to="/search" className="text-sm text-teal-700">
+            全部条目 ↗
+          </Link>
+        </div>
+        <LoadState {...topics} />
+        <div className="grid md:grid-cols-2 gap-6">
+          {topics.data?.map((topic, index) => (
+            <Link
+              to={`/topics/${topic.slug}`}
+              key={topic.id}
+              className="reading-card group relative overflow-hidden"
+            >
+              <span className="eyebrow">
+                专题 {String(index + 1).padStart(2, "0")} ·{" "}
+                {topic.sections.length} 个阅读章节
+              </span>
+              <h3 className="font-serif text-3xl mt-5 group-hover:text-teal-700">
+                {topic.title}
+              </h3>
+              <p className="text-slate-600 leading-8 mt-4">
+                {topic.description}
+              </p>
+              <span className="inline-block mt-8 text-teal-700">
+                开始阅读 →
+              </span>
             </Link>
-          </div>
+          ))}
+        </div>
+        {topics.data?.length === 0 && (
+          <p className="text-slate-500">五代十国专题正在整理，审核完成后将在这里发布。</p>
         )}
-      </div>
+      </section>
+      <section className="grid sm:grid-cols-3 gap-6 border-t border-stone-200 pt-8">
+        {[
+          ["01", "读懂人物", "从生平、选择与关系理解人物。", "/people"],
+          ["02", "梳理事件", "把事件放回时间与参与者之中。", "/events"],
+          ["03", "顺着线索找", "按姓名、别名、标签寻找下一条线索。", "/search"],
+        ].map(([number, title, body, path]) => (
+          <Link key={number} to={path} className="p-2">
+            <span className="eyebrow">{number}</span>
+            <h3 className="text-lg font-semibold mt-3">{title} ↗</h3>
+            <p className="text-sm text-slate-500 leading-7 mt-2">{body}</p>
+          </Link>
+        ))}
+      </section>
     </div>
   );
-};
+}

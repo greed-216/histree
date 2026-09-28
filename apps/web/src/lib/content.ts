@@ -35,6 +35,24 @@ export const edgeTypeLabel = (type: string) => {
   switch (type) {
     case 'causes':
       return '因果';
+    case 'hegemon':
+      return '霸主';
+    case 'strategist':
+      return '谋划者';
+    case 'patron':
+      return '支持者';
+    case 'envoy':
+      return '使者';
+    case 'defender':
+      return '防守方';
+    case 'rival':
+      return '竞争者';
+    case 'reformer':
+      return '改革主持者';
+    case 'commander':
+      return '统帅';
+    case 'diplomat':
+      return '外交参与者';
     case 'participant':
       return '参与';
     case 'ruler':

@@ -1,3 +1,4 @@
+import { publicationStatus } from '../../common/publication';
 import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common';
 import type {
   EventCausalityRelation,
@@ -173,6 +174,7 @@ export class RelationshipService {
     }
 
     return {
+      status: publicationStatus(payload.status),
       person_a,
       person_b,
       relation_type,
@@ -189,7 +191,7 @@ export class RelationshipService {
       throw new BadRequestException('person_id, event_id, and role are required');
     }
 
-    return { person_id, event_id, role };
+    return { person_id, event_id, role, status: publicationStatus(payload.status) };
   }
 
   private normalizeEventCausality(payload: Partial<EventCausalityRelationInput>): EventCausalityRelationInput {
@@ -205,6 +207,7 @@ export class RelationshipService {
     }
 
     return {
+      status: publicationStatus(payload.status),
       cause_event_id,
       effect_event_id,
       description: this.optionalText(payload.description),

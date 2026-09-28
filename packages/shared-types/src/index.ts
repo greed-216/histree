@@ -1,4 +1,5 @@
 export interface Person {
+  status?: PublicationStatus;
   id: string;
   name: string;
   courtesy_name?: string;
@@ -29,6 +30,7 @@ export interface Person {
 }
 
 export interface Event {
+  status?: PublicationStatus;
   id: string;
   title: string;
   start_year?: number;
@@ -48,10 +50,16 @@ export interface Event {
   location_lat?: number;
   location_lng?: number;
   location_name?: string;
+  location_modern_name?: string;
+  location_precision?: 'site' | 'approximate' | 'region' | 'unknown';
+  location_note?: string;
+  time_original?: string;
   type: 'event';
 }
 
 export interface Edge {
+  id?: string;
+  subject_table?: ClaimSubject;
   source: string; // id of node
   target: string; // id of node
   type: string; // enemy / ally / participated / causes / etc.
@@ -59,6 +67,7 @@ export interface Edge {
 }
 
 export interface PersonRelationship {
+  status?: PublicationStatus;
   id: string;
   person_a: string;
   person_b: string;
@@ -70,6 +79,7 @@ export interface PersonRelationship {
 export type PersonRelationshipInput = Omit<PersonRelationship, 'id' | 'created_at'>;
 
 export interface PersonEventRelation {
+  status?: PublicationStatus;
   id: string;
   person_id: string;
   event_id: string;
@@ -80,6 +90,7 @@ export interface PersonEventRelation {
 export type PersonEventRelationInput = Omit<PersonEventRelation, 'id' | 'created_at'>;
 
 export interface EventCausalityRelation {
+  status?: PublicationStatus;
   id: string;
   cause_event_id: string;
   effect_event_id: string;
@@ -121,6 +132,7 @@ export interface Source {
 }
 
 export interface FactClaim {
+  status?: PublicationStatus;
   id: string;
   subject_table: string;
   subject_id: string;
@@ -138,3 +150,15 @@ export interface ReferenceLink {
   url?: string;
   note?: string;
 }
+
+export type PublicationStatus = 'draft' | 'published';
+export type ClaimSubject = 'person' | 'event' | 'person_relationship' | 'person_event' | 'event_causality';
+export interface Topic {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  status: PublicationStatus;
+  sections: Array<{ heading: string; body: string; node_ids: string[] }>;
+}
+export interface EvidenceClaim extends FactClaim { source: Source | null }

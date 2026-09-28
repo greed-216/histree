@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import type { Event, Person, RelationshipBundle } from '@histree/shared-types';
 import { useResource } from '../hooks/useResource';
 import { formatDisplayRange } from '../lib/content';
+const HistoricalMap = lazy(() => import('./HistoricalMap'));
 const TopicMap = lazy(() => import('./TopicMap'));
 const precisionLabels = { site: '已定位城址／遗址', approximate: '概略位置', region: '区域代表点', unknown: '定位精度待核对' };
 export function TopicExplorer({ events, people }: { events: Event[]; people: Person[] }) {
   const relationships = useResource<RelationshipBundle>('/relationships');
+  const [mapMode, setMapMode] = useState<'historical' | 'modern'>('historical');
   const [personId, setPersonId] = useState('');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
@@ -39,7 +41,11 @@ export function TopicExplorer({ events, people }: { events: Event[]; people: Per
         {!visible.length && <li className="p-4 text-slate-500">没有符合条件的事件。</li>}
       </ol>
       <div className="min-w-0 space-y-4">
-        <Suspense fallback={<p role="status">正在加载地图…</p>}><TopicMap events={visible} selected={selected} onSelect={setSelectedId} /></Suspense>
+        <div className="flex gap-2" aria-label="地图类型">
+          <button aria-pressed={mapMode === 'historical'} className={`rounded-lg border px-3 py-2 text-sm ${mapMode === 'historical' ? 'bg-teal-800 text-white' : 'bg-white'}`} onClick={() => setMapMode('historical')}>历史形势图（907）</button>
+          <button aria-pressed={mapMode === 'modern'} className={`rounded-lg border px-3 py-2 text-sm ${mapMode === 'modern' ? 'bg-teal-800 text-white' : 'bg-white'}`} onClick={() => setMapMode('modern')}>现代地理底图</button>
+        </div>
+        <Suspense fallback={<p role="status">正在加载地图…</p>}>{mapMode === 'historical' ? <HistoricalMap selected={selected} /> : <TopicMap events={visible} selected={selected} onSelect={setSelectedId} />}</Suspense>
         {selected && <article className="reading-card" aria-label="选中事件">
           <h3 className="text-xl font-semibold">{selected.title}</h3>
           <p className="text-sm text-slate-500 mt-2">{formatDisplayRange(selected.start_year, selected.end_year)}{selected.time_original ? ` · 原纪年：${selected.time_original}` : ''}</p>

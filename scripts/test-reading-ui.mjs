@@ -73,6 +73,8 @@ try {
   assert.equal(await page.locator('section[id^="chapter-"]').count(),3);
   const timeline = page.getByRole('list',{name:'专题事件时间线'});
   await timeline.getByRole('button',{name:/测试事件甲/}).waitFor();
+  await page.getByRole('heading', {name:'907 年形势参考图 · 史图馆'}).waitFor();
+  await page.getByRole('button', {name:'现代地理底图', exact:true}).click();
   await page.getByTitle('测试地点甲 · 1 个事件',{exact:true}).waitFor();
   await timeline.getByRole('button',{name:/测试事件乙/}).click();
   await page.getByRole('article',{name:'选中事件'}).getByRole('heading',{name:'测试事件乙'}).waitFor();

@@ -28,7 +28,7 @@ export function VisualExplorePage({ mode }: { mode: 'graph' | 'map' }) {
       <h1 className="font-serif text-3xl">{mode === 'graph' ? '人物与事件图谱' : '历史地图'}</h1>
       <p className="mt-3 text-slate-600 leading-7">{mode === 'graph'
         ? '查看已发布人物与事件的关系。拖动节点调整布局，点击节点进入它的关系图谱，再打开条目阅读出处。'
-        : '沿时间和人物筛选事件，对照古地名了解发生地点。现代底图用于方位参考，尚未核实坐标的事件不显示标记。'}</p>
+        : '对照史图馆的907年形势图阅读后梁事件，也可切换现代地理底图。历史图的年份固定，事件按各自年代展示。'}</p>
       <Link to={mode === 'graph' ? '/map' : '/graph'} className="inline-block mt-3 text-teal-700 underline">{mode === 'graph' ? '切换到地图 →' : '切换到图谱 →'}</Link>
     </header>
     <LoadState loading={loading} error={error} retry={() => { people.retry(); events.retry(); relationships.retry(); }} />

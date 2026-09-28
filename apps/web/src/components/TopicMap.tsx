@@ -34,8 +34,9 @@ export default function TopicMap({ events, selected, onSelect }: { events: Event
     const key = `${e.location_lat},${e.location_lng}`;
     groups.set(key, [...groups.get(key) ?? [], e]);
   }
-  if (!located.length) return <div className="rounded-xl bg-stone-100 p-8 text-slate-600">这些事件尚无可靠坐标，仍可在时间线上阅读。</div>;
+
   return <div className="min-w-0 space-y-2">
+    {!located.length && <p role="status" className="rounded-xl bg-amber-50 p-4 text-sm text-amber-900">当前事件尚无已核实坐标。下方显示方位参考底图；古地名可在事件列表中查看，核实坐标后才会出现标记。</p>}
     <p className="text-xs text-slate-500">现代底图仅用于方位参考；标记不表示历史疆界，概略位置不代表精确城址。</p>
     <div className="relative z-0 overflow-hidden rounded-xl" aria-label="专题事件地图">
       <MapContainer center={[35, 110]} zoom={4} scrollWheelZoom={false} style={{ height: 360, width: '100%' }}>

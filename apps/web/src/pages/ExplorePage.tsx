@@ -80,11 +80,12 @@ export function ExplorePage() {
           <p className="text-slate-500">五代十国专题正在整理，审核完成后将在这里发布。</p>
         )}
       </section>
-      <section className="grid sm:grid-cols-3 gap-6 border-t border-stone-200 pt-8">
+      <section className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 border-t border-stone-200 pt-8">
         {[
           ["01", "读懂人物", "从生平、选择与关系理解人物。", "/people"],
           ["02", "梳理事件", "把事件放回时间与参与者之中。", "/events"],
-          ["03", "顺着线索找", "按姓名、别名、标签寻找下一条线索。", "/search"],
+          ["03", "关系图谱", "展开人物与事件的关系，点击节点继续探索。", "/graph"],
+          ["04", "历史地图", "对照古地名与时间，查看事件定位进度。", "/map"],
         ].map(([number, title, body, path]) => (
           <Link key={number} to={path} className="p-2">
             <span className="eyebrow">{number}</span>

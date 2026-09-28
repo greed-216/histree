@@ -5,6 +5,7 @@ import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
 import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { getCurrentUserRole } from './lib/api';
+const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
 import { ExplorePage } from './pages/ExplorePage';
 const GraphPage = lazy(() => import('./pages/GraphPage').then(m => ({ default: m.GraphPage })));
 import { PeoplePage } from './pages/PeoplePage';
@@ -102,6 +103,8 @@ function App() {
                 <AcademicCapIcon className="w-4 h-4" />
                 事件
               </Link>
+              <Link to="/graph" className={navLinkClass('/graph')}>图谱</Link>
+              <Link to="/map" className={navLinkClass('/map')}>地图</Link>
               <Link to="/search" className={navLinkClass('/search')}>搜索</Link>
               {isAdmin && (
                 <Link to="/admin" className={navLinkClass('/admin')}>
@@ -153,6 +156,8 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
+          <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
+          <Route path="/map" element={<VisualExplorePage mode="map" />} />
           <Route path="/graph/:id" element={<GraphPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/events" element={<EventsPage />} />

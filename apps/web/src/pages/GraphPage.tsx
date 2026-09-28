@@ -43,8 +43,12 @@ const drag = (simulation: d3.Simulation<GraphNode, GraphEdge>) => {
 
 export const GraphPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const { data, loading, error } = useResource<GraphResponse>(`/graph/${id}`);
+  return <GraphView data={data} loading={loading} error={error} />;
+};
+
+export function GraphView({ data, loading = false, error, overview = false }: { data?: GraphResponse; loading?: boolean; error?: string; overview?: boolean }) {
+  const navigate = useNavigate();
   const selectedNode = data?.center;
   const svgRef = useRef<SVGSVGElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -138,6 +142,10 @@ export const GraphPage: React.FC = () => {
       .data(nodes)
       .join('g')
       .attr('class', 'node cursor-pointer')
+      .attr('role', 'link')
+      .attr('tabindex', 0)
+      .attr('aria-label', d => isPerson(d) ? d.name : d.title)
+      .on('keydown', (event, d) => { if (event.key === 'Enter') navigate(`/graph/${d.id}`); })
       .call(drag(simulation))
       .on('click', (_event, d) => {
         navigate(`/graph/${d.id}`);
@@ -192,6 +200,11 @@ export const GraphPage: React.FC = () => {
       .attr('dy', 4)
       .style('text-shadow', '0 1px 3px rgba(255,255,255,0.8), 0 -1px 3px rgba(255,255,255,0.8), 1px 0 3px rgba(255,255,255,0.8), -1px 0 3px rgba(255,255,255,0.8)');
 
+    simulation.on('end', () => {
+      const bounds = nodeGroup.node()?.getBBox();
+      if (bounds) svg.attr('viewBox', [bounds.x - 40, bounds.y - 40, bounds.width + 80, bounds.height + 80]);
+    });
+
     simulation.on('tick', () => {
       link
         .attr('x1', (d) => (d.source.x ?? 0))
@@ -244,11 +257,11 @@ export const GraphPage: React.FC = () => {
             </div>
           </div>
         </div>
-        <svg ref={svgRef} className="w-full h-[600px] lg:h-[800px] cursor-grab active:cursor-grabbing bg-slate-50/50 mt-16"></svg>
+        <svg aria-label="人物与事件关系图谱" ref={svgRef} className="w-full h-[600px] lg:h-[800px] cursor-grab active:cursor-grabbing bg-slate-50/50 mt-16"></svg>
       </div>
 
       {/* Info Panel */}
-      <div className="w-full lg:w-96 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-y-auto h-[600px] lg:h-[800px] flex flex-col shrink-0">
+      {!overview && <div className="w-full lg:w-96 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-y-auto h-[600px] lg:h-[800px] flex flex-col shrink-0">
         <div className="p-6 border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur-sm z-10">
           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
             {isPerson(selectedNode) ? <UserIcon className="w-4 h-4" /> : <AcademicCapIcon className="w-4 h-4" />}
@@ -453,7 +466,7 @@ export const GraphPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

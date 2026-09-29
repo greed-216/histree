@@ -1,0 +1,71 @@
+{
+  "batch_sha256": "69254fee47164ea07a074404d7d25c32754dd09f07ac887e737c551cc4a27057",
+  "stages": [
+    "preflight_checked",
+    "drafts_checked_source",
+    "drafts_checked_person",
+    "drafts_checked_event",
+    "drafts_checked_person_relationship",
+    "drafts_checked_person_event",
+    "drafts_checked_fact_claim",
+    "published_person",
+    "published_event",
+    "published_person_relationship",
+    "published_person_event",
+    "published_fact_claim",
+    "zhu_biography_updated",
+    "anonymous_readback_verified",
+    "preflight_checked",
+    "drafts_checked_source",
+    "drafts_checked_person",
+    "drafts_checked_event",
+    "drafts_checked_person_relationship",
+    "drafts_checked_person_event",
+    "drafts_checked_fact_claim",
+    "published_person",
+    "published_event",
+    "published_person_relationship",
+    "published_person_event",
+    "published_fact_claim",
+    "zhu_biography_updated",
+    "anonymous_readback_verified"
+  ],
+  "zhu_before": {
+    "birth_year": null,
+    "description": "后梁建立者。907年在大梁称帝，912年在宫廷政变中被杀。",
+    "biography": "后梁建立者。907年在大梁称帝，912年在宫廷政变中被杀。",
+    "era": "五代十国"
+  },
+  "zhu_patch": {
+    "birth_year": 852,
+    "description": "朱温，后赐名朱全忠，又名朱晃，后梁建立者。籍贯宋州砀山午沟里；父亲朱诚以《五经》教授乡里，父亡后家贫，与母亲、兄长在萧县刘崇家佣食。877年随兄朱存加入黄巢军，882年归唐并获赐名全忠，883年入镇汴州。907年称帝，912年在宫廷政变中被杀。",
+    "biography": "朱温，后赐名朱全忠，又名朱晃，后梁建立者。籍贯宋州砀山午沟里；父亲朱诚以《五经》教授乡里，父亡后家贫，与母亲、兄长在萧县刘崇家佣食。877年随兄朱存加入黄巢军，882年归唐并获赐名全忠，883年入镇汴州。907年称帝，912年在宫廷政变中被杀。",
+    "era": "晚唐至五代"
+  },
+  "public_counts": {
+    "source": 4,
+    "person": 10,
+    "event": 9,
+    "person_relationship": 5,
+    "person_event": 17,
+    "fact_claim": 48
+  },
+  "verified": true,
+  "corrections": [
+    {
+      "reason": "复核发现朱全昱兄长关系已有记录；将新引文合并到原关系，移除本批重复关系。",
+      "old_batch_sha256": "4208739905846b5c66f9f68e00417eeae640bba4c29b14f425d80569c3bc7d37",
+      "removed_relationship": {
+        "id": "10b82a16-3050-5099-b872-ba23fa78c0cc",
+        "person_a": "4a9e8e14-490e-5b74-945b-47e8c5c92bb5",
+        "person_b": "0555e455-34d4-54ef-b93e-b0e6425018ab",
+        "relation_type": "兄长",
+        "description": "朱全昱为朱温兄长。",
+        "created_at": "2026-09-29T12:48:03.637975+00:00",
+        "status": "published"
+      },
+      "retargeted_claim_id": "a56a115f-c903-5a0b-a704-0b0f4330d83e",
+      "canonical_relationship_id": "25262d71-7aa3-5bf2-b9a6-8a7a408ffca4"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "batch_sha256": "56f5fa2ce66d0838c48025667c7738b49b7e6a11060365a1d90c1473ffe65b96",
+  "stages": [
+    {
+      "stage": "preflight_checked",
+      "at": "2026-09-29T15:14:06.913765+00:00"
+    },
+    {
+      "stage": "drafts_verified_source",
+      "at": "2026-09-29T15:14:08.504080+00:00"
+    },
+    {
+      "stage": "drafts_verified_person",
+      "at": "2026-09-29T15:14:10.641911+00:00"
+    },
+    {
+      "stage": "drafts_verified_event",
+      "at": "2026-09-29T15:14:12.866915+00:00"
+    },
+    {
+      "stage": "drafts_verified_person_relationship",
+      "at": "2026-09-29T15:14:14.759514+00:00"
+    },
+    {
+      "stage": "drafts_verified_person_event",
+      "at": "2026-09-29T15:14:16.410142+00:00"
+    },
+    {
+      "stage": "drafts_verified_fact_claim",
+      "at": "2026-09-29T15:14:23.430156+00:00"
+    },
+    {
+      "stage": "published_source",
+      "at": "2026-09-29T15:14:23.431546+00:00"
+    },
+    {
+      "stage": "published_person",
+      "at": "2026-09-29T15:14:24.206032+00:00"
+    },
+    {
+      "stage": "published_event",
+      "at": "2026-09-29T15:14:25.244616+00:00"
+    },
+    {
+      "stage": "published_person_relationship",
+      "at": "2026-09-29T15:14:27.970225+00:00"
+    },
+    {
+      "stage": "published_person_event",
+      "at": "2026-09-29T15:14:28.725428+00:00"
+    },
+    {
+      "stage": "published_fact_claim",
+      "at": "2026-09-29T15:14:29.898695+00:00"
+    },
+    {
+      "stage": "anonymous_readback_verified",
+      "at": "2026-09-29T15:14:41.732623+00:00"
+    }
+  ],
+  "initial_counts": {
+    "source": {
+      "new": 1,
+      "reused": 1
+    },
+    "person": {
+      "new": 12,
+      "reused": 18
+    },
+    "event": {
+      "new": 15,
+      "reused": 0
+    },
+    "person_relationship": {
+      "new": 1,
+      "reused": 0
+    },
+    "person_event": {
+      "new": 35,
+      "reused": 0
+    },
+    "fact_claim": {
+      "new": 98,
+      "reused": 0
+    }
+  },
+  "public_counts": {
+    "source": 2,
+    "person": 30,
+    "event": 15,
+    "person_relationship": 1,
+    "person_event": 35,
+    "fact_claim": 98
+  },
+  "verified": true
+}

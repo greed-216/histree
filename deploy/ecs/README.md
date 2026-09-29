@@ -31,3 +31,9 @@ Configure the `ecs-production` environment secret `WORKBENCH_CONFIG` with a dedi
 The workflow uploads to a fresh directory on each run, checks the image, and deploys the exact commit tag. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
 
 After HTTPS is ready, set repository variable `VITE_ASK_API_URL` to `https://<host>/api/v1` and rerun the Pages workflow.
+
+## HTTPS without a domain
+
+Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx exposes only the ask and status routes. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
+
+Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/bin/certbot renew --dry-run`, and verify the public HTTPS endpoint before setting `VITE_ASK_API_URL`. Six-day IP certificates require working automatic renewal. See https://letsencrypt.org/2026/03/11/shorter-certs-certbot .

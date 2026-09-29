@@ -88,11 +88,8 @@ function App() {
       <header className="site-header sticky top-0 z-40">
         <div className="site-header-inner mx-auto px-4 md:px-8 min-h-16 py-3 flex flex-wrap gap-3 items-center justify-between">
           <div className="contents md:flex md:items-center md:gap-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="brand-seal">
-                <span aria-hidden="true">史</span>
-              </div>
-              <span className="brand-name">Histree</span>
+            <Link to="/" className="brand-link" aria-label="Histree 历史之树首页">
+              <img className="brand-logo" src={`${import.meta.env.BASE_URL}brand/histree-logo.png`} alt="Histree" width="2172" height="724" />
             </Link>
             
             <nav aria-label="主导航" className="order-3 w-full md:order-none md:w-auto flex flex-wrap items-center gap-1">

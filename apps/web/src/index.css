@@ -91,8 +91,8 @@ body { background: var(--paper); }
 .site-header-inner { max-width: 1500px; }
 .site-main { max-width: 1200px; }
 .site-main-graph { max-width: 1500px; }
-.brand-seal { width: 34px; height: 38px; display: grid; place-items: center; border-radius: 9px 3px 9px 3px; background: #315c4c; color: #fffcf0; font: 23px 'Songti SC', 'Noto Serif CJK SC', serif; }
-.brand-name { font: 600 22px Georgia, serif; letter-spacing: -.6px; color: var(--ink); }
+.brand-link { display: inline-flex; align-items: center; flex-shrink: 0; border-radius: 4px; }
+.brand-logo { display: block; width: 150px; height: 50px; object-fit: contain; }
 .nav-active { color: #235440; background: #e7eee6; box-shadow: inset 0 -2px #496d54; }
 h1, h2.font-serif, h3.font-serif { font-family: 'Songti SC', 'Noto Serif CJK SC', Georgia, serif; }
 .reading-card { border-color: #dee3d9; box-shadow: 0 3px 16px #324a3710; transition: border-color .18s, box-shadow .18s; }

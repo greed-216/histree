@@ -1,0 +1,87 @@
+{
+  "year": 907,
+  "batch_key": "year-0907-v1",
+  "project": "ilnwjhabcqtxkkuhddyt",
+  "status": "draft_import_verified",
+  "verified_at": "2026-09-29",
+  "tables": {
+    "person": {
+      "before": 6,
+      "after": 93,
+      "new": 87,
+      "status_counts": {
+        "draft": 87,
+        "published": 6
+      }
+    },
+    "event": {
+      "before": 9,
+      "after": 63,
+      "new": 54,
+      "status_counts": {
+        "published": 9,
+        "draft": 54
+      }
+    },
+    "person_event": {
+      "before": 15,
+      "after": 201,
+      "new": 186,
+      "status_counts": {
+        "published": 15,
+        "draft": 186
+      }
+    },
+    "person_relationship": {
+      "before": 4,
+      "after": 23,
+      "new": 19,
+      "status_counts": {
+        "published": 4,
+        "draft": 19
+      }
+    },
+    "fact_claim": {
+      "before": 85,
+      "after": 580,
+      "new": 495,
+      "status_counts": {
+        "draft": 495,
+        "published": 85
+      }
+    },
+    "source": {
+      "before": 14,
+      "after": 16,
+      "new": 2,
+      "status_counts": {
+        "not_applicable": 16
+      }
+    },
+    "topic": {
+      "before": 1,
+      "after": 2,
+      "new": 1,
+      "status_counts": {
+        "published": 1,
+        "draft": 1
+      }
+    }
+  },
+  "checks": [
+    "远端逐ID回读：本批记录齐全",
+    "所有新增业务记录为draft",
+    "原有全部业务记录逐字段相等，未被修改",
+    "人物参与关系(person_id,event_id)无重复",
+    "全部新增引用的来源和对象存在",
+    "线上匿名REST读取核验：新增草稿不可见，公开数量保持原样"
+  ],
+  "anonymous_visible_counts": {
+    "person": 6,
+    "event": 9,
+    "person_event": 15,
+    "person_relationship": 4,
+    "fact_claim": 85,
+    "topic": 1
+  }
+}

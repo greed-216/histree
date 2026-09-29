@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-09-29",
+  "status": "published",
+  "counts": {
+    "person": 93,
+    "event": 67,
+    "person_event": 207,
+    "person_relationship": 23,
+    "fact_claim": 621,
+    "source": 19,
+    "topic": 2
+  },
+  "checks": [
+    "original published rows unchanged",
+    "all batch rows published",
+    "anonymous REST counts equal expected totals",
+    "source quotations matched to hashed snapshots before release",
+    "guarded single-transaction corrections applied"
+  ],
+  "limitations": [
+    "多源核对集中于开国、任官、追尊、使行、吴越和蜀；不是每条均有独立来源。",
+    "旧五代史内明确转引通鉴的段落不作为独立证据。",
+    "电子排印底本未考定，PDF页码非古籍叶码；未作影像校勘。",
+    "无确切年代的追叙仍暂缓；月份异文并列，不强行裁决。"
+  ]
+}

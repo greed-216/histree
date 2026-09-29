@@ -37,6 +37,20 @@ export class EditorialService {
     return slug ? topics[0] : topics;
   }
 
+  async source(id: string, page = 0) {
+    if (!uuid.test(id) || !Number.isInteger(page) || page < 0 || page > 100000)
+      throw new BadRequestException('无效的来源地址');
+    const client = this.db.getClient();
+    const [source, claims] = await Promise.all([
+      client.from('source').select('*').eq('id', id).single(),
+      client.from('fact_claim').select('*, source:source_id(*)', { count: 'exact' })
+        .eq('status', 'published').eq('source_id', id).order('id').range(page * 50, page * 50 + 49),
+    ]);
+    if (source.error) throw source.error;
+    if (claims.error) throw claims.error;
+    return { source: source.data, claims: claims.data ?? [], count: claims.count ?? 0 };
+  }
+
   async evidence(subject: string, id: string) {
     if (!subjects.includes(subject) || !uuid.test(id))
       throw new BadRequestException('无效的出处对象');

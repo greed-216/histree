@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { splitEvidenceNote, evidencePath, correctionUrl } from "../lib/evidence";
 import { Link } from "react-router-dom";
 import type { Event, EvidenceClaim, ClaimSubject } from "@histree/shared-types";
 import { formatDisplayRange } from "../lib/content";
@@ -80,42 +82,38 @@ export function Evidence({
       {result.data?.length === 0 && (
         <p className="text-sm text-slate-500">这部分的具体出处尚待整理。</p>
       )}
-      {result.data?.map((claim) => (
-        <div key={claim.id} className="border-l-2 border-teal-600 pl-4 py-1">
-          <p className="leading-7">{claim.claim_text}</p>
-          <p className="text-sm text-slate-600 mt-2">
-            {claim.source ? (
-              <>
-                《{claim.source.title}》
-                {claim.source.author ? ` · ${claim.source.author}` : ""}
-              </>
-            ) : (
-              "来源待补充"
-            )}{" "}
-            · {claim.citation || "定位待补充"}
-          </p>
-          {claim.source?.edition && (
-            <p className="text-xs text-slate-500 mt-1">
-              版本：{claim.source.edition}
-            </p>
-          )}
-          {claim.note && (
-            <p className="text-sm text-slate-500 mt-2">{claim.note}</p>
-          )}
-          {safeUrl(claim.source?.url) && (
-            <a
-              className="text-sm text-teal-700 underline"
-              href={safeUrl(claim.source?.url)}
-              target="_blank"
-              rel="noreferrer"
-            >
-              阅读来源 ↗
-            </a>
-          )}
-        </div>
-      ))}
+      {result.data?.map((claim) => <EvidenceCard key={claim.id} claim={claim} />)}
     </div>
   );
+}
+export function EvidenceCard({ claim }: { claim: EvidenceClaim }) {
+  const { quote, review } = splitEvidenceNote(claim.note);
+  const anchor = `claim-${claim.id}`;
+  const path = evidencePath(claim);
+  const permalink = `${window.location.origin}${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`;
+  const selected = window.location.hash === `#${anchor}`;
+  useEffect(() => {
+    if (selected) document.getElementById(anchor)?.scrollIntoView({ block: 'start' });
+  }, [anchor, selected]);
+  return <article id={anchor} className="border-l-2 border-teal-600 pl-4 py-2 scroll-mt-28">
+    <p className="leading-7 font-medium">{claim.claim_text}</p>
+    <p className="text-sm text-slate-600 mt-2">
+      {claim.source ? <Link className="text-teal-700 underline" to={`/sources/${claim.source.id}`}>《{claim.source.title}》</Link> : '来源待补充'}
+      {claim.source?.author && ` · ${claim.source.author}`} · {claim.citation || '定位待补充'}
+    </p>
+    {claim.source?.edition && <p className="text-xs text-slate-500 mt-1">版本：{claim.source.edition}</p>}
+    {review && <p className="text-sm text-slate-600 mt-3 leading-6">核对说明：{review}</p>}
+    {quote && <details open={selected || undefined} className="mt-3 rounded-lg bg-stone-100 p-3">
+      <summary className="cursor-pointer text-sm text-teal-800">查看所引原文</summary>
+      <blockquote className="mt-3 whitespace-pre-wrap text-sm leading-7 text-slate-700">{quote}</blockquote>
+    </details>}
+    <div className="flex flex-wrap gap-4 text-sm text-teal-700 mt-3">
+      <Link className="underline" to={path}>此条引用的固定链接</Link>
+      {safeUrl(claim.source?.url) && !claim.source?.url?.includes('isyd.net') && <a className="underline" href={safeUrl(claim.source?.url)} target="_blank" rel="noreferrer">打开来源版本 ↗</a>}
+      <a className="underline" href={correctionUrl(claim, permalink)} target="_blank" rel="noreferrer">提交勘误（GitHub）↗</a>
+    </div>
+    <p className="text-xs text-slate-400 mt-2 break-all">引用编号：{claim.id}</p>
+  </article>;
 }
 export function Timeline({ events }: { events: Event[] }) {
   const sorted = [...events].sort(

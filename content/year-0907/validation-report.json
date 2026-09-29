@@ -1,0 +1,25 @@
+{
+  "batch_key": "year-0907-v1",
+  "counts": {
+    "people": 92,
+    "events": 59,
+    "person_events": 192,
+    "person_relationships": 19,
+    "sources": 13,
+    "claims": 559,
+    "topics": 1
+  },
+  "checks": [
+    "unique keys",
+    "valid references",
+    "all draft",
+    "valid years and coordinate pairs",
+    "source SHA-256",
+    "verbatim excerpts present",
+    "evidence for every entity and relation"
+  ],
+  "limitations": [
+    "Structural checks do not prove historical accuracy.",
+    "Human editorial review and geographical verification remain required."
+  ]
+}

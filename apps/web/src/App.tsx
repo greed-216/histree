@@ -1,3 +1,4 @@
+import { SourcePage, EvidencePage } from './pages/SourcesPage';
 import { MAPS_ENABLED } from './lib/features';
 import type { Session } from '@supabase/supabase-js';
 import { lazy, Suspense, useEffect, useState } from 'react';
@@ -153,6 +154,8 @@ function App() {
       {/* Main Content */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-6 md:py-8">
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
+          <Route path="/sources/:id" element={<SourcePage />} />
+          <Route path="/evidence/:subject/:id" element={<EvidencePage />} />
           <Route path="/topics/:slug" element={<TopicPage />} />
           <Route path="/people/:id" element={<EntryPage />} />
           <Route path="/events/:id" element={<EntryPage />} />

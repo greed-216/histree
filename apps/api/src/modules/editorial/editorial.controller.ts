@@ -1,5 +1,6 @@
 import {
   Body,
+  Query,
   Controller,
   Delete,
   Get,
@@ -19,6 +20,9 @@ export class EditorialController {
   }
   @Get('topics/:slug') topic(@Param('slug') slug: string) {
     return this.service.topics(slug);
+  }
+  @Get('sources/:id') source(@Param('id') id: string, @Query('page') page?: string) {
+    return this.service.source(id, Number(page ?? 0));
   }
   @Get('evidence/:subject/:id') evidence(
     @Param('subject') subject: string,

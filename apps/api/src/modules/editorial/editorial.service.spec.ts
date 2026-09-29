@@ -116,3 +116,28 @@ describe('Editorial validation', () => {
     );
   });
 });
+
+
+describe('Public source index', () => {
+  it('validates pagination and IDs before querying', async () => {
+    const { service, client } = fixture();
+    for (const [key, page] of [['bad', 0], [id, -1], [id, 1.5], [id, Infinity]] as const)
+      await expect(service.source(key, page)).rejects.toBeInstanceOf(BadRequestException);
+    expect(client.from).not.toHaveBeenCalled();
+  });
+  it('uses the public client and filters draft evidence with stable pagination', async () => {
+    const q = { select: jest.fn(), eq: jest.fn(), order: jest.fn(), range: jest.fn(), single: jest.fn() };
+    q.select.mockReturnValue(q); q.eq.mockReturnValue(q); q.order.mockReturnValue(q);
+    q.single.mockResolvedValue({ data: { id, title: '史料' }, error: null });
+    q.range.mockResolvedValue({ data: [{ id: 'claim' }], count: 121, error: null });
+    const client = { from: jest.fn(() => q) };
+    const admin = jest.fn(() => { throw new Error('must not use service credentials'); });
+    const service = new EditorialService({ getClient: () => client, getAdminClient: admin } as unknown as SupabaseService);
+    expect((await service.source(id, 1)).count).toBe(121);
+    expect(q.eq).toHaveBeenCalledWith('status', 'published');
+    expect(q.eq).toHaveBeenCalledWith('source_id', id);
+    expect(q.order).toHaveBeenCalledWith('id');
+    expect(q.range).toHaveBeenCalledWith(50, 99);
+    expect(admin).not.toHaveBeenCalled();
+  });
+});

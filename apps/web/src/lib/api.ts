@@ -58,6 +58,20 @@ async function supabasePublicFetch<T>(path: string): Promise<T> {
     if (slug && !data?.length) throw new Error('专题尚未发布或不存在');
     return (slug ? data![0] : data ?? []) as T;
   }
+  if (path.startsWith('/sources/')) {
+    const url = new URL(path, 'https://histree.local');
+    const id = url.pathname.split('/')[2];
+    const page = Number(url.searchParams.get('page') ?? 0);
+    if (!/^[0-9a-f-]{36}$/i.test(id) || !Number.isInteger(page) || page < 0 || page > 100000) throw new Error('无效的来源地址');
+    const [source, claims] = await Promise.all([
+      publicSupabase.from('source').select('*').eq('id', id).single(),
+      publicSupabase.from('fact_claim').select('*, source:source_id(*)', { count: 'exact' })
+        .eq('status', 'published').eq('source_id', id).order('id').range(page*50, page*50+49),
+    ]);
+    if (source.error) throw source.error;
+    if (claims.error) throw claims.error;
+    return { source: source.data, claims: claims.data ?? [], count: claims.count ?? 0 } as T;
+  }
   if (path.startsWith('/evidence/')) {
     const [, , subject, id] = path.split('/');
     const { data, error } = await publicSupabase.from('fact_claim').select('*, source:source_id(*)')

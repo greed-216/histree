@@ -1,24 +1,50 @@
 {
-  "scope": "五代十国逐年整理，优先后梁907—923",
-  "years": [
+  "format_version": 2,
+  "primary_book": "资治通鉴",
+  "primary_book_key": "zizhi-tongjian",
+  "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
+  "active_cursor": {
+    "volume": 255,
+    "year": 884,
+    "last_reviewed_paragraph": "zztj-v255-y0884-p007",
+    "next_paragraph": "zztj-v255-y0884-p008",
+    "next_paragraph_opening": "高骈从子左骁卫大将军澞",
+    "batch": "content/books/zizhi-tongjian/vol-255/year-0884/part-01",
+    "status": "published_verified",
+    "last_published_paragraph": "zztj-v255-y0884-p007"
+  },
+  "year_coverage": [
+    {
+      "year": 884,
+      "status": "partial",
+      "volumes": [
+        255,
+        256
+      ],
+      "batches": [
+        "content/books/zizhi-tongjian/vol-255/year-0884/part-01"
+      ],
+      "note": "本批仅卷255第1—7段；卷255余段与卷256该年段落仍待录入。"
+    },
     {
       "year": 907,
-      "status": "published_verified",
-      "directory": "content/year-0907",
-      "source_paragraphs": 61,
-      "next_step": "继续908年；跨年复用人物ID，保留907年异文待考清单"
+      "status": "legacy_published_verified",
+      "batch": "content/year-0907",
+      "note": "保留已发布记录；不是当前连续编年进度。"
     }
   ],
-  "next_year": 908,
-  "identity_rule": "跨年复用已有key和UUID，别名与称号不另建人物",
-  "active_workstream": "late-tang-background",
-  "background_batches": [
+  "legacy_archives": [
     {
-      "batch_key": "late-tang-zhu-wen-852-883",
       "directory": "content/late-tang-zhu-wen-early",
-      "status": "published_verified",
-      "coverage": "朱温身世及852—883年早年主线；不是这些年份的全量编年整理",
-      "next_year": 884
+      "status": "archived_published",
+      "coverage": "朱温专题的852—883年选录，不算通鉴这些年份完成",
+      "replacement": "content/books/*/source-index.json 按书索引原引用"
+    },
+    {
+      "directory": "content/later-liang-907-923",
+      "status": "archived_published",
+      "coverage": "后梁专题选录"
     }
-  ]
+  ],
+  "identity_rule": "人物、事件和关系跨卷跨书复用key/UUID，引用按来源独立记录；新增书证不复制实体。"
 }

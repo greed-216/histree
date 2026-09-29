@@ -1,4 +1,10 @@
-# 五代十国：首批数据整理规范
+# 历史数据整理规范
+
+## 当前组织方式
+
+以《资治通鉴》为主书，使用 `content/books/zizhi-tongjian/vol-{卷}/year-{年}/part-{批}/`；按原文连续段落录入，其他书证按书建立索引并关联主书段落与同一实体。唯一续录位置见 `content/yearly-progress.json`。旧专题批次保留为发布档案，不再作为新增目录模板。详见 [content/README.md](../content/README.md)。
+
+书本批次使用 `scripts/prepare-book-import.py` 生成排除复用对象的SQL，`scripts/publish-book-batch.py` 默认为只读预检，`--apply` 发布后匿名读回。下文通用格式仍适用。
 
 ## 使用方式
 

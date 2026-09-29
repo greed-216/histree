@@ -42,5 +42,9 @@ try {
    for (const [key,value] of Object.entries(change.after)) assert.deepEqual(row[key],value,'public copy '+change.id+':'+key);
  }
  assert.deepEqual((await db.query('SELECT id,note FROM fact_claim ORDER BY id')).rows.map(r=>[r.id,r.note.split('；核对说明：')[0]]),originalQuotes,'copy edits preserve all quotations');
+ await db.exec(await readFile('content/revisions/2026-09-29-reference-links/apply.sql','utf8'));
+ for(const source of JSON.parse(await readFile('content/revisions/2026-09-29-reference-links/links.json','utf8')).sources) {
+   assert.equal((await db.query('SELECT url FROM source WHERE id=$1',[source.id])).rows[0].url,source.after,'source archive link');
+ }
  console.log('PASS: 907 import and retry, preserved all existing rows, no duplicate participation, new drafts invisible to anonymous readers',first);
 } finally {await db.close();await rm(dir,{recursive:true,force:true});}

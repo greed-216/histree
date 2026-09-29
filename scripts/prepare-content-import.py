@@ -13,6 +13,12 @@ batch = json.loads(batch_path.read_text())
 namespace = uuid.uuid5(uuid.NAMESPACE_URL, 'https://github.com/greed-216/histree/content')
 ids = {row['key']: str(uuid.uuid5(namespace, row['key']))
        for group in batch.values() if isinstance(group, list) for row in group}
+# Prefer the archived, immutable copy for known source IDs. Original provenance stays in manifests.
+archive_map = Path(__file__).resolve().parents[1] / 'content/revisions/2026-09-29-reference-links/links.json'
+if archive_map.exists():
+ archived = {s['id']: s['after'] for s in json.loads(archive_map.read_text())['sources']}
+ for source in batch['sources']:
+  if ids[source['key']] in archived: source['url'] = archived[ids[source['key']]]
 groups = [('sources','source'),('people','person'),('events','event'),
           ('person_relationships','person_relationship'),('person_events','person_event'),
           ('claims','fact_claim'),('topics','topic')]

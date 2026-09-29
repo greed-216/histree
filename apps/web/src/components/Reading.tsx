@@ -109,7 +109,7 @@ export function EvidenceCard({ claim }: { claim: EvidenceClaim }) {
     </details>}
     <div className="flex flex-wrap gap-4 text-sm text-teal-700 mt-3">
       <Link className="underline" to={path}>此条引用的固定链接</Link>
-      {safeUrl(claim.source?.url) && !claim.source?.url?.includes('isyd.net') && <a className="underline" href={safeUrl(claim.source?.url)} target="_blank" rel="noreferrer">打开来源版本 ↗</a>}
+      {safeUrl(claim.source?.url) && !claim.source?.url?.includes('isyd.net') && <a className="underline" href={safeUrl(claim.source?.url)} target="_blank" rel="noreferrer">查看参考原文 ↗</a>}
       <a className="underline" href={correctionUrl(claim, permalink)} target="_blank" rel="noreferrer">提交勘误（GitHub）↗</a>
     </div>
     <p className="text-xs text-slate-400 mt-2 break-all">引用编号：{claim.id}</p>

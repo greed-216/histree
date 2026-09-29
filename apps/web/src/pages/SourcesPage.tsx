@@ -15,7 +15,7 @@ export function SourcePage() {
       <header><p className="eyebrow">史料与引用索引</p><h1 className="text-3xl font-semibold mt-2">{data.source.title}</h1>
         <p className="mt-3">{data.source.author} · {data.source.edition}</p>
         <p className="mt-3 text-slate-600 leading-7">{data.source.note}</p>
-        {safeUrl(data.source.url) && !data.source.url?.includes('isyd.net') && <a className="text-teal-700 underline" href={safeUrl(data.source.url)} target="_blank" rel="noreferrer">打开来源版本 ↗</a>}
+        {safeUrl(data.source.url) && !data.source.url?.includes('isyd.net') && <a className="text-teal-700 underline" href={safeUrl(data.source.url)} target="_blank" rel="noreferrer">查看参考原文 ↗</a>}
       </header>
       <h2 className="text-xl font-semibold">本网站引用此来源的说法（{data.count} 条）</h2>
       <p className="text-sm text-slate-500">点击固定链接可返回对应条目的证据；原文中的异体字、缺字代码和不同记载保留供核对。</p>

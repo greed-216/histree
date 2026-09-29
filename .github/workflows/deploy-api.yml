@@ -1,0 +1,92 @@
+name: Deploy API to Alibaba ECS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/api/**'
+      - 'packages/shared-types/**'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - 'package.json'
+      - '.dockerignore'
+      - 'deploy/ecs/**'
+      - '.github/workflows/deploy-api.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: histree-ecs-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - name: Build and verify Linux image
+        run: |
+          docker build --platform linux/amd64 -f apps/api/Dockerfile -t histree-api:${GITHUB_SHA} .
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
+          mkdir bundle
+          docker save histree-api:${GITHUB_SHA} | gzip > bundle/image.tar.gz
+          cp deploy/ecs/compose.yml deploy/ecs/release.sh bundle/
+          cd bundle
+          sha256sum image.tar.gz > image.tar.gz.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: histree-api-${{ github.sha }}
+          path: bundle/
+          retention-days: 7
+
+  deploy:
+    needs: build
+    if: vars.ECS_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: ecs-production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: histree-api-${{ github.sha }}
+          path: bundle
+      - name: Install Workbench
+        run: |
+          curl --fail --silent --show-error https://workbench-cli.oss-cn-hangzhou.aliyuncs.com/install.sh -o /tmp/install-workbench.sh
+          bash /tmp/install-workbench.sh -v 1.0.1 -d "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Configure deployment credentials
+        env:
+          WORKBENCH_CONFIG: ${{ secrets.WORKBENCH_CONFIG }}
+        run: |
+          test -n "$WORKBENCH_CONFIG"
+          install -d -m 700 "$HOME/.workbench"
+          umask 077
+          printf '%s' "$WORKBENCH_CONFIG" > "$HOME/.workbench/config.json"
+      - name: Upload and deploy
+        env:
+          ECS_INSTANCE_ID: ${{ vars.ECS_INSTANCE_ID }}
+          ECS_REGION: ${{ vars.ECS_REGION }}
+        run: |
+          set -euo pipefail
+          [[ "$ECS_INSTANCE_ID" =~ ^i-[a-z0-9]+$ ]]
+          [[ "$ECS_REGION" =~ ^[a-z]+-[a-z]+$ ]]
+          release="/opt/histree/releases/${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          workbench exec -i "$ECS_INSTANCE_ID" -r "$ECS_REGION" -c "test -f /opt/histree/runtime.env && test ! -e $release && install -d -m 700 $release"
+          for file in image.tar.gz image.tar.gz.sha256 compose.yml release.sh; do
+            workbench upload "bundle/$file" "$release/$file" -i "$ECS_INSTANCE_ID" -r "$ECS_REGION"
+          done
+          workbench exec -i "$ECS_INSTANCE_ID" -r "$ECS_REGION" --timeout 600 -c "bash $release/release.sh $release histree-api:${GITHUB_SHA}"
+      - name: Remove runner credentials
+        if: always()
+        run: rm -f "$HOME/.workbench/config.json"

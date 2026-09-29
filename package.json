@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas",
+    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph",
     "e2e:smoke": "node scripts/e2e-smoke.mjs",
     "test:publication": "node scripts/test-publication.mjs",
     "test:reading": "node scripts/test-reading-ui.mjs",
+    "test:graph": "node scripts/test-graph.mjs",
     "test:atlas": "node scripts/test-atlas.mjs",
     "test:map": "node scripts/test-map-document.mjs",
     "test:content": "node scripts/test-content-import.mjs"

@@ -96,6 +96,14 @@ try {
   await page.screenshot({path:`${screenshots}/entry-desktop.png`,fullPage:true});
   await page.getByRole('link',{name:'在图谱中探索 →'}).click();
   await page.locator('svg .nodes').waitFor();
+  const graphUrl = page.url();
+  await page.getByRole('button',{name:'查看人物：测试人物甲',exact:true}).click();
+  assert.equal(page.url(),graphUrl,'Clicking a graph node must not navigate');
+  const edgeButton = page.locator('svg .links [data-edge]').first();
+  await edgeButton.click();
+  assert.equal(await edgeButton.getAttribute('aria-pressed'),'true');
+  assert.equal(page.url(),graphUrl,'Clicking a graph edge must not navigate');
+  await page.getByRole('button',{name:'查看人物：测试人物甲',exact:true}).click();
   await page.getByRole('link',{name:'阅读全文与出处 →'}).click();
   await page.getByRole('heading',{name:'测试人物甲',exact:true,level:1}).waitFor();
   await page.goto(`${base}events/${eventId}`); await page.getByText('测试阶段',{exact:true}).waitFor();

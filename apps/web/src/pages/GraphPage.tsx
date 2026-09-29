@@ -1,473 +1,109 @@
-import { MAPS_ENABLED } from '../lib/features';
-import React, { useEffect, useRef } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import * as d3 from 'd3';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import type { GraphResponse, Person, Event, Edge } from '@histree/shared-types';
-import { UserIcon, AcademicCapIcon, MapIcon, ArrowLeftIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { entryPath } from '../lib/reading';
+import { useMemo, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import type { GraphResponse, Edge } from '@histree/shared-types';
+import { GraphCanvas } from '../components/graph/GraphCanvas';
+import { Evidence } from '../components/Reading';
 import { useResource } from '../hooks/useResource';
-import { edgeTypeLabel, formatDisplayRange, formatDisplayYear, referenceTypeLabel } from '../lib/content';
+import { entryPath, entryTitle } from '../lib/reading';
+import { edgeTypeLabel, formatDisplayRange } from '../lib/content';
+import { edgeKey, edgeSubject, neighborhood, type GraphSelection } from '../lib/graph';
 
-// Fix leaflet default icon
-delete (L.Icon.Default.prototype as L.Icon.Default & { _getIconUrl?: unknown })._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
-
-const isPerson = (node: Person | Event): node is Person => node.type === 'person';
-
-const tagList = (node: Person | Event) => node.tags ?? [];
-
-type GraphNode = (Person | Event) & d3.SimulationNodeDatum;
-type GraphEdge = Omit<Edge, 'source' | 'target'> & { source: GraphNode; target: GraphNode };
-const drag = (simulation: d3.Simulation<GraphNode, GraphEdge>) => {
-    function dragstarted(event: d3.D3DragEvent<SVGGElement, GraphNode, GraphNode>) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      event.subject.fx = event.subject.x;
-      event.subject.fy = event.subject.y;
-    }
-    function dragged(event: d3.D3DragEvent<SVGGElement, GraphNode, GraphNode>) {
-      event.subject.fx = event.x;
-      event.subject.fy = event.y;
-    }
-    function dragended(event: d3.D3DragEvent<SVGGElement, GraphNode, GraphNode>) {
-      if (!event.active) simulation.alphaTarget(0);
-      event.subject.fx = null;
-      event.subject.fy = null;
-    }
-    return d3.drag<SVGGElement, GraphNode>().on('start', dragstarted).on('drag', dragged).on('end', dragended);
-  };
-
-export const GraphPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const { data, loading, error } = useResource<GraphResponse>(`/graph/${id}`);
-  return <GraphView data={data} loading={loading} error={error} />;
-};
-
-export function GraphView({ data, loading = false, error, overview = false }: { data?: GraphResponse; loading?: boolean; error?: string; overview?: boolean }) {
-  const navigate = useNavigate();
-  const selectedNode = data?.center;
-  const svgRef = useRef<SVGSVGElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!data || !svgRef.current || !containerRef.current) return;
-
-    const width = containerRef.current.clientWidth || 800;
-    const height = 600;
-
-    const svg = d3.select(svgRef.current)
-      .attr('viewBox', [0, 0, width, height]);
-
-    svg.selectAll('*').remove();
-
-    // Tooltip div
-    d3.select(containerRef.current).selectAll('.d3-tooltip').remove();
-    const tooltip = d3.select(containerRef.current)
-      .append('div')
-      .attr('class', 'd3-tooltip');
-
-    // Arrow markers
-    svg.append('defs').append('marker')
-      .attr('id', 'arrowhead')
-      .attr('viewBox', '-0 -5 10 10')
-      .attr('refX', 28) // Shift arrow back so it doesn't hide under node
-      .attr('refY', 0)
-      .attr('orient', 'auto')
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('xoverflow', 'visible')
-      .append('svg:path')
-      .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-      .attr('fill', '#94a3b8')
-      .style('stroke','none');
-
-    const nodes: GraphNode[] = data.nodes.map(d => ({ ...d }));
-    const byId = new Map(nodes.map(n => [n.id, n]));
-    const edges: GraphEdge[] = data.edges.filter(e => byId.has(e.source) && byId.has(e.target))
-      .map(e => ({ ...e, source: byId.get(e.source)!, target: byId.get(e.target)! }));
-
-    // Create defs for image patterns
-    const defs = svg.select('defs');
-    nodes.forEach((n) => {
-      if (n.image_url) {
-        defs.append('pattern')
-          .attr('id', `img-${n.id}`)
-          .attr('patternUnits', 'objectBoundingBox')
-          .attr('width', 1)
-          .attr('height', 1)
-          .append('image')
-          .attr('href', n.image_url)
-          .attr('width', isPerson(n) ? 56 : 64) // diameter for circle, width for rect
-          .attr('height', isPerson(n) ? 56 : 48)
-          .attr('preserveAspectRatio', 'xMidYMid slice');
-      }
-    });
-
-    const simulation = d3.forceSimulation<GraphNode>(nodes)
-      .force('link', d3.forceLink<GraphNode, GraphEdge>(edges).id((d) => d.id).distance(180))
-      .force('charge', d3.forceManyBody().strength(-800))
-      .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collide', d3.forceCollide().radius(60));
-
-    // Links container
-    const linkGroup = svg.append('g').attr('class', 'links');
-    const link = linkGroup.selectAll('line')
-      .data(edges)
-      .join('line')
-      .attr('stroke', (d) => d.type === 'causes' ? '#f87171' : '#cbd5e1')
-      .attr('stroke-width', (d) => d.type === 'causes' ? 3 : 2)
-      .attr('stroke-dasharray', (d) => d.type === 'causes' ? '4,4' : 'none')
-      .attr('marker-end', 'url(#arrowhead)');
-
-    // Link Labels
-    const linkLabel = linkGroup.selectAll('text')
-      .data(edges)
-      .join('text')
-      .attr('class', 'link-label')
-      .text((d) => edgeTypeLabel(d.type))
-      .attr('font-size', '10px')
-      .attr('font-weight', (d) => d.type === 'causes' ? 'bold' : 'normal')
-      .attr('fill', (d) => d.type === 'causes' ? '#ef4444' : '#64748b')
-      .attr('text-anchor', 'middle')
-      .attr('dy', -4)
-      .style('background', 'white');
-
-    // Nodes container
-    const nodeGroup = svg.append('g').attr('class', 'nodes');
-    const node = nodeGroup.selectAll<SVGGElement, GraphNode>('g')
-      .data(nodes)
-      .join('g')
-      .attr('class', 'node cursor-pointer')
-      .attr('role', 'link')
-      .attr('tabindex', 0)
-      .attr('aria-label', d => isPerson(d) ? d.name : d.title)
-      .on('keydown', (event, d) => { if (event.key === 'Enter') navigate(`/graph/${d.id}`); })
-      .call(drag(simulation))
-      .on('click', (_event, d) => {
-        navigate(`/graph/${d.id}`);
-      })
-      .on('mouseover', (event, d) => {
-        d3.select(event.currentTarget).select(isPerson(d) ? 'circle' : 'rect')
-          .transition().duration(200)
-          .attr('stroke', '#3b82f6')
-          .attr('stroke-width', 4);
-        
-        tooltip.transition().duration(200).style('opacity', 1);
-        tooltip.text(`${isPerson(d) ? d.name : d.title} · ${isPerson(d) ? d.era || '时代待补充' : formatDisplayRange(d.start_year, d.end_year)}`);
-        const [x, y] = d3.pointer(event, containerRef.current);
-        tooltip.style('left', `${x + 15}px`).style('top', `${y + 15}px`);
-      })
-      .on('mouseout', (event, d) => {
-        d3.select(event.currentTarget).select(isPerson(d) ? 'circle' : 'rect')
-          .transition().duration(200)
-          .attr('stroke', d.id === data.center?.id ? '#10b981' : '#fff')
-          .attr('stroke-width', d.id === data.center?.id ? 4 : 2);
-        tooltip.transition().duration(500).style('opacity', 0);
-      });
-
-    // Render Person as Circle
-    node.filter((d) => isPerson(d))
-      .append('circle')
-      .attr('r', 28)
-      .attr('fill', (d) => d.image_url ? `url(#img-${d.id})` : '#38bdf8') // sky-400
-      .attr('stroke', (d) => d.id === data.center?.id ? '#10b981' : '#fff')
-      .attr('stroke-width', (d) => d.id === data.center?.id ? 4 : 2)
-      .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
-
-    // Render Event as Rectangle
-    node.filter((d) => !isPerson(d))
-      .append('rect')
-      .attr('width', 64)
-      .attr('height', 48)
-      .attr('x', -32)
-      .attr('y', -24)
-      .attr('rx', 12)
-      .attr('fill', (d) => d.image_url ? `url(#img-${d.id})` : '#fb923c') // orange-400
-      .attr('stroke', (d) => d.id === data.center?.id ? '#10b981' : '#fff')
-      .attr('stroke-width', (d) => d.id === data.center?.id ? 4 : 2)
-      .attr('filter', 'drop-shadow(0px 4px 6px rgba(0,0,0,0.1))');
-
-    node.append('text')
-      .text((d) => isPerson(d) ? d.name : d.title)
-      .attr('font-size', '12px')
-      .attr('font-weight', '600')
-      .attr('fill', '#1e293b')
-      .attr('dx', (d) => isPerson(d) ? 34 : 36)
-      .attr('dy', 4)
-      .style('text-shadow', '0 1px 3px rgba(255,255,255,0.8), 0 -1px 3px rgba(255,255,255,0.8), 1px 0 3px rgba(255,255,255,0.8), -1px 0 3px rgba(255,255,255,0.8)');
-
-    simulation.on('end', () => {
-      const bounds = nodeGroup.node()?.getBBox();
-      if (bounds) svg.attr('viewBox', [bounds.x - 40, bounds.y - 40, bounds.width + 80, bounds.height + 80]);
-    });
-
-    simulation.on('tick', () => {
-      link
-        .attr('x1', (d) => (d.source.x ?? 0))
-        .attr('y1', (d) => (d.source.y ?? 0))
-        .attr('x2', (d) => (d.target.x ?? 0))
-        .attr('y2', (d) => (d.target.y ?? 0));
-      
-      linkLabel
-        .attr('x', (d) => ((d.source.x ?? 0) + (d.target.x ?? 0)) / 2)
-        .attr('y', (d) => ((d.source.y ?? 0) + (d.target.y ?? 0)) / 2);
-
-      node.attr('transform', (d) => `translate(${d.x},${d.y})`);
-    });
-
-    return () => { simulation.stop(); tooltip.remove(); };
-  }, [data, navigate]);
-
-  if (loading) {
-    return <div className="flex justify-center items-center h-96 text-slate-400">加载中...</div>;
-  }
-
-  if (error) return <p role="alert" className="py-16 text-center">图谱暂时无法加载，请刷新重试。</p>;
-
-  if (!data || !selectedNode) {
-    return <div className="flex justify-center items-center h-96 text-slate-400">未找到该节点数据</div>;
-  }
-
-  return (
-    <div className="flex flex-col lg:flex-row gap-6 h-full">
-      {/* Graph Area */}
-      <div className="flex-1 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative" ref={containerRef}>
-        <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50 absolute top-0 w-full z-10 opacity-90 backdrop-blur-sm">
-          <div className="flex items-center gap-4">
-            <button onClick={() => navigate(-1)} className="p-2 hover:bg-slate-200 rounded-lg text-slate-500 transition-colors">
-              <ArrowLeftIcon className="w-5 h-5" />
-            </button>
-            <h2 className="text-lg font-bold text-slate-700 flex items-center gap-2">
-              <MapIcon className="w-5 h-5 text-sky-500" />
-              关系图谱
-            </h2>
-          </div>
-          <div className="flex gap-4 text-sm font-medium">
-            <div className="flex items-center gap-2 bg-sky-50 px-2 py-1 rounded-md text-sky-700">
-              <span className="w-3 h-3 rounded-full bg-sky-400 inline-block"></span>
-              人物
-            </div>
-            <div className="flex items-center gap-2 bg-orange-50 px-2 py-1 rounded-md text-orange-700">
-              <span className="w-4 h-3 rounded-sm bg-orange-400 inline-block"></span>
-              事件
-            </div>
-          </div>
-        </div>
-        <svg aria-label="人物与事件关系图谱" ref={svgRef} className="w-full h-[600px] lg:h-[800px] cursor-grab active:cursor-grabbing bg-slate-50/50 mt-16"></svg>
-      </div>
-
-      {/* Info Panel */}
-      {!overview && <div className="w-full lg:w-96 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-y-auto h-[600px] lg:h-[800px] flex flex-col shrink-0">
-        <div className="p-6 border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur-sm z-10">
-          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-            {isPerson(selectedNode) ? <UserIcon className="w-4 h-4" /> : <AcademicCapIcon className="w-4 h-4" />}
-            {isPerson(selectedNode) ? '人物条目' : '事件条目'}
-          </h3>
-          <h1 className="text-3xl font-extrabold text-slate-800 mb-2">
-            {isPerson(selectedNode) ? selectedNode.name : selectedNode.title}
-          </h1>
-          <Link to={entryPath(selectedNode)} className="block text-teal-700 text-sm mb-4">阅读全文与出处 →</Link>
-          <div className="inline-flex px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold border border-slate-200">
-            {isPerson(selectedNode) ? selectedNode.era || '时代待补充' : formatDisplayRange(selectedNode.start_year, selectedNode.end_year)}
-          </div>
-        </div>
-        
-        <div className="p-6 flex-1 space-y-8">
-          {selectedNode.image_url && (
-            <div className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm">
-              <img src={selectedNode.image_url} alt={isPerson(selectedNode) ? selectedNode.name : selectedNode.title} className="w-full h-48 object-cover" />
-            </div>
-          )}
-
-          {tagList(selectedNode).length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {tagList(selectedNode).map((tag) => (
-                <span key={tag} className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {isPerson(selectedNode) && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">人物信息</h4>
-              <dl className="grid grid-cols-2 gap-3 text-sm">
-                {selectedNode.courtesy_name && (
-                  <div>
-                    <dt className="text-slate-400">字</dt>
-                    <dd className="font-medium text-slate-700">{selectedNode.courtesy_name}</dd>
-                  </div>
-                )}
-                {selectedNode.faction && (
-                  <div>
-                    <dt className="text-slate-400">阵营</dt>
-                    <dd className="font-medium text-slate-700">{selectedNode.faction}</dd>
-                  </div>
-                )}
-                {selectedNode.native_place && (
-                  <div>
-                    <dt className="text-slate-400">籍贯</dt>
-                    <dd className="font-medium text-slate-700">{selectedNode.native_place}</dd>
-                  </div>
-                )}
-                {(selectedNode.birth_year || selectedNode.death_year) && (
-                  <div>
-                    <dt className="text-slate-400">生卒</dt>
-                    <dd className="font-medium text-slate-700">{formatDisplayYear(selectedNode.birth_year)} - {formatDisplayYear(selectedNode.death_year)}</dd>
-                  </div>
-                )}
-              </dl>
-              {selectedNode.aliases && selectedNode.aliases.length > 0 && (
-                <div className="mt-3 text-sm text-slate-600">
-                  <span className="text-slate-400">别名：</span>{selectedNode.aliases.join('、')}
-                </div>
-              )}
-            </div>
-          )}
-
-          <div>
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">概述</h4>
-            <p className="text-slate-600 leading-relaxed text-base">
-              {selectedNode.description || '暂无描述信息。'}
-            </p>
-          </div>
-
-          {isPerson(selectedNode) && selectedNode.biography && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">生平</h4>
-              <p className="text-slate-600 leading-relaxed text-base whitespace-pre-line">{selectedNode.biography}</p>
-            </div>
-          )}
-
-          {isPerson(selectedNode) && selectedNode.historical_evaluation && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">历史评价</h4>
-              <p className="text-slate-600 leading-relaxed text-base whitespace-pre-line">{selectedNode.historical_evaluation}</p>
-            </div>
-          )}
-
-          {isPerson(selectedNode) && selectedNode.family && selectedNode.family.length > 0 && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">亲属关系</h4>
-              <div className="space-y-2">
-                {selectedNode.family.map((item, index) => (
-                  <div key={`${item.name}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                    <div className="text-sm font-semibold text-slate-700">{item.name} <span className="text-slate-400 font-normal">/ {item.relation}</span></div>
-                    {item.note && <div className="text-xs text-slate-500 mt-1">{item.note}</div>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {isPerson(selectedNode) && selectedNode.social_relations && selectedNode.social_relations.length > 0 && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">交际关系</h4>
-              <div className="space-y-2">
-                {selectedNode.social_relations.map((item, index) => (
-                  <div key={`${item.name}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                    <div className="text-sm font-semibold text-slate-700">{item.name} <span className="text-slate-400 font-normal">/ {item.relation}</span></div>
-                    {item.note && <div className="text-xs text-slate-500 mt-1">{item.note}</div>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {selectedNode.references && selectedNode.references.length > 0 && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">参考资料</h4>
-              <div className="space-y-2">
-                {selectedNode.references.map((reference, index) => (
-                  <div key={`${reference.title}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="text-sm font-semibold text-slate-700">{reference.title}</div>
-                      <span className="shrink-0 px-2 py-0.5 rounded-md bg-white border border-slate-200 text-[11px] text-slate-500">
-                        {referenceTypeLabel(reference.reference_type)}
-                      </span>
-                    </div>
-                    {reference.note && <div className="text-xs text-slate-500 mt-1 leading-relaxed">{reference.note}</div>}
-                    {reference.url && (
-                      <a href={reference.url} target="_blank" rel="noreferrer" className="text-xs text-sky-600 hover:text-sky-700 mt-2 inline-block break-all">
-                        {reference.url}
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {!isPerson(selectedNode) && selectedNode.phases && selectedNode.phases.length > 0 && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">事件阶段</h4>
-              <div className="space-y-3">
-                {selectedNode.phases.map((phase, index) => (
-                  <div key={`${phase.title}-${index}`} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                    <div className="text-sm font-semibold text-slate-700">{phase.title}</div>
-                    {(phase.start_year || phase.end_year) && <div className="text-xs text-slate-400">{formatDisplayRange(phase.start_year, phase.end_year)}</div>}
-                    {phase.description && <div className="text-xs text-slate-500 mt-1 leading-relaxed">{phase.description}</div>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {MAPS_ENABLED && !isPerson(selectedNode) && selectedNode.location_lat && selectedNode.location_lng && (
-            <div>
-              <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1">
-                <MapPinIcon className="w-4 h-4" /> 地点{selectedNode.location_name ? ` - ${selectedNode.location_name}` : ''}
-              </h4>
-              <div className="w-full h-48 rounded-xl overflow-hidden border border-slate-200 shadow-sm z-0 relative">
-                <MapContainer 
-                  center={[selectedNode.location_lat, selectedNode.location_lng]} 
-                  zoom={6} 
-                  scrollWheelZoom={false}
-                  style={{ height: '100%', width: '100%' }}
-                >
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={[selectedNode.location_lat, selectedNode.location_lng]}>
-                    {selectedNode.location_name && <Popup>{selectedNode.location_name}</Popup>}
-                  </Marker>
-                </MapContainer>
-              </div>
-            </div>
-          )}
-          
-          <div>
-            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">相关节点</h4>
-            <div className="space-y-2">
-              {data.nodes.filter(n => n.id !== selectedNode.id).slice(0, 8).map(n => (
-                <Link 
-                  key={n.id} 
-                  to={`/graph/${n.id}`}
-                  className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-sky-200 hover:bg-sky-50 transition-colors group"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isPerson(n) ? 'bg-sky-100 text-sky-600' : 'bg-orange-100 text-orange-600'}`}>
-                      {isPerson(n) ? <UserIcon className="w-4 h-4" /> : <AcademicCapIcon className="w-4 h-4" />}
-                    </div>
-                    <span className="font-semibold text-slate-700 group-hover:text-sky-700">{isPerson(n) ? n.name : n.title}</span>
-                  </div>
-                  <ArrowLeftIcon className="w-4 h-4 text-slate-300 group-hover:text-sky-500 rotate-180" />
-                </Link>
-              ))}
-              {data.nodes.length > 9 && (
-                <div className="text-center text-sm text-slate-400 pt-2">+ {data.nodes.length - 9} 个更多节点仍在图中</div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>}
-    </div>
-  );
-};
+export function GraphPage() {
+ const {id}=useParams<{id:string}>();
+ const result=useResource<GraphResponse>(`/graph/${id}`);
+ return <GraphView key={id} data={result.data} loading={result.loading} error={result.error}/>;
+}
+export function GraphView({data,loading=false,error,overview=false}:{data?:GraphResponse;loading?:boolean;error?:string;overview?:boolean}) {
+ if(loading)return <p role="status" className="py-16">正在加载图谱…</p>;
+ if(error)return <p role="alert" className="py-16">图谱暂时无法加载，请刷新重试。</p>;
+ if(!data?.nodes.length)return <p className="py-16">当前没有可展示的图谱内容。</p>;
+ return <GraphExplorer data={data} overview={overview}/>;
+}
+function GraphExplorer({data,overview}:{data:GraphResponse;overview:boolean}) {
+ const [mode,setMode]=useState<'timeline'|'network'>(overview?'timeline':'network');
+ const [selection,setSelection]=useState<GraphSelection>(overview?null:{kind:'node',id:data.center.id});
+ const [query,setQuery]=useState('');
+ const [relation,setRelation]=useState('all');
+ const [focus,setFocus]=useState('');
+ const [depth,setDepth]=useState(1);
+ const [from,setFrom]=useState('');
+ const [to,setTo]=useState('');
+ const [evidence,setEvidence]=useState(false);
+ const invalidRange=from!==''&&to!==''&&Number(from)>Number(to);
+ const selectedNode=selection?.kind==='node'?data.nodes.find(n=>n.id===selection.id):undefined;
+ const selectedEdge=selection?.kind==='edge'?data.edges.find(e=>edgeKey(e)===selection.id):undefined;
+ function select(next:GraphSelection){setSelection(next);setEvidence(false);}
+ const filtered=useMemo(()=>{
+   const scope=focus?neighborhood(data,focus,depth):null;
+   const nodes=data.nodes.filter(n=>{
+     if(invalidRange)return false;
+     if(scope&&!scope.has(n.id))return false;
+     if(n.type==='event'&&n.start_year!=null)return (from===''||(n.end_year??n.start_year)>=Number(from))&&(to===''||n.start_year<=Number(to));
+     return true;
+   });
+   const ids=new Set(nodes.map(n=>n.id));
+   let edges=data.edges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&(relation==='all'||edgeSubject(e,data.nodes)===relation));
+   if(relation!=='all') {
+     const linked=new Set(edges.flatMap(e=>[e.source,e.target]));
+     return {...data,nodes:nodes.filter(n=>linked.has(n.id)),edges};
+   }
+   if(mode==='timeline')edges=edges.filter(e=>edgeSubject(e,data.nodes)==='person_event');
+   return {...data,nodes,edges};
+ },[data,focus,depth,from,to,invalidRange,relation,mode]);
+ const matches=data.nodes.filter(n=>entryTitle(n).includes(query.trim()) || (n.type==='person' && n.aliases?.some(a=>a.includes(query.trim()))));
+ const selectedIds=selectedNode?neighborhood(data,selectedNode.id,1):selectedEdge?new Set([selectedEdge.source,selectedEdge.target]):null;
+ const highlighted=query.trim()?new Set(matches.map(n=>n.id)):selectedIds;
+ const title=(id:string)=>{const n=data.nodes.find(node=>node.id===id);return n?entryTitle(n):'未知条目';};
+ const edgeTitle=(e:Edge)=>`${title(e.source)} → ${title(e.target)}：${edgeTypeLabel(e.type)}`;
+ const visibleIds=new Set(filtered.nodes.map(n=>n.id));
+ const selectedHidden=selectedNode&&!visibleIds.has(selectedNode.id)||selectedEdge&&!filtered.edges.some(e=>edgeKey(e)===edgeKey(selectedEdge));
+ const adjacent=selectedNode?data.edges.filter(e=>e.source===selectedNode.id||e.target===selectedNode.id):[];
+ const button='rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm';
+ function switchMode(next:'timeline'|'network') {setMode(next);setRelation(next==='network'?'person_relationship':'all');if(selection?.kind==='edge')select(null);}
+ return <section className="space-y-4" aria-label="历史图谱工作区">
+   <div className="flex flex-wrap justify-between gap-3 items-center">
+     <div className="inline-flex rounded-xl bg-[#e8ede6] p-1" aria-label="图谱视图">
+       <button aria-pressed={mode==='timeline'} className={`graph-mode ${mode==='timeline'?'is-active':''}`} onClick={()=>switchMode('timeline')}>历史进程</button>
+       <button aria-pressed={mode==='network'} className={`graph-mode ${mode==='network'?'is-active':''}`} onClick={()=>switchMode('network')}>关系探索</button>
+     </div>
+     <p className="text-xs text-stone-500">{filtered.nodes.length} 个条目 · {filtered.edges.length} 条{mode==='timeline'?'参与':'已记录'}关系</p>
+   </div>
+   <div className="flex flex-wrap gap-3 items-end">
+     <label className="text-sm">查找人物／事件<input aria-label="查找图谱节点" className="block border rounded-lg px-3 py-2 mt-1 bg-white" value={query} onChange={e=>setQuery(e.target.value)} placeholder="输入姓名或事件关键词"/></label>
+     <label className="text-sm">事件起始年<input aria-label="图谱起始年" className="block w-24 border rounded-lg p-2 mt-1" type="number" value={from} onChange={e=>setFrom(e.target.value)}/></label>
+     <label className="text-sm">事件结束年<input aria-label="图谱结束年" className="block w-24 border rounded-lg p-2 mt-1" type="number" value={to} onChange={e=>setTo(e.target.value)}/></label>
+     {mode==='network'&&<label className="text-sm">关系类型<select aria-label="关系类型" className="block border rounded-lg p-2 mt-1 bg-white" value={relation} onChange={e=>setRelation(e.target.value)}><option value="all">全部关系</option><option value="person_relationship">人物关系</option><option value="person_event">事件参与</option><option value="event_causality">事件因果</option></select></label>}
+     <button className={button} onClick={()=>{setQuery('');setFrom('');setTo('');setFocus('');setRelation('all');select(null);}}>重置筛选</button>
+   </div>
+   {invalidRange&&<p role="alert" className="text-rose-700">起始年不能晚于结束年。</p>}
+   {query.trim()&&<div className="flex flex-wrap gap-2" aria-label="图谱搜索结果">{matches.length?matches.slice(0,20).map(n=><button key={n.id} className={button} onClick={()=>{select({kind:'node',id:n.id});setQuery('');}}>{entryTitle(n)}</button>):<p className="text-sm text-stone-500">没有找到匹配的条目。</p>}{matches.length>20&&<span className="text-sm">仅显示前 20 项，请缩小关键词范围。</span>}</div>}
+   {focus&&<div className="flex flex-wrap gap-2 items-center text-sm bg-teal-50 rounded-lg p-3"><span>聚焦：{title(focus)}</span><button className={button} onClick={()=>setDepth(depth===1?2:1)}>{depth===1?'展开到两层关系':'收起为直接关系'}</button><button className={button} onClick={()=>setFocus('')}>返回当前全图</button></div>}
+   <p className="text-xs text-stone-500">{mode==='timeline'?'每位人物一行，角色标签表示其参与该事件。空白表示暂无参与记录；人物之间的关系可切换到“关系探索”。':'节点位置仅用于阅读，不表示年代或地理位置。'} 年份筛选作用于事件，时间不详的条目保留。</p>
+   <div className="grid xl:grid-cols-[minmax(0,1fr)_330px] gap-4 items-start">
+     <div className="min-w-0">
+       {filtered.nodes.length?<GraphCanvas key={`${mode}:${focus}:${depth}:${relation}:${from}:${to}`} data={filtered} mode={mode} selection={selection} onSelect={select} highlighted={highlighted}/>:<p className="reading-card py-20 text-center">没有符合条件的关系或条目。可以重置筛选查看全部内容。</p>}
+       {selection&&<a href="#graph-details" className="xl:hidden block text-center rounded-lg bg-teal-50 p-3 mt-3 text-sm text-teal-800">查看选中内容的详情 ↓</a>}
+       <details className="mt-3 rounded-xl border border-stone-200 bg-white p-4"><summary className="text-sm">关系清单 · {filtered.edges.length} 条（也可在这里选择）</summary><div className="max-h-64 overflow-auto mt-3 space-y-2">{filtered.edges.map(e=><button key={edgeKey(e)} onClick={()=>select({kind:'edge',id:edgeKey(e)})} className={`block w-full text-left rounded-lg p-3 text-sm ${selectedEdge&&edgeKey(selectedEdge)===edgeKey(e)?'bg-teal-100':'bg-stone-50'}`}>{edgeTitle(e)}</button>)}</div></details>
+     </div>
+     <aside id="graph-details" className="graph-detail" aria-label="图谱详情" aria-live="polite">
+       <div className="flex justify-between items-center"><p className="eyebrow">{selectedEdge?'关系详情':selectedNode?.type==='person'?'人物详情':selectedNode?'事件详情':'阅读图谱'}</p>{selection&&<button className="text-sm text-stone-500" onClick={()=>select(null)}>取消选择</button>}</div>
+       {selectedHidden&&<p className="text-xs text-amber-800 mt-3">当前筛选未展示此项，详情仍保留。重置筛选可回到全图。</p>}
+       {selectedNode?<>
+         <h2 className="font-serif text-2xl leading-9 mt-4">{entryTitle(selectedNode)}</h2>
+         <p className="text-sm text-stone-500 mt-2">{selectedNode.type==='event'?formatDisplayRange(selectedNode.start_year,selectedNode.end_year):selectedNode.era||'时代待补充'}</p>
+         <p className="text-sm leading-7 mt-4">{selectedNode.description||'条目说明尚待整理。'}</p>
+         <div className="flex flex-wrap gap-2 mt-5"><button className={button} onClick={()=>{setFocus(selectedNode.id);setDepth(1);switchMode('network');setRelation('all');}}>聚焦其关系</button><Link className="rounded-lg bg-[#285747] px-3 py-2 text-sm text-white" to={entryPath(selectedNode)}>阅读全文与出处 →</Link></div>
+         {selectedNode.type==='event'&&selectedNode.phases?.map((p,i)=><div key={i} className="border-l-2 border-stone-300 pl-3 mt-4 text-sm"><strong>{p.title}</strong><p className="leading-7 mt-1">{p.description}</p></div>)}
+         <h3 className="text-sm font-semibold mt-6 mb-2">相关关系 · {adjacent.length}</h3>
+         <div className="space-y-2">{adjacent.map(e=><button className="block w-full text-left text-sm p-3 bg-stone-50 rounded-lg hover:bg-teal-50" key={edgeKey(e)} onClick={()=>select({kind:'edge',id:edgeKey(e)})}>{edgeTitle(e)}</button>)}</div>
+       </>:selectedEdge?<>
+         <div className="mt-4 space-y-3"><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.source})}>{title(selectedEdge.source)}</button><p className="text-sm text-stone-500">↓ {edgeTypeLabel(selectedEdge.type)}</p><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.target})}>{title(selectedEdge.target)}</button></div>
+         <p className="text-sm leading-7 mt-5">{selectedEdge.description || (edgeSubject(selectedEdge,data.nodes)==='person_event'?`当前记录的事件角色为“${edgeTypeLabel(selectedEdge.type)}”，具体依据见下方史料。`:'该关系已记录，进一步说明尚待整理。')}</p>
+         <p className="text-xs leading-6 text-stone-500 mt-3">{edgeSubject(selectedEdge,data.nodes)==='person_event'?(()=>{const e=data.nodes.find(n=>(n.id===selectedEdge.source||n.id===selectedEdge.target)&&n.type==='event');return e?.type==='event'?`关联事件：${formatDisplayRange(e.start_year,e.end_year)}`:'';})():'关系有效起止时间尚未单独整理。'}</p>
+       </>:<><h2 className="font-serif text-2xl mt-4">沿着人物读历史</h2><p className="text-sm leading-7 mt-4">单击人物或事件，在这里查看详情；单击角色标签或关系线，查看它连接了谁、是什么关系以及史料依据。</p><p className="text-sm leading-7 mt-3">选中人物后，其相关事件和人物会突出显示。切换关系探索，可以拖动节点，并聚焦一到两层关系。</p></>}
+       {(selectedNode||selectedEdge)&&<div className="border-t border-stone-200 mt-6 pt-4"><button className="text-sm text-teal-800 underline" aria-expanded={evidence} onClick={()=>setEvidence(!evidence)}>{evidence?'收起史料依据':'查看史料依据'}</button>{evidence&&(selectedNode?<Evidence key={selectedNode.id} subject={selectedNode.type} id={selectedNode.id}/>:selectedEdge?.id?<Evidence key={edgeKey(selectedEdge)} subject={edgeSubject(selectedEdge,data.nodes)} id={selectedEdge.id}/>:<p className="text-sm mt-3">这条关系的独立出处尚待整理。</p>)}</div>}
+       {!overview&&<Link to="/graph" className="block text-sm underline text-teal-700 mt-6">打开全部人物与事件图谱 →</Link>}
+     </aside>
+   </div>
+ </section>;
+}

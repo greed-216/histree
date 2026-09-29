@@ -8,7 +8,8 @@ apps/api/dist/
 *.log
 .DS_Store
 
-# Local research corpus: keep manifests and guides in Git, full sources on disk.
+# Reference texts are versioned; exclude original duplicate, transport archives and API caches.
 resources/*.txt
-resources/originals/
-resources/derived/
+resources/originals/**/*.zip
+resources/originals/**/*.json
+resources/originals/**/.gitignore

@@ -2,6 +2,8 @@
 
 ## 从这里继续
 
+协作者先读项目 [史料录入 Skill](../skills/histree-history-ingest/SKILL.md)；根目录 [AGENTS.md](../AGENTS.md) 为 Agent 提供入口。
+
 当前主书为 **《资治通鉴》**，编年录入从 **884年**继续。唯一进度入口是 [yearly-progress.json](yearly-progress.json)，其中精确记录下一卷、年、段落；不再维护“朱温专题下一年”等平行游标。
 
 ```text

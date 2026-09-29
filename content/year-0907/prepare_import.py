@@ -2,6 +2,7 @@
 import json,subprocess,sys
 from pathlib import Path
 D=Path(__file__).resolve().parent;ROOT=D.parents[1]
+subprocess.run([sys.executable,str(ROOT/'scripts/clean-public-copy.py'),'--batch',str(D/'content-batch.json')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts/prepare-content-import.py'),str(D/'content-batch.json'),str(D/'sql')],check=True)
 b=json.loads((D/'content-batch.json').read_text());old=json.loads((D.parent/'later-liang-907-923/content-batch.json').read_text());ids=json.loads((D/'sql/key-map.json').read_text())
 mapping={'people':'person','events':'event','person_events':'person_event','person_relationships':'person_relationship','claims':'fact_claim','topics':'topic'}

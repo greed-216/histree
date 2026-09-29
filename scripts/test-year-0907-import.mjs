@@ -34,5 +34,13 @@ try {
  for(const t of tables){const rows=(await db.query(`SELECT * FROM ${t} WHERE id=ANY($1::uuid[]) ORDER BY id`,[baseline[t].map(x=>x.id)])).rows;assert.deepEqual(rows,baseline[t],'release preserves existing '+t);}
 
  await db.exec('SET ROLE anon');for(const t of tables.filter(x=>x!=='source'))assert.equal((await db.query(`SELECT count(*)::int n FROM ${t}`)).rows[0].n,first[t],'reviewed data published '+t);await db.exec('RESET ROLE');
+ const originalQuotes=(await db.query('SELECT id,note FROM fact_claim ORDER BY id')).rows.map(r=>[r.id,r.note.split('；核对说明：')[0]]);
+ const copySql=await readFile('content/revisions/2026-09-29-public-copy/apply.sql','utf8');
+ await db.exec(copySql); await db.exec(copySql);
+ for(const change of JSON.parse(await readFile('content/revisions/2026-09-29-public-copy/changes.json','utf8'))) {
+   const row=(await db.query(`SELECT * FROM ${change.table} WHERE id=$1`,[change.id])).rows[0];
+   for (const [key,value] of Object.entries(change.after)) assert.deepEqual(row[key],value,'public copy '+change.id+':'+key);
+ }
+ assert.deepEqual((await db.query('SELECT id,note FROM fact_claim ORDER BY id')).rows.map(r=>[r.id,r.note.split('；核对说明：')[0]]),originalQuotes,'copy edits preserve all quotations');
  console.log('PASS: 907 import and retry, preserved all existing rows, no duplicate participation, new drafts invisible to anonymous readers',first);
 } finally {await db.close();await rm(dir,{recursive:true,force:true});}

@@ -18,6 +18,8 @@ raw = (ROOT / 'resources/derived/tongjian/256.txt').read_bytes()
 (P / 'sources/manifest.json').write_text(json.dumps([dict(key=source, file=source + '.txt', sha256=hashlib.sha256(raw).hexdigest(), url=B['sources'][0]['url'], upstream='resources/derived/tongjian/256.txt', transformation='none')], ensure_ascii=False, indent=2) + '\n')
 registry = {}
 for f in sorted((ROOT / 'content').rglob('content-batch.json')):
+    if f.resolve() == (P / 'content-batch.json').resolve() or ('books' in f.parts and str(f) > str(P / 'content-batch.json')):
+        continue
     for row in json.loads(f.read_text())['people']:
         if row['name'] in registry:
             assert registry[row['name']]['key'] == row['key'], (f, row['name'])

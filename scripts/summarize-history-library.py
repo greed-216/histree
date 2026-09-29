@@ -10,7 +10,7 @@ for i,x in enumerate(load('twenty-four-histories.json')):
  p=ROOT/x['file'];assert hashlib.sha256(p.read_bytes()).hexdigest()==x['sha256']; assert ins[x['file']]['status']=='parsed'
  books.append(dict(key='history-'+str(i+1).zfill(2),title=x['title'],periods=[periods[i]],format='PDF',file=x['file'],source_url=x['url'],sha256=x['sha256'],pages=ins[x['file']]['pages'],edition_status=ins[x['file']]['edition_status'],status='下载校验通过；版本待考'))
 checks.append('24/24 PDF通过SHA-256复核、Git blob校验及PDF解析；未逐页校勘')
-x=load('tongjian-user-file.json');assert hashlib.sha256((ROOT/x['file']).read_bytes()).hexdigest()==x['sha256'];books.append(dict(key='tongjian-user',title='资治通鉴',periods=['战国—五代'],format='TXT',file=x['file'],sha256=x['sha256'],edition_status=x['edition_status'],status='294卷标题已识别'))
+x=load('tongjian-user-file.json');x['file']='resources/originals/tongjian/资治通鉴.txt' if (B/'originals/tongjian/资治通鉴.txt').exists() else x['file'];assert hashlib.sha256((ROOT/x['file']).read_bytes()).hexdigest()==x['sha256'];books.append(dict(key='tongjian-user',title='资治通鉴',periods=['战国—五代'],format='TXT',file=x['file'],sha256=x['sha256'],edition_status=x['edition_status'],status='294卷标题已识别'))
 vols=load('tongjian-volumes.json');assert len(vols)==294
 for x in vols:assert hashlib.sha256((ROOT/x['file']).read_bytes()).hexdigest()==x['sha256']
 assert [(x['volume'],x['heading']) for x in vols[265:272]]==[(266,'后梁纪一'),(267,'后梁纪二'),(268,'后梁纪三'),(269,'后梁纪四'),(270,'后梁纪五'),(271,'后梁纪六'),(272,'后唐纪一')]

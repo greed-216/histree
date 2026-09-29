@@ -29,7 +29,7 @@ export const EventsPage: React.FC = () => {
         <div className="p-3 bg-orange-100 rounded-xl text-orange-600">
           <AcademicCapIcon className="w-6 h-6" />
         </div>
-        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">历史事件</h1>
+        <h1 className="text-3xl font-serif text-stone-800 tracking-tight">历史事件</h1>
       </div>
 
       <Link to="/search" className="inline-block text-teal-700 text-sm">搜索姓名、别名与标签 →</Link>
@@ -42,7 +42,7 @@ export const EventsPage: React.FC = () => {
             <Link 
               key={event.id} 
               to={`/events/${event.id}`}
-              className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all group"
+              className="reading-card directory-card group"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2 bg-orange-50 text-orange-500 rounded-lg group-hover:bg-orange-500 group-hover:text-white transition-colors">

@@ -5,7 +5,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
-import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon } from '@heroicons/react/24/outline';
 import { getCurrentUserRole } from './lib/api';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
 import { ExplorePage } from './pages/ExplorePage';
@@ -77,21 +77,21 @@ function App() {
   const navLinkClass = (path: string) => 
     `flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
       location.pathname === path || (path !== '/' && location.pathname.startsWith(path))
-        ? 'bg-slate-800 text-white shadow-sm'
-        : 'text-slate-600 hover:bg-slate-200/60 hover:text-slate-900'
+        ? 'nav-active'
+        : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
     }`;
 
   return (
-    <div className="min-h-screen bg-[#faf9f6] flex flex-col font-sans">
+    <div className="site-shell min-h-screen flex flex-col font-sans">
       {/* Top Navigation */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 min-h-16 py-3 flex flex-wrap gap-3 items-center justify-between">
+      <header className="site-header sticky top-0 z-40">
+        <div className="site-header-inner mx-auto px-4 md:px-8 min-h-16 py-3 flex flex-wrap gap-3 items-center justify-between">
           <div className="contents md:flex md:items-center md:gap-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center shadow-sm">
-                <SparklesIcon className="w-5 h-5 text-white" />
+              <div className="brand-seal">
+                <span aria-hidden="true">史</span>
               </div>
-              <span className="text-xl font-bold text-slate-800 tracking-tight">Histree</span>
+              <span className="brand-name">Histree</span>
             </Link>
             
             <nav aria-label="主导航" className="order-3 w-full md:order-none md:w-auto flex flex-wrap items-center gap-1">
@@ -152,7 +152,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 md:px-8 py-6 md:py-8">
+      <main className={`site-main flex-1 w-full mx-auto px-4 md:px-8 py-6 md:py-8 ${location.pathname.startsWith('/graph')?'site-main-graph':''}`}>
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
           <Route path="/sources/:id" element={<SourcePage />} />
           <Route path="/evidence/:subject/:id" element={<EvidencePage />} />

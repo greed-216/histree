@@ -26,10 +26,10 @@ export const PeoplePage: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3 mb-8">
-        <div className="p-3 bg-sky-100 rounded-xl text-sky-600">
+        <div className="p-3 bg-teal-100 rounded-xl text-teal-600">
           <UserIcon className="w-6 h-6" />
         </div>
-        <h1 className="text-3xl font-bold text-slate-800 tracking-tight">历史人物</h1>
+        <h1 className="text-3xl font-serif text-stone-800 tracking-tight">历史人物</h1>
       </div>
 
       <Link to="/search" className="inline-block text-teal-700 text-sm">搜索姓名、别名与标签 →</Link>
@@ -42,9 +42,9 @@ export const PeoplePage: React.FC = () => {
             <Link 
               key={person.id} 
               to={`/people/${person.id}`}
-              className="bg-white p-6 rounded-2xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition-all group flex items-start gap-4"
+              className="reading-card directory-card group flex items-start gap-4"
             >
-              <div className="w-14 h-14 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 font-bold text-lg overflow-hidden border border-slate-200 group-hover:border-sky-300 transition-colors">
+              <div className="w-14 h-14 rounded-full bg-teal-50 text-teal-500 flex items-center justify-center shrink-0 font-bold text-lg overflow-hidden border border-slate-200 group-hover:border-teal-300 transition-colors">
                 {person.image_url ? (
                   <img src={person.image_url} alt={person.name} className="w-full h-full object-cover" />
                 ) : (
@@ -52,7 +52,7 @@ export const PeoplePage: React.FC = () => {
                 )}
               </div>
               <div>
-                <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-sky-600 transition-colors">{person.name}</h3>
+                <h3 className="text-lg font-bold text-slate-800 mb-1 group-hover:text-teal-600 transition-colors">{person.name}</h3>
                 <div className="text-sm text-slate-500 mb-2">
                   {person.era || '时代待补充'}
                   {person.faction ? ` · ${person.faction}` : ''}
@@ -72,7 +72,7 @@ export const PeoplePage: React.FC = () => {
                   </div>
                 )}
                 {primaryReference(person.references) && (
-                  <div className="mt-3 text-xs text-sky-700 line-clamp-1">
+                  <div className="mt-3 text-xs text-teal-700 line-clamp-1">
                     参考：{primaryReference(person.references)?.title}
                   </div>
                 )}

@@ -44,3 +44,23 @@ export function graphForView(data: GraphResponse, mode: GraphViewMode): GraphRes
   const subject=mode==='people'?'person_relationship':'person_event';
   return {...data,nodes,edges:data.edges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&edgeSubject(e,data.nodes)===subject)};
 }
+
+export type GraphViewport = { x: number; y: number; k: number };
+export function fitGraph(points: Point[], width = 900, height = 760): GraphViewport {
+  if (!points.length) return { x: 0, y: 0, k: 1 };
+  const left = Math.min(...points.map(p => p.x)) - 115, right = Math.max(...points.map(p => p.x)) + 115;
+  const top = Math.min(...points.map(p => p.y)) - 70, bottom = Math.max(...points.map(p => p.y)) + 70;
+  const k = Math.min(1.25, (width - 60) / (right - left), (height - 60) / (bottom - top));
+  return { x: width / 2 - (left + right) / 2 * k, y: height / 2 - (top + bottom) / 2 * k, k };
+}
+export function focusGraph(point: Point, renderedWidth: number, width = 900, height = 760): GraphViewport {
+  // Keep the selected card readable in CSS pixels, including narrow viewports.
+  const k = Math.min(3, Math.max(1.1, width / Math.max(renderedWidth, 280) * 1.05));
+  return { x: width / 2 - point.x * k, y: height / 2 - point.y * k, k };
+}
+export function enterSubgraph(history: string[], id: string): string[] {
+  return history.at(-1) === id ? history : [...history, id];
+}
+export function isDoubleActivation(previous: { id: string; time: number; point: Point } | null, id: string, time: number, point: Point) {
+  return !!previous && previous.id === id && time - previous.time <= 320 && Math.hypot(point.x - previous.point.x, point.y - previous.point.y) < 12;
+}

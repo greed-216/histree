@@ -29,3 +29,24 @@ assert.deepEqual(events.edges,[edges[1]]);
 assert.equal(events.nodes.length,nodes.length,'Keep entries with no recorded participation visible');
 assert.deepEqual([...neighborhood(events,'p',2)],['p'],'Focus must not cross hidden person relationships');
 assert.equal(data.edges.length,2,'Changing views must not mutate the source');
+
+const {fitGraph,focusGraph,enterSubgraph,isDoubleActivation}=await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
+for (const width of [340,680,1100]) {
+ const target={x:-1300,y:4200},camera=focusGraph(target,width);
+ assert.ok(Math.abs(target.x*camera.k+camera.x-450)<.001,'selected node centered horizontally');
+ assert.ok(Math.abs(target.y*camera.k+camera.y-380)<.001,'selected node centered vertically');
+ assert.ok(172*camera.k*width/900>=175,'selected card remains readable on narrow screens');
+}
+const spread=fitGraph([{x:-10000,y:-5000},{x:10000,y:5000}]);
+assert.ok(spread.k<.1,'overview can fit a large graph');
+assert.ok(focusGraph({x:10000,y:5000},680).k>1,'focusing must escape a tiny overview scale');
+let history=enterSubgraph([], 'p');history=enterSubgraph(history,'q');
+assert.deepEqual(history,['p','q']);assert.deepEqual(enterSubgraph(history,'q'),history,'same node does not create duplicate breadcrumb');
+assert.deepEqual([...neighborhood(data,history.at(-1),1)].sort(),['early','p','q'],'drilling expands the new center from full graph');
+assert.deepEqual(history.slice(0,-1),['p'],'back restores previous scope');
+const prior={id:'p',time:100,point:{x:10,y:10}};
+assert.equal(isDoubleActivation(prior,'p',300,{x:12,y:12}),true);
+assert.equal(isDoubleActivation(prior,'q',300,{x:12,y:12}),false,'two different nodes are not a double click');
+assert.equal(isDoubleActivation(prior,'p',500,{x:12,y:12}),false,'slow clicks are single selections');
+assert.equal(isDoubleActivation(prior,'p',300,{x:40,y:10}),false,'pointer travel is not a double activation');
+console.log('Graph focus tests passed: readable camera, large overview, drill/back scope, double-click versus drag.');

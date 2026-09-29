@@ -73,14 +73,13 @@ try {
   assert.equal(await page.locator('section[id^="chapter-"]').count(),3);
   const timeline = page.getByRole('list',{name:'专题事件时间线'});
   await timeline.getByRole('button',{name:/测试事件甲/}).waitFor();
-  await page.getByTitle('测试地点甲 · 1 个事件',{exact:true}).waitFor();
   await timeline.getByRole('button',{name:/测试事件乙/}).click();
   await page.getByRole('article',{name:'选中事件'}).getByRole('heading',{name:'测试事件乙'}).waitFor();
-  await page.getByTitle('测试地点甲 · 1 个事件',{exact:true}).click();
+  assert.equal(await page.getByLabel('专题事件地图',{exact:true}).count(),0);
+  await timeline.getByRole('button',{name:/测试事件甲/}).click();
   await page.getByRole('article',{name:'选中事件'}).getByRole('heading',{name:'测试事件甲'}).waitFor();
   await page.getByLabel('筛选起始年').fill('2');
   assert.equal(await timeline.getByRole('button').count(),2);
-  await page.getByText('当前事件尚无已核实坐标。下方显示方位参考底图；古地名可在事件列表中查看，核实坐标后才会出现标记。',{exact:true}).waitFor();
   await page.getByLabel('筛选结束年').fill('1');
   await page.getByText('起始年不能晚于结束年。',{exact:true}).waitFor();
   await page.getByRole('button',{name:'重置筛选'}).click();

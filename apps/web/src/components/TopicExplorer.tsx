@@ -1,3 +1,4 @@
+import { MAPS_ENABLED } from '../lib/features';
 import { lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Event, Person, RelationshipBundle } from '@histree/shared-types';
@@ -21,9 +22,9 @@ export function TopicExplorer({ events, people }: { events: Event[]; people: Per
   }).sort((a, b) => (a.start_year ?? Infinity) - (b.start_year ?? Infinity));
   const selected = visible.find(e => e.id === selectedId) ?? visible[0];
   const participantIds = new Set(relationships.data?.person_events.filter(r => events.some(e => e.id === r.event_id)).map(r => r.person_id));
-  if (!events.length) return <section className="reading-card"><h2 className="text-xl font-serif">时间与地点</h2><p className="mt-3 text-slate-500">关联事件整理后，将在这里展示时间线与地图。</p></section>;
-  return <section className="space-y-5" aria-label="时间与地点">
-    <h2 className="text-2xl font-serif">时间与地点</h2>
+  if (!events.length) return <section className="reading-card"><h2 className="text-xl font-serif">事件时间线</h2><p className="mt-3 text-slate-500">关联事件整理后，将在这里展示事件时间线。</p></section>;
+  return <section className="space-y-5" aria-label="事件时间线">
+    <h2 className="text-2xl font-serif">事件时间线</h2>
     <div className="flex flex-wrap items-end gap-3">
       <label className="text-sm">参与人物<select className="block border rounded-lg p-2 mt-1 max-w-full" aria-label="参与人物" value={personId} disabled={relationships.loading || !!relationships.error} onChange={e => setPersonId(e.target.value)}><option value="">全部人物</option>{people.filter(p => participantIds.has(p.id)).map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
       <label className="text-sm">起始年<input aria-label="筛选起始年" type="number" step="1" className="block w-28 border rounded-lg p-2 mt-1" placeholder="不限" value={from} onChange={e => setFrom(e.target.value)} /></label>
@@ -32,15 +33,15 @@ export function TopicExplorer({ events, people }: { events: Event[]; people: Per
     </div>
     {relationships.error && <p className="text-sm text-slate-600">人物筛选暂不可用。<button className="underline ml-2" onClick={relationships.retry}>重试人物关系</button></p>}
     {invalidRange && <p role="alert" className="text-rose-700">起始年不能晚于结束年。</p>}
-    <p className="text-sm text-slate-500">显示 {visible.length} 个事件。时间不详的事件保留在列表末尾；地点未定位的事件不落点。</p>
+    <p className="text-sm text-slate-500">显示 {visible.length} 个事件。时间不详的事件保留在列表末尾。</p>
     <div className="grid lg:grid-cols-[minmax(0,280px)_minmax(0,1fr)] gap-6">
       <ol className="space-y-2 max-h-[460px] overflow-auto" aria-label="专题事件时间线">
         {visible.map(e => <li key={e.id}><button aria-pressed={selected?.id === e.id} className={`w-full text-left rounded-xl p-4 border ${selected?.id === e.id ? 'border-teal-700 bg-teal-50' : 'border-stone-200'}`} onClick={() => setSelectedId(e.id)}><span className="text-xs text-slate-500">{formatDisplayRange(e.start_year, e.end_year)}</span><span className="block font-semibold mt-1">{e.title}</span><span className="block text-sm text-slate-600 mt-1">{e.location_name || '地点待考'}</span></button></li>)}
         {!visible.length && <li className="p-4 text-slate-500">没有符合条件的事件。</li>}
       </ol>
       <div className="min-w-0 space-y-4">
-        <p className="text-xs text-slate-500">事件地理层 · 现代底图用于地点定位，与历史疆域底图分别维护。</p>
-        <Suspense fallback={<p role="status">正在加载地图…</p>}><TopicMap events={visible} selected={selected} onSelect={setSelectedId} /></Suspense>
+        {MAPS_ENABLED && <><p className="text-xs text-slate-500">事件地理层 · 现代底图用于地点定位，与历史疆域底图分别维护。</p>
+        <Suspense fallback={<p role="status">正在加载地图…</p>}><TopicMap events={visible} selected={selected} onSelect={setSelectedId} /></Suspense></>}
         {selected && <article className="reading-card" aria-label="选中事件">
           <h3 className="text-xl font-semibold">{selected.title}</h3>
           <p className="text-sm text-slate-500 mt-2">{formatDisplayRange(selected.start_year, selected.end_year)}{selected.time_original ? ` · 原纪年：${selected.time_original}` : ''}</p>

@@ -1,3 +1,4 @@
+import { MAPS_ENABLED } from '../lib/features';
 import React, { useEffect, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import * as d3 from 'd3';
@@ -418,7 +419,7 @@ export function GraphView({ data, loading = false, error, overview = false }: { 
             </div>
           )}
 
-          {!isPerson(selectedNode) && selectedNode.location_lat && selectedNode.location_lng && (
+          {MAPS_ENABLED && !isPerson(selectedNode) && selectedNode.location_lat && selectedNode.location_lng && (
             <div>
               <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1">
                 <MapPinIcon className="w-4 h-4" /> 地点{selectedNode.location_name ? ` - ${selectedNode.location_name}` : ''}

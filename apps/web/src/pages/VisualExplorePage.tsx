@@ -1,3 +1,4 @@
+import { MAPS_ENABLED } from '../lib/features';
 import { lazy, Suspense, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import type { Person, Event, RelationshipBundle, GraphResponse } from '@histree/shared-types';
@@ -31,7 +32,7 @@ export function VisualExplorePage({ mode }: { mode: 'graph' | 'map' }) {
         ? '查看已发布人物与事件的关系。拖动节点调整布局，点击节点进入它的关系图谱，再打开条目阅读出处。'
         : '按年份加载独立的疆域底图，点击地块查看分区；在底图工坊中描绘边界、制作新时期版本。'}</p>
       {mode === 'map' && <Link to="/map/edit" className="inline-block mt-4 mr-4 rounded-lg bg-teal-800 text-white px-4 py-3">打开底图工坊 →</Link>}
-      <Link to={mode === 'graph' ? '/map' : '/graph'} className="inline-block mt-3 text-teal-700 underline">{mode === 'graph' ? '切换到地图 →' : '切换到图谱 →'}</Link>
+      {MAPS_ENABLED && <Link to={mode === 'graph' ? '/map' : '/graph'} className="inline-block mt-3 text-teal-700 underline">{mode === 'graph' ? '切换到地图 →' : '切换到图谱 →'}</Link>}
     </header>
     {mode === 'map' && <Suspense fallback={<p>正在加载疆域底图…</p>}><HistoricalMap /></Suspense>}
     <LoadState loading={loading} error={error} retry={() => { people.retry(); events.retry(); relationships.retry(); }} />

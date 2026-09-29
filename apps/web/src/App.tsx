@@ -1,6 +1,7 @@
+import { MAPS_ENABLED } from './lib/features';
 import type { Session } from '@supabase/supabase-js';
 import { lazy, Suspense, useEffect, useState } from 'react';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
 import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, SparklesIcon } from '@heroicons/react/24/outline';
@@ -106,7 +107,7 @@ function App() {
                 事件
               </Link>
               <Link to="/graph" className={navLinkClass('/graph')}>图谱</Link>
-              <Link to="/map" className={navLinkClass('/map')}>地图</Link>
+              {MAPS_ENABLED && <Link to="/map" className={navLinkClass('/map')}>地图</Link>}
               <Link to="/search" className={navLinkClass('/search')}>搜索</Link>
               {isAdmin && (
                 <Link to="/admin" className={navLinkClass('/admin')}>
@@ -159,9 +160,9 @@ function App() {
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
-          <Route path="/map/annotations" element={<AnnotationEditorPage />} />
-          <Route path="/map/edit" element={<MapEditorPage />} />
-          <Route path="/map" element={<VisualExplorePage mode="map" />} />
+          <Route path="/map/annotations" element={MAPS_ENABLED ? <AnnotationEditorPage /> : <Navigate to="/graph" replace />} />
+          <Route path="/map/edit" element={MAPS_ENABLED ? <MapEditorPage /> : <Navigate to="/graph" replace />} />
+          <Route path="/map" element={MAPS_ENABLED ? <VisualExplorePage mode="map" /> : <Navigate to="/graph" replace />} />
           <Route path="/graph/:id" element={<GraphPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/events" element={<EventsPage />} />

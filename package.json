@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph && node scripts/test-year-0907-import.mjs",
+    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph && node scripts/test-year-0907-import.mjs && node scripts/test-ask.mjs",
     "e2e:smoke": "node scripts/e2e-smoke.mjs",
+    "test:ask-runtime": "node apps/api/dsh/smoke.mjs",
     "test:publication": "node scripts/test-publication.mjs",
     "test:reading": "node scripts/test-reading-ui.mjs",
     "test:graph": "node scripts/test-graph.mjs",

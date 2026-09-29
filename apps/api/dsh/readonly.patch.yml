@@ -1,0 +1,27 @@
+- id: llm-deepseek
+  config:
+    thinking: disabled
+    streamIdleTimeoutMs: 30000
+- id: persistent-bash
+  disabled: true
+- id: persistent-pwsh
+  disabled: true
+- id: terminal-bash
+  disabled: true
+- id: terminal-pwsh
+  disabled: true
+- id: pty
+  disabled: true
+- insert:
+    - id: histree-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: histree
+        transport: stdio
+        command: !!js process.execPath
+        args: !!js '[process.env.HISTREE_MCP]'
+        env:
+          HISTREE_SNAPSHOT: !!js process.env.HISTREE_SNAPSHOT
+          HISTREE_RETRIEVED: !!js process.env.HISTREE_RETRIEVED
+        toolCallTimeoutMs: 10000
+        failOnStartupError: true

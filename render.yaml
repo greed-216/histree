@@ -13,5 +13,11 @@ services:
         sync: false
       - key: SUPABASE_ANON_KEY
         sync: false
-      - key: SUPABASE_SERVICE_ROLE_KEY
+      - key: HISTREE_ASK_ENABLED
+        value: "true"
+      - key: DEEPSEEK_API_KEY
         sync: false
+      - key: HISTREE_MODEL
+        value: deepseek-flash
+      - key: TRUST_PROXY
+        value: "1"

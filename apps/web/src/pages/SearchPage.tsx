@@ -36,6 +36,7 @@ export function SearchPage() {
       <header>
         <p className="eyebrow">寻找历史线索</p>
         <h1 className="text-3xl font-serif mt-3">搜索与浏览</h1>
+        <Link to="/ask" className="inline-block mt-3 text-sm text-teal-800 underline">想了解来龙去脉？试试问史料 →</Link>
       </header>
       <label className="block">
         <span className="sr-only">搜索关键词</span>

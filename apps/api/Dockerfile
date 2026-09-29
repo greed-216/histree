@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM node:24-bookworm-slim AS builder
 
 # Enable pnpm
 RUN corepack enable pnpm
@@ -19,7 +19,7 @@ RUN pnpm install --frozen-lockfile
 RUN pnpm --filter @histree/shared-types... build || true
 RUN pnpm --filter api build
 
-FROM node:20-alpine AS runner
+FROM node:24-bookworm-slim AS runner
 
 WORKDIR /app
 
@@ -29,6 +29,7 @@ COPY --from=builder /app/packages/shared-types ./packages/shared-types
 COPY --from=builder /app/apps/api/node_modules ./apps/api/node_modules
 COPY --from=builder /app/apps/api/dist ./apps/api/dist
 COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
+COPY --from=builder /app/apps/api/dsh ./apps/api/dsh
 
 EXPOSE 3000
 

@@ -19,6 +19,7 @@ const EditorialPage = lazy(() => import('./pages/EditorialPage').then(m => ({ de
 import { TopicPage } from './pages/TopicPage';
 import { EntryPage } from './pages/EntryPage';
 import { SearchPage } from './pages/SearchPage';
+const AskPage = lazy(() => import('./pages/AskPage').then(m => ({ default: m.AskPage })));
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline';
 
 function App() {
@@ -110,6 +111,7 @@ function App() {
               <Link to="/graph" className={navLinkClass('/graph')}>图谱</Link>
               {MAPS_ENABLED && <Link to="/map" className={navLinkClass('/map')}>地图</Link>}
               <Link to="/search" className={navLinkClass('/search')}>搜索</Link>
+              <Link to="/ask" className={navLinkClass('/ask')}>问史料</Link>
               {isAdmin && (
                 <Link to="/admin" className={navLinkClass('/admin')}>
                   <AdjustmentsHorizontalIcon className="w-4 h-4" />
@@ -160,6 +162,7 @@ function App() {
           <Route path="/people/:id" element={<EntryPage />} />
           <Route path="/events/:id" element={<EntryPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/ask" element={<AskPage key={location.search} />} />
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />

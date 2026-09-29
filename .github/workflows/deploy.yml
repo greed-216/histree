@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -37,12 +37,14 @@ jobs:
       - name: Validate application and publication policies
         run: |
           pnpm test
+          node apps/api/dsh/smoke.mjs
           pnpm --filter api build
           pnpm --filter web lint
 
       - name: Build frontend
         run: pnpm --filter web build
         env:
+          VITE_ASK_API_URL: ${{ vars.VITE_ASK_API_URL }}
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

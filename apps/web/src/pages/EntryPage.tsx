@@ -59,6 +59,7 @@ export function EntryPage() {
               别名：{node.aliases.join("、")}
             </p>
           ) : null}
+          <Link to={`/ask?kind=${node.type}&id=${node.id}`} className="inline-block mt-4 text-sm text-teal-800 underline">围绕此条目问史料 →</Link>
           <div className="flex flex-wrap gap-2 mt-5">
             {node.tags?.map((tag) => (
               <Link

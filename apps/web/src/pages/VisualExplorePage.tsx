@@ -29,7 +29,7 @@ export function VisualExplorePage({ mode }: { mode: 'graph' | 'map' }) {
     <header>
       <h1 className="font-serif text-3xl">{mode === 'graph' ? '人物与事件图谱' : '历史地图'}</h1>
       <p className="mt-3 text-slate-600 leading-7">{mode === 'graph'
-        ? '沿着时间读事件，追踪人物的参与轨迹；也可切换关系探索，查看人物与事件之间的联系和史料依据。'
+        ? '分开探索人物之间的关系与人物参与的事件。自由拖动节点，点击人物、事件或连线查看详情与史料依据。'
         : '按年份加载独立的疆域底图，点击地块查看分区；在底图工坊中描绘边界、制作新时期版本。'}</p>
       {mode === 'map' && <Link to="/map/edit" className="inline-block mt-4 mr-4 rounded-lg bg-teal-800 text-white px-4 py-3">打开底图工坊 →</Link>}
       {MAPS_ENABLED && <Link to={mode === 'graph' ? '/map' : '/graph'} className="inline-block mt-3 text-teal-700 underline">{mode === 'graph' ? '切换到地图 →' : '切换到图谱 →'}</Link>}

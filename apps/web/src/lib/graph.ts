@@ -36,3 +36,11 @@ export function edgeCurve(a: Point, b: Point, bend=0) {
   return {path:`M ${start.x} ${start.y} Q ${control.x} ${control.y} ${end.x} ${end.y}`,label:{x:(start.x+2*control.x+end.x)/4,y:(start.y+2*control.y+end.y)/4}};
 }
 export function isDrag(start: Point, current: Point) {return Math.hypot(current.x-start.x,current.y-start.y)>=6;}
+
+export type GraphViewMode = 'people' | 'events';
+export function graphForView(data: GraphResponse, mode: GraphViewMode): GraphResponse {
+  const nodes=data.nodes.filter(n=>mode==='events'||n.type==='person');
+  const ids=new Set(nodes.map(n=>n.id));
+  const subject=mode==='people'?'person_relationship':'person_event';
+  return {...data,nodes,edges:data.edges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&edgeSubject(e,data.nodes)===subject)};
+}

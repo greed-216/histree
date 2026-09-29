@@ -46,3 +46,20 @@
 :focus-visible { outline: 2px solid #0f766e; outline-offset: 4px; }
 button, summary { cursor: pointer; }
 button:disabled { cursor: wait; opacity: .5; }
+
+/* Independent historical basemap: image-space regions, separate from event markers. */
+.atlas-stage { position: relative; overflow: hidden; border: 1px solid #a99f85; border-radius: 12px; background: #e8e1ce; }
+.atlas-svg { display: block; width: 100%; height: 590px; touch-action: none; cursor: grab; }
+.atlas-svg:active { cursor: grabbing; }
+.atlas-svg.atlas-drawing { cursor: crosshair; }
+.atlas-tools { position: absolute; z-index: 2; top: 12px; left: 12px; right: 12px; display: flex; gap: 4px; flex-wrap: wrap; pointer-events: none; }
+.atlas-tools button { pointer-events: auto; color: #ece4ce; background: #303d35ed; border: 1px solid #5b6659; border-radius: 5px; font-size: 12px; padding: 6px 9px; }
+.atlas-regions polygon { cursor: pointer; transition: filter .15s; }
+.atlas-drawing .atlas-regions polygon { cursor: crosshair; }
+.atlas-regions polygon:hover, .atlas-regions polygon:focus-visible { filter: brightness(1.12); outline: none; stroke: #fff7d4; stroke-width: 1; }
+.atlas-labels { font-family: Georgia, 'Songti SC', serif; fill: #372f23; text-anchor: middle; dominant-baseline: central; paint-order: stroke; stroke: #fff9e18c; stroke-width: .4; letter-spacing: .3px; }
+.atlas-context { fill: #8e9681; font-size: 3.5px; letter-spacing: 1.5px; }
+.atlas-map-caption { position: absolute; bottom: 0; left: 0; right: 0; background: #303d35ed; color: #eee6d1; font-size: 12px; padding: 8px 14px; pointer-events: none; }
+.atlas-map-caption span { float: right; opacity: .7; }
+.atlas-panel { background: #f4f0e4; border: 1px solid #d7cdb6; border-radius: 12px; padding: 18px; }
+@media(max-width:640px) { .atlas-svg { height: 460px; } .atlas-map-caption span { display: none; } }

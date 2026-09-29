@@ -7,6 +7,7 @@ import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon, Sparkles
 import { getCurrentUserRole } from './lib/api';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
 import { ExplorePage } from './pages/ExplorePage';
+const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
 const GraphPage = lazy(() => import('./pages/GraphPage').then(m => ({ default: m.GraphPage })));
 import { PeoplePage } from './pages/PeoplePage';
@@ -158,6 +159,7 @@ function App() {
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
+          <Route path="/map/annotations" element={<AnnotationEditorPage />} />
           <Route path="/map/edit" element={<MapEditorPage />} />
           <Route path="/map" element={<VisualExplorePage mode="map" />} />
           <Route path="/graph/:id" element={<GraphPage />} />

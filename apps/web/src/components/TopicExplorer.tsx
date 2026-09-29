@@ -8,7 +8,7 @@ const TopicMap = lazy(() => import('./TopicMap'));
 const precisionLabels = { site: '已定位城址／遗址', approximate: '概略位置', region: '区域代表点', unknown: '定位精度待核对' };
 export function TopicExplorer({ events, people }: { events: Event[]; people: Person[] }) {
   const relationships = useResource<RelationshipBundle>('/relationships');
-  const [mapMode, setMapMode] = useState<'historical' | 'modern'>('historical');
+  const [mapMode, setMapMode] = useState<'historical' | 'modern'>('modern');
   const [personId, setPersonId] = useState('');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');

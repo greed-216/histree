@@ -6,12 +6,12 @@
   "active_cursor": {
     "volume": 258,
     "year": 890,
-    "last_reviewed_paragraph": "zztj-v258-y0890-p008",
-    "next_paragraph": "zztj-v258-y0890-p009",
-    "next_paragraph_opening": "杨行密遣其将马敬言将兵五千，乘虚袭据润州。李友将兵二万屯青城，将攻常州。安仁义、刘威、田頵败刘锋于武进，敬言、仁义、威屯润州。友，合肥人；威，慎县人也。",
-    "batch": "content/books/zizhi-tongjian/vol-258/year-0890/part-01",
+    "last_reviewed_paragraph": "zztj-v258-y0890-p020",
+    "next_paragraph": "zztj-v258-y0890-p021",
+    "next_paragraph_opening": "壬子，张浚帅诸军五十二都及邠、宁、鄜、夏杂虏合五万人发京师，上御安喜楼饯之。浚屏左右言于上曰：“俟臣先除外忧，然后为陛下除内患。”杨复恭窃听，闻之。两军中尉饯浚于长乐坂，复恭属浚酒，浚辞以醉，复恭戏之曰：“相公杖钺专征，作态邪？”浚曰：“俟平贼还，方见作态耳！”复恭益忌之。癸丑，削夺李罕之官爵。六月，以孙揆为昭义节度使，充招讨副使。",
+    "batch": "content/books/zizhi-tongjian/vol-258/year-0890/part-03",
     "status": "published_verified",
-    "last_published_paragraph": "zztj-v258-y0890-p008"
+    "last_published_paragraph": "zztj-v258-y0890-p020"
   },
   "year_coverage": [
     {
@@ -136,9 +136,11 @@
         258
       ],
       "batches": [
-        "content/books/zizhi-tongjian/vol-258/year-0890/part-01"
+        "content/books/zizhi-tongjian/vol-258/year-0890/part-01",
+        "content/books/zizhi-tongjian/vol-258/year-0890/part-02",
+        "content/books/zizhi-tongjian/vol-258/year-0890/part-03"
       ],
-      "note": "卷258大顺元年43段，前8段已发布并匿名读回；余35段未完成。"
+      "note": "卷258大顺元年43段，前20段已发布并匿名读回；余23段未完成。"
     }
   ],
   "legacy_archives": [
@@ -154,5 +156,18 @@
       "coverage": "后梁专题选录"
     }
   ],
-  "identity_rule": "人物、事件和关系跨卷跨书复用key/UUID，引用按来源独立记录；新增书证不复制实体。"
+  "identity_rule": "人物、事件和关系跨卷跨书复用key/UUID，引用按来源独立记录；新增书证不复制实体。",
+  "editorial_followups": [
+    {
+      "key": "meng-fangli-meng-qian-kinship-variant",
+      "status": "pending_source_supplement",
+      "subject_key": "relationship_person_孟方立_person_孟迁_兄长",
+      "primary_batch": "content/books/zizhi-tongjian/vol-258/year-0889/part-02",
+      "primary_paragraph": "zztj-v258-y0889-p010",
+      "primary_reading": "《通鉴》称孟迁为孟方立之弟。",
+      "alternate_source": "resources/derived/twenty-four-histories/18旧五代史.jsonl#pdf_page=583",
+      "alternate_reading": "《旧五代史》称孟迁为孟方立之侄。",
+      "required_action": "保留两书异说并补独立引用，不覆盖旧发布批次或直接推定哪一说为真。"
+    }
+  ]
 }

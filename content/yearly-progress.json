@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 259,
-    "year": 892,
-    "last_reviewed_paragraph": "zztj-v258-y0891-p040",
-    "next_paragraph": "zztj-v259-y0892-p001",
-    "next_paragraph_opening": "春，正月，丙寅，赦天下，改元。",
-    "batch": "content/books/zizhi-tongjian/vol-258/year-0891/part-05",
-    "status": "published_verified",
-    "last_published_paragraph": "zztj-v258-y0891-p040"
+    "year": 893,
+    "last_reviewed_paragraph": "zztj-v259-y0892-p046",
+    "next_paragraph": "zztj-v259-y0893-p001",
+    "next_paragraph_opening": "春，正月，时溥遣兵攻宿州，刺史郭言战死。",
+    "batch": null,
+    "status": "pending",
+    "last_published_paragraph": "zztj-v259-y0892-p046"
   },
   "year_coverage": [
     {
@@ -165,6 +165,22 @@
       "completed_volumes": [
         258
       ]
+    },
+    {
+      "year": 892,
+      "status": "complete_published_verified",
+      "volumes": [
+        259
+      ],
+      "batches": [
+        "content/books/zizhi-tongjian/vol-259/year-0892/part-01",
+        "content/books/zizhi-tongjian/vol-259/year-0892/part-02",
+        "content/books/zizhi-tongjian/vol-259/year-0892/part-03",
+        "content/books/zizhi-tongjian/vol-259/year-0892/part-04",
+        "content/books/zizhi-tongjian/vol-259/year-0892/part-05",
+        "content/books/zizhi-tongjian/vol-259/year-0892/part-06"
+      ],
+      "note": "卷259景福元年46段已全部公开并匿名读回；六批哈希、连续源行和固定提交快照核验通过。"
     }
   ],
   "legacy_archives": [
@@ -224,6 +240,32 @@
       "primary_reading": "通鉴891年陈岩卒，范晖为其妻弟。",
       "alternate_reading": "新五代史卷68记景福元年892卒，范晖为其婿。",
       "required_action": "已经将两说附同一主体与关系，保留书间差别，不用另一书覆盖主线。"
+    },
+    {
+      "key": "892-wang-tan-wuzhou-name-place",
+      "status": "pending_source_supplement",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0892/part-06",
+      "primary_paragraph": "zztj-v259-y0892-p042",
+      "subject_key": "person_王坛（孙儒将）",
+      "primary_reading": "底本孙儒将王坛陷婺州，蒋环奔赵州。",
+      "required_action": "另本核王坛字形及赵州目的地；未获身份依据不得合并王檀或配现代坐标。"
+    },
+    {
+      "key": "892-li-jimi-son-identity",
+      "status": "pending_identity_evidence",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0892/part-05",
+      "primary_paragraph": "zztj-v259-y0892-p036",
+      "subject_key": "person_李继密",
+      "primary_reading": "李茂贞表其子继密权知兴元府事。",
+      "required_action": "补书证核养子或亲子身份；暂未增加具体父子关系，不推生母。"
+    },
+    {
+      "key": "892-yunzhou-tianwei-name",
+      "status": "pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0892/part-05",
+      "primary_paragraph": "zztj-v259-y0892-p035",
+      "primary_reading": "己亥，天威等烧营而遁。",
+      "required_action": "天威疑前文匡威转录讹字；另本核对前不另建天威人物。"
     }
   ]
 }

@@ -22,12 +22,26 @@ function graph(id) {
   const ids = new Set([id, ...edges.flatMap(e => [e.source,e.target])]);
   return { center, edges, nodes:allNodes().filter(n => ids.has(n.id)) };
 }
+function catalogue(table,params,admin=false) {
+ let rows=table==='nodes'?allNodes():db[table];
+ if(!admin&&table!=='source')rows=rows.filter(r=>r.status==='published');
+ if(params.has('ids')){const ids=params.get('ids').split(',');rows=rows.filter(r=>ids.includes(r.id));}
+ if(params.has('topic')){const topic=db.topic.find(t=>t.slug===params.get('topic'));const ids=(params.has('section')?topic.sections[Number(params.get('section'))].node_ids:topic.sections.flatMap(s=>s.node_ids));rows=rows.filter(r=>ids.includes(r.id));}
+ if(params.has('person'))rows=rows.filter(r=>db.person_event.some(e=>e.event_id===r.id&&e.person_id===params.get('person')));
+ if(table==='event'){if(params.get('from'))rows=rows.filter(r=>r.start_year==null||(r.end_year??r.start_year)>=Number(params.get('from')));if(params.get('to'))rows=rows.filter(r=>r.start_year==null||r.start_year<=Number(params.get('to')));}
+ if(params.has('node'))rows=rows.filter(r=>r.sections.some(s=>s.node_ids.includes(params.get('node'))));
+ if(table==='fact_claim'){if(params.has('subject'))rows=rows.filter(r=>r.subject_table===params.get('subject'));if(params.has('subject_id'))rows=rows.filter(r=>r.subject_id===params.get('subject_id'));if(params.has('claim'))rows=rows.filter(r=>r.id===params.get('claim'));}
+ const label=r=>r.name||r.title||r.claim_text||r.id;
+ if(params.get('q'))rows=rows.filter(r=>JSON.stringify(r).includes(params.get('q')));
+ const page=Number(params.get('page')||0),size=Number(params.get('limit')||20);
+ return {items:rows.slice(page*size,(page+1)*size).map(r=>({...r,type:table==='person'?'person':table==='event'?'event':r.type,label:label(r),section_count:r.sections?.length,source:table==='fact_claim'?db.source.find(s=>s.id===r.source_id):undefined})),has_more:rows.length>(page+1)*size,labels:Object.fromEntries(allNodes().map(n=>[n.id,label(n)]))};
+}
 async function context(options = {}) {
   const ctx = await browser.newContext(options);
   await ctx.route('**/*', async route => {
     const url = new URL(route.request().url());
     if (url.origin === new URL(base).origin) return route.continue();
-    if (url.origin !== 'http://127.0.0.1:4319') return route.abort();
+    if (!['http://127.0.0.1:4319','http://127.0.0.1:54321'].includes(url.origin)) return route.abort();
     const reply = (body, status = 200) => route.fulfill({ status, contentType:'application/json', body:JSON.stringify(body) });
     const path = url.pathname.replace('/api/v1', '');
     if (path.startsWith('/event/') && route.request().method() === 'PATCH') {
@@ -36,6 +50,11 @@ async function context(options = {}) {
       Object.assign(row,route.request().postDataJSON());
       return reply(row);
     }
+    if(path.startsWith('/catalog/'))return reply(failTopics&&path==='/catalog/topic'?{message:'offline'}:catalogue(path.split('/')[2],url.searchParams),failTopics&&path==='/catalog/topic'?503:200);
+    if(path.startsWith('/entry-context/'))return reply({...graph(path.split('/')[2]),has_more:false});
+    if(path.startsWith('/entry/'))return reply(allNodes().find(n=>n.id===path.split('/')[2]));
+    if(path.startsWith('/graph-slice/'))return reply({...graph(path.split('/')[2]),truncated:false});
+    if(path==='/search'){const rows=allNodes().filter(r=>r.status==='published'&&JSON.stringify(r).includes(url.searchParams.get('q')||''));return reply({items:rows,has_more:false});}
     if (path === '/relationships') return reply({person_relationships:db.person_relationship,person_events:db.person_event,event_causalities:db.event_causality});
     if (path === '/people') return reply(db.person.filter(r => r.status === 'published').map(p => asNode(p, 'person')));
     if (path === '/event') return reply(db.event.filter(r => r.status === 'published').map(e => asNode(e, 'event')));
@@ -46,7 +65,7 @@ async function context(options = {}) {
     if (path.startsWith('/editorial/')) {
       assert.ok(route.request().headers().authorization, 'admin calls carry bearer token');
       const [, , table, id] = path.split('/');
-      if (route.request().method() === 'GET') return reply(db[table]);
+      if (route.request().method() === 'GET') return reply(catalogue(table,url.searchParams,true));
       const body = route.request().postDataJSON();
       if (route.request().method() === 'POST') { const row = { ...body, id: crypto.randomUUID() }; db[table].push(row); return reply(row); }
       if (route.request().method() === 'PATCH') { const row = db[table].find(r => r.id === id); Object.assign(row,body); return reply(row); }
@@ -60,11 +79,11 @@ async function context(options = {}) {
 }
 try {
   const ctx = await context({ viewport:{width:1440,height:1000} }); const page = await ctx.newPage();
-  await ctx.route('**/api/v1/topics', route => route.fulfill({contentType:'application/json',body:'[]'}));
+  await ctx.route('**/api/v1/catalog/topic*', route => route.fulfill({contentType:'application/json',body:'{"items":[],"has_more":false}'}));
   await page.goto(base);
   await page.getByText('五代十国专题正在整理，审核完成后将在这里发布。',{exact:true}).waitFor();
   assert.equal(await page.locator('a[href*="/topics/"]').count(),0);
-  await ctx.unroute('**/api/v1/topics');
+  await ctx.unroute('**/api/v1/catalog/topic*');
   await page.goto(base); await page.getByRole('heading',{name:'沿着专题阅读'}).waitFor();
   await page.getByRole('link').filter({hasText:'测试阅读专题'}).waitFor();
   await page.screenshot({path:`${screenshots}/home-desktop.png`,fullPage:true});
@@ -79,12 +98,12 @@ try {
   await timeline.getByRole('button',{name:/测试事件甲/}).click();
   await page.getByRole('article',{name:'选中事件'}).getByRole('heading',{name:'测试事件甲'}).waitFor();
   await page.getByLabel('筛选起始年').fill('2');
-  assert.equal(await timeline.getByRole('button').count(),2);
+  await page.waitForFunction(()=>document.querySelector('ol[aria-label="专题事件时间线"]').querySelectorAll('button').length===2);
   await page.getByLabel('筛选结束年').fill('1');
   await page.getByText('起始年不能晚于结束年。',{exact:true}).waitFor();
   await page.getByRole('button',{name:'重置筛选'}).click();
-  await page.getByLabel('参与人物',{exact:true}).selectOption(personId);
-  assert.equal(await timeline.getByRole('button').count(),1);
+  await page.getByText('筛选参与人物',{exact:true}).click();await page.getByRole('group',{name:'参与人物候选'}).getByRole('button',{name:'测试人物甲',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('ol[aria-label="专题事件时间线"]').querySelectorAll('button').length===1);
   await page.getByRole('button',{name:'重置筛选'}).click();
 
   await page.screenshot({path:`${screenshots}/topic-desktop.png`,fullPage:true});
@@ -116,12 +135,12 @@ try {
   await mp.screenshot({path:`${screenshots}/entry-mobile.png`,fullPage:true});
   await mp.goto(base); await mp.getByRole('heading',{name:'测试阅读专题',exact:true}).waitFor(); await mp.screenshot({path:`${screenshots}/home-mobile.png`,fullPage:true});
   const admin = await context({viewport:{width:1280,height:900}});
-  await admin.addInitScript(() => { if (location.origin !== 'http://127.0.0.1:5175') return; const enc=o=>btoa(JSON.stringify(o)); const token=`${enc({alg:'HS256',typ:'JWT'})}.${enc({sub:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',exp:4102444800})}.local-test`; localStorage.setItem('sb-127-auth-token',JSON.stringify({access_token:token,refresh_token:'local-refresh',expires_at:4102444800,expires_in:3600,token_type:'bearer',user:{id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',email:'editor@example.test'}})); });
+  await admin.addInitScript(() => { if(!location.origin.startsWith('http://127.0.0.1:'))return; const enc=o=>btoa(JSON.stringify(o)); const token=`${enc({alg:'HS256',typ:'JWT'})}.${enc({sub:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',exp:4102444800})}.local-test`; localStorage.setItem('sb-127-auth-token',JSON.stringify({access_token:token,refresh_token:'local-refresh',expires_at:4102444800,expires_in:3600,token_type:'bearer',user:{id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',email:'editor@example.test'}})); });
   const ap = await admin.newPage(); await ap.goto(`${base}admin`); await ap.getByRole('link',{name:'专题与出处管理 →'}).waitFor(); await ap.getByRole('link',{name:'专题与出处管理 →'}).click();
-  await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('标题',{exact:true}).fill('测试专题'); await ap.getByLabel('专题地址').fill('test-topic'); await ap.getByLabel('导读').fill('测试导读'); await ap.getByLabel('章节标题').fill('第一章'); await ap.getByLabel('正文',{exact:true}).fill('阅读内容'); await ap.getByLabel('发布状态').selectOption('draft'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').waitFor();
+  await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('标题',{exact:true}).fill('测试专题'); await ap.getByLabel('专题地址').fill('test-topic'); await ap.getByLabel('导读').fill('测试导读'); await ap.getByLabel('章节标题').fill('第一章'); await ap.getByLabel('正文',{exact:true}).fill('阅读内容'); await ap.getByLabel('发布状态').selectOption('draft'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').filter({hasText:'已保存'}).waitFor();
   assert.equal(db.topic.find(t => t.slug === 'test-topic').status,'draft');
-  await ap.getByRole('button',{name:'来源库',exact:true}).click(); await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('书名／资料标题').fill('测试来源'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').waitFor();
-  await ap.getByRole('button',{name:'陈述与引用',exact:true}).click(); await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('具体条目或关系').selectOption(personId); await ap.getByLabel('具体陈述').fill('测试陈述'); await ap.getByLabel('来源',{exact:true}).selectOption(db.source.at(-1).id); await ap.getByLabel('定位').fill('卷一'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').waitFor(); assert.equal(db.fact_claim.at(-1).status,'draft');
+  await ap.getByRole('button',{name:'来源库',exact:true}).click(); await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('书名／资料标题').fill('测试来源'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').filter({hasText:'已保存'}).waitFor();
+  await ap.getByRole('button',{name:'陈述与引用',exact:true}).click(); await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByRole('group',{name:'具体条目或关系候选'}).getByRole('button',{name:'测试人物甲',exact:true}).click(); await ap.getByLabel('具体陈述').fill('测试陈述'); await ap.getByRole('group',{name:'来源候选'}).getByRole('button',{name:'测试来源',exact:true}).click(); await ap.getByLabel('定位').fill('卷一'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').filter({hasText:'已保存'}).waitFor(); assert.equal(db.fact_claim.at(-1).status,'draft');
   await ap.screenshot({path:`${screenshots}/editorial-desktop.png`,fullPage:true});
   await ap.goto(`${base}admin`);
   await ap.getByRole('button',{name:'事件',exact:true}).click();

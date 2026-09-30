@@ -1,5 +1,6 @@
 import type { EvidenceClaim } from '@histree/shared-types';
-export function splitEvidenceNote(note = '') {
+export function splitEvidenceNote(input?: string | null) {
+  const note=input??'';
   const marker = '；核对说明：';
   if (!note.startsWith('原文：') || !note.includes(marker)) return { quote: '', review: note };
   const end = note.indexOf(marker);

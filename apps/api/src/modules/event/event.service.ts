@@ -1,105 +1,63 @@
+import { readContentPage, validPage } from '../../common/pagination';
 import { publicationStatus } from '../../common/publication';
-import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
-import type { EventDetail, Person, Event } from '@histree/shared-types';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
+import type {
+  EventDetail,
+  Event,
+  EntryContext,
+  PageResult,
+} from '@histree/shared-types';
 import { SupabaseService } from '../supabase/supabase.service';
 
 @Injectable()
 export class EventService {
-  private readonly logger = new Logger(EventService.name);
-
   constructor(private supabaseService: SupabaseService) {}
 
-  async getEvents(): Promise<any[]> {
-    const supabase = this.supabaseService.getClient();
-    try {
-      const { data, error } = await supabase.from('event').select('*').order('start_year', { ascending: true });
-      if (error) throw error;
-      return (data || []).map(e => ({ ...e, type: 'event' }));
-    } catch (err) {
-      this.logger.error('Failed to fetch events', err);
-      throw err;
-    }
+  async getEvents(
+    query: Record<string, string> = {},
+  ): Promise<PageResult<Event>> {
+    return readContentPage(this.supabaseService.getClient(), 'event', query);
   }
 
-  async getEventDetail(eventId: string): Promise<EventDetail> {
-    const supabase = this.supabaseService.getClient();
-
-    try {
-      // 1. Get event basic info
-      const { data: event, error } = await supabase
-        .from('event')
-        .select('*')
-        .eq('id', eventId)
-        .single();
-
-      if (error || !event) {
-        throw new NotFoundException('Event not found');
-      }
-
-      // 2. Get related people
-      const { data: personEvents, error: personEventsError } = await supabase
-        .from('person_event')
-        .select('role, person_id')
-        .eq('event_id', eventId);
-      if (personEventsError) throw personEventsError;
-
-      let related_people: any[] = [];
-      if (personEvents && personEvents.length > 0) {
-        const personIds = personEvents.map(pe => pe.person_id);
-        const { data: peopleData, error: peopleError } = await supabase.from('person').select('*').in('id', personIds);
-        if (peopleError) throw peopleError;
-        
-        related_people = personEvents.map(pe => {
-          const p = peopleData?.find(p => p.id === pe.person_id);
-          return {
-            role: pe.role,
-            person: { ...p, type: 'person' } as Person
-          };
-        });
-      }
-
-      // 3. Get cause events
-      const { data: causeCausalities, error: causeCausalitiesError } = await supabase
-        .from('event_causality')
-        .select('cause_event_id')
-        .eq('effect_event_id', eventId);
-      if (causeCausalitiesError) throw causeCausalitiesError;
-
-      let cause_events: Event[] = [];
-      if (causeCausalities && causeCausalities.length > 0) {
-        const causeIds = causeCausalities.map(c => c.cause_event_id);
-        const { data: causeData, error: causeError } = await supabase.from('event').select('*').in('id', causeIds);
-        if (causeError) throw causeError;
-        cause_events = (causeData || []).map(e => ({ ...e, type: 'event' } as Event));
-      }
-
-      // 4. Get effect events
-      const { data: effectCausalities, error: effectCausalitiesError } = await supabase
-        .from('event_causality')
-        .select('effect_event_id')
-        .eq('cause_event_id', eventId);
-      if (effectCausalitiesError) throw effectCausalitiesError;
-
-      let effect_events: Event[] = [];
-      if (effectCausalities && effectCausalities.length > 0) {
-        const effectIds = effectCausalities.map(c => c.effect_event_id);
-        const { data: effectData, error: effectError } = await supabase.from('event').select('*').in('id', effectIds);
-        if (effectError) throw effectError;
-        effect_events = (effectData || []).map(e => ({ ...e, type: 'event' } as Event));
-      }
-
-      return {
-        ...event,
-        type: 'event',
-        related_people,
-        cause_events,
-        effect_events,
-      };
-
-    } catch (err) {
-      this.logger.error('Failed to fetch event detail from Supabase', err);
-      throw err;
-    }
+  async getEventDetail(eventId: string, page?: string): Promise<EventDetail> {
+    const { data, error } = await this.supabaseService
+      .getClient()
+      .rpc('entry_context', { p_id: eventId, p_page: validPage(page) });
+    if (error) throw error;
+    const context = data as EntryContext | null;
+    if (!context || context.center.type !== 'event')
+      throw new NotFoundException('Event not found');
+    const nodes = new Map(context.nodes.map((n) => [n.id, n]));
+    return {
+      ...context.center,
+      related_people: context.edges
+        .filter((e) => e.subject_table === 'person_event')
+        .flatMap((e) => {
+          const person = nodes.get(e.source);
+          return person?.type === 'person' ? [{ person, role: e.type }] : [];
+        }),
+      cause_events: context.edges
+        .filter(
+          (e) => e.subject_table === 'event_causality' && e.target === eventId,
+        )
+        .flatMap((e) => {
+          const event = nodes.get(e.source);
+          return event?.type === 'event' ? [event] : [];
+        }),
+      effect_events: context.edges
+        .filter(
+          (e) => e.subject_table === 'event_causality' && e.source === eventId,
+        )
+        .flatMap((e) => {
+          const event = nodes.get(e.target);
+          return event?.type === 'event' ? [event] : [];
+        }),
+      has_more: context.has_more,
+    };
   }
 
   async createEvent(payload: Partial<Event>): Promise<Event> {

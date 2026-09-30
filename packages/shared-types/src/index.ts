@@ -101,6 +101,7 @@ export interface EventCausalityRelation {
 export type EventCausalityRelationInput = Omit<EventCausalityRelation, 'id' | 'created_at'>;
 
 export interface RelationshipBundle {
+  has_more?: boolean;
   person_relationships: PersonRelationship[];
   person_events: PersonEventRelation[];
   event_causalities: EventCausalityRelation[];
@@ -110,9 +111,13 @@ export interface GraphResponse {
   center: Person | Event;
   nodes: Array<Person | Event>;
   edges: Edge[];
+  truncated?: boolean;
+  node_limit?: number;
+  edge_limit?: number;
 }
 
 export interface EventDetail extends Event {
+  has_more?: boolean;
   related_people: {
     person: Person;
     role: string;
@@ -162,3 +167,14 @@ export interface Topic {
   sections: Array<{ heading: string; body: string; node_ids: string[] }>;
 }
 export interface EvidenceClaim extends FactClaim { source: Source | null }
+
+export type SearchKind = 'all' | 'person' | 'event' | 'topic' | 'nodes';
+export type SearchHit = Person | Event | (Pick<Topic, 'id' | 'slug' | 'title' | 'description'> & { type: 'topic' });
+export interface SearchResponse { items: SearchHit[]; has_more: boolean; }
+export { exploreRequest } from './explore';
+
+export interface PageResult<T> { items: T[]; has_more: boolean; labels?: Record<string,string>; }
+export type ContentRow = { id: string; label?: string; status?: PublicationStatus; [key: string]: unknown };
+export type TopicSummary = Omit<Topic,'sections'> & { section_count: number };
+export interface EntryContext extends GraphResponse { has_more: boolean; }
+export { contentRequest, pageNumber } from './content-query';

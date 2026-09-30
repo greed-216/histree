@@ -1,4 +1,6 @@
-import type { Topic, EvidenceClaim } from '@histree/shared-types';
+import { readContentPage } from '../../common/pagination';
+import { contentRequest } from '@histree/shared-types';
+import type { Topic } from '@histree/shared-types';
 import {
   BadRequestException,
   Injectable,
@@ -21,7 +23,8 @@ const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export class EditorialService {
   constructor(private readonly db: SupabaseService) {}
 
-  async topics(slug?: string) {
+  async topics(slug?: string, options: Record<string, string> = {}) {
+    if (!slug) return readContentPage(this.db.getClient(), 'topic', options);
     let query = this.db
       .getClient()
       .from('topic')
@@ -43,38 +46,54 @@ export class EditorialService {
     const client = this.db.getClient();
     const [source, claims] = await Promise.all([
       client.from('source').select('*').eq('id', id).single(),
-      client.from('fact_claim').select('*, source:source_id(*)', { count: 'exact' })
-        .eq('status', 'published').eq('source_id', id).order('id').range(page * 50, page * 50 + 49),
+      client
+        .from('fact_claim')
+        .select('*, source:source_id(*)', { count: 'exact' })
+        .eq('status', 'published')
+        .eq('source_id', id)
+        .order('id')
+        .range(page * 50, page * 50 + 49),
     ]);
     if (source.error) throw source.error;
     if (claims.error) throw claims.error;
-    return { source: source.data, claims: claims.data ?? [], count: claims.count ?? 0 };
+    return {
+      source: source.data,
+      claims: claims.data ?? [],
+      count: claims.count ?? 0,
+    };
   }
 
-  async evidence(subject: string, id: string) {
+  async evidence(
+    subject: string,
+    id: string,
+    options: Record<string, string> = {},
+  ) {
     if (!subjects.includes(subject) || !uuid.test(id))
       throw new BadRequestException('无效的出处对象');
-    const { data, error } = await this.db
-      .getClient()
-      .from('fact_claim')
-      .select('*, source:source_id(*)')
-      .eq('status', 'published')
-      .eq('subject_table', subject)
-      .eq('subject_id', id);
-    if (error) throw error;
-    return (data ?? []) as EvidenceClaim[];
+    return readContentPage(this.db.getClient(), 'fact_claim', {
+      ...options,
+      subject,
+      subject_id: id,
+    });
   }
 
-  async list(table: string) {
-    if (!tables.includes(table))
+  async list(table: string, options: Record<string, string> = {}) {
+    if (!tables.includes(table) && table !== 'nodes')
       throw new BadRequestException('无效的内容类型');
+    let args: ReturnType<typeof contentRequest>;
+    try {
+      args = contentRequest(
+        `/editorial/${table}?${new URLSearchParams(options)}`,
+        true,
+      );
+    } catch {
+      throw new BadRequestException('查询参数无效');
+    }
     const { data, error } = await this.db
       .getAdminClient()
-      .from(table)
-      .select('*')
-      .order('created_at', { ascending: false });
+      .rpc('content_page', args);
     if (error) throw error;
-    return (data ?? []) as Record<string, unknown>[];
+    return data;
   }
 
   async save(table: string, input: Record<string, unknown>, id?: string) {
@@ -173,34 +192,37 @@ export class EditorialService {
         )
           throw new BadRequestException('章节标题、正文或关联条目无效');
         const nodeIds = section.node_ids as string[];
-        for (const node of nodeIds) {
-          const [p, e] = await Promise.all(
-            subjects
-              .slice(0, 2)
-              .map((t) =>
-                this.db
-                  .getAdminClient()
-                  .from(t)
-                  .select('id, status')
-                  .eq('id', node)
-                  .maybeSingle<{ id: string; status: string }>(),
-              ),
-          );
-          if (p.error) throw p.error;
-          if (e.error) throw e.error;
-          const found = p.data ?? e.data;
-          if (
-            !found ||
-            (status === 'published' && found.status !== 'published')
-          )
-            throw new BadRequestException('发布专题前，请先发布全部关联条目');
-        }
         sections.push({
           heading: section.heading.trim(),
           body: section.body.trim(),
           node_ids: [...new Set(nodeIds)],
         });
       }
+      const ids = [...new Set(sections.flatMap((section) => section.node_ids))];
+      const found = new Map<string, string>();
+      for (let offset = 0; offset < ids.length; offset += 100) {
+        const results = await Promise.all(
+          ['person', 'event'].map((table) =>
+            this.db
+              .getAdminClient()
+              .from(table)
+              .select('id,status')
+              .in('id', ids.slice(offset, offset + 100)),
+          ),
+        );
+        for (const result of results) {
+          if (result.error) throw result.error;
+          for (const row of result.data ?? []) found.set(row.id, row.status);
+        }
+      }
+      if (
+        ids.some(
+          (id) =>
+            !found.has(id) ||
+            (status === 'published' && found.get(id) !== 'published'),
+        )
+      )
+        throw new BadRequestException('发布专题前，请先发布全部关联条目');
       return {
         slug,
         title: text('title', true),

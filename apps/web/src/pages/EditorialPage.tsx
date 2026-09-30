@@ -4,32 +4,20 @@ import type {
   Topic,
   Source,
   FactClaim,
-  Person,
-  Event,
-  PersonRelationship,
-  PersonEventRelation,
-  EventCausalityRelation,
   ClaimSubject,
+  PageResult,
 } from "@histree/shared-types";
 import { apiFetch, getCurrentUserRole } from "../lib/api";
+import { useResource } from '../hooks/useResource';
+import { useDebounced } from '../hooks/useDebounced';
+import { usePageState } from '../hooks/usePageState';
+import { RecordPicker } from '../components/RecordPicker';
+import { RecordChecklist } from '../components/RecordChecklist';
+import { Pagination } from '../components/Pagination';
+import { LoadState } from '../components/Reading';
 import { PublicationField } from "../components/PublicationField";
-import { relationshipSentence } from "../lib/graph";
 
 type Table = "topic" | "source" | "fact_claim";
-type Catalog = {
-  person: Person[];
-  event: Event[];
-  person_relationship: PersonRelationship[];
-  person_event: PersonEventRelation[];
-  event_causality: EventCausalityRelation[];
-};
-const blankCatalog: Catalog = {
-  person: [],
-  event: [],
-  person_relationship: [],
-  person_event: [],
-  event_causality: [],
-};
 const labels: Record<ClaimSubject, string> = {
   person: "人物",
   event: "事件",
@@ -52,48 +40,20 @@ export function EditorialPage() {
   const [message, setMessage] = useState("");
   const [tab, setTab] = useState<Table>("topic");
   const [query, setQuery] = useState("");
-  const [topics, setTopics] = useState<Topic[]>([]);
-  const [sources, setSources] = useState<Source[]>([]);
-  const [claims, setClaims] = useState<FactClaim[]>([]);
-  const [catalog, setCatalog] = useState<Catalog>(blankCatalog);
   const [topic, setTopic] = useState<Partial<Topic> | null>(null);
   const [source, setSource] = useState<Partial<Source> | null>(null);
   const [claim, setClaim] = useState<Partial<FactClaim> | null>(null);
-  const load = async () => {
-    const [t, s, c, p, e, pr, pe, ec] = await Promise.all([
-      apiFetch<Topic[]>("/editorial/topic", { auth: true }),
-      apiFetch<Source[]>("/editorial/source", { auth: true }),
-      apiFetch<FactClaim[]>("/editorial/fact_claim", { auth: true }),
-      apiFetch<Person[]>("/editorial/person", { auth: true }),
-      apiFetch<Event[]>("/editorial/event", { auth: true }),
-      apiFetch<PersonRelationship[]>("/editorial/person_relationship", {
-        auth: true,
-      }),
-      apiFetch<PersonEventRelation[]>("/editorial/person_event", {
-        auth: true,
-      }),
-      apiFetch<EventCausalityRelation[]>("/editorial/event_causality", {
-        auth: true,
-      }),
-    ]);
-    setTopics(t);
-    setSources(s);
-    setClaims(c);
-    setCatalog({
-      person: p,
-      event: e,
-      person_relationship: pr,
-      person_event: pe,
-      event_causality: ec,
-    });
-  };
+  const settled=useDebounced(query.trim());
+  const [page,setPage]=usePageState(`${tab}:${settled}`);
+  const list=useResource<PageResult<Topic|Source|FactClaim>>(admin?`/editorial/${tab}?${new URLSearchParams({q:settled,page:String(page)})}`:undefined,true);
+  const load=async()=>{list.retry();};
   useEffect(() => {
     let active = true;
     getCurrentUserRole()
       .then(async (role) => {
         if (!active) return;
         setAdmin(role === "admin");
-        if (role === "admin") await load();
+
       })
       .catch((e) => {
         if (active) setError(e.message);
@@ -140,35 +100,6 @@ export function EditorialPage() {
         });
         await load();
       });
-  };
-  const personName = (id: string) =>
-    catalog.person.find((p) => p.id === id)?.name || "人物已移除";
-  const eventName = (id: string) =>
-    catalog.event.find((e) => e.id === id)?.title || "事件已移除";
-  const subjectOptions = (subject: string): { id: string; label: string }[] => {
-    switch (subject) {
-      case "person":
-        return catalog.person.map((n) => ({ id: n.id, label: n.name }));
-      case "event":
-        return catalog.event.map((n) => ({ id: n.id, label: n.title }));
-      case "person_relationship":
-        return catalog.person_relationship.map((r) => ({
-          id: r.id,
-          label: relationshipSentence(personName(r.person_a), personName(r.person_b), r.relation_type),
-        }));
-      case "person_event":
-        return catalog.person_event.map((r) => ({
-          id: r.id,
-          label: `${personName(r.person_id)} → ${r.role} → ${eventName(r.event_id)}`,
-        }));
-      case "event_causality":
-        return catalog.event_causality.map((r) => ({
-          id: r.id,
-          label: `${eventName(r.cause_event_id)} → ${eventName(r.effect_event_id)}`,
-        }));
-      default:
-        return [];
-    }
   };
   const field = (
     label: string,
@@ -232,23 +163,7 @@ export function EditorialPage() {
         status: "draft",
       });
   };
-  const rows = (
-    tab === "topic" ? topics : tab === "source" ? sources : claims
-  ).filter((row) =>
-    ("claim_text" in row ? row.claim_text : row.title).includes(query),
-  );
-  const nodes = [
-    ...catalog.person.map((p) => ({
-      id: p.id,
-      title: p.name,
-      status: p.status,
-    })),
-    ...catalog.event.map((e) => ({
-      id: e.id,
-      title: e.title,
-      status: e.status,
-    })),
-  ];
+  const rows = list.data?.items??[];
   return (
     <div className="space-y-6">
       <Link to="/admin" className="text-teal-700 text-sm">
@@ -334,29 +249,7 @@ export function EditorialPage() {
                 <p className="text-sm text-slate-600">
                   关联阅读（按勾选顺序排列）
                 </p>
-                <div className="max-h-48 overflow-y-auto grid sm:grid-cols-2 gap-2">
-                  {nodes.map((node) => (
-                    <label
-                      key={node.id}
-                      className="text-sm flex gap-2 items-center"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={section.node_ids.includes(node.id)}
-                        onChange={(e) =>
-                          update({
-                            ...section,
-                            node_ids: e.target.checked
-                              ? [...section.node_ids, node.id]
-                              : section.node_ids.filter((id) => id !== node.id),
-                          })
-                        }
-                      />
-                      {node.title} ·{" "}
-                      {node.status === "published" ? "已发布" : "草稿"}
-                    </label>
-                  ))}
-                </div>
+                <RecordChecklist value={section.node_ids} onChange={node_ids=>update({...section,node_ids})}/>
                 <div className="flex gap-4 text-sm">
                   <button
                     disabled={index === 0}
@@ -414,23 +307,9 @@ export function EditorialPage() {
           {field("书名／资料标题", source.title, (title) =>
             setSource({ ...source, title }),
           )}
-          <label className="block text-sm">
-            来源类型
-            <select
-              className="reading-input mt-1"
-              value={source.source_type}
-              onChange={(e) =>
-                setSource({
-                  ...source,
-                  source_type: e.target.value as Source["source_type"],
-                })
-              }
-            >
-              {Object.entries(sourceTypes).map(([v, l]) => (
-                <option key={v} value={v}>
-                  {l}
-                </option>
-              ))}
+          <label className="block text-sm">来源类型
+            <select className="reading-input mt-1" value={source.source_type || "primary"} onChange={e => setSource({...source, source_type: e.target.value as Source['source_type']})}>
+              {Object.entries(sourceTypes).map(([value,label]) => <option key={value} value={value}>{label}</option>)}
             </select>
           </label>
           {field("作者", source.author, (author) =>
@@ -481,23 +360,7 @@ export function EditorialPage() {
               ))}
             </select>
           </label>
-          <label className="block text-sm">
-            具体条目或关系
-            <select
-              className="reading-input mt-1"
-              value={claim.subject_id || ""}
-              onChange={(e) =>
-                setClaim({ ...claim, subject_id: e.target.value })
-              }
-            >
-              <option value="">请选择</option>
-              {subjectOptions(claim.subject_table || "").map((o) => (
-                <option key={o.id} value={o.id}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
-          </label>
+          <RecordPicker table={claim.subject_table??'person'} value={claim.subject_id} label="具体条目或关系" onChange={subject_id=>setClaim({...claim,subject_id})}/>
           {field(
             "对应字段（如 biography、description）",
             claim.field_path,
@@ -509,25 +372,7 @@ export function EditorialPage() {
             (claim_text) => setClaim({ ...claim, claim_text }),
             true,
           )}
-          <label className="block text-sm">
-            来源
-            <select
-              className="reading-input mt-1"
-              aria-label="来源"
-              value={claim.source_id || ""}
-              onChange={(e) =>
-                setClaim({ ...claim, source_id: e.target.value })
-              }
-            >
-              <option value="">请选择来源</option>
-              {sources.map((s) => (
-                <option value={s.id} key={s.id}>
-                  {s.title}
-                  {s.edition ? ` · ${s.edition}` : ""}
-                </option>
-              ))}
-            </select>
-          </label>
+          <RecordPicker table="source" value={claim.source_id} label="来源" onChange={source_id=>setClaim({...claim,source_id})}/>
           {field("定位（卷、篇、章节或页码）", claim.citation, (citation) =>
             setClaim({ ...claim, citation }),
           )}
@@ -563,6 +408,7 @@ export function EditorialPage() {
           ＋ 新增
         </button>
       </div>
+      <LoadState {...list}/>
       <div className="space-y-3">
         {rows.map((row) => (
           <div
@@ -580,7 +426,7 @@ export function EditorialPage() {
                     ? "已发布"
                     : "草稿"}
                 {"subject_table" in row &&
-                  ` · ${subjectOptions(row.subject_table).find((o) => o.id === row.subject_id)?.label || "关联对象已移除"}`}
+                  ` · ${list.data?.labels?.[row.subject_id] || "关联对象已移除"}`}
               </p>
               {"slug" in row && row.status === "published" && (
                 <Link
@@ -617,6 +463,7 @@ export function EditorialPage() {
           <p className="text-slate-500 py-8 text-center">没有匹配的记录。</p>
         )}
       </div>
+      <Pagination page={page} hasMore={list.data?.has_more??false} loading={list.loading||busy} onPage={setPage}/>
     </div>
   );
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph && node scripts/test-year-0907-import.mjs && node scripts/test-ask.mjs",
+    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph && pnpm test:explore && node scripts/test-year-0907-import.mjs && node scripts/test-ask.mjs",
     "e2e:smoke": "node scripts/e2e-smoke.mjs",
     "test:ask-runtime": "node apps/api/dsh/smoke.mjs",
     "test:publication": "node scripts/test-publication.mjs",
@@ -12,7 +12,8 @@
     "test:graph": "node scripts/test-graph.mjs",
     "test:atlas": "node scripts/test-atlas.mjs",
     "test:map": "node scripts/test-map-document.mjs",
-    "test:content": "node scripts/test-content-import.mjs"
+    "test:content": "node scripts/test-content-import.mjs",
+    "test:explore": "node scripts/test-explore.mjs"
   },
   "keywords": [],
   "author": "",

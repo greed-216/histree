@@ -1,15 +1,27 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+  UseGuards,
+} from '@nestjs/common';
 import { AdminGuard } from '../../common/guards/admin.guard';
 import { PersonService } from './person.service';
-import type { Person } from '@histree/shared-types';
+import type { Person, PageResult } from '@histree/shared-types';
 
 @Controller('api/v1/people')
 export class PersonController {
   constructor(private readonly personService: PersonService) {}
 
   @Get()
-  async getPeople(): Promise<Person[]> {
-    return this.personService.getPeople();
+  async getPeople(
+    @Query() query: Record<string, string>,
+  ): Promise<PageResult<Person>> {
+    return this.personService.getPeople(query);
   }
 
   @Post()
@@ -20,7 +32,10 @@ export class PersonController {
 
   @Patch(':id')
   @UseGuards(AdminGuard)
-  async updatePerson(@Param('id') id: string, @Body() payload: Partial<Person>): Promise<Person> {
+  async updatePerson(
+    @Param('id') id: string,
+    @Body() payload: Partial<Person>,
+  ): Promise<Person> {
     return this.personService.updatePerson(id, payload);
   }
 

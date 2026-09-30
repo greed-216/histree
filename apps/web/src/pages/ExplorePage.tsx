@@ -1,10 +1,13 @@
 import { MAPS_ENABLED } from '../lib/features';
-import { Link } from "react-router-dom";
-import type { Topic } from "@histree/shared-types";
+import { Link, useSearchParams } from "react-router-dom";
+import type { TopicSummary, PageResult } from "@histree/shared-types";
+import { Pagination } from '../components/Pagination';
 import { useResource } from "../hooks/useResource";
 import { LoadState } from "../components/Reading";
 export function ExplorePage() {
-  const topics = useResource<Topic[]>("/topics");
+  const [params,setParams]=useSearchParams();
+  const page=Math.max(0,Math.min(100000,Math.floor(Number(params.get('page'))||0)));
+  const topics = useResource<PageResult<TopicSummary>>(`/catalog/topic?page=${page}`);
   return (
     <div className="space-y-12 pb-12">
       <section className="reading-hero relative overflow-hidden rounded-3xl px-7 py-12 md:px-14 md:py-20">
@@ -55,7 +58,7 @@ export function ExplorePage() {
         </div>
         <LoadState {...topics} />
         <div className="grid md:grid-cols-2 gap-6">
-          {topics.data?.map((topic, index) => (
+          {topics.data?.items.map((topic, index) => (
             <Link
               to={`/topics/${topic.slug}`}
               key={topic.id}
@@ -63,7 +66,7 @@ export function ExplorePage() {
             >
               <span className="eyebrow">
                 专题 {String(index + 1).padStart(2, "0")} ·{" "}
-                {topic.sections.length} 个阅读章节
+                {topic.section_count} 个阅读章节
               </span>
               <h3 className="font-serif text-3xl mt-5 group-hover:text-teal-700">
                 {topic.title}
@@ -77,9 +80,10 @@ export function ExplorePage() {
             </Link>
           ))}
         </div>
-        {topics.data?.length === 0 && (
+        {topics.data?.items.length === 0 && (
           <p className="text-slate-500">五代十国专题正在整理，审核完成后将在这里发布。</p>
         )}
+        <Pagination page={page} hasMore={topics.data?.has_more??false} loading={topics.loading} onPage={page=>setParams({page:String(page)})}/>
       </section>
       <section className={`grid sm:grid-cols-2 ${MAPS_ENABLED ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-6 border-t border-stone-200 pt-8`}>
         {[

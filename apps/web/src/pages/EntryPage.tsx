@@ -1,9 +1,11 @@
 import { relationshipPresentation } from "../lib/graph";
 import { entryTitle, entryPath, safeUrl } from "../lib/reading";
 import { Link, useParams } from "react-router-dom";
-import type { GraphResponse, Topic, Event } from "@histree/shared-types";
+import type { EntryContext, TopicSummary, PageResult, Event } from "@histree/shared-types";
+import { usePageState } from '../hooks/usePageState';
+import { Pagination } from '../components/Pagination';
 import { useResource } from "../hooks/useResource";
-import { Evidence, LoadState, Timeline } from "../components/Reading";
+import { Evidence, LazyEvidence, LoadState, Timeline } from "../components/Reading";
 import {
   edgeTypeLabel,
   formatDisplayRange,
@@ -11,8 +13,10 @@ import {
 } from "../lib/content";
 export function EntryPage() {
   const { id } = useParams();
-  const graph = useResource<GraphResponse>(`/graph/${id}`);
-  const topics = useResource<Topic[]>("/topics");
+  const [page,setPage]=usePageState(id??'');
+  const graph = useResource<EntryContext>(`/entry-context/${id}?page=${page}`);
+  const [topicPage,setTopicPage]=usePageState(id??'');
+  const topics = useResource<PageResult<TopicSummary>>(`/catalog/topic?node=${id}&page=${topicPage}`);
   if (graph.loading || graph.error) return <LoadState {...graph} />;
   if (!graph.data) return null;
   const { center: node, nodes, edges } = graph.data;
@@ -26,13 +30,12 @@ export function EntryPage() {
         <Link to={node.type === "person" ? "/people" : "/events"}>
           ← {node.type === "person" ? "历史人物" : "历史事件"}
         </Link>
-        {topics.data
-          ?.filter((t) => t.sections.some((s) => s.node_ids.includes(node.id)))
-          .map((t) => (
+        {topics.data?.items.map((t) => (
             <Link key={t.id} to={`/topics/${t.slug}`}>
               专题：{t.title}
             </Link>
           ))}
+        {topics.data?.has_more||topicPage>0?<Pagination page={topicPage} hasMore={topics.data?.has_more??false} loading={topics.loading} onPage={setTopicPage}/>:null}
       </nav>
       <header className="border-b border-stone-200 pb-9 mb-9 flex items-start gap-6">
         <div className="flex-1">
@@ -114,7 +117,7 @@ export function EntryPage() {
           )}
           <section id="chronology" className="scroll-mt-24">
             <h2 className="reading-heading">
-              {node.type === "person" ? "相关事件时间线" : "事件时间脉络"}
+              {node.type === "person" ? "本页相关事件时间线" : "事件时间脉络"}
             </h2>
             {events.length ? (
               <Timeline events={events} />
@@ -162,19 +165,13 @@ export function EntryPage() {
                       {edge.description || "关系说明正在整理。"}
                     </p>
                     {edge.id && edge.subject_table && (
-                      <details className="mt-4 text-sm">
-                        <summary className="cursor-pointer text-teal-700">
-                          查看这条关系的依据
-                        </summary>
-                        <div className="mt-4">
-                          <Evidence subject={edge.subject_table} id={edge.id} />
-                        </div>
-                      </details>
+                      <LazyEvidence subject={edge.subject_table} id={edge.id}/>
                     )}
                   </div>
                 );
               })}
             </div>
+            <Pagination page={page} hasMore={graph.data.has_more} loading={graph.loading} onPage={setPage}/>
           </section>
           <section id="evidence" className="scroll-mt-24">
             <h2 className="reading-heading">陈述与出处</h2>

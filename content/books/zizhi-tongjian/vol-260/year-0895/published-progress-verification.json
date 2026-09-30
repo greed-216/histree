@@ -1,7 +1,7 @@
 {
-  "verified_at": "2026-09-30T10:48:00.903575+00:00",
-  "status": "partial_published_verified",
-  "paragraphs_published": 69,
+  "verified_at": "2026-09-30T10:56:33.456082+00:00",
+  "status": "complete_published_verified",
+  "paragraphs_published": 74,
   "paragraphs_total": 74,
   "batches": [
     "content/books/zizhi-tongjian/vol-260/year-0895/part-01",
@@ -20,22 +20,26 @@
     "content/books/zizhi-tongjian/vol-260/year-0895/part-14",
     "content/books/zizhi-tongjian/vol-260/year-0895/part-15",
     "content/books/zizhi-tongjian/vol-260/year-0895/part-16",
-    "content/books/zizhi-tongjian/vol-260/year-0895/part-17"
+    "content/books/zizhi-tongjian/vol-260/year-0895/part-17",
+    "content/books/zizhi-tongjian/vol-260/year-0895/part-18"
   ],
   "public_row_occurrences": {
-    "source": 35,
-    "person": 241,
-    "event": 246,
-    "person_relationship": 24,
-    "person_event": 523,
-    "fact_claim": 1335
+    "source": 37,
+    "person": 257,
+    "event": 259,
+    "person_relationship": 25,
+    "person_event": 550,
+    "fact_claim": 1407
   },
   "checks": [
-    "seventeen publication hashes",
+    "eighteen publication hashes",
     "each publication anonymous readback",
-    "continuous primary source lines 6 through 74",
+    "continuous primary source lines 6 through 79",
+    "paragraph text exact matches upstream",
+    "year headers and end boundary verified",
+    "coverage includes each paragraph exactly once",
     "new source snapshots match fixed Git commit",
-    "paragraphs 70 through 74 remain pending"
+    "896 ledger 48 pending paragraphs lines 82 through 129"
   ],
-  "next_paragraph": "zztj-v260-y0895-p070"
+  "next_paragraph": "zztj-v260-y0896-p001"
 }

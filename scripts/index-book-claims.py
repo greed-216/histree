@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 books={'zizhi-tongjian':('资治通鉴',('tongjian-',)),'jiuwudaishi':('旧五代史',('jiuwudaishi-',)),'xinwudaishi':('新五代史',('xinwudaishi-',)),'wuyue-beishi':('吴越备史',('KR2i0019-',)),'shu-taowu':('蜀梼杌',('KR2i0016-',))}
 books.update({'jiutangshu':('旧唐书',('jiutangshu-',)), 'shiguochunqiu':('十国春秋',('shiguochunqiu-',))})
+books.update({'beimeng-suoyan':('北梦琐言',('beimeng-suoyan-',))})
 indexes={k:{} for k in books}
 for path in sorted((ROOT/'content').rglob('content-batch.json')):
  batch=json.loads(path.read_text())

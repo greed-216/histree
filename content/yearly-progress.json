@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 259,
-    "year": 894,
-    "last_reviewed_paragraph": "zztj-v259-y0894-p016",
-    "next_paragraph": "zztj-v259-y0894-p017",
-    "next_paragraph_opening": "蕲州刺史冯敬章邀击淮南军，硃延寿攻蕲州，不克。",
-    "batch": "content/books/zizhi-tongjian/vol-259/year-0894/part-02",
-    "status": "published_verified",
-    "last_published_paragraph": "zztj-v259-y0894-p016"
+    "volume": 260,
+    "year": 895,
+    "last_reviewed_paragraph": "zztj-v259-y0894-p033",
+    "next_paragraph": "zztj-v260-y0895-p001",
+    "next_paragraph_opening": "春，正月，辛酉，幽州军民数万以麾盖歌鼓迎李克用入府舍；克用命李存审、刘仁恭将兵略定巡属。",
+    "batch": null,
+    "status": "pending",
+    "last_published_paragraph": "zztj-v259-y0894-p033"
   },
   "year_coverage": [
     {
@@ -199,15 +199,20 @@
     },
     {
       "year": 894,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         259
       ],
       "batches": [
         "content/books/zizhi-tongjian/vol-259/year-0894/part-01",
-        "content/books/zizhi-tongjian/vol-259/year-0894/part-02"
+        "content/books/zizhi-tongjian/vol-259/year-0894/part-02",
+        "content/books/zizhi-tongjian/vol-259/year-0894/part-03",
+        "content/books/zizhi-tongjian/vol-259/year-0894/part-04"
       ],
-      "note": "卷259乾宁元年条33段已连续发布前16段，下一段第17段；尚未报整年完成。"
+      "note": "卷259乾宁元年33段分四批连续发布；四批哈希、535条引用及所有主体的重新匿名读回、固定来源快照和年界均通过核验。其他书异说与待校姓名仍并列保留，不视为纸本校勘。",
+      "completed_volumes": [
+        259
+      ]
     }
   ],
   "legacy_archives": [
@@ -304,6 +309,38 @@
       "alternate_source": "resources/derived/twenty-four-histories/19新五代史.jsonl#pdf_page=686",
       "alternate_reading": "新五代史卷39称同谋客李正抱，687页救王镕时又记正抱被杀。",
       "required_action": "暂留主书判官身份key；追加686页独立引用并核对姓名异说前，不将正抱自动追加为已确证别名，更不能并早唐同名将。"
+    },
+    {
+      "key": "894-liu-chongwang-chonglu-age",
+      "status": "pending_source_supplement",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0894/part-03",
+      "primary_paragraph": "zztj-v259-y0894-p018",
+      "primary_reading": "主书李溪奏词写弟崇望，与两唐书以崇鲁为崇望之弟相抵。",
+      "required_action": "长幼书证待归档补入同一主体；本批仅保留奏词，不建方向关系。",
+      "reference_urls": [
+        "https://zh.wikisource.org/wiki/舊唐書/卷179",
+        "https://zh.wikisource.org/wiki/新唐書/卷090"
+      ]
+    },
+    {
+      "key": "894-xue-zhicheng-zhiqin-name",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0894/part-03",
+      "primary_paragraph": "zztj-v259-y0894-p023",
+      "subject_key": "person_薛志勤",
+      "primary_reading": "底本云州刺史薛志诚表为昭义留后。",
+      "alternate_reading": "旧五代史卷55薛志勤从云州大同任乾宁初代康君立为昭义节度使；已附独立出处。",
+      "required_action": "按相同官地接任链暂对应既有主体，姓名异文待校；不要新建重复人物，也不把志诚当作已经确认的正式别名。"
+    },
+    {
+      "key": "894-li-xi-third-glyph-source-link",
+      "status": "pending_source_supplement",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0894/part-03",
+      "primary_paragraph": "zztj-v259-y0894-p018",
+      "subject_key": "person_李磎",
+      "primary_reading": "人物已合主书李溪与北梦李磎；另一电子字形李谿已见两唐書和旧五代史。",
+      "alternate_source": "resources/derived/twenty-four-histories/18旧五代史.jsonl#pdf_page=1391",
+      "required_action": "下年再任相连续段复用李磎时，补旧五代史李琪传1391页李谿字形为独立人物引用；保持已发布批次，别名并非正式改名。"
     }
   ]
 }

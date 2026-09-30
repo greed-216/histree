@@ -1,0 +1,43 @@
+{
+  "year": 894,
+  "paragraphs": 33,
+  "batches": 4,
+  "verified": true,
+  "counts": {
+    "source": 17,
+    "person": 103,
+    "event": 93,
+    "person_relationship": 10,
+    "person_event": 203,
+    "fact_claim": 535
+  },
+  "new_counts": {
+    "source": 14,
+    "person": 34,
+    "event": 93,
+    "person_relationship": 10,
+    "person_event": 203,
+    "fact_claim": 535
+  },
+  "unique_public_counts": {
+    "source": 14,
+    "person": 82,
+    "event": 93,
+    "person_relationship": 10,
+    "person_event": 203,
+    "fact_claim": 535
+  },
+  "checks": [
+    "33 paragraphs match consecutive raw lines 94-126 and complete year/volume boundary",
+    "four publication hashes match and anonymous public counts complete",
+    "all paragraphs published_verified; no gaps or duplicate primary coverage",
+    "all fixed commit source bytes match snapshots including extracted PDF pages and original CRLF",
+    "fresh anonymous readback checks every unique public row and visible fixed source links",
+    "895 ledger matches all 74 next-year paragraphs in volume 260; 896 begins at raw line 81"
+  ],
+  "editorial_limitations": [
+    "Electronic transcription reviewed; printed editions remain unchecked.",
+    "Quoted accusations and predictions are attributed to speakers.",
+    "Named source variants and unresolved age/name readings remain recorded in editorial_followups."
+  ]
+}

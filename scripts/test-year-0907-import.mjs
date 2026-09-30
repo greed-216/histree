@@ -1,12 +1,13 @@
+import { pg_trgm } from '@electric-sql/pglite/contrib/pg_trgm';
 import {PGlite} from '@electric-sql/pglite';
 import {readFile,readdir,mkdtemp,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
-const db=new PGlite(), dir=await mkdtemp(join(tmpdir(),'histree-907-'));
+const db=new PGlite({ extensions: { pg_trgm } }), dir=await mkdtemp(join(tmpdir(),'histree-907-'));
 try {
- await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY); CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT null::uuid $$; CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public TO anon;`);
+ await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY); CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT null::uuid $$; CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public TO anon;`);
  for (const f of (await readdir('supabase/migrations')).filter(x=>x.endsWith('.sql')).sort()) await db.exec(await readFile('supabase/migrations/'+f,'utf8'));
  await db.exec('GRANT SELECT ON ALL TABLES IN SCHEMA public TO anon');
  execFileSync('python3',['scripts/prepare-content-import.py','content/later-liang-907-923/content-batch.json',dir]);

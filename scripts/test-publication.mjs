@@ -1,11 +1,12 @@
+import { pg_trgm } from '@electric-sql/pglite/contrib/pg_trgm';
 import { PGlite } from '@electric-sql/pglite';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
-const db = new PGlite();
+const db = new PGlite({ extensions: { pg_trgm } });
 await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY);
 CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
-CREATE ROLE anon; CREATE ROLE authenticated;
+CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated;
 GRANT USAGE ON SCHEMA public, auth TO anon, authenticated; GRANT EXECUTE ON FUNCTION auth.uid() TO anon, authenticated;`);
 for (const file of (await readdir(new URL('../supabase/migrations/', import.meta.url))).filter(f => f.endsWith('.sql')).sort()) {
   if (file === '20260928130000_clear_legacy_content.sql') {

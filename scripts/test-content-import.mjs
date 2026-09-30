@@ -1,3 +1,4 @@
+import { pg_trgm } from '@electric-sql/pglite/contrib/pg_trgm';
 import { PGlite } from '@electric-sql/pglite';
 import { readdir, readFile, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -5,12 +6,12 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 const dir = await mkdtemp(join(tmpdir(), 'histree-import-'));
-const db = new PGlite();
+const db = new PGlite({ extensions: { pg_trgm } });
 try {
  execFileSync('python3',['scripts/prepare-content-import.py','content/later-liang-907-923/content-batch.json',dir]);
  await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY);
  CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT null::uuid $$;
- CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public TO anon;`);
+ CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public TO anon;`);
  for (const file of (await readdir('supabase/migrations')).filter(f=>f.endsWith('.sql')).sort()) {
   await db.exec(await readFile(`supabase/migrations/${file}`,'utf8'));
  }

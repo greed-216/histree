@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { splitEvidenceNote, evidencePath, correctionUrl } from "../lib/evidence";
-import { Link } from "react-router-dom";
-import type { Event, EvidenceClaim, ClaimSubject } from "@histree/shared-types";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import type { Event, EvidenceClaim, ClaimSubject, PageResult } from "@histree/shared-types";
 import { formatDisplayRange } from "../lib/content";
+import { Pagination } from './Pagination';
+import { usePageState } from '../hooks/usePageState';
 import { useResource } from "../hooks/useResource";
 import { entryTitle, entryPath, safeUrl } from "../lib/reading";
 import type { Entry } from "../lib/reading";
@@ -75,14 +77,20 @@ export function Evidence({
   subject: ClaimSubject;
   id: string;
 }) {
-  const result = useResource<EvidenceClaim[]>(`/evidence/${subject}/${id}`);
+  const [page,setPage]=usePageState(`${subject}:${id}`);
+  const location=useLocation();const navigate=useNavigate();
+  const pinned=/^#claim-[0-9a-f-]{36}$/i.test(location.hash)?location.hash.slice(7):'';
+  const params=new URLSearchParams({subject,subject_id:id,page:String(pinned?0:page)});
+  if(pinned)params.set('claim',pinned);
+  const result = useResource<PageResult<EvidenceClaim>>(`/catalog/fact_claim?${params}`);
   return (
     <div className="space-y-4">
       <LoadState {...result} />
-      {result.data?.length === 0 && (
+      {result.data?.items.length === 0 && (
         <p className="text-sm text-slate-500">这部分的具体出处尚待整理。</p>
       )}
-      {result.data?.map((claim) => <EvidenceCard key={claim.id} claim={claim} />)}
+      {result.data?.items.map((claim) => <EvidenceCard key={claim.id} claim={claim} />)}
+      {pinned?<button className="text-sm underline" onClick={()=>{navigate({pathname:location.pathname,search:location.search,hash:''},{replace:true});setPage(0);}}>查看全部依据</button>:<Pagination page={page} hasMore={result.data?.has_more??false} loading={result.loading} onPage={setPage}/>}
     </div>
   );
 }
@@ -146,4 +154,9 @@ export function Timeline({ events }: { events: Event[] }) {
       ))}
     </ol>
   );
+}
+
+export function LazyEvidence({subject,id}:{subject:ClaimSubject;id:string}) {
+ const [open,setOpen]=useState(false);
+ return <details className="mt-4 text-sm" onToggle={e=>setOpen(e.currentTarget.open)}><summary className="cursor-pointer text-teal-700">查看这条关系的依据</summary>{open&&<div className="mt-4"><Evidence subject={subject} id={id}/></div>}</details>;
 }

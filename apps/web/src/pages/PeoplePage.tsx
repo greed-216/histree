@@ -1,28 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { UserIcon } from '@heroicons/react/24/outline';
-import type { Person } from '@histree/shared-types';
-import { apiFetch } from '../lib/api';
+import type { Person, PageResult } from '@histree/shared-types';
+import { useResource } from '../hooks/useResource';
+import { Pagination } from '../components/Pagination';
+import { LoadState } from '../components/Reading';
 import { primaryReference } from '../lib/content';
 
 export const PeoplePage: React.FC = () => {
-  const [people, setPeople] = useState<Person[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    apiFetch<Person[]>('/people')
-      .then(data => {
-        setPeople(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setError(true);
-        setLoading(false);
-      });
-  }, []);
-
+  const [params,setParams]=useSearchParams();
+  const page=Math.max(0,Math.min(100000,Math.floor(Number(params.get('page'))||0)));
+  const result=useResource<PageResult<Person>>(`/catalog/person?page=${page}`);
+  const people=result.data?.items??[];
+  const loading=result.loading;
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3 mb-8">
@@ -33,7 +23,7 @@ export const PeoplePage: React.FC = () => {
       </div>
 
       <Link to="/search" className="inline-block text-teal-700 text-sm">搜索姓名、别名与标签 →</Link>
-      {error && <p role="alert" className="text-rose-700">加载失败，请刷新重试。</p>}
+      <LoadState {...result}/>
       {loading ? (
         <div className="flex justify-center py-12 text-slate-400">加载中...</div>
       ) : (
@@ -81,6 +71,7 @@ export const PeoplePage: React.FC = () => {
           ))}
         </div>
       )}
+      <Pagination page={page} hasMore={result.data?.has_more??false} loading={loading} onPage={page=>setParams({page:String(page)})}/>
     </div>
   );
 };

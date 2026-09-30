@@ -1,111 +1,28 @@
-import { Link, useSearchParams } from "react-router-dom";
-import type { Person, Event, Topic } from "@histree/shared-types";
-import { useResource } from "../hooks/useResource";
-import { EntryCard, LoadState } from "../components/Reading";
+import { Link, useSearchParams } from 'react-router-dom';
+import type { SearchResponse } from '@histree/shared-types';
+import { useResource } from '../hooks/useResource';
+import { useDebounced } from '../hooks/useDebounced';
+import { EntryCard, LoadState } from '../components/Reading';
+
 export function SearchPage() {
   const [params, setParams] = useSearchParams();
-  const q = params.get("q") || "";
-  const kind = params.get("kind") || "all";
-  const people = useResource<Person[]>("/people");
-  const events = useResource<Event[]>("/event");
-  const topics = useResource<Topic[]>("/topics");
-  const match = (values: unknown[]) =>
-    values
-      .flat()
-      .filter(Boolean)
-      .join(" ")
-      .toLocaleLowerCase()
-      .includes(q.trim().toLocaleLowerCase());
-  const nodes = [...(people.data ?? []), ...(events.data ?? [])].filter(
-    (n) =>
-      (kind === "all" || n.type === kind) &&
-      match(
-        n.type === "person"
-          ? [n.name, n.aliases, n.era, n.faction, n.tags, n.description]
-          : [n.title, n.dynasty, n.tags, n.description],
-      ),
-  );
-  const foundTopics = (topics.data ?? []).filter(
-    (t) =>
-      (kind === "all" || kind === "topic") && match([t.title, t.description]),
-  );
-  const loading = people.loading || events.loading || topics.loading;
-  const error = people.error || events.error || topics.error;
-  return (
-    <div className="space-y-7">
-      <header>
-        <p className="eyebrow">寻找历史线索</p>
-        <h1 className="text-3xl font-serif mt-3">搜索与浏览</h1>
-        <Link to="/ask" className="inline-block mt-3 text-sm text-teal-800 underline">想了解来龙去脉？试试问史料 →</Link>
-      </header>
-      <label className="block">
-        <span className="sr-only">搜索关键词</span>
-        <input
-          type="search"
-          value={q}
-          onChange={(e) =>
-            setParams({ q: e.target.value, kind }, { replace: true })
-          }
-          placeholder="姓名、别名、事件、标签…"
-          className="reading-input text-lg"
-        />
-      </label>
-      <div className="flex flex-wrap gap-2">
-        {[
-          ["all", "全部"],
-          ["person", "人物"],
-          ["event", "事件"],
-          ["topic", "专题"],
-        ].map(([value, label]) => (
-          <button
-            key={value}
-            aria-pressed={kind === value}
-            onClick={() => setParams({ q, kind: value }, { replace: true })}
-            className={`px-5 py-2 rounded-full text-sm ${kind === value ? "bg-teal-800 text-white" : "bg-white border border-stone-200"}`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-      <LoadState
-        loading={loading}
-        error={error}
-        retry={() => {
-          people.retry();
-          events.retry();
-          topics.retry();
-        }}
-      />
-      {!loading && !error && (
-        <>
-          <p className="text-sm text-slate-500">
-            {nodes.length + foundTopics.length} 条结果{q && ` · “${q}”`}
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {foundTopics.map((t) => (
-              <Link
-                className="reading-card"
-                to={`/topics/${t.slug}`}
-                key={t.id}
-              >
-                <p className="eyebrow">专题</p>
-                <h2 className="text-xl font-semibold mt-2">{t.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {t.description}
-                </p>
-              </Link>
-            ))}
-            {nodes.map((n) => (
-              <EntryCard node={n} key={n.id} />
-            ))}
-          </div>
-          {nodes.length + foundTopics.length === 0 && (
-            <p className="py-12 text-center text-slate-500">
-              暂时没有匹配的条目，试试别名或更短的关键词。
-            </p>
-          )}
-        </>
-      )}
-    </div>
-  );
+  const q = params.get('q') || '';
+  const kind = params.get('kind') || 'all';
+  const page = Math.max(0, Number(params.get('page')) || 0);
+  const settled = useDebounced(q.trim());
+  const result = useResource<SearchResponse>(`/search?${new URLSearchParams({ q: settled, kind, page: String(page), limit: '20' })}`);
+  const pending = settled !== q.trim();
+  function update(q: string, kind: string, page = 0) { setParams({ q, kind, page: String(page) }, { replace: true }); }
+  return <div className="space-y-7">
+    <header><p className="eyebrow">寻找历史线索</p><h1 className="text-3xl font-serif mt-3">搜索与浏览</h1><Link to="/ask" className="inline-block mt-3 text-sm text-teal-800 underline">想了解来龙去脉？试试问史料 →</Link></header>
+    <label className="block"><span className="sr-only">搜索关键词</span><input type="search" value={q} maxLength={200} onChange={e => update(e.target.value, kind)} placeholder="姓名、别名、事件、标签…" className="reading-input text-lg" /></label>
+    <div className="flex flex-wrap gap-2">{[['all','全部'],['person','人物'],['event','事件'],['topic','专题']].map(([value,label]) => <button key={value} aria-pressed={kind === value} onClick={() => update(q,value)} className={`px-5 py-2 rounded-full text-sm ${kind === value ? 'bg-teal-800 text-white' : 'bg-white border border-stone-200'}`}>{label}</button>)}</div>
+    {pending ? <p role="status">正在搜索…</p> : <LoadState {...result} />}
+    {!pending && !result.loading && !result.error && result.data && <>
+      <p className="text-sm text-slate-500">第 {page+1} 页 · {result.data.items.length} 条结果{q && ` · “${q}”`}</p>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">{result.data.items.map(n => n.type === 'topic' ? <Link className="reading-card" to={`/topics/${n.slug}`} key={n.id}><p className="eyebrow">专题</p><h2 className="text-xl font-semibold mt-2">{n.title}</h2><p className="mt-3 text-sm leading-7 text-slate-600">{n.description}</p></Link> : <EntryCard node={n} key={n.id} />)}</div>
+      {result.data.items.length === 0 && <p className="py-12 text-center text-slate-500">暂时没有匹配的条目，试试别名或更短的关键词。</p>}
+      <nav aria-label="搜索结果分页" className="flex gap-3"><button disabled={page === 0} onClick={() => update(q,kind,page-1)} className="rounded-lg border px-4 py-2 disabled:opacity-40">上一页</button><button disabled={!result.data.has_more} onClick={() => update(q,kind,page+1)} className="rounded-lg border px-4 py-2 disabled:opacity-40">下一页</button></nav>
+    </>}
+  </div>;
 }

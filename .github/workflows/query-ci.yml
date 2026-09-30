@@ -1,0 +1,32 @@
+name: Query regression checks
+on:
+  pull_request:
+    paths:
+      - 'apps/**'
+      - 'packages/**'
+      - 'supabase/migrations/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/query-ci.yml'
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm --filter web lint
+      - run: pnpm --filter web build
+      - run: pnpm --filter api build
+      - run: pnpm test:ask-runtime
+      - run: HISTREE_REMOTE_SMOKE=1 pnpm test:ask-runtime

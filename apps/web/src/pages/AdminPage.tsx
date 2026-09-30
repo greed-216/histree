@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { PlusIcon, TrashIcon, PencilIcon, PhotoIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import type {
@@ -9,7 +9,15 @@ import type {
   PersonRelationship,
   ReferenceLink,
   RelationshipBundle,
+  PageResult,
+  ContentRow,
 } from '@histree/shared-types';
+import { useResource } from '../hooks/useResource';
+import { useDebounced } from '../hooks/useDebounced';
+import { usePageState } from '../hooks/usePageState';
+import { Pagination } from '../components/Pagination';
+import { RecordPicker } from '../components/RecordPicker';
+import { LoadState } from '../components/Reading';
 import { apiFetch } from '../lib/api';
 import { Link } from 'react-router-dom';
 import { PublicationField } from '../components/PublicationField';
@@ -18,19 +26,21 @@ import { relationshipSentence } from '../lib/graph';
 
 export const AdminPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'people' | 'events' | 'relationships'>('people');
-  const [people, setPeople] = useState<Person[]>([]);
-  const [events, setEvents] = useState<Event[]>([]);
-  const [relationships, setRelationships] = useState<RelationshipBundle>({
-    person_relationships: [],
-    person_events: [],
-    event_causalities: [],
-  });
-  
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const [query, setQuery] = useState('');
+  const [relationshipTable,setRelationshipTable]=useState('person_relationship');
+  const settled=useDebounced(query.trim());
+  const table=activeTab==='people'?'person':activeTab==='events'?'event':relationshipTable;
+  const [page,setPage]=usePageState(`${table}:${settled}`);
+  const list=useResource<PageResult<ContentRow>>(isAdmin?`/editorial/${table}?${new URLSearchParams({q:settled,page:String(page)})}`:undefined,true);
+  const people=(table==='person'?list.data?.items??[]:[]) as unknown as Person[];
+  const events=(table==='event'?list.data?.items??[]:[]) as unknown as Event[];
+  const relationships:RelationshipBundle={person_relationships:table==='person_relationship'?(list.data?.items??[]) as unknown as PersonRelationship[]:[],person_events:table==='person_event'?(list.data?.items??[]) as unknown as PersonEventRelation[]:[],event_causalities:table==='event_causality'?(list.data?.items??[]) as unknown as EventCausalityRelation[]:[]};
+  const [chosenLabels,setChosenLabels]=useState<Record<string,string>>({});
+  const knownLabels={...list.data?.labels,...chosenLabels};
   const statusBadge = (status?: string) => <span className={`ml-2 text-xs font-normal ${status === 'published' ? 'text-teal-700' : 'text-amber-700'}`}>{status === 'published' ? '已发布' : '草稿'}</span>;
   const run = async (action: () => Promise<void>) => { setBusy(true); setError(''); try { await action(); } catch (e) { setError(e instanceof Error ? e.message : '操作失败'); } finally { setBusy(false); } };
 
@@ -67,19 +77,7 @@ export const AdminPage: React.FC = () => {
   const formatReferences = (references?: ReferenceLink[]) =>
     references?.map((reference) => [reference.title, reference.reference_type, reference.url ?? '', reference.note ?? ''].join(' | ')).join('\n') ?? '';
 
-  const fetchData = useCallback(async () => {
-    const [pData, eData, person_relationships, person_events, event_causalities] = await Promise.all([
-      apiFetch<Person[]>('/editorial/person', { auth: true }),
-      apiFetch<Event[]>('/editorial/event', { auth: true }),
-      apiFetch<PersonRelationship[]>('/editorial/person_relationship', { auth: true }),
-      apiFetch<PersonEventRelation[]>('/editorial/person_event', { auth: true }),
-      apiFetch<EventCausalityRelation[]>('/editorial/event_causality', { auth: true }),
-    ]);
-    const relationshipData = { person_relationships, person_events, event_causalities };
-    setPeople(pData);
-    setEvents(eData);
-    setRelationships(relationshipData);
-  }, []);
+  const fetchData = async () => { list.retry(); };
 
   useEffect(() => {
     let active = true;
@@ -90,15 +88,15 @@ export const AdminPage: React.FC = () => {
       const { data: roles, error: roleError } = await supabase.from('user_roles').select('role').eq('user_id', session.user.id).single();
       if (!active) return;
       if (roleError) throw roleError;
-      if (roles?.role === 'admin') { setIsAdmin(true); await fetchData(); }
+      if (roles?.role === 'admin') { setIsAdmin(true); }
       if (active) setLoading(false);
     };
     check().catch(e => { if (active) { setError(e.message); setLoading(false); } });
     return () => { active = false; };
-  }, [fetchData]);
+  }, []);
 
-  const personName = (id?: string) => people.find((person) => person.id === id)?.name ?? id ?? '-';
-  const eventTitle = (id?: string) => events.find((event) => event.id === id)?.title ?? id ?? '-';
+  const personName = (id?: string) => knownLabels[id??''] ?? people.find((person) => person.id === id)?.name ?? id ?? '-';
+  const eventTitle = (id?: string) => knownLabels[id??''] ?? events.find((event) => event.id === id)?.title ?? id ?? '-';
 
   const savePerson = async () => {
     if (!editingPerson?.name?.trim()) throw new Error('请填写人物姓名');
@@ -327,7 +325,7 @@ export const AdminPage: React.FC = () => {
         </div>
       </div>
 
-      {activeTab !== 'relationships' && <input aria-label="筛选人物或事件" placeholder="按姓名或事件标题筛选…" className="reading-input" value={query} onChange={e => setQuery(e.target.value)} />}
+      <LoadState {...list}/><input aria-label="筛选人物或事件" placeholder="按姓名或事件标题筛选…" className="reading-input" value={query} onChange={e => setQuery(e.target.value)} />
       {activeTab === 'people' && (
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
@@ -348,7 +346,7 @@ export const AdminPage: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {people.filter(p => p.name.includes(query)).map(p => (
+                {people.map(p => (
                   <tr key={p.id} className="hover:bg-slate-50/50">
                     <td className="px-6 py-4 font-semibold text-slate-800">{p.name}{statusBadge(p.status)}</td>
                     <td className="px-6 py-4">{p.era}</td>
@@ -388,7 +386,7 @@ export const AdminPage: React.FC = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {events.filter(e => e.title.includes(query)).map(e => (
+                {events.map(e => (
                   <tr key={e.id} className="hover:bg-slate-50/50">
                     <td className="px-6 py-4 font-semibold text-slate-800">{e.title}{statusBadge(e.status)}</td>
                     <td className="px-6 py-4">{e.start_year}</td>
@@ -409,7 +407,8 @@ export const AdminPage: React.FC = () => {
       {activeTab === 'relationships' && (
         <div className="space-y-6">
 
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <nav className="flex gap-3" aria-label="关系类型">{[['person_relationship','人物关系'],['person_event','事件参与'],['event_causality','事件因果']].map(([value,label])=><button key={value} className="rounded border p-2" aria-pressed={relationshipTable===value} onClick={()=>setRelationshipTable(value)}>{label}</button>)}</nav>
+          {relationshipTable==='person_relationship'&&(          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
               <h2 className="font-semibold text-slate-700">人物关系</h2>
               <button
@@ -419,7 +418,7 @@ export const AdminPage: React.FC = () => {
                   relation_type: '',
                 })}
                 className="flex items-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
-                disabled={people.length < 2}
+                disabled={busy}
               >
                 <PlusIcon className="w-4 h-4" /> 新增人物关系
               </button>
@@ -428,12 +427,8 @@ export const AdminPage: React.FC = () => {
               <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1fr_1.5fr_auto]">
                 <p className="md:col-span-full text-sm text-slate-600">方向约定：A —关系→ B 表示 A 是 B 的该关系。例如：A —父亲→ B 表示 A 是 B 的父亲。兄弟、夫妻等对称关系不区分方向。</p>
                 <PublicationField value={editingPersonRelationship.status} onChange={status => setEditingPersonRelationship({...editingPersonRelationship, status})} />
-                <select value={editingPersonRelationship.person_a || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, person_a: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
-                  {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
-                </select>
-                <select value={editingPersonRelationship.person_b || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, person_b: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
-                  {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
-                </select>
+                <RecordPicker table="person" value={editingPersonRelationship.person_a} label="人物 A" onChange={(id,label)=>{setEditingPersonRelationship({...editingPersonRelationship,person_a:id});setChosenLabels(v=>({...v,[id]:label}));}}/>
+                <RecordPicker table="person" value={editingPersonRelationship.person_b} label="人物 B" onChange={(id,label)=>{setEditingPersonRelationship({...editingPersonRelationship,person_b:id});setChosenLabels(v=>({...v,[id]:label}));}}/>
                 <input aria-label="A 相对于 B 的身份" list="person-relationship-roles" placeholder="A 是 B 的…" value={editingPersonRelationship.relation_type || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, relation_type: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
                 <datalist id="person-relationship-roles">{['父亲','母亲','儿子','女儿','养父','养母','兄长','弟弟','姐姐','妹妹','丈夫','妻子','主君','臣属','兄弟','夫妻','姻亲'].map(role => <option key={role} value={role} />)}</datalist>
                 <p className="md:col-span-full text-xs text-slate-500">长幼或夫妻身份有原文依据时填写具体角色；尚不能确定时保留兄弟、夫妻等对称关系。不要填写父子、母子或统属。</p>
@@ -475,15 +470,15 @@ export const AdminPage: React.FC = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div>)}
 
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          {relationshipTable==='person_event'&&(          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
               <h2 className="font-semibold text-slate-700">事件参与</h2>
               <button
                 onClick={() => setEditingPersonEvent({ person_id: people[0]?.id, event_id: events[0]?.id, role: '' })}
                 className="flex items-center gap-1 bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
-                disabled={people.length === 0 || events.length === 0}
+                disabled={busy}
               >
                 <PlusIcon className="w-4 h-4" /> 新增参与关系
               </button>
@@ -491,12 +486,8 @@ export const AdminPage: React.FC = () => {
             {editingPersonEvent && (
               <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]">
                 <PublicationField value={editingPersonEvent.status} onChange={status => setEditingPersonEvent({...editingPersonEvent, status})} />
-                <select value={editingPersonEvent.person_id || ''} onChange={e => setEditingPersonEvent({ ...editingPersonEvent, person_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
-                  {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
-                </select>
-                <select value={editingPersonEvent.event_id || ''} onChange={e => setEditingPersonEvent({ ...editingPersonEvent, event_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
-                  {events.map(event => <option key={event.id} value={event.id}>{event.title}</option>)}
-                </select>
+                <RecordPicker table="person" value={editingPersonEvent.person_id} label="参与人物" onChange={(id,label)=>{setEditingPersonEvent({...editingPersonEvent,person_id:id});setChosenLabels(v=>({...v,[id]:label}));}}/>
+                <RecordPicker table="event" value={editingPersonEvent.event_id} label="关联事件" onChange={(id,label)=>{setEditingPersonEvent({...editingPersonEvent,event_id:id});setChosenLabels(v=>({...v,[id]:label}));}}/>
                 <input placeholder="角色" value={editingPersonEvent.role || ''} onChange={e => setEditingPersonEvent({ ...editingPersonEvent, role: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
                 <div className="flex gap-2">
                   <button onClick={() => setEditingPersonEvent(null)} className="px-3 py-2 text-slate-500 hover:bg-slate-100 rounded-lg text-sm">取消</button>
@@ -532,9 +523,9 @@ export const AdminPage: React.FC = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div>)}
 
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          {relationshipTable==='event_causality'&&(          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
               <h2 className="font-semibold text-slate-700">事件因果</h2>
               <button
@@ -543,7 +534,7 @@ export const AdminPage: React.FC = () => {
                   effect_event_id: events[1]?.id ?? events[0]?.id,
                 })}
                 className="flex items-center gap-1 bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
-                disabled={events.length < 2}
+                disabled={busy}
               >
                 <PlusIcon className="w-4 h-4" /> 新增因果关系
               </button>
@@ -551,12 +542,8 @@ export const AdminPage: React.FC = () => {
             {editingEventCausality && (
               <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1.5fr_auto]">
                 <PublicationField value={editingEventCausality.status} onChange={status => setEditingEventCausality({...editingEventCausality, status})} />
-                <select value={editingEventCausality.cause_event_id || ''} onChange={e => setEditingEventCausality({ ...editingEventCausality, cause_event_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
-                  {events.map(event => <option key={event.id} value={event.id}>{event.title}</option>)}
-                </select>
-                <select value={editingEventCausality.effect_event_id || ''} onChange={e => setEditingEventCausality({ ...editingEventCausality, effect_event_id: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
-                  {events.map(event => <option key={event.id} value={event.id}>{event.title}</option>)}
-                </select>
+                <RecordPicker table="event" value={editingEventCausality.cause_event_id} label="原因事件" onChange={(id,label)=>{setEditingEventCausality({...editingEventCausality,cause_event_id:id});setChosenLabels(v=>({...v,[id]:label}));}}/>
+                <RecordPicker table="event" value={editingEventCausality.effect_event_id} label="结果事件" onChange={(id,label)=>{setEditingEventCausality({...editingEventCausality,effect_event_id:id});setChosenLabels(v=>({...v,[id]:label}));}}/>
                 <input placeholder="说明" value={editingEventCausality.description || ''} onChange={e => setEditingEventCausality({ ...editingEventCausality, description: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
                 <div className="flex gap-2">
                   <button onClick={() => setEditingEventCausality(null)} className="px-3 py-2 text-slate-500 hover:bg-slate-100 rounded-lg text-sm">取消</button>
@@ -592,9 +579,11 @@ export const AdminPage: React.FC = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div>)}
         </div>
       )}
+
+      <Pagination page={page} hasMore={list.data?.has_more??false} loading={list.loading||busy} onPage={setPage}/>
 
       {/* Edit Person Modal */}
       {editingPerson && (

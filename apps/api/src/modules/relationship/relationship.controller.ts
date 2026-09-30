@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Query,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import type {
   EventCausalityRelation,
   EventCausalityRelationInput,
@@ -16,13 +26,17 @@ export class RelationshipController {
   constructor(private readonly relationshipService: RelationshipService) {}
 
   @Get()
-  async getRelationships(): Promise<RelationshipBundle> {
-    return this.relationshipService.getRelationships();
+  async getRelationships(
+    @Query() query: Record<string, string>,
+  ): Promise<RelationshipBundle> {
+    return this.relationshipService.getRelationships(query);
   }
 
   @Post('person-relationships')
   @UseGuards(AdminGuard)
-  async createPersonRelationship(@Body() payload: PersonRelationshipInput): Promise<PersonRelationship> {
+  async createPersonRelationship(
+    @Body() payload: PersonRelationshipInput,
+  ): Promise<PersonRelationship> {
     return this.relationshipService.createPersonRelationship(payload);
   }
 
@@ -37,13 +51,17 @@ export class RelationshipController {
 
   @Delete('person-relationships/:id')
   @UseGuards(AdminGuard)
-  async deletePersonRelationship(@Param('id') id: string): Promise<{ id: string }> {
+  async deletePersonRelationship(
+    @Param('id') id: string,
+  ): Promise<{ id: string }> {
     return this.relationshipService.deletePersonRelationship(id);
   }
 
   @Post('person-events')
   @UseGuards(AdminGuard)
-  async createPersonEvent(@Body() payload: PersonEventRelationInput): Promise<PersonEventRelation> {
+  async createPersonEvent(
+    @Body() payload: PersonEventRelationInput,
+  ): Promise<PersonEventRelation> {
     return this.relationshipService.createPersonEvent(payload);
   }
 
@@ -64,7 +82,9 @@ export class RelationshipController {
 
   @Post('event-causalities')
   @UseGuards(AdminGuard)
-  async createEventCausality(@Body() payload: EventCausalityRelationInput): Promise<EventCausalityRelation> {
+  async createEventCausality(
+    @Body() payload: EventCausalityRelationInput,
+  ): Promise<EventCausalityRelation> {
     return this.relationshipService.createEventCausality(payload);
   }
 

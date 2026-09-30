@@ -1,0 +1,91 @@
+import { useState } from "react";
+import type { ContentRow, PageResult } from "@histree/shared-types";
+import { useDebounced } from "../hooks/useDebounced";
+import { usePageState } from "../hooks/usePageState";
+import { useResource } from "../hooks/useResource";
+import { Pagination } from "./Pagination";
+import { LoadState } from "./Reading";
+export function RecordChecklist({
+  value,
+  onChange,
+}: {
+  value: string[];
+  onChange: (value: string[]) => void;
+}) {
+  const [query, setQuery] = useState("");
+  const settled = useDebounced(query.trim());
+  const [page, setPage] = usePageState(settled);
+  const [selectedPage, setSelectedPage] = usePageState(String(value.length));
+  const result = useResource<PageResult<ContentRow>>(
+    `/editorial/nodes?${new URLSearchParams({ q: settled, page: String(page) })}`,
+    true,
+  );
+  const selectedIds = value.slice(selectedPage * 20, selectedPage * 20 + 20);
+  const selected = useResource<PageResult<ContentRow>>(
+    selectedIds.length
+      ? `/editorial/nodes?ids=${selectedIds.join(",")}`
+      : undefined,
+    true,
+  );
+  const names = new Map(selected.data?.items.map((n) => [n.id, n.label]));
+  return (
+    <div className="space-y-3">
+      <input
+        type="search"
+        aria-label="搜索关联阅读条目"
+        className="reading-input"
+        value={query}
+        maxLength={200}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="搜索人物或事件…"
+      />
+      <LoadState {...result} />
+      <div className="grid sm:grid-cols-2 gap-2 max-h-48 overflow-auto">
+        {query.trim() === settled &&
+          result.data?.items.map((node) => (
+            <label key={node.id} className="text-sm flex gap-2">
+              <input
+                type="checkbox"
+                checked={value.includes(node.id)}
+                onChange={(e) =>
+                  onChange(
+                    e.target.checked
+                      ? [...value, node.id]
+                      : value.filter((id) => id !== node.id),
+                  )
+                }
+              />
+              {node.label} · {node.status === "published" ? "已发布" : "草稿"}
+            </label>
+          ))}
+      </div>
+      <Pagination
+        page={page}
+        hasMore={result.data?.has_more ?? false}
+        loading={result.loading}
+        onPage={setPage}
+      />
+      <p className="text-sm">已选 {value.length} 个条目（保持勾选顺序）</p>
+      <ol className="text-sm space-y-1">
+        {selectedIds.map((id) => (
+          <li key={id}>
+            {names.get(id) ?? id}
+            <button
+              className="ml-3 underline"
+              onClick={() => onChange(value.filter((v) => v !== id))}
+            >
+              移除
+            </button>
+          </li>
+        ))}
+      </ol>
+      {value.length > 20 && (
+        <Pagination
+          page={selectedPage}
+          hasMore={(selectedPage + 1) * 20 < value.length}
+          onPage={setSelectedPage}
+        />
+      )}
+    </div>
+  );
+}

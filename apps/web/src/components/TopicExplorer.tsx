@@ -1,39 +1,44 @@
 import { MAPS_ENABLED } from '../lib/features';
 import { lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
-import type { Event, Person, RelationshipBundle } from '@histree/shared-types';
+import type { Event, PageResult } from '@histree/shared-types';
+import { RecordPicker } from './RecordPicker';
+import { Pagination } from './Pagination';
+import { LoadState } from './Reading';
+import { useDebounced } from '../hooks/useDebounced';
+import { usePageState } from '../hooks/usePageState';
 import { useResource } from '../hooks/useResource';
 import { formatDisplayRange } from '../lib/content';
 const TopicMap = lazy(() => import('./TopicMap'));
 const precisionLabels = { site: '已定位城址／遗址', approximate: '概略位置', region: '区域代表点', unknown: '定位精度待核对' };
-export function TopicExplorer({ events, people }: { events: Event[]; people: Person[] }) {
-  const relationships = useResource<RelationshipBundle>('/relationships');
+export function TopicExplorer({ topicSlug }: { topicSlug?: string }) {
+  const [pickerOpen,setPickerOpen]=useState(false);
   const [personId, setPersonId] = useState('');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [selectedId, setSelectedId] = useState('');
   const invalidRange = from !== '' && to !== '' && Number(from) > Number(to);
-  const linkedEvents = new Set(relationships.data?.person_events.filter(r => r.person_id === personId).map(r => r.event_id));
-  const visible = events.filter(e => {
-    if (invalidRange || (personId && !linkedEvents.has(e.id))) return false;
-    // Undated events remain available and are explicitly labelled, never assigned a fabricated year.
-    if (e.start_year == null) return true;
-    return (from === '' || (e.end_year ?? e.start_year) >= Number(from)) && (to === '' || e.start_year <= Number(to));
-  }).sort((a, b) => (a.start_year ?? Infinity) - (b.start_year ?? Infinity));
-  const selected = visible.find(e => e.id === selectedId) ?? visible[0];
-  const participantIds = new Set(relationships.data?.person_events.filter(r => events.some(e => e.id === r.event_id)).map(r => r.person_id));
-  if (!events.length) return <section className="reading-card"><h2 className="text-xl font-serif">事件时间线</h2><p className="mt-3 text-slate-500">关联事件整理后，将在这里展示事件时间线。</p></section>;
+  const range=useDebounced(`${from}|${to}`);const [rangeFrom,rangeTo]=range.split('|');
+  const [page,setPage]=usePageState(`${topicSlug}:${personId}:${range}`);
+  const invalidSettled=rangeFrom!==''&&rangeTo!==''&&Number(rangeFrom)>Number(rangeTo);
+  const params=new URLSearchParams({page:String(page),from:rangeFrom,to:rangeTo});
+  if(topicSlug)params.set('topic',topicSlug);if(personId)params.set('person',personId);
+  const result=useResource<PageResult<Event>>(invalidSettled?undefined:`/catalog/event?${params}`);
+  const visible=invalidRange?[]:result.data?.items??[];
+  const selectedSummary=visible.find(e=>e.id===selectedId)??visible[0];
+  const detail=useResource<Event>(selectedSummary?`/entry/${selectedSummary.id}`:undefined);
+  const selected=detail.data??selectedSummary;
   return <section className="space-y-5" aria-label="事件时间线">
     <h2 className="text-2xl font-serif">事件时间线</h2>
     <div className="flex flex-wrap items-end gap-3">
-      <label className="text-sm">参与人物<select className="block border rounded-lg p-2 mt-1 max-w-full" aria-label="参与人物" value={personId} disabled={relationships.loading || !!relationships.error} onChange={e => setPersonId(e.target.value)}><option value="">全部人物</option>{people.filter(p => participantIds.has(p.id)).map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
+      <details className="max-w-md" onToggle={e=>setPickerOpen(e.currentTarget.open)}><summary className="text-sm cursor-pointer">筛选参与人物{personId?'（已选择）':''}</summary>{pickerOpen&&<RecordPicker table="person" value={personId} admin={false} label="参与人物" onChange={id=>{setPersonId(id);setSelectedId('');}}/>}</details>
       <label className="text-sm">起始年<input aria-label="筛选起始年" type="number" step="1" className="block w-28 border rounded-lg p-2 mt-1" placeholder="不限" value={from} onChange={e => setFrom(e.target.value)} /></label>
       <label className="text-sm">结束年<input aria-label="筛选结束年" type="number" step="1" className="block w-28 border rounded-lg p-2 mt-1" placeholder="不限" value={to} onChange={e => setTo(e.target.value)} /></label>
       <button className="text-sm underline p-2" onClick={() => { setPersonId(''); setFrom(''); setTo(''); setSelectedId(''); }}>重置筛选</button>
     </div>
-    {relationships.error && <p className="text-sm text-slate-600">人物筛选暂不可用。<button className="underline ml-2" onClick={relationships.retry}>重试人物关系</button></p>}
+    <LoadState {...result}/>
     {invalidRange && <p role="alert" className="text-rose-700">起始年不能晚于结束年。</p>}
-    <p className="text-sm text-slate-500">显示 {visible.length} 个事件。时间不详的事件保留在列表末尾。</p>
+    <p className="text-sm text-slate-500">本页显示 {visible.length} 个事件。时间不详的事件保留在列表末尾。</p>
     <div className="grid lg:grid-cols-[minmax(0,280px)_minmax(0,1fr)] gap-6">
       <ol className="space-y-2 max-h-[460px] overflow-auto" aria-label="专题事件时间线">
         {visible.map(e => <li key={e.id}><button aria-pressed={selected?.id === e.id} className={`w-full text-left rounded-xl p-4 border ${selected?.id === e.id ? 'border-teal-700 bg-teal-50' : 'border-stone-200'}`} onClick={() => setSelectedId(e.id)}><span className="text-xs text-slate-500">{formatDisplayRange(e.start_year, e.end_year)}</span><span className="block font-semibold mt-1">{e.title}</span><span className="block text-sm text-slate-600 mt-1">{e.location_name || '地点待考'}</span></button></li>)}
@@ -52,5 +57,6 @@ export function TopicExplorer({ events, people }: { events: Event[]; people: Per
         </article>}
       </div>
     </div>
+    <Pagination page={page} hasMore={result.data?.has_more??false} loading={result.loading} onPage={setPage}/>
   </section>;
 }

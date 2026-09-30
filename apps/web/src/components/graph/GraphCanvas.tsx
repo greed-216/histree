@@ -1,5 +1,5 @@
-import { useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react';
-import * as d3 from 'd3';
+import { memo, useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useGraphLayout } from '../../hooks/useGraphLayout';
 import type { Edge, GraphResponse } from '@histree/shared-types';
 import { relationshipPresentation, fitGraph, focusGraph, isDoubleActivation, edgeCurve, edgeKey, edgeSubject, isDrag, sortedEvents, type GraphEntry, type GraphSelection, type Point } from '../../lib/graph';
 import { entryTitle } from '../../lib/reading';
@@ -13,7 +13,7 @@ interface Props {
 const W=900,H=760;
 const eventLabel=(node:GraphEntry)=>node.type==='event'?formatDisplayRange(node.start_year,node.end_year):node.era || '人物';
 function wrap(title:string) {const chars=Array.from(title);return [chars.slice(0,9).join(''),chars.slice(9,18).join(''),chars.length>18?chars.slice(18,26).join('')+(chars.length>26?'…':''):''].filter(Boolean);}
-export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusRequest,highlighted}:Props) {
+function GraphCanvasView({data,mode,selection,onSelect,onEnterSubgraph,focusRequest,highlighted}:Props) {
  const svg=useRef<SVGSVGElement>(null);
  const marker=useId().replace(/:/g,'');
  const [positions,setPositions]=useState<Record<string,Point>>({});
@@ -28,21 +28,7 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
  useEffect(()=>()=>{clearClick();stopAnimation();},[]);
  const events=useMemo(()=>sortedEvents(data.nodes),[data.nodes]);
  const people=useMemo(()=>data.nodes.filter(n=>n.type==='person'),[data.nodes]);
- const layout=useMemo(()=>{
-   if(mode==='timeline')return Object.fromEntries([
-     ...people.map((p,i)=>[p.id,{x:100,y:245+i*94}]),
-     ...events.map((e,i)=>[e.id,{x:325+i*220,y:112}]),
-   ]);
-   const nodes=data.nodes.map((n,i)=>({id:n.id,x:180+(i%4)*260,y:100+Math.floor(i/4)*160}));
-   const simulation=d3.forceSimulation(nodes).stop()
-     .force('charge',d3.forceManyBody().strength(data.nodes.length<=24?-600:-1400))
-     .force('link',d3.forceLink(data.edges.map(e=>({source:e.source,target:e.target}))).id(n=>(n as {id:string}).id).distance(data.nodes.length<=24?190:265))
-     .force('center',d3.forceCenter(W/2,H/2))
-     .force('x',d3.forceX(W/2).strength(.12)).force('y',d3.forceY(H/2).strength(.14))
-     .force('collide',d3.forceCollide(data.nodes.length<=24?90:105));
-   simulation.tick(240);simulation.stop();
-   return Object.fromEntries(nodes.map(n=>[n.id,{x:n.x,y:n.y}]));
- },[data,mode,people,events]);
+ const {positions:layout,pending:layoutPending,failed:layoutFailed}=useGraphLayout(data,mode);
  const [view,setView]=useState<View>(()=>mode==='timeline'?{x:20,y:10,k:1}:fitGraph(Object.values(layout)));
  useEffect(()=>{camera.current=view;},[view]);
  function animateTo(target:View) {
@@ -57,6 +43,10 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
    };
    animation.current=requestAnimationFrame(frame);
  }
+ useEffect(()=>{
+   if(selection?.kind!=='node')animateTo(mode==='timeline'?{x:20,y:10,k:1}:fitGraph(Object.values(layout)));
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+ },[layout]);
  // Selection changes move the camera; dragging positions does not retrigger this effect.
  useEffect(()=>{
    if(selection?.kind!=='node')return;
@@ -65,7 +55,7 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
    return stopAnimation;
    // Camera/positions are intentionally read only when a new focus is requested.
    // eslint-disable-next-line react-hooks/exhaustive-deps
- },[selection?.kind,selection?.id,focusRequest]);
+ },[selection?.kind,selection?.id,focusRequest,layout]);
 
  useEffect(()=>{
    const element=svg.current;if(!element)return;
@@ -122,8 +112,16 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
    if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);
  }
  const keyboard=(event:React.KeyboardEvent,selection:GraphSelection)=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();onSelect(selection);}};
- const validEdges=data.edges.filter(e=>at(e.source)&&at(e.target));
- return <div className="history-canvas">
+ const validEdges=useMemo(()=>data.edges.filter(e=>layout[e.source]&&layout[e.target]),[data.edges,layout]);
+ const edgeGroups=useMemo(()=>{
+   const groups=new Map<string,Edge[]>();
+   for(const edge of validEdges){const key=[edge.source,edge.target].sort().join('|');const group=groups.get(key)??[];group.push(edge);groups.set(key,group);}
+   return groups;
+ },[validEdges]);
+ const presentations=useMemo(()=>new Map(validEdges.map(e=>[edgeKey(e),relationshipPresentation(e,data.nodes,edgeTypeLabel(e.type))])),[validEdges,data.nodes]);
+ return <div className="history-canvas" data-layout-state={layoutFailed?'failed':layoutPending?'pending':'ready'}>
+   {layoutPending&&<p role="status" className="text-xs p-2">正在整理布局，可继续搜索与操作…</p>}
+   {layoutFailed&&<p role="status" className="text-xs p-2">自动布局暂不可用，仍可拖动节点探索。</p>}
    <div className="history-canvas-tools">
      <div className="flex gap-1"><button aria-label="放大图谱" onClick={()=>zoom(1.25)}>＋</button><button aria-label="缩小图谱" onClick={()=>zoom(.8)}>−</button><button onClick={fit}>适应全图</button><button onClick={()=>{clearClick();setPositions({});animateTo(fitGraph(Object.values(layout)));}}>恢复布局</button></div>
      <span className="text-xs text-stone-500">{mode==='timeline'?'事件依次排列，间距不代表时长':'单击聚焦 · 双击展开关系'} · {Math.round(view.k*100)}%</span>
@@ -140,7 +138,7 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
        <g className="links">
        {validEdges.map((edge,index)=>{
          const active=edgeActive(edge),key=edgeKey(edge);
-         const presentation=relationshipPresentation(edge,data.nodes,edgeTypeLabel(edge.type));
+         const presentation=presentations.get(key)!;
          const title=presentation.sentence;
          const dim=highlighted&&(!highlighted.has(edge.source)||!highlighted.has(edge.target));
          if(mode==='timeline') {
@@ -153,7 +151,7 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
              <title>{title}</title><rect x="-64" y="-17" width="128" height="34" rx="17" fill={active?'#276458':'#fffdf7'} stroke={active?'#163f35':'#afc2b7'} strokeWidth={active?2.5:1}/><text textAnchor="middle" y="5" fontSize="16" fill={active?'#fff':'#365f52'}>{edgeTypeLabel(edge.type).slice(0,7)}</text>
            </g>;
          }
-         const siblings=validEdges.filter(e=>[e.source,e.target].sort().join('|')===[edge.source,edge.target].sort().join('|'));
+         const siblings=edgeGroups.get([edge.source,edge.target].sort().join('|'))!;
          const bend=((siblings.indexOf(edge)-(siblings.length-1)/2)*65 + (index%2===0?18:-18)) * (edge.source < edge.target ? 1 : -1);
          const curve=edgeCurve(at(edge.source),at(edge.target),bend);
          return <g key={key} data-edge={key} role="button" tabIndex={0} aria-label={`查看关系：${title}`} aria-pressed={active} opacity={dim ? .18 : 1} className="graph-edge" onKeyDown={e=>keyboard(e,{kind:'edge',id:key})}>
@@ -181,3 +179,5 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
    <p className="px-4 py-2 text-xs text-stone-500 border-t border-stone-200">拖动空白处平移；＋ / − 或 Ctrl／⌘＋滚轮缩放。{mode==='timeline'?'时间布局固定；角色标签可点击查看关系。':'拖动节点在当前视图内保留位置；连线及其文字均可选中。'}双击节点进入子图；键盘 Enter 选择，Shift＋Enter 展开关系，Esc 取消。</p>
  </div>;
 }
+
+export const GraphCanvas = memo(GraphCanvasView);

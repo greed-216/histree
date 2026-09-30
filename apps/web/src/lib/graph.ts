@@ -71,7 +71,9 @@ const inverseRelations: Record<string, string> = {
   父亲: '子女', 母亲: '子女', 儿子: '父母', 女儿: '父母',
   养父: '养子女', 养母: '养子女', 假父: '假子',
   兄长: '弟妹', 哥哥: '弟妹', 弟弟: '兄姐',
-  姐姐: '弟妹', 丈夫: '妻子', 妻子: '丈夫',
+  姐姐: '弟妹', 妹妹: '兄姐', 丈夫: '妻子', 妻子: '丈夫',
+  子女: '父母', 养子: '养父母', 养女: '养父母', 养子女: '养父母', 假子: '假父',
+  主君: '臣属', 臣属: '主君', minister: '主君', ruler: '臣属',
 };
 export function relationshipSentence(source: string, target: string, type: string, label = type) {
   return symmetricRelations.has(type) ? `${source}与${target}：${label}` : `${source}是${target}的${label}`;

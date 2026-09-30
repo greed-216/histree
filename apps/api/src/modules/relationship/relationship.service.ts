@@ -173,6 +173,10 @@ export class RelationshipService {
       throw new BadRequestException('A person relationship must connect two different people');
     }
 
+    if (['父子', '母子', '统属'].includes(relation_type)) {
+      throw new BadRequestException('请填写 A 相对于 B 的具体身份，例如父亲、母亲、儿子、女儿或主君；A —关系→ B 表示 A 是 B 的该关系');
+    }
+
     return {
       status: publicationStatus(payload.status),
       person_a,

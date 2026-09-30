@@ -18,6 +18,8 @@ description: 按《资治通鉴》编年顺序录入 Histree 历史人物、事�
 
 具体判例见 [史料校核参考](references/editorial.md)。批次字段说明在 `docs/DATA_PREPARATION.md`。
 
+新增人物关系不使用“父子”“母子”“统属”等含糊标签，填写 A 相对于 B 的具体身份。未发布批次的 `prepare-book-import.py` 会拒绝这些新增类型，并检查复用关系是否符合已存的方向修正；若报错，应修正新批次中的端点和类型，保留原 key/UUID，不改写已发布档案。
+
 ## 校验、发布与交接
 
 - 运行 `python3 scripts/validate-content-batch.py <批次>/content-batch.json`；用 `python3 scripts/prepare-book-import.py <批次>/content-batch.json` 生成 UUID 映射与排除复用对象的 SQL；运行 `python3 scripts/publish-book-batch.py <批次>/content-batch.json` 做**只读预检**。结构检查不替代逐段人工核对。

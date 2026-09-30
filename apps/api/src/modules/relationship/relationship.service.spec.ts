@@ -86,6 +86,18 @@ const baseRows: TableRows = {
 };
 
 describe('RelationshipService', () => {
+  it.each(['父子', '母子', '统属'])('rejects ambiguous role %s before writing', async relation_type => {
+    const { service, client } = createService(baseRows);
+    await expect(service.createPersonRelationship({person_a: 'person-a', person_b: 'person-b', relation_type})).rejects.toBeInstanceOf(BadRequestException);
+    expect(client.from).not.toHaveBeenCalled();
+  });
+
+  it.each(['父亲', '儿子', '兄长', '弟弟', '丈夫', '妻子', '兄弟', '夫妻'])('preserves the submitted direction for %s', async relation_type => {
+    const { service } = createService(baseRows);
+    const row = await service.createPersonRelationship({person_a: 'person-a', person_b: 'person-b', relation_type});
+    expect(row).toMatchObject({person_a: 'person-a', person_b: 'person-b', relation_type});
+  });
+
   it('rejects duplicate person relationships', async () => {
     const { service } = createService({
       ...baseRows,

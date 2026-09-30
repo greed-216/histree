@@ -434,7 +434,9 @@ export const AdminPage: React.FC = () => {
                 <select value={editingPersonRelationship.person_b || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, person_b: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
                   {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
                 </select>
-                <input placeholder="关系类型" value={editingPersonRelationship.relation_type || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, relation_type: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <input aria-label="A 相对于 B 的身份" list="person-relationship-roles" placeholder="A 是 B 的…" value={editingPersonRelationship.relation_type || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, relation_type: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <datalist id="person-relationship-roles">{['父亲','母亲','儿子','女儿','养父','养母','兄长','弟弟','姐姐','妹妹','丈夫','妻子','主君','臣属','兄弟','夫妻','姻亲'].map(role => <option key={role} value={role} />)}</datalist>
+                <p className="md:col-span-full text-xs text-slate-500">长幼或夫妻身份有原文依据时填写具体角色；尚不能确定时保留兄弟、夫妻等对称关系。不要填写父子、母子或统属。</p>
                 <input placeholder="说明" value={editingPersonRelationship.description || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, description: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
                 <p className="md:col-span-full text-sm font-medium text-teal-800">预览：{editingPersonRelationship.relation_type ? relationshipSentence(personName(editingPersonRelationship.person_a || ''), personName(editingPersonRelationship.person_b || ''), editingPersonRelationship.relation_type) : '请选择两位人物并填写关系类型'}</p>
                 <div className="flex gap-2">

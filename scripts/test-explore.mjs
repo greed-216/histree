@@ -397,6 +397,11 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
     const errors = [];
     page.on("pageerror", (e) => errors.push(e.message));
     const calls = [];
+    const feedCalls = [];
+    let failPersonPage = false, overlapPersonPage = false;
+    let releaseSlow, markSlowStarted;
+    const slowDone = new Promise(resolve => { releaseSlow = resolve; });
+    const slowStarted = new Promise(resolve => { markSlowStarted = resolve; });
     await page.route("**/rest/v1/**", async (route) => {
       const requestUrl = new URL(route.request().url());
       const name = requestUrl.pathname.split("/rpc/")[1];
@@ -411,6 +416,13 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
         route.request().method() === "POST"
           ? route.request().postDataJSON()
           : {};
+      feedCalls.push({ name, args });
+      if (name === 'content_page' && args.p_table === 'person' && args.p_page === 1 && failPersonPage) {
+        failPersonPage = false;
+        await route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ message: 'fixture retry' }) });
+        return;
+      }
+      if (name === 'search_entries' && args.p_query === '滞后请求') { markSlowStarted(); await slowDone; }
       try {
         let body;
         if (name === "search_entries")
@@ -436,6 +448,10 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
             `SELECT public.content_page(${keys.map((k, i) => `${k} => $${i + 1}`).join(",")})`,
             Object.values(args),
           );
+          if (args.p_table === 'person' && args.p_page === 1 && overlapPersonPage) {
+            const first = await scalar("SELECT public.content_page('person',0,20)");
+            body.items[0] = first.items[0];
+          }
         } else if (name === "entry_context")
           body = await scalar("SELECT public.entry_context($1,$2)", [
             args.p_id,
@@ -555,37 +571,46 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
       .getByRole("heading", { name: "测试人物1499", exact: true })
       .waitFor();
     await page.getByRole("searchbox").fill("检索标签");
-    await page
-      .getByRole("button", { name: "下一页", exact: true })
-      .waitFor({ state: "visible" });
-    await page.waitForFunction(() =>
-      document.body.textContent.includes("20 条结果"),
-    );
-    await page.getByRole("button", { name: "下一页", exact: true }).click();
-    await page.waitForFunction(() =>
-      document.body.textContent.includes("第 2 页"),
-    );
+    await page.waitForFunction(() => document.body.textContent.includes("已加载 20 条结果"));
+    await page.locator('[data-feed="搜索结果"]').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => document.body.textContent.includes("已加载 40 条结果"));
+    assert.equal(await page.getByRole('button',{name:'下一页',exact:true}).count(),0);
+    await page.getByRole('searchbox').fill('滞后请求');
+    await slowStarted;
+    await page.getByRole('searchbox').fill('别名1499');
+    await page.getByRole('heading',{name:'测试人物1499',exact:true}).waitFor();
+    releaseSlow();
+    await page.waitForTimeout(150);
+    await page.getByText('已加载 1 条结果 · “别名1499”',{exact:true}).waitFor();
     await page.goto(`${base}people`);
     await page.locator(".directory-card").first().waitFor();
-    assert.equal(await page.locator(".directory-card").count(), 20);
-    await page.getByRole("button", { name: "下一页", exact: true }).click();
-    await page.waitForFunction(() =>
-      document.body.textContent.includes("第 2 页"),
-    );
-    assert.ok(new URL(page.url()).searchParams.get("page") === "1");
+    assert.equal(await page.locator(".directory-card").count(),20);
+    const names = await page.locator('.directory-card h3').allTextContents();
+    failPersonPage = true; overlapPersonPage = true;
+    await page.locator('[data-feed="人物"]').scrollIntoViewIfNeeded();
+    await page.getByRole('button',{name:'重试加载更多',exact:true}).waitFor();
+    assert.deepEqual(await page.locator('.directory-card h3').allTextContents(),names,'Append failures retain the loaded cards');
+    await page.getByRole('button',{name:'重试加载更多',exact:true}).click();
+    await page.waitForFunction(() => document.querySelectorAll('.directory-card').length===39);
+    assert.deepEqual((await page.locator('.directory-card h3').allTextContents()).slice(0,20),names,'Append retains the original cards and order');
+    assert.equal(feedCalls.filter(c=>c.name==='content_page'&&c.args.p_table==='person'&&c.args.p_page===1).length,2,'Only one request per attempt, including retry of the same page');
+    assert.equal(new URL(page.url()).searchParams.has('page'),false);
+    const link=page.locator('.directory-card').nth(22);
+    await link.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(80);
+    const scroll=await page.evaluate(()=>window.scrollY);
+    assert.ok(scroll>0);
+    await link.click();
+    await page.getByRole('heading',{level:1}).waitFor();
+    await page.goBack();
+    await page.waitForFunction(()=>document.querySelectorAll('.directory-card').length===39);
+    await page.waitForFunction(y=>Math.abs(window.scrollY-y)<5,scroll);
     await page.goto(`${base}people/${p1000}`);
-    await page
-      .getByRole("heading", { name: "测试人物1000", exact: true })
-      .waitFor();
+    await page.getByRole('heading',{name:'测试人物1000',exact:true}).waitFor();
     await page.locator('[id^="claim-"]').first().waitFor();
-    assert.equal(await page.locator('[id^="claim-"]').count(), 20);
-    await page
-      .getByRole("button", { name: "下一页", exact: true })
-      .last()
-      .click();
-    await page.waitForFunction(() =>
-      document.body.textContent.includes("第 2 页"),
-    );
+    assert.equal(await page.locator('[id^="claim-"]').count(),20);
+    await page.locator('[data-feed="史料依据"]').scrollIntoViewIfNeeded();
+    await page.waitForFunction(()=>document.querySelectorAll('[id^="claim-"]').length===40);
     const pinned = await id("claim-1205");
     await page.goto(`${base}evidence/person/${p1000}#claim-${pinned}`);
     await page.locator(`#claim-${pinned}`).waitFor();
@@ -593,11 +618,9 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
     await page
       .getByRole("button", { name: "查看全部依据", exact: true })
       .click();
-    await page.waitForFunction(
-      () => document.querySelectorAll('[id^="claim-"]').length === 20,
-    );
-    await page.getByRole('button',{name:'下一页',exact:true}).click();
-    await page.waitForFunction(()=>document.body.textContent.includes('第 2 页'));
+    await page.waitForFunction(() => document.querySelectorAll('[id^="claim-"]').length >= 20);
+    await page.locator('[data-feed="史料依据"]').scrollIntoViewIfNeeded();
+    await page.waitForFunction(()=>document.querySelectorAll('[id^="claim-"]').length>=40);
     const anchor=await page.locator('[id^="claim-"]').first().getAttribute('id');
     await page.getByRole('link',{name:'此条引用的固定链接',exact:true}).first().click();
     await page.waitForFunction(()=>document.querySelectorAll('[id^="claim-"]').length===1);
@@ -617,7 +640,7 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
     assert.ok(!calls.includes("TABLE_READ"));
     assert.deepEqual(errors, []);
     console.log(
-      "PASS: browser catalogue pagination, entry evidence pagination, citation deep links and lazy topic sections.",
+      "PASS: continuous search/catalogue/evidence feeds, append retry and deduplication, stale query cancellation, browser Back position, citation deep links and lazy topic sections.",
     );
 
     await page.screenshot({
@@ -625,7 +648,7 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
       fullPage: true,
     });
     console.log(
-      "PASS: browser graph entry, global search jump, preserved layout on typing, worker completion, two-hop/drill/back, event view, search pagination; no full table reads or browser errors.",
+      "PASS: browser graph entry, global search jump, preserved layout on typing, worker completion, two-hop/drill/back, event view, continuous search; no full table reads or browser errors.",
     );
 
     if (process.env.HISTREE_ADMIN_BROWSER) {
@@ -692,10 +715,9 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
       await ap
         .getByRole("heading", { name: "人物管理", exact: true })
         .waitFor();
-      await ap.getByRole("button", { name: "下一页", exact: true }).click();
-      await ap.waitForFunction(() =>
-        document.body.textContent.includes("第 2 页"),
-      );
+      await ap.getByText('已加载 20 条', {exact:true}).waitFor();
+      await ap.locator('[data-feed="管理列表"]').scrollIntoViewIfNeeded();
+      await ap.waitForFunction(() => document.body.textContent.includes('已加载 40 条'));
       assert.ok(
         adminCalls.some((c) => c.p_table === "person" && c.p_page === 1),
       );
@@ -714,12 +736,11 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
         .waitFor();
       await ap.getByRole("searchbox", { name: "搜索关联阅读条目" }).fill("");
       await ap.waitForFunction(
-        () => document.querySelectorAll("input[type=checkbox]").length === 20,
+        () => document.querySelectorAll("input[type=checkbox]").length >= 20,
       );
-      await ap
-        .getByRole("button", { name: "下一页", exact: true })
-        .first()
-        .click();
+      const beforeCandidates=await ap.getByRole('checkbox').count();
+      await ap.locator('[data-feed="关联阅读候选"]').scrollIntoViewIfNeeded();
+      await ap.waitForFunction(n=>document.querySelectorAll('input[type=checkbox]').length>n,beforeCandidates);
       await ap
         .getByText("已选 1 个条目（保持勾选顺序）", { exact: true })
         .waitFor();
@@ -752,7 +773,7 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
       });
       await ctx.close();
       console.log(
-        "PASS: browser admin page isolation, paging, cross-page checkbox preservation, selected ID lookup, source editing and evidence pickers.",
+        "PASS: browser admin page isolation, nested scroll loading, checkbox preservation across batches, selected ID lookup, source editing and evidence pickers.",
       );
     }
   } finally {

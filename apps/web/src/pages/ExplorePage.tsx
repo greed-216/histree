@@ -1,13 +1,11 @@
 import { MAPS_ENABLED } from '../lib/features';
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { TopicSummary, PageResult } from "@histree/shared-types";
-import { Pagination } from '../components/Pagination';
-import { useResource } from "../hooks/useResource";
+import { InfiniteScroll } from '../components/InfiniteScroll';
+import { useInfiniteResource } from "../hooks/useInfiniteResource";
 import { LoadState } from "../components/Reading";
 export function ExplorePage() {
-  const [params,setParams]=useSearchParams();
-  const page=Math.max(0,Math.min(100000,Math.floor(Number(params.get('page'))||0)));
-  const topics = useResource<PageResult<TopicSummary>>(`/catalog/topic?page=${page}`);
+  const topics = useInfiniteResource<PageResult<TopicSummary>>("/catalog/topic");
   return (
     <div className="space-y-12 pb-12">
       <section className="reading-hero relative overflow-hidden rounded-3xl px-7 py-12 md:px-14 md:py-20">
@@ -83,7 +81,7 @@ export function ExplorePage() {
         {topics.data?.items.length === 0 && (
           <p className="text-slate-500">五代十国专题正在整理，审核完成后将在这里发布。</p>
         )}
-        <Pagination page={page} hasMore={topics.data?.has_more??false} loading={topics.loading} onPage={page=>setParams({page:String(page)})}/>
+        <InfiniteScroll {...topics} count={topics.data?.items.length} label="专题"/>
       </section>
       <section className={`grid sm:grid-cols-2 ${MAPS_ENABLED ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-6 border-t border-stone-200 pt-8`}>
         {[

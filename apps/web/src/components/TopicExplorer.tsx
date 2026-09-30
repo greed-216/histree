@@ -3,10 +3,10 @@ import { lazy, Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Event, PageResult } from '@histree/shared-types';
 import { RecordPicker } from './RecordPicker';
-import { Pagination } from './Pagination';
+import { InfiniteScroll } from './InfiniteScroll';
+import { useInfiniteResource } from '../hooks/useInfiniteResource';
 import { LoadState } from './Reading';
 import { useDebounced } from '../hooks/useDebounced';
-import { usePageState } from '../hooks/usePageState';
 import { useResource } from '../hooks/useResource';
 import { formatDisplayRange } from '../lib/content';
 const TopicMap = lazy(() => import('./TopicMap'));
@@ -19,11 +19,10 @@ export function TopicExplorer({ topicSlug }: { topicSlug?: string }) {
   const [selectedId, setSelectedId] = useState('');
   const invalidRange = from !== '' && to !== '' && Number(from) > Number(to);
   const range=useDebounced(`${from}|${to}`);const [rangeFrom,rangeTo]=range.split('|');
-  const [page,setPage]=usePageState(`${topicSlug}:${personId}:${range}`);
   const invalidSettled=rangeFrom!==''&&rangeTo!==''&&Number(rangeFrom)>Number(rangeTo);
-  const params=new URLSearchParams({page:String(page),from:rangeFrom,to:rangeTo});
+  const params=new URLSearchParams({from:rangeFrom,to:rangeTo});
   if(topicSlug)params.set('topic',topicSlug);if(personId)params.set('person',personId);
-  const result=useResource<PageResult<Event>>(invalidSettled?undefined:`/catalog/event?${params}`);
+  const result=useInfiniteResource<PageResult<Event>>(invalidSettled?undefined:`/catalog/event?${params}`);
   const visible=invalidRange?[]:result.data?.items??[];
   const selectedSummary=visible.find(e=>e.id===selectedId)??visible[0];
   const detail=useResource<Event>(selectedSummary?`/entry/${selectedSummary.id}`:undefined);
@@ -38,11 +37,12 @@ export function TopicExplorer({ topicSlug }: { topicSlug?: string }) {
     </div>
     <LoadState {...result}/>
     {invalidRange && <p role="alert" className="text-rose-700">起始年不能晚于结束年。</p>}
-    <p className="text-sm text-slate-500">本页显示 {visible.length} 个事件。时间不详的事件保留在列表末尾。</p>
+    <p className="text-sm text-slate-500">已加载 {visible.length} 个事件。时间不详的事件保留在列表末尾。</p>
     <div className="grid lg:grid-cols-[minmax(0,280px)_minmax(0,1fr)] gap-6">
       <ol className="space-y-2 max-h-[460px] overflow-auto" aria-label="专题事件时间线">
         {visible.map(e => <li key={e.id}><button aria-pressed={selected?.id === e.id} className={`w-full text-left rounded-xl p-4 border ${selected?.id === e.id ? 'border-teal-700 bg-teal-50' : 'border-stone-200'}`} onClick={() => setSelectedId(e.id)}><span className="text-xs text-slate-500">{formatDisplayRange(e.start_year, e.end_year)}</span><span className="block font-semibold mt-1">{e.title}</span><span className="block text-sm text-slate-600 mt-1">{e.location_name || '地点待考'}</span></button></li>)}
         {!visible.length && <li className="p-4 text-slate-500">没有符合条件的事件。</li>}
+        <li><InfiniteScroll {...result} count={visible.length} disabled={invalidRange || range !== `${from}|${to}`} label="时间线事件"/></li>
       </ol>
       <div className="min-w-0 space-y-4">
         {MAPS_ENABLED && <><p className="text-xs text-slate-500">事件地理层 · 现代底图用于地点定位，与历史疆域底图分别维护。</p>
@@ -57,6 +57,6 @@ export function TopicExplorer({ topicSlug }: { topicSlug?: string }) {
         </article>}
       </div>
     </div>
-    <Pagination page={page} hasMore={result.data?.has_more??false} loading={result.loading} onPage={setPage}/>
+
   </section>;
 }

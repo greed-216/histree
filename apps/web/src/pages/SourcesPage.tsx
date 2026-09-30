@@ -1,13 +1,17 @@
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import type { Source, EvidenceClaim, ClaimSubject } from '@histree/shared-types';
-import { useResource } from '../hooks/useResource';
+import { useInfiniteResource, uniqueRows } from '../hooks/useInfiniteResource';
+import { InfiniteScroll } from '../components/InfiniteScroll';
 import { Evidence, EvidenceCard, LoadState } from '../components/Reading';
 import { safeUrl } from '../lib/reading';
+type SourceClaims = { source: Source; claims: EvidenceClaim[]; count: number };
+const sourcePages = {
+  merge: (before: SourceClaims, next: SourceClaims) => ({ ...next, claims: uniqueRows([...before.claims, ...next.claims]) }),
+  hasMore: (data: SourceClaims, page: number) => (page + 1) * 50 < data.count,
+};
 export function SourcePage() {
   const { id } = useParams();
-  const [params] = useSearchParams();
-  const page = Math.max(0, Math.min(100000, Math.floor(Number(params.get('page')) || 0)));
-  const result = useResource<{ source: Source; claims: EvidenceClaim[]; count: number }>(`/sources/${id}?page=${page}`);
+  const result = useInfiniteResource<SourceClaims>(`/sources/${id}`, false, sourcePages);
   const data = result.data;
   return <div className="max-w-3xl mx-auto space-y-6">
     <Link to="/" className="text-teal-700">← 专题探索</Link><LoadState {...result} />
@@ -23,11 +27,8 @@ export function SourcePage() {
         {(c.subject_table === 'person' || c.subject_table === 'event') && <Link className="text-teal-700 text-sm" to={`/${c.subject_table === 'person' ? 'people' : 'events'}/${c.subject_id}`}>查看对应{c.subject_table === 'person' ? '人物' : '事件'} →</Link>}
         <EvidenceCard claim={c} />
       </div>)}
-      {data.claims.length === 0 && <p>本页暂无已发布引用。</p>}
-      <nav aria-label="引用分页" className="flex gap-6">
-        {page > 0 && <Link to={`?page=${page-1}`}>上一页</Link>}
-        {(page+1)*50 < data.count && <Link to={`?page=${page+1}`}>下一页</Link>}
-      </nav>
+      {data.claims.length === 0 && <p>暂无已发布引用。</p>}
+      <InfiniteScroll {...result} count={data.claims.length} label="来源引用"/>
     </>}
   </div>;
 }

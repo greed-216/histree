@@ -2,21 +2,24 @@ import { relationshipPresentation } from "../lib/graph";
 import { entryTitle, entryPath, safeUrl } from "../lib/reading";
 import { Link, useParams } from "react-router-dom";
 import type { EntryContext, TopicSummary, PageResult, Event } from "@histree/shared-types";
-import { usePageState } from '../hooks/usePageState';
-import { Pagination } from '../components/Pagination';
-import { useResource } from "../hooks/useResource";
+import { useInfiniteResource, uniqueRows } from '../hooks/useInfiniteResource';
+import { InfiniteScroll } from '../components/InfiniteScroll';
 import { Evidence, LazyEvidence, LoadState, Timeline } from "../components/Reading";
 import {
   edgeTypeLabel,
   formatDisplayRange,
   referenceTypeLabel,
 } from "../lib/content";
+const contextPages = {
+  merge: (before: EntryContext, next: EntryContext): EntryContext => {
+    const edges = new Map([...before.edges, ...next.edges].map(e => [e.id ?? `${e.subject_table}:${e.source}:${e.target}:${e.type}`, e]));
+    return { ...next, nodes: uniqueRows([...before.nodes, ...next.nodes]), edges: [...edges.values()] };
+  },
+};
 export function EntryPage() {
   const { id } = useParams();
-  const [page,setPage]=usePageState(id??'');
-  const graph = useResource<EntryContext>(`/entry-context/${id}?page=${page}`);
-  const [topicPage,setTopicPage]=usePageState(id??'');
-  const topics = useResource<PageResult<TopicSummary>>(`/catalog/topic?node=${id}&page=${topicPage}`);
+  const graph = useInfiniteResource<EntryContext>(`/entry-context/${id}`, false, contextPages);
+  const topics = useInfiniteResource<PageResult<TopicSummary>>(`/catalog/topic?node=${id}`);
   if (graph.loading || graph.error) return <LoadState {...graph} />;
   if (!graph.data) return null;
   const { center: node, nodes, edges } = graph.data;
@@ -35,7 +38,7 @@ export function EntryPage() {
               专题：{t.title}
             </Link>
           ))}
-        {topics.data?.has_more||topicPage>0?<Pagination page={topicPage} hasMore={topics.data?.has_more??false} loading={topics.loading} onPage={setTopicPage}/>:null}
+        {(topics.hasMore || (topics.data?.items.length ?? 0) > 20) && <InfiniteScroll {...topics} count={topics.data?.items.length} label="关联专题"/>}
       </nav>
       <header className="border-b border-stone-200 pb-9 mb-9 flex items-start gap-6">
         <div className="flex-1">
@@ -117,7 +120,7 @@ export function EntryPage() {
           )}
           <section id="chronology" className="scroll-mt-24">
             <h2 className="reading-heading">
-              {node.type === "person" ? "本页相关事件时间线" : "事件时间脉络"}
+              {node.type === "person" ? "相关事件时间线" : "事件时间脉络"}
             </h2>
             {events.length ? (
               <Timeline events={events} />
@@ -171,7 +174,7 @@ export function EntryPage() {
                 );
               })}
             </div>
-            <Pagination page={page} hasMore={graph.data.has_more} loading={graph.loading} onPage={setPage}/>
+            <InfiniteScroll {...graph} count={related.length} label="关系与上下文"/>
           </section>
           <section id="evidence" className="scroll-mt-24">
             <h2 className="reading-heading">陈述与出处</h2>

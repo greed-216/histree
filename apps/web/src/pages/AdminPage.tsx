@@ -12,10 +12,9 @@ import type {
   PageResult,
   ContentRow,
 } from '@histree/shared-types';
-import { useResource } from '../hooks/useResource';
+import { useInfiniteResource } from '../hooks/useInfiniteResource';
 import { useDebounced } from '../hooks/useDebounced';
-import { usePageState } from '../hooks/usePageState';
-import { Pagination } from '../components/Pagination';
+import { InfiniteScroll } from '../components/InfiniteScroll';
 import { RecordPicker } from '../components/RecordPicker';
 import { LoadState } from '../components/Reading';
 import { apiFetch } from '../lib/api';
@@ -34,8 +33,7 @@ export const AdminPage: React.FC = () => {
   const [relationshipTable,setRelationshipTable]=useState('person_relationship');
   const settled=useDebounced(query.trim());
   const table=activeTab==='people'?'person':activeTab==='events'?'event':relationshipTable;
-  const [page,setPage]=usePageState(`${table}:${settled}`);
-  const list=useResource<PageResult<ContentRow>>(isAdmin?`/editorial/${table}?${new URLSearchParams({q:settled,page:String(page)})}`:undefined,true);
+  const list=useInfiniteResource<PageResult<ContentRow>>(isAdmin?`/editorial/${table}?${new URLSearchParams({q:settled})}`:undefined,true);
   const people=(table==='person'?list.data?.items??[]:[]) as unknown as Person[];
   const events=(table==='event'?list.data?.items??[]:[]) as unknown as Event[];
   const relationships:RelationshipBundle={person_relationships:table==='person_relationship'?(list.data?.items??[]) as unknown as PersonRelationship[]:[],person_events:table==='person_event'?(list.data?.items??[]) as unknown as PersonEventRelation[]:[],event_causalities:table==='event_causality'?(list.data?.items??[]) as unknown as EventCausalityRelation[]:[]};
@@ -583,7 +581,7 @@ export const AdminPage: React.FC = () => {
         </div>
       )}
 
-      <Pagination page={page} hasMore={list.data?.has_more??false} loading={list.loading||busy} onPage={setPage}/>
+      <InfiniteScroll {...list} count={list.data?.items.length} disabled={busy || query.trim() !== settled} label="管理列表"/>
 
       {/* Edit Person Modal */}
       {editingPerson && (

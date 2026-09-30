@@ -66,7 +66,7 @@ export function isDoubleActivation(previous: { id: string; time: number; point: 
 }
 
 // Directed roles always describe the source's relationship to the target.
-const symmetricRelations = new Set(['兄弟', '姐妹', '夫妻', '同盟', 'ally', '敌对', 'enemy', '姻亲', '约为兄弟', '结义兄弟']);
+const symmetricRelations = new Set(['兄弟', '姐妹', '从兄弟', '夫妻', '同盟', 'ally', '敌对', 'enemy', '姻亲', '约为兄弟', '结义兄弟']);
 const inverseRelations: Record<string, string> = {
   父亲: '子女', 母亲: '子女', 儿子: '父母', 女儿: '父母',
   养父: '养子女', 养母: '养子女', 假父: '假子',

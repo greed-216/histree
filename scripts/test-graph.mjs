@@ -54,6 +54,8 @@ console.log('Graph focus tests passed: readable camera, large overview, drill/ba
 const {relationshipPresentation,relationshipSentence}=await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
 assert.equal(relationshipSentence('甲','乙','父亲'),'甲是乙的父亲','Editor preview uses the graph direction convention');
 assert.equal(relationshipSentence('甲','乙','夫妻'),'甲与乙：夫妻','Symmetric relationships have no directional role');
+assert.equal(relationshipPresentation({...edges[0],type:'从兄弟'},nodes,'从兄弟').symmetric,true,'Cousin age order is unspecified');
+assert.equal(relationshipSentence('甲','乙','从兄弟'),'甲与乙：从兄弟');
 const father=relationshipPresentation(edges[0],nodes,'父亲');
 assert.equal(father.sentence,'甲是乙的父亲');
 assert.equal(father.symmetric,false);

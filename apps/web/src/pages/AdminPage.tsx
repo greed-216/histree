@@ -14,6 +14,7 @@ import { apiFetch } from '../lib/api';
 import { Link } from 'react-router-dom';
 import { PublicationField } from '../components/PublicationField';
 import { referenceTypeLabel } from '../lib/content';
+import { relationshipSentence } from '../lib/graph';
 
 export const AdminPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'people' | 'events' | 'relationships'>('people');
@@ -425,6 +426,7 @@ export const AdminPage: React.FC = () => {
             </div>
             {editingPersonRelationship && (
               <div className="p-4 border-b border-slate-100 grid gap-3 md:grid-cols-[1fr_1fr_1fr_1.5fr_auto]">
+                <p className="md:col-span-full text-sm text-slate-600">方向约定：A —关系→ B 表示 A 是 B 的该关系。例如：A —父亲→ B 表示 A 是 B 的父亲。兄弟、夫妻等对称关系不区分方向。</p>
                 <PublicationField value={editingPersonRelationship.status} onChange={status => setEditingPersonRelationship({...editingPersonRelationship, status})} />
                 <select value={editingPersonRelationship.person_a || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, person_a: e.target.value })} className="w-full p-2 border rounded-lg text-sm">
                   {people.map(person => <option key={person.id} value={person.id}>{person.name}</option>)}
@@ -434,6 +436,7 @@ export const AdminPage: React.FC = () => {
                 </select>
                 <input placeholder="关系类型" value={editingPersonRelationship.relation_type || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, relation_type: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
                 <input placeholder="说明" value={editingPersonRelationship.description || ''} onChange={e => setEditingPersonRelationship({ ...editingPersonRelationship, description: e.target.value })} className="w-full p-2 border rounded-lg text-sm" />
+                <p className="md:col-span-full text-sm font-medium text-teal-800">预览：{editingPersonRelationship.relation_type ? relationshipSentence(personName(editingPersonRelationship.person_a || ''), personName(editingPersonRelationship.person_b || ''), editingPersonRelationship.relation_type) : '请选择两位人物并填写关系类型'}</p>
                 <div className="flex gap-2">
                   <button onClick={() => setEditingPersonRelationship(null)} className="px-3 py-2 text-slate-500 hover:bg-slate-100 rounded-lg text-sm">取消</button>
                   <button disabled={busy} onClick={() => run(savePersonRelationship)} className="px-3 py-2 bg-emerald-500 text-white rounded-lg text-sm">保存</button>
@@ -456,7 +459,7 @@ export const AdminPage: React.FC = () => {
                     <tr key={relationship.id} className="hover:bg-slate-50/50">
                       <td className="px-6 py-4 font-semibold text-slate-800">{personName(relationship.person_a)}</td>
                       <td className="px-6 py-4 font-semibold text-slate-800">{personName(relationship.person_b)}</td>
-                      <td className="px-6 py-4">{relationship.relation_type}{statusBadge(relationship.status)}</td>
+                      <td className="px-6 py-4">{relationshipSentence(personName(relationship.person_a), personName(relationship.person_b), relationship.relation_type)}{statusBadge(relationship.status)}</td>
                       <td className="px-6 py-4">{relationship.description || '-'}</td>
                       <td className="px-6 py-4 text-right space-x-2">
                         <button onClick={() => setEditingPersonRelationship(relationship)} className="p-1.5 text-emerald-500 hover:bg-emerald-50 rounded-md transition-colors"><PencilIcon className="w-4 h-4" /></button>

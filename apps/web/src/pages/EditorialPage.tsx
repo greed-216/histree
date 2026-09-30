@@ -13,6 +13,7 @@ import type {
 } from "@histree/shared-types";
 import { apiFetch, getCurrentUserRole } from "../lib/api";
 import { PublicationField } from "../components/PublicationField";
+import { relationshipSentence } from "../lib/graph";
 
 type Table = "topic" | "source" | "fact_claim";
 type Catalog = {
@@ -153,7 +154,7 @@ export function EditorialPage() {
       case "person_relationship":
         return catalog.person_relationship.map((r) => ({
           id: r.id,
-          label: `${personName(r.person_a)} → ${r.relation_type} → ${personName(r.person_b)}`,
+          label: relationshipSentence(personName(r.person_a), personName(r.person_b), r.relation_type),
         }));
       case "person_event":
         return catalog.person_event.map((r) => ({

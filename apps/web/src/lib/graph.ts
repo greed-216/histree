@@ -70,9 +70,12 @@ const symmetricRelations = new Set(['兄弟', '姐妹', '夫妻', '同盟', 'all
 const inverseRelations: Record<string, string> = {
   父亲: '子女', 母亲: '子女', 儿子: '父母', 女儿: '父母',
   养父: '养子女', 养母: '养子女', 假父: '假子',
-  兄长: '弟弟', 哥哥: '弟弟', 弟弟: '兄长',
+  兄长: '弟妹', 哥哥: '弟妹', 弟弟: '兄姐',
   姐姐: '弟妹', 丈夫: '妻子', 妻子: '丈夫',
 };
+export function relationshipSentence(source: string, target: string, type: string, label = type) {
+  return symmetricRelations.has(type) ? `${source}与${target}：${label}` : `${source}是${target}的${label}`;
+}
 export function relationshipPresentation(edge: Edge, nodes: GraphEntry[], label: string, perspective?: string) {
   const name = (id: string) => {const node = nodes.find(n => n.id === id); return node ? (node.type === 'person' ? node.name : node.title) : '未知条目';};
   const personRelation = edgeSubject(edge, nodes) === 'person_relationship';
@@ -83,6 +86,6 @@ export function relationshipPresentation(edge: Edge, nodes: GraphEntry[], label:
     [source, target] = [target, source]; role = inverseRelations[edge.type];
   }
   const sentence = !personRelation ? `${name(source)} → ${name(target)}：${role}`
-    : symmetric ? `${name(source)}与${name(target)}：${role}` : `${name(source)}是${name(target)}的${role}`;
+    : relationshipSentence(name(source), name(target), edge.type, role);
   return { symmetric, sentence, source, target, role };
 }

@@ -32,6 +32,9 @@
 - subject_table 使用 person / event / person_relationship / person_event / event_causality。对应 people/events 等数组中对象的 key。
 - citation 写卷次、纪年、篇章或段落。note 按“原文：…；核对说明：…”保存片段与疑点。field_path 指明支持的字段，例如 biography、start_year、location_name。
 - 关系方向：`person_a —relation_type→ person_b` 表示 person_a 是 person_b 的该关系。兄长、父亲等用具体角色；对称关系保留对称类型。逆向表述由界面生成，不重复录入。历史修正见 `content/revisions/`，沿用原关系 key/UUID。
+  - `甲 —父亲→ 乙`：甲是乙的父亲；`乙 —儿子→ 甲`：乙是甲的儿子。只有史料支持乙的性别时才写儿子，否则反向阅读用子女。
+  - 原文明示长幼、身份时，用兄长／弟弟、丈夫／妻子；仅称兄弟、夫妻时保留对称类型，不补推长幼。反向阅读兄长用弟妹、弟弟用兄姐，避免推断另一人的性别。
+  - 后台保存前检查完整关系句子，并与原文主语、宾语逐一对应；不要为反向阅读新增重复记录。
 - 人物关系的有效时段先明确写进 description，并用对应 claim 支撑；当前没有关系起止年的结构化字段，不能据此生成历史阵营时间切片。
 - 没有证据的事件先后顺序不录为因果；第一批不要求填写 event_causality。
 - 没有审核完成的内容不发布；批次格式本身不代表事实已核对。

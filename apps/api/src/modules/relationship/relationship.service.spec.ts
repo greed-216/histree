@@ -86,6 +86,43 @@ const baseRows: TableRows = {
 };
 
 describe('RelationshipService', () => {
+  it.each([
+    ['父亲', '儿子'], ['儿子', '父亲'], ['母亲', '女儿'],
+    ['养父', '养子'], ['兄长', '弟弟'], ['姐姐', '弟弟'],
+    ['丈夫', '妻子'], ['主君', '臣属'], ['兄弟', '兄弟'], ['姻亲', '姻亲'],
+  ])('rejects reversed duplicate %s / %s', async (existingType, relation_type) => {
+    const { service, rows } = createService({
+      ...baseRows,
+      person_relationship: [{id: 'rel-1', person_a: 'person-a', person_b: 'person-b', relation_type: existingType}],
+    });
+    await expect(service.createPersonRelationship({
+      person_a: 'person-b', person_b: 'person-a', relation_type,
+    })).rejects.toBeInstanceOf(ConflictException);
+    expect(rows.person_relationship).toHaveLength(1);
+  });
+
+  it('allows rewriting the same edge from the other endpoint', async () => {
+    const { service, rows } = createService({
+      ...baseRows,
+      person_relationship: [{id: 'rel-1', person_a: 'person-a', person_b: 'person-b', relation_type: '父亲'}],
+    });
+    const updated = await service.updatePersonRelationship('rel-1', {
+      person_a: 'person-b', person_b: 'person-a', relation_type: '儿子',
+    });
+    expect(updated).toMatchObject({id: 'rel-1', relation_type: '儿子'});
+    expect(rows.person_relationship).toHaveLength(1);
+  });
+
+  it('keeps different facts between the same people', async () => {
+    const { service } = createService({
+      ...baseRows,
+      person_relationship: [{id: 'rel-1', person_a: 'person-a', person_b: 'person-b', relation_type: '父亲'}],
+    });
+    await expect(service.createPersonRelationship({
+      person_a: 'person-b', person_b: 'person-a', relation_type: '臣属',
+    })).resolves.toMatchObject({relation_type: '臣属'});
+  });
+
   it.each(['父子', '母子', '统属'])('rejects ambiguous role %s before writing', async relation_type => {
     const { service, client } = createService(baseRows);
     await expect(service.createPersonRelationship({person_a: 'person-a', person_b: 'person-b', relation_type})).rejects.toBeInstanceOf(BadRequestException);

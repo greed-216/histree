@@ -11,6 +11,25 @@ import type {
 } from '@histree/shared-types';
 import { SupabaseService } from '../supabase/supabase.service';
 
+// These reverse roles describe the same fact, rather than a second edge.
+const reverseRoles: Record<string, string[]> = {
+  父亲: ['儿子', '女儿', '子女'], 母亲: ['儿子', '女儿', '子女'],
+  儿子: ['父亲', '母亲', '父母'], 女儿: ['父亲', '母亲', '父母'],
+  子女: ['父亲', '母亲', '父母'], 父母: ['儿子', '女儿', '子女'],
+  养父: ['养子', '养女', '养子女'], 养母: ['养子', '养女', '养子女'],
+  养子: ['养父', '养母', '养父母'], 养女: ['养父', '养母', '养父母'],
+  养子女: ['养父', '养母', '养父母'], 养父母: ['养子', '养女', '养子女'],
+  兄长: ['弟弟', '妹妹', '弟妹'], 哥哥: ['弟弟', '妹妹', '弟妹'],
+  姐姐: ['弟弟', '妹妹', '弟妹'],
+  弟弟: ['兄长', '哥哥', '姐姐', '兄姐'], 妹妹: ['兄长', '哥哥', '姐姐', '兄姐'],
+  弟妹: ['兄长', '哥哥', '姐姐', '兄姐'], 兄姐: ['弟弟', '妹妹', '弟妹'],
+  丈夫: ['妻子'], 妻子: ['丈夫'], 主君: ['臣属'], 臣属: ['主君'],
+  假父: ['假子'], 假子: ['假父'],
+};
+for (const role of ['兄弟', '姐妹', '从兄弟', '夫妻', '同盟', 'ally', '敌对', 'enemy', '姻亲', '约为兄弟', '结义兄弟']) {
+  reverseRoles[role] = [role];
+}
+
 @Injectable()
 export class RelationshipService {
   constructor(private readonly supabaseService: SupabaseService) {}
@@ -248,6 +267,20 @@ export class RelationshipService {
     if (error) throw error;
     if (data && data.id !== currentId) {
       throw new ConflictException('Duplicate person relationship');
+    }
+    for (const reverseType of reverseRoles[row.relation_type] ?? []) {
+      const { data: reverse, error: reverseError } = await this.supabaseService
+        .getAdminClient()
+        .from('person_relationship')
+        .select('id')
+        .eq('person_a', row.person_b)
+        .eq('person_b', row.person_a)
+        .eq('relation_type', reverseType)
+        .maybeSingle();
+      if (reverseError) throw reverseError;
+      if (reverse && reverse.id !== currentId) {
+        throw new ConflictException('这条关系已以反向表述存在，请编辑原关系，避免重复连线');
+      }
     }
   }
 

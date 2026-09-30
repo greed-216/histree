@@ -95,6 +95,7 @@ function GraphExplorer({data,overview}:{data:GraphResponse;overview:boolean}) {
 
    <div className="graph-columns">
      <div className="min-w-0">
+       {mode==='people'&&<p className="mb-3 text-xs leading-6 text-stone-500">关系读法：甲 —父亲→ 乙，表示甲是乙的父亲。兄弟、姻亲等对称关系使用无箭头连线；点击关系可查看说明与出处。</p>}
        {filtered.nodes.length?<GraphCanvas key={`${mode}:${focus}:${depth}:${from}:${to}`} data={filtered} mode="network" selection={selection} onSelect={select} onEnterSubgraph={dive} focusRequest={focusRequest} highlighted={highlighted}/>:<p className="reading-card py-20 text-center">没有符合条件的关系或条目。可以重置筛选查看全部内容。</p>}
        {selection&&<a href="#graph-details" className="xl:hidden block text-center rounded-lg bg-teal-50 p-3 mt-3 text-sm text-teal-800">查看选中内容的详情 ↓</a>}
        <details className="mt-3 rounded-xl border border-stone-200 bg-white p-4"><summary className="text-sm">关系清单 · {filtered.edges.length} 条（也可在这里选择）</summary><div className="max-h-64 overflow-auto mt-3 space-y-2">{filtered.edges.map(e=><button key={edgeKey(e)} onClick={()=>select({kind:'edge',id:edgeKey(e)})} className={`block w-full text-left rounded-lg p-3 text-sm ${selectedEdge&&edgeKey(selectedEdge)===edgeKey(e)?'bg-teal-100':'bg-stone-50'}`}>{edgeTitle(e)}</button>)}</div></details>

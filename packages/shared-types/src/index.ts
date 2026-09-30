@@ -171,10 +171,10 @@ export interface EvidenceClaim extends FactClaim { source: Source | null }
 export type SearchKind = 'all' | 'person' | 'event' | 'topic' | 'nodes';
 export type SearchHit = Person | Event | (Pick<Topic, 'id' | 'slug' | 'title' | 'description'> & { type: 'topic' });
 export interface SearchResponse { items: SearchHit[]; has_more: boolean; }
-export { exploreRequest } from './explore';
+export { exploreRequest } from './explore.ts';
 
 export interface PageResult<T> { items: T[]; has_more: boolean; labels?: Record<string,string>; }
 export type ContentRow = { id: string; label?: string; status?: PublicationStatus; [key: string]: unknown };
 export type TopicSummary = Omit<Topic,'sections'> & { section_count: number };
 export interface EntryContext extends GraphResponse { has_more: boolean; }
-export { contentRequest, pageNumber } from './content-query';
+export { contentRequest, pageNumber } from './content-query.ts';

@@ -1,16 +1,14 @@
 import React from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { UserIcon } from '@heroicons/react/24/outline';
 import type { Person, PageResult } from '@histree/shared-types';
-import { useResource } from '../hooks/useResource';
-import { Pagination } from '../components/Pagination';
+import { useInfiniteResource } from '../hooks/useInfiniteResource';
+import { InfiniteScroll } from '../components/InfiniteScroll';
 import { LoadState } from '../components/Reading';
 import { primaryReference } from '../lib/content';
 
 export const PeoplePage: React.FC = () => {
-  const [params,setParams]=useSearchParams();
-  const page=Math.max(0,Math.min(100000,Math.floor(Number(params.get('page'))||0)));
-  const result=useResource<PageResult<Person>>(`/catalog/person?page=${page}`);
+  const result=useInfiniteResource<PageResult<Person>>("/catalog/person");
   const people=result.data?.items??[];
   const loading=result.loading;
   return (
@@ -71,7 +69,7 @@ export const PeoplePage: React.FC = () => {
           ))}
         </div>
       )}
-      <Pagination page={page} hasMore={result.data?.has_more??false} loading={loading} onPage={page=>setParams({page:String(page)})}/>
+      <InfiniteScroll {...result} count={people.length} label="人物"/>
     </div>
   );
 };

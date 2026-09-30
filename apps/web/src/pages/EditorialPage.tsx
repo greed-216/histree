@@ -8,12 +8,11 @@ import type {
   PageResult,
 } from "@histree/shared-types";
 import { apiFetch, getCurrentUserRole } from "../lib/api";
-import { useResource } from '../hooks/useResource';
+import { useInfiniteResource } from '../hooks/useInfiniteResource';
 import { useDebounced } from '../hooks/useDebounced';
-import { usePageState } from '../hooks/usePageState';
 import { RecordPicker } from '../components/RecordPicker';
 import { RecordChecklist } from '../components/RecordChecklist';
-import { Pagination } from '../components/Pagination';
+import { InfiniteScroll } from '../components/InfiniteScroll';
 import { LoadState } from '../components/Reading';
 import { PublicationField } from "../components/PublicationField";
 
@@ -44,8 +43,7 @@ export function EditorialPage() {
   const [source, setSource] = useState<Partial<Source> | null>(null);
   const [claim, setClaim] = useState<Partial<FactClaim> | null>(null);
   const settled=useDebounced(query.trim());
-  const [page,setPage]=usePageState(`${tab}:${settled}`);
-  const list=useResource<PageResult<Topic|Source|FactClaim>>(admin?`/editorial/${tab}?${new URLSearchParams({q:settled,page:String(page)})}`:undefined,true);
+  const list=useInfiniteResource<PageResult<Topic|Source|FactClaim>>(admin?`/editorial/${tab}?${new URLSearchParams({q:settled})}`:undefined,true);
   const load=async()=>{list.retry();};
   useEffect(() => {
     let active = true;
@@ -463,7 +461,7 @@ export function EditorialPage() {
           <p className="text-slate-500 py-8 text-center">没有匹配的记录。</p>
         )}
       </div>
-      <Pagination page={page} hasMore={list.data?.has_more??false} loading={list.loading||busy} onPage={setPage}/>
+      <InfiniteScroll {...list} count={list.data?.items.length} disabled={busy || query.trim() !== settled} label="管理列表"/>
     </div>
   );
 }

@@ -3,23 +3,24 @@ import { Link, useParams } from 'react-router-dom';
 import type { Topic,Person,Event,PageResult } from '@histree/shared-types';
 import { useResource } from '../hooks/useResource';
 import { EntryCard,LoadState } from '../components/Reading';
-import { Pagination } from '../components/Pagination';
+import { InfiniteScroll } from '../components/InfiniteScroll';
+import { useInfiniteResource } from '../hooks/useInfiniteResource';
 import { TopicExplorer } from '../components/TopicExplorer';
 
 function TopicSection({slug,section,index}:{slug:string;section:Topic['sections'][number];index:number}) {
- const ref=useRef<HTMLElement>(null);const [visible,setVisible]=useState(false);const [page,setPage]=useState(0);
+ const ref=useRef<HTMLElement>(null);const [visible,setVisible]=useState(false);
  useEffect(()=>{
   if(!ref.current)return;
   const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){setVisible(true);observer.disconnect();}},{rootMargin:'300px'});
   observer.observe(ref.current);return ()=>observer.disconnect();
  },[]);
- const result=useResource<PageResult<Person|Event>>(visible?`/catalog/nodes?${new URLSearchParams({topic:slug,section:String(index),page:String(page)})}`:undefined);
+ const result=useInfiniteResource<PageResult<Person|Event>>(visible?`/catalog/nodes?${new URLSearchParams({topic:slug,section:String(index)})}`:undefined);
  return <section ref={ref} id={`chapter-${index}`} className="scroll-mt-28">
   <p className="eyebrow">{String(index+1).padStart(2,'0')} / 阅读线索</p><h2 className="font-serif text-2xl mt-2">{section.heading}</h2>
   <p className="leading-8 text-slate-600 whitespace-pre-line mt-4">{section.body}</p><LoadState {...result}/>
   <div className="grid sm:grid-cols-2 gap-4 mt-6">{result.data?.items.map(node=><EntryCard key={node.id} node={node}/>)}</div>
   {result.data&&section.node_ids.length>0&&result.data.items.length===0&&<p className="text-sm text-slate-500">部分关联条目正在修订，发布后即可阅读。</p>}
-  {visible&&<Pagination page={page} hasMore={result.data?.has_more??false} loading={result.loading} onPage={setPage}/>}
+  {visible&&<InfiniteScroll {...result} count={result.data?.items.length} label="章节条目"/>}
  </section>;
 }
 export function TopicPage() {

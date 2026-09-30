@@ -7,6 +7,7 @@ import { supabase } from './supabaseClient';
 import { AuthModal } from './AuthModal';
 import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon } from '@heroicons/react/24/outline';
 import { getCurrentUserRole } from './lib/api';
+import { useScrollRestoration } from './hooks/useScrollRestoration';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
 import { ExplorePage } from './pages/ExplorePage';
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
@@ -27,7 +28,7 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const location = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
+  useScrollRestoration();
 
   useEffect(() => {
     let cancelled = false;

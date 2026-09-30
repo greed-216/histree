@@ -2,8 +2,8 @@ import { useState } from "react";
 import type { ContentRow, PageResult } from "@histree/shared-types";
 import { useResource } from "../hooks/useResource";
 import { useDebounced } from "../hooks/useDebounced";
-import { usePageState } from "../hooks/usePageState";
-import { Pagination } from "./Pagination";
+import { useInfiniteResource } from "../hooks/useInfiniteResource";
+import { InfiniteScroll } from "./InfiniteScroll";
 import { LoadState } from "./Reading";
 
 export function RecordPicker({
@@ -21,10 +21,9 @@ export function RecordPicker({
 }) {
   const [query, setQuery] = useState("");
   const settled = useDebounced(query.trim());
-  const [page, setPage] = usePageState(`${table}:${settled}`);
   const root = admin ? "/editorial" : "/catalog";
-  const result = useResource<PageResult<ContentRow>>(
-    `${root}/${table}?${new URLSearchParams({ q: settled, page: String(page), limit: "20" })}`,
+  const result = useInfiniteResource<PageResult<ContentRow>>(
+    `${root}/${table}?${new URLSearchParams({ q: settled, limit: "20" })}`,
     admin,
   );
   const selected = useResource<PageResult<ContentRow>>(
@@ -78,13 +77,8 @@ export function RecordPicker({
               {row.status === "draft" ? " · 草稿" : ""}
             </button>
           ))}
+        <InfiniteScroll {...result} count={result.data?.items.length} disabled={query.trim() !== settled} label={`${label}候选`}/>
       </div>
-      <Pagination
-        page={page}
-        hasMore={result.data?.has_more ?? false}
-        loading={result.loading || query.trim() !== settled}
-        onPage={setPage}
-      />
     </div>
   );
 }

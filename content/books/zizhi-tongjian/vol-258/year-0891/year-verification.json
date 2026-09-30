@@ -1,0 +1,30 @@
+{
+  "year": 891,
+  "paragraphs": 40,
+  "batches": 5,
+  "verified": true,
+  "counts": {
+    "source": 10,
+    "person": 135,
+    "event": 97,
+    "person_relationship": 13,
+    "person_event": 240,
+    "fact_claim": 600
+  },
+  "new_counts": {
+    "source": 6,
+    "person": 41,
+    "event": 97,
+    "person_relationship": 12,
+    "person_event": 240,
+    "fact_claim": 600
+  },
+  "checks": [
+    "all year paragraphs published_verified",
+    "continuous raw source lines and complete year boundaries",
+    "five publication hashes match",
+    "anonymous counts complete",
+    "fixed commit bytes equal source snapshots",
+    "next volume begins 892"
+  ]
+}

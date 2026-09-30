@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 258,
-    "year": 891,
-    "last_reviewed_paragraph": "zztj-v258-y0890-p043",
-    "next_paragraph": "zztj-v258-y0891-p001",
-    "next_paragraph_opening": "春，正月，罗弘信军于内黄。丙辰，硃全忠击之，五战皆捷，到永定桥，斩首万馀级。弘信惧，遣使厚币请和。全忠命止焚掠，归其俘，还军河上。魏博自是服于汴。",
-    "batch": "content/books/zizhi-tongjian/vol-258/year-0890/part-06",
+    "volume": 259,
+    "year": 892,
+    "last_reviewed_paragraph": "zztj-v258-y0891-p040",
+    "next_paragraph": "zztj-v259-y0892-p001",
+    "next_paragraph_opening": "春，正月，丙寅，赦天下，改元。",
+    "batch": "content/books/zizhi-tongjian/vol-258/year-0891/part-05",
     "status": "published_verified",
-    "last_published_paragraph": "zztj-v258-y0890-p043"
+    "last_published_paragraph": "zztj-v258-y0891-p040"
   },
   "year_coverage": [
     {
@@ -147,6 +147,24 @@
       "completed_volumes": [
         258
       ]
+    },
+    {
+      "year": 891,
+      "status": "complete_published_verified",
+      "volumes": [
+        258
+      ],
+      "batches": [
+        "content/books/zizhi-tongjian/vol-258/year-0891/part-01",
+        "content/books/zizhi-tongjian/vol-258/year-0891/part-02",
+        "content/books/zizhi-tongjian/vol-258/year-0891/part-03",
+        "content/books/zizhi-tongjian/vol-258/year-0891/part-04",
+        "content/books/zizhi-tongjian/vol-258/year-0891/part-05"
+      ],
+      "note": "卷258大顺二年40段五批全部公开并匿名读回；97事件、600引用及原文连续、来源固定提交和批次哈希校验通过。异文与两书记载分歧并列保留。",
+      "completed_volumes": [
+        258
+      ]
     }
   ],
   "legacy_archives": [
@@ -174,6 +192,38 @@
       "alternate_source": "resources/derived/twenty-four-histories/18旧五代史.jsonl#pdf_page=583",
       "alternate_reading": "《旧五代史》称孟迁为孟方立之侄。",
       "required_action": "保留两书异说并补独立引用，不覆盖旧发布批次或直接推定哪一说为真。"
+    },
+    {
+      "key": "891-wuding-shouzhong-shousi-variant",
+      "status": "documented_source_variant",
+      "primary_batch": "content/books/zizhi-tongjian/vol-258/year-0891/part-03",
+      "primary_paragraph": "zztj-v258-y0891-p024",
+      "subject_key": "person_杨守忠",
+      "primary_reading": "主底本武定节度使守忠。",
+      "alternate_reading": "胡三省音注电子本对应位置作守思。",
+      "required_action": "两读已经独立引用；未据此合并守思为别名，后续遇到该名再核身份。"
+    },
+    {
+      "key": "891-li-jian-two-commanders",
+      "status": "identity_disambiguated_pending_evidence",
+      "primary_paragraphs": [
+        "zztj-v258-y0891-p020",
+        "zztj-v258-y0891-p038"
+      ],
+      "subject_keys": [
+        "person_李简（杨行密将）",
+        "person_李简（王建将）"
+      ],
+      "required_action": "按所属主将暂分别建档。后续复用须查所属主将、籍贯与活动，不能按李简姓名直接合并。"
+    },
+    {
+      "key": "891-fan-hui-chen-yan-source-conflicts",
+      "status": "documented_source_conflict",
+      "primary_batch": "content/books/zizhi-tongjian/vol-258/year-0891/part-05",
+      "primary_paragraph": "zztj-v258-y0891-p040",
+      "primary_reading": "通鉴891年陈岩卒，范晖为其妻弟。",
+      "alternate_reading": "新五代史卷68记景福元年892卒，范晖为其婿。",
+      "required_action": "已经将两说附同一主体与关系，保留书间差别，不用另一书覆盖主线。"
     }
   ]
 }

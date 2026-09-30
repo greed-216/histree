@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 259,
-    "year": 893,
-    "last_reviewed_paragraph": "zztj-v259-y0892-p046",
-    "next_paragraph": "zztj-v259-y0893-p001",
-    "next_paragraph_opening": "春，正月，时溥遣兵攻宿州，刺史郭言战死。",
+    "year": 894,
+    "last_reviewed_paragraph": "zztj-v259-y0893-p038",
+    "next_paragraph": "zztj-v259-y0894-p001",
+    "next_paragraph_opening": "春，正月，乙丑朔，赦天下，改元。李茂贞入朝，大陈兵自卫，数日归镇。",
     "batch": null,
     "status": "pending",
-    "last_published_paragraph": "zztj-v259-y0892-p046"
+    "last_published_paragraph": "zztj-v259-y0893-p038"
   },
   "year_coverage": [
     {
@@ -181,6 +181,21 @@
         "content/books/zizhi-tongjian/vol-259/year-0892/part-06"
       ],
       "note": "卷259景福元年46段已全部公开并匿名读回；六批哈希、连续源行和固定提交快照核验通过。"
+    },
+    {
+      "year": 893,
+      "status": "complete_published_verified",
+      "volumes": [
+        259
+      ],
+      "batches": [
+        "content/books/zizhi-tongjian/vol-259/year-0893/part-01",
+        "content/books/zizhi-tongjian/vol-259/year-0893/part-02",
+        "content/books/zizhi-tongjian/vol-259/year-0893/part-03",
+        "content/books/zizhi-tongjian/vol-259/year-0893/part-04",
+        "content/books/zizhi-tongjian/vol-259/year-0893/part-05"
+      ],
+      "note": "卷259景福二年38段已全部公开并匿名读回；五批哈希、连续源行和固定提交快照核验通过。"
     }
   ],
   "legacy_archives": [
@@ -266,6 +281,17 @@
       "primary_paragraph": "zztj-v259-y0892-p035",
       "primary_reading": "己亥，天威等烧营而遁。",
       "required_action": "天威疑前文匡威转录讹字；另本核对前不另建天威人物。"
+    },
+    {
+      "key": "893-li-baozhen-li-zhengbao-name-variant",
+      "status": "pending_identity_evidence",
+      "primary_batch": "content/books/zizhi-tongjian/vol-259/year-0893/part-03",
+      "primary_paragraph": "zztj-v259-y0893-p014",
+      "subject_key": "person_李抱真（李匡威判官）",
+      "primary_reading": "通鉴匡威判官李抱真自京师归为其画夺镇计。",
+      "alternate_source": "resources/derived/twenty-four-histories/19新五代史.jsonl#pdf_page=686",
+      "alternate_reading": "新五代史卷39称同谋客李正抱，687页救王镕时又记正抱被杀。",
+      "required_action": "暂留主书判官身份key；追加686页独立引用并核对姓名异说前，不将正抱自动追加为已确证别名，更不能并早唐同名将。"
     }
   ]
 }

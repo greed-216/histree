@@ -64,3 +64,25 @@ export function enterSubgraph(history: string[], id: string): string[] {
 export function isDoubleActivation(previous: { id: string; time: number; point: Point } | null, id: string, time: number, point: Point) {
   return !!previous && previous.id === id && time - previous.time <= 320 && Math.hypot(point.x - previous.point.x, point.y - previous.point.y) < 12;
 }
+
+// Directed roles always describe the source's relationship to the target.
+const symmetricRelations = new Set(['兄弟', '姐妹', '夫妻', '同盟', 'ally', '敌对', 'enemy', '姻亲', '约为兄弟', '结义兄弟']);
+const inverseRelations: Record<string, string> = {
+  父亲: '子女', 母亲: '子女', 儿子: '父母', 女儿: '父母',
+  养父: '养子女', 养母: '养子女', 假父: '假子',
+  兄长: '弟弟', 哥哥: '弟弟', 弟弟: '兄长',
+  姐姐: '弟妹', 丈夫: '妻子', 妻子: '丈夫',
+};
+export function relationshipPresentation(edge: Edge, nodes: GraphEntry[], label: string, perspective?: string) {
+  const name = (id: string) => {const node = nodes.find(n => n.id === id); return node ? (node.type === 'person' ? node.name : node.title) : '未知条目';};
+  const personRelation = edgeSubject(edge, nodes) === 'person_relationship';
+  const symmetric = personRelation && symmetricRelations.has(edge.type);
+  let source = edge.source, target = edge.target, role = label;
+  // Unspecified gender must not be inferred from a name or a graph endpoint.
+  if (personRelation && !symmetric && perspective === target && inverseRelations[edge.type]) {
+    [source, target] = [target, source]; role = inverseRelations[edge.type];
+  }
+  const sentence = !personRelation ? `${name(source)} → ${name(target)}：${role}`
+    : symmetric ? `${name(source)}与${name(target)}：${role}` : `${name(source)}是${name(target)}的${role}`;
+  return { symmetric, sentence, source, target, role };
+}

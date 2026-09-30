@@ -50,3 +50,15 @@ assert.equal(isDoubleActivation(prior,'q',300,{x:12,y:12}),false,'two different 
 assert.equal(isDoubleActivation(prior,'p',500,{x:12,y:12}),false,'slow clicks are single selections');
 assert.equal(isDoubleActivation(prior,'p',300,{x:40,y:10}),false,'pointer travel is not a double activation');
 console.log('Graph focus tests passed: readable camera, large overview, drill/back scope, double-click versus drag.');
+
+const {relationshipPresentation}=await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
+const father=relationshipPresentation(edges[0],nodes,'父亲');
+assert.equal(father.sentence,'甲是乙的父亲');
+assert.equal(father.symmetric,false);
+assert.equal(relationshipPresentation(edges[0],nodes,'父亲','q').sentence,'乙是甲的子女','Do not infer child gender');
+assert.equal(relationshipPresentation({...edges[0],type:'兄长'},nodes,'兄长','q').sentence,'乙是甲的弟弟');
+assert.equal(relationshipPresentation({...edges[0],type:'从子',source:'q',target:'p'},nodes,'从子').sentence,'乙是甲的从子');
+assert.equal(relationshipPresentation({...edges[0],type:'姻亲'},nodes,'姻亲').symmetric,true);
+assert.equal(relationshipPresentation({...edges[0],type:'约为兄弟'},nodes,'约为兄弟').sentence,'甲与乙：约为兄弟');
+assert.equal(relationshipPresentation(edges[1],nodes,'参与').sentence,'乙 → 先：参与','Event roles use their own semantics');
+console.log('Relationship direction tests passed.');

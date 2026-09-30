@@ -6,7 +6,7 @@ import { Evidence } from '../components/Reading';
 import { useResource } from '../hooks/useResource';
 import { entryPath, entryTitle } from '../lib/reading';
 import { edgeTypeLabel, formatDisplayRange } from '../lib/content';
-import { enterSubgraph, edgeKey, edgeSubject, neighborhood, graphForView, type GraphViewMode, type GraphSelection } from '../lib/graph';
+import { relationshipPresentation, enterSubgraph, edgeKey, edgeSubject, neighborhood, graphForView, type GraphViewMode, type GraphSelection } from '../lib/graph';
 
 export function GraphPage() {
  const {id}=useParams<{id:string}>();
@@ -63,7 +63,7 @@ function GraphExplorer({data,overview}:{data:GraphResponse;overview:boolean}) {
  const selectedIds=selectedNode?neighborhood(filtered,selectedNode.id,1):selectedEdge?new Set([selectedEdge.source,selectedEdge.target]):null;
  const highlighted=query.trim()?new Set(matches.map(n=>n.id)):selectedIds;
  const title=(id:string)=>{const n=data.nodes.find(node=>node.id===id);return n?entryTitle(n):'未知条目';};
- const edgeTitle=(e:Edge)=>`${title(e.source)} → ${title(e.target)}：${edgeTypeLabel(e.type)}`;
+ const edgeTitle=(e:Edge)=>relationshipPresentation(e,data.nodes,edgeTypeLabel(e.type),selectedNode?.id).sentence;
  const visibleIds=new Set(filtered.nodes.map(n=>n.id));
  const selectedHidden=selectedNode&&!visibleIds.has(selectedNode.id)||selectedEdge&&!filtered.edges.some(e=>edgeKey(e)===edgeKey(selectedEdge));
  const adjacent=selectedNode?base.edges.filter(e=>e.source===selectedNode.id||e.target===selectedNode.id):[];
@@ -111,8 +111,8 @@ function GraphExplorer({data,overview}:{data:GraphResponse;overview:boolean}) {
          <h3 className="text-sm font-semibold mt-6 mb-2">相关关系 · {adjacent.length}</h3>
          <div className="space-y-2">{adjacent.length===0&&<p className="text-sm text-stone-500 leading-7">当前视图尚未收录这位人物的关系。可切换另一视图继续查看。</p>}{adjacent.map(e=><button className="block w-full text-left text-sm p-3 bg-stone-50 rounded-lg hover:bg-teal-50" key={edgeKey(e)} onClick={()=>select({kind:'edge',id:edgeKey(e)})}>{edgeTitle(e)}</button>)}</div>
        </>:selectedEdge?<>
-         <div className="mt-4 space-y-3"><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.source})}>{title(selectedEdge.source)}</button><p className="text-sm text-stone-500">↓ {edgeTypeLabel(selectedEdge.type)}</p><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.target})}>{title(selectedEdge.target)}</button></div>
-         <p className="text-sm leading-7 mt-5">{selectedEdge.description || (edgeSubject(selectedEdge,data.nodes)==='person_event'?`当前记录的事件角色为“${edgeTypeLabel(selectedEdge.type)}”，具体依据见下方史料。`:'该关系已记录，进一步说明尚待整理。')}</p>
+         <div className="mt-4 space-y-3"><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.source})}>{title(selectedEdge.source)}</button><p className="text-sm text-stone-500">{relationshipPresentation(selectedEdge,data.nodes,edgeTypeLabel(selectedEdge.type)).symmetric ? "—" : "↓"} {edgeTypeLabel(selectedEdge.type)}</p><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.target})}>{title(selectedEdge.target)}</button></div>
+         <p className="mt-4 font-medium">{relationshipPresentation(selectedEdge,data.nodes,edgeTypeLabel(selectedEdge.type)).sentence}</p><p className="text-sm leading-7 mt-5">{selectedEdge.description || (edgeSubject(selectedEdge,data.nodes)==='person_event'?`当前记录的事件角色为“${edgeTypeLabel(selectedEdge.type)}”，具体依据见下方史料。`:'该关系已记录，进一步说明尚待整理。')}</p>
          <p className="text-xs leading-6 text-stone-500 mt-3">{edgeSubject(selectedEdge,data.nodes)==='person_event'?(()=>{const e=data.nodes.find(n=>(n.id===selectedEdge.source||n.id===selectedEdge.target)&&n.type==='event');return e?.type==='event'?`关联事件：${formatDisplayRange(e.start_year,e.end_year)}`:'';})():'关系有效起止时间尚未单独整理。'}</p>
        </>:<><h2 className="font-serif text-2xl mt-4">从一位人物开始</h2><p className="text-sm leading-7 mt-4">选中人物，画布会自动移到他的位置，并放大到便于阅读的大小。关系线也可以点击，查看双方身份与史料依据。</p><p className="text-sm leading-7 mt-3">双击节点，只看他与相邻人物或事件的子图。可以继续双击探索，或通过上方路径返回。</p></>}
        {(selectedNode||selectedEdge)&&<div className="border-t border-stone-200 mt-6 pt-4"><button className="text-sm text-teal-800 underline" aria-expanded={evidence} onClick={()=>setEvidence(!evidence)}>{evidence?'收起史料依据':'查看史料依据'}</button>{evidence&&(selectedNode?<Evidence key={selectedNode.id} subject={selectedNode.type} id={selectedNode.id}/>:selectedEdge?.id?<Evidence key={edgeKey(selectedEdge)} subject={edgeSubject(selectedEdge,data.nodes)} id={selectedEdge.id}/>:<p className="text-sm mt-3">这条关系的独立出处尚待整理。</p>)}</div>}

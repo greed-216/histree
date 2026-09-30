@@ -31,6 +31,7 @@
 - source_type 使用 primary / reference / scholarship / digital / media；电子文本明确写电子版本，不能冒充核对过的纸本。
 - subject_table 使用 person / event / person_relationship / person_event / event_causality。对应 people/events 等数组中对象的 key。
 - citation 写卷次、纪年、篇章或段落。note 按“原文：…；核对说明：…”保存片段与疑点。field_path 指明支持的字段，例如 biography、start_year、location_name。
+- 关系方向：`person_a —relation_type→ person_b` 表示 person_a 是 person_b 的该关系。兄长、父亲等用具体角色；对称关系保留对称类型。逆向表述由界面生成，不重复录入。历史修正见 `content/revisions/`，沿用原关系 key/UUID。
 - 人物关系的有效时段先明确写进 description，并用对应 claim 支撑；当前没有关系起止年的结构化字段，不能据此生成历史阵营时间切片。
 - 没有证据的事件先后顺序不录为因果；第一批不要求填写 event_causality。
 - 没有审核完成的内容不发布；批次格式本身不代表事实已核对。

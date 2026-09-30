@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState, type PointerEvent } from 'react';
 import * as d3 from 'd3';
 import type { Edge, GraphResponse } from '@histree/shared-types';
-import { fitGraph, focusGraph, isDoubleActivation, edgeCurve, edgeKey, edgeSubject, isDrag, sortedEvents, type GraphEntry, type GraphSelection, type Point } from '../../lib/graph';
+import { relationshipPresentation, fitGraph, focusGraph, isDoubleActivation, edgeCurve, edgeKey, edgeSubject, isDrag, sortedEvents, type GraphEntry, type GraphSelection, type Point } from '../../lib/graph';
 import { entryTitle } from '../../lib/reading';
 import { edgeTypeLabel, formatDisplayRange } from '../../lib/content';
 
@@ -128,7 +128,7 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
      <div className="flex gap-1"><button aria-label="放大图谱" onClick={()=>zoom(1.25)}>＋</button><button aria-label="缩小图谱" onClick={()=>zoom(.8)}>−</button><button onClick={fit}>适应全图</button><button onClick={()=>{clearClick();setPositions({});animateTo(fitGraph(Object.values(layout)));}}>恢复布局</button></div>
      <span className="text-xs text-stone-500">{mode==='timeline'?'事件依次排列，间距不代表时长':'单击聚焦 · 双击展开关系'} · {Math.round(view.k*100)}%</span>
    </div>
-   <div className="history-viewport"><svg ref={svg} viewBox={`0 0 ${W} ${H}`} aria-label={mode==='timeline'?'历史进程图谱':'人物与事件关系图谱'} data-scale={view.k.toFixed(3)} className={`history-graph ${moving?'is-moving':''}`} onPointerDown={start} onPointerMove={move} onPointerUp={end} onPointerCancel={()=>{gesture.current=null;clearClick();setMoving(false);}} onKeyDown={event=>{if(event.key==='Escape'){clearClick();onSelect(null);}}}>
+   <p className="text-xs text-stone-500 mb-2">人物关系箭头由 A 指向 B：A 是 B 的该关系；无箭头表示双方关系。选中连线可查看完整说明与出处。</p><div className="history-viewport"><svg ref={svg} viewBox={`0 0 ${W} ${H}`} aria-label={mode==='timeline'?'历史进程图谱':'人物与事件关系图谱'} data-scale={view.k.toFixed(3)} className={`history-graph ${moving?'is-moving':''}`} onPointerDown={start} onPointerMove={move} onPointerUp={end} onPointerCancel={()=>{gesture.current=null;clearClick();setMoving(false);}} onKeyDown={event=>{if(event.key==='Escape'){clearClick();onSelect(null);}}}>
      <defs><pattern id={`${marker}-grid`} width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#c7cdc7"/></pattern><marker id={marker} markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#7c8a85"/></marker></defs>
      <rect width={W} height={H} fill={`url(#${marker}-grid)`}/>
      <g transform={`translate(${view.x},${view.y}) scale(${view.k})`}>
@@ -140,7 +140,8 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
        <g className="links">
        {validEdges.map((edge,index)=>{
          const active=edgeActive(edge),key=edgeKey(edge);
-         const title=`${entryTitle(data.nodes.find(n=>n.id===edge.source)!)} → ${entryTitle(data.nodes.find(n=>n.id===edge.target)!)}：${edgeTypeLabel(edge.type)}`;
+         const presentation=relationshipPresentation(edge,data.nodes,edgeTypeLabel(edge.type));
+         const title=presentation.sentence;
          const dim=highlighted&&(!highlighted.has(edge.source)||!highlighted.has(edge.target));
          if(mode==='timeline') {
            if(edgeSubject(edge,data.nodes)!=='person_event')return null;
@@ -156,7 +157,7 @@ export function GraphCanvas({data,mode,selection,onSelect,onEnterSubgraph,focusR
          const bend=((siblings.indexOf(edge)-(siblings.length-1)/2)*65 + (index%2===0?18:-18)) * (edge.source < edge.target ? 1 : -1);
          const curve=edgeCurve(at(edge.source),at(edge.target),bend);
          return <g key={key} data-edge={key} role="button" tabIndex={0} aria-label={`查看关系：${title}`} aria-pressed={active} opacity={dim ? .18 : 1} className="graph-edge" onKeyDown={e=>keyboard(e,{kind:'edge',id:key})}>
-           <title>{title}</title><path d={curve.path} className="edge-visible" stroke={active?'#ae7136':'#96a7a1'} strokeWidth={active?3.5:1.5} fill="none" markerEnd={`url(#${marker})`}/>
+           <title>{title}</title><path d={curve.path} className="edge-visible" stroke={active?'#ae7136':'#96a7a1'} strokeWidth={active?3.5:1.5} fill="none" markerEnd={presentation.symmetric ? undefined : `url(#${marker})`}/>
            <path d={curve.path} stroke="transparent" strokeWidth="20" fill="none" className="edge-hit"/>
            <rect x={curve.label.x-45} y={curve.label.y-12} width="90" height="24" rx="10" fill={active?'#ae7136':'#f8f7f0'}/><text x={curve.label.x} y={curve.label.y+4} textAnchor="middle" fontSize="14" fill={active?'white':'#5f7069'}>{edgeTypeLabel(edge.type).slice(0,8)}</text>
          </g>;

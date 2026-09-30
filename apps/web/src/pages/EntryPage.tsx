@@ -1,3 +1,4 @@
+import { relationshipPresentation } from "../lib/graph";
 import { entryTitle, entryPath, safeUrl } from "../lib/reading";
 import { Link, useParams } from "react-router-dom";
 import type { GraphResponse, Topic, Event } from "@histree/shared-types";
@@ -136,6 +137,7 @@ export function EntryPage() {
                 const from = nodes.find((n) => n.id === edge.source);
                 const to = nodes.find((n) => n.id === edge.target);
                 if (!from || !to) return null;
+                const presentation = relationshipPresentation(edge, nodes, edgeTypeLabel(edge.type));
                 return (
                   <div key={edge.id ?? index} className="reading-card">
                     <div className="flex flex-wrap gap-2 items-center text-sm">
@@ -146,7 +148,7 @@ export function EntryPage() {
                         {entryTitle(from)}
                       </Link>
                       <span className="text-slate-500">
-                        → {edgeTypeLabel(edge.type)} →
+                        — {edgeTypeLabel(edge.type)} {presentation.symmetric ? "—" : "→"}
                       </span>
                       <Link
                         to={entryPath(to)}
@@ -155,6 +157,7 @@ export function EntryPage() {
                         {entryTitle(to)}
                       </Link>
                     </div>
+                    <p className="mt-2 text-sm font-medium">{relationshipPresentation(edge, nodes, edgeTypeLabel(edge.type), node.id).sentence}</p>
                     <p className="mt-3 text-sm leading-7 text-slate-600">
                       {edge.description || "关系说明正在整理。"}
                     </p>

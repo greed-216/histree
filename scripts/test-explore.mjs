@@ -1,3 +1,5 @@
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import { PGlite } from "@electric-sql/pglite";
 import { pg_trgm } from "@electric-sql/pglite/contrib/pg_trgm";
 import { readdir, readFile } from "node:fs/promises";
@@ -250,7 +252,7 @@ const { createRemoteLibrary } =
   await import("../apps/api/dsh/remote-library.mjs");
 const { validateAnswer } = await import("../apps/api/dsh/retrieval.mjs");
 const { mkdtemp, rm } = await import("node:fs/promises");
-const dir = await mkdtemp("/private/tmp/histree-remote-test-");
+const dir = await mkdtemp(join(tmpdir(),"histree-remote-test-"));
 const ledger = `${dir}/retrieved`;
 const realFetch = globalThis.fetch;
 const remoteCalls = [];
@@ -619,7 +621,7 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
     );
 
     await page.screenshot({
-      path: "/private/tmp/histree-explore-search.png",
+      path: join(tmpdir(),"histree-explore-search.png"),
       fullPage: true,
     });
     console.log(
@@ -745,7 +747,7 @@ if (process.env.HISTREE_EXPLORE_BROWSER) {
       await ap.getByText("已选：测试出处", { exact: true }).waitFor();
       assert.deepEqual(errors, []);
       await ap.screenshot({
-        path: "/private/tmp/histree-admin-pagination.png",
+        path: join(tmpdir(),"histree-admin-pagination.png"),
         fullPage: true,
       });
       await ctx.close();

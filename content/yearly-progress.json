@@ -6,12 +6,12 @@
   "active_cursor": {
     "volume": 260,
     "year": 896,
-    "last_reviewed_paragraph": "zztj-v260-y0895-p074",
-    "next_paragraph": "zztj-v260-y0896-p001",
-    "next_paragraph_opening": "春，正月，西川将王宗夔攻拔龙州，杀刺史田昉。丁已，刘建锋遣都指挥使马殷将兵讨蒋勋，攻定胜寨，破之。",
+    "last_reviewed_paragraph": "zztj-v260-y0896-p010",
+    "next_paragraph": "zztj-v260-y0896-p011",
+    "next_paragraph_opening": "夏，四月，辛酉，河涨，将毁滑州城，硃全忠命决为二河，夹滑城而东，为害滋甚。",
     "batch": null,
     "status": "pending",
-    "last_published_paragraph": "zztj-v260-y0895-p074"
+    "last_published_paragraph": "zztj-v260-y0896-p010"
   },
   "year_coverage": [
     {
@@ -247,12 +247,16 @@
     },
     {
       "year": 896,
-      "status": "pending",
+      "status": "partial_published_verified",
       "volumes": [
         260
       ],
-      "batches": [],
-      "note": "卷260乾宁三年48段账本已建立，原文件第82—129行，尚未发布。"
+      "batches": [
+        "content/books/zizhi-tongjian/vol-260/year-0896/part-01",
+        "content/books/zizhi-tongjian/vol-260/year-0896/part-02",
+        "content/books/zizhi-tongjian/vol-260/year-0896/part-03"
+      ],
+      "note": "卷260乾宁三年第1—10段三批均连续发布并匿名读回，原文第82—91行、覆盖无重无缺及批次哈希核验通过；全年48段未完成。兵数异记、拆字和人物身份待考保留校核说明。"
     }
   ],
   "legacy_archives": [
@@ -444,6 +448,16 @@
       "primary_paragraph": "zztj-v260-y0895-p066",
       "primary_reading": "华洪大破东川兵于楸林，俘斩数万，拔揪林寒。",
       "required_action": "核纸本及其他电子底本末句揪林寒是否楸林寨等转录讹字；未核前保原摘录，不将疑文静默改成确定寨名。"
+    },
+    {
+      "key": "896-zhang-xiong-guozhou-identity",
+      "status": "pending_identity_review",
+      "primary_batch": "content/books/zizhi-tongjian/vol-260/year-0896/part-02",
+      "primary_paragraph": "zztj-v260-y0896-p004",
+      "subject_key": "person_张雄（果州刺史）",
+      "other_subject_key": "person_张雄",
+      "primary_reading": "果州刺史张雄降于王建。",
+      "required_action": "核果州张雄与已录江淮张雄身份、卒年与任职连接；暂按职位消歧，未核前不因同名合并，也不认定必为异人。"
     }
   ]
 }

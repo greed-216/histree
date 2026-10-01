@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 265,
-    "year": 904,
-    "last_reviewed_paragraph": "zztj-v265-y0904-p016",
-    "next_paragraph": "zztj-v265-y0904-p017",
-    "next_paragraph_opening": "光州叛杨行密，降硃全忠，行密遣兵围之，与鄂州皆告急于全忠。十一月，戊辰，全忠自将兵五万自颍州济淮，军于霍丘，分兵救鄂州。?茨媳澼凸庵葜冓霮构懔戡按兵不出战，全忠分命诸将大掠淮南以困之。",
-    "batch": "content/books/zizhi-tongjian/vol-265/year-0904/part-03",
-    "status": "partial_published_verified",
-    "last_published_paragraph": "zztj-v265-y0904-p016"
+    "year": 905,
+    "last_reviewed_paragraph": "zztj-v265-y0904-p021",
+    "next_paragraph": "zztj-v265-y0905-p001",
+    "next_paragraph_opening": "春，正月，硃全忠遣诸将进兵逼寿州。",
+    "batch": "content/books/zizhi-tongjian/vol-265/year-0904/part-04",
+    "status": "year_904_complete_published_verified",
+    "last_published_paragraph": "zztj-v265-y0904-p021"
   },
   "year_coverage": [
     {
@@ -403,7 +403,7 @@
     },
     {
       "year": 904,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         264,
         265
@@ -414,12 +414,24 @@
         "content/books/zizhi-tongjian/vol-264/year-0904/part-03",
         "content/books/zizhi-tongjian/vol-265/year-0904/part-01",
         "content/books/zizhi-tongjian/vol-265/year-0904/part-02",
-        "content/books/zizhi-tongjian/vol-265/year-0904/part-03"
+        "content/books/zizhi-tongjian/vol-265/year-0904/part-03",
+        "content/books/zizhi-tongjian/vol-265/year-0904/part-04"
       ],
-      "note": "卷264的904年11段及卷265第1—16段已连续发布并匿名读回；卷265第17段原TXT有疑似乱码须对勘。",
+      "note": "卷264的904年11段与卷265的904年21段均连续发布并匿名读回；卷265第17段原TXT乱码仅保留可辨引文，损坏字串待纸本校。",
       "completed_volumes": [
-        264
+        264,
+        265
       ]
+    },
+    {
+      "year": 905,
+      "status": "not_started",
+      "volumes": [
+        265
+      ],
+      "batches": [],
+      "note": "卷265第30—89行共60段，首段待处理。",
+      "completed_volumes": []
     }
   ],
   "legacy_archives": [
@@ -1009,6 +1021,13 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-262/year-0901/part-07",
       "primary_paragraph": "zztj-v262-y0901-p049",
       "required_action": "卷262原文件第93—94行为空行，不计入史料段落；901年计53个非空段。通鉴记徐彦若遗表荐刘隐权留后，新唐书记刘隐自称留后，两种叙事并列；钟传少时猎虎为追叙，确年未定。"
+    },
+    {
+      "key": "904-part04-source-garble-and-chronology",
+      "status": "open",
+      "primary_batch": "content/books/zizhi-tongjian/vol-265/year-0904/part-04",
+      "primary_paragraph": "zztj-v265-y0904-p017",
+      "required_action": "卷265第17段底本在鄂州分兵之后有损坏字串，未据其建立事实；待纸本校勘。戊辰/旧五代史戊寅、陈璋降杨之十二月/新唐书八月并列。第21段徐彦若遗表荐刘隐亦见901年卷262第7批，需将904年重复事件合并到既有 event_zztj_262_0901_xu_recommends_liu_yin；其余追叙及刘隐正式受任年另核。"
     }
   ]
 }

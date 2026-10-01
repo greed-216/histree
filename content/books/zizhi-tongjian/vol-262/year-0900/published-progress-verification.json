@@ -1,25 +1,26 @@
 {
-  "verified_at": "2026-10-01T13:49:56.832148+00:00",
+  "verified_at": "2026-10-01T13:58:35.875451+00:00",
   "status": "partial_published_verified",
-  "paragraphs_published": 8,
+  "paragraphs_published": 16,
   "paragraphs_total": 32,
   "batches": [
-    "content/books/zizhi-tongjian/vol-262/year-0900/part-01"
+    "content/books/zizhi-tongjian/vol-262/year-0900/part-01",
+    "content/books/zizhi-tongjian/vol-262/year-0900/part-02"
   ],
   "public_row_occurrences": {
-    "source": 2,
-    "person": 17,
-    "event": 17,
+    "source": 9,
+    "person": 38,
+    "event": 48,
     "person_relationship": 1,
-    "person_event": 27,
-    "fact_claim": 83
+    "person_event": 88,
+    "fact_claim": 241
   },
-  "source_snapshots_verified": 2,
+  "source_snapshots_verified": 9,
   "checks": [
-    "publication payload hash and anonymous readback verified",
-    "two source snapshot SHA and fixed commit bytes verified",
-    "continuous original lines 6 through 13 covered exactly once",
-    "all 32 ledger texts match original volume 262; later 24 paragraphs pending"
+    "two publication payload hashes and anonymous readbacks verified",
+    "all nine source snapshot occurrences SHA and fixed commit bytes verified",
+    "continuous original lines 6 through 21 covered exactly once",
+    "all 32 ledger texts match original volume 262; later 16 paragraphs pending"
   ],
-  "next_paragraph": "zztj-v262-y0900-p009"
+  "next_paragraph": "zztj-v262-y0900-p017"
 }

@@ -10,15 +10,18 @@ P=Path(args.batch).resolve().parent
 subprocess.run([sys.executable,str(ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
 batch=json.loads((P/'content-batch.json').read_text());coverage=json.loads((P/'coverage.json').read_text())
 assert not batch['topics'], 'Book publisher does not yet publish topics'
-assert coverage['paragraphs'] and coverage['primary_source_key'] in {r['key'] for r in batch['sources']}
+source_keys={r['key'] for r in batch['sources']}
+primary_keys=set(coverage.get('primary_source_keys',[coverage['primary_source_key']]))
+assert coverage['paragraphs'] and primary_keys and coverage['primary_source_key'] in primary_keys
+assert primary_keys <= source_keys, 'Missing primary source'
 supplements={x['claim_key']:x for x in coverage['supplements']}
 assert len(supplements)==len(coverage['supplements']), 'Duplicate supplement mapping'
 for c in batch['claims']:
- if c['source_key']!=coverage['primary_source_key']:
+ if c['source_key'] not in primary_keys:
   extra=supplements[c['key']]
   assert extra['primary_paragraph_id'] in coverage['paragraphs'] and extra['subject_key']==c['subject_key']
   assert extra['source_book'] and extra['relation'] in ['corroborates','adds','conflicts']
-assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key']!=coverage['primary_source_key']}, 'Unmatched supplement mapping'
+assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] not in primary_keys}, 'Unmatched supplement mapping'
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}
 env=dict(l.strip().split('=',1) for l in (ROOT/'apps/api/.env').read_text().splitlines() if '=' in l and not l.startswith('#'))
 headers={'apikey':env['SUPABASE_SERVICE_ROLE_KEY'],'Authorization':'Bearer '+env['SUPABASE_SERVICE_ROLE_KEY'],'Content-Type':'application/json','Prefer':'return=representation'}

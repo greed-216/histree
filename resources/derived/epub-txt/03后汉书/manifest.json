@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "后汉书",
+  "book_number": 3,
+  "epub_file": "resources/originals/twenty-four-histories/backup/後漢書.epub",
+  "epub_sha256": "4135e746e7415d60c845310eb5d33dd76bf7e9f1d0917c892e0ea1e86aa5047a",
+  "txt_file": "resources/originals/twenty-four-histories/03后汉书-EPUB全文.txt",
+  "txt_sha256": "6521ac4b3664ab552e94c30e0d5905716a32966227cd19485c3d45bc3040bcf0",
+  "encoding": "utf-8",
+  "expected_volumes": 120,
+  "volume_sections": 130,
+  "all_source_sections": 132,
+  "mapped_paragraphs_including_headings": 15989,
+  "restored_variant_records": 1580,
+  "issue_records": 7,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "4b2518f3da67f15b2bd8d92a757bc1fa0fc1039bee7e598efa4062cbff70e018",
+    "paragraphs.jsonl.gz": "967253724e01d12fba016c8ebc22714b32b03152c610ffebed0bbc95246af8cb",
+    "excluded.json.gz": "da1ac0b7cc84e53f8f88bd4533dfbf482ae7735445130d3498a784a80ffb10a5",
+    "restored-variants.json.gz": "27647ceff5993a3e031985a1495c4e46c68ea776a20d3266462430e4a30a9fd1",
+    "epub-metadata.json.gz": "6b7a0102db9a56269f2f5b8d3ffc719ff0854431a9fd20090aa8c80751ce77c8",
+    "issues.json": "0d17dc00ae1302661bca14e516477684ef91482e545e5643bc078aa96d1e9770"
+  },
+  "previous_conversion_archives": []
+}

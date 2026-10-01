@@ -35,6 +35,26 @@ for row in ins.values():
  if 'extracted_pages_file' in row:
   pages=[json.loads(l) for l in (ROOT/row['extracted_pages_file']).read_text().splitlines()];assert len(pages)==row['pages'];assert [p['pdf_page'] for p in pages]==list(range(1,row['pages']+1))
 checks.append('旧五代史1667页、新五代史1627页已逐页提取，页码连续、数量匹配')
-save('library.json',dict(collected_at='2026-09-29',unique_works=len(books),books=books,alternate_editions=[pg],validation=checks))
+alternates=[pg]
+epub_catalog=B/'derived/epub-txt/catalog.json'
+if epub_catalog.exists():
+ converted=json.loads(epub_catalog.read_text())['books']
+ normalized_catalog=B/'derived/history-library/catalog.json'
+ normalized={b['book']:b['book_key'] for b in json.loads(normalized_catalog.read_text())['books']} if normalized_catalog.exists() else {}
+ for source in converted:
+  key='history-'+str(source['book_number']).zfill(2)
+  old=next((b for b in books if b['key']==key),None)
+  if old:
+   alternates.append(dict(old,role='backup_edition'))
+   books.remove(old)
+  books.append(dict(key=key,title=source['book'],periods=old['periods'] if old else ['清'],format='TXT',
+                    file=source['txt_file'],sha256=source['txt_sha256'],
+                    source_epub_file=source['epub_file'],source_epub_sha256=source['epub_sha256'],
+                    conversion_manifest='resources/derived/epub-txt/'+str(source['book_number']).zfill(2)+source['book']+'/manifest.json',
+                    normalized_index='resources/derived/history-library/'+normalized[source['book']]+'/index.json' if source['book'] in normalized else None,
+                    role='prepared_deferred' if source['book']=='清史稿' else 'foundation',
+                    edition_status='用户提供的EPUB快照转换；纸本与异文待校核',status='选定TXT与规范化分段已核验'))
+ checks.append('选定25份EPUB转换TXT为当前工作来源；PDF作为备份版本；清史稿仅预处理')
+save('library.json',dict(collected_at='2026-09-29',selected_sources_updated_at='2026-10-01',unique_works=len(books),books=books,alternate_editions=alternates,validation=checks))
 summary=['# 采集与质量报告','','日期：2026-09-29。已归档 **33种书**：二十四史24种、用户提供的资治通鉴1种、五代十国补充资料8种；不同网站或版本的副本不重复计数。','', '## 已取得资料','','| 类别 | 结果 |','| --- | --- |','| 二十四史PDF | 24/24，原PDF合计187,812,076字节，约188 MB |','| 资治通鉴TXT | 原件9,394,794字节；识别并拆分294个卷标题；底本未注明 |','| 五代会要 | 30卷及提要，31个文本文件，Kanripo WYG |','| 十国春秋 | 114卷及卷首，115个文本文件，Kanripo WYG |','| 吴越备史 | 4个文本文件，Kanripo SBCK |','| 蜀梼杌 | 上下卷、提要、后序，4个文本文件，Kanripo WYG |','| 马氏南唐书 | 30卷及卷首，31个文本文件，Kanripo SBCK |','| 陆氏南唐书 | 17个文本文件，内部含本纪3卷、列传15卷及序、音释；同号纪传合并在文件中，Kanripo SBCK |','| 北梦琐言 | 20卷及卷首，21个文件，Kanripo WYG；另存Gutenberg全文副本 |','| 五代史补 | 已取得含五卷的全览文本，维基文库四库全书本电子转录 |','','WYG、SBCK是来源仓库的版本声明，分别为文渊阁四库全书、四部丛刊。保留原文元数据与页码标记，但本轮没有对照相应底本书页校勘。','','## 核验结果','']+['- '+c for c in checks]+['','## 重要发现与限制','','- PDF抽查显示旧五代史为现代电子排印版，可提取文字；首尾抽查没有确认出版版本，不能标为古籍影印或某出版社点校本。','- 用户TXT正文存在明显疑似转录异常，例如部分卷首“起”作“赵”或“趣”；原件保留，作为待核问题，不自动订正。','- 294个卷标题仅证明结构检查通过，不能证明每卷无删节或错字；末卷含进书表等附文。','- 维基文库采集遇429限流后停止。已下载页面见catalog/wikisource-downloaded-pages.json；旧分卷采集记录中的失败项属于该来源的副本缺口，主资料已由Kanripo或合并文本补足。','- 十国春秋是后世汇编；五代史补、北梦琐言有笔记性质，后续逐条核对，不把重复转引视作独立证据。','- 已建立书籍级时代标签与后梁工作分期，尚未给所有正文段落精确断代，也未生成或发布新的人物、关系、事件。','','## 下一步','','从907—908年开始：通鉴卷266及267的908年段，配合新旧五代史对应本纪、列传。按PROCESSING.md生成原文对照稿和草稿JSON；审阅后走现有导入流程。']
 (B/'COLLECTION_REPORT.md').write_text('\n'.join(summary)+'\n');print('Validated',len(books),'unique works;',len(wiki),'Wikisource snapshots')

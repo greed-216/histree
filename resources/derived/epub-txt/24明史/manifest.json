@@ -1,0 +1,49 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "明史",
+  "book_number": 24,
+  "epub_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+  "epub_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42",
+  "txt_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+  "txt_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+  "encoding": "utf-8",
+  "expected_volumes": 332,
+  "volume_sections": 332,
+  "all_source_sections": 333,
+  "mapped_paragraphs_including_headings": 35153,
+  "restored_variant_records": 2069,
+  "issue_records": 86,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": {
+    "file": "resources/originals/twenty-four-histories/backup/previous-conversions/24明史/fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab.txt",
+    "sha256": "fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab"
+  },
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "1264367e873b4a1e658e9f5e3976c952c94179b4eaad157c3b7bb878fe8d12d6",
+    "paragraphs.jsonl.gz": "26a9034ab423f23067fef2c908e96609d329dd69224a7b6e0d8337d4ba0e04a0",
+    "excluded.json.gz": "37cf6614690d0fffd3a5696a8f01553d05e790df2b67a62998ec50b784659075",
+    "restored-variants.json.gz": "9713dc7e12584ea629faa961d1b1c233dcac0c348aad02c3177c4ac2109cc767",
+    "epub-metadata.json.gz": "9611b85d5cf8dcda34b02a7dcba4c6c5b25bae50e0d2cbee5ae3141ba750f11d",
+    "issues.json": "b1f9cdb674d6dbea453398c0b03c5d75ccb3b119ca7df3eec0ac9a052b433ebb"
+  },
+  "previous_conversion_archives": [
+    {
+      "file": "resources/originals/twenty-four-histories/backup/previous-conversions/24明史/fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab.txt",
+      "sha256": "fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab"
+    }
+  ]
+}

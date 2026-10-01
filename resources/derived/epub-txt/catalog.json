@@ -1,0 +1,1170 @@
+{
+  "format_version": "history-epub-txt-catalog-v1",
+  "books": [
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "史记",
+      "book_number": 1,
+      "epub_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+      "epub_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+      "txt_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+      "txt_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+      "encoding": "utf-8",
+      "expected_volumes": 130,
+      "volume_sections": 130,
+      "all_source_sections": 131,
+      "mapped_paragraphs_including_headings": 7856,
+      "restored_variant_records": 3556,
+      "issue_records": 2,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "395d45745f4bb5d5236e244f1ee75306416b7ba9d92b5ae61f371be85a072949",
+        "paragraphs.jsonl.gz": "b81213f6182bbc571c09fc85fe1fd4548de8276bb8e8fc8bc498d443b674db63",
+        "excluded.json.gz": "043068acedc3e2013a323da074d47aa6af6847750b23643e50f5768696cb32ac",
+        "restored-variants.json.gz": "1e9ea3df71b0bc4f40c1c1ce1a2e453bf80c12960d7757d5acc2a4728ccbfc12",
+        "epub-metadata.json.gz": "73c932cb13b4582671caa0bcae135185a24382f63a746adad525d0be61cff9f9",
+        "issues.json": "951658aa80b7f658adb02c8ea516e4c0d62b231131cd8099fa9b1d55c2de3d44"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "汉书",
+      "book_number": 2,
+      "epub_file": "resources/originals/twenty-four-histories/backup/漢書.epub",
+      "epub_sha256": "27882561a22c9b7bc05288340ef8973abe38cfcf714d2a250fb29c83a27ded10",
+      "txt_file": "resources/originals/twenty-four-histories/02汉书-EPUB全文.txt",
+      "txt_sha256": "f5d07e926ca15d339cc2d68859dd81122225c360a6b1ab205c49f1e8527ac6e5",
+      "encoding": "utf-8",
+      "expected_volumes": 100,
+      "volume_sections": 108,
+      "all_source_sections": 111,
+      "mapped_paragraphs_including_headings": 9890,
+      "restored_variant_records": 998,
+      "issue_records": 1,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": {
+        "file": "resources/originals/twenty-four-histories/backup/previous-conversions/02汉书/d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449.txt",
+        "sha256": "d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449"
+      },
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "dee1dc642a45f019bcd457d0d8c225d20ce3088279d28c62bc892fdd2122160b",
+        "paragraphs.jsonl.gz": "4bf92df132a7fb235b37258bd1adca22699687664c514d008f002d888b72abfb",
+        "excluded.json.gz": "d283af1d791e9273de90b405939840c85f75d1a27aea91f577869a87e64e6da4",
+        "restored-variants.json.gz": "282bd930b004f91ab149454d1beee0f8d6912d204b7fbbddfd49a0052cdc8ffe",
+        "epub-metadata.json.gz": "307b1521a72ef1d034009723550627311a20c3827a44c8bc32d6d1f96aa75f52",
+        "issues.json": "d6be1cba5a4f543959e02b8aad8e415607086af84b08a44b13243494282c631a"
+      },
+      "previous_conversion_archives": [
+        {
+          "file": "resources/originals/twenty-four-histories/backup/previous-conversions/02汉书/d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449.txt",
+          "sha256": "d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449"
+        }
+      ]
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "后汉书",
+      "book_number": 3,
+      "epub_file": "resources/originals/twenty-four-histories/backup/後漢書.epub",
+      "epub_sha256": "4135e746e7415d60c845310eb5d33dd76bf7e9f1d0917c892e0ea1e86aa5047a",
+      "txt_file": "resources/originals/twenty-four-histories/03后汉书-EPUB全文.txt",
+      "txt_sha256": "6521ac4b3664ab552e94c30e0d5905716a32966227cd19485c3d45bc3040bcf0",
+      "encoding": "utf-8",
+      "expected_volumes": 120,
+      "volume_sections": 130,
+      "all_source_sections": 132,
+      "mapped_paragraphs_including_headings": 15989,
+      "restored_variant_records": 1580,
+      "issue_records": 7,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "4b2518f3da67f15b2bd8d92a757bc1fa0fc1039bee7e598efa4062cbff70e018",
+        "paragraphs.jsonl.gz": "967253724e01d12fba016c8ebc22714b32b03152c610ffebed0bbc95246af8cb",
+        "excluded.json.gz": "da1ac0b7cc84e53f8f88bd4533dfbf482ae7735445130d3498a784a80ffb10a5",
+        "restored-variants.json.gz": "27647ceff5993a3e031985a1495c4e46c68ea776a20d3266462430e4a30a9fd1",
+        "epub-metadata.json.gz": "6b7a0102db9a56269f2f5b8d3ffc719ff0854431a9fd20090aa8c80751ce77c8",
+        "issues.json": "0d17dc00ae1302661bca14e516477684ef91482e545e5643bc078aa96d1e9770"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "三国志",
+      "book_number": 4,
+      "epub_file": "resources/originals/twenty-four-histories/backup/三國志.epub",
+      "epub_sha256": "bcfd1bab650983ddcc1e8de5631f5b22d8903df5919ebb7413702c85bc2863fa",
+      "txt_file": "resources/originals/twenty-four-histories/04三国志-EPUB全文.txt",
+      "txt_sha256": "7ea8526e00e84d80d913137fd9e46e7c5ae356b7fb01dfd7603db2cd8d649f4f",
+      "encoding": "utf-8",
+      "expected_volumes": 65,
+      "volume_sections": 65,
+      "all_source_sections": 68,
+      "mapped_paragraphs_including_headings": 3367,
+      "restored_variant_records": 1600,
+      "issue_records": 1,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "3141f8ff69bd3736efd03cc45b8476c5028e38a15981a455a175616362e7074f",
+        "paragraphs.jsonl.gz": "73552c2f391f61605de51164febde598c2fa8ef2de3a89cf095218e49f038c92",
+        "excluded.json.gz": "aff11199e64fa8a1d48028f93e80ee3a244ef2dbf3455da4cf25820718d6a5ea",
+        "restored-variants.json.gz": "83f7884adcbd2f99777e7f4f277a365113213860e4d96e91eaba3185038ed326",
+        "epub-metadata.json.gz": "af0c06e65793ac6b675cd7c171e4c31e50720ae2f58d8db5a8e6b89ebc3064fc",
+        "issues.json": "0dea9d50c6ecfebe2e69e13c6c97771840e0c0b493887807de2efd1207975bfa"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "晋书",
+      "book_number": 5,
+      "epub_file": "resources/originals/twenty-four-histories/backup/晉書.epub",
+      "epub_sha256": "84b4bbc8123a44f44a90a2a8ab34eaef5cf735785c1be8925f0b8ec2c6be11c7",
+      "txt_file": "resources/originals/twenty-four-histories/05晋书-EPUB全文.txt",
+      "txt_sha256": "1f45414830715ea85aca2ddd2801736bc7554177d3139453a12eaf54fb45e465",
+      "encoding": "utf-8",
+      "expected_volumes": 130,
+      "volume_sections": 130,
+      "all_source_sections": 131,
+      "mapped_paragraphs_including_headings": 11886,
+      "restored_variant_records": 1459,
+      "issue_records": 10,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "e6f0d1bf8f2c5220262fdbb74aa6590999c259647fee41f24bcaa0038b96e612",
+        "paragraphs.jsonl.gz": "d6ff1bdb881097c4dd947cce59349717b3c57ad19f567476b02ccb103469b21e",
+        "excluded.json.gz": "7b4f1b0dc43c006bacf8e63ab5b4b9ca5fe5af5ed30c1a1ed3de227150003dca",
+        "restored-variants.json.gz": "bbfa8abf028f842eeffe4789d4603e44ab402e22f9a64f7a784cb2864b6367bf",
+        "epub-metadata.json.gz": "a3977951b09fa3de96cbf764b67bdbf037db9ef638c628c8b9c1a5df61679fcd",
+        "issues.json": "7635271fef9957b4d5b80b1399bec56df485b24a20abdccbbe66e012e5b63830"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "宋书",
+      "book_number": 6,
+      "epub_file": "resources/originals/twenty-four-histories/backup/宋書.epub",
+      "epub_sha256": "b4115d54a6022254bc389a6155062dc17fe6afb7134216fdf4a53eba78ab380a",
+      "txt_file": "resources/originals/twenty-four-histories/06宋书-EPUB全文.txt",
+      "txt_sha256": "1f581c29ea046b73033eac0574163e891426e25125a2a1b352bc1107c7d92b1a",
+      "encoding": "utf-8",
+      "expected_volumes": 100,
+      "volume_sections": 100,
+      "all_source_sections": 101,
+      "mapped_paragraphs_including_headings": 13497,
+      "restored_variant_records": 1348,
+      "issue_records": 1,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "99773d67b01b78212901fd4a70dd7472ebd0883df82bd99c06f0dc6b4cc9d180",
+        "paragraphs.jsonl.gz": "2c18845d258df529cb49fd55ce5ca3ef343efe025c487dd01a426d87f68a3714",
+        "excluded.json.gz": "7ce39516798f7a16305c34d4f72c5b4d9b3fd9e52fe5bdb3e2484a51fe31c6f4",
+        "restored-variants.json.gz": "db1bb1c757aacf8efd50f579c8b2f95b9d29f5f2760626d798b657535f48a4bc",
+        "epub-metadata.json.gz": "955ef7563de0ef33104cf4a90fa5d2f7799179fcfac6fe337a53c68440d512f0",
+        "issues.json": "409b3287e311082e4fe9a42fa783d06fcf8999a77ca52f82087dade83600fddc"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "南齐书",
+      "book_number": 7,
+      "epub_file": "resources/originals/twenty-four-histories/backup/南齊書.epub",
+      "epub_sha256": "d16a67f185f19af042460903791511578d1afd89c042d70484d731932915f49a",
+      "txt_file": "resources/originals/twenty-four-histories/07南齐书-EPUB全文.txt",
+      "txt_sha256": "83d4715481f63afc2d560ce2f7db1f8ce0d29089f4d35d50c1049b5c6dfc8f85",
+      "encoding": "utf-8",
+      "expected_volumes": 59,
+      "volume_sections": 59,
+      "all_source_sections": 63,
+      "mapped_paragraphs_including_headings": 4975,
+      "restored_variant_records": 24,
+      "issue_records": 18,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "1e68e00609aea860da82a518f4b8e12ba704c327d2c20d932554a5a3e285444a",
+        "paragraphs.jsonl.gz": "3459ceb81994ac9a126124cb80fe3f40a4ffb91f7f2d416beaf39d5fbe6a3fdb",
+        "excluded.json.gz": "159e4d0076891dc314083878a7537ff23a56a267440b93a8ef348eed440b05b2",
+        "restored-variants.json.gz": "babe7074b925186fbe1e127f6e1f3fe43952613f8273e3c8b2b9ec22ccf2df71",
+        "epub-metadata.json.gz": "e1250c58cb44e2a38877d3fbebc13728b70ef8525904eca59c179cb052a062b1",
+        "issues.json": "ba56c1543c6c56f022519dffa2d02be5924c65290f99ab7c16f316d519ff8fdd"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "梁书",
+      "book_number": 8,
+      "epub_file": "resources/originals/twenty-four-histories/backup/梁書.epub",
+      "epub_sha256": "503fd4bb1047e050b6ff0844b836192791c90ce44e378d131d8a04bba3601655",
+      "txt_file": "resources/originals/twenty-four-histories/08梁书-EPUB全文.txt",
+      "txt_sha256": "2cc9ba431a3b30674f7befd5e01863f49ac79ec9bc2d6aae0fbd4c702c8522f5",
+      "encoding": "utf-8",
+      "expected_volumes": 56,
+      "volume_sections": 56,
+      "all_source_sections": 57,
+      "mapped_paragraphs_including_headings": 2931,
+      "restored_variant_records": 36,
+      "issue_records": 0,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "3d9467e3d3826655ef443ae3b91e1a686ca8564504b32bfeae2d4558e4c24492",
+        "paragraphs.jsonl.gz": "ce9f9da117c27fc61e624a291bd804595c88ffe8299cd8ec454a4e75119753f5",
+        "excluded.json.gz": "0f2bc30d63ecbff130d1711bd60eb19048dc861c136e115504cca8efeaaa9178",
+        "restored-variants.json.gz": "0043d988eb092974f38e26d3603652749cb52e6b99b9a85f210241b3eab90ad0",
+        "epub-metadata.json.gz": "4e03893fe9f71fcf666311481ed79c22286859ccfd0aa5eea04fb08b20955590",
+        "issues.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "陈书",
+      "book_number": 9,
+      "epub_file": "resources/originals/twenty-four-histories/backup/陳書.epub",
+      "epub_sha256": "0b7cb030c2e8b386bec73c2df90d0601ca40cc134b122d3a6392d9ec511f0de4",
+      "txt_file": "resources/originals/twenty-four-histories/09陈书-EPUB全文.txt",
+      "txt_sha256": "34468e6f174e692c56f0cdb8a8fb77ab291975eaaf00e6e939fc915bcdd33735",
+      "encoding": "utf-8",
+      "expected_volumes": 36,
+      "volume_sections": 36,
+      "all_source_sections": 38,
+      "mapped_paragraphs_including_headings": 2220,
+      "restored_variant_records": 1,
+      "issue_records": 17,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "50fe4e0b9039338a61453e3d4dfb6d16bb9fa275e06cc2491dc09cb00c2f0320",
+        "paragraphs.jsonl.gz": "136fc226f521351072f8094feac3f7a41f6a9de52dba269b6ad9f79b9ae37780",
+        "excluded.json.gz": "4b0587fbca7aa77d910925457b64574a2141c180d2332678e0201f84763b0f65",
+        "restored-variants.json.gz": "1cb628fd036f42a60132be70148c057817164c5e15f22bc963efd599cb124b76",
+        "epub-metadata.json.gz": "d9a1aa0ea7a9cbe68cea642a732ac1f16d18444b09b67d68164df20f6a7cfed7",
+        "issues.json": "e8bf23929903a5681404ddff18f83b83468685a345ff7225f0f50be88f32dc2a"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "魏书",
+      "book_number": 10,
+      "epub_file": "resources/originals/twenty-four-histories/backup/魏書.epub",
+      "epub_sha256": "98164d447df5d9c74f0a96ae53c9d6a05d7ab245c5c066838a1f307129a7ac86",
+      "txt_file": "resources/originals/twenty-four-histories/10魏书-EPUB全文.txt",
+      "txt_sha256": "eb1517b66cf69eae9957d23b22036de73e144f56b40906026804558065c0bc9a",
+      "encoding": "utf-8",
+      "expected_volumes": 114,
+      "volume_sections": 130,
+      "all_source_sections": 132,
+      "mapped_paragraphs_including_headings": 15893,
+      "restored_variant_records": 6,
+      "issue_records": 3,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "15bb8fd72f912721e708f3637a59056988f70688f3163ac34cf918cd58d941ba",
+        "paragraphs.jsonl.gz": "58a29aaeb0b72a6cd286d4e4c2dfff6a17ef898dcd43c4ec141f64e0ebabfeae",
+        "excluded.json.gz": "e1f0ca898b70d8c55e1b77cc8024073c7c73655eb4d458e212f57bab7d22dfa5",
+        "restored-variants.json.gz": "b7bb19786058fec9e80a7aec57eb9a686262a00f4ebd19c4e93f148a175ead10",
+        "epub-metadata.json.gz": "45ac62d1e1e37eb654aa9a848514288ad0707c98808b947e6ff850af8dd0318c",
+        "issues.json": "bb9876f1bf583254be53880c7aebb429d4d2bbd048011683d610883840390d87"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "北齐书",
+      "book_number": 11,
+      "epub_file": "resources/originals/twenty-four-histories/backup/北齊書.epub",
+      "epub_sha256": "7ff92729cdb31c0e2f35b9117d72d59163849fe280dcc4a08b0dca3c4be6d52e",
+      "txt_file": "resources/originals/twenty-four-histories/11北齐书-EPUB全文.txt",
+      "txt_sha256": "9ff895a69ec20b79cf59c453e0de68ae5a8684c51e65407fe413cf8e074983f1",
+      "encoding": "utf-8",
+      "expected_volumes": 50,
+      "volume_sections": 50,
+      "all_source_sections": 51,
+      "mapped_paragraphs_including_headings": 1915,
+      "restored_variant_records": 913,
+      "issue_records": 0,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": {
+        "file": "resources/originals/twenty-four-histories/backup/previous-conversions/11北齐书/05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9.txt",
+        "sha256": "05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9"
+      },
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "5c7a0fb4306a2682c647f9904f55a9a004747fa83aa05c0c3963fb9476d28e99",
+        "paragraphs.jsonl.gz": "781aaf34e5b674ae841d3d98b5f214e2552a940af4d7586e6d968a3affb6eaf0",
+        "excluded.json.gz": "79e5e8ae56bec9bcef56c79cd5e7d5e571276d470da6280ecf7d28cd103b6603",
+        "restored-variants.json.gz": "3487d715bd2fc540cbaa505c74202d1bed6619c0acc3c605399f28e6b5174755",
+        "epub-metadata.json.gz": "33f61a11d8336a7a87834e897659bdf9b44c652ba9274ec5146e2042651e2d2a",
+        "issues.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "previous_conversion_archives": [
+        {
+          "file": "resources/originals/twenty-four-histories/backup/previous-conversions/11北齐书/05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9.txt",
+          "sha256": "05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9"
+        }
+      ]
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "周书",
+      "book_number": 12,
+      "epub_file": "resources/originals/twenty-four-histories/backup/周書.epub",
+      "epub_sha256": "d44166d6a13f5027ef17e5f6af843671cfa5d1d4fdf1f7e3afba1bd45d707f36",
+      "txt_file": "resources/originals/twenty-four-histories/12周书-EPUB全文.txt",
+      "txt_sha256": "750f05874a785d4da34933733a405caca92360b189c3d76b75a680a23bfd5558",
+      "encoding": "utf-8",
+      "expected_volumes": 50,
+      "volume_sections": 50,
+      "all_source_sections": 51,
+      "mapped_paragraphs_including_headings": 4084,
+      "restored_variant_records": 182,
+      "issue_records": 1,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "b9d5a2355b0b0b5febed70620489d2a18f067e906f6c530caa39becff656a05d",
+        "paragraphs.jsonl.gz": "070304e48b990dae1a4631a8223841313259846be419b13fd9b96a6970c3c277",
+        "excluded.json.gz": "125ca1c18eb40581c33cbb51e88b0037be0fb5da6ae4094af4d20c8513ee1792",
+        "restored-variants.json.gz": "8dc84b6c0036c458390d2265bcf2edf965aab6e657dfff465fa488d582eb6659",
+        "epub-metadata.json.gz": "5654c257b5183e12a254aad3afe79146555f00ee419dd6d01fc00763182e506d",
+        "issues.json": "f513800eef9528381fad335ba5182f9350aa405702bf6c78b58f02bceba77491"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "隋书",
+      "book_number": 13,
+      "epub_file": "resources/originals/twenty-four-histories/backup/隋書.epub",
+      "epub_sha256": "fada5d4edfe1f8c728c2f972bdea793a0714ff30b65d324a642391539d78fdb6",
+      "txt_file": "resources/originals/twenty-four-histories/13隋书-EPUB全文.txt",
+      "txt_sha256": "5feb2a3f5b33af366e0053b4a99133cca09689269b7571990386181a268c7884",
+      "encoding": "utf-8",
+      "expected_volumes": 85,
+      "volume_sections": 85,
+      "all_source_sections": 87,
+      "mapped_paragraphs_including_headings": 11005,
+      "restored_variant_records": 852,
+      "issue_records": 5,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "1b1e2bc29ee6e38029b0cfa70781be65bf0cec7c1a79708e1971dc8e69d06ca6",
+        "paragraphs.jsonl.gz": "700000a0b766a97851d24e4a3cbd68b841ea0d79f2dd72415e2ca37654fcd0bd",
+        "excluded.json.gz": "dfacf47f350d09c95e80eafd0eee2c7b936ccee3c233c970c4e75ab308c2241b",
+        "restored-variants.json.gz": "b6688a1bc0cecbaa93eabdbeea75b5909e6117f9f8640b34e64826e7ce19b3c6",
+        "epub-metadata.json.gz": "f6a7205a86f3916d42e85209e51656d7ca2a7a85cea679b3f0501d52205b3f3f",
+        "issues.json": "acdad2e8832b2004db61204db0720856d5e3975a2ac1a21461961602cdd2e234"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "南史",
+      "book_number": 14,
+      "epub_file": "resources/originals/twenty-four-histories/backup/南史.epub",
+      "epub_sha256": "1b4d0cb69ae2e7c9d0cd8d730b6f4f510892f2f2c4d9556688c8de14eb012294",
+      "txt_file": "resources/originals/twenty-four-histories/14南史-EPUB全文.txt",
+      "txt_sha256": "7e941e5dee50de6e6b10c21b3457463b8a9a8d240dc8a57398a5f5bacbb2b28a",
+      "encoding": "utf-8",
+      "expected_volumes": 80,
+      "volume_sections": 80,
+      "all_source_sections": 81,
+      "mapped_paragraphs_including_headings": 8187,
+      "restored_variant_records": 1828,
+      "issue_records": 0,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "a26d55fc5fe5a8eaafc0de26870dee13161c6a59a583a2712350200cdc1c2e7b",
+        "paragraphs.jsonl.gz": "70c5df1a358db63b3d3d605e2ef28015a1cf79aa6c2fd8e0dc39b3e8c7a28dc8",
+        "excluded.json.gz": "eedb58654242a696b4e413cca0a231b95355f563af2a3da5dc2995c8de9d6ec9",
+        "restored-variants.json.gz": "d3afd4f6530291fa28684bc5b34693c404ada6b392ee5d7b5475b9fe3a16f675",
+        "epub-metadata.json.gz": "dfead47c36d73ccfdd3da94dc515272a0f139376e31bfdb6050ccd15cc545ede",
+        "issues.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "北史",
+      "book_number": 15,
+      "epub_file": "resources/originals/twenty-four-histories/backup/北史.epub",
+      "epub_sha256": "01f49a811963351f46eb79b4dbbac366f420dcd3b3792bf7ee1fc695bedfc083",
+      "txt_file": "resources/originals/twenty-four-histories/15北史-EPUB全文.txt",
+      "txt_sha256": "a2765400ce228fb84f0c9ec776e819f10fa2e9ecf8a9466e62c77245b65cd3bf",
+      "encoding": "utf-8",
+      "expected_volumes": 100,
+      "volume_sections": 100,
+      "all_source_sections": 101,
+      "mapped_paragraphs_including_headings": 8446,
+      "restored_variant_records": 1837,
+      "issue_records": 2,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "b96e7e51d089dc43ec4243878e5a5bacc122a67f64dba90ac74f20c68e85561c",
+        "paragraphs.jsonl.gz": "dac2b5316fb954ea45fb8ab573aaa8e245688557a5782a999f719a064459451e",
+        "excluded.json.gz": "28971437150a0dc3c413b4e70b0226976f06b24b21889755f627908bc4d921a2",
+        "restored-variants.json.gz": "476af5393cc906cb36473001064cd86ad11f1752c64dcb970ad3337b06d86357",
+        "epub-metadata.json.gz": "1c69acd9796299228bb8f09727762a928e1148eeaf86d0e1c09462787516b672",
+        "issues.json": "947521b71b829d3b89491576ef0f8cfc834be8ea9e25c4442e83fa092240e827"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "旧唐书",
+      "book_number": 16,
+      "epub_file": "resources/originals/twenty-four-histories/backup/舊唐書.epub",
+      "epub_sha256": "90b5e92975317fb82463aa2698d58c8c7985de580211baf3b1927961e0268270",
+      "txt_file": "resources/originals/twenty-four-histories/16旧唐书-EPUB全文.txt",
+      "txt_sha256": "19325bd93c326ffd4efcf2916484413af946144cdd0b167913cfb780753e6a76",
+      "encoding": "utf-8",
+      "expected_volumes": 200,
+      "volume_sections": 214,
+      "all_source_sections": 216,
+      "mapped_paragraphs_including_headings": 21350,
+      "restored_variant_records": 2730,
+      "issue_records": 54,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": {
+        "file": "resources/originals/twenty-four-histories/backup/previous-conversions/16旧唐书/f302bfe7da0d3bce59448e71f20782032a727a7ac534007c34b215bbe02ee120.txt",
+        "sha256": "f302bfe7da0d3bce59448e71f20782032a727a7ac534007c34b215bbe02ee120"
+      },
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "35aedb47b7b2a3a9e53d286a5b6ad2d2b64423318e635d4ce89fc8c00c586d91",
+        "paragraphs.jsonl.gz": "a0b087ee94719fa55a2ebbd21bdf7fd0b075a0cc7d26b74817831ac745b50864",
+        "excluded.json.gz": "0485ae94e068496855f1eeea8cc6946baee8eaaf123abf7a09f9a975dd24b0ec",
+        "restored-variants.json.gz": "6bfff29ffd1c284abb684672734d024fe4c7b33432ce464cd63d89913479b325",
+        "epub-metadata.json.gz": "7632890c05688376891fa2ba9a5ffe6297f62853262d4e27a180200bc216fdce",
+        "issues.json": "b3c964749dd6947a5543df101f846820b78b26d51253a71fac48f6c27b8cff7c"
+      },
+      "previous_conversion_archives": [
+        {
+          "file": "resources/originals/twenty-four-histories/backup/previous-conversions/16旧唐书/f302bfe7da0d3bce59448e71f20782032a727a7ac534007c34b215bbe02ee120.txt",
+          "sha256": "f302bfe7da0d3bce59448e71f20782032a727a7ac534007c34b215bbe02ee120"
+        }
+      ]
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "新唐书",
+      "book_number": 17,
+      "epub_file": "resources/originals/twenty-four-histories/backup/新唐書.epub",
+      "epub_sha256": "61a20a161b67b9246d56d9c0a23f98931b4bf70972f68379c15b4d1bf768fe53",
+      "txt_file": "resources/originals/twenty-four-histories/17新唐书-EPUB全文.txt",
+      "txt_sha256": "1baeb092c9728a03fd5cec6efc0b4a14e83c626048886329051335f21fbd97a7",
+      "encoding": "utf-8",
+      "expected_volumes": 225,
+      "volume_sections": 248,
+      "all_source_sections": 250,
+      "mapped_paragraphs_including_headings": 35706,
+      "restored_variant_records": 2043,
+      "issue_records": 42,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "3d777e92c20077e7a1463416c02547e4ff0617c0bea55ff04ab68462f9c0ffc3",
+        "paragraphs.jsonl.gz": "3fcc982942f93f43a67d88d00a87bef47a7e2aa914ecbc3abc2a3a8309202763",
+        "excluded.json.gz": "0a3fd03b7602371c753ee390134862a0497a92ee3cb6feeb048c359f1dec60e1",
+        "restored-variants.json.gz": "cfcd756ee219107c97718c1661ff27deb4f9bf5daca9915a78f26cae1ea2a69a",
+        "epub-metadata.json.gz": "72c23bfea7ebb43e037ccfd2e86bbf55cae5ada00292cd5916cce4137e1ce5f1",
+        "issues.json": "e797442d54f4871466c8dce082036a315a3532f2826505047c347627783eecd2"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "旧五代史",
+      "book_number": 18,
+      "epub_file": "resources/originals/twenty-four-histories/backup/舊五代史.epub",
+      "epub_sha256": "808c89dca8a5a3fc798076aa0d4baeb7e40b4cc7bdfb1fd23db1600afa608f42",
+      "txt_file": "resources/originals/twenty-four-histories/18旧五代史-EPUB全文.txt",
+      "txt_sha256": "8923127534193fda78c8c106abc5de78ac27fc3cf4e5143882e8d42224bc929b",
+      "encoding": "utf-8",
+      "expected_volumes": 150,
+      "volume_sections": 150,
+      "all_source_sections": 152,
+      "mapped_paragraphs_including_headings": 3822,
+      "restored_variant_records": 125,
+      "issue_records": 8,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": {
+        "file": "resources/originals/twenty-four-histories/backup/previous-conversions/18旧五代史/1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b.txt",
+        "sha256": "1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b"
+      },
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "e793af7135715d8d8490d7e5eb85cbc086d0da24e7da39a70cd41993cb00adfd",
+        "paragraphs.jsonl.gz": "b35f8e0fb8d2bbff567da7a447545949c7d5a8dba87fc6346a5b6666013bd451",
+        "excluded.json.gz": "234d9467a7a2e67df04dd2e4abed91fa499fbf004f24f6c9a1f2c43cc2940de4",
+        "restored-variants.json.gz": "66ce308daa1dfa368c4d944446e57aa52f8b4d94cdf270185f6e782b04b40ebe",
+        "epub-metadata.json.gz": "cd901ddac1efc05b59aadec10399f9379fa8cbf6c614dd34a4e85357424e2931",
+        "issues.json": "6a7703ceccb56c6f0561e37c466c9ad65ae2596c78a6cd0bd244072edfce7d04"
+      },
+      "previous_conversion_archives": [
+        {
+          "file": "resources/originals/twenty-four-histories/backup/previous-conversions/18旧五代史/1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b.txt",
+          "sha256": "1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b"
+        }
+      ]
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "新五代史",
+      "book_number": 19,
+      "epub_file": "resources/originals/twenty-four-histories/backup/新五代史.epub",
+      "epub_sha256": "03336971b4a790bfcca412e828a3e9b4fb817159b0963daf00ac4cffe61ad911",
+      "txt_file": "resources/originals/twenty-four-histories/19新五代史-EPUB全文.txt",
+      "txt_sha256": "086f0a0f2274a4bce219630378e22a6c43d9ca19578e528023b3e50161c6ffa2",
+      "encoding": "utf-8",
+      "expected_volumes": 74,
+      "volume_sections": 74,
+      "all_source_sections": 75,
+      "mapped_paragraphs_including_headings": 3613,
+      "restored_variant_records": 1,
+      "issue_records": 0,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "9f4d9f73927457b57d8aa56bc2c7d0b5c0b9e1d557cee3d4ca705afd3d41bb49",
+        "paragraphs.jsonl.gz": "1ee6e147eccd6936461e791b462ffb440e469abcd7ec349cbf3e97e77b57ab78",
+        "excluded.json.gz": "c3119fd93ed5c9b7f83162ae8e44e6b3f8806320344a4bcb9804dc6ac748144c",
+        "restored-variants.json.gz": "004f1a463c5c84231100c9057a959b8f1f0f29876e509d66605849e3e907667e",
+        "epub-metadata.json.gz": "e3065882ea1106b732d27656f403349e75b665754f4d7db1de27335b4e175595",
+        "issues.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "宋史",
+      "book_number": 20,
+      "epub_file": "resources/originals/twenty-four-histories/backup/宋史.epub",
+      "epub_sha256": "7b86da10244bc06df36a61c6debe8f10cb2705271b2c7d22fef173499871b190",
+      "txt_file": "resources/originals/twenty-four-histories/20宋史-EPUB全文.txt",
+      "txt_sha256": "3e0b12169631b4813bb342076284dc235c6911bf613b6beb9a062c2cab2452a2",
+      "encoding": "utf-8",
+      "expected_volumes": 496,
+      "volume_sections": 496,
+      "all_source_sections": 498,
+      "mapped_paragraphs_including_headings": 75935,
+      "restored_variant_records": 11318,
+      "issue_records": 83,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "ec6a9f7cc96e927a69f5e5e32bd3c3343438a8281fa8d8cb62b78d4e01182048",
+        "paragraphs.jsonl.gz": "81a1211bdee2ebb4c7b6c226e0afa7fbec8904f160c6a068fad235e447c6e952",
+        "excluded.json.gz": "21f123cbbffedfbc601d39493bdc8e33ec9338efbd1fd6ca2a6bfe292b13291c",
+        "restored-variants.json.gz": "b6595246962ad9cf44f64f660842b2b87b95da8bb76cb8c5bebbd74e387cba67",
+        "epub-metadata.json.gz": "43bc2a3ec949e5a8346ee73d17fd10986e039b6bd4269471b7a2de3a0cfe46fe",
+        "issues.json": "3b17b036f8403d8de322f4bee598fe88043c2a83f5ce8c09163b7a6530a17ad6"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "辽史",
+      "book_number": 21,
+      "epub_file": "resources/originals/twenty-four-histories/backup/遼史.epub",
+      "epub_sha256": "ee0b2cd45097258d410a7c60ad45420b8281e5ace2a2beffe9842d51b34de1e9",
+      "txt_file": "resources/originals/twenty-four-histories/21辽史-EPUB全文.txt",
+      "txt_sha256": "f2db7792ccb0dc2ba257f3eafdbac57e6d6148e99fa8ab0ef62f55547fad2073",
+      "encoding": "utf-8",
+      "expected_volumes": 116,
+      "volume_sections": 116,
+      "all_source_sections": 118,
+      "mapped_paragraphs_including_headings": 5988,
+      "restored_variant_records": 381,
+      "issue_records": 8,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "4dd5ff27988b687e3120e98b248f1d2c6d69aca2eb2bc55ea53ff1929fb7fd8a",
+        "paragraphs.jsonl.gz": "35e4b9a40d1d0e86fb97ff920d65ca24fe9829f84777a2ff0ccd46d6e635659a",
+        "excluded.json.gz": "45316d91e8adcd9c69b3cc149ca61234cd4d96aa454a442bd2184f596bcff917",
+        "restored-variants.json.gz": "1ab1ff936728c4a64542e903a961f140bdc0d200f5f67e49dc9f7e4b2ce94ad3",
+        "epub-metadata.json.gz": "41b407333485ec1d2e3ff930677f28bd798555b29a724ab7ab8ced180a757525",
+        "issues.json": "222eb2de15fea7a66856b4fa70af118c84b9495de49ee05c4a7d21cfedd8c221"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "金史",
+      "book_number": 22,
+      "epub_file": "resources/originals/twenty-four-histories/backup/金史.epub",
+      "epub_sha256": "52e60c7fd16dfdf343cfe297194ad8c65b5fc37c61c08a5d2147bbe2a88f881a",
+      "txt_file": "resources/originals/twenty-four-histories/22金史-EPUB全文.txt",
+      "txt_sha256": "3cbf3ae9a801347b41a7244540993a6dec08c84d920886ea08ef649c3baa74ec",
+      "encoding": "utf-8",
+      "expected_volumes": 135,
+      "volume_sections": 135,
+      "all_source_sections": 137,
+      "mapped_paragraphs_including_headings": 9234,
+      "restored_variant_records": 212,
+      "issue_records": 9,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": {
+        "file": "resources/originals/twenty-four-histories/backup/previous-conversions/22金史/ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2.txt",
+        "sha256": "ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2"
+      },
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "e6e6d737b2a539f105e1be40519d0daebb3b84e8c4e2bcfa52c85ad763282f35",
+        "paragraphs.jsonl.gz": "6202d3e774f8128220066c33df9a36ddfc20c7c875cd44f70f81090e03c67146",
+        "excluded.json.gz": "4ed5c2b8dae743918f014fee7531fe3b9b6438971384e78e78c952dd5a30c609",
+        "restored-variants.json.gz": "191aa3f32eb8416d13ea8f9d912c909ae293010cc27ff5d2026443f456b4b00b",
+        "epub-metadata.json.gz": "69cf848c171dabf466c3a7b62b6ad7a6f084fac94e6807049eef83c42f63b2eb",
+        "issues.json": "bce9e0a0500e913d58bf98e9464154850750f6d4b1267dac6a637e9160f241d5"
+      },
+      "previous_conversion_archives": [
+        {
+          "file": "resources/originals/twenty-four-histories/backup/previous-conversions/22金史/ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2.txt",
+          "sha256": "ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2"
+        }
+      ]
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "元史",
+      "book_number": 23,
+      "epub_file": "resources/originals/twenty-four-histories/backup/元史.epub",
+      "epub_sha256": "3fdfeb8c9df55467a5f1c17497e03a5c70c2fe7a8fec3d9e433eb5bc02617a84",
+      "txt_file": "resources/originals/twenty-four-histories/23元史-EPUB全文.txt",
+      "txt_sha256": "824092a2f728faa4b5b18b640604312d586e75f6d9cabb3633406cb2784b5804",
+      "encoding": "utf-8",
+      "expected_volumes": 210,
+      "volume_sections": 210,
+      "all_source_sections": 212,
+      "mapped_paragraphs_including_headings": 23382,
+      "restored_variant_records": 236,
+      "issue_records": 2,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "723e76e26dc4e0c3c0cf52b895644dc085a27ced032799e90986e92ae31c7330",
+        "paragraphs.jsonl.gz": "a1986ea8ae03d127e76dc392fa4fa5e3f575af9ce0afc6d729db189f8213d063",
+        "excluded.json.gz": "cab36dc78b7587fb31d1e9d8388a76113c452becbc9b7292a61d6c078f91e32b",
+        "restored-variants.json.gz": "1bfccf0bc86fa49b3bb1bf977bd8c27e7c6c35ab2c0c2549e107dc0ee6582174",
+        "epub-metadata.json.gz": "a52e6344192cd825cda1a719dd31b98f1f2ecd070ed7d832b48090f0e0767923",
+        "issues.json": "3355c27f09f3791057e9f34557bef4a03cdbc2178be45bd897b2f9bb3ea37f18"
+      },
+      "previous_conversion_archives": []
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "明史",
+      "book_number": 24,
+      "epub_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+      "epub_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42",
+      "txt_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+      "txt_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+      "encoding": "utf-8",
+      "expected_volumes": 332,
+      "volume_sections": 332,
+      "all_source_sections": 333,
+      "mapped_paragraphs_including_headings": 35153,
+      "restored_variant_records": 2069,
+      "issue_records": 86,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": {
+        "file": "resources/originals/twenty-four-histories/backup/previous-conversions/24明史/fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab.txt",
+        "sha256": "fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab"
+      },
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "1264367e873b4a1e658e9f5e3976c952c94179b4eaad157c3b7bb878fe8d12d6",
+        "paragraphs.jsonl.gz": "26a9034ab423f23067fef2c908e96609d329dd69224a7b6e0d8337d4ba0e04a0",
+        "excluded.json.gz": "37cf6614690d0fffd3a5696a8f01553d05e790df2b67a62998ec50b784659075",
+        "restored-variants.json.gz": "9713dc7e12584ea629faa961d1b1c233dcac0c348aad02c3177c4ac2109cc767",
+        "epub-metadata.json.gz": "9611b85d5cf8dcda34b02a7dcba4c6c5b25bae50e0d2cbee5ae3141ba750f11d",
+        "issues.json": "b1f9cdb674d6dbea453398c0b03c5d75ccb3b119ca7df3eec0ac9a052b433ebb"
+      },
+      "previous_conversion_archives": [
+        {
+          "file": "resources/originals/twenty-four-histories/backup/previous-conversions/24明史/fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab.txt",
+          "sha256": "fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab"
+        }
+      ]
+    },
+    {
+      "format_version": "history-epub-txt-v1",
+      "book": "清史稿",
+      "book_number": 25,
+      "epub_file": "resources/originals/twenty-four-histories/backup/清史稿.epub",
+      "epub_sha256": "ecbb20c5b72bdfb4f209cbcc3dd3d9bd21e2a3dac7a1d4e325f5cc17f3987419",
+      "txt_file": "resources/originals/twenty-four-histories/25清史稿-EPUB全文.txt",
+      "txt_sha256": "4397b3bd0204f27c2dfe4dcff5664a56a0472b09c6d09f83f8112f205dd1943e",
+      "encoding": "utf-8",
+      "expected_volumes": 529,
+      "volume_sections": 529,
+      "all_source_sections": 531,
+      "mapped_paragraphs_including_headings": 36280,
+      "restored_variant_records": 1109,
+      "issue_records": 227,
+      "validation": {
+        "zip_crc": "passed",
+        "numbered_volume_coverage": "passed",
+        "retained_body_character_conservation": "passed",
+        "paragraph_offsets": "passed"
+      },
+      "review_status": "pending_textual_review",
+      "previous_conversion": null,
+      "transforms": [
+        "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+        "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+        "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+        "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+        "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+        "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+      ],
+      "outputs": {
+        "sections.json": "2e02325b7a26d52a0d9640ff6a964f7fd86425c22690c0d6b7ca133af2a23127",
+        "paragraphs.jsonl.gz": "c30d5784f19ab8881935561daddb582480eab98475365c93c75e50999736605e",
+        "excluded.json.gz": "bf39b42f4919cadd926d30996135ce89aed4028e8b5217116d330590f628e0a0",
+        "restored-variants.json.gz": "558f7ec13725b69aed700b52008703b8f9985e24087bfc01f8d09f1f8d6da212",
+        "epub-metadata.json.gz": "04ea84100f8e4bc2d27a5551dcd49621d80dd6932556bb49a8243a312d9c90e0",
+        "issues.json": "c5ca850af886d7cda40428f6b15129a4d74ccdbaddce87e2974fb0bbcad526b7"
+      },
+      "previous_conversion_archives": []
+    }
+  ],
+  "original_source_hashes_preserved": {
+    "resources/originals/twenty-four-histories/backup/03后汉书.TXT": "0f0e74175b393376a8aaa1813f747a6bbcc3a8b19ecf16ffe1e2cf36a4c7aac5",
+    "resources/originals/twenty-four-histories/backup/舊唐書.epub": "90b5e92975317fb82463aa2698d58c8c7985de580211baf3b1927961e0268270",
+    "resources/originals/twenty-four-histories/backup/02汉书.TXT": "715895cace2a3509198ffda654ef96f829d3ae9d86d2f64409dda8b195d29a8f",
+    "resources/originals/twenty-four-histories/backup/舊五代史.epub": "808c89dca8a5a3fc798076aa0d4baeb7e40b4cc7bdfb1fd23db1600afa608f42",
+    "resources/originals/twenty-four-histories/backup/史記.epub": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+    "resources/originals/twenty-four-histories/backup/14南史.TXT": "dabec464b45f2f8909e1893bd9f825e299ee848d5d253d71180939bf40cda598",
+    "resources/originals/twenty-four-histories/backup/13隋书.pdf": "ba452f95a8b8d411303d4ac117f834c15b1280b8a8d1a404097e139452cbb3fc",
+    "resources/originals/twenty-four-histories/backup/17新唐书.pdf": "8e210c2b704e368e5067b09d5bb94a35c0107558be5efd3c69e10d074fc83dfd",
+    "resources/originals/twenty-four-histories/backup/南齊書.epub": "d16a67f185f19af042460903791511578d1afd89c042d70484d731932915f49a",
+    "resources/originals/twenty-four-histories/backup/23元史.pdf": "b8a51b5c8253b8a31717608a7fb8cc15a202e84118038f4f49304addff681713",
+    "resources/originals/twenty-four-histories/backup/18旧五代史.pdf": "d11a325d8660ca5022806ded060fb5ad3f4171611779c70dab46b19e6f5d8e9e",
+    "resources/originals/twenty-four-histories/backup/周書.epub": "d44166d6a13f5027ef17e5f6af843671cfa5d1d4fdf1f7e3afba1bd45d707f36",
+    "resources/originals/twenty-four-histories/backup/金史.epub": "52e60c7fd16dfdf343cfe297194ad8c65b5fc37c61c08a5d2147bbe2a88f881a",
+    "resources/originals/twenty-four-histories/backup/晉書.epub": "84b4bbc8123a44f44a90a2a8ab34eaef5cf735785c1be8925f0b8ec2c6be11c7",
+    "resources/originals/twenty-four-histories/backup/14南史.pdf": "2782864a9f6bbd821ef6439cf2d7465597234d99bbeb37fc18870f1b35476f3e",
+    "resources/originals/twenty-four-histories/backup/13隋书.TXT": "41f609bc333417d1257ed2c210f44f42f05825710d9f1199d55e2041768ee0db",
+    "resources/originals/twenty-four-histories/backup/03后汉书.pdf": "85a7671e180c5f8265bb62a9e98f36dac41fc72eb23b52dc415da4a0dcd7348d",
+    "resources/originals/twenty-four-histories/backup/北齊書 (1).epub": "78990674d2b1bfec081a09c644244a5a03a17d31fbe2e0729801f9981fbb614a",
+    "resources/originals/twenty-four-histories/backup/16旧唐书(上).TXT": "167caf266df5a3887eeb68c055c9b5c4bcab83c9cae89985621eb09c7d565039",
+    "resources/originals/twenty-four-histories/backup/02汉书.pdf": "e44c4de2642276abc499c4e8383f43deafbbdd74516a9128ddf6b1f49173b864",
+    "resources/originals/twenty-four-histories/backup/北齊書.epub": "7ff92729cdb31c0e2f35b9117d72d59163849fe280dcc4a08b0dca3c4be6d52e",
+    "resources/originals/twenty-four-histories/backup/新唐書.epub": "61a20a161b67b9246d56d9c0a23f98931b4bf70972f68379c15b4d1bf768fe53",
+    "resources/originals/twenty-four-histories/backup/16旧唐书(下).txt": "a61091b13fce294f10bf57f2d6539c1e707b5d1d325a8f99cb9503a46c9501b7",
+    "resources/originals/twenty-four-histories/backup/23元史.txt": "98691c1af11c3e00bb641a20839a9e427069e71e3a61b72e987badd7327fe213",
+    "resources/originals/twenty-four-histories/backup/18旧五代史.TXT": "a729bc0725c82340feff82db79f3fbe212c12374e201badb63d0f00c1280c32a",
+    "resources/originals/twenty-four-histories/backup/16旧唐书.pdf": "8fe6f624ef20bd5bb4e0858104bc6ff87024254e28c7cbfb191558e06164ca5e",
+    "resources/originals/twenty-four-histories/backup/宋史.epub": "7b86da10244bc06df36a61c6debe8f10cb2705271b2c7d22fef173499871b190",
+    "resources/originals/twenty-four-histories/backup/遼史.epub": "ee0b2cd45097258d410a7c60ad45420b8281e5ace2a2beffe9842d51b34de1e9",
+    "resources/originals/twenty-four-histories/backup/07南齐书.pdf": "3010a1680a79052ae1b0e426734dde209023e4f54868272f6608d601a4747f65",
+    "resources/originals/twenty-four-histories/backup/24明史.txt": "1a17222cf8eb4eec530d0ca7bebf5fd0ed7925248a8133dcf278238e1dec41f2",
+    "resources/originals/twenty-four-histories/backup/12周书.pdf": "7ccc5f6f5fb1aa8a185efdf75dc5a4f10e87c9027f7076870a6e5b3e48dd5a05",
+    "resources/originals/twenty-four-histories/backup/11北齐书.TXT": "68a67f3041eef96e08c0e7bba00ea43a89797b061011019c95d32007c41d4672",
+    "resources/originals/twenty-four-histories/backup/05晋书.TXT": "089d319d54ab941ba268f2fdc5ebf9a93788794c2c22c0d3ade7f5547895d3e1",
+    "resources/originals/twenty-four-histories/backup/01史记.pdf": "ecfc5bed23edc151f24221fbaf91663b6862a67ab2e25b0ceac09e454533fc93",
+    "resources/originals/twenty-four-histories/backup/10魏书.TXT": "837986a9209b358aa95a1dd19645e3752d669269250e860f139e5e4cb869ad3a",
+    "resources/originals/twenty-four-histories/backup/三國志.epub": "bcfd1bab650983ddcc1e8de5631f5b22d8903df5919ebb7413702c85bc2863fa",
+    "resources/originals/twenty-four-histories/backup/09陈书.TXT": "316a2b16102aefba673bbcb78e0d96b788028ac502004223fd0ec84c4d652cea",
+    "resources/originals/twenty-four-histories/backup/22金史.pdf": "098644ed5420ef7efa989180064cae8ba6c006fe2527df8460c8daa554fc7be9",
+    "resources/originals/twenty-four-histories/backup/後漢書.epub": "4135e746e7415d60c845310eb5d33dd76bf7e9f1d0917c892e0ea1e86aa5047a",
+    "resources/originals/twenty-four-histories/backup/17新唐书(下).txt": "50461cc5cd97f60ab5d99203dcb1ba13d024023006ff6cab3ca3306493061741",
+    "resources/originals/twenty-four-histories/backup/15北史.TXT": "31ec541b3f919735a7b1cfad6113918ae3a8c65d1fb12f56232dedc4c991220f",
+    "resources/originals/twenty-four-histories/backup/21辽史.pdf": "a65bcdd1ef8d4c26ecce9ea30fe5ac9ddf6d115999ec2abf4b0b37cc760037ff",
+    "resources/originals/twenty-four-histories/backup/漢書.epub": "27882561a22c9b7bc05288340ef8973abe38cfcf714d2a250fb29c83a27ded10",
+    "resources/originals/twenty-four-histories/backup/08梁书.TXT": "2f624b7fdf9922e80f1d7dc6565b11daaff7937eae0cd2fc673c7ea9c16c2a41",
+    "resources/originals/twenty-four-histories/backup/魏書.epub": "98164d447df5d9c74f0a96ae53c9d6a05d7ab245c5c066838a1f307129a7ac86",
+    "resources/originals/twenty-four-histories/backup/17新唐书(上).TXT": "f6ffca8c6fc793d99ef67e5111b71a082f22ea4218d05ae1a3fea90b3f34edb0",
+    "resources/originals/twenty-four-histories/backup/明史.epub": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42",
+    "resources/originals/twenty-four-histories/backup/19新五代史.TXT": "45b0a542b34d48c0263e9023241a03fcbb3bfacb31436d1bc826db237fe434b5",
+    "resources/originals/twenty-four-histories/backup/04三国志.pdf": "b4e93fb976beb3d7eeafd3a7fa4d5afda553e7a82c33d46ade1c58fcd94e039b",
+    "resources/originals/twenty-four-histories/backup/元史.epub": "3fdfeb8c9df55467a5f1c17497e03a5c70c2fe7a8fec3d9e433eb5bc02617a84",
+    "resources/originals/twenty-four-histories/backup/20宋史.pdf": "502d3e195340c0f8debbbe11a36f48c6acd734417598a967928cfd38190b6500",
+    "resources/originals/twenty-four-histories/backup/清史稿.epub": "ecbb20c5b72bdfb4f209cbcc3dd3d9bd21e2a3dac7a1d4e325f5cc17f3987419",
+    "resources/originals/twenty-four-histories/backup/06宋书.pdf": "79aeab7b8c0db056c71bdc5587028dffa121154e78904b540ddcc79a057856aa",
+    "resources/originals/twenty-four-histories/backup/隋書.epub": "fada5d4edfe1f8c728c2f972bdea793a0714ff30b65d324a642391539d78fdb6",
+    "resources/originals/twenty-four-histories/backup/22金史.txt": "4e9c61b0d71588721b084da66a1c5407acc1ff4e2a27fe3bc2f368fa56b23437",
+    "resources/originals/twenty-four-histories/backup/KR2a0029 舊五代史-宋-薛居正.txt": "75880b705947aae43ec7784fe4f93c3eb426f4463d763eb918e3adcd3f99c487",
+    "resources/originals/twenty-four-histories/backup/清史稿(上).txt": "5507a2416531d35ba56d16145ff88849accb270016e5d76a671cde952d965cc2",
+    "resources/originals/twenty-four-histories/backup/北史.epub": "01f49a811963351f46eb79b4dbbac366f420dcd3b3792bf7ee1fc695bedfc083",
+    "resources/originals/twenty-four-histories/backup/15北史.pdf": "3e00e1426f4e3e60e3f7764df2826b5db71cc165753a6a03189782ab648bc4ca",
+    "resources/originals/twenty-four-histories/backup/宋書.epub": "b4115d54a6022254bc389a6155062dc17fe6afb7134216fdf4a53eba78ab380a",
+    "resources/originals/twenty-four-histories/backup/24明史.pdf": "500a102a26fc407f0f0bb12bfec84bd5a34a90a519f9884a08cffa6a11b56189",
+    "resources/originals/twenty-four-histories/backup/12周书.TXT": "acc93dc7a1ebc05eb9d5f86d31567f3a46f40ec6751331307abb3cbbe4ec879d",
+    "resources/originals/twenty-four-histories/backup/07南齐书.TXT": "fbe5459cdd5c376e1037090e7ff90880e7ffe721ca0c47d8ca93ddfcf249c4c3",
+    "resources/originals/twenty-four-histories/backup/陳書.epub": "0b7cb030c2e8b386bec73c2df90d0601ca40cc134b122d3a6392d9ec511f0de4",
+    "resources/originals/twenty-four-histories/backup/10魏书.pdf": "fa4964144eb2c7dc1cb96cc98edc5239e47b57fd0428ca6d5776c9b724ddfc47",
+    "resources/originals/twenty-four-histories/backup/11北齐书.pdf": "6e154f6f6115ce3c1f2621a9d4e13a62d636bedf8c3f0f78931846ffa7270fc1",
+    "resources/originals/twenty-four-histories/backup/01史记.txt": "c93516e7e03c3eadd47cacbb278438cd315780ba1e41a9d37d08ba65a5777fde",
+    "resources/originals/twenty-four-histories/backup/05晋书.pdf": "b95895cddb4a42df5e98c2bb6e9521c5d5f936e8101bb137902d7be09cdba357",
+    "resources/originals/twenty-four-histories/backup/梁書.epub": "503fd4bb1047e050b6ff0844b836192791c90ce44e378d131d8a04bba3601655",
+    "resources/originals/twenty-four-histories/backup/09陈书.pdf": "ef67bb77cde717d734bc94a00ce8ea278c15a87468b03a8ec875f1a2c67c6734",
+    "resources/originals/twenty-four-histories/backup/19新五代史.pdf": "8090e84f4137dd5938f8634372a8682084d003a46d12f78611c8c3922ff8512a",
+    "resources/originals/twenty-four-histories/backup/04三国志.TXT": "b4dece77e2ede88b7bd90fc3b7abe713203a26c3e9789145da9a9f08ca92811b",
+    "resources/originals/twenty-four-histories/backup/新五代史.epub": "03336971b4a790bfcca412e828a3e9b4fb817159b0963daf00ac4cffe61ad911",
+    "resources/originals/twenty-four-histories/backup/20宋史.txt": "e9ecb64d8b0e984bc9b4dad2f2524c44e983c6d9a813dacfa2e3632389ab6023",
+    "resources/originals/twenty-four-histories/backup/06宋书.TXT": "eae2cfdf5cf2a7dc17690e4f2d003f6c9424b70af35968519c66e39bb1d0643e",
+    "resources/originals/twenty-four-histories/backup/21辽史.txt": "2c4089873dce576ce29305d7a2e813626a0f08fc1d6409f04a92f8c91dada14c",
+    "resources/originals/twenty-four-histories/backup/南史.epub": "1b4d0cb69ae2e7c9d0cd8d730b6f4f510892f2f2c4d9556688c8de14eb012294",
+    "resources/originals/twenty-four-histories/backup/08梁书.pdf": "4e33b0b0aca375d635c92eed20a119e6e6115f5e10c3344245ea6b7f6f6b5591",
+    "resources/originals/twenty-four-histories/backup/清史稿(下).txt": "db142d8cbaa212f0a9b63a3ceb3a5fa2a90facd9e187ba3f87acb2d7e6446374",
+    "resources/originals/twenty-four-histories/backup/archive/12周书.before-volume-04.TXT": "4e2241adefe329ca91a8fa4381752c9395b3833024eb1cbc5e027f2a45e0fb49",
+    "resources/originals/twenty-four-histories/backup/previous-conversions/16旧唐书/f302bfe7da0d3bce59448e71f20782032a727a7ac534007c34b215bbe02ee120.txt": "f302bfe7da0d3bce59448e71f20782032a727a7ac534007c34b215bbe02ee120",
+    "resources/originals/twenty-four-histories/backup/previous-conversions/02汉书/d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449.txt": "d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449",
+    "resources/originals/twenty-four-histories/backup/previous-conversions/18旧五代史/1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b.txt": "1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b",
+    "resources/originals/twenty-four-histories/backup/previous-conversions/24明史/fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab.txt": "fb76ddd46d0b3b7415c9f3a88e6af3c5bd9ec0f0d9b98f379914558e7c94cdab",
+    "resources/originals/twenty-four-histories/backup/previous-conversions/11北齐书/05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9.txt": "05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9",
+    "resources/originals/twenty-four-histories/backup/previous-conversions/22金史/ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2.txt": "ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2",
+    "resources/originals/twenty-four-histories/backup/legacy-zhoushu-volume-04/original-decoded.txt": "c4eade512501493bbd129c0bf45fbbf1e813d8a253ced16cc4de78ad04680dc0",
+    "resources/originals/twenty-four-histories/backup/legacy-zhoushu-volume-04/source.txt": "6de48824164303eba747821861edf3db0b879275ccf59a163d083fb25b7baae1",
+    "resources/originals/twenty-four-histories/backup/legacy-zhoushu-volume-04/combined-reading.txt": "acc93dc7a1ebc05eb9d5f86d31567f3a46f40ec6751331307abb3cbbe4ec879d"
+  },
+  "note": "转换完成不等于逐段校勘完成；清史稿转换归档不改变现有录入范围。"
+}

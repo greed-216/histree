@@ -1,0 +1,40 @@
+{
+  "book_key": "hou-hanshu",
+  "book": "后汉书",
+  "source_version": "2d1104e7d6fe",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/後漢書.epub",
+      "source_sha256": "4135e746e7415d60c845310eb5d33dd76bf7e9f1d0917c892e0ea1e86aa5047a",
+      "mapped_source_file": "resources/originals/twenty-four-histories/03后汉书-EPUB全文.txt",
+      "mapped_source_sha256": "6521ac4b3664ab552e94c30e0d5905716a32966227cd19485c3d45bc3040bcf0",
+      "conversion_manifest": "resources/derived/epub-txt/03后汉书/manifest.json"
+    }
+  ],
+  "sections": 132,
+  "paragraphs": 16139,
+  "kind_counts": {
+    "heading": 1283,
+    "front_matter": 37,
+    "table_of_contents": 100,
+    "body": 13634,
+    "editorial_notice": 149,
+    "annotation": 934,
+    "appendix": 2
+  },
+  "paragraph_file": "resources/derived/history-library/hou-hanshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "1191a4f1e4862e9e92231f7476bb15ec3658d90c8ea79ba256157c5748ea9f61",
+  "sections_file": "resources/derived/history-library/hou-hanshu/sections.json",
+  "sections_sha256": "7fea775815656abd1e8a1b2d3d4b01450f3c2821095b9ebfc727e6a6da6fb038",
+  "reading_file": "resources/derived/history-library/hou-hanshu/reading.txt",
+  "reading_sha256": "9acce6861e15bcd3f3932fc15e438f2655193f0f2b28c8f7c6a7d0ea5c209344",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

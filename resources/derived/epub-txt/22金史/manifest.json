@@ -1,0 +1,49 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "金史",
+  "book_number": 22,
+  "epub_file": "resources/originals/twenty-four-histories/backup/金史.epub",
+  "epub_sha256": "52e60c7fd16dfdf343cfe297194ad8c65b5fc37c61c08a5d2147bbe2a88f881a",
+  "txt_file": "resources/originals/twenty-four-histories/22金史-EPUB全文.txt",
+  "txt_sha256": "3cbf3ae9a801347b41a7244540993a6dec08c84d920886ea08ef649c3baa74ec",
+  "encoding": "utf-8",
+  "expected_volumes": 135,
+  "volume_sections": 135,
+  "all_source_sections": 137,
+  "mapped_paragraphs_including_headings": 9234,
+  "restored_variant_records": 212,
+  "issue_records": 9,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": {
+    "file": "resources/originals/twenty-four-histories/backup/previous-conversions/22金史/ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2.txt",
+    "sha256": "ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2"
+  },
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "e6e6d737b2a539f105e1be40519d0daebb3b84e8c4e2bcfa52c85ad763282f35",
+    "paragraphs.jsonl.gz": "6202d3e774f8128220066c33df9a36ddfc20c7c875cd44f70f81090e03c67146",
+    "excluded.json.gz": "4ed5c2b8dae743918f014fee7531fe3b9b6438971384e78e78c952dd5a30c609",
+    "restored-variants.json.gz": "191aa3f32eb8416d13ea8f9d912c909ae293010cc27ff5d2026443f456b4b00b",
+    "epub-metadata.json.gz": "69cf848c171dabf466c3a7b62b6ad7a6f084fac94e6807049eef83c42f63b2eb",
+    "issues.json": "bce9e0a0500e913d58bf98e9464154850750f6d4b1267dac6a637e9160f241d5"
+  },
+  "previous_conversion_archives": [
+    {
+      "file": "resources/originals/twenty-four-histories/backup/previous-conversions/22金史/ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2.txt",
+      "sha256": "ec231f51c55bbf4c8da4ffdf88524360e8e8e96bcd604ca2b965bf813c59dea2"
+    }
+  ]
+}

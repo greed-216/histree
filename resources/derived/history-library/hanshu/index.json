@@ -1,0 +1,41 @@
+{
+  "book_key": "hanshu",
+  "book": "汉书",
+  "source_version": "d843e70ef156",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/漢書.epub",
+      "source_sha256": "27882561a22c9b7bc05288340ef8973abe38cfcf714d2a250fb29c83a27ded10",
+      "mapped_source_file": "resources/originals/twenty-four-histories/02汉书-EPUB全文.txt",
+      "mapped_source_sha256": "f5d07e926ca15d339cc2d68859dd81122225c360a6b1ab205c49f1e8527ac6e5",
+      "conversion_manifest": "resources/derived/epub-txt/02汉书/manifest.json"
+    }
+  ],
+  "sections": 111,
+  "paragraphs": 10037,
+  "kind_counts": {
+    "heading": 992,
+    "front_matter": 2,
+    "table_of_contents": 108,
+    "body": 6971,
+    "table_row": 1786,
+    "annotation": 113,
+    "editorial_notice": 5,
+    "appendix": 60
+  },
+  "paragraph_file": "resources/derived/history-library/hanshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "faa86c112f5e8adf1ff255f51b5685ac25f169760e4837328024f724287c3d60",
+  "sections_file": "resources/derived/history-library/hanshu/sections.json",
+  "sections_sha256": "b497f3873e461bc34a20a50e709becbbad8d162f3e6665f892f05b778432b045",
+  "reading_file": "resources/derived/history-library/hanshu/reading.txt",
+  "reading_sha256": "a3a0c79e6cb121ba6e07b98127c3865d5af28ffab6e5bc6b2500e51c6e0de35e",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

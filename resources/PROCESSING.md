@@ -1,5 +1,7 @@
 # 从史料到网站数据
 
+当前阶段的基础资料限于《资治通鉴》和二十四史，其他书籍待后续增补。录入时先用 [分段检索库](derived/history-library/README.md) 搜索，并按 [搜索与引用说明](../docs/HISTORY_LIBRARY.md) 导出可追溯片段；候选分段和索引建立不等于校核或录入完成。
+
 沿用 `docs/DATA_PREPARATION.md` 与 `docs/templates/content-batch.json`。本轮仅采集、建立卷页索引与工作分期，不将自动提取结果写入生产数据库。
 
 ## 1. 保存来源
@@ -9,6 +11,10 @@
 - 二十四史PDF底本未确认，引用写“GitHub仓库电子排印本，版本待考”；不能标成中华书局点校本或某古刻本。
 - 用户TXT底本不详；用于检索定位，并对照另一来源核验关键字句。
 - Kanripo文本保留 `#+` 元数据、方括号页码、异体字与原始行分隔；生成清洗副本时另存，不直接覆盖。
+
+当前工作文本是二十四史目录根目录的25份 `*-EPUB全文.txt`；其他版本和原EPUB在 `backup/`。阅读和分段仅使用 [统一规范化库](derived/history-library/README.md)，转换出处和原元素定位见 [压缩转换审计](derived/epub-txt/README.md)，处理规则见 [规范化说明](../docs/HISTORY_TEXT_NORMALIZATION.md)。旧阅读/校改产物已清理，旧脚本归档供历史核查。
+
+TeX和HTML候选来源的既有评估仅作历史参考：[TeX评估](../docs/TWENTY_FOUR_HISTORIES_TEX_REVIEW.md) · [HTML评估](../docs/CHINA_HISTORY_SOURCE_REVIEW.md)。当前不采用其替代选定工作版本；已发布引用快照继续保留原位。
 
 ## 2. 分卷、分纪年、分段
 

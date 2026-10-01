@@ -1,0 +1,40 @@
+{
+  "book_key": "shiji",
+  "book": "史记",
+  "source_version": "174f8dfa444c",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+      "source_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+      "mapped_source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+      "mapped_source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+      "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+    }
+  ],
+  "sections": 131,
+  "paragraphs": 7990,
+  "kind_counts": {
+    "heading": 1189,
+    "front_matter": 3,
+    "table_of_contents": 130,
+    "editorial_notice": 2,
+    "body": 5017,
+    "annotation": 29,
+    "table_row": 1620
+  },
+  "paragraph_file": "resources/derived/history-library/shiji/paragraphs.jsonl.gz",
+  "paragraph_sha256": "4cd64271001679a6da652f271c791948df3028e1674cc48d3a26c4f61c9a6899",
+  "sections_file": "resources/derived/history-library/shiji/sections.json",
+  "sections_sha256": "db510cc1cdbc90630e9f4364851863b5b778ac667a7896330be812d9e6f5536b",
+  "reading_file": "resources/derived/history-library/shiji/reading.txt",
+  "reading_sha256": "8a9f63f3986f854a72beffa4244c9d17ccb2d4d1a574d65318e8e831892b4a3a",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

@@ -1,0 +1,40 @@
+{
+  "book_key": "sanguozhi",
+  "book": "三国志",
+  "source_version": "631314e0fecb",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/三國志.epub",
+      "source_sha256": "bcfd1bab650983ddcc1e8de5631f5b22d8903df5919ebb7413702c85bc2863fa",
+      "mapped_source_file": "resources/originals/twenty-four-histories/04三国志-EPUB全文.txt",
+      "mapped_source_sha256": "7ea8526e00e84d80d913137fd9e46e7c5ae356b7fb01dfd7603db2cd8d649f4f",
+      "conversion_manifest": "resources/derived/epub-txt/04三国志/manifest.json"
+    }
+  ],
+  "sections": 68,
+  "paragraphs": 3525,
+  "kind_counts": {
+    "heading": 633,
+    "front_matter": 3,
+    "table_of_contents": 65,
+    "body": 2779,
+    "editorial_notice": 15,
+    "table_row": 2,
+    "appendix": 28
+  },
+  "paragraph_file": "resources/derived/history-library/sanguozhi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "2be7dd7c0e2f46d9834b6debf7ebe5eedaa97fe40792ff6519ae2f762d9e6724",
+  "sections_file": "resources/derived/history-library/sanguozhi/sections.json",
+  "sections_sha256": "e7356204e7e38d12f0f7232415f50be4e6b0e2f2eb5045ba3bc7e84abf1e1131",
+  "reading_file": "resources/derived/history-library/sanguozhi/reading.txt",
+  "reading_sha256": "ac0b47c277b48622ca11e62d1bac2405010355e7f188d26dc4c06bcc4cd1a290",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

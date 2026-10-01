@@ -1,0 +1,39 @@
+{
+  "book_key": "xin-wudaishi",
+  "book": "新五代史",
+  "source_version": "b08f244b9241",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/新五代史.epub",
+      "source_sha256": "03336971b4a790bfcca412e828a3e9b4fb817159b0963daf00ac4cffe61ad911",
+      "mapped_source_file": "resources/originals/twenty-four-histories/19新五代史-EPUB全文.txt",
+      "mapped_source_sha256": "086f0a0f2274a4bce219630378e22a6c43d9ca19578e528023b3e50161c6ffa2",
+      "conversion_manifest": "resources/derived/epub-txt/19新五代史/manifest.json"
+    }
+  ],
+  "sections": 75,
+  "paragraphs": 3689,
+  "kind_counts": {
+    "heading": 586,
+    "front_matter": 2,
+    "table_of_contents": 74,
+    "body": 2351,
+    "annotation": 157,
+    "table_row": 519
+  },
+  "paragraph_file": "resources/derived/history-library/xin-wudaishi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "e08b9cb5f87ca16b11e5f499b54ac894110553f3fb2526863d13296cdefe9640",
+  "sections_file": "resources/derived/history-library/xin-wudaishi/sections.json",
+  "sections_sha256": "1a594e7eba3ee4f4127d99c0e175253a159460b2c6e9d2bf571f9e6d9913cfa4",
+  "reading_file": "resources/derived/history-library/xin-wudaishi/reading.txt",
+  "reading_sha256": "588cd9de810fabd07c6a782b61c3db97c7f6f4a60e2c6f99afb29b18b550dadd",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

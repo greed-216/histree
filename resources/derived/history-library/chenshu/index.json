@@ -1,0 +1,40 @@
+{
+  "book_key": "chenshu",
+  "book": "陈书",
+  "source_version": "c53b33dea954",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/陳書.epub",
+      "source_sha256": "0b7cb030c2e8b386bec73c2df90d0601ca40cc134b122d3a6392d9ec511f0de4",
+      "mapped_source_file": "resources/originals/twenty-four-histories/09陈书-EPUB全文.txt",
+      "mapped_source_sha256": "34468e6f174e692c56f0cdb8a8fb77ab291975eaaf00e6e939fc915bcdd33735",
+      "conversion_manifest": "resources/derived/epub-txt/09陈书/manifest.json"
+    }
+  ],
+  "sections": 38,
+  "paragraphs": 2260,
+  "kind_counts": {
+    "heading": 360,
+    "front_matter": 2,
+    "table_of_contents": 36,
+    "body": 1482,
+    "annotation": 371,
+    "editorial_notice": 4,
+    "appendix": 5
+  },
+  "paragraph_file": "resources/derived/history-library/chenshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "7ea5c9e744d7e855e89b7da282903cf5ef173d24435e42aeb931ca5628de9d13",
+  "sections_file": "resources/derived/history-library/chenshu/sections.json",
+  "sections_sha256": "386d041e03741079b8f948d4b2f18e847cd60b5318f2f7cccc81c4e101361aa2",
+  "reading_file": "resources/derived/history-library/chenshu/reading.txt",
+  "reading_sha256": "31f7eab7a4f6c44bbd58efb3b8c35350e0547bda9593187107e740687ea28061",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

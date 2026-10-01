@@ -1,0 +1,41 @@
+{
+  "book_key": "weishu",
+  "book": "魏书",
+  "source_version": "dd7194b9ae21",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/魏書.epub",
+      "source_sha256": "98164d447df5d9c74f0a96ae53c9d6a05d7ab245c5c066838a1f307129a7ac86",
+      "mapped_source_file": "resources/originals/twenty-four-histories/10魏书-EPUB全文.txt",
+      "mapped_source_sha256": "eb1517b66cf69eae9957d23b22036de73e144f56b40906026804558065c0bc9a",
+      "conversion_manifest": "resources/derived/epub-txt/10魏书/manifest.json"
+    }
+  ],
+  "sections": 132,
+  "paragraphs": 16031,
+  "kind_counts": {
+    "heading": 1683,
+    "front_matter": 4,
+    "table_of_contents": 130,
+    "body": 11809,
+    "annotation": 1988,
+    "editorial_notice": 3,
+    "table_row": 408,
+    "appendix": 6
+  },
+  "paragraph_file": "resources/derived/history-library/weishu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "f0cc645cd0552eb250809957d3fae167fccc7b650e4bc592d2bcc9a6b047e60b",
+  "sections_file": "resources/derived/history-library/weishu/sections.json",
+  "sections_sha256": "c2c467ec907ab754534ffe7a1aee44e8df74ab82622610668e874a6140ee7d56",
+  "reading_file": "resources/derived/history-library/weishu/reading.txt",
+  "reading_sha256": "c5229d431a9b5ac959ece8bb4e185e2c491503adc1b6c47462d61948ea48a884",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

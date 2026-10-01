@@ -1,0 +1,41 @@
+{
+  "book_key": "mingshi",
+  "book": "明史",
+  "source_version": "2f603db3d81e",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+      "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42",
+      "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+      "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+      "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json"
+    }
+  ],
+  "sections": 333,
+  "paragraphs": 35498,
+  "kind_counts": {
+    "heading": 3150,
+    "front_matter": 2,
+    "table_of_contents": 332,
+    "body": 26604,
+    "annotation": 187,
+    "table_row": 5159,
+    "source_gap": 14,
+    "editorial_notice": 50
+  },
+  "paragraph_file": "resources/derived/history-library/mingshi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+  "sections_file": "resources/derived/history-library/mingshi/sections.json",
+  "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5",
+  "reading_file": "resources/derived/history-library/mingshi/reading.txt",
+  "reading_sha256": "fcc119bf1855276cb3a1ede861773bfe664dcfb8e1ef1a51b20182f1bffaf330",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

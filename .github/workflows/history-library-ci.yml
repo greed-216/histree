@@ -1,0 +1,36 @@
+name: History source and search checks
+
+on:
+  push:
+    paths:
+      - 'resources/**'
+      - 'scripts/*history*.py'
+      - 'skills/histree-history-ingest/**'
+      - '.github/workflows/history-library-ci.yml'
+  pull_request:
+    paths:
+      - 'resources/**'
+      - 'scripts/*history*.py'
+      - 'skills/histree-history-ingest/**'
+      - '.github/workflows/history-library-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate EPUB conversion and provenance
+        run: python3 scripts/test-history-epubs.py
+      - name: Rebuild search from versioned paragraphs
+        run: python3 scripts/build-history-library.py --rebuild-search
+      - name: Validate paragraphs, search and source exports
+        run: python3 scripts/test-history-library.py
+      - name: Ensure rebuilding preserves versioned files
+        run: git diff --exit-code

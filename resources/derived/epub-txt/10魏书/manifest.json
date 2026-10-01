@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "魏书",
+  "book_number": 10,
+  "epub_file": "resources/originals/twenty-four-histories/backup/魏書.epub",
+  "epub_sha256": "98164d447df5d9c74f0a96ae53c9d6a05d7ab245c5c066838a1f307129a7ac86",
+  "txt_file": "resources/originals/twenty-four-histories/10魏书-EPUB全文.txt",
+  "txt_sha256": "eb1517b66cf69eae9957d23b22036de73e144f56b40906026804558065c0bc9a",
+  "encoding": "utf-8",
+  "expected_volumes": 114,
+  "volume_sections": 130,
+  "all_source_sections": 132,
+  "mapped_paragraphs_including_headings": 15893,
+  "restored_variant_records": 6,
+  "issue_records": 3,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "15bb8fd72f912721e708f3637a59056988f70688f3163ac34cf918cd58d941ba",
+    "paragraphs.jsonl.gz": "58a29aaeb0b72a6cd286d4e4c2dfff6a17ef898dcd43c4ec141f64e0ebabfeae",
+    "excluded.json.gz": "e1f0ca898b70d8c55e1b77cc8024073c7c73655eb4d458e212f57bab7d22dfa5",
+    "restored-variants.json.gz": "b7bb19786058fec9e80a7aec57eb9a686262a00f4ebd19c4e93f148a175ead10",
+    "epub-metadata.json.gz": "45ac62d1e1e37eb654aa9a848514288ad0707c98808b947e6ff850af8dd0318c",
+    "issues.json": "bb9876f1bf583254be53880c7aebb429d4d2bbd048011683d610883840390d87"
+  },
+  "previous_conversion_archives": []
+}

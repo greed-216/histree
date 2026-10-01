@@ -12,4 +12,9 @@ apps/api/dist/
 resources/*.txt
 resources/originals/**/*.zip
 resources/originals/**/*.json
+!resources/originals/twenty-four-histories/backup/**/*.json
 resources/originals/**/.gitignore
+
+# Rebuildable local full-text search database; version JSONL and source maps.
+resources/derived/history-library*/*.sqlite
+resources/derived/history-library*/search.sqlite.build

@@ -1,0 +1,38 @@
+{
+  "book_key": "zhoushu",
+  "book": "周书",
+  "source_version": "ecf2a9970097",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/周書.epub",
+      "source_sha256": "d44166d6a13f5027ef17e5f6af843671cfa5d1d4fdf1f7e3afba1bd45d707f36",
+      "mapped_source_file": "resources/originals/twenty-four-histories/12周书-EPUB全文.txt",
+      "mapped_source_sha256": "750f05874a785d4da34933733a405caca92360b189c3d76b75a680a23bfd5558",
+      "conversion_manifest": "resources/derived/epub-txt/12周书/manifest.json"
+    }
+  ],
+  "sections": 51,
+  "paragraphs": 4135,
+  "kind_counts": {
+    "heading": 400,
+    "front_matter": 3,
+    "table_of_contents": 50,
+    "body": 2229,
+    "annotation": 1453
+  },
+  "paragraph_file": "resources/derived/history-library/zhoushu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "7aae3314d54dd6fa34de676f4511236e45cef69b508f9b315281e873f3f6e193",
+  "sections_file": "resources/derived/history-library/zhoushu/sections.json",
+  "sections_sha256": "a51ac010c29867aba19305812c59df0e71d5db0c498f602c66dc89b3a62c43a6",
+  "reading_file": "resources/derived/history-library/zhoushu/reading.txt",
+  "reading_sha256": "8bab1c289f80e307a49816379db63cce5a4ccc7a179518c6fb0aae9157251e87",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

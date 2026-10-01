@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "辽史",
+  "book_number": 21,
+  "epub_file": "resources/originals/twenty-four-histories/backup/遼史.epub",
+  "epub_sha256": "ee0b2cd45097258d410a7c60ad45420b8281e5ace2a2beffe9842d51b34de1e9",
+  "txt_file": "resources/originals/twenty-four-histories/21辽史-EPUB全文.txt",
+  "txt_sha256": "f2db7792ccb0dc2ba257f3eafdbac57e6d6148e99fa8ab0ef62f55547fad2073",
+  "encoding": "utf-8",
+  "expected_volumes": 116,
+  "volume_sections": 116,
+  "all_source_sections": 118,
+  "mapped_paragraphs_including_headings": 5988,
+  "restored_variant_records": 381,
+  "issue_records": 8,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "4dd5ff27988b687e3120e98b248f1d2c6d69aca2eb2bc55ea53ff1929fb7fd8a",
+    "paragraphs.jsonl.gz": "35e4b9a40d1d0e86fb97ff920d65ca24fe9829f84777a2ff0ccd46d6e635659a",
+    "excluded.json.gz": "45316d91e8adcd9c69b3cc149ca61234cd4d96aa454a442bd2184f596bcff917",
+    "restored-variants.json.gz": "1ab1ff936728c4a64542e903a961f140bdc0d200f5f67e49dc9f7e4b2ce94ad3",
+    "epub-metadata.json.gz": "41b407333485ec1d2e3ff930677f28bd798555b29a724ab7ab8ced180a757525",
+    "issues.json": "222eb2de15fea7a66856b4fa70af118c84b9495de49ee05c4a7d21cfedd8c221"
+  },
+  "previous_conversion_archives": []
+}

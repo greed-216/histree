@@ -1,0 +1,41 @@
+{
+  "book_key": "qing-shigao",
+  "book": "清史稿",
+  "source_version": "99ab36d27b5e",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/清史稿.epub",
+      "source_sha256": "ecbb20c5b72bdfb4f209cbcc3dd3d9bd21e2a3dac7a1d4e325f5cc17f3987419",
+      "mapped_source_file": "resources/originals/twenty-four-histories/25清史稿-EPUB全文.txt",
+      "mapped_source_sha256": "4397b3bd0204f27c2dfe4dcff5664a56a0472b09c6d09f83f8112f205dd1943e",
+      "conversion_manifest": "resources/derived/epub-txt/25清史稿/manifest.json"
+    }
+  ],
+  "sections": 531,
+  "paragraphs": 37062,
+  "kind_counts": {
+    "heading": 4420,
+    "front_matter": 530,
+    "body": 26598,
+    "editorial_notice": 3,
+    "table_row": 5487,
+    "source_gap": 8,
+    "annotation": 10,
+    "appendix": 6
+  },
+  "paragraph_file": "resources/derived/history-library/qing-shigao/paragraphs.jsonl.gz",
+  "paragraph_sha256": "aa154182890f78632a48400d471073c16bd55a3729b9d4cbba69465a2ca38e39",
+  "sections_file": "resources/derived/history-library/qing-shigao/sections.json",
+  "sections_sha256": "1c4c1b9a31cd78cca57eb87b32551b02c2f472bc6034f4216d60abb3aea3c1bd",
+  "reading_file": "resources/derived/history-library/qing-shigao/reading.txt",
+  "reading_sha256": "cf15cf1d761f01cff8d3342ad943e8fa83c3263bfa4eaec5410832d0e1641b37",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "prepared_deferred",
+  "status": "normalized_candidates_pending_editorial_review"
+}

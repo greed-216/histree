@@ -1,0 +1,41 @@
+{
+  "book_key": "nan-qishu",
+  "book": "南齐书",
+  "source_version": "4eecff8f98ac",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/南齊書.epub",
+      "source_sha256": "d16a67f185f19af042460903791511578d1afd89c042d70484d731932915f49a",
+      "mapped_source_file": "resources/originals/twenty-four-histories/07南齐书-EPUB全文.txt",
+      "mapped_source_sha256": "83d4715481f63afc2d560ce2f7db1f8ce0d29089f4d35d50c1049b5c6dfc8f85",
+      "conversion_manifest": "resources/derived/epub-txt/07南齐书/manifest.json"
+    }
+  ],
+  "sections": 63,
+  "paragraphs": 5040,
+  "kind_counts": {
+    "heading": 524,
+    "editorial_notice": 5,
+    "table_of_contents": 59,
+    "front_matter": 3,
+    "body": 3898,
+    "annotation": 533,
+    "table_row": 4,
+    "appendix": 14
+  },
+  "paragraph_file": "resources/derived/history-library/nan-qishu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "386aa6bf188e0d8f1059b7e9029024e7769e2b52958a4e801cb95363f1eac934",
+  "sections_file": "resources/derived/history-library/nan-qishu/sections.json",
+  "sections_sha256": "d82bc2e26107b4d22e05afe2d75270a8aa644a4f189891568ea16b9ce69fb5d7",
+  "reading_file": "resources/derived/history-library/nan-qishu/reading.txt",
+  "reading_sha256": "6bb4723fbbfbd976dcd8642e8012275d7db251e9f92ad4a843218cd327dd5507",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

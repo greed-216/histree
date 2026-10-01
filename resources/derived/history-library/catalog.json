@@ -1,0 +1,3392 @@
+{
+  "format_version": "history-epub-paragraph-v3",
+  "record_encoding": "zlib-json-v1",
+  "books": [
+    {
+      "book_key": "shiji",
+      "book": "史记",
+      "source_version": "174f8dfa444c",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+          "source_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+          "mapped_source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+          "mapped_source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+          "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+        }
+      ],
+      "sections": 131,
+      "paragraphs": 7990,
+      "kind_counts": {
+        "heading": 1189,
+        "front_matter": 3,
+        "table_of_contents": 130,
+        "editorial_notice": 2,
+        "body": 5017,
+        "annotation": 29,
+        "table_row": 1620
+      },
+      "paragraph_file": "resources/derived/history-library/shiji/paragraphs.jsonl.gz",
+      "paragraph_sha256": "4cd64271001679a6da652f271c791948df3028e1674cc48d3a26c4f61c9a6899",
+      "sections_file": "resources/derived/history-library/shiji/sections.json",
+      "sections_sha256": "db510cc1cdbc90630e9f4364851863b5b778ac667a7896330be812d9e6f5536b",
+      "reading_file": "resources/derived/history-library/shiji/reading.txt",
+      "reading_sha256": "8a9f63f3986f854a72beffa4244c9d17ccb2d4d1a574d65318e8e831892b4a3a",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "hanshu",
+      "book": "汉书",
+      "source_version": "d843e70ef156",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/漢書.epub",
+          "source_sha256": "27882561a22c9b7bc05288340ef8973abe38cfcf714d2a250fb29c83a27ded10",
+          "mapped_source_file": "resources/originals/twenty-four-histories/02汉书-EPUB全文.txt",
+          "mapped_source_sha256": "f5d07e926ca15d339cc2d68859dd81122225c360a6b1ab205c49f1e8527ac6e5",
+          "conversion_manifest": "resources/derived/epub-txt/02汉书/manifest.json"
+        }
+      ],
+      "sections": 111,
+      "paragraphs": 10037,
+      "kind_counts": {
+        "heading": 992,
+        "front_matter": 2,
+        "table_of_contents": 108,
+        "body": 6971,
+        "table_row": 1786,
+        "annotation": 113,
+        "editorial_notice": 5,
+        "appendix": 60
+      },
+      "paragraph_file": "resources/derived/history-library/hanshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "faa86c112f5e8adf1ff255f51b5685ac25f169760e4837328024f724287c3d60",
+      "sections_file": "resources/derived/history-library/hanshu/sections.json",
+      "sections_sha256": "b497f3873e461bc34a20a50e709becbbad8d162f3e6665f892f05b778432b045",
+      "reading_file": "resources/derived/history-library/hanshu/reading.txt",
+      "reading_sha256": "a3a0c79e6cb121ba6e07b98127c3865d5af28ffab6e5bc6b2500e51c6e0de35e",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "hou-hanshu",
+      "book": "后汉书",
+      "source_version": "2d1104e7d6fe",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/後漢書.epub",
+          "source_sha256": "4135e746e7415d60c845310eb5d33dd76bf7e9f1d0917c892e0ea1e86aa5047a",
+          "mapped_source_file": "resources/originals/twenty-four-histories/03后汉书-EPUB全文.txt",
+          "mapped_source_sha256": "6521ac4b3664ab552e94c30e0d5905716a32966227cd19485c3d45bc3040bcf0",
+          "conversion_manifest": "resources/derived/epub-txt/03后汉书/manifest.json"
+        }
+      ],
+      "sections": 132,
+      "paragraphs": 16139,
+      "kind_counts": {
+        "heading": 1283,
+        "front_matter": 37,
+        "table_of_contents": 100,
+        "body": 13634,
+        "editorial_notice": 149,
+        "annotation": 934,
+        "appendix": 2
+      },
+      "paragraph_file": "resources/derived/history-library/hou-hanshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "1191a4f1e4862e9e92231f7476bb15ec3658d90c8ea79ba256157c5748ea9f61",
+      "sections_file": "resources/derived/history-library/hou-hanshu/sections.json",
+      "sections_sha256": "7fea775815656abd1e8a1b2d3d4b01450f3c2821095b9ebfc727e6a6da6fb038",
+      "reading_file": "resources/derived/history-library/hou-hanshu/reading.txt",
+      "reading_sha256": "9acce6861e15bcd3f3932fc15e438f2655193f0f2b28c8f7c6a7d0ea5c209344",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "sanguozhi",
+      "book": "三国志",
+      "source_version": "631314e0fecb",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/三國志.epub",
+          "source_sha256": "bcfd1bab650983ddcc1e8de5631f5b22d8903df5919ebb7413702c85bc2863fa",
+          "mapped_source_file": "resources/originals/twenty-four-histories/04三国志-EPUB全文.txt",
+          "mapped_source_sha256": "7ea8526e00e84d80d913137fd9e46e7c5ae356b7fb01dfd7603db2cd8d649f4f",
+          "conversion_manifest": "resources/derived/epub-txt/04三国志/manifest.json"
+        }
+      ],
+      "sections": 68,
+      "paragraphs": 3525,
+      "kind_counts": {
+        "heading": 633,
+        "front_matter": 3,
+        "table_of_contents": 65,
+        "body": 2779,
+        "editorial_notice": 15,
+        "table_row": 2,
+        "appendix": 28
+      },
+      "paragraph_file": "resources/derived/history-library/sanguozhi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "2be7dd7c0e2f46d9834b6debf7ebe5eedaa97fe40792ff6519ae2f762d9e6724",
+      "sections_file": "resources/derived/history-library/sanguozhi/sections.json",
+      "sections_sha256": "e7356204e7e38d12f0f7232415f50be4e6b0e2f2eb5045ba3bc7e84abf1e1131",
+      "reading_file": "resources/derived/history-library/sanguozhi/reading.txt",
+      "reading_sha256": "ac0b47c277b48622ca11e62d1bac2405010355e7f188d26dc4c06bcc4cd1a290",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "jinshu",
+      "book": "晋书",
+      "source_version": "3e2896142c78",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/晉書.epub",
+          "source_sha256": "84b4bbc8123a44f44a90a2a8ab34eaef5cf735785c1be8925f0b8ec2c6be11c7",
+          "mapped_source_file": "resources/originals/twenty-four-histories/05晋书-EPUB全文.txt",
+          "mapped_source_sha256": "1f45414830715ea85aca2ddd2801736bc7554177d3139453a12eaf54fb45e465",
+          "conversion_manifest": "resources/derived/epub-txt/05晋书/manifest.json"
+        }
+      ],
+      "sections": 131,
+      "paragraphs": 12027,
+      "kind_counts": {
+        "heading": 1701,
+        "front_matter": 1,
+        "table_of_contents": 130,
+        "body": 9575,
+        "annotation": 576,
+        "editorial_notice": 41,
+        "source_gap": 1,
+        "table_row": 2
+      },
+      "paragraph_file": "resources/derived/history-library/jinshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "ba98323633963412d3f3a572ec99506808dbcd5317386adaa742dcb5d0424173",
+      "sections_file": "resources/derived/history-library/jinshu/sections.json",
+      "sections_sha256": "61866a0f71e23dfa101a9bd4fc1fb89f3cbbc705990379f26e98058293d01ab5",
+      "reading_file": "resources/derived/history-library/jinshu/reading.txt",
+      "reading_sha256": "890dd61db223303aa40adb23d720b1c059cbb07d6921be59fb856902ae3b2c69",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "songshu",
+      "book": "宋书",
+      "source_version": "444b42a98550",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/宋書.epub",
+          "source_sha256": "b4115d54a6022254bc389a6155062dc17fe6afb7134216fdf4a53eba78ab380a",
+          "mapped_source_file": "resources/originals/twenty-four-histories/06宋书-EPUB全文.txt",
+          "mapped_source_sha256": "1f581c29ea046b73033eac0574163e891426e25125a2a1b352bc1107c7d92b1a",
+          "conversion_manifest": "resources/derived/epub-txt/06宋书/manifest.json"
+        }
+      ],
+      "sections": 101,
+      "paragraphs": 13606,
+      "kind_counts": {
+        "heading": 1104,
+        "front_matter": 1,
+        "table_of_contents": 100,
+        "body": 9588,
+        "annotation": 2587,
+        "table_row": 224,
+        "editorial_notice": 2
+      },
+      "paragraph_file": "resources/derived/history-library/songshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "ac99ade27c039f79c03d50a66acb277b5dd7be5af75fb23318e72bb4ffe49aba",
+      "sections_file": "resources/derived/history-library/songshu/sections.json",
+      "sections_sha256": "623cfab2f45c2c34acb875b01844c8c155f1a5300b869d8dd0c83488eda8ee42",
+      "reading_file": "resources/derived/history-library/songshu/reading.txt",
+      "reading_sha256": "5b2a2b472801ca537276cddef254391624be24b7d61c79238a9fad55b16c1a2b",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "nan-qishu",
+      "book": "南齐书",
+      "source_version": "4eecff8f98ac",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/南齊書.epub",
+          "source_sha256": "d16a67f185f19af042460903791511578d1afd89c042d70484d731932915f49a",
+          "mapped_source_file": "resources/originals/twenty-four-histories/07南齐书-EPUB全文.txt",
+          "mapped_source_sha256": "83d4715481f63afc2d560ce2f7db1f8ce0d29089f4d35d50c1049b5c6dfc8f85",
+          "conversion_manifest": "resources/derived/epub-txt/07南齐书/manifest.json"
+        }
+      ],
+      "sections": 63,
+      "paragraphs": 5040,
+      "kind_counts": {
+        "heading": 524,
+        "editorial_notice": 5,
+        "table_of_contents": 59,
+        "front_matter": 3,
+        "body": 3898,
+        "annotation": 533,
+        "table_row": 4,
+        "appendix": 14
+      },
+      "paragraph_file": "resources/derived/history-library/nan-qishu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "386aa6bf188e0d8f1059b7e9029024e7769e2b52958a4e801cb95363f1eac934",
+      "sections_file": "resources/derived/history-library/nan-qishu/sections.json",
+      "sections_sha256": "d82bc2e26107b4d22e05afe2d75270a8aa644a4f189891568ea16b9ce69fb5d7",
+      "reading_file": "resources/derived/history-library/nan-qishu/reading.txt",
+      "reading_sha256": "6bb4723fbbfbd976dcd8642e8012275d7db251e9f92ad4a843218cd327dd5507",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "liangshu",
+      "book": "梁书",
+      "source_version": "632aa19e7da8",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/梁書.epub",
+          "source_sha256": "503fd4bb1047e050b6ff0844b836192791c90ce44e378d131d8a04bba3601655",
+          "mapped_source_file": "resources/originals/twenty-four-histories/08梁书-EPUB全文.txt",
+          "mapped_source_sha256": "2cc9ba431a3b30674f7befd5e01863f49ac79ec9bc2d6aae0fbd4c702c8522f5",
+          "conversion_manifest": "resources/derived/epub-txt/08梁书/manifest.json"
+        }
+      ],
+      "sections": 57,
+      "paragraphs": 2989,
+      "kind_counts": {
+        "heading": 582,
+        "front_matter": 2,
+        "table_of_contents": 56,
+        "body": 2267,
+        "annotation": 56,
+        "editorial_notice": 24,
+        "table_row": 2
+      },
+      "paragraph_file": "resources/derived/history-library/liangshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "67862f5e858688e7d3825820fabe7ba0f8700bb77ed6178bf96eab9a94a64f69",
+      "sections_file": "resources/derived/history-library/liangshu/sections.json",
+      "sections_sha256": "fe8e96ce9db1763288970a94319856dfa1973ce2563151ba9797a009eaee5e4b",
+      "reading_file": "resources/derived/history-library/liangshu/reading.txt",
+      "reading_sha256": "38cd908cc2ec179697509cc9389961451b8ce660b3b3183779fa8572b3b4031f",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "chenshu",
+      "book": "陈书",
+      "source_version": "c53b33dea954",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/陳書.epub",
+          "source_sha256": "0b7cb030c2e8b386bec73c2df90d0601ca40cc134b122d3a6392d9ec511f0de4",
+          "mapped_source_file": "resources/originals/twenty-four-histories/09陈书-EPUB全文.txt",
+          "mapped_source_sha256": "34468e6f174e692c56f0cdb8a8fb77ab291975eaaf00e6e939fc915bcdd33735",
+          "conversion_manifest": "resources/derived/epub-txt/09陈书/manifest.json"
+        }
+      ],
+      "sections": 38,
+      "paragraphs": 2260,
+      "kind_counts": {
+        "heading": 360,
+        "front_matter": 2,
+        "table_of_contents": 36,
+        "body": 1482,
+        "annotation": 371,
+        "editorial_notice": 4,
+        "appendix": 5
+      },
+      "paragraph_file": "resources/derived/history-library/chenshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "7ea5c9e744d7e855e89b7da282903cf5ef173d24435e42aeb931ca5628de9d13",
+      "sections_file": "resources/derived/history-library/chenshu/sections.json",
+      "sections_sha256": "386d041e03741079b8f948d4b2f18e847cd60b5318f2f7cccc81c4e101361aa2",
+      "reading_file": "resources/derived/history-library/chenshu/reading.txt",
+      "reading_sha256": "31f7eab7a4f6c44bbd58efb3b8c35350e0547bda9593187107e740687ea28061",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "weishu",
+      "book": "魏书",
+      "source_version": "dd7194b9ae21",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/魏書.epub",
+          "source_sha256": "98164d447df5d9c74f0a96ae53c9d6a05d7ab245c5c066838a1f307129a7ac86",
+          "mapped_source_file": "resources/originals/twenty-four-histories/10魏书-EPUB全文.txt",
+          "mapped_source_sha256": "eb1517b66cf69eae9957d23b22036de73e144f56b40906026804558065c0bc9a",
+          "conversion_manifest": "resources/derived/epub-txt/10魏书/manifest.json"
+        }
+      ],
+      "sections": 132,
+      "paragraphs": 16031,
+      "kind_counts": {
+        "heading": 1683,
+        "front_matter": 4,
+        "table_of_contents": 130,
+        "body": 11809,
+        "annotation": 1988,
+        "editorial_notice": 3,
+        "table_row": 408,
+        "appendix": 6
+      },
+      "paragraph_file": "resources/derived/history-library/weishu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "f0cc645cd0552eb250809957d3fae167fccc7b650e4bc592d2bcc9a6b047e60b",
+      "sections_file": "resources/derived/history-library/weishu/sections.json",
+      "sections_sha256": "c2c467ec907ab754534ffe7a1aee44e8df74ab82622610668e874a6140ee7d56",
+      "reading_file": "resources/derived/history-library/weishu/reading.txt",
+      "reading_sha256": "c5229d431a9b5ac959ece8bb4e185e2c491503adc1b6c47462d61948ea48a884",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "bei-qishu",
+      "book": "北齐书",
+      "source_version": "773d7c82ad71",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/北齊書.epub",
+          "source_sha256": "7ff92729cdb31c0e2f35b9117d72d59163849fe280dcc4a08b0dca3c4be6d52e",
+          "mapped_source_file": "resources/originals/twenty-four-histories/11北齐书-EPUB全文.txt",
+          "mapped_source_sha256": "9ff895a69ec20b79cf59c453e0de68ae5a8684c51e65407fe413cf8e074983f1",
+          "conversion_manifest": "resources/derived/epub-txt/11北齐书/manifest.json"
+        }
+      ],
+      "sections": 51,
+      "paragraphs": 1966,
+      "kind_counts": {
+        "heading": 501,
+        "front_matter": 1,
+        "table_of_contents": 50,
+        "body": 1389,
+        "table_row": 6,
+        "editorial_notice": 9,
+        "annotation": 10
+      },
+      "paragraph_file": "resources/derived/history-library/bei-qishu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "30a94e8397f512218c6d92fcd2c323aa0c36d35378c6ec8cd5c0c89a4ccd99fb",
+      "sections_file": "resources/derived/history-library/bei-qishu/sections.json",
+      "sections_sha256": "436d2e15d29297459398b723e219ed9e1390864809aed24d1c3b64742a031ca5",
+      "reading_file": "resources/derived/history-library/bei-qishu/reading.txt",
+      "reading_sha256": "ce9ea6d51cab42af812f203f522aad32ef5c8a314d04fcae76159a13b40a6813",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "zhoushu",
+      "book": "周书",
+      "source_version": "ecf2a9970097",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/周書.epub",
+          "source_sha256": "d44166d6a13f5027ef17e5f6af843671cfa5d1d4fdf1f7e3afba1bd45d707f36",
+          "mapped_source_file": "resources/originals/twenty-four-histories/12周书-EPUB全文.txt",
+          "mapped_source_sha256": "750f05874a785d4da34933733a405caca92360b189c3d76b75a680a23bfd5558",
+          "conversion_manifest": "resources/derived/epub-txt/12周书/manifest.json"
+        }
+      ],
+      "sections": 51,
+      "paragraphs": 4135,
+      "kind_counts": {
+        "heading": 400,
+        "front_matter": 3,
+        "table_of_contents": 50,
+        "body": 2229,
+        "annotation": 1453
+      },
+      "paragraph_file": "resources/derived/history-library/zhoushu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "7aae3314d54dd6fa34de676f4511236e45cef69b508f9b315281e873f3f6e193",
+      "sections_file": "resources/derived/history-library/zhoushu/sections.json",
+      "sections_sha256": "a51ac010c29867aba19305812c59df0e71d5db0c498f602c66dc89b3a62c43a6",
+      "reading_file": "resources/derived/history-library/zhoushu/reading.txt",
+      "reading_sha256": "8bab1c289f80e307a49816379db63cce5a4ccc7a179518c6fb0aae9157251e87",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "suishu",
+      "book": "隋书",
+      "source_version": "20b1e58a4cac",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/隋書.epub",
+          "source_sha256": "fada5d4edfe1f8c728c2f972bdea793a0714ff30b65d324a642391539d78fdb6",
+          "mapped_source_file": "resources/originals/twenty-four-histories/13隋书-EPUB全文.txt",
+          "mapped_source_sha256": "5feb2a3f5b33af366e0053b4a99133cca09689269b7571990386181a268c7884",
+          "conversion_manifest": "resources/derived/epub-txt/13隋书/manifest.json"
+        }
+      ],
+      "sections": 87,
+      "paragraphs": 11096,
+      "kind_counts": {
+        "heading": 997,
+        "front_matter": 2,
+        "table_of_contents": 85,
+        "body": 9744,
+        "annotation": 251,
+        "editorial_notice": 10,
+        "table_row": 4,
+        "appendix": 3
+      },
+      "paragraph_file": "resources/derived/history-library/suishu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "2227021bc5ee338fd15de984f98a4df876d0d57137a1da6b424a184dcfbe8a1b",
+      "sections_file": "resources/derived/history-library/suishu/sections.json",
+      "sections_sha256": "d93706375e0ea1ff3bba199d69049d5a75b07b28799efa81f4ece61f533ef191",
+      "reading_file": "resources/derived/history-library/suishu/reading.txt",
+      "reading_sha256": "468d56e477ce8c6a0515bc434021ace6a8165d176b5186167c4836e56bf8490c",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "nanshi",
+      "book": "南史",
+      "source_version": "c5ac4ccb7ddc",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/南史.epub",
+          "source_sha256": "1b4d0cb69ae2e7c9d0cd8d730b6f4f510892f2f2c4d9556688c8de14eb012294",
+          "mapped_source_file": "resources/originals/twenty-four-histories/14南史-EPUB全文.txt",
+          "mapped_source_sha256": "7e941e5dee50de6e6b10c21b3457463b8a9a8d240dc8a57398a5f5bacbb2b28a",
+          "conversion_manifest": "resources/derived/epub-txt/14南史/manifest.json"
+        }
+      ],
+      "sections": 81,
+      "paragraphs": 8270,
+      "kind_counts": {
+        "heading": 1213,
+        "front_matter": 1,
+        "table_of_contents": 80,
+        "body": 6665,
+        "editorial_notice": 4,
+        "annotation": 307
+      },
+      "paragraph_file": "resources/derived/history-library/nanshi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "f941d3d716db92c28ebdb5a52d566c87135eee5c5ca22be414eb008d4a040db3",
+      "sections_file": "resources/derived/history-library/nanshi/sections.json",
+      "sections_sha256": "96d3785582ba86a15186456ef60254e0695c2140aeae26f205b5e2f68d653797",
+      "reading_file": "resources/derived/history-library/nanshi/reading.txt",
+      "reading_sha256": "a1cc287a9b5737d66ad57f1b60d40acaf979d197c4543ebed6c59bf187ea9178",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "beishi",
+      "book": "北史",
+      "source_version": "ee7c91053694",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/北史.epub",
+          "source_sha256": "01f49a811963351f46eb79b4dbbac366f420dcd3b3792bf7ee1fc695bedfc083",
+          "mapped_source_file": "resources/originals/twenty-four-histories/15北史-EPUB全文.txt",
+          "mapped_source_sha256": "a2765400ce228fb84f0c9ec776e819f10fa2e9ecf8a9466e62c77245b65cd3bf",
+          "conversion_manifest": "resources/derived/epub-txt/15北史/manifest.json"
+        }
+      ],
+      "sections": 101,
+      "paragraphs": 8548,
+      "kind_counts": {
+        "heading": 1268,
+        "front_matter": 1,
+        "table_of_contents": 100,
+        "body": 7176,
+        "editorial_notice": 3
+      },
+      "paragraph_file": "resources/derived/history-library/beishi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "e960b9e422aa77049c7315ca659fb2c12f4933c0abbcb297c30665d9433cc014",
+      "sections_file": "resources/derived/history-library/beishi/sections.json",
+      "sections_sha256": "86cf575d947635a02cafa815e769cdfd6a06942b6f271875843eca456df303cd",
+      "reading_file": "resources/derived/history-library/beishi/reading.txt",
+      "reading_sha256": "2ba77f860a696eb560c5909ec1b3df372839cff1eb8e3c8550520df2913cfceb",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "jiu-tangshu",
+      "book": "旧唐书",
+      "source_version": "b729c4ac3d3b",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/舊唐書.epub",
+          "source_sha256": "90b5e92975317fb82463aa2698d58c8c7985de580211baf3b1927961e0268270",
+          "mapped_source_file": "resources/originals/twenty-four-histories/16旧唐书-EPUB全文.txt",
+          "mapped_source_sha256": "19325bd93c326ffd4efcf2916484413af946144cdd0b167913cfb780753e6a76",
+          "conversion_manifest": "resources/derived/epub-txt/16旧唐书/manifest.json"
+        }
+      ],
+      "sections": 216,
+      "paragraphs": 21603,
+      "kind_counts": {
+        "heading": 3183,
+        "front_matter": 2,
+        "table_of_contents": 214,
+        "body": 18179,
+        "annotation": 1,
+        "editorial_notice": 10,
+        "table_row": 8,
+        "appendix": 6
+      },
+      "paragraph_file": "resources/derived/history-library/jiu-tangshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "f604405365c99298f2d2a18ef0004d948c6a72b35151a6c2e796c096cafc7df9",
+      "sections_file": "resources/derived/history-library/jiu-tangshu/sections.json",
+      "sections_sha256": "84494846a9f475d49989c94b505527122ff5222181cc9f891007bc56f06adba4",
+      "reading_file": "resources/derived/history-library/jiu-tangshu/reading.txt",
+      "reading_sha256": "58fda9bea95fb2f8f68208a90817b9e999dd4ab0ccca57b3c9b1f2f9570a5cfd",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "xin-tangshu",
+      "book": "新唐书",
+      "source_version": "685ef499825e",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/新唐書.epub",
+          "source_sha256": "61a20a161b67b9246d56d9c0a23f98931b4bf70972f68379c15b4d1bf768fe53",
+          "mapped_source_file": "resources/originals/twenty-four-histories/17新唐书-EPUB全文.txt",
+          "mapped_source_sha256": "1baeb092c9728a03fd5cec6efc0b4a14e83c626048886329051335f21fbd97a7",
+          "conversion_manifest": "resources/derived/epub-txt/17新唐书/manifest.json"
+        }
+      ],
+      "sections": 250,
+      "paragraphs": 35967,
+      "kind_counts": {
+        "heading": 3132,
+        "front_matter": 2,
+        "table_of_contents": 248,
+        "body": 20418,
+        "annotation": 362,
+        "table_row": 11799,
+        "editorial_notice": 2,
+        "appendix": 4
+      },
+      "paragraph_file": "resources/derived/history-library/xin-tangshu/paragraphs.jsonl.gz",
+      "paragraph_sha256": "d5f56e163a3c75f95c9466e44bce14db7e74196c429083fe7f9d3182fb076b08",
+      "sections_file": "resources/derived/history-library/xin-tangshu/sections.json",
+      "sections_sha256": "8cecca93a27f0c049605182913715b3c52ebf40c83912d4d0df9664aad426a7a",
+      "reading_file": "resources/derived/history-library/xin-tangshu/reading.txt",
+      "reading_sha256": "a612624d8ed14c29734c13ba7e10cb6946e0b52b22c1267ac05ccf46400e6205",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "jiu-wudaishi",
+      "book": "旧五代史",
+      "source_version": "205deb4a7860",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/舊五代史.epub",
+          "source_sha256": "808c89dca8a5a3fc798076aa0d4baeb7e40b4cc7bdfb1fd23db1600afa608f42",
+          "mapped_source_file": "resources/originals/twenty-four-histories/18旧五代史-EPUB全文.txt",
+          "mapped_source_sha256": "8923127534193fda78c8c106abc5de78ac27fc3cf4e5143882e8d42224bc929b",
+          "conversion_manifest": "resources/derived/epub-txt/18旧五代史/manifest.json"
+        }
+      ],
+      "sections": 152,
+      "paragraphs": 3988,
+      "kind_counts": {
+        "heading": 822,
+        "front_matter": 2,
+        "table_of_contents": 150,
+        "body": 2962,
+        "editorial_notice": 2,
+        "table_row": 2,
+        "appendix": 48
+      },
+      "paragraph_file": "resources/derived/history-library/jiu-wudaishi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "449be484096e4060ee5cc4da83051b76409d9442b627f8db8a242e77adaa6b6f",
+      "sections_file": "resources/derived/history-library/jiu-wudaishi/sections.json",
+      "sections_sha256": "c74f5d5366d928a9afe08d799380d260aac089174b9e5fc0608d9430fc29618f",
+      "reading_file": "resources/derived/history-library/jiu-wudaishi/reading.txt",
+      "reading_sha256": "da277c37198ddb092b28100bc51b1eadff35829426af4e67d214227d42b5c518",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "xin-wudaishi",
+      "book": "新五代史",
+      "source_version": "b08f244b9241",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/新五代史.epub",
+          "source_sha256": "03336971b4a790bfcca412e828a3e9b4fb817159b0963daf00ac4cffe61ad911",
+          "mapped_source_file": "resources/originals/twenty-four-histories/19新五代史-EPUB全文.txt",
+          "mapped_source_sha256": "086f0a0f2274a4bce219630378e22a6c43d9ca19578e528023b3e50161c6ffa2",
+          "conversion_manifest": "resources/derived/epub-txt/19新五代史/manifest.json"
+        }
+      ],
+      "sections": 75,
+      "paragraphs": 3689,
+      "kind_counts": {
+        "heading": 586,
+        "front_matter": 2,
+        "table_of_contents": 74,
+        "body": 2351,
+        "annotation": 157,
+        "table_row": 519
+      },
+      "paragraph_file": "resources/derived/history-library/xin-wudaishi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "e08b9cb5f87ca16b11e5f499b54ac894110553f3fb2526863d13296cdefe9640",
+      "sections_file": "resources/derived/history-library/xin-wudaishi/sections.json",
+      "sections_sha256": "1a594e7eba3ee4f4127d99c0e175253a159460b2c6e9d2bf571f9e6d9913cfa4",
+      "reading_file": "resources/derived/history-library/xin-wudaishi/reading.txt",
+      "reading_sha256": "588cd9de810fabd07c6a782b61c3db97c7f6f4a60e2c6f99afb29b18b550dadd",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "songshi",
+      "book": "宋史",
+      "source_version": "9c6e46fee832",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/宋史.epub",
+          "source_sha256": "7b86da10244bc06df36a61c6debe8f10cb2705271b2c7d22fef173499871b190",
+          "mapped_source_file": "resources/originals/twenty-four-histories/20宋史-EPUB全文.txt",
+          "mapped_source_sha256": "3e0b12169631b4813bb342076284dc235c6911bf613b6beb9a062c2cab2452a2",
+          "conversion_manifest": "resources/derived/epub-txt/20宋史/manifest.json"
+        }
+      ],
+      "sections": 498,
+      "paragraphs": 76468,
+      "kind_counts": {
+        "heading": 5284,
+        "editorial_notice": 93,
+        "front_matter": 497,
+        "body": 38701,
+        "table_row": 31512,
+        "annotation": 286,
+        "source_gap": 3,
+        "appendix": 92
+      },
+      "paragraph_file": "resources/derived/history-library/songshi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "272255485a4602db6fd440263b268686298d189b74c25b3a033a53ee3e940914",
+      "sections_file": "resources/derived/history-library/songshi/sections.json",
+      "sections_sha256": "91d81042b47ebfb2615196d234a51e0d4145e0dcb99301240ea9fec91d7922fc",
+      "reading_file": "resources/derived/history-library/songshi/reading.txt",
+      "reading_sha256": "a1bcab78b78f8f28cc446e30a289eb9bf23c866ffa381df643414a5508c107c6",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "liaoshi",
+      "book": "辽史",
+      "source_version": "7cd182a20e67",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/遼史.epub",
+          "source_sha256": "ee0b2cd45097258d410a7c60ad45420b8281e5ace2a2beffe9842d51b34de1e9",
+          "mapped_source_file": "resources/originals/twenty-four-histories/21辽史-EPUB全文.txt",
+          "mapped_source_sha256": "f2db7792ccb0dc2ba257f3eafdbac57e6d6148e99fa8ab0ef62f55547fad2073",
+          "conversion_manifest": "resources/derived/epub-txt/21辽史/manifest.json"
+        }
+      ],
+      "sections": 118,
+      "paragraphs": 6107,
+      "kind_counts": {
+        "heading": 681,
+        "editorial_notice": 1,
+        "table_of_contents": 116,
+        "front_matter": 1,
+        "body": 4442,
+        "annotation": 181,
+        "table_row": 640,
+        "appendix": 45
+      },
+      "paragraph_file": "resources/derived/history-library/liaoshi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "c61ac3f1f5c7d4179423f3feb50993d937fceb7d096bc7bd0931ccb07e5ba806",
+      "sections_file": "resources/derived/history-library/liaoshi/sections.json",
+      "sections_sha256": "f8890c24c5bc83c51d4bb090e86772a8290da3bfce15b81076d2c6f0512fa61e",
+      "reading_file": "resources/derived/history-library/liaoshi/reading.txt",
+      "reading_sha256": "d9b2d394a945ea7900f45106db9f4ea06ec57c3e70ab0c050b2789881a637a32",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "jinshi",
+      "book": "金史",
+      "source_version": "45a71daf280f",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/金史.epub",
+          "source_sha256": "52e60c7fd16dfdf343cfe297194ad8c65b5fc37c61c08a5d2147bbe2a88f881a",
+          "mapped_source_file": "resources/originals/twenty-four-histories/22金史-EPUB全文.txt",
+          "mapped_source_sha256": "3cbf3ae9a801347b41a7244540993a6dec08c84d920886ea08ef649c3baa74ec",
+          "conversion_manifest": "resources/derived/epub-txt/22金史/manifest.json"
+        }
+      ],
+      "sections": 137,
+      "paragraphs": 9381,
+      "kind_counts": {
+        "heading": 1302,
+        "editorial_notice": 1,
+        "table_of_contents": 135,
+        "front_matter": 2,
+        "body": 6893,
+        "annotation": 39,
+        "table_row": 945,
+        "source_gap": 3,
+        "appendix": 61
+      },
+      "paragraph_file": "resources/derived/history-library/jinshi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "e565ad867e2afab3693918f83feeef837706e91bd86c3ac60090f73611ac5744",
+      "sections_file": "resources/derived/history-library/jinshi/sections.json",
+      "sections_sha256": "54d4c330520350a5ff113f697b3a26c3069d462383cb25ddb0cde91ef0f7b615",
+      "reading_file": "resources/derived/history-library/jinshi/reading.txt",
+      "reading_sha256": "fe12ed64563d1f5fd3e0d3a038bb9f4e3c66c9d4e978deef0241c2dedbfe90ae",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "yuanshi",
+      "book": "元史",
+      "source_version": "9ff5cf14e766",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/元史.epub",
+          "source_sha256": "3fdfeb8c9df55467a5f1c17497e03a5c70c2fe7a8fec3d9e433eb5bc02617a84",
+          "mapped_source_file": "resources/originals/twenty-four-histories/23元史-EPUB全文.txt",
+          "mapped_source_sha256": "824092a2f728faa4b5b18b640604312d586e75f6d9cabb3633406cb2784b5804",
+          "conversion_manifest": "resources/derived/epub-txt/23元史/manifest.json"
+        }
+      ],
+      "sections": 212,
+      "paragraphs": 23642,
+      "kind_counts": {
+        "heading": 1917,
+        "front_matter": 2,
+        "table_of_contents": 210,
+        "body": 14387,
+        "annotation": 2824,
+        "table_row": 4285,
+        "editorial_notice": 1,
+        "appendix": 16
+      },
+      "paragraph_file": "resources/derived/history-library/yuanshi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "6577ad0e9c351414d09cb0892e58b22c9bb5d2d41193bb17a39c303ffebaedfb",
+      "sections_file": "resources/derived/history-library/yuanshi/sections.json",
+      "sections_sha256": "dcc262f34f2610df0c1317122b8e034a44e624199477264a0329a0711d7dec9a",
+      "reading_file": "resources/derived/history-library/yuanshi/reading.txt",
+      "reading_sha256": "bf8ac13b1bf3ab01971fe04c8788d6d08347fa151f87f65371575ca143cd6775",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "mingshi",
+      "book": "明史",
+      "source_version": "2f603db3d81e",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+          "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42",
+          "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+          "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+          "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json"
+        }
+      ],
+      "sections": 333,
+      "paragraphs": 35498,
+      "kind_counts": {
+        "heading": 3150,
+        "front_matter": 2,
+        "table_of_contents": 332,
+        "body": 26604,
+        "annotation": 187,
+        "table_row": 5159,
+        "source_gap": 14,
+        "editorial_notice": 50
+      },
+      "paragraph_file": "resources/derived/history-library/mingshi/paragraphs.jsonl.gz",
+      "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+      "sections_file": "resources/derived/history-library/mingshi/sections.json",
+      "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5",
+      "reading_file": "resources/derived/history-library/mingshi/reading.txt",
+      "reading_sha256": "fcc119bf1855276cb3a1ede861773bfe664dcfb8e1ef1a51b20182f1bffaf330",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "foundation",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "qing-shigao",
+      "book": "清史稿",
+      "source_version": "99ab36d27b5e",
+      "rules": "history-epub-paragraph-v3",
+      "inputs": [
+        {
+          "source_file": "resources/originals/twenty-four-histories/backup/清史稿.epub",
+          "source_sha256": "ecbb20c5b72bdfb4f209cbcc3dd3d9bd21e2a3dac7a1d4e325f5cc17f3987419",
+          "mapped_source_file": "resources/originals/twenty-four-histories/25清史稿-EPUB全文.txt",
+          "mapped_source_sha256": "4397b3bd0204f27c2dfe4dcff5664a56a0472b09c6d09f83f8112f205dd1943e",
+          "conversion_manifest": "resources/derived/epub-txt/25清史稿/manifest.json"
+        }
+      ],
+      "sections": 531,
+      "paragraphs": 37062,
+      "kind_counts": {
+        "heading": 4420,
+        "front_matter": 530,
+        "body": 26598,
+        "editorial_notice": 3,
+        "table_row": 5487,
+        "source_gap": 8,
+        "annotation": 10,
+        "appendix": 6
+      },
+      "paragraph_file": "resources/derived/history-library/qing-shigao/paragraphs.jsonl.gz",
+      "paragraph_sha256": "aa154182890f78632a48400d471073c16bd55a3729b9d4cbba69465a2ca38e39",
+      "sections_file": "resources/derived/history-library/qing-shigao/sections.json",
+      "sections_sha256": "1c4c1b9a31cd78cca57eb87b32551b02c2f472bc6034f4216d60abb3aea3c1bd",
+      "reading_file": "resources/derived/history-library/qing-shigao/reading.txt",
+      "reading_sha256": "cf15cf1d761f01cff8d3342ad943e8fa83c3263bfa4eaec5410832d0e1641b37",
+      "warnings": [
+        "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+        "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+        "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+        "结构核验不替代史料校勘；自动段落不标为已录入。"
+      ],
+      "ingestion_role": "prepared_deferred",
+      "status": "normalized_candidates_pending_editorial_review"
+    },
+    {
+      "book_key": "zizhi-tongjian",
+      "book": "资治通鉴",
+      "source_version": "a63549944a71",
+      "rules": "history-paragraph-v2",
+      "inputs": [
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/001.txt",
+          "mapped_source_sha256": "c8e8785ba30c53b56cfaec6e640cdf5f233015a012f5df7cfc32161cae6b7dfe",
+          "title": "周纪一",
+          "volume": 1
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/002.txt",
+          "mapped_source_sha256": "50f4e53a2a9d2b5acc762973dc5e515a4938c36c47a331fdf54fd610e6e484b3",
+          "title": "周纪二",
+          "volume": 2
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/003.txt",
+          "mapped_source_sha256": "10aa69f0c3d25d683a5bb17389d708ecae2b5a0b8ac4d59a0fbdee6bdff9080f",
+          "title": "周纪三",
+          "volume": 3
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/004.txt",
+          "mapped_source_sha256": "0ef00edf3f4436d373c7733314dd3bb2f0cd75598be683783244c5fa74a56079",
+          "title": "周纪四",
+          "volume": 4
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/005.txt",
+          "mapped_source_sha256": "515532cc9d549746795d15cd9167eafb81f1202770d0306bdc77be2437172e80",
+          "title": "周纪五",
+          "volume": 5
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/006.txt",
+          "mapped_source_sha256": "7f89453284a6b21ad954dc7db8b34798d3520b4594a7c00b4bdd9fe345dec985",
+          "title": "秦纪一",
+          "volume": 6
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/007.txt",
+          "mapped_source_sha256": "18e9e745d4a9eb0c8f508ad95cffe3e817d34faf29158972819cbbfd2f55cd66",
+          "title": "秦纪二",
+          "volume": 7
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/008.txt",
+          "mapped_source_sha256": "c511c8b691a02f6377a47144a4358bc2098e1bd6286c8628d9f1e5aba7e4d6e3",
+          "title": "秦纪三",
+          "volume": 8
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/009.txt",
+          "mapped_source_sha256": "b278fc82d8e542946d3f7f4c82540dba629588d434732ef4e5ba98c9eb73cd08",
+          "title": "汉纪一",
+          "volume": 9
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/010.txt",
+          "mapped_source_sha256": "f5b9cec1c25ad7824f66370a9af1f584687c457d3dff4bc813b3575e3414843d",
+          "title": "汉纪二",
+          "volume": 10
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/011.txt",
+          "mapped_source_sha256": "77288e556d697938ba3cc8ef89b0d8b7758d4095215c582a3bd7753fc97d0c06",
+          "title": "汉纪三",
+          "volume": 11
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/012.txt",
+          "mapped_source_sha256": "fe68a69a31271f07ebacb3089a6a13420da234d0adba4f6ba098e99c79860e40",
+          "title": "汉纪四",
+          "volume": 12
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/013.txt",
+          "mapped_source_sha256": "278a549e8c54e5baa334c735bc34e0f70eb8bd2b99e1f9eddac7472efe0991e3",
+          "title": "汉纪五",
+          "volume": 13
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/014.txt",
+          "mapped_source_sha256": "7185134d8c3404de9f21cecd662b379a1f2daa65a343f7c28a7ac9a818ca0908",
+          "title": "汉纪六",
+          "volume": 14
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/015.txt",
+          "mapped_source_sha256": "49dbfdf4099715693f260f4bfde5f316f995cf116abf0adceea5e62b7355d446",
+          "title": "汉纪七",
+          "volume": 15
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/016.txt",
+          "mapped_source_sha256": "9466048372ea33318012c61aba468fb19b1b616f65280c28d76d425c2c4687c4",
+          "title": "汉纪八",
+          "volume": 16
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/017.txt",
+          "mapped_source_sha256": "53d6c84888177fe829dd7678e6e2ca4e8c6952ef86067121b73e134ee3cfc5ec",
+          "title": "汉纪九",
+          "volume": 17
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/018.txt",
+          "mapped_source_sha256": "c45f62013f074f5867511da0468706d172e2a493f69371835826594bf0f032da",
+          "title": "汉纪十",
+          "volume": 18
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/019.txt",
+          "mapped_source_sha256": "9ba3b8e84ad57e31fc686170a2aeda305f38ed89fc61ad2a3468a5d01aa86ff7",
+          "title": "汉纪十一",
+          "volume": 19
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/020.txt",
+          "mapped_source_sha256": "c3abda9e17c6a1512339237a9fecd7b0ae512fcc5b2e1adbd0f43f73109fd95b",
+          "title": "汉纪十二",
+          "volume": 20
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/021.txt",
+          "mapped_source_sha256": "c3b53d01ea72a90fd99c2f9d7f395b90d79b28da323d277dc1a5a4f51034c62f",
+          "title": "汉纪十三",
+          "volume": 21
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/022.txt",
+          "mapped_source_sha256": "045f779237fe3e513ef82582ed94641c977d021a9b3080b2a7c3f522adfbfc95",
+          "title": "汉纪十四",
+          "volume": 22
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/023.txt",
+          "mapped_source_sha256": "36bc1aa6c8f7072a658e449396f525ae39bed08cc1502918d734ad0ccbf1b7e5",
+          "title": "汉纪十五",
+          "volume": 23
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/024.txt",
+          "mapped_source_sha256": "8939968f9c647789263a5fcdc0152c010a52b9583bc92c9b995ebcf3830d3dae",
+          "title": "汉纪十六",
+          "volume": 24
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/025.txt",
+          "mapped_source_sha256": "dbd0b9b8f19cbf6c448a942413fc479f9922a7d3693d4adaa3365b0472d5f338",
+          "title": "汉纪十七",
+          "volume": 25
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/026.txt",
+          "mapped_source_sha256": "d9dd6b3bbd81a9755434a18c35fe57d0d5fa27c419e49e3bb622ab375ec20612",
+          "title": "汉纪十八",
+          "volume": 26
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/027.txt",
+          "mapped_source_sha256": "86edec412327d44789345d95d0b5000b409bdfd3d7d17f45cdc7b82c9b85723e",
+          "title": "汉纪十九",
+          "volume": 27
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/028.txt",
+          "mapped_source_sha256": "5a1f103b409da5914eee62950afa75bb58e4c8d6649cfbfaaf44400fe0bc3b10",
+          "title": "汉纪二十",
+          "volume": 28
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/029.txt",
+          "mapped_source_sha256": "bf566412f8ebcceb2fbce253c273b426b591c634da466c5057736d6c8d1dfa03",
+          "title": "汉纪二十一",
+          "volume": 29
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/030.txt",
+          "mapped_source_sha256": "feeb4b33f59804da3e3570dbc1700f5110caf9a261124d601b7f13514115a965",
+          "title": "汉纪二十二",
+          "volume": 30
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/031.txt",
+          "mapped_source_sha256": "595c73addf91a1a36017c759dc41a1bf48ac6183ab5a1090dd2b3efdf661454c",
+          "title": "汉纪二十三",
+          "volume": 31
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/032.txt",
+          "mapped_source_sha256": "1cd552087c7189b9a9a520c3c79d6d54fa1ac00ad506dcab43022707b6058bd6",
+          "title": "汉纪二十四",
+          "volume": 32
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/033.txt",
+          "mapped_source_sha256": "170bfd874655649c0b516d589c45a8d959c823a686614872517df166777ef7b5",
+          "title": "汉纪二十五",
+          "volume": 33
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/034.txt",
+          "mapped_source_sha256": "84476f3ac238e44d2dbe68f92a443015dc1fa4e9709b46f96d61bc55c506239a",
+          "title": "汉纪二十六",
+          "volume": 34
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/035.txt",
+          "mapped_source_sha256": "48508871c0b9e0d603dde96b9262cab334e5f3ac95e680d6121d5863dd23fdf1",
+          "title": "汉纪二十七",
+          "volume": 35
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/036.txt",
+          "mapped_source_sha256": "c4a7bf4452ab89bfb9b40a4cb487e879596d1e62b7193723148e4cd626ecc6eb",
+          "title": "汉纪二十八",
+          "volume": 36
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/037.txt",
+          "mapped_source_sha256": "fc1ced769a7ac1716ff1508da44fcf2b10939097bbf3705742fbc6737713ffe3",
+          "title": "汉纪二十九",
+          "volume": 37
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/038.txt",
+          "mapped_source_sha256": "b6dec1dd7e12b01f39b993f6856e8222edb3552586b69a1206fd1e3162dd0c2f",
+          "title": "汉纪三十",
+          "volume": 38
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/039.txt",
+          "mapped_source_sha256": "9e4a9c7b7c1325935feb35dc6279d9630c2069629b26b3ce58c5804fe6d78027",
+          "title": "汉纪三十一",
+          "volume": 39
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/040.txt",
+          "mapped_source_sha256": "43cee1af13fb7a97bace0cf9e4a56414b2154fdf60b474bb7330be25e41ad597",
+          "title": "汉纪三十二",
+          "volume": 40
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/041.txt",
+          "mapped_source_sha256": "3530bdfaecaa9686e5e7dc4c5dd487b0a774aaf10e776f3f462db319493f5cd0",
+          "title": "汉纪三十三",
+          "volume": 41
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/042.txt",
+          "mapped_source_sha256": "7543687357b2122be1d9dafe1c01ae50494977b3cf24b197ff8f6f64a970a01c",
+          "title": "汉纪三十四",
+          "volume": 42
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/043.txt",
+          "mapped_source_sha256": "f8720ed6e7ed1598adc727fd09bc8b5a8a65df1dd2d71815e0d887bf092ce50f",
+          "title": "汉纪三十五",
+          "volume": 43
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/044.txt",
+          "mapped_source_sha256": "f1f220a15aa03f917671d6a5e87a4ec3c5040bab7ee0bc53c125387d42e54458",
+          "title": "汉纪三十六",
+          "volume": 44
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/045.txt",
+          "mapped_source_sha256": "d63107d7dd377a7fcddc3c3522de6939a831095a47a15504863aec8ddd6b62a1",
+          "title": "汉纪三十七",
+          "volume": 45
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/046.txt",
+          "mapped_source_sha256": "62fdcb8187ab791a19477687dda7036971f1f263bdd8b1178fe2aa4ca3fcd1f0",
+          "title": "汉纪三十八",
+          "volume": 46
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/047.txt",
+          "mapped_source_sha256": "5223c9247ec98368a7eb31c1de457e9253249104528f04eaded170cf1a579b89",
+          "title": "汉纪三十九",
+          "volume": 47
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/048.txt",
+          "mapped_source_sha256": "bc667c435ed91c97baeab1d735025e2ea893efd32bd7dd2590807a9f29d36d29",
+          "title": "汉纪四十",
+          "volume": 48
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/049.txt",
+          "mapped_source_sha256": "a49ec3af1622d5607eb845f10ab058962094ef36348dcfbaa5a285d7de15bf8c",
+          "title": "汉纪四十一",
+          "volume": 49
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/050.txt",
+          "mapped_source_sha256": "f275e28126290af678bb4c890c1e18c0109e6703f405f2a74ac808c64b23d9fc",
+          "title": "汉纪四十二",
+          "volume": 50
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/051.txt",
+          "mapped_source_sha256": "25a4a6eeb2f6649defd01b0fcaba556385616abcc25d1959efed64fb685297bc",
+          "title": "汉纪四十三",
+          "volume": 51
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/052.txt",
+          "mapped_source_sha256": "7d72638401eb544b81c0d47ba82bd4c91633cc9f510800c7bcfc29d3acdf78a1",
+          "title": "汉纪四十四",
+          "volume": 52
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/053.txt",
+          "mapped_source_sha256": "1ab252c0447031212e5e82f4a03aa23494deac44d9ad566e71107edd75c2662f",
+          "title": "汉纪四十五",
+          "volume": 53
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/054.txt",
+          "mapped_source_sha256": "5036a45502c056ad83e0dc3feb3ea6fee478132903ce2822a17809c00cbeaa65",
+          "title": "汉纪四十六",
+          "volume": 54
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/055.txt",
+          "mapped_source_sha256": "433d4aa5e01804fbf8dc4ec9aae91b6127d593047823d2b3ffc1f5b6637dac0c",
+          "title": "汉纪四十七",
+          "volume": 55
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/056.txt",
+          "mapped_source_sha256": "d4c0ba1fda14bc36d47c90218ccb2b7f6642ece2d113b70ed519dc148c70917b",
+          "title": "汉纪四十八",
+          "volume": 56
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/057.txt",
+          "mapped_source_sha256": "89167b68ec380922b143d53955d5353b54c8fc30ba59eaa590b70f373bdb2ffa",
+          "title": "汉纪四十九",
+          "volume": 57
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/058.txt",
+          "mapped_source_sha256": "be347e6b2bed6f175c098078fbf3f7d907cb68da78dc58732653298fe5d20a9e",
+          "title": "汉纪五十",
+          "volume": 58
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/059.txt",
+          "mapped_source_sha256": "635c9a96c77fc053aac5e0ae3ecb13b3d2b4da615cf963a16ce1222b630a2133",
+          "title": "汉纪五十一",
+          "volume": 59
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/060.txt",
+          "mapped_source_sha256": "6d872e071d432bb8fb2832162eb449d94051968635284f92b44a0e4218ab1225",
+          "title": "汉纪五十二",
+          "volume": 60
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/061.txt",
+          "mapped_source_sha256": "5b2c6a1409cb552d083f7c77586f8b37fcad473418b1f22ddaa30a5376df53ce",
+          "title": "汉纪五十三",
+          "volume": 61
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/062.txt",
+          "mapped_source_sha256": "80b3ef75ae573ff2789ade7342dded1edc2b82cc57d9ffd9e1ca2c26c40f4126",
+          "title": "汉纪五十四",
+          "volume": 62
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/063.txt",
+          "mapped_source_sha256": "c3e59fc2f7d5e50f5a06745b42cf15b377ca74e8bb1a42221f9d2e35ee03a67a",
+          "title": "汉纪五十五",
+          "volume": 63
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/064.txt",
+          "mapped_source_sha256": "4cd0ba920b97b22f922135be12600590ec6490f17287cdc95b2c543cecde9203",
+          "title": "汉纪五十六",
+          "volume": 64
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/065.txt",
+          "mapped_source_sha256": "45b2f6ecbb318774df6fe17ed6b617900d3c164d4e642a185cb28cba3b97d945",
+          "title": "汉纪五十七",
+          "volume": 65
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/066.txt",
+          "mapped_source_sha256": "98cd113815f73d1e0c6eecbbc0b9092e409f32690cb4b5cc2bb205c310f10198",
+          "title": "汉纪五十八",
+          "volume": 66
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/067.txt",
+          "mapped_source_sha256": "6b78f6a4da2cd7081a2a46f11b0736ada3382711fe13d39cdd1ea1df922716a4",
+          "title": "汉纪五十九",
+          "volume": 67
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/068.txt",
+          "mapped_source_sha256": "6500ae5c8a8f369bf3a44f4f51e3a646a5b76257b9e8d5204be8a4712049fdd0",
+          "title": "汉纪六十",
+          "volume": 68
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/069.txt",
+          "mapped_source_sha256": "e5957c77a919e3cba418880b73da6b68ea8715afdf98df5a9c9148435d120637",
+          "title": "魏纪一",
+          "volume": 69
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/070.txt",
+          "mapped_source_sha256": "eb7c19c9a7aff35a25404c2dd84df492dbe391b5b036048630c11f17d7153a7b",
+          "title": "魏纪二",
+          "volume": 70
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/071.txt",
+          "mapped_source_sha256": "6c0725f1e37556dd05d3557fd2ed3d546e381c551425e1e4be34aa4d52e2dd2d",
+          "title": "魏纪三",
+          "volume": 71
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/072.txt",
+          "mapped_source_sha256": "55bd52ac12ef05a584b0659a76b6c8a4b3b11dcff3026fbb69b38872f2cbfd16",
+          "title": "魏纪四",
+          "volume": 72
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/073.txt",
+          "mapped_source_sha256": "bd97c9e8cf3c170b457fe8c84d147800354f967d640dc8c17f82de0c43f3426e",
+          "title": "魏纪五",
+          "volume": 73
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/074.txt",
+          "mapped_source_sha256": "232ec3e9fadf94178dc8d082d64e5c158d01ec2acb14928d32b3e2dc6e2c1c95",
+          "title": "魏纪六",
+          "volume": 74
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/075.txt",
+          "mapped_source_sha256": "11c2eb78b45ef5a36ddb60adda5b532c38bea534f276f3c5df63b30e652ed722",
+          "title": "魏纪七",
+          "volume": 75
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/076.txt",
+          "mapped_source_sha256": "bda1347f91b4f90f0553c085b0a5b154c59730a4ac1df8a74aa1bfafc49a9a3d",
+          "title": "魏纪八",
+          "volume": 76
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/077.txt",
+          "mapped_source_sha256": "7f71faed2befb9f090bca5323512a82f3e9ecd4c9574669976da614cdfdf0ce9",
+          "title": "魏纪九",
+          "volume": 77
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/078.txt",
+          "mapped_source_sha256": "3f83baa03dfe07527acbe28185cff4e43a943621639a7284fd06d69cf7cdcf05",
+          "title": "魏纪十",
+          "volume": 78
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/079.txt",
+          "mapped_source_sha256": "1e7b16844a329b44f5fdac960526f51faae61915cadcb82c7a0bc4e3f92f8e64",
+          "title": "晋纪一",
+          "volume": 79
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/080.txt",
+          "mapped_source_sha256": "5bbb41301d909e18209eab4d99bd82408620e987cc96eda6ec2dd24e2d62392d",
+          "title": "晋纪二",
+          "volume": 80
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/081.txt",
+          "mapped_source_sha256": "c1cd2fae1127081d1482a0ac796efdbfd3ecdc3158fe93c794309fed7f61d4b3",
+          "title": "晋纪三",
+          "volume": 81
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/082.txt",
+          "mapped_source_sha256": "ef27ec29dd7d9913bf43bd0874766f3591a396a0714be8e6cbeac0fcb105be6c",
+          "title": "晋纪四",
+          "volume": 82
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/083.txt",
+          "mapped_source_sha256": "e044a3760a534aebe2c92f91a10a9fd0b575e82a453d1ddf3065d77f2a3f73ff",
+          "title": "晋纪五",
+          "volume": 83
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/084.txt",
+          "mapped_source_sha256": "5aadbdb2e6953bfdd47bf3c3ba63a2cc49eae9dfe9f4728431b64cbf17ec87fa",
+          "title": "晋纪六",
+          "volume": 84
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/085.txt",
+          "mapped_source_sha256": "2cddc017502689a2e8507495d9bfdc6eee01e6f1f4a599dd24f2e51e6ed4012c",
+          "title": "晋纪七",
+          "volume": 85
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/086.txt",
+          "mapped_source_sha256": "f180d5108916818a64828805b73f897c7554bf04ab75d2794270f9a9a24d075d",
+          "title": "晋纪八",
+          "volume": 86
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/087.txt",
+          "mapped_source_sha256": "58150035119ea684b4cd8567b1e9e73da8cdeedb0ea0e723b65f63da3c72fb43",
+          "title": "晋纪九",
+          "volume": 87
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/088.txt",
+          "mapped_source_sha256": "58e1d6dc97a7b5e72df5beeb528bbfb8319eafb68502007b534d5495926b8362",
+          "title": "晋纪十",
+          "volume": 88
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/089.txt",
+          "mapped_source_sha256": "5cae3e51c824aec3ee11bf7213e6875e5f9487a40140544d42a75bcb9bfa4b50",
+          "title": "晋纪十一",
+          "volume": 89
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/090.txt",
+          "mapped_source_sha256": "eed57f21c82660f48035f63da4718a558a2a49fc5fdf4a46df20ec11b89d579e",
+          "title": "晋纪十二",
+          "volume": 90
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/091.txt",
+          "mapped_source_sha256": "fc9e759f0027846ba37ce0cd199325c8f454b2e29f823e93011d19c177d72d6c",
+          "title": "晋纪十三",
+          "volume": 91
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/092.txt",
+          "mapped_source_sha256": "111f98e96c0599c94bbf7db5a76932eb91f3e1868d0208545c79e54ee083c627",
+          "title": "晋纪十四",
+          "volume": 92
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/093.txt",
+          "mapped_source_sha256": "b390539b652c2a33a7d541cc47359c6d33625ad7b1592587ecb84ee61f6aefeb",
+          "title": "晋纪十五",
+          "volume": 93
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/094.txt",
+          "mapped_source_sha256": "3a88e3e6110682d01d33eeea4ee91d0424fb13eb09dd7816b96c2fc7729cd42d",
+          "title": "晋纪十六",
+          "volume": 94
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/095.txt",
+          "mapped_source_sha256": "dd1087b92a4612c48b42bbd00fc2c9faf189301cf01ac46facc3589e4bbd686a",
+          "title": "晋纪十七",
+          "volume": 95
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/096.txt",
+          "mapped_source_sha256": "2fd4b0c529cd580aee277e6cf2291fa93a7c2ac77a218da4256913de60495fac",
+          "title": "晋纪十八",
+          "volume": 96
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/097.txt",
+          "mapped_source_sha256": "5096a2f0d58814acf07fa77d9cf838a509159b79460711635bfd446b71da4a81",
+          "title": "晋纪十九",
+          "volume": 97
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/098.txt",
+          "mapped_source_sha256": "a5db4f28c6072a89130c2e83f45dc833e14e632b86b9ab30920de403629ac63b",
+          "title": "晋纪二十",
+          "volume": 98
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/099.txt",
+          "mapped_source_sha256": "14200c3b2dbc5c801378f6a87c51a1a5aef6dde059b9413ad7420c5b408ae61a",
+          "title": "晋纪二十一",
+          "volume": 99
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/100.txt",
+          "mapped_source_sha256": "2e27da8d72c6909b550a610c7ea8db04b48f25b76b4992a5171913a7d365b719",
+          "title": "晋纪二十二",
+          "volume": 100
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/101.txt",
+          "mapped_source_sha256": "90a217271fb91220d550a829764b862825c13d551da74835fae0878960749e6d",
+          "title": "晋纪二十三",
+          "volume": 101
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/102.txt",
+          "mapped_source_sha256": "1dccac0428a6021d8769e995d9dbb73e274e6685472a65eca6c60f32a39d44b5",
+          "title": "晋纪二十四",
+          "volume": 102
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/103.txt",
+          "mapped_source_sha256": "2abfd8f407b7eb74a720ac13bf3338035c2783229c7462425afc54456f1b6da8",
+          "title": "晋纪二十五",
+          "volume": 103
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/104.txt",
+          "mapped_source_sha256": "7690ebbc4d3631f4af27a4245678cef8af29b818c4a51806647147ca98d94542",
+          "title": "晋纪二十六",
+          "volume": 104
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/105.txt",
+          "mapped_source_sha256": "324a29cf3bc86502d41b619f040bd39a95c72c0a844f22b034a5560456e36a0d",
+          "title": "晋纪二十七",
+          "volume": 105
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/106.txt",
+          "mapped_source_sha256": "c2d9b4c9531963d7137d35fef178358867b1e038dbfe14089cd7c9f6e60df806",
+          "title": "晋纪二十八",
+          "volume": 106
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/107.txt",
+          "mapped_source_sha256": "2306f3539c5fcaec7516bde4137ed6ccb88ae91a6270f4eee32e2e197cf32c50",
+          "title": "晋纪二十九",
+          "volume": 107
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/108.txt",
+          "mapped_source_sha256": "cde23f7403fe401bab1bc3d081c7c2340bf4bb40e19ee0c43947226c9b3864d8",
+          "title": "晋纪三十",
+          "volume": 108
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/109.txt",
+          "mapped_source_sha256": "70a5be33634c2e2f94193faec34dae372c2f4fe6da3b6247c36eb2e6be01ba35",
+          "title": "晋纪三十一",
+          "volume": 109
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/110.txt",
+          "mapped_source_sha256": "b9afc5e098444ca8a336b1b3744730b4254a476db8c5c6967e1f695130b8d98d",
+          "title": "晋纪三十二",
+          "volume": 110
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/111.txt",
+          "mapped_source_sha256": "5d5ca52c475b6c58a7c33aa1ad0316fa586830133ab07882f7814a9d5f088294",
+          "title": "晋纪三十三",
+          "volume": 111
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/112.txt",
+          "mapped_source_sha256": "304842b22d12f002af160d8666611bb0fe62e7065828f92e587a4a854aa9e507",
+          "title": "晋纪三十四",
+          "volume": 112
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/113.txt",
+          "mapped_source_sha256": "53bb11862ab74bea303deaf45fc67aaa8a258cec52d79ade42a102d63d37f7f4",
+          "title": "晋纪三十五",
+          "volume": 113
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/114.txt",
+          "mapped_source_sha256": "643696882e199f83cdb1fa48c86029b8573ffbc7abd106a1c517cb861ba44a9e",
+          "title": "晋纪三十六",
+          "volume": 114
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/115.txt",
+          "mapped_source_sha256": "7bab94101bec8e3245f924ed589df42e9b15cf88386cdf809d9986eaefccfa49",
+          "title": "晋纪三十七",
+          "volume": 115
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/116.txt",
+          "mapped_source_sha256": "edc8229b7140f61c261a6b0dc7d1914c00be69014a2fb35250a95644352fc142",
+          "title": "晋纪三十八",
+          "volume": 116
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/117.txt",
+          "mapped_source_sha256": "d9851d58cb9f456b5ffe970028d290d65c5623d35ba974a69511c2b26c8378e3",
+          "title": "晋纪三十九",
+          "volume": 117
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/118.txt",
+          "mapped_source_sha256": "250ab6f986c29231eb48a77bfa19932ebd11748685b1136e6402b0b7de10a527",
+          "title": "晋纪四十",
+          "volume": 118
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/119.txt",
+          "mapped_source_sha256": "3b44e1ea32a7bea27e305cbac4963fa0950c58dbc9269d2316511a69761109bb",
+          "title": "宋纪一",
+          "volume": 119
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/120.txt",
+          "mapped_source_sha256": "5927106e8c8693bf525f2a7e2146beec28bf9adcdf5947cf4f763f9ea6ff26ce",
+          "title": "宋纪二",
+          "volume": 120
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/121.txt",
+          "mapped_source_sha256": "4b4e56a98f8cf66f26d3cbca6d43303cd994b1c1991d855e222266a67b705079",
+          "title": "宋纪三",
+          "volume": 121
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/122.txt",
+          "mapped_source_sha256": "d83f2186ce6b9370b7583cd51d4e58c8cd82ba76281224179fa539f81164bf26",
+          "title": "宋纪四",
+          "volume": 122
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/123.txt",
+          "mapped_source_sha256": "64ab6f9bbd3ed831a545b81ff32d5138972bbdbe1f0d1d1b46b718678b605f58",
+          "title": "宋纪五",
+          "volume": 123
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/124.txt",
+          "mapped_source_sha256": "a2afe4b06b8527d317d146f1f51d702edcdb81887ba67cc50a8c3a1e267b149f",
+          "title": "宋纪六",
+          "volume": 124
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/125.txt",
+          "mapped_source_sha256": "0bace660df46cefd4da955a992146c30094e76f07647b2bde59d9dfb577960c5",
+          "title": "宋纪七",
+          "volume": 125
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/126.txt",
+          "mapped_source_sha256": "33c906ea1814aa85857f6717e600889d6d9185fa74eb40ec565adf3c79d57f2a",
+          "title": "宋纪八",
+          "volume": 126
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/127.txt",
+          "mapped_source_sha256": "47b4b539abc5d465f4446cbb90877b0ee0fef33fa5e83af56aa3aedab29a8970",
+          "title": "宋纪九",
+          "volume": 127
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/128.txt",
+          "mapped_source_sha256": "e7ec50ee0869968bab378f45f4bf674d96617dbf398e4c12521a3bbb4d58896c",
+          "title": "宋纪十",
+          "volume": 128
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/129.txt",
+          "mapped_source_sha256": "8b604bc4c733d0bb586f253fd30ce5042b2daeebe9e2c460afea1a6b25a2b942",
+          "title": "宋纪十一",
+          "volume": 129
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/130.txt",
+          "mapped_source_sha256": "e7ebd09ffeae69b0aa88794fc11bc8aa1e7773f3a28851a5d8e82473dfb64ee9",
+          "title": "宋纪十二",
+          "volume": 130
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/131.txt",
+          "mapped_source_sha256": "40233f8454b6473b1a765545a4ea47c15b977394848e13a6cd623831c26b1563",
+          "title": "宋纪十三",
+          "volume": 131
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/132.txt",
+          "mapped_source_sha256": "ca908bc020e808d20b8f714f30fa75131012735df36ef8b512b98e28ab5e0dd5",
+          "title": "宋纪十四",
+          "volume": 132
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/133.txt",
+          "mapped_source_sha256": "5b6ee76e5bc720403a1dd2dbcffca6dadb1b8484ff5c29a148b281b2fa101695",
+          "title": "宋纪十五",
+          "volume": 133
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/134.txt",
+          "mapped_source_sha256": "a4b2768c16b4bfd7da96ea7fd7b7d1222b8ce52381c7a5c241be84156408f01a",
+          "title": "宋纪十六",
+          "volume": 134
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/135.txt",
+          "mapped_source_sha256": "669f7238d2583d5b75f4c4ab9b841d628ae21e7fc25f840b593164d3fbbaa6ad",
+          "title": "齐纪一",
+          "volume": 135
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/136.txt",
+          "mapped_source_sha256": "b2bae77e81f3ebbd981f04f55c606ff7b14ce57a183e57324bc0c8439f5f17d0",
+          "title": "齐纪二",
+          "volume": 136
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/137.txt",
+          "mapped_source_sha256": "a68a92d8c5f4a77e9ffefe0855d8b2702312a81c63246f4cdd62daf5fc75d8c7",
+          "title": "齐纪三",
+          "volume": 137
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/138.txt",
+          "mapped_source_sha256": "f4ef226d26635b17e85c4283d3e994c8bc6aa43b101160161b61a753d0f8234c",
+          "title": "齐纪四",
+          "volume": 138
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/139.txt",
+          "mapped_source_sha256": "792730fb6d6be047feebd60702e2e9d449edec853020cd77d4cf694779b9fc71",
+          "title": "齐纪五",
+          "volume": 139
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/140.txt",
+          "mapped_source_sha256": "7c8d308995e555a0dc953d741a25840b0aaed0780ff0e762db7720c2af8cdd8d",
+          "title": "齐纪六",
+          "volume": 140
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/141.txt",
+          "mapped_source_sha256": "6add6a6a92fa8de4331823e031f25f0df2ee71e6893d4bc6d26f5677ee666da2",
+          "title": "齐纪七",
+          "volume": 141
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/142.txt",
+          "mapped_source_sha256": "7886c588866e8ddd17122d9c5913351980851571fc600c09c6211b1b134a17ed",
+          "title": "齐纪八",
+          "volume": 142
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/143.txt",
+          "mapped_source_sha256": "f25a421c5349d127ce02e40ed2ecd7fcbf607d54c55f71f71a947930de65697f",
+          "title": "齐纪九",
+          "volume": 143
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/144.txt",
+          "mapped_source_sha256": "3613d64b3127f61e84dd87a9748beba070dff348d08ecc03d2caec7bb8de7a1a",
+          "title": "齐纪十",
+          "volume": 144
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/145.txt",
+          "mapped_source_sha256": "c2cc1118653ba8ed6bc2dc437d524c9cc4b7f164caddd10d1a2edd3dd1992330",
+          "title": "梁纪一",
+          "volume": 145
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/146.txt",
+          "mapped_source_sha256": "c402981181af32644dde1d6c8cee195d8f204fddd6b8ccdf0efd23c610f76beb",
+          "title": "梁纪二",
+          "volume": 146
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/147.txt",
+          "mapped_source_sha256": "3aafda165cd1fa30fb5385d9b342872ec431cb8a88c507b11a2c04f92b47bb3f",
+          "title": "梁纪三",
+          "volume": 147
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/148.txt",
+          "mapped_source_sha256": "c38d9b5d849a9e2eb7916d632d8963d4700a7491217fc860797b9a5035eee75a",
+          "title": "梁纪四",
+          "volume": 148
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/149.txt",
+          "mapped_source_sha256": "2db523c4526fcf67735b423f17249a10b2e28eab9f8226a247179e548a2863c2",
+          "title": "梁纪五",
+          "volume": 149
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/150.txt",
+          "mapped_source_sha256": "b38668a309ae8ea6bd324bc7034ed5254dd8c7a1afa344555cb1bc952f191c39",
+          "title": "梁纪六",
+          "volume": 150
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/151.txt",
+          "mapped_source_sha256": "ee06dce7fa14bf30f0889e01d8b1e26cc38565853bf8860bb8438866a14c0d5a",
+          "title": "梁纪七",
+          "volume": 151
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/152.txt",
+          "mapped_source_sha256": "5754d0e19643722788a3ed38e138419b9ae4554f82002ce8f8b3104111cabb8a",
+          "title": "梁纪八",
+          "volume": 152
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/153.txt",
+          "mapped_source_sha256": "b8396ecb8b77cfaa3b76cedaf8782f3ccca1fd6274469c5678b9ea2c9460c00a",
+          "title": "梁纪九",
+          "volume": 153
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/154.txt",
+          "mapped_source_sha256": "2e78cfcd76283925d06ad9dd59b64bcd69251ea1bd7837bf65a09ac13c5f17ed",
+          "title": "梁纪十",
+          "volume": 154
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/155.txt",
+          "mapped_source_sha256": "908e3c714e4ec79960cf51f6a56ab228e7de268db9f57cd807c5b0f92e5f13b0",
+          "title": "梁纪十一",
+          "volume": 155
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/156.txt",
+          "mapped_source_sha256": "33e3707af64466c7fba8fc9bf17eb1807ed19d046d4a1ed5a848b3dfece3935b",
+          "title": "梁纪十二",
+          "volume": 156
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/157.txt",
+          "mapped_source_sha256": "2aa38ec78d626836c792b8d3f42361dac4c14f7e9319a97c9c133e93bfc69930",
+          "title": "梁纪十三",
+          "volume": 157
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/158.txt",
+          "mapped_source_sha256": "9d221605da5487d9739912555fb446807168d5f850bd6d193648f9937318c9a9",
+          "title": "梁纪十四",
+          "volume": 158
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/159.txt",
+          "mapped_source_sha256": "fbf70927fc845061119f23278f2f1c83436b7635506d2803a870e2344ff49ebe",
+          "title": "梁纪十五",
+          "volume": 159
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/160.txt",
+          "mapped_source_sha256": "40e9a9d7d8b206c1b67e21fc158d51639a4cc4b579ec5f8b5070bd199165fce7",
+          "title": "梁纪十六",
+          "volume": 160
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/161.txt",
+          "mapped_source_sha256": "e339dc82f6d9b76e3add41d80c01c8e81f2c146e48995250f3c77e9fea2dfbf5",
+          "title": "梁纪十七",
+          "volume": 161
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/162.txt",
+          "mapped_source_sha256": "820adc14c2aa48d5e043f194e52e6640bd4cc276ed0d4523d14d8fac0c3f64f2",
+          "title": "梁纪十八",
+          "volume": 162
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/163.txt",
+          "mapped_source_sha256": "43fa1bff7bb4895452c115fbf291cb049352baba789374518995f29e52e40de3",
+          "title": "梁纪十九",
+          "volume": 163
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/164.txt",
+          "mapped_source_sha256": "31e43d7f2927497af93ae9f24138ef6baf23059c746b1ca26bb2be486a6e61f5",
+          "title": "梁纪二十",
+          "volume": 164
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/165.txt",
+          "mapped_source_sha256": "bcf6bd54baaf94f95cdcd5fc68676c782f2b2f73a28d11d0d54761e8dd577dbb",
+          "title": "梁纪二十一",
+          "volume": 165
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/166.txt",
+          "mapped_source_sha256": "c53d7f43f5db160c7c5dc279fe97f4757af556f4e5fd319d2fc1b22fefb60e9f",
+          "title": "梁纪二十二",
+          "volume": 166
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/167.txt",
+          "mapped_source_sha256": "f012aa539e4f3ec22332bd90f36b23d26d0bf2454c661a33bae24c594e874840",
+          "title": "陈纪一",
+          "volume": 167
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/168.txt",
+          "mapped_source_sha256": "52a1f8bf2f4c3c716ba4406c0311be69b1d7dae0186dec56f6b48ebe012587aa",
+          "title": "陈纪二",
+          "volume": 168
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/169.txt",
+          "mapped_source_sha256": "93148776d1002066ec2046fca57784e47d7933f1a95a888bdfc6ffffbc8228c6",
+          "title": "陈纪三",
+          "volume": 169
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/170.txt",
+          "mapped_source_sha256": "16ba9ba0011253c7e2cda3fe0acdbeeba62d3787ea742fa24547ac9538b0a427",
+          "title": "陈纪四",
+          "volume": 170
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/171.txt",
+          "mapped_source_sha256": "561ee0e370eb0687c6bf37b7f5304eca942f57788dc646d5faa9dc8fa30d7457",
+          "title": "陈纪五",
+          "volume": 171
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/172.txt",
+          "mapped_source_sha256": "d1783053188feb7311922b93a5e63e9472beae8e218218dca6023f32728ad01b",
+          "title": "陈纪六",
+          "volume": 172
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/173.txt",
+          "mapped_source_sha256": "e88af996bbba97c396af8711caa75b11e0b73d0c6a8ff67f0eff01573cbef9c7",
+          "title": "陈纪七",
+          "volume": 173
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/174.txt",
+          "mapped_source_sha256": "52f94c01be6d5cea82ee870ed9d6cd19e87f891aae3cc9b2072cdc45567091fd",
+          "title": "陈纪八",
+          "volume": 174
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/175.txt",
+          "mapped_source_sha256": "c866e5bacc0c0182eac484f059a6a7e336c7fc4a3cc92c4f21124166cc4657ff",
+          "title": "陈纪九",
+          "volume": 175
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/176.txt",
+          "mapped_source_sha256": "def5835bd6059f20d0afb7369185fa014a66664c6ca48a3503d286eea2505466",
+          "title": "陈纪十",
+          "volume": 176
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/177.txt",
+          "mapped_source_sha256": "bec1734ccaf217e8a70e8385988b566580d629fc8262038ae96b04c71bcba0fb",
+          "title": "隋纪一",
+          "volume": 177
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/178.txt",
+          "mapped_source_sha256": "c98e057db5f2457a8abee5ed7de458ccf3fbcc468eea4c65e75c08ef168eddc4",
+          "title": "隋纪二",
+          "volume": 178
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/179.txt",
+          "mapped_source_sha256": "b03a554829d98e75a91af8cf54365ed18bf98126cd5d013b9a2896eb1a4ba5bb",
+          "title": "隋纪三",
+          "volume": 179
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/180.txt",
+          "mapped_source_sha256": "e250a4f1dfd9ead1a3fa7c94b6ac19197caf61e9a0c875405553539656a7ca7f",
+          "title": "隋纪四",
+          "volume": 180
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/181.txt",
+          "mapped_source_sha256": "c386380b30f0ec434f3feba414c4cd2fa0e8c6508eea4674203e568e9ab77e7f",
+          "title": "隋纪五",
+          "volume": 181
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/182.txt",
+          "mapped_source_sha256": "6a4a6d23f0795593b33449a64f50c1689e210448cb6b4aafac5c58fdee36887d",
+          "title": "隋纪六",
+          "volume": 182
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/183.txt",
+          "mapped_source_sha256": "b5e1ae16ac697a099ac82f227c6bb45c65464e7dfe23ce89bd80f4f2f1104633",
+          "title": "隋纪七",
+          "volume": 183
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/184.txt",
+          "mapped_source_sha256": "61d62583503a18b774d4bd8337b512ce4761b4ea9835a2eee01653155ccdb82f",
+          "title": "隋纪八",
+          "volume": 184
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/185.txt",
+          "mapped_source_sha256": "2513b4a5f29585f70141958f1e69bff84b509c472f9c42852916c288bd94bb59",
+          "title": "唐纪一",
+          "volume": 185
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/186.txt",
+          "mapped_source_sha256": "8b95a09be5064de43488e255f09f0070151074ecaeaff2004f1718a187452d3d",
+          "title": "唐纪二",
+          "volume": 186
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/187.txt",
+          "mapped_source_sha256": "005e49bbd9bb4be47e231f4a36262008f7dab9004a0528e7334db04344522742",
+          "title": "唐纪三",
+          "volume": 187
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/188.txt",
+          "mapped_source_sha256": "5969f176766ffc8887efba3367792244b549398e12d1ba08a104fb7c00692892",
+          "title": "唐纪四",
+          "volume": 188
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/189.txt",
+          "mapped_source_sha256": "5d09add54c6776d5740a7489ec05de87873bef39239747c80eda712fd4b296ea",
+          "title": "唐纪五",
+          "volume": 189
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/190.txt",
+          "mapped_source_sha256": "fb4ad68ca5db903132f2b1c866ddc72a1af864715e135a2d3a3abdbc164be580",
+          "title": "唐纪六",
+          "volume": 190
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/191.txt",
+          "mapped_source_sha256": "1bf62be7359fa7f1b0ce91e52e50b654791197798793dc59a6c37f83395f5ac1",
+          "title": "唐纪七",
+          "volume": 191
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/192.txt",
+          "mapped_source_sha256": "3c7d44074a6936839ccd4cc4b50626048980334b34173a4018aa47a90ece69cf",
+          "title": "唐纪八",
+          "volume": 192
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/193.txt",
+          "mapped_source_sha256": "bc628d9c05a1f57c8d93c093d4ff900a1fe837f7664af6c26d23adfa739d6e68",
+          "title": "唐纪九",
+          "volume": 193
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/194.txt",
+          "mapped_source_sha256": "4f304aaf3420e402ee859b5ebe2ba4dfd010ad929785e1f85e973d890a122fda",
+          "title": "唐纪十",
+          "volume": 194
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/195.txt",
+          "mapped_source_sha256": "0ac52958f0ffb278dc7ffa54abd3a167ea9f9d9441761c61022cea4b4a386857",
+          "title": "唐纪十一",
+          "volume": 195
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/196.txt",
+          "mapped_source_sha256": "0e1a8828d3133d83173c6588a4b2dcc2a54e503cb8edf79e5a4baebe423e55f5",
+          "title": "唐纪十二",
+          "volume": 196
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/197.txt",
+          "mapped_source_sha256": "b449896789b9cb9902a3386a9f9b8560e04aa45234f2ce7e1e305f9d909746ef",
+          "title": "唐纪十三",
+          "volume": 197
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/198.txt",
+          "mapped_source_sha256": "37cad7435e4a94c2a752e171a314911d0f5bea4b52efebb21eff07f48903b0ce",
+          "title": "唐纪十四",
+          "volume": 198
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/199.txt",
+          "mapped_source_sha256": "b57b983ad5b0e20c641cc8dcaa295afaa2c62a2b2814d7acc9ed52751a6824a5",
+          "title": "唐纪十五",
+          "volume": 199
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/200.txt",
+          "mapped_source_sha256": "7cd39f6d89b4bc7397fe7057c0f7a7889613caf95c3db321beab046e94c66889",
+          "title": "唐纪十六",
+          "volume": 200
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/201.txt",
+          "mapped_source_sha256": "31d107b4cb0836e990078192831004dbb40814e9ecaed513c71abecb1092c3cd",
+          "title": "唐纪十七",
+          "volume": 201
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/202.txt",
+          "mapped_source_sha256": "f826586e7fce29212b2e6dc78db294eb33a753c97e949260380967fef4dbfa80",
+          "title": "唐纪十八",
+          "volume": 202
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/203.txt",
+          "mapped_source_sha256": "53b2e5df5957def86222def8704067b9530b7a5002c0525f0972dae7aca5e699",
+          "title": "唐纪十九",
+          "volume": 203
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/204.txt",
+          "mapped_source_sha256": "68b3872fefcfc1dbc171b76c275ee30413f05d66c00601fedcf9224286b24a0e",
+          "title": "唐纪二十",
+          "volume": 204
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/205.txt",
+          "mapped_source_sha256": "b699300ea5503940f1c7821bc6bd9a04dca947b091952dd6b22dcae66ebfcdf4",
+          "title": "唐纪二十一",
+          "volume": 205
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/206.txt",
+          "mapped_source_sha256": "c9cb7b4c1b1b4657d84fc584001e5ec1acb69d6c43a0226e82bd034b440b03fb",
+          "title": "唐纪二十二",
+          "volume": 206
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/207.txt",
+          "mapped_source_sha256": "bef1ff09486d7de97f1aea8bc1d7c8d0a134534cdce87dc940d2dfc65ac26099",
+          "title": "唐纪二十三",
+          "volume": 207
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/208.txt",
+          "mapped_source_sha256": "3ca8ca6c797a5b333ef2ec667e8b70d722311f163aab6467cce9c37cb78636a8",
+          "title": "唐纪二十四",
+          "volume": 208
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/209.txt",
+          "mapped_source_sha256": "bc4802a7eded7d4f2837abf29e41e795cb5b655feee2a45e38e2e17b5ea55d4a",
+          "title": "唐纪二十五",
+          "volume": 209
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/210.txt",
+          "mapped_source_sha256": "5712ded48d3f2b137a46fffda4f91b58bd2a0f8a9bf2543fd2abdd57c5130303",
+          "title": "唐纪二十六",
+          "volume": 210
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/211.txt",
+          "mapped_source_sha256": "6ee8365c24d3e906ddeed7ede5820e151c1c2c0f7d9510f3e814140aee294283",
+          "title": "唐纪二十七",
+          "volume": 211
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/212.txt",
+          "mapped_source_sha256": "289ccaa3ebc0fbe2c5d3ad3e2ceb3fcda7472d7152668c8793382f936324ae7a",
+          "title": "唐纪二十八",
+          "volume": 212
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/213.txt",
+          "mapped_source_sha256": "1dea81a861733c5a08e3f88dabc81070b548d0bf11a37c903e32124d2e6612e1",
+          "title": "唐纪二十九",
+          "volume": 213
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/214.txt",
+          "mapped_source_sha256": "f38b49df951c7cc4fe7affdaa66daf4e9dd6f75e6a60cd50ab5f655c55ebd983",
+          "title": "唐纪三十",
+          "volume": 214
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/215.txt",
+          "mapped_source_sha256": "3960b4e7f06aefc4cfb94b16d7e85c62329141dac9b84016904884f795a6acba",
+          "title": "唐纪三十一",
+          "volume": 215
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/216.txt",
+          "mapped_source_sha256": "46bab8c48916173a6374010d2ac1e9e8b26c4fa6b484fd0512754c407e79b707",
+          "title": "唐纪三十二",
+          "volume": 216
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/217.txt",
+          "mapped_source_sha256": "cced284d1910f6e00adc39a2b423d171f5f14ecd73a006069548d8f17c1caff0",
+          "title": "唐纪三十三",
+          "volume": 217
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/218.txt",
+          "mapped_source_sha256": "9a301ff1f88c9cab7ad631acc9b3e982601a75708ec10f90423793a65f6e7e9e",
+          "title": "唐纪三十四",
+          "volume": 218
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/219.txt",
+          "mapped_source_sha256": "c1bff9feae4449da16552dfcc0037d8285cd40f39d6e50fe272bdd5e06c6dae6",
+          "title": "唐纪三十五",
+          "volume": 219
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/220.txt",
+          "mapped_source_sha256": "493c5fb8bcb5b8a65cdcd3d60d35ed56bdda2e5a7884c7416c80723d2db9a8c9",
+          "title": "唐纪三十六",
+          "volume": 220
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/221.txt",
+          "mapped_source_sha256": "a6847862a3f695983a583c90fabe5c13038871d106affba0cfbc4ab02466efee",
+          "title": "唐纪三十七",
+          "volume": 221
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/222.txt",
+          "mapped_source_sha256": "4dc3f7680c1b969261e03c2226580140403567e871ef06fe88b81338218083ad",
+          "title": "唐纪三十八",
+          "volume": 222
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/223.txt",
+          "mapped_source_sha256": "00d7e811a6a39288bab4166743bbd9dda7d8a1b929b8729e3e26f0bc4c32d596",
+          "title": "唐纪三十九",
+          "volume": 223
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/224.txt",
+          "mapped_source_sha256": "fcaaf4edeac1afab746a075b9665b46fe0205e6b4bcc7390df93863fa35c89e2",
+          "title": "唐纪四十",
+          "volume": 224
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/225.txt",
+          "mapped_source_sha256": "3f89ef9bb1b33faa0fdf47fd717d236d59dc37ddb8f8f775333db054f0388840",
+          "title": "唐纪四十一",
+          "volume": 225
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/226.txt",
+          "mapped_source_sha256": "366e1daad7d8189f089e2ed623ac7bb7d5c041dc768782df3f1edf051b972f66",
+          "title": "唐纪四十二",
+          "volume": 226
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/227.txt",
+          "mapped_source_sha256": "d20e017b09e7e06c7d43f27330e61c84d7e786f18dcaa16b6fdd9bfe4e31b295",
+          "title": "唐纪四十三",
+          "volume": 227
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/228.txt",
+          "mapped_source_sha256": "cd55b5ebe11c2e6b9821f2bcabf20e6dc0797384222e4eaf2bc874c76ff2e005",
+          "title": "唐纪四十四",
+          "volume": 228
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/229.txt",
+          "mapped_source_sha256": "cdd794a4740cf3b9ff0eca70a84786dde29c174e43cccbbd9753592576ba8433",
+          "title": "唐纪四十五",
+          "volume": 229
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/230.txt",
+          "mapped_source_sha256": "6a646a8584f5fa90d9c999442955e641ac14940787c2096ce3712350a84f4371",
+          "title": "唐纪四十六",
+          "volume": 230
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/231.txt",
+          "mapped_source_sha256": "07a303236dc8c35298a75f038ead578b0d44e77bffab2c9a78f4568f8b41e3bc",
+          "title": "唐纪四十七",
+          "volume": 231
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/232.txt",
+          "mapped_source_sha256": "c7a99cfefbbe18eb45663784d7f3d2ea225d3b642b250337b643ce46395b6c4b",
+          "title": "唐纪四十八",
+          "volume": 232
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/233.txt",
+          "mapped_source_sha256": "57c21395d6bbf1873985392bb5cd35941913b671c1c183b2e41cb3dbbc8dacee",
+          "title": "唐纪四十九",
+          "volume": 233
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/234.txt",
+          "mapped_source_sha256": "285e482750dd08195dafcb14a901175721dd03ffe89161c606594da0f3386950",
+          "title": "唐纪五十",
+          "volume": 234
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/235.txt",
+          "mapped_source_sha256": "3e810216adff3eeff5bde85a5cec29925344cd1b9bf37b4dfb476920dff4b45c",
+          "title": "唐纪五十一",
+          "volume": 235
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/236.txt",
+          "mapped_source_sha256": "5deea462751f7768aa2934f751c3310d1e7eef00065949d29c9326798ae21fa0",
+          "title": "唐纪五十二",
+          "volume": 236
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/237.txt",
+          "mapped_source_sha256": "a04e66c17d87223fd98a9dafc8561acba7ffacf23ea1062f9b882bf4c1af2d5a",
+          "title": "唐纪五十三",
+          "volume": 237
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/238.txt",
+          "mapped_source_sha256": "8c4a361e96aa3303b7f3f221347c7444a3b85b36d48c3d2c853ae3bd6bd4f743",
+          "title": "唐纪五十四",
+          "volume": 238
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/239.txt",
+          "mapped_source_sha256": "132f1fcd496015d902fe59ce0cc4f7ce57d3c564003a03539d6291a75b98875e",
+          "title": "唐纪五十五",
+          "volume": 239
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/240.txt",
+          "mapped_source_sha256": "b04c1882c92b83090c0a64c68aa555860ec37cc36500b73132952af04b0dc6ea",
+          "title": "唐纪五十六",
+          "volume": 240
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/241.txt",
+          "mapped_source_sha256": "9718d0a4f1057165c631ec219647ea9ce86f9fdc2163728a9cd34783557476c6",
+          "title": "唐纪五十七",
+          "volume": 241
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/242.txt",
+          "mapped_source_sha256": "d8bfaec80bac38c56a003593fc9c7ee7f7fa018ac6a9024eb67247fdedc3ecee",
+          "title": "唐纪五十八",
+          "volume": 242
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/243.txt",
+          "mapped_source_sha256": "afec1a97df8f15878b1e7ee3f0a4f8e8756b2d6cede6781260499db9a1adf7fb",
+          "title": "唐纪五十九",
+          "volume": 243
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/244.txt",
+          "mapped_source_sha256": "571f31c0b8950ae333d099963c26746d246d56677291b961f46de641bc120792",
+          "title": "唐纪六十",
+          "volume": 244
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/245.txt",
+          "mapped_source_sha256": "05b75d849789f7d352595eff187ff7fc81ecec3fcf7349d21e1935237b15dfbe",
+          "title": "唐纪六十一",
+          "volume": 245
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/246.txt",
+          "mapped_source_sha256": "4dac2e4d249d05680ae53dbe47b80afd1b15f25ef5172a8ee4b025fc2ec9be6f",
+          "title": "唐纪六十二",
+          "volume": 246
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/247.txt",
+          "mapped_source_sha256": "19f8d88830aa1b362deb4de29ca73f7b820c081529d8247d23cf3ae371fb0c2a",
+          "title": "唐纪六十三",
+          "volume": 247
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/248.txt",
+          "mapped_source_sha256": "f95708a3db13c36f8ec05f35f198b0ba5a1e6995008d14dac9cb6c05aa6dafb9",
+          "title": "唐纪六十四",
+          "volume": 248
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/249.txt",
+          "mapped_source_sha256": "78cd36459661adfc453f1f40e7fca9747f1c77f4ca419d6975e782dd13a79c1f",
+          "title": "唐纪六十五",
+          "volume": 249
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/250.txt",
+          "mapped_source_sha256": "90d349f39fe15ddd7c42a5b246488cdf2d06beb18d762464d3a0ba812c5077ac",
+          "title": "唐纪六十六",
+          "volume": 250
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/251.txt",
+          "mapped_source_sha256": "4772664e3ee2c62908ad7661c64fe3e4c7a4fdf04610e001210ca158cd5bc55e",
+          "title": "唐纪六十七",
+          "volume": 251
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/252.txt",
+          "mapped_source_sha256": "82e9692b587333da2fbc3f2904725121af922bb252b944ca058dcfa27c7b9e9e",
+          "title": "唐纪六十八",
+          "volume": 252
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/253.txt",
+          "mapped_source_sha256": "6f236c0a966ecfdf7c0abdd6be37bbc57a17e3d93a0d6d7d5bed510f4f100c31",
+          "title": "唐纪六十九",
+          "volume": 253
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/254.txt",
+          "mapped_source_sha256": "c95431c9b0b3f4915679a67671ef67445094f8da3c069de129ae3e00649a8de8",
+          "title": "唐纪七十",
+          "volume": 254
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/255.txt",
+          "mapped_source_sha256": "26833010df2beaa03182071a41a0eca9589fcf398cd5347d8bff1ecbe4520836",
+          "title": "唐纪七十一",
+          "volume": 255
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/256.txt",
+          "mapped_source_sha256": "e8b7e6cccaf3ddf17757b9655bc3e7b44eb5b30ff7d353908dcf725a7b0551b9",
+          "title": "唐纪七十二",
+          "volume": 256
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/257.txt",
+          "mapped_source_sha256": "f68f4ea82be4f347b99a1d4bc30f9753e5bca047713ed0e64a080027c50b5ae8",
+          "title": "唐纪七十三",
+          "volume": 257
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/258.txt",
+          "mapped_source_sha256": "52abb7ad8529ffe150f9fdb82bbe30d6ef7c0823887d377ae84d164283a6a813",
+          "title": "唐纪七十四",
+          "volume": 258
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/259.txt",
+          "mapped_source_sha256": "06ca64f454107ad737d80fcda390b067ed1d9af2b173d65554294f2dee666b76",
+          "title": "唐纪七十五",
+          "volume": 259
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/260.txt",
+          "mapped_source_sha256": "d1ae910c349e273604f05ad6879e5fe7870c482bc567dea101bf40593faa812e",
+          "title": "唐纪七十六",
+          "volume": 260
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/261.txt",
+          "mapped_source_sha256": "2b0b22158f234fcbd0459ecf7d8a4e6c7da524f1fa085ac5a9167bf0b2db6642",
+          "title": "唐纪七十七",
+          "volume": 261
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/262.txt",
+          "mapped_source_sha256": "970e7edc7f5d721877633a3684e0785f323f899b4a3045bee796afa74614de8b",
+          "title": "唐纪七十八",
+          "volume": 262
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/263.txt",
+          "mapped_source_sha256": "251353575cffa25426ccb00b852108b30ddeb5372d9106e6f53c194be092abad",
+          "title": "唐纪七十九",
+          "volume": 263
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/264.txt",
+          "mapped_source_sha256": "588a591743bfd6a71b6123c6df57fb92b7bd1959bd788be3bd1e3f132be31e62",
+          "title": "唐纪八十",
+          "volume": 264
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/265.txt",
+          "mapped_source_sha256": "6ebae9d565910e15618cbb1c1048651b30e69e906776c1046d050e8b746ae87c",
+          "title": "唐纪八十一",
+          "volume": 265
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/266.txt",
+          "mapped_source_sha256": "3696739ff4af114e1f032c302e306312898bb5a1a8aea6c612b98d2b8a716ccb",
+          "title": "后梁纪一",
+          "volume": 266
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/267.txt",
+          "mapped_source_sha256": "50edee35110c01fce7d712a83e7ab33c659d3d2525b149e972e546a077dccdff",
+          "title": "后梁纪二",
+          "volume": 267
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/268.txt",
+          "mapped_source_sha256": "5130a353d2ac8a5188186753d27b6f493a4f3d280c714627042abaaa87f58312",
+          "title": "后梁纪三",
+          "volume": 268
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/269.txt",
+          "mapped_source_sha256": "13f4d41c22fb2355a0cad6cf70d7fa3c9b0e44db19c30cd9aca420b6392f0f5b",
+          "title": "后梁纪四",
+          "volume": 269
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/270.txt",
+          "mapped_source_sha256": "ddf6dedba22adc83dbc19f94af482f117ea67aca90a7b45cf9bf679f2bb978b9",
+          "title": "后梁纪五",
+          "volume": 270
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/271.txt",
+          "mapped_source_sha256": "8095c52a4ce98ec9fd8884aa86ecf481058a4e0ab8b993e76934f085f3230319",
+          "title": "后梁纪六",
+          "volume": 271
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/272.txt",
+          "mapped_source_sha256": "539a3ccd9c29ef8a35579788cdc95e96a6f165fab7ffca66683e30bd1e6dc075",
+          "title": "后唐纪一",
+          "volume": 272
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/273.txt",
+          "mapped_source_sha256": "e566e3b248ed188a3bc7af63d3c4c334f64cd766169e319fc71510f45d52d5b2",
+          "title": "后唐纪二",
+          "volume": 273
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/274.txt",
+          "mapped_source_sha256": "124d448d2ce6fb9db35f7f2383d130c4948ec351c1ba7f689dccf383a2b1f27d",
+          "title": "后唐纪三",
+          "volume": 274
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/275.txt",
+          "mapped_source_sha256": "335a989ea6296c396ad173f5d978532b395b0c858d3366ef57af84583694c5a6",
+          "title": "后唐纪四",
+          "volume": 275
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/276.txt",
+          "mapped_source_sha256": "dda017240fa2abdd28c4a060263ae1c9f7534e833c8d92dc616ef3f2e760cabc",
+          "title": "后唐纪五",
+          "volume": 276
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/277.txt",
+          "mapped_source_sha256": "8c130d303183ced41b5123598dab718aef77fdcf16fab22cbe752d3533ace0ab",
+          "title": "后唐纪六",
+          "volume": 277
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/278.txt",
+          "mapped_source_sha256": "4b12d738dc6ee86ab7cb4e0be2efe95e0814406a6148b410b67b2ae742cdf756",
+          "title": "后唐纪七",
+          "volume": 278
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/279.txt",
+          "mapped_source_sha256": "977195561a0bb0bac9e97d2a6950b2ff840610f5aabd7799abb84c8f53ad0bdb",
+          "title": "后唐纪八",
+          "volume": 279
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/280.txt",
+          "mapped_source_sha256": "74862b405c2c00a39615a9fa7eab3a5193b865ce5c5fb209f050f92c513f72dd",
+          "title": "后晋纪一",
+          "volume": 280
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/281.txt",
+          "mapped_source_sha256": "0204268641451a932dca6210cd737120da1ca386759ba3530b0706da802ed082",
+          "title": "后晋纪二",
+          "volume": 281
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/282.txt",
+          "mapped_source_sha256": "173c2f596450c05923f28409aa842aa402f0cc9bca7ae48f0b7acc4e166591ab",
+          "title": "后晋纪三",
+          "volume": 282
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/283.txt",
+          "mapped_source_sha256": "38a244d88d96ffd3e95e0c63ce328a20378549aa0699bd0d6cda9ff401d74ce3",
+          "title": "后晋纪四",
+          "volume": 283
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/284.txt",
+          "mapped_source_sha256": "43b39bcfbe8cb49b29a1152aee0afc045e6b7d34a934409058f74830fb7bb016",
+          "title": "后晋纪五",
+          "volume": 284
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/285.txt",
+          "mapped_source_sha256": "c3beabea9ad3b5e1ddae685ef208310f455ad07dec543fe17fe86a0435cdc8e7",
+          "title": "后晋纪六",
+          "volume": 285
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/286.txt",
+          "mapped_source_sha256": "e6abfa1c6f02bab101616a5868747f8e893e75c8b73b3738c0b6e611370b63a0",
+          "title": "后汉纪一",
+          "volume": 286
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/287.txt",
+          "mapped_source_sha256": "c2c5f96df2d3277b8a646178f551754a5b64c1dc2296eb88519df58bb79a2bbb",
+          "title": "后汉纪二",
+          "volume": 287
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/288.txt",
+          "mapped_source_sha256": "6ed61682ef1aae885d7f726799114da7b8769b1cba2f1c7751b03682b5562da0",
+          "title": "后汉纪三",
+          "volume": 288
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/289.txt",
+          "mapped_source_sha256": "a7f18df6f350ad1688a95b37fc1ce450203b717a0420de9401cc29300bc7c69a",
+          "title": "后汉纪四",
+          "volume": 289
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/290.txt",
+          "mapped_source_sha256": "d592f922b5dca4ea6d077eaac03d6fd5f4672317745be071e1138c67cd5b7deb",
+          "title": "后周纪一",
+          "volume": 290
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/291.txt",
+          "mapped_source_sha256": "ca4e1e22d267c9406bc649fbb67d43c2ec8ddbc8dbf4510b230aff3c8988805e",
+          "title": "后周纪二",
+          "volume": 291
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/292.txt",
+          "mapped_source_sha256": "d695aad597190fcc04fd381e85da625a762b26cb41474f61c7e5134c7363957f",
+          "title": "后周纪三",
+          "volume": 292
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/293.txt",
+          "mapped_source_sha256": "7f4594c157740b2f9b3b7542261d657241fddf4c8380bbea67a4b78fecaa8e42",
+          "title": "后周纪四",
+          "volume": 293
+        },
+        {
+          "source_file": "resources/《资治通鉴》【爱上阅读_www.isyd.net】.txt",
+          "source_sha256": "750e7c12480f22cd925dcad6f4f4080177e1af0a36f4720e702ca0230cb873f3",
+          "mapped_source_file": "resources/derived/tongjian/294.txt",
+          "mapped_source_sha256": "3aca3405b1f4ffd43df266d5c65c4f90eec1a1305b8f13734e6f764d48b1b100",
+          "title": "后周纪五",
+          "volume": 294
+        }
+      ],
+      "sections": 294,
+      "paragraphs": 3497,
+      "kind_counts": {
+        "body": 3497
+      },
+      "paragraph_file": "resources/derived/history-library/zizhi-tongjian/paragraphs.jsonl.gz",
+      "paragraph_sha256": "8b28adb98830ac50e35d003f5f4131c4776aa504240d0fb457469585775c4a23",
+      "sections_file": "resources/derived/history-library/zizhi-tongjian/sections.json",
+      "sections_sha256": "3404867fa9db6046386c619200144e4df1b76c4b319d578b18e9285d175e4677",
+      "reading_file": "resources/derived/history-library/zizhi-tongjian/reading.txt",
+      "reading_sha256": "8cd8b107bcc16996b97c98d1d9c6fcb7bbe54e29a86aeca45e63ec6e6239853f",
+      "warnings": [
+        "现有电子文本的候选分段与卷界；不代表全书齐备或已完成史料录入。",
+        "保留注释和网站残留并分别标记；不得把注释自动当作原史正文。"
+      ],
+      "ingestion_role": "chronological_primary",
+      "status": "normalized_candidates_pending_editorial_review"
+    }
+  ],
+  "note": "清史稿仅本地预处理；既定录入范围、已发布来源与通鉴游标不变。"
+}

@@ -1,0 +1,41 @@
+{
+  "book_key": "liaoshi",
+  "book": "辽史",
+  "source_version": "7cd182a20e67",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/遼史.epub",
+      "source_sha256": "ee0b2cd45097258d410a7c60ad45420b8281e5ace2a2beffe9842d51b34de1e9",
+      "mapped_source_file": "resources/originals/twenty-four-histories/21辽史-EPUB全文.txt",
+      "mapped_source_sha256": "f2db7792ccb0dc2ba257f3eafdbac57e6d6148e99fa8ab0ef62f55547fad2073",
+      "conversion_manifest": "resources/derived/epub-txt/21辽史/manifest.json"
+    }
+  ],
+  "sections": 118,
+  "paragraphs": 6107,
+  "kind_counts": {
+    "heading": 681,
+    "editorial_notice": 1,
+    "table_of_contents": 116,
+    "front_matter": 1,
+    "body": 4442,
+    "annotation": 181,
+    "table_row": 640,
+    "appendix": 45
+  },
+  "paragraph_file": "resources/derived/history-library/liaoshi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "c61ac3f1f5c7d4179423f3feb50993d937fceb7d096bc7bd0931ccb07e5ba806",
+  "sections_file": "resources/derived/history-library/liaoshi/sections.json",
+  "sections_sha256": "f8890c24c5bc83c51d4bb090e86772a8290da3bfce15b81076d2c6f0512fa61e",
+  "reading_file": "resources/derived/history-library/liaoshi/reading.txt",
+  "reading_sha256": "d9b2d394a945ea7900f45106db9f4ea06ec57c3e70ab0c050b2789881a637a32",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

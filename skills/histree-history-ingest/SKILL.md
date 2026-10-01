@@ -5,6 +5,12 @@ description: 按《资治通鉴》编年顺序录入 Histree 历史人物、事�
 
 # Histree 史料录入
 
+当前阶段按用户决定，以《资治通鉴》和二十四史构建基础数据面；《清史稿》和其他专门史籍暂缓新增，既有发布出处保留。范围见 `resources/catalog/ingestion-source-scope.json`。二十四史分段检索入口为 `resources/derived/history-library/README.md`，用 `scripts/search-history-library.py` 查关键词、段落ID与来源定位；自动分段、卷界和完整性不等于人工校核通过。
+
+二十四史及清史稿统一选用 `resources/originals/twenty-four-histories/*-EPUB全文.txt`，其他来源版本在 `backup/`。新分段文件为每书 `paragraphs.jsonl.gz`，阅读文本为 `reading.txt`；原EPUB及转换审计可回查。清史稿仅本地规范化，不改变既定录入范围。旧 `readable`、`readable-txt`、`corrected-txt` 等处理产物已清理，勿使用已归档的旧脚本重新产生多套数据。
+
+首次克隆或检索缓存缺失、过期时，运行 `python3 scripts/build-history-library.py --rebuild-search`，从版本化分段记录重建本地SQLite，不重新转换底本或改写段落ID。检索、阅读、逐字导出及来源问题检查按 [分段检索与引用参考](references/source-library.md) 操作。录入引用用导出的原TXT片段；`reading.txt`和搜索摘要仅供查阅，不直接作为原文快照。
+
 以书、卷、年、**连续原文段落**为工作单元。主线为《资治通鉴》；人物、事件和关系是跨书共享实体。开始前看仓库根目录 `AGENTS.md`、`content/yearly-progress.json` 的 `active_cursor`、对应卷年的 `paragraphs.json`，从 `next_paragraph` 开始。可以按可审核的段数分批，不要越过未处理段落。卷末接下一卷；只有该年所跨各卷全部段落处理并发布后，才记整年完成。
 
 新批次置于 `content/books/zizhi-tongjian/vol-{卷}/year-{年}/part-{序号}/`。旧目录 `content/later-liang-907-923/`、`content/year-0907/`、`content/late-tang-zhu-wen-early/` 是发布档案，保留其稳定 key、UUID 和固定引用。可参考 `content/books/zizhi-tongjian/vol-255/year-0884/part-02/` 的结构；示例中的卷、年、段号和人物不应照搬。

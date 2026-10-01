@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "隋书",
+  "book_number": 13,
+  "epub_file": "resources/originals/twenty-four-histories/backup/隋書.epub",
+  "epub_sha256": "fada5d4edfe1f8c728c2f972bdea793a0714ff30b65d324a642391539d78fdb6",
+  "txt_file": "resources/originals/twenty-four-histories/13隋书-EPUB全文.txt",
+  "txt_sha256": "5feb2a3f5b33af366e0053b4a99133cca09689269b7571990386181a268c7884",
+  "encoding": "utf-8",
+  "expected_volumes": 85,
+  "volume_sections": 85,
+  "all_source_sections": 87,
+  "mapped_paragraphs_including_headings": 11005,
+  "restored_variant_records": 852,
+  "issue_records": 5,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "1b1e2bc29ee6e38029b0cfa70781be65bf0cec7c1a79708e1971dc8e69d06ca6",
+    "paragraphs.jsonl.gz": "700000a0b766a97851d24e4a3cbd68b841ea0d79f2dd72415e2ca37654fcd0bd",
+    "excluded.json.gz": "dfacf47f350d09c95e80eafd0eee2c7b936ccee3c233c970c4e75ab308c2241b",
+    "restored-variants.json.gz": "b6688a1bc0cecbaa93eabdbeea75b5909e6117f9f8640b34e64826e7ce19b3c6",
+    "epub-metadata.json.gz": "f6a7205a86f3916d42e85209e51656d7ca2a7a85cea679b3f0501d52205b3f3f",
+    "issues.json": "acdad2e8832b2004db61204db0720856d5e3975a2ac1a21461961602cdd2e234"
+  },
+  "previous_conversion_archives": []
+}

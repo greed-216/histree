@@ -1,0 +1,49 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "汉书",
+  "book_number": 2,
+  "epub_file": "resources/originals/twenty-four-histories/backup/漢書.epub",
+  "epub_sha256": "27882561a22c9b7bc05288340ef8973abe38cfcf714d2a250fb29c83a27ded10",
+  "txt_file": "resources/originals/twenty-four-histories/02汉书-EPUB全文.txt",
+  "txt_sha256": "f5d07e926ca15d339cc2d68859dd81122225c360a6b1ab205c49f1e8527ac6e5",
+  "encoding": "utf-8",
+  "expected_volumes": 100,
+  "volume_sections": 108,
+  "all_source_sections": 111,
+  "mapped_paragraphs_including_headings": 9890,
+  "restored_variant_records": 998,
+  "issue_records": 1,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": {
+    "file": "resources/originals/twenty-four-histories/backup/previous-conversions/02汉书/d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449.txt",
+    "sha256": "d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449"
+  },
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "dee1dc642a45f019bcd457d0d8c225d20ce3088279d28c62bc892fdd2122160b",
+    "paragraphs.jsonl.gz": "4bf92df132a7fb235b37258bd1adca22699687664c514d008f002d888b72abfb",
+    "excluded.json.gz": "d283af1d791e9273de90b405939840c85f75d1a27aea91f577869a87e64e6da4",
+    "restored-variants.json.gz": "282bd930b004f91ab149454d1beee0f8d6912d204b7fbbddfd49a0052cdc8ffe",
+    "epub-metadata.json.gz": "307b1521a72ef1d034009723550627311a20c3827a44c8bc32d6d1f96aa75f52",
+    "issues.json": "d6be1cba5a4f543959e02b8aad8e415607086af84b08a44b13243494282c631a"
+  },
+  "previous_conversion_archives": [
+    {
+      "file": "resources/originals/twenty-four-histories/backup/previous-conversions/02汉书/d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449.txt",
+      "sha256": "d1b402ecfd73a7e441fc631044afacec33f5345a434fccca67323fa1a7db2449"
+    }
+  ]
+}

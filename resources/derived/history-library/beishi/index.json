@@ -1,0 +1,38 @@
+{
+  "book_key": "beishi",
+  "book": "北史",
+  "source_version": "ee7c91053694",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/北史.epub",
+      "source_sha256": "01f49a811963351f46eb79b4dbbac366f420dcd3b3792bf7ee1fc695bedfc083",
+      "mapped_source_file": "resources/originals/twenty-four-histories/15北史-EPUB全文.txt",
+      "mapped_source_sha256": "a2765400ce228fb84f0c9ec776e819f10fa2e9ecf8a9466e62c77245b65cd3bf",
+      "conversion_manifest": "resources/derived/epub-txt/15北史/manifest.json"
+    }
+  ],
+  "sections": 101,
+  "paragraphs": 8548,
+  "kind_counts": {
+    "heading": 1268,
+    "front_matter": 1,
+    "table_of_contents": 100,
+    "body": 7176,
+    "editorial_notice": 3
+  },
+  "paragraph_file": "resources/derived/history-library/beishi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "e960b9e422aa77049c7315ca659fb2c12f4933c0abbcb297c30665d9433cc014",
+  "sections_file": "resources/derived/history-library/beishi/sections.json",
+  "sections_sha256": "86cf575d947635a02cafa815e769cdfd6a06942b6f271875843eca456df303cd",
+  "reading_file": "resources/derived/history-library/beishi/reading.txt",
+  "reading_sha256": "2ba77f860a696eb560c5909ec1b3df372839cff1eb8e3c8550520df2913cfceb",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

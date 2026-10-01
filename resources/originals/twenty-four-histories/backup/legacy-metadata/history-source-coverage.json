@@ -1,0 +1,42 @@
+[
+  {
+    "book": "旧五代史",
+    "checked_at": "2026-10-01",
+    "pdf_file": "resources/originals/twenty-four-histories/18旧五代史.pdf",
+    "pdf_sha256": "d11a325d8660ca5022806ded060fb5ad3f4171611779c70dab46b19e6f5d8e9e",
+    "pdf_pages": 1667,
+    "finding": "TXT与PDF均止于唐书列传二十二张敬达传结尾；本地材料没有后续晋、汉、周部分。",
+    "status": "requires_source_review"
+  },
+  {
+    "book": "北齐书",
+    "checked_at": "2026-10-01",
+    "pdf_file": "resources/originals/twenty-four-histories/11北齐书.pdf",
+    "pdf_sha256": "6e154f6f6115ce3c1f2621a9d4e13a62d636bedf8c3f0f78931846ffa7270fc1",
+    "pdf_pages": 698,
+    "finding": "TXT正文卷一至卷三十，末尾目录也止于卷三十；PDF书签及结尾与之相同。",
+    "status": "requires_source_review"
+  },
+  {
+    "book": "周书",
+    "checked_at": "2026-10-01",
+    "pdf_file": "resources/originals/twenty-four-histories/12周书.pdf",
+    "pdf_sha256": "7ccc5f6f5fb1aa8a185efdf75dc5a4f10e87c9027f7076870a6e5b3e48dd5a05",
+    "pdf_pages": 1466,
+    "finding": "本地TXT缺少卷四标题及整卷正文；本地PDF保留卷四，物理页80至96，卷五从97页开始。",
+    "status": "canonical_txt_replaced_with_checked_pdf_supplement",
+    "evidence_file": "resources/derived/coverage-review/zhoushu-volume-04/finding.json",
+    "missing_txt_volume": 4,
+    "available_pdf_pages": [
+      80,
+      96
+    ],
+    "remediation": {
+      "status": "pdf_supplement_indexed",
+      "manifest_file": "resources/derived/supplements/zhoushu-volume-04/manifest.json",
+      "indexed_body_paragraphs": 19,
+      "reading_file": "resources/derived/supplements/zhoushu-volume-04/combined-reading.txt"
+    },
+    "replacement_record": "resources/derived/supplements/zhoushu-volume-04/replacement.json"
+  }
+]

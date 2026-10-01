@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "周书",
+  "book_number": 12,
+  "epub_file": "resources/originals/twenty-four-histories/backup/周書.epub",
+  "epub_sha256": "d44166d6a13f5027ef17e5f6af843671cfa5d1d4fdf1f7e3afba1bd45d707f36",
+  "txt_file": "resources/originals/twenty-four-histories/12周书-EPUB全文.txt",
+  "txt_sha256": "750f05874a785d4da34933733a405caca92360b189c3d76b75a680a23bfd5558",
+  "encoding": "utf-8",
+  "expected_volumes": 50,
+  "volume_sections": 50,
+  "all_source_sections": 51,
+  "mapped_paragraphs_including_headings": 4084,
+  "restored_variant_records": 182,
+  "issue_records": 1,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "b9d5a2355b0b0b5febed70620489d2a18f067e906f6c530caa39becff656a05d",
+    "paragraphs.jsonl.gz": "070304e48b990dae1a4631a8223841313259846be419b13fd9b96a6970c3c277",
+    "excluded.json.gz": "125ca1c18eb40581c33cbb51e88b0037be0fb5da6ae4094af4d20c8513ee1792",
+    "restored-variants.json.gz": "8dc84b6c0036c458390d2265bcf2edf965aab6e657dfff465fa488d582eb6659",
+    "epub-metadata.json.gz": "5654c257b5183e12a254aad3afe79146555f00ee419dd6d01fc00763182e506d",
+    "issues.json": "f513800eef9528381fad335ba5182f9350aa405702bf6c78b58f02bceba77491"
+  },
+  "previous_conversion_archives": []
+}

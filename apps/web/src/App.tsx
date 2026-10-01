@@ -12,6 +12,7 @@ const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m 
 import { ExplorePage } from './pages/ExplorePage';
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
+const TimelinePage = lazy(() => import('./pages/TimelinePage').then(m => ({ default: m.TimelinePage })));
 const GraphPage = lazy(() => import('./pages/GraphPage').then(m => ({ default: m.GraphPage })));
 import { PeoplePage } from './pages/PeoplePage';
 import { EventsPage } from './pages/EventsPage';
@@ -107,6 +108,7 @@ function App() {
                 事件
               </Link>
               <Link to="/graph" className={navLinkClass('/graph')}>图谱</Link>
+              <Link to="/timeline" className={navLinkClass('/timeline')}>时间图</Link>
               {MAPS_ENABLED && <Link to="/map" className={navLinkClass('/map')}>地图</Link>}
               <Link to="/search" className={navLinkClass('/search')}>搜索</Link>
               <Link to="/ask" className={navLinkClass('/ask')}>问史料</Link>
@@ -163,6 +165,7 @@ function App() {
           <Route path="/ask" element={<AskPage key={location.search} />} />
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
+          <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
           <Route path="/map/annotations" element={MAPS_ENABLED ? <AnnotationEditorPage /> : <Navigate to="/graph" replace />} />
           <Route path="/map/edit" element={MAPS_ENABLED ? <MapEditorPage /> : <Navigate to="/graph" replace />} />

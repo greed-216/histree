@@ -178,3 +178,6 @@ export type ContentRow = { id: string; label?: string; status?: PublicationStatu
 export type TopicSummary = Omit<Topic,'sections'> & { section_count: number };
 export interface EntryContext extends GraphResponse { has_more: boolean; }
 export { contentRequest, pageNumber } from './content-query.ts';
+
+export { timelineYear } from './timeline.ts';
+export type { TimelineOverview } from './timeline.ts';

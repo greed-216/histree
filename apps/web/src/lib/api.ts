@@ -1,4 +1,4 @@
-import { exploreRequest, contentRequest, pageNumber } from '@histree/shared-types';
+import { exploreRequest, contentRequest, pageNumber, timelineYear } from '@histree/shared-types';
 import { supabase, publicSupabase } from '../supabaseClient';
 
 
@@ -50,6 +50,26 @@ export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promi
 }
 
 async function supabasePublicFetch<T>(path: string, signal?: AbortSignal): Promise<T> {
+  if (path === '/timeline/overview') {
+    let rpc = publicSupabase.rpc('timeline_overview');
+    if (signal) rpc = rpc.abortSignal(signal);
+    const { data, error } = await rpc;
+    if (error) throw error;
+    return data as T;
+  }
+  if (path.startsWith('/timeline?')) {
+    const url = new URL(path, 'https://histree.local');
+    if (url.searchParams.has('year')) {
+      const year = timelineYear(url.searchParams.get('year')), page = pageNumber(url.searchParams.get('page'));
+      let query = publicSupabase.from('event').select('*').eq('status', 'published')
+        .lte('start_year', year).or(`end_year.gte.${year},and(end_year.is.null,start_year.eq.${year})`)
+        .order('start_year').order('id').range(page * 20, page * 20 + 20);
+      if (signal) query = query.abortSignal(signal);
+      const { data, error } = await query;
+      if (error) throw error;
+      return { items: (data ?? []).slice(0, 20), has_more: (data?.length ?? 0) > 20 } as T;
+    }
+  }
   if(path.startsWith('/catalog/')) {
     let rpc=publicSupabase.rpc('content_page',contentRequest(path));if(signal)rpc=rpc.abortSignal(signal);
     const {data,error}=await rpc;if(error)throw error;return data as T;

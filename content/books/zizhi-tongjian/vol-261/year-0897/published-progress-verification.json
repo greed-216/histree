@@ -1,25 +1,27 @@
 {
-  "verified_at": "2026-10-01T09:56:37.456341+00:00",
+  "verified_at": "2026-10-01T10:18:41.080069+00:00",
   "status": "partial_published_verified",
-  "paragraphs_published": 3,
+  "paragraphs_published": 12,
   "paragraphs_total": 50,
   "batches": [
-    "content/books/zizhi-tongjian/vol-261/year-0897/part-01"
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-01",
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-02"
   ],
   "public_row_occurrences": {
-    "source": 5,
-    "person": 13,
-    "event": 22,
-    "person_relationship": 0,
-    "person_event": 35,
-    "fact_claim": 103
+    "source": 13,
+    "person": 57,
+    "event": 65,
+    "person_relationship": 4,
+    "person_event": 119,
+    "fact_claim": 339
   },
   "checks": [
-    "publication hash and anonymous readback verified",
-    "source TXT character positions SHA and fixed commit verified",
-    "primary source lines 6 through 8 continuous",
+    "two publication hashes and anonymous readbacks verified",
+    "source TXT character positions SHA and fixed commits verified",
+    "primary source lines 6 through 17 continuous",
+    "coverage includes each reviewed paragraph exactly once",
     "all ledger texts match original volume 261",
-    "paragraphs 4 through 50 remain pending"
+    "paragraphs 13 through 50 remain pending"
   ],
-  "next_paragraph": "zztj-v261-y0897-p004"
+  "next_paragraph": "zztj-v261-y0897-p013"
 }

@@ -140,3 +140,19 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .history-graph { scroll-margin-top: 80px; }
 .graph-context { position: sticky; top: 65px; z-index: 20; background: #f5f5efee; backdrop-filter: blur(12px); border-radius: 10px; padding: 5px 0; }
 @media(max-width:767px) { .graph-context { position: static; } }
+
+/* Temporal exploration: published event density against a continuous calendar. */
+.timeline-river { border: 1px solid #e3dece; border-radius: 24px; padding: 28px 32px 20px; background: radial-gradient(ellipse at 50% 45%, #faf4e5, #f5f3eb); overflow: hidden; }
+.timeline-topline { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.timeline-controls { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 24px; }
+.timeline-button { border: 1px solid #d8d2c2; background: #fffdf6; padding: 7px 12px; border-radius: 8px; font-size: 13px; color: #365f57; }
+.timeline-button[aria-pressed=true] { background: #e2ebe5; }
+.timeline-year-input { width: 155px; border: 1px solid #d8d2c2; background: #fffdf6; padding: 7px 10px; border-radius: 8px; font-size: 13px; }
+.timeline-chart { width: 100%; display: block; cursor: crosshair; margin-top: 8px; }
+.timeline-selected { text-align: center; }
+.timeline-selected h2 { font-family: Georgia, 'Songti SC', serif; font-size: clamp(32px, 4vw, 58px); color: #2d4f49; letter-spacing: .08em; margin: 8px 0 16px; }
+.timeline-slider { display: flex; align-items: center; gap: 16px; }
+.timeline-slider input { width: 100%; accent-color: #446e60; cursor: pointer; }
+.timeline-note { font-size: 12px; color: #777469; line-height: 1.8; margin-top: 16px; }
+.timeline-event:hover { background: #fcfaf1; }
+@media(max-width: 640px) { .timeline-river { padding: 20px 14px; border-radius: 16px; } .timeline-chart { min-height: 200px; } .timeline-controls { gap: 10px; } }

@@ -9,7 +9,7 @@ ROOT = next(x for x in P.parents if (x / 'scripts/validate-content-batch.py').ex
 YEAR = P.parent
 ledger = json.loads((YEAR / 'paragraphs.json').read_text())
 Q = {int(p['id'][-3:]): p for p in ledger}
-assert list(Q) == list(range(1, 56))
+assert list(Q) == list(range(1, 54))
 primary_prev = 'tongjian-262-901-feb-apr'
 primary = 'tongjian-262-901-may-june'
 
@@ -252,6 +252,6 @@ for n in range(17,25):
 (P/'coverage.json').write_text(json.dumps(dict(book='资治通鉴',volume=262,year=901,
     primary_source_key=primary_prev,primary_source_keys=[primary_prev,primary],
     paragraphs=[Q[n]['id'] for n in range(17,25)],next_paragraph=Q[25]['id'],
-    coverage='天复元年55段中的第17—24段连续处理；本年尚未完成。',
+    coverage='天复元年53段中的第17—24段连续处理；本年尚未完成。',
     supplements=supplements,status=status),ensure_ascii=False,indent=2)+'\n')
 print({k:len(v) for k,v in B.items() if isinstance(v,list)})

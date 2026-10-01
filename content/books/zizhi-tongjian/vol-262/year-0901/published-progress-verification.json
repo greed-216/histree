@@ -1,30 +1,32 @@
 {
-  "verified_at": "2026-10-01T14:56:41.863788+00:00",
-  "status": "partial_published_verified",
-  "paragraphs_published": 48,
-  "paragraphs_total": 55,
+  "verified_at": "2026-10-01T15:02:57.767431+00:00",
+  "status": "complete_published_verified",
+  "paragraphs_published": 53,
+  "paragraphs_total": 53,
   "batches": [
     "content/books/zizhi-tongjian/vol-262/year-0901/part-01",
     "content/books/zizhi-tongjian/vol-262/year-0901/part-02",
     "content/books/zizhi-tongjian/vol-262/year-0901/part-03",
     "content/books/zizhi-tongjian/vol-262/year-0901/part-04",
     "content/books/zizhi-tongjian/vol-262/year-0901/part-05",
-    "content/books/zizhi-tongjian/vol-262/year-0901/part-06"
+    "content/books/zizhi-tongjian/vol-262/year-0901/part-06",
+    "content/books/zizhi-tongjian/vol-262/year-0901/part-07"
   ],
   "public_row_occurrences": {
-    "source": 27,
-    "person": 154,
-    "event": 194,
-    "person_relationship": 1,
-    "person_event": 371,
-    "fact_claim": 956
+    "source": 30,
+    "person": 172,
+    "event": 213,
+    "person_relationship": 3,
+    "person_event": 411,
+    "fact_claim": 1059
   },
-  "source_snapshots_verified": 18,
+  "source_snapshots_verified": 20,
   "checks": [
-    "publication payload hash and anonymous readback verified for part-06",
-    "four referenced source snapshot SHA and fixed commit bytes verified",
-    "continuous original volume 262 lines 40 through 87 covered exactly once",
-    "all 55 ledger texts match original volume 262; later 7 paragraphs pending"
+    "all seven batch publication payload hashes and anonymous readback verified",
+    "three referenced part-07 source snapshot SHA and fixed commit bytes verified",
+    "continuous volume 262 lines 40 through 92 covered exactly once",
+    "volume 262 lines 93 and 94 are empty, excluded from paragraph ledger",
+    "next volume 263 begins year 902 on line 6"
   ],
-  "next_paragraph": "zztj-v262-y0901-p049"
+  "next_paragraph": "zztj-v263-y0902-p001"
 }

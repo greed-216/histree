@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 262,
-    "year": 901,
-    "last_reviewed_paragraph": "zztj-v262-y0901-p048",
-    "next_paragraph": "zztj-v262-y0901-p049",
-    "next_paragraph_opening": "清海节度使徐彦若薨，遗表荐行军司马刘隐权留后。",
-    "batch": "content/books/zizhi-tongjian/vol-262/year-0901/part-06",
-    "status": "partial_published_verified",
-    "last_published_paragraph": "zztj-v262-y0901-p048"
+    "volume": 263,
+    "year": 902,
+    "last_reviewed_paragraph": "zztj-v262-y0901-p053",
+    "next_paragraph": "zztj-v263-y0902-p001",
+    "next_paragraph_opening": "春，正月，癸丑，硃全忠复屯三原，又移军武功。河东将李嗣昭、周德威攻慈、隰，以分全忠兵势。",
+    "batch": "content/books/zizhi-tongjian/vol-262/year-0901/part-07",
+    "status": "next_year_pending",
+    "last_published_paragraph": "zztj-v262-y0901-p053"
   },
   "year_coverage": [
     {
@@ -337,7 +337,7 @@
     },
     {
       "year": 901,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         262
       ],
@@ -347,9 +347,22 @@
         "content/books/zizhi-tongjian/vol-262/year-0901/part-03",
         "content/books/zizhi-tongjian/vol-262/year-0901/part-04",
         "content/books/zizhi-tongjian/vol-262/year-0901/part-05",
-        "content/books/zizhi-tongjian/vol-262/year-0901/part-06"
+        "content/books/zizhi-tongjian/vol-262/year-0901/part-06",
+        "content/books/zizhi-tongjian/vol-262/year-0901/part-07"
       ],
-      "note": "48/55: Volume 262 lines 40 through 87 published and verified; next line 88."
+      "note": "53/53 nonempty paragraphs: Volume 262 lines 40 through 92 published and verified; source lines 93–94 are blank. Year 902 begins volume 263 line 6.",
+      "completed_volumes": [
+        262
+      ]
+    },
+    {
+      "year": 902,
+      "status": "pending",
+      "volumes": [
+        263
+      ],
+      "batches": [],
+      "note": "59 nonempty paragraphs in volume 263 lines 6 through 64; year 903 begins line 66; next paragraph 902-p001."
     }
   ],
   "legacy_archives": [
@@ -932,6 +945,13 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-262/year-0901/part-06",
       "primary_paragraph": "zztj-v262-y0901-p041",
       "required_action": "通鉴第41段张浚话后有电子文本疑损，不据以推断军令细节。崔胤书和朱使所称密诏与韩全诲矫诏的反说均留作各方说法，真伪待校。旧唐书作十二月己卯崔胤到三原，通鉴作癸未；保留并列。"
+    },
+    {
+      "key": "901-part07-yearend-and-blank-lines",
+      "status": "open",
+      "primary_batch": "content/books/zizhi-tongjian/vol-262/year-0901/part-07",
+      "primary_paragraph": "zztj-v262-y0901-p049",
+      "required_action": "卷262原文件第93—94行为空行，不计入史料段落；901年计53个非空段。通鉴记徐彦若遗表荐刘隐权留后，新唐书记刘隐自称留后，两种叙事并列；钟传少时猎虎为追叙，确年未定。"
     }
   ]
 }

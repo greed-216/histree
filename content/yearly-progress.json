@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 261,
-    "year": 899,
-    "last_reviewed_paragraph": "zztj-v261-y0899-p020",
-    "next_paragraph": "zztj-v261-y0899-p021",
-    "next_paragraph_opening": "马殷遣其将李唐攻道州，蔡结聚群蛮，伏兵于隘以击之，大破唐兵。唐曰：“蛮所恃者，山林耳。若战平地，安能败我！”乃命因风燔林",
+    "volume": 262,
+    "year": 900,
+    "last_reviewed_paragraph": "zztj-v261-y0899-p029",
+    "next_paragraph": "zztj-v262-y0900-p001",
+    "next_paragraph_opening": "春，正月，宣州将康儒攻睦州，钱镠使其从弟銶拒之。",
     "batch": null,
     "status": "pending",
-    "last_published_paragraph": "zztj-v261-y0899-p020"
+    "last_published_paragraph": "zztj-v261-y0899-p029"
   },
   "year_coverage": [
     {
@@ -307,15 +307,28 @@
     },
     {
       "year": 899,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         261
       ],
       "batches": [
         "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
-        "content/books/zizhi-tongjian/vol-261/year-0899/part-02"
+        "content/books/zizhi-tongjian/vol-261/year-0899/part-02",
+        "content/books/zizhi-tongjian/vol-261/year-0899/part-03"
       ],
-      "note": "20/29: 十二段连续校核；陈章求赏与生擒、石会关追击分录。乱码原存，只引可读段，末后周指代待考。武信置军与授王宗佶分期。围潞与援军、诛主副、嗣昭代攻、罕病改镇死怀分录。陕州李璠与892死宣武副使消歧；陈海宾汉宾同段异名，未造未名将领或年代后果。"
+      "note": "29/29: 年末九段连续校核；道州先败后取斩，泽潞分攻与换守、贺弃城伏击、葛援迟还分录。原刘缺字保快照，不猜姓名；李孝璋与李存璋候选身份待核。沂军败退与王伏胜不误作取城；朱简复用友谦，杀璠与旧传逃归汴异说并列，请入子侄不造已认养。郴斩陈、连鲁自杀及湖南平总括有别。",
+      "completed_volumes": [
+        261
+      ]
+    },
+    {
+      "year": 900,
+      "status": "pending",
+      "volumes": [
+        262
+      ],
+      "batches": [],
+      "note": "0/32: Volume 262 lines 6 through 37 pending."
     }
   ],
   "legacy_archives": [
@@ -791,6 +804,43 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-02",
       "primary_paragraph": "zztj-v261-y0899-p009",
       "required_action": "十二段连续校核；陈章求赏与生擒、石会关追击分录。乱码原存，只引可读段，末后周指代待考。武信置军与授王宗佶分期。围潞与援军、诛主副、嗣昭代攻、罕病改镇死怀分录。陕州李璠与892死宣武副使消歧；陈海宾汉宾同段异名，未造未名将领或年代后果。"
+    },
+    {
+      "key": "899-part03-variant-4",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-03",
+      "primary_paragraph": "zztj-v261-y0899-p022",
+      "subject_key": "event_zztj_261_0899_li_xiaozhang_ze_appointed",
+      "primary_reading": "李孝璋任泽州刺史。",
+      "alternate_reading": "《旧五代史》同役记泽州刺史李存璋，主書作李孝璋。",
+      "required_action": "原文：汴將澤州刺史劉屺棄城而遁，乃以李存璋為刺史。；核对说明：孝/存用字及身份待核，已有人库李存璋；主书新键不设别名，留候选身份问题，未静改底本。"
+    },
+    {
+      "key": "899-part03-variant-6",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-03",
+      "primary_paragraph": "zztj-v261-y0899-p024",
+      "subject_key": "event_zztj_261_0899_li_petitions_meng_zhaoyi",
+      "primary_reading": "李克用表孟迁为昭义留后。",
+      "alternate_reading": "《旧五代史》九月称李克用表孟迁为潞州节度使，主书昭义留后。",
+      "required_action": "原文：九月，武皇表汾州刺史孟遷為潞州節度使。；核对说明：同报请但留后/节度使不同，潞州与昭义为城镇层次，不强改主书正式授节。"
+    },
+    {
+      "key": "899-part03-variant-8",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-03",
+      "primary_paragraph": "zztj-v261-y0899-p026",
+      "subject_key": "event_zztj_261_0899_zhu_jian_kills_li_fan_self_deputy",
+      "primary_reading": "朱简杀李璠，自称陕州留后附朱全忠。",
+      "alternate_reading": "《旧五代史》朱友谦传称朱简攻李璠，璠逃归汴；主书与梁纪称杀。",
+      "required_action": "原文：簡復攻璠，璠冒刃獲免，逃歸於汴。；核对说明：杀与逃不能直接合并，保本书内异说；不补后来第二次被杀作为凑合解释。"
+    },
+    {
+      "key": "899-part03-ze-name-and-glyph",
+      "status": "source_identity_and_text_pending_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-03",
+      "primary_paragraph": "zztj-v261-y0899-p022",
+      "required_action": "年末九段连续校核；道州先败后取斩，泽潞分攻与换守、贺弃城伏击、葛援迟还分录。原刘缺字保快照，不猜姓名；李孝璋与李存璋候选身份待核。沂军败退与王伏胜不误作取城；朱简复用友谦，杀璠与旧传逃归汴异说并列，请入子侄不造已认养。郴斩陈、连鲁自杀及湖南平总括有别。"
     }
   ]
 }

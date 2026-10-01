@@ -1,28 +1,29 @@
 {
-  "verified_at": "2026-10-01T13:23:53.116781+00:00",
-  "status": "partial_published_verified",
-  "paragraphs_published": 20,
+  "verified_at": "2026-10-01T13:42:06.056896+00:00",
+  "status": "complete_published_verified",
+  "paragraphs_published": 29,
   "paragraphs_total": 29,
   "batches": [
     "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
-    "content/books/zizhi-tongjian/vol-261/year-0899/part-02"
+    "content/books/zizhi-tongjian/vol-261/year-0899/part-02",
+    "content/books/zizhi-tongjian/vol-261/year-0899/part-03"
   ],
   "public_row_occurrences": {
-    "source": 15,
-    "person": 55,
-    "event": 60,
+    "source": 22,
+    "person": 78,
+    "event": 83,
     "person_relationship": 1,
-    "person_event": 120,
-    "fact_claim": 334
+    "person_event": 159,
+    "fact_claim": 458
   },
-  "source_snapshots_verified": 15,
+  "source_snapshots_verified": 22,
   "checks": [
-    "publication payload hash and anonymous readback verified",
-    "15 source snapshots SHA and fixed commit bytes verified",
-    "continuous original lines 107 through 126",
-    "every reviewed paragraph covered exactly once",
+    "three publication payload hashes and anonymous readbacks verified",
+    "22 source snapshots SHA and fixed commit bytes verified",
+    "continuous original lines 107 through 135 covered exactly once",
     "all 29 ledger texts match original volume 261",
-    "paragraphs 21 through 29 remain pending"
+    "volume 261 ends after year 899; volume 262 starts year 900",
+    "900 ledger has 32 pending paragraphs from volume 262 lines 6 through 37; next header is year 901"
   ],
-  "next_paragraph": "zztj-v261-y0899-p021"
+  "next_paragraph": "zztj-v262-y0900-p001"
 }

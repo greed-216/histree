@@ -1,0 +1,54 @@
+{
+  "verified_at": "2026-10-01T13:42:07.111826+00:00",
+  "status": "complete_published_verified",
+  "volume": 261,
+  "years": [
+    {
+      "year": 897,
+      "paragraphs": 50,
+      "audit": "content/books/zizhi-tongjian/vol-261/year-0897/published-progress-verification.json"
+    },
+    {
+      "year": 898,
+      "paragraphs": 47,
+      "audit": "content/books/zizhi-tongjian/vol-261/year-0898/published-progress-verification.json"
+    },
+    {
+      "year": 899,
+      "paragraphs": 29,
+      "audit": "content/books/zizhi-tongjian/vol-261/year-0899/published-progress-verification.json"
+    }
+  ],
+  "paragraphs_published": 126,
+  "batches": [
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-01",
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-02",
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-03",
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-04",
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-05",
+    "content/books/zizhi-tongjian/vol-261/year-0897/part-06",
+    "content/books/zizhi-tongjian/vol-261/year-0898/part-01",
+    "content/books/zizhi-tongjian/vol-261/year-0898/part-02",
+    "content/books/zizhi-tongjian/vol-261/year-0898/part-03",
+    "content/books/zizhi-tongjian/vol-261/year-0898/part-04",
+    "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+    "content/books/zizhi-tongjian/vol-261/year-0899/part-02",
+    "content/books/zizhi-tongjian/vol-261/year-0899/part-03"
+  ],
+  "source_snapshots_verified": 90,
+  "public_row_occurrences": {
+    "source": 90,
+    "person": 353,
+    "event": 362,
+    "person_relationship": 27,
+    "person_event": 695,
+    "fact_claim": 2001
+  },
+  "checks": [
+    "all annual ledgers match original volume 261 and year boundaries",
+    "all 126 paragraphs included exactly once in 13 verified publication batches",
+    "all publication payload hashes and anonymous readback audits checked",
+    "90 snapshot hashes and fixed Git commit bytes rechecked"
+  ],
+  "next_paragraph": "zztj-v262-y0900-p001"
+}

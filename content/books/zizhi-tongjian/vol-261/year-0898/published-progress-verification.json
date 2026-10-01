@@ -1,29 +1,30 @@
 {
-  "verified_at": "2026-10-01T12:47:30.956644+00:00",
-  "status": "partial_published_verified",
-  "paragraphs_published": 36,
+  "verified_at": "2026-10-01T12:58:49.307012+00:00",
+  "status": "complete_published_verified",
+  "paragraphs_published": 47,
   "paragraphs_total": 47,
   "batches": [
     "content/books/zizhi-tongjian/vol-261/year-0898/part-01",
     "content/books/zizhi-tongjian/vol-261/year-0898/part-02",
-    "content/books/zizhi-tongjian/vol-261/year-0898/part-03"
+    "content/books/zizhi-tongjian/vol-261/year-0898/part-03",
+    "content/books/zizhi-tongjian/vol-261/year-0898/part-04"
   ],
   "public_row_occurrences": {
-    "source": 23,
-    "person": 82,
-    "event": 78,
-    "person_relationship": 4,
-    "person_event": 148,
-    "fact_claim": 439
+    "source": 31,
+    "person": 117,
+    "event": 106,
+    "person_relationship": 8,
+    "person_event": 213,
+    "fact_claim": 615
   },
-  "source_snapshots_verified": 23,
+  "source_snapshots_verified": 31,
   "checks": [
-    "publication payload hash and anonymous readback verified",
-    "23 source snapshots SHA and fixed commit bytes verified",
-    "continuous original lines 58 through 93",
-    "every reviewed paragraph covered exactly once",
+    "four publication payload hashes and anonymous readbacks verified",
+    "31 source snapshots SHA and fixed commit bytes verified",
+    "continuous original lines 58 through 104 covered exactly once",
     "all 47 ledger texts match original volume 261",
-    "paragraphs 37 through 47 remain pending"
+    "year boundary: line 105 separator, 106 year 899 header, 107 first paragraph",
+    "899 ledger has 29 pending paragraphs from lines 107 through 135; volume 262 starts year 900"
   ],
-  "next_paragraph": "zztj-v261-y0898-p037"
+  "next_paragraph": "zztj-v261-y0899-p001"
 }

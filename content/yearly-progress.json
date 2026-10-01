@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 261,
-    "year": 898,
-    "last_reviewed_paragraph": "zztj-v261-y0898-p036",
-    "next_paragraph": "zztj-v261-y0898-p037",
-    "next_paragraph_opening": "丁巳，以东川留后王宗涤为节度使。",
+    "year": 899,
+    "last_reviewed_paragraph": "zztj-v261-y0898-p047",
+    "next_paragraph": "zztj-v261-y0899-p001",
+    "next_paragraph_opening": "春，正月，丁未，中书侍郎兼吏部尚书、同平章事崔胤罢守本官。以兵部尚书陆扆同平章事。",
     "batch": null,
     "status": "pending",
-    "last_published_paragraph": "zztj-v261-y0898-p036"
+    "last_published_paragraph": "zztj-v261-y0898-p047"
   },
   "year_coverage": [
     {
@@ -290,16 +290,29 @@
     },
     {
       "year": 898,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         261
       ],
       "batches": [
         "content/books/zizhi-tongjian/vol-261/year-0898/part-01",
         "content/books/zizhi-tongjian/vol-261/year-0898/part-02",
-        "content/books/zizhi-tongjian/vol-261/year-0898/part-03"
+        "content/books/zizhi-tongjian/vol-261/year-0898/part-03",
+        "content/books/zizhi-tongjian/vol-261/year-0898/part-04"
       ],
-      "note": "36/47: 十二段连续校核；返京起程到达和改元分录，别镇申请不当批准。苏州取城与昆山围降持续时段分清，备宴千人不算降兵。魏军推立与朝廷授留后分录；武瑜通淮是指控。邢青山兵数与旧明宗纪年序差异保独立引用，未强填现代地理。"
+      "note": "47/47: 十一段连续校核；授节与留后分期，子侄礼不造血亲。皇子祯禛、崔贤兄弟长幼异文并列。李罕之求镇追叙与十二月擅据潞、拘将降汴、嗣昭取泽分录，重复疑讹引语原字保留。交换俘虏、广州战另录，未读未来段不推进。",
+      "completed_volumes": [
+        261
+      ]
+    },
+    {
+      "year": 899,
+      "status": "pending",
+      "volumes": [
+        261
+      ],
+      "batches": [],
+      "note": "0/29: Volume 261 lines 107 through 135 pending."
     }
   ],
   "legacy_archives": [
@@ -671,6 +684,33 @@
       "primary_reading": "李嗣源高地列阵奋击，李嗣昭继进退葛军。",
       "alternate_reading": "《旧五代史》明宗纪有近似救援叙述，记李嗣源解鞍砺镞、凭高列阵。",
       "required_action": "原文：帝率其屬，解鞍礪鏃，憑高列陣，左右指畫，梁人莫之測；核对说明：帝为明宗李嗣源；此段开明年，前p001077乾宁三年已回查，按字面是897，与主书898差年，是否同战待考。这里只保相似叙述，不把伤箭等未核细节直接改入主书事件。"
+    },
+    {
+      "key": "898-part04-variant-2",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0898/part-04",
+      "primary_paragraph": "zztj-v261-y0898-p041",
+      "subject_key": "person_李祯",
+      "primary_reading": "主书雅王名字作祯，按当朝李氏皇子记录为李祯。",
+      "alternate_reading": "《旧唐书》雅王名字作禛，主书作祯。",
+      "required_action": "原文：雅王禛、瓊王祥，並光化元年十一月九日封。；核对说明：同光化元年十一月同雅琼王对应，保名字用字异文，主书主体仍李祯；未查纸本，不静改字。"
+    },
+    {
+      "key": "898-part04-variant-5",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0898/part-04",
+      "primary_paragraph": "zztj-v261-y0898-p044",
+      "subject_key": "relationship_person_崔洪_person_崔贤_兄长",
+      "primary_reading": "崔洪是崔贤的兄长。",
+      "alternate_reading": "《新唐书》称崔贤是崔洪的兄，主书称弟。",
+      "required_action": "原文：遣兄賢入質，全忠還之，質洪子於汴。；核对说明：主体同洪贤与送质背景，长幼兄/弟相反，保主书关系方向并列异说，不强定谁误。送回贤及质洪子为此书延展，未合成主书当时已发生。"
+    },
+    {
+      "key": "898-part04-primary-repeated-speech",
+      "status": "source_transcription_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0898/part-04",
+      "primary_paragraph": "zztj-v261-y0898-p046",
+      "required_action": "十一段连续校核；授节与留后分期，子侄礼不造血亲。皇子祯禛、崔贤兄弟长幼异文并列。李罕之求镇追叙与十二月擅据潞、拘将降汴、嗣昭取泽分录，重复疑讹引语原字保留。交换俘虏、广州战另录，未读未来段不推进。"
     }
   ]
 }

@@ -6,12 +6,12 @@
   "active_cursor": {
     "volume": 261,
     "year": 899,
-    "last_reviewed_paragraph": "zztj-v261-y0898-p047",
-    "next_paragraph": "zztj-v261-y0899-p001",
-    "next_paragraph_opening": "春，正月，丁未，中书侍郎兼吏部尚书、同平章事崔胤罢守本官。以兵部尚书陆扆同平章事。",
+    "last_reviewed_paragraph": "zztj-v261-y0899-p008",
+    "next_paragraph": "zztj-v261-y0899-p009",
+    "next_paragraph_opening": "叔琮有骁将陈章，号“陈夜叉”，为前锋，请于叔琮曰：“河东所恃者周杨五，请擒之，求一州为赏。”克用闻之，以戒德威，德威曰：",
     "batch": null,
     "status": "pending",
-    "last_published_paragraph": "zztj-v261-y0898-p047"
+    "last_published_paragraph": "zztj-v261-y0899-p008"
   },
   "year_coverage": [
     {
@@ -307,12 +307,14 @@
     },
     {
       "year": 899,
-      "status": "pending",
+      "status": "partial_published_verified",
       "volumes": [
         261
       ],
-      "batches": [],
-      "note": "0/29: Volume 261 lines 107 through 135 pending."
+      "batches": [
+        "content/books/zizhi-tongjian/vol-261/year-0899/part-01"
+      ],
+      "note": "8/29: 八段连续校核；表请不当制授。徐州退兵、蔡军出奔、内黄设伏、魏州破寨追击与两路河东进军分录。万余户不换人口，杀获不全当斩首，八百入魏与五百出战分清。补书月序、军数、单可及擒斩及崔洪劫与驱民异记并列。未造妹婿另一端或匿名将领。"
     }
   ],
   "legacy_archives": [
@@ -711,6 +713,76 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0898/part-04",
       "primary_paragraph": "zztj-v261-y0898-p046",
       "required_action": "十一段连续校核；授节与留后分期，子侄礼不造血亲。皇子祯禛、崔贤兄弟长幼异文并列。李罕之求镇追叙与十二月擅据潞、拘将降汴、嗣昭取泽分录，重复疑讹引语原字保留。交换俘虏、广州战另录，未读未来段不推进。"
+    },
+    {
+      "key": "899-part01-variant-1",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p001",
+      "subject_key": "event_zztj_261_0899_lu_yi_premier_restored",
+      "primary_reading": "陆扆任同平章事。",
+      "alternate_reading": "《旧唐书》正月丁未记陆扆为兵部侍郎同平章事，主书为兵部尚书同平章事。",
+      "required_action": "原文：二年春正月乙未朔。丁未，以兵部尚書陸扆為兵部侍郎、同平章事。；核对说明：同相职日期，兵部尚书/侍郎文字相异，保两书记法，不静改主书。"
+    },
+    {
+      "key": "899-part01-variant-2",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p005",
+      "subject_key": "event_zztj_261_0899_cui_xian_return_cai_muster",
+      "primary_reading": "朱全忠遣崔贤还蔡州发二千兵赴汴。",
+      "alternate_reading": "《旧唐书》记崔贤还蔡征三千兵，主书记二千。",
+      "required_action": "原文：汴人遣賢還蔡，徵兵三千出征。；核对说明：征兵数二千/三千并列，与最后至广陵人数不同统计阶段，不强凑。"
+    },
+    {
+      "key": "899-part01-variant-3",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p005",
+      "subject_key": "event_zztj_261_0899_cui_jingsi_kills_xian_takes_hong",
+      "primary_reading": "蔡军崔景思等杀崔贤，劫崔洪驱兵民奔淮南。",
+      "alternate_reading": "《新唐书》记崔景思杀贤后，崔洪惧而驱民奔行密，主书记劫洪。",
+      "required_action": "原文：將行，大將崔景思不悅，殺賢，洪懼，驅民趨申州，遂奔行密；核对说明：自主驱民与劫洪叙法不同，保独立引文，不补本人是否自愿、途中每城控制权。"
+    },
+    {
+      "key": "899-part01-variant-5",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p004",
+      "subject_key": "event_zztj_261_0899_liu_ren_gong_takes_slaughters_bei",
+      "primary_reading": "899年刘军进攻魏州前；主书正月条，确日未载",
+      "alternate_reading": "《旧唐书》在二月条记刘仁恭陷贝州屠城，主书置正月条出兵攻贝。",
+      "required_action": "原文：是月陷貝州，人無少長皆屠之，投屍清水，為之不流。；核对说明：是月承该段二月；出发与攻克可跨月，但此时未核定，主书月序与书证分列。"
+    },
+    {
+      "key": "899-part01-variant-6",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p005",
+      "subject_key": "event_zztj_261_0899_zhu_personal_xu_aid_yang_withdraws",
+      "primary_reading": "899年二月；确日未载",
+      "alternate_reading": "《旧五代史》梁纪正月统述朱全忠亲征、杨退，主书二月条记亲救与退兵。",
+      "required_action": "原文：二年正月，淮南楊行密舉全吳之眾，精甲五萬，以伐徐州，帝領大軍禦之。行密聞帝親征，乃收軍而退。；核对说明：攻徐始于正月与后来亲救分阶段可能，未强定各书为互斥第二次战役；保两月序。"
+    },
+    {
+      "key": "899-part01-variant-8",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p006",
+      "subject_key": "event_zztj_261_0899_li_yuan_ambush_shouwen",
+      "primary_reading": "李思安袁象先设伏，内黄夹击败刘守文。",
+      "alternate_reading": "《旧五代史》梁纪内黄战记杀二万余、获马二千余、擒单无敌等七十余；主书杀获三万并斩单可及。",
+      "required_action": "原文：三月，與燕軍戰于內黃北，燕軍大敗，殺二萬餘眾，奪馬二千餘匹，擒都將單無敵已下七十餘人。；核对说明：杀二万余与杀获三万统计口径不同，擒/斩单的过程亦异记；不虚构先擒再斩以消冲突。片内通鉴注文非独立正文确证。"
+    },
+    {
+      "key": "899-part01-variant-10",
+      "status": "documented_source_variant_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-261/year-0899/part-01",
+      "primary_paragraph": "zztj-v261-y0899-p007",
+      "subject_key": "person_王郐郎",
+      "primary_reading": "本段记王郐郎：被擒将领。",
+      "alternate_reading": "《旧五代史》同战被擒将名作王郃郎，主书作王郐郎。",
+      "required_action": "原文：擒都將薛突厥、王郃郎等。；核对说明：同战同薛突厥并列，保郐/郃异字，不静改名，不与后文另一年同名擒将提前合并人生轨迹。"
     }
   ]
 }

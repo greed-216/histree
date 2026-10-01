@@ -1,0 +1,42 @@
+{
+  "book_key": "jinshi",
+  "book": "金史",
+  "source_version": "45a71daf280f",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/金史.epub",
+      "source_sha256": "52e60c7fd16dfdf343cfe297194ad8c65b5fc37c61c08a5d2147bbe2a88f881a",
+      "mapped_source_file": "resources/originals/twenty-four-histories/22金史-EPUB全文.txt",
+      "mapped_source_sha256": "3cbf3ae9a801347b41a7244540993a6dec08c84d920886ea08ef649c3baa74ec",
+      "conversion_manifest": "resources/derived/epub-txt/22金史/manifest.json"
+    }
+  ],
+  "sections": 137,
+  "paragraphs": 9381,
+  "kind_counts": {
+    "heading": 1302,
+    "editorial_notice": 1,
+    "table_of_contents": 135,
+    "front_matter": 2,
+    "body": 6893,
+    "annotation": 39,
+    "table_row": 945,
+    "source_gap": 3,
+    "appendix": 61
+  },
+  "paragraph_file": "resources/derived/history-library/jinshi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "e565ad867e2afab3693918f83feeef837706e91bd86c3ac60090f73611ac5744",
+  "sections_file": "resources/derived/history-library/jinshi/sections.json",
+  "sections_sha256": "54d4c330520350a5ff113f697b3a26c3069d462383cb25ddb0cde91ef0f7b615",
+  "reading_file": "resources/derived/history-library/jinshi/reading.txt",
+  "reading_sha256": "fe12ed64563d1f5fd3e0d3a038bb9f4e3c66c9d4e978deef0241c2dedbfe90ae",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

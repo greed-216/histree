@@ -1,0 +1,41 @@
+{
+  "book_key": "jiu-tangshu",
+  "book": "旧唐书",
+  "source_version": "b729c4ac3d3b",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/舊唐書.epub",
+      "source_sha256": "90b5e92975317fb82463aa2698d58c8c7985de580211baf3b1927961e0268270",
+      "mapped_source_file": "resources/originals/twenty-four-histories/16旧唐书-EPUB全文.txt",
+      "mapped_source_sha256": "19325bd93c326ffd4efcf2916484413af946144cdd0b167913cfb780753e6a76",
+      "conversion_manifest": "resources/derived/epub-txt/16旧唐书/manifest.json"
+    }
+  ],
+  "sections": 216,
+  "paragraphs": 21603,
+  "kind_counts": {
+    "heading": 3183,
+    "front_matter": 2,
+    "table_of_contents": 214,
+    "body": 18179,
+    "annotation": 1,
+    "editorial_notice": 10,
+    "table_row": 8,
+    "appendix": 6
+  },
+  "paragraph_file": "resources/derived/history-library/jiu-tangshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "f604405365c99298f2d2a18ef0004d948c6a72b35151a6c2e796c096cafc7df9",
+  "sections_file": "resources/derived/history-library/jiu-tangshu/sections.json",
+  "sections_sha256": "84494846a9f475d49989c94b505527122ff5222181cc9f891007bc56f06adba4",
+  "reading_file": "resources/derived/history-library/jiu-tangshu/reading.txt",
+  "reading_sha256": "58fda9bea95fb2f8f68208a90817b9e999dd4ab0ccca57b3c9b1f2f9570a5cfd",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

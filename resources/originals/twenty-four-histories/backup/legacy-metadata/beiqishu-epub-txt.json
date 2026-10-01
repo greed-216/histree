@@ -1,0 +1,65 @@
+{
+  "book": "北齐书",
+  "created_at": "2026-10-01",
+  "role": "archived_conversion_before_unified_epub_extraction",
+  "selection_basis": "用户要求沿用旧五代史EPUB全文的目录与命名方式，作为后续分段依据，保留旧TXT。",
+  "txt_file": "resources/derived/epub-txt/11北齐书/previous-conversions/05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9.txt",
+  "txt_sha256": "05cda193cc504805333335eb735fe9a6dd4e8666e457e7bea5aa4d20d1660aa9",
+  "encoding": "UTF-8",
+  "volume_range": [
+    1,
+    50
+  ],
+  "volumes": 50,
+  "non_whitespace_characters": 260601,
+  "source_epub_file": "resources/originals/twenty-four-histories/北齊書.epub",
+  "source_epub_sha256": "7ff92729cdb31c0e2f35b9117d72d59163849fe280dcc4a08b0dca3c4be6d52e",
+  "source_metadata": {
+    "identifier": [
+      "https://zh.wikisource.org/wiki/%E5%8C%97%E9%BD%8A%E6%9B%B8"
+    ],
+    "language": [
+      "zh"
+    ],
+    "title": [
+      "北齊書"
+    ],
+    "source": [
+      "https://zh.wikisource.org/wiki/%E5%8C%97%E9%BD%8A%E6%9B%B8"
+    ],
+    "rights": [
+      "Creative Commons BY-SA 3.0",
+      "GNU Free Documentation License"
+    ],
+    "contributor": [
+      "Wikisource"
+    ]
+  },
+  "rights": [
+    "Creative Commons BY-SA 3.0",
+    "GNU Free Documentation License"
+  ],
+  "extraction_script": "scripts/prepare-beiqishu-epub.py",
+  "extraction_manifest": "resources/derived/supplements/beiqishu-epub/manifest.json",
+  "volume_locators": "resources/derived/supplements/beiqishu-epub/volumes.json",
+  "restored_variants": "resources/derived/supplements/beiqishu-epub/restored-variants.json",
+  "transforms": [
+    "按OPF spine顺序提取卷1至50，保留繁体原字、标点、卷内标题与注文",
+    "移出网页导航、姊妹计划与许可展示框，原文字记录于excluded.json",
+    "将空异体字span的data-mw-variant.disabled.t还原为文字，逐处记录于restored-variants.json",
+    "卷39转义成文字的异体字span同样按disabled.t还原，保留原始标签审计",
+    "HTML块与br转为换行，整理空白；每卷加入数字卷号与EPUB原题",
+    "卷末校核说明保留在各卷中，不将其当作纸本已核证据"
+  ],
+  "review_status": "pending_textual_review",
+  "notes": [
+    "与转换全文full-source.txt逐字节一致，逐卷定位字符区间可以复用。",
+    "保留50卷正文、原字、标点、卷内标题与注文；卷末校核说明保留。",
+    "新增数字卷号标头由脚本生成，不是原作正文，不得作为史料引文。",
+    "旧TXT、PDF与已引用来源保留；现有分段索引尚未切换。",
+    "非纸本校勘定本，具体引用仍需回查EPUB原卷、核对异文。",
+    "本审计对应旧转换归档。统一转换的新全文、哈希及偏移见superseded_by，不混用旧偏移。"
+  ],
+  "previous_txt_file": "resources/originals/twenty-four-histories/11北齐书-EPUB全文.txt",
+  "superseded_by": "resources/derived/epub-txt/11北齐书/manifest.json"
+}

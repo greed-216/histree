@@ -1,0 +1,40 @@
+{
+  "book_key": "jiu-wudaishi",
+  "book": "旧五代史",
+  "source_version": "205deb4a7860",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/舊五代史.epub",
+      "source_sha256": "808c89dca8a5a3fc798076aa0d4baeb7e40b4cc7bdfb1fd23db1600afa608f42",
+      "mapped_source_file": "resources/originals/twenty-four-histories/18旧五代史-EPUB全文.txt",
+      "mapped_source_sha256": "8923127534193fda78c8c106abc5de78ac27fc3cf4e5143882e8d42224bc929b",
+      "conversion_manifest": "resources/derived/epub-txt/18旧五代史/manifest.json"
+    }
+  ],
+  "sections": 152,
+  "paragraphs": 3988,
+  "kind_counts": {
+    "heading": 822,
+    "front_matter": 2,
+    "table_of_contents": 150,
+    "body": 2962,
+    "editorial_notice": 2,
+    "table_row": 2,
+    "appendix": 48
+  },
+  "paragraph_file": "resources/derived/history-library/jiu-wudaishi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "449be484096e4060ee5cc4da83051b76409d9442b627f8db8a242e77adaa6b6f",
+  "sections_file": "resources/derived/history-library/jiu-wudaishi/sections.json",
+  "sections_sha256": "c74f5d5366d928a9afe08d799380d260aac089174b9e5fc0608d9430fc29618f",
+  "reading_file": "resources/derived/history-library/jiu-wudaishi/reading.txt",
+  "reading_sha256": "da277c37198ddb092b28100bc51b1eadff35829426af4e67d214227d42b5c518",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

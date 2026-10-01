@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "三国志",
+  "book_number": 4,
+  "epub_file": "resources/originals/twenty-four-histories/backup/三國志.epub",
+  "epub_sha256": "bcfd1bab650983ddcc1e8de5631f5b22d8903df5919ebb7413702c85bc2863fa",
+  "txt_file": "resources/originals/twenty-four-histories/04三国志-EPUB全文.txt",
+  "txt_sha256": "7ea8526e00e84d80d913137fd9e46e7c5ae356b7fb01dfd7603db2cd8d649f4f",
+  "encoding": "utf-8",
+  "expected_volumes": 65,
+  "volume_sections": 65,
+  "all_source_sections": 68,
+  "mapped_paragraphs_including_headings": 3367,
+  "restored_variant_records": 1600,
+  "issue_records": 1,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "3141f8ff69bd3736efd03cc45b8476c5028e38a15981a455a175616362e7074f",
+    "paragraphs.jsonl.gz": "73552c2f391f61605de51164febde598c2fa8ef2de3a89cf095218e49f038c92",
+    "excluded.json.gz": "aff11199e64fa8a1d48028f93e80ee3a244ef2dbf3455da4cf25820718d6a5ea",
+    "restored-variants.json.gz": "83f7884adcbd2f99777e7f4f277a365113213860e4d96e91eaba3185038ed326",
+    "epub-metadata.json.gz": "af0c06e65793ac6b675cd7c171e4c31e50720ae2f58d8db5a8e6b89ebc3064fc",
+    "issues.json": "0dea9d50c6ecfebe2e69e13c6c97771840e0c0b493887807de2efd1207975bfa"
+  },
+  "previous_conversion_archives": []
+}

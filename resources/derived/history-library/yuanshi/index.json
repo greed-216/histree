@@ -1,0 +1,41 @@
+{
+  "book_key": "yuanshi",
+  "book": "元史",
+  "source_version": "9ff5cf14e766",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/元史.epub",
+      "source_sha256": "3fdfeb8c9df55467a5f1c17497e03a5c70c2fe7a8fec3d9e433eb5bc02617a84",
+      "mapped_source_file": "resources/originals/twenty-four-histories/23元史-EPUB全文.txt",
+      "mapped_source_sha256": "824092a2f728faa4b5b18b640604312d586e75f6d9cabb3633406cb2784b5804",
+      "conversion_manifest": "resources/derived/epub-txt/23元史/manifest.json"
+    }
+  ],
+  "sections": 212,
+  "paragraphs": 23642,
+  "kind_counts": {
+    "heading": 1917,
+    "front_matter": 2,
+    "table_of_contents": 210,
+    "body": 14387,
+    "annotation": 2824,
+    "table_row": 4285,
+    "editorial_notice": 1,
+    "appendix": 16
+  },
+  "paragraph_file": "resources/derived/history-library/yuanshi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "6577ad0e9c351414d09cb0892e58b22c9bb5d2d41193bb17a39c303ffebaedfb",
+  "sections_file": "resources/derived/history-library/yuanshi/sections.json",
+  "sections_sha256": "dcc262f34f2610df0c1317122b8e034a44e624199477264a0329a0711d7dec9a",
+  "reading_file": "resources/derived/history-library/yuanshi/reading.txt",
+  "reading_sha256": "bf8ac13b1bf3ab01971fe04c8788d6d08347fa151f87f65371575ca143cd6775",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

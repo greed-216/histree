@@ -1,2 +1,6 @@
 # Preserve retrieved source bytes for SHA-256 evidence verification.
 content/**/sources/*.txt -text whitespace=-blank-at-eol
+
+# Historical source bytes and paragraph separators are preserved intentionally.
+resources/originals/twenty-four-histories/** -text -whitespace
+resources/derived/history-library/*/reading.txt -text -whitespace

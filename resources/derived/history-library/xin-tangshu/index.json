@@ -1,0 +1,41 @@
+{
+  "book_key": "xin-tangshu",
+  "book": "新唐书",
+  "source_version": "685ef499825e",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/新唐書.epub",
+      "source_sha256": "61a20a161b67b9246d56d9c0a23f98931b4bf70972f68379c15b4d1bf768fe53",
+      "mapped_source_file": "resources/originals/twenty-four-histories/17新唐书-EPUB全文.txt",
+      "mapped_source_sha256": "1baeb092c9728a03fd5cec6efc0b4a14e83c626048886329051335f21fbd97a7",
+      "conversion_manifest": "resources/derived/epub-txt/17新唐书/manifest.json"
+    }
+  ],
+  "sections": 250,
+  "paragraphs": 35967,
+  "kind_counts": {
+    "heading": 3132,
+    "front_matter": 2,
+    "table_of_contents": 248,
+    "body": 20418,
+    "annotation": 362,
+    "table_row": 11799,
+    "editorial_notice": 2,
+    "appendix": 4
+  },
+  "paragraph_file": "resources/derived/history-library/xin-tangshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "d5f56e163a3c75f95c9466e44bce14db7e74196c429083fe7f9d3182fb076b08",
+  "sections_file": "resources/derived/history-library/xin-tangshu/sections.json",
+  "sections_sha256": "8cecca93a27f0c049605182913715b3c52ebf40c83912d4d0df9664aad426a7a",
+  "reading_file": "resources/derived/history-library/xin-tangshu/reading.txt",
+  "reading_sha256": "a612624d8ed14c29734c13ba7e10cb6946e0b52b22c1267ac05ccf46400e6205",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

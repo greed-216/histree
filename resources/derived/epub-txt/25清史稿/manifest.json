@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "清史稿",
+  "book_number": 25,
+  "epub_file": "resources/originals/twenty-four-histories/backup/清史稿.epub",
+  "epub_sha256": "ecbb20c5b72bdfb4f209cbcc3dd3d9bd21e2a3dac7a1d4e325f5cc17f3987419",
+  "txt_file": "resources/originals/twenty-four-histories/25清史稿-EPUB全文.txt",
+  "txt_sha256": "4397b3bd0204f27c2dfe4dcff5664a56a0472b09c6d09f83f8112f205dd1943e",
+  "encoding": "utf-8",
+  "expected_volumes": 529,
+  "volume_sections": 529,
+  "all_source_sections": 531,
+  "mapped_paragraphs_including_headings": 36280,
+  "restored_variant_records": 1109,
+  "issue_records": 227,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "2e02325b7a26d52a0d9640ff6a964f7fd86425c22690c0d6b7ca133af2a23127",
+    "paragraphs.jsonl.gz": "c30d5784f19ab8881935561daddb582480eab98475365c93c75e50999736605e",
+    "excluded.json.gz": "bf39b42f4919cadd926d30996135ce89aed4028e8b5217116d330590f628e0a0",
+    "restored-variants.json.gz": "558f7ec13725b69aed700b52008703b8f9985e24087bfc01f8d09f1f8d6da212",
+    "epub-metadata.json.gz": "04ea84100f8e4bc2d27a5551dcd49621d80dd6932556bb49a8243a312d9c90e0",
+    "issues.json": "c5ca850af886d7cda40428f6b15129a4d74ccdbaddce87e2974fb0bbcad526b7"
+  },
+  "previous_conversion_archives": []
+}

@@ -1,0 +1,78 @@
+{
+  "format_version": "history-pdf-supplement-v1",
+  "book": "周书",
+  "volume": 4,
+  "title": "卷四 帝纪第四·明帝（PDF补文）",
+  "source_file": "resources/originals/twenty-four-histories/12周书.pdf",
+  "source_sha256": "7ccc5f6f5fb1aa8a185efdf75dc5a4f10e87c9027f7076870a6e5b3e48dd5a05",
+  "mapped_source_file": "resources/derived/supplements/zhoushu-volume-04/source.txt",
+  "mapped_source_sha256": "6de48824164303eba747821861edf3db0b879275ccf59a163d083fb25b7baae1",
+  "pdf_page_start": 80,
+  "pdf_page_end": 96,
+  "raw_pages_file": "resources/derived/supplements/zhoushu-volume-04/pdf-pages.jsonl",
+  "raw_pages_sha256": "1197c39d60b259835338b0648ae4efe8cbca6e1fadd8817fd3a3d3a7c91d3229",
+  "source_map_file": "resources/derived/supplements/zhoushu-volume-04/source-map.jsonl",
+  "source_map_sha256": "bd1516b017efaa9453cc7cd706ff9c599d1d16b82bfb8d3a1d5f847e2aeaf8b2",
+  "excluded_file": "resources/derived/supplements/zhoushu-volume-04/excluded.json",
+  "excluded_sha256": "1224c50e1c279d99a3bb9273646f5403e20555fd48212434ce8d05b63493d454",
+  "combined_file": "resources/derived/supplements/zhoushu-volume-04/combined-reading.txt",
+  "combined_sha256": "acc93dc7a1ebc05eb9d5f86d31567f3a46f40ec6751331307abb3cbbe4ec879d",
+  "combined_map_file": "resources/derived/supplements/zhoushu-volume-04/combined-map.json",
+  "combined_map_sha256": "6e1e415cdaf1dad5a6e68b60886114990e0c1ea49b8078f6ce622585d072aff9",
+  "combined_editorial_heading": {
+    "prefix": "周书卷四  ",
+    "title": "周书卷四  帝纪第四",
+    "basis": "书名及经核对的卷号；新增导航前缀与PDF原文分开记录"
+  },
+  "insert_before": {
+    "file": "resources/derived/supplements/zhoushu-volume-04/original-decoded.txt",
+    "sha256": "c4eade512501493bbd129c0bf45fbbf1e813d8a253ced16cc4de78ad04680dc0",
+    "char_offset": 17077,
+    "heading": "周书卷五  帝纪第五"
+  },
+  "original_txt_file": "resources/originals/twenty-four-histories/archive/12周书.before-volume-04.TXT",
+  "original_txt_sha256": "4e2241adefe329ca91a8fa4381752c9395b3833024eb1cbc5e027f2a45e0fb49",
+  "headings": 2,
+  "paragraphs": 19,
+  "non_whitespace_characters": 3762,
+  "transforms": [
+    "只移出每页书名和页码",
+    "保留PDF原字标点，合并机械折行与跨页续行",
+    "按PDF段首横坐标缩进分段，标题单列；不按现代语义重分段",
+    "全文阅读副本在卷四原题前加“周书卷四”导航前缀；单卷PDF来源文本不改"
+  ],
+  "source_anomalies_preserved": [
+    {
+      "pdf_page": 82,
+      "text": "丁巳。雍州置十二郡。",
+      "note": "底本句点原样保留"
+    },
+    {
+      "pdf_page": 86,
+      "text": "辛已",
+      "note": "日字底本原样保留，未擅改巳"
+    },
+    {
+      "pdf_page": 87,
+      "text": "甲戌，云。",
+      "note": "本地PDF也如此，疑有底本文字问题，待校"
+    },
+    {
+      "pdf_page": 95,
+      "text": "不提辄奔赴阙庭",
+      "note": "本地PDF也如此，不猜改"
+    }
+  ],
+  "checks": [
+    "pypdf与pdfplumber逐页正文字符一致",
+    "17页正文字符顺序守恒",
+    "80—96页渲染已人工核对，重建时锁定已核PDF哈希"
+  ],
+  "status": "local_pdf_supplement_checked_pending_edition_review",
+  "limitations": [
+    "仅对本地电子PDF核对，未核纸本；不声称校勘完成。",
+    "原TXT缺卷事实保留，补文作为独立PDF来源纳入阅读索引。"
+  ],
+  "canonical_txt_file": "resources/originals/twenty-four-histories/12周书.TXT",
+  "canonical_txt_sha256": "acc93dc7a1ebc05eb9d5f86d31567f3a46f40ec6751331307abb3cbbe4ec879d"
+}

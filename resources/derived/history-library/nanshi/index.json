@@ -1,0 +1,39 @@
+{
+  "book_key": "nanshi",
+  "book": "南史",
+  "source_version": "c5ac4ccb7ddc",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/南史.epub",
+      "source_sha256": "1b4d0cb69ae2e7c9d0cd8d730b6f4f510892f2f2c4d9556688c8de14eb012294",
+      "mapped_source_file": "resources/originals/twenty-four-histories/14南史-EPUB全文.txt",
+      "mapped_source_sha256": "7e941e5dee50de6e6b10c21b3457463b8a9a8d240dc8a57398a5f5bacbb2b28a",
+      "conversion_manifest": "resources/derived/epub-txt/14南史/manifest.json"
+    }
+  ],
+  "sections": 81,
+  "paragraphs": 8270,
+  "kind_counts": {
+    "heading": 1213,
+    "front_matter": 1,
+    "table_of_contents": 80,
+    "body": 6665,
+    "editorial_notice": 4,
+    "annotation": 307
+  },
+  "paragraph_file": "resources/derived/history-library/nanshi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "f941d3d716db92c28ebdb5a52d566c87135eee5c5ca22be414eb008d4a040db3",
+  "sections_file": "resources/derived/history-library/nanshi/sections.json",
+  "sections_sha256": "96d3785582ba86a15186456ef60254e0695c2140aeae26f205b5e2f68d653797",
+  "reading_file": "resources/derived/history-library/nanshi/reading.txt",
+  "reading_sha256": "a1cc287a9b5737d66ad57f1b60d40acaf979d197c4543ebed6c59bf187ea9178",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

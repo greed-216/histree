@@ -1,0 +1,41 @@
+{
+  "book_key": "suishu",
+  "book": "隋书",
+  "source_version": "20b1e58a4cac",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/隋書.epub",
+      "source_sha256": "fada5d4edfe1f8c728c2f972bdea793a0714ff30b65d324a642391539d78fdb6",
+      "mapped_source_file": "resources/originals/twenty-four-histories/13隋书-EPUB全文.txt",
+      "mapped_source_sha256": "5feb2a3f5b33af366e0053b4a99133cca09689269b7571990386181a268c7884",
+      "conversion_manifest": "resources/derived/epub-txt/13隋书/manifest.json"
+    }
+  ],
+  "sections": 87,
+  "paragraphs": 11096,
+  "kind_counts": {
+    "heading": 997,
+    "front_matter": 2,
+    "table_of_contents": 85,
+    "body": 9744,
+    "annotation": 251,
+    "editorial_notice": 10,
+    "table_row": 4,
+    "appendix": 3
+  },
+  "paragraph_file": "resources/derived/history-library/suishu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "2227021bc5ee338fd15de984f98a4df876d0d57137a1da6b424a184dcfbe8a1b",
+  "sections_file": "resources/derived/history-library/suishu/sections.json",
+  "sections_sha256": "d93706375e0ea1ff3bba199d69049d5a75b07b28799efa81f4ece61f533ef191",
+  "reading_file": "resources/derived/history-library/suishu/reading.txt",
+  "reading_sha256": "468d56e477ce8c6a0515bc434021ace6a8165d176b5186167c4836e56bf8490c",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

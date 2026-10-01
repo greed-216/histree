@@ -1,0 +1,40 @@
+{
+  "book_key": "bei-qishu",
+  "book": "北齐书",
+  "source_version": "773d7c82ad71",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/北齊書.epub",
+      "source_sha256": "7ff92729cdb31c0e2f35b9117d72d59163849fe280dcc4a08b0dca3c4be6d52e",
+      "mapped_source_file": "resources/originals/twenty-four-histories/11北齐书-EPUB全文.txt",
+      "mapped_source_sha256": "9ff895a69ec20b79cf59c453e0de68ae5a8684c51e65407fe413cf8e074983f1",
+      "conversion_manifest": "resources/derived/epub-txt/11北齐书/manifest.json"
+    }
+  ],
+  "sections": 51,
+  "paragraphs": 1966,
+  "kind_counts": {
+    "heading": 501,
+    "front_matter": 1,
+    "table_of_contents": 50,
+    "body": 1389,
+    "table_row": 6,
+    "editorial_notice": 9,
+    "annotation": 10
+  },
+  "paragraph_file": "resources/derived/history-library/bei-qishu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "30a94e8397f512218c6d92fcd2c323aa0c36d35378c6ec8cd5c0c89a4ccd99fb",
+  "sections_file": "resources/derived/history-library/bei-qishu/sections.json",
+  "sections_sha256": "436d2e15d29297459398b723e219ed9e1390864809aed24d1c3b64742a031ca5",
+  "reading_file": "resources/derived/history-library/bei-qishu/reading.txt",
+  "reading_sha256": "ce9ea6d51cab42af812f203f522aad32ef5c8a314d04fcae76159a13b40a6813",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "南齐书",
+  "book_number": 7,
+  "epub_file": "resources/originals/twenty-four-histories/backup/南齊書.epub",
+  "epub_sha256": "d16a67f185f19af042460903791511578d1afd89c042d70484d731932915f49a",
+  "txt_file": "resources/originals/twenty-four-histories/07南齐书-EPUB全文.txt",
+  "txt_sha256": "83d4715481f63afc2d560ce2f7db1f8ce0d29089f4d35d50c1049b5c6dfc8f85",
+  "encoding": "utf-8",
+  "expected_volumes": 59,
+  "volume_sections": 59,
+  "all_source_sections": 63,
+  "mapped_paragraphs_including_headings": 4975,
+  "restored_variant_records": 24,
+  "issue_records": 18,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "1e68e00609aea860da82a518f4b8e12ba704c327d2c20d932554a5a3e285444a",
+    "paragraphs.jsonl.gz": "3459ceb81994ac9a126124cb80fe3f40a4ffb91f7f2d416beaf39d5fbe6a3fdb",
+    "excluded.json.gz": "159e4d0076891dc314083878a7537ff23a56a267440b93a8ef348eed440b05b2",
+    "restored-variants.json.gz": "babe7074b925186fbe1e127f6e1f3fe43952613f8273e3c8b2b9ec22ccf2df71",
+    "epub-metadata.json.gz": "e1250c58cb44e2a38877d3fbebc13728b70ef8525904eca59c179cb052a062b1",
+    "issues.json": "ba56c1543c6c56f022519dffa2d02be5924c65290f99ab7c16f316d519ff8fdd"
+  },
+  "previous_conversion_archives": []
+}

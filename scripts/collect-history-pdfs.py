@@ -5,7 +5,8 @@ BASE=ROOT/'resources'
 tree=json.loads((BASE/'catalog/github-tree.json').read_text())
 items=[x for x in tree['tree'] if x['path'].startswith('kindle_free_books/二十四史/PDF/') and x['path'].endswith('.pdf')]
 def fetch(x):
-    dest=BASE/'originals/twenty-four-histories'/pathlib.Path(x['path']).name
+    dest=BASE/'originals/twenty-four-histories/backup'/pathlib.Path(x['path']).name
+    dest.parent.mkdir(parents=True,exist_ok=True)
     url='https://raw.githubusercontent.com/LeungGeorge/grimoire-kindle/'+tree['sha']+'/'+urllib.parse.quote(x['path'])
     for attempt in range(3):
         try:

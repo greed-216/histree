@@ -19,7 +19,7 @@ for i,m in enumerate(starts):
 save(BASE/'catalog/tongjian-volumes.json',records)
 save(BASE/'catalog/tongjian-user-file.json',dict(title='资治通鉴',file=str(p.relative_to(ROOT)),bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),encoding='UTF-8',recognized_volume_headings=len(starts),source='用户提供；文件自称爱上阅读www.isyd.net',edition_status='底本未注明；识别出294卷标题不等于无缺字错字',accessed_at='2026-09-29',notes=['原文件未修改','分卷按标题顺序编号；保留原文本字符，卷界可能附带下一纪标题','末卷含进书表等附文；后续正文分析需分开']))
 results=[]
-for p in sorted((BASE/'originals/twenty-four-histories').glob('*.pdf')):
+for p in sorted((BASE/'originals/twenty-four-histories/backup').glob('*.pdf')):
  try:
   reader=PdfReader(p);first=reader.pages[0].extract_text() or '';last=reader.pages[-1].extract_text() or ''
   row=dict(file=str(p.relative_to(ROOT)),title=p.stem[2:],pages=len(reader.pages),first_page_sample=first[:700],last_page_sample=last[-350:],status='parsed',edition_status='电子PDF；底本与转录质量未校勘')

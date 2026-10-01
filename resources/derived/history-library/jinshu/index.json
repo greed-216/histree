@@ -1,0 +1,41 @@
+{
+  "book_key": "jinshu",
+  "book": "晋书",
+  "source_version": "3e2896142c78",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/晉書.epub",
+      "source_sha256": "84b4bbc8123a44f44a90a2a8ab34eaef5cf735785c1be8925f0b8ec2c6be11c7",
+      "mapped_source_file": "resources/originals/twenty-four-histories/05晋书-EPUB全文.txt",
+      "mapped_source_sha256": "1f45414830715ea85aca2ddd2801736bc7554177d3139453a12eaf54fb45e465",
+      "conversion_manifest": "resources/derived/epub-txt/05晋书/manifest.json"
+    }
+  ],
+  "sections": 131,
+  "paragraphs": 12027,
+  "kind_counts": {
+    "heading": 1701,
+    "front_matter": 1,
+    "table_of_contents": 130,
+    "body": 9575,
+    "annotation": 576,
+    "editorial_notice": 41,
+    "source_gap": 1,
+    "table_row": 2
+  },
+  "paragraph_file": "resources/derived/history-library/jinshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "ba98323633963412d3f3a572ec99506808dbcd5317386adaa742dcb5d0424173",
+  "sections_file": "resources/derived/history-library/jinshu/sections.json",
+  "sections_sha256": "61866a0f71e23dfa101a9bd4fc1fb89f3cbbc705990379f26e98058293d01ab5",
+  "reading_file": "resources/derived/history-library/jinshu/reading.txt",
+  "reading_sha256": "890dd61db223303aa40adb23d720b1c059cbb07d6921be59fb856902ae3b2c69",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

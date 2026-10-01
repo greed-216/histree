@@ -1,0 +1,49 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "旧五代史",
+  "book_number": 18,
+  "epub_file": "resources/originals/twenty-four-histories/backup/舊五代史.epub",
+  "epub_sha256": "808c89dca8a5a3fc798076aa0d4baeb7e40b4cc7bdfb1fd23db1600afa608f42",
+  "txt_file": "resources/originals/twenty-four-histories/18旧五代史-EPUB全文.txt",
+  "txt_sha256": "8923127534193fda78c8c106abc5de78ac27fc3cf4e5143882e8d42224bc929b",
+  "encoding": "utf-8",
+  "expected_volumes": 150,
+  "volume_sections": 150,
+  "all_source_sections": 152,
+  "mapped_paragraphs_including_headings": 3822,
+  "restored_variant_records": 125,
+  "issue_records": 8,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": {
+    "file": "resources/originals/twenty-four-histories/backup/previous-conversions/18旧五代史/1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b.txt",
+    "sha256": "1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b"
+  },
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "e793af7135715d8d8490d7e5eb85cbc086d0da24e7da39a70cd41993cb00adfd",
+    "paragraphs.jsonl.gz": "b35f8e0fb8d2bbff567da7a447545949c7d5a8dba87fc6346a5b6666013bd451",
+    "excluded.json.gz": "234d9467a7a2e67df04dd2e4abed91fa499fbf004f24f6c9a1f2c43cc2940de4",
+    "restored-variants.json.gz": "66ce308daa1dfa368c4d944446e57aa52f8b4d94cdf270185f6e782b04b40ebe",
+    "epub-metadata.json.gz": "cd901ddac1efc05b59aadec10399f9379fa8cbf6c614dd34a4e85357424e2931",
+    "issues.json": "6a7703ceccb56c6f0561e37c466c9ad65ae2596c78a6cd0bd244072edfce7d04"
+  },
+  "previous_conversion_archives": [
+    {
+      "file": "resources/originals/twenty-four-histories/backup/previous-conversions/18旧五代史/1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b.txt",
+      "sha256": "1bef5d5c9d5d0f8331b646c49a5129e66f0f3e51e50bb58dbf227de824314f7b"
+    }
+  ]
+}

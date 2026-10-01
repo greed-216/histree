@@ -1,0 +1,40 @@
+{
+  "book_key": "liangshu",
+  "book": "梁书",
+  "source_version": "632aa19e7da8",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/梁書.epub",
+      "source_sha256": "503fd4bb1047e050b6ff0844b836192791c90ce44e378d131d8a04bba3601655",
+      "mapped_source_file": "resources/originals/twenty-four-histories/08梁书-EPUB全文.txt",
+      "mapped_source_sha256": "2cc9ba431a3b30674f7befd5e01863f49ac79ec9bc2d6aae0fbd4c702c8522f5",
+      "conversion_manifest": "resources/derived/epub-txt/08梁书/manifest.json"
+    }
+  ],
+  "sections": 57,
+  "paragraphs": 2989,
+  "kind_counts": {
+    "heading": 582,
+    "front_matter": 2,
+    "table_of_contents": 56,
+    "body": 2267,
+    "annotation": 56,
+    "editorial_notice": 24,
+    "table_row": 2
+  },
+  "paragraph_file": "resources/derived/history-library/liangshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "67862f5e858688e7d3825820fabe7ba0f8700bb77ed6178bf96eab9a94a64f69",
+  "sections_file": "resources/derived/history-library/liangshu/sections.json",
+  "sections_sha256": "fe8e96ce9db1763288970a94319856dfa1973ce2563151ba9797a009eaee5e4b",
+  "reading_file": "resources/derived/history-library/liangshu/reading.txt",
+  "reading_sha256": "38cd908cc2ec179697509cc9389961451b8ce660b3b3183779fa8572b3b4031f",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

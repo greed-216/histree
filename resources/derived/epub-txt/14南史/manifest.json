@@ -1,0 +1,41 @@
+{
+  "format_version": "history-epub-txt-v1",
+  "book": "南史",
+  "book_number": 14,
+  "epub_file": "resources/originals/twenty-four-histories/backup/南史.epub",
+  "epub_sha256": "1b4d0cb69ae2e7c9d0cd8d730b6f4f510892f2f2c4d9556688c8de14eb012294",
+  "txt_file": "resources/originals/twenty-four-histories/14南史-EPUB全文.txt",
+  "txt_sha256": "7e941e5dee50de6e6b10c21b3457463b8a9a8d240dc8a57398a5f5bacbb2b28a",
+  "encoding": "utf-8",
+  "expected_volumes": 80,
+  "volume_sections": 80,
+  "all_source_sections": 81,
+  "mapped_paragraphs_including_headings": 8187,
+  "restored_variant_records": 1828,
+  "issue_records": 0,
+  "validation": {
+    "zip_crc": "passed",
+    "numbered_volume_coverage": "passed",
+    "retained_body_character_conservation": "passed",
+    "paragraph_offsets": "passed"
+  },
+  "review_status": "pending_textual_review",
+  "previous_conversion": null,
+  "transforms": [
+    "正文按数字卷号与上中下、之一至之四排序；卷前资料和附录单独标记",
+    "保留原字形和标点；按属性恢复文字及来源提示；多向转换选择原声明的繁体显示",
+    "图像字按EPUB自身alt文字或部件描述还原，不猜测原字；图片仍列入待核项",
+    "网页导航和许可框另存；中间题名栏保留，包含补帝纪、补列传等标识",
+    "HTML段落、标题和换行转为文本分段；表格行列用换行和制表符表达",
+    "段落偏移按Python Unicode字符计数，行号从1开始；未作纸本校勘或补写缺文"
+  ],
+  "outputs": {
+    "sections.json": "a26d55fc5fe5a8eaafc0de26870dee13161c6a59a583a2712350200cdc1c2e7b",
+    "paragraphs.jsonl.gz": "70c5df1a358db63b3d3d605e2ef28015a1cf79aa6c2fd8e0dc39b3e8c7a28dc8",
+    "excluded.json.gz": "eedb58654242a696b4e413cca0a231b95355f563af2a3da5dc2995c8de9d6ec9",
+    "restored-variants.json.gz": "d3afd4f6530291fa28684bc5b34693c404ada6b392ee5d7b5475b9fe3a16f675",
+    "epub-metadata.json.gz": "dfead47c36d73ccfdd3da94dc515272a0f139376e31bfdb6050ccd15cc545ede",
+    "issues.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  "previous_conversion_archives": []
+}

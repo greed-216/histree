@@ -1,0 +1,41 @@
+{
+  "book_key": "songshi",
+  "book": "宋史",
+  "source_version": "9c6e46fee832",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/宋史.epub",
+      "source_sha256": "7b86da10244bc06df36a61c6debe8f10cb2705271b2c7d22fef173499871b190",
+      "mapped_source_file": "resources/originals/twenty-four-histories/20宋史-EPUB全文.txt",
+      "mapped_source_sha256": "3e0b12169631b4813bb342076284dc235c6911bf613b6beb9a062c2cab2452a2",
+      "conversion_manifest": "resources/derived/epub-txt/20宋史/manifest.json"
+    }
+  ],
+  "sections": 498,
+  "paragraphs": 76468,
+  "kind_counts": {
+    "heading": 5284,
+    "editorial_notice": 93,
+    "front_matter": 497,
+    "body": 38701,
+    "table_row": 31512,
+    "annotation": 286,
+    "source_gap": 3,
+    "appendix": 92
+  },
+  "paragraph_file": "resources/derived/history-library/songshi/paragraphs.jsonl.gz",
+  "paragraph_sha256": "272255485a4602db6fd440263b268686298d189b74c25b3a033a53ee3e940914",
+  "sections_file": "resources/derived/history-library/songshi/sections.json",
+  "sections_sha256": "91d81042b47ebfb2615196d234a51e0d4145e0dcb99301240ea9fec91d7922fc",
+  "reading_file": "resources/derived/history-library/songshi/reading.txt",
+  "reading_sha256": "a1bcab78b78f8f28cc446e30a289eb9bf23c866ffa381df643414a5508c107c6",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

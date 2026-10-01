@@ -1,0 +1,40 @@
+{
+  "book_key": "songshu",
+  "book": "宋书",
+  "source_version": "444b42a98550",
+  "rules": "history-epub-paragraph-v3",
+  "inputs": [
+    {
+      "source_file": "resources/originals/twenty-four-histories/backup/宋書.epub",
+      "source_sha256": "b4115d54a6022254bc389a6155062dc17fe6afb7134216fdf4a53eba78ab380a",
+      "mapped_source_file": "resources/originals/twenty-four-histories/06宋书-EPUB全文.txt",
+      "mapped_source_sha256": "1f581c29ea046b73033eac0574163e891426e25125a2a1b352bc1107c7d92b1a",
+      "conversion_manifest": "resources/derived/epub-txt/06宋书/manifest.json"
+    }
+  ],
+  "sections": 101,
+  "paragraphs": 13606,
+  "kind_counts": {
+    "heading": 1104,
+    "front_matter": 1,
+    "table_of_contents": 100,
+    "body": 9588,
+    "annotation": 2587,
+    "table_row": 224,
+    "editorial_notice": 2
+  },
+  "paragraph_file": "resources/derived/history-library/songshu/paragraphs.jsonl.gz",
+  "paragraph_sha256": "ac99ade27c039f79c03d50a66acb277b5dd7be5af75fb23318e72bb4ffe49aba",
+  "sections_file": "resources/derived/history-library/songshu/sections.json",
+  "sections_sha256": "623cfab2f45c2c34acb875b01844c8c155f1a5300b869d8dd0c83488eda8ee42",
+  "reading_file": "resources/derived/history-library/songshu/reading.txt",
+  "reading_sha256": "5b2a2b472801ca537276cddef254391624be24b7d61c79238a9fad55b16c1a2b",
+  "warnings": [
+    "采用当前目录中选定的EPUB转换TXT；按原卷号和分部建索引。",
+    "所有非空白字符顺序覆盖一次；卷前资料、标题、注文、附录及缺漏提示均独立标记。",
+    "卷目齐全不代表正文齐全；缺表、外部子页、图片字、私用字等见sections.json.source_issues。",
+    "结构核验不替代史料校勘；自动段落不标为已录入。"
+  ],
+  "ingestion_role": "foundation",
+  "status": "normalized_candidates_pending_editorial_review"
+}

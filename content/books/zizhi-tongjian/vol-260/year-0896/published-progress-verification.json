@@ -1,7 +1,7 @@
 {
-  "verified_at": "2026-10-01T09:04:36.470132+00:00",
-  "status": "partial_published_verified",
-  "paragraphs_published": 40,
+  "verified_at": "2026-10-01T09:47:05.375176+00:00",
+  "status": "complete_published_verified",
+  "paragraphs_published": 48,
   "paragraphs_total": 48,
   "batches": [
     "content/books/zizhi-tongjian/vol-260/year-0896/part-01",
@@ -13,24 +13,26 @@
     "content/books/zizhi-tongjian/vol-260/year-0896/part-07",
     "content/books/zizhi-tongjian/vol-260/year-0896/part-08",
     "content/books/zizhi-tongjian/vol-260/year-0896/part-09",
-    "content/books/zizhi-tongjian/vol-260/year-0896/part-10"
+    "content/books/zizhi-tongjian/vol-260/year-0896/part-10",
+    "content/books/zizhi-tongjian/vol-260/year-0896/part-11"
   ],
   "public_row_occurrences": {
-    "source": 28,
-    "person": 136,
-    "event": 146,
-    "person_relationship": 6,
-    "person_event": 268,
-    "fact_claim": 740
+    "source": 32,
+    "person": 151,
+    "event": 167,
+    "person_relationship": 7,
+    "person_event": 299,
+    "fact_claim": 836
   },
   "checks": [
-    "ten publication hashes",
+    "eleven publication hashes",
     "each publication anonymous readback",
-    "continuous primary source lines 82 through 121",
+    "continuous primary source lines 82 through 129",
     "paragraph text exact matches upstream",
     "coverage includes each paragraph exactly once",
-    "new source snapshots match fixed Git commit",
-    "paragraphs 41 through 48 remain pending"
+    "source snapshots retained with SHA and fixed commits",
+    "volume 260 ends at paragraph 48; trailing lines are blank; volume 261 opens year 897",
+    "year 897 ledger initialized as pending only"
   ],
-  "next_paragraph": "zztj-v260-y0896-p041"
+  "next_paragraph": "zztj-v261-y0897-p001"
 }

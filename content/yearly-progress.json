@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 260,
-    "year": 896,
-    "last_reviewed_paragraph": "zztj-v260-y0896-p040",
-    "next_paragraph": "zztj-v260-y0896-p041",
-    "next_paragraph_opening": "钱镠令两浙吏民上表，请以镠兼领浙东；朝廷不得已，复以王抟为吏部尚书、同平章事，以镠为镇海、威胜两军度使。丙子，更名威胜曰",
+    "volume": 261,
+    "year": 897,
+    "last_reviewed_paragraph": "zztj-v260-y0896-p048",
+    "next_paragraph": "zztj-v261-y0897-p001",
+    "next_paragraph_opening": "春，正月，甲申，韩建奏：“防城将张行思等告睦、济、韶、通、彭、韩、仪、陈八王谋杀臣，劫车驾幸河中。”建恶诸王典兵，故使行",
     "batch": null,
     "status": "pending",
-    "last_published_paragraph": "zztj-v260-y0896-p040"
+    "last_published_paragraph": "zztj-v260-y0896-p048"
   },
   "year_coverage": [
     {
@@ -247,7 +247,7 @@
     },
     {
       "year": 896,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         260
       ],
@@ -261,9 +261,22 @@
         "content/books/zizhi-tongjian/vol-260/year-0896/part-07",
         "content/books/zizhi-tongjian/vol-260/year-0896/part-08",
         "content/books/zizhi-tongjian/vol-260/year-0896/part-09",
-        "content/books/zizhi-tongjian/vol-260/year-0896/part-10"
+        "content/books/zizhi-tongjian/vol-260/year-0896/part-10",
+        "content/books/zizhi-tongjian/vol-260/year-0896/part-11"
       ],
-      "note": "卷260乾宁三年第1—40段十批连续发布并匿名读回，原文第82—121行、覆盖无重无缺和批次哈希通过；全年48段未完成。第31—40段按新选定TXT逐字导出，旧唐书朱朴与新五代史高郁独立补证；追叙、陈词和请求不作当年已完成行动。"
+      "note": "卷260乾宁三年48段、11批已连续发布并匿名读回。原文第82—129行无重无缺，卷末接卷261乾宁四年；主书疑字及补书异文保留独立定位。彦徽/继徽和谭弘私用字/谭玘尚待校勘。",
+      "completed_volumes": [
+        260
+      ]
+    },
+    {
+      "year": 897,
+      "status": "pending",
+      "volumes": [
+        261
+      ],
+      "batches": [],
+      "note": "卷261乾宁四年50段账本已按原文第6—55行建立，尚未发布；不得记全年完成。"
     }
   ],
   "legacy_archives": [
@@ -465,6 +478,26 @@
       "other_subject_key": "person_张雄",
       "primary_reading": "果州刺史张雄降于王建。",
       "required_action": "核果州张雄与已录江淮张雄身份、卒年与任职连接；暂按职位消歧，未核前不因同名合并，也不认定必为异人。"
+    },
+    {
+      "key": "896-li-yanhui-jihui-name",
+      "status": "pending_identity_review",
+      "primary_batch": "content/books/zizhi-tongjian/vol-260/year-0896/part-11",
+      "primary_paragraph": "zztj-v260-y0896-p045",
+      "subject_key": "person_李彦徽（湖州）",
+      "primary_reading": "主书师悦子前绵州刺史彦徽知州事。",
+      "alternate_reading": "新唐书卷10其子继徽自称留后。",
+      "required_action": "核同父同地接职异名及方式，不与静难李继徽合并，不设确定改名别名。"
+    },
+    {
+      "key": "896-tan-hong-private-glyph",
+      "status": "pending_textual_review",
+      "primary_batch": "content/books/zizhi-tongjian/vol-260/year-0896/part-11",
+      "primary_paragraph": "zztj-v260-y0896-p048",
+      "subject_key": "person_谭弘（末字待考）",
+      "primary_reading": "主书谭弘末字为私用字。",
+      "alternate_reading": "旧五代史卷135牙将谭玘。",
+      "required_action": "保同事件书证异文，核纸本、字形与身份，未核前不猜定私用字或确定别名。"
     }
   ]
 }

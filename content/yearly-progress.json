@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 266,
+    "volume": 267,
     "year": 908,
-    "last_reviewed_paragraph": "zztj-v266-y0908-p024",
-    "next_paragraph": "zztj-v266-y0908-p025",
-    "next_paragraph_opening": "静江节度使、同平章事李琼卒，楚王殷以其弟永州刺史存知桂州事。",
-    "batch": "content/books/zizhi-tongjian/vol-266/year-0908/part-02",
+    "last_reviewed_paragraph": "zztj-v266-y0908-p040",
+    "next_paragraph": "zztj-v267-y0908-p001",
+    "next_paragraph_opening": "八月，吴越王镠遣宁国节度使王景仁奉表诣大梁，陈取淮南之策。景仁即茂章也，避梁讳改焉。",
+    "batch": "content/books/zizhi-tongjian/vol-266/year-0908/part-03",
     "status": "partial_published_verified",
-    "last_published_paragraph": "zztj-v266-y0908-p024"
+    "last_published_paragraph": "zztj-v266-y0908-p040"
   },
   "year_coverage": [
     {
@@ -489,10 +489,13 @@
       ],
       "batches": [
         "content/books/zizhi-tongjian/vol-266/year-0908/part-01",
-        "content/books/zizhi-tongjian/vol-266/year-0908/part-02"
+        "content/books/zizhi-tongjian/vol-266/year-0908/part-02",
+        "content/books/zizhi-tongjian/vol-266/year-0908/part-03"
       ],
-      "completed_volumes": [],
-      "note": "卷266开平二年第1—24段连续发布并匿名读回；本卷后续及卷267同年段落仍待处理。"
+      "completed_volumes": [
+        266
+      ],
+      "note": "卷266开平二年第1—40段连续发布并匿名读回；卷267同年17段待处理，故908年尚未完成。"
     }
   ],
   "legacy_archives": [
@@ -1125,6 +1128,13 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-266/year-0908/part-02",
       "primary_paragraph": "zztj-v266-y0908-p021",
       "required_action": "夹寨战主书符道昭“马倒，为晋人所杀”，旧五代史卷27记“获其将符道昭”；主书梁将康怀贞，旧/新五代史该役作康怀英，两稳定人物身份暂不自动合并；已有 event_luzhou_relief 的 time_original 写五月辛未朔，主书朔日伏兵、诘旦突袭，应后续校正展示时间。第17段“已亥”疑应己亥，纸本待核。"
+    },
+    {
+      "key": "908-part03-huainan-coup-and-textual-variants",
+      "status": "documented_variants_pending_textual_check",
+      "primary_batch": "content/books/zizhi-tongjian/vol-266/year-0908/part-03",
+      "primary_paragraph": "zztj-v266-y0908-p030",
+      "required_action": "通鉴第30段有私用字形“真”，保留原字并只据明确上下文录入；新五代史卷61记“鍾章”而通鉴作“钟泰章”，未因繁简强并。第35段“已酉”疑为“己酉”，待纸本及历日校；第40段“后逾年”升任钟泰章确年未定。"
     }
   ]
 }

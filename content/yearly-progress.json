@@ -6,12 +6,12 @@
   "active_cursor": {
     "volume": 269,
     "year": 914,
-    "last_reviewed_paragraph": "zztj-v269-y0914-p004",
-    "next_paragraph": "zztj-v269-y0914-p005",
-    "next_paragraph_opening": "帝以岐人数为寇，二月，甲戌，徙感化节度使康怀英为永平节度使，镇长安。怀英即怀贞也，避帝名改焉。",
-    "batch": "content/books/zizhi-tongjian/vol-269/year-0914/part-01",
+    "last_reviewed_paragraph": "zztj-v269-y0914-p010",
+    "next_paragraph": "zztj-v269-y0914-p011",
+    "next_paragraph_opening": "晋王既克幽州，乃谋入寇。秋，七月，会赵王镕及周德威于赵州，南寇邢州，李嗣昭引昭义兵会之。杨师厚引兵救邢州，军于漳水之东。晋军至张公桥，裨将曹进金来奔。晋军退，诸镇兵皆引归。八月，晋王还晋阳。",
+    "batch": "content/books/zizhi-tongjian/vol-269/year-0914/part-02",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v269-y0914-p004"
+    "last_published_paragraph": "zztj-v269-y0914-p010"
   },
   "year_coverage": [
     {
@@ -598,10 +598,11 @@
         269
       ],
       "batches": [
-        "content/books/zizhi-tongjian/vol-269/year-0914/part-01"
+        "content/books/zizhi-tongjian/vol-269/year-0914/part-01",
+        "content/books/zizhi-tongjian/vol-269/year-0914/part-02"
       ],
       "completed_volumes": [],
-      "note": "卷269乾化四年第1—4段发布并匿名读回；第5—16段待处理。"
+      "note": "卷269乾化四年第1—10段连续发布并匿名读回；第11—16段待处理。康怀英／康怀贞身份明文证据已录，早期双UUID修正在进行。"
     }
   ],
   "legacy_archives": [
@@ -1486,6 +1487,13 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-269/year-0914/part-01",
       "primary_paragraph": "zztj-v269-y0914-p004",
       "required_action": "通鉴详记夔州水战、王成先战后遭王宗寿斩；新五代史卷63概述高季昌侵巫山、王宗寿败之于瞿唐。地名与叙事层级待核。"
+    },
+    {
+      "key": "914-p005-kang-identity-merge",
+      "status": "published_identity_merge_pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-269/year-0914/part-02",
+      "primary_paragraph": "zztj-v269-y0914-p005",
+      "required_action": "通鉴明确“怀英即怀贞也，避帝名改焉”；旧五代史卷23也明言本名怀贞。新批次已统一指person_康怀贞，历史person_康怀英的六条参与边、五条人物声明与公开实体仍须独立审计迁移。"
     }
   ]
 }

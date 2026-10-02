@@ -1,0 +1,11 @@
+BEGIN;
+
+UPDATE public.person SET status='published' WHERE id IN ('03ab42f3-76aa-5905-9aa3-bcd1b8015c59','ed9c3a09-21ab-55cb-ac02-35df3c866de2','9a4c469a-2b78-528e-84c9-6a7bd1b2d246');
+
+UPDATE public.event SET status='published' WHERE id IN ('db340d54-5df5-562b-98ff-842abc544591','31d2b928-b486-5244-a635-b6cee768a5b8','79dc7715-c3c0-5e5e-ab18-e047c59b180f','205beed3-79e6-56fd-af89-9d8d2c79d408','bb46da17-af9c-5256-b0b8-bf2d46144585','4544bcd8-66ea-57d3-a79b-2481f39338f8');
+
+UPDATE public.person_event SET status='published' WHERE id IN ('063800c4-09d0-537f-badb-af236f3e50e3','40b03f57-8104-5b14-9c65-f14eacf26f7d','2e438769-10ad-54c8-b2d8-31f2256ed595','17e09bba-5f12-58c6-9d92-d3da07af5ebf','c3ea29da-54b1-5272-9f4a-fa3d2144e5c6','f06a23a6-4ada-5446-8684-e124998d4939','50d5dfd2-307e-54ab-9145-8afac5c17493','acac0fcf-9b08-5b8a-902d-eab4d800b782','49efd5cf-7fc1-575f-9281-0ad4e9991659','4bf3314c-99da-5c71-a264-2eeb40cd9a96','6d8b7148-382f-5a89-a83e-987c25513ae3');
+
+UPDATE public.fact_claim SET status='published' WHERE id IN ('7b045cc5-e6e4-52d0-9471-4e9d27d12aca','9045a3de-c006-5c20-bb75-3d7478a591d7','12219bf7-a0b4-5b9c-bc02-c8502daecbba','0b398f3b-4b6e-5725-9173-9fcd15ab5c7b','b1de635f-2698-5938-9595-15441bb4e6c8','a3d58c44-d492-552a-beaf-3dc99ccc9e6f','0ee0004f-3fb9-5a17-8a05-f40dc6cbe329','5ad58406-8fbf-5f97-898a-9bbe5c352794','d8d356d4-afb2-50c2-9aa6-40db65f5b00f','f1db9ae4-1b8b-558e-baf4-e86ae2f959ba','eec8a083-52de-547e-b454-f1e8a365b205','7f6ffbb2-c2ba-5ac7-93ec-771096c0db4b','a27f94d0-2ae9-50da-80be-a8912f829a04','b0bc681e-1d24-5127-9739-f00dab2bc91e','7c028bf7-bf2b-545b-a2c5-3a85551879b0','8aa9feb3-0a3b-5b6f-9fed-6b876bb961a0','55026dff-c40e-5ee6-9f3a-b7e047f665e5','649bdcb2-c35b-5561-9c9f-3bef7492cd89','9a1e356e-8be3-5b81-a332-d3006065c846','d7bd794e-66a4-5619-9b17-17092e05fc57','7e126ba4-f95b-5213-a9a3-6ca48499297e','e3378c5d-4ba6-51d0-83d0-d791fe3eeac4','b9d85245-1383-5ce1-9059-bade415cfb6e','7ce51e46-d696-5fc5-ac58-f0663617cfab','095c1711-541d-55e6-95a9-1fb85fbc2510','2525584b-53c9-56f1-8408-c7f7b28573ab','a82bd88c-cb38-5055-ac8b-6c304d063abb','dc4636ec-31cb-5ad9-96ec-10d3e2dea1dc','5ec55f3a-cd7b-5857-bcbb-38acab695494','ada32463-fa84-595a-8001-d24e412dd0d3','c2c5a2c8-ec2a-5e00-a6ac-ac37b79c039a','3b2528a4-b3bc-598b-bb92-eca78ea009a6','987303aa-687e-51c6-a4e8-ad588c4fd7be','c9c76320-71d8-53ca-9373-6224d61e0709');
+
+COMMIT;

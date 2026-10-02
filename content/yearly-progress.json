@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 268,
-    "year": 912,
-    "last_reviewed_paragraph": "zztj-v268-y0912-p040",
-    "next_paragraph": "zztj-v268-y0912-p041",
-    "next_paragraph_opening": "辛巳，蜀改剑南东川曰武德军。",
-    "batch": "content/books/zizhi-tongjian/vol-268/year-0912/part-04",
+    "year": 913,
+    "last_reviewed_paragraph": "zztj-v268-y0912-p050",
+    "next_paragraph": "zztj-v268-y0913-p001",
+    "next_paragraph_opening": "春，正月，丁巳，晋周德威拔燕顺州。",
+    "batch": "content/books/zizhi-tongjian/vol-268/year-0912/part-05",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v268-y0912-p040"
+    "last_published_paragraph": "zztj-v268-y0912-p050"
   },
   "year_coverage": [
     {
@@ -554,7 +554,7 @@
     },
     {
       "year": 912,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         268
       ],
@@ -562,10 +562,24 @@
         "content/books/zizhi-tongjian/vol-268/year-0912/part-01",
         "content/books/zizhi-tongjian/vol-268/year-0912/part-02",
         "content/books/zizhi-tongjian/vol-268/year-0912/part-03",
-        "content/books/zizhi-tongjian/vol-268/year-0912/part-04"
+        "content/books/zizhi-tongjian/vol-268/year-0912/part-04",
+        "content/books/zizhi-tongjian/vol-268/year-0912/part-05"
       ],
+      "completed_volumes": [
+        268
+      ],
+      "note": "卷268乾化二年50段连续发布并匿名读回；下一年卷268第1段起。"
+    },
+    {
+      "year": 913,
+      "status": "pending",
+      "volumes": [
+        268,
+        269
+      ],
+      "batches": [],
       "completed_volumes": [],
-      "note": "卷268乾化二年第1—40段连续发布并匿名读回；第41—50段待处理。"
+      "note": "卷268第1—49段、卷269第1—4段，需按书卷连续录入；尚未开始。"
     }
   ],
   "legacy_archives": [
@@ -1331,6 +1345,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0912/part-04",
       "primary_paragraph": "zztj-v268-y0912-p038",
       "required_action": "通鉴作康怀贞，旧五代史卷28与新五代史卷5作康怀英；是否同人或避讳异名待核，暂不并实体。新史另概述朱友谦复臣梁而暗附晋。"
+    },
+    {
+      "key": "912-p042-baijingling-variants",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0912/part-05",
+      "primary_paragraph": "zztj-v268-y0912-p042",
+      "required_action": "通鉴作康怀贞在解县败、斩首千级、追至白径岭；旧五代史卷28康怀英在平阳败、千余级；新五代史卷22白径岭战败。人名、地点、数字差异保留。"
+    },
+    {
+      "key": "912-p048-liu-xun-prefecture",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0912/part-05",
+      "primary_paragraph": "zztj-v268-y0912-p048",
+      "required_action": "旧五代史卷61刘训河中—隰州履历支持复用901已录人物，但作杀陕州刺史，通鉴作隰州刺史；地点异说待核。"
+    },
+    {
+      "key": "912-p050-gao-jichang-glyph",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0912/part-05",
+      "primary_paragraph": "zztj-v268-y0912-p050",
+      "required_action": "底本作高季昌“助梁代晋”，新五代史卷69作高季兴“助梁击晋”；同人别名已复用，动词异字待纸本核。"
     }
   ]
 }

@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 268,
-    "year": 911,
-    "last_reviewed_paragraph": "zztj-v268-y0911-p020",
-    "next_paragraph": "zztj-v268-y0911-p021",
-    "next_paragraph_opening": "怀州刺史开封段明远妹为美人。戊子，帝至获嘉，明远馈献丰备，帝悦。",
-    "batch": "content/books/zizhi-tongjian/vol-268/year-0911/part-02",
+    "year": 912,
+    "last_reviewed_paragraph": "zztj-v268-y0911-p033",
+    "next_paragraph": "zztj-v268-y0912-p001",
+    "next_paragraph_opening": "春，正月，德威东出飞狐，与赵王将王德明、义武将程岩会于易水。丙戌，三镇兵进攻燕祁沟关，下之；戊子，围涿州。刺史刘知温城守，刘守奇之客刘去非大呼于城下，谓知温曰：“河东小刘郎来为父讨贼，何豫汝事而坚守邪？”守奇免胄劳之，知温拜于城上，遂降。周德威疾守奇之功，谮诸晋王，王召之，守奇恐获罪，与去非及进士赵凤来奔，上以守奇为博州刺史。去非、凤，皆幽州人也。先是，燕主守光籍境内丁壮，悉文面为兵，虽士人不免，凤诈为僧奔晋，守奇客之。丁酉，德威至幽州城下，守光来求救。二月，帝疾小愈，议自将击镇、定以救之。",
+    "batch": "content/books/zizhi-tongjian/vol-268/year-0911/part-03",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v268-y0911-p020"
+    "last_published_paragraph": "zztj-v268-y0911-p033"
   },
   "year_coverage": [
     {
@@ -535,7 +535,7 @@
     },
     {
       "year": 911,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         267,
         268
@@ -543,12 +543,24 @@
       "batches": [
         "content/books/zizhi-tongjian/vol-267/year-0911/part-01",
         "content/books/zizhi-tongjian/vol-268/year-0911/part-01",
-        "content/books/zizhi-tongjian/vol-268/year-0911/part-02"
+        "content/books/zizhi-tongjian/vol-268/year-0911/part-02",
+        "content/books/zizhi-tongjian/vol-268/year-0911/part-03"
       ],
       "completed_volumes": [
-        267
+        267,
+        268
       ],
-      "note": "卷267第1—11段、卷268第1—20段已连续发布并匿名读回；卷268第21—33段待录。"
+      "note": "卷267正月至二月11段与卷268三月至岁末33段，合计44段连续发布并匿名读回；马賨历史重复UUID列待合并。"
+    },
+    {
+      "year": 912,
+      "status": "pending",
+      "volumes": [
+        268
+      ],
+      "batches": [],
+      "completed_volumes": [],
+      "note": "卷268乾化二年首段起；50段待连续录入。"
     }
   ],
   "legacy_archives": [
@@ -1258,6 +1270,13 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0911/part-02",
       "primary_paragraph": "zztj-v268-y0911-p014",
       "required_action": "卷268第14段燕右相《通鉴》刘涉、《新五代史》齐涉；李承勋《通鉴》止于“不屈”，《新五代史》另记被杀。底本孙鹤受刑处C061损字、第15段短俊、第19段王寂侃均保留原字，按上下文和《通鉴》异本校识为刘知俊、王宗侃，待纸本核。王宗播复用已发布许存UUID及别名。"
+    },
+    {
+      "key": "911-p027-ma-cong-duplicate",
+      "status": "published_event_person_link_pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0911/part-03",
+      "primary_paragraph": "zztj-v268-y0911-p027",
+      "required_action": "904年person_马賨与910年person_马宾（线上已校名马賨）为同一马殷之弟，分别有已发布UUID。911年马賨任永顺节度使事件只发布原文和事件，未新增第三个人物或参与边。须审计合并线上人物、外键、claim和索引，保留原批次档案与勘误映射，再补911年参与关系。"
     }
   ]
 }

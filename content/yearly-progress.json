@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 269,
-    "year": 913,
-    "last_reviewed_paragraph": "zztj-v268-y0913-p049",
-    "next_paragraph": "zztj-v269-y0913-p001",
-    "next_paragraph_opening": "十二月，吴镇海节度使徐温、平卢节度使硃瑾帅诸将拒之，遇于赵步。吴征兵未集，温以四千馀人与景仁战，不胜而却。景仁引兵乘之，将及于隘，吴吏士皆失色，左骁卫大将军宛丘陈绍援枪大呼曰：“诱敌太深，可以进矣！”",
-    "batch": "content/books/zizhi-tongjian/vol-268/year-0913/part-05",
+    "year": 914,
+    "last_reviewed_paragraph": "zztj-v269-y0913-p004",
+    "next_paragraph": "zztj-v269-y0914-p001",
+    "next_paragraph_opening": "春，正月，戊戌朔，赵王镕诣晋王行帐上寿置酒。镕愿识刘太师面，晋王命吏脱刘仁恭及守光械，引就席同宴。镕答其拜，又以衣服、鞍马、酒馔赠之，己亥，晋王与镕畋于行唐之西，镕送至境上而别。",
+    "batch": "content/books/zizhi-tongjian/vol-269/year-0913/part-01",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v268-y0913-p049"
+    "last_published_paragraph": "zztj-v269-y0913-p004"
   },
   "year_coverage": [
     {
@@ -572,7 +572,7 @@
     },
     {
       "year": 913,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         268,
         269
@@ -582,12 +582,24 @@
         "content/books/zizhi-tongjian/vol-268/year-0913/part-02",
         "content/books/zizhi-tongjian/vol-268/year-0913/part-03",
         "content/books/zizhi-tongjian/vol-268/year-0913/part-04",
-        "content/books/zizhi-tongjian/vol-268/year-0913/part-05"
+        "content/books/zizhi-tongjian/vol-268/year-0913/part-05",
+        "content/books/zizhi-tongjian/vol-269/year-0913/part-01"
       ],
       "completed_volumes": [
-        268
+        268,
+        269
       ],
-      "note": "卷268乾化三年49段连续发布并匿名读回；卷269第1—4段待处理，全年尚未完成。"
+      "note": "卷268乾化三年49段与卷269十二月4段，合计53段连续发布、批次哈希与匿名读回核验通过；异文见editorial_followups。"
+    },
+    {
+      "year": 914,
+      "status": "in_progress",
+      "volumes": [
+        269
+      ],
+      "batches": [],
+      "completed_volumes": [],
+      "note": "卷269乾化四年16段待从第1段连续处理。"
     }
   ],
   "legacy_archives": [
@@ -1444,6 +1456,20 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-268/year-0913/part-05",
       "primary_paragraph": "zztj-v268-y0913-p046",
       "required_action": "王宗辂爵号：通鉴作雅王，新五代史卷63作豳王；底本“受册华”疑讹，暂不据此增加册礼细节。"
+    },
+    {
+      "key": "913-v269-p001-huoqiu-outcome",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-269/year-0913/part-01",
+      "primary_paragraph": "zztj-v269-y0913-p001",
+      "required_action": "霍丘战事通鉴称梁兵大败，旧五代史卷23王景仁传强调擒吴将、率数骑殿后并引兵还；其九国志转引记朱景移表使梁兵溺死，不计为独立原始证据。"
+    },
+    {
+      "key": "913-v269-p004-wang-rong-glyph-date",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-269/year-0913/part-01",
+      "primary_paragraph": "zztj-v269-y0913-p004",
+      "required_action": "主书“越王镕”依上下文和旧五代史卷28“镇州王鎔”暂归赵王王镕；主书丙戌谒北岳，旧书作甲申后翌日，日期及衡唐／行唐地名待纸本核。"
     }
   ]
 }

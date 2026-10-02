@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 267,
+    "volume": 268,
     "year": 911,
-    "last_reviewed_paragraph": "zztj-v267-y0910-p043",
-    "next_paragraph": "zztj-v267-y0911-p001",
-    "next_paragraph_opening": "春，正月，丙戌朔，日有食之。",
-    "batch": "content/books/zizhi-tongjian/vol-267/year-0910/part-05",
+    "last_reviewed_paragraph": "zztj-v267-y0911-p011",
+    "next_paragraph": "zztj-v268-y0911-p001",
+    "next_paragraph_opening": "三月，乙酉朔，以天雄留后罗周翰为节度使。",
+    "batch": "content/books/zizhi-tongjian/vol-267/year-0911/part-01",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v267-y0910-p043"
+    "last_published_paragraph": "zztj-v267-y0911-p011"
   },
   "year_coverage": [
     {
@@ -535,14 +535,18 @@
     },
     {
       "year": 911,
-      "status": "pending",
+      "status": "partial_published_verified",
       "volumes": [
         267,
         268
       ],
-      "batches": [],
-      "completed_volumes": [],
-      "note": "卷267第1—11段为乾化元年正月至二月；卷268自同年三月续。尚未录入。"
+      "batches": [
+        "content/books/zizhi-tongjian/vol-267/year-0911/part-01"
+      ],
+      "completed_volumes": [
+        267
+      ],
+      "note": "卷267乾化元年正月至二月第1—11段已发布并匿名读回；同年卷268三月至岁末共33段待录。"
     }
   ],
   "legacy_archives": [
@@ -1231,6 +1235,13 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-267/year-0910/part-04",
       "primary_paragraph": "zztj-v267-y0910-p030",
       "required_action": "第30段所封五位假子与八位亲生子分录；王宗懿改名元坦为同一人。底本“宗钅岁”为拆字，胡三省音注本作宗鐬；站内王宗鐬保留原字别名，纸本待核。后续须让王宗懿人物检索包含元坦别名。"
+    },
+    {
+      "key": "911-vol267-text-and-names",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-267/year-0911/part-01",
+      "primary_paragraph": "zztj-v267-y0911-p008",
+      "required_action": "卷267乾化元年二月蔡州事底本“田子”疑损字，未自改干支；柏乡李建及原姓王，新五代史作王建及，按同一人物归入。赵王养子德明本姓张名文礼，按张文礼稳定实体记录。"
     }
   ]
 }

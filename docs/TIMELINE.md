@@ -14,3 +14,9 @@
 `pnpm test:timeline` 验证完整迁移链及超过 1,000 条数据、公元前、跨年范围、未知日期、匿名和已登录用户的草稿隔离。API 单测验证参数和分页。`pnpm test` 包含这些检查。
 
 `VITE_API_URL='' pnpm --filter web dev --host 127.0.0.1 --port 5174` 后运行 `node scripts/test-timeline-browser.mjs` 验证浏览器。该脚本只读本地环境配置和线上已发布事件，以真实日期构造尚未部署的统计 RPC 响应，事件清单使用线上查询；另用小型测试数据验证公元前 1 年到公元 1 年的边界。截图写入 `/tmp`。这项验证不代表线上 RPC 已部署。
+
+## 时间图交互
+
+光标在图上移动时即时更新年份和标记，触摸设备保留点击和滑块操作。事件清单在停止移动 200 毫秒后加载；放大时固定时间窗口。时间图内年份参数变化保留页面滚动位置，进入详情页仍回到顶部，返回时通过统计与事件缓存恢复位置。
+
+本地或线上回归：`TIMELINE_TEST_URL=https://greed-216.github.io/histree/timeline node scripts/test-timeline-interaction.mjs`。覆盖光标跟随、请求合并、放大范围稳定、年份切换不回顶以及详情跳转与返回。

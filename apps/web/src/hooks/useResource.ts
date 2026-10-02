@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { apiFetch } from "../lib/api";
 const cache = new Map<string, { data: unknown; expires: number }>();
-const cacheable = (path: string) => path.startsWith('/graph-slice/') || path.startsWith('/entry/');
+const cacheable = (path: string) => path.startsWith('/graph-slice/') || path.startsWith('/entry/') || path === '/timeline/overview';
 export function useResource<T>(path: string | undefined, auth = false) {
   const [state, setState] = useState<{
     path: string | undefined;

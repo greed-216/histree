@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 271,
-    "year": 920,
-    "last_reviewed_paragraph": "zztj-v271-y0920-p021",
-    "next_paragraph": "zztj-v271-y0920-p022",
-    "next_paragraph_opening": "吴金陵城成，隐彦谦上费用册籍，徐温曰：“吾既任公，不复会计！",
-    "batch": "content/books/zizhi-tongjian/vol-271/year-0920/part-05",
+    "year": 921,
+    "last_reviewed_paragraph": "zztj-v271-y0920-p026",
+    "next_paragraph": "zztj-v271-y0921-p001",
+    "next_paragraph_opening": "春，正月，甲午，蜀主还成都。",
+    "batch": "content/books/zizhi-tongjian/vol-271/year-0920/part-06",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v271-y0920-p021"
+    "last_published_paragraph": "zztj-v271-y0920-p025"
   },
   "year_coverage": [
     {
@@ -719,7 +719,7 @@
     },
     {
       "year": 920,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         271
       ],
@@ -728,10 +728,26 @@
         "content/books/zizhi-tongjian/vol-271/year-0920/part-02",
         "content/books/zizhi-tongjian/vol-271/year-0920/part-03",
         "content/books/zizhi-tongjian/vol-271/year-0920/part-04",
-        "content/books/zizhi-tongjian/vol-271/year-0920/part-05"
+        "content/books/zizhi-tongjian/vol-271/year-0920/part-05",
+        "content/books/zizhi-tongjian/vol-271/year-0920/part-06"
       ],
+      "completed_volumes": [
+        271
+      ],
+      "note": "卷271贞明六年25个正文段按六批连续发布；原账本第26项◎为分隔符，保留ID及定位并标记非正文排除。全年原文第16—40行、六批哈希及全部79事件、413引用等公开记录已重新匿名读回；年界后第42行龙德元年标题、第43行接921首段。身份与纪年异文仍有独立校核说明。",
+      "body_paragraphs": 25,
+      "excluded_non_body": 1,
+      "audit": "content/books/zizhi-tongjian/vol-271/year-0920/year-audit.json"
+    },
+    {
+      "year": 921,
+      "status": "in_progress",
+      "volumes": [
+        271
+      ],
+      "batches": [],
       "completed_volumes": [],
-      "note": "卷271贞明六年前21个正文段已连续发布并匿名读回；尚余4个正文段和1个年界分隔符待核。张文礼／王德明已合并修正；赵亲军冲突纪年及李弘规／李宏规等異文保留。"
+      "note": "卷271龙德元年24个正文段待连续处理；年界分隔符另见boundaries.json，不生成史事。"
     }
   ],
   "legacy_archives": [

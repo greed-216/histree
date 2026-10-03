@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 276,
-    "year": 927,
-    "last_reviewed_paragraph": "zztj-v276-y0927-p018",
-    "next_paragraph": "zztj-v276-y0927-p019",
-    "next_paragraph_opening": "丙子，吴主尊太妃王氏曰皇太后，以徐知询为诸道副都统、镇海宁国节度使兼侍中，加徐知诰都督中外诸军事。",
-    "batch": "content/books/zizhi-tongjian/vol-276/year-0927/part-04",
+    "year": 928,
+    "last_reviewed_paragraph": "zztj-v276-y0927-p025",
+    "next_paragraph": "zztj-v276-y0928-p001",
+    "next_paragraph_opening": "春，正月，丁巳，吴主立子琏为江都王，璘为江夏王，璆为宜春王，宣帝子庐陵公玢为南阳王。",
+    "batch": "content/books/zizhi-tongjian/vol-276/year-0927/part-05",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v276-y0927-p018"
+    "last_published_paragraph": "zztj-v276-y0927-p025"
   },
   "year_coverage": [
     {
@@ -870,13 +870,14 @@
     },
     {
       "year": 927,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         275,
         276
       ],
       "completed_volumes": [
-        275
+        275,
+        276
       ],
       "batches": [
         "content/books/zizhi-tongjian/vol-275/year-0927/part-01",
@@ -888,9 +889,21 @@
         "content/books/zizhi-tongjian/vol-276/year-0927/part-01",
         "content/books/zizhi-tongjian/vol-276/year-0927/part-02",
         "content/books/zizhi-tongjian/vol-276/year-0927/part-03",
-        "content/books/zizhi-tongjian/vol-276/year-0927/part-04"
+        "content/books/zizhi-tongjian/vol-276/year-0927/part-04",
+        "content/books/zizhi-tongjian/vol-276/year-0927/part-05"
       ],
-      "note": "927年两卷共57段，卷275全部32段与卷276前18段已发布并匿名回查，完成50段，余7段待录，全年未完成。"
+      "note": "927年卷275全部32段和卷276全部25段，共57正文段，11批已连续发布并逐条匿名回查；全年审计通过，928年52段尚待处理。",
+      "year_audit": "content/books/zizhi-tongjian/vol-276/year-0927/year-audit.json"
+    },
+    {
+      "year": 928,
+      "status": "in_progress",
+      "volumes": [
+        276
+      ],
+      "batches": [],
+      "completed_volumes": [],
+      "note": "928年卷276原文件33—84行共52正文段，年界已核，均待连续录入；卷277从930年开始。"
     }
   ],
   "legacy_archives": [
@@ -3007,6 +3020,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0927/part-04",
       "primary_paragraph": "zztj-v276-y0927-p017",
       "required_action": "吴庚戌即位、甲子赦改元分日；新合项概叙未明同日不强判异日。新李太尉侍中、知询金陵尹补官不提前下一段丙子职位。"
+    },
+    {
+      "key": "927-v276-wu_kinship",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0927/part-05",
+      "primary_paragraph": "zztj-v276-y0927-p021",
+      "required_action": "王氏仅吴太妃不猜生母；珙为杨溥兄子只建叔父关系，不从相邻濛猜父亲。"
+    },
+    {
+      "key": "927-v276-zhouxuanbao_retrospective",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0927/part-05",
+      "primary_paragraph": "zztj-v276-y0927-p022",
+      "required_action": "初预言与即位后召见计划未明确年，保留null；新补易服和不复召，话语不作相术能力证明；就除致仕非入京履任。"
+    },
+    {
+      "key": "927-v276-temple_and_border_prices",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0927/part-05",
+      "primary_paragraph": "zztj-v276-y0927-p023",
+      "required_action": "主诸提案与最终应州令分阶段；旧新丙午仅实际追尊立庙；祖先列表考未具名不猜谱系。主年度蔚代粟价和旧周令武己卯奏山北价格地域叙法并存，不推全国富裕。"
     }
   ]
 }

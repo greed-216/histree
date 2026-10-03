@@ -114,6 +114,10 @@ export function createGateway(
       return json(404, "接口不存在");
     }
     if (request.method !== routes[path]) return json(405, "不支持此请求方法");
+    const requestId = crypto.randomUUID();
+    headers.set("X-Histree-Request-Id", requestId);
+    const started = Date.now();
+    let stage = "identity";
     const deadline = AbortSignal.timeout(130000);
     const upstreamAbort = new AbortController();
     const signal = AbortSignal.any([
@@ -139,6 +143,7 @@ export function createGateway(
         if (path === "/session") {
           if (!config.allowAnonymous) return json(401, "请先登录");
           const id = hex(crypto.getRandomValues(new Uint8Array(32)).buffer);
+          stage = "quota";
           if (!await deps.consumeQuota(`anon:${id}`, "session", signal)) {
             return json(429, "当前访问较多，请稍后再试");
           }
@@ -204,6 +209,7 @@ export function createGateway(
         if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
           return json(400, "无效请求");
         }
+        stage = "quota";
         if (
           !await deps.consumeQuota(
             actor,
@@ -215,12 +221,21 @@ export function createGateway(
       // Construct headers from scratch: browser credentials and identity headers never reach ECS.
       const upstreamHeaders = new Headers({
         "x-histree-gateway-key": config.secret,
-        "x-histree-request-id": crypto.randomUUID(),
+        "x-histree-request-id": requestId,
       });
       if (actor) upstreamHeaders.set("x-histree-actor", actor);
       if (body !== undefined) {
         upstreamHeaders.set("Content-Type", "application/json");
       }
+      stage = "upstream";
+      console.log(
+        JSON.stringify({
+          event: "upstream_start",
+          requestId,
+          path,
+          bytes: body === undefined ? 0 : encoder.encode(body).byteLength,
+        }),
+      );
       const response = await deps.fetch(
         `${config.upstream.replace(/\/$/, "")}${path}`,
         {
@@ -230,6 +245,15 @@ export function createGateway(
           signal,
           redirect: "error",
         },
+      );
+      console.log(
+        JSON.stringify({
+          event: "upstream_headers",
+          requestId,
+          path,
+          status: response.status,
+          elapsedMs: Date.now() - started,
+        }),
       );
       headers.set(
         "Content-Type",
@@ -267,7 +291,18 @@ export function createGateway(
         },
       });
       return new Response(stream, { status: response.status, headers });
-    } catch {
+    } catch (error) {
+      console.error(
+        JSON.stringify({
+          event: "gateway_error",
+          requestId,
+          path,
+          stage,
+          error: error instanceof Error ? error.name : "unknown",
+          deadline: deadline.aborted,
+          elapsedMs: Date.now() - started,
+        }),
+      );
       return json(
         deadline.aborted ? 504 : 503,
         deadline.aborted

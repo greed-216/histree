@@ -7,6 +7,7 @@ books.update({'jiutangshu':('旧唐书',('jiutangshu-',)), 'shiguochunqiu':('十
 books.update({'beimeng-suoyan':('北梦琐言',('beimeng-suoyan-',))})
 books['xintangshu']=('新唐书',('xintangshu-',))
 books['liaoshi']=('辽史',('liaoshi-',))
+books['songshi']=('宋史',('songshi-',))
 books['wuyue-beishi']=('吴越备史',('KR2i0019-','wuyuebeishi-'))
 indexes={k:{} for k in books}
 subject_remap={}

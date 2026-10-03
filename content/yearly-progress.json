@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 272,
-    "year": 923,
-    "last_reviewed_paragraph": "zztj-v272-y0923-p066",
-    "next_paragraph": "zztj-v272-y0923-p067",
-    "next_paragraph_opening": "己未，加张全义守尚书令，高季兴守中书令。时季兴入朝，上待之甚厚，从容问曰：“朕欲用兵于吴、蜀，二国何先？”季兴以蜀道险难取，乃对曰：“吴地薄民贫，克之无益，不如先伐蜀。蜀土富饶，又主荒民怨，伐之必克。克蜀之后，顺流而下，取吴如反掌耳。”上曰：“善！”",
-    "batch": "content/books/zizhi-tongjian/vol-272/year-0923/part-10",
+    "volume": 273,
+    "year": 924,
+    "last_reviewed_paragraph": "zztj-v272-y0923-p076",
+    "next_paragraph": "zztj-v273-y0924-p001",
+    "next_paragraph_opening": "春，正月，甲辰，幽州奏契丹入寇，至瓦桥。以天平军节度使李嗣源为北面行营都招讨使，陕州留后霍彦威副之，宣徽使李绍宏为监军，将兵救幽州。",
+    "batch": "content/books/zizhi-tongjian/vol-272/year-0923/part-11",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v272-y0923-p066"
+    "last_published_paragraph": "zztj-v272-y0923-p076"
   },
   "year_coverage": [
     {
@@ -777,7 +777,7 @@
     },
     {
       "year": 923,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         272
       ],
@@ -791,10 +791,23 @@
         "content/books/zizhi-tongjian/vol-272/year-0923/part-07",
         "content/books/zizhi-tongjian/vol-272/year-0923/part-08",
         "content/books/zizhi-tongjian/vol-272/year-0923/part-09",
-        "content/books/zizhi-tongjian/vol-272/year-0923/part-10"
+        "content/books/zizhi-tongjian/vol-272/year-0923/part-10",
+        "content/books/zizhi-tongjian/vol-272/year-0923/part-11"
       ],
+      "completed_volumes": [
+        272
+      ],
+      "note": "卷272同光元年全部76正文段经11批连续发布并匿名读回；全年复核来源哈希、段落顺序、批次哈希及公开事实引用；下一卷273同光二年924首段待录。身份、日次、数字异文逐批保留在coverage.json，未宣称纸本校定。"
+    },
+    {
+      "year": 924,
+      "status": "in_progress",
+      "volumes": [
+        273
+      ],
+      "batches": [],
       "completed_volumes": [],
-      "note": "卷272正文前66段已连续发布并匿名读回；下一段zztj-v272-y0923-p067，全年尚未完成。"
+      "note": "卷273同光二年正文76段，源文件6—81行；已核年界，全部待录，下一段p001。"
     }
   ],
   "legacy_archives": [
@@ -1847,6 +1860,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-269/year-0915/part-08",
       "primary_paragraph": "zztj-v269-y0915-p027",
       "required_action": "蜀宫火后主书记录蜀主拒卫兵入宫救火，原因未明；随后大赦未立直接因果。"
+    },
+    {
+      "key": "923-p068-jingzhao-date",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-272/year-0923/part-11",
+      "primary_paragraph": "zztj-v272-y0923-p068",
+      "required_action": "通鉴十一月辛酉恢复西京京兆府；旧史卷30编在十二月戊寅后，具体日次待纸本核。"
+    },
+    {
+      "key": "923-p074-jitao-text-numbers",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-272/year-0923/part-11",
+      "primary_paragraph": "zztj-v272-y0923-p074",
+      "required_action": "主书泣请其死原字保留，结合求哀及旧史哀祈语境整理为求情；四十万两/数十万两、百骑/数百骑分别保留，未改底本或强定数。"
+    },
+    {
+      "key": "923-p076-xiangzhou-actors",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-272/year-0923/part-11",
+      "primary_paragraph": "zztj-v272-y0923-p076",
+      "required_action": "通鉴孔勍留宴，新史卷69另记密诏刘训图之；角色未合并，书间叙次、人物待考。"
     }
   ]
 }

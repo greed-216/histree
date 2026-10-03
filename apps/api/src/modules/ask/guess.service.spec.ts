@@ -15,21 +15,21 @@ const claim = {
   source: { title: '测试史书' },
   citation: '测试定位',
 };
-function make() {
+function make(target = person) {
   const agent = {
     available: jest.fn(() => true),
-    run: jest.fn().mockResolvedValue({ ids: [person.id] }),
+    run: jest.fn().mockResolvedValue({ ids: [target.id] }),
   };
   const rpc = jest.fn((name: string, args: { p_table: string }) => ({
     abortSignal: () =>
       Promise.resolve({
         data:
           name === 'entry_detail'
-            ? { ...person, type: 'person' }
+            ? { ...target, type: 'person' }
             : name === 'entry_context'
               ? { edges: [], nodes: [] }
               : {
-                  items: args.p_table === 'person' ? [person] : [claim],
+                  items: args.p_table === 'person' ? [target] : [claim],
                   has_more: false,
                 },
         error: null,
@@ -44,6 +44,72 @@ function make() {
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
 describe('Guess game privacy and lifecycle', () => {
+  it.each([
+    ['李存勖', '李亚子', 2],
+    ['李存勖', '你是李亚子吗？', 2],
+    ['李白', '李太白', 1],
+    ['李白', '我猜是李太白', 1],
+  ])(
+    'accepts %s and its equivalent %s in the normal question input',
+    async (name, text, difficulty) => {
+      const { service, agent } = make({ ...person, name, aliases: [] });
+      const { token } = await service.start({ difficulty }, 'a', signal);
+      const result = await service.act(
+        { token, action: 'question', text },
+        'a',
+        signal,
+      );
+      expect(result.outcome).toBe('won');
+      expect(result.remaining).toBe(29);
+      expect(result.turns).toHaveLength(1);
+      expect(result.turns[0].answer).toBe('猜对了');
+      expect(agent.run).toHaveBeenCalledTimes(1); // Known names need no paid judge call.
+    },
+  );
+  it('counts a wrong proposed name once and never trusts a model-invented or incidental name', async () => {
+    const { service, agent } = make();
+    const { token } = await service.start(filters, 'a', signal);
+    agent.run.mockResolvedValueOnce({
+      verdict: 'guess',
+      name: '曹操',
+      claims: [],
+    });
+    const wrong = await service.act(
+      { token, action: 'question', text: '你是曹操吗？' },
+      'a',
+      signal,
+    );
+    expect(wrong.remaining).toBe(29);
+    expect(wrong.outcome).toBeNull();
+    expect(wrong.turns[0].answer).toBe('不是');
+    agent.run.mockResolvedValueOnce({
+      verdict: 'guess',
+      name: '朱温',
+      claims: [],
+    });
+    await expect(
+      service.act(
+        { token, action: 'question', text: '你认识朱温吗？' },
+        'a',
+        signal,
+      ),
+    ).rejects.toThrow('确认');
+    agent.run.mockResolvedValueOnce({
+      verdict: 'guess',
+      name: '朱温',
+      claims: [],
+    });
+    await expect(
+      service.act(
+        { token, action: 'question', text: '告诉我你的名字' },
+        'a',
+        signal,
+      ),
+    ).rejects.toThrow('确认');
+    expect(
+      (await service.act({ token, action: 'state' }, 'a', signal)).remaining,
+    ).toBe(29);
+  });
   it('refreshes the catalogue in the background before expiry and rebuilds screening for the new snapshot', async () => {
     jest.useFakeTimers();
     const { service, agent, rpc } = make();

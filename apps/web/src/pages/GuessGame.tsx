@@ -26,7 +26,6 @@ export function GuessGame() {
   const [game, setGame] = useState<GuessState>();
   const [token, setToken] = useState("");
   const [text, setText] = useState("");
-  const [mode, setMode] = useState<"question" | "guess">("question");
   const [busy, setBusy] = useState(false);
   const [available, setAvailable] = useState<boolean | null>(null);
   const [error, setError] = useState("");
@@ -283,12 +282,12 @@ export function GuessGame() {
         <p className="eyebrow">一个人 · 三十次机会 · 沿着史料找答案</p>
         <h1 className="font-serif text-3xl md:text-4xl mt-3">猜猜我是谁</h1>
         <p className="mt-4 text-stone-600 leading-7">
-          一位历史人物正在等你。问“你是唐朝人吗？”这样的是非问题，逐步缩小范围，再猜出姓名。
+          一位历史人物正在等你。问“你是唐朝人吗？”这样的是非问题，逐步缩小范围，猜到后直接输入姓名或别名即可。
         </p>
         <details className="mt-3 text-sm text-stone-500 leading-7">
           <summary className="cursor-pointer">玩法与史料范围</summary>
           <p>
-            普通回答只有“是”“不是”“不清楚”“是，也不是”。开放式问题会被拒绝且不计次数；姓名请用“猜姓名”提交。提问和猜姓名合计最多
+            普通回答只有“是”“不是”“不清楚”“是，也不是”。开放式问题会被拒绝且不计次数；提出人物姓名或别名也算一次对答，猜中即结束。每局最多
             30 次，每局可领取 3
             个提示，使用提示也能获胜。史书异说或兼是兼否时回答“是，也不是”；没有记载时回答“不清楚”。
           </p>
@@ -356,8 +355,7 @@ export function GuessGame() {
               game.turns.map((turn, i) => (
                 <div key={i} className="border-b border-stone-100 pb-3">
                   <p className="text-sm text-stone-600">
-                    {i + 1}. {turn.kind === "guess" ? "猜姓名：" : ""}
-                    {turn.text}
+                    {i + 1}. {turn.text}
                   </p>
                   <p className="mt-1 font-medium text-teal-900">
                     {turn.answer}
@@ -374,31 +372,14 @@ export function GuessGame() {
                   e.preventDefault();
                   void request("act", {
                     token,
-                    action: mode,
+                    action: "question",
                     text: text.trim(),
                   });
                 }}
                 className="space-y-3"
               >
-                <div className="flex gap-3">
-                  {(["question", "guess"] as const).map((m) => (
-                    <button
-                      key={m}
-                      type="button"
-                      disabled={busy}
-                      aria-pressed={mode === m}
-                      onClick={() => {
-                        setMode(m);
-                        setText("");
-                      }}
-                      className={`text-sm rounded-lg px-3 py-2 ${mode === m ? "bg-teal-50 text-teal-900 font-medium" : "text-stone-500"}`}
-                    >
-                      {m === "question" ? "问是非问题" : "猜姓名"}
-                    </button>
-                  ))}
-                </div>
                 <label htmlFor="guess-text" className="sr-only">
-                  {mode === "question" ? "是非问题" : "人物姓名"}
+                  问题或人物名字
                 </label>
                 <input
                   id="guess-text"
@@ -408,19 +389,11 @@ export function GuessGame() {
                   disabled={busy}
                   onChange={(e) => setText(e.target.value)}
                   maxLength={400}
-                  placeholder={
-                    mode === "question"
-                      ? "例如：你曾经做过皇帝吗？"
-                      : "输入姓名或本站已登记的别名"
-                  }
+                  placeholder="问一个是非问题，或输入人物名字（如李亚子）…"
                 />
                 <div className="flex flex-wrap justify-between gap-3">
                   <button className={button} disabled={busy || !text.trim()}>
-                    {busy
-                      ? "正在处理…"
-                      : mode === "question"
-                        ? "提问"
-                        : "确认猜测"}
+                    {busy ? "正在处理…" : "提交"}
                   </button>
                   <button
                     type="button"

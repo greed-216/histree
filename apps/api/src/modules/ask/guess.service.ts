@@ -71,13 +71,34 @@ const labels = {
   no: '不是',
   unknown: '不清楚',
   mixed: '是，也不是',
-  refuse: '请只问一个是非问题；猜姓名请使用“猜姓名”。',
+  refuse: '请问一个是非问题，或提出一个人物名字；不能直接索要答案或候选名单。',
 };
 export function normalizeGuess(text: string) {
   return text
     .normalize('NFKC')
     .replace(/[\s·・，。！？?!]/g, '')
     .toLocaleLowerCase();
+}
+// Registered identities and user-confirmed common forms; never infer a win from a substring.
+export function guessNames(person: Person) {
+  const common: Record<string, string[]> = {
+    李存勖: ['李亚子'],
+    李白: ['李太白'],
+  };
+  return [
+    person.name,
+    ...(person.aliases || []),
+    person.courtesy_name,
+    ...(common[person.name] || []),
+  ].filter((name): name is string => !!name);
+}
+export function directGuess(text: string) {
+  const value = normalizeGuess(text);
+  // Only anchored affirmative guess forms. A name inside a fact question or a negation cannot win.
+  const match = value.match(
+    /^(?:(?:我猜|我觉得|我认为|答案)(?:是)?|你是不是|你是|你叫|是不是|会不会是|应该是|是)?(.+?)(?:吗|么|吧|对吗)?$/u,
+  );
+  return match?.[1] || value;
 }
 // Reference anchors constrain the model's fame classification; absent names remain agent-assessed.
 const anchors: Record<string, number> = Object.fromEntries(
@@ -447,14 +468,15 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
     this.active++;
     try {
       if (action === 'reveal') game.outcome = 'revealed';
-      else if (action === 'guess') {
-        const names = [
-          game.person.name,
-          ...(game.person.aliases || []),
-          game.person.courtesy_name,
-        ].filter((n): n is string => !!n);
-        const correct = names.some(
-          (n) => normalizeGuess(n) === normalizeGuess(text!),
+      else if (
+        action === 'guess' ||
+        (action === 'question' &&
+          guessNames(game.person).some(
+            (name) => normalizeGuess(name) === directGuess(text!),
+          ))
+      ) {
+        const correct = guessNames(game.person).some(
+          (name) => normalizeGuess(name) === directGuess(text!),
         );
         game.turns.push({
           text: text!,
@@ -490,7 +512,15 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
         if (action === 'question') {
           const result = z
             .object({
-              verdict: z.enum(['yes', 'no', 'unknown', 'mixed', 'refuse']),
+              verdict: z.enum([
+                'yes',
+                'no',
+                'unknown',
+                'mixed',
+                'refuse',
+                'guess',
+              ]),
+              name: z.string().trim().min(1).max(100).optional(),
               claims: z.array(z.string()).max(10),
             })
             .strict()
@@ -499,19 +529,35 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
             throw new ServiceUnavailableException(
               '裁判未返回有效答案，请重试。',
             );
-          const verdict =
-            ['yes', 'no', 'mixed'].includes(result.data.verdict) &&
-            !supported(result.data.claims)
-              ? 'unknown'
-              : result.data.verdict;
-          // A refusal does not consume a turn; identity guesses only win through deterministic matching.
-          if (verdict === 'refuse')
-            return { ...this.view(game), notice: labels.refuse };
-          game.turns.push({
-            text: text!,
-            answer: labels[verdict],
-            kind: 'question',
-          });
+          if (result.data.verdict === 'guess') {
+            const name = result.data.name;
+            if (!name || directGuess(text!) !== normalizeGuess(name))
+              throw new ServiceUnavailableException(
+                '未能确认你提出的人物名字，请重试。',
+              );
+            const correct = guessNames(game.person).some(
+              (n) => normalizeGuess(n) === normalizeGuess(name),
+            );
+            game.turns.push({
+              text: text!,
+              answer: correct ? '猜对了' : '不是',
+              kind: 'guess',
+            });
+            if (correct) game.outcome = 'won';
+          } else {
+            const verdict =
+              ['yes', 'no', 'mixed'].includes(result.data.verdict) &&
+              !supported(result.data.claims)
+                ? 'unknown'
+                : result.data.verdict;
+            if (verdict === 'refuse')
+              return { ...this.view(game), notice: labels.refuse };
+            game.turns.push({
+              text: text!,
+              answer: labels[verdict],
+              kind: 'question',
+            });
+          }
         } else {
           const result = z
             .object({
@@ -520,11 +566,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
             })
             .strict()
             .safeParse(raw);
-          const names = [
-            game.person.name,
-            ...(game.person.aliases || []),
-            game.person.courtesy_name,
-          ].filter((n): n is string => !!n);
+          const names = guessNames(game.person);
           if (
             !result.success ||
             !result.data.text ||

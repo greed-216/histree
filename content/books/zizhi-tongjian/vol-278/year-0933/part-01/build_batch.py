@@ -62,6 +62,7 @@ def claim(table, key, field, value, n, quote, note, source=None, relation='adds'
     assert quote in (sources[source] / 'source.txt').read_text(), (source, quote)
     if source in main_sources:
         assert quote in Q[n]['text'], (n, quote)
+        # Preserve published payload for hash reproducibility; corrected live citation is in revisions/2026-10-04-933-era-citation. Future 933 batches must use 长兴四年.
         citation = f'卷278·长兴三年（933）·{Q[n]["id"]}·原文件第{Q[n]["source_line"]}行'
     else:
         citation = record['citation']

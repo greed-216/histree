@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 274,
-    "year": 925,
-    "last_reviewed_paragraph": "zztj-v274-y0925-p024",
-    "next_paragraph": "zztj-v274-y0925-p025",
-    "next_paragraph_opening": "辛亥，立皇弟存美为邕王，存霸为永王，存礼为薛王，存渥为申王，存又为睦王，存确为通王，存纪为雅王。",
-    "batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-02",
+    "year": 926,
+    "last_reviewed_paragraph": "zztj-v274-y0925-p030",
+    "next_paragraph": "zztj-v274-y0926-p001",
+    "next_paragraph_opening": "春，正月，庚申，魏王继岌遣李继严、李严部送王衍及其宗族百官数千人诣洛阳。",
+    "batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-03",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v274-y0925-p024"
+    "last_published_paragraph": "zztj-v274-y0925-p029"
   },
   "year_coverage": [
     {
@@ -820,7 +820,7 @@
     },
     {
       "year": 925,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         273,
         274
@@ -831,12 +831,25 @@
         "content/books/zizhi-tongjian/vol-273/year-0925/part-03",
         "content/books/zizhi-tongjian/vol-273/year-0925/part-04",
         "content/books/zizhi-tongjian/vol-274/year-0925/part-01",
-        "content/books/zizhi-tongjian/vol-274/year-0925/part-02"
+        "content/books/zizhi-tongjian/vol-274/year-0925/part-02",
+        "content/books/zizhi-tongjian/vol-274/year-0925/part-03"
       ],
       "completed_volumes": [
-        273
+        273,
+        274
       ],
-      "note": "925年卷273全部37段与卷274前24段已连续发布并匿名读回，共61/66正文段；卷274尚余5正文段，第30项为已核结构标题，全年未完成。"
+      "note": "925年卷273的37段与卷274的29正文段共66段、七批全部发布；全年审计复核连续源行、批次哈希、快照及匿名可见引用和固定URL。原账本第67项为926帝纪标题，已核结构项保留，不生史事。"
+    },
+    {
+      "year": 926,
+      "status": "in_progress",
+      "volumes": [
+        274,
+        275
+      ],
+      "completed_volumes": [],
+      "batches": [],
+      "note": "926年卷274正文43段、卷275正文67段，共110段；年界与原文连续账本已核，尚待录入，下一段卷274第1段。"
     }
   ],
   "legacy_archives": [
@@ -2211,6 +2224,34 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-02",
       "primary_paragraph": "zztj-v274-y0925-p014",
       "required_action": "新史謚日忠懿之日疑曰，原文保留，谥号用两书相应记载，卒日不是授谥日。"
+    },
+    {
+      "key": "925-v274-prince-cunyi",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-03",
+      "primary_paragraph": "zztj-v274-y0925-p025",
+      "required_action": "主书存又据同日同睦王两史校为李存乂；旧本纪未列薛王，旧宗室传同年封存礼补，不是更名或存礼未封。"
+    },
+    {
+      "key": "925-v274-guo-report-quantities",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-03",
+      "primary_paragraph": "zztj-v274-y0925-p026",
+      "required_action": "向延嗣报告郭父子金银钱马及妓乐数皆转述，未当独立核定赃物；新郭传蜀簿兵三十万、粮二百五十三万与旧本纪三万、三百五十三万差异保留。"
+    },
+    {
+      "key": "925-v274-guo-orders",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-03",
+      "primary_paragraph": "zztj-v274-y0925-p027",
+      "required_action": "帝令孟诛后允先察，遣马附条件，拒贸杀而刘后自为教；新郭传写矫诏，性质分别保留。实际杀郭留926正月，不移至925。"
+    },
+    {
+      "key": "925-v274-chu-trade-text",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-274/year-0925/part-03",
+      "primary_paragraph": "zztj-v274-y0925-p028",
+      "required_action": "辐氵奏底本拆字保留待校；不征商旅、茶算与铅铁钱、帛税为不同叙述税目，初追叙未强年，不将零商旅税等同全部零税。"
     }
   ]
 }

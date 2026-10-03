@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph && pnpm test:explore && pnpm test:timeline && node scripts/test-year-0907-import.mjs && node scripts/test-ask.mjs",
+    "test": "pnpm --filter api test --runInBand && pnpm test:publication && pnpm test:content && pnpm test:map && pnpm test:atlas && pnpm test:graph && pnpm test:explore && pnpm test:timeline && node scripts/test-year-0907-import.mjs && node scripts/test-ask.mjs && pnpm test:gateway",
     "e2e:smoke": "node scripts/e2e-smoke.mjs",
     "test:ask-runtime": "node apps/api/dsh/smoke.mjs",
     "test:publication": "node scripts/test-publication.mjs",
@@ -14,7 +14,8 @@
     "test:map": "node scripts/test-map-document.mjs",
     "test:content": "node scripts/test-content-import.mjs",
     "test:timeline": "node scripts/test-timeline.mjs && node scripts/test-timeline-viewport.mjs",
-    "test:explore": "node scripts/test-explore.mjs"
+    "test:explore": "node scripts/test-explore.mjs",
+    "test:gateway": "deno test --allow-read --allow-env supabase/functions/ai-gateway/gateway_test.ts && node scripts/test-ai-gateway-quota.mjs"
   },
   "keywords": [],
   "author": "",

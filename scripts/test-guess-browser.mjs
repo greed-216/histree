@@ -25,6 +25,19 @@ try {
           contentType: "application/json",
           body: JSON.stringify(body),
         });
+      if (url.pathname.endsWith("/ai-gateway/session"))
+        return reply({
+          token: "test-anonymous-session",
+          expires: Math.floor(Date.now() / 1000) + 86400,
+        });
+      if (
+        url.pathname.includes("/ask/guess/") &&
+        route.request().method() === "POST"
+      )
+        assert.equal(
+          route.request().headers()["x-histree-anonymous"],
+          "test-anonymous-session",
+        );
       if (
         url.pathname.endsWith("/ask/guess/status") ||
         url.pathname.endsWith("/ask/status")

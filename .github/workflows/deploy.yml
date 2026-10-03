@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.3.3
       - name: Validate application and publication policies
         run: |
           pnpm test
@@ -45,7 +48,6 @@ jobs:
       - name: Build frontend
         run: pnpm --filter web build
         env:
-          VITE_ASK_API_URL: ${{ vars.VITE_ASK_API_URL }}
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

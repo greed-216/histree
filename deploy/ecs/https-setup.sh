@@ -40,6 +40,14 @@ server {
     proxy_set_header X-Forwarded-Proto https;
     proxy_read_timeout 180s;
   }
+  location ~ ^/api/v1/ask/guess/(status|start|act)$ {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Host \$host;
+    proxy_set_header X-Forwarded-For \$remote_addr;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_read_timeout 140s;
+  }
   location = /api/v1/ask {
     proxy_pass http://127.0.0.1:3000;
     proxy_http_version 1.1;
@@ -92,4 +100,4 @@ WantedBy=timers.target
 UNIT
 systemctl daemon-reload
 systemctl enable --now histree-certbot.timer
-curl --fail --silent "https://$ip/api/v1/ask/status"
+docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/status',{headers:{'x-histree-gateway-key':process.env.HISTREE_GATEWAY_SECRET||''}}).then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"

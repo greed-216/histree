@@ -4,7 +4,7 @@
 
 - 前端：GitHub Pages，推送 `main` 后由 `.github/workflows/deploy.yml` 测试、构建并发布。
 - 数据库和登录：Supabase 项目 `ilnwjhabcqtxkkuhddyt`。
-- API：NestJS；仓库提供 Render 配置，但服务是否已创建需在 Render 控制台核实。
+- AI 计算后端：北京 ECS 上的 NestJS + dsh，通过 Supabase `ai-gateway` Edge Function 访问。部署顺序和密钥配置见 [AI 网关](AI_GATEWAY.md)。
 - GitHub 未配置 `VITE_API_URL` 时，公开页面直接使用 Supabase 匿名客户端；管理台写入需要另行部署 API 并配置该变量，以 `/api/v1` 结尾。
 - 服务角色密钥仅用于后端，不得配置为 `VITE_*` 或提交到 Git。
 

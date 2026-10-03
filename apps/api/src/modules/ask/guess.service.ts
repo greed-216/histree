@@ -55,6 +55,7 @@ type Claim = {
 };
 type Turn = { text: string; answer: string; kind: 'question' | 'guess' };
 type Game = {
+  owner: string;
   person: Person;
   context?: unknown;
   claims: Claim[];
@@ -215,7 +216,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
   status() {
     return { available: this.agent.available(), maxTurns: 30, maxHints: 3 };
   }
-  private admit(ip: string) {
+  private admit(actor: string) {
     if (!this.agent.available())
       throw new ServiceUnavailableException('猜人物服务尚未开放。');
     const now = Date.now();
@@ -225,11 +226,14 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       if (quota.reset < now) this.quotas.delete(key);
     if (this.active >= 2)
       throw new HttpException('当前游戏请求较多，请稍后再试。', 429);
-    const quota = this.quotas.get(ip) || { count: 0, reset: now + 3600000 };
-    if (quota.count >= 80 || (!this.quotas.has(ip) && this.quotas.size >= 2048))
+    const quota = this.quotas.get(actor) || { count: 0, reset: now + 3600000 };
+    if (
+      quota.count >= 80 ||
+      (!this.quotas.has(actor) && this.quotas.size >= 2048)
+    )
       throw new HttpException('已达到每小时游戏请求限额，请稍后再试。', 429);
     quota.count++;
-    this.quotas.set(ip, quota);
+    this.quotas.set(actor, quota);
   }
   private async page(
     table: string,
@@ -311,11 +315,11 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       );
     return eligible;
   }
-  async start(body: unknown, ip: string, signal: AbortSignal) {
+  async start(body: unknown, actor: string, signal: AbortSignal) {
     const parsed = filtersSchema.safeParse(body);
     if (!parsed.success)
       throw new BadRequestException('请检查难度、年代和限定条件。');
-    this.admit(ip);
+    this.admit(actor);
     if (this.games.size >= 500)
       throw new HttpException('游戏会话较多，请稍后再试。', 429);
     this.active++;
@@ -381,6 +385,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
         }
         const token = randomBytes(32).toString('hex');
         const game: Game = {
+          owner: actor,
           person,
           context,
           claims,
@@ -425,15 +430,17 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
         : {}),
     };
   }
-  async act(body: unknown, ip: string, signal: AbortSignal) {
+  async act(body: unknown, actor: string, signal: AbortSignal) {
     const parsed = actionSchema.safeParse(body);
     if (!parsed.success) throw new BadRequestException('游戏请求格式不正确。');
     const { token, action, text } = parsed.data;
     const game = this.games.get(token);
+    if (game && game.owner !== actor)
+      throw new HttpException('无权访问此游戏。', 403);
     if (!game || game.expires < Date.now())
       throw new HttpException('游戏已过期，请重新开局。', 410);
     if (action === 'state') return this.view(game);
-    this.admit(ip);
+    this.admit(actor);
     if (game.busy) throw new HttpException('请等待本次操作完成。', 409);
     if (game.outcome) return this.view(game);
     game.busy = true;

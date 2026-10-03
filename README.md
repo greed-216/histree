@@ -80,7 +80,7 @@ pnpm --filter web lint
 pnpm --filter web build
 ```
 
-前端构建输出位于 `apps/web/dist`。推送 `main` 后，GitHub Actions 按 [部署工作流](.github/workflows/deploy.yml) 发布 GitHub Pages；API 另行部署，仓库提供 [Render 配置](render.yaml)。具体变量和验收步骤见 [部署说明](docs/DEPLOYMENT.md)。
+前端构建输出位于 `apps/web/dist`。推送 `main` 后，GitHub Actions 按 [部署工作流](.github/workflows/deploy.yml) 发布 GitHub Pages；AI 后端另行部署到 ECS，由 [Supabase Edge 网关](docs/AI_GATEWAY.md)统一提供入口。具体变量和验收步骤见 [部署说明](docs/DEPLOYMENT.md)。
 
 ## 文档导航
 

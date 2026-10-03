@@ -1,3 +1,4 @@
+import { aiGatewayConfigured, aiGatewayFetch } from './aiGateway';
 export type GuessFilters = {
   difficulty: number;
   from?: number;
@@ -30,21 +31,16 @@ export class GuessRequestError extends Error {
     this.status = status;
   }
 }
-const base = (
-  import.meta.env.VITE_ASK_API_URL ||
-  import.meta.env.VITE_API_URL ||
-  ""
-).replace(/\/$/, "");
 export async function guessRequest(
   path: "start" | "act",
   body: unknown,
   signal: AbortSignal,
 ): Promise<GuessState> {
-  if (!base) throw new Error("猜人物服务尚未开放。");
-  const timeout = AbortSignal.timeout(160000);
+  if (!aiGatewayConfigured) throw new Error("猜人物服务尚未开放。");
+  const timeout = AbortSignal.timeout(140000);
   let res: Response;
   try {
-    res = await fetch(`${base}/ask/guess/${path}`, {
+    res = await aiGatewayFetch(`/ask/guess/${path}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -71,8 +67,8 @@ export async function guessRequest(
   return data;
 }
 export async function guessStatus(signal: AbortSignal): Promise<boolean> {
-  if (!base) return false;
-  const res = await fetch(`${base}/ask/guess/status`, { signal });
+  if (!aiGatewayConfigured) return false;
+  const res = await aiGatewayFetch('/ask/guess/status', { signal });
   if (!res.ok) return false;
   return Boolean((await res.json()).available);
 }

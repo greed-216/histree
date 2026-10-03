@@ -17,6 +17,8 @@ services:
         value: "true"
       - key: DEEPSEEK_API_KEY
         sync: false
+      - key: HISTREE_GATEWAY_SECRET
+        sync: false
       - key: HISTREE_MODEL
         value: deepseek-flash
       - key: TRUST_PROXY

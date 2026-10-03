@@ -234,6 +234,19 @@ describe('Guess game privacy and lifecycle', () => {
       (await service.act({ token, action: 'hint' }, 'a', signal)).hints,
     ).toHaveLength(0);
   });
+  it('binds game state and actions to the gateway caller', async () => {
+    const { service } = make();
+    const { token } = await service.start(filters, 'a', signal);
+    await expect(
+      service.act({ token, action: 'state' }, 'other', signal),
+    ).rejects.toThrow('无权');
+    await expect(
+      service.act({ token, action: 'reveal' }, 'other', signal),
+    ).rejects.toThrow('无权');
+    expect(
+      (await service.act({ token, action: 'state' }, 'a', signal)).remaining,
+    ).toBe(30);
+  });
   it('does not charge a refused question, caps hints, and reveals after 30 guesses', async () => {
     const { service, agent } = make();
     const { token } = await service.start(filters, 'a', signal);

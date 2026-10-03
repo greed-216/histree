@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 273,
-    "year": 924,
-    "last_reviewed_paragraph": "zztj-v273-y0924-p060",
-    "next_paragraph": "zztj-v273-y0924-p061",
-    "next_paragraph_opening": "吴王如白沙观楼船，更命白沙曰迎銮镇。徐温自金陵来朝，先是，温以亲吏翟虔为阁门、宫城、武备等使，使察王起居，虔防制王甚急。至是，王对温名雨为水，温请其故。王曰：“翟虔父名，吾讳之熟矣。”因谓温曰：“公之忠诚，我所知也，然翟虔无礼，宫中及宗室所须多不获。”温顿首谢罪，请斩之，王曰：“斩则太过，远徙可也。",
-    "batch": "content/books/zizhi-tongjian/vol-273/year-0924/part-05",
+    "year": 925,
+    "last_reviewed_paragraph": "zztj-v273-y0924-p076",
+    "next_paragraph": "zztj-v273-y0925-p001",
+    "next_paragraph_opening": "春，正月，甲午朔，蜀大赦。",
+    "batch": "content/books/zizhi-tongjian/vol-273/year-0924/part-06",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v273-y0924-p060"
+    "last_published_paragraph": "zztj-v273-y0924-p076"
   },
   "year_coverage": [
     {
@@ -801,7 +801,7 @@
     },
     {
       "year": 924,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         273
       ],
@@ -810,10 +810,24 @@
         "content/books/zizhi-tongjian/vol-273/year-0924/part-02",
         "content/books/zizhi-tongjian/vol-273/year-0924/part-03",
         "content/books/zizhi-tongjian/vol-273/year-0924/part-04",
-        "content/books/zizhi-tongjian/vol-273/year-0924/part-05"
+        "content/books/zizhi-tongjian/vol-273/year-0924/part-05",
+        "content/books/zizhi-tongjian/vol-273/year-0924/part-06"
       ],
+      "completed_volumes": [
+        273
+      ],
+      "note": "卷273同光二年全部76正文段经6批连续发布并匿名读回；全年重新核对来源快照哈希、正文顺序、批次哈希及公开事实引用；下一卷273同光三年925首段待录。日次、数字与身份异文逐批保留，不宣称已作纸本校定。"
+    },
+    {
+      "year": 925,
+      "status": "in_progress",
+      "volumes": [
+        273,
+        274
+      ],
+      "batches": [],
       "completed_volumes": [],
-      "note": "卷273正文前60段已连续发布并匿名读回；下一段zztj-v273-y0924-p061，全年尚未完成。"
+      "note": "925跨卷273正文37段（84—120行）、卷274正文30段（6—35行），共67段均待录；须两卷完成后方记全年完成。"
     }
   ],
   "legacy_archives": [
@@ -1992,6 +2006,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-273/year-0924/part-05",
       "primary_paragraph": "zztj-v273-y0924-p059",
       "required_action": "主书选万二千、四十軍，旧史传数千、龙武都、天水；不同编制数量地点叙法并列，后续求秦州另顺序核。"
+    },
+    {
+      "key": "924-p071-adopted-father-narration",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-273/year-0924/part-06",
+      "primary_paragraph": "zztj-v273-y0924-p071",
+      "required_action": "刘后请父事、旧史帝命及新史养父称法并列；关系为张全义养父而非亲父。幼失父母仅刘后自述，不能覆盖新史生父故事。"
+    },
+    {
+      "key": "924-p072-chengxiu-interval",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-273/year-0924/part-06",
+      "primary_paragraph": "zztj-v273-y0924-p072",
+      "required_action": "主书十月置龙武十二月授秦州节度，旧史安重霸传先选军俱天水、岁余求旄钺；保留叙次间隔，不按岁余强推925。"
+    },
+    {
+      "key": "924-p075-cunxian-date",
+      "status": "published_with_source_variant_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-273/year-0924/part-06",
+      "primary_paragraph": "zztj-v273-y0924-p075",
+      "required_action": "主书924末记李存贤卒，旧史925正月丙辰记幽州奏卒；死亡与报告区别，传无确日，具体日期待纸本。"
     }
   ]
 }

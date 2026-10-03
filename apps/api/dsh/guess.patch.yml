@@ -1,0 +1,14 @@
+- id: llm-deepseek
+  config:
+    thinking: disabled
+    streamIdleTimeoutMs: 30000
+- id: persistent-bash
+  disabled: true
+- id: persistent-pwsh
+  disabled: true
+- id: terminal-bash
+  disabled: true
+- id: terminal-pwsh
+  disabled: true
+- id: pty
+  disabled: true

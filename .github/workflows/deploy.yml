@@ -38,6 +38,7 @@ jobs:
         run: |
           pnpm test
           node apps/api/dsh/smoke.mjs
+          node apps/api/dsh/guess-smoke.mjs
           pnpm --filter api build
           pnpm --filter web lint
 

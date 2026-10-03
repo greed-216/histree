@@ -39,6 +39,7 @@ jobs:
           docker build --platform linux/amd64 -f apps/api/Dockerfile -t histree-api:${GITHUB_SHA} .
           docker run --rm histree-api:${GITHUB_SHA} node -e "require('./apps/api/dist/app.module.js')"
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs
           mkdir bundle
           docker save histree-api:${GITHUB_SHA} | gzip > bundle/image.tar.gz
           cp deploy/ecs/compose.yml deploy/ecs/release.sh bundle/

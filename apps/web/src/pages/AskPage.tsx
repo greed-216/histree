@@ -2,8 +2,20 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { askQuestion, askStatus, type AskAnswer } from '../lib/ask';
 
+import { GuessGame } from './GuessGame';
+
 const examples = ['907 年唐梁禅代有哪些相关事件？', '朱温与敬翔是什么关系？有哪些史料依据？', '李克用与李存勖的关系，有哪些记载？'];
 export function AskPage() {
+  const [params, setParams] = useSearchParams();
+  const game = params.get('mode') === 'guess';
+  return <div className="space-y-6">
+    <nav aria-label="问史料玩法" className="mx-auto max-w-4xl flex gap-2">
+      {[['ask', '查阅史料'], ['guess', '猜猜我是谁']].map(([mode, label]) => <button key={mode} aria-pressed={game === (mode === 'guess')} className={`rounded-full px-5 py-2 text-sm ${game === (mode === 'guess') ? 'bg-teal-800 text-white' : 'bg-white border border-stone-200 text-stone-600'}`} onClick={() => { const next = new URLSearchParams(params); next.set('mode', mode); setParams(next); }}>{label}</button>)}
+    </nav>
+    {game ? <GuessGame /> : <EvidenceAskPage />}
+  </div>;
+}
+function EvidenceAskPage() {
   const [params] = useSearchParams();
   const kind = params.get('kind'); const id = params.get('id');
   const context = (kind === 'person' || kind === 'event') && id ? { kind, id } : undefined;

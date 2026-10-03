@@ -21,14 +21,29 @@ const server = createServer(async (req, res) => {
     for await (const chunk of req) body += chunk;
     const request = JSON.parse(body);
     requests++;
-    assert.equal(requests, 1);
+    assert.ok(requests <= 2);
     assert.equal(
       (request.tools || []).length,
       0,
       'Game has no shell, filesystem, MCP or other tools',
     );
     assert.ok(JSON.stringify(request.messages).includes('你是皇帝吗'));
-    assert.ok(JSON.stringify(request.messages).includes('测试人物称帝'));
+    if (requests === 1) {
+      assert.ok(
+        !JSON.stringify(request.messages).includes('测试人物称帝'),
+        'Normalization cannot see secret evidence',
+      );
+      assert.ok(
+        !JSON.stringify(request.messages).includes('测试人物'),
+        'Normalization cannot see secret identity',
+      );
+    } else {
+      assert.ok(JSON.stringify(request.messages).includes('测试人物称帝'));
+      assert.ok(
+        JSON.stringify(request.messages).includes('你曾经担任皇帝吗'),
+        'Judge receives the normalized proposition',
+      );
+    }
     res.writeHead(200, { 'Content-Type': 'text/event-stream' });
     const send = (type, value) =>
       res.write(
@@ -54,7 +69,11 @@ const server = createServer(async (req, res) => {
       index: 0,
       delta: {
         type: 'text_delta',
-        text: JSON.stringify({ verdict: 'yes', claims: ['c1'] }),
+        text: JSON.stringify(
+          requests === 1
+            ? { kind: 'yes_no', question: '你曾经担任皇帝吗？' }
+            : { verdict: 'yes', claims: ['c1'] },
+        ),
       },
     });
     send('content_block_stop', { index: 0 });
@@ -104,7 +123,7 @@ try {
     type: 'result',
     data: { verdict: 'yes', claims: ['c1'] },
   });
-  assert.equal(requests, 1);
+  assert.equal(requests, 2);
   console.log(
     'Guess worker/dsh smoke passed: no tools, bounded JSON reply, fixture evidence, clean worker exit',
   );

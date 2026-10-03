@@ -41,4 +41,4 @@ else
   exit 1
 fi
 docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/status',{headers:{'x-histree-gateway-key':process.env.HISTREE_GATEWAY_SECRET||''}}).then(async r=>{if(!r.ok)process.exit(1);console.log(await r.text())}).catch(()=>process.exit(1))"
-curl --fail --silent http://127.0.0.1:3000/api/v1/ask/guess/status
+docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/guess/status',{headers:{'x-histree-gateway-key':process.env.HISTREE_GATEWAY_SECRET||''}}).then(async r=>{if(!r.ok)process.exit(1);console.log(await r.text())}).catch(()=>process.exit(1))"

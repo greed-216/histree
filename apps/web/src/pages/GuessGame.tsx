@@ -66,7 +66,7 @@ export function GuessGame() {
         .catch((err) => {
           if (!controller.signal.aborted) {
             setError(err instanceof Error ? err.message : "无法恢复游戏。");
-            if (err instanceof GuessRequestError && err.status === 410) {
+            if (err instanceof GuessRequestError && [401, 403, 410].includes(err.status)) {
               try {
                 sessionStorage.removeItem(storageKey);
               } catch {
@@ -121,7 +121,7 @@ export function GuessGame() {
     } catch (err) {
       if (!controller.signal.aborted) {
         setError(err instanceof Error ? err.message : "请求未完成，请重试。");
-        if (err instanceof GuessRequestError && err.status === 410) {
+        if (err instanceof GuessRequestError && [401, 403, 410].includes(err.status)) {
           setGame(undefined);
           setToken("");
           try {

@@ -65,5 +65,16 @@ export async function aiGatewayFetch(path: string, options: RequestInit = {}) {
     options.signal?.throwIfAborted();
   }
   // No automatic retries: a disconnected model request may already have incurred cost.
-  return fetch(`${base}${path}`, { ...options, headers });
+  const response = await fetch(`${base}${path}`, { ...options, headers });
+  if (response.status === 401 && headers.has("x-histree-anonymous")) {
+    // Key rotation can invalidate a signed session before its nominal expiry.
+    // Clear it for the next explicit action, without replaying this request.
+    anonymous = undefined;
+    try {
+      localStorage.removeItem(storageKey);
+    } catch {
+      /* optional */
+    }
+  }
+  return response;
 }

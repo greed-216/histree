@@ -77,7 +77,7 @@ describe('ECS HTTP gateway boundary', () => {
       .set('x-histree-gateway-key', secret)
       .set('x-histree-actor', actor)
       .send({ difficulty: 2 })
-      .expect(200);
+      .expect(201);
     expect(guess.start.mock.calls[0][1]).toBe(actor);
   });
 });

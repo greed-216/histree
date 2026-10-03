@@ -26,15 +26,24 @@ try {
     if (url.pathname.endsWith("/session")) {
       sessions++;
       return json({
-        token: "anonymous-test",
+        token: `anonymous-test-${sessions}`,
         expires: Math.floor(Date.now() / 1000) + 86400,
       });
     }
     if (url.pathname.endsWith("/status")) return json({ available: true });
-    assert.equal(request.headers()["x-histree-anonymous"], "anonymous-test");
+    assert.equal(
+      request.headers()["x-histree-anonymous"],
+      `anonymous-test-${sessions}`,
+    );
     assert.equal(request.headers()["x-histree-gateway-key"], undefined);
     const body = request.postDataJSON();
     questions.push(body);
+    if (questions.length === 3)
+      return route.fulfill({
+        status: 401,
+        contentType: "application/json",
+        body: JSON.stringify({ message: "匿名会话已过期" }),
+      });
     return route.fulfill({
       contentType: "application/x-ndjson",
       body:
@@ -68,6 +77,27 @@ try {
   await page.getByText("网关测试回答2", { exact: true }).waitFor();
   assert.equal(questions[1].conversation, "a".repeat(64));
   assert.equal(sessions, 1);
+  await input.fill("测试过期会话");
+  await page
+    .locator("form")
+    .getByRole("button", { name: "查阅史料", exact: true })
+    .click();
+  await page.getByRole("alert").filter({ hasText: "匿名会话已过期" }).waitFor();
+  assert.equal(questions.length, 3, "failed operation must not be replayed");
+  assert.equal(
+    await page.evaluate(() =>
+      localStorage.getItem("histree-anonymous-session-v1"),
+    ),
+    null,
+  );
+  await page.reload();
+  await page.getByRole("textbox").fill("重新开始");
+  await page
+    .locator("form")
+    .getByRole("button", { name: "查阅史料", exact: true })
+    .click();
+  await page.getByText("网关测试回答4", { exact: true }).waitFor();
+  assert.equal(sessions, 2);
   assert.deepEqual(errors, []);
   console.log(
     "Browser gateway: Supabase-only requests, anonymous session reuse, NDJSON result and followup passed",

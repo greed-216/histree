@@ -28,7 +28,7 @@ Configure repository variables:
 
 Configure the `ecs-production` environment secret `WORKBENCH_CONFIG` with a dedicated Workbench profile JSON. Prefer a RAM identity scoped to the deployment instance; do not use an account administrator key. Keep DeepSeek and Supabase credentials on the server; the workflow never needs them.
 
-The workflow uploads to a fresh directory on each run, checks the image, and deploys the exact commit tag. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
+The workflow creates a fresh directory on each run. ECS downloads the tested GitHub artifact through a short-lived signed URL; the GitHub token stays on the runner. Before extraction it verifies the artifact digest and exact file list, then checks the image and deploys the exact commit tag. This avoids slow or timed-out runner-to-OSS uploads. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
 
 After HTTPS is ready, set repository variable `VITE_ASK_API_URL` to `https://<host>/api/v1` and rerun the Pages workflow.
 

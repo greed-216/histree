@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: histree-ecs-production
@@ -23,6 +24,9 @@ concurrency:
 
 jobs:
   build:
+    outputs:
+      artifact-id: ${{ steps.image.outputs.artifact-id }}
+      artifact-digest: ${{ steps.image.outputs.artifact-digest }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -46,6 +50,7 @@ jobs:
           cd bundle
           sha256sum image.tar.gz > image.tar.gz.sha256
       - uses: actions/upload-artifact@v4
+        id: image
         with:
           name: histree-api-${{ github.sha }}
           path: bundle/
@@ -58,10 +63,6 @@ jobs:
     timeout-minutes: 30
     environment: ecs-production
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: histree-api-${{ github.sha }}
-          path: bundle
       - name: Install Workbench
         run: |
           curl --fail --silent --show-error https://workbench-cli.oss-cn-hangzhou.aliyuncs.com/install.sh -o /tmp/install-workbench.sh
@@ -75,20 +76,69 @@ jobs:
           install -d -m 700 "$HOME/.workbench"
           umask 077
           printf '%s' "$WORKBENCH_CONFIG" > "$HOME/.workbench/config.json"
-      - name: Upload and deploy
+      - name: Download and deploy
         env:
           ECS_INSTANCE_ID: ${{ vars.ECS_INSTANCE_ID }}
           ECS_REGION: ${{ vars.ECS_REGION }}
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.build.outputs.artifact-id }}
+          ARTIFACT_DIGEST: ${{ needs.build.outputs.artifact-digest }}
         run: |
           set -euo pipefail
           [[ "$ECS_INSTANCE_ID" =~ ^i-[a-z0-9]+$ ]]
           [[ "$ECS_REGION" =~ ^[a-z]+-[a-z]+$ ]]
           release="/opt/histree/releases/${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           workbench exec -i "$ECS_INSTANCE_ID" -r "$ECS_REGION" -c "test -f /opt/histree/runtime.env && test ! -e $release && install -d -m 700 $release"
-          for file in image.tar.gz image.tar.gz.sha256 compose.yml release.sh; do
-            workbench upload "bundle/$file" "$release/$file" -i "$ECS_INSTANCE_ID" -r "$ECS_REGION"
-          done
-          workbench exec -i "$ECS_INSTANCE_ID" -r "$ECS_REGION" --timeout 600 -c "bash $release/release.sh $release histree-api:${GITHUB_SHA}"
+          # GitHub credentials stay on the runner; ECS receives only a short-lived URL.
+          artifact_url=$(python3 - <<'PY_URL'
+          import os, urllib.request, urllib.error, urllib.parse
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, *args, **kwargs):
+                  return None
+          artifact_id = os.environ['ARTIFACT_ID']
+          assert artifact_id.isdigit(), 'Invalid artifact ID'
+          url = 'https://api.github.com/repos/' + os.environ['GITHUB_REPOSITORY'] + '/actions/artifacts/' + artifact_id + '/zip'
+          request = urllib.request.Request(url, headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2026-03-10'})
+          try:
+              urllib.request.build_opener(NoRedirect()).open(request, timeout=30)
+              raise RuntimeError('Expected artifact download redirect')
+          except urllib.error.HTTPError as error:
+              if error.code != 302:
+                  raise
+              location = error.headers['Location']
+              assert urllib.parse.urlparse(location).scheme == 'https', 'Invalid artifact download URL'
+              print(location)
+          PY_URL
+          )
+          echo "::add-mask::$artifact_url"
+          remote_command=$(python3 - "$artifact_url" "$release" <<'PY_COMMAND'
+          import os, shlex, sys
+          url, release = sys.argv[1:]
+          digest = os.environ['ARTIFACT_DIGEST']
+          assert len(digest) == 64 and all(c in '0123456789abcdef' for c in digest), 'Invalid artifact digest'
+          extract = """import hashlib, pathlib, sys, zipfile
+          archive, destination, digest = sys.argv[1:]
+          hash_value = hashlib.sha256()
+          with open(archive, 'rb') as stream:
+              for block in iter(lambda: stream.read(1024 * 1024), b''):
+                  hash_value.update(block)
+          if hash_value.hexdigest() != digest:
+              raise RuntimeError('Artifact digest mismatch')
+          with zipfile.ZipFile(archive) as package:
+              expected = {'image.tar.gz', 'image.tar.gz.sha256', 'compose.yml', 'release.sh'}
+              if set(package.namelist()) != expected or len(package.namelist()) != len(expected):
+                  raise RuntimeError('Unexpected deployment archive contents')
+              package.extractall(destination)
+          """
+          commands = [
+              ['curl', '--fail', '--silent', '--show-error', '--connect-timeout', '20', '--max-time', '900', '--retry', '2', url, '-o', release + '/bundle.zip'],
+              ['python3', '-c', extract, release + '/bundle.zip', release, digest],
+              ['bash', release + '/release.sh', release, 'histree-api:' + os.environ['GITHUB_SHA']],
+          ]
+          print(' && '.join(shlex.join(command) for command in commands))
+          PY_COMMAND
+          )
+          workbench exec -i "$ECS_INSTANCE_ID" -r "$ECS_REGION" --timeout 1800 -c "$remote_command"
       - name: Remove runner credentials
         if: always()
         run: rm -f "$HOME/.workbench/config.json"

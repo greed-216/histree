@@ -2,16 +2,19 @@
   "book": "资治通鉴",
   "volume": 278,
   "year": 933,
-  "completed_paragraphs": 49,
+  "completed_paragraphs": 56,
   "volume_total_paragraphs": 56,
-  "year_completed_paragraphs": 49,
+  "year_completed_paragraphs": 56,
   "year_total_paragraphs": 56,
   "continuous_prefix_verified": true,
   "source_hash_and_lines_verified": true,
   "volume_complete": false,
-  "volume_year_complete": false,
-  "year_complete": false,
-  "next_paragraph": "zztj-v278-y0933-p050",
+  "volume_year_complete": true,
+  "year_complete": true,
+  "excluded_ledger_non_body": 1,
+  "next_volume": 278,
+  "next_year": 934,
+  "next_paragraph": "zztj-v278-y0934-p001",
   "batches": [
     {
       "batch": "content/books/zizhi-tongjian/vol-278/year-0933/part-01",
@@ -42,7 +45,13 @@
       "batch": "content/books/zizhi-tongjian/vol-278/year-0933/part-06",
       "batch_sha256": "7c77511a7dd892a0f2c7aa0100960700af84ae706afc479879af79d4a4284f70",
       "anonymous_readback_verified": true
+    },
+    {
+      "batch": "content/books/zizhi-tongjian/vol-278/year-0933/part-07",
+      "batch_sha256": "7f9a27cd43eadebad6bae4ac3e942c6922cb57c1a90beff9f41b5c2938a922f8",
+      "anonymous_readback_verified": true
     }
   ],
+  "year_audit": "year-audit.json",
   "previous_year_audit": "content/books/zizhi-tongjian/vol-278/year-0932/year-audit.json"
 }

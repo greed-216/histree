@@ -2,6 +2,8 @@ import {
   BadRequestException,
   HttpException,
   Injectable,
+  OnModuleInit,
+  OnModuleDestroy,
   ServiceUnavailableException,
 } from '@nestjs/common';
 import { randomBytes, randomInt } from 'node:crypto';
@@ -94,14 +96,122 @@ const anchors: Record<string, number> = Object.fromEntries(
 );
 
 @Injectable()
-export class GuessService {
+export class GuessService implements OnModuleInit, OnModuleDestroy {
   private readonly games = new Map<string, Game>();
   private readonly quotas = new Map<string, { count: number; reset: number }>();
   private active = 0;
+  private generation = 0;
+  private catalogueCache?: {
+    expires: number;
+    promise: Promise<{ people: Person[]; generation: number }>;
+  };
+  private readonly candidatePools = new Map<string, Promise<Person[]>>();
+  private refreshTimer?: ReturnType<typeof setInterval>;
+  private refreshing = false;
   constructor(
     private readonly db: SupabaseService,
     private readonly agent: GuessAgentService,
   ) {}
+  onModuleInit() {
+    if (!this.agent.available()) return;
+    void this.catalogue().catch(() => {});
+    this.refreshTimer = setInterval(() => void this.refreshCatalogue(), 240000);
+    this.refreshTimer.unref();
+  }
+  onModuleDestroy() {
+    clearInterval(this.refreshTimer);
+  }
+  private async refreshCatalogue() {
+    if (this.refreshing || !this.agent.available()) return;
+    this.refreshing = true;
+    const previous = this.catalogueCache;
+    try {
+      const people = await this.loadCatalogue(AbortSignal.timeout(60000));
+      // Keep serving the current pool while loading; swap only a complete successful snapshot.
+      if (this.catalogueCache === previous) {
+        this.catalogueCache = {
+          expires: Date.now() + 300000,
+          promise: Promise.resolve({ people, generation: ++this.generation }),
+        };
+        this.candidatePools.clear();
+      }
+    } catch {
+      /* Retain the last snapshot within its existing TTL; foreground retry after expiry. */
+    } finally {
+      this.refreshing = false;
+    }
+  }
+  private waitShared<T>(promise: Promise<T>, signal: AbortSignal): Promise<T> {
+    signal.throwIfAborted();
+    return new Promise((resolve, reject) => {
+      const abort = () => reject(signal.reason);
+      signal.addEventListener('abort', abort, { once: true });
+      promise
+        .then(resolve, reject)
+        .finally(() => signal.removeEventListener('abort', abort));
+    });
+  }
+  private catalogue() {
+    if (this.catalogueCache && this.catalogueCache.expires > Date.now())
+      return this.catalogueCache.promise;
+    this.candidatePools.clear();
+    const generation = ++this.generation;
+    const promise = this.loadCatalogue(AbortSignal.timeout(60000)).then(
+      (people) => ({ people, generation }),
+    );
+    this.catalogueCache = { expires: Date.now() + 300000, promise };
+    void promise.catch(() => {
+      if (this.catalogueCache?.promise === promise)
+        this.catalogueCache = undefined;
+    });
+    return promise;
+  }
+  private async loadCatalogue(signal: AbortSignal) {
+    const people: Person[] = [];
+    const first = await this.page('person', 0, signal);
+    people.push(...first.items);
+    if (!first.has_more) return people;
+    // Four bounded pages in flight, preserving page order and the corpus capacity guard.
+    for (let offset = 1; offset < 200; offset += 4) {
+      const pages = await Promise.all(
+        Array.from({ length: Math.min(4, 200 - offset) }, (_, i) =>
+          this.page('person', offset + i, signal),
+        ),
+      );
+      for (const result of pages) {
+        people.push(...result.items);
+        if (!result.has_more) return people;
+      }
+    }
+    throw new ServiceUnavailableException(
+      '人物库超过当前游戏候选容量，需扩展候选索引。',
+    );
+  }
+  private async pool(
+    filters: Filters,
+    catalogue: { people: Person[]; generation: number },
+    signal: AbortSignal,
+  ) {
+    const key = JSON.stringify([catalogue.generation, filters]);
+    let pending = this.candidatePools.get(key);
+    if (!pending) {
+      if (this.candidatePools.size >= 128)
+        this.candidatePools.delete(this.candidatePools.keys().next().value!);
+      pending = this.selectCandidates(
+        filters,
+        catalogue.people,
+        AbortSignal.timeout(120000),
+      );
+      this.candidatePools.set(key, pending);
+      const owned = pending;
+      void pending.catch(() => {
+        if (this.candidatePools.get(key) === owned)
+          this.candidatePools.delete(key);
+      });
+    }
+    // Per-game removals must never mutate the shared pool.
+    return [...(await this.waitShared(pending, signal))];
+  }
   status() {
     return { available: this.agent.available(), maxTurns: 30, maxHints: 3 };
   }
@@ -141,6 +251,66 @@ export class GuessService {
       throw new ServiceUnavailableException('已发布资料暂时无法读取。');
     return data as { items: Array<Person & Claim>; has_more: boolean };
   }
+  private async selectCandidates(
+    filters: Filters,
+    people: Person[],
+    signal: AbortSignal,
+  ) {
+    const candidates = people.filter((p) => {
+      const tier = anchors[p.name];
+      if (tier && tier !== filters.difficulty) return false;
+      if (filters.from !== undefined || filters.to !== undefined) {
+        const start = p.birth_year ?? p.death_year,
+          end = p.death_year ?? p.birth_year;
+        // Let the agent inspect descriptions for dated activity when lifespan is unknown.
+        if (
+          start !== undefined &&
+          end !== undefined &&
+          ((filters.from !== undefined && end < filters.from) ||
+            (filters.to !== undefined && start > filters.to))
+        )
+          return false;
+      }
+      return true;
+    });
+    for (let i = candidates.length - 1; i > 0; i--) {
+      const j = randomInt(i + 1);
+      [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+    const sample = [
+      ...candidates.filter((p) => anchors[p.name] === filters.difficulty),
+      ...candidates.filter((p) => !anchors[p.name]),
+    ].slice(0, 120);
+    if (!sample.length)
+      throw new BadRequestException(
+        '当前已发布人物中没有符合该难度和年代的候选。',
+      );
+    const selection = z
+      .object({ ids: z.array(z.string()).max(120) })
+      .strict()
+      .safeParse(
+        await this.agent.run(
+          {
+            task: 'select',
+            filters,
+            candidates: sample.map((p) => ({
+              ...p,
+              description: p.description?.slice(0, 600),
+              fixedDifficulty: anchors[p.name],
+            })),
+          },
+          signal,
+        ),
+      );
+    if (!selection.success)
+      throw new ServiceUnavailableException('人物筛选未完成，请重试。');
+    const eligible = sample.filter((p) => selection.data.ids.includes(p.id));
+    if (!eligible.length)
+      throw new BadRequestException(
+        '本次候选抽样没有可确认符合全部限定的人物，请放宽条件或重试。',
+      );
+    return eligible;
+  }
   async start(body: unknown, ip: string, signal: AbortSignal) {
     const parsed = filtersSchema.safeParse(body);
     if (!parsed.success)
@@ -151,110 +321,61 @@ export class GuessService {
     this.active++;
     try {
       const filters = parsed.data;
-      const people: Person[] = [];
-      // Bound reads; fail explicitly if the corpus exceeds capacity rather than silently omitting older entries.
-      for (let page = 0; page < 200; page++) {
-        const result = await this.page('person', page, signal);
-        people.push(...result.items);
-        if (!result.has_more) break;
-        if (page === 199)
-          throw new ServiceUnavailableException(
-            '人物库超过当前游戏候选容量，需扩展候选索引。',
-          );
-      }
-      const candidates = people.filter((p) => {
-        const tier = anchors[p.name];
-        if (tier && tier !== filters.difficulty) return false;
-        if (filters.from !== undefined || filters.to !== undefined) {
-          const start = p.birth_year ?? p.death_year,
-            end = p.death_year ?? p.birth_year;
-          // Let the agent inspect descriptions for dated activity when lifespan is unknown.
-          if (
-            start !== undefined &&
-            end !== undefined &&
-            ((filters.from !== undefined && end < filters.from) ||
-              (filters.to !== undefined && start > filters.to))
-          )
-            return false;
-        }
-        return true;
-      });
-      for (let i = candidates.length - 1; i > 0; i--) {
-        const j = randomInt(i + 1);
-        [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
-      }
-      const sample = [
-        ...candidates.filter((p) => anchors[p.name] === filters.difficulty),
-        ...candidates.filter((p) => !anchors[p.name]),
-      ].slice(0, 120);
-      if (!sample.length)
-        throw new BadRequestException(
-          '当前已发布人物中没有符合该难度和年代的候选。',
-        );
-      const selection = z
-        .object({ ids: z.array(z.string()).max(120) })
-        .strict()
-        .safeParse(
-          await this.agent.run(
-            {
-              task: 'select',
-              filters,
-              candidates: sample.map((p) => ({
-                ...p,
-                description: p.description?.slice(0, 600),
-                fixedDifficulty: anchors[p.name],
-              })),
-            },
-            signal,
-          ),
-        );
-      if (!selection.success)
-        throw new ServiceUnavailableException('人物筛选未完成，请重试。');
-      const eligible = sample.filter((p) => selection.data.ids.includes(p.id));
-      if (!eligible.length)
-        throw new BadRequestException(
-          '本次候选抽样没有可确认符合全部限定的人物，请放宽条件或重试。',
-        );
+      const catalogue = await this.waitShared(this.catalogue(), signal);
+      const eligible = await this.pool(filters, catalogue, signal);
       // Select uniformly among confirmed candidates; sparse evidence remains playable on very hard.
       while (eligible.length) {
         let person = eligible.splice(randomInt(eligible.length), 1)[0];
         const claims: Claim[] = [];
-        const direct = await this.page('fact_claim', 0, signal, {
-          p_subject: 'person',
-          p_subject_id: person.id,
-        });
+        const [direct, detail, related] = await Promise.all([
+          this.page('fact_claim', 0, signal, {
+            p_subject: 'person',
+            p_subject_id: person.id,
+          }),
+          this.db
+            .getClient()
+            .rpc('entry_detail', { p_id: person.id })
+            .abortSignal(signal),
+          this.db
+            .getClient()
+            .rpc('entry_context', { p_id: person.id, p_page: 0, p_limit: 20 })
+            .abortSignal(signal),
+        ]);
         claims.push(
           ...direct.items.filter(
             (c) => c.source?.title && c.note?.startsWith('原文：'),
           ),
         );
-        if (!claims.length) continue;
-        const detail = await this.db
-          .getClient()
-          .rpc('entry_detail', { p_id: person.id })
-          .abortSignal(signal);
-        if (detail.error || !detail.data || detail.data.type !== 'person')
+        if (
+          !claims.length ||
+          detail.error ||
+          !detail.data ||
+          detail.data.type !== 'person'
+        )
           continue;
         person = detail.data as Person;
-        const related = await this.db
-          .getClient()
-          .rpc('entry_context', { p_id: person.id, p_page: 0, p_limit: 20 })
-          .abortSignal(signal);
         if (related.error)
           throw new ServiceUnavailableException('人物关系暂时无法读取。');
         const context = related.data;
-        for (const edge of (context?.edges || [])
+        const edges = (context?.edges || [])
           .filter((e: { subject_table: string }) =>
             ['person_relationship', 'person_event'].includes(e.subject_table),
           )
-          .slice(0, 6)) {
-          const result = await this.page('fact_claim', 0, signal, {
-            p_subject: edge.subject_table,
-            p_subject_id: edge.id,
-          });
+          .slice(0, 6);
+        const relatedClaims = await Promise.all(
+          edges.map((edge: { subject_table: string; id: string }) =>
+            this.page('fact_claim', 0, signal, {
+              p_subject: edge.subject_table,
+              p_subject_id: edge.id,
+            }),
+          ),
+        );
+        for (const result of relatedClaims) {
           claims.push(
             ...result.items
-              .filter((c) => c.source?.title && c.note?.startsWith('原文：'))
+              .filter(
+                (c: Claim) => c.source?.title && c.note?.startsWith('原文：'),
+              )
               .slice(0, 5),
           );
         }

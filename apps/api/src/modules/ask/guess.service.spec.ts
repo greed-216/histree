@@ -44,6 +44,111 @@ function make() {
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
 describe('Guess game privacy and lifecycle', () => {
+  it('refreshes the catalogue in the background before expiry and rebuilds screening for the new snapshot', async () => {
+    jest.useFakeTimers();
+    const { service, agent, rpc } = make();
+    try {
+      await service.start(filters, 'a', signal);
+      service.onModuleInit();
+      jest.advanceTimersByTime(240000);
+      for (let i = 0; i < 20; i++) await Promise.resolve();
+      await service.start(filters, 'a', signal);
+      expect(agent.run).toHaveBeenCalledTimes(2);
+      expect(
+        rpc.mock.calls.filter(
+          ([name, args]) =>
+            name === 'content_page' && args.p_table === 'person',
+        ),
+      ).toHaveLength(2);
+    } finally {
+      service.onModuleDestroy();
+      jest.useRealTimers();
+    }
+  });
+  it('reuses candidate reads and screening but creates independent games with fresh evidence', async () => {
+    const { service, agent, rpc } = make();
+    const first = await service.start(filters, 'a', signal);
+    const second = await service.start(filters, 'a', signal);
+    expect(first.token).not.toBe(second.token);
+    expect(second).not.toHaveProperty('person');
+    expect(agent.run).toHaveBeenCalledTimes(1);
+    expect(
+      rpc.mock.calls.filter(
+        ([name, args]) => name === 'content_page' && args.p_table === 'person',
+      ),
+    ).toHaveLength(1);
+    expect(
+      rpc.mock.calls.filter(
+        ([name, args]) =>
+          name === 'content_page' && args.p_table === 'fact_claim',
+      ),
+    ).toHaveLength(2);
+    await service.start(
+      { ...filters, custom: 'another restriction' },
+      'a',
+      signal,
+    );
+    expect(agent.run).toHaveBeenCalledTimes(2);
+  });
+  it('refreshes expired candidates and never opens a cached person without current published evidence', async () => {
+    const { service, agent, rpc } = make();
+    await service.start(filters, 'a', signal);
+    const original = rpc.getMockImplementation()!;
+    rpc.mockImplementation((name, args) =>
+      name === 'content_page' && args.p_table === 'fact_claim'
+        ? {
+            abortSignal: () =>
+              Promise.resolve({
+                data: { items: [], has_more: false },
+                error: null,
+              }),
+          }
+        : original(name, args),
+    );
+    await expect(service.start(filters, 'a', signal)).rejects.toThrow(
+      '尚无可回溯原文',
+    );
+    expect(agent.run).toHaveBeenCalledTimes(1);
+    rpc.mockImplementation(original);
+    const now = jest.spyOn(Date, 'now').mockReturnValue(Date.now() + 300001);
+    try {
+      await service.start(filters, 'a', signal);
+      expect(agent.run).toHaveBeenCalledTimes(2);
+      expect(
+        rpc.mock.calls.filter(
+          ([name, args]) =>
+            name === 'content_page' && args.p_table === 'person',
+        ),
+      ).toHaveLength(2);
+    } finally {
+      now.mockRestore();
+    }
+  });
+  it('evicts a failed screening and shares pending screening without letting one cancellation abort the other game', async () => {
+    const { service, agent } = make();
+    agent.run.mockRejectedValueOnce(new Error('offline'));
+    await expect(service.start(filters, 'a', signal)).rejects.toThrow(
+      'offline',
+    );
+    let complete!: (value: unknown) => void;
+    agent.run.mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          complete = resolve;
+        }),
+    );
+    const controller = new AbortController();
+    const first = service.start(filters, 'a', controller.signal);
+    const cancelled = expect(first).rejects.toThrow('cancelled');
+    const second = service.start(filters, 'b', signal);
+    for (let i = 0; i < 20 && !complete; i++) await Promise.resolve();
+    expect(complete).toBeDefined();
+    controller.abort(new Error('cancelled'));
+    await cancelled;
+    complete({ ids: [person.id] });
+    expect((await second).token).toMatch(/^[a-f0-9]{64}$/);
+    expect(agent.run).toHaveBeenCalledTimes(2);
+  });
   it('reads candidates beyond the first 1000 published people', async () => {
     const { service, rpc } = make();
     const original = rpc.getMockImplementation()!;

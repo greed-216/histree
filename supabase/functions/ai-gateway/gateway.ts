@@ -4,6 +4,7 @@ export type GatewayConfig = {
   origins: string[];
   allowAnonymous: boolean;
   localDevelopment?: boolean;
+  upstreamHeadersTimeoutMs?: number;
 };
 export type GatewayDependencies = {
   verifyUser: (token: string, signal: AbortSignal) => Promise<string | null>;
@@ -24,6 +25,13 @@ export function createGateway(
   config: GatewayConfig,
   deps: GatewayDependencies,
 ) {
+  const headersTimeoutMs = config.upstreamHeadersTimeoutMs ?? 15000;
+  if (
+    !Number.isInteger(headersTimeoutMs) || headersTimeoutMs < 1 ||
+    headersTimeoutMs > 15000
+  ) {
+    throw new Error("Invalid upstream headers timeout");
+  }
   const upstream = new URL(config.upstream);
   if (
     upstream.protocol !== "https:" &&
@@ -118,6 +126,7 @@ export function createGateway(
     headers.set("X-Histree-Request-Id", requestId);
     const started = Date.now();
     let stage = "identity";
+    let headersTimedOut = false;
     const deadline = AbortSignal.timeout(130000);
     const upstreamAbort = new AbortController();
     const signal = AbortSignal.any([
@@ -236,16 +245,32 @@ export function createGateway(
           bytes: body === undefined ? 0 : encoder.encode(body).byteLength,
         }),
       );
-      const response = await deps.fetch(
-        `${config.upstream.replace(/\/$/, "")}${path}`,
-        {
-          method: request.method,
-          headers: upstreamHeaders,
-          body,
-          signal,
-          redirect: "error",
-        },
-      );
+      const headersAbort = new AbortController();
+      const headersTimer = setTimeout(() => {
+        headersTimedOut = true;
+        headersAbort.abort(
+          new DOMException(
+            "Upstream response headers timed out",
+            "TimeoutError",
+          ),
+        );
+      }, headersTimeoutMs);
+      let response: Response;
+      try {
+        response = await deps.fetch(
+          `${config.upstream.replace(/\/$/, "")}${path}`,
+          {
+            method: request.method,
+            headers: upstreamHeaders,
+            body,
+            signal: AbortSignal.any([signal, headersAbort.signal]),
+            redirect: "error",
+          },
+        );
+      } finally {
+        // Once headers arrive, keep the full streaming deadline instead.
+        clearTimeout(headersTimer);
+      }
       console.log(
         JSON.stringify({
           event: "upstream_headers",
@@ -300,12 +325,13 @@ export function createGateway(
           stage,
           error: error instanceof Error ? error.name : "unknown",
           deadline: deadline.aborted,
+          headersTimedOut,
           elapsedMs: Date.now() - started,
         }),
       );
       return json(
-        deadline.aborted ? 504 : 503,
-        deadline.aborted
+        deadline.aborted || headersTimedOut ? 504 : 503,
+        deadline.aborted || headersTimedOut
           ? "等待回复超时，请稍后重试"
           : "服务暂时无法连接，请稍后重试",
       );

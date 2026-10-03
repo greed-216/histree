@@ -3,7 +3,7 @@ const check = (value: unknown, message = "assertion failed") => {
   if (!value) throw new Error(message);
 };
 const secret = "a".repeat(64);
-function fixture(allowAnonymous = true) {
+function fixture(allowAnonymous = true, upstreamHeadersTimeoutMs = 15000) {
   const calls: Array<{ url: string; init: RequestInit }> = [];
   const quotas: Array<[string, string]> = [];
   const deps: GatewayDependencies = {
@@ -23,6 +23,7 @@ function fixture(allowAnonymous = true) {
     secret,
     origins: ["https://greed-216.github.io"],
     allowAnonymous,
+    upstreamHeadersTimeoutMs,
   }, deps);
   const request = (path: string, init: RequestInit = {}) =>
     handler(
@@ -167,4 +168,55 @@ Deno.test("upstream status survives and redirects cannot leak the service secret
   const r = await f.request("/ask/status");
   check(r.status === 429);
   check((await r.json()).message === "busy");
+});
+
+Deno.test("stalled upstream headers fail promptly without retrying or debiting twice", async () => {
+  const f = fixture(true, 20), token = await session(f);
+  f.deps.fetch = ((url, init) => {
+    f.calls.push({ url: String(url), init: init! });
+    return new Promise<Response>((_resolve, reject) => {
+      init!.signal!.addEventListener(
+        "abort",
+        () => reject(init!.signal!.reason),
+        { once: true },
+      );
+    });
+  }) as typeof fetch;
+  const r = await f.request("/ask", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-histree-anonymous": token,
+    },
+    body: '{"question":"test"}',
+  });
+  check(r.status === 504);
+  check(f.calls.length === 1);
+  check(f.quotas.filter((q) => q[1] === "ask").length === 1);
+});
+Deno.test("the headers deadline never truncates a slow healthy response stream", async () => {
+  const f = fixture(true, 20);
+  let source!: ReadableStreamDefaultController<Uint8Array>,
+    upstreamSignal!: AbortSignal;
+  f.deps.fetch = ((_url, init) => {
+    upstreamSignal = init!.signal!;
+    return Promise.resolve(
+      new Response(
+        new ReadableStream<Uint8Array>({
+          start(c) {
+            source = c;
+            c.enqueue(new TextEncoder().encode("first\n"));
+          },
+        }),
+      ),
+    );
+  }) as typeof fetch;
+  const r = await f.request("/ask/status"), reader = r.body!.getReader();
+  check(new TextDecoder().decode((await reader.read()).value) === "first\n");
+  await new Promise((resolve) => setTimeout(resolve, 40));
+  check(!upstreamSignal.aborted);
+  source.enqueue(new TextEncoder().encode("result\n"));
+  source.close();
+  check(new TextDecoder().decode((await reader.read()).value) === "result\n");
+  check((await reader.read()).done);
 });

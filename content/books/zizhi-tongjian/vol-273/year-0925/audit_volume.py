@@ -80,6 +80,6 @@ for table, row_ids in ids_by_table.items():
         actual.update((r['id'], r) for r in rows)
     assert len(actual) == len(expected)
     counts[table] = len(actual)
-result=dict(verified=True,at=datetime.now(timezone.utc).isoformat(),volume=273,year=925,body_paragraphs=37,body_source_lines=[84,120],volume_complete=True,year_complete=False,next_volume=274,next_year=925,next_paragraph=next_ledger[0]['id'],scope='volume',year_body_paragraphs_outside_volume=30,batch_sha256=sha_by_batch,unique_public_counts=counts,anonymous_readback_verified=True)
+result=dict(verified=True,at=datetime.now(timezone.utc).isoformat(),volume=273,year=925,body_paragraphs=37,body_source_lines=[84,120],volume_complete=True,year_complete=False,next_volume=274,next_year=925,next_paragraph=next_ledger[0]['id'],scope='volume',year_body_paragraphs_outside_volume=sum(r.get('kind')!='section_heading' for r in next_ledger),batch_sha256=sha_by_batch,unique_public_counts=counts,anonymous_readback_verified=True)
 (HERE/'volume-audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(result)

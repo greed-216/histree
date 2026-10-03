@@ -251,5 +251,5 @@ for n in range(1,13):ledger[n-1].update(event_keys=used[n],batch_key=B['batch_ke
 (P/'content-batch.json').write_text(payload)
 (P/'reused-keys.json').write_text(json.dumps(sorted(reused),ensure_ascii=False,indent=2)+'\n')
 (YEAR/'paragraphs.json').write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n')
-(P/'coverage.json').write_text(json.dumps(dict(book='资治通鉴',volume=274,year=925,primary_source_key=main_sources[0],primary_source_keys=main_sources,paragraphs=[Q[n]['id'] for n in range(1,13)],next_paragraph=Q[13]['id'],next_volume=274,supplements=supplements,coverage='卷274第1—12段，原文件6—17行；925年十一月蜀主返京、各州归降、宗弼夺权、渡绵江、正式降蜀及十二月东川任用和两府受馈失衡。卷273本年37段已完成，卷274尚余18段，925年未完成。',reviewed_questions=[dict(paragraph_id=Q[n]['id'],note=review) for n in range(1,13)]),ensure_ascii=False,indent=2)+'\n')
+(P/'coverage.json').write_text(json.dumps(dict(book='资治通鉴',volume=274,year=925,primary_source_key=main_sources[0],primary_source_keys=main_sources,paragraphs=[Q[n]['id'] for n in range(1,13)],next_paragraph=Q[13]['id'],next_volume=274,supplements=supplements,coverage='卷274第1—12段，原文件6—17行；925年十一月蜀主返京、各州归降、宗弼夺权、渡绵江、正式降蜀及十二月东川任用和两府受馈失衡。卷273本年37段已完成，卷274尚余17正文段，925年未完成。',reviewed_questions=[dict(paragraph_id=Q[n]['id'],note=review) for n in range(1,13)]),ensure_ascii=False,indent=2)+'\n')
 print({k:len(v) for k,v in B.items() if isinstance(v,list)})

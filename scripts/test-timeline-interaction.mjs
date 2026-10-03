@@ -39,7 +39,7 @@ try {
  for(const ratio of [.3,.4,.5,.6]){await point(ratio);await page.waitForTimeout(250);}
  assert.equal(yearRequests,afterClick,'Even prolonged hovering does not refetch list');
  await page.mouse.move(5,5);assert.equal(await slider.inputValue(),String(ordinal(907)));
- const zoom=page.getByRole('button',{name:'放大当前年代'});await zoom.focus();await zoom.press('Enter');
+ const zoom=page.getByRole('button',{name:'放大',exact:true});await zoom.focus();await zoom.press('Enter');
  const ticks=await page.locator('.timeline-chart text').allTextContents();await point(.4);
  assert.deepEqual(await page.locator('.timeline-chart text').allTextContents(),ticks,'Hover leaves zoom axis fixed');
  const card=page.getByRole('link',{name:/阅读全文与出处/}).first();await card.scrollIntoViewIfNeeded();const returnScroll=await page.evaluate(()=>scrollY);

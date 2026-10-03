@@ -141,40 +141,68 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .graph-context { position: sticky; top: 65px; z-index: 20; background: #f5f5efee; backdrop-filter: blur(12px); border-radius: 10px; padding: 5px 0; }
 @media(max-width:767px) { .graph-context { position: static; } }
 
-/* Temporal exploration: published event density against a continuous calendar. */
-.timeline-river { border: 1px solid #e3dece; border-radius: 24px; padding: 28px 32px 20px; background: radial-gradient(ellipse at 50% 45%, #faf4e5, #f5f3eb); overflow: hidden; }
-.timeline-topline { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.timeline-controls { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 24px; }
-.timeline-button { border: 1px solid #d8d2c2; background: #fffdf6; padding: 7px 12px; border-radius: 8px; font-size: 13px; color: #365f57; }
-.timeline-button[aria-pressed=true] { background: #e2ebe5; }
-.timeline-year-input { width: 155px; border: 1px solid #d8d2c2; background: #fffdf6; padding: 7px 10px; border-radius: 8px; font-size: 13px; }
-.timeline-chart { width: 100%; display: block; cursor: crosshair; margin-top: 8px; }
-.timeline-selected { text-align: center; }
-.timeline-selected h2 { font-family: Georgia, 'Songti SC', serif; font-size: clamp(32px, 4vw, 58px); color: #2d4f49; letter-spacing: .08em; margin: 8px 0 16px; }
-.timeline-slider { display: flex; align-items: center; gap: 16px; }
-.timeline-slider input { width: 100%; accent-color: #446e60; cursor: pointer; }
-.timeline-note { font-size: 12px; color: #777469; line-height: 1.8; margin-top: 16px; }
-.timeline-event:hover { background: #fcfaf1; }
-@media(max-width: 640px) { .timeline-river { padding: 20px 14px; border-radius: 16px; } .timeline-chart { min-height: 200px; } .timeline-controls { gap: 10px; } }
-
-.timeline-river { background: radial-gradient(ellipse at 12% 10%, #fffdf5, transparent 60%), #f3f1e9; border-color: #e1dfd1; box-shadow: 0 12px 48px #354d3c06; }
-.timeline-stage { position: relative; margin-top: 24px; }
-.timeline-chart { margin: 0; }
-.timeline-preview { position: relative; width: min(100%, 650px); min-height: 150px; padding: 0 8px 16px; pointer-events: none; }
-.timeline-preview-title { display: flex; align-items: baseline; gap: 16px; margin: 6px 0 10px; }
-.timeline-preview-title h2 { font-family: Georgia, 'Songti SC', serif; font-size: 36px; color: #315e52; }
-.timeline-preview-title span { font-size: 12px; color: #8b887a; }
-.timeline-preview ul { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: 'Songti SC', serif; color: #625a48; font-size: 15px; line-height: 1.8; }
-.timeline-preview li::before { content: '·'; color: #ae8b51; margin-right: 6px; }
-.timeline-selected h2 { font-size: clamp(28px, 3vw, 42px); margin-bottom: 12px; }
-@media(min-width: 768px) { .timeline-preview { position: absolute; top: 0; right: 0; width: 380px; min-height: 125px; padding: 12px 18px; background: #fffdf5e8; border: 1px solid #e4decd; border-radius: 12px; box-shadow: 0 5px 22px #61502c08; } .timeline-preview ul { display: block; } .timeline-preview-title h2 { font-size: 30px; } }
-@media(max-width: 640px) { .timeline-preview-title h2 { font-size: 30px; } .timeline-preview { min-height: 185px; } }
-/* Keep the preview above the plotted data, so it never hides the fixed marker. */
-@media(min-width: 768px) {
- .timeline-preview { position: relative; top: auto; right: auto; width: 100%; min-height: 134px; margin-bottom: 24px; padding: 18px 24px; display: grid; grid-template-columns: 210px 1fr; column-gap: 28px; align-content: center; }
- .timeline-preview .eyebrow { grid-column: 1; }
- .timeline-preview-title { grid-column: 1; display: block; margin-bottom: 0; }
- .timeline-preview-title span { display: block; }
- .timeline-preview ul, .timeline-preview > p:not(.eyebrow) { grid-column: 2; grid-row: 1 / 3; align-self: center; border-left: 1px solid #e4decd; padding-left: 28px; }
- .timeline-preview ul { line-height: 1.95; }
+/* Chronicle: a quiet paper canvas, editorial typography and an ink-and-gold river. */
+.timeline-page { --timeline-ink: #274f47; --timeline-gold: #ae8a4f; }
+.timeline-page .explore-heading { padding-bottom: 8px; }
+.timeline-page .explore-heading h1 { font-family: 'Songti SC', 'Noto Serif CJK SC', Georgia, serif; font-size: clamp(30px,3.2vw,44px); letter-spacing: .06em; }
+.timeline-page .explore-heading > p:last-child { font-size: 13px; color: #8b8a80; }
+.timeline-river { padding: 30px 36px 22px; background: #faf8f1; border: 1px solid #e4e1d7; border-radius: 4px; box-shadow: 0 12px 45px #433e2607; position: relative; overflow: hidden; }
+.timeline-river::before { content: ''; position: absolute; top: 0; left: 36px; width: 36px; height: 3px; background: #ae8a4f; }
+.timeline-topline { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-bottom: 22px; border-bottom: 1px solid #e7e3d8; }
+.timeline-topline .eyebrow { letter-spacing: .24em; font-size: 11px; color: #a18554; }
+.timeline-topline > div > p:last-child { font-size: 14px; margin-top: 7px; letter-spacing: .04em; color: #6b7169; }
+.timeline-topline > p { font-size: 11px; color: #98968b; }
+.timeline-controls { display: flex; justify-content: space-between; gap: 14px; margin-top: 16px; align-items: center; }
+.timeline-button { border: 1px solid #d9ddd0; background: transparent; padding: 6px 10px; border-radius: 3px; font-size: 11px; color: #52685d; transition: background .15s; }
+.timeline-button:hover, .timeline-button[aria-pressed=true] { background: #eaf0e6; border-color: #b7c8b8; }
+.timeline-year-input { width: 132px; border: 0; border-bottom: 1px solid #d6d7c9; padding: 6px 4px; font-size: 11px; background: transparent; border-radius: 0; }
+.timeline-controls label { font-size: 11px; color: #8f9387; }
+.timeline-stage { position: relative; margin-top: 30px; }
+.timeline-preview { display: grid; grid-template-columns: 200px 1fr; column-gap: 38px; align-content: center; min-height: 156px; padding: 6px 28px 14px 8px; pointer-events: none; }
+.timeline-preview .eyebrow { grid-column: 1; color: #aa8956; font-size: 10px; letter-spacing: .14em; }
+.timeline-preview-title { grid-column: 1; margin-top: 8px; }
+.timeline-preview-title h2 { font: 58px/1.2 Georgia, 'Songti SC', serif; color: #264d46; letter-spacing: -.03em; }
+.timeline-preview-title span { display: block; margin-top: 10px; font-size: 10px; color: #969a8e; letter-spacing: .1em; }
+.timeline-preview ul, .timeline-preview > p:not(.eyebrow) { grid-column: 2; grid-row: 1 / 3; align-self: center; padding-left: 30px; border-left: 1px solid #dddacb; color: #5a604f; font-family: 'Songti SC', Georgia, serif; font-size: 17px; line-height: 1.95; }
+.timeline-preview li { position: relative; }
+.timeline-preview li::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: #b79b63; vertical-align: middle; margin: 0 12px 3px 0; }
+.timeline-chart { width: 100%; display: block; cursor: crosshair; margin-top: 20px; }
+.timeline-chart text { font-family: Georgia, 'Songti SC', serif; }
+.timeline-selected { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin: 12px 0 18px; }
+.timeline-selected .eyebrow { color: #a2a295; font-size: 10px; }
+.timeline-selected h2 { font: 19px Georgia, 'Songti SC', serif; letter-spacing: .08em; color: #365f53; }
+.timeline-slider { display: flex; align-items: center; gap: 18px; }
+.timeline-slider input { width: 100%; height: 2px; accent-color: #315c50; cursor: pointer; }
+.timeline-slider .timeline-button { border: 0; font-size: 18px; padding: 0 8px; }
+.timeline-note { font-size: 10px; color: #a3a394; line-height: 1.8; margin-top: 20px; text-align: center; }
+.timeline-event { border: 0; border-top: 1px solid #dddccd; background: transparent; border-radius: 0; padding: 24px 12px 20px; box-shadow: none; }
+.timeline-event:hover { background: #f6f5ec; border-color: #9caa90; box-shadow: none; }
+.timeline-event h3 { font-weight: 400; line-height: 1.7; }
+.timeline-event .eyebrow { font-size: 10px; color: #9c957b; }
+.timeline-event > span { font-size: 11px; }
+@media(max-width: 640px) {
+ .timeline-river { padding: 22px 16px 16px; }
+ .timeline-topline { gap: 14px; padding-bottom: 16px; }
+ .timeline-controls { flex-wrap: wrap; }
+ .timeline-stage { margin-top: 24px; }
+ .timeline-preview { grid-template-columns: 110px 1fr; column-gap: 12px; padding: 0; min-height: 195px; }
+ .timeline-preview-title h2 { font-size: 35px; }
+ .timeline-preview-title span { font-size: 9px; letter-spacing: 0; }
+ .timeline-preview ul, .timeline-preview > p:not(.eyebrow) { padding-left: 14px; font-size: 13px; line-height: 1.9; }
+ .timeline-preview li::before { display: none; }
+ .timeline-chart { min-height: 200px; margin-top: 12px; }
+ .timeline-note { text-align: left; }
+ .timeline-selected { margin-top: 4px; }
 }
+.timeline-chart { cursor: grab; touch-action: pan-y; user-select: none; }
+.timeline-chart:active, .timeline-minimap:active { cursor: grabbing; }
+.timeline-window-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; color: #888776; font: 12px Georgia, 'Songti SC', serif; }
+.timeline-button:disabled { opacity: .35; cursor: default; }
+.timeline-zoom { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.timeline-zoom > span { color: #8c907f; font-size: 11px; margin-left: 6px; }
+.timeline-overview { margin-top: 18px; border-top: 1px solid #e5e1d5; padding-top: 20px; }
+.timeline-overview-labels, .timeline-overview-keys { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 10px; color: #8e9281; }
+.timeline-minimap { width: 100%; height: 64px; display: block; cursor: grab; touch-action: pan-y; user-select: none; }
+.timeline-overview-keys { margin-bottom: 22px; }
+@media(max-width:640px) { .timeline-window-heading { font-size: 10px; gap: 4px; } .timeline-window-heading .timeline-button { padding: 6px; } .timeline-overview-labels > span:nth-child(2) { font-size: 9px; text-align: center; max-width: 130px; } .timeline-minimap { height: 56px; } }
+@media(max-width:640px) { .timeline-chart { min-height: 120px; } .timeline-chart text { font-size: 30px; } .timeline-chart g:has(> rect) > rect, .timeline-chart g:has(> rect) > text { display: none; } }

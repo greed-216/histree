@@ -13,7 +13,7 @@
     "test:atlas": "node scripts/test-atlas.mjs",
     "test:map": "node scripts/test-map-document.mjs",
     "test:content": "node scripts/test-content-import.mjs",
-    "test:timeline": "node scripts/test-timeline.mjs",
+    "test:timeline": "node scripts/test-timeline.mjs && node scripts/test-timeline-viewport.mjs",
     "test:explore": "node scripts/test-explore.mjs"
   },
   "keywords": [],

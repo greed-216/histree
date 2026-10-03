@@ -38,3 +38,9 @@ python3 scripts/search-history-library.py --id '<搜索返回的完整段落ID>'
 4. 先提交来源快照，再使用所得固定commit生成出处URL；仍按主Skill校验批次和只读预检，只有当前任务授权发布才执行`--apply`。搜索与导出不改变录入游标。
 
 规则与完整处理流程见 [规范化说明](../../../docs/HISTORY_TEXT_NORMALIZATION.md)，参数说明见 [检索文档](../../../docs/HISTORY_LIBRARY.md)。
+
+## 卷内传主与电子章节标题
+
+EPUB章节题可能只选同卷的一位传主，分段记录的section_title不能单独证明当前段落属于该传。例如《宋史》卷262的EPUB原题李濤傳，正文卷题为列传第二十一，开篇李穀，韩熙载与李谷谈话在李谷传内。出处展示应依据正文核对的卷号、传主，并在定位中保留原EPUB题名说明。
+
+核对时查看原TXT卷题和传主起始段，导出证据并保留段落ID及原字。已发布出处标签的更正单列content/revisions中的plan、定向更新脚本和匿名回查证明，不覆盖原发布批次、电子底本或快照。示例见content/revisions/2026-10-03-songshi-262-ligu-heading/。

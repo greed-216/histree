@@ -15,6 +15,7 @@ try {
     let lastFilters;
     let revealCalls = 0;
     let expireNext = false;
+    let failNext = false;
     const token = "a".repeat(64);
     await ctx.route("**/*", async (route) => {
       const url = new URL(route.request().url());
@@ -43,6 +44,15 @@ try {
       if (url.pathname.endsWith("/ask/guess/act")) {
         const body = route.request().postDataJSON();
         assert.equal(body.token, token);
+        if (failNext) {
+          failNext = false;
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          return route.fulfill({
+            status: 503,
+            contentType: "application/json",
+            body: JSON.stringify({ message: "裁判暂时失败，请重试。" }),
+          });
+        }
         if (expireNext) {
           expireNext = false;
           return route.fulfill({
@@ -123,9 +133,68 @@ try {
       .filter({ hasText: "请只问一个是非问题" })
       .waitFor();
     assert.equal(state.turns.length, 0);
+    assert.equal(
+      await page.getByLabel("是非问题", { exact: true }).inputValue(),
+      "你是哪个朝代的？",
+    );
+    await page.getByText("本次操作未计入次数", { exact: true }).waitFor();
+    const visibleFeedback = async (locator) => {
+      await page.waitForFunction(
+        (text) => {
+          const element = [
+            ...document.querySelectorAll('[role="status"], [role="alert"]'),
+          ].find((e) =>
+            e.textContent.replace(/\s/g, "").includes(text.replace(/\s/g, "")),
+          );
+          if (!element) return false;
+          const rect = element.getBoundingClientRect();
+          return rect.top >= 0 && rect.bottom <= innerHeight;
+        },
+        await locator.innerText(),
+      );
+    };
+    await visibleFeedback(
+      page.getByRole("status").filter({ hasText: "本次操作未计入次数" }),
+    );
+    for (let i = 1; i <= 9; i++) {
+      await page
+        .getByLabel("是非问题", { exact: true })
+        .fill(i === 9 ? "是姓李么？" : `第${i}个是非问题`);
+      await page.getByRole("button", { name: "提问", exact: true }).click();
+      await page.waitForFunction(
+        (n) => document.querySelectorAll('[role="log"] > div').length === n,
+        i,
+      );
+    }
+    assert.equal(state.remaining, 21);
+    await page.getByLabel("是非问题", { exact: true }).fill("你是哪个朝代的？");
+    await page.getByRole("button", { name: "提问", exact: true }).click();
+    await page.getByText("本次操作未计入次数", { exact: true }).waitFor();
+    await visibleFeedback(
+      page.getByRole("status").filter({ hasText: "本次操作未计入次数" }),
+    );
+    assert.equal(state.turns.length, 9);
+    failNext = true;
+    await page.getByLabel("是非问题", { exact: true }).fill("你是皇帝吗？");
+    await page.getByRole("button", { name: "提问", exact: true }).click();
+    await page
+      .getByRole("button", { name: "正在处理…", exact: true })
+      .waitFor();
+    await page.getByRole("status").filter({ hasText: "正在核对" }).waitFor();
+    await page.getByRole("alert").filter({ hasText: "裁判暂时失败" }).waitFor();
+    await visibleFeedback(page.getByRole("alert"));
+    assert.equal(
+      await page.getByLabel("是非问题", { exact: true }).inputValue(),
+      "你是皇帝吗？",
+    );
+    assert.equal(state.turns.length, 9);
     await page.getByLabel("是非问题", { exact: true }).fill("你生活在五代吗？");
     await page.getByRole("button", { name: "提问", exact: true }).click();
-    await page.getByRole("log").getByText("是", { exact: true }).waitFor();
+    await page
+      .getByRole("log")
+      .getByText("是", { exact: true })
+      .last()
+      .waitFor();
     await page.getByRole("button", { name: "领取提示 1" }).click();
     await page.getByText("提示 1：我曾在五代时期活动。").waitFor();
     await page.reload();

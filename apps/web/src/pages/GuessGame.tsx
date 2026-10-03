@@ -33,6 +33,7 @@ export function GuessGame() {
   const [notice, setNotice] = useState("");
   const abort = useRef<AbortController | null>(null);
   const log = useRef<HTMLDivElement | null>(null);
+  const feedback = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const controller = new AbortController();
     abort.current = controller;
@@ -89,6 +90,14 @@ export function GuessGame() {
       behavior: "smooth",
     });
   }, [game?.turns.length]);
+  useEffect(() => {
+    if (notice || error) {
+      feedback.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [notice, error]);
   async function request(path: "start" | "act", body: unknown) {
     if (busy) return;
     const controller = new AbortController();
@@ -108,7 +117,7 @@ export function GuessGame() {
       }
       setGame(state);
       setNotice(state.notice || "");
-      setText("");
+      if (!state.notice) setText("");
     } catch (err) {
       if (!controller.signal.aborted) {
         setError(err instanceof Error ? err.message : "请求未完成，请重试。");
@@ -127,6 +136,37 @@ export function GuessGame() {
     }
   }
   const active = game && !game.outcome;
+  const feedbackPanel = (
+    <div ref={feedback} className="space-y-2" aria-busy={busy}>
+      <p role="status" aria-live="polite" className="text-sm text-teal-800">
+        {busy
+          ? "正在核对已发布史料，请稍候…"
+          : available === null
+            ? "正在检查游戏服务…"
+            : !available
+              ? "猜人物服务暂未就绪。"
+              : ""}
+      </p>
+      {notice && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-7 text-amber-900"
+        >
+          <p className="font-medium">本次操作未计入次数</p>
+          <p>{notice}</p>
+        </div>
+      )}
+      {error && (
+        <p
+          role="alert"
+          className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-7 text-amber-900"
+        >
+          {error}
+        </p>
+      )}
+    </div>
+  );
   const setup = (
     <form
       className="reading-card space-y-5"
@@ -326,6 +366,7 @@ export function GuessGame() {
               ))
             )}
           </div>
+          {feedbackPanel}
           {active && (
             <>
               <form
@@ -375,7 +416,11 @@ export function GuessGame() {
                 />
                 <div className="flex flex-wrap justify-between gap-3">
                   <button className={button} disabled={busy || !text.trim()}>
-                    {mode === "question" ? "提问" : "确认猜测"}
+                    {busy
+                      ? "正在处理…"
+                      : mode === "question"
+                        ? "提问"
+                        : "确认猜测"}
                   </button>
                   <button
                     type="button"
@@ -460,20 +505,7 @@ export function GuessGame() {
         </section>
       )}
       {game?.outcome && setup}
-      <p role="status" aria-live="polite" className="text-sm text-teal-800">
-        {busy
-          ? "正在核对已发布史料，请稍候…"
-          : available === null
-            ? "正在检查游戏服务…"
-            : !available
-              ? "猜人物服务暂未就绪。"
-              : notice}
-      </p>
-      {error && (
-        <p role="alert" className="reading-card text-sm text-amber-800">
-          {error}
-        </p>
-      )}
+      {!game && feedbackPanel}
     </div>
   );
 }

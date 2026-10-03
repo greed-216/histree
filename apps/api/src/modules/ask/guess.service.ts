@@ -153,11 +153,11 @@ export class GuessService {
       const filters = parsed.data;
       const people: Person[] = [];
       // Bound reads; fail explicitly if the corpus exceeds capacity rather than silently omitting older entries.
-      for (let page = 0; page < 20; page++) {
+      for (let page = 0; page < 200; page++) {
         const result = await this.page('person', page, signal);
         people.push(...result.items);
         if (!result.has_more) break;
-        if (page === 19)
+        if (page === 199)
           throw new ServiceUnavailableException(
             '人物库超过当前游戏候选容量，需扩展候选索引。',
           );

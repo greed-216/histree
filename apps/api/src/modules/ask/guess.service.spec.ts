@@ -44,6 +44,34 @@ function make() {
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
 describe('Guess game privacy and lifecycle', () => {
+  it('reads candidates beyond the first 1000 published people', async () => {
+    const { service, rpc } = make();
+    const original = rpc.getMockImplementation()!;
+    rpc.mockImplementation((name, args) => {
+      if (name === 'content_page' && args.p_table === 'person') {
+        const page = (args as { p_page?: number }).p_page ?? 0;
+        return {
+          abortSignal: () =>
+            Promise.resolve({
+              data: { items: page === 20 ? [person] : [], has_more: page < 20 },
+              error: null,
+            }),
+        };
+      }
+      return original(name, args);
+    });
+    const started = await service.start(filters, 'a', signal);
+    expect(started.token).toMatch(/^[a-f0-9]{64}$/);
+    expect(rpc).toHaveBeenCalledWith(
+      'content_page',
+      expect.objectContaining({
+        p_table: 'person',
+        p_page: 20,
+        p_admin: false,
+      }),
+    );
+  });
+
   it('keeps identity and evidence server-side until a deterministic guess wins', async () => {
     const { service } = make();
     const started = await service.start(filters, 'a', signal);

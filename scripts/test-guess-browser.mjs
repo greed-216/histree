@@ -61,18 +61,25 @@ try {
             body: JSON.stringify({ message: "游戏已过期，请重新开局。" }),
           });
         }
-        if (body.action === "question") {
+        if (
+          body.action === "question" &&
+          !["朱温", "朱全忠"].includes(body.text)
+        ) {
           if (body.text.includes("哪个朝代"))
             return reply({
               ...state,
-              notice: "请只问一个是非问题；猜姓名请使用“猜姓名”。",
+              notice:
+                "请问一个是非问题，或提出一个人物名字；不能直接索要答案或候选名单。",
             });
           state.turns.push({ text: body.text, answer: "是", kind: "question" });
           state.remaining--;
         }
         if (body.action === "hint") state.hints.push("我曾在五代时期活动。");
-        if (body.action === "guess") {
-          const correct = body.text === "朱温";
+        if (
+          body.action === "guess" ||
+          (body.action === "question" && ["朱温", "朱全忠"].includes(body.text))
+        ) {
+          const correct = ["朱温", "朱全忠"].includes(body.text);
           state.turns.push({
             text: body.text,
             answer: correct ? "猜对了" : "不是",
@@ -126,15 +133,17 @@ try {
       await page.getByRole("link", { name: "阅读人物资料 →" }).count(),
       0,
     );
-    await page.getByLabel("是非问题", { exact: true }).fill("你是哪个朝代的？");
-    await page.getByRole("button", { name: "提问", exact: true }).click();
+    await page
+      .getByLabel("问题或人物名字", { exact: true })
+      .fill("你是哪个朝代的？");
+    await page.getByRole("button", { name: "提交", exact: true }).click();
     await page
       .getByRole("status")
-      .filter({ hasText: "请只问一个是非问题" })
+      .filter({ hasText: "请问一个是非问题" })
       .waitFor();
     assert.equal(state.turns.length, 0);
     assert.equal(
-      await page.getByLabel("是非问题", { exact: true }).inputValue(),
+      await page.getByLabel("问题或人物名字", { exact: true }).inputValue(),
       "你是哪个朝代的？",
     );
     await page.getByText("本次操作未计入次数", { exact: true }).waitFor();
@@ -158,25 +167,29 @@ try {
     );
     for (let i = 1; i <= 9; i++) {
       await page
-        .getByLabel("是非问题", { exact: true })
+        .getByLabel("问题或人物名字", { exact: true })
         .fill(i === 9 ? "是姓李么？" : `第${i}个是非问题`);
-      await page.getByRole("button", { name: "提问", exact: true }).click();
+      await page.getByRole("button", { name: "提交", exact: true }).click();
       await page.waitForFunction(
         (n) => document.querySelectorAll('[role="log"] > div').length === n,
         i,
       );
     }
     assert.equal(state.remaining, 21);
-    await page.getByLabel("是非问题", { exact: true }).fill("你是哪个朝代的？");
-    await page.getByRole("button", { name: "提问", exact: true }).click();
+    await page
+      .getByLabel("问题或人物名字", { exact: true })
+      .fill("你是哪个朝代的？");
+    await page.getByRole("button", { name: "提交", exact: true }).click();
     await page.getByText("本次操作未计入次数", { exact: true }).waitFor();
     await visibleFeedback(
       page.getByRole("status").filter({ hasText: "本次操作未计入次数" }),
     );
     assert.equal(state.turns.length, 9);
     failNext = true;
-    await page.getByLabel("是非问题", { exact: true }).fill("你是皇帝吗？");
-    await page.getByRole("button", { name: "提问", exact: true }).click();
+    await page
+      .getByLabel("问题或人物名字", { exact: true })
+      .fill("你是皇帝吗？");
+    await page.getByRole("button", { name: "提交", exact: true }).click();
     await page
       .getByRole("button", { name: "正在处理…", exact: true })
       .waitFor();
@@ -184,12 +197,14 @@ try {
     await page.getByRole("alert").filter({ hasText: "裁判暂时失败" }).waitFor();
     await visibleFeedback(page.getByRole("alert"));
     assert.equal(
-      await page.getByLabel("是非问题", { exact: true }).inputValue(),
+      await page.getByLabel("问题或人物名字", { exact: true }).inputValue(),
       "你是皇帝吗？",
     );
     assert.equal(state.turns.length, 9);
-    await page.getByLabel("是非问题", { exact: true }).fill("你生活在五代吗？");
-    await page.getByRole("button", { name: "提问", exact: true }).click();
+    await page
+      .getByLabel("问题或人物名字", { exact: true })
+      .fill("你生活在五代吗？");
+    await page.getByRole("button", { name: "提交", exact: true }).click();
     await page
       .getByRole("log")
       .getByText("是", { exact: true })
@@ -202,9 +217,12 @@ try {
       .getByRole("log")
       .getByText("你生活在五代吗？", { exact: false })
       .waitFor();
-    await page.getByRole("button", { name: "猜姓名", exact: true }).click();
-    await page.getByLabel("人物姓名", { exact: true }).fill("朱温");
-    await page.getByRole("button", { name: "确认猜测" }).click();
+    assert.equal(
+      await page.getByRole("button", { name: "猜姓名", exact: true }).count(),
+      0,
+    );
+    await page.getByLabel("问题或人物名字", { exact: true }).fill("朱全忠");
+    await page.getByRole("button", { name: "提交" }).click();
     await page.getByRole("heading", { name: "你猜对了！" }).waitFor();
     assert.equal(
       await page

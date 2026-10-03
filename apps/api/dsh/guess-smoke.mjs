@@ -6,11 +6,12 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+const guessing = process.argv.includes('--guess');
 const directory = await mkdtemp(join(tmpdir(), 'histree-guess-smoke-'));
 const input = {
   task: 'question',
   person: { name: '测试人物' },
-  question: '你是皇帝吗？',
+  question: guessing ? '你是李亚子吗？' : '你是皇帝吗？',
   claims: [{ id: 'c1', note: '原文：测试人物称帝。' }],
 };
 let requests = 0;
@@ -27,7 +28,11 @@ const server = createServer(async (req, res) => {
       0,
       'Game has no shell, filesystem, MCP or other tools',
     );
-    assert.ok(JSON.stringify(request.messages).includes('你是皇帝吗'));
+    assert.ok(
+      JSON.stringify(request.messages).includes(
+        guessing ? '你是李亚子吗' : '你是皇帝吗',
+      ),
+    );
     if (requests === 1) {
       assert.ok(
         !JSON.stringify(request.messages).includes('测试人物称帝'),
@@ -70,9 +75,11 @@ const server = createServer(async (req, res) => {
       delta: {
         type: 'text_delta',
         text: JSON.stringify(
-          requests === 1
-            ? { kind: 'yes_no', question: '你曾经担任皇帝吗？' }
-            : { verdict: 'yes', claims: ['c1'] },
+          guessing
+            ? { kind: 'guess', question: '李亚子' }
+            : requests === 1
+              ? { kind: 'yes_no', question: '你曾经担任皇帝吗？' }
+              : { verdict: 'yes', claims: ['c1'] },
         ),
       },
     });
@@ -121,9 +128,11 @@ try {
   if (error) throw error;
   assert.deepEqual(result, {
     type: 'result',
-    data: { verdict: 'yes', claims: ['c1'] },
+    data: guessing
+      ? { verdict: 'guess', name: '李亚子', claims: [] }
+      : { verdict: 'yes', claims: ['c1'] },
   });
-  assert.equal(requests, 2);
+  assert.equal(requests, guessing ? 1 : 2);
   console.log(
     'Guess worker/dsh smoke passed: no tools, bounded JSON reply, fixture evidence, clean worker exit',
   );

@@ -1,0 +1,29 @@
+{
+  "book": "资治通鉴",
+  "volume": 277,
+  "year": 930,
+  "source_file": "resources/derived/tongjian/277.txt",
+  "source_sha256": "8c130d303183ced41b5123598dab718aef77fdcf16fab22cbe752d3533ace0ab",
+  "year_header_line": 5,
+  "body_source_lines": [
+    6,
+    60
+  ],
+  "body_paragraphs": 55,
+  "note": "930年全部正文在卷277原6—60行，共55段。第61行年界分隔、第62行931标题，不计930正文；本年度尚未开始录入。",
+  "excluded_non_body": [
+    {
+      "source_line": 61,
+      "text": "◎",
+      "reason": "下一年之前的年界分隔，不是930正文。"
+    },
+    {
+      "source_line": 62,
+      "text": "长兴二年辛卯，公元九三一年",
+      "reason": "931年标题，不是930正文。"
+    }
+  ],
+  "next_volume": 277,
+  "next_year": 931,
+  "next_body_source_line": 63
+}

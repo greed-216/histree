@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 276,
-    "year": 929,
-    "last_reviewed_paragraph": "zztj-v276-y0929-p032",
-    "next_paragraph": "zztj-v276-y0929-p033",
-    "next_paragraph_opening": "康福行至方渠，羌胡出兵邀福，福击走之；至青刚峡，遇吐蕃野利、大虫二族数千帐，皆不觉唐兵至，福遣卫审余掩击，大破之，杀获殆尽。由是威声大振，遂进至灵州，自是朔方始受代。",
-    "batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-05",
+    "volume": 277,
+    "year": 930,
+    "last_reviewed_paragraph": "zztj-v276-y0929-p036",
+    "next_paragraph": "zztj-v277-y0930-p001",
+    "next_paragraph_opening": "春，正月，董璋遣兵筑七寨于剑门。辛巳，孟知祥遣赵季良如梓州修好。",
+    "batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-06",
     "status": "in_progress",
-    "last_published_paragraph": "zztj-v276-y0929-p032"
+    "last_published_paragraph": "zztj-v276-y0929-p036"
   },
   "year_coverage": [
     {
@@ -920,7 +920,7 @@
     },
     {
       "year": 929,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         276
       ],
@@ -929,10 +929,24 @@
         "content/books/zizhi-tongjian/vol-276/year-0929/part-02",
         "content/books/zizhi-tongjian/vol-276/year-0929/part-03",
         "content/books/zizhi-tongjian/vol-276/year-0929/part-04",
-        "content/books/zizhi-tongjian/vol-276/year-0929/part-05"
+        "content/books/zizhi-tongjian/vol-276/year-0929/part-05",
+        "content/books/zizhi-tongjian/vol-276/year-0929/part-06"
       ],
+      "completed_volumes": [
+        276
+      ],
+      "note": "929年卷276全部36正文段、6批连续发布并逐条匿名回查；全年重新核验全部公开UUID、出处关联和原文快照通过。930年55段尚待处理。",
+      "year_audit": "content/books/zizhi-tongjian/vol-276/year-0929/year-audit.json"
+    },
+    {
+      "year": 930,
+      "status": "in_progress",
+      "volumes": [
+        277
+      ],
+      "batches": [],
       "completed_volumes": [],
-      "note": "929年卷276共36正文段，首32段已连续发布并逐条匿名回查，余4段待处理；全年未完成。"
+      "note": "930年卷277原6—60行共55正文段，年界回查，均待连续录入；第61—62行为分隔及931标题，不计930正文。"
     }
   ],
   "legacy_archives": [
@@ -3497,6 +3511,34 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-05",
       "primary_paragraph": "zztj-v276-y0929-p032",
       "required_action": "主睿圣文明光孝、新睿圣文明孝少光存异；改元大和本字，不太和、不重927即位。新同段中书令与主十二月纪时另留后批。"
+    },
+    {
+      "key": "929-v276-kangfu_battle_report_variants",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-06",
+      "primary_paragraph": "zztj-v276-y0929-p033",
+      "required_action": "主青刚峡数千帐/旧丁酉奏方渠三百余帐有地数差，不用奏报日解释全部；牛羊三万非人，杀获非全杀，丁酉为奏日，卫规范字沿前批，受代非改朝。"
+    },
+    {
+      "key": "929-v276-xu_wine_shenjiangao",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-06",
+      "primary_paragraph": "zztj-v276-y0929-p034",
+      "required_action": "知询疑毒不是现代确认下毒者；拒酒、申合饮、密药、脑溃卒分，脑字原存不改肠或现代诊断。申案二十四史未检同案，主独证。主十二月加中书令、新十一月概叙差保留。"
+    },
+    {
+      "key": "929-v276-wangyanbing_jixiong_identity",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-06",
+      "primary_paragraph": "zztj-v276-y0929-p035",
+      "required_action": "廷禀沿已有王延禀，同建州及同子继雄对照，廷延原字并列；后新931战死只补身份不提前事件。称疾为本人陈述，父请任与庚子诏刺史分，父亲边方向明确。"
+    },
+    {
+      "key": "929-v276-sichuan_marriage_and_surveillance",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-276/year-0929/part-06",
+      "primary_paragraph": "zztj-v276-y0929-p036",
+      "required_action": "既以仁矩镇承十月，不重授；武故吏外兄/新表兄方向武→安，不猜父母线。诇反目标、仁矩增饰非已确反，城隍是城防壕，绵龙划镇为传言。求婚只许未礼成，不造未名子女或姻亲边；谋拒非930已反，新孟赵问劝补，随后共同表与主930二月需后续对读。"
     }
   ]
 }

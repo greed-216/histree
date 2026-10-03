@@ -1,5 +1,5 @@
 export interface TimelineOverview {
-  years: Array<{ year: number; count: number }>;
+  years: Array<{ year: number; count: number; highlights?: Array<{ id: string; title: string }> }>;
   total: number;
   undated: number;
   from: number | null;

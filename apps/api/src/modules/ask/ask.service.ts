@@ -28,6 +28,7 @@ const bodySchema = z
   .strict();
 type AskBody = z.infer<typeof bodySchema>;
 type Conversation = {
+  owner: string;
   history: Array<{ question: string; answer: string }>;
   expires: number;
   busy: boolean;
@@ -62,7 +63,7 @@ export class AskService {
     };
   }
 
-  reserve(body: unknown, ip: string) {
+  reserve(body: unknown, actor: string) {
     if (!this.status().available)
       throw new ServiceUnavailableException(
         '史料问答尚未开放，请先使用普通搜索。',
@@ -81,23 +82,29 @@ export class AskService {
       : undefined;
     if (existing && !conversation)
       throw new HttpException('对话已过期，请开始新对话。', 410);
+    if (conversation && conversation.owner !== actor)
+      throw new HttpException('无权访问此对话。', 403);
     if (conversation?.busy)
       throw new HttpException('请等待当前问题完成。', 409);
     if (conversation && conversation.history.length >= 6)
       throw new HttpException('本次对话已达 6 轮，请开始新对话。', 409);
     if (this.active >= 2)
       throw new HttpException('当前提问较多，请稍后再试。', 429);
-    const quota = this.requests.get(ip) || { count: 0, reset: now + 3600000 };
+    const quota = this.requests.get(actor) || {
+      count: 0,
+      reset: now + 3600000,
+    };
     if (
       quota.count >= 10 ||
-      (!this.requests.has(ip) && this.requests.size >= 2048) ||
+      (!this.requests.has(actor) && this.requests.size >= 2048) ||
       (!existing && this.conversations.size >= 1000)
     )
       throw new HttpException('已达到提问限额，请稍后再试。', 429);
     quota.count++;
-    this.requests.set(ip, quota);
+    this.requests.set(actor, quota);
     const token = existing || randomBytes(32).toString('hex');
     const session = conversation || {
+      owner: actor,
       history: [],
       expires: now + 1800000,
       busy: false,

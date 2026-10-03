@@ -1,14 +1,10 @@
-import {
-  Body,
-  Controller,
-  ForbiddenException,
-  Get,
-  Post,
-  Req,
-  Res,
-} from '@nestjs/common';
-import type { Request, Response } from 'express';
+import { GatewayGuard } from '../../common/guards/gateway.guard';
+import type { GatewayRequest } from '../../common/guards/gateway.guard';
+import { UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
+import type { Response } from 'express';
 import { GuessService } from './guess.service';
+@UseGuards(GatewayGuard)
 @Controller('api/v1/ask/guess')
 export class GuessController {
   constructor(private readonly service: GuessService) {}
@@ -16,27 +12,17 @@ export class GuessController {
     return this.service.status();
   }
   private async request(
-    req: Request,
+    req: GatewayRequest,
     res: Response,
     operation: (signal: AbortSignal) => Promise<unknown>,
   ) {
-    const origin = req.headers.origin;
-    if (
-      origin &&
-      ![
-        'https://greed-216.github.io',
-        'http://localhost:5173',
-        'http://127.0.0.1:5174',
-      ].includes(origin)
-    )
-      throw new ForbiddenException('不允许此来源操作游戏');
     res.set('Cache-Control', 'no-store');
     const controller = new AbortController();
     const close = () => controller.abort();
     res.on('close', close);
     try {
       return await operation(
-        AbortSignal.any([controller.signal, AbortSignal.timeout(150000)]),
+        AbortSignal.any([controller.signal, AbortSignal.timeout(120000)]),
       );
     } finally {
       res.off('close', close);
@@ -44,20 +30,20 @@ export class GuessController {
   }
   @Post('start') start(
     @Body() body: unknown,
-    @Req() req: Request,
+    @Req() req: GatewayRequest,
     @Res({ passthrough: true }) res: Response,
   ) {
     return this.request(req, res, (signal) =>
-      this.service.start(body, req.ip || 'unknown', signal),
+      this.service.start(body, req.gatewayActor, signal),
     );
   }
   @Post('act') act(
     @Body() body: unknown,
-    @Req() req: Request,
+    @Req() req: GatewayRequest,
     @Res({ passthrough: true }) res: Response,
   ) {
     return this.request(req, res, (signal) =>
-      this.service.act(body, req.ip || 'unknown', signal),
+      this.service.act(body, req.gatewayActor, signal),
     );
   }
 }

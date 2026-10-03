@@ -8,6 +8,7 @@ Runtime configuration lives only at `/opt/histree/runtime.env` (directory 0700, 
 - DEEPSEEK_API_KEY
 - HISTREE_ASK_ENABLED=true
 - HISTREE_MODEL=deepseek-flash
+- HISTREE_GATEWAY_SECRET: shared only with the Supabase ai-gateway function
 - NODE_ENV=production / PORT=3000
 
 Do not upload the Supabase service-role key. Do not commit runtime configuration or include it in an image/artifact.
@@ -30,10 +31,10 @@ Configure the `ecs-production` environment secret `WORKBENCH_CONFIG` with a dedi
 
 The workflow creates a fresh directory on each run. ECS downloads the tested GitHub artifact through a short-lived signed URL; the GitHub token stays on the runner. Before extraction it verifies the artifact digest and exact file list, then checks the image and deploys the exact commit tag. This avoids slow or timed-out runner-to-OSS uploads. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
 
-After HTTPS is ready, set repository variable `VITE_ASK_API_URL` to `https://<host>/api/v1` and rerun the Pages workflow.
+Browsers call Supabase `ai-gateway`; the ECS URL and shared secret exist only in server configuration. Follow [AI gateway deployment](../../docs/AI_GATEWAY.md) for migration, function secrets, cutover and verification.
 
 ## HTTPS without a domain
 
 Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx exposes only the ask and status routes plus the three guessing-game endpoints (`guess/status`, `guess/start`, `guess/act`). Existing gateways receive these exact game routes during a release; certificate and renewal settings are preserved. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
 
-Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/bin/certbot renew --dry-run`, and verify the public HTTPS endpoint before setting `VITE_ASK_API_URL`. Six-day IP certificates require working automatic renewal. See https://letsencrypt.org/2026/03/11/shorter-certs-certbot .
+Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/bin/certbot renew --dry-run`, and verify the HTTPS origin from the gateway. Six-day IP certificates require working automatic renewal. See https://letsencrypt.org/2026/03/11/shorter-certs-certbot .

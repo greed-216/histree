@@ -13,7 +13,7 @@
 - 每问最多 800 字、16 次成功或尝试的业务工具调用、每次模型输出最多 2400 tokens，总执行时间 120 秒。超时/断开连接会回收专属进程组；请求完成删除临时快照与运行时日志，不持久化聊天内容。
 - 原文与书名来自已发布证据。最终回答中的 `[C数字]` 必须存在于本次实际读取的证据记录，否则整条回答失败；引用链接由服务端生成，模型不能提供外部链接。存在引用不等于自动完成史学校勘。
 
-本地要求 Node 24（系统 Node 23 缺少 dsh 入口所需的 `import.meta.main`）。配置 `apps/api/.env`：`HISTREE_ASK_ENABLED=true`、`DEEPSEEK_API_KEY`、`HISTREE_MODEL=deepseek-flash` 以及已有 Supabase URL/匿名密钥。前端设置 `VITE_ASK_API_URL=http://localhost:3001/api/v1`，不必改变普通页面的 Supabase 直连设置。
+本地要求 Node 24（系统 Node 23 缺少 dsh 入口所需的 `import.meta.main`）。配置 `apps/api/.env`：`HISTREE_ASK_ENABLED=true`、`DEEPSEEK_API_KEY`、`HISTREE_MODEL=deepseek-flash` 以及已有 Supabase URL/匿名密钥。前端通过 Supabase `ai-gateway` 调用问答，不配置 ECS 地址；本地网关与密钥配置见 [AI 网关](AI_GATEWAY.md)。
 
 验证命令：
 
@@ -33,7 +33,7 @@ pnpm --filter web build
 
 Render 环境：`HISTREE_ASK_ENABLED=true`、`HISTREE_MODEL=deepseek-flash`、`DEEPSEEK_API_KEY`、`SUPABASE_URL`、`SUPABASE_ANON_KEY`、`TRUST_PROXY=1`。`TRUST_PROXY` 只用于已知单层反向代理；本地保持关闭。免费实例可能冷启动，实际容量需线上验证。
 
-GitHub 仓库变量 `VITE_ASK_API_URL` 指向后端地址并以 `/api/v1` 结尾，Pages workflow 构建时读取。这个变量只包含服务地址。若后端或密钥未就绪，页面显示未开放，并保留普通搜索入口。
+Pages 只配置 Supabase URL 和公开 API key；问答地址由该 URL 派生。ECS URL 和服务凭据仅配置在 Edge secrets 与 ECS runtime.env。旧 `VITE_ASK_API_URL` 已停止使用。
 
 ## 结论
 

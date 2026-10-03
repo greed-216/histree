@@ -18,7 +18,9 @@ try {
  }
  const requestsBefore=yearRequests;
  await page.evaluate(()=>scrollTo(0,180));const scrollBefore=await page.evaluate(()=>scrollY);
- const ratio907=(ordinal(907)-min)/(max-min);
+ const chart=page.locator('.timeline-chart');
+ const from=Number(await chart.getAttribute('data-from')),to=Number(await chart.getAttribute('data-to'));
+ const ratio907=(ordinal(907)-from)/Math.max(1,to-from);
  await point(ratio907);
  await page.getByRole('complementary',{name:'年度大事提要'}).getByRole('heading',{name:'907年',exact:true}).waitFor();
  assert.match(await page.getByRole('complementary',{name:'年度大事提要'}).innerText(),/朱温称帝，后梁建立/);
@@ -42,6 +44,22 @@ try {
  const zoom=page.getByRole('button',{name:'放大',exact:true});await zoom.focus();await zoom.press('Enter');
  const ticks=await page.locator('.timeline-chart text').allTextContents();await point(.4);
  assert.deepEqual(await page.locator('.timeline-chart text').allTextContents(),ticks,'Hover leaves zoom axis fixed');
+ const dragBox=await chart.boundingBox();
+ const fixedBeforeDrag=page.url(),requestsBeforeDrag=yearRequests;
+ const windowBeforeDrag=await chart.getAttribute('data-from');
+ await page.mouse.move(dragBox.x+dragBox.width*.6,dragBox.y+dragBox.height*.5);
+ await page.mouse.down();await page.mouse.move(dragBox.x+dragBox.width*.4,dragBox.y+dragBox.height*.5,{steps:10});await page.mouse.up();
+ assert.equal(page.url(),fixedBeforeDrag,'Dragging must not commit a year');
+ assert.equal(yearRequests,requestsBeforeDrag,'Dragging sends no event queries');
+ assert.notEqual(await chart.getAttribute('data-from'),windowBeforeDrag,'Dragging pans the visible window');
+ await page.getByRole('button',{name:'卷尾',exact:true}).click();
+ assert.equal(Number(await chart.getAttribute('data-to')),max,'End of scroll clamps to latest year');
+ assert.equal(await page.getByRole('button',{name:'后一段历史'}).isEnabled(),false);
+ await page.getByRole('button',{name:'卷首',exact:true}).click();
+ assert.equal(Number(await chart.getAttribute('data-from')),min,'Start of scroll clamps to earliest year');
+ assert.equal(await page.getByRole('button',{name:'前一段历史'}).isEnabled(),false);
+ await page.getByRole('button',{name:'回到已选年份'}).click();
+ assert.equal(page.url(),fixedBeforeDrag,'Navigation leaves selected year intact');
  const card=page.getByRole('link',{name:/阅读全文与出处/}).first();await card.scrollIntoViewIfNeeded();const returnScroll=await page.evaluate(()=>scrollY);
  await card.click();await page.waitForURL(/events\//);await page.waitForTimeout(250);assert.equal(await page.evaluate(()=>scrollY),0);
  await page.goBack();await slider.waitFor();await page.waitForTimeout(400);

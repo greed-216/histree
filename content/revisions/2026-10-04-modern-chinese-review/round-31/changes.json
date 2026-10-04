@@ -1,0 +1,4230 @@
+{
+  "created_at": "2026-10-04T10:54:24.167256+00:00",
+  "scope": "936年第13—20段待审参与角色、逐字对应人物事实和五条亲属关系说明；在第29轮地点更新期间仅处理不同表及字段，引用和端点不变。",
+  "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
+  "archives": [
+    {
+      "batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-03",
+      "batch_sha256": "ee6475c075eba4c9ab8a9e70456485ea333e0e0d6bb17adc7c60936d15625fbb",
+      "source_files": [
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/jiuwudaishi-048-936-july-revolts/source.txt",
+          "sha256": "fe72a13dacaa38f22d68ecf439f395f24eb8bcd973435d59ae4311fb3181a8a9"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/jiuwudaishi-048-936-june-armies/source.txt",
+          "sha256": "9ced20f5354f8bc525874105bcdb4bf9c067238c0604e91e00a15ea5c1baefb8"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/jiuwudaishi-048-936-may-revolts/source.txt",
+          "sha256": "f49053131da431e41a4621abaa150e46bd344f1e561432a4631bcbdbbfe73135"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/tongjian-280-936-may-july-revolts/source.txt",
+          "sha256": "05c0b4b54c89ac43615e3a0fc6831eb08705828dc30203e9316f50c0c2c75ae5"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/xinwudaishi-007-936-revolts/source.txt",
+          "sha256": "8989a16623a80e68ccae968c001bd08f35366f00983605f7a080628b5a61e47c"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "table": "person_event",
+      "id": "7bf8a931-582a-590d-bbbe-cd17c3f31b0f",
+      "baseline": {
+        "id": "7bf8a931-582a-590d-bbbe-cd17c3f31b0f",
+        "person_id": "d1d49161-7580-5b4e-9bea-b2b316ef2f55",
+        "event_id": "ceaba146-fa10-59ce-a074-0003ca91d85a",
+        "role": "昭义节度使、报告者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "昭义节度使、报告者"
+      },
+      "after": {
+        "role": "以昭义节度使身份报告石敬瑭反叛"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "35b27ec3-9240-5601-ad83-45b0e8578ee4",
+      "baseline": {
+        "id": "35b27ec3-9240-5601-ad83-45b0e8578ee4",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "ceaba146-fa10-59ce-a074-0003ca91d85a",
+        "role": "被报告者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被报告者"
+      },
+      "after": {
+        "role": "被皇甫立报告反叛"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "9f21d877-e73d-5657-90d2-b0eb84f1e091",
+      "baseline": {
+        "id": "9f21d877-e73d-5657-90d2-b0eb84f1e091",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "b6dc0bb1-ca13-5488-8d17-e5edc9600b19",
+        "role": "上表要求者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "上表要求者"
+      },
+      "after": {
+        "role": "上表要求李从珂把皇位传给许王"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "55baf2ef-62db-5ffb-a67f-dc3cdd4577ea",
+      "baseline": {
+        "id": "55baf2ef-62db-5ffb-a67f-dc3cdd4577ea",
+        "person_id": "0a45ab01-e475-5d82-9a76-16d916af5abd",
+        "event_id": "b6dc0bb1-ca13-5488-8d17-e5edc9600b19",
+        "role": "被指责、被要求者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被指责、被要求者"
+      },
+      "after": {
+        "role": "被石敬瑭指责为养子，并要求交出皇位"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "f31f473f-a937-5f57-bf86-a123b2322484",
+      "baseline": {
+        "id": "f31f473f-a937-5f57-bf86-a123b2322484",
+        "person_id": "0a45ab01-e475-5d82-9a76-16d916af5abd",
+        "event_id": "8df35ae7-31ad-57e8-9581-b189c7b7d3fa",
+        "role": "毁表、答诏者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "毁表、答诏者"
+      },
+      "after": {
+        "role": "撕毁石敬瑭的奏表，下诏反驳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "b50b1acd-3d3d-5a6c-bd3f-6cabe6ccf769",
+      "baseline": {
+        "id": "b50b1acd-3d3d-5a6c-bd3f-6cabe6ccf769",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "8df35ae7-31ad-57e8-9581-b189c7b7d3fa",
+        "role": "答诏对象",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "答诏对象"
+      },
+      "after": {
+        "role": "受到李从珂下诏反驳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "7c0a2c57-173c-546d-be9d-e7caac3f1970",
+      "baseline": {
+        "id": "7c0a2c57-173c-546d-be9d-e7caac3f1970",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "f6461fcc-46e1-5032-ad73-e48fc708b569",
+        "role": "被削夺者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被削夺者"
+      },
+      "after": {
+        "role": "被朝廷剥夺官职和爵位"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "4a9fdb09-8943-5c50-94d4-67fa45a1a9c4",
+      "baseline": {
+        "id": "4a9fdb09-8943-5c50-94d4-67fa45a1a9c4",
+        "person_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "event_id": "0b0e5e45-ee67-57c5-8b7c-f42616ab0c02",
+        "role": "兼任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "兼任者"
+      },
+      "after": {
+        "role": "兼任太原四面排陈使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "dd912efd-f6d1-5f6a-952d-5f631e4b2a7e",
+      "baseline": {
+        "id": "dd912efd-f6d1-5f6a-952d-5f631e4b2a7e",
+        "person_id": "1d4e69b6-64bd-53f4-8cd8-a520b0739423",
+        "event_id": "cbc7354f-4d8a-52e6-9ebd-a94a70df604f",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "获任太原四面马步军都指挥使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "b2dfba27-6832-52ba-ac17-4aa8a2cb6122",
+      "baseline": {
+        "id": "b2dfba27-6832-52ba-ac17-4aa8a2cb6122",
+        "person_id": "a579a6a1-65a5-5c8a-9c6c-be178cb049aa",
+        "event_id": "5b0d765c-ff66-534d-be7a-01682a2acac6",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "获任太原四面马军都指挥使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "56e16d71-ada0-570b-b994-fb0badfe5e9f",
+      "baseline": {
+        "id": "56e16d71-ada0-570b-b994-fb0badfe5e9f",
+        "person_id": "e2182ca6-8574-5fc2-9c3d-a92e1f9139ed",
+        "event_id": "ad03e072-3855-5547-9e5f-50d886ae1c91",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "获任太原四面步军都指挥使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "62bfe0e5-add7-5f31-9c1e-3c1e5314d2d9",
+      "baseline": {
+        "id": "62bfe0e5-add7-5f31-9c1e-3c1e5314d2d9",
+        "person_id": "b33f9e46-e003-5e57-ba26-9b478560cefb",
+        "event_id": "b15810b6-f088-5737-8ff3-3e7fc85ce3b3",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "获任太原四面壕寨使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "8435c454-4f79-5cfe-96fc-b9e67080fdcd",
+      "baseline": {
+        "id": "8435c454-4f79-5cfe-96fc-b9e67080fdcd",
+        "person_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "event_id": "aadf4b61-5bcd-541f-a22d-2ae293ec62f6",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "获任太原四面兵马都部署"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "8af7db8d-2983-5c9c-8327-f410ce3872c5",
+      "baseline": {
+        "id": "8af7db8d-2983-5c9c-8327-f410ce3872c5",
+        "person_id": "54ec3b10-aece-5189-91a8-84a03c5691a3",
+        "event_id": "c2696ce2-c7b1-5260-9c33-dbbb467b616b",
+        "role": "义武节度使、获副部署者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "义武节度使、获副部署者"
+      },
+      "after": {
+        "role": "以义武节度使身份获任太原四面兵马副部署"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "cd3c5099-3ae7-59f8-89b8-e1801680bad6",
+      "baseline": {
+        "id": "cd3c5099-3ae7-59f8-89b8-e1801680bad6",
+        "person_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "event_id": "773f7238-465c-55c1-b5da-7de76551d9cf",
+        "role": "领行府事者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "领行府事者"
+      },
+      "after": {
+        "role": "获命主持太原行府事务"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "5454cd4a-044e-5b91-91d1-c047242994b9",
+      "baseline": {
+        "id": "5454cd4a-044e-5b91-91d1-c047242994b9",
+        "person_id": "659c5f83-09bc-5282-8f02-4c7fa0a62729",
+        "event_id": "fe3ca6e0-8eb6-5009-bb54-3b4825345932",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "获任太原四面招抚、排陈等使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "41ab3812-010e-56e1-8f45-412e3fafbfea",
+      "baseline": {
+        "id": "41ab3812-010e-56e1-8f45-412e3fafbfea",
+        "person_id": "54ec3b10-aece-5189-91a8-84a03c5691a3",
+        "event_id": "a634f55a-c508-596f-ada0-51a52282101e",
+        "role": "离定州者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "离定州者"
+      },
+      "after": {
+        "role": "离开定州后，当地发生军队叛乱"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "54991942-1ffd-5a28-a5ba-d3ff4d659886",
+      "baseline": {
+        "id": "54991942-1ffd-5a28-a5ba-d3ff4d659886",
+        "person_id": "f3df25e6-d0a6-57cc-8996-e5d57af4f5ef",
+        "event_id": "a634f55a-c508-596f-ada0-51a52282101e",
+        "role": "讨平军乱者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "讨平军乱者"
+      },
+      "after": {
+        "role": "率军平定定州军队叛乱"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "0b3c9f55-b3b4-5e0f-8655-60180533c043",
+      "baseline": {
+        "id": "0b3c9f55-b3b4-5e0f-8655-60180533c043",
+        "person_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "event_id": "f44b951c-2337-5bba-af82-1d4d899ce890",
+        "role": "驻军将领",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "驻军将领"
+      },
+      "after": {
+        "role": "率军驻扎晋安乡"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "08986692-f0ec-527a-b5fc-bc660454d915",
+      "baseline": {
+        "id": "08986692-f0ec-527a-b5fc-bc660454d915",
+        "person_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "event_id": "1913d371-0577-5d2a-b244-4d905b08384d",
+        "role": "报告者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "报告者"
+      },
+      "after": {
+        "role": "向朝廷报告安审信转投石敬瑭"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "9c7c406a-a9c7-5b9b-84de-34103cded41e",
+      "baseline": {
+        "id": "9c7c406a-a9c7-5b9b-84de-34103cded41e",
+        "person_id": "d2ddf941-57f6-5dc2-bf1b-d0256df4eae0",
+        "event_id": "1913d371-0577-5d2a-b244-4d905b08384d",
+        "role": "西北先锋马军都指挥使、转投者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "西北先锋马军都指挥使、转投者"
+      },
+      "after": {
+        "role": "以西北先锋马军都指挥使身份转投晋阳的石敬瑭"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "3c443039-03b7-5000-a91f-131a7c77850c",
+      "baseline": {
+        "id": "3c443039-03b7-5000-a91f-131a7c77850c",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "75dd509a-e8ac-5ff6-9ef0-3277e2a9efbb",
+        "role": "雄义都指挥使、戍将",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "雄义都指挥使、戍将"
+      },
+      "after": {
+        "role": "以雄义都指挥使身份率军驻守代州"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "4086e6e9-f54d-55cb-af4e-1ec01e85d505",
+      "baseline": {
+        "id": "4086e6e9-f54d-55cb-af4e-1ec01e85d505",
+        "person_id": "8ceaef72-c533-5422-8e26-fede0ae534ce",
+        "event_id": "75dd509a-e8ac-5ff6-9ef0-3277e2a9efbb",
+        "role": "代州刺史、善遇者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "代州刺史、善遇者"
+      },
+      "after": {
+        "role": "以代州刺史身份善待安元信"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "d9be3487-965d-5a8a-816c-16c519a721c3",
+      "baseline": {
+        "id": "d9be3487-965d-5a8a-816c-16c519a721c3",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "13c1cd90-2316-594c-8284-9da07bf3a405",
+        "role": "劝说者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "劝说者"
+      },
+      "after": {
+        "role": "私下劝张朗联系石敬瑭，以求自保"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "c8299d47-d32d-5d7e-a0c1-15ce51496e1b",
+      "baseline": {
+        "id": "c8299d47-d32d-5d7e-a0c1-15ce51496e1b",
+        "person_id": "8ceaef72-c533-5422-8e26-fede0ae534ce",
+        "event_id": "13c1cd90-2316-594c-8284-9da07bf3a405",
+        "role": "拒绝者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "拒绝者"
+      },
+      "after": {
+        "role": "拒绝安元信联系石敬瑭的建议"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "76de53fa-c2f2-526f-98cf-25ea06d264e8",
+      "baseline": {
+        "id": "76de53fa-c2f2-526f-98cf-25ea06d264e8",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "2c0e36c9-7db1-58ec-ae7d-bc14a48f6658",
+        "role": "谋杀未遂、奔军者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "谋杀未遂、奔军者"
+      },
+      "after": {
+        "role": "谋杀张朗未遂，率军投奔安审信"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "d133f09f-c46c-57b3-a075-01b5757d0644",
+      "baseline": {
+        "id": "d133f09f-c46c-57b3-a075-01b5757d0644",
+        "person_id": "8ceaef72-c533-5422-8e26-fede0ae534ce",
+        "event_id": "2c0e36c9-7db1-58ec-ae7d-bc14a48f6658",
+        "role": "谋杀对象",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "谋杀对象"
+      },
+      "after": {
+        "role": "遭到安元信谋杀，安元信未能得手"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "5b308975-7223-5557-b3e5-9d986e99dc62",
+      "baseline": {
+        "id": "5b308975-7223-5557-b3e5-9d986e99dc62",
+        "person_id": "d2ddf941-57f6-5dc2-bf1b-d0256df4eae0",
+        "event_id": "2c0e36c9-7db1-58ec-ae7d-bc14a48f6658",
+        "role": "所奔军主将",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "所奔军主将"
+      },
+      "after": {
+        "role": "安元信率军投奔的对象"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "8df014af-c1a3-5d14-8e1f-cd73d8ab3583",
+      "baseline": {
+        "id": "8df014af-c1a3-5d14-8e1f-cd73d8ab3583",
+        "person_id": "d2ddf941-57f6-5dc2-bf1b-d0256df4eae0",
+        "event_id": "656c303a-ef3a-5ae9-99c4-07330aac77e1",
+        "role": "领骑者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "领骑者"
+      },
+      "after": {
+        "role": "率领骑兵，与安元信劫掠百井后投奔晋阳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "bef3ea5e-f56c-5551-9822-d3f7608afaeb",
+      "baseline": {
+        "id": "bef3ea5e-f56c-5551-9822-d3f7608afaeb",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "656c303a-ef3a-5ae9-99c4-07330aac77e1",
+        "role": "同奔者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "同奔者"
+      },
+      "after": {
+        "role": "与安审信一起劫掠百井后投奔晋阳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "23c33a96-c965-555c-b5bc-5868f18d7f59",
+      "baseline": {
+        "id": "23c33a96-c965-555c-b5bc-5868f18d7f59",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "739beffe-25cb-547a-8f94-548772152cce",
+        "role": "询问者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "询问者"
+      },
+      "after": {
+        "role": "询问安元信为何转投自己"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "257d9ac7-a88e-5f8a-96de-84e4069f986c",
+      "baseline": {
+        "id": "257d9ac7-a88e-5f8a-96de-84e4069f986c",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "739beffe-25cb-547a-8f94-548772152cce",
+        "role": "被问者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被问者"
+      },
+      "after": {
+        "role": "受到石敬瑭询问投奔原因"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "96fc8da9-559c-5b73-a8bb-9adb23f5c4ed",
+      "baseline": {
+        "id": "96fc8da9-559c-5b73-a8bb-9adb23f5c4ed",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "b669ffa3-3124-5f7f-abb9-61932ede1adc",
+        "role": "解释选择者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "解释选择者"
+      },
+      "after": {
+        "role": "以李从珂失信解释投奔石敬瑭的原因"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "f52e8b76-f8bb-5e14-a02e-3b261bac7084",
+      "baseline": {
+        "id": "f52e8b76-f8bb-5e14-a02e-3b261bac7084",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "b669ffa3-3124-5f7f-abb9-61932ede1adc",
+        "role": "听解释者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "听解释者"
+      },
+      "after": {
+        "role": "听取安元信解释投奔的原因"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "ce25b588-6cb1-5276-94a3-59b1a22c9b89",
+      "baseline": {
+        "id": "ce25b588-6cb1-5276-94a3-59b1a22c9b89",
+        "person_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "event_id": "272e3284-3de4-539c-b13f-801f270c60aa",
+        "role": "委任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "委任者"
+      },
+      "after": {
+        "role": "让安元信负责军事事务"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "06c0b531-760d-57f9-832b-79605c20cd8e",
+      "baseline": {
+        "id": "06c0b531-760d-57f9-832b-79605c20cd8e",
+        "person_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "event_id": "272e3284-3de4-539c-b13f-801f270c60aa",
+        "role": "获委者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获委者"
+      },
+      "after": {
+        "role": "受石敬瑭委任，负责军事事务"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "1ddadf07-3352-5da7-a970-83b56bff1ef6",
+      "baseline": {
+        "id": "1ddadf07-3352-5da7-a970-83b56bff1ef6",
+        "person_id": "7309cd08-206a-5781-8eaa-527f54f64299",
+        "event_id": "6b82fc15-1391-58a3-bc6c-d68939f4edbb",
+        "role": "转投者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "转投者"
+      },
+      "after": {
+        "role": "从代北率领五百名步兵和骑兵投奔晋阳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "451c53b4-83ac-56c1-b3a1-beb0e4aa4319",
+      "baseline": {
+        "id": "451c53b4-83ac-56c1-b3a1-beb0e4aa4319",
+        "person_id": "a69faeab-caae-5e4c-9aa3-1adb5b305c59",
+        "event_id": "2eb4f42d-6aa3-58c6-96a9-54c3b1111f9e",
+        "role": "获改任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获改任者"
+      },
+      "after": {
+        "role": "改任宁国节度使，并担任侍卫马军都指挥使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "cba2c317-705d-56bd-9e30-f0b8befdf132",
+      "baseline": {
+        "id": "cba2c317-705d-56bd-9e30-f0b8befdf132",
+        "person_id": "07d9f33a-b9fb-5829-ab31-44601e21660f",
+        "event_id": "e5defce1-9b6e-5810-bf26-c8d5c2aa8642",
+        "role": "被史书描述的节度使",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被史书描述的节度使"
+      },
+      "after": {
+        "role": "被《资治通鉴》记载侵夺财产、削减军队赏赐、宴饮无度"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "1a9ec687-9fca-5e49-937e-b563ff38891e",
+      "baseline": {
+        "id": "1a9ec687-9fca-5e49-937e-b563ff38891e",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "475634d4-705e-53e7-94f0-c1656d29abd0",
+        "role": "兵变领头者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "兵变领头者"
+      },
+      "after": {
+        "role": "率兵发动兵变，攻占魏博牙城"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "061f4443-7d15-521b-be06-c4813153a62a",
+      "baseline": {
+        "id": "061f4443-7d15-521b-be06-c4813153a62a",
+        "person_id": "07d9f33a-b9fb-5829-ab31-44601e21660f",
+        "event_id": "0e751afa-a480-5cc3-a935-49d90ea17b6b",
+        "role": "脱身者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "脱身者"
+      },
+      "after": {
+        "role": "牙城失守后逃走"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "640b6a6c-b3f7-5b37-b483-074b42e9fb17",
+      "baseline": {
+        "id": "640b6a6c-b3f7-5b37-b483-074b42e9fb17",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "2a753c4e-9151-5d4b-95f4-6a76c897a579",
+        "role": "自述领府、求旌节者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "自述领府、求旌节者"
+      },
+      "after": {
+        "role": "上奏自称为安抚军士暂管军府，请求赐予节度使旌节"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "8caf7e7a-73d0-5a7a-990c-aa393a6a3009",
+      "baseline": {
+        "id": "8caf7e7a-73d0-5a7a-990c-aa393a6a3009",
+        "person_id": "07d9f33a-b9fb-5829-ab31-44601e21660f",
+        "event_id": "8d7fdff3-949d-5984-a349-a093f954d526",
+        "role": "至洛阳、初被命贬者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "至洛阳、初被命贬者"
+      },
+      "after": {
+        "role": "到了洛阳后，被李从珂下令贬往远方"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "3401a3be-7013-531c-a50c-aa2e30a9988a",
+      "baseline": {
+        "id": "3401a3be-7013-531c-a50c-aa2e30a9988a",
+        "person_id": "0a45ab01-e475-5d82-9a76-16d916af5abd",
+        "event_id": "8d7fdff3-949d-5984-a349-a093f954d526",
+        "role": "下远贬命者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "下远贬命者"
+      },
+      "after": {
+        "role": "下令将刘延皓贬往远方"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "40127aad-c68e-5fa6-9b30-88d6bbc140d2",
+      "baseline": {
+        "id": "40127aad-c68e-5fa6-9b30-88d6bbc140d2",
+        "person_id": "15aa1582-b512-50ab-90f7-65da83673b74",
+        "event_id": "5350080a-57de-525e-a84c-ec5ad90ea4a3",
+        "role": "求情者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "求情者"
+      },
+      "after": {
+        "role": "为刘延皓求情"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "2effd462-b882-54ff-a1f9-87237972bbdb",
+      "baseline": {
+        "id": "2effd462-b882-54ff-a1f9-87237972bbdb",
+        "person_id": "07d9f33a-b9fb-5829-ab31-44601e21660f",
+        "event_id": "5350080a-57de-525e-a84c-ec5ad90ea4a3",
+        "role": "求情对象",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "求情对象"
+      },
+      "after": {
+        "role": "受到刘皇后求情"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "72ff09ae-4845-5d9f-88dc-c24c4ab0836f",
+      "baseline": {
+        "id": "72ff09ae-4845-5d9f-88dc-c24c4ab0836f",
+        "person_id": "07d9f33a-b9fb-5829-ab31-44601e21660f",
+        "event_id": "3255e56b-4d18-52ad-9fc7-09a463fa779b",
+        "role": "被削官、归私第者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被削官、归私第者"
+      },
+      "after": {
+        "role": "被剥夺官职和爵位，回到私宅"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "0a9cc3de-7942-5ff5-85d6-ac85a638171f",
+      "baseline": {
+        "id": "0a9cc3de-7942-5ff5-85d6-ac85a638171f",
+        "person_id": "17d67985-b1cf-561c-9df9-fcce2c1a5e0d",
+        "event_id": "ac8c5071-5732-519d-af49-03989a050010",
+        "role": "因病罢职者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "因病罢职者"
+      },
+      "after": {
+        "role": "因病离任"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "f4828221-9f0f-5481-acca-fb0a2c0dbd0e",
+      "baseline": {
+        "id": "f4828221-9f0f-5481-acca-fb0a2c0dbd0e",
+        "person_id": "cb45cc6e-58fb-5804-8c3d-962cbbc03a13",
+        "event_id": "118d1f26-3d21-540d-ba90-41767f2518e0",
+        "role": "获任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任者"
+      },
+      "after": {
+        "role": "接替哥哥徐景迁担任门下侍郎、参政事"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "4038225f-d783-54ab-b763-1264fa2aecc5",
+      "baseline": {
+        "id": "4038225f-d783-54ab-b763-1264fa2aecc5",
+        "person_id": "17d67985-b1cf-561c-9df9-fcce2c1a5e0d",
+        "event_id": "118d1f26-3d21-540d-ba90-41767f2518e0",
+        "role": "被弟代职的前任",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被弟代职的前任"
+      },
+      "after": {
+        "role": "离任后由弟弟徐景遂接替"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "39ca1e91-1145-5131-a0d1-2e0e32f3ef13",
+      "baseline": {
+        "id": "39ca1e91-1145-5131-a0d1-2e0e32f3ef13",
+        "person_id": "0a45ab01-e475-5d82-9a76-16d916af5abd",
+        "event_id": "b1776947-3ff7-51ee-a073-54444074e495",
+        "role": "授官者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "授官者"
+      },
+      "after": {
+        "role": "任命张令昭暂管天雄军事务"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "01d5f361-e853-51a9-8274-32b60a514620",
+      "baseline": {
+        "id": "01d5f361-e853-51a9-8274-32b60a514620",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "b1776947-3ff7-51ee-a073-54444074e495",
+        "role": "获权任者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获权任者"
+      },
+      "after": {
+        "role": "获任右千牛卫将军，并暂管天雄军事务"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "c009f2a7-604c-571e-b0a0-d519079734c0",
+      "baseline": {
+        "id": "c009f2a7-604c-571e-b0a0-d519079734c0",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "15428193-0672-505e-951f-7bf8644a1a66",
+        "role": "暂受者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "暂受者"
+      },
+      "after": {
+        "role": "因兵力尚未集齐，暂时接受朝廷任命"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "9b021f0f-b7a7-5927-8245-2777d128e66e",
+      "baseline": {
+        "id": "9b021f0f-b7a7-5927-8245-2777d128e66e",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "e722ee1e-64fa-500f-b8fc-8d89572c0874",
+        "role": "被命移职者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被命移职者"
+      },
+      "after": {
+        "role": "被朝廷下诏调任齐州防御使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "09dc9fea-b0bb-51bf-b022-1d6312381264",
+      "baseline": {
+        "id": "09dc9fea-b0bb-51bf-b022-1d6312381264",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "2bf5f48d-14d2-5d49-b7b8-1e267da28281",
+        "role": "留任观望者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "留任观望者"
+      },
+      "after": {
+        "role": "以士兵挽留为由留下，等待河东起事的结果"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "0de7b265-cea6-5496-a462-d1b3d94f9686",
+      "baseline": {
+        "id": "0de7b265-cea6-5496-a462-d1b3d94f9686",
+        "person_id": "0a45ab01-e475-5d82-9a76-16d916af5abd",
+        "event_id": "8f0749f8-0d36-5b86-ad02-3bebfcecb132",
+        "role": "遣使者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "遣使者"
+      },
+      "after": {
+        "role": "派使者向张令昭传达旨意"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "c0759c05-746e-5c8b-b20c-21a5ad19cbf6",
+      "baseline": {
+        "id": "c0759c05-746e-5c8b-b20c-21a5ad19cbf6",
+        "person_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "event_id": "8f0749f8-0d36-5b86-ad02-3bebfcecb132",
+        "role": "杀使者者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "杀使者者"
+      },
+      "after": {
+        "role": "杀死李从珂派来的使者"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "2491dbff-788d-5041-8103-6ae004790b0d",
+      "baseline": {
+        "id": "2491dbff-788d-5041-8103-6ae004790b0d",
+        "person_id": "6889e460-4b23-5243-9441-b5c3a78da98f",
+        "event_id": "625b84d3-ab1a-5378-8fbe-ec3741824cfd",
+        "role": "获任讨魏博主帅",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任讨魏博主帅"
+      },
+      "after": {
+        "role": "获任天雄四面行营招讨使，并主持魏博行府事务"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "7aced9cd-451a-5448-9017-bfdab1a148c3",
+      "baseline": {
+        "id": "7aced9cd-451a-5448-9017-bfdab1a148c3",
+        "person_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "event_id": "dabcf1d4-7500-5b2d-8d7f-7863bb0ed8b5",
+        "role": "获改官者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获改官者"
+      },
+      "after": {
+        "role": "改任太原四面招讨使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "e62466dc-6e76-5a1c-805a-491b309c90c1",
+      "baseline": {
+        "id": "e62466dc-6e76-5a1c-805a-491b309c90c1",
+        "person_id": "54ec3b10-aece-5189-91a8-84a03c5691a3",
+        "event_id": "c7998b16-ded3-540c-916e-00370cb38b90",
+        "role": "获任副使者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "获任副使者"
+      },
+      "after": {
+        "role": "获任太原四面副招讨使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "c416d4f6-b54c-5aa1-a30f-73239bc0e9b9",
+      "baseline": {
+        "id": "c416d4f6-b54c-5aa1-a30f-73239bc0e9b9",
+        "person_id": "80ce0eab-d01c-5ae2-ad19-5d2e34b7e3b5",
+        "event_id": "dcffb917-360f-535f-a399-effab2495911",
+        "role": "西京留守、获副招讨命者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "西京留守、获副招讨命者"
+      },
+      "after": {
+        "role": "以西京留守身份获任天雄军四面行营副招讨使"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "b5dff8d8-be8d-5f41-a7b2-b8a1d68bc86d",
+      "baseline": {
+        "id": "b5dff8d8-be8d-5f41-a7b2-b8a1d68bc86d",
+        "person_id": "839d136d-f52b-5fb6-923a-f29f26275116",
+        "event_id": "a10c31cc-bfc1-5508-b99d-24df7b5fe8b5",
+        "role": "右卫上将军、藏匿者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "右卫上将军、藏匿者"
+      },
+      "after": {
+        "role": "听说父亲石敬瑭起兵后躲藏在民宅井中"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "072c19f2-7a74-57e9-ac0d-f8f1359463d1",
+      "baseline": {
+        "id": "072c19f2-7a74-57e9-ac0d-f8f1359463d1",
+        "person_id": "2e2fd7e0-eb92-5941-939b-f07f617ae3c3",
+        "event_id": "a10c31cc-bfc1-5508-b99d-24df7b5fe8b5",
+        "role": "皇城副使、藏匿者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "皇城副使、藏匿者"
+      },
+      "after": {
+        "role": "听说父亲石敬瑭起兵后躲藏在民宅井中"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "79cf684a-411d-52f6-88cb-a4a0397fc2c4",
+      "baseline": {
+        "id": "79cf684a-411d-52f6-88cb-a4a0397fc2c4",
+        "person_id": "a919fa99-811c-5288-9beb-8cbe1bd7b807",
+        "event_id": "6dc08f85-4dc7-573c-8498-2ec5651db8fc",
+        "role": "沂州都指挥使、杀家属并逃者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "沂州都指挥使、杀家属并逃者"
+      },
+      "after": {
+        "role": "杀死妻女后逃走"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "e06c0d80-ed30-53f6-a691-016e6088758d",
+      "baseline": {
+        "id": "e06c0d80-ed30-53f6-a691-016e6088758d",
+        "person_id": "a919fa99-811c-5288-9beb-8cbe1bd7b807",
+        "event_id": "6e76f709-b056-5287-a8d2-596fe8352be1",
+        "role": "被捕、死狱者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被捕、死狱者"
+      },
+      "after": {
+        "role": "被捕后死亡；《资治通鉴》记载他死在狱中"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "2b40dfb2-a23d-5f88-8278-77350b00108f",
+      "baseline": {
+        "id": "2b40dfb2-a23d-5f88-8278-77350b00108f",
+        "person_id": "ab41c627-3a85-50fc-b627-897a17918b05",
+        "event_id": "f0a52659-8b08-5d57-ad78-ee91d81f8a09",
+        "role": "自杀者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "自杀者"
+      },
+      "after": {
+        "role": "自杀"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "88290b3e-b74b-5381-a6ea-4c8e9c52de6f",
+      "baseline": {
+        "id": "88290b3e-b74b-5381-a6ea-4c8e9c52de6f",
+        "person_id": "839d136d-f52b-5fb6-923a-f29f26275116",
+        "event_id": "e38fb57a-a654-5be7-a2ea-ca8e8f07173d",
+        "role": "被捕诛者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被捕诛者"
+      },
+      "after": {
+        "role": "被捕并处死"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "9fdd75c4-3d78-5c42-83da-aa90e4772ca7",
+      "baseline": {
+        "id": "9fdd75c4-3d78-5c42-83da-aa90e4772ca7",
+        "person_id": "2e2fd7e0-eb92-5941-939b-f07f617ae3c3",
+        "event_id": "e38fb57a-a654-5be7-a2ea-ca8e8f07173d",
+        "role": "被捕诛者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被捕诛者"
+      },
+      "after": {
+        "role": "被捕并处死"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "e954fd29-5b17-5c4a-ba18-438a3f206b90",
+      "baseline": {
+        "id": "e954fd29-5b17-5c4a-ba18-438a3f206b90",
+        "person_id": "6c13c07c-57cf-596e-9247-ba0556ac4737",
+        "event_id": "c94907f5-8720-54db-ab1d-13b89ab4c40f",
+        "role": "北还者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "北还者"
+      },
+      "after": {
+        "role": "从桂州向北返回"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "bbe68980-7a6a-5730-9336-c6140ffc18a9",
+      "baseline": {
+        "id": "bbe68980-7a6a-5730-9336-c6140ffc18a9",
+        "person_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "event_id": "e1552275-9c11-5f8f-8ea2-a64bbc7bd707",
+        "role": "奏称者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "奏称者"
+      },
+      "after": {
+        "role": "向朝廷指控尹晖驱逐沙彦珣、收兵响应石敬瑭"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "75485e11-ece9-534c-ad68-986ff066379b",
+      "baseline": {
+        "id": "75485e11-ece9-534c-ad68-986ff066379b",
+        "person_id": "bd7deb48-309d-5bdc-ab41-85bbc59444ea",
+        "event_id": "e1552275-9c11-5f8f-8ea2-a64bbc7bd707",
+        "role": "被指称者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被指称者"
+      },
+      "after": {
+        "role": "被桑迁指控驱逐沙彦珣、收兵响应石敬瑭"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "c3e1a371-008b-5676-82f5-ccb8afd61ec9",
+      "baseline": {
+        "id": "c3e1a371-008b-5676-82f5-ccb8afd61ec9",
+        "person_id": "14933655-00d4-5df8-b377-9b7c7aac47df",
+        "event_id": "e1552275-9c11-5f8f-8ea2-a64bbc7bd707",
+        "role": "奏称中被逐者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "奏称中被逐者"
+      },
+      "after": {
+        "role": "在桑迁奏报中被称为遭尹晖驱逐的人"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "a66aefc4-955c-55b8-b5b9-03c3b2fc2d9e",
+      "baseline": {
+        "id": "a66aefc4-955c-55b8-b5b9-03c3b2fc2d9e",
+        "person_id": "14933655-00d4-5df8-b377-9b7c7aac47df",
+        "event_id": "1ed32245-51e9-526b-88ca-3a6dbaae7156",
+        "role": "报告者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "报告者"
+      },
+      "after": {
+        "role": "上表报告桑迁围城、谋叛响应石敬瑭"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "d44c53ea-f8fe-5113-a74a-d865c9595f9e",
+      "baseline": {
+        "id": "d44c53ea-f8fe-5113-a74a-d865c9595f9e",
+        "person_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "event_id": "1ed32245-51e9-526b-88ca-3a6dbaae7156",
+        "role": "被报作乱者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被报作乱者"
+      },
+      "after": {
+        "role": "被沙彦珣奏报围城、谋叛响应石敬瑭"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "f7c3039a-19c0-53cf-859d-bfddb4ecf1cc",
+      "baseline": {
+        "id": "f7c3039a-19c0-53cf-859d-bfddb4ecf1cc",
+        "person_id": "14933655-00d4-5df8-b377-9b7c7aac47df",
+        "event_id": "ac530fe5-1520-5a9d-9729-b4e3a09834cf",
+        "role": "突围者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "突围者"
+      },
+      "after": {
+        "role": "突围后从西山出去，据守雷公口"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "481bf5f5-b882-583f-9086-590a39bd9a87",
+      "baseline": {
+        "id": "481bf5f5-b882-583f-9086-590a39bd9a87",
+        "person_id": "14933655-00d4-5df8-b377-9b7c7aac47df",
+        "event_id": "acd84f5c-ec6a-5009-8b27-996acd9e7f1e",
+        "role": "收兵击乱军者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "收兵击乱军者"
+      },
+      "after": {
+        "role": "收拢部队回城，攻击叛乱士兵"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "a663c0fb-3795-5e22-a88d-94ddedffef56",
+      "baseline": {
+        "id": "a663c0fb-3795-5e22-a88d-94ddedffef56",
+        "person_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "event_id": "acd84f5c-ec6a-5009-8b27-996acd9e7f1e",
+        "role": "败走者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "败走者"
+      },
+      "after": {
+        "role": "被沙彦珣击败后逃走"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "b1337d7a-7e8d-5407-b138-3d1712885262",
+      "baseline": {
+        "id": "b1337d7a-7e8d-5407-b138-3d1712885262",
+        "person_id": "bd7deb48-309d-5bdc-ab41-85bbc59444ea",
+        "event_id": "e4c63fd2-99d5-5fc3-bdda-407ecc736d6a",
+        "role": "擒送者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "擒送者"
+      },
+      "after": {
+        "role": "抓获桑迁并将他送往洛阳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "ec1d554f-b90d-5c86-ac82-8e749d0630e9",
+      "baseline": {
+        "id": "ec1d554f-b90d-5c86-ac82-8e749d0630e9",
+        "person_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "event_id": "e4c63fd2-99d5-5fc3-bdda-407ecc736d6a",
+        "role": "被擒送者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被擒送者"
+      },
+      "after": {
+        "role": "被尹晖抓获并送往洛阳"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "person_event",
+      "id": "ad62abd9-7b83-5a42-b3ae-6c7081fe3234",
+      "baseline": {
+        "id": "ad62abd9-7b83-5a42-b3ae-6c7081fe3234",
+        "person_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "event_id": "736411da-7d88-57e3-bd0a-f012fea4e84e",
+        "role": "被斩者",
+        "created_at": "2026-10-04T04:26:46.474816+00:00",
+        "status": "published"
+      },
+      "before": {
+        "role": "被斩者"
+      },
+      "after": {
+        "role": "被送往洛阳后处死"
+      },
+      "review": "逐项核读参与引用，写清行动与涉及人物，区分请求、方案、意见和实际行动；人物和事件ID保持原值。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "271dc59b-f4e8-580e-8580-63749b5ad5ba",
+      "baseline": {
+        "id": "271dc59b-f4e8-580e-8580-63749b5ad5ba",
+        "subject_table": "person_event",
+        "subject_id": "7bf8a931-582a-590d-bbbe-cd17c3f31b0f",
+        "field_path": "role",
+        "claim_text": "皇甫立：昭义节度使、报告者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：戊戌，昭义节度使皇甫立奏敬瑭反。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "皇甫立：昭义节度使、报告者。"
+      },
+      "after": {
+        "claim_text": "皇甫立：以昭义节度使身份报告石敬瑭反叛。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9f12b71a-3cf0-5222-abef-06304a2b0944",
+      "baseline": {
+        "id": "9f12b71a-3cf0-5222-abef-06304a2b0944",
+        "subject_table": "person_event",
+        "subject_id": "35b27ec3-9240-5601-ad83-45b0e8578ee4",
+        "field_path": "role",
+        "claim_text": "石敬瑭：被报告者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：戊戌，昭义节度使皇甫立奏敬瑭反。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：被报告者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：被皇甫立报告反叛。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "76dd195b-6eff-54d5-b766-ea5983eceeec",
+      "baseline": {
+        "id": "76dd195b-6eff-54d5-b766-ea5983eceeec",
+        "subject_table": "person_event",
+        "subject_id": "9f21d877-e73d-5657-90d2-b0eb84f1e091",
+        "field_path": "role",
+        "claim_text": "石敬瑭：上表要求者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：敬瑭表：“帝，养子，不应承祀，请传位许王。”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：上表要求者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：上表要求李从珂把皇位传给许王。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ea003a59-f156-5d10-8e61-1362558c4697",
+      "baseline": {
+        "id": "ea003a59-f156-5d10-8e61-1362558c4697",
+        "subject_table": "person_event",
+        "subject_id": "55baf2ef-62db-5ffb-a67f-dc3cdd4577ea",
+        "field_path": "role",
+        "claim_text": "李从珂：被指责、被要求者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：敬瑭表：“帝，养子，不应承祀，请传位许王。”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：被指责、被要求者。"
+      },
+      "after": {
+        "claim_text": "李从珂：被石敬瑭指责为养子，并要求交出皇位。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b763e36e-5040-505a-8001-a16639f9df76",
+      "baseline": {
+        "id": "b763e36e-5040-505a-8001-a16639f9df76",
+        "subject_table": "person_event",
+        "subject_id": "f31f473f-a937-5f57-bf86-a123b2322484",
+        "field_path": "role",
+        "claim_text": "李从珂：毁表、答诏者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：帝手裂其表抵地，以诏答之曰：“卿于鄂王固非疏远，卫州之事，天下皆知；许王之言，何人肯信！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：毁表、答诏者。"
+      },
+      "after": {
+        "claim_text": "李从珂：撕毁石敬瑭的奏表，下诏反驳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6c53767c-5a8a-5c6d-b701-d9f9462623e7",
+      "baseline": {
+        "id": "6c53767c-5a8a-5c6d-b701-d9f9462623e7",
+        "subject_table": "person_event",
+        "subject_id": "b50b1acd-3d3d-5a6c-bd3f-6cabe6ccf769",
+        "field_path": "role",
+        "claim_text": "石敬瑭：答诏对象。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：帝手裂其表抵地，以诏答之曰：“卿于鄂王固非疏远，卫州之事，天下皆知；许王之言，何人肯信！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：答诏对象。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：受到李从珂下诏反驳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "963219fe-4363-5015-8354-6fd516801c2a",
+      "baseline": {
+        "id": "963219fe-4363-5015-8354-6fd516801c2a",
+        "subject_table": "person_event",
+        "subject_id": "7c0a2c57-173c-546d-be9d-e7caac3f1970",
+        "field_path": "role",
+        "claim_text": "石敬瑭：被削夺者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：壬寅，制削夺敬瑭官爵。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：被削夺者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：被朝廷剥夺官职和爵位。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1fc50705-76af-5ec1-8e51-37356ff43a29",
+      "baseline": {
+        "id": "1fc50705-76af-5ec1-8e51-37356ff43a29",
+        "subject_table": "person_event",
+        "subject_id": "4a9fdb09-8943-5c50-94d4-67fa45a1a9c4",
+        "field_path": "role",
+        "claim_text": "张敬达：兼任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：乙巳，以张敬达兼太原四面排陈使，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张敬达：兼任者。"
+      },
+      "after": {
+        "claim_text": "张敬达：兼任太原四面排陈使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "893d8691-c9d7-5be4-8071-9050fb7f9fa4",
+      "baseline": {
+        "id": "893d8691-c9d7-5be4-8071-9050fb7f9fa4",
+        "subject_table": "person_event",
+        "subject_id": "dd912efd-f6d1-5f6a-952d-5f631e4b2a7e",
+        "field_path": "role",
+        "claim_text": "张彦琪：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：河阳节度使张彦琪为马步军都指挥使，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张彦琪：获任者。"
+      },
+      "after": {
+        "claim_text": "张彦琪：获任太原四面马步军都指挥使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "603f6c79-0e12-5c4e-ae8a-4703e3c0bafd",
+      "baseline": {
+        "id": "603f6c79-0e12-5c4e-ae8a-4703e3c0bafd",
+        "subject_table": "person_event",
+        "subject_id": "b2dfba27-6832-52ba-ac17-4aa8a2cb6122",
+        "field_path": "role",
+        "claim_text": "安审琦：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以安国节度使安审琦为马军都指挥使，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安审琦：获任者。"
+      },
+      "after": {
+        "claim_text": "安审琦：获任太原四面马军都指挥使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "cefd36bb-3d28-5e56-aeba-232136edd5f1",
+      "baseline": {
+        "id": "cefd36bb-3d28-5e56-aeba-232136edd5f1",
+        "subject_table": "person_event",
+        "subject_id": "56e16d71-ada0-570b-b994-fb0badfe5e9f",
+        "field_path": "role",
+        "claim_text": "相里金：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以保义节度使相里金为步军都指挥使，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "相里金：获任者。"
+      },
+      "after": {
+        "claim_text": "相里金：获任太原四面步军都指挥使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "566bfd34-039c-53a1-a5de-32ae411a5bf2",
+      "baseline": {
+        "id": "566bfd34-039c-53a1-a5de-32ae411a5bf2",
+        "subject_table": "person_event",
+        "subject_id": "62bfe0e5-add7-5f31-9c1e-3c1e5314d2d9",
+        "field_path": "role",
+        "claim_text": "武廷翰：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以右监门上将军武廷翰为壕寨使。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "武廷翰：获任者。"
+      },
+      "after": {
+        "claim_text": "武廷翰：获任太原四面壕寨使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5dc8b59b-633a-59e6-a424-16266ae21063",
+      "baseline": {
+        "id": "5dc8b59b-633a-59e6-a424-16266ae21063",
+        "subject_table": "person_event",
+        "subject_id": "8435c454-4f79-5cfe-96fc-b9e67080fdcd",
+        "field_path": "role",
+        "claim_text": "张敬达：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：丙午，以张敬达为太原四面兵马都部署，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张敬达：获任者。"
+      },
+      "after": {
+        "claim_text": "张敬达：获任太原四面兵马都部署。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c8a4610c-c2bc-5138-ba77-7e40d9546960",
+      "baseline": {
+        "id": "c8a4610c-c2bc-5138-ba77-7e40d9546960",
+        "subject_table": "person_event",
+        "subject_id": "8af7db8d-2983-5c9c-8327-f410ce3872c5",
+        "field_path": "role",
+        "claim_text": "杨檀：义武节度使、获副部署者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以义武节度使杨光远为副部署。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "杨檀：义武节度使、获副部署者。"
+      },
+      "after": {
+        "claim_text": "杨檀：以义武节度使身份获任太原四面兵马副部署。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5d397ae2-f377-5b47-9520-b247dfb23f08",
+      "baseline": {
+        "id": "5d397ae2-f377-5b47-9520-b247dfb23f08",
+        "subject_table": "person_event",
+        "subject_id": "cd3c5099-3ae7-59f8-89b8-e1801680bad6",
+        "field_path": "role",
+        "claim_text": "张敬达：领行府事者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：丁未，又以张敬达知太原行府事，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张敬达：领行府事者。"
+      },
+      "after": {
+        "claim_text": "张敬达：获命主持太原行府事务。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d8b48127-ffa7-5e7b-b776-04940e44c2cb",
+      "baseline": {
+        "id": "d8b48127-ffa7-5e7b-b776-04940e44c2cb",
+        "subject_table": "person_event",
+        "subject_id": "5454cd4a-044e-5b91-91d1-c047242994b9",
+        "field_path": "role",
+        "claim_text": "高行周：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以前彰武节度使高行周为太原四面招抚、排陈等使。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "高行周：获任者。"
+      },
+      "after": {
+        "claim_text": "高行周：获任太原四面招抚、排陈等使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a34e99b5-c5a7-5afd-8e7b-145f28504413",
+      "baseline": {
+        "id": "a34e99b5-c5a7-5afd-8e7b-145f28504413",
+        "subject_table": "person_event",
+        "subject_id": "41ab3812-010e-56e1-8f45-412e3fafbfea",
+        "field_path": "role",
+        "claim_text": "杨檀：离定州者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：光远既行，定州军乱，牙将千乘方太讨平之。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "杨檀：离定州者。"
+      },
+      "after": {
+        "claim_text": "杨檀：离开定州后，当地发生军队叛乱。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9303d5d8-27fd-5867-a919-18307a4e5230",
+      "baseline": {
+        "id": "9303d5d8-27fd-5867-a919-18307a4e5230",
+        "subject_table": "person_event",
+        "subject_id": "54991942-1ffd-5a28-a5ba-d3ff4d659886",
+        "field_path": "role",
+        "claim_text": "方太：讨平军乱者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：光远既行，定州军乱，牙将千乘方太讨平之。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "方太：讨平军乱者。"
+      },
+      "after": {
+        "claim_text": "方太：率军平定定州军队叛乱。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b59e1e1a-5ebc-5c2c-ab7c-25956c6a2bd3",
+      "baseline": {
+        "id": "b59e1e1a-5ebc-5c2c-ab7c-25956c6a2bd3",
+        "subject_table": "person_event",
+        "subject_id": "0b3c9f55-b3b4-5e0f-8655-60180533c043",
+        "field_path": "role",
+        "claim_text": "张敬达：驻军将领。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：张敬达将后三万营于晋安乡，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张敬达：驻军将领。"
+      },
+      "after": {
+        "claim_text": "张敬达：率军驻扎晋安乡。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "26978008-707d-5da5-985a-d708d4b2a20d",
+      "baseline": {
+        "id": "26978008-707d-5da5-985a-d708d4b2a20d",
+        "subject_table": "person_event",
+        "subject_id": "08986692-f0ec-527a-b5fc-bc660454d915",
+        "field_path": "role",
+        "claim_text": "张敬达：报告者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：戊申，敬达奏西北先锋马军都指挥使安审信叛奔晋阳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张敬达：报告者。"
+      },
+      "after": {
+        "claim_text": "张敬达：向朝廷报告安审信转投石敬瑭。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "376547a2-a80d-5d3f-9836-6fa7e0c51fcf",
+      "baseline": {
+        "id": "376547a2-a80d-5d3f-9836-6fa7e0c51fcf",
+        "subject_table": "person_event",
+        "subject_id": "9c7c406a-a9c7-5b9b-84de-34103cded41e",
+        "field_path": "role",
+        "claim_text": "安审信：西北先锋马军都指挥使、转投者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：戊申，敬达奏西北先锋马军都指挥使安审信叛奔晋阳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安审信：西北先锋马军都指挥使、转投者。"
+      },
+      "after": {
+        "claim_text": "安审信：以西北先锋马军都指挥使身份转投晋阳的石敬瑭。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f523084e-5bd8-5514-bbcb-2951c3d83b89",
+      "baseline": {
+        "id": "f523084e-5bd8-5514-bbcb-2951c3d83b89",
+        "subject_table": "person_event",
+        "subject_id": "3c443039-03b7-5000-a91f-131a7c77850c",
+        "field_path": "role",
+        "claim_text": "安元信：雄义都指挥使、戍将。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：先是，雄义都指挥使马邑安元信将所部六百馀人戍代州，代州刺史张朗善遇之，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：雄义都指挥使、戍将。"
+      },
+      "after": {
+        "claim_text": "安元信：以雄义都指挥使身份率军驻守代州。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "19fd4abc-d947-5b0a-8672-59690afdcd84",
+      "baseline": {
+        "id": "19fd4abc-d947-5b0a-8672-59690afdcd84",
+        "subject_table": "person_event",
+        "subject_id": "4086e6e9-f54d-55cb-af4e-1ec01e85d505",
+        "field_path": "role",
+        "claim_text": "张朗：代州刺史、善遇者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：先是，雄义都指挥使马邑安元信将所部六百馀人戍代州，代州刺史张朗善遇之，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张朗：代州刺史、善遇者。"
+      },
+      "after": {
+        "claim_text": "张朗：以代州刺史身份善待安元信。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c6948b9e-b7a0-5218-bbd0-660c15798cd5",
+      "baseline": {
+        "id": "c6948b9e-b7a0-5218-bbd0-660c15798cd5",
+        "subject_table": "person_event",
+        "subject_id": "d9be3487-965d-5a8a-816c-16c519a721c3",
+        "field_path": "role",
+        "claim_text": "安元信：劝说者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信密说朗曰：“吾观石令公长者，举事必成；公何不潜遣人通意，可以自全。”朗不从，由是互相猜忌。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：劝说者。"
+      },
+      "after": {
+        "claim_text": "安元信：私下劝张朗联系石敬瑭，以求自保。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "3fd0047f-6e49-5702-8c3e-f97df8f191f1",
+      "baseline": {
+        "id": "3fd0047f-6e49-5702-8c3e-f97df8f191f1",
+        "subject_table": "person_event",
+        "subject_id": "c8299d47-d32d-5d7e-a0c1-15ce51496e1b",
+        "field_path": "role",
+        "claim_text": "张朗：拒绝者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信密说朗曰：“吾观石令公长者，举事必成；公何不潜遣人通意，可以自全。”朗不从，由是互相猜忌。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张朗：拒绝者。"
+      },
+      "after": {
+        "claim_text": "张朗：拒绝安元信联系石敬瑭的建议。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8d456698-e366-56e6-9d38-cf49890fd21f",
+      "baseline": {
+        "id": "8d456698-e366-56e6-9d38-cf49890fd21f",
+        "subject_table": "person_event",
+        "subject_id": "76de53fa-c2f2-526f-98cf-25ea06d264e8",
+        "field_path": "role",
+        "claim_text": "安元信：谋杀未遂、奔军者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信谋杀朗，不克，帅其众奔审信，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：谋杀未遂、奔军者。"
+      },
+      "after": {
+        "claim_text": "安元信：谋杀张朗未遂，率军投奔安审信。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "78bd60a9-8db3-5ac6-9546-067110e6aa4a",
+      "baseline": {
+        "id": "78bd60a9-8db3-5ac6-9546-067110e6aa4a",
+        "subject_table": "person_event",
+        "subject_id": "d133f09f-c46c-57b3-a075-01b5757d0644",
+        "field_path": "role",
+        "claim_text": "张朗：谋杀对象。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信谋杀朗，不克，帅其众奔审信，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张朗：谋杀对象。"
+      },
+      "after": {
+        "claim_text": "张朗：遭到安元信谋杀，安元信未能得手。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ea97b22b-01bc-5eac-b7a5-d8ac8057f47f",
+      "baseline": {
+        "id": "ea97b22b-01bc-5eac-b7a5-d8ac8057f47f",
+        "subject_table": "person_event",
+        "subject_id": "5b308975-7223-5557-b3e5-9d986e99dc62",
+        "field_path": "role",
+        "claim_text": "安审信：所奔军主将。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信谋杀朗，不克，帅其众奔审信，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安审信：所奔军主将。"
+      },
+      "after": {
+        "claim_text": "安审信：安元信率军投奔的对象。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2fa82863-8fd8-58d3-9e48-62a23b100d21",
+      "baseline": {
+        "id": "2fa82863-8fd8-58d3-9e48-62a23b100d21",
+        "subject_table": "person_event",
+        "subject_id": "8df014af-c1a3-5d14-8e1f-cd73d8ab3583",
+        "field_path": "role",
+        "claim_text": "安审信：领骑者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：审信遂帅麾下数百骑与元信掠百井奔晋阳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安审信：领骑者。"
+      },
+      "after": {
+        "claim_text": "安审信：率领骑兵，与安元信劫掠百井后投奔晋阳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "53cc9424-89e1-5e1a-b554-40da80db812d",
+      "baseline": {
+        "id": "53cc9424-89e1-5e1a-b554-40da80db812d",
+        "subject_table": "person_event",
+        "subject_id": "bef3ea5e-f56c-5551-9822-d3f7608afaeb",
+        "field_path": "role",
+        "claim_text": "安元信：同奔者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：审信遂帅麾下数百骑与元信掠百井奔晋阳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：同奔者。"
+      },
+      "after": {
+        "claim_text": "安元信：与安审信一起劫掠百井后投奔晋阳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9a396d0a-d826-5a63-ac30-4caa6b43d6ef",
+      "baseline": {
+        "id": "9a396d0a-d826-5a63-ac30-4caa6b43d6ef",
+        "subject_table": "person_event",
+        "subject_id": "23c33a96-c965-555c-b5bc-5868f18d7f59",
+        "field_path": "role",
+        "claim_text": "石敬瑭：询问者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：敬瑭谓元信曰：“汝见何利害，舍强而归弱？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：询问者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：询问安元信为何转投自己。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "59965de8-137c-5945-8dc4-d311bd3a9477",
+      "baseline": {
+        "id": "59965de8-137c-5945-8dc4-d311bd3a9477",
+        "subject_table": "person_event",
+        "subject_id": "257d9ac7-a88e-5f8a-96de-84e4069f986c",
+        "field_path": "role",
+        "claim_text": "安元信：被问者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：敬瑭谓元信曰：“汝见何利害，舍强而归弱？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：被问者。"
+      },
+      "after": {
+        "claim_text": "安元信：受到石敬瑭询问投奔原因。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c79b6510-a80d-54e0-8eb1-98ea6eb0acf2",
+      "baseline": {
+        "id": "c79b6510-a80d-54e0-8eb1-98ea6eb0acf2",
+        "subject_table": "person_event",
+        "subject_id": "96fc8da9-559c-5b73-a8bb-9adb23f5c4ed",
+        "field_path": "role",
+        "claim_text": "安元信：解释选择者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：对曰：“元信非知星识气，顾以人事决之耳。夫帝王所以御天下，莫重于信。今主上失大信于令公，亲而贵者且不自保，况疏贱乎！其亡可翘足而待，何强之有！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：解释选择者。"
+      },
+      "after": {
+        "claim_text": "安元信：以李从珂失信解释投奔石敬瑭的原因。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "83a9c999-0815-53cf-bd5a-4f86a66b22dc",
+      "baseline": {
+        "id": "83a9c999-0815-53cf-bd5a-4f86a66b22dc",
+        "subject_table": "person_event",
+        "subject_id": "f52e8b76-f8bb-5e14-a02e-3b261bac7084",
+        "field_path": "role",
+        "claim_text": "石敬瑭：听解释者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：对曰：“元信非知星识气，顾以人事决之耳。夫帝王所以御天下，莫重于信。今主上失大信于令公，亲而贵者且不自保，况疏贱乎！其亡可翘足而待，何强之有！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：听解释者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：听取安元信解释投奔的原因。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ed3af4ce-6df1-5ad4-ba2d-49595947a567",
+      "baseline": {
+        "id": "ed3af4ce-6df1-5ad4-ba2d-49595947a567",
+        "subject_table": "person_event",
+        "subject_id": "ce25b588-6cb1-5276-94a3-59b1a22c9b89",
+        "field_path": "role",
+        "claim_text": "石敬瑭：委任者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：敬瑭悦，委以军事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：委任者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：让安元信负责军事事务。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8a33e57e-1429-574d-8b36-d7d6e4245a6c",
+      "baseline": {
+        "id": "8a33e57e-1429-574d-8b36-d7d6e4245a6c",
+        "subject_table": "person_event",
+        "subject_id": "06c0b531-760d-57f9-832b-79605c20cd8e",
+        "field_path": "role",
+        "claim_text": "安元信：获委者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：敬瑭悦，委以军事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安元信：获委者。"
+      },
+      "after": {
+        "claim_text": "安元信：受石敬瑭委任，负责军事事务。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5457c23a-db3c-5a35-aae6-8c0104338397",
+      "baseline": {
+        "id": "5457c23a-db3c-5a35-aae6-8c0104338397",
+        "subject_table": "person_event",
+        "subject_id": "1ddadf07-3352-5da7-a970-83b56bff1ef6",
+        "field_path": "role",
+        "claim_text": "安重荣：转投者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：振武西北巡检使安重荣戍代北，帅步骑五百奔晋阳。重荣，朔州人也。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "安重荣：转投者。"
+      },
+      "after": {
+        "claim_text": "安重荣：从代北率领五百名步兵和骑兵投奔晋阳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f84d4669-c2c6-51db-9e37-4dcff24b76bb",
+      "baseline": {
+        "id": "f84d4669-c2c6-51db-9e37-4dcff24b76bb",
+        "subject_table": "person_event",
+        "subject_id": "451c53b4-83ac-56c1-b3a1-beb0e4aa4319",
+        "field_path": "role",
+        "claim_text": "宋审虔：获改任者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：以宋审虔为宁国节度使、充待卫马军都指挥使。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "宋审虔：获改任者。"
+      },
+      "after": {
+        "claim_text": "宋审虔：改任宁国节度使，并担任侍卫马军都指挥使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8a80b994-12c0-5a23-809c-5b3a8aa4fe10",
+      "baseline": {
+        "id": "8a80b994-12c0-5a23-809c-5b3a8aa4fe10",
+        "subject_table": "person_event",
+        "subject_id": "cba2c317-705d-56bd-9e30-f0b8befdf132",
+        "field_path": "role",
+        "claim_text": "刘延皓：被史书描述的节度使。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：天雄节度使刘延皓恃后族之势，骄纵，夺人财产，减将士给赐，宴饮无度。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "刘延皓：被史书描述的节度使。"
+      },
+      "after": {
+        "claim_text": "刘延皓：被《资治通鉴》记载侵夺财产、削减军队赏赐、宴饮无度。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c2d1c5ce-2143-5d0e-8a4f-0594caf7bd86",
+      "baseline": {
+        "id": "c2d1c5ce-2143-5d0e-8a4f-0594caf7bd86",
+        "subject_table": "person_event",
+        "subject_id": "1a9ec687-9fca-5e49-937e-b563ff38891e",
+        "field_path": "role",
+        "claim_text": "张令昭：兵变领头者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：捧圣都虞候张令昭因众心怨怒，谋以魏博应河东，癸丑未明，帅众攻牙城，克之；；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：兵变领头者。"
+      },
+      "after": {
+        "claim_text": "张令昭：率兵发动兵变，攻占魏博牙城。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d1b662e4-6add-540d-a7b3-d01c85a9d399",
+      "baseline": {
+        "id": "d1b662e4-6add-540d-a7b3-d01c85a9d399",
+        "subject_table": "person_event",
+        "subject_id": "061f4443-7d15-521b-be06-c4813153a62a",
+        "field_path": "role",
+        "claim_text": "刘延皓：脱身者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：延皓脱身走，乱兵大掠。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "刘延皓：脱身者。"
+      },
+      "after": {
+        "claim_text": "刘延皓：牙城失守后逃走。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8e20edc4-0c19-5f6e-a795-177cc27fa071",
+      "baseline": {
+        "id": "8e20edc4-0c19-5f6e-a795-177cc27fa071",
+        "subject_table": "person_event",
+        "subject_id": "640b6a6c-b3f7-5b37-b483-074b42e9fb17",
+        "field_path": "role",
+        "claim_text": "张令昭：自述领府、求旌节者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：令昭奏：“延皓失于抚御，以致军乱；臣以抚安士卒，权领军府，乞赐旌节！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：自述领府、求旌节者。"
+      },
+      "after": {
+        "claim_text": "张令昭：上奏自称为安抚军士暂管军府，请求赐予节度使旌节。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "743741b2-e72c-5dcc-83b7-c0c149ddb2b8",
+      "baseline": {
+        "id": "743741b2-e72c-5dcc-83b7-c0c149ddb2b8",
+        "subject_table": "person_event",
+        "subject_id": "8caf7e7a-73d0-5a7a-990c-aa393a6a3009",
+        "field_path": "role",
+        "claim_text": "刘延皓：至洛阳、初被命贬者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：延皓至洛阳，唐主怒，命远贬；；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "刘延皓：至洛阳、初被命贬者。"
+      },
+      "after": {
+        "claim_text": "刘延皓：到了洛阳后，被李从珂下令贬往远方。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ced6b005-1131-5222-85d6-79998d71efae",
+      "baseline": {
+        "id": "ced6b005-1131-5222-85d6-79998d71efae",
+        "subject_table": "person_event",
+        "subject_id": "3401a3be-7013-531c-a50c-aa2e30a9988a",
+        "field_path": "role",
+        "claim_text": "李从珂：下远贬命者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：延皓至洛阳，唐主怒，命远贬；；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：下远贬命者。"
+      },
+      "after": {
+        "claim_text": "李从珂：下令将刘延皓贬往远方。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5ccdbf7f-77e1-5225-85a8-8c0c4d2ca082",
+      "baseline": {
+        "id": "5ccdbf7f-77e1-5225-85a8-8c0c4d2ca082",
+        "subject_table": "person_event",
+        "subject_id": "40127aad-c68e-5fa6-9b30-88d6bbc140d2",
+        "field_path": "role",
+        "claim_text": "刘氏（李从珂后）：求情者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：皇后为之请，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "刘氏（李从珂后）：求情者。"
+      },
+      "after": {
+        "claim_text": "刘氏（李从珂后）：为刘延皓求情。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "7abbcc1d-e124-5c6f-b539-e8c2bcc18712",
+      "baseline": {
+        "id": "7abbcc1d-e124-5c6f-b539-e8c2bcc18712",
+        "subject_table": "person_event",
+        "subject_id": "2effd462-b882-54ff-a1f9-87237972bbdb",
+        "field_path": "role",
+        "claim_text": "刘延皓：求情对象。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：皇后为之请，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "刘延皓：求情对象。"
+      },
+      "after": {
+        "claim_text": "刘延皓：受到刘皇后求情。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5aa8bd91-d411-5167-8fc8-c1c9d31c58af",
+      "baseline": {
+        "id": "5aa8bd91-d411-5167-8fc8-c1c9d31c58af",
+        "subject_table": "person_event",
+        "subject_id": "72ff09ae-4845-5d9f-88dc-c24c4ab0836f",
+        "field_path": "role",
+        "claim_text": "刘延皓：被削官、归私第者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：六月，庚申，止削延皓官爵，归私第。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "刘延皓：被削官、归私第者。"
+      },
+      "after": {
+        "claim_text": "刘延皓：被剥夺官职和爵位，回到私宅。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1c099f37-79c9-5e9a-a551-8491507e01bb",
+      "baseline": {
+        "id": "1c099f37-79c9-5e9a-a551-8491507e01bb",
+        "subject_table": "person_event",
+        "subject_id": "0a9cc3de-7942-5ff5-85d6-ac85a638171f",
+        "field_path": "role",
+        "claim_text": "徐景迁：因病罢职者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：辛酉，吴太保、同平章事徐景迁以疾罢，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "徐景迁：因病罢职者。"
+      },
+      "after": {
+        "claim_text": "徐景迁：因病离任。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "74a06996-dc23-5f33-b3b5-f8a880d8b54c",
+      "baseline": {
+        "id": "74a06996-dc23-5f33-b3b5-f8a880d8b54c",
+        "subject_table": "person_event",
+        "subject_id": "f4828221-9f0f-5481-acca-fb0a2c0dbd0e",
+        "field_path": "role",
+        "claim_text": "徐景遂：获任者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：以其弟景遂代为门下侍郎、参政事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "徐景遂：获任者。"
+      },
+      "after": {
+        "claim_text": "徐景遂：接替哥哥徐景迁担任门下侍郎、参政事。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a1f85a6c-015d-5689-a8de-94a0c2ff71a0",
+      "baseline": {
+        "id": "a1f85a6c-015d-5689-a8de-94a0c2ff71a0",
+        "subject_table": "person_event",
+        "subject_id": "4038225f-d783-54ab-b763-1264fa2aecc5",
+        "field_path": "role",
+        "claim_text": "徐景迁：被弟代职的前任。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：以其弟景遂代为门下侍郎、参政事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "徐景迁：被弟代职的前任。"
+      },
+      "after": {
+        "claim_text": "徐景迁：离任后由弟弟徐景遂接替。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ef8bbdbc-fc44-5781-abc0-3a58a00e2f05",
+      "baseline": {
+        "id": "ef8bbdbc-fc44-5781-abc0-3a58a00e2f05",
+        "subject_table": "person_event",
+        "subject_id": "39ca1e91-1145-5131-a0d1-2e0e32f3ef13",
+        "field_path": "role",
+        "claim_text": "李从珂：授官者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：癸亥，唐主以张令昭为右千牛卫将军、权知天雄军计事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：授官者。"
+      },
+      "after": {
+        "claim_text": "李从珂：任命张令昭暂管天雄军事务。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "77992a31-6f6a-5410-9a1e-12326c345ef9",
+      "baseline": {
+        "id": "77992a31-6f6a-5410-9a1e-12326c345ef9",
+        "subject_table": "person_event",
+        "subject_id": "01d5f361-e853-51a9-8274-32b60a514620",
+        "field_path": "role",
+        "claim_text": "张令昭：获权任者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：癸亥，唐主以张令昭为右千牛卫将军、权知天雄军计事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：获权任者。"
+      },
+      "after": {
+        "claim_text": "张令昭：获任右千牛卫将军，并暂管天雄军事务。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "61578c5d-89e8-533d-b5a7-3e26e56f6660",
+      "baseline": {
+        "id": "61578c5d-89e8-533d-b5a7-3e26e56f6660",
+        "subject_table": "person_event",
+        "subject_id": "c009f2a7-604c-571e-b0a0-d519079734c0",
+        "field_path": "role",
+        "claim_text": "张令昭：暂受者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：令昭以调发未集，且受新命。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：暂受者。"
+      },
+      "after": {
+        "claim_text": "张令昭：因兵力尚未集齐，暂时接受朝廷任命。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "45eed152-406f-5c45-b59c-9e7755b54a09",
+      "baseline": {
+        "id": "45eed152-406f-5c45-b59c-9e7755b54a09",
+        "subject_table": "person_event",
+        "subject_id": "9b021f0f-b7a7-5927-8245-2777d128e66e",
+        "field_path": "role",
+        "claim_text": "张令昭：被命移职者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：寻有诏徙齐州防御使，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：被命移职者。"
+      },
+      "after": {
+        "claim_text": "张令昭：被朝廷下诏调任齐州防御使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "15af8ac0-eb08-5fdf-8c9f-4530a8c58061",
+      "baseline": {
+        "id": "15af8ac0-eb08-5fdf-8c9f-4530a8c58061",
+        "subject_table": "person_event",
+        "subject_id": "09dc9fea-b0bb-51bf-b022-1d6312381264",
+        "field_path": "role",
+        "claim_text": "张令昭：留任观望者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：令昭托以士卒所留，实俟河东之成败。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：留任观望者。"
+      },
+      "after": {
+        "claim_text": "张令昭：以士兵挽留为由留下，等待河东起事的结果。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9960b816-2779-56e1-8594-a9f3b711b141",
+      "baseline": {
+        "id": "9960b816-2779-56e1-8594-a9f3b711b141",
+        "subject_table": "person_event",
+        "subject_id": "0de7b265-cea6-5496-a462-d1b3d94f9686",
+        "field_path": "role",
+        "claim_text": "李从珂：遣使者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：唐主遣使谕之，令昭杀使者。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：遣使者。"
+      },
+      "after": {
+        "claim_text": "李从珂：派使者向张令昭传达旨意。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "09e68edb-e57b-515c-87f3-5ed1fa182073",
+      "baseline": {
+        "id": "09e68edb-e57b-515c-87f3-5ed1fa182073",
+        "subject_table": "person_event",
+        "subject_id": "c0759c05-746e-5c8b-b20c-21a5ad19cbf6",
+        "field_path": "role",
+        "claim_text": "张令昭：杀使者者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：唐主遣使谕之，令昭杀使者。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张令昭：杀使者者。"
+      },
+      "after": {
+        "claim_text": "张令昭：杀死李从珂派来的使者。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9a7c3176-b659-57d9-bd78-91506d706160",
+      "baseline": {
+        "id": "9a7c3176-b659-57d9-bd78-91506d706160",
+        "subject_table": "person_event",
+        "subject_id": "2491dbff-788d-5041-8103-6ae004790b0d",
+        "field_path": "role",
+        "claim_text": "范延光：获任讨魏博主帅。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：甲戌，以宣武节度使兼中书令范延光为天雄四面行营招讨使、知魏博行府事，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "范延光：获任讨魏博主帅。"
+      },
+      "after": {
+        "claim_text": "范延光：获任天雄四面行营招讨使，并主持魏博行府事务。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "80f79eff-68c6-5c75-9404-9b0e1049e191",
+      "baseline": {
+        "id": "80f79eff-68c6-5c75-9404-9b0e1049e191",
+        "subject_table": "person_event",
+        "subject_id": "7aced9cd-451a-5448-9017-bfdab1a148c3",
+        "field_path": "role",
+        "claim_text": "张敬达：获改官者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：以张敬达充太原四面招讨使，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张敬达：获改官者。"
+      },
+      "after": {
+        "claim_text": "张敬达：改任太原四面招讨使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d61c53f3-57e6-53ff-b3f4-ed564ece5daf",
+      "baseline": {
+        "id": "d61c53f3-57e6-53ff-b3f4-ed564ece5daf",
+        "subject_table": "person_event",
+        "subject_id": "e62466dc-6e76-5a1c-805a-491b309c90c1",
+        "field_path": "role",
+        "claim_text": "杨檀：获任副使者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：以杨光远为副使。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "杨檀：获任副使者。"
+      },
+      "after": {
+        "claim_text": "杨檀：获任太原四面副招讨使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "28de60ec-276c-569d-a589-7a5746745e32",
+      "baseline": {
+        "id": "28de60ec-276c-569d-a589-7a5746745e32",
+        "subject_table": "person_event",
+        "subject_id": "c416d4f6-b54c-5aa1-a30f-73239bc0e9b9",
+        "field_path": "role",
+        "claim_text": "李周：西京留守、获副招讨命者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：丙子，以西京留守李周为天雄军四面行营副招讨使。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李周：西京留守、获副招讨命者。"
+      },
+      "after": {
+        "claim_text": "李周：以西京留守身份获任天雄军四面行营副招讨使。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8446bf33-deda-5961-895d-f86b7f48919a",
+      "baseline": {
+        "id": "8446bf33-deda-5961-895d-f86b7f48919a",
+        "subject_table": "person_event",
+        "subject_id": "b5dff8d8-be8d-5f41-a7b2-b8a1d68bc86d",
+        "field_path": "role",
+        "claim_text": "石重英：右卫上将军、藏匿者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔闻敬瑭举兵，匿于民间井中。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石重英：右卫上将军、藏匿者。"
+      },
+      "after": {
+        "claim_text": "石重英：听说父亲石敬瑭起兵后躲藏在民宅井中。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5204595d-9760-53d1-8814-f40478f116e9",
+      "baseline": {
+        "id": "5204595d-9760-53d1-8814-f40478f116e9",
+        "subject_table": "person_event",
+        "subject_id": "072c19f2-7a74-57e9-ac0d-f8f1359463d1",
+        "field_path": "role",
+        "claim_text": "石重裔：皇城副使、藏匿者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔闻敬瑭举兵，匿于民间井中。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石重裔：皇城副使、藏匿者。"
+      },
+      "after": {
+        "claim_text": "石重裔：听说父亲石敬瑭起兵后躲藏在民宅井中。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "72aff5b6-7ad2-5151-8381-929f4758a3ac",
+      "baseline": {
+        "id": "72aff5b6-7ad2-5151-8381-929f4758a3ac",
+        "subject_table": "person_event",
+        "subject_id": "79cf684a-411d-52f6-88cb-a4a0397fc2c4",
+        "field_path": "role",
+        "claim_text": "石敬德：沂州都指挥使、杀家属并逃者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：弟沂州都指挥使敬德杀其妻女而逃，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬德：沂州都指挥使、杀家属并逃者。"
+      },
+      "after": {
+        "claim_text": "石敬德：杀死妻女后逃走。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a1e20668-c3f1-59b9-a7bd-8ccc79c45288",
+      "baseline": {
+        "id": "a1e20668-c3f1-59b9-a7bd-8ccc79c45288",
+        "subject_table": "person_event",
+        "subject_id": "e06c0d80-ed30-53f6-a691-016e6088758d",
+        "field_path": "role",
+        "claim_text": "石敬德：被捕、死狱者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：寻捕得，死狱中，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬德：被捕、死狱者。"
+      },
+      "after": {
+        "claim_text": "石敬德：被捕后死亡；《资治通鉴》记载他死在狱中。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0a7ed4f4-8caf-5bdf-bbfd-fb6ce5a62876",
+      "baseline": {
+        "id": "0a7ed4f4-8caf-5bdf-bbfd-fb6ce5a62876",
+        "subject_table": "person_event",
+        "subject_id": "2b40dfb2-a23d-5f88-8278-77350b00108f",
+        "field_path": "role",
+        "claim_text": "石敬威：自杀者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：从弟彰圣都指挥使敬威自杀。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬威：自杀者。"
+      },
+      "after": {
+        "claim_text": "石敬威：自杀。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "490f1cf8-a47c-5972-91a4-c21ad5eb9292",
+      "baseline": {
+        "id": "490f1cf8-a47c-5972-91a4-c21ad5eb9292",
+        "subject_table": "person_event",
+        "subject_id": "88290b3e-b74b-5381-a6ea-4c8e9c52de6f",
+        "field_path": "role",
+        "claim_text": "石重英：被捕诛者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：秋，七月，戊子，获重殷、重裔，诛之，并族所匿之家。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石重英：被捕诛者。"
+      },
+      "after": {
+        "claim_text": "石重英：被捕并处死。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "336fcaad-86cf-5a04-aebb-5be6f0bbe9b5",
+      "baseline": {
+        "id": "336fcaad-86cf-5a04-aebb-5be6f0bbe9b5",
+        "subject_table": "person_event",
+        "subject_id": "9fdd75c4-3d78-5c42-83da-aa90e4772ca7",
+        "field_path": "role",
+        "claim_text": "石重裔：被捕诛者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：秋，七月，戊子，获重殷、重裔，诛之，并族所匿之家。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石重裔：被捕诛者。"
+      },
+      "after": {
+        "claim_text": "石重裔：被捕并处死。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9ec2e43c-d1cb-5e4c-beef-6e0afc5636da",
+      "baseline": {
+        "id": "9ec2e43c-d1cb-5e4c-beef-6e0afc5636da",
+        "subject_table": "person_event",
+        "subject_id": "e954fd29-5b17-5c4a-ba18-438a3f206b90",
+        "field_path": "role",
+        "claim_text": "马希范：北还者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p019·原文件第24行",
+        "note": "原文：庚寅，楚王希范自桂州北还。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "马希范：北还者。"
+      },
+      "after": {
+        "claim_text": "马希范：从桂州向北返回。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1be0699a-dd96-5e02-bb89-2deeb138d77c",
+      "baseline": {
+        "id": "1be0699a-dd96-5e02-bb89-2deeb138d77c",
+        "subject_table": "person_event",
+        "subject_id": "bbe68980-7a6a-5730-9336-c6140ffc18a9",
+        "field_path": "role",
+        "claim_text": "桑迁：奏称者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "桑迁：奏称者。"
+      },
+      "after": {
+        "claim_text": "桑迁：向朝廷指控尹晖驱逐沙彦珣、收兵响应石敬瑭。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "fd1add27-0b60-564a-a052-4749c6d975d9",
+      "baseline": {
+        "id": "fd1add27-0b60-564a-a052-4749c6d975d9",
+        "subject_table": "person_event",
+        "subject_id": "75485e11-ece9-534c-ad68-986ff066379b",
+        "field_path": "role",
+        "claim_text": "尹晖：被指称者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "尹晖：被指称者。"
+      },
+      "after": {
+        "claim_text": "尹晖：被桑迁指控驱逐沙彦珣、收兵响应石敬瑭。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eec4215b-d2cb-54b8-8069-e9b28b2d9791",
+      "baseline": {
+        "id": "eec4215b-d2cb-54b8-8069-e9b28b2d9791",
+        "subject_table": "person_event",
+        "subject_id": "c3e1a371-008b-5676-82f5-ccb8afd61ec9",
+        "field_path": "role",
+        "claim_text": "沙彦珣：奏称中被逐者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "沙彦珣：奏称中被逐者。"
+      },
+      "after": {
+        "claim_text": "沙彦珣：在桑迁奏报中被称为遭尹晖驱逐的人。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1140d164-25bf-526d-82d7-e941300f7fa7",
+      "baseline": {
+        "id": "1140d164-25bf-526d-82d7-e941300f7fa7",
+        "subject_table": "person_event",
+        "subject_id": "a66aefc4-955c-55b8-b5b9-03c3b2fc2d9e",
+        "field_path": "role",
+        "claim_text": "沙彦珣：报告者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：丁酉，彦旬表迁谋叛应河东，引兵围子城。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "沙彦珣：报告者。"
+      },
+      "after": {
+        "claim_text": "沙彦珣：上表报告桑迁围城、谋叛响应石敬瑭。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "44509c96-4f18-5708-8143-e99a1d4f09e6",
+      "baseline": {
+        "id": "44509c96-4f18-5708-8143-e99a1d4f09e6",
+        "subject_table": "person_event",
+        "subject_id": "d44c53ea-f8fe-5113-a74a-d865c9595f9e",
+        "field_path": "role",
+        "claim_text": "桑迁：被报作乱者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：丁酉，彦旬表迁谋叛应河东，引兵围子城。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "桑迁：被报作乱者。"
+      },
+      "after": {
+        "claim_text": "桑迁：被沙彦珣奏报围城、谋叛响应石敬瑭。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "49bacf63-9f84-579b-b908-bc9f109dbde9",
+      "baseline": {
+        "id": "49bacf63-9f84-579b-b908-bc9f109dbde9",
+        "subject_table": "person_event",
+        "subject_id": "f7c3039a-19c0-53cf-859d-bfddb4ecf1cc",
+        "field_path": "role",
+        "claim_text": "沙彦珣：突围者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：彦昫犯围走出西山，据雷公口，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "沙彦珣：突围者。"
+      },
+      "after": {
+        "claim_text": "沙彦珣：突围后从西山出去，据守雷公口。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8b5d4c51-e177-5c42-9834-f3ba69604cd5",
+      "baseline": {
+        "id": "8b5d4c51-e177-5c42-9834-f3ba69604cd5",
+        "subject_table": "person_event",
+        "subject_id": "481bf5f5-b882-583f-9086-590a39bd9a87",
+        "field_path": "role",
+        "claim_text": "沙彦珣：收兵击乱军者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：明日，收兵入城击乱兵，迁败走，军城复安。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "沙彦珣：收兵击乱军者。"
+      },
+      "after": {
+        "claim_text": "沙彦珣：收拢部队回城，攻击叛乱士兵。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c808e5db-9565-5de4-84a6-0b6a5f3ae694",
+      "baseline": {
+        "id": "c808e5db-9565-5de4-84a6-0b6a5f3ae694",
+        "subject_table": "person_event",
+        "subject_id": "a663c0fb-3795-5e22-a88d-94ddedffef56",
+        "field_path": "role",
+        "claim_text": "桑迁：败走者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：明日，收兵入城击乱兵，迁败走，军城复安。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "桑迁：败走者。"
+      },
+      "after": {
+        "claim_text": "桑迁：被沙彦珣击败后逃走。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "bf1267a8-dfce-51bc-827f-ce0ba54b43bb",
+      "baseline": {
+        "id": "bf1267a8-dfce-51bc-827f-ce0ba54b43bb",
+        "subject_table": "person_event",
+        "subject_id": "b1337d7a-7e8d-5407-b138-3d1712885262",
+        "field_path": "role",
+        "claim_text": "尹晖：擒送者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：是日，尹晖执迁送洛阳，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "尹晖：擒送者。"
+      },
+      "after": {
+        "claim_text": "尹晖：抓获桑迁并将他送往洛阳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5a63e758-4b46-5e8a-8625-0b2a99fdf664",
+      "baseline": {
+        "id": "5a63e758-4b46-5e8a-8625-0b2a99fdf664",
+        "subject_table": "person_event",
+        "subject_id": "ec1d554f-b90d-5c86-ac82-8e749d0630e9",
+        "field_path": "role",
+        "claim_text": "桑迁：被擒送者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：是日，尹晖执迁送洛阳，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "桑迁：被擒送者。"
+      },
+      "after": {
+        "claim_text": "桑迁：被尹晖抓获并送往洛阳。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eef28d71-1729-574c-8e05-61289f327b4e",
+      "baseline": {
+        "id": "eef28d71-1729-574c-8e05-61289f327b4e",
+        "subject_table": "person_event",
+        "subject_id": "ad62abd9-7b83-5a42-b3ae-6c7081fe3234",
+        "field_path": "role",
+        "claim_text": "桑迁：被斩者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：尹晖执迁送洛阳，斩之。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "桑迁：被斩者。"
+      },
+      "after": {
+        "claim_text": "桑迁：被送往洛阳后处死。"
+      },
+      "review": "对应参与事实展开为该引用所支持的动作；逐字引用、校核说明和出处保持不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "600b8b78-320c-5b21-9a2b-901a7727ecbe",
+      "baseline": {
+        "id": "600b8b78-320c-5b21-9a2b-901a7727ecbe",
+        "subject_table": "person",
+        "subject_id": "d1d49161-7580-5b4e-9bea-b2b316ef2f55",
+        "field_path": "description",
+        "claim_text": "本段记皇甫立：昭义节度使、报告者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：戊戌，昭义节度使皇甫立奏敬瑭反。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记皇甫立：昭义节度使、报告者。"
+      },
+      "after": {
+        "claim_text": "皇甫立：以昭义节度使身份报告石敬瑭反叛。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "97ad75b9-2904-54e8-aa1d-2e75b1e39cb4",
+      "baseline": {
+        "id": "97ad75b9-2904-54e8-aa1d-2e75b1e39cb4",
+        "subject_table": "person",
+        "subject_id": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "field_path": "description",
+        "claim_text": "本段记石敬瑭：被报告者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：戊戌，昭义节度使皇甫立奏敬瑭反。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记石敬瑭：被报告者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：被皇甫立报告反叛。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "01e90b76-bee4-59ec-bac1-3aa4431f6126",
+      "baseline": {
+        "id": "01e90b76-bee4-59ec-bac1-3aa4431f6126",
+        "subject_table": "person",
+        "subject_id": "0a45ab01-e475-5d82-9a76-16d916af5abd",
+        "field_path": "description",
+        "claim_text": "本段记李从珂：被指责、被要求者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：敬瑭表：“帝，养子，不应承祀，请传位许王。”；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记李从珂：被指责、被要求者。"
+      },
+      "after": {
+        "claim_text": "李从珂：被石敬瑭指责为养子，并要求交出皇位。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "507e4586-45ee-5733-add9-ebf398ca5c71",
+      "baseline": {
+        "id": "507e4586-45ee-5733-add9-ebf398ca5c71",
+        "subject_table": "person",
+        "subject_id": "2970e6dd-9d89-56e7-a1cf-018052b12906",
+        "field_path": "description",
+        "claim_text": "本段记张敬达：兼任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：乙巳，以张敬达兼太原四面排陈使，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记张敬达：兼任者。"
+      },
+      "after": {
+        "claim_text": "张敬达：兼任太原四面排陈使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d29adf83-1cbe-536b-839d-df5416bb5228",
+      "baseline": {
+        "id": "d29adf83-1cbe-536b-839d-df5416bb5228",
+        "subject_table": "person",
+        "subject_id": "1d4e69b6-64bd-53f4-8cd8-a520b0739423",
+        "field_path": "description",
+        "claim_text": "本段记张彦琪：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：河阳节度使张彦琪为马步军都指挥使，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记张彦琪：获任者。"
+      },
+      "after": {
+        "claim_text": "张彦琪：获任太原四面马步军都指挥使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6c776e1d-9ea3-537d-8bcc-f2c58ef072e4",
+      "baseline": {
+        "id": "6c776e1d-9ea3-537d-8bcc-f2c58ef072e4",
+        "subject_table": "person",
+        "subject_id": "a579a6a1-65a5-5c8a-9c6c-be178cb049aa",
+        "field_path": "description",
+        "claim_text": "本段记安审琦：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以安国节度使安审琦为马军都指挥使，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记安审琦：获任者。"
+      },
+      "after": {
+        "claim_text": "安审琦：获任太原四面马军都指挥使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "aafacfd7-555b-5d82-adc0-aaece2c828b5",
+      "baseline": {
+        "id": "aafacfd7-555b-5d82-adc0-aaece2c828b5",
+        "subject_table": "person",
+        "subject_id": "e2182ca6-8574-5fc2-9c3d-a92e1f9139ed",
+        "field_path": "description",
+        "claim_text": "本段记相里金：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以保义节度使相里金为步军都指挥使，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记相里金：获任者。"
+      },
+      "after": {
+        "claim_text": "相里金：获任太原四面步军都指挥使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "da0b944f-bd17-5ead-ba05-a1f20d385263",
+      "baseline": {
+        "id": "da0b944f-bd17-5ead-ba05-a1f20d385263",
+        "subject_table": "person",
+        "subject_id": "b33f9e46-e003-5e57-ba26-9b478560cefb",
+        "field_path": "description",
+        "claim_text": "本段记武廷翰：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以右监门上将军武廷翰为壕寨使。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记武廷翰：获任者。"
+      },
+      "after": {
+        "claim_text": "武廷翰：获任太原四面壕寨使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9327df82-35d7-5ef4-80cf-64457db452d1",
+      "baseline": {
+        "id": "9327df82-35d7-5ef4-80cf-64457db452d1",
+        "subject_table": "person",
+        "subject_id": "54ec3b10-aece-5189-91a8-84a03c5691a3",
+        "field_path": "description",
+        "claim_text": "本段记杨檀：义武节度使、获副部署者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以义武节度使杨光远为副部署。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记杨檀：义武节度使、获副部署者。"
+      },
+      "after": {
+        "claim_text": "杨檀：以义武节度使身份获任太原四面兵马副部署。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5fe17a7a-4d27-52ec-85ff-814af140f2ed",
+      "baseline": {
+        "id": "5fe17a7a-4d27-52ec-85ff-814af140f2ed",
+        "subject_table": "person",
+        "subject_id": "659c5f83-09bc-5282-8f02-4c7fa0a62729",
+        "field_path": "description",
+        "claim_text": "本段记高行周：获任者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以前彰武节度使高行周为太原四面招抚、排陈等使。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记高行周：获任者。"
+      },
+      "after": {
+        "claim_text": "高行周：获任太原四面招抚、排陈等使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "533805b1-2a06-5316-b94a-6b40c3cce772",
+      "baseline": {
+        "id": "533805b1-2a06-5316-b94a-6b40c3cce772",
+        "subject_table": "person",
+        "subject_id": "f3df25e6-d0a6-57cc-8996-e5d57af4f5ef",
+        "field_path": "description",
+        "claim_text": "本段记方太：讨平军乱者。",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：光远既行，定州军乱，牙将千乘方太讨平之。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记方太：讨平军乱者。"
+      },
+      "after": {
+        "claim_text": "方太：率军平定定州军队叛乱。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eec33bf2-c74c-5c68-a8fa-06cf09413fb7",
+      "baseline": {
+        "id": "eec33bf2-c74c-5c68-a8fa-06cf09413fb7",
+        "subject_table": "person",
+        "subject_id": "d2ddf941-57f6-5dc2-bf1b-d0256df4eae0",
+        "field_path": "description",
+        "claim_text": "本段记安审信：西北先锋马军都指挥使、转投者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：戊申，敬达奏西北先锋马军都指挥使安审信叛奔晋阳。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记安审信：西北先锋马军都指挥使、转投者。"
+      },
+      "after": {
+        "claim_text": "安审信：以西北先锋马军都指挥使身份转投晋阳的石敬瑭。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "63a900e9-8f53-5057-92d7-9ff35017947f",
+      "baseline": {
+        "id": "63a900e9-8f53-5057-92d7-9ff35017947f",
+        "subject_table": "person",
+        "subject_id": "b52eca39-fd61-599b-8624-160fbb4ec282",
+        "field_path": "description",
+        "claim_text": "本段记安金全：主安审信之弟子称谓中的金全。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：审信，金全之弟子也，敬瑭与之有旧。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记安金全：主安审信之弟子称谓中的金全。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》在说明安审信与安金全的关系时使用“弟子”一词，其具体亲属或师生含义仍待核实。"
+      },
+      "review": "明确书名、人名及原文“弟子”的歧义，不推定为师徒或叔侄关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6c7f5961-592d-5094-a37a-265d2519eb4f",
+      "baseline": {
+        "id": "6c7f5961-592d-5094-a37a-265d2519eb4f",
+        "subject_table": "person",
+        "subject_id": "b52eca39-fd61-599b-8624-160fbb4ec282",
+        "field_path": "description",
+        "claim_text": "主称安审信为金全之弟子，并与石敬瑭有旧。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：审信，金全之弟子也，敬瑭与之有旧。；核对说明：弟子古义可能指弟之子，本次无明确证据拆成师徒或叔侄边，保持待考，不合李金全。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "主称安审信为金全之弟子，并与石敬瑭有旧。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》称安审信为安金全的“弟子”，并记载他与石敬瑭早有交往；“弟子”的具体含义仍待核实。"
+      },
+      "review": "明确书名、人名及原文“弟子”的歧义，不推定为师徒或叔侄关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6ca4c300-b589-50ad-9c7e-406b7730d464",
+      "baseline": {
+        "id": "6ca4c300-b589-50ad-9c7e-406b7730d464",
+        "subject_table": "person",
+        "subject_id": "1b3f603f-8e9d-50da-a498-2ab6c0abc8e0",
+        "field_path": "description",
+        "claim_text": "本段记安元信：雄义都指挥使、戍将。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：先是，雄义都指挥使马邑安元信将所部六百馀人戍代州，代州刺史张朗善遇之，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记安元信：雄义都指挥使、戍将。"
+      },
+      "after": {
+        "claim_text": "安元信：以雄义都指挥使身份率军驻守代州。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "af523bea-bb77-5682-a706-215abbb8f57e",
+      "baseline": {
+        "id": "af523bea-bb77-5682-a706-215abbb8f57e",
+        "subject_table": "person",
+        "subject_id": "8ceaef72-c533-5422-8e26-fede0ae534ce",
+        "field_path": "description",
+        "claim_text": "本段记张朗：代州刺史、善遇者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：先是，雄义都指挥使马邑安元信将所部六百馀人戍代州，代州刺史张朗善遇之，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记张朗：代州刺史、善遇者。"
+      },
+      "after": {
+        "claim_text": "张朗：以代州刺史身份善待安元信。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4a9c9f7b-36f2-5ce5-99d8-18d791100c62",
+      "baseline": {
+        "id": "4a9c9f7b-36f2-5ce5-99d8-18d791100c62",
+        "subject_table": "person",
+        "subject_id": "7309cd08-206a-5781-8eaa-527f54f64299",
+        "field_path": "description",
+        "claim_text": "本段记安重荣：转投者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：振武西北巡检使安重荣戍代北，帅步骑五百奔晋阳。重荣，朔州人也。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记安重荣：转投者。"
+      },
+      "after": {
+        "claim_text": "安重荣：从代北率领五百名步兵和骑兵投奔晋阳。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "202879b2-afda-5f9d-9f0d-6fda0ae8a2c3",
+      "baseline": {
+        "id": "202879b2-afda-5f9d-9f0d-6fda0ae8a2c3",
+        "subject_table": "person",
+        "subject_id": "a69faeab-caae-5e4c-9aa3-1adb5b305c59",
+        "field_path": "description",
+        "claim_text": "本段记宋审虔：获改任者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：以宋审虔为宁国节度使、充待卫马军都指挥使。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记宋审虔：获改任者。"
+      },
+      "after": {
+        "claim_text": "宋审虔：改任宁国节度使，并担任侍卫马军都指挥使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "7a088195-3f49-570d-99ea-1fea0e37753b",
+      "baseline": {
+        "id": "7a088195-3f49-570d-99ea-1fea0e37753b",
+        "subject_table": "person",
+        "subject_id": "07d9f33a-b9fb-5829-ab31-44601e21660f",
+        "field_path": "description",
+        "claim_text": "本段记刘延皓：被史书描述的节度使。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：天雄节度使刘延皓恃后族之势，骄纵，夺人财产，减将士给赐，宴饮无度。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记刘延皓：被史书描述的节度使。"
+      },
+      "after": {
+        "claim_text": "刘延皓：被《资治通鉴》记载侵夺财产、削减军队赏赐、宴饮无度。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "42bf2ab8-d22f-573c-85d0-ba3adb43e8a7",
+      "baseline": {
+        "id": "42bf2ab8-d22f-573c-85d0-ba3adb43e8a7",
+        "subject_table": "person",
+        "subject_id": "7c4bbeba-a204-5b27-ae1e-234994e240be",
+        "field_path": "description",
+        "claim_text": "本段记张令昭：兵变领头者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：捧圣都虞候张令昭因众心怨怒，谋以魏博应河东，癸丑未明，帅众攻牙城，克之；；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记张令昭：兵变领头者。"
+      },
+      "after": {
+        "claim_text": "张令昭：率兵发动兵变，攻占魏博牙城。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "868110a1-9bae-5838-8bc3-8434eb2ff792",
+      "baseline": {
+        "id": "868110a1-9bae-5838-8bc3-8434eb2ff792",
+        "subject_table": "person",
+        "subject_id": "15aa1582-b512-50ab-90f7-65da83673b74",
+        "field_path": "description",
+        "claim_text": "本段记刘氏（李从珂后）：求情者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：皇后为之请，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记刘氏（李从珂后）：求情者。"
+      },
+      "after": {
+        "claim_text": "刘氏（李从珂后）：为刘延皓求情。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "289dc48e-ab29-51c2-92be-c336114c552e",
+      "baseline": {
+        "id": "289dc48e-ab29-51c2-92be-c336114c552e",
+        "subject_table": "person",
+        "subject_id": "17d67985-b1cf-561c-9df9-fcce2c1a5e0d",
+        "field_path": "description",
+        "claim_text": "本段记徐景迁：因病罢职者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：辛酉，吴太保、同平章事徐景迁以疾罢，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记徐景迁：因病罢职者。"
+      },
+      "after": {
+        "claim_text": "徐景迁：因病离任。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4e596c9e-4b11-52ed-a5c0-4e8d0d5d9724",
+      "baseline": {
+        "id": "4e596c9e-4b11-52ed-a5c0-4e8d0d5d9724",
+        "subject_table": "person",
+        "subject_id": "cb45cc6e-58fb-5804-8c3d-962cbbc03a13",
+        "field_path": "description",
+        "claim_text": "本段记徐景遂：获任者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：以其弟景遂代为门下侍郎、参政事。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记徐景遂：获任者。"
+      },
+      "after": {
+        "claim_text": "徐景遂：接替哥哥徐景迁担任门下侍郎、参政事。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6efc9f68-f3f3-5dfc-b080-6061755c92ec",
+      "baseline": {
+        "id": "6efc9f68-f3f3-5dfc-b080-6061755c92ec",
+        "subject_table": "person",
+        "subject_id": "6889e460-4b23-5243-9441-b5c3a78da98f",
+        "field_path": "description",
+        "claim_text": "本段记范延光：获任讨魏博主帅。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：甲戌，以宣武节度使兼中书令范延光为天雄四面行营招讨使、知魏博行府事，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记范延光：获任讨魏博主帅。"
+      },
+      "after": {
+        "claim_text": "范延光：获任天雄四面行营招讨使，并主持魏博行府事务。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "81462381-85f7-51d9-a3bb-8ebb8548d557",
+      "baseline": {
+        "id": "81462381-85f7-51d9-a3bb-8ebb8548d557",
+        "subject_table": "person",
+        "subject_id": "80ce0eab-d01c-5ae2-ad19-5d2e34b7e3b5",
+        "field_path": "description",
+        "claim_text": "本段记李周：西京留守、获副招讨命者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：丙子，以西京留守李周为天雄军四面行营副招讨使。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记李周：西京留守、获副招讨命者。"
+      },
+      "after": {
+        "claim_text": "李周：以西京留守身份获任天雄军四面行营副招讨使。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f9ddb8bb-2601-56c9-ae9d-0d0dc27ebc41",
+      "baseline": {
+        "id": "f9ddb8bb-2601-56c9-ae9d-0d0dc27ebc41",
+        "subject_table": "person",
+        "subject_id": "839d136d-f52b-5fb6-923a-f29f26275116",
+        "field_path": "description",
+        "claim_text": "本段记石重英：右卫上将军、藏匿者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔闻敬瑭举兵，匿于民间井中。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记石重英：右卫上将军、藏匿者。"
+      },
+      "after": {
+        "claim_text": "石重英：听说父亲石敬瑭起兵后躲藏在民宅井中。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6b153a08-e934-5086-ba19-4cf5731534fb",
+      "baseline": {
+        "id": "6b153a08-e934-5086-ba19-4cf5731534fb",
+        "subject_table": "person",
+        "subject_id": "2e2fd7e0-eb92-5941-939b-f07f617ae3c3",
+        "field_path": "description",
+        "claim_text": "本段记石重裔：皇城副使、藏匿者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔闻敬瑭举兵，匿于民间井中。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记石重裔：皇城副使、藏匿者。"
+      },
+      "after": {
+        "claim_text": "石重裔：听说父亲石敬瑭起兵后躲藏在民宅井中。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c5909192-73d9-52fa-98b3-5bc124caff85",
+      "baseline": {
+        "id": "c5909192-73d9-52fa-98b3-5bc124caff85",
+        "subject_table": "person",
+        "subject_id": "a919fa99-811c-5288-9beb-8cbe1bd7b807",
+        "field_path": "description",
+        "claim_text": "本段记石敬德：沂州都指挥使、杀家属并逃者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：弟沂州都指挥使敬德杀其妻女而逃，；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记石敬德：沂州都指挥使、杀家属并逃者。"
+      },
+      "after": {
+        "claim_text": "石敬德：杀死妻女后逃走。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ec203c80-e3f6-5f11-8a84-d01481ceac2a",
+      "baseline": {
+        "id": "ec203c80-e3f6-5f11-8a84-d01481ceac2a",
+        "subject_table": "person",
+        "subject_id": "ab41c627-3a85-50fc-b627-897a17918b05",
+        "field_path": "description",
+        "claim_text": "本段记石敬威：自杀者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：从弟彰圣都指挥使敬威自杀。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记石敬威：自杀者。"
+      },
+      "after": {
+        "claim_text": "石敬威：自杀。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eeeb43a8-952b-583d-abe1-756c8551d67c",
+      "baseline": {
+        "id": "eeeb43a8-952b-583d-abe1-756c8551d67c",
+        "subject_table": "person",
+        "subject_id": "6c13c07c-57cf-596e-9247-ba0556ac4737",
+        "field_path": "description",
+        "claim_text": "本段记马希范：北还者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p019·原文件第24行",
+        "note": "原文：庚寅，楚王希范自桂州北还。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记马希范：北还者。"
+      },
+      "after": {
+        "claim_text": "马希范：从桂州向北返回。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6695fc18-3638-5544-9973-5871cb03c66b",
+      "baseline": {
+        "id": "6695fc18-3638-5544-9973-5871cb03c66b",
+        "subject_table": "person",
+        "subject_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "field_path": "description",
+        "claim_text": "本段记桑迁：奏称者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记桑迁：奏称者。"
+      },
+      "after": {
+        "claim_text": "桑迁：向朝廷指控尹晖驱逐沙彦珣、收兵响应石敬瑭。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "bca7874d-add0-57a0-9f8c-dd5663056497",
+      "baseline": {
+        "id": "bca7874d-add0-57a0-9f8c-dd5663056497",
+        "subject_table": "person",
+        "subject_id": "bd7deb48-309d-5bdc-ab41-85bbc59444ea",
+        "field_path": "description",
+        "claim_text": "本段记尹晖：被指称者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记尹晖：被指称者。"
+      },
+      "after": {
+        "claim_text": "尹晖：被桑迁指控驱逐沙彦珣、收兵响应石敬瑭。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "41010e69-dcb2-5fa2-b9a3-7ad1d8093ddb",
+      "baseline": {
+        "id": "41010e69-dcb2-5fa2-b9a3-7ad1d8093ddb",
+        "subject_table": "person",
+        "subject_id": "14933655-00d4-5df8-b377-9b7c7aac47df",
+        "field_path": "description",
+        "claim_text": "本段记沙彦珣：奏称中被逐者。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段记沙彦珣：奏称中被逐者。"
+      },
+      "after": {
+        "claim_text": "沙彦珣：在桑迁奏报中被称为遭尹晖驱逐的人。"
+      },
+      "review": "人物事实与参与引用逐字一致并对应同一主体，按该条动作展开；不扩写人物完整生平，不改变引用、身份或关系。"
+    },
+    {
+      "table": "person_relationship",
+      "id": "78e0df9f-b9c2-503c-88a9-cb832d824b14",
+      "baseline": {
+        "id": "78e0df9f-b9c2-503c-88a9-cb832d824b14",
+        "person_a": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "person_b": "ab41c627-3a85-50fc-b627-897a17918b05",
+        "relation_type": "从兄",
+        "description": "石敬瑭是石敬威的从兄。",
+        "created_at": "2026-10-04T04:26:45.157446+00:00",
+        "status": "published"
+      },
+      "before": {
+        "description": "石敬瑭是石敬威的从兄。"
+      },
+      "after": {
+        "description": "按原文“从弟”的记载，石敬瑭是石敬威的同宗兄辈，具体亲属范围仍待核实。"
+      },
+      "review": "逐条核读亲属引用，明确双方姓名和关系方向；从兄保留古称范围，解释同宗长幼，不擅定父亲或共同祖先。端点和类型不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5e342b96-c9c1-521a-8f38-1d81aed1e286",
+      "baseline": {
+        "id": "5e342b96-c9c1-521a-8f38-1d81aed1e286",
+        "subject_table": "person_relationship",
+        "subject_id": "78e0df9f-b9c2-503c-88a9-cb832d824b14",
+        "field_path": "description",
+        "claim_text": "石敬瑭是石敬威的从兄。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：从弟彰圣都指挥使敬威自杀。；核对说明：从弟明示旁系较幼，对向用从兄；保古称，不擅限定亲父或几代共同祖先。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭是石敬威的从兄。"
+      },
+      "after": {
+        "claim_text": "按原文“从弟”的记载，石敬瑭是石敬威的同宗兄辈，具体亲属范围仍待核实。"
+      },
+      "review": "对应同条亲属引用展开关系说明，保留端点、方向和原文，未载的生母或共同祖先不补出。"
+    }
+  ],
+  "reviewed_unchanged": [
+    {
+      "table": "person_relationship",
+      "id": "6bbc4b1f-433b-5cf9-bbff-6f1e385cf6f7",
+      "fields": [
+        "description"
+      ],
+      "baseline": {
+        "id": "6bbc4b1f-433b-5cf9-bbff-6f1e385cf6f7",
+        "person_a": "17d67985-b1cf-561c-9df9-fcce2c1a5e0d",
+        "person_b": "cb45cc6e-58fb-5804-8c3d-962cbbc03a13",
+        "relation_type": "兄长",
+        "description": "徐景迁是徐景遂的兄长。",
+        "created_at": "2026-10-04T04:26:45.157446+00:00",
+        "status": "published"
+      },
+      "review": "逐条核读亲属引用，明确双方姓名和关系方向；从兄保留古称范围，解释同宗长幼，不擅定父亲或共同祖先。端点和类型不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "46e54e17-977f-5818-a948-a26f403304d3",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "46e54e17-977f-5818-a948-a26f403304d3",
+        "subject_table": "person_relationship",
+        "subject_id": "6bbc4b1f-433b-5cf9-bbff-6f1e385cf6f7",
+        "field_path": "description",
+        "claim_text": "徐景迁是徐景遂的兄长。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：以其弟景遂代为门下侍郎、参政事。；核对说明：承前景迁，其弟明确；A是B兄长。",
+        "status": "published"
+      },
+      "review": "对应同条亲属引用展开关系说明，保留端点、方向和原文，未载的生母或共同祖先不补出。"
+    },
+    {
+      "table": "person_relationship",
+      "id": "97d62a58-7e4b-58ab-8f4a-ab2b299dc8a5",
+      "fields": [
+        "description"
+      ],
+      "baseline": {
+        "id": "97d62a58-7e4b-58ab-8f4a-ab2b299dc8a5",
+        "person_a": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "person_b": "839d136d-f52b-5fb6-923a-f29f26275116",
+        "relation_type": "父亲",
+        "description": "石敬瑭是石重英的父亲。",
+        "created_at": "2026-10-04T04:26:45.157446+00:00",
+        "status": "published"
+      },
+      "review": "逐条核读亲属引用，明确双方姓名和关系方向；从兄保留古称范围，解释同宗长幼，不擅定父亲或共同祖先。端点和类型不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "dd3b70e1-e5e8-557c-b116-d51047733279",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "dd3b70e1-e5e8-557c-b116-d51047733279",
+        "subject_table": "person_relationship",
+        "subject_id": "97d62a58-7e4b-58ab-8f4a-ab2b299dc8a5",
+        "field_path": "description",
+        "claim_text": "石敬瑭是石重英的父亲。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔；核对说明：主明之子，A是B父亲；不据未明生母造母子。",
+        "status": "published"
+      },
+      "review": "对应同条亲属引用展开关系说明，保留端点、方向和原文，未载的生母或共同祖先不补出。"
+    },
+    {
+      "table": "person_relationship",
+      "id": "cc6f89fa-b2fb-56ba-b6c5-fdd38953bf8b",
+      "fields": [
+        "description"
+      ],
+      "baseline": {
+        "id": "cc6f89fa-b2fb-56ba-b6c5-fdd38953bf8b",
+        "person_a": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "person_b": "2e2fd7e0-eb92-5941-939b-f07f617ae3c3",
+        "relation_type": "父亲",
+        "description": "石敬瑭是石重裔的父亲。",
+        "created_at": "2026-10-04T04:26:45.157446+00:00",
+        "status": "published"
+      },
+      "review": "逐条核读亲属引用，明确双方姓名和关系方向；从兄保留古称范围，解释同宗长幼，不擅定父亲或共同祖先。端点和类型不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "23b834d8-f393-5d6a-9c1d-5b4b31a4a827",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "23b834d8-f393-5d6a-9c1d-5b4b31a4a827",
+        "subject_table": "person_relationship",
+        "subject_id": "cc6f89fa-b2fb-56ba-b6c5-fdd38953bf8b",
+        "field_path": "description",
+        "claim_text": "石敬瑭是石重裔的父亲。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔；核对说明：主明之子，A是B父亲；不据未明生母造母子。",
+        "status": "published"
+      },
+      "review": "对应同条亲属引用展开关系说明，保留端点、方向和原文，未载的生母或共同祖先不补出。"
+    },
+    {
+      "table": "person_relationship",
+      "id": "33fc2a7a-b334-58f4-bb58-b97437a7dad0",
+      "fields": [
+        "description"
+      ],
+      "baseline": {
+        "id": "33fc2a7a-b334-58f4-bb58-b97437a7dad0",
+        "person_a": "bf42d98c-7477-5be1-a767-867fe26cf617",
+        "person_b": "a919fa99-811c-5288-9beb-8cbe1bd7b807",
+        "relation_type": "兄长",
+        "description": "石敬瑭是石敬德的兄长。",
+        "created_at": "2026-10-04T04:26:45.157446+00:00",
+        "status": "published"
+      },
+      "review": "逐条核读亲属引用，明确双方姓名和关系方向；从兄保留古称范围，解释同宗长幼，不擅定父亲或共同祖先。端点和类型不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a1621fab-2097-5096-bf05-07eabc918704",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "a1621fab-2097-5096-bf05-07eabc918704",
+        "subject_table": "person_relationship",
+        "subject_id": "33fc2a7a-b334-58f4-bb58-b97437a7dad0",
+        "field_path": "description",
+        "claim_text": "石敬瑭是石敬德的兄长。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：弟沂州都指挥使敬德；核对说明：前石敬瑭之弟，明示长幼。",
+        "status": "published"
+      },
+      "review": "对应同条亲属引用展开关系说明，保留端点、方向和原文，未载的生母或共同祖先不补出。"
+    }
+  ],
+  "full_goal_complete": false
+}

@@ -1,0 +1,1900 @@
+{
+  "created_at": "2026-10-04T11:07:54.523879+00:00",
+  "scope": "936年第13—20段剩余尚待审的补证事实、身份异写和时间事实说明；已清楚的原纪年及干支日期保留。事件核心概述由第30轮另行处理，其他字段分别审查。",
+  "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
+  "archives": [
+    {
+      "batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-03",
+      "batch_sha256": "ee6475c075eba4c9ab8a9e70456485ea333e0e0d6bb17adc7c60936d15625fbb",
+      "source_files": [
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/jiuwudaishi-048-936-july-revolts/source.txt",
+          "sha256": "fe72a13dacaa38f22d68ecf439f395f24eb8bcd973435d59ae4311fb3181a8a9"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/jiuwudaishi-048-936-june-armies/source.txt",
+          "sha256": "9ced20f5354f8bc525874105bcdb4bf9c067238c0604e91e00a15ea5c1baefb8"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/jiuwudaishi-048-936-may-revolts/source.txt",
+          "sha256": "f49053131da431e41a4621abaa150e46bd344f1e561432a4631bcbdbbfe73135"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/tongjian-280-936-may-july-revolts/source.txt",
+          "sha256": "05c0b4b54c89ac43615e3a0fc6831eb08705828dc30203e9316f50c0c2c75ae5"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-03/sources/library/xinwudaishi-007-936-revolts/source.txt",
+          "sha256": "8989a16623a80e68ccae968c001bd08f35366f00983605f7a080628b5a61e47c"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "table": "fact_claim",
+      "id": "49ed53e6-d4fb-551a-b9c5-734b8588936a",
+      "baseline": {
+        "id": "49ed53e6-d4fb-551a-b9c5-734b8588936a",
+        "subject_table": "event",
+        "subject_id": "ceaba146-fa10-59ce-a074-0003ca91d85a",
+        "field_path": "description",
+        "claim_text": "旧同日记昭义奏报。",
+        "source_id": "fc828d33-d885-5a04-a3c5-410698c4177d",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001316；EPUB电子本，纸本及异文待核",
+        "note": "原文：戊戌，昭義奏，河東節度使石敬瑭叛。；核对说明：《旧五代史》未写出奏报者姓名，《资治通鉴》明确写为皇甫立。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧同日记昭义奏报。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在同日记载昭义方面奏报石敬瑭反叛。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d8a3b24d-9864-5788-8b01-603f36583457",
+      "baseline": {
+        "id": "d8a3b24d-9864-5788-8b01-603f36583457",
+        "subject_table": "event",
+        "subject_id": "b6dc0bb1-ca13-5488-8d17-e5edc9600b19",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：敬瑭表：“帝，养子，不应承祀，请传位许王。”；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c1325cdc-4b1b-54c5-9049-24f92e6c5362",
+      "baseline": {
+        "id": "c1325cdc-4b1b-54c5-9049-24f92e6c5362",
+        "subject_table": "event",
+        "subject_id": "b6dc0bb1-ca13-5488-8d17-e5edc9600b19",
+        "field_path": "description",
+        "claim_text": "旧也记石表强调许王先朝血绪。",
+        "source_id": "fc828d33-d885-5a04-a3c5-410698c4177d",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001316；EPUB电子本，纸本及异文待核",
+        "note": "原文：許王先朝血緒，養德皇闈，；核对说明：这条记载说明石敬瑭的政治要求，未说明皇位已经转交。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧也记石表强调许王先朝血绪。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》也记载石敬瑭在奏表中强调许王是先帝的血亲后裔。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1fe79f43-7381-55a4-8ef1-ea9a2e5063c6",
+      "baseline": {
+        "id": "1fe79f43-7381-55a4-8ef1-ea9a2e5063c6",
+        "subject_table": "event",
+        "subject_id": "8df35ae7-31ad-57e8-9581-b189c7b7d3fa",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：帝手裂其表抵地，以诏答之曰：“卿于鄂王固非疏远，卫州之事，天下皆知；许王之言，何人肯信！”；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "fc8d33eb-f4f0-5091-8346-6907c113f4a0",
+      "baseline": {
+        "id": "fc8d33eb-f4f0-5091-8346-6907c113f4a0",
+        "subject_table": "event",
+        "subject_id": "f6461fcc-46e1-5032-ad73-e48fc708b569",
+        "field_path": "description",
+        "claim_text": "旧同日并补令张敬达进军。",
+        "source_id": "fc828d33-d885-5a04-a3c5-410698c4177d",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001316；EPUB电子本，纸本及异文待核",
+        "note": "原文：壬寅，削奪石敬瑭官爵，便令張敬達進軍攻討。；核对说明：《旧五代史》补充了进军命令，不能据此认定张敬达当日已经抵达太原。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧同日并补令张敬达进军。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在同日记载剥夺石敬瑭官爵，并命张敬达进军讨伐。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4fcdd6cf-e857-5363-ab36-a08ecfb3a09a",
+      "baseline": {
+        "id": "4fcdd6cf-e857-5363-ab36-a08ecfb3a09a",
+        "subject_table": "event",
+        "subject_id": "0b0e5e45-ee67-57c5-8b7c-f42616ab0c02",
+        "field_path": "time_original",
+        "claim_text": "旧写乙卯任四面部署，寻改招讨，主乙巳排陈、丙午部署。",
+        "source_id": "fc828d33-d885-5a04-a3c5-410698c4177d",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001316；EPUB电子本，纸本及异文待核",
+        "note": "原文：乙卯。以晉州節度使張敬達為太原四面兵馬都部署，尋改為招討使；；核对说明：《资治通鉴》与《旧五代史》所载干支日期和官职安排不同，分别保留，不能称为两书完全一致的同一项任命。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧写乙卯任四面部署，寻改招讨，主乙巳排陈、丙午部署。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》记乙卯任命张敬达为太原四面兵马都部署，不久改任招讨使；《资治通鉴》记乙巳兼任排陈使、丙午任命兵马都部署。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2511b765-cbc8-55bb-962d-8a5bc04a1bdd",
+      "baseline": {
+        "id": "2511b765-cbc8-55bb-962d-8a5bc04a1bdd",
+        "subject_table": "event",
+        "subject_id": "cbc7354f-4d8a-52e6-9ebd-a94a70df604f",
+        "field_path": "time_original",
+        "claim_text": "936年五月乙巳条下",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：河阳节度使张彦琪为马步军都指挥使，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月乙巳条下"
+      },
+      "after": {
+        "claim_text": "记在936年五月乙巳条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "faf88495-1df8-598f-81b7-2c1881967017",
+      "baseline": {
+        "id": "faf88495-1df8-598f-81b7-2c1881967017",
+        "subject_table": "event",
+        "subject_id": "5b0d765c-ff66-534d-be7a-01682a2acac6",
+        "field_path": "time_original",
+        "claim_text": "936年五月乙巳条下",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以安国节度使安审琦为马军都指挥使，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月乙巳条下"
+      },
+      "after": {
+        "claim_text": "记在936年五月乙巳条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "79b80b5e-9b69-5af2-bfae-64ba69f7bf0b",
+      "baseline": {
+        "id": "79b80b5e-9b69-5af2-bfae-64ba69f7bf0b",
+        "subject_table": "event",
+        "subject_id": "ad03e072-3855-5547-9e5f-50d886ae1c91",
+        "field_path": "time_original",
+        "claim_text": "936年五月乙巳条下",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以保义节度使相里金为步军都指挥使，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月乙巳条下"
+      },
+      "after": {
+        "claim_text": "记在936年五月乙巳条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b5b8f61f-1165-522d-9a0d-97e7cf8c9d7e",
+      "baseline": {
+        "id": "b5b8f61f-1165-522d-9a0d-97e7cf8c9d7e",
+        "subject_table": "event",
+        "subject_id": "b15810b6-f088-5737-8ff3-3e7fc85ce3b3",
+        "field_path": "time_original",
+        "claim_text": "936年五月乙巳条下",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以右监门上将军武廷翰为壕寨使。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月乙巳条下"
+      },
+      "after": {
+        "claim_text": "记在936年五月乙巳条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "83e850b8-2229-5d61-8481-4a70ad5434ac",
+      "baseline": {
+        "id": "83e850b8-2229-5d61-8481-4a70ad5434ac",
+        "subject_table": "event",
+        "subject_id": "c2696ce2-c7b1-5260-9c33-dbbb467b616b",
+        "field_path": "time_original",
+        "claim_text": "936年五月丙午条下",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以义武节度使杨光远为副部署。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月丙午条下"
+      },
+      "after": {
+        "claim_text": "记在936年五月丙午条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d6a23203-a914-5caf-a677-9e47c23fa079",
+      "baseline": {
+        "id": "d6a23203-a914-5caf-a677-9e47c23fa079",
+        "subject_table": "event",
+        "subject_id": "c2696ce2-c7b1-5260-9c33-dbbb467b616b",
+        "field_path": "time_original",
+        "claim_text": "旧丙辰任副部署并兼马步都虞候。",
+        "source_id": "fc828d33-d885-5a04-a3c5-410698c4177d",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001316；EPUB电子本，纸本及异文待核",
+        "note": "原文：丙辰，以定州節度使楊光遠為太原四面兵馬副部署、兼馬步都虞候，；核对说明：《资治通鉴》记丙午，《旧五代史》记丙辰，日期差异分别保留。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧丙辰任副部署并兼马步都虞候。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》记丙辰任命杨光远为太原四面兵马副部署，并兼任马步都虞候。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "820d8e15-6ccf-5745-9794-b156b14089f6",
+      "baseline": {
+        "id": "820d8e15-6ccf-5745-9794-b156b14089f6",
+        "subject_table": "event",
+        "subject_id": "fe3ca6e0-8eb6-5009-bb54-3b4825345932",
+        "field_path": "time_original",
+        "claim_text": "936年五月丁未条下",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：以前彰武节度使高行周为太原四面招抚、排陈等使。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月丁未条下"
+      },
+      "after": {
+        "claim_text": "记在936年五月丁未条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "369f70ed-fbec-5a40-bb8d-0cf21817bed2",
+      "baseline": {
+        "id": "369f70ed-fbec-5a40-bb8d-0cf21817bed2",
+        "subject_table": "event",
+        "subject_id": "a634f55a-c508-596f-ada0-51a52282101e",
+        "field_path": "time_original",
+        "claim_text": "936年五月杨光远行后；确日未载",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：光远既行，定州军乱，牙将千乘方太讨平之。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月杨光远行后；确日未载"
+      },
+      "after": {
+        "claim_text": "936年五月杨檀（原文称杨光远）离开定州之后，具体日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "259ec2cd-5b0f-553d-995f-110673a290d4",
+      "baseline": {
+        "id": "259ec2cd-5b0f-553d-995f-110673a290d4",
+        "subject_table": "event",
+        "subject_id": "f44b951c-2337-5bba-af82-1d4d899ce890",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：张敬达将后三万营于晋安乡，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a7940332-becc-5a6d-8098-07656c6d976f",
+      "baseline": {
+        "id": "a7940332-becc-5a6d-8098-07656c6d976f",
+        "subject_table": "event",
+        "subject_id": "1913d371-0577-5d2a-b244-4d905b08384d",
+        "field_path": "time_original",
+        "claim_text": "936年五月戊申奏报",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：戊申，敬达奏西北先锋马军都指挥使安审信叛奔晋阳。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月戊申奏报"
+      },
+      "after": {
+        "claim_text": "936年五月戊申奏报，实际出发日期另行说明。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d156f751-01a7-5825-ac22-1c0d6bda4204",
+      "baseline": {
+        "id": "d156f751-01a7-5825-ac22-1c0d6bda4204",
+        "subject_table": "event",
+        "subject_id": "1913d371-0577-5d2a-b244-4d905b08384d",
+        "field_path": "description",
+        "claim_text": "旧同日记总共五百骑，其中雄义227骑，劫百井入太原。",
+        "source_id": "44ea70ea-01e3-589b-821e-859c8e607df3",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001317；EPUB电子本，纸本及异文待核",
+        "note": "原文：戊申，張敬達奏，西北面先鋒都指揮使安審信率雄義左第二指揮二百二十七騎，並部下共五百騎，剽劫百井，叛入太原。；核对说明：《资治通鉴》记数百骑，《旧五代史》有具体兵力细项；两书记载分别保留，不能把其中二百二十七骑当作投奔部队的总人数。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧同日记总共五百骑，其中雄义227骑，劫百井入太原。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在同日记载安审信率部共五百骑，其中雄义左第二指挥二百二十七骑，劫掠百井后进入太原。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2a4025b7-13a0-5707-b322-2b00a4880ba5",
+      "baseline": {
+        "id": "2a4025b7-13a0-5707-b322-2b00a4880ba5",
+        "subject_table": "event",
+        "subject_id": "1913d371-0577-5d2a-b244-4d905b08384d",
+        "field_path": "description",
+        "claim_text": "新末帝纪同戊申记转投石敬瑭。",
+        "source_id": "a2a0fb8c-b142-52b7-a70c-9f7b9705037e",
+        "citation": "《新五代史》卷七，段落 xin-wudaishi-b08f244b9241-p000303；EPUB电子本，纸本及异文待核",
+        "note": "原文：戊申，先鋒指揮使安審信叛降于石敬瑭。；核对说明：《新五代史》也在同日记载安审信投降；太原与晋阳在这次事件中指同一地点。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新末帝纪同戊申记转投石敬瑭。"
+      },
+      "after": {
+        "claim_text": "《新五代史》也在戊申记载安审信转投石敬瑭。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1513cf6b-1b97-5d2a-98de-e73bc821eb26",
+      "baseline": {
+        "id": "1513cf6b-1b97-5d2a-98de-e73bc821eb26",
+        "subject_table": "event",
+        "subject_id": "75dd509a-e8ac-5ff6-9ef0-3277e2a9efbb",
+        "field_path": "time_original",
+        "claim_text": "先是，转投晋阳之前；驻屯起年未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：先是，雄义都指挥使马邑安元信将所部六百馀人戍代州，代州刺史张朗善遇之，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "先是，转投晋阳之前；驻屯起年未载"
+      },
+      "after": {
+        "claim_text": "追述投奔晋阳以前的驻守经历，开始驻守的年份未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "681dffab-f5f5-5cf6-a45f-11dbee710e11",
+      "baseline": {
+        "id": "681dffab-f5f5-5cf6-a45f-11dbee710e11",
+        "subject_table": "event",
+        "subject_id": "75dd509a-e8ac-5ff6-9ef0-3277e2a9efbb",
+        "field_path": "description",
+        "claim_text": "旧前驻地和张朗职记作伏州，主代州。",
+        "source_id": "44ea70ea-01e3-589b-821e-859c8e607df3",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001317；EPUB电子本，纸本及异文待核",
+        "note": "原文：先是，雄義都在伏州屯戍，其指揮使安元信謀殺伏州刺史張朗，；核对说明：伏州与代州的字形或电子底本差异仍待核实，引用不改字；按人物姓名和同一行动沿用已有主体。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧前驻地和张朗职记作伏州，主代州。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》将此前驻地及张朗的官职记为伏州、伏州刺史，《资治通鉴》则记代州、代州刺史。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "99c1fc85-399f-5fd2-ab77-ddc52c0bd895",
+      "baseline": {
+        "id": "99c1fc85-399f-5fd2-ab77-ddc52c0bd895",
+        "subject_table": "event",
+        "subject_id": "13c1cd90-2316-594c-8284-9da07bf3a405",
+        "field_path": "time_original",
+        "claim_text": "转投晋阳前追叙；确年日未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信密说朗曰：“吾观石令公长者，举事必成；公何不潜遣人通意，可以自全。”朗不从，由是互相猜忌。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "转投晋阳前追叙；确年日未载"
+      },
+      "after": {
+        "claim_text": "追述投奔晋阳以前的事情，具体年份和日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "822054e6-c5fb-56a0-859b-2f03257823fb",
+      "baseline": {
+        "id": "822054e6-c5fb-56a0-859b-2f03257823fb",
+        "subject_table": "event",
+        "subject_id": "2c0e36c9-7db1-58ec-ae7d-bc14a48f6658",
+        "field_path": "time_original",
+        "claim_text": "936年五月转投前；确日未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：元信谋杀朗，不克，帅其众奔审信，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月转投前；确日未载"
+      },
+      "after": {
+        "claim_text": "936年五月投奔晋阳以前，具体日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "7467d0e4-ae9a-514e-a6f3-778b0a95df85",
+      "baseline": {
+        "id": "7467d0e4-ae9a-514e-a6f3-778b0a95df85",
+        "subject_table": "event",
+        "subject_id": "656c303a-ef3a-5ae9-99c4-07330aac77e1",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：审信遂帅麾下数百骑与元信掠百井奔晋阳。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ba5174b1-0bcd-5e09-acb2-803e069a2f52",
+      "baseline": {
+        "id": "ba5174b1-0bcd-5e09-acb2-803e069a2f52",
+        "subject_table": "event",
+        "subject_id": "739beffe-25cb-547a-8f94-548772152cce",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：敬瑭谓元信曰：“汝见何利害，舍强而归弱？”；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "83c882f8-639b-5e92-8c6d-382b3812faa0",
+      "baseline": {
+        "id": "83c882f8-639b-5e92-8c6d-382b3812faa0",
+        "subject_table": "event",
+        "subject_id": "b669ffa3-3124-5f7f-abb9-61932ede1adc",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：对曰：“元信非知星识气，顾以人事决之耳。夫帝王所以御天下，莫重于信。今主上失大信于令公，亲而贵者且不自保，况疏贱乎！其亡可翘足而待，何强之有！”；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "be116223-23c6-59bb-a788-596b3392d5ce",
+      "baseline": {
+        "id": "be116223-23c6-59bb-a788-596b3392d5ce",
+        "subject_table": "event",
+        "subject_id": "272e3284-3de4-539c-b13f-801f270c60aa",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：敬瑭悦，委以军事。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "778e1fe3-ed08-5c2e-9f0d-58d380f0d64d",
+      "baseline": {
+        "id": "778e1fe3-ed08-5c2e-9f0d-58d380f0d64d",
+        "subject_table": "event",
+        "subject_id": "6b82fc15-1391-58a3-bc6c-d68939f4edbb",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：振武西北巡检使安重荣戍代北，帅步骑五百奔晋阳。重荣，朔州人也。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "34a9b81d-b3cf-5cdf-8e9e-45a995fafc56",
+      "baseline": {
+        "id": "34a9b81d-b3cf-5cdf-8e9e-45a995fafc56",
+        "subject_table": "event",
+        "subject_id": "6b82fc15-1391-58a3-bc6c-d68939f4edbb",
+        "field_path": "description",
+        "claim_text": "旧己酉奏安重荣驱掠戍兵五百骑入太原。",
+        "source_id": "44ea70ea-01e3-589b-821e-859c8e607df3",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001317；EPUB电子本，纸本及异文待核",
+        "note": "原文：己酉，振武節度使安叔千奏，西北界巡檢使安重榮驅掠戍兵五百騎叛入太原。；核对说明：《旧五代史》补充奏报日期，将部队写为骑兵，与《资治通鉴》的步兵和骑兵表述不同，分别保留。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧己酉奏安重荣驱掠戍兵五百骑入太原。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在己酉记载安叔千奏报安重荣劫掠并带领五百骑驻军进入太原。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e8213a39-3e2a-559a-983c-a84ea1f82cf9",
+      "baseline": {
+        "id": "e8213a39-3e2a-559a-983c-a84ea1f82cf9",
+        "subject_table": "event",
+        "subject_id": "6b82fc15-1391-58a3-bc6c-d68939f4edbb",
+        "field_path": "time_original",
+        "claim_text": "新也以己酉记安重荣降石。",
+        "source_id": "a2a0fb8c-b142-52b7-a70c-9f7b9705037e",
+        "citation": "《新五代史》卷七，段落 xin-wudaishi-b08f244b9241-p000303；EPUB电子本，纸本及异文待核",
+        "note": "原文：己酉，振武戍將安重榮叛降于石敬瑭。；核对说明：这条补证单独提供日期，不能据此声称《资治通鉴》原文也明确记载了同一天。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新也以己酉记安重荣降石。"
+      },
+      "after": {
+        "claim_text": "《新五代史》也在己酉记载安重荣投降石敬瑭。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b040aeb8-e45b-599c-a551-63095a4c673c",
+      "baseline": {
+        "id": "b040aeb8-e45b-599c-a551-63095a4c673c",
+        "subject_table": "event",
+        "subject_id": "2eb4f42d-6aa3-58c6-96a9-54c3b1111f9e",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p014·原文件第19行",
+        "note": "原文：以宋审虔为宁国节度使、充待卫马军都指挥使。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e3487297-10a3-5aaa-b297-da67fcd955c9",
+      "baseline": {
+        "id": "e3487297-10a3-5aaa-b297-da67fcd955c9",
+        "subject_table": "event",
+        "subject_id": "2eb4f42d-6aa3-58c6-96a9-54c3b1111f9e",
+        "field_path": "description",
+        "claim_text": "旧称新授河东宋改宣州节度、侍卫马军。",
+        "source_id": "44ea70ea-01e3-589b-821e-859c8e607df3",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001317；EPUB电子本，纸本及异文待核",
+        "note": "原文：以新授河東節度使宋審虔為宣州節度使，充侍衛馬軍都指揮使。；核对说明：宁国军治所在宣州，两处官职称法对应同一驻地；《旧五代史》明确写“侍卫”，可供核读底本疑字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧称新授河东宋改宣州节度、侍卫马军。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》记载新获任河东节度使的宋审虔改任宣州节度使，并担任侍卫马军都指挥使。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "084108b1-fd86-5966-8357-76c608db5e88",
+      "baseline": {
+        "id": "084108b1-fd86-5966-8357-76c608db5e88",
+        "subject_table": "event",
+        "subject_id": "e5defce1-9b6e-5810-bf26-c8d5c2aa8642",
+        "field_path": "time_original",
+        "claim_text": "魏博兵变前治理背景；各次起止年日未具",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：天雄节度使刘延皓恃后族之势，骄纵，夺人财产，减将士给赐，宴饮无度。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "魏博兵变前治理背景；各次起止年日未具"
+      },
+      "after": {
+        "claim_text": "魏博兵变以前的治理背景，各项行为的具体起止年份和日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "166df83b-48e0-5cdb-aaa6-70de0b72c107",
+      "baseline": {
+        "id": "166df83b-48e0-5cdb-aaa6-70de0b72c107",
+        "subject_table": "event",
+        "subject_id": "e5defce1-9b6e-5810-bf26-c8d5c2aa8642",
+        "field_path": "description",
+        "claim_text": "新刘氏传附刘延皓补受赇、掠园宅等。",
+        "source_id": "829f5eaf-a0e4-5194-8c76-5c16a234852d",
+        "citation": "《新五代史》卷16·废帝皇后刘氏传附刘延皓，段落 xin-wudaishi-b08f244b9241-p000547；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：以后故用事，受賕，掠人園宅，在鄴下不恤軍士，軍士皆怨。；核对说明：《新五代史》先评价刘延皓谨慎厚道，后记载他改变作风，两层叙述分别保留；不能把所有行为强定为936年发生。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新刘氏传附刘延皓补受赇、掠园宅等。"
+      },
+      "after": {
+        "claim_text": "《新五代史》记载刘延皓依仗皇后收受贿赂、夺取园宅等行为。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e5892192-624a-5091-805d-ec2fad95d18a",
+      "baseline": {
+        "id": "e5892192-624a-5091-805d-ec2fad95d18a",
+        "subject_table": "event",
+        "subject_id": "475634d4-705e-53e7-94f0-c1656d29abd0",
+        "field_path": "time_original",
+        "claim_text": "936年五月癸丑未明（主书）",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：捧圣都虞候张令昭因众心怨怒，谋以魏博应河东，癸丑未明，帅众攻牙城，克之；；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月癸丑未明（主书）"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》记为936年五月癸丑天亮前。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "814c53fd-3597-5db2-aaf2-748133e98686",
+      "baseline": {
+        "id": "814c53fd-3597-5db2-aaf2-748133e98686",
+        "subject_table": "event",
+        "subject_id": "475634d4-705e-53e7-94f0-c1656d29abd0",
+        "field_path": "time_original",
+        "claim_text": "旧壬子记逐刘据城叛，新末帝纪也作壬子。",
+        "source_id": "44ea70ea-01e3-589b-821e-859c8e607df3",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001317；EPUB电子本，纸本及异文待核",
+        "note": "原文：壬子，鄴都屯駐捧聖都虞候張令昭逐節度使劉延皓，據城叛。；核对说明：《资治通鉴》记癸丑，《旧五代史》记壬子，相差一日，两种日期并列保留。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧壬子记逐刘据城叛，新末帝纪也作壬子。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在壬子记载张令昭驱逐刘延皓、占城反叛，《新五代史》也记为壬子。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eafbb708-0cd4-55bb-9311-34fded135680",
+      "baseline": {
+        "id": "eafbb708-0cd4-55bb-9311-34fded135680",
+        "subject_table": "event",
+        "subject_id": "0e751afa-a480-5cc3-a935-49d90ea17b6b",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：延皓脱身走，乱兵大掠。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a5d9b5cb-89b5-5901-93b3-5c433efe2e6e",
+      "baseline": {
+        "id": "a5d9b5cb-89b5-5901-93b3-5c433efe2e6e",
+        "subject_table": "event",
+        "subject_id": "0e751afa-a480-5cc3-a935-49d90ea17b6b",
+        "field_path": "description",
+        "claim_text": "新补其逃走相州。",
+        "source_id": "829f5eaf-a0e4-5194-8c76-5c16a234852d",
+        "citation": "《新五代史》卷16·废帝皇后刘氏传附刘延皓，段落 xin-wudaishi-b08f244b9241-p000547；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：延皓走相州。；核对说明：《新五代史》记逃往相州，《资治通鉴》后文记到了洛阳，可能对应不同阶段；不能把相州改写为洛阳。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新补其逃走相州。"
+      },
+      "after": {
+        "claim_text": "《新五代史》补充记载刘延皓逃往相州。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "32ac84a2-78fd-5f85-b8ff-7714a184453a",
+      "baseline": {
+        "id": "32ac84a2-78fd-5f85-b8ff-7714a184453a",
+        "subject_table": "event",
+        "subject_id": "2a753c4e-9151-5d4b-95f4-6a76c897a579",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：令昭奏：“延皓失于抚御，以致军乱；臣以抚安士卒，权领军府，乞赐旌节！”；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b2c1214d-0e17-5195-8b3d-945cb1f7d299",
+      "baseline": {
+        "id": "b2c1214d-0e17-5195-8b3d-945cb1f7d299",
+        "subject_table": "event",
+        "subject_id": "8d7fdff3-949d-5984-a349-a093f954d526",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：延皓至洛阳，唐主怒，命远贬；；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c2302b55-0c7b-57dc-9148-ffcba133ca5b",
+      "baseline": {
+        "id": "c2302b55-0c7b-57dc-9148-ffcba133ca5b",
+        "subject_table": "event",
+        "subject_id": "5350080a-57de-525e-a84c-ec5ad90ea4a3",
+        "field_path": "time_original",
+        "claim_text": "936年五月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：皇后为之请，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年五月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年五月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ca774807-8dcb-5ba9-b4c4-a8f07abd4dad",
+      "baseline": {
+        "id": "ca774807-8dcb-5ba9-b4c4-a8f07abd4dad",
+        "subject_table": "event",
+        "subject_id": "3255e56b-4d18-52ad-9fc7-09a463fa779b",
+        "field_path": "time_original",
+        "claim_text": "936年六月庚申（主）",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；五月至六月）·zztj-v280-y0936-p015·原文件第20行",
+        "note": "原文：六月，庚申，止削延皓官爵，归私第。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月庚申（主）"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》记为936年六月庚申。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eae846e9-7c9d-5f48-ac0d-4f8b0598a2d9",
+      "baseline": {
+        "id": "eae846e9-7c9d-5f48-ac0d-4f8b0598a2d9",
+        "subject_table": "event",
+        "subject_id": "3255e56b-4d18-52ad-9fc7-09a463fa779b",
+        "field_path": "time_original",
+        "claim_text": "旧官爵削归私第作六月辛酉。",
+        "source_id": "379676cc-c4c2-5f6b-b4fb-ec987971a6bc",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001318；EPUB电子本，纸本及异文待核",
+        "note": "原文：六月辛酉，天雄軍節度使劉延皓削奪官爵，勒歸私第。；核对说明：《资治通鉴》记庚申，《旧五代史》记辛酉，相差一日，分别保留日期和出处定位。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧官爵削归私第作六月辛酉。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》将刘延皓被剥夺官爵、回到私宅记在六月辛酉。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "93aa574e-7332-5ee8-bef3-576ebedbafb7",
+      "baseline": {
+        "id": "93aa574e-7332-5ee8-bef3-576ebedbafb7",
+        "subject_table": "event",
+        "subject_id": "118d1f26-3d21-540d-ba90-41767f2518e0",
+        "field_path": "time_original",
+        "claim_text": "936年六月辛酉条下",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：以其弟景遂代为门下侍郎、参政事。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月辛酉条下"
+      },
+      "after": {
+        "claim_text": "记在936年六月辛酉条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6e5cc701-2b3e-5797-b080-102328a28b23",
+      "baseline": {
+        "id": "6e5cc701-2b3e-5797-b080-102328a28b23",
+        "subject_table": "event",
+        "subject_id": "b1776947-3ff7-51ee-a073-54444074e495",
+        "field_path": "description",
+        "claim_text": "旧同日补检校司空与府事表述。",
+        "source_id": "379676cc-c4c2-5f6b-b4fb-ec987971a6bc",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001318；EPUB电子本，纸本及异文待核",
+        "note": "原文：癸亥，以天雄軍守禦、右捧聖第二軍都虞候張令昭為檢校司空，行右千牛將軍，權知天雄軍府事。；核对说明：《资治通鉴》的“计事”保留原字，《旧五代史》明确记“府事”，可供校读；此时尚不能认定张令昭正式获授节度使旌节。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧同日补检校司空与府事表述。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在同日补充张令昭获授检校司空、暂管天雄军府事的记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "cb05c8d5-84fc-517f-b87b-7e9db9953e72",
+      "baseline": {
+        "id": "cb05c8d5-84fc-517f-b87b-7e9db9953e72",
+        "subject_table": "event",
+        "subject_id": "15428193-0672-505e-951f-7bf8644a1a66",
+        "field_path": "time_original",
+        "claim_text": "936年六月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：令昭以调发未集，且受新命。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年六月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f0f660d1-924a-5d3f-b5c8-79434565c118",
+      "baseline": {
+        "id": "f0f660d1-924a-5d3f-b5c8-79434565c118",
+        "subject_table": "event",
+        "subject_id": "e722ee1e-64fa-500f-b8fc-8d89572c0874",
+        "field_path": "time_original",
+        "claim_text": "936年六月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：寻有诏徙齐州防御使，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年六月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4967b56a-bd9a-5013-a953-811f2c25e6df",
+      "baseline": {
+        "id": "4967b56a-bd9a-5013-a953-811f2c25e6df",
+        "subject_table": "event",
+        "subject_id": "e722ee1e-64fa-500f-b8fc-8d89572c0874",
+        "field_path": "description",
+        "claim_text": "旧补齐州调职同官命，接辛未条下。",
+        "source_id": "379676cc-c4c2-5f6b-b4fb-ec987971a6bc",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001318；EPUB电子本，纸本及异文待核",
+        "note": "原文：以權知魏府事、右千牛將軍張令昭為齊州防禦使，；核对说明：《旧五代史》前文在辛未记许寂去世，这项任命未单列日期，不能把《资治通鉴》的“不久”确定为辛未。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧补齐州调职同官命，接辛未条下。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》也记载张令昭被调任齐州防御使，这条任命接在辛未条之后，未单独记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8eda0b47-4141-5c2b-a9ad-f3259779be39",
+      "baseline": {
+        "id": "8eda0b47-4141-5c2b-a9ad-f3259779be39",
+        "subject_table": "event",
+        "subject_id": "2bf5f48d-14d2-5d49-b7b8-1e267da28281",
+        "field_path": "time_original",
+        "claim_text": "936年六月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：令昭托以士卒所留，实俟河东之成败。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年六月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ce64d73a-090f-5f0b-af42-14230731de2e",
+      "baseline": {
+        "id": "ce64d73a-090f-5f0b-af42-14230731de2e",
+        "subject_table": "event",
+        "subject_id": "8f0749f8-0d36-5b86-ad02-3bebfcecb132",
+        "field_path": "time_original",
+        "claim_text": "936年六月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：唐主遣使谕之，令昭杀使者。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年六月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "16d49a0a-0b65-54e7-b399-e4543ae641b1",
+      "baseline": {
+        "id": "16d49a0a-0b65-54e7-b399-e4543ae641b1",
+        "subject_table": "event",
+        "subject_id": "625b84d3-ab1a-5378-8fbe-ec3741824cfd",
+        "field_path": "description",
+        "claim_text": "旧同日同讨魏博官命。",
+        "source_id": "379676cc-c4c2-5f6b-b4fb-ec987971a6bc",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001318；EPUB电子本，纸本及异文待核",
+        "note": "原文：甲戌，以汴州節度使範延光為天雄軍四面招討使，知行府事。；核对说明：宣武军治所在汴州，两种官职称法沿用同一范延光主体。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧同日同讨魏博官命。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在同日记载范延光获任天雄军四面招讨使，并主持行府事务。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d7d9083a-a8fd-5482-b5bb-bc6bcdcd3074",
+      "baseline": {
+        "id": "d7d9083a-a8fd-5482-b5bb-bc6bcdcd3074",
+        "subject_table": "event",
+        "subject_id": "dabcf1d4-7500-5b2d-8d7f-7863bb0ed8b5",
+        "field_path": "time_original",
+        "claim_text": "936年六月甲戌条下",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：以张敬达充太原四面招讨使，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月甲戌条下"
+      },
+      "after": {
+        "claim_text": "记在936年六月甲戌条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d384d23f-7c49-5d61-ba0d-2d3cb96bee06",
+      "baseline": {
+        "id": "d384d23f-7c49-5d61-ba0d-2d3cb96bee06",
+        "subject_table": "event",
+        "subject_id": "c7998b16-ded3-540c-916e-00370cb38b90",
+        "field_path": "time_original",
+        "claim_text": "936年六月甲戌条下",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：以杨光远为副使。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年六月甲戌条下"
+      },
+      "after": {
+        "claim_text": "记在936年六月甲戌条下，未另记日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4bd17d13-4d95-5665-b329-f9cde9d6a78e",
+      "baseline": {
+        "id": "4bd17d13-4d95-5665-b329-f9cde9d6a78e",
+        "subject_table": "event",
+        "subject_id": "dcffb917-360f-535f-a399-effab2495911",
+        "field_path": "description",
+        "claim_text": "旧同日补兼兵马都监。",
+        "source_id": "379676cc-c4c2-5f6b-b4fb-ec987971a6bc",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001318；EPUB电子本，纸本及异文待核",
+        "note": "原文：丙子，以西京留守李周為天雄軍四面副招討使兼兵馬都監。；核对说明：《旧五代史》补充同次任命的兼任官职，不据此认定李周已经率兵出发。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧同日补兼兵马都监。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在同日记载李周兼任兵马都监。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "bd093c5e-91cc-5b1b-b2fa-b7deef508211",
+      "baseline": {
+        "id": "bd093c5e-91cc-5b1b-b2fa-b7deef508211",
+        "subject_table": "event",
+        "subject_id": "a10c31cc-bfc1-5508-b99d-24df7b5fe8b5",
+        "field_path": "time_original",
+        "claim_text": "936年石敬瑭举兵后，七月捕获前；确日未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：石敬瑭之子右卫上将军重殷、皇城副使重裔闻敬瑭举兵，匿于民间井中。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年石敬瑭举兵后，七月捕获前；确日未载"
+      },
+      "after": {
+        "claim_text": "936年石敬瑭起兵之后、七月被捕以前，具体日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9ca64eb7-ac5c-5d25-9c39-6e1e155a680a",
+      "baseline": {
+        "id": "9ca64eb7-ac5c-5d25-9c39-6e1e155a680a",
+        "subject_table": "event",
+        "subject_id": "a10c31cc-bfc1-5508-b99d-24df7b5fe8b5",
+        "field_path": "description",
+        "claim_text": "旧重英等同样藏民井而被获。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：時重英等匿於民家井中，獲而誅之，並族所匿之家。；核对说明：《旧五代史》的重英与《资治通鉴》的重殷，根据相同官职、同行的石重裔和同一行动识别为同一人，不另建第三个儿子。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧重英等同样藏民井而被获。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》也记载石重英等藏身民宅井中，后来被捕并处死。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0484840e-b0f8-5f23-a359-0b695862ce12",
+      "baseline": {
+        "id": "0484840e-b0f8-5f23-a359-0b695862ce12",
+        "subject_table": "person",
+        "subject_id": "839d136d-f52b-5fb6-923a-f29f26275116",
+        "field_path": "aliases",
+        "claim_text": "主重殷与旧石重英按同官、同重裔藏井被诛识别同一人，保异名。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：誅右衛上將軍石重英、皇城副使石重裔，皆敬瑭之子也。；核对说明：与《资治通鉴》逐项核对姓名、官职和行动；不能仅凭同一家族或名字相近，就合并石敬殷、石重胤等人物。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "主重殷与旧石重英按同官、同重裔藏井被诛识别同一人，保异名。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》的重殷与《旧五代史》的石重英，按相同官职、与石重裔一同藏身井中及被处死等要素识别为同一人，保留异名。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "43edacdc-8aa4-52a2-8000-410342fef3a1",
+      "baseline": {
+        "id": "43edacdc-8aa4-52a2-8000-410342fef3a1",
+        "subject_table": "event",
+        "subject_id": "6dc08f85-4dc7-573c-8498-2ec5651db8fc",
+        "field_path": "time_original",
+        "claim_text": "936年兄举兵后，七月条前追述；确日未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：弟沂州都指挥使敬德杀其妻女而逃，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年兄举兵后，七月条前追述；确日未载"
+      },
+      "after": {
+        "claim_text": "936年石敬瑭起兵之后，在七月条以前追述，具体日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f986d47b-abe8-5f1d-b283-b3632d2f244c",
+      "baseline": {
+        "id": "f986d47b-abe8-5f1d-b283-b3632d2f244c",
+        "subject_table": "event",
+        "subject_id": "6e76f709-b056-5287-a8d2-596fe8352be1",
+        "field_path": "time_original",
+        "claim_text": "936年逃后寻被捕，七月条前附述；确日未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：寻捕得，死狱中，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年逃后寻被捕，七月条前附述；确日未载"
+      },
+      "after": {
+        "claim_text": "936年逃走后不久被捕，附记在七月条以前，具体日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "bc933238-35fd-5309-8b22-47340e062a57",
+      "baseline": {
+        "id": "bc933238-35fd-5309-8b22-47340e062a57",
+        "subject_table": "event",
+        "subject_id": "6e76f709-b056-5287-a8d2-596fe8352be1",
+        "field_path": "description",
+        "claim_text": "旧七月辛卯沂州奏诛敬德并族其家。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：辛卯，沂州奏，誅都指揮使石敬德，並族其家，敬瑭之弟也。；核对说明：《资治通鉴》记死在狱中，《旧五代史》记奏报处死，两种表述分别保留；奏报日期不直接作为死亡的确定日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧七月辛卯沂州奏诛敬德并族其家。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在七月辛卯记载沂州奏报石敬德被处死，并称他的家族也被处死。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c59aacc1-06f1-5870-9e02-98d0739da9d4",
+      "baseline": {
+        "id": "c59aacc1-06f1-5870-9e02-98d0739da9d4",
+        "subject_table": "event",
+        "subject_id": "f0a52659-8b08-5d57-ad78-ee91d81f8a09",
+        "field_path": "time_original",
+        "claim_text": "936年兄举兵后，七月捕二子前附述；确日未载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：从弟彰圣都指挥使敬威自杀。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年兄举兵后，七月捕二子前附述；确日未载"
+      },
+      "after": {
+        "claim_text": "936年石敬瑭起兵之后，附记在七月捕获两个儿子的记载以前，具体日期未记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ba3b561d-95b4-59b9-a334-ca3d487cc084",
+      "baseline": {
+        "id": "ba3b561d-95b4-59b9-a334-ca3d487cc084",
+        "subject_table": "event",
+        "subject_id": "e38fb57a-a654-5be7-a2ea-ca8e8f07173d",
+        "field_path": "time_original",
+        "claim_text": "936年七月戊子（主）",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：秋，七月，戊子，获重殷、重裔，诛之，并族所匿之家。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月戊子（主）"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》记为936年七月戊子。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5c3943d9-7bc4-5bbc-8bbf-92dbf9303962",
+      "baseline": {
+        "id": "5c3943d9-7bc4-5bbc-8bbf-92dbf9303962",
+        "subject_table": "event",
+        "subject_id": "e38fb57a-a654-5be7-a2ea-ca8e8f07173d",
+        "field_path": "time_original",
+        "claim_text": "旧七月己丑诛同二子。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：己丑，誅右衛上將軍石重英、皇城副使石重裔，皆敬瑭之子也。；核对说明：《资治通鉴》记戊子，《旧五代史》记己丑，相差一日；重殷与重英根据身份和行动等要素识别为同一人物，保留异名。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧七月己丑诛同二子。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在七月己丑记载石重英与石重裔被处死。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "7c0434b2-4d0b-5234-9fb0-27f0a8f1b12b",
+      "baseline": {
+        "id": "7c0434b2-4d0b-5234-9fb0-27f0a8f1b12b",
+        "subject_table": "event",
+        "subject_id": "e1552275-9c11-5f8f-8ea2-a64bbc7bd707",
+        "field_path": "time_original",
+        "claim_text": "936年七月条下；确日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：云州步军指挥使桑迁奏应州节度使尹晖逐云州节度使沙彦旬，收其兵应河东。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月条下；确日未独载"
+      },
+      "after": {
+        "claim_text": "见936年七月的记载，具体日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4f17da61-c1ba-51ca-a2bc-9dd6d39f176f",
+      "baseline": {
+        "id": "4f17da61-c1ba-51ca-a2bc-9dd6d39f176f",
+        "subject_table": "event",
+        "subject_id": "1ed32245-51e9-526b-88ca-3a6dbaae7156",
+        "field_path": "time_original",
+        "claim_text": "936年七月丁酉奏表",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：丁酉，彦旬表迁谋叛应河东，引兵围子城。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月丁酉奏表"
+      },
+      "after": {
+        "claim_text": "936年七月丁酉上表，实际围城日期另行说明。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8dbf69f3-a336-5e11-8eed-33bcc389369a",
+      "baseline": {
+        "id": "8dbf69f3-a336-5e11-8eed-33bcc389369a",
+        "subject_table": "event",
+        "subject_id": "1ed32245-51e9-526b-88ca-3a6dbaae7156",
+        "field_path": "time_original",
+        "claim_text": "旧丁酉奏并补实际围城七月二日夜，明确沙彥珣。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：丁酉，雲州節度使沙彥珣奏，此月二日夜，步軍指揮使桑遷作亂，以兵圍子城，；核对说明：事件发生时间与上表时间分别记录；底本名字中的私用字符依据《旧五代史》相同官职和行动核读，不改原文快照。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧丁酉奏并补实际围城七月二日夜，明确沙彥珣。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在丁酉记载沙彦珣奏报，并补充围城发生于七月初二夜。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "09073c59-b8db-56c8-b4ca-f763f4b5111e",
+      "baseline": {
+        "id": "09073c59-b8db-56c8-b4ca-f763f4b5111e",
+        "subject_table": "person",
+        "subject_id": "14933655-00d4-5df8-b377-9b7c7aac47df",
+        "field_path": "aliases",
+        "claim_text": "沙彦珣主文见彦昫及私用字拆件名，旧明确沙彥珣。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：雲州節度使沙彥珣奏，；核对说明：根据同日、同官职和桑迁围城事件识别同一人物；昫与珣的差异不是繁简转换，底本原字保留，仍待纸本核对。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "沙彦珣主文见彦昫及私用字拆件名，旧明确沙彥珣。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》底本中的沙彦珣名字有彦昫和含私用字符的写法，《旧五代史》明确写为沙彥珣，保留异写。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f13790e4-9ab8-5042-87a5-971953bbed13",
+      "baseline": {
+        "id": "f13790e4-9ab8-5042-87a5-971953bbed13",
+        "subject_table": "event",
+        "subject_id": "ac530fe5-1520-5a9d-9729-b4e3a09834cf",
+        "field_path": "time_original",
+        "claim_text": "936年七月围城时；主未独日",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：彦昫犯围走出西山，据雷公口，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月围城时；主未独日"
+      },
+      "after": {
+        "claim_text": "936年七月围城过程中，《资治通鉴》未单独记载具体日期。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "01328ebd-d4a7-55f9-85e5-7a88972c5b05",
+      "baseline": {
+        "id": "01328ebd-d4a7-55f9-85e5-7a88972c5b05",
+        "subject_table": "event",
+        "subject_id": "acd84f5c-ec6a-5009-8b27-996acd9e7f1e",
+        "field_path": "time_original",
+        "claim_text": "936年七月突围翌日；旧补七月三日",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：明日，收兵入城击乱兵，迁败走，军城复安。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月突围翌日；旧补七月三日"
+      },
+      "after": {
+        "claim_text": "936年七月突围的第二天；《旧五代史》补充记为七月初三。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a1357fb6-1b5f-53a3-9837-60104c981f80",
+      "baseline": {
+        "id": "a1357fb6-1b5f-53a3-9837-60104c981f80",
+        "subject_table": "event",
+        "subject_id": "acd84f5c-ec6a-5009-8b27-996acd9e7f1e",
+        "field_path": "time_original",
+        "claim_text": "旧明确七月三日招兵入城诛乱军。",
+        "source_id": "c73336f8-49e6-5bf7-861b-465ecd94dd04",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001319；EPUB电子本，纸本及异文待核",
+        "note": "原文：三日，招集兵士入城誅亂軍，軍城如故。；核对说明：初三回城的记载与奏表日期分别记录，不能直接按丁酉的次日换算干支。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧明确七月三日招兵入城诛乱军。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》明确记载沙彦珣在七月初三召集士兵入城，处死叛乱士兵。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b81d8a2b-f5bd-5abb-8402-8c91d6617797",
+      "baseline": {
+        "id": "b81d8a2b-f5bd-5abb-8402-8c91d6617797",
+        "subject_table": "event",
+        "subject_id": "e4c63fd2-99d5-5fc3-bdda-407ecc736d6a",
+        "field_path": "time_original",
+        "claim_text": "936年七月平乱日条下；确干支未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：是日，尹晖执迁送洛阳，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月平乱日条下；确干支未独载"
+      },
+      "after": {
+        "claim_text": "见936年七月平乱当天的记载，具体干支日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2d83e220-0f54-53b8-8791-5f3ed9a0f0f5",
+      "baseline": {
+        "id": "2d83e220-0f54-53b8-8791-5f3ed9a0f0f5",
+        "subject_table": "event",
+        "subject_id": "736411da-7d88-57e3-bd0a-f012fea4e84e",
+        "field_path": "time_original",
+        "claim_text": "936年七月擒送洛阳后；斩日未独载",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：尹晖执迁送洛阳，斩之。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "936年七月擒送洛阳后；斩日未独载"
+      },
+      "after": {
+        "claim_text": "936年七月被捕并送往洛阳之后，处死日期未单独记载。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "fa2f8062-ae2b-52c5-8c5f-43588a4e302d",
+      "baseline": {
+        "id": "fa2f8062-ae2b-52c5-8c5f-43588a4e302d",
+        "subject_table": "person",
+        "subject_id": "839d136d-f52b-5fb6-923a-f29f26275116",
+        "field_path": "death_year",
+        "claim_text": "石重英本年身亡。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：秋，七月，戊子，获重殷、重裔，诛之，并族所匿之家。；核对说明：根据936年连续记载的被捕处死、狱中死亡或自杀确定死亡年份；具体日期及各书差异按对应事件分别记录。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石重英本年身亡。"
+      },
+      "after": {
+        "claim_text": "石重英在936年去世。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "82667a45-b903-5ec3-9981-9fca75c87e83",
+      "baseline": {
+        "id": "82667a45-b903-5ec3-9981-9fca75c87e83",
+        "subject_table": "person",
+        "subject_id": "2e2fd7e0-eb92-5941-939b-f07f617ae3c3",
+        "field_path": "death_year",
+        "claim_text": "石重裔本年身亡。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：秋，七月，戊子，获重殷、重裔，诛之，并族所匿之家。；核对说明：根据936年连续记载的被捕处死、狱中死亡或自杀确定死亡年份；具体日期及各书差异按对应事件分别记录。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石重裔本年身亡。"
+      },
+      "after": {
+        "claim_text": "石重裔在936年去世。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "79403895-fb00-5ed4-9650-edd428062429",
+      "baseline": {
+        "id": "79403895-fb00-5ed4-9650-edd428062429",
+        "subject_table": "person",
+        "subject_id": "a919fa99-811c-5288-9beb-8cbe1bd7b807",
+        "field_path": "death_year",
+        "claim_text": "石敬德本年身亡。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：寻捕得，死狱中，；核对说明：根据936年连续记载的被捕处死、狱中死亡或自杀确定死亡年份；具体日期及各书差异按对应事件分别记录。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬德本年身亡。"
+      },
+      "after": {
+        "claim_text": "石敬德在936年去世。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "3c0b5048-c17c-50e5-b82b-f2303e58d52b",
+      "baseline": {
+        "id": "3c0b5048-c17c-50e5-b82b-f2303e58d52b",
+        "subject_table": "person",
+        "subject_id": "ab41c627-3a85-50fc-b627-897a17918b05",
+        "field_path": "death_year",
+        "claim_text": "石敬威本年身亡。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p018·原文件第23行",
+        "note": "原文：从弟彰圣都指挥使敬威自杀。；核对说明：根据936年连续记载的被捕处死、狱中死亡或自杀确定死亡年份；具体日期及各书差异按对应事件分别记录。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬威本年身亡。"
+      },
+      "after": {
+        "claim_text": "石敬威在936年去世。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1bb74093-e34f-5efd-92d3-b78e1b05b91c",
+      "baseline": {
+        "id": "1bb74093-e34f-5efd-92d3-b78e1b05b91c",
+        "subject_table": "person",
+        "subject_id": "95020f6a-34aa-5e29-95ec-06d6ee948f94",
+        "field_path": "death_year",
+        "claim_text": "桑迁本年身亡。",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p020·原文件第25行",
+        "note": "原文：是日，尹晖执迁送洛阳，斩之。；核对说明：根据936年连续记载的被捕处死、狱中死亡或自杀确定死亡年份；具体日期及各书差异按对应事件分别记录。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "桑迁本年身亡。"
+      },
+      "after": {
+        "claim_text": "桑迁在936年去世。"
+      },
+      "review": "逐条核读这条引用，展开书名、人物、动作和日期解释；保留各书差异、相对时间和未确定日期。原文、出处、状态和主体不变。"
+    }
+  ],
+  "reviewed_unchanged": [
+    {
+      "table": "fact_claim",
+      "id": "87d15fce-20db-54d3-b2d8-4c6fa92fa773",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "87d15fce-20db-54d3-b2d8-4c6fa92fa773",
+        "subject_table": "event",
+        "subject_id": "ceaba146-fa10-59ce-a074-0003ca91d85a",
+        "field_path": "time_original",
+        "claim_text": "936年五月戊戌",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：戊戌，昭义节度使皇甫立奏敬瑭反。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "91ff9695-14cd-5533-ade8-e2a6b171e8b6",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "91ff9695-14cd-5533-ade8-e2a6b171e8b6",
+        "subject_table": "event",
+        "subject_id": "f6461fcc-46e1-5032-ad73-e48fc708b569",
+        "field_path": "time_original",
+        "claim_text": "936年五月壬寅",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：壬寅，制削夺敬瑭官爵。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a43c33a2-52e8-5135-a9ac-84d12d00d0dd",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "a43c33a2-52e8-5135-a9ac-84d12d00d0dd",
+        "subject_table": "event",
+        "subject_id": "0b0e5e45-ee67-57c5-8b7c-f42616ab0c02",
+        "field_path": "time_original",
+        "claim_text": "936年五月乙巳",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：乙巳，以张敬达兼太原四面排陈使，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "546fa15b-6f37-50d2-b0cf-7dc717c13de1",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "546fa15b-6f37-50d2-b0cf-7dc717c13de1",
+        "subject_table": "event",
+        "subject_id": "aadf4b61-5bcd-541f-a22d-2ae293ec62f6",
+        "field_path": "time_original",
+        "claim_text": "936年五月丙午",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：丙午，以张敬达为太原四面兵马都部署，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e0bd2a3f-da47-5dc3-bbd0-2f0117709dd9",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "e0bd2a3f-da47-5dc3-bbd0-2f0117709dd9",
+        "subject_table": "event",
+        "subject_id": "773f7238-465c-55c1-b5da-7de76551d9cf",
+        "field_path": "time_original",
+        "claim_text": "936年五月丁未",
+        "source_id": "9e03392f-c864-55dd-ba3f-5cea6255daee",
+        "citation": "卷280·后唐清泰三年（936；五月条下及追叙）·zztj-v280-y0936-p013·原文件第18行",
+        "note": "原文：丁未，又以张敬达知太原行府事，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "51ef9357-6bf5-5b62-9b47-f28fcef38da5",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "51ef9357-6bf5-5b62-9b47-f28fcef38da5",
+        "subject_table": "event",
+        "subject_id": "ac8c5071-5732-519d-af49-03989a050010",
+        "field_path": "time_original",
+        "claim_text": "936年六月辛酉",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p016·原文件第21行",
+        "note": "原文：辛酉，吴太保、同平章事徐景迁以疾罢，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5a86768f-c2e3-5c12-88f2-dba745643fa3",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "5a86768f-c2e3-5c12-88f2-dba745643fa3",
+        "subject_table": "event",
+        "subject_id": "b1776947-3ff7-51ee-a073-54444074e495",
+        "field_path": "time_original",
+        "claim_text": "936年六月癸亥",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：癸亥，唐主以张令昭为右千牛卫将军、权知天雄军计事。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5b7f38f0-276d-5dfb-b798-0e6b8a44cb4d",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "5b7f38f0-276d-5dfb-b798-0e6b8a44cb4d",
+        "subject_table": "event",
+        "subject_id": "625b84d3-ab1a-5378-8fbe-ec3741824cfd",
+        "field_path": "time_original",
+        "claim_text": "936年六月甲戌",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：甲戌，以宣武节度使兼中书令范延光为天雄四面行营招讨使、知魏博行府事，；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "63ecd95a-8ec4-574b-8963-35159fc966bf",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "63ecd95a-8ec4-574b-8963-35159fc966bf",
+        "subject_table": "event",
+        "subject_id": "dcffb917-360f-535f-a399-effab2495911",
+        "field_path": "time_original",
+        "claim_text": "936年六月丙子",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；六月）·zztj-v280-y0936-p017·原文件第22行",
+        "note": "原文：丙子，以西京留守李周为天雄军四面行营副招讨使。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "729d1d4a-0cee-59f6-9d80-99b7e917ac46",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "729d1d4a-0cee-59f6-9d80-99b7e917ac46",
+        "subject_table": "event",
+        "subject_id": "c94907f5-8720-54db-ab1d-13b89ab4c40f",
+        "field_path": "time_original",
+        "claim_text": "936年七月庚寅",
+        "source_id": "6c15eec2-5a1e-584d-8d89-efa247f5207b",
+        "citation": "卷280·后唐清泰三年（936；七月条下及追叙）·zztj-v280-y0936-p019·原文件第24行",
+        "note": "原文：庚寅，楚王希范自桂州北还。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "review": "原纪年与干支日期已经明确，作为历史日期保留；已核读所对应的原文，不转换公历，不改变具体日期。"
+    }
+  ],
+  "full_goal_complete": false
+}

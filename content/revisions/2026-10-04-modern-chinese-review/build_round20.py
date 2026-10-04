@@ -1,5 +1,5 @@
 # coding: utf-8
-"""Curated evidence notes, dates and locations for 936 paragraphs 31 through 36."""
+"""Curated evidence notes, dates and locations for 936 paragraphs 29 through 36."""
 import json,gzip,hashlib
 from pathlib import Path
 from datetime import datetime,timezone
@@ -45,7 +45,7 @@ for original in batch['events']:
   patch('event',rid,'location_note','地点沿用史书记载的名称，现代坐标尚未核实。','将地点核对说明展开为白话；地点名称及坐标保持原值。')
 archives=[dict(batch=str(part.relative_to(ROOT)),batch_sha256=sha(part/'content-batch.json'),source_files=[dict(path=str(f.relative_to(ROOT)),sha256=sha(f)) for f in sorted((part/'sources').rglob('source.txt'))])]
 D=P/'round-20';assert not (D/'publication.json').exists();D.mkdir(parents=True,exist_ok=True)
-plan=dict(created_at=datetime.now(timezone.utc).isoformat(),scope='936年第31—36段尚待审的事实核对说明、事实正文，以及51个事件的时间和地点解释；已核字段不重复计数。',inventory_sha256=sha(snap_path),archives=archives,changes=list(changes.values()),reviewed_unchanged=unchanged,full_goal_complete=False)
+plan=dict(created_at=datetime.now(timezone.utc).isoformat(),scope='936年第29—36段尚待审的事实核对说明、事实正文，以及51个事件的时间和地点解释；已核字段不重复计数。',inventory_sha256=sha(snap_path),archives=archives,changes=list(changes.values()),reviewed_unchanged=unchanged,full_goal_complete=False)
 (D/'changes.json').write_text(json.dumps(plan,ensure_ascii=False,indent=2)+'\n')
 from collections import Counter
 print(dict(changes=len(changes),by_table=dict(Counter(c['table'] for c in changes.values())),changed_fields=sum(len(c['after']) for c in changes.values()),unchanged_fields=len(unchanged)))

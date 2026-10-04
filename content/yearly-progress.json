@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 281,
-    "year": 937,
-    "last_reviewed_paragraph": "zztj-v281-y0937-p053",
-    "next_paragraph": "zztj-v281-y0937-p054",
-    "next_paragraph_opening": "十一月，乙卯，唐吴王景通更名璟。唐主赐杨画家杨琏妃号永兴公主；妃闻人呼公主则流涕而辞。戊午，唐主立其子景遂为吉王，景达为寿阳公；以景遂为侍中、东都留守、江都尹，帅留司百官赴东都。",
-    "batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-07",
+    "year": 938,
+    "last_reviewed_paragraph": "zztj-v281-y0937-p059",
+    "next_paragraph": "zztj-v281-y0938-p001",
+    "next_paragraph_opening": "春，正月，己酉，日有食之。",
+    "batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-08",
     "status": "pending",
-    "last_published_paragraph": "zztj-v281-y0937-p053"
+    "last_published_paragraph": "zztj-v281-y0937-p059"
   },
   "year_coverage": [
     {
@@ -1085,11 +1085,13 @@
     },
     {
       "year": 937,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         281
       ],
-      "completed_volumes": [],
+      "completed_volumes": [
+        281
+      ],
       "batches": [
         "content/books/zizhi-tongjian/vol-281/year-0937/part-01",
         "content/books/zizhi-tongjian/vol-281/year-0937/part-02",
@@ -1097,9 +1099,20 @@
         "content/books/zizhi-tongjian/vol-281/year-0937/part-04",
         "content/books/zizhi-tongjian/vol-281/year-0937/part-05",
         "content/books/zizhi-tongjian/vol-281/year-0937/part-06",
-        "content/books/zizhi-tongjian/vol-281/year-0937/part-07"
+        "content/books/zizhi-tongjian/vol-281/year-0937/part-07",
+        "content/books/zizhi-tongjian/vol-281/year-0937/part-08"
       ],
-      "note": "卷281第1—53段连续发布并匿名读回，共59段，后6段待录；937年尚未完成。"
+      "note": "卷281第6—64行59段正文连续完成，8批原文和引用发布并匿名读回。年末蜀年号、契丹时间、安州奏报异说保留待考；已核65行分隔与66行938年题不计入本年正文。"
+    },
+    {
+      "year": 938,
+      "status": "pending",
+      "volumes": [
+        281
+      ],
+      "completed_volumes": [],
+      "batches": [],
+      "note": "卷281第67—108行42段正文账本已初始化，全部待录；卷282开始939年。"
     }
   ],
   "legacy_archives": [
@@ -5463,6 +5476,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-07",
       "primary_paragraph": "zztj-v281-y0937-p053",
       "required_action": "《资治通鉴》其弟与《新五代史》其子冲突，暂不生成确定亲属边，后续回查册封和闽世家版本。"
+    },
+    {
+      "key": "937-v281-li_hu_report_day",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-08",
+      "primary_paragraph": "zztj-v281-y0937-p056",
+      "required_action": "《资治通鉴》十一月乙亥与《旧五代史》十一月壬午奏病纪日不同，独立引用；杀人后续不套报告日。"
+    },
+    {
+      "key": "937-v281-shu_era_name",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-08",
+      "primary_paragraph": "zztj-v281-y0937-p057",
+      "required_action": "《资治通鉴》电子本改明年元曰明德，《新五代史》明德五年始改广政，年号字形和公告需纸本版本校读。"
+    },
+    {
+      "key": "937-v281-khitan_huitong_chronology",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-08",
+      "primary_paragraph": "zztj-v281-y0937-p059",
+      "required_action": "《资治通鉴》937是岁改元会同、号大辽；辽史卷4会同元年十一月丙寅改元及卷76会同初加赵政事令并列；公元换算和改国号年份待核。"
     }
   ]
 }

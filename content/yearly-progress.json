@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 283,
-    "year": 942,
-    "last_reviewed_paragraph": "zztj-v283-y0942-p033",
-    "next_paragraph": "zztj-v283-y0942-p034",
-    "next_paragraph_opening": "冬，十月，丙子，张遇贤陷循州，杀汉刺史刘传。",
-    "batch": "content/books/zizhi-tongjian/vol-283/year-0942/part-04",
+    "year": 943,
+    "last_reviewed_paragraph": "zztj-v283-y0942-p040",
+    "next_paragraph": "zztj-v283-y0943-p001",
+    "next_paragraph_opening": "春，正月，癸卯，蜀主以宣徽使兼宫苑使田敬全领永平节度使；敬全，宦者也，引前蜀王承休为比而命之，国人非之。",
+    "batch": "content/books/zizhi-tongjian/vol-283/year-0942/part-05",
     "status": "pending",
-    "last_published_paragraph": "zztj-v283-y0942-p033"
+    "last_published_paragraph": "zztj-v283-y0942-p040"
   },
   "year_coverage": [
     {
@@ -1179,18 +1179,31 @@
     },
     {
       "year": 942,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         283
       ],
-      "completed_volumes": [],
+      "completed_volumes": [
+        283
+      ],
       "batches": [
         "content/books/zizhi-tongjian/vol-283/year-0942/part-01",
         "content/books/zizhi-tongjian/vol-283/year-0942/part-02",
         "content/books/zizhi-tongjian/vol-283/year-0942/part-03",
-        "content/books/zizhi-tongjian/vol-283/year-0942/part-04"
+        "content/books/zizhi-tongjian/vol-283/year-0942/part-04",
+        "content/books/zizhi-tongjian/vol-283/year-0942/part-05"
       ],
-      "note": "卷283原6—38行942年第1—33段四批连续发布并匿名读回，全年40正文尚余7段。本批处理张遇贤起事与钱帛馆救援、王清刘词先登襄州及安从进自焚、安宏赞被俘处死、赵莹任官、闽求和与杀王继柔、永隆钱、南汉康陵及升元条、余廷英掳人献钱等。神降为传闻，陈道庠字形校读有新史，父侄异说及献钱单位分别保留，未知追述日期为空。"
+      "note": "卷283中942年原6—45行40正文五批连续发布并核验来源哈希、逐段覆盖及匿名读回。第46行齐王上为标题。完成仅指该卷942年部分，卷283还含943年与944年开篇，整卷未完成。盐课收入异数、李仁遇父亲身份与亲属支系等待核。"
+    },
+    {
+      "year": 943,
+      "status": "pending",
+      "volumes": [
+        283
+      ],
+      "completed_volumes": [],
+      "batches": [],
+      "note": "卷283原49—90行共42正文待录，91—92行为944年界。整卷未完成。"
     }
   ],
   "legacy_archives": [
@@ -6130,6 +6143,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0942/part-04",
       "primary_paragraph": "zztj-v283-y0942-p033",
       "required_action": "通鉴买宴钱万缗、第二笔献皇后钱未给金额；新史写两笔钱千万。保留各记数单位和支持范围，不擅换算、相加或把数差当已证互斥。候官籍贯原字保留待版本核。"
+    },
+    {
+      "key": "942-salt-income-variant",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0942/part-05",
+      "primary_paragraph": "zztj-v283-y0942-p037",
+      "required_action": "通鉴年收十七万缗，旧纪电子底本一千七万贯，保留各书记数与原单位，纸本待核；至今指作者回顾，不据此设942年停止日。"
+    },
+    {
+      "key": "942-li-renyu-father-identity",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0942/part-05",
+      "primary_paragraph": "zztj-v283-y0942-p038",
+      "required_action": "父名李敏尚不足证与已录闽宰相同人，保留文字出处，不误接唐昭宗旧名李敏；甥支系未证，暂不建立唯一母亲或亲属边。"
+    },
+    {
+      "key": "942-jing-diplomatic-claims",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0942/part-05",
+      "primary_paragraph": "zztj-v283-y0942-p039",
+      "required_action": "称孙不称臣为外交称谓，不能改成血亲；十万横磨剑为景延广谈话声称，不能直接记作军械实存。"
     }
   ]
 }

@@ -6,12 +6,12 @@
   "active_cursor": {
     "volume": 282,
     "year": 939,
-    "last_reviewed_paragraph": "zztj-v281-y0938-p042",
-    "next_paragraph": "zztj-v282-y0939-p001",
-    "next_paragraph_opening": "春，正月，辛亥，以澶州防御使太原张从恩为枢密副使。",
-    "batch": "content/books/zizhi-tongjian/vol-281/year-0938/part-07",
+    "last_reviewed_paragraph": "zztj-v282-y0939-p008",
+    "next_paragraph": "zztj-v282-y0939-p009",
+    "next_paragraph_opening": "寻州戌将王彦忠据怀远城叛，上遣供奉官齐延祚往招谕之；彦忠降，延祚杀之。上怒曰：“朕践祚以来，未尝失信于人，彦忠已输仗出迎，延祚何得擅杀之！”除延祚名，重杖配流，议者犹以为延祚不应免死。",
+    "batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-01",
     "status": "pending",
-    "last_published_paragraph": "zztj-v281-y0938-p042"
+    "last_published_paragraph": "zztj-v282-y0939-p008"
   },
   "year_coverage": [
     {
@@ -1126,13 +1126,15 @@
     },
     {
       "year": 939,
-      "status": "pending",
+      "status": "partial_published_verified",
       "volumes": [
         282
       ],
       "completed_volumes": [],
-      "batches": [],
-      "note": "卷282原6—46行41段连续正文已登记，全部待录；原47—48行为940年界，未包含于939账本。"
+      "batches": [
+        "content/books/zizhi-tongjian/vol-282/year-0939/part-01"
+      ],
+      "note": "卷282原6—13行第1—8段连续发布并匿名读回；正月至三月任官、朔方治理、南唐复姓改名宗庙祖系、闽接待使者及刘知远辞命。全年度41段，后33段待录。"
     }
   ],
   "legacy_archives": [
@@ -5622,6 +5624,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0938/part-07",
       "primary_paragraph": "zztj-v281-y0938-p042",
       "required_action": "李从曮姓名私用字沿既有李继曮主体，乱兵帐字义待校；已录明确反击、东行与华州截杀，不猜改原字。"
+    },
+    {
+      "key": "939-nantang-ancestry",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-01",
+      "primary_paragraph": "zztj-v282-y0939-p005",
+      "required_action": "主书吴王李恪、李祎李岘链与新史唐宪宗子建王恪链有异说，保留为南唐祖系说法，不建李昪确定远祖关系。主书郑王无懿姓名待版本校核。"
+    },
+    {
+      "key": "939-tuoba-chief-name",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-01",
+      "primary_paragraph": "zztj-v282-y0939-p002",
+      "required_action": "冯晖留居党项首领，主书作拓跋彦超，旧史作拓拔彦昭；同一行动姓名差异并列，后续校核，未凭字形另造人物。"
+    },
+    {
+      "key": "902-feng-hui-homonym",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-01",
+      "primary_paragraph": "zztj-v282-y0939-p002",
+      "required_action": "902年冯弘铎部下冯晖，与934—939年兴州、范延光军及义成朔方冯晖共用旧主体。当前晚期经历由旧史卷125传记连贯补证；早期同名是否混同需要另核年龄、履历及身份，不能用旧key自动证明同人；如需拆分，须独立修订与引用、参与关联迁移，保留原批次。"
     }
   ]
 }

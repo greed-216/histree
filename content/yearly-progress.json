@@ -6,12 +6,12 @@
   "active_cursor": {
     "volume": 281,
     "year": 938,
-    "last_reviewed_paragraph": "zztj-v281-y0937-p059",
-    "next_paragraph": "zztj-v281-y0938-p001",
-    "next_paragraph_opening": "春，正月，己酉，日有食之。",
-    "batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-08",
+    "last_reviewed_paragraph": "zztj-v281-y0938-p008",
+    "next_paragraph": "zztj-v281-y0938-p009",
+    "next_paragraph_opening": "吴让皇固辞旧宫，屡请徙居；李德诚等亦亟以为言。五月，戊午，唐主改润州牙城为丹杨宫，以李建勋为迎奉让皇使。",
+    "batch": "content/books/zizhi-tongjian/vol-281/year-0938/part-01",
     "status": "pending",
-    "last_published_paragraph": "zztj-v281-y0937-p059"
+    "last_published_paragraph": "zztj-v281-y0938-p008"
   },
   "year_coverage": [
     {
@@ -1106,13 +1106,15 @@
     },
     {
       "year": 938,
-      "status": "pending",
+      "status": "partial_published_verified",
       "volumes": [
         281
       ],
       "completed_volumes": [],
-      "batches": [],
-      "note": "卷281第67—108行42段正文账本已初始化，全部待录；卷282开始939年。"
+      "batches": [
+        "content/books/zizhi-tongjian/vol-281/year-0938/part-01"
+      ],
+      "note": "卷281第1—8段（原67—74行）连续发布并匿名读回，938年共42段，后34段待录。"
     }
   ],
   "legacy_archives": [
@@ -5497,6 +5499,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0937/part-08",
       "primary_paragraph": "zztj-v281-y0937-p059",
       "required_action": "《资治通鉴》937是岁改元会同、号大辽；辽史卷4会同元年十一月丙寅改元及卷76会同初加赵政事令并列；公元换算和改国号年份待核。"
+    },
+    {
+      "key": "938-v281-eclipse_observation",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0938/part-01",
+      "primary_paragraph": "zztj-v281-y0938-p001",
+      "required_action": "《通鉴》正月己酉有食，旧本纪太史预报但不亏，观测与预报差异保留，后续核纸本及天文资料。"
+    },
+    {
+      "key": "938-v281-memorial_original_order_date",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0938/part-01",
+      "primary_paragraph": "zztj-v281-y0938-p005",
+      "required_action": "求封事原诏和详定院起始年月未载，主书数月后乙未催促与旧本纪二月乙未并列；起始事件及后续未知年份留null，待追查原诏。"
+    },
+    {
+      "key": "938-v281-liang_wenju_office_typo",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-281/year-0938/part-01",
+      "primary_paragraph": "zztj-v281-y0938-p005",
+      "required_action": "主书使部尚书疑吏部之讹，暂仅录梁文矩审阅职掌，不造使部机构；后续回查官传及版本。"
     }
   ]
 }

@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 138653,
-    "reviewed_verified": 1506
+    "pending": 138293,
+    "reviewed_verified": 1866
   },
   "rounds": [
     {
@@ -40,8 +40,26 @@
       "status": "published_verified",
       "changes": 64,
       "readback_audit_sha256": "be204190ad025d07259f917cb8b526fcb182a0a509bb3f05dc4c856756fbc9ec"
+    },
+    {
+      "path": "round-05",
+      "status": "published_verified",
+      "changes": 226,
+      "readback_audit_sha256": "61d86d73c4437ed4bdeac78c3b33fef51dca30e1af4b0ac0cdb65516721123a7"
+    },
+    {
+      "path": "round-06",
+      "status": "published_verified",
+      "changes": 41,
+      "readback_audit_sha256": "af18cd9ae9b6ade2eea7cec6c4e56a2df07dbda29a1a676a96a21321ef627187"
     }
   ],
   "complete": false,
-  "note": "关键词检查和结构检查只作辅助；其余字段持续逐项审阅，不将本轮视为全站完成。"
+  "note": "关键词检查和结构检查只作辅助；其余字段持续逐项审阅，不将本轮视为全站完成。",
+  "additional_scope_audit": {
+    "path": "authenticated-scope-counts.json",
+    "extra_records_beyond_initial_public_inventory": 9,
+    "status": "pending_classification",
+    "note": "后台总数比初始匿名盘点多6位人物、1个事件和2条参与记录；须检查草稿、隐藏重复主体或盘点后的新增记录，不自动视为已审，不恢复已合并主体。"
+  }
 }

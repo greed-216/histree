@@ -4,6 +4,7 @@ Existing entities are never overwritten. REST stages are resumable, not transact
 import argparse,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
 from datetime import datetime,timezone
 from pathlib import Path
+from history_identity import merged_identity_target
 ROOT=Path(__file__).resolve().parents[1]
 ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',action='store_true');args=ap.parse_args()
 P=Path(args.batch).resolve().parent
@@ -66,10 +67,27 @@ for _,table in groups:
   elif old:assert all(old.get(k)==v for k,v in r.items() if k!='status'),f'Conflicting row: {table}/{r["id"]}'
 # Names and aliases flag identity collisions before insertion; endpoints flag duplicate edges.
 def norm(s):return s.replace('硃','朱')
-for old in allrows('person','id,name,aliases'):
+# A completed identity merge keeps a hidden historical row. Exempt only its
+# audited redirect to the current canonical row; ordinary drafts still collide.
+people={x['id']:x for x in allrows('person','id,name,aliases,status')}
+redirects={}
+current_person_ids={x['id'] for x in rows['person']}
+for audit_file in sorted((ROOT/'content/revisions').glob('*/publication.json')):
+ merge_audit=json.loads(audit_file.read_text());plan_file=audit_file.parent/'plan.json'
+ if merge_audit.get('canonical_person_id') not in current_person_ids or not merge_audit.get('hidden_duplicate_person_id') or not plan_file.exists():continue
+ merge_plan=json.loads(plan_file.read_text())
+ if merge_audit.get('revision_sha256'):assert merge_audit['revision_sha256']==hashlib.sha256(plan_file.read_bytes()).hexdigest(),'Merge plan changed after verification'
+ target=merged_identity_target(merge_plan,merge_audit,people)
+ if target:
+  duplicate,canonical=target
+  assert not req('person_event','person_id=eq.'+duplicate+'&select=id'),'Merged duplicate still has participants'
+  assert not req('fact_claim','subject_table=eq.person&subject_id=eq.'+duplicate+'&select=id'),'Merged duplicate still has person claims'
+  assert not req('person_relationship','or=(person_a.eq.'+duplicate+',person_b.eq.'+duplicate+')&select=id'),'Merged duplicate still has relations'
+  redirects[duplicate]=canonical
+for old in people.values():
  oldnames={norm(x) for x in [old['name']]+(old['aliases'] or [])}
  for row in rows['person']:
-  assert old['id']==row['id'] or not oldnames.intersection(norm(x) for x in [row['name']]+row.get('aliases',[])), 'Person identity collision: '+row['name']
+  assert old['id']==row['id'] or redirects.get(old['id'])==row['id'] or not oldnames.intersection(norm(x) for x in [row['name']]+row.get('aliases',[])), 'Person identity collision: '+row['name']
 for table,fields in [('person_relationship',['person_a','person_b','relation_type']),('person_event',['person_id','event_id','role'])]:
  if not rows[table]:continue
  for old in allrows(table,'id,'+','.join(fields)):

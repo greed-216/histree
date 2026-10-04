@@ -22,3 +22,5 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 公开读回后，更新 `paragraphs.json` 的状态为 `published_verified`，更新 `content/yearly-progress.json` 的最后已发布段、下一段、年覆盖和批次路径，更新 `content/books/zizhi-tongjian/index.json`，再运行 `python3 scripts/index-book-claims.py`。如需验证问答，选本批的具体问题，检查回答与出处定位；问答成功不替代史料审核。
 
 提交时只暂存本批及必要索引和进度，避免其他人的未提交修改或 `apps/api/.env`。在交接说明写明发布段落范围、待考点、下一段和该年是否完成。
+
+已核验同人合并会保留隐藏的旧主体。发布预检仅在plan稳定key与审计ID一致、规范主体仍公开、重复主体为draft且无剩余参与／人物引用／关系时，允许该隐藏记录指向规范主体。普通草稿重名仍报错，禁止重新发布重复key。变更此守卫时运行 `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/tests -p test_history_identity.py`，再做线上只读预检。

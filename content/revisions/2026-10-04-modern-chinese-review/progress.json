@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 138293,
-    "reviewed_verified": 1866
+    "pending": 137801,
+    "reviewed_verified": 2358
   },
   "rounds": [
     {
@@ -52,14 +52,27 @@
       "status": "published_verified",
       "changes": 41,
       "readback_audit_sha256": "af18cd9ae9b6ade2eea7cec6c4e56a2df07dbda29a1a676a96a21321ef627187"
+    },
+    {
+      "path": "round-07",
+      "status": "published_verified",
+      "changes": 298,
+      "readback_audit_sha256": "a591846159045be0b80a6391569979eb10f28faf4d7371879e0fcb671b3ad0c5"
+    },
+    {
+      "path": "round-08",
+      "status": "published_verified",
+      "changes": 61,
+      "readback_audit_sha256": "90f8225da4446f65873cd4c90d64d2160b98a6199ef95ea105419c75d8d57ee5"
     }
   ],
   "complete": false,
   "note": "关键词检查和结构检查只作辅助；其余字段持续逐项审阅，不将本轮视为全站完成。",
   "additional_scope_audit": {
-    "path": "authenticated-scope-counts.json",
+    "path": "extra-record-classification.json",
     "extra_records_beyond_initial_public_inventory": 9,
-    "status": "pending_classification",
-    "note": "后台总数比初始匿名盘点多6位人物、1个事件和2条参与记录；须检查草稿、隐藏重复主体或盘点后的新增记录，不自动视为已审，不恢复已合并主体。"
+    "status": "classified_retired_duplicates",
+    "active_records_missing_from_initial_inventory": 0,
+    "note": "9条均为已合并并隐藏的旧人物、事件或参与记录；对应审计和当前公开主体已核验。保留归档，继续在公开字段账本审阅正式主体，不恢复重复记录。"
   }
 }

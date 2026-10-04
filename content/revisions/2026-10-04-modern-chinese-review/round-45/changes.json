@@ -1,0 +1,2344 @@
+{
+  "created_at": "2026-10-04T12:04:17.020075+00:00",
+  "scope": "936年第1—8段与活动第41轮不重叠的事实正文；原文引用、核对说明和身份字段保留。重叠记录仍待第41轮独立验证后处理。",
+  "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
+  "archives": [
+    {
+      "batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-01",
+      "batch_sha256": "df42b58f5b62c13cf2811d08af551a93fcdbed0f6e2d7421439bdcc59e9ed489",
+      "source_files": [
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-01/sources/library/jiuwudaishi-048-936-january/source.txt",
+          "sha256": "0eb69c18b167e454a7823684bd68415a016d570c9e207ddb833dcfd1a06eccf7"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-01/sources/library/jiuwudaishi-048-936-march/source.txt",
+          "sha256": "82b4f0b571c5c29f39396bef4f1f5547d67376066425c705278784fdac22ebf8"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-01/sources/library/tongjian-280-936-opening/source.txt",
+          "sha256": "3ede0e4b38993f1f759d406c01ee021b30fa7d25729160e27605b24849452e98"
+        },
+        {
+          "path": "content/books/zizhi-tongjian/vol-280/year-0936/part-01/sources/library/xinwudaishi-056-lv-qi-peace/source.txt",
+          "sha256": "381d7a261e3d52f4938749d09d05e33c1838f05ad43d4c02353d46e64339d2a4"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "table": "fact_claim",
+      "id": "7d57f0ac-4671-5416-b5ca-fa8feca5009e",
+      "baseline": {
+        "id": "7d57f0ac-4671-5416-b5ca-fa8feca5009e",
+        "subject_table": "event",
+        "subject_id": "1ada1b99-5ac8-531f-9609-e84f4995500d",
+        "field_path": "description",
+        "claim_text": "正月徐知诰建立大元帅府，幕职分掌六部及盐铁。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p001·原文件第6行",
+        "note": "原文：春，正月，吴徐知诰始建大元帅府，以幕职分判吏、户、礼、兵、刑、工部及盐铁。；核对说明：这里的吏、户、礼、兵、刑、工及盐铁是元帅府内部的事务分工，不能据此认定南唐已经建立正式的六部制度。徐知诰在吴地的军政发展延续了935年受封齐王后的局面。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "正月徐知诰建立大元帅府，幕职分掌六部及盐铁。"
+      },
+      "after": {
+        "claim_text": "正月，徐知诰建立大元帅府，让幕府官员分别管理吏、户、礼、兵、刑、工及盐铁事务。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "567ba738-968f-5e1b-8e85-a491406445e5",
+      "baseline": {
+        "id": "567ba738-968f-5e1b-8e85-a491406445e5",
+        "subject_table": "person_event",
+        "subject_id": "0e800b24-710f-55d5-86e3-c26545b16483",
+        "field_path": "role",
+        "claim_text": "李昪：建立元帅府与分职者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p001·原文件第6行",
+        "note": "原文：春，正月，吴徐知诰始建大元帅府，以幕职分判吏、户、礼、兵、刑、工部及盐铁。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李昪：建立元帅府与分职者。"
+      },
+      "after": {
+        "claim_text": "李昪：建立大元帅府，安排幕僚分管各项事务，当时名徐知诰。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4bdae4c4-e886-5bb1-b5b5-9a3c46e06d5d",
+      "baseline": {
+        "id": "4bdae4c4-e886-5bb1-b5b5-9a3c46e06d5d",
+        "subject_table": "event",
+        "subject_id": "72810a26-1e97-5e76-80c6-dbda3832295a",
+        "field_path": "description",
+        "claim_text": "正月丁未李从珂封子李重美为雍王。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p002·原文件第7行",
+        "note": "原文：丁未，唐主立子重美为雍王。；核对说明：这时仍是后唐清泰三年。卷首使用后晋天福元年，是整年编年的标题，不能据此认为石敬瑭此时已经称帝。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "正月丁未李从珂封子李重美为雍王。"
+      },
+      "after": {
+        "claim_text": "正月丁未，李从珂封儿子李重美为雍王。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0b7232f2-8cb6-596c-acfe-807890be9202",
+      "baseline": {
+        "id": "0b7232f2-8cb6-596c-acfe-807890be9202",
+        "subject_table": "person_event",
+        "subject_id": "f01671a9-1d6e-571d-8290-5d3fac65a4b5",
+        "field_path": "role",
+        "claim_text": "李从珂：封王者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p002·原文件第7行",
+        "note": "原文：丁未，唐主立子重美为雍王。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：封王者。"
+      },
+      "after": {
+        "claim_text": "李从珂：封儿子李重美为雍王。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "94159be9-4754-530b-b472-513e139a6cc0",
+      "baseline": {
+        "id": "94159be9-4754-530b-b472-513e139a6cc0",
+        "subject_table": "person_event",
+        "subject_id": "f88ef062-3e90-5ff7-a87f-3ab83bac46ee",
+        "field_path": "role",
+        "claim_text": "李重美：皇子、雍王获封者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p002·原文件第7行",
+        "note": "原文：丁未，唐主立子重美为雍王。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李重美：皇子、雍王获封者。"
+      },
+      "after": {
+        "claim_text": "李重美：以皇子身份获封雍王。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8281036a-6e03-55b2-8d75-f4d951f57c1f",
+      "baseline": {
+        "id": "8281036a-6e03-55b2-8d75-f4d951f57c1f",
+        "subject_table": "event",
+        "subject_id": "72810a26-1e97-5e76-80c6-dbda3832295a",
+        "field_path": "description",
+        "claim_text": "旧末帝纪清泰三年正月丁未同记李重美封雍王，并列河南尹判六军职。",
+        "source_id": "ff2a4143-4f96-591d-8a62-f2a963d5f36f",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001311；EPUB电子本，纸本及异文待核",
+        "note": "原文：丁未，皇子河南尹、判六軍諸衛事重美封雍王。；核对说明：这里的重美是李重美。此处记载了他的现任官职，没有说明他首次担任河南尹的年份。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧末帝纪清泰三年正月丁未同记李重美封雍王，并列河南尹判六军职。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》记载，后唐清泰三年正月丁未，李重美获封雍王，当时任河南尹、判六军诸卫事。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d8393745-7dfb-5b9a-a2f4-d84e6b2d6342",
+      "baseline": {
+        "id": "d8393745-7dfb-5b9a-a2f4-d84e6b2d6342",
+        "subject_table": "event",
+        "subject_id": "a2e39355-1c4d-5e17-b42b-7177c5cc350a",
+        "field_path": "description",
+        "claim_text": "正月癸丑李从珂千春节设宴，晋国长公主上寿后辞归晋阳。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：癸丑，唐主以千春节置酒，晋国长公主上寿毕，辞归晋阳。；核对说明：“上寿”是祝寿；“辞归”是请求离开。原文没有说明公主当天已经抵达晋阳。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "正月癸丑李从珂千春节设宴，晋国长公主上寿后辞归晋阳。"
+      },
+      "after": {
+        "claim_text": "正月癸丑，李从珂为千春节设宴，晋国长公主祝寿后请求返回晋阳。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9cfc1056-1a2c-5c36-9c56-ed3d47467a39",
+      "baseline": {
+        "id": "9cfc1056-1a2c-5c36-9c56-ed3d47467a39",
+        "subject_table": "person_event",
+        "subject_id": "ffb910db-cf46-5596-950e-ceeecc8e1493",
+        "field_path": "role",
+        "claim_text": "李从珂：千春节设宴者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：癸丑，唐主以千春节置酒，晋国长公主上寿毕，辞归晋阳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：千春节设宴者。"
+      },
+      "after": {
+        "claim_text": "李从珂：在千春节设宴。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "54a2ba3f-6b5e-58bf-ba98-3f14ce321c34",
+      "baseline": {
+        "id": "54a2ba3f-6b5e-58bf-ba98-3f14ce321c34",
+        "subject_table": "person_event",
+        "subject_id": "32f7f300-a68c-5ded-acab-45af0ead3c06",
+        "field_path": "role",
+        "claim_text": "永宁公主（石敬瑭妻）：上寿并辞归者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：癸丑，唐主以千春节置酒，晋国长公主上寿毕，辞归晋阳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "永宁公主（石敬瑭妻）：上寿并辞归者。"
+      },
+      "after": {
+        "claim_text": "永宁公主（石敬瑭妻）：为李从珂祝寿后请求返回晋阳，当时称晋国长公主。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "18460b0c-6bbd-5aff-9680-15d390ff2340",
+      "baseline": {
+        "id": "18460b0c-6bbd-5aff-9680-15d390ff2340",
+        "subject_table": "event",
+        "subject_id": "5daee7e5-00e8-5a45-ad92-3fb0104cd620",
+        "field_path": "description",
+        "claim_text": "李从珂醉后问公主是否急归与石敬瑭反叛。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：帝醉，曰：“何不且留？遽归，欲与石郎反邪！”；核对说明：谋反的疑问是李从珂说的话，不能据此认定公主和石敬瑭当天已经谋反。“石郎”指石敬瑭，原文没有说他在场。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂醉后问公主是否急归与石敬瑭反叛。"
+      },
+      "after": {
+        "claim_text": "李从珂喝醉后问公主，急着回去是否想与石敬瑭一起反叛。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e7d8e8f0-41e6-5953-ba0a-8c67c678f8ed",
+      "baseline": {
+        "id": "e7d8e8f0-41e6-5953-ba0a-8c67c678f8ed",
+        "subject_table": "person_event",
+        "subject_id": "c7f4bc5d-792d-5125-b281-85bb7c481143",
+        "field_path": "role",
+        "claim_text": "李从珂：醉后质问者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：帝醉，曰：“何不且留？遽归，欲与石郎反邪！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：醉后质问者。"
+      },
+      "after": {
+        "claim_text": "李从珂：醉后质问公主是否急着与石敬瑭反叛。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "470b8100-dd34-5c77-b248-0a66ed99613d",
+      "baseline": {
+        "id": "470b8100-dd34-5c77-b248-0a66ed99613d",
+        "subject_table": "person_event",
+        "subject_id": "fd2daca0-71da-5720-9d8f-82431d982075",
+        "field_path": "role",
+        "claim_text": "永宁公主（石敬瑭妻）：被质问者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：帝醉，曰：“何不且留？遽归，欲与石郎反邪！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "永宁公主（石敬瑭妻）：被质问者。"
+      },
+      "after": {
+        "claim_text": "永宁公主（石敬瑭妻）：受到李从珂醉后质问。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8348dc42-b29d-549e-8263-c875024576cf",
+      "baseline": {
+        "id": "8348dc42-b29d-549e-8263-c875024576cf",
+        "subject_table": "event",
+        "subject_id": "4bc45d48-e311-5bd2-864a-12a1595745c5",
+        "field_path": "description",
+        "claim_text": "石敬瑭闻李从珂对公主之言，更加忧惧。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：石敬瑭闻之，益惧。；核对说明：石敬瑭听说此事，并不表示他亲自在宴席上。恐惧是《资治通鉴》对其心理的记载，不能据此认定他此时已经起兵。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭闻李从珂对公主之言，更加忧惧。"
+      },
+      "after": {
+        "claim_text": "石敬瑭听说李从珂对公主说的话后，更加害怕。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "036e4e1f-9e7e-550d-b60b-68832ca46d65",
+      "baseline": {
+        "id": "036e4e1f-9e7e-550d-b60b-68832ca46d65",
+        "subject_table": "person_event",
+        "subject_id": "e83f0d14-b210-51f9-845f-61d2e7d04293",
+        "field_path": "role",
+        "claim_text": "石敬瑭：闻言后被记益惧者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p003·原文件第8行",
+        "note": "原文：石敬瑭闻之，益惧。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：闻言后被记益惧者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：听说李从珂质问公主后更加害怕。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "da1497c0-1d9f-5063-b927-d82456b76318",
+      "baseline": {
+        "id": "da1497c0-1d9f-5063-b927-d82456b76318",
+        "subject_table": "event",
+        "subject_id": "fae8b33f-8ee9-5d9d-9985-d2272d5e51a6",
+        "field_path": "description",
+        "claim_text": "三月丙午马胤孙任中书侍郎、同平章事。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p004·原文件第9行",
+        "note": "原文：三月，丙午，以翰林学士、礼部侍郎马胤孙为中书侍郎、同平章事。；核对说明：说明只依据原文明载的行动，不额外推断原因或结果。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "三月丙午马胤孙任中书侍郎、同平章事。"
+      },
+      "after": {
+        "claim_text": "三月丙午，马胤孙任中书侍郎、同平章事。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f1e7be91-f8f2-5c05-b3b7-321f6f01bfdc",
+      "baseline": {
+        "id": "f1e7be91-f8f2-5c05-b3b7-321f6f01bfdc",
+        "subject_table": "person_event",
+        "subject_id": "8951569b-ac10-5a84-b1d1-9927416cb4df",
+        "field_path": "role",
+        "claim_text": "马胤孙：翰林学士礼部侍郎、获任宰辅者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p004·原文件第9行",
+        "note": "原文：三月，丙午，以翰林学士、礼部侍郎马胤孙为中书侍郎、同平章事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "马胤孙：翰林学士礼部侍郎、获任宰辅者。"
+      },
+      "after": {
+        "claim_text": "马胤孙：由翰林学士、礼部侍郎获任中书侍郎、同平章事。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8f8feb18-0929-562f-9b47-7e600b39c6f9",
+      "baseline": {
+        "id": "8f8feb18-0929-562f-9b47-7e600b39c6f9",
+        "subject_table": "person_event",
+        "subject_id": "beaf71c3-369b-5142-8cd1-e4025421f9c0",
+        "field_path": "role",
+        "claim_text": "李从珂：任命者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p004·原文件第9行",
+        "note": "原文：三月，丙午，以翰林学士、礼部侍郎马胤孙为中书侍郎、同平章事。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：任命者。"
+      },
+      "after": {
+        "claim_text": "李从珂：任命马胤孙为中书侍郎、同平章事。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e198c19b-cc30-5ec6-a6d8-6cf5929366b4",
+      "baseline": {
+        "id": "e198c19b-cc30-5ec6-a6d8-6cf5929366b4",
+        "subject_table": "event",
+        "subject_id": "fae8b33f-8ee9-5d9d-9985-d2272d5e51a6",
+        "field_path": "description",
+        "claim_text": "旧末帝纪同记三月丙午马裔孙任中书侍郎、同平章事。",
+        "source_id": "adad8e91-6aa4-5455-acd8-ba57bf1b5892",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001313；EPUB电子本，纸本及异文待核",
+        "note": "原文：丙午，以翰林學士、禮部侍郎馬裔孫為中書侍郎、同平章事。；核对说明：原文的马裔孙与马胤孙是同一人；引用保留“裔”字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧末帝纪同记三月丙午马裔孙任中书侍郎、同平章事。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》也记载，三月丙午，马胤孙任中书侍郎、同平章事，原文写作“马裔孙”。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "60764be7-2d53-5064-9379-fc689c2d9e55",
+      "baseline": {
+        "id": "60764be7-2d53-5064-9379-fc689c2d9e55",
+        "subject_table": "event",
+        "subject_id": "6dc2bc48-45f8-5f29-a088-2e02ff66b94d",
+        "field_path": "description",
+        "claim_text": "主书称马胤孙任中书后事务凝滞、少接宾客，时称三不开。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p004·原文件第9行",
+        "note": "原文：胤孙性谨儒，中书事多凝滞，又罕接宾客，时人目为“三不开”，谓口、印、门也。；核对说明：“三不开”对应不开口、不用印、不出门，是当时人对马胤孙的评价，不是三项精确的政务指标。“谨儒”是史书的描述，不据此作人格诊断。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "主书称马胤孙任中书后事务凝滞、少接宾客，时称三不开。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》说，马胤孙担任中书官职后政务多有迟滞，又很少接待宾客，当时人称他为“三不开”。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "181443d3-b1be-5266-bbc1-1e4addd0c83f",
+      "baseline": {
+        "id": "181443d3-b1be-5266-bbc1-1e4addd0c83f",
+        "subject_table": "person_event",
+        "subject_id": "735fdcd6-f87d-51a2-ae4e-8c949c9d6386",
+        "field_path": "role",
+        "claim_text": "马胤孙：被记凝滞及获三不开称呼者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p004·原文件第9行",
+        "note": "原文：胤孙性谨儒，中书事多凝滞，又罕接宾客，时人目为“三不开”，谓口、印、门也。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "马胤孙：被记凝滞及获三不开称呼者。"
+      },
+      "after": {
+        "claim_text": "马胤孙：被史书记载政务迟滞、少见宾客，当时被称为三不开。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f73d9ebf-a901-5c51-b497-09165b37e541",
+      "baseline": {
+        "id": "f73d9ebf-a901-5c51-b497-09165b37e541",
+        "subject_table": "event",
+        "subject_id": "6dc2bc48-45f8-5f29-a088-2e02ff66b94d",
+        "field_path": "description",
+        "claim_text": "新马胤孙传解释三不开：不论议、不行印、不延士大夫。",
+        "source_id": "55bbafc5-39dc-5c35-9f2c-1913bbaba8da",
+        "citation": "《新五代史》卷55·马胤孙传（司空职掌议论），段落 xin-wudaishi-b08f244b9241-p002153；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：當時號為「三不開」，謂其不開口以論議，不開印以行事，不開門以延士大夫也。；核对说明：“三不开”是当时人的称呼，不能据此认定马胤孙每项政务都没有处理。该传还记载了关于司空职掌的议论，但这不表示他在936年新任司空。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新马胤孙传解释三不开：不论议、不行印、不延士大夫。"
+      },
+      "after": {
+        "claim_text": "《新五代史》解释，马胤孙被称为“三不开”，指不开口议事、不用印办事、不打开门接待士大夫。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2805a7c2-95a0-5ebd-8ec4-cde55353207c",
+      "baseline": {
+        "id": "2805a7c2-95a0-5ebd-8ec4-cde55353207c",
+        "subject_table": "event",
+        "subject_id": "682b8fbf-1c4d-5c13-92c8-f06b8a0297b8",
+        "field_path": "description",
+        "claim_text": "石敬瑭将洛阳及诸道财货收归晋阳，以助军费为说辞。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：石敬瑭尽收其货之在洛阳及诸道者归晋阳，托言以助军费，人皆知其有异志。；核对说明：“托言”和“人皆知”是史家的判断。原文明载石敬瑭收集财物，却不能据此独立证明所有人都知情，或认定他已经反叛。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭将洛阳及诸道财货收归晋阳，以助军费为说辞。"
+      },
+      "after": {
+        "claim_text": "石敬瑭将洛阳及各地的财物收回晋阳，称是为了补助军费。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f13ff30c-fc8a-55bb-94f6-6c5671b80d69",
+      "baseline": {
+        "id": "f13ff30c-fc8a-55bb-94f6-6c5671b80d69",
+        "subject_table": "person_event",
+        "subject_id": "f1b4a9b6-b989-5b0e-a613-a6828e2d3767",
+        "field_path": "role",
+        "claim_text": "石敬瑭：集货归晋阳者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：石敬瑭尽收其货之在洛阳及诸道者归晋阳，托言以助军费，人皆知其有异志。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "石敬瑭：集货归晋阳者。"
+      },
+      "after": {
+        "claim_text": "石敬瑭：将洛阳及各地财物收回晋阳，称为补助军费。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a0785320-8f57-5347-aa6b-5850f9d3ea49",
+      "baseline": {
+        "id": "a0785320-8f57-5347-aa6b-5850f9d3ea49",
+        "subject_table": "event",
+        "subject_id": "8899ba7b-9caa-5a5a-95d9-a0ee04e6478a",
+        "field_path": "description",
+        "claim_text": "李从珂夜间与近臣谈石敬瑭亲近与流言，问失欢后如何解处，众未答。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：唐主夜与近臣从容语曰：“石郎于朕至亲，无可疑者；但流言不息，万一失欢，何以解之？”皆不对。；核对说明：“至亲无可疑”是李从珂的说法，应与史家的评价区别。原文未列出近臣姓名，不能自行补出名单。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂夜间与近臣谈石敬瑭亲近与流言，问失欢后如何解处，众未答。"
+      },
+      "after": {
+        "claim_text": "李从珂夜间与近臣谈到自己和石敬瑭关系亲近，却流言不断，询问两人一旦失和应如何化解，众人没有回答。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2a5535aa-72c2-5ca2-91f7-77e6e5171542",
+      "baseline": {
+        "id": "2a5535aa-72c2-5ca2-91f7-77e6e5171542",
+        "subject_table": "person_event",
+        "subject_id": "c8d9c15f-c4be-5d7a-bb5d-9e9ef7fc2b45",
+        "field_path": "role",
+        "claim_text": "李从珂：向近臣问计者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：唐主夜与近臣从容语曰：“石郎于朕至亲，无可疑者；但流言不息，万一失欢，何以解之？”皆不对。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：向近臣问计者。"
+      },
+      "after": {
+        "claim_text": "李从珂：向近臣询问如何化解与石敬瑭的矛盾。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "16a69f3e-a6fd-5fb6-96ab-bfc19a58ec40",
+      "baseline": {
+        "id": "16a69f3e-a6fd-5fb6-96ab-bfc19a58ec40",
+        "subject_table": "event",
+        "subject_id": "3c79aa9b-d218-5b28-b69a-f863b37c0e99",
+        "field_path": "description",
+        "claim_text": "李崧退后问吕琦应如何谋划，以受恩深厚为理由。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：端明殿学士、给事中李崧退谓同僚吕琦曰：“吾辈受恩深厚，岂得自同众人，一概观望邪！计将安出？”；核对说明：原文只表明这些人是同僚，不能据此认定他们有长期的上下级或盟友关系。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧退后问吕琦应如何谋划，以受恩深厚为理由。"
+      },
+      "after": {
+        "claim_text": "李崧退出后对吕琦说，两人受到皇帝深厚的恩待，不能一味观望，并询问应如何谋划。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d3cd7ca7-952e-5077-8ce6-63234bd494dd",
+      "baseline": {
+        "id": "d3cd7ca7-952e-5077-8ce6-63234bd494dd",
+        "subject_table": "person_event",
+        "subject_id": "0b6c31c9-a585-5cce-9090-bd4598a2421b",
+        "field_path": "role",
+        "claim_text": "李崧：端明殿学士给事中、向同僚问计者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：端明殿学士、给事中李崧退谓同僚吕琦曰：“吾辈受恩深厚，岂得自同众人，一概观望邪！计将安出？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：端明殿学士给事中、向同僚问计者。"
+      },
+      "after": {
+        "claim_text": "李崧：以端明殿学士、给事中身份向吕琦询问应对办法。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "53629fc4-290a-54e5-83f4-ddb46c541c53",
+      "baseline": {
+        "id": "53629fc4-290a-54e5-83f4-ddb46c541c53",
+        "subject_table": "person_event",
+        "subject_id": "c1547407-8621-59f9-8267-7712d9739db4",
+        "field_path": "role",
+        "claim_text": "吕琦：被问同僚。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：端明殿学士、给事中李崧退谓同僚吕琦曰：“吾辈受恩深厚，岂得自同众人，一概观望邪！计将安出？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：被问同僚。"
+      },
+      "after": {
+        "claim_text": "吕琦：受到同僚李崧询问应对办法。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e76ca544-58f9-5685-aa61-9bdf052d3e7b",
+      "baseline": {
+        "id": "e76ca544-58f9-5685-aa61-9bdf052d3e7b",
+        "subject_table": "event",
+        "subject_id": "b054d4f9-73cc-5866-abda-e916f575eaf8",
+        "field_path": "description",
+        "claim_text": "吕琦分析河东异谋可能引契丹，述契丹求和及荝剌未获归的背景。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：琦曰：“吾辈受恩深厚，岂得自同众人，一概观望邪！计将安出？”琦曰：“河东若有异谋，必结契丹为援。契丹母以赞华在中国，屡求和亲，但求荝剌等未获，故和未成耳。；核对说明：“若有异谋”是假设，不能据此认定石敬瑭当时已与契丹正式结盟。契丹太后与赞华只是被谈及，原文没有说他们在场。此前求和的具体起始年份未明。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦分析河东异谋可能引契丹，述契丹求和及荝剌未获归的背景。"
+      },
+      "after": {
+        "claim_text": "吕琦认为，河东如果另有图谋，可能与契丹结盟求援；他还说，契丹此前曾请求和亲，但由于荝剌等人没有获准返回，和议未成。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0fb91dfb-6c32-5605-a97a-b355e8b8adee",
+      "baseline": {
+        "id": "0fb91dfb-6c32-5605-a97a-b355e8b8adee",
+        "subject_table": "person_event",
+        "subject_id": "13c95012-c6a5-5da7-a811-c5b72f64a46a",
+        "field_path": "role",
+        "claim_text": "吕琦：陈述风险与背景者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：琦曰：“吾辈受恩深厚，岂得自同众人，一概观望邪！计将安出？”琦曰：“河东若有异谋，必结契丹为援。契丹母以赞华在中国，屡求和亲，但求荝剌等未获，故和未成耳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：陈述风险与背景者。"
+      },
+      "after": {
+        "claim_text": "吕琦：分析河东可能求契丹援助及此前求和背景。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ad133780-54d1-5393-ae3a-dffa05a368b7",
+      "baseline": {
+        "id": "ad133780-54d1-5393-ae3a-dffa05a368b7",
+        "subject_table": "person_event",
+        "subject_id": "03d0231c-a042-5ed8-9d8b-fa99ba3f81dd",
+        "field_path": "role",
+        "claim_text": "李崧：听其分析者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：琦曰：“吾辈受恩深厚，岂得自同众人，一概观望邪！计将安出？”琦曰：“河东若有异谋，必结契丹为援。契丹母以赞华在中国，屡求和亲，但求荝剌等未获，故和未成耳。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：听其分析者。"
+      },
+      "after": {
+        "claim_text": "李崧：听取吕琦对风险和求和背景的分析。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0ab1aa11-1ca7-5b2a-9827-5f0aca73de1a",
+      "baseline": {
+        "id": "0ab1aa11-1ca7-5b2a-9827-5f0aca73de1a",
+        "subject_table": "person",
+        "subject_id": "1c865dcb-3259-50e9-b13e-181615308183",
+        "field_path": "description",
+        "claim_text": "吕琦以契丹母与赞华在中国的背景分析对方求和。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：契丹母以赞华在中国，屡求和亲，但求荝剌等未获，故和未成耳。；核对说明：“契丹母”指述律平。谈话中提到她，并不表示她在场。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦以契丹母与赞华在中国的背景分析对方求和。"
+      },
+      "after": {
+        "claim_text": "吕琦说，契丹太后因为赞华留在后唐，曾多次请求和亲。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "eb6f9b43-1136-5451-9889-3467e189bbc7",
+      "baseline": {
+        "id": "eb6f9b43-1136-5451-9889-3467e189bbc7",
+        "subject_table": "person",
+        "subject_id": "5627be02-e5b4-58fd-9c04-9871554a8d80",
+        "field_path": "aliases",
+        "claim_text": "本段赞华沿耶律倍在后唐所赐姓名李赞华。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：契丹母以赞华在中国，；核对说明：结合《资治通鉴》931年的赐名记载与东丹相关记载，这里的赞华与耶律倍是同一人。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段赞华沿耶律倍在后唐所赐姓名李赞华。"
+      },
+      "after": {
+        "claim_text": "这里的赞华是耶律倍在后唐获赐的姓名李赞华。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a059c64f-4d9d-545b-81e1-3ccc3fc7ad4b",
+      "baseline": {
+        "id": "a059c64f-4d9d-545b-81e1-3ccc3fc7ad4b",
+        "subject_table": "person",
+        "subject_id": "5627be02-e5b4-58fd-9c04-9871554a8d80",
+        "field_path": "aliases",
+        "claim_text": "长兴二年东丹慕华获赐姓名李赞华，耶律倍可按此名检索。",
+        "source_id": "a794722f-8c64-5a3f-b726-4f1c9bd5a6d5",
+        "citation": "《资治通鉴》后唐纪六，段落 zizhi-tongjian-a63549944a71-p003299；电子底本待考，分段待核",
+        "note": "原文：秋，九月，己亥，更赐东凡慕华姓名曰李赞华。；核对说明：赞华与931年获赐姓名的耶律倍是同一人。底本的“东凡”疑为“东丹”，引用仍保留原字。此处说明他的身份，不把赐名事件误记为936年发生。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "长兴二年东丹慕华获赐姓名李赞华，耶律倍可按此名检索。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》记载，长兴二年耶律倍获赐姓名李赞华；原文的“东凡”疑为“东丹”，引用保留原字。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "62c75c2e-435e-5846-b7ba-8565090a287d",
+      "baseline": {
+        "id": "62c75c2e-435e-5846-b7ba-8565090a287d",
+        "subject_table": "person",
+        "subject_id": "755daf3d-2f6b-5807-87ec-930fea729b93",
+        "field_path": "aliases",
+        "claim_text": "本段先写荝剌、后写荝刺，按同一返还对象沿荝剌。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：今诚归荝刺等与之和，；核对说明：“刺”与“剌”并非繁简字。结合同段记载及拟送还的对象，按同一人物的不同写法处理，引用保持原字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "本段先写荝剌、后写荝刺，按同一返还对象沿荝剌。"
+      },
+      "after": {
+        "claim_text": "这段原文先写“荝剌”，后写“荝刺”，两处说的是同一位拟送还契丹的人物。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ec3c991b-3637-527a-b00a-d7ee55bb0cbc",
+      "baseline": {
+        "id": "ec3c991b-3637-527a-b00a-d7ee55bb0cbc",
+        "subject_table": "event",
+        "subject_id": "6937cf2f-edcc-53fa-9260-3069bbaab1ef",
+        "field_path": "description",
+        "claim_text": "吕琦提出归还荝剌等、每年给礼币约十余万缗，与契丹议和以断河东外援。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：今诚归荝刺等与之和，岁以礼币约直十馀万缗遗之，彼必欢然承命。如此，则河东虽欲陆梁，无能为矣。”；核对说明：“十余万”是计划每年赠送礼币的价值，以缗计算，并非已经支付的金额。“河东无能为”是对方案效果的预测，不能写成已经实施并奏效。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦提出归还荝剌等、每年给礼币约十余万缗，与契丹议和以断河东外援。"
+      },
+      "after": {
+        "claim_text": "吕琦提议归还荝剌等人，每年赠送价值约十余万缗的礼币，与契丹议和，希望切断河东的外援。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "fa72e4ab-1b16-5181-958e-3760c5ab5a73",
+      "baseline": {
+        "id": "fa72e4ab-1b16-5181-958e-3760c5ab5a73",
+        "subject_table": "person_event",
+        "subject_id": "58ba0b66-3a6e-5e9d-b5ba-5236316779a6",
+        "field_path": "role",
+        "claim_text": "吕琦：提出方案及效果预测者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：今诚归荝刺等与之和，岁以礼币约直十馀万缗遗之，彼必欢然承命。如此，则河东虽欲陆梁，无能为矣。”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：提出方案及效果预测者。"
+      },
+      "after": {
+        "claim_text": "吕琦：提出归还俘虏、每年赠送钱帛的议和方案，并预测效果。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "4d46fd1d-d1b5-5a13-a25f-83171bdfcdf4",
+      "baseline": {
+        "id": "4d46fd1d-d1b5-5a13-a25f-83171bdfcdf4",
+        "subject_table": "person_event",
+        "subject_id": "745bd4ac-41b6-5055-9891-cdfedc3902a0",
+        "field_path": "role",
+        "claim_text": "李崧：听方案者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：今诚归荝刺等与之和，岁以礼币约直十馀万缗遗之，彼必欢然承命。如此，则河东虽欲陆梁，无能为矣。”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：听方案者。"
+      },
+      "after": {
+        "claim_text": "李崧：听取吕琦的议和方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d6c2c6a1-056c-5b8b-8079-3f79fcf96e68",
+      "baseline": {
+        "id": "d6c2c6a1-056c-5b8b-8079-3f79fcf96e68",
+        "subject_table": "event",
+        "subject_id": "6937cf2f-edcc-53fa-9260-3069bbaab1ef",
+        "field_path": "description",
+        "claim_text": "新吕琦传明确补方案还包括岁给金帛、妻之以女，欲断强藩外援。",
+        "source_id": "a0cd4d7d-2ee8-5384-bf36-46f66e6440b1",
+        "citation": "《新五代史》卷56·吕琦传（对契丹和议），段落 xin-wudaishi-b08f244b9241-p002218；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：不如與契丹通和，如漢故事，歲給金帛，妻之以女，使彊藩大鎮顧外無所引援，可弭其亂心。；核对说明：《资治通鉴》没有展开婚姻条款，《新五代史》明确记载了这一提议，可作为补充。提议不等于已经嫁女；女子未具名，不能认定为惠明公主等具体人物。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新吕琦传明确补方案还包括岁给金帛、妻之以女，欲断强藩外援。"
+      },
+      "after": {
+        "claim_text": "《新五代史》记载，吕琦还提议每年赠送金帛，并以女子与契丹联姻，希望切断强藩大镇的外援，消除其反叛念头。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e6fec6a2-fb98-5c2f-a06e-c090912a8d98",
+      "baseline": {
+        "id": "e6fec6a2-fb98-5c2f-a06e-c090912a8d98",
+        "subject_table": "event",
+        "subject_id": "7711b684-205c-5aef-a650-935917182585",
+        "field_path": "description",
+        "claim_text": "李崧认可吕琦方案，因钱谷出三司而转告张延朗商议。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：崧曰：“此吾志也。然钱谷皆出三司，宜更与张相谋之。”遂告张延朗，；核对说明：“张相”指张延朗，不是刘延朗。三司的钱财与军事费用如何安排，当时仍在讨论。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧认可吕琦方案，因钱谷出三司而转告张延朗商议。"
+      },
+      "after": {
+        "claim_text": "李崧赞同吕琦的方案，认为钱粮由三司负责，便将方案告诉张延朗，与他商议。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8c97e16f-9af6-57b4-abf2-e010af20d127",
+      "baseline": {
+        "id": "8c97e16f-9af6-57b4-abf2-e010af20d127",
+        "subject_table": "person_event",
+        "subject_id": "3547b324-6763-5042-9dfd-206a2233756b",
+        "field_path": "role",
+        "claim_text": "李崧：转告商议者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：崧曰：“此吾志也。然钱谷皆出三司，宜更与张相谋之。”遂告张延朗，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：转告商议者。"
+      },
+      "after": {
+        "claim_text": "李崧：将方案告诉张延朗，与他商议费用。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5138bee4-4e12-5a8a-8fe0-3e7928d162e3",
+      "baseline": {
+        "id": "5138bee4-4e12-5a8a-8fe0-3e7928d162e3",
+        "subject_table": "person_event",
+        "subject_id": "a1af1fdd-809d-58fc-9061-41e9a53618b5",
+        "field_path": "role",
+        "claim_text": "吕琦：前述讨论对象。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：崧曰：“此吾志也。然钱谷皆出三司，宜更与张相谋之。”遂告张延朗，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：前述讨论对象。"
+      },
+      "after": {
+        "claim_text": "吕琦：向李崧提出此前的议和方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "68fe1e23-4aa2-55a3-bf10-f01a6c0f9f3a",
+      "baseline": {
+        "id": "68fe1e23-4aa2-55a3-bf10-f01a6c0f9f3a",
+        "subject_table": "person_event",
+        "subject_id": "027d8ea8-73cd-568a-84c9-179278979b11",
+        "field_path": "role",
+        "claim_text": "张延朗：受告的三司财政负责人。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：崧曰：“此吾志也。然钱谷皆出三司，宜更与张相谋之。”遂告张延朗，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张延朗：受告的三司财政负责人。"
+      },
+      "after": {
+        "claim_text": "张延朗：以三司财政负责人身份听取李崧介绍方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "df869cf8-3ae6-538d-a959-620de6b68990",
+      "baseline": {
+        "id": "df869cf8-3ae6-538d-a959-620de6b68990",
+        "subject_table": "event",
+        "subject_id": "8b73d2de-087a-5792-a928-8ba597bbfbba",
+        "field_path": "description",
+        "claim_text": "张延朗赞成和议，称可减边费并在军财之外筹措供给。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：延朗曰：“如学士计，不惟可以制河东，亦省边费之什九，计无便于此者。若主上听从，但责办于老夫，请于军财之外捃拾以供之，；核对说明：“省什九”是对节省费用的预测，以接受和议为条件，不能写成已经节省九成，也不能当作实际筹款金额。原文后句的引号疑有缺漏，引用不自行补字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张延朗赞成和议，称可减边费并在军财之外筹措供给。"
+      },
+      "after": {
+        "claim_text": "张延朗赞同和议，预计可节省边防费用，并承诺如果皇帝接受方案，就在军事经费之外筹集供给。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0c2f7b67-c6ed-582d-9dec-e1f2d96d74ab",
+      "baseline": {
+        "id": "0c2f7b67-c6ed-582d-9dec-e1f2d96d74ab",
+        "subject_table": "person_event",
+        "subject_id": "f9667ae0-c354-5834-96b7-e38446da3b63",
+        "field_path": "role",
+        "claim_text": "张延朗：赞成并愿筹措者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：延朗曰：“如学士计，不惟可以制河东，亦省边费之什九，计无便于此者。若主上听从，但责办于老夫，请于军财之外捃拾以供之，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "张延朗：赞成并愿筹措者。"
+      },
+      "after": {
+        "claim_text": "张延朗：赞同和议，承诺若获准便筹措费用。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "94b90536-864d-5b66-8e40-0956be347033",
+      "baseline": {
+        "id": "94b90536-864d-5b66-8e40-0956be347033",
+        "subject_table": "event",
+        "subject_id": "8b73d2de-087a-5792-a928-8ba597bbfbba",
+        "field_path": "description",
+        "claim_text": "新吕传也记张延朗愿筹每年十数万缗以纾国患。",
+        "source_id": "a0cd4d7d-2ee8-5384-bf36-46f66e6440b1",
+        "citation": "《新五代史》卷56·吕琦传（对契丹和议），段落 xin-wudaishi-b08f244b9241-p002218；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：延朗欣然曰：「苟能紓國患，歲費縣官十數萬緡，責吾取足可也！」；核对说明：这是有条件的筹款承诺，并非已经将钱交给契丹。《新五代史》的“十数万”与《资治通鉴》的“十余万”分别保留，不强行统一数额。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新吕传也记张延朗愿筹每年十数万缗以纾国患。"
+      },
+      "after": {
+        "claim_text": "《新五代史》记载，张延朗表示，如果能缓解国家的忧患，他愿负责筹足每年十数万缗的费用。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d0e1add7-9733-55cc-bc51-692a56754b42",
+      "baseline": {
+        "id": "d0e1add7-9733-55cc-bc51-692a56754b42",
+        "subject_table": "event",
+        "subject_id": "afd3bfd6-6bed-5cd0-9706-c041ebcba4f7",
+        "field_path": "description",
+        "claim_text": "另一夜李崧、吕琦向李从珂密陈方案，帝喜并称忠。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：他夕，二人密言于帝，帝大喜，称其忠，；核对说明：李从珂起初认可提议，并不表示外交方案已经实施；他后来改变主意，另有记载。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "另一夜李崧、吕琦向李从珂密陈方案，帝喜并称忠。"
+      },
+      "after": {
+        "claim_text": "另一个夜晚，李崧与吕琦向李从珂秘密说明方案。李从珂十分高兴，称赞二人忠心。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a88ea635-f86e-55ea-8151-9e0779a40166",
+      "baseline": {
+        "id": "a88ea635-f86e-55ea-8151-9e0779a40166",
+        "subject_table": "person_event",
+        "subject_id": "9b21a8ee-ca46-556c-b346-07f685fbd165",
+        "field_path": "role",
+        "claim_text": "李崧：密陈者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：他夕，二人密言于帝，帝大喜，称其忠，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：密陈者。"
+      },
+      "after": {
+        "claim_text": "李崧：私下向李从珂陈述议和方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "9cb1c7a5-8e3c-505b-a503-a3b78b396888",
+      "baseline": {
+        "id": "9cb1c7a5-8e3c-505b-a503-a3b78b396888",
+        "subject_table": "person_event",
+        "subject_id": "bd6f4115-593f-515c-bdc8-24e85c2d84d7",
+        "field_path": "role",
+        "claim_text": "吕琦：密陈者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：他夕，二人密言于帝，帝大喜，称其忠，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：密陈者。"
+      },
+      "after": {
+        "claim_text": "吕琦：私下向李从珂陈述议和方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a041cde2-26e7-51aa-a664-a72570d36c02",
+      "baseline": {
+        "id": "a041cde2-26e7-51aa-a664-a72570d36c02",
+        "subject_table": "person_event",
+        "subject_id": "64f285bc-451f-59a0-a81b-be27a759843d",
+        "field_path": "role",
+        "claim_text": "李从珂：当时认可称忠者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：他夕，二人密言于帝，帝大喜，称其忠，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：当时认可称忠者。"
+      },
+      "after": {
+        "claim_text": "李从珂：听取方案后初步认可，称赞二人忠诚。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0282d455-60f2-5d05-b09c-a3829b994ecf",
+      "baseline": {
+        "id": "0282d455-60f2-5d05-b09c-a3829b994ecf",
+        "subject_table": "event",
+        "subject_id": "ea3b711c-678d-5906-8301-14527bf964b8",
+        "field_path": "description",
+        "claim_text": "李崧、吕琦私草遗契丹书，等待命令。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：二人私草《遗契丹书》以俟命。；核对说明：“俟命”表示等待命令。原文没有说书信已经寄出，不能据此认定使团已经抵达或契丹已经接受方案。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧、吕琦私草遗契丹书，等待命令。"
+      },
+      "after": {
+        "claim_text": "李崧与吕琦私下起草致契丹的书信，等待命令。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8e076a07-1339-5bc8-be9c-cecca76d897e",
+      "baseline": {
+        "id": "8e076a07-1339-5bc8-be9c-cecca76d897e",
+        "subject_table": "person_event",
+        "subject_id": "310f5ae5-b08a-5199-ad85-867ed7f53ef8",
+        "field_path": "role",
+        "claim_text": "李崧：草书待命者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：二人私草《遗契丹书》以俟命。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：草书待命者。"
+      },
+      "after": {
+        "claim_text": "李崧：起草致契丹书信，等待皇帝命令。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "a5d86164-f404-563e-a1c3-9b651a90b797",
+      "baseline": {
+        "id": "a5d86164-f404-563e-a1c3-9b651a90b797",
+        "subject_table": "person_event",
+        "subject_id": "ba473aa8-d9f6-5f05-a8d2-db9e0b9ea193",
+        "field_path": "role",
+        "claim_text": "吕琦：草书待命者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p005·原文件第10行",
+        "note": "原文：二人私草《遗契丹书》以俟命。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：草书待命者。"
+      },
+      "after": {
+        "claim_text": "吕琦：起草致契丹书信，等待皇帝命令。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f925e8a2-b1a4-5c87-b1de-b9732569addc",
+      "baseline": {
+        "id": "f925e8a2-b1a4-5c87-b1de-b9732569addc",
+        "subject_table": "event",
+        "subject_id": "0aece444-dd7b-51b9-8d7b-c7ce36f77865",
+        "field_path": "description",
+        "claim_text": "过一段时间李从珂将和议方案告薛文遇。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：久之，帝以其谋告枢密直学士薛文遇，；核对说明：“久之”没有说明具体相隔几天。结合后文三月丁巳的任命，这段仍列于本年，但不补出准确日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "过一段时间李从珂将和议方案告薛文遇。"
+      },
+      "after": {
+        "claim_text": "过了一段时间，李从珂把和议方案告诉薛文遇。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c4a0ae14-aba9-50a9-b64e-a7673066e087",
+      "baseline": {
+        "id": "c4a0ae14-aba9-50a9-b64e-a7673066e087",
+        "subject_table": "person_event",
+        "subject_id": "74ed475b-d751-5db5-8891-9c832005a042",
+        "field_path": "role",
+        "claim_text": "李从珂：告方案者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：久之，帝以其谋告枢密直学士薛文遇，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：告方案者。"
+      },
+      "after": {
+        "claim_text": "李从珂：将和议方案告诉薛文遇。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "7622eddd-8d5b-5ebc-aaf4-d96f1376fd9f",
+      "baseline": {
+        "id": "7622eddd-8d5b-5ebc-aaf4-d96f1376fd9f",
+        "subject_table": "person_event",
+        "subject_id": "2ed3ea1a-8f09-5517-81f1-0608eff580b0",
+        "field_path": "role",
+        "claim_text": "薛文遇：枢密直学士、受告者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：久之，帝以其谋告枢密直学士薛文遇，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "薛文遇：枢密直学士、受告者。"
+      },
+      "after": {
+        "claim_text": "薛文遇：以枢密直学士身份听取皇帝介绍方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "3caa7216-f660-500f-b81a-abf1d5e204db",
+      "baseline": {
+        "id": "3caa7216-f660-500f-b81a-abf1d5e204db",
+        "subject_table": "event",
+        "subject_id": "e25ec34f-c4f3-55af-a805-93dc10ae0817",
+        "field_path": "description",
+        "claim_text": "薛文遇以屈尊及契丹求尚公主为由反对和议，并引戎昱诗。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：文遇对曰：“以天子之尊，屈身奉夷狄，不亦辱乎！又，虏若循故事求尚公主，何以拒之？”因诵戎昱《昭君诗》曰：“安危托妇人。”帝意遂变。；核对说明：迎娶公主是薛文遇提出的可能情况，不能据此认定契丹当时已正式求婚。戎昱与昭君属于谈话中引用的旧诗内容，并非936年在场的人物。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "薛文遇以屈尊及契丹求尚公主为由反对和议，并引戎昱诗。"
+      },
+      "after": {
+        "claim_text": "薛文遇认为向契丹求和有失皇帝身份，又担心契丹要求迎娶公主，因此反对和议，并引用戎昱的诗句。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8a86d368-95d5-533c-b40f-e55d03474c59",
+      "baseline": {
+        "id": "8a86d368-95d5-533c-b40f-e55d03474c59",
+        "subject_table": "person_event",
+        "subject_id": "5e95986e-8725-5c8a-aae0-9c7b2707aa95",
+        "field_path": "role",
+        "claim_text": "薛文遇：反对者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：文遇对曰：“以天子之尊，屈身奉夷狄，不亦辱乎！又，虏若循故事求尚公主，何以拒之？”因诵戎昱《昭君诗》曰：“安危托妇人。”帝意遂变。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "薛文遇：反对者。"
+      },
+      "after": {
+        "claim_text": "薛文遇：以屈尊和公主联姻风险为由反对和议。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "702c1dc5-e6c2-5f35-8c99-3f5cdbcc18af",
+      "baseline": {
+        "id": "702c1dc5-e6c2-5f35-8c99-3f5cdbcc18af",
+        "subject_table": "person_event",
+        "subject_id": "3f132d17-1948-5ae8-bd42-7a9f7d51ee23",
+        "field_path": "role",
+        "claim_text": "李从珂：被记改变意见者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：文遇对曰：“以天子之尊，屈身奉夷狄，不亦辱乎！又，虏若循故事求尚公主，何以拒之？”因诵戎昱《昭君诗》曰：“安危托妇人。”帝意遂变。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：被记改变意见者。"
+      },
+      "after": {
+        "claim_text": "李从珂：听取薛文遇的反对意见后改变看法。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "528223b5-ddd4-50ba-a33f-8dab5904f705",
+      "baseline": {
+        "id": "528223b5-ddd4-50ba-a33f-8dab5904f705",
+        "subject_table": "event",
+        "subject_id": "e25ec34f-c4f3-55af-a805-93dc10ae0817",
+        "field_path": "description",
+        "claim_text": "新吕琦传也记薛文遇反对并引戎昱诗，保存更完整引语。",
+        "source_id": "a0cd4d7d-2ee8-5384-bf36-46f66e6440b1",
+        "citation": "《新五代史》卷56·吕琦传（对契丹和议），段落 xin-wudaishi-b08f244b9241-p002218；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：文遇大以為非，因誦戎昱「社稷依明主，安危託婦人」之詩，以誚琦等。；核对说明：这首唐代旧诗在谈话中被引用，并非936年新作。引用保留底本的“託”字。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新吕琦传也记薛文遇反对并引戎昱诗，保存更完整引语。"
+      },
+      "after": {
+        "claim_text": "《新五代史》也记载薛文遇反对和议，并引用戎昱的诗句，所录引语比《资治通鉴》更完整。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e32aa439-12f9-5227-98b7-d600a324a6ac",
+      "baseline": {
+        "id": "e32aa439-12f9-5227-98b7-d600a324a6ac",
+        "subject_table": "event",
+        "subject_id": "5bf73081-0f5d-5da0-a6e7-68b34eef356a",
+        "field_path": "description",
+        "claim_text": "李从珂一日急召李崧、吕琦至后楼，责其拟送女、输财方案。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：一日，急召崧、琦至后楼，盛怒，责之曰：“卿辈皆知古今，欲佐人主致太平；今乃为谋如是！朕一女尚乳臭，卿欲弃之沙漠邪？且欲以养士之财输之虏庭，其意安在？”；核对说明：“一日”指某一天，不表示紧接着的第二天。李从珂称女儿年幼，但没有说明姓名和年龄，不能认定为惠明公主。“弃女”也不表示已经实际出嫁。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂一日急召李崧、吕琦至后楼，责其拟送女、输财方案。"
+      },
+      "after": {
+        "claim_text": "某一天，李从珂急召李崧、吕琦到后楼，责问他们提议送女儿去联姻、将钱财送给契丹的用意。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e4575426-993c-5bf5-a3e6-f0bbb6e47a92",
+      "baseline": {
+        "id": "e4575426-993c-5bf5-a3e6-f0bbb6e47a92",
+        "subject_table": "person_event",
+        "subject_id": "c59c05d1-d8c1-588c-8008-7b10bb02bd9f",
+        "field_path": "role",
+        "claim_text": "李从珂：急召并责问者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：一日，急召崧、琦至后楼，盛怒，责之曰：“卿辈皆知古今，欲佐人主致太平；今乃为谋如是！朕一女尚乳臭，卿欲弃之沙漠邪？且欲以养士之财输之虏庭，其意安在？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：急召并责问者。"
+      },
+      "after": {
+        "claim_text": "李从珂：急召李崧、吕琦，责问联姻及输送钱财方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "20adc09a-9876-51fc-aa2a-aa4bb70211f0",
+      "baseline": {
+        "id": "20adc09a-9876-51fc-aa2a-aa4bb70211f0",
+        "subject_table": "person_event",
+        "subject_id": "8730f412-8e5f-5afb-b6bb-d9f632cb04a3",
+        "field_path": "role",
+        "claim_text": "李崧：被责问者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：一日，急召崧、琦至后楼，盛怒，责之曰：“卿辈皆知古今，欲佐人主致太平；今乃为谋如是！朕一女尚乳臭，卿欲弃之沙漠邪？且欲以养士之财输之虏庭，其意安在？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：被责问者。"
+      },
+      "after": {
+        "claim_text": "李崧：被李从珂召来责问方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "378b094a-8726-50e8-8781-9f5198f05f32",
+      "baseline": {
+        "id": "378b094a-8726-50e8-8781-9f5198f05f32",
+        "subject_table": "person_event",
+        "subject_id": "d5640a62-4ee5-5deb-9f5d-f288dde6e7f5",
+        "field_path": "role",
+        "claim_text": "吕琦：被责问者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：一日，急召崧、琦至后楼，盛怒，责之曰：“卿辈皆知古今，欲佐人主致太平；今乃为谋如是！朕一女尚乳臭，卿欲弃之沙漠邪？且欲以养士之财输之虏庭，其意安在？”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：被责问者。"
+      },
+      "after": {
+        "claim_text": "吕琦：被李从珂召来责问方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8ac786b9-e564-5132-ba23-e7cc782506db",
+      "baseline": {
+        "id": "8ac786b9-e564-5132-ba23-e7cc782506db",
+        "subject_table": "event",
+        "subject_id": "e4c33436-f146-5314-b072-44231c0e9232",
+        "field_path": "description",
+        "claim_text": "李崧、吕琦称为报国而非为契丹，反复拜谢，帝仍责骂。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：二人惧，汗流浃背，曰：“臣等志在竭愚以报国，非为虏计也，愿陛下察之。”拜谢无数，帝诟责不已。；核对说明：恐惧、流汗是史书对李崧与吕琦反应的描述，不据此诊断疾病。“拜谢无数”也不用于统计具体次数。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧、吕琦称为报国而非为契丹，反复拜谢，帝仍责骂。"
+      },
+      "after": {
+        "claim_text": "李崧与吕琦说，提出方案是为了报效国家，并非为契丹打算。两人反复叩拜谢罪，李从珂仍不断责骂。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "0c478473-a6f2-5a3f-95fb-2d1ec0704ed0",
+      "baseline": {
+        "id": "0c478473-a6f2-5a3f-95fb-2d1ec0704ed0",
+        "subject_table": "person_event",
+        "subject_id": "4e5d1aa3-d433-5c1a-815f-870afe351f0f",
+        "field_path": "role",
+        "claim_text": "李崧：辩明意图并拜谢者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：二人惧，汗流浃背，曰：“臣等志在竭愚以报国，非为虏计也，愿陛下察之。”拜谢无数，帝诟责不已。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：辩明意图并拜谢者。"
+      },
+      "after": {
+        "claim_text": "李崧：解释方案意在报国，反复叩拜谢罪。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ca11ae7a-502d-5bc4-a6fb-c01b152440e2",
+      "baseline": {
+        "id": "ca11ae7a-502d-5bc4-a6fb-c01b152440e2",
+        "subject_table": "person_event",
+        "subject_id": "5a691d97-7b50-5423-9d86-8ec4a910f946",
+        "field_path": "role",
+        "claim_text": "吕琦：辩明意图并拜谢者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：二人惧，汗流浃背，曰：“臣等志在竭愚以报国，非为虏计也，愿陛下察之。”拜谢无数，帝诟责不已。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：辩明意图并拜谢者。"
+      },
+      "after": {
+        "claim_text": "吕琦：解释方案意在报国，反复叩拜谢罪。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e130475d-e5b6-56cc-bf89-018782fba8aa",
+      "baseline": {
+        "id": "e130475d-e5b6-56cc-bf89-018782fba8aa",
+        "subject_table": "person_event",
+        "subject_id": "3dbb1c17-e31a-58ca-91e8-b8461dfc86d7",
+        "field_path": "role",
+        "claim_text": "李从珂：继续责问者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：二人惧，汗流浃背，曰：“臣等志在竭愚以报国，非为虏计也，愿陛下察之。”拜谢无数，帝诟责不已。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：继续责问者。"
+      },
+      "after": {
+        "claim_text": "李从珂：继续责骂李崧、吕琦。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "3c33a595-fc4e-5785-b850-f5eea9074376",
+      "baseline": {
+        "id": "3c33a595-fc4e-5785-b850-f5eea9074376",
+        "subject_table": "event",
+        "subject_id": "d22a224a-c647-597b-95b0-5af235760d9f",
+        "field_path": "description",
+        "claim_text": "吕琦拜至气竭稍停，被责强项后表示愿受罪，反问多拜何益。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：吕琦气竭，拜少止，帝曰：“吕琦强项，肯视朕为人主邪！”琦曰：“臣等为谋不臧，愿陛下治其罪，多拜可为！”；核对说明：“强项”是李从珂责斥李崧时的用语，不是官职，也不据此判断其长期性格。李崧请求治罪，不等于已经被判刑。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦拜至气竭稍停，被责强项后表示愿受罪，反问多拜何益。"
+      },
+      "after": {
+        "claim_text": "吕琦叩拜到气力耗尽，稍作停顿，李从珂斥责他态度强硬。吕琦表示愿因谋划不当受罚，并质疑继续叩拜的作用。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d350595d-f5d2-5f97-a6d6-26493007f78b",
+      "baseline": {
+        "id": "d350595d-f5d2-5f97-a6d6-26493007f78b",
+        "subject_table": "person_event",
+        "subject_id": "895662fd-9f21-54f2-bccc-41c53868368f",
+        "field_path": "role",
+        "claim_text": "吕琦：停拜与回应者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：吕琦气竭，拜少止，帝曰：“吕琦强项，肯视朕为人主邪！”琦曰：“臣等为谋不臧，愿陛下治其罪，多拜可为！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：停拜与回应者。"
+      },
+      "after": {
+        "claim_text": "吕琦：叩拜力竭后稍停，回应皇帝责问并表示愿受处罚。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "46bfa0ec-d603-50c6-84f1-590ed36492b6",
+      "baseline": {
+        "id": "46bfa0ec-d603-50c6-84f1-590ed36492b6",
+        "subject_table": "person_event",
+        "subject_id": "bef24dbc-052c-54a9-9e8f-17253e16cf38",
+        "field_path": "role",
+        "claim_text": "李从珂：责强项者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：吕琦气竭，拜少止，帝曰：“吕琦强项，肯视朕为人主邪！”琦曰：“臣等为谋不臧，愿陛下治其罪，多拜可为！”；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：责强项者。"
+      },
+      "after": {
+        "claim_text": "李从珂：因吕琦稍停叩拜，责他倔强、不把自己当作君主。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2d6a92a7-33ac-5784-9b09-43477cbfecef",
+      "baseline": {
+        "id": "2d6a92a7-33ac-5784-9b09-43477cbfecef",
+        "subject_table": "event",
+        "subject_id": "d22a224a-c647-597b-95b0-5af235760d9f",
+        "field_path": "description",
+        "claim_text": "新吕传补吕琦自述素病羸、拜多而乏，求少息。",
+        "source_id": "a0cd4d7d-2ee8-5384-bf36-46f66e6440b1",
+        "citation": "《新五代史》卷56·吕琦传（对契丹和议），段落 xin-wudaishi-b08f244b9241-p002218；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：琦曰：「臣素病羸，拜多而乏，容臣少息。」；核对说明：吕琦自称患病、身体虚弱，不能据此填写现代疾病诊断。《资治通鉴》所说的气力耗尽，与《新五代史》的补充说明分别保留。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新吕传补吕琦自述素病羸、拜多而乏，求少息。"
+      },
+      "after": {
+        "claim_text": "《新五代史》记载，吕琦说自己一向患病、身体虚弱，叩拜太多已经疲乏，请求稍作休息。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8ebd06e7-6e71-5af0-979c-4b21e44a5c00",
+      "baseline": {
+        "id": "8ebd06e7-6e71-5af0-979c-4b21e44a5c00",
+        "subject_table": "event",
+        "subject_id": "1be0c605-2e94-58a7-bd55-4600c5350d1f",
+        "field_path": "description",
+        "claim_text": "李从珂稍解怒，止拜赐酒遣出，此后群臣不敢再提和亲策。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：帝怒稍解，止其拜，各赐卮酒罢之，自是群臣不敢复言和亲之策。；核对说明：“不敢复言”是《资治通鉴》的概括。群臣没有具体姓名，不能自行补出名单；赐酒也不表示和议获得批准。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂稍解怒，止拜赐酒遣出，此后群臣不敢再提和亲策。"
+      },
+      "after": {
+        "claim_text": "李从珂的怒气稍有缓解，让两人停止叩拜，赐酒后让他们退下。此后群臣不敢再提和亲方案。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b45cb262-7d20-5dcc-b6ca-6e0cb81042f4",
+      "baseline": {
+        "id": "b45cb262-7d20-5dcc-b6ca-6e0cb81042f4",
+        "subject_table": "person_event",
+        "subject_id": "ef604b3e-9186-5d89-8d60-00fdbb5dc663",
+        "field_path": "role",
+        "claim_text": "李从珂：止拜赐酒遣出者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：帝怒稍解，止其拜，各赐卮酒罢之，自是群臣不敢复言和亲之策。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：止拜赐酒遣出者。"
+      },
+      "after": {
+        "claim_text": "李从珂：让二人停止叩拜，赐酒后令其退下。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "b3b4368f-72c2-53c8-a1d8-b402c6292ae7",
+      "baseline": {
+        "id": "b3b4368f-72c2-53c8-a1d8-b402c6292ae7",
+        "subject_table": "person_event",
+        "subject_id": "06e9e4cd-cd4d-5c8d-afa1-65d2957dec74",
+        "field_path": "role",
+        "claim_text": "李崧：结束召对者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：帝怒稍解，止其拜，各赐卮酒罢之，自是群臣不敢复言和亲之策。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李崧：结束召对者。"
+      },
+      "after": {
+        "claim_text": "李崧：获赐酒后结束召见。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "def42908-ca2f-5c43-a599-190b8fc4be08",
+      "baseline": {
+        "id": "def42908-ca2f-5c43-a599-190b8fc4be08",
+        "subject_table": "person_event",
+        "subject_id": "f9a2d4ef-7d90-56da-b795-add34200736c",
+        "field_path": "role",
+        "claim_text": "吕琦：结束召对者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：帝怒稍解，止其拜，各赐卮酒罢之，自是群臣不敢复言和亲之策。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：结束召对者。"
+      },
+      "after": {
+        "claim_text": "吕琦：获赐酒后结束召见。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "86e84e0b-4da7-532d-a480-f848036fc4f6",
+      "baseline": {
+        "id": "86e84e0b-4da7-532d-a480-f848036fc4f6",
+        "subject_table": "event",
+        "subject_id": "1be0c605-2e94-58a7-bd55-4600c5350d1f",
+        "field_path": "description",
+        "claim_text": "新吕传明确记赐酒遣出，和议遂停。",
+        "source_id": "a0cd4d7d-2ee8-5384-bf36-46f66e6440b1",
+        "citation": "《新五代史》卷56·吕琦传（对契丹和议），段落 xin-wudaishi-b08f244b9241-p002218；已核上下文及传主，纸本及异文待核。",
+        "note": "原文：賜酒一巵而遣之，其議遂寢。；核对说明：“一巵”是一杯酒。赐酒不等于正式批准外交方案，更不表示已经支付礼币。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新吕传明确记赐酒遣出，和议遂停。"
+      },
+      "after": {
+        "claim_text": "《新五代史》记载，李从珂赐给两人一杯酒后让他们离开，和议随之停止。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "dca7ba3e-dc09-50ab-9a8f-00f5859d8821",
+      "baseline": {
+        "id": "dca7ba3e-dc09-50ab-9a8f-00f5859d8821",
+        "subject_table": "event",
+        "subject_id": "d2d2dbc1-98a0-5538-abb2-d748dec249b2",
+        "field_path": "description",
+        "claim_text": "三月丁巳吕琦任御史中丞。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：丁巳，以琦为御史中丞，盖疏之也。；核对说明：“盖疏之”是《资治通鉴》对任命原因的解释，并非任命文书明确写了贬斥。《新五代史》所载数月后恢复端明殿学士职务，也不能提前到此时。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "三月丁巳吕琦任御史中丞。"
+      },
+      "after": {
+        "claim_text": "三月丁巳，吕琦任御史中丞。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c254965b-889f-5e19-a1da-7692e440efff",
+      "baseline": {
+        "id": "c254965b-889f-5e19-a1da-7692e440efff",
+        "subject_table": "person_event",
+        "subject_id": "93b77cfa-5967-5b3b-8a1a-c64c4a5622fe",
+        "field_path": "role",
+        "claim_text": "吕琦：御史中丞获任者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：丁巳，以琦为御史中丞，盖疏之也。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：御史中丞获任者。"
+      },
+      "after": {
+        "claim_text": "吕琦：获任御史中丞。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "04a4151e-2f75-57c8-9f02-bfa44bd95b45",
+      "baseline": {
+        "id": "04a4151e-2f75-57c8-9f02-bfa44bd95b45",
+        "subject_table": "person_event",
+        "subject_id": "13766e43-c2e1-5bdc-852a-27ce8c721621",
+        "field_path": "role",
+        "claim_text": "李从珂：任命者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p006·原文件第11行",
+        "note": "原文：丁巳，以琦为御史中丞，盖疏之也。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李从珂：任命者。"
+      },
+      "after": {
+        "claim_text": "李从珂：任命吕琦为御史中丞。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "43c8dd6c-6b40-534d-9dfe-c48ed7b8f3e2",
+      "baseline": {
+        "id": "43c8dd6c-6b40-534d-9dfe-c48ed7b8f3e2",
+        "subject_table": "event",
+        "subject_id": "d2d2dbc1-98a0-5538-abb2-d748dec249b2",
+        "field_path": "description",
+        "claim_text": "旧末帝纪三月丁巳同记吕琦由端明殿学士任御史中丞。",
+        "source_id": "adad8e91-6aa4-5455-acd8-ba57bf1b5892",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001313；EPUB电子本，纸本及异文待核",
+        "note": "原文：丁巳，以端明殿學士呂琦為御史中丞。；核对说明：以《旧五代史》正文的任命记载核对官职。其附注提到《资治通鉴》的和亲方案，属于依赖《资治通鉴》的说明，不能重复算作独立证据。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧末帝纪三月丁巳同记吕琦由端明殿学士任御史中丞。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》也记载，三月丁巳，吕琦由端明殿学士改任御史中丞。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "e3e473b0-3ba4-5d28-a152-63a0dbbc0987",
+      "baseline": {
+        "id": "e3e473b0-3ba4-5d28-a152-63a0dbbc0987",
+        "subject_table": "event",
+        "subject_id": "12a43d01-594a-5365-bd0a-270c1d1d0b63",
+        "field_path": "description",
+        "claim_text": "徐知诰以子徐景通为太尉、副元帅。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：吴徐知诰以其子副都统景通为太尉、副元帅，；核对说明：徐景通就是后来的李璟。太尉是此次新授官衔，任副元帅不表示徐知诰已经让出君位。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "徐知诰以子徐景通为太尉、副元帅。"
+      },
+      "after": {
+        "claim_text": "徐知诰任命儿子徐景通为太尉、副元帅。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "05bc8302-7c5e-5eb1-9286-2e1def3c7c3b",
+      "baseline": {
+        "id": "05bc8302-7c5e-5eb1-9286-2e1def3c7c3b",
+        "subject_table": "person_event",
+        "subject_id": "152016c7-e1ee-51e6-9a46-4c0d1b36eff0",
+        "field_path": "role",
+        "claim_text": "李昪：任命者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：吴徐知诰以其子副都统景通为太尉、副元帅，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李昪：任命者。"
+      },
+      "after": {
+        "claim_text": "李昪：任命儿子徐景通为太尉、副元帅，当时名徐知诰。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "26b1f226-b370-5c2c-a1f4-10af636d34f7",
+      "baseline": {
+        "id": "26b1f226-b370-5c2c-a1f4-10af636d34f7",
+        "subject_table": "person_event",
+        "subject_id": "387ea5e9-9be0-53d3-8d44-bb34db164a5c",
+        "field_path": "role",
+        "claim_text": "李璟：原副都统、太尉副元帅获任者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：吴徐知诰以其子副都统景通为太尉、副元帅，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李璟：原副都统、太尉副元帅获任者。"
+      },
+      "after": {
+        "claim_text": "李璟：由副都统获任太尉、副元帅，当时名徐景通。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "d0745c41-dfe1-57dd-b18e-f05789bf47f9",
+      "baseline": {
+        "id": "d0745c41-dfe1-57dd-b18e-f05789bf47f9",
+        "subject_table": "event",
+        "subject_id": "12a43d01-594a-5365-bd0a-270c1d1d0b63",
+        "field_path": "description",
+        "claim_text": "新南唐世家明确景初名景通、昪长子，后改璟。",
+        "source_id": "3e3b39f3-8520-5d9e-840f-592a043aba94",
+        "citation": "《新五代史》卷六十二，段落 xin-wudaishi-b08f244b9241-p003137；EPUB电子本，纸本及异文待核",
+        "note": "原文：景，初名景通，昪長子也。既立，又改名璟。；核对说明：徐景通与后来即位并改名的李璟是同一人，但即位、改名不能提前记为936年的行为。说明兼用李璟与当时的姓名徐景通，便于识别。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新南唐世家明确景初名景通、昪长子，后改璟。"
+      },
+      "after": {
+        "claim_text": "《新五代史》记载，李璟原名景通，是李昪的长子，即位后改名璟。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2b61a84e-b9f2-5620-b58a-f72b6fdbe295",
+      "baseline": {
+        "id": "2b61a84e-b9f2-5620-b58a-f72b6fdbe295",
+        "subject_table": "event",
+        "subject_id": "340e37d8-f3b3-5de1-adf2-142c46ea37da",
+        "field_path": "description",
+        "claim_text": "宋齐丘、徐玠分别任大元帅府左、右司马。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：都统判官宋齐丘、行军司马徐玠为元帅府左、右司马。；核对说明：宋齐丘任左司马，徐玠任右司马，须按原文顺序对应。这不是左右丞相，也不能据此推定长期的上下级关系。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "宋齐丘、徐玠分别任大元帅府左、右司马。"
+      },
+      "after": {
+        "claim_text": "宋齐丘、徐玠分别任大元帅府左司马、右司马。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "84503a5f-612c-5ec2-a2d1-033ae9392d3c",
+      "baseline": {
+        "id": "84503a5f-612c-5ec2-a2d1-033ae9392d3c",
+        "subject_table": "person_event",
+        "subject_id": "2fe2c409-0dc0-5f16-ad26-7ce3fb5d92b2",
+        "field_path": "role",
+        "claim_text": "宋齐丘：原都统判官、元帅府左司马获任者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：都统判官宋齐丘、行军司马徐玠为元帅府左、右司马。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "宋齐丘：原都统判官、元帅府左司马获任者。"
+      },
+      "after": {
+        "claim_text": "宋齐丘：由都统判官获任元帅府左司马。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ebf95cdb-e41f-5bf1-b756-71e07a47198e",
+      "baseline": {
+        "id": "ebf95cdb-e41f-5bf1-b756-71e07a47198e",
+        "subject_table": "person_event",
+        "subject_id": "90fb32db-cd90-56c9-910f-ed2442ebbc89",
+        "field_path": "role",
+        "claim_text": "徐玠：原行军司马、元帅府右司马获任者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：都统判官宋齐丘、行军司马徐玠为元帅府左、右司马。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "徐玠：原行军司马、元帅府右司马获任者。"
+      },
+      "after": {
+        "claim_text": "徐玠：由行军司马获任元帅府右司马。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "1e4ab724-f929-57bf-a98f-6e89151241e8",
+      "baseline": {
+        "id": "1e4ab724-f929-57bf-a98f-6e89151241e8",
+        "subject_table": "person_event",
+        "subject_id": "a4cbecae-3e52-5dba-8155-60520a2cbbee",
+        "field_path": "role",
+        "claim_text": "李昪：任命者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：都统判官宋齐丘、行军司马徐玠为元帅府左、右司马。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李昪：任命者。"
+      },
+      "after": {
+        "claim_text": "李昪：任命宋齐丘、徐玠分别担任元帅府左、右司马，当时名徐知诰。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "68bbb253-7508-5d01-a7b2-46a51283b79b",
+      "baseline": {
+        "id": "68bbb253-7508-5d01-a7b2-46a51283b79b",
+        "subject_table": "event",
+        "subject_id": "ed9beef2-263b-539b-9b95-d251a0c215ad",
+        "field_path": "description",
+        "claim_text": "闽主王昶改元通文。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：闽主昶改元通文，；核对说明：《资治通鉴》将改元记在三月条下，未载具体日期。《新五代史》把即位、改名和改元合写在一段，不能据此把通文改元提前到935年。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "闽主王昶改元通文。"
+      },
+      "after": {
+        "claim_text": "闽王王昶将年号改为通文。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "f3436ef5-e248-5436-8d2f-d3331f21988b",
+      "baseline": {
+        "id": "f3436ef5-e248-5436-8d2f-d3331f21988b",
+        "subject_table": "person_event",
+        "subject_id": "f9cf6675-ccf9-5ff5-889a-93733518c2e1",
+        "field_path": "role",
+        "claim_text": "王继鹏：改元主体。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：闽主昶改元通文，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "王继鹏：改元主体。"
+      },
+      "after": {
+        "claim_text": "王继鹏：将闽国年号改为通文，当时名王昶。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "be160c3d-6889-59d4-a618-18e720afd207",
+      "baseline": {
+        "id": "be160c3d-6889-59d4-a618-18e720afd207",
+        "subject_table": "event",
+        "subject_id": "ed9beef2-263b-539b-9b95-d251a0c215ad",
+        "field_path": "time_original",
+        "claim_text": "新闽世家将即位更名与通文改元压缩相连。",
+        "source_id": "f6403bac-2c4e-565a-ada0-4f697b3c2a27",
+        "citation": "《新五代史》卷六十八，段落 xin-wudaishi-b08f244b9241-p003401；EPUB电子本，纸本及异文待核",
+        "note": "原文：既立，更名昶，改元通文，；核对说明：《资治通鉴》分别记载935年更名与936年改元。《新五代史》没有给出改元的准确月日，两书各自的叙述顺序均予保留。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "新闽世家将即位更名与通文改元压缩相连。"
+      },
+      "after": {
+        "claim_text": "《新五代史》将王继鹏即位、更名王昶与改元通文连写在一起，未单独说明改元的准确日期。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "6adf388f-d47a-54e5-a043-46a608a0b68e",
+      "baseline": {
+        "id": "6adf388f-d47a-54e5-a043-46a608a0b68e",
+        "subject_table": "event",
+        "subject_id": "9e8567fc-1190-5b9c-9dd5-c32e61feb7e5",
+        "field_path": "description",
+        "claim_text": "闽主王昶立贤妃李氏为皇后。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：立贤妃李氏为皇后，；核对说明：贤妃李氏是935年记载的李春燕，不是元妃梁国夫人李氏。王昶是王继鹏，与蜀地的孟昶不是同一人。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "闽主王昶立贤妃李氏为皇后。"
+      },
+      "after": {
+        "claim_text": "闽王王昶立贤妃李春燕为皇后。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8811d507-77ad-50cc-9234-77648d430951",
+      "baseline": {
+        "id": "8811d507-77ad-50cc-9234-77648d430951",
+        "subject_table": "person_event",
+        "subject_id": "49ad252e-3680-5ee4-b529-b7eef6d3c1ce",
+        "field_path": "role",
+        "claim_text": "王继鹏：立后者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：立贤妃李氏为皇后，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "王继鹏：立后者。"
+      },
+      "after": {
+        "claim_text": "王继鹏：立贤妃李春燕为皇后，当时名王昶。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "aecdd559-d099-5195-a24e-1829fadcb184",
+      "baseline": {
+        "id": "aecdd559-d099-5195-a24e-1829fadcb184",
+        "subject_table": "person_event",
+        "subject_id": "45f7c4ec-933c-5bf8-b769-4edc9b836a46",
+        "field_path": "role",
+        "claim_text": "李春燕：原贤妃、获立皇后者。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：立贤妃李氏为皇后，；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "李春燕：原贤妃、获立皇后者。"
+      },
+      "after": {
+        "claim_text": "李春燕：由贤妃获立为皇后。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "5726df6a-914f-5f44-b64f-60c4636a2d06",
+      "baseline": {
+        "id": "5726df6a-914f-5f44-b64f-60c4636a2d06",
+        "subject_table": "event",
+        "subject_id": "6c798ba8-a161-58e4-b25e-7e03a28f883d",
+        "field_path": "description",
+        "claim_text": "闽朝廷尊皇太后为太皇太后。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：尊皇太后曰太皇太后。；核对说明：皇太后未具名，不能猜测为黄氏等具体人物。获尊号也不能证明她亲自实施了宫廷政变。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "闽朝廷尊皇太后为太皇太后。"
+      },
+      "after": {
+        "claim_text": "闽国将皇太后尊为太皇太后。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "85538dd4-676d-5eda-9b8c-d1b19e92ee22",
+      "baseline": {
+        "id": "85538dd4-676d-5eda-9b8c-d1b19e92ee22",
+        "subject_table": "person_event",
+        "subject_id": "b2ee0b31-e977-5a49-9fc5-cc414777da41",
+        "field_path": "role",
+        "claim_text": "王继鹏：尊号主体。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p008·原文件第13行",
+        "note": "原文：尊皇太后曰太皇太后。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "王继鹏：尊号主体。"
+      },
+      "after": {
+        "claim_text": "王继鹏：将皇太后尊为太皇太后，当时名王昶。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "ffcbb72c-58ca-59c5-8c03-e724f951ed30",
+      "baseline": {
+        "id": "ffcbb72c-58ca-59c5-8c03-e724f951ed30",
+        "subject_table": "event",
+        "subject_id": "56459ddd-bb97-5873-af32-984a162f012f",
+        "field_path": "description",
+        "claim_text": "旧末帝纪补正月癸卯吕琦任端明殿学士。",
+        "source_id": "ff2a4143-4f96-591d-8a62-f2a963d5f36f",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001311；EPUB电子本，纸本及异文待核",
+        "note": "原文：癸卯，以給事中、充樞密院直學士呂琦為端明殿學士；；核对说明：此处只说明吕琦在相关谈话与任命中的身份，不扩展为同段其他人物的任命说明。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧末帝纪补正月癸卯吕琦任端明殿学士。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》记载，正月癸卯，吕琦由给事中、充枢密院直学士任端明殿学士。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "2df510e9-cdd1-52d4-9d54-c4244c674af4",
+      "baseline": {
+        "id": "2df510e9-cdd1-52d4-9d54-c4244c674af4",
+        "subject_table": "person_event",
+        "subject_id": "431f552d-8b9a-51e9-a2df-f49d6438e63a",
+        "field_path": "role",
+        "claim_text": "吕琦：由给事中枢密直学士任端明学士者。",
+        "source_id": "ff2a4143-4f96-591d-8a62-f2a963d5f36f",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001311；EPUB电子本，纸本及异文待核",
+        "note": "原文：癸卯，以給事中、充樞密院直學士呂琦為端明殿學士；；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "吕琦：由给事中枢密直学士任端明学士者。"
+      },
+      "after": {
+        "claim_text": "吕琦：由给事中、枢密院直学士获任端明殿学士。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "44534403-4ec1-5fa0-8f0a-84a6f4b90f1f",
+      "baseline": {
+        "id": "44534403-4ec1-5fa0-8f0a-84a6f4b90f1f",
+        "subject_table": "event",
+        "subject_id": "d5f4e5cf-4480-5ee2-8ef6-1a5f5eba5dc6",
+        "field_path": "description",
+        "claim_text": "旧末帝纪补正月癸卯薛文遇任枢密院直学士。",
+        "source_id": "ff2a4143-4f96-591d-8a62-f2a963d5f36f",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001311；EPUB电子本，纸本及异文待核",
+        "note": "原文：以六軍諸衛判官、尚書工部郎中薛文遇為樞密院直學士。；核对说明：《旧五代史》的这项任命接在癸卯之后，没有另列日期。《资治通鉴》935年已称薛文遇为枢密直学士，两书记载层次不同，不能据此认定此前轮值都属于此次首次任命。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "旧末帝纪补正月癸卯薛文遇任枢密院直学士。"
+      },
+      "after": {
+        "claim_text": "《旧五代史》在正月癸卯条下记载，薛文遇由六军诸卫判官、尚书工部郎中任枢密院直学士；这项任命没有另列具体日期。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "c969383b-3df6-5ae7-b95b-0284f0405e11",
+      "baseline": {
+        "id": "c969383b-3df6-5ae7-b95b-0284f0405e11",
+        "subject_table": "person_event",
+        "subject_id": "e43bbb06-cddb-57cd-9dd2-362373ffb5ae",
+        "field_path": "role",
+        "claim_text": "薛文遇：枢密直学士获任者。",
+        "source_id": "ff2a4143-4f96-591d-8a62-f2a963d5f36f",
+        "citation": "《旧五代史》卷四十八，段落 jiu-wudaishi-205deb4a7860-p001311；EPUB电子本，纸本及异文待核",
+        "note": "原文：以六軍諸衛判官、尚書工部郎中薛文遇為樞密院直學士。；核对说明：参与角色依据所引原文，人物沿用已有记录；引用保持底本字形。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "薛文遇：枢密直学士获任者。"
+      },
+      "after": {
+        "claim_text": "薛文遇：获任枢密院直学士。"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    }
+  ],
+  "reviewed_unchanged": [
+    {
+      "table": "fact_claim",
+      "id": "dd648a9b-dd5c-5bbc-96bb-f4190fc27812",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "dd648a9b-dd5c-5bbc-96bb-f4190fc27812",
+        "subject_table": "person_relationship",
+        "subject_id": "269338fc-87ce-5133-8d38-1438ac406108",
+        "field_path": "description",
+        "claim_text": "李从珂是李重美的父亲。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；正月条下）·zztj-v280-y0936-p002·原文件第7行",
+        "note": "原文：唐主立子重美为雍王。；核对说明：原文明说李重美是李从珂的儿子。公主与李重美出现在同一段记载中，不能据此推断其他亲属关系。",
+        "status": "published"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "8f1a0a3c-d155-5d06-ab93-d1adb0236d44",
+      "fields": [
+        "claim_text"
+      ],
+      "baseline": {
+        "id": "8f1a0a3c-d155-5d06-ab93-d1adb0236d44",
+        "subject_table": "person_relationship",
+        "subject_id": "a663feb8-2d9e-5bcf-9efd-075932d60384",
+        "field_path": "description",
+        "claim_text": "李昪是李璟的父亲。",
+        "source_id": "ea1bf08c-fc97-55be-90b8-c91512fdfaf2",
+        "citation": "卷280·后唐清泰三年（936；三月条下及附载背景）·zztj-v280-y0936-p007·原文件第12行",
+        "note": "原文：吴徐知诰以其子副都统景通为太尉、副元帅，；核对说明：原文明说徐景通是徐知诰的儿子，即李璟与李昪的父子关系。这与徐温作为李昪养父的关系不同。",
+        "status": "published"
+      },
+      "review": "核读该条完整引用，展开书名、人物、动作和时间解释；事件、人物与参与事实按同一引用对应，不把计划、传闻或评价写成既成事实。引用及身份、出处保留。"
+    }
+  ],
+  "deferred_active_write_ids": [
+    "0a0f2b2c-1654-586d-9627-1947ecfc0069",
+    "6428c5dc-1a2d-5e27-81ef-e1ba033d27c9",
+    "a577d7ed-e422-548b-ba7b-beade3f10eb4",
+    "606b1851-c0cc-5283-972c-a0009c94e593",
+    "d8a6f30c-6b75-5f88-8719-4e7b778960e5",
+    "abce0974-143e-5c70-a5b9-5a074ac4a7a7",
+    "1057e534-9255-5059-b4ff-4a08a657116d",
+    "e38a1ba1-e470-5960-a2f5-d946dec3acc0",
+    "26992a4b-0d77-59b2-86ee-c80ae46a83a2",
+    "09aa2f1d-4419-5e1d-9ee8-275f6ecc95e3",
+    "1432ebde-b749-517f-9722-356316a974ac",
+    "22ead0ff-c23a-50a3-bf34-aa115e646fcc",
+    "d807a307-3075-55de-bdf4-b7c40725748d",
+    "b8dec603-cbe9-50e2-8d36-c7d91627ab6c",
+    "d1dc7402-f2ec-5cf3-9818-959b64d38704",
+    "9c53bdc8-4fc0-545a-9ce0-5f4596803e75",
+    "6bd7f13e-0d5a-5437-bc6d-ee7a06166023",
+    "9e2efd8c-48f4-5094-8e7d-60eb9f193205",
+    "112eddbc-24f2-54c9-8894-77c418845d06",
+    "4ee30cb8-04c6-5ca9-8ccf-e783417c7f32",
+    "bb3314dd-2347-596c-8adb-e3e2f892b9ca",
+    "9ad50a58-ea8b-534c-8d6d-2f6aaffa004e",
+    "7b5912a8-bcdf-53ce-8152-c41a91b1376d",
+    "62b6a9d9-b42a-514b-9948-b95e74542ae2",
+    "7b79c827-c83f-5c32-9d3e-4b69088c1b64",
+    "73d2903b-7906-50de-a542-1cb57b95b6be",
+    "c2ca66b9-c824-59c9-a73c-8072017f3273",
+    "6ce369ea-705a-5254-91bd-e78a17f4581f",
+    "67867068-ae3e-5ac2-a5c9-54f95b516d31",
+    "cbc41146-8952-5720-acfc-280c198f72be",
+    "51c10933-e5aa-512c-93d0-cd86a99f70f3",
+    "9656b8d1-e9fe-5fbd-a757-7d4884d55dc7",
+    "d414ae5e-5b2f-5ebb-b9b9-577fc99d9b71",
+    "5003af89-2b30-5fca-94ef-083743b8e906",
+    "80856040-06a8-5e6c-8ccb-34ea9f92e526",
+    "7cd7e4ff-353a-52ce-be4f-fec238e0c7e4",
+    "2c4901ea-141b-5aca-80c1-435d5f79bbf0",
+    "611fd29c-254c-5661-a686-be957caf0aa3",
+    "a29339c4-cd3f-5b04-acd6-3e4fd2bd27ac",
+    "8b8062f2-c25b-50b6-9d6b-85cca65f4dfc",
+    "efbc3300-f5a0-57fa-905a-889ad352c12c",
+    "f57a9a2a-c25e-5e24-a59f-9d71dcd8a5ea",
+    "54de08ca-9388-50de-9648-9fb65baa7d04",
+    "78445743-8331-5598-b15c-de63c51a1562",
+    "93ead780-8712-53f6-bc89-b42cb3406597",
+    "8544935a-ce7a-5763-ab36-ce5a43eabad3",
+    "08464eb9-6ca3-52a4-aef2-75b8d33af165",
+    "fc57a1db-3fd5-5f5c-ac79-bc9c05364430"
+  ],
+  "full_goal_complete": false
+}

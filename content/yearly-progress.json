@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 282,
-    "year": 939,
-    "last_reviewed_paragraph": "zztj-v282-y0939-p032",
-    "next_paragraph": "zztj-v282-y0939-p033",
-    "next_paragraph_opening": "癸未，以唐许王从益为郇国公，奉唐祀。从益尚幼，李后养从益于宫中，奉王淑妃如事母。",
-    "batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-04",
+    "year": 940,
+    "last_reviewed_paragraph": "zztj-v282-y0939-p041",
+    "next_paragraph": "zztj-v282-y0940-p001",
+    "next_paragraph_opening": "春，正月，帝引见闽使郑元弼等。元弼曰：“王昶蛮夷之君，不知礼义，陛下得其善言不足喜，恶言不足怒。臣将命无状，愿伏鈇锧以赎昶罪。”帝怜之，辛未，诏释元弼等。",
+    "batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-05",
     "status": "pending",
-    "last_published_paragraph": "zztj-v282-y0939-p032"
+    "last_published_paragraph": "zztj-v282-y0939-p041"
   },
   "year_coverage": [
     {
@@ -1126,18 +1126,31 @@
     },
     {
       "year": 939,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         282
       ],
-      "completed_volumes": [],
+      "completed_volumes": [
+        282
+      ],
       "batches": [
         "content/books/zizhi-tongjian/vol-282/year-0939/part-01",
         "content/books/zizhi-tongjian/vol-282/year-0939/part-02",
         "content/books/zizhi-tongjian/vol-282/year-0939/part-03",
-        "content/books/zizhi-tongjian/vol-282/year-0939/part-04"
+        "content/books/zizhi-tongjian/vol-282/year-0939/part-04",
+        "content/books/zizhi-tongjian/vol-282/year-0939/part-05"
       ],
-      "note": "卷282原6—37行第1—32段四批连续发布并匿名读回；闽国政变逐阶段、林兴流放后被杀、亳州决河、冯道任官掌印、吴越元帅及楚地出兵分别录。全年度41段，后9段待录。"
+      "note": "卷282的939年部分原6—46行41段五批连续公开并核验批次哈希、匿名读回数量、来源哈希和逐段覆盖。姓名、宫名和纪日异说保留，940年起卷282后续尚待，未将整卷标为完成。"
+    },
+    {
+      "year": 940,
+      "status": "pending",
+      "volumes": [
+        282
+      ],
+      "completed_volumes": [],
+      "batches": [],
+      "note": "卷282原49—83行35段连续正文已登记，全部待录；原84—85行是941年界，未纳入940账本。"
     }
   ],
   "legacy_archives": [
@@ -5707,6 +5720,34 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-04",
       "primary_paragraph": "zztj-v282-y0939-p031",
       "required_action": "《资治通鉴》电子本八月己酉作吴越王元璟，《旧五代史》同日官命明确钱元瓘，沿用钱传瓘稳定主体；元璟未作为正式别名或新人加入，电子本字形待版本校核。"
+    },
+    {
+      "key": "939-li-congyi-enfeoffment-month",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-05",
+      "primary_paragraph": "zztj-v282-y0939-p033",
+      "required_action": "《资治通鉴》列李从益封郇国公于九月癸未，《旧五代史》本纪列八月癸未，所附《五代会要》引文又称九月。月份各保留，未直接校核会要原书或裁定纪日。"
+    },
+    {
+      "key": "939-monastery-ban-day",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-05",
+      "primary_paragraph": "zztj-v282-y0939-p039",
+      "required_action": "禁新建寺院诏令，通鉴十二月丙戌，旧史十二月丙辰。政策对应、干支有异，待版本与历日校核，未另造两道确定诏令。"
+    },
+    {
+      "key": "939-yaozhe-source-name",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-05",
+      "primary_paragraph": "zztj-v282-y0939-p036",
+      "required_action": "通鉴写契丹使者遥折，职务及姓名字形未得其他可靠直接书证。按本处原名记录，不猜氏族或改成近名人物，后续再校核。"
+    },
+    {
+      "key": "939-zhao-guangyi-death-followup",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0939/part-05",
+      "primary_paragraph": "zztj-v282-y0939-p041",
+      "required_action": "及卒、赵损继任是从本年外交建议延伸的后事，未列死亡及任官确年，均保留null。赵光裔/新史光胤旧异说沿已发布917补证保留；赵损与后晋李知损分开。"
     }
   ]
 }

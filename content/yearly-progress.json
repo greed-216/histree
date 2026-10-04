@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 283,
+    "volume": 284,
     "year": 944,
-    "last_reviewed_paragraph": "zztj-v283-y0943-p042",
-    "next_paragraph": "zztj-v283-y0944-p001",
-    "next_paragraph_opening": "春，正月，乙亥，边籓驰告：“契丹前锋将赵延寿、赵延照将兵五万入寇，逼贝州。”延照，思温之子也。先是朝廷以贝州水陆要冲，多聚刍粟，为大军数年之储，以备契丹。军校邵珂，性凶悖，永清节度使王令温黜之。珂怨望，密遣人亡入契丹，言“贝州粟多而兵弱，易取也。”会令温入朝，执政以前复州防御使吴峦权知州事。峦至，推诚抚士；会契丹入寇，峦书生，无爪牙，珂自请，愿效死，峦使将兵守南门，峦自守东门。契丹主自攻贝州，峦悉力拒之，烧其攻具殆尽。己卯，契丹复攻城，珂引契丹自南门入，峦赴井死。契丹遂陷贝州，所杀且万人。庚辰，以归德节度使高行周为北面行营都部署，以河阳节度使符彦卿为马军左厢排陈使，以右神武统军丘甫遇为马军右厢排陈使，以陕府节度使王周为步军左厢排陈使，以左羽林将军潘环为步军右厢排陈使。",
-    "batch": "content/books/zizhi-tongjian/vol-283/year-0943/part-05",
+    "last_reviewed_paragraph": "zztj-v283-y0944-p011",
+    "next_paragraph": "zztj-v284-y0944-p001",
+    "next_paragraph_opening": "二月，甲辰朔，命前保义节度使石赟守麻家口，前威胜节度使何重建守杨刘镇，护圣都指挥使白再荣守马家口，西京留守安彦威守河阳。未几，周儒引契丹将麻答自马家口济河，营于东岸，攻郓州北津以应杨光远。麻答，契丹主之从弟也。乙巳，遣侍卫马军都指挥使、义成节度使李守贞、神武统军皇甫遇、陈州防御使梁汉璋、怀州刺史薛怀让将兵万人，缘河水陆俱进。守贞，河阳；汉璋，应州；怀让，太原人也。",
+    "batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
     "status": "pending",
-    "last_published_paragraph": "zztj-v283-y0943-p042"
+    "last_published_paragraph": "zztj-v283-y0944-p011"
   },
   "year_coverage": [
     {
@@ -1215,14 +1215,18 @@
     },
     {
       "year": 944,
-      "status": "pending",
+      "status": "partial_published_verified",
       "volumes": [
         283,
         284
       ],
-      "completed_volumes": [],
-      "batches": [],
-      "note": "卷283原93—103行11正文与卷284原6—49行44正文，共55段待连续录入；卷284原50—51行为945年界，不视为944正文。"
+      "completed_volumes": [
+        283
+      ],
+      "batches": [
+        "content/books/zizhi-tongjian/vol-283/year-0944/part-01"
+      ],
+      "note": "944年跨卷283与284，共55正文；卷283原93—103行11正文已发布并匿名读回，卷284二月至年末44正文待录。卷283的942、943、944三年正文均已连续覆盖并完成各年部分审计；944全年未完成。"
     }
   ],
   "legacy_archives": [
@@ -6344,6 +6348,48 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0943/part-05",
       "primary_paragraph": "zztj-v283-y0943-p037",
       "required_action": "通鉴旧史劫往青州与新史十二月死之分录，死亡明确，劫持和死亡的具体间隔及方式待核。"
+    },
+    {
+      "key": "944-jing-audience-edict-variants",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
+      "primary_paragraph": "zztj-v283-y0944-p005",
+      "required_action": "通鉴正月辛巳、魏岑查文徽可奏；新史十二月、陈觉查文徽可奏，月份与人选差异独立保存。"
+    },
+    {
+      "key": "944-huangfu-qiu-name",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
+      "primary_paragraph": "zztj-v283-y0944-p001",
+      "required_action": "原TXT丘甫遇按旧纪同日、同职与同一任官序列校为皇甫遇，原字保留，纸本待核。"
+    },
+    {
+      "key": "944-xiurong-xiugu-place",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
+      "primary_paragraph": "zztj-v283-y0944-p008",
+      "required_action": "通鉴及新史秀容，旧纪秀谷；战事与辛丑奏报分清，地名异文待纸本。伟王个人名未证，不猜同一耶律主体。"
+    },
+    {
+      "key": "944-zhou-ru-identity",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
+      "primary_paragraph": "zztj-v283-y0944-p011",
+      "required_action": "博州刺史周儒与888年魏军同名被俘将领未证同人，另档保留，后续传记补查。"
+    },
+    {
+      "key": "944-wang-ban-identity",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
+      "primary_paragraph": "zztj-v283-y0944-p006",
+      "required_action": "新史辛巳殿直王班与909年已被殺的襄州刺史王班为不同人，分别建档。"
+    },
+    {
+      "key": "944-wang-zhou-early-identity",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-283/year-0944/part-01",
+      "primary_paragraph": "zztj-v283-y0944-p001",
+      "required_action": "沿用938—942年后晋王周主体，901年同名河东降将的既有连接待身份复核；未以本批重写旧档案。"
     }
   ]
 }

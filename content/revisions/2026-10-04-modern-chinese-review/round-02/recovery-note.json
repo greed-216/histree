@@ -1,0 +1,11 @@
+{
+  "incident": "First apply stopped after 164 successful record checks because one fact_claim write did not pass response verification.",
+  "failed_id": "2fbb0906-5e77-516f-a322-5161bb2e5765",
+  "read_only_recovery_check": {
+    "public_rows": 1,
+    "claim_text": "桑维翰：被荐者。",
+    "protected_differences": []
+  },
+  "resolution": "Resume the exact SHA-guarded plan. Already updated rows are read back; unchanged rows retain old-value PATCH guards. No blind reissue of the failed write.",
+  "root_cause": "Not established from available response; no claim of concurrent edit or transport failure."
+}

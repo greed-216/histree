@@ -33,4 +33,39 @@ class ReviewGuards(unittest.TestCase):
     if query['select']=='*':return [dict(c['baseline'],note=c['after']['note'],subject_id='wrong-subject')]
     return [dict(id='known-id',note=c['before']['note'])]
   with self.assertRaises(AssertionError):mod.apply_change(Client(),c,True)
+ def test_old_value_guard_and_anonymous_readback(self):
+  c=self.change();calls=[]
+  class Client:
+   def request(self,table,query,payload=None):
+    calls.append((query,payload))
+    if payload is not None:
+     assert query['note']=='eq.'+c['before']['note']
+     return [dict(id=c['id'],**payload)]
+    return [dict(c['baseline'],**c['after'])]
+  self.assertTrue(mod.apply_change(Client(),c,True)['verified'])
+  self.assertEqual(len(calls),2)
+  self.assertIsNotNone(calls[0][1]);self.assertIsNone(calls[1][1])
+  self.assertEqual(calls[1][0]['select'],'*')
+ def test_already_applied_empty_patch_needs_full_readback(self):
+  c=self.change();calls=[]
+  class Client:
+   def request(self,table,query,payload=None):
+    calls.append(payload)
+    return [] if payload is not None else [dict(c['baseline'],**c['after'])]
+  self.assertTrue(mod.apply_change(Client(),c,True)['verified'])
+  self.assertEqual(len(calls),2)
+ def test_uncertain_write_is_inspected_without_retry(self):
+  c=self.change();calls=[]
+  class Client:
+   def request(self,table,query,payload=None):
+    calls.append(payload)
+    if payload is not None:raise TimeoutError('response lost after commit')
+    return [dict(c['baseline'],**c['after'])]
+  self.assertTrue(mod.apply_change(Client(),c,True)['verified'])
+  self.assertEqual(sum(x is not None for x in calls),1)
+ def test_empty_patch_with_concurrent_value_is_rejected(self):
+  c=self.change()
+  class Client:
+   def request(self,table,query,payload=None):return [] if payload is not None else [dict(c['baseline'],note='Changed by another editor')]
+  with self.assertRaises(AssertionError):mod.apply_change(Client(),c,True)
 if __name__=='__main__':unittest.main()

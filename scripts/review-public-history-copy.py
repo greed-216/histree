@@ -54,25 +54,30 @@ def validate_changes(changes):
 
 def apply_change(client,c,apply):
  table=c['table'];fields=list(c['after']);rid=c['id']
- rows=client.request(table,{'id':'eq.'+rid,'select':','.join(['id']+fields)})
+ if not apply:
+  rows=client.request(table,{'id':'eq.'+rid,'select':','.join(['id']+fields)})
+  assert len(rows)==1,(table,rid,'public row missing')
+  current={k:rows[0][k] for k in fields};assert current in [c['before'],c['after']],(table,rid,'concurrent change')
+  return dict(table=table,id=rid,fields=fields,verified=False)
+ # The PATCH checks every reviewed old value atomically. A separate GET before
+ # it adds no protection: it cannot close the race between reading and writing.
+ query={'id':'eq.'+rid,'select':','.join(['id']+fields)}
+ for k,value in c['before'].items():query[k]='is.null' if value is None else 'eq.'+(json.dumps(value,ensure_ascii=False,separators=(',',':')) if isinstance(value,(list,dict)) else str(value))
+ try:
+  result=client.request(table,query,c['after'])
+  assert len(result)<=1,(table,rid,'multiple rows updated')
+  if result:assert {k:result[0][k] for k in fields}==c['after'],(table,rid,'write result does not match')
+ except (urllib.error.URLError,TimeoutError):
+  # The PATCH may have committed. Inspect anonymous state; never retry a write.
+  pass
+ rows=client.request(table,{'id':'eq.'+rid,'select':'*'})
  assert len(rows)==1,(table,rid,'public row missing')
- current={k:rows[0][k] for k in fields};assert current in [c['before'],c['after']],(table,rid,'concurrent change')
- if apply and current!=c['after']:
-  query={'id':'eq.'+rid,'select':','.join(['id']+fields)}
-  for k,value in current.items():query[k]='is.null' if value is None else 'eq.'+(json.dumps(value,ensure_ascii=False,separators=(',',':')) if isinstance(value,(list,dict)) else str(value))
-  try:result=client.request(table,query,c['after'])
-  except (urllib.error.URLError,TimeoutError):
-   # An observation failure can follow a successful PATCH. Re-read instead of repeating it.
-   rows=client.request(table,{'id':'eq.'+rid,'select':','.join(['id']+fields)})
-   assert len(rows)==1 and {k:rows[0][k] for k in fields}==c['after'];result=rows
-  assert len(result)==1 and {k:result[0][k] for k in fields}==c['after'],(table,rid,'guard rejected')
- if apply:
-  rows=client.request(table,{'id':'eq.'+rid,'select':'*'});row=rows[0]
-  assert len(rows)==1 and {k:row[k] for k in fields}==c['after']
-  # Full authoritative baseline includes all non-editable IDs, dates, endpoints and source metadata.
-  if 'baseline' in c:
-   assert all(row[k]==v for k,v in c['baseline'].items() if k not in fields and k not in ['updated_at']), (table,rid,'protected field changed')
- return dict(table=table,id=rid,fields=fields,verified=apply)
+ row=rows[0]
+ assert {k:row[k] for k in fields}==c['after'],(table,rid,'guard rejected or write not committed')
+ # Also covers a zero-row PATCH for an already applied plan. Every non-edited
+ # field must still equal the authoritative baseline, and the record is public.
+ assert all(row[k]==v for k,v in c['baseline'].items() if k not in fields and k!='updated_at'),(table,rid,'protected field changed')
+ return dict(table=table,id=rid,fields=fields,verified=True)
 
 def main():
  a=argparse.ArgumentParser();a.add_argument('mode',choices=['snapshot','preflight','apply']);a.add_argument('path',type=Path);a.add_argument('--workers',type=int,default=4);args=a.parse_args();client=Client()

@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 282,
-    "year": 941,
-    "last_reviewed_paragraph": "zztj-v282-y0941-p029",
-    "next_paragraph": "zztj-v282-y0941-p030",
-    "next_paragraph_opening": "唐主性节俭，常蹑蒲屦，盥颒用铁盎，暑则寝于青葛帷，左右使令惟老丑宫人，服饰粗略。死国事者虽士卒皆给禄三年。分遣使者按行民田，以肥瘠定其税，民间称其平允。自是江、淮调兵兴役及它赋敛，皆以税钱为率，至今用之。唐主勤于听政，以夜继昼，还自江都，不复宴乐；颇伤躁急，内侍王绍颜上书，以为“今春以来，群臣获罪者众，中外疑惧。”唐主手诏释其所以然，令绍颜告谕中外。",
-    "batch": "content/books/zizhi-tongjian/vol-282/year-0941/part-05",
+    "volume": 283,
+    "year": 942,
+    "last_reviewed_paragraph": "zztj-v282-y0941-p038",
+    "next_paragraph": "zztj-v283-y0942-p001",
+    "next_paragraph_opening": "春，正月，丁巳，镇州牙将自西郭水碾门导官军入城，杀守陴民二万人，执安重荣，斩之。杜重威杀导者，自以为功。庚申，重荣首至鄴都，帝命漆之，函送契丹。",
+    "batch": "content/books/zizhi-tongjian/vol-282/year-0941/part-06",
     "status": "pending",
-    "last_published_paragraph": "zztj-v282-y0941-p029"
+    "last_published_paragraph": "zztj-v282-y0941-p038"
   },
   "year_coverage": [
     {
@@ -1160,19 +1160,32 @@
     },
     {
       "year": 941,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         282
       ],
-      "completed_volumes": [],
+      "completed_volumes": [
+        282
+      ],
       "batches": [
         "content/books/zizhi-tongjian/vol-282/year-0941/part-01",
         "content/books/zizhi-tongjian/vol-282/year-0941/part-02",
         "content/books/zizhi-tongjian/vol-282/year-0941/part-03",
         "content/books/zizhi-tongjian/vol-282/year-0941/part-04",
-        "content/books/zizhi-tongjian/vol-282/year-0941/part-05"
+        "content/books/zizhi-tongjian/vol-282/year-0941/part-05",
+        "content/books/zizhi-tongjian/vol-282/year-0941/part-06"
       ],
-      "note": "卷282原86—114行第1—29段五批连续发布并匿名读回；本批滑州河决奏报、契丹交涉、王亚澄升官、白承福归刘知远及安从进起兵败退分别录。日期、部众支持声称与实际行动有别，李敏宰相与唐昭宗旧名消歧，花山与湖阳等异说独立引用。全年38段，剩余9段待录。"
+      "note": "卷282原86—123行941年38段六批全部连续公开并核验批次及来源哈希、逐段覆盖和匿名读回。年末宗城之战、赵彦之死亡、安从贵被俘及断足、南汉改名、钱弘佐正式授封等分别录。入朝字词、战冻死亡人数与未知年月保留校核说明。卷282的939—941年部分均完成，下一卷283从942年开始。"
+    },
+    {
+      "year": 942,
+      "status": "pending",
+      "volumes": [
+        283
+      ],
+      "completed_volumes": [],
+      "batches": [],
+      "note": "卷283原6—45行共40正文段待录；第46行齐王上为结构标题，第47—48行为943年界，不录成942年史事。"
     }
   ],
   "legacy_archives": [
@@ -6000,6 +6013,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0941/part-05",
       "primary_paragraph": "zztj-v282-y0941-p029",
       "required_action": "主书、新史数十骑退回襄州，旧史奏报单骑逃逸；不同记载保留，未以人数差异另造逃亡。旧传概述后接自焚，不提前录入次年结果。"
+    },
+    {
+      "key": "941-an-arrival-wording",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0941/part-06",
+      "primary_paragraph": "zztj-v282-y0941-p033",
+      "required_action": "电子底本声言不朝与同书固定修订转录声言入朝、新史声言入觐有异；原文保留，展示据版本校读，影印字形及纸本待核。"
+    },
+    {
+      "key": "941-zongcheng-casualty-overlap",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0941/part-06",
+      "primary_paragraph": "zztj-v282-y0941-p035",
+      "required_action": "宗城斩首一万五千和随后战死冻死二万多人可能重叠，不能相加；旧史同类数字不是额外死亡。"
+    },
+    {
+      "key": "941-liu-yan-private-character",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-282/year-0941/part-06",
+      "primary_paragraph": "zztj-v282-y0941-p037",
+      "required_action": "主书私用区字保留在原文快照，展示据新五代史明确龑字规范，传记前事不强定941年。"
     }
   ]
 }

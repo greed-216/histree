@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 280,
-    "year": 936,
-    "last_reviewed_paragraph": "zztj-v280-y0936-p053",
-    "next_paragraph": "zztj-v280-y0936-p054",
-    "next_paragraph_opening": "初，帝在河东，为唐朝所忌，中书侍郎、同平章事、判三司张延朗不欲河东多蓄积，凡财赋应留使之外尽收取之，帝以是恨之。壬午，百官入见，独收延朗付御史台，馀皆谢恩。甲申，车驾入宫，大赦：“应中外官吏一切不问，惟贼臣张延朗、刘延皓、刘延朗奸邪贪猥，罪难容贷；中书侍郎、平章事马胤孙、枢密使房暠、宣徽使李专美、河中节度使韩昭胤等，虽居重位，不务诡随，并释罪除名；中外臣僚先归顺者，委中书门下别加任使。”刘延皓匿于成门，数日，自经死。刘延朗将奔南山，捕得，杀之。斩张延朗；既而选三司使，难其人，帝甚悔之。",
-    "batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-08",
-    "status": "in_progress",
-    "last_published_paragraph": "zztj-v280-y0936-p053"
+    "volume": 281,
+    "year": 937,
+    "last_reviewed_paragraph": "zztj-v280-y0936-p070",
+    "next_paragraph": "zztj-v281-y0937-p001",
+    "next_paragraph_opening": "春，正月，乙卯，日有食之。",
+    "batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+    "status": "pending",
+    "last_published_paragraph": "zztj-v280-y0936-p070"
   },
   "year_coverage": [
     {
@@ -1063,7 +1063,7 @@
     },
     {
       "year": 936,
-      "status": "in_progress",
+      "status": "complete_published_verified",
       "volumes": [
         280
       ],
@@ -1075,10 +1075,23 @@
         "content/books/zizhi-tongjian/vol-280/year-0936/part-05",
         "content/books/zizhi-tongjian/vol-280/year-0936/part-06",
         "content/books/zizhi-tongjian/vol-280/year-0936/part-07",
-        "content/books/zizhi-tongjian/vol-280/year-0936/part-08"
+        "content/books/zizhi-tongjian/vol-280/year-0936/part-08",
+        "content/books/zizhi-tongjian/vol-280/year-0936/part-09"
+      ],
+      "completed_volumes": [
+        280
+      ],
+      "note": "卷280原6—75行70正文全部连续公开；9批原文、引用、参与和关系端点独立匿名核验。后唐辛巳灭亡及晋入洛后年末事均完成；下一卷281年937第1段尚待录。"
+    },
+    {
+      "year": 937,
+      "status": "pending",
+      "volumes": [
+        281
       ],
       "completed_volumes": [],
-      "note": "卷280连续第1—53段公开并独立匿名核验，53/70；下一段旧朝重臣处分与晋朝收尾。前段仍用后唐清泰三年。"
+      "batches": [],
+      "note": "原6—64行59正文已初始化，全部待录；938年题不计入937。"
     }
   ],
   "legacy_archives": [
@@ -5232,6 +5245,55 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-08",
       "primary_paragraph": "zztj-v280-y0936-p053",
       "required_action": "止焚全部宫与王曹避匿话在自焚之前插叙，新传清楚；明确同焚5人、倍另杀、石晚入旧第和次甲申入宫分。"
+    },
+    {
+      "key": "936-v280-zheng_ruan_variant",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p059",
+      "required_action": "主旧郑阮、新郑玩同曹州刺史被石重立杀链核为异写，保别名，新补己丑。"
+    },
+    {
+      "key": "936-v280-zhou_gui_variant",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p066",
+      "required_action": "主周瑰、旧帝纪周环、旧传周瑰按晋阳出纳旧臣、三司任命辞职链核同人，不建重复主体。"
+    },
+    {
+      "key": "936-v280-fang_death_day",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p067",
+      "required_action": "主庚子条下闻卒与旧传辛巳卒日疑差并列，卒年同936；需核纸本及纪日。"
+    },
+    {
+      "key": "936-v280-lu_wenjin_date",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p069",
+      "required_action": "主936十二月辛丑、旧传936十二月、新传元年冬、新纪937正月癸亥互异，保各书来源与元年冬二年初边界待核。"
+    },
+    {
+      "key": "936-v280-li_decheng_jingnan",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p070",
+      "required_action": "主李德诚荆南职疑镇南，原字保留未定新任荆南；待纸本和吴任职链校核。"
+    },
+    {
+      "key": "936-v280-zhou_quanjin_date",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p070",
+      "required_action": "新周劝进叙于937受禅后压写，主936本次与937复劝区分，不硬当同日；新死不提前填936。"
+    },
+    {
+      "key": "936-v280-goryeo_summary",
+      "status": "published_with_textual_review_pending_paper",
+      "primary_batch": "content/books/zizhi-tongjian/vol-280/year-0936/part-09",
+      "primary_paragraph": "zztj-v280-y0936-p070",
+      "required_action": "主压记击破新罗百济及府郡数，未分具体日期，不自动认两国同936同日军事灭亡；保史载概数。"
     }
   ]
 }

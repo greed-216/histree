@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 284,
+    "volume": 285,
     "year": 945,
-    "last_reviewed_paragraph": "zztj-v284-y0945-p024",
-    "next_paragraph": "zztj-v284-y0945-p025",
-    "next_paragraph_opening": "五月，丙申朔，大赦。",
-    "batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-03",
+    "last_reviewed_paragraph": "zztj-v284-y0945-p035",
+    "next_paragraph": "zztj-v285-y0945-p001",
+    "next_paragraph_opening": "八月，甲子朔，日有食之。",
+    "batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
     "status": "pending",
-    "last_published_paragraph": "zztj-v284-y0945-p024"
+    "last_published_paragraph": "zztj-v284-y0945-p035"
   },
   "year_coverage": [
     {
@@ -1246,9 +1246,10 @@
       "batches": [
         "content/books/zizhi-tongjian/vol-284/year-0945/part-01",
         "content/books/zizhi-tongjian/vol-284/year-0945/part-02",
-        "content/books/zizhi-tongjian/vol-284/year-0945/part-03"
+        "content/books/zizhi-tongjian/vol-284/year-0945/part-03",
+        "content/books/zizhi-tongjian/vol-284/year-0945/part-04"
       ],
-      "note": "945年跨卷284、285共58正文，卷284前24段三批连续发布并匿名读回，累计24段，余34段。当前批覆盖福州政变、僧卓岩明被立、张汉真兵败被杀、李仁达再杀黄陈掌兵，晋军攻泰满遂、阳城初战至围寨决战、战后返京和封授。新旧史、辽史和宋史独立补证，日期、报告兵数、古虎北口和宋传顺逆风战术叙述异说并列。"
+      "note": "945年跨卷284、285共58正文，卷284全部35段四批连续发布并匿名读回，累计35段，卷285余23段。当前批覆盖五月大赦、杜重威在恒州的长期作为与擅自入朝、李仁达杀卓岩明及对唐晋越外交、献兵粮请求与天雄任命、汀州俘时厚卿、晋契丹求和、福州援兵遇害、唐攻闽军需、王延政求吴越救援及马希杲遇害。新旧五代史独立补证。"
     }
   ],
   "legacy_archives": [
@@ -6685,6 +6686,41 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-03",
       "primary_paragraph": "zztj-v284-y0945-p017",
       "required_action": "卓岩明新史作卓儼明，同寺同场立帝对应保留姓名异文；晋廷谦旧本纪同日同城降州作晋庭谦。正字待纸本核，不自动推更多异名。"
+    },
+    {
+      "key": "945-du-hengzhou-number-glyph",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
+      "primary_paragraph": "zztj-v284-y0945-p026",
+      "required_action": "《资治通鉴》私用字保留于原文；两书被掳百姓数量千百与千萬、一土一骑等字形待纸本核，不据此做准确人口统计。"
+    },
+    {
+      "key": "945-li-ren-da-hongyi",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
+      "primary_paragraph": "zztj-v284-y0945-p027",
+      "required_action": "李仁达在本段获南唐赐名弘义，后续福州弘义对应李仁达，勿自动合其他李弘义；《新五代史》传末保大四年不套全部前述事。"
+    },
+    {
+      "key": "945-zhang-hui-envoy-identity",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
+      "primary_paragraph": "zztj-v284-y0945-p031",
+      "required_action": "本段与新五代史明确供奉官求和使者，未证明与937博州守将或后来的北汉同名人为一人，以限定主体保留。"
+    },
+    {
+      "key": "945-yelu-later-daliang-speech",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
+      "primary_paragraph": "zztj-v284-y0945-p031",
+      "required_action": "及契丹主入大梁后的谈话是后事追叙，未定为945六月；推进到后晋灭亡时回查时间并复用既有事件，不另造一条同谈话。"
+    },
+    {
+      "key": "945-ma-xigao-death-report",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
+      "primary_paragraph": "zztj-v284-y0945-p035",
+      "required_action": "《资治通鉴》七月记毒杀，《旧五代史》八月戊子奏报卒，死亡与奏报日分开，下一卷引用此奏报时复用。"
     }
   ]
 }

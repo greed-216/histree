@@ -1,0 +1,42 @@
+{
+  "reason": "连续录入944年时由明确改名原文解决同人身份疑问，仅替换人物说明中已过时的待裁定句，保留姓名、key、UUID、全部事实字段及旧批次。",
+  "changes": [
+    {
+      "table": "person",
+      "id": "daf29c5e-0a0a-5cc1-aa88-e64404212a3c",
+      "before": {
+        "description": "杨光远之子。940年受父亲派遣围范延光私宅，逼其自尽，随后把范延光推入河中。《新五代史》相关执行者写杨承勋，姓名异说未裁定，不自动合并。生卒年未载。"
+      },
+      "after": {
+        "description": "杨光远之子。940年受父亲派遣围范延光私宅，逼其自尽，随后把范延光推入河中。《旧五代史》杨承勋传明确记载他初名承贵，后因避石重贵的名字改名；杨承勋是同一人的后名。生卒年未载。"
+      },
+      "baseline": {
+        "id": "daf29c5e-0a0a-5cc1-aa88-e64404212a3c",
+        "name": "杨承贵",
+        "era": "五代十国",
+        "birth_year": null,
+        "death_year": null,
+        "description": "杨光远之子。940年受父亲派遣围范延光私宅，逼其自尽，随后把范延光推入河中。《新五代史》相关执行者写杨承勋，姓名异说未裁定，不自动合并。生卒年未载。",
+        "created_at": "2026-10-04T19:38:47.597334+00:00",
+        "image_url": null,
+        "courtesy_name": null,
+        "aliases": [
+          "楊承貴",
+          "杨承勋",
+          "楊承勛",
+          "楊承勳"
+        ],
+        "faction": null,
+        "native_place": null,
+        "biography": null,
+        "historical_evaluation": null,
+        "tags": [],
+        "family": [],
+        "social_relations": [],
+        "references": [],
+        "status": "published"
+      },
+      "review": "《旧五代史》卷97杨承勋传明载“始名承貴，避少帝名改焉”；当前已发布aliases事实引用见同日别名修订。原人物介绍的姓名未裁定句已经过时，定向更新一句，940年行为、生卒年与其他字段保留。"
+    }
+  ]
+}

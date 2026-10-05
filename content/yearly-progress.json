@@ -4,14 +4,14 @@
   "primary_book_key": "zizhi-tongjian",
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
-    "volume": 285,
-    "year": 946,
-    "last_reviewed_paragraph": "zztj-v285-y0946-p050",
-    "next_paragraph": "zztj-v285-y0946-p051",
-    "next_paragraph_opening": "是夕，彦泽杀桑维翰。以带加颈，白契丹主，云其自经。契丹主曰：“吾无意杀维翰，何为如是！”命厚抚其家。",
-    "batch": "content/books/zizhi-tongjian/vol-285/year-0946/part-07",
+    "volume": 286,
+    "year": 947,
+    "last_reviewed_paragraph": "zztj-v285-y0946-p056",
+    "next_paragraph": "zztj-v286-y0947-p001",
+    "next_paragraph_opening": "春，正月，丁亥朔，百官遥辞晋主于城北，乃易素服纱帽，迎契丹主，伏路侧请罪。契丹主貂帽、貂裘，衷甲，驻马高阜，命起，改服，抚慰之。左卫上将军安叔千独出班胡语，契丹主曰：“汝安没字邪？汝昔镇邢州，已累表输诚，我不忘也。”叔千拜谢呼跃而退。",
+    "batch": "content/books/zizhi-tongjian/vol-285/year-0946/part-08",
     "status": "pending",
-    "last_published_paragraph": "zztj-v285-y0946-p050"
+    "last_published_paragraph": "zztj-v285-y0946-p056"
   },
   "year_coverage": [
     {
@@ -1259,7 +1259,7 @@
     },
     {
       "year": 946,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         285
       ],
@@ -1270,9 +1270,20 @@
         "content/books/zizhi-tongjian/vol-285/year-0946/part-04",
         "content/books/zizhi-tongjian/vol-285/year-0946/part-05",
         "content/books/zizhi-tongjian/vol-285/year-0946/part-06",
-        "content/books/zizhi-tongjian/vol-285/year-0946/part-07"
+        "content/books/zizhi-tongjian/vol-285/year-0946/part-07",
+        "content/books/zizhi-tongjian/vol-285/year-0946/part-08"
       ],
-      "note": "946年卷285共56正文，首50段七批连续发布并匿名读回，余6段。第七批覆盖皇甫遇拒令与自杀、张彦泽入京、石重贵降表及受命、桑维翰拘押、京城掳掠、帝迁府受拘、乌氏姑母告别自缢、冯玉送宝请求、丁氏被强取。新旧五代史补降表妻冯氏异文及入京跨夜记日。"
+      "note": "946年卷285共56正文，八批连续发布并匿名读回，年度原文、年界及来源审计通过。947年契丹入京尚待下一批。"
+    },
+    {
+      "year": 947,
+      "status": "pending",
+      "volumes": [
+        286,
+        287
+      ],
+      "batches": [],
+      "note": "947年跨卷286、287；卷28692正文已建账本，目标仅先到正月契丹入大梁，不当全年完成。"
     }
   ],
   "legacy_archives": [
@@ -7004,6 +7015,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0946/part-07",
       "primary_paragraph": "zztj-v285-y0946-p047",
       "required_action": "旧桑传称少帝密旨并利其家财，通鉴本段仅记以帝命召；保留别书记载，不当唯一动机，实际杀桑另段续录。"
+    },
+    {
+      "key": "946-sang-death-date",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0946/part-08",
+      "primary_paragraph": "zztj-v285-y0946-p051",
+      "required_action": "通鉴是夕、旧本纪甲戌夜、旧传十八日夜、新纪壬申各自保留，死亡年946明确，具体纪日待纸本校核。"
+    },
+    {
+      "key": "946-jie-li-messenger-identity",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0946/part-08",
+      "primary_paragraph": "zztj-v285-y0946-p053",
+      "required_action": "传诏解里与八月被斩契丹将同名，暂分档，待职务和异文校核。"
+    },
+    {
+      "key": "946-li-jun-original-name",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0946/part-08",
+      "primary_paragraph": "zztj-v285-y0946-p055",
+      "required_action": "宋史李筠初名荣的片段已归档；补证对象是此前第48段看守者，留待独立别名修订，不混入本批覆盖段。"
     }
   ]
 }

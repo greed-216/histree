@@ -5,6 +5,7 @@ import argparse,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
 from datetime import datetime,timezone
 from pathlib import Path
 from history_identity import merged_identity_target
+from history_cross_supplements import validate_cross_supplement
 ROOT=Path(__file__).resolve().parents[1]
 ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',action='store_true');args=ap.parse_args()
 P=Path(args.batch).resolve().parent
@@ -20,7 +21,9 @@ assert len(supplements)==len(coverage['supplements']), 'Duplicate supplement map
 for c in batch['claims']:
  if c['source_key'] not in primary_keys:
   extra=supplements[c['key']]
-  assert extra['primary_paragraph_id'] in coverage['paragraphs'] and extra['subject_key']==c['subject_key']
+  assert extra['subject_key']==c['subject_key']
+  if extra['primary_paragraph_id'] not in coverage['paragraphs']:
+   validate_cross_supplement(ROOT,extra['primary_paragraph_id'],extra['subject_key'],coverage.get('cross_volume_supplements',[]))
   assert extra['source_book'] and extra['relation'] in ['corroborates','adds','conflicts']
 assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] not in primary_keys}, 'Unmatched supplement mapping'
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}

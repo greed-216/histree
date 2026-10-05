@@ -24,3 +24,7 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 提交时只暂存本批及必要索引和进度，避免其他人的未提交修改或 `apps/api/.env`。在交接说明写明发布段落范围、待考点、下一段和该年是否完成。
 
 已核验同人合并会保留隐藏的旧主体。发布预检仅在plan稳定key与审计ID一致、规范主体仍公开、重复主体为draft且无剩余参与／人物引用／关系时，允许该隐藏记录指向规范主体。普通草稿重名仍报错，禁止重新发布重复key。变更此守卫时运行 `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts/tests -p test_history_identity.py`，再做线上只读预检。
+
+## 新来源补充已发布段落
+
+新来源可以补证旧段落，无需重写旧批次。在当前 `coverage.json.supplements` 中填写原段落ID与主体key，并在 `cross_volume_supplements` 显式声明同一段落与主体。发布脚本要求旧段落已公开核验、旧批次哈希与发布审计相符、原coverage包含该段落、补证主体存在于旧批次；这类补证不计入当前连续正文段落覆盖。

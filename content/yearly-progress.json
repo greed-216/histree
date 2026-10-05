@@ -5,13 +5,13 @@
   "organization": "书→卷→年→连续段落；其他书作为有对应段落和实体的补充引文",
   "active_cursor": {
     "volume": 285,
-    "year": 945,
-    "last_reviewed_paragraph": "zztj-v285-y0945-p018",
-    "next_paragraph": "zztj-v285-y0945-p019",
-    "next_paragraph_opening": "十二月，乙丑，加吴越王弘佐东南面兵马都元帅。",
-    "batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-02",
+    "year": 946,
+    "last_reviewed_paragraph": "zztj-v285-y0945-p023",
+    "next_paragraph": "zztj-v285-y0946-p001",
+    "next_paragraph_opening": "春，正月，以齐丘为太傅兼中书令，但奉朝请，不预政事。以昭武节度使李建勋为右仆射兼门下侍郎，与中书侍郎冯延己皆同平章事。建勋练习吏事，而懦怯少断。延己工文辞，而狡佞，喜大言，多树朋党。水部郎中高越，上书指延己兄弟过恶，唐主怒，贬越蕲州司士。初，唐主置宣政院于禁中，以翰林学士、给事中常梦锡领之，专典机密，与中书侍郎严续皆忠直无私。唐主谓梦锡曰：“大臣惟严续中立，然无才，恐不胜其党，卿宜左右之。”未几，梦锡罢宣政院，续亦出为池州观察使。梦锡于是移疾纵酒，不复预朝廷事。续，可求之子也。",
+    "batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-03",
     "status": "pending",
-    "last_published_paragraph": "zztj-v285-y0945-p018"
+    "last_published_paragraph": "zztj-v285-y0945-p023"
   },
   "year_coverage": [
     {
@@ -1237,21 +1237,34 @@
     },
     {
       "year": 945,
-      "status": "partial_published_verified",
+      "status": "complete_published_verified",
       "volumes": [
         284,
         285
       ],
-      "completed_volumes": [],
+      "completed_volumes": [
+        284,
+        285
+      ],
       "batches": [
         "content/books/zizhi-tongjian/vol-284/year-0945/part-01",
         "content/books/zizhi-tongjian/vol-284/year-0945/part-02",
         "content/books/zizhi-tongjian/vol-284/year-0945/part-03",
         "content/books/zizhi-tongjian/vol-284/year-0945/part-04",
         "content/books/zizhi-tongjian/vol-285/year-0945/part-01",
-        "content/books/zizhi-tongjian/vol-285/year-0945/part-02"
+        "content/books/zizhi-tongjian/vol-285/year-0945/part-02",
+        "content/books/zizhi-tongjian/vol-285/year-0945/part-03"
       ],
-      "note": "945年跨卷284、285共58正文，卷284全部35段、卷285前18段六批连续发布并匿名读回，累计53段，余5段。当前批覆盖张彦泽戍恒、南汉诛杀四力士及王翷、陈州镇安军、宋太后死、王延政到金陵与战后官刑、高丽追叙与郭仁遇出使、吴越杜昭达阚璠之死及程昭悦诬告清除、钱仁俊被囚、慎温其逼供不屈获任。新旧五代史及宋史补证，姓名、人数、左右仆射、王建死亡纪年与主945新946迁族差异保留。"
+      "note": "945年跨卷284、285共58正文，七批连续发布且各批匿名读回通过；完成审计回查全段原文、年界、引用快照哈希和发布批次哈希。阚璠任官与死亡矛盾、使者与问读书细节等异说仍待核。"
+    },
+    {
+      "year": 946,
+      "status": "pending",
+      "volumes": [
+        285
+      ],
+      "batches": [],
+      "note": "卷285原31—86行56正文待录，从第一段连续推进。"
     }
   ],
   "legacy_archives": [
@@ -6771,7 +6784,8 @@
       "status": "pending",
       "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-02",
       "primary_paragraph": "zztj-v285-y0945-p017",
-      "required_action": "已回查《旧五代史》卷84段jiu-wudaishi-205deb4a7860-p002032：十二月丙寅仍记明州刺史阚璠遥领宣州宁国军节度使，与《资治通鉴》十一月己未被杀不同。下一批处理十二月时按独立书证列出任命记载和时序分歧，不先推追授或改死亡日。"
+      "required_action": "已在945年十二月末批登记《旧五代史》十二月丙寅阚璠遥领宁国军、典军如故，与《资治通鉴》十一月己未死亡的矛盾引用。未推定追赠或迟到诏令，仍待纸本及其他底本核对。",
+      "supplement_batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-03"
     },
     {
       "key": "945-wuyue-fabricated-case",
@@ -6779,6 +6793,27 @@
       "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-02",
       "primary_paragraph": "zztj-v285-y0945-p018",
       "required_action": "程昭悦谮阚杜拥立钱仁俊、下狱锻炼成罪明确为诬告；不得把罪名写为真实谋反。诛放百余是两类合计概数。慎温其后仕钱俶与当前弘佐国官区分。"
+    },
+    {
+      "key": "945-sang-messenger-education",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-03",
+      "primary_paragraph": "zztj-v285-y0945-p021",
+      "required_action": "通鉴女仆问读书、旧传中使请师傅、新传遣人请求置师傅，分别保留；追述正旦年月不强定。"
+    },
+    {
+      "key": "945-hu-jinsi-character-order",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-03",
+      "primary_paragraph": "zztj-v285-y0945-p019",
+      "required_action": "湖州刺史胡进思旧本纪写胡思进，按职地对应复用，字序待核。"
+    },
+    {
+      "key": "945-dai-yan-confinement",
+      "status": "pending",
+      "primary_batch": "content/books/zizhi-tongjian/vol-285/year-0945/part-03",
+      "primary_paragraph": "zztj-v285-y0945-p022",
+      "required_action": "主书囚禁与旧传迁碧湘湖禁往来并列，旧传过程年月未确证，未来携女逃亡等未提前945。"
     }
   ]
 }

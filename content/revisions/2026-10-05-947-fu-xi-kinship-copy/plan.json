@@ -1,0 +1,29 @@
+{
+  "scope": "仅修本批一条人物事实的亲属方向表达；原档案、引用、事实身份和关系端点保留",
+  "changes": [
+    {
+      "table": "fact_claim",
+      "id": "1b2ab56a-274e-5e41-9294-69920cd7d367",
+      "before": {
+        "claim_text": "符习：是张廷翰的甥关系对象。"
+      },
+      "after": {
+        "claim_text": "《资治通鉴》记张廷翰为符习的甥。"
+      },
+      "baseline": {
+        "id": "1b2ab56a-274e-5e41-9294-69920cd7d367",
+        "subject_table": "person",
+        "subject_id": "054bed21-1711-5e8b-bdc8-9fe0e62d82e9",
+        "field_path": "description",
+        "claim_text": "符习：是张廷翰的甥关系对象。",
+        "source_id": "9983c746-4e2f-5a2e-a794-cbd7cac12d91",
+        "citation": "卷286·天福十二年（947年四月及追述）·zztj-v286-y0947-p091·原文件第96行",
+        "confidence": null,
+        "note": "原文：廷翰，冀州人，符习之甥也。；核对说明：核对同名、职务及行动后识别主体；展示简体，摘录保留原字。",
+        "created_at": "2026-10-05T12:16:32.348216+00:00",
+        "status": "published"
+      },
+      "review": "原句甥关系对象不便独立阅读；改为明确的史书记述，不把符习写成张廷翰的甥，逐字引用和关系端点不变。"
+    }
+  ]
+}

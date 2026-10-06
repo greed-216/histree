@@ -6,9 +6,9 @@
   "source_sha256": "d695aad597190fcc04fd381e85da625a762b26cb41474f61c7e5134c7363957f",
   "body_lines": [
     6,
-    30
+    29
   ],
-  "body_count": 25,
+  "body_count": 24,
   "structural_items": [
     {
       "source_line": 1,
@@ -49,9 +49,18 @@
       "status": "excluded_non_body_verified",
       "event_keys": [],
       "reason": "已核卷年结构及末尾空行，排除非史事；题名不代替正文人物识别。"
+    },
+    {
+      "id": "zztj-v292-y0954-p025",
+      "source_line": 30,
+      "text": "世宗睿武孝文皇帝上",
+      "kind": "section_heading",
+      "status": "excluded_non_body_verified",
+      "event_keys": [],
+      "reason": "第30行是下一年标题前的帝号结构项，不含人物行为或史事；保留原文、原段号和行号，移入structural_items。未发布该条目，无数据库记录需删除。"
     }
   ],
-  "note": "954年跨卷291和292，全部正文与史论段落待录，不能将本卷当全年。",
+  "note": "954年本卷原6—29行24段正文；原30行为帝号题名，31—32行为下一年边界。与卷291共62段正文，不能把本卷当全年。",
   "next_year_boundary": {
     "volume": 292,
     "separator_line": 31,

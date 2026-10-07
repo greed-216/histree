@@ -9,7 +9,7 @@ import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon } from '@
 import { getCurrentUserRole } from './lib/api';
 import { useScrollRestoration } from './hooks/useScrollRestoration';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
-import { GuidePage, HistoryOverviewPage } from './pages/GuidePage';
+import { GuidePage, GuideIndexPage, FiveDynastiesOverviewPage, LegacyZhouGuideRedirect } from './pages/GuidePage';
 import { ExplorePage } from './pages/ExplorePage';
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
@@ -160,9 +160,12 @@ function App() {
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
           <Route path="/sources/:id" element={<SourcePage />} />
           <Route path="/evidence/:subject/:id" element={<EvidencePage />} />
-          <Route path="/learn" element={<HistoryOverviewPage />} />
-          <Route path="/learn/later-zhou" element={<GuidePage />} />
-          <Route path="/learn/later-zhou/:chapter" element={<GuidePage key={location.pathname} />} />
+          <Route path="/learn" element={<GuideIndexPage />} />
+          <Route path="/learn/five-dynasties" element={<FiveDynastiesOverviewPage />} />
+          <Route path="/learn/five-dynasties/later-zhou" element={<GuidePage />} />
+          <Route path="/learn/five-dynasties/later-zhou/:chapter" element={<GuidePage key={location.pathname} />} />
+          <Route path="/learn/later-zhou" element={<LegacyZhouGuideRedirect />} />
+          <Route path="/learn/later-zhou/:chapter" element={<LegacyZhouGuideRedirect />} />
           <Route path="/topics/:slug" element={<TopicPage />} />
           <Route path="/people/:id" element={<EntryPage />} />
           <Route path="/events/:id" element={<EntryPage />} />

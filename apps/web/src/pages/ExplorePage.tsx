@@ -81,7 +81,7 @@ export function ExplorePage() {
           ))}
         </div>
         {topics.data?.items.length === 0 && (
-          <p className="text-slate-500">五代十国专题正在整理，审核完成后将在这里发布。</p>
+          <p className="text-slate-500">专题资料正在整理，审核完成后将在这里发布。</p>
         )}
         <InfiniteScroll {...topics} count={topics.data?.items.length} label="专题"/>
       </section>

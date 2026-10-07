@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState } from "react";
 import type { GraphResponse } from "@histree/shared-types";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import data from "../data/history-guides.json";
 const GraphView = lazy(() =>
   import("./GraphPage").then((m) => ({ default: m.GraphView })),
@@ -22,16 +22,21 @@ export function GuideCards() {
       </div>
       <div className="grid md:grid-cols-2 gap-5 mt-6">
         <Link to="/learn" className="guide-cover">
-          <span className="eyebrow">时代总览 · 六个阶段</span>
-          <h3>五代，为什么不断更替？</h3>
-          <p>把唐末到后周放在同一条主线上，也看看中原之外正在发生什么。</p>
-          <span>从全貌开始 →</span>
+          <span className="eyebrow">历史导读目录</span>
+          <h3>选择你的阅读路径</h3>
+          <p>
+            从一个时期、一个主题、一位人物或一个问题开始，沿着史料逐步理解历史。
+          </p>
+          <span>浏览已整理的导读 →</span>
         </Link>
-        <Link to="/learn/later-zhou" className="guide-cover guide-cover-zhou">
-          <span className="eyebrow">连续导读 · 六个章节</span>
+        <Link
+          to="/learn/five-dynasties/later-zhou"
+          className="guide-cover guide-cover-zhou"
+        >
+          <span className="eyebrow">当前推荐 · 五代时期</span>
           <h3>读懂后周</h3>
           <p>从郭威建国到柴荣北征，沿着战争、治理和继承理解950—959年。</p>
-          <span>开始第一段历史 →</span>
+          <span>阅读后周六章 →</span>
         </Link>
       </div>
     </section>
@@ -104,13 +109,13 @@ export function GuidePage() {
     return (
       <div className="reading-card">
         <h1>没有找到这一章</h1>
-        <Link to="/learn/later-zhou">返回后周目录 →</Link>
+        <Link to="/learn/five-dynasties/later-zhou">返回后周目录 →</Link>
       </div>
     );
   const current = chapters[index];
   return (
     <div className="guide-page space-y-8 pb-10">
-      <Link to="/learn" className="text-teal-800 text-sm">
+      <Link to="/learn/five-dynasties" className="text-teal-800 text-sm">
         ← 五代历史总览
       </Link>
       <header className="guide-header">
@@ -126,7 +131,7 @@ export function GuidePage() {
           <p className="guide-coverage">{data.zhou.coverage}</p>
           <Link
             className="guide-primary-link"
-            to={`/learn/later-zhou/${chapters[0].slug}`}
+            to={`/learn/five-dynasties/later-zhou/${chapters[0].slug}`}
           >
             从第一章开始 →
           </Link>
@@ -135,7 +140,10 @@ export function GuidePage() {
           </p>
           <nav aria-label="后周导读目录" className="guide-chapters">
             {chapters.map((c, i) => (
-              <Link key={c.slug} to={`/learn/later-zhou/${c.slug}`}>
+              <Link
+                key={c.slug}
+                to={`/learn/five-dynasties/later-zhou/${c.slug}`}
+              >
                 <span className="eyebrow">
                   {String(i + 1).padStart(2, "0")} · {yearLabel(c.years)}
                 </span>
@@ -194,31 +202,35 @@ export function GuidePage() {
             </section>
             <nav aria-label="章节翻页" className="guide-pager">
               {index > 0 ? (
-                <Link to={`/learn/later-zhou/${chapters[index - 1].slug}`}>
+                <Link
+                  to={`/learn/five-dynasties/later-zhou/${chapters[index - 1].slug}`}
+                >
                   ← 上一章：{chapters[index - 1].title}
                 </Link>
               ) : (
-                <Link to="/learn/later-zhou">← 导读目录</Link>
+                <Link to="/learn/five-dynasties/later-zhou">← 导读目录</Link>
               )}
               {index < chapters.length - 1 ? (
-                <Link to={`/learn/later-zhou/${chapters[index + 1].slug}`}>
+                <Link
+                  to={`/learn/five-dynasties/later-zhou/${chapters[index + 1].slug}`}
+                >
                   下一章：{chapters[index + 1].title} →
                 </Link>
               ) : (
-                <Link to="/learn">读完了，回到时代总览 →</Link>
+                <Link to="/learn/five-dynasties">读完了，回到五代总览 →</Link>
               )}
             </nav>
           </article>
           <aside>
             <nav className="guide-side" aria-label="章节目录">
-              <Link to="/learn/later-zhou" className="eyebrow">
+              <Link to="/learn/five-dynasties/later-zhou" className="eyebrow">
                 后周 · 阅读目录
               </Link>
               {chapters.map((c, i) => (
                 <Link
                   aria-current={i === index ? "page" : undefined}
                   key={c.slug}
-                  to={`/learn/later-zhou/${c.slug}`}
+                  to={`/learn/five-dynasties/later-zhou/${c.slug}`}
                 >
                   {String(i + 1).padStart(2, "0")} {c.title}
                 </Link>
@@ -233,11 +245,14 @@ export function GuidePage() {
     </div>
   );
 }
-export function HistoryOverviewPage() {
+export function FiveDynastiesOverviewPage() {
   return (
     <div className="guide-page space-y-8 pb-10">
+      <Link to="/learn" className="text-teal-800 text-sm">
+        ← 全部历史导读
+      </Link>
       <header className="guide-header">
-        <p className="eyebrow">历史导读 · 时代总览</p>
+        <p className="eyebrow">历史导读 / 五代 / 时代总览</p>
         <h1>{data.overview.title}</h1>
         <p>{data.overview.description}</p>
       </header>
@@ -266,7 +281,7 @@ export function HistoryOverviewPage() {
                   className="text-teal-800"
                   to={
                     s.slug === "zhou"
-                      ? "/learn/later-zhou"
+                      ? "/learn/five-dynasties/later-zhou"
                       : s.slug === "liang"
                         ? "/topics/later-liang-907-923"
                         : `/timeline?year=${s.years[0]}`
@@ -294,7 +309,7 @@ export function HistoryOverviewPage() {
         <p className="eyebrow">从不同角度继续读</p>
         <h2 className="font-serif text-2xl mt-3">同一段历史，可以有不同入口</h2>
         <div className="grid md:grid-cols-3 gap-5 mt-5">
-          <Link to="/learn/later-zhou">
+          <Link to="/learn/five-dynasties/later-zhou">
             <h3 className="font-semibold">按时期读 →</h3>
             <p className="text-sm text-stone-600 mt-2">
               后周已有完整六章导读，先建立连续脉络。
@@ -306,7 +321,7 @@ export function HistoryOverviewPage() {
               查阅南唐相关条目，和同期中原史事对照；连续导读待补。
             </p>
           </Link>
-          <Link to="/learn/later-zhou/huainan">
+          <Link to="/learn/five-dynasties/later-zhou/huainan">
             <h3 className="font-semibold">带着问题读 →</h3>
             <p className="text-sm text-stone-600 mt-2">
               南唐为什么交出江北？从淮南战争这一章开始。
@@ -346,5 +361,93 @@ function ChapterGraph({
         </>
       )}
     </details>
+  );
+}
+
+const guideKinds = [
+  ["all", "全部"],
+  ["period", "按时期"],
+  ["topic", "按主题"],
+  ["person", "按人物"],
+  ["question", "按问题"],
+] as const;
+export function GuideIndexPage() {
+  const [kind, setKind] = useState<string>("all");
+  const [query, setQuery] = useState("");
+  const items = data.catalog.filter(
+    (item) =>
+      (kind === "all" || item.kind === kind) &&
+      `${item.title} ${item.description} ${item.scope}`.includes(query.trim()),
+  );
+  return (
+    <div className="guide-page space-y-8 pb-10">
+      <header className="guide-header">
+        <p className="eyebrow">HISTREE · 历史导读</p>
+        <h1>找到你想读的那段历史</h1>
+        <p>
+          按时期建立全貌，按主题追踪变化，跟随人物理解选择，或带着一个问题查阅史料。
+        </p>
+      </header>
+      <section aria-label="选择阅读路径" className="reading-card">
+        <div className="flex flex-wrap gap-2">
+          {guideKinds.map(([value, label]) => (
+            <button
+              type="button"
+              key={value}
+              aria-pressed={kind === value}
+              onClick={() => setKind(value)}
+              className={`rounded-full border px-4 py-2 text-sm ${kind === value ? "bg-teal-900 text-white border-teal-900" : "border-stone-300 text-stone-600"}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <label className="block mt-5">
+          <span className="sr-only">搜索导读</span>
+          <input
+            className="w-full border border-stone-300 rounded-lg px-4 py-3"
+            placeholder="搜索时期、主题、人物或问题…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </label>
+      </section>
+      <div>
+        <p className="text-sm text-stone-500 mb-5">
+          导读持续整理中。当前开放五代时期的阅读路径，其他时期会随着资料整理逐步加入。
+        </p>
+        <div className="guide-chapters" aria-label="已整理的导读">
+          {items.map((item) => (
+            <Link key={item.id} to={item.path}>
+              <span className="eyebrow">
+                {guideKinds.find(([value]) => value === item.kind)?.[1]} ·{" "}
+                {item.scope}
+              </span>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+              <span className="text-teal-800">开始阅读 →</span>
+            </Link>
+          ))}
+        </div>
+        {items.length === 0 && (
+          <p className="reading-card text-stone-500">
+            暂无符合条件的导读。可以换个关键词，或前往
+            <Link to="/search" className="text-teal-800 underline">
+              全站搜索
+            </Link>
+            查阅已录入条目。
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+export function LegacyZhouGuideRedirect() {
+  const { chapter } = useParams();
+  return (
+    <Navigate
+      to={`/learn/five-dynasties/later-zhou${chapter ? `/${chapter}` : ""}`}
+      replace
+    />
   );
 }

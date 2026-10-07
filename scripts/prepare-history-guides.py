@@ -75,7 +75,10 @@ zhou = json.loads((ROOT/'content/guides/later-zhou.json').read_text())
 overview = json.loads((ROOT/'content/guides/five-dynasties.json').read_text())
 zhou['chapters'] = [compile_part(c) for c in zhou['chapters']]
 overview['stages'] = [compile_part(c) for c in overview['stages']]
-data = dict(overview=overview, zhou=zhou)
+catalog = json.loads((ROOT/'content/guides/catalog.json').read_text())
+assert len({e['id'] for e in catalog})==len(catalog)
+assert all(e['kind'] in ('period','topic','question','person') and e['path'].startswith('/') and not e['path'].startswith('//') for e in catalog)
+data = dict(catalog=catalog, overview=overview, zhou=zhou)
 target = ROOT/'apps/web/src/data/history-guides.json'
 target.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n')
 audit = dict(status='compiled_from_published_archives', scope='五代总览与950—959年后周六章导读', batches=sorted(used_batches), applied_citation_revisions=applied_revisions, generated_sha256=hashlib.sha256(target.read_bytes()).hexdigest(), note='导读为编辑概括；事件、UUID和逐字引文取自发布档案。线上条目应在发布前匿名回查。')

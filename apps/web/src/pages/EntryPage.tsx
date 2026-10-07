@@ -35,7 +35,7 @@ export function EntryPage() {
         <Link to={node.type === "person" ? "/people" : "/events"}>
           ← {node.type === "person" ? "历史人物" : "历史事件"}
         </Link>
-        {hasGuideForNode(node.id) && <Link to="/learn/later-zhou">后周导读 →</Link>}
+        {hasGuideForNode(node.id) && <Link to="/learn/five-dynasties/later-zhou">后周导读 →</Link>}
         {topics.data?.items.map((t) => (
             <Link key={t.id} to={`/topics/${t.slug}`}>
               专题：{t.title}
@@ -95,7 +95,7 @@ export function EntryPage() {
           {hasZhouGuide && <section className="guide-prose guide-conclusion">
             <p className="eyebrow">生平导读 · 后周世宗</p><h2>从继承者到后周君主</h2>
             <p>柴荣在954年即位，经历高平之战，随后整顿军队，处理铸钱、寺院和田租等事务。后周在秦凤和淮南方向取得进展，959年北征后，柴荣南返并去世。宗训继位。</p>
-            <Link className="text-teal-800 underline" to="/learn/later-zhou">沿六章阅读相关史事与出处 →</Link>
+            <Link className="text-teal-800 underline" to="/learn/five-dynasties/later-zhou">沿六章阅读相关史事与出处 →</Link>
           </section>}
           <section id="overview" className="scroll-mt-24">
             <h2 className="reading-heading">{hasZhouGuide ? "早年身份与史料差异" : "概述"}</h2>

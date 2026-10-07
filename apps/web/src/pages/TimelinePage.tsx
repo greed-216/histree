@@ -1,3 +1,4 @@
+import { guideHighlights } from '../lib/historyGuides';
 import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { Event, PageResult, TimelineOverview } from '@histree/shared-types';
@@ -26,7 +27,9 @@ function TimelineRiver({ data }: { data: TimelineOverview }) {
   const focus = ordinal(selected);
   const [hoverYear, setHoverYear] = useState<number | null>(null);
   const previewYear = hoverYear ?? selected;
-  const preview = data.years.find(row => row.year === previewYear);
+  const recordedPreview = data.years.find(row => row.year === previewYear);
+  const selectedHighlights = guideHighlights(previewYear);
+  const preview = recordedPreview ? { ...recordedPreview, highlights: selectedHighlights.length ? selectedHighlights : recordedPreview.highlights } : undefined;
   const [draft, setDraft] = useState('');
   const [invalid, setInvalid] = useState(false);
   const chartRef = useRef<SVGSVGElement>(null);
@@ -134,10 +137,10 @@ function TimelineRiver({ data }: { data: TimelineOverview }) {
       <div className="timeline-controls"><div className="timeline-zoom"><button className="timeline-button" disabled={to - from >= last - first} onClick={() => browse({ from: first, to: last })}>全程</button><button className="timeline-button" disabled={span >= last - first} onClick={() => resize(span * 2)}>缩小</button><button className="timeline-button" disabled={span <= Math.min(10, last - first)} onClick={() => resize(Math.max(10, span / 2))}>放大</button><span>{to - from + 1} 年视窗</span></div><form onSubmit={jump} className="flex gap-2 items-center"><label className="text-sm" htmlFor="timeline-jump">跳至</label><input id="timeline-jump" aria-label="跳至年份" type="number" placeholder="如 900 或 -403" value={draft} onChange={e => setDraft(e.target.value)} className="timeline-year-input"/><button className="timeline-button">前往</button></form></div>
       {invalid && <p role="alert" className="text-sm text-rose-700">请输入资料范围内的整数年份；公元前用负数，没有公元 0 年。</p>}
       <div className="timeline-stage">
-      <aside className="timeline-preview" aria-label="年度大事提要">
+      <aside className="timeline-preview" aria-label="年度史事选读">
         <p className="eyebrow">{hoverYear === null ? '已选年份' : '浏览预览 · 点击年份选中'}</p>
         <div className="timeline-preview-title"><h2>{formatDisplayYear(previewYear)}</h2><span>{preview?.count ?? 0} 条事件开始</span></div>
-        {preview?.highlights?.length ? <ul>{preview.highlights.map(event => <li key={event.id}>{event.title}</li>)}</ul> : <p className="text-sm text-stone-500 leading-7">{preview ? '年度提要尚待整理，可点击查看已录入事件。' : '这一年暂无起始事件记录，可点击查看跨年事件。'}</p>}
+        {preview?.highlights?.length ? <><p className="text-xs text-stone-500">{selectedHighlights.length ? "导读精选 · 点击年份查看全部事件" : "已录入史事示例 · 未作重要性排序"}</p><ul>{preview.highlights.map(event => <li key={event.id}>{event.title}</li>)}</ul></> : <p className="text-sm text-stone-500 leading-7">{preview ? '年度提要尚待整理，可点击查看已录入事件。' : '这一年暂无起始事件记录，可点击查看跨年事件。'}</p>}
       </aside>
       <div className="timeline-window-heading"><button className="timeline-button" aria-label="前一段历史" disabled={from <= first} onClick={() => pan(-span * .8)}>← 前一段</button><span>{formatDisplayYear(calendar(from))} — {formatDisplayYear(calendar(to))}</span><button className="timeline-button" aria-label="后一段历史" disabled={to >= last} onClick={() => pan(span * .8)}>后一段 →</button></div>
       <svg ref={chartRef} data-from={from} data-to={to} viewBox="0 90 1000 270" className="timeline-chart" role="img" aria-label="历史时间图，拖动浏览，移动光标预览，点击固定年份" onPointerDown={e => startDrag(e)} onPointerUp={endDrag} onPointerCancel={e => { suppressClick.current = true; endDrag(e); }} onPointerMove={e => { if (!moveDrag(e) && (e.pointerType === 'mouse' || e.pointerType === 'pen')) { const year = pointYear(e); if (year !== undefined) setHoverYear(year); } }} onPointerLeave={() => { if (!drag.current) setHoverYear(null); }} onClick={e => { if (suppressClick.current) { suppressClick.current = false; return; } const year = pointYear(e); if (year !== undefined) choose(year); }}>

@@ -16,19 +16,20 @@ export function GraphPage() {
  const entry=useResource<Person|Event>(id?`/entry/${id}`:undefined);
  return <div className="space-y-6"><header className="explore-heading"><p className="eyebrow">关系探索</p><h1>沿着人物，走进历史</h1><p>从当前条目出发，双击相邻节点继续探索。</p></header>{entry.loading||entry.error?<LoadState {...entry}/>:<GraphView key={id} initialId={id} initialMode={entry.data?.type==='event'?'events':'people'}/>}</div>;
 }
-export function GraphView({initialId,initialMode='people'}:{initialId?:string;initialMode?:GraphViewMode}) {
- return <GraphExplorer initialId={initialId} initialMode={initialMode}/>;
+export function GraphView({initialId,initialMode='people',initialFrom='',initialTo='',initialGraph}:{initialId?:string;initialMode?:GraphViewMode;initialFrom?:string;initialTo?:string;initialGraph?:GraphResponse}) {
+ return <GraphExplorer initialId={initialId} initialMode={initialMode} initialFrom={initialFrom} initialTo={initialTo} initialGraph={initialGraph}/>;
 }
-function GraphExplorer({initialId,initialMode}:{initialId?:string;initialMode:GraphViewMode}) {
+function GraphExplorer({initialId,initialMode,initialFrom,initialTo,initialGraph}:{initialId?:string;initialMode:GraphViewMode;initialFrom:string;initialTo:string;initialGraph?:GraphResponse}) {
  const [mode,setMode]=useState<GraphViewMode>(initialMode);
+ const [chapterOnly,setChapterOnly]=useState(Boolean(initialGraph));
  const [selection,setSelection]=useState<GraphSelection>(initialId?{kind:'node',id:initialId}:null);
  const [history,setHistory]=useState<string[]>(initialId?[initialId]:[]);
  const [labels,setLabels]=useState<Record<string,string>>({});
  const focus=history.at(-1)||'';
  const [focusRequest,setFocusRequest]=useState(0);
  const [depth,setDepth]=useState(1);
- const [from,setFrom]=useState('');
- const [to,setTo]=useState('');
+ const [from,setFrom]=useState(initialFrom);
+ const [to,setTo]=useState(initialTo);
  const [evidence,setEvidence]=useState(false);
  const [listOpen,setListOpen]=useState(false);
  const [listLimit,setListLimit]=useState(50);
@@ -39,8 +40,13 @@ function GraphExplorer({initialId,initialMode}:{initialId?:string;initialMode:Gr
  const params=new URLSearchParams({mode,depth:String(depth)});
  if(mode==='events'&&rangeFrom!=='')params.set('from',rangeFrom);
  if(mode==='events'&&rangeTo!=='')params.set('to',rangeTo);
- const result=useResource<GraphResponse>(focus&&!invalidSettledRange?`/graph-slice/${focus}?${params}`:undefined);
- const data=result.data??EMPTY_GRAPH;
+ const result=useResource<GraphResponse>(focus&&!invalidSettledRange&&!(initialGraph&&chapterOnly&&focus===initialId&&depth===1)?`/graph-slice/${focus}?${params}`:undefined);
+ const data=useMemo(()=>{
+  if(!initialGraph||!chapterOnly||focus!==initialId||depth!==1)return result.data??EMPTY_GRAPH;
+  const nodes=initialGraph.nodes.filter(n=>mode==='people'?n.type==='person':n.type==='person'||n.start_year!==null&&n.start_year!==undefined&&(rangeFrom===''||n.start_year>=Number(rangeFrom))&&(rangeTo===''||n.start_year<=Number(rangeTo)));
+  const ids=new Set(nodes.map(n=>n.id));
+  return {...initialGraph,nodes,edges:initialGraph.edges.filter(e=>ids.has(e.source)&&ids.has(e.target)&&(mode==='people'?e.subject_table==='person_relationship':e.subject_table==='person_event'))};
+ },[initialGraph,chapterOnly,depth,focus,initialId,result.data,mode,rangeFrom,rangeTo]);
  const detail=useResource<Person|Event>(selection?.kind==='node'?`/entry/${selection.id}`:undefined);
  const base=data;
  const filtered=invalidRange?EMPTY_GRAPH:data;
@@ -48,7 +54,7 @@ function GraphExplorer({initialId,initialMode}:{initialId?:string;initialMode:Gr
  const selectedNode=selection?.kind==='node'?(detail.data??nodeIndex.get(selection.id)):undefined;
  const selectedEdge=selection?.kind==='edge'?data.edges.find(e=>edgeKey(e)===selection.id):undefined;
  const select=useCallback((next:GraphSelection)=>{setSelection(next);setEvidence(false);setFocusRequest(v=>v+1);},[]);
- const dive=useCallback((id:string)=>{setHistory(h=>enterSubgraph(h,id));setDepth(1);select({kind:'node',id});setLabels(l=>({...l,[focus]:nodeIndex.has(focus)?entryTitle(nodeIndex.get(focus)!):l[focus]??'条目',[id]:nodeIndex.has(id)?entryTitle(nodeIndex.get(id)!):l[id]??'条目'}));},[nodeIndex,focus,select]);
+ const dive=useCallback((id:string)=>{setChapterOnly(false);setHistory(h=>enterSubgraph(h,id));setDepth(1);select({kind:'node',id});setLabels(l=>({...l,[focus]:nodeIndex.has(focus)?entryTitle(nodeIndex.get(focus)!):l[focus]??'条目',[id]:nodeIndex.has(id)?entryTitle(nodeIndex.get(id)!):l[id]??'条目'}));},[nodeIndex,focus,select]);
  function navigate(index:number){const next=history.slice(0,index+1);setHistory(next);setDepth(1);select(next.length?{kind:'node',id:next.at(-1)!}:null);}
  function reset(){setFrom('');setTo('');setHistory([]);setDepth(1);select(null);}
  const highlighted=useMemo(()=>selectedNode?neighborhood(filtered,selectedNode.id,1):selectedEdge?new Set([selectedEdge.source,selectedEdge.target]):null,[filtered,selectedNode,selectedEdge]);
@@ -60,6 +66,7 @@ function GraphExplorer({initialId,initialMode}:{initialId?:string;initialMode:Gr
  const button='rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm';
  function switchMode(next:GraphViewMode) {setMode(next);setDepth(1);select(focus?{kind:'node',id:focus}:null);}
  return <section className="graph-workspace space-y-3" aria-label="历史图谱工作区">
+   {initialGraph && <div className="flex justify-between gap-3 text-sm text-stone-500"><span>{chapterOnly&&focus===initialId&&depth===1?'本章精选关系':'已展开更多关系'}</span><button className={button} onClick={()=>{setChapterOnly(true);setHistory(initialId?[initialId]:[]);setDepth(1);setMode(initialMode);setFrom(initialFrom);setTo(initialTo);select(initialId?{kind:'node',id:initialId}:null);}}>回到本章精选</button></div>}
    <div className="graph-toolbar">
      <div className="inline-flex rounded-xl bg-[#e8ede6] p-1" aria-label="图谱视图">
        <button aria-pressed={mode==='people'} className={`graph-mode ${mode==='people'?'is-active':''}`} onClick={()=>switchMode('people')}>人物关系</button>

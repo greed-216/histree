@@ -1,3 +1,4 @@
+import { GuideCards } from './GuidePage';
 import { MAPS_ENABLED } from '../lib/features';
 import { Link } from "react-router-dom";
 import type { TopicSummary, PageResult } from "@histree/shared-types";
@@ -44,11 +45,12 @@ export function ExplorePage() {
           史
         </div>
       </section>
+      <GuideCards />
       <section>
         <div className="flex items-end justify-between mb-6">
           <div>
             <p className="eyebrow">从这里开始</p>
-            <h2 className="text-2xl font-serif mt-2">沿着专题阅读</h2>
+            <h2 className="text-2xl font-serif mt-2">继续查阅专题</h2>
           </div>
           <Link to="/search" className="text-sm text-teal-700">
             全部条目 ↗

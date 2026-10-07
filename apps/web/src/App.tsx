@@ -9,6 +9,7 @@ import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon } from '@
 import { getCurrentUserRole } from './lib/api';
 import { useScrollRestoration } from './hooks/useScrollRestoration';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
+import { GuidePage, HistoryOverviewPage } from './pages/GuidePage';
 import { ExplorePage } from './pages/ExplorePage';
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
@@ -99,6 +100,7 @@ function App() {
                 <MapIcon className="w-4 h-4" />
                 探索
               </Link>
+              <Link to="/learn" className={navLinkClass('/learn')}>导读</Link>
               <Link to="/people" className={navLinkClass('/people')}>
                 <UserIcon className="w-4 h-4" />
                 人物
@@ -158,6 +160,9 @@ function App() {
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
           <Route path="/sources/:id" element={<SourcePage />} />
           <Route path="/evidence/:subject/:id" element={<EvidencePage />} />
+          <Route path="/learn" element={<HistoryOverviewPage />} />
+          <Route path="/learn/later-zhou" element={<GuidePage />} />
+          <Route path="/learn/later-zhou/:chapter" element={<GuidePage key={location.pathname} />} />
           <Route path="/topics/:slug" element={<TopicPage />} />
           <Route path="/people/:id" element={<EntryPage />} />
           <Route path="/events/:id" element={<EntryPage />} />

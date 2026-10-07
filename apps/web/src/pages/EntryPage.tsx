@@ -1,3 +1,4 @@
+import { hasGuideForNode } from '../lib/historyGuides';
 import { relationshipPresentation } from "../lib/graph";
 import { entryTitle, entryPath, safeUrl } from "../lib/reading";
 import { Link, useParams } from "react-router-dom";
@@ -23,6 +24,7 @@ export function EntryPage() {
   if (graph.loading || graph.error) return <LoadState {...graph} />;
   if (!graph.data) return null;
   const { center: node, nodes, edges } = graph.data;
+  const hasZhouGuide = node.type === 'person' && node.id === '697c1a4f-b373-5a78-8b47-330fe349a424';
   const related = edges.filter(
     (e) => e.source === node.id || e.target === node.id,
   );
@@ -33,6 +35,7 @@ export function EntryPage() {
         <Link to={node.type === "person" ? "/people" : "/events"}>
           ← {node.type === "person" ? "历史人物" : "历史事件"}
         </Link>
+        {hasGuideForNode(node.id) && <Link to="/learn/later-zhou">后周导读 →</Link>}
         {topics.data?.items.map((t) => (
             <Link key={t.id} to={`/topics/${t.slug}`}>
               专题：{t.title}
@@ -55,7 +58,7 @@ export function EntryPage() {
               ? [
                   node.faction,
                   node.native_place,
-                  formatDisplayRange(node.birth_year, node.death_year),
+                  hasZhouGuide && node.death_year == null ? '生年待补 · 959年去世' : formatDisplayRange(node.birth_year, node.death_year),
                 ]
                   .filter(Boolean)
                   .join(" · ")
@@ -89,8 +92,13 @@ export function EntryPage() {
       </header>
       <div className="grid lg:grid-cols-[minmax(0,1fr)_280px] gap-12">
         <div className="space-y-10 min-w-0">
+          {hasZhouGuide && <section className="guide-prose guide-conclusion">
+            <p className="eyebrow">生平导读 · 后周世宗</p><h2>从继承者到后周君主</h2>
+            <p>柴荣在954年即位，经历高平之战，随后整顿军队，处理铸钱、寺院和田租等事务。后周在秦凤和淮南方向取得进展，959年北征后，柴荣南返并去世。宗训继位。</p>
+            <Link className="text-teal-800 underline" to="/learn/later-zhou">沿六章阅读相关史事与出处 →</Link>
+          </section>}
           <section id="overview" className="scroll-mt-24">
-            <h2 className="reading-heading">概述</h2>
+            <h2 className="reading-heading">{hasZhouGuide ? "早年身份与史料差异" : "概述"}</h2>
             <p className="reading-prose">
               {node.description || "概述正在整理。"}
             </p>
@@ -127,6 +135,8 @@ export function EntryPage() {
             ) : (
               <p className="text-slate-500 text-sm">相关事件正在整理。</p>
             )}
+            <InfiniteScroll {...graph} count={events.length} label={node.type === "person" ? "人物相关事件" : "关联事件"} />
+            {graph.hasMore && <p className="text-xs text-stone-500 mt-2">继续加载关联记录，时间线也会补充；当前列表还不是完整生平。</p>}
           </section>
           <section id="relationships" className="scroll-mt-24">
             <div className="flex justify-between items-center mb-5">

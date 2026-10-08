@@ -44,6 +44,8 @@
 
 ---
 
+数据库检索仍由 ECS 读取 Supabase 已发布资料。`20261008110000_ask_search_candidates.sql` 将证据匹配改为一次候选检索，避免逐条目重复扫描。`ask_search` 保持 SECURITY INVOKER；唯一的 SECURITY DEFINER 辅助函数 `ask_published_claim_hits` 固定空 search_path，只读且校验关键词数量、长度和条目类型，仅返回已发布人物/事件的已发布证据所对应的 ID，不返回证据内容。它显式验证父条目的发布状态，以便使用已有全文索引而不扩大草稿可见范围。其回归测试对照原查询的排序、分页、文字匹配和年代筛选，并覆盖草稿证据及草稿父条目隔离。
+
 # 旧 Supabase Edge 网关：兼容与历史排查
 
 浏览器调用 Supabase `functions/v1/ai-gateway`，Edge 验证调用身份、检查共享额度并转发到 ECS。NestJS 的问答、游戏和状态接口都要求 `HISTREE_GATEWAY_SECRET` 服务凭据；不依赖隐藏地址或 CORS 鉴权。ECS 合并镜像中的普通阅读通过同源 NestJS API 访问 Supabase 发布视图／RPC；未配置 API 地址的备用前端仍直接使用 Data API / RPC 和 RLS。

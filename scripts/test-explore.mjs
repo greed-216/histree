@@ -247,6 +247,33 @@ assert.equal(
 await db.exec(
   `RESET ROLE; SELECT set_config('request.jwt.claim.sub','',false); SET ROLE anon;`,
 );
+await db.exec(`RESET ROLE;
+ INSERT INTO fact_claim(subject_table,subject_id,field_path,claim_text,source_id,citation,status) VALUES
+ ('person','${draft}','biography','秘密父条目证据',md5('source-fixture')::uuid,'卷一','published'),
+ ('person','${p1000}','biography','秘密草稿证据',md5('source-fixture')::uuid,'卷一','draft');
+ SET ROLE anon;`);
+for (const keyword of ['秘密父条目证据','秘密草稿证据','隐藏关系引用']) {
+ assert.equal((await db.query('SELECT * FROM public.ask_published_claim_hits($1,$2)',[[keyword],'all'])).rows.length,0);
+}
+await assert.rejects(db.query('SELECT * FROM public.ask_published_claim_hits($1,$2)',[[null],'all']));
+assert.ok((await db.query('SELECT * FROM public.ask_published_claim_hits($1,$2)',[['测试依据'],'person'])).rows.length > 0);
+// The optimized search must retain ranking, duplicate terms, literal matching,
+// dates, pagination and draft isolation from the original public RPC.
+await db.exec('RESET ROLE');
+const originalAskSql = (await readFile(new URL('../supabase/migrations/20260930120000_ask_on_demand.sql', import.meta.url), 'utf8'))
+  .replaceAll('public.ask_search(', 'public.ask_search_reference(');
+await db.exec(originalAskSql);
+await db.exec('SET ROLE anon');
+for (const args of [
+  [['别名1499'],'all',null,null,0], [['测试人物','测试人物'],'person',null,null,12],
+  [['%'],'all',null,null,0], [['_'],'all',null,null,0], [['\\'],'all',null,null,0],
+  [['隐藏别名'],'all',null,null,0], [['隐藏关系引用'],'all',null,null,0],
+  [['测试'],'all',900,905,0], [['测试专题'],'topic',null,null,0],
+  [['测试人物','引用'],'all',null,null,0], [['秘密父条目证据'],'all',null,null,0], [['秘密草稿证据'],'all',null,null,0],
+]) {
+  assert.deepEqual(await scalar('SELECT public.ask_search($1,$2,$3,$4,$5)',args),
+    await scalar('SELECT public.ask_search_reference($1,$2,$3,$4,$5)',args));
+}
 // Ask uses RPC reads only; the citation ledger includes just the evidence actually retrieved.
 const { createRemoteLibrary } =
   await import("../apps/api/dsh/remote-library.mjs");

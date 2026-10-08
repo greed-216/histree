@@ -1,50 +1,38 @@
-import { GuideCards } from './GuidePage';
-import { MAPS_ENABLED } from '../lib/features';
+import { TimelineExplorer } from "../components/TimelineExplorer";
+import { GuideCards } from "./GuidePage";
+import { MAPS_ENABLED } from "../lib/features";
 import { Link } from "react-router-dom";
 import type { TopicSummary, PageResult } from "@histree/shared-types";
-import { InfiniteScroll } from '../components/InfiniteScroll';
+import { InfiniteScroll } from "../components/InfiniteScroll";
 import { useInfiniteResource } from "../hooks/useInfiniteResource";
 import { LoadState } from "../components/Reading";
 export function ExplorePage() {
-  const topics = useInfiniteResource<PageResult<TopicSummary>>("/catalog/topic");
+  const topics =
+    useInfiniteResource<PageResult<TopicSummary>>("/catalog/topic");
   return (
-    <div className="space-y-12 pb-12">
-      <section className="reading-hero relative overflow-hidden rounded-3xl px-7 py-12 md:px-14 md:py-20">
-        <div className="relative z-10 max-w-2xl">
-          <p className="eyebrow text-teal-200!">HISTREE / 历史之树</p>
-          <h1 className="mt-6 text-4xl md:text-6xl leading-tight font-serif">
-            从一个问题，
-            <br />
-            走进一段历史。
-          </h1>
-          <p className="mt-6 text-teal-50/80 leading-8 max-w-lg">
-            读人物的选择，看事件的脉络。沿着关系探索，在史料中寻找依据。
-          </p>
-          <form
-            action={`${import.meta.env.BASE_URL}search`}
-            className="mt-8 flex gap-2 max-w-lg"
-          >
-            <label htmlFor="home-search" className="sr-only">
-              搜索历史人物、事件或专题
-            </label>
-            <input
-              id="home-search"
-              name="q"
-              placeholder="搜索人物、事件、专题…"
-              className="min-w-0 flex-1 bg-white text-slate-800 rounded-xl px-4 py-3"
-            />
-            <button className="rounded-xl px-5 py-3 bg-amber-100 text-stone-900 font-medium">
-              搜索
-            </button>
-          </form>
+    <div className="home-explore space-y-8 pb-12">
+      <section className="home-time-heading">
+        <div>
+          <p className="eyebrow">HISTREE / 历史之树</p>
+          <h1>沿时间，走进历史</h1>
+          <p>拖动画卷，发现史事；点击年份，再循着出处深入阅读。</p>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute -right-12 -bottom-24 text-[280px] font-serif text-white/5 select-none"
+        <form
+          action={`${import.meta.env.BASE_URL}search`}
+          className="home-time-search"
         >
-          史
-        </div>
+          <label htmlFor="home-search" className="sr-only">
+            搜索历史人物、事件或专题
+          </label>
+          <input
+            id="home-search"
+            name="q"
+            placeholder="搜索人物、事件、专题…"
+          />
+          <button type="submit">搜索</button>
+        </form>
       </section>
+      <TimelineExplorer compact />
       <GuideCards />
       <section>
         <div className="flex items-end justify-between mb-6">
@@ -81,16 +69,38 @@ export function ExplorePage() {
           ))}
         </div>
         {topics.data?.items.length === 0 && (
-          <p className="text-slate-500">专题资料正在整理，审核完成后将在这里发布。</p>
+          <p className="text-slate-500">
+            专题资料正在整理，审核完成后将在这里发布。
+          </p>
         )}
-        <InfiniteScroll {...topics} count={topics.data?.items.length} label="专题"/>
+        <InfiniteScroll
+          {...topics}
+          count={topics.data?.items.length}
+          label="专题"
+        />
       </section>
-      <section className={`grid sm:grid-cols-2 ${MAPS_ENABLED ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-6 border-t border-stone-200 pt-8`}>
+      <section
+        className={`grid sm:grid-cols-2 ${MAPS_ENABLED ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-6 border-t border-stone-200 pt-8`}
+      >
         {[
           ["01", "读懂人物", "从生平、选择与关系理解人物。", "/people"],
           ["02", "梳理事件", "把事件放回时间与参与者之中。", "/events"],
-          ["03", "关系图谱", "展开人物与事件的关系，点击节点继续探索。", "/graph"],
-          ...(MAPS_ENABLED ? [["04", "历史地图", "对照古地名与时间，查看事件定位进度。", "/map"]] : []),
+          [
+            "03",
+            "关系图谱",
+            "展开人物与事件的关系，点击节点继续探索。",
+            "/graph",
+          ],
+          ...(MAPS_ENABLED
+            ? [
+                [
+                  "04",
+                  "历史地图",
+                  "对照古地名与时间，查看事件定位进度。",
+                  "/map",
+                ],
+              ]
+            : []),
         ].map(([number, title, body, path]) => (
           <Link key={number} to={path} className="p-2">
             <span className="eyebrow">{number}</span>

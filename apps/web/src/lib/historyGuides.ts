@@ -1,5 +1,9 @@
 import data from "../data/history-guides.json";
 const selected: Record<number, string[]> = {
+  907: ["event_liang_founded"],
+  923: ["event_tang_founded"],
+  936: ["event_zztj_280_0936_jin_enthronement_liulin"],
+  947: ["event_zztj_286_0947_liu_zhiyuan_accession"],
   951: ["event_zztj_290_0951_guo_accession_chongyuan"],
   954: [
     "event_zztj_291_0954_chairong_accession",
@@ -23,7 +27,10 @@ const selected: Record<number, string[]> = {
   ],
 };
 const events = new Map(
-  data.zhou.chapters.flatMap((c) => c.events).map((e) => [e.key, e]),
+  [
+    ...data.overview.stages.flatMap((c) => c.events),
+    ...data.zhou.chapters.flatMap((c) => c.events),
+  ].map((e) => [e.key, e]),
 );
 export function guideHighlights(year: number) {
   return (selected[year] ?? []).flatMap((key) => {

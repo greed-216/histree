@@ -10,6 +10,7 @@ import { getCurrentUserRole } from './lib/api';
 import { useScrollRestoration } from './hooks/useScrollRestoration';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
 import { GuidePage, GuideIndexPage, FiveDynastiesOverviewPage, LegacyZhouGuideRedirect } from './pages/GuidePage';
+import { HistoryScrollPage } from './pages/HistoryScrollPage';
 import { ExplorePage } from './pages/ExplorePage';
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
@@ -174,6 +175,7 @@ function App() {
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
           <Route path="/timeline" element={<TimelinePage />} />
+          <Route path="/timeline/scroll" element={<HistoryScrollPage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
           <Route path="/map/annotations" element={MAPS_ENABLED ? <AnnotationEditorPage /> : <Navigate to="/graph" replace />} />
           <Route path="/map/edit" element={MAPS_ENABLED ? <MapEditorPage /> : <Navigate to="/graph" replace />} />

@@ -111,7 +111,6 @@ function App() {
                 事件
               </Link>
               <Link to="/graph" className={navLinkClass('/graph')}>图谱</Link>
-              <Link to="/timeline" className={navLinkClass('/timeline')}>时间图</Link>
               {MAPS_ENABLED && <Link to="/map" className={navLinkClass('/map')}>地图</Link>}
               <Link to="/search" className={navLinkClass('/search')}>搜索</Link>
               <Link to="/ask" className={navLinkClass('/ask')}>问史料</Link>

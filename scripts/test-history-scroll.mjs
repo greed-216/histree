@@ -11,7 +11,7 @@ const {ordinal}=await import(viewportUrl);
 const source=(await readFile(new URL('../apps/web/src/lib/historyScroll.ts',import.meta.url),'utf8'))
  .replace('import scroll from "../data/history-scroll.json";',`const scroll=${JSON.stringify(scroll)};`)
  .replace('"./timelineViewport"',JSON.stringify(viewportUrl));
-const {scrollYearX,scrollPanelGeometry,scrollBackgroundGeometry,scrollSceneLayout,scrollPeriodShare,initialScrollWindow}=await import(moduleUrl(source));
+const {scrollYearX,scrollPanelGeometry,scrollBackgroundGeometry,scrollSceneLayout,scrollPeriodShare,initialScrollWindow,minimumScrollSpan,nextScrollZoomSpan}=await import(moduleUrl(source));
 const first=ordinal(scroll.from_year),last=ordinal(scroll.to_year),art=scroll.panels[0];
 assert.equal(first,-403);assert.equal(last-first,2314);
 assert.equal(ordinal(1)-ordinal(-1),1);
@@ -27,7 +27,7 @@ const pixelForYear=y=>(ordinal(y)-first)/(last-first)*art.width;
 for(const [from,to] of [[first,last],[606,1206],[-50,50],[850,958],[ordinal(907),ordinal(917)]]) {
  const g=scrollPanelGeometry(art,from,to),scene=scrollSceneLayout(from,to);
  assert.deepEqual(scrollBackgroundGeometry(art,from,to),g);
- assert.equal(g.height,scene.height);assert.equal(g.y+g.height,scene.bottom);
+ if(scene.mode === "scroll") {assert.equal(g.height,scene.height);assert.equal(g.y+g.height,scene.bottom);}
  assert.ok(scene.bottom+30<=90+scene.viewBoxHeight,'entire height and ticks fit, without vertical crop');
  assert.ok(Math.abs(g.width/g.height-art.width/art.height)<1e-12);
  for(const year of [-403,-221,-1,1,220,581,907,960,1279,1368,1644,1912]) {
@@ -39,6 +39,24 @@ for(const [from,to] of [[first,last],[606,1206],[-50,50],[850,958],[ordinal(907)
  const dataShift=scrollYearX(907,from+7,to+7)-scrollYearX(907,from,to);
  assert.ok(Math.abs(artShift-dataShift)<1e-8,'drag speed must match exactly');
 }
+// Artwork is fully visible only while its physical height and source pixels are usable.
+for(const width of [320,555,1000,1440]) {
+ const limit=minimumScrollSpan(width);
+ const overview=scrollSceneLayout(906,906+limit,width);
+ assert.equal(overview.mode,'scroll');
+ assert.ok(overview.viewBoxHeight * width / 1000 <= 1200 + .01);
+ const detail=scrollSceneLayout(906,916,width);
+ assert.equal(detail.mode,'detail');
+ assert.equal(detail.viewBoxHeight * width / 1000,width < 640 ? 270 : 310);
+ const riverHalf = 80 * detail.viewBoxHeight / 270;
+ assert.ok(detail.riverY - riverHalf >= 90 && detail.riverY + riverHalf < detail.bottom,'event dots and river stay above the year axis');
+ assert.equal(nextScrollZoomSpan(limit+10,limit,true),limit,'zoom stops at usable artwork limit');
+ assert.ok(nextScrollZoomSpan(limit,limit,true)<limit,'next zoom enters event detail');
+ assert.equal(nextScrollZoomSpan(Math.ceil(limit*.75),limit,false),limit,'zoom out returns to artwork limit');
+ for(const span of [10,20,40,100]) if(span<limit)
+  assert.equal(scrollSceneLayout(906,906+span,width).viewBoxHeight,detail.viewBoxHeight,'detail height stays fixed through zoom');
+}
+for(const span of [176,88]) assert.equal(scrollSceneLayout(900,900+span,555).mode,'scroll','moderate zoom keeps the artwork on the current narrow desktop canvas');
 for(const year of [-403,-1,1,907,959,1912])for(const compact of [false,true]) {
  const w=initialScrollWindow(year,852,959,compact);
  assert.ok(w.from<=ordinal(year)&&w.to>=ordinal(year));assert.ok(w.from>=first&&w.to<=last);

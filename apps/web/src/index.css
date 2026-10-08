@@ -205,7 +205,7 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .timeline-minimap { width: 100%; height: 64px; display: block; cursor: grab; touch-action: pan-y; user-select: none; }
 .timeline-overview-keys { margin-bottom: 22px; }
 @media(max-width:640px) { .timeline-window-heading { font-size: 10px; gap: 4px; } .timeline-window-heading .timeline-button { padding: 6px; } .timeline-overview-labels > span:nth-child(2) { font-size: 9px; text-align: center; max-width: 130px; } .timeline-minimap { height: 56px; } }
-@media(max-width:640px) { .timeline-chart { min-height: 120px; } .timeline-chart text { font-size: 30px; } .timeline-chart g:has(> rect) > rect, .timeline-chart g:has(> rect) > text { display: none; } }
+@media(max-width:640px) { .timeline-chart { min-height: 120px; } .timeline-chart text { font-size: 30px; } .timeline-chart .timeline-selected-mark > rect, .timeline-chart .timeline-selected-mark > text { display: none; } }
 
 /* Historical reading guides: a short narrative before the full archive. */
 .guide-page { max-width: 1120px; margin-inline:auto; }
@@ -304,6 +304,9 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .timeline-art-caption { font-size:11px; color:#8a8e7d; margin:10px 0 4px; }
 .timeline-chart { min-height:0; }
 
-.timeline-canvas-scroll { max-height:560px; overflow-y:auto; overflow-x:hidden; scrollbar-width:thin; border-radius:12px; }
+.timeline-canvas-scroll { overflow:hidden; border-radius:12px; }
 .timeline-canvas-scroll .timeline-chart { width:100%; height:auto; min-height:0; }
-@media(max-width:760px) { .timeline-canvas-scroll { max-height:65vh; } }
+.timeline-view-switch { display:flex; gap:2px; padding:3px; background:#eeeee4; border-radius:6px; margin-left:6px; }
+.timeline-view-switch button { font-size:11px; padding:4px 8px; border-radius:4px; color:#7c8274; }
+.timeline-view-switch button[aria-pressed="true"] { background:#fffdf6; color:#315e52; box-shadow:0 1px 4px #233b2010; }
+.timeline-view-switch button:focus-visible { outline:2px solid #315e52; outline-offset:2px; }

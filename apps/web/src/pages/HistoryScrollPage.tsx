@@ -43,7 +43,7 @@ export function HistoryScrollPage() {
         </div>
       </div>
       <p className="text-sm text-stone-500 leading-7">
-        {historyScroll.artwork_note} 一张连续母图裁出约6:1长卷，网页展示尺寸为
+        {historyScroll.artwork_note} 一张连续母图保留完整画面区域，按原始像素展示为
         {totalWidth}×{historyScroll.logical_canvas.height}。
       </p>
       <div className="grid sm:grid-cols-3 gap-4">

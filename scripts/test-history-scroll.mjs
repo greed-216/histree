@@ -50,3 +50,11 @@ for (const year of [-495, -1, 1, 907, 959, 1912]) {
 }
 assert.deepEqual(initialScrollWindow(959, 852, 959, false), {from:858, to:958});
 console.log('PASS: direct links include selected years outside the recorded corpus, with legacy recorded-year windows preserved.');
+
+const art = scroll.panels[0];
+assert.equal(scroll.logical_canvas.width, art.crop.width, 'gallery must use native width');
+assert.equal(scroll.logical_canvas.height, art.crop.height, 'gallery must use native height');
+const overview = scrollPanelGeometry(art, first, last);
+assert.equal(overview.y, 0);
+assert.ok(overview.height + 4 <= 188, 'overview must fit its entire artwork above the range bar');
+console.log('PASS: complete artwork height fits overview and gallery uses native resolution.');

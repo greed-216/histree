@@ -395,6 +395,24 @@ function TimelineRiver({
           ))}
         </nav>
         <div className="timeline-stage">
+          <p className="timeline-art-caption">完整历史画卷 · 下方金色范围对应当前视窗</p>
+          <svg className="timeline-art-overview" viewBox="0 0 1000 200"
+            role="img" aria-label="完整历史画卷，点击选年，拖动浏览范围"
+            onPointerDown={e => startDrag(e, true)} onPointerMove={moveDrag}
+            onPointerUp={endDrag} onPointerCancel={e => {suppressClick.current=true;endDrag(e);}}
+            onClick={e => {
+              if(suppressClick.current){suppressClick.current=false;return;}
+              const matrix=e.currentTarget.getScreenCTM();if(!matrix)return;
+              const point=new DOMPoint(e.clientX,e.clientY).matrixTransform(matrix.inverse());
+              choose(calendar(Math.round(first+Math.max(0,Math.min(1,(point.x-20)/960))*(last-first))));
+            }}>
+            <g transform="translate(0 4)"><HistoryScrollBackdrop from={first} to={last}/></g>
+            <line x1="20" x2="980" y1="192" y2="192" stroke="#d5d8c8"/>
+            <rect x={overviewX(from)} y="188" width={Math.max(2, overviewX(to)-overviewX(from))}
+              height="8" rx="4" fill="#ab854c"/>
+            <circle cx={overviewX(focus)} cy="192" r="4" fill="#315e52"/>
+          </svg>
+          <p className="timeline-art-caption">史事时间轴 · 可独立放大与拖动</p>
           <div className="timeline-window-heading">
             <button
               className="timeline-button"
@@ -421,7 +439,7 @@ function TimelineRiver({
             ref={chartRef}
             data-from={from}
             data-to={to}
-            viewBox="0 90 1000 270"
+            viewBox="0 246 1000 110"
             className="timeline-chart"
             role="img"
             aria-label="历史时间图，拖动浏览，移动光标预览，点击固定年份"
@@ -452,7 +470,6 @@ function TimelineRiver({
               if (year !== undefined) choose(year);
             }}
           >
-            <HistoryScrollBackdrop from={from} to={to} />
             <defs>
               <linearGradient id="river-colour" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#427d73" stopOpacity=".8" />
@@ -531,7 +548,7 @@ function TimelineRiver({
                   <line
                     x1={x(hoverYear)}
                     x2={x(hoverYear)}
-                    y1="126"
+                    y1="260"
                     y2="304"
                     stroke="#ae8b51"
                     strokeDasharray="3 5"
@@ -552,7 +569,7 @@ function TimelineRiver({
                 <line
                   x1={x(selected)}
                   x2={x(selected)}
-                  y1="126"
+                  y1="260"
                   y2="304"
                   stroke="#315e52"
                   strokeWidth="1.5"
@@ -567,7 +584,7 @@ function TimelineRiver({
                 />
                 <rect
                   x={Math.max(40, Math.min(880, x(selected) - 40))}
-                  y="98"
+                  y="248"
                   width="80"
                   height="24"
                   rx="12"
@@ -575,7 +592,7 @@ function TimelineRiver({
                 />
                 <text
                   x={Math.max(80, Math.min(920, x(selected)))}
-                  y="114"
+                  y="264"
                   textAnchor="middle"
                   fill="#fffdf6"
                   fontSize="12"
@@ -793,7 +810,7 @@ function TimelineRiver({
           </>
         )}
         <p className="timeline-note">
-          拖动画卷或概览只浏览，点击年份才更新事件清单。底部曲线与光点表示该时间段开始的已录入事件数量。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
+          完整画卷保留原图比例；缩放只作用于下方史事时间轴。拖动只浏览，点击年份才更新事件清单。底部曲线与光点表示该时间段开始的已录入事件数量。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
           {bins.length < to - from + 1 &&
             "全景按时间段聚合，放大可查看更多细节。"}
         </p>

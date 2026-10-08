@@ -15,7 +15,7 @@ services:
         max-size: "10m"
         max-file: "3"
     healthcheck:
-      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/v1/ask/status',{headers:{'x-histree-gateway-key':process.env.HISTREE_GATEWAY_SECRET||''}}).then(async r=>{if(!r.ok || !(await r.json()).available)process.exit(1)}).catch(()=>process.exit(1))"]
+      test: ["CMD", "node", "-e", "Promise.all([fetch('http://127.0.0.1:3000/api/v1/ask/status',{headers:{'x-histree-gateway-key':process.env.HISTREE_GATEWAY_SECRET||''}}).then(async r=>{if(!r.ok || !(await r.json()).available)throw Error('API unavailable')}),fetch('http://127.0.0.1:3000/people').then(async r=>{if(!r.ok || !(await r.text()).includes('<div id=\"root\"></div>'))throw Error('Frontend unavailable')})]).catch(()=>process.exit(1))"]
       interval: 15s
       timeout: 5s
       start_period: 30s

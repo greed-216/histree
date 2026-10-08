@@ -1,9 +1,7 @@
 name: Deploy Frontend to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  # Retained as a manually invoked fallback; ECS now builds both applications.
   workflow_dispatch:
 
 permissions:

@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: '/histree/',
+  base: process.env.VITE_BASE_PATH || '/histree/',
 })

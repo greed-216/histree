@@ -1,6 +1,6 @@
-# ECS deployment
+# ECS deployment: frontend + API
 
-Build `apps/api/Dockerfile` for `linux/amd64`, then `docker save | gzip`. The ECS host loads this archive without contacting Docker Hub.
+Build `apps/api/Dockerfile` for `linux/amd64` with public build arguments `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, then `docker save | gzip`. This single image contains the React frontend and NestJS API. NestJS serves the frontend from `/app/apps/web/dist` via `HISTREE_WEB_ROOT`; browser routes use `/` and application requests use `/api/v1`. Database and authentication remain on Supabase. The deployed AI gateway on Supabase retains identity and quota enforcement. The ECS host loads this archive without contacting Docker Hub.
 
 Runtime configuration lives only at `/opt/histree/runtime.env` (directory 0700, file 0600):
 
@@ -13,13 +13,13 @@ Runtime configuration lives only at `/opt/histree/runtime.env` (directory 0700, 
 
 Do not upload the Supabase service-role key. Do not commit runtime configuration or include it in an image/artifact.
 
-Each release directory contains `image.tar.gz`, its `sha256sum` file, `compose.yml`, and `release.sh`. Run `bash release.sh /opt/histree/releases/<release> histree-api:<commit>` on the server. The script validates the archive, runs the actual dsh/MCP smoke test, replaces only the Histree API, waits for health, and restores the previous image on startup failure. It retains old release archives for rollback; monitor disk usage. In-memory conversations reset on deploy.
+Each release directory contains `image.tar.gz`, its `sha256sum` file, `compose.yml`, and `release.sh`. Run `bash release.sh /opt/histree/releases/<release> histree-api:<commit>` on the server. The script validates the archive, runs the actual dsh/MCP smoke test, replaces the Histree application, waits for frontend and API health, and restores the previous image on startup failure. It retains old release archives for rollback; monitor disk usage. In-memory conversations reset on deploy.
 
 Port 3000 is bound to loopback. Public access requires an HTTPS reverse proxy. Set `TRUST_PROXY=1` only behind one trusted proxy which overwrites forwarded headers. GitHub Pages cannot call a plain HTTP API.
 
 ## GitHub Actions
 
-`deploy-api.yml` builds/tests on relevant pushes to main or manual dispatch. Artifacts expire after seven days.
+`deploy-api.yml` builds/tests both applications on relevant pushes to main or manual dispatch. `deploy.yml` keeps GitHub Pages available only by manual dispatch. Artifacts expire after seven days.
 
 Configure repository variables:
 
@@ -32,6 +32,26 @@ Configure the `ecs-production` environment secret `WORKBENCH_CONFIG` with a dedi
 The workflow creates a fresh directory on each run. ECS downloads the tested GitHub artifact through a short-lived signed URL; the GitHub token stays on the runner. Before extraction it verifies the artifact digest and exact file list, then checks the image and deploys the exact commit tag. This avoids slow or timed-out runner-to-OSS uploads. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
 
 Browsers call Supabase `ai-gateway`; the ECS URL and shared secret exist only in server configuration. Follow [AI gateway deployment](../../docs/AI_GATEWAY.md) for migration, function secrets, cutover and verification.
+
+## histree.wiki
+
+1. The existing Beijing ECS public address is `123.56.189.146` (verify before reuse). Complete ICP filing/access requirements before serving the domain from mainland China.
+2. At the DNS provider, point the root `@` A record to the target ECS public IP. Remove conflicting parking/AAAA records if they point elsewhere. Allow public TCP 80/443; keep port 3000 on loopback.
+3. Build with the same public Supabase URL/anonymous key used by the frontend. Never pass service-role, gateway or model credentials as build arguments.
+4. Deploy the combined application with `release.sh`. Verify the frontend and API on loopback before adding the domain.
+5. Run `bash deploy/ecs/domain-setup.sh histree.wiki` on ECS. It adds a separate domain nginx vhost, requests a Let's Encrypt certificate, preserves the existing IP gateway and checks the existing renewal timer. It restores the previous domain vhost if setup fails.
+6. Add `https://histree.wiki` to the Supabase `ai-gateway` secret `HISTREE_ALLOWED_ORIGINS`, retaining existing allowed origins. Add the new origin to Supabase Auth Site URL/redirect configuration if using email/OAuth links. Do not disable gateway identity or quotas.
+7. Verify root/deep links, static assets, public records, AI status and login at `https://histree.wiki`. Missing `/api/v1` routes and missing assets must return 404, rather than the frontend shell.
+
+Example build (variables contain only public browser configuration):
+
+```sh
+docker build --platform linux/amd64 -f apps/api/Dockerfile \
+  --build-arg VITE_SUPABASE_URL --build-arg VITE_SUPABASE_ANON_KEY \
+  -t histree-api:<release> .
+```
+
+The frontend is immutable per release: changing public build configuration requires a rebuild. Server-only configuration stays in `/opt/histree/runtime.env`. Local Vite and manual Pages builds retain the `/histree/` base unless `VITE_BASE_PATH=/` is specified.
 
 ## HTTPS without a domain
 

@@ -2,7 +2,7 @@
 
 从专题阅读历史，通过人物、事件和关系图谱梳理脉络，沿着引用回到具体史料。
 
-**[访问网站](https://greed-216.github.io/histree/)** · **[网站索引](docs/SITE_INDEX.md)** · [GitHub 仓库](https://github.com/greed-216/histree)
+**[备用阅读站（GitHub Pages）](https://greed-216.github.io/histree/)** · **[正式域名（备案办理中）](https://histree.wiki/)** · **[网站索引](docs/SITE_INDEX.md)** · [GitHub 仓库](https://github.com/greed-216/histree)
 
 ## 从这里开始
 
@@ -80,7 +80,9 @@ pnpm --filter web lint
 pnpm --filter web build
 ```
 
-前端构建输出位于 `apps/web/dist`。推送 `main` 后，GitHub Actions 按 [部署工作流](.github/workflows/deploy.yml) 发布 GitHub Pages；AI 后端另行部署到 ECS，由 [Supabase Edge 网关](docs/AI_GATEWAY.md)统一提供入口。具体变量和验收步骤见 [部署说明](docs/DEPLOYMENT.md)。
+前端构建输出位于 `apps/web/dist`，与 NestJS API 一起打入 `apps/api/Dockerfile` 构建的镜像，由 [ECS 工作流](.github/workflows/deploy-api.yml) 在相关改动推送 `main` 后测试、构建并部署。ECS nginx 负责 HTTPS，应用容器提供根路径页面和 `/api/v1` 接口；数据库、登录及 AI 身份／额度网关继续使用 Supabase。GitHub Pages 工作流保留为手动备用发布。构建、运行环境和回滚见 [ECS 操作说明](deploy/ecs/README.md)，架构及上线验收见 [部署说明](docs/DEPLOYMENT.md)。
+
+截至 2026-10-08，合并应用已部署，histree.wiki 的阿里云证书已安装；ICP备案仍在办理，域名配置为 HTTP 503 待上线页面。服务器端 TLS 验证通过，当前网络的公网 TLS 握手仍失败，公网可用性尚未确认。应用部署、证书安装与网站正式上线分别验收。
 
 ## 文档导航
 
@@ -88,7 +90,7 @@ pnpm --filter web build
 - [内容方向](docs/CONTENT_FOCUS.md)：当前五代十国建设范围。
 - [产品路线图](docs/PRODUCT_ROADMAP.md)：长期规划；当前进展以文首更新及代码为准。
 - [内容模型](docs/CONTENT_MODEL.md) / [数据整理规范](docs/DATA_PREPARATION.md)：条目、关系、来源与引用的组织方式。
-- [部署说明](docs/DEPLOYMENT.md)：运行配置、内容导入和发布验收。
+- [部署说明](docs/DEPLOYMENT.md) / [ECS 操作说明](deploy/ecs/README.md)：架构、镜像发布、证书安装、回滚和上线验收。
 - [907 年核读记录](content/year-0907/README.md) / [后梁专题](content/later-liang-907-923/README.md)：内容批次与依据。
 - [资源说明](resources/README.md)：史料文件与资源组织。
 

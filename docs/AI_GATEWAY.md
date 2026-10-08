@@ -1,6 +1,6 @@
 # AI 业务入口
 
-浏览器调用 Supabase `functions/v1/ai-gateway`，Edge 验证调用身份、检查共享额度并转发到 ECS。NestJS 的问答、游戏和状态接口都要求 `HISTREE_GATEWAY_SECRET` 服务凭据；不依赖隐藏地址或 CORS 鉴权。原有公开阅读仍通过 Data API / RPC 和 RLS。
+浏览器调用 Supabase `functions/v1/ai-gateway`，Edge 验证调用身份、检查共享额度并转发到 ECS。NestJS 的问答、游戏和状态接口都要求 `HISTREE_GATEWAY_SECRET` 服务凭据；不依赖隐藏地址或 CORS 鉴权。ECS 合并镜像中的普通阅读通过同源 NestJS API 访问 Supabase 发布视图／RPC；未配置 API 地址的备用前端仍直接使用 Data API / RPC 和 RLS。
 
 ## 身份与额度
 
@@ -23,7 +23,7 @@ Edge secrets：
 
 Edge 使用平台内置 `SUPABASE_URL`、`SUPABASE_ANON_KEY`、`SUPABASE_SERVICE_ROLE_KEY`。service role 只用于额度 RPC，绝不转发到 ECS；ECS 的检索保持匿名发布视图。
 
-浏览器只配置 `VITE_SUPABASE_URL` 和 `VITE_SUPABASE_ANON_KEY`。问答和游戏不再使用 VITE_ASK_API_URL 或 VITE_API_URL；普通管理接口的 VITE_API_URL 配置独立。
+浏览器只配置 `VITE_SUPABASE_URL` 和 `VITE_SUPABASE_ANON_KEY`。问答和游戏不再使用 VITE_ASK_API_URL 或 VITE_API_URL；普通阅读与管理接口的 VITE_API_URL 配置独立，ECS 合并镜像设置为 `/api/v1`。域名上线时，在 `HISTREE_ALLOWED_ORIGINS` 中添加 `https://histree.wiki`，保留已有允许来源；本地预览的 Origin 未获允许时，AI 入口会被拒绝。
 
 Edge 必须 `verify_jwt=false`：匿名是当前产品行为，函数内部仍验证所有提供的用户令牌。白名单仅包含 session、ask、ask/status、ask/guess/status、ask/guess/start、ask/guess/act；不允许任意代理 URL、查询参数或管理路由。
 
@@ -37,7 +37,7 @@ ECS 只接受 Edge 服务凭据及由 Edge 构造的 actor；客户端自定义�
 4. 更新前端到 Edge 入口；前后端切换期间暂停 AI 使用。部署带 GatewayGuard 的 API 后，旧页面直连会被拒绝，需要刷新。
 5. 验证 Edge 两个 status 返回 available、非法路径返回 404、错误 Origin 返回 403、无凭据 ECS status 返回 401。用模拟模型核验流式转发、取消和跨身份会话隔离；真实模型请求另行计入使用成本。
 
-不要通过完整 `supabase db push` 部署这个单独变更，以免误应用其他迁移。生产发布需协调数据库、Edge、API 和 Pages 四个部署面。
+不要通过完整 `supabase db push` 部署这个单独变更，以免误应用其他迁移。生产发布需协调数据库、Edge、ECS 合并应用和 nginx／证书；Pages 仅作为手动备用发布。普通前端迁移到 ECS 不改变 AI 网关的身份、额度或服务凭据边界。
 
 ## 本地与测试
 

@@ -11,10 +11,35 @@ export function scrollPanelGeometry(panel:(typeof scroll.panels)[number],from:nu
   const height=width*panel.crop.height/panel.crop.width;
   return {x,width,height,y:96};
 }
-export function scrollSceneLayout(from:number,to:number) {
-  const height=scrollPanelGeometry(scroll.panels[0],from,to).height;
-  const bottom=96+height;
-  return {height,bottom,riverY:Math.max(136,bottom-20),viewBoxHeight:Math.max(128,height+70)};
+/** Minimum year span at which the full artwork fits the available canvas. */
+export function minimumScrollSpan(viewportWidth = 1000) {
+  const width = Math.max(240, viewportWidth);
+  const maxCanvasHeight = 1200;
+  const availableHeight = Math.max(1, maxCanvasHeight * 1000 / width - 70);
+  const panel = scroll.panels[0];
+  const annualHeight = 920 * (ordinal(panel.to_year) - ordinal(panel.from_year))
+    * panel.crop.height / panel.crop.width;
+  const nativePixels = width * .92 / (scroll.pixels_per_elapsed_year * 2);
+  return Math.max(10, Math.ceil(annualHeight / availableHeight), Math.ceil(nativePixels));
+}
+/** Stop once at the artwork limit before entering the closer event view. */
+export function nextScrollZoomSpan(span: number, limit: number, zoomIn: boolean) {
+  const next = Math.max(10, span * (zoomIn ? .5 : 2));
+  if ((zoomIn && span > limit && next < limit) || (!zoomIn && span < limit && next >= limit)) return limit;
+  return next;
+}
+export function scrollSceneLayout(from: number, to: number, viewportWidth = 1000) {
+  const width = Math.max(240, viewportWidth);
+  const minimumSpan = minimumScrollSpan(width);
+  const mode = to - from >= minimumSpan ? "scroll" : "detail";
+  const naturalHeight = scrollPanelGeometry(scroll.panels[0], from, to).height;
+  const viewBoxHeight = mode === "scroll" ? Math.max(128, naturalHeight + 70)
+    : (width < 640 ? 270 : 310) * 1000 / width;
+  const height = mode === "scroll" ? naturalHeight : viewBoxHeight - 70;
+  const bottom = mode === "scroll" ? 96 + height : 90 + viewBoxHeight * (214 / 270);
+  return { mode, minimumSpan, height, bottom,
+    riverY: mode === "scroll" ? Math.max(136, bottom - 20) : 90 + viewBoxHeight * (118 / 270),
+    viewBoxHeight };
 }
 export function scrollPeriodShare(from: number, to: number) {
   return (

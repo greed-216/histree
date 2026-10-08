@@ -1,5 +1,5 @@
 import { HistoryScrollBackdrop } from "../components/HistoryScrollBackdrop";
-import { historyScroll, initialScrollWindow, scrollSceneLayout, scrollYearX } from "../lib/historyScroll";
+import { historyScroll, initialScrollWindow, nextScrollZoomSpan, scrollSceneLayout, scrollYearX } from "../lib/historyScroll";
 import { guideHighlights } from "../lib/historyGuides";
 import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -73,7 +73,16 @@ function TimelineRiver({
   const from = window.from,
     to = window.to;
   const span = Math.max(1, to - from);
-  const scene=scrollSceneLayout(from,to);
+  const [chartWidth, setChartWidth] = useState(1000);
+  const canvasRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const observer = new ResizeObserver(([entry]) => setChartWidth(entry.contentRect.width));
+    observer.observe(canvas);
+    return () => observer.disconnect();
+  }, []);
+  const scene=scrollSceneLayout(from,to,chartWidth);
   const riverY=scene.riverY;
   const focus = ordinal(selected);
   const [hoverYear, setHoverYear] = useState<number | null>(null);
@@ -226,8 +235,11 @@ function TimelineRiver({
     return values;
   }, [data.years, from, to]);
   const peak = Math.max(1, ...bins.map((b) => b.count));
-  const half = (count: number) =>
-    count ? 2 + 16 * Math.sqrt(count / peak) : 0;
+  const pointScale = scene.mode === "detail" ? scene.viewBoxHeight / 270 : 1;
+  const half = (count: number) => count
+    ? scene.mode === "detail" ? (8 + 72 * Math.sqrt(count / peak)) * pointScale
+      : 2 + 16 * Math.sqrt(count / peak)
+    : 0;
   const bx = (at: number) =>
     to === from ? 500 : 40 + ((at - from) / span) * 920;
   const riverPath =
@@ -241,13 +253,16 @@ function TimelineRiver({
       .x((b) => bx(b.at))
       .y((b) => riverY - half(b.count))
       .curve(curveMonotoneX)(bins) ?? "";
-  const ticks = [
+  const overviewTicks = [
     ...new Set(
       Array.from({ length: 7 }, (_, i) =>
         calendar(Math.round(from + (span * i) / 6)),
       ),
     ),
   ].filter((y) => ordinal(y) <= to);
+  const ticks = scene.mode === "detail" && span <= 20
+    ? Array.from({length: to - from + 1}, (_, i) => calendar(from + i)) : overviewTicks;
+  const binYears = Math.max(1, Math.ceil((to - from + 1) / 100));
   function choose(year: number, replace = false) {
     year = calendar(Math.max(first, Math.min(last, ordinal(year))));
     setHoverYear(null);
@@ -346,18 +361,24 @@ function TimelineRiver({
             <button
               className="timeline-button"
               disabled={span >= last - first}
-              onClick={() => resize(span * 2)}
+              onClick={() => resize(nextScrollZoomSpan(span, scene.minimumSpan, false))}
             >
               缩小
             </button>
             <button
               className="timeline-button"
               disabled={span <= Math.min(10, last - first)}
-              onClick={() => resize(Math.max(10, span / 2))}
+              onClick={() => resize(nextScrollZoomSpan(span, scene.minimumSpan, true))}
             >
               放大
             </button>
             <span>{to - from + 1} 年视窗</span>
+            <div className="timeline-view-switch" role="group" aria-label="时间图浏览方式">
+              <button type="button" aria-pressed={scene.mode === "scroll"}
+                onClick={() => { if (scene.mode !== "scroll") resize(scene.minimumSpan); }}>画卷浏览</button>
+              <button type="button" aria-pressed={scene.mode === "detail"}
+                onClick={() => { if (scene.mode !== "detail") resize(Math.min(span, 100, scene.minimumSpan - 1)); }}>史事细览</button>
+            </div>
           </div>
           {compact ? (
             <details className="timeline-jump">
@@ -418,14 +439,15 @@ function TimelineRiver({
               后一段 →
             </button>
           </div>
-          <div className="timeline-canvas-scroll" aria-label="时间画卷，深度放大时可上下浏览">
+          <div ref={canvasRef} className="timeline-canvas-scroll" data-view={scene.mode}
+            aria-label={scene.mode === "scroll" ? "历史画卷" : "史事数量分布"}>
           <svg
             ref={chartRef}
             data-from={from}
             data-to={to}
             viewBox={`0 90 1000 ${scene.viewBoxHeight}`}
             style={{aspectRatio:`1000 / ${scene.viewBoxHeight}`}}
-            className="timeline-chart"
+            className={`timeline-chart ${scene.mode === "detail" ? "timeline-detail-chart" : ""}`}
             role="img"
             aria-label="历史时间图，拖动浏览，移动光标预览，点击固定年份"
             onPointerDown={(e) => startDrag(e)}
@@ -455,7 +477,7 @@ function TimelineRiver({
               if (year !== undefined) choose(year);
             }}
           >
-            <HistoryScrollBackdrop from={from} to={to}/>
+            {scene.mode === "scroll" && <HistoryScrollBackdrop from={from} to={to}/>}
             <defs>
               <linearGradient id="river-colour" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#427d73" stopOpacity=".8" />
@@ -463,6 +485,7 @@ function TimelineRiver({
                 <stop offset="100%" stopColor="#214e47" stopOpacity=".85" />
               </linearGradient>
             </defs>
+            <g className="timeline-event-dots" aria-hidden="true" pointerEvents="none">
             <line
               x1="40"
               x2="960"
@@ -471,7 +494,7 @@ function TimelineRiver({
               stroke="#c6d2c9"
               strokeWidth=".6"
             />
-            <path d={riverPath} fill="url(#river-colour)" fillOpacity=".66" />
+            <path d={riverPath} fill="url(#river-colour)" fillOpacity={scene.mode === "detail" ? 1 : .66} />
             <path
               d={
                 area<(typeof bins)[number]>()
@@ -518,15 +541,17 @@ function TimelineRiver({
                   return (
                     <circle
                       key={`${b.at}-${i}`}
+                      data-event-dot="true" data-year={calendar(b.at)}
                       cx={bx(b.at) + (seed(1) - 0.5) * Math.min(12, 920 / span)}
                       cy={riverY + (seed(2) * 2 - 1) * half(b.count) * 0.83}
-                      r={0.7 + seed(3) * 1.35}
+                      r={(0.7 + seed(3) * 1.35) * pointScale}
                       fill={i % 3 ? "#ead4a1" : "#ffedc3"}
                       fillOpacity={0.45 + seed(4) * 0.5}
                     />
                   );
                 }),
               )}
+            </g>
             {hoverYear !== null &&
               ordinal(hoverYear) >= from &&
               ordinal(hoverYear) <= to && (
@@ -551,7 +576,7 @@ function TimelineRiver({
                 </g>
               )}
             {ordinal(selected) >= from && ordinal(selected) <= to && (
-              <g>
+              <g className="timeline-selected-mark">
                 <line
                   x1={x(selected)}
                   x2={x(selected)}
@@ -618,7 +643,12 @@ function TimelineRiver({
             ))}
           </svg>
           </div>
-          {scene.height>400 && <p className="timeline-art-caption">已放大画卷，可在画布内上下浏览完整高度。</p>}
+          <p className="timeline-art-caption">
+            {scene.mode === "detail"
+              ? `${binYears === 1 ? "按年展示" : `按${binYears}年汇总`}起始事件记录。河流厚度与光点表示记录分布；点击年份查看史事。`
+              : span <= scene.minimumSpan ? "已到画卷适合观看的最大倍率；继续放大进入史事细览。"
+              : "画卷随时间轴同步移动；放大可进入史事细览。"}
+          </p>
         </div>
         <aside className="timeline-preview" aria-label="年度史事选读">
           <div className="timeline-preview-year">
@@ -798,7 +828,7 @@ function TimelineRiver({
           </>
         )}
         <p className="timeline-note">
-          画卷与年份刻度使用相同坐标，拖动与缩放同步。深度放大时可上下浏览；底图细节受原始分辨率限制。拖动只浏览，点击年份才更新事件清单。底部曲线与光点表示该时间段开始的已录入事件数量。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
+          画卷与年份刻度使用相同坐标，拖动与缩放同步。细览显示起始事件记录数量。拖动只浏览，点击年份才更新事件清单。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
           {bins.length < to - from + 1 &&
             "全景按时间段聚合，放大可查看更多细节。"}
         </p>

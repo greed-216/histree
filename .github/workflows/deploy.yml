@@ -46,6 +46,7 @@ jobs:
       - name: Build frontend
         run: pnpm --filter web build
         env:
+          VITE_ASK_API_URL: ${{ vars.VITE_ASK_API_URL }}
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

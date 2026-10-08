@@ -1,10 +1,8 @@
-import { supabase, supabaseAnonKey, supabaseUrl } from "../supabaseClient";
+import { supabase } from "../supabaseClient";
 
-// Browsers know only the Supabase business entry point, never the compute host.
-const base = supabaseUrl
-  ? `${supabaseUrl.replace(/\/$/, "")}/functions/v1/ai-gateway`
-  : "";
-export const aiGatewayConfigured = Boolean(base && supabaseAnonKey);
+// AI requests go directly to NestJS on ECS; Supabase remains database/auth only.
+const base = (import.meta.env.VITE_ASK_API_URL || import.meta.env.VITE_API_URL || "/api/v1").replace(/\/$/, "");
+export const aiGatewayConfigured = Boolean(base);
 const storageKey = "histree-anonymous-session-v1";
 let anonymous: { token: string; expires: number } | undefined;
 let pending: Promise<string> | undefined;
@@ -26,9 +24,8 @@ async function anonymousToken() {
     return anonymous.token;
   if (!pending) {
     pending = (async () => {
-      const response = await fetch(`${base}/session`, {
+      const response = await fetch(`${base}/ask/session`, {
         method: "POST",
-        headers: { apikey: supabaseAnonKey! },
         signal: AbortSignal.timeout(15000),
       });
       const data = await response.json();
@@ -51,7 +48,7 @@ async function anonymousToken() {
 }
 export async function aiGatewayFetch(path: string, options: RequestInit = {}) {
   if (!aiGatewayConfigured) throw new Error("AI 服务尚未配置");
-  const headers = new Headers({ apikey: supabaseAnonKey! });
+  const headers = new Headers();
   if (options.body !== undefined)
     headers.set("Content-Type", "application/json");
   if ((options.method || "GET").toUpperCase() === "POST") {

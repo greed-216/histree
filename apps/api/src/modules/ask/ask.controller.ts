@@ -3,14 +3,20 @@ import type { GatewayRequest } from '../../common/guards/gateway.guard';
 import { UseGuards } from '@nestjs/common';
 import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import type { Response } from 'express';
+import { AiAccessService } from './ai-access.service';
 import { AskService } from './ask.service';
 
 @UseGuards(GatewayGuard)
 @Controller('api/v1/ask')
 export class AskController {
-  constructor(private readonly service: AskService) {}
+  constructor(private readonly service: AskService, private readonly access: AiAccessService) {}
   @Get('status') status() {
-    return this.service.status();
+    const status = this.service.status();
+    return { ...status, available: status.available && this.access.ready() };
+  }
+  @Post('session') async session(@Res({ passthrough: true }) res: Response) {
+    res.set('Cache-Control', 'no-store');
+    return this.access.issueSession();
   }
   @Post() async ask(
     @Body() body: unknown,

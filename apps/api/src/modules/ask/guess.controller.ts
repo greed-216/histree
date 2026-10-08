@@ -3,13 +3,15 @@ import type { GatewayRequest } from '../../common/guards/gateway.guard';
 import { UseGuards } from '@nestjs/common';
 import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import type { Response } from 'express';
+import { AiAccessService } from './ai-access.service';
 import { GuessService } from './guess.service';
 @UseGuards(GatewayGuard)
 @Controller('api/v1/ask/guess')
 export class GuessController {
-  constructor(private readonly service: GuessService) {}
+  constructor(private readonly service: GuessService, private readonly access: AiAccessService) {}
   @Get('status') status() {
-    return this.service.status();
+    const status = this.service.status();
+    return { ...status, available: status.available && this.access.ready() };
   }
   private async request(
     req: GatewayRequest,

@@ -109,4 +109,4 @@ WantedBy=timers.target
 UNIT
 systemctl daemon-reload
 systemctl enable --now histree-certbot.timer
-docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/status',{headers:{'x-histree-gateway-key':process.env.HISTREE_GATEWAY_SECRET||''}}).then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/status').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"

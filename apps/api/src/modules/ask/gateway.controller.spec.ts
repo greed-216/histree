@@ -6,6 +6,8 @@ import { AskController } from './ask.controller';
 import { GuessController } from './guess.controller';
 import { AskService } from './ask.service';
 import { GuessService } from './guess.service';
+import { AiAccessService } from './ai-access.service';
+import { UnauthorizedException } from '@nestjs/common';
 import { GatewayGuard } from '../../common/guards/gateway.guard';
 describe('ECS HTTP gateway boundary', () => {
   let app: INestApplication;
@@ -28,6 +30,11 @@ describe('ECS HTTP gateway boundary', () => {
       controllers: [AskController, GuessController],
       providers: [
         GatewayGuard,
+        { provide: AiAccessService, useValue: {
+          ready: () => true, checkOrigin: () => {}, allowsAnonymous: () => true,
+          anonymousActor: () => { throw new UnauthorizedException('需要签名会话'); },
+          consumeQuota: jest.fn(),
+        } },
         {
           provide: ConfigService,
           useValue: new ConfigService({ HISTREE_GATEWAY_SECRET: secret }),
@@ -42,9 +49,9 @@ describe('ECS HTTP gateway boundary', () => {
   afterAll(async () => {
     await app.close();
   });
-  it('blocks public access to both status and paid operations', async () => {
+  it('exposes model-free status but blocks spoofed paid operations', async () => {
     for (const path of ['/api/v1/ask/status', '/api/v1/ask/guess/status'])
-      await request(app.getHttpServer()).get(path).expect(401);
+      await request(app.getHttpServer()).get(path).expect(200);
     for (const path of [
       '/api/v1/ask',
       '/api/v1/ask/guess/start',

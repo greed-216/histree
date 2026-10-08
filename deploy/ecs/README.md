@@ -1,6 +1,6 @@
 # ECS deployment: frontend + API
 
-Build `apps/api/Dockerfile` for `linux/amd64` with public build arguments `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, then `docker save | gzip`. This single image contains the React frontend and NestJS API. NestJS serves the frontend from `/app/apps/web/dist` via `HISTREE_WEB_ROOT`; browser routes use `/` and application requests use `/api/v1`. Database and authentication remain on Supabase. The deployed AI gateway on Supabase retains identity and quota enforcement. The ECS host loads this archive without contacting Docker Hub.
+Build `apps/api/Dockerfile` for `linux/amd64` with public build arguments `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, then `docker save | gzip`. This single image contains the React frontend and NestJS API. NestJS serves the frontend from `/app/apps/web/dist` via `HISTREE_WEB_ROOT`; browser routes use `/` and application requests use `/api/v1`. Database and authentication remain on Supabase. AI requests go directly to ECS; NestJS enforces identity and quotas, using Supabase only for auth verification and the existing database quota RPC. The ECS host loads this archive without contacting Docker Hub.
 
 Runtime configuration lives only at `/opt/histree/runtime.env` (directory 0700, file 0600):
 
@@ -8,10 +8,13 @@ Runtime configuration lives only at `/opt/histree/runtime.env` (directory 0700, 
 - DEEPSEEK_API_KEY
 - HISTREE_ASK_ENABLED=true
 - HISTREE_MODEL=deepseek-flash
-- HISTREE_GATEWAY_SECRET: shared only with the Supabase ai-gateway function
+- HISTREE_GATEWAY_SECRET: anonymous signing secret and legacy Edge compatibility
+- HISTREE_QUOTA_KEY: server-only Supabase service-role key for the dedicated quota RPC client
+- HISTREE_AI_ALLOWED_ORIGINS: approved browser origins; defaults include the IP, domain and Pages
+- HISTREE_ALLOW_ANONYMOUS: true by default
 - NODE_ENV=production / PORT=3000
 
-Do not upload the Supabase service-role key. Do not commit runtime configuration or include it in an image/artifact.
+Configure the quota key only in the private server environment; never pass it as a build argument, give it to dsh, or include it in Git, images or release artifacts. The retrieval client remains anonymous. Do not set the generic SUPABASE_SERVICE_ROLE_KEY as part of this cutover; the quota credential is dedicated to admission.
 
 Each release directory contains `image.tar.gz`, its `sha256sum` file, `compose.yml`, and `release.sh`. Run `bash release.sh /opt/histree/releases/<release> histree-api:<commit>` on the server. The script validates the archive, runs the actual dsh/MCP smoke test, replaces the Histree application, waits for frontend and API health, and restores the previous image on startup failure. It retains old release archives for rollback; monitor disk usage. In-memory conversations reset on deploy.
 
@@ -31,7 +34,7 @@ Configure the `ecs-production` environment secret `WORKBENCH_CONFIG` with a dedi
 
 The workflow creates a fresh directory on each run. ECS downloads the tested GitHub artifact through a short-lived signed URL; the GitHub token stays on the runner. Before extraction it verifies the artifact digest and exact file list, then checks the image and deploys the exact commit tag. This avoids slow or timed-out runner-to-OSS uploads. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
 
-Browsers call Supabase `ai-gateway`; the ECS URL and shared secret exist only in server configuration. Follow [AI gateway deployment](../../docs/AI_GATEWAY.md) for migration, function secrets, cutover and verification.
+Browsers call the ECS `/api/v1` entry directly; signing and quota credentials stay server-side. Follow [direct AI ingress](../../docs/AI_GATEWAY.md) for identity checks, quota configuration, legacy compatibility and verification.
 
 ## histree.wiki
 
@@ -40,7 +43,7 @@ Browsers call Supabase `ai-gateway`; the ECS URL and shared secret exist only in
 3. Build with the same public Supabase URL/anonymous key used by the frontend. Never pass service-role, gateway or model credentials as build arguments.
 4. Deploy the combined application with `release.sh`. Verify the frontend and API on loopback before adding the domain.
 5. Use the issued Alibaba Cloud Nginx certificate with `install-domain-certificate.sh` as documented below. Use default `pending` mode during ICP filing, and `serve` only after filing/access readiness and publication authorization. The existing IP gateway is preserved. `domain-setup.sh` is a separate Let's Encrypt alternative for domains without an imported certificate; do not run it over the installed Alibaba Cloud certificate.
-6. Add `https://histree.wiki` to the Supabase `ai-gateway` secret `HISTREE_ALLOWED_ORIGINS`, retaining existing allowed origins. Add the new origin to Supabase Auth Site URL/redirect configuration if using email/OAuth links. Do not disable gateway identity or quotas.
+6. Ensure ECS `HISTREE_AI_ALLOWED_ORIGINS` includes `https://histree.wiki`, retaining existing allowed origins. Add the new origin to Supabase Auth Site URL/redirect configuration if using email/OAuth links. Do not disable gateway identity or quotas.
 7. Verify root/deep links, static assets, public records, AI status and login at `https://histree.wiki`. Missing `/api/v1` routes and missing assets must return 404, rather than the frontend shell.
 
 Example build (variables contain only public browser configuration):
@@ -63,7 +66,7 @@ bash deploy/ecs/install-domain-certificate.sh histree.wiki /private/path/fullcha
 
 The script verifies hostname, expiry, trust chain and key match, installs a private versioned directory under `/opt/histree/tls/histree.wiki/`, and configures `/etc/nginx/conf.d/histree-domain.conf`. It validates nginx and waits for new workers before checking TLS without disabling certificate verification. Failure restores the previous domain vhost. The existing IP gateway and its certificate remain intact. The IP vhost must use `listen 443 ssl default_server;`: literal-IP TLS clients may omit SNI, and otherwise the earlier domain vhost can serve the wrong certificate. The installer checks this prerequisite before making changes. The IP homepage now serves the combined application; the separate pending domain homepage remains 503 until domain publication is enabled.
 
-Default `pending` mode returns HTTP 503 with the ICP filing pending message. After filing/access readiness and publication authorization, pass `serve` as the fourth argument using the installed full chain and key paths. Configure the Supabase gateway Origin and applicable Auth callbacks before public acceptance testing. Temporary upload copies can be removed after installation; preserve the active version for rollback.
+Default `pending` mode returns HTTP 503 with the ICP filing pending message. After filing/access readiness and publication authorization, pass `serve` as the fourth argument using the installed full chain and key paths. Configure the ECS AI Origin and applicable Auth callbacks before public acceptance testing. Temporary upload copies can be removed after installation; preserve the active version for rollback.
 
 As of 2026-10-08, the Alibaba Cloud certificate is installed and valid until **2027-01-06 07:59:59 Asia/Shanghai**. Server-side verification by normal domain resolution succeeded; public TLS handshakes from the current network failed, so public reachability is unverified. Root-domain nginx is in `pending` mode; the certificate also covers www, whose DNS/vhost setup is not part of this cutover.
 
@@ -79,7 +82,7 @@ bash deploy/ecs/open-ip-frontend.sh 123.56.189.146
 
 The script checks the application build, saves the previous IP nginx configuration in `/opt/histree/nginx-backups/`, replaces only the old homepage 404 rule with an application proxy, retains existing AI routes and access logs, and validates TLS/deep links with bounded reload waits. It restores the backup on failure. Admin routes and AI GatewayGuard remain enforced. The independent domain vhost stays in pending mode.
 
-Set Supabase `HISTREE_ALLOWED_ORIGINS` to include the IP browser Origin while retaining previous origins. Current configured value: `https://greed-216.github.io,https://123.56.189.146`. Do not put gateway or model secrets in the browser.
+ECS `HISTREE_AI_ALLOWED_ORIGINS` includes the IP browser Origin and Pages/domain origins. Supabase Edge Origin configuration is used only by the retained legacy compatibility path. Do not put gateway or model secrets in the browser.
 
 ## HTTPS without a domain
 

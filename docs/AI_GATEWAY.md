@@ -1,4 +1,50 @@
-# AI 业务入口
+# AI 业务入口：ECS 直连
+
+主站浏览器直接请求同源 `/api/v1`，由宿主机 nginx 转发给同一镜像内的 NestJS；身份与额度校验通过后直接进入 dsh。主站不再经 Supabase Edge Function 转发。
+
+```text
+浏览器 → ECS nginx → NestJS 身份／额度校验 → dsh
+                          ├─ Supabase Auth：登录凭据验证
+                          └─ Supabase 数据库：额度 RPC 与已发布史料
+```
+
+## 前端接口
+
+- `GET /api/v1/ask/status`、`GET /api/v1/ask/guess/status`：ECS 本地状态，不访问模型或数据库。
+- `POST /api/v1/ask/session`：签发一天有效的随机 HMAC 匿名令牌，先扣减会话签发额度。
+- `POST /api/v1/ask`：NDJSON 问答流。
+- `POST /api/v1/ask/guess/start`、`POST /api/v1/ask/guess/act`：游戏请求。
+
+前端入口优先取 `VITE_ASK_API_URL`，其次 `VITE_API_URL`，默认 `/api/v1`。ECS 镜像使用同源路径；手动 Pages 备用发布需把 `VITE_ASK_API_URL` 指向 ECS HTTPS 的 `/api/v1`。浏览器发送登录 Bearer token 或 `x-histree-anonymous`，不持有服务凭据，不自动重试模型请求。
+
+## 服务端配置与保护
+
+`/opt/histree/runtime.env` 增加以下私有配置，不能进入 Git、镜像或前端：
+
+- `HISTREE_GATEWAY_SECRET`：沿用既有签名密钥，至少32字符，保留旧匿名令牌格式及旧 Edge 兼容。
+- `HISTREE_QUOTA_KEY`：Supabase service-role key，仅供独立额度客户端调用已有 `consume_ai_gateway_quota` RPC。检索客户端仍使用 anon key；不将该配置赋给通用管理客户端或传给 dsh 子进程。
+- `HISTREE_ALLOW_ANONYMOUS`：默认允许；`false` 要求登录。
+- `HISTREE_AI_ALLOWED_ORIGINS`：允许的浏览器来源。默认包括 `https://123.56.189.146`、`https://histree.wiki`、`https://greed-216.github.io`；本地开发需显式加入实际 origin。
+
+登录 JWT 由 Supabase SDK `getClaims` 验证签名和有效期；非对称签名使用缓存 JWKS，旧对称签名由 Auth 验证。已验证身份仅缓存最多60秒且不超过 JWT 过期时间，缓存只存令牌哈希。无效登录凭据不降级为匿名。
+
+匿名签名验证、来源检查、16 KiB 请求限制和会话身份绑定在 ECS 执行。额度账本和原子 RPC 保持原有上限：每小时问答每身份10次／全站200次，游戏80次／全站1600次，匿名签发全站1000次。额度凭据缺失、数据库故障或达到上限时拒绝模型调用。重启后的会话行为与原来相同，进程内对话和游戏会话会丢失。
+
+旧 Edge 的服务凭据路径仅用于尚未更新的旧前端兼容；该路径已经在 Edge 扣减额度，NestJS 不重复扣减。普通浏览器自带 `x-histree-actor` 不会被信任。现有 Edge Function 暂时保留，当前主站不调用它。
+
+## 发布与验收
+
+1. 安全配置服务端额度凭据及允许来源；不重放数据库迁移。本次沿用已有额度函数。
+2. 构建并发布前后端合并镜像；nginx 保留现有证书、IP 整站入口和独立域名待上线配置。
+3. 验证本地状态、匿名签发、伪造／过期身份拒绝、管理员保护、限额／数据库故障停止调用、跨身份对话隔离，以及 NDJSON 完整结束和取消。
+4. 浏览器验证请求进入 ECS `/api/v1`，问答状态就绪；至少一次受控真实模型验证流式结果和引用。真实模型调用会计入额度及供应商用量。
+5. 日志仅记录请求 ID、路径、状态和耗时。nginx 使用上游响应的 `X-Histree-Request-Id` 关联直接请求，不记录身份、令牌、问题正文或服务凭据。
+
+以下内容保留旧网关的行为与诊断证据，供兼容路径排查；不代表主站当前请求路径。
+
+---
+
+# 旧 Supabase Edge 网关：兼容与历史排查
 
 浏览器调用 Supabase `functions/v1/ai-gateway`，Edge 验证调用身份、检查共享额度并转发到 ECS。NestJS 的问答、游戏和状态接口都要求 `HISTREE_GATEWAY_SECRET` 服务凭据；不依赖隐藏地址或 CORS 鉴权。ECS 合并镜像中的普通阅读通过同源 NestJS API 访问 Supabase 发布视图／RPC；未配置 API 地址的备用前端仍直接使用 Data API / RPC 和 RLS。
 

@@ -19,13 +19,13 @@ try {
     const token = "a".repeat(64);
     await ctx.route("**/*", async (route) => {
       const url = new URL(route.request().url());
-      if (url.origin === new URL(base).origin) return route.continue();
+      if (url.origin === new URL(base).origin && !url.pathname.startsWith("/api/v1/ask")) return route.continue();
       const reply = (body) =>
         route.fulfill({
           contentType: "application/json",
           body: JSON.stringify(body),
         });
-      if (url.pathname.endsWith("/ai-gateway/session"))
+      if (url.pathname.endsWith("/ask/session"))
         return reply({
           token: "test-anonymous-session",
           expires: Math.floor(Date.now() / 1000) + 86400,

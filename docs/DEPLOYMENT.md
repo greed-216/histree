@@ -6,7 +6,7 @@
 - HTTPS：宿主机 nginx；容器 `3000` 端口只绑定 `127.0.0.1`。仅在该可信代理后设置 `TRUST_PROXY=1`。
 - 数据库和登录：继续使用 Supabase 项目 `ilnwjhabcqtxkkuhddyt`，本次托管迁移没有搬迁数据库或重放迁移。
 - 普通阅读与管理：ECS 镜像构建时设置 `VITE_API_URL=/api/v1`，调用同源 API；公开读取保留发布状态和匿名 RLS 视图，管理写入继续要求管理员权限。未配置 API 地址的本地／备用前端保留 Supabase Data API/RPC 直读模式。
-- AI：浏览器仍经 Supabase `ai-gateway` Edge Function 进行身份与共享额度校验，再访问 ECS。域名上线时补充允许的 Origin，配置见 [AI 网关](AI_GATEWAY.md)。
+- AI：浏览器同源请求 ECS `/api/v1/ask` 及游戏接口，身份／额度校验由 NestJS 执行，不经 Supabase Edge 转发。登录验证、额度账本及史料查询仍使用 Supabase Auth／数据库。配置和兼容路径见 [AI 入口](AI_GATEWAY.md)。
 - 自动发布：`.github/workflows/deploy-api.yml` 构建、验证并发布前后端合并镜像。`.github/workflows/deploy.yml` 仅保留手动 GitHub Pages 备用发布。
 - 构建时只使用 Supabase 公共 URL／anon key；模型密钥、gateway secret 等只放在服务端环境中，不进入前端、镜像或 Git。
 
@@ -23,10 +23,10 @@ ICP备案尚在办理，当前采用证书安装脚本的 `pending` 模式，域
 备案／接入要求完成且正式上线获授权后：
 
 1. 复用已安装的阿里云证书，以 `install-domain-certificate.sh` 的 `serve` 模式启用应用代理；不要用 Let's Encrypt 脚本覆盖它。
-2. 在 Supabase 网关允许来源中补充 `https://histree.wiki`，保留已有来源；使用邮件或 OAuth 回调时同步更新 Auth 的站点与回调配置。
+2. 确认 ECS 的 `HISTREE_AI_ALLOWED_ORIGINS` 包含 `https://histree.wiki`，保留已有来源；使用邮件或 OAuth 回调时同步更新 Auth 的站点与回调配置。
 3. 从公网核验 TLS、首页、深链接、数据读取、登录及 AI 链路，再把状态改为正式上线。
 
-已有 IP HTTPS 网关可运行 `bash deploy/ecs/open-ip-frontend.sh 123.56.189.146` 开放合并应用。脚本保留专用 AI 路由，校验 nginx 和深链接，并保存可回滚的原配置。AI 网关生产允许来源包含 `https://greed-216.github.io` 与 `https://123.56.189.146`；域名上线时再补充其 Origin。
+已有 IP HTTPS 网关可运行 `bash deploy/ecs/open-ip-frontend.sh 123.56.189.146` 开放合并应用。脚本保留专用 AI 路由，校验 nginx 和深链接，并保存可回滚的原配置。ECS AI 入口允许来源包含 `https://greed-216.github.io` 与 `https://123.56.189.146`；域名上线时再补充其 Origin。
 
 阿里云证书到期前需续签并替换；现有 Certbot timer 负责旧 IP 证书，不负责这份域名证书。
 

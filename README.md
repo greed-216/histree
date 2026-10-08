@@ -80,7 +80,7 @@ pnpm --filter web lint
 pnpm --filter web build
 ```
 
-前端构建输出位于 `apps/web/dist`，与 NestJS API 一起打入 `apps/api/Dockerfile` 构建的镜像，由 [ECS 工作流](.github/workflows/deploy-api.yml) 在相关改动推送 `main` 后测试、构建并部署。ECS nginx 负责 HTTPS，应用容器提供根路径页面和 `/api/v1` 接口；数据库、登录及 AI 身份／额度网关继续使用 Supabase。GitHub Pages 工作流保留为手动备用发布。构建、运行环境和回滚见 [ECS 操作说明](deploy/ecs/README.md)，架构及上线验收见 [部署说明](docs/DEPLOYMENT.md)。
+前端构建输出位于 `apps/web/dist`，与 NestJS API 一起打入 `apps/api/Dockerfile` 构建的镜像，由 [ECS 工作流](.github/workflows/deploy-api.yml) 在相关改动推送 `main` 后测试、构建并部署。ECS nginx 负责 HTTPS，应用容器提供根路径页面和 `/api/v1` 接口；数据库和登录继续使用 Supabase，AI 请求直接进入 ECS，身份／额度校验在 NestJS 执行。GitHub Pages 工作流保留为手动备用发布。构建、运行环境和回滚见 [ECS 操作说明](deploy/ecs/README.md)，架构及上线验收见 [部署说明](docs/DEPLOYMENT.md)。
 
 截至 2026-10-08，合并应用已部署，histree.wiki 的阿里云证书已安装；ICP备案仍在办理，域名配置为 HTTP 503 待上线页面。服务器端 TLS 验证通过，当前网络的公网 TLS 握手仍失败，公网可用性尚未确认。IP 入口 `https://123.56.189.146/` 已按用户授权开放完整前端与普通 API；域名入口继续待上线。应用部署、证书安装、IP 访问与域名正式上线分别验收。
 

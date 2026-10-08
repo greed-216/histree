@@ -37,8 +37,10 @@ describe('combined frontend and API hosting', () => {
       .expect('Cache-Control', 'public, max-age=31536000, immutable');
     await request(app.getHttpServer()).get('/assets/missing.js').expect(404);
     await request(app.getHttpServer()).get('/api/v1/missing').expect(404);
+    await request(app.getHttpServer()).get('/API/V1/missing').expect(404);
     await request(app.getHttpServer()).post('/ask').expect(404);
     await request(app.getHttpServer()).get('/api/v1/status').expect(200, { available: true });
+    await request(app.getHttpServer()).get('/API/V1/status').expect(200, { available: true });
   });
   it('refuses to start when the frontend build is missing', () => {
     expect(() => configureWebHosting(app, join(root, 'absent'))).toThrow('Frontend build missing');

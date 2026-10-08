@@ -37,7 +37,7 @@ export class GatewayGuard implements CanActivate {
     const bytes = request.rawBody?.length ?? Buffer.byteLength(JSON.stringify(request.body ?? {}));
     const declared = Number(request.headers['content-length'] || 0);
     if (bytes > 16384 || declared > 16384) throw new HttpException('请求过长', 413);
-    const path = request.path.replace(/\/$/, '');
+    const path = request.path.toLowerCase().replace(/\/$/, '');
     const session = path === '/api/v1/ask/session';
     let actor: string | undefined;
     if (request.headers.authorization !== undefined) actor = await this.access.userActor(request.headers.authorization);

@@ -16,7 +16,7 @@ export function configureWebHosting(app: NestExpressApplication, webRoot: string
   });
   // Browser routes receive the app shell; missing assets and API routes keep real 404s.
   app.use((req: Request, res: Response, next: NextFunction) => {
-    if (!['GET', 'HEAD'].includes(req.method) || /^\/api(?:\/|$)/.test(req.path)
+    if (!['GET', 'HEAD'].includes(req.method) || /^\/api(?:\/|$)/i.test(req.path)
       || req.path.split('/').some(part => part.includes('.')) || !req.accepts('html')) return next();
     res.setHeader('Cache-Control', 'no-cache');
     res.sendFile(index);

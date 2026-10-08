@@ -15,7 +15,7 @@ describe('direct ECS AI HTTP admission and streaming',()=>{
   beforeEach(async()=>{
     debit=jest.fn().mockResolvedValue({data:true,error:null});
     (createClient as jest.Mock).mockImplementation((_url,key)=>key==='quota'
-      ? {rpc:()=>({abortSignal:()=>debit()})}
+      ? {rpc:(name: string,args: unknown)=>({abortSignal:()=>debit(name,args)})}
       : {auth:{getClaims:jest.fn().mockResolvedValue({data:null,error:{name:'AuthInvalidJwtError'}})}});
     const config=new ConfigService({SUPABASE_URL:'https://project.supabase.co',SUPABASE_ANON_KEY:'public',HISTREE_QUOTA_KEY:'quota',HISTREE_GATEWAY_SECRET:'a'.repeat(64),HISTREE_ASK_ENABLED:'true',DEEPSEEK_API_KEY:'fixture'});
     service=new AskService(config,{} as SupabaseService);
@@ -43,6 +43,11 @@ describe('direct ECS AI HTTP admission and streaming',()=>{
     const other=await session();
     await post().set('x-histree-anonymous',other).set('x-histree-actor','anon:'+token.split('.')[0]).send({question:'followup fixture',conversation:events[0].conversation}).expect(403);
     expect(run).toHaveBeenCalledTimes(1);
+  });
+  it('uses the ask quota even when Express matches a mixed-case URL',async()=>{
+    const token=await session();
+    await request(app.getHttpServer()).post('/API/V1/ASK/').set('Origin',origin).set('x-histree-anonymous',token).send({question:'fixture question'}).expect(200);
+    expect(debit).toHaveBeenLastCalledWith('consume_ai_gateway_quota',expect.objectContaining({p_operation:'ask'}));
   });
   it('rejects unauthenticated/spoofed, malformed and oversized requests without invoking a model',async()=>{
     await post().set('x-histree-actor','user:forged').send({question:'fixture'}).expect(401);

@@ -9,8 +9,8 @@ export function HistoryScrollPage() {
       </Link>
       <header className="explore-heading">
         <p className="eyebrow">历史画卷 · 底图预览</p>
-        <h1>从春秋战国到清末</h1>
-        <p>前770年—1912年，按年代比例连续展开。横向滚动查看细节。</p>
+        <h1>从《资治通鉴》开篇到清末</h1>
+        <p>前403年—1912年，按年代比例连续展开。横向滚动查看细节。</p>
       </header>
       <div
         className="scroll-gallery"
@@ -28,7 +28,7 @@ export function HistoryScrollPage() {
             <svg
               key={panel.id}
               role="img"
-              aria-label="从春秋战国到清末的一幅连续文化长卷"
+              aria-label="从《资治通鉴》开篇到清末的一幅连续文化长卷"
               viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
               width={totalWidth * scrollPeriodShare(panel.from_year, panel.to_year)}
               height={historyScroll.logical_canvas.height}
@@ -43,7 +43,7 @@ export function HistoryScrollPage() {
         </div>
       </div>
       <p className="text-sm text-stone-500 leading-7">
-        {historyScroll.artwork_note} 一张连续母图保留完整画面区域，按原始像素展示为
+        {historyScroll.artwork_note} 五段连续扩图裁去重叠后组成一张长图，实际像素为
         {totalWidth}×{historyScroll.logical_canvas.height}。
       </p>
       <div className="grid sm:grid-cols-3 gap-4">

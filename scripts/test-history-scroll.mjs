@@ -56,5 +56,5 @@ assert.equal(scroll.logical_canvas.width, art.crop.width, 'gallery must use nati
 assert.equal(scroll.logical_canvas.height, art.crop.height, 'gallery must use native height');
 const overview = scrollPanelGeometry(art, first, last);
 assert.equal(overview.y, 0);
-assert.ok(overview.height + 4 <= 178, 'overview must fit its entire artwork above the range bar');
+assert.ok(overview.height + 4 <= 188, 'overview must fit its entire artwork above the range bar');
 console.log('PASS: complete artwork height fits overview and gallery uses native resolution.');

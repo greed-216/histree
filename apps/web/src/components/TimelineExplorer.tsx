@@ -407,10 +407,10 @@ function TimelineRiver({
               choose(calendar(Math.round(first+Math.max(0,Math.min(1,(point.x-20)/960))*(last-first))));
             }}>
             <g transform="translate(0 4)"><HistoryScrollBackdrop from={first} to={last}/></g>
-            <line x1="20" x2="980" y1="182" y2="182" stroke="#d5d8c8"/>
-            <rect x={overviewX(from)} y="178" width={Math.max(2, overviewX(to)-overviewX(from))}
+            <line x1="20" x2="980" y1="192" y2="192" stroke="#d5d8c8"/>
+            <rect x={overviewX(from)} y="188" width={Math.max(2, overviewX(to)-overviewX(from))}
               height="8" rx="4" fill="#ab854c"/>
-            <circle cx={overviewX(focus)} cy="182" r="4" fill="#315e52"/>
+            <circle cx={overviewX(focus)} cy="192" r="4" fill="#315e52"/>
           </svg>
           <p className="timeline-art-caption">史事时间轴 · 可独立放大与拖动</p>
           <div className="timeline-window-heading">

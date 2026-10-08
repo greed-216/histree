@@ -26,6 +26,13 @@ def nonspace(text):
 
 
 def main():
+    # The cleanup report records an old audit, not permanent versions of evolving ledgers.
+    # Compare this run's protected files before/after; source hashes remain checked below.
+    cleanup = json.loads((ROOT / 'resources/catalog/history-text-cleanup.json').read_text())
+    protected_before = {path: sha(ROOT / path) for path in cleanup['protected_files']}
+    protected_before.update({path: sha(ROOT / path)
+                             for path in cleanup.get('local_unversioned_protected_files', {})
+                             if (ROOT / path).exists()})
     spec = importlib.util.spec_from_file_location('normalizer', ROOT / 'scripts/build-history-library.py')
     normalizer = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(normalizer)
@@ -158,12 +165,8 @@ def main():
     aliases = json.loads((ROOT / 'resources/catalog/source-replacements.json').read_text())
     for alias in aliases['aliases']:
         assert sha(ROOT / alias['backup_file']) == alias['sha256']
-    cleanup = json.loads((ROOT / 'resources/catalog/history-text-cleanup.json').read_text())
-    for path, h in cleanup['protected_files'].items():
-        assert sha(ROOT / path) == h
-    for path, h in cleanup.get('local_unversioned_protected_files', {}).items():
-        if (ROOT / path).exists():
-            assert sha(ROOT / path) == h
+    for path, before in protected_before.items():
+        assert sha(ROOT / path) == before, f'Test/search export changed protected file: {path}'
     (BASE / 'validation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: result[k] for k in ('status', 'books', 'records')}))
 

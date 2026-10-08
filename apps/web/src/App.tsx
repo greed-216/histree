@@ -9,6 +9,8 @@ import { UserIcon, ArrowRightOnRectangleIcon, AcademicCapIcon, MapIcon } from '@
 import { getCurrentUserRole } from './lib/api';
 import { useScrollRestoration } from './hooks/useScrollRestoration';
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
+import { GuidePage, GuideIndexPage, FiveDynastiesOverviewPage, LegacyZhouGuideRedirect } from './pages/GuidePage';
+import { HistoryScrollPage } from './pages/HistoryScrollPage';
 import { ExplorePage } from './pages/ExplorePage';
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
@@ -99,6 +101,7 @@ function App() {
                 <MapIcon className="w-4 h-4" />
                 探索
               </Link>
+              <Link to="/learn" className={navLinkClass('/learn')}>导读</Link>
               <Link to="/people" className={navLinkClass('/people')}>
                 <UserIcon className="w-4 h-4" />
                 人物
@@ -158,6 +161,12 @@ function App() {
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
           <Route path="/sources/:id" element={<SourcePage />} />
           <Route path="/evidence/:subject/:id" element={<EvidencePage />} />
+          <Route path="/learn" element={<GuideIndexPage />} />
+          <Route path="/learn/five-dynasties" element={<FiveDynastiesOverviewPage />} />
+          <Route path="/learn/five-dynasties/later-zhou" element={<GuidePage />} />
+          <Route path="/learn/five-dynasties/later-zhou/:chapter" element={<GuidePage key={location.pathname} />} />
+          <Route path="/learn/later-zhou" element={<LegacyZhouGuideRedirect />} />
+          <Route path="/learn/later-zhou/:chapter" element={<LegacyZhouGuideRedirect />} />
           <Route path="/topics/:slug" element={<TopicPage />} />
           <Route path="/people/:id" element={<EntryPage />} />
           <Route path="/events/:id" element={<EntryPage />} />
@@ -166,6 +175,7 @@ function App() {
           <Route path="/admin/editorial" element={<EditorialPage />} />
           <Route path="/" element={<ExplorePage />} />
           <Route path="/timeline" element={<TimelinePage />} />
+          <Route path="/timeline/scroll" element={<HistoryScrollPage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
           <Route path="/map/annotations" element={MAPS_ENABLED ? <AnnotationEditorPage /> : <Navigate to="/graph" replace />} />
           <Route path="/map/edit" element={MAPS_ENABLED ? <MapEditorPage /> : <Navigate to="/graph" replace />} />

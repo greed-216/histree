@@ -1,3 +1,29 @@
+# 首页历史画卷 V2
+
+当前使用内置imagegen生成的一张连续母图 `apps/web/public/timeline-scroll/scroll-continuous-v2.png`，2172×724。SVG只展示其中 x=0、y=194、宽2172、高368的画卷区域，约6:1；网页完整预览6516×1104是展示尺寸，放大不会增加原图细节。母图像素未作修改。
+
+覆盖前770年至1912年，无0年，共2681年。整幅画面由同一条连续河道与山势贯穿；不再将三幅独立生图并列。`history-scroll.json`保存裁切、尺寸、哈希及分期，底图使用与事件相同的时间坐标。
+
+## V2 提示词规格
+
+Use case: compositing. Inputs: 原三幅图作为风格和时代意象参考。Redraw all three together as ONE organically continuous landscape; no montage, no vertical seams, no repeated vignettes at one-third/two-thirds. Continuous river, mountains, roads, consistent perspective, texture, lighting and palette. Preserve blue-green gongbi Chinese handscroll style and ivory silk texture. No text, dates, labels, watermarks or map boundaries.
+
+生图请求为3:1画布中间包含9:1浅长卷，两侧上下为空白纸面。实际工具返回2172×724，画卷区域更高，因此网页裁出约6:1区域以保留山势与河道，而未把画面强行拉伸成9:1。
+
+按宽度比例配置意象：春秋战国20.5%，秦汉16.4%，魏晋南北朝13.5%，隋唐12.2%，五代2.0%，宋11.9%，元3.3%，明10.3%，清10.0%。时代场景逐渐过渡，不设分块边界。最右侧少量蒸汽船、电报线和铁路表现清末变化。
+
+## 交互与验证
+
+首页默认607—1207年、选中907年；浏览、拖动、缩放不改变选年，明确点击才更新选择。数据范围外的直达年份也定位到对应画卷。未录入年份显示暂无记录。年份、史事和数量由页面绘制，不从画面推断事实。
+
+画面是AI文化意象，画内时代比例近似，不代表疆域、准确建筑年代或具体事件。按中原主线粗分时期；元从1279年、清从1644年计算。后续可替换更高清母图，保持年轴及裁切定义即可。
+
+`pnpm test:timeline`验证时间比例、无0年换算、单幅连续资产、裁切范围、图片比例与原件哈希。旧三幅原件保留为V1参考，当前页面不再加载。
+
+---
+
+## V1 生成档案
+
 # 首页历史画卷
 
 ## 展示与尺寸

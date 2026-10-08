@@ -32,14 +32,17 @@ export function HistoryScrollBackdrop({
           .map((panel) => {
             const geometry = scrollPanelGeometry(panel, from, to);
             return (
-              <image
+              <svg
                 key={panel.id}
                 data-panel={panel.id}
-                href={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
                 {...geometry}
+                viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
                 preserveAspectRatio="none"
-                opacity=".88"
-              />
+                overflow="hidden"
+              >
+                <image href={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
+                  width={panel.width} height={panel.height} opacity=".88" />
+              </svg>
             );
           })}
         <rect

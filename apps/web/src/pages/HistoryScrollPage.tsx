@@ -25,28 +25,25 @@ export function HistoryScrollPage() {
           }}
         >
           {historyScroll.panels.map((panel) => (
-            <img
+            <svg
               key={panel.id}
-              src={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
-              alt={
-                panel.id === "scroll-01"
-                  ? "春秋战国至东汉早期的文化意象"
-                  : panel.id === "scroll-02"
-                    ? "东汉后期至宋初的文化意象"
-                    : "宋、元、明、清至清末的文化意象"
-              }
-              style={{
-                width:
-                  totalWidth *
-                  scrollPeriodShare(panel.from_year, panel.to_year),
-                height: historyScroll.logical_canvas.height,
-              }}
-            />
+              role="img"
+              aria-label="从春秋战国到清末的一幅连续文化长卷"
+              viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
+              width={totalWidth * scrollPeriodShare(panel.from_year, panel.to_year)}
+              height={historyScroll.logical_canvas.height}
+              style={{flexShrink:0}}
+              preserveAspectRatio="none"
+              overflow="hidden"
+            >
+              <image href={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
+                width={panel.width} height={panel.height} />
+            </svg>
           ))}
         </div>
       </div>
       <p className="text-sm text-stone-500 leading-7">
-        {historyScroll.artwork_note} 三幅生图原件组成约9:1长卷，网页展示尺寸为
+        {historyScroll.artwork_note} 一张连续母图裁出约6:1长卷，网页展示尺寸为
         {totalWidth}×{historyScroll.logical_canvas.height}。
       </p>
       <div className="grid sm:grid-cols-3 gap-4">

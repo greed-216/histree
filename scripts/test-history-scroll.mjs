@@ -22,11 +22,17 @@ for (const [from, to] of [[first, last], [ordinal(607), ordinal(1207)], [-50, 50
   const geometry = scroll.panels.map(p => scrollPanelGeometry(p, from, to));
   for (let i = 0; i < geometry.length; i++) {
     const g = geometry[i], p = scroll.panels[i];
-    assert.ok(Math.abs(g.width / g.height - p.width / p.height) < 1e-12);
+    assert.ok(Math.abs(g.width / g.height - p.crop.width / p.crop.height) < 1e-12);
     if (i) assert.ok(Math.abs(geometry[i-1].x + geometry[i-1].width - g.x) < 1e-9);
   }
 }
+assert.equal(scroll.panels.length, 1, 'continuous artwork must not join independent pictures');
+assert.equal(scroll.panels[0].from_year, scroll.from_year);
+assert.equal(scroll.panels[0].to_year, scroll.to_year);
 for (const panel of scroll.panels) {
+  assert.ok(panel.crop.x >= 0 && panel.crop.y >= 0);
+  assert.ok(panel.crop.x + panel.crop.width <= panel.width);
+  assert.ok(panel.crop.y + panel.crop.height <= panel.height);
   const bytes = await readFile(new URL(`../apps/web/public/timeline-scroll/${panel.file}`, import.meta.url));
   assert.equal(bytes.readUInt32BE(16), panel.width);
   assert.equal(bytes.readUInt32BE(20), panel.height);

@@ -10,7 +10,7 @@ export function scrollPanelGeometry(
   const x = 40 + ((ordinal(panel.from_year) - from) / span) * 920;
   const width =
     ((ordinal(panel.to_year) - ordinal(panel.from_year)) / span) * 920;
-  const height = (width * panel.height) / panel.width;
+  const height = (width * panel.crop.height) / panel.crop.width;
   return { x, width, height, y: 198 - height / 2 };
 }
 export function scrollPeriodShare(from: number, to: number) {

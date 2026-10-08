@@ -15,7 +15,11 @@ export function useScrollRestoration() {
     };
   }, []);
   useLayoutEffect(() => {
-    const retainPosition = previousPath.current?.pathname === '/timeline' && previousPath.current.key !== location.key && location.pathname === '/timeline';
+    // Selecting a year is an in-page interaction on both timeline surfaces.
+    const retainPosition =
+      previousPath.current?.pathname === location.pathname &&
+      previousPath.current.key !== location.key &&
+      (location.pathname === "/" || location.pathname === "/timeline");
     previousPath.current = { pathname: location.pathname, key: location.key };
     if (retainPosition) positions.set(location.key, window.scrollY);
     const remember = () => {

@@ -303,3 +303,7 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .timeline-art-overview:active { cursor:grabbing; }
 .timeline-art-caption { font-size:11px; color:#8a8e7d; margin:10px 0 4px; }
 .timeline-chart { min-height:0; }
+
+.timeline-canvas-scroll { max-height:560px; overflow-y:auto; overflow-x:hidden; scrollbar-width:thin; border-radius:12px; }
+.timeline-canvas-scroll .timeline-chart { width:100%; height:auto; min-height:0; }
+@media(max-width:760px) { .timeline-canvas-scroll { max-height:65vh; } }

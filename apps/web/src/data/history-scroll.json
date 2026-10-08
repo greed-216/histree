@@ -1,35 +1,35 @@
 {
-  "from_year": -770,
+  "from_year": -403,
   "to_year": 1912,
   "coordinate_rule": "BCE years are negative; no year zero. Shared panel boundaries are exclusive on the right.",
   "generator": "built-in imagegen",
-  "artwork_note": "AI生成的历史文化意象，按大体年代比例组织；不作疆域、建筑年代或具体场景的史实复原。",
+  "artwork_note": "AI生成的历史活动长卷；人物、动作与同框安排为艺术构图，不作为具体现场、人物容貌或政治疆域的复原。",
   "logical_canvas": {
-    "width": 2172,
-    "height": 400
+    "width": 9360,
+    "height": 720
   },
   "panels": [
     {
-      "id": "scroll-continuous-v2",
-      "file": "scroll-continuous-v2.png",
-      "from_year": -770,
+      "id": "history-scroll-v6",
+      "file": "history-scroll-v6.webp",
+      "from_year": -403,
       "to_year": 1912,
-      "width": 2172,
-      "height": 724,
+      "width": 9360,
+      "height": 720,
       "crop": {
         "x": 0,
-        "y": 180,
-        "width": 2172,
-        "height": 400
+        "y": 0,
+        "width": 9360,
+        "height": 720
       },
-      "sha256": "8a4fe759b465b8a15416f5ebcecda8f2fd06c1b47adcbc3319c8ee8925fd861b",
-      "bytes": 2894467
+      "sha256": "04eadb90c98471d1dc08dbd3453bfdbddbe998594e600c202c5c9a6bb208606f",
+      "bytes": 3865286
     }
   ],
   "periods": [
     {
-      "label": "春秋战国",
-      "from_year": -770,
+      "label": "战国",
+      "from_year": -403,
       "to_year": -221
     },
     {
@@ -71,6 +71,90 @@
       "label": "清",
       "from_year": 1644,
       "to_year": 1912
+    }
+  ],
+  "pixels_per_elapsed_year": 4.044943820224719,
+  "artifact_version": "v6",
+  "provenance_directory": "design/history-scroll-v6",
+  "scene_notes": [
+    {
+      "period": "战国",
+      "figures": [
+        "魏文侯"
+      ],
+      "activity": "庭院议事、士人交谈、诸侯城邑与农耕。"
+    },
+    {
+      "period": "秦汉",
+      "figures": [
+        "秦始皇",
+        "汉武帝",
+        "张骞"
+      ],
+      "activity": "城门下校验量器、整齐军阵、汉阙前的使节与骑队出行。"
+    },
+    {
+      "period": "汉末至南北朝",
+      "figures": [
+        "曹操",
+        "王羲之",
+        "孝文帝"
+      ],
+      "activity": "军帐议图、临水书写、迁徙人群与新都门前议事。"
+    },
+    {
+      "period": "隋唐",
+      "figures": [
+        "隋炀帝",
+        "唐太宗",
+        "玄奘"
+      ],
+      "activity": "运河营建与牵船、宫城议事、商旅和僧人远行。"
+    },
+    {
+      "period": "五代至宋初",
+      "figures": [
+        "朱温",
+        "柴荣",
+        "赵匡胤"
+      ],
+      "activity": "城寨仪式、军队操练、修城与官府议事。"
+    },
+    {
+      "period": "宋",
+      "figures": [
+        "张择端"
+      ],
+      "activity": "木桥市集、书坊、货船装卸，以及临水观察并绘画的文人。"
+    },
+    {
+      "period": "宋元之际",
+      "figures": [
+        "忽必烈"
+      ],
+      "activity": "都城会见、驿路商旅、不同衣着的来客与骑队。"
+    },
+    {
+      "period": "明",
+      "figures": [
+        "朱元璋",
+        "郑和"
+      ],
+      "activity": "城市治理、码头准备、船队出航与工匠装载。"
+    },
+    {
+      "period": "清",
+      "figures": [
+        "康熙"
+      ],
+      "activity": "官府议图、传统水运、木船营建和市井生活。"
+    },
+    {
+      "period": "清末",
+      "figures": [
+        "李鸿章"
+      ],
+      "activity": "末端的船厂营建、官员与工程人员交谈；以小幅文书场景收束帝制时代。"
     }
   ]
 }

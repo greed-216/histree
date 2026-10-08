@@ -298,3 +298,8 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .timeline-jump[open] form { position:absolute; right:0; top:35px; z-index:12; display:flex; align-items:center; gap:6px; padding:12px; background:#fffdf7; border:1px solid #d9ddd0; border-radius:8px; box-shadow:0 8px 25px #243b2915; width:260px; }
 
 @media(max-width:760px) { .timeline-jump[open] form { left:0; right:auto; } }
+
+.timeline-art-overview { display:block; width:100%; max-width:2172px; height:auto; touch-action:pan-y; cursor:grab; }
+.timeline-art-overview:active { cursor:grabbing; }
+.timeline-art-caption { font-size:11px; color:#8a8e7d; margin:10px 0 4px; }
+.timeline-chart { min-height:0; }

@@ -28,7 +28,7 @@ export function HistoryScrollPage() {
             <svg
               key={panel.id}
               role="img"
-              aria-label="从《资治通鉴》开篇到清末的一幅连续文化长卷"
+              aria-label="从《资治通鉴》开篇到清末的一幅连续历史活动长卷"
               viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
               width={totalWidth * scrollPeriodShare(panel.from_year, panel.to_year)}
               height={historyScroll.logical_canvas.height}
@@ -46,6 +46,20 @@ export function HistoryScrollPage() {
         {historyScroll.artwork_note} 五段连续扩图裁去重叠后组成一张长图，实际像素为
         {totalWidth}×{historyScroll.logical_canvas.height}。
       </p>
+      {historyScroll.scene_notes.length > 0 && <section className="reading-card" aria-labelledby="scroll-scene-heading">
+        <h2 id="scroll-scene-heading" className="font-serif text-xl">画卷中的活动主题</h2>
+        <p className="text-sm text-stone-500 leading-7 mt-2">
+          从左向右寻找这些场景。人物通过所参与的活动融入画面；以下姓名说明构图参考，不用于辨认容貌或确认某次现场。
+        </p>
+        <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mt-5">
+          {historyScroll.scene_notes.map((scene) => (
+            <div key={scene.period}>
+              <dt className="font-medium text-stone-800">{scene.period} · {scene.figures.join("、")}</dt>
+              <dd className="text-sm text-stone-600 leading-7 mt-1">{scene.activity}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>}
       <div className="grid sm:grid-cols-3 gap-4">
         {historyScroll.periods.map((period) => (
           <div className="reading-card" key={period.label}>

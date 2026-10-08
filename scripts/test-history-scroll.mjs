@@ -55,10 +55,26 @@ for(let offset=12;offset+8<bytes.length;) {
  offset+=8+size+(size%2);
 }
 assert.deepEqual(dimensions,[9360,720]);
-const audit=JSON.parse(await readFile(new URL('../design/history-scroll-v5/composition.json',import.meta.url),'utf8'));
+const provenance=scroll.provenance_directory;
+const audit=JSON.parse(await readFile(new URL(`../${provenance}/composition.json`,import.meta.url),'utf8'));
 assert.equal(audit.width,9360);assert.equal(audit.overlap_px,360);assert.equal(audit.seams.length,4);
 assert.equal(2160+4*1800,9360,'duplicate overlap pixels must be removed');
-const png=await readFile(new URL('../design/history-scroll-v5/history-scroll-v5.png',import.meta.url));
+const png=await readFile(new URL(`../${provenance}/history-scroll-${scroll.artifact_version}.png`,import.meta.url));
 assert.equal(png.readUInt32BE(16),9360);assert.equal(png.readUInt32BE(20),720);
 assert.equal(createHash('sha256').update(png).digest('hex'),audit.lossless_png_sha256);
+for(const original of audit.originals) {
+ const raw=await readFile(new URL(`../${original.file}`,import.meta.url));
+ assert.equal(createHash('sha256').update(raw).digest('hex'),original.sha256);
+}
+if(scroll.artifact_version==='v6') {
+ const ending=audit.late_ending;
+ assert.equal(ending.from_year,1850);
+ assert.equal(ending.global_start_px,Math.ceil(pixelForYear(1850)));
+ assert.equal(ending.local_start_px,ending.global_start_px-4*audit.step_px);
+ const raw=await readFile(new URL(`../${ending.file}`,import.meta.url));
+ assert.equal(createHash('sha256').update(raw).digest('hex'),ending.source_sha256);
+ const storyboard=JSON.parse(await readFile(new URL(`../${provenance}/storyboard.json`,import.meta.url),'utf8'));
+ assert.deepEqual(scroll.scene_notes,storyboard.display_notes);
+ assert.equal(scroll.scene_notes.length,10);
+}
 console.log('PASS: 403 BCE–1912, original stitched pixels, era proportions, no year zero, exact artwork/data anchors and pan speed at all zooms, full height and asset hashes.');

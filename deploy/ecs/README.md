@@ -61,7 +61,7 @@ Download the **Nginx (pem/key)** package. Run the installer on ECS with the PEM 
 bash deploy/ecs/install-domain-certificate.sh histree.wiki /private/path/fullchain.pem /private/path/private.key
 ```
 
-The script verifies hostname, expiry, trust chain and key match, installs a private versioned directory under `/opt/histree/tls/histree.wiki/`, and configures `/etc/nginx/conf.d/histree-domain.conf`. It validates nginx and waits for new workers before checking TLS without disabling certificate verification. Failure restores the previous domain vhost. The existing IP gateway and its certificate remain intact. The IP vhost must use `listen 443 ssl default_server;`: literal-IP TLS clients may omit SNI, and otherwise the earlier domain vhost can serve the wrong certificate. The installer checks this prerequisite before making changes. Keep the IP homepage 404 and the pending domain homepage 503 until website publication is enabled.
+The script verifies hostname, expiry, trust chain and key match, installs a private versioned directory under `/opt/histree/tls/histree.wiki/`, and configures `/etc/nginx/conf.d/histree-domain.conf`. It validates nginx and waits for new workers before checking TLS without disabling certificate verification. Failure restores the previous domain vhost. The existing IP gateway and its certificate remain intact. The IP vhost must use `listen 443 ssl default_server;`: literal-IP TLS clients may omit SNI, and otherwise the earlier domain vhost can serve the wrong certificate. The installer checks this prerequisite before making changes. The IP homepage now serves the combined application; the separate pending domain homepage remains 503 until domain publication is enabled.
 
 Default `pending` mode returns HTTP 503 with the ICP filing pending message. After filing/access readiness and publication authorization, pass `serve` as the fourth argument using the installed full chain and key paths. Configure the Supabase gateway Origin and applicable Auth callbacks before public acceptance testing. Temporary upload copies can be removed after installation; preserve the active version for rollback.
 
@@ -69,8 +69,20 @@ As of 2026-10-08, the Alibaba Cloud certificate is installed and valid until **2
 
 Renew/reissue this certificate through Alibaba Cloud and rerun the installer before expiry. The existing Certbot timer renews the IP certificate only. Do not run `domain-setup.sh` over the imported domain certificate.
 
+## Existing IP frontend gateway
+
+The IP entry point `https://123.56.189.146/` serves the full frontend and regular `/api/v1` routes. To enable it on the existing Histree IP vhost:
+
+```sh
+bash deploy/ecs/open-ip-frontend.sh 123.56.189.146
+```
+
+The script checks the application build, saves the previous IP nginx configuration in `/opt/histree/nginx-backups/`, replaces only the old homepage 404 rule with an application proxy, retains existing AI routes and access logs, and validates TLS/deep links with bounded reload waits. It restores the backup on failure. Admin routes and AI GatewayGuard remain enforced. The independent domain vhost stays in pending mode.
+
+Set Supabase `HISTREE_ALLOWED_ORIGINS` to include the IP browser Origin while retaining previous origins. Current configured value: `https://greed-216.github.io,https://123.56.189.146`. Do not put gateway or model secrets in the browser.
+
 ## HTTPS without a domain
 
-Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx exposes only the ask and status routes plus the three guessing-game endpoints (`guess/status`, `guess/start`, `guess/act`). Existing gateways receive these exact game routes during a release; certificate and renewal settings are preserved. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
+Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx serves the combined frontend/API and preserves the ask/status and guessing-game locations. Existing gateways receive these exact game routes during a release; certificate and renewal settings are preserved. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
 
 Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/bin/certbot renew --dry-run`, and verify the HTTPS origin from the gateway. Six-day IP certificates require working automatic renewal. See https://letsencrypt.org/2026/03/11/shorter-certs-certbot .

@@ -18,7 +18,7 @@ Edge secrets：
 
 - `HISTREE_ECS_API_URL`：HTTPS 地址，以 `/api/v1` 结尾。
 - `HISTREE_GATEWAY_SECRET`：随机生成的至少 32 字符服务凭据，与 ECS 相同。不要配置为 VITE_*。
-- `HISTREE_ALLOWED_ORIGINS`：逗号分隔；默认 `https://greed-216.github.io`。
+- `HISTREE_ALLOWED_ORIGINS`：逗号分隔；代码默认 `https://greed-216.github.io`，当前生产配置为 `https://greed-216.github.io,https://123.56.189.146`，支持已开放的 IP 前端。
 - `HISTREE_ALLOW_ANONYMOUS`：默认允许；`false` 要求认证。
 
 Edge 使用平台内置 `SUPABASE_URL`、`SUPABASE_ANON_KEY`、`SUPABASE_SERVICE_ROLE_KEY`。service role 只用于额度 RPC，绝不转发到 ECS；ECS 的检索保持匿名发布视图。

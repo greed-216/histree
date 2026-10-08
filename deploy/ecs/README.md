@@ -61,7 +61,7 @@ Download the **Nginx (pem/key)** package. Run the installer on ECS with the PEM 
 bash deploy/ecs/install-domain-certificate.sh histree.wiki /private/path/fullchain.pem /private/path/private.key
 ```
 
-The script verifies hostname, expiry, trust chain and key match, installs a private versioned directory under `/opt/histree/tls/histree.wiki/`, and configures `/etc/nginx/conf.d/histree-domain.conf`. It validates nginx and waits for new workers before checking TLS without disabling certificate verification. Failure restores the previous domain vhost. The existing IP gateway and its certificate remain intact.
+The script verifies hostname, expiry, trust chain and key match, installs a private versioned directory under `/opt/histree/tls/histree.wiki/`, and configures `/etc/nginx/conf.d/histree-domain.conf`. It validates nginx and waits for new workers before checking TLS without disabling certificate verification. Failure restores the previous domain vhost. The existing IP gateway and its certificate remain intact. The IP vhost must use `listen 443 ssl default_server;`: literal-IP TLS clients may omit SNI, and otherwise the earlier domain vhost can serve the wrong certificate. The installer checks this prerequisite before making changes. Keep the IP homepage 404 and the pending domain homepage 503 until website publication is enabled.
 
 Default `pending` mode returns HTTP 503 with the ICP filing pending message. After filing/access readiness and publication authorization, pass `serve` as the fourth argument using the installed full chain and key paths. Configure the Supabase gateway Origin and applicable Auth callbacks before public acceptance testing. Temporary upload copies can be removed after installation; preserve the active version for rollback.
 

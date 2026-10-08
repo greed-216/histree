@@ -26,7 +26,7 @@ server {
   location / { return 308 https://$ip\$request_uri; }
 }
 server {
-  listen 443 ssl;
+  listen 443 ssl default_server;
   server_name $ip;
   ssl_certificate /etc/letsencrypt/live/$ip/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/$ip/privkey.pem;

@@ -15,6 +15,14 @@ openssl verify -purpose sslserver -verify_hostname "$domain" -untrusted "$certif
 cert_public=$(openssl x509 -in "$certificate" -pubkey -noout | openssl pkey -pubin -outform DER | sha256sum)
 key_public=$(openssl pkey -in "$private_key" -pubout -outform DER | sha256sum)
 [[ "$cert_public" == "$key_public" ]] || { echo 'Certificate and private key do not match' >&2; exit 1; }
+# Literal-IP TLS clients often omit SNI; preserve the existing IP certificate.
+ip_conf=/etc/nginx/conf.d/histree.conf
+if [[ -f "$ip_conf" ]] && grep -q 'ssl_certificate /etc/letsencrypt/live/' "$ip_conf"; then
+  if ! grep -Eq '^[[:space:]]*listen[[:space:]]+443[^;]*default_server' "$ip_conf"; then
+    echo 'Set the existing IP TLS listener to default_server before adding the domain vhost' >&2
+    exit 1
+  fi
+fi
 install -d -m 700 "/opt/histree/tls/$domain"
 tls=$(mktemp -d "/opt/histree/tls/$domain/issued-XXXXXXXX")
 install -m 644 "$certificate" "$tls/fullchain.pem"

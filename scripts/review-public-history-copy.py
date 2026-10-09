@@ -24,7 +24,7 @@ class Client:
   for attempt in range(attempts):
    try:
     with urllib.request.urlopen(req,timeout=45) as response:return json.load(response)
-   except (urllib.error.URLError,TimeoutError):
+   except (urllib.error.URLError,TimeoutError,ConnectionError):
     if attempt+1==attempts:raise
     time.sleep(1)
  def rows(self,table,rows=None,checkpoint=None):
@@ -67,7 +67,7 @@ def apply_change(client,c,apply):
   result=client.request(table,query,c['after'])
   assert len(result)<=1,(table,rid,'multiple rows updated')
   if result:assert {k:result[0][k] for k in fields}==c['after'],(table,rid,'write result does not match')
- except (urllib.error.URLError,TimeoutError):
+ except (urllib.error.URLError,TimeoutError,ConnectionError):
   # The PATCH may have committed. Inspect anonymous state; never retry a write.
   pass
  rows=client.request(table,{'id':'eq.'+rid,'select':'*'})

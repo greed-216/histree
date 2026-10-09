@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 100214,
-    "reviewed_verified": 39945
+    "pending": 99963,
+    "reviewed_verified": 40196
   },
   "rounds": [
     {
@@ -525,6 +525,24 @@
       "protected_identity_fields_verified": 0,
       "newly_reviewed_fields": 132,
       "readback_audit_sha256": "6066c6c445b781062a21f3f28c1b1a37dd8f1107c9d72e89cd97b32df4b0cf49"
+    },
+    {
+      "path": "round-81",
+      "status": "published_verified",
+      "changes": 149,
+      "reviewed_fields": 344,
+      "protected_identity_fields_verified": 0,
+      "newly_reviewed_fields": 235,
+      "readback_audit_sha256": "240ceda06a54074fc55264997f6c8d1a43d7a9cd401997c065d97b83c21dd3ed"
+    },
+    {
+      "path": "round-82",
+      "status": "published_verified",
+      "changes": 15,
+      "reviewed_fields": 34,
+      "protected_identity_fields_verified": 33,
+      "newly_reviewed_fields": 16,
+      "readback_audit_sha256": "505a7ab84435c54a5b7e42103b97a6208fd6f3ae296117f31570abb674102fe4"
     }
   ],
   "complete": false,
@@ -539,19 +557,25 @@
   "review_workflow": {
     "status": "resumed_at_user_request",
     "reason": "2026-10-09用户授权继续修订旧数据；先收尾935年第1批，再从934年年末连续段落向前审阅。",
-    "last_round": "round-80",
+    "last_round": "round-82",
     "full_goal_complete": false,
     "review_cursor": {
       "volume": 279,
       "year": 934,
-      "next_reverse_paragraph": "zztj-v279-y0934-p052",
+      "next_reverse_paragraph": "zztj-v279-y0934-p046",
       "next_scope": [
-        "zztj-v279-y0934-p047",
-        "zztj-v279-y0934-p048",
-        "zztj-v279-y0934-p049",
-        "zztj-v279-y0934-p050",
-        "zztj-v279-y0934-p051",
-        "zztj-v279-y0934-p052"
+        "zztj-v279-y0934-p035",
+        "zztj-v279-y0934-p036",
+        "zztj-v279-y0934-p037",
+        "zztj-v279-y0934-p038",
+        "zztj-v279-y0934-p039",
+        "zztj-v279-y0934-p040",
+        "zztj-v279-y0934-p041",
+        "zztj-v279-y0934-p042",
+        "zztj-v279-y0934-p043",
+        "zztj-v279-y0934-p044",
+        "zztj-v279-y0934-p045",
+        "zztj-v279-y0934-p046"
       ],
       "direction": "reverse_review",
       "status": "pending_review"

@@ -4,7 +4,8 @@
   "scope": "scope.json",
   "completed_batch_audits": [
     "934-part10-closure-audit.json",
-    "934-part09-closure-audit.json"
+    "934-part09-closure-audit.json",
+    "934-part08-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -27,18 +28,24 @@
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-80",
+  "last_verified_round": "round-82",
   "review_cursor": {
     "volume": 279,
     "year": 934,
-    "next_reverse_paragraph": "zztj-v279-y0934-p052",
+    "next_reverse_paragraph": "zztj-v279-y0934-p046",
     "next_scope": [
-      "zztj-v279-y0934-p047",
-      "zztj-v279-y0934-p048",
-      "zztj-v279-y0934-p049",
-      "zztj-v279-y0934-p050",
-      "zztj-v279-y0934-p051",
-      "zztj-v279-y0934-p052"
+      "zztj-v279-y0934-p035",
+      "zztj-v279-y0934-p036",
+      "zztj-v279-y0934-p037",
+      "zztj-v279-y0934-p038",
+      "zztj-v279-y0934-p039",
+      "zztj-v279-y0934-p040",
+      "zztj-v279-y0934-p041",
+      "zztj-v279-y0934-p042",
+      "zztj-v279-y0934-p043",
+      "zztj-v279-y0934-p044",
+      "zztj-v279-y0934-p045",
+      "zztj-v279-y0934-p046"
     ],
     "direction": "reverse_review",
     "status": "pending_review"
@@ -52,11 +59,28 @@
     "round-77",
     "round-78",
     "round-79",
-    "round-80"
+    "round-80",
+    "round-81",
+    "round-82"
   ],
   "newly_reviewed_fields_latest_stage": 450,
   "latest_follow_up_audits": [
     "934-part10-followup-audit.json"
   ],
-  "review_execution_note": "逐字段审核。清楚且史实、出处无误的文案核验后保留，集中修正占位文字、缩写和事实问题，减少不必要的线上写入。"
+  "review_execution_note": "沿独立审阅游标逐段、逐字段核对；正确清楚内容保留，白话与史实一次检查完成。仅为身份、时间、关系、疑字或异说做必要跨书校核；保留各书独立出处，不常规扩充补证。旧值守卫写入、独立匿名读回和批次闭合后才推进进度。",
+  "review_method": "review-method.md",
+  "review_method_adoption": "review-method-adoption.json",
+  "newly_reviewed_fields_part08_latest_rounds": 251,
+  "next_scope_inventory": {
+    "batch": "content/books/zizhi-tongjian/vol-279/year-0934/part-07",
+    "paragraphs": "zztj-v279-y0934-p035–p046",
+    "status": "fresh_public_snapshot_fetched_not_reviewed",
+    "public_counts": {
+      "event": 32,
+      "person_event": 63,
+      "fact_claim": 178,
+      "person_relationship": 0,
+      "source": 12
+    }
+  }
 }

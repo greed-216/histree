@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 97533,
-    "reviewed_verified": 42626
+    "pending": 97174,
+    "reviewed_verified": 42985
   },
   "rounds": [
     {
@@ -651,6 +651,33 @@
       "newly_reviewed_fields": 0,
       "structural_fields_verified": 20,
       "readback_audit_sha256": "b15a816337c09b925b7f6fb42eb217b0d2d5ebc094e4570813e953174e10d095"
+    },
+    {
+      "path": "round-95",
+      "status": "published_verified",
+      "changes": 225,
+      "reviewed_fields": 509,
+      "protected_identity_fields_verified": 0,
+      "newly_reviewed_fields": 352,
+      "readback_audit_sha256": "a8159a93b915245e6012e46a976347aa32edb920d42d6d439ce7cb4ade60792f"
+    },
+    {
+      "path": "round-96",
+      "status": "published_verified",
+      "changes": 7,
+      "reviewed_fields": 27,
+      "protected_identity_fields_verified": 27,
+      "newly_reviewed_fields": 7,
+      "readback_audit_sha256": "00e3a36de6266180804416ce98a023731fa27f008053962f12aad0e28adae64a"
+    },
+    {
+      "path": "round-97",
+      "status": "published_verified",
+      "changes": 13,
+      "reviewed_fields": 13,
+      "newly_reviewed_fields": 0,
+      "structural_fields_verified": 13,
+      "readback_audit_sha256": "c01860316840480cbf797a3f117f93a274628a5362ece692204e94ad7c1aac57"
     }
   ],
   "complete": false,
@@ -665,17 +692,17 @@
   "review_workflow": {
     "status": "resumed_at_user_request",
     "reason": "2026-10-09用户授权继续修订旧数据；先收尾935年第1批，再从934年年末连续段落向前审阅。",
-    "last_round": "round-94",
+    "last_round": "round-97",
     "full_goal_complete": false,
     "review_cursor": {
       "volume": 279,
       "year": 934,
-      "next_reverse_paragraph": "zztj-v279-y0934-p008",
+      "next_reverse_paragraph": "zztj-v279-y0934-p004",
       "next_scope": [
-        "zztj-v279-y0934-p005",
-        "zztj-v279-y0934-p006",
-        "zztj-v279-y0934-p007",
-        "zztj-v279-y0934-p008"
+        "zztj-v279-y0934-p001",
+        "zztj-v279-y0934-p002",
+        "zztj-v279-y0934-p003",
+        "zztj-v279-y0934-p004"
       ],
       "direction": "reverse_review",
       "status": "pending_review"

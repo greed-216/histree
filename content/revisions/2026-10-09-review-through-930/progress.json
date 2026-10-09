@@ -10,7 +10,8 @@
     "934-part06-closure-audit.json",
     "934-part05-closure-audit.json",
     "934-part04-closure-audit.json",
-    "934-part03-closure-audit.json"
+    "934-part03-closure-audit.json",
+    "934-part02-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -29,6 +30,14 @@
       "issue": "934年石敬瑭亲将与909年后梁同名将领是否同人尚待考；本轮保留现有主体，简介不串联二者。",
       "status": "pending_identity_review",
       "review_round": "round-90"
+    },
+    {
+      "person_id": "9fe69d68-eb2b-507e-879d-5e885f0ef6c1",
+      "name": "赧诩",
+      "issue": "《资治通鉴》赧诩与《新五代史》对应使者情节的郝诩字形关系待考；保留各书原字与现有主体，不新增别名或强行改名合并。",
+      "status": "pending_textual_review",
+      "basis_claim_id": "59bfa38d-5af9-5b23-bbe4-1cc7eed447d7",
+      "context_audit": "../2026-10-04-modern-chinese-review/round-95/name-context-verification.json"
     }
   ],
   "completion_proven": false,
@@ -40,16 +49,16 @@
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-94",
+  "last_verified_round": "round-97",
   "review_cursor": {
     "volume": 279,
     "year": 934,
-    "next_reverse_paragraph": "zztj-v279-y0934-p008",
+    "next_reverse_paragraph": "zztj-v279-y0934-p004",
     "next_scope": [
-      "zztj-v279-y0934-p005",
-      "zztj-v279-y0934-p006",
-      "zztj-v279-y0934-p007",
-      "zztj-v279-y0934-p008"
+      "zztj-v279-y0934-p001",
+      "zztj-v279-y0934-p002",
+      "zztj-v279-y0934-p003",
+      "zztj-v279-y0934-p004"
     ],
     "direction": "reverse_review",
     "status": "pending_review"
@@ -77,7 +86,10 @@
     "round-91",
     "round-92",
     "round-93",
-    "round-94"
+    "round-94",
+    "round-95",
+    "round-96",
+    "round-97"
   ],
   "newly_reviewed_fields_latest_stage": 450,
   "latest_follow_up_audits": [
@@ -88,8 +100,8 @@
   "review_method_adoption": "review-method-adoption.json",
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
-    "batch": "content/books/zizhi-tongjian/vol-279/year-0934/part-02",
-    "paragraphs": "zztj-v279-y0934-p005–p008",
+    "batch": "content/books/zizhi-tongjian/vol-279/year-0934/part-01",
+    "paragraphs": "zztj-v279-y0934-p001–p004",
     "status": "pending_review"
   },
   "newly_reviewed_fields_part07": 419,
@@ -102,5 +114,6 @@
     "complete": true
   },
   "newly_reviewed_fields_part04": 649,
-  "newly_reviewed_fields_part03": 487
+  "newly_reviewed_fields_part03": 487,
+  "newly_reviewed_fields_part02": 359
 }

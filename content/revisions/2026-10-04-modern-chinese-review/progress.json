@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 101262,
-    "reviewed_verified": 38897
+    "pending": 101154,
+    "reviewed_verified": 39005
   },
   "rounds": [
     {
@@ -431,6 +431,21 @@
       "status": "published_verified",
       "changes": 36,
       "readback_audit_sha256": "25acbb37d63392f6f4778e420b992984279ad9a5fee0522c668c219791f27c0e"
+    },
+    {
+      "path": "round-70",
+      "status": "published_verified",
+      "changes": 8,
+      "reviewed_unchanged_fields": 2,
+      "readback_audit_sha256": "d6e73fae79cf2ad9cb1e8a99626f64dc63879c2a3424088961abedfffed9c545"
+    },
+    {
+      "path": "round-71",
+      "status": "published_verified",
+      "changes": 63,
+      "reviewed_fields": 142,
+      "newly_reviewed_fields": 98,
+      "readback_audit_sha256": "81d6ebc322e52e5b3f5cccf4134290b816384aa3f3e696322283945681602d23"
     }
   ],
   "complete": false,
@@ -443,14 +458,23 @@
     "note": "9条均为已合并并隐藏的旧人物、事件或参与记录；对应审计和当前公开主体已核验。保留归档，继续在公开字段账本审阅正式主体，不恢复重复记录。"
   },
   "review_workflow": {
-    "status": "paused_at_user_request",
-    "reason": "用户要求白话审阅先停在935年，优先恢复按主书连续段落录入；更早内容和原人物早年简介以后结合完整的新旧五代史逐步补证修订。",
-    "last_round": "round-69",
+    "status": "resumed_at_user_request",
+    "reason": "2026-10-09用户授权继续修订旧数据；先收尾935年第1批，再从934年年末连续段落向前审阅。",
+    "last_round": "round-71",
     "full_goal_complete": false,
-    "resume_ingestion_cursor": {
-      "volume": 281,
-      "year": 937,
-      "next_paragraph": "zztj-v281-y0937-p001"
-    }
+    "review_cursor": {
+      "volume": 279,
+      "year": 934,
+      "next_reverse_paragraph": "zztj-v279-y0934-p074",
+      "next_scope": [
+        "zztj-v279-y0934-p071",
+        "zztj-v279-y0934-p072",
+        "zztj-v279-y0934-p073",
+        "zztj-v279-y0934-p074"
+      ],
+      "direction": "reverse_review",
+      "status": "pending_review"
+    },
+    "ingestion_cursor_changed": false
   }
 }

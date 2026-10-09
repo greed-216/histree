@@ -28,8 +28,19 @@ for plan_path in sorted((ROOT/'content/revisions').glob('*/plan.json')):
  for claim_key, subject_key in plan.get('claim_subject_remap',{}).items():
   assert claim_key not in subject_remap or subject_remap[claim_key]==subject_key, claim_key
   subject_remap[claim_key]=subject_key
-for path in sorted((ROOT/'content').rglob('content-batch.json')):
+batch_paths=list((ROOT/'content').rglob('content-batch.json'))
+revision_paths=list((ROOT/'content/revisions').glob('*/additional-claims.json'))
+for path in sorted(batch_paths+revision_paths):
  batch=json.loads(path.read_text())
+ if path.name=='additional-claims.json':
+  assert batch.get('format_version')==1, 'Unsupported revision claim schema'
+  audit_name=batch['publication_audit']
+  assert Path(audit_name).name==audit_name, 'Invalid revision audit path'
+  audit_path=path.parent/audit_name
+  if audit_path.exists():
+   audit=json.loads(audit_path.read_text())
+   if audit.get('verified'):
+    assert audit.get('additional_claims_sha256')==hashlib.sha256(path.read_bytes()).hexdigest(), 'Published revision claims changed'
  for c in batch['claims']:
   matches=[k for k,(_,prefixes) in books.items() if c['source_key'].startswith(prefixes)]
   assert len(matches)==1, c['source_key']

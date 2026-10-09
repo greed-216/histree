@@ -1,0 +1,581 @@
+{
+  "date": "2026-10-09",
+  "base_commit": "e42cef86e91d2a54fe61056039b33cc81a3d6159",
+  "status": "inventory_and_first_local_revision_draft",
+  "all_legacy_history_reviewed": false,
+  "ingestion_cursor_changed": false,
+  "methodology": [
+    "Latest main archives and prior review audits, not the stale primary checkout ledger.",
+    "Counts of supplemental claims are archival coverage counts; absence is a review priority, not proof a historical statement is false.",
+    "Public anonymous reads verified the 9 pending-profile people, 261 linked description/biography facts, 2 event examples and the change-of-name claim.",
+    "No keyword scan is treated as full factual or prose review; old published batches remain unchanged."
+  ],
+  "review_boundary": [
+    {
+      "batch": "content/books/zizhi-tongjian/vol-279/year-0935/part-01",
+      "total_scoped_fields": 376,
+      "reviewed_scoped_fields": 366,
+      "pending_fields": [
+        {
+          "table": "person",
+          "id": "07a6bbea-9699-5f43-aef3-481401e2ed5e",
+          "field": "description",
+          "baseline_sha256": "b4b2b4de487fac1be4952ed97169f4e2bf800d3bc950ef8cd41040ba1446b545",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "22edc111-ae26-5bce-a26b-3ae072425377",
+          "field": "description",
+          "baseline_sha256": "3ebd77e07bd97791cf91aea8e22ae2f7ac50a0b1d691462812256fc5653999d9",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "4e068da9-c8dd-5a31-a747-87669e3bf993",
+          "field": "description",
+          "baseline_sha256": "d5ee0df2ef9feb4a54eb120988fc7ae19db4cad28ca7a731abfb1b36eadb5a9e",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "4e068da9-c8dd-5a31-a747-87669e3bf993",
+          "field": "biography",
+          "baseline_sha256": "d5ee0df2ef9feb4a54eb120988fc7ae19db4cad28ca7a731abfb1b36eadb5a9e",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "654153fa-064f-5854-8ebc-536aab291939",
+          "field": "description",
+          "baseline_sha256": "08d6155115379d298ac8ff7a1a82d5a18d47e1e237d548a3c9f89f517d412190",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "666201f7-9186-590e-8d5b-2a4a605dba69",
+          "field": "description",
+          "baseline_sha256": "ad071975e6fef9613d6f78c2d13346a4ed58ed66c3d7340b97f21608674f9020",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "6674e6a1-d66d-5e57-af1f-2d98f55021a1",
+          "field": "description",
+          "baseline_sha256": "b2db176822a997273160f99c5289126f5b8e68c03c0eeea3a6ae24b159b05a17",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "af5ecc72-bb0e-579c-88dd-a2daad979022",
+          "field": "description",
+          "baseline_sha256": "120f80f2863b140e946342fa1faf7716c9c3942bcad6f3b9648521898a59e0ca",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "da556260-49fd-5099-b0e4-5003f3d35b65",
+          "field": "description",
+          "baseline_sha256": "ec5da93c8b3ad7d6d99a71c3e81745442176e36af6c6ac4b9ae5c5f65457d75a",
+          "status": "pending",
+          "round": null
+        },
+        {
+          "table": "person",
+          "id": "eb1c4d9c-183b-5aa5-84d7-0dc737af780a",
+          "field": "description",
+          "baseline_sha256": "0e8b916379d472ffd51bb48b3c2e62bdcdb64f39606710f2e88c6a7c31e283f6",
+          "status": "pending",
+          "round": null
+        }
+      ],
+      "all_scoped_fields_reviewed": false,
+      "verified_at": "2026-10-04T13:28:31.602355+00:00"
+    },
+    {
+      "batch": "content/books/zizhi-tongjian/vol-279/year-0935/part-02",
+      "total_scoped_fields": 669,
+      "reviewed_scoped_fields": 669,
+      "pending_fields": [],
+      "all_scoped_fields_reviewed": true,
+      "verified_at": "2026-10-04T13:17:14.071655+00:00"
+    },
+    {
+      "batch": "content/books/zizhi-tongjian/vol-279/year-0935/part-03",
+      "total_scoped_fields": 476,
+      "reviewed_scoped_fields": 476,
+      "pending_fields": [],
+      "all_scoped_fields_reviewed": true,
+      "verified_at": "2026-10-04T12:59:29.767487+00:00"
+    },
+    {
+      "batch": "content/books/zizhi-tongjian/vol-279/year-0935/part-04",
+      "total_scoped_fields": 965,
+      "reviewed_scoped_fields": 965,
+      "pending_fields": [],
+      "all_scoped_fields_reviewed": true,
+      "verified_at": "2026-10-04T12:40:44.634751+00:00"
+    }
+  ],
+  "old_inventory_snapshot": {
+    "inventory_at": "2026-10-04T06:48:07.124890+00:00",
+    "field_counts": {
+      "pending": 101262,
+      "reviewed_verified": 38897
+    },
+    "scope_warning": "Snapshot at 2026-10-04; these numbers are not a fresh full-site pending count and exclude subsequent ingestion."
+  },
+  "chronological_archive_groups": {
+    "884—893": {
+      "batches": 51,
+      "continuous_paragraphs": 435,
+      "event_row_occurrences": 923,
+      "supplement_claims": 28,
+      "batches_without_supplements": 43
+    },
+    "894—922": {
+      "batches": 187,
+      "continuous_paragraphs": 1256,
+      "event_row_occurrences": 3354,
+      "supplement_claims": 981,
+      "batches_without_supplements": 2
+    },
+    "923—934": {
+      "batches": 100,
+      "continuous_paragraphs": 772,
+      "event_row_occurrences": 2965,
+      "supplement_claims": 2009,
+      "batches_without_supplements": 0
+    }
+  },
+  "by_year": {
+    "884": {
+      "batches": 3,
+      "continuous_paragraphs": 39,
+      "event_row_occurrences": 68,
+      "supplement_claims": 0,
+      "batches_without_supplements": 3
+    },
+    "885": {
+      "batches": 3,
+      "continuous_paragraphs": 30,
+      "event_row_occurrences": 61,
+      "supplement_claims": 0,
+      "batches_without_supplements": 3
+    },
+    "886": {
+      "batches": 6,
+      "continuous_paragraphs": 56,
+      "event_row_occurrences": 100,
+      "supplement_claims": 7,
+      "batches_without_supplements": 4
+    },
+    "887": {
+      "batches": 8,
+      "continuous_paragraphs": 70,
+      "event_row_occurrences": 152,
+      "supplement_claims": 0,
+      "batches_without_supplements": 8
+    },
+    "888": {
+      "batches": 6,
+      "continuous_paragraphs": 49,
+      "event_row_occurrences": 88,
+      "supplement_claims": 0,
+      "batches_without_supplements": 6
+    },
+    "889": {
+      "batches": 3,
+      "continuous_paragraphs": 24,
+      "event_row_occurrences": 58,
+      "supplement_claims": 0,
+      "batches_without_supplements": 3
+    },
+    "890": {
+      "batches": 6,
+      "continuous_paragraphs": 43,
+      "event_row_occurrences": 110,
+      "supplement_claims": 1,
+      "batches_without_supplements": 5
+    },
+    "891": {
+      "batches": 5,
+      "continuous_paragraphs": 40,
+      "event_row_occurrences": 97,
+      "supplement_claims": 12,
+      "batches_without_supplements": 3
+    },
+    "892": {
+      "batches": 6,
+      "continuous_paragraphs": 46,
+      "event_row_occurrences": 86,
+      "supplement_claims": 2,
+      "batches_without_supplements": 5
+    },
+    "893": {
+      "batches": 5,
+      "continuous_paragraphs": 38,
+      "event_row_occurrences": 103,
+      "supplement_claims": 6,
+      "batches_without_supplements": 3
+    },
+    "894": {
+      "batches": 4,
+      "continuous_paragraphs": 33,
+      "event_row_occurrences": 93,
+      "supplement_claims": 19,
+      "batches_without_supplements": 0
+    },
+    "895": {
+      "batches": 18,
+      "continuous_paragraphs": 74,
+      "event_row_occurrences": 259,
+      "supplement_claims": 42,
+      "batches_without_supplements": 1
+    },
+    "896": {
+      "batches": 11,
+      "continuous_paragraphs": 48,
+      "event_row_occurrences": 167,
+      "supplement_claims": 41,
+      "batches_without_supplements": 0
+    },
+    "897": {
+      "batches": 6,
+      "continuous_paragraphs": 50,
+      "event_row_occurrences": 173,
+      "supplement_claims": 58,
+      "batches_without_supplements": 0
+    },
+    "898": {
+      "batches": 4,
+      "continuous_paragraphs": 47,
+      "event_row_occurrences": 106,
+      "supplement_claims": 40,
+      "batches_without_supplements": 0
+    },
+    "899": {
+      "batches": 3,
+      "continuous_paragraphs": 29,
+      "event_row_occurrences": 83,
+      "supplement_claims": 34,
+      "batches_without_supplements": 0
+    },
+    "900": {
+      "batches": 4,
+      "continuous_paragraphs": 32,
+      "event_row_occurrences": 125,
+      "supplement_claims": 27,
+      "batches_without_supplements": 0
+    },
+    "901": {
+      "batches": 7,
+      "continuous_paragraphs": 53,
+      "event_row_occurrences": 213,
+      "supplement_claims": 27,
+      "batches_without_supplements": 0
+    },
+    "902": {
+      "batches": 7,
+      "continuous_paragraphs": 59,
+      "event_row_occurrences": 169,
+      "supplement_claims": 22,
+      "batches_without_supplements": 0
+    },
+    "903": {
+      "batches": 11,
+      "continuous_paragraphs": 69,
+      "event_row_occurrences": 220,
+      "supplement_claims": 46,
+      "batches_without_supplements": 0
+    },
+    "904": {
+      "batches": 7,
+      "continuous_paragraphs": 32,
+      "event_row_occurrences": 114,
+      "supplement_claims": 41,
+      "batches_without_supplements": 0
+    },
+    "905": {
+      "batches": 9,
+      "continuous_paragraphs": 60,
+      "event_row_occurrences": 157,
+      "supplement_claims": 84,
+      "batches_without_supplements": 0
+    },
+    "906": {
+      "batches": 5,
+      "continuous_paragraphs": 42,
+      "event_row_occurrences": 91,
+      "supplement_claims": 28,
+      "batches_without_supplements": 0
+    },
+    "907": {
+      "batches": 6,
+      "continuous_paragraphs": 61,
+      "event_row_occurrences": 75,
+      "supplement_claims": 17,
+      "batches_without_supplements": 0
+    },
+    "908": {
+      "batches": 4,
+      "continuous_paragraphs": 57,
+      "event_row_occurrences": 80,
+      "supplement_claims": 23,
+      "batches_without_supplements": 0
+    },
+    "909": {
+      "batches": 3,
+      "continuous_paragraphs": 60,
+      "event_row_occurrences": 88,
+      "supplement_claims": 23,
+      "batches_without_supplements": 0
+    },
+    "910": {
+      "batches": 5,
+      "continuous_paragraphs": 43,
+      "event_row_occurrences": 96,
+      "supplement_claims": 13,
+      "batches_without_supplements": 0
+    },
+    "911": {
+      "batches": 4,
+      "continuous_paragraphs": 44,
+      "event_row_occurrences": 89,
+      "supplement_claims": 10,
+      "batches_without_supplements": 0
+    },
+    "912": {
+      "batches": 5,
+      "continuous_paragraphs": 50,
+      "event_row_occurrences": 88,
+      "supplement_claims": 21,
+      "batches_without_supplements": 0
+    },
+    "913": {
+      "batches": 6,
+      "continuous_paragraphs": 53,
+      "event_row_occurrences": 104,
+      "supplement_claims": 34,
+      "batches_without_supplements": 0
+    },
+    "914": {
+      "batches": 3,
+      "continuous_paragraphs": 16,
+      "event_row_occurrences": 42,
+      "supplement_claims": 16,
+      "batches_without_supplements": 0
+    },
+    "915": {
+      "batches": 9,
+      "continuous_paragraphs": 33,
+      "event_row_occurrences": 86,
+      "supplement_claims": 70,
+      "batches_without_supplements": 0
+    },
+    "916": {
+      "batches": 8,
+      "continuous_paragraphs": 38,
+      "event_row_occurrences": 113,
+      "supplement_claims": 61,
+      "batches_without_supplements": 0
+    },
+    "917": {
+      "batches": 7,
+      "continuous_paragraphs": 29,
+      "event_row_occurrences": 75,
+      "supplement_claims": 34,
+      "batches_without_supplements": 0
+    },
+    "918": {
+      "batches": 10,
+      "continuous_paragraphs": 44,
+      "event_row_occurrences": 106,
+      "supplement_claims": 37,
+      "batches_without_supplements": 0
+    },
+    "919": {
+      "batches": 8,
+      "continuous_paragraphs": 31,
+      "event_row_occurrences": 82,
+      "supplement_claims": 24,
+      "batches_without_supplements": 0
+    },
+    "920": {
+      "batches": 6,
+      "continuous_paragraphs": 25,
+      "event_row_occurrences": 79,
+      "supplement_claims": 16,
+      "batches_without_supplements": 1
+    },
+    "921": {
+      "batches": 4,
+      "continuous_paragraphs": 24,
+      "event_row_occurrences": 101,
+      "supplement_claims": 41,
+      "batches_without_supplements": 0
+    },
+    "922": {
+      "batches": 3,
+      "continuous_paragraphs": 20,
+      "event_row_occurrences": 80,
+      "supplement_claims": 32,
+      "batches_without_supplements": 0
+    },
+    "923": {
+      "batches": 11,
+      "continuous_paragraphs": 76,
+      "event_row_occurrences": 287,
+      "supplement_claims": 188,
+      "batches_without_supplements": 0
+    },
+    "924": {
+      "batches": 6,
+      "continuous_paragraphs": 76,
+      "event_row_occurrences": 183,
+      "supplement_claims": 109,
+      "batches_without_supplements": 0
+    },
+    "925": {
+      "batches": 7,
+      "continuous_paragraphs": 66,
+      "event_row_occurrences": 236,
+      "supplement_claims": 173,
+      "batches_without_supplements": 0
+    },
+    "926": {
+      "batches": 13,
+      "continuous_paragraphs": 110,
+      "event_row_occurrences": 391,
+      "supplement_claims": 286,
+      "batches_without_supplements": 0
+    },
+    "927": {
+      "batches": 11,
+      "continuous_paragraphs": 57,
+      "event_row_occurrences": 209,
+      "supplement_claims": 182,
+      "batches_without_supplements": 0
+    },
+    "928": {
+      "batches": 9,
+      "continuous_paragraphs": 52,
+      "event_row_occurrences": 260,
+      "supplement_claims": 208,
+      "batches_without_supplements": 0
+    },
+    "929": {
+      "batches": 6,
+      "continuous_paragraphs": 36,
+      "event_row_occurrences": 169,
+      "supplement_claims": 118,
+      "batches_without_supplements": 0
+    },
+    "930": {
+      "batches": 7,
+      "continuous_paragraphs": 55,
+      "event_row_occurrences": 230,
+      "supplement_claims": 133,
+      "batches_without_supplements": 0
+    },
+    "931": {
+      "batches": 5,
+      "continuous_paragraphs": 50,
+      "event_row_occurrences": 154,
+      "supplement_claims": 74,
+      "batches_without_supplements": 0
+    },
+    "932": {
+      "batches": 6,
+      "continuous_paragraphs": 49,
+      "event_row_occurrences": 190,
+      "supplement_claims": 108,
+      "batches_without_supplements": 0
+    },
+    "933": {
+      "batches": 7,
+      "continuous_paragraphs": 56,
+      "event_row_occurrences": 233,
+      "supplement_claims": 173,
+      "batches_without_supplements": 0
+    },
+    "934": {
+      "batches": 12,
+      "continuous_paragraphs": 89,
+      "event_row_occurrences": 423,
+      "supplement_claims": 257,
+      "batches_without_supplements": 0
+    }
+  },
+  "live_findings": [
+    {
+      "kind": "internal_editorial_shorthand",
+      "record": {
+        "id": "9f141796-e55d-5c6a-8d4a-963bdfadb02b",
+        "title": "康福至青刚峡，遣卫审𡷣突袭未觉唐兵到的吐蕃野利、大虫二族，主记大破、杀获殆尽",
+        "description": "康福至青刚峡，遣卫审𡷣突袭未觉唐兵到的吐蕃野利、大虫二族，主记大破、杀获殆尽。",
+        "start_year": 929,
+        "end_year": 929,
+        "time_original": "929年赴镇途中；战事确月日未独载",
+        "status": "published"
+      },
+      "action": "按完整原文复核标题、正文、参与角色与对应事实说明；本次记录问题，尚未拟改写这两个事件。"
+    },
+    {
+      "kind": "internal_editorial_shorthand",
+      "record": {
+        "id": "212dcef7-57cb-59c1-92eb-3963fd80b964",
+        "title": "李仁罕叩头流涕，称惟尽死报德，主记诸将由此亲附服孟",
+        "description": "李仁罕叩头流涕，称惟尽死报德，主记诸将由此亲附服孟。",
+        "start_year": 930,
+        "end_year": 930,
+        "time_original": "930年二月戊戌宴中",
+        "status": "published"
+      },
+      "action": "按完整原文复核标题、正文、参与角色与对应事实说明；本次记录问题，尚未拟改写这两个事件。"
+    },
+    {
+      "kind": "thin_or_template_profiles",
+      "reviewed_fields": 10,
+      "proposed_changes": 8,
+      "reviewed_unchanged": 2,
+      "plan": "profile-changes.json"
+    },
+    {
+      "kind": "missing_alias",
+      "person_id": "6674e6a1-d66d-5e57-af1f-2d98f55021a1",
+      "person_name": "钱传瓘",
+      "detail": "alias-candidate.json"
+    }
+  ],
+  "recommended_order": [
+    "先完成935年第1批剩余10个人物简介/生平字段；本次已准备8项修订、2项保留审阅。",
+    "按卷年段落顺序从934年向前复核，优先身份、追叙定年、关系方向、引文支持范围，其次处理文案；覆盖人物跨年引用，不机械逐年重写。",
+    "884—893年51批中43批未登记其他史书补证，结合相关新旧五代史及唐史传记按主书段落补查。",
+    "852—883年专题旧档案是选录，不将其当作连续年份已完成；保留稳定主体及原档案。"
+  ],
+  "inventory_online_writes": 0,
+  "implementation": {
+    "status": "published_verified",
+    "profiles": "readback-audit.json",
+    "remaining_935_fields": "935-part01-closure-audit.json",
+    "alias": "alias-publication.json",
+    "review_934": "content/revisions/2026-10-04-modern-chinese-review/round-71/readback-audit.json",
+    "online_writes_performed": true,
+    "next_review_scope": [
+      "zztj-v279-y0934-p071",
+      "zztj-v279-y0934-p072",
+      "zztj-v279-y0934-p073",
+      "zztj-v279-y0934-p074"
+    ],
+    "all_legacy_history_reviewed": false
+  }
+}

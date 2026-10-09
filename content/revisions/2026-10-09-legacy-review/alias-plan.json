@@ -1,0 +1,44 @@
+{
+  "reason": "把已发布的改名史实连接到人物别名字段；先发布独立事实引用，再守卫更新别名，不改规范名或创建新人。",
+  "person_key": "person_钱传瓘",
+  "person_baseline": {
+    "id": "6674e6a1-d66d-5e57-af1f-2d98f55021a1",
+    "name": "钱传瓘",
+    "era": "唐末五代十国",
+    "birth_year": null,
+    "death_year": null,
+    "description": "钱传瓘是钱镠的儿子，后改名钱元瓘。907年，他受钱镠派遣，与钱传镣一起进攻温州的卢佶。",
+    "created_at": "2026-09-29T06:41:00.671162+00:00",
+    "image_url": null,
+    "courtesy_name": null,
+    "aliases": [],
+    "faction": null,
+    "native_place": null,
+    "biography": null,
+    "historical_evaluation": null,
+    "tags": [],
+    "family": [],
+    "social_relations": [],
+    "references": [],
+    "status": "published"
+  },
+  "before": [],
+  "after": [
+    "钱元瓘",
+    "錢元瓘"
+  ],
+  "support_claim_id": "c4fa1ecf-fd95-5108-8dc5-59e480efd784",
+  "support_source_url": "https://github.com/greed-216/histree/blob/585a188b/content/books/zizhi-tongjian/vol-277/year-0932/part-01/sources/library/tongjian-277-932-february/source.txt",
+  "claim_key": "claim_revision_20261009_qian_chuanguan_yuanguan_aliases",
+  "alias_claim": {
+    "id": "6de53ca6-2f89-5a5c-a47a-c80097e3f83a",
+    "subject_table": "person",
+    "subject_id": "6674e6a1-d66d-5e57-af1f-2d98f55021a1",
+    "field_path": "aliases",
+    "claim_text": "钱传瓘继位后改名元瓘；钱元瓘、錢元瓘是同一人物的姓名检索形式。",
+    "source_id": "b6143394-59b0-59c4-bb37-ab20a7eaabdd",
+    "citation": "卷277·长兴三年（932）·zztj-v277-y0932-p011·原文件第125行",
+    "note": "原文：传瓘既袭位，更名元瓘，兄弟名“传”者皆更为“元”。；核对说明：《资治通鉴》明确记载传瓘继位后更名元瓘，沿用既有人物UUID。錢元瓘是钱元瓘的繁体检索形式，不表示底本另载一种姓名；兄弟的改名不据此补出未载姓名。",
+    "status": "draft"
+  }
+}

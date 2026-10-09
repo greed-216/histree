@@ -8,7 +8,8 @@
     "934-part08-closure-audit.json",
     "934-part07-closure-audit.json",
     "934-part06-closure-audit.json",
-    "934-part05-closure-audit.json"
+    "934-part05-closure-audit.json",
+    "934-part04-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -20,6 +21,13 @@
         "476a4e50-0891-5c80-ba47-93b512d83811",
         "f2aaeb80-1e79-5710-b59e-b5c312df2780"
       ]
+    },
+    {
+      "person_id": "0835b2b5-3f61-55af-b09b-880c7be94a5e",
+      "name": "陈晖（石敬瑭亲将）",
+      "issue": "934年石敬瑭亲将与909年后梁同名将领是否同人尚待考；本轮保留现有主体，简介不串联二者。",
+      "status": "pending_identity_review",
+      "review_round": "round-90"
     }
   ],
   "completion_proven": false,
@@ -31,17 +39,17 @@
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-88",
+  "last_verified_round": "round-90",
   "review_cursor": {
     "volume": 279,
     "year": 934,
-    "next_reverse_paragraph": "zztj-v279-y0934-p018",
+    "next_reverse_paragraph": "zztj-v279-y0934-p013",
     "next_scope": [
-      "zztj-v279-y0934-p014",
-      "zztj-v279-y0934-p015",
-      "zztj-v279-y0934-p016",
-      "zztj-v279-y0934-p017",
-      "zztj-v279-y0934-p018"
+      "zztj-v279-y0934-p009",
+      "zztj-v279-y0934-p010",
+      "zztj-v279-y0934-p011",
+      "zztj-v279-y0934-p012",
+      "zztj-v279-y0934-p013"
     ],
     "direction": "reverse_review",
     "status": "pending_review"
@@ -63,7 +71,9 @@
     "round-85",
     "round-86",
     "round-87",
-    "round-88"
+    "round-88",
+    "round-89",
+    "round-90"
   ],
   "newly_reviewed_fields_latest_stage": 450,
   "latest_follow_up_audits": [
@@ -74,24 +84,18 @@
   "review_method_adoption": "review-method-adoption.json",
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
-    "batch": "content/books/zizhi-tongjian/vol-279/year-0934/part-04",
-    "paragraphs": "zztj-v279-y0934-p014–p018",
-    "status": "fresh_snapshot_fetched_meaning_review_pending",
-    "public_counts": {
-      "event": 58,
-      "person_event": 103,
-      "fact_claim": 271,
-      "person_relationship": 1,
-      "source": 11
-    }
+    "batch": "content/books/zizhi-tongjian/vol-279/year-0934/part-03",
+    "paragraphs": "zztj-v279-y0934-p009–p013",
+    "status": "pending_review"
   },
   "newly_reviewed_fields_part07": 419,
   "newly_reviewed_fields_part06": 429,
   "newly_reviewed_fields_part05": 446,
   "combined_scope_status": {
     "paragraphs": "zztj-v279-y0934-p014–p023",
-    "completed": "zztj-v279-y0934-p019–p023",
-    "pending": "zztj-v279-y0934-p014–p018",
-    "complete": false
-  }
+    "completed": "zztj-v279-y0934-p014–p023",
+    "pending": null,
+    "complete": true
+  },
+  "newly_reviewed_fields_part04": 649
 }

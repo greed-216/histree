@@ -42,24 +42,17 @@
   ],
   "completion_proven": false,
   "remaining_years": [
-    934,
     933,
     932,
     931,
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-97",
+  "last_verified_round": "round-98",
   "review_cursor": {
-    "volume": 279,
-    "year": 934,
-    "next_reverse_paragraph": "zztj-v279-y0934-p004",
-    "next_scope": [
-      "zztj-v279-y0934-p001",
-      "zztj-v279-y0934-p002",
-      "zztj-v279-y0934-p003",
-      "zztj-v279-y0934-p004"
-    ],
+    "volume": 278,
+    "year": 933,
+    "next_reverse_paragraph": "zztj-v278-y0933-p056",
     "direction": "reverse_review",
     "status": "pending_review"
   },
@@ -89,31 +82,58 @@
     "round-94",
     "round-95",
     "round-96",
-    "round-97"
+    "round-97",
+    "round-98"
   ],
-  "newly_reviewed_fields_latest_stage": 450,
+  "newly_reviewed_fields_latest_stage": 1000,
   "latest_follow_up_audits": [
     "934-part10-followup-audit.json"
   ],
-  "review_execution_note": "沿独立审阅游标逐段、逐字段核对；正确清楚内容保留，白话与史实一次检查完成。仅为身份、时间、关系、疑字或异说做必要跨书校核；保留各书独立出处，不常规扩充补证。旧值守卫写入、独立匿名读回和批次闭合后才推进进度。",
+  "review_execution_note": "按连续原文字数与复杂度合并相邻旧批次，事件、人物、关系、出处一次含义检查；正确内容保留，共享来源按稳定ID集中核验，集中守卫写入、匿名读回和网页验收。",
   "review_method": "review-method.md",
   "review_method_adoption": "review-method-adoption.json",
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
-    "batch": "content/books/zizhi-tongjian/vol-279/year-0934/part-01",
-    "paragraphs": "zztj-v279-y0934-p001–p004",
+    "batch": "content/books/zizhi-tongjian/vol-278/year-0933/part-07",
+    "paragraphs": "待按连续原文字数合并相邻批次，末段p056",
     "status": "pending_review"
   },
   "newly_reviewed_fields_part07": 419,
   "newly_reviewed_fields_part06": 429,
   "newly_reviewed_fields_part05": 446,
   "combined_scope_status": {
-    "paragraphs": "zztj-v279-y0934-p014–p023",
-    "completed": "zztj-v279-y0934-p014–p023",
-    "pending": null,
+    "batches": [
+      "content/books/zizhi-tongjian/vol-279/year-0934/part-01",
+      "content/books/zizhi-tongjian/vol-278/year-0934/part-02",
+      "content/books/zizhi-tongjian/vol-278/year-0934/part-01"
+    ],
+    "paragraphs": [
+      "zztj-v279-y0934-p001",
+      "zztj-v279-y0934-p002",
+      "zztj-v279-y0934-p003",
+      "zztj-v279-y0934-p004",
+      "zztj-v278-y0934-p008",
+      "zztj-v278-y0934-p009",
+      "zztj-v278-y0934-p010",
+      "zztj-v278-y0934-p011",
+      "zztj-v278-y0934-p012",
+      "zztj-v278-y0934-p001",
+      "zztj-v278-y0934-p002",
+      "zztj-v278-y0934-p003",
+      "zztj-v278-y0934-p004",
+      "zztj-v278-y0934-p005",
+      "zztj-v278-y0934-p006",
+      "zztj-v278-y0934-p007"
+    ],
     "complete": true
   },
   "newly_reviewed_fields_part04": 649,
   "newly_reviewed_fields_part03": 487,
-  "newly_reviewed_fields_part02": 359
+  "newly_reviewed_fields_part02": 359,
+  "completed_years": [
+    934
+  ],
+  "completed_year_audits": [
+    "934-year-closure-audit.json"
+  ]
 }

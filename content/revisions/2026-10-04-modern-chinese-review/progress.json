@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 98020,
-    "reviewed_verified": 42139
+    "pending": 97533,
+    "reviewed_verified": 42626
   },
   "rounds": [
     {
@@ -615,6 +615,42 @@
       "protected_identity_fields_verified": 28,
       "newly_reviewed_fields": 10,
       "readback_audit_sha256": "63872939f830aefcc20b1afd9f6814032899a748d60a7058a98a788b7094daaa"
+    },
+    {
+      "path": "round-91",
+      "status": "published_verified",
+      "changes": 220,
+      "reviewed_fields": 426,
+      "protected_identity_fields_verified": 0,
+      "newly_reviewed_fields": 383,
+      "readback_audit_sha256": "c2e43c674a6977ab2c20a34f45a4cf8fbb43e16744218c6f57e1cffa4bb960ce"
+    },
+    {
+      "path": "round-92",
+      "status": "published_verified",
+      "changes": 69,
+      "reviewed_fields": 437,
+      "protected_identity_fields_verified": 0,
+      "newly_reviewed_fields": 98,
+      "readback_audit_sha256": "f5c1cf05c4004732c2f2d0868ae870003aacd1d0f7684a663e616cb3605b4aff"
+    },
+    {
+      "path": "round-93",
+      "status": "published_verified",
+      "changes": 6,
+      "reviewed_fields": 22,
+      "protected_identity_fields_verified": 22,
+      "newly_reviewed_fields": 6,
+      "readback_audit_sha256": "c220676469244bd3e066e1ab7ba45f2b4faad06852af2a38b663e3da8c6a1ef0"
+    },
+    {
+      "path": "round-94",
+      "status": "published_verified",
+      "changes": 20,
+      "reviewed_fields": 20,
+      "newly_reviewed_fields": 0,
+      "structural_fields_verified": 20,
+      "readback_audit_sha256": "b15a816337c09b925b7f6fb42eb217b0d2d5ebc094e4570813e953174e10d095"
     }
   ],
   "complete": false,
@@ -629,18 +665,17 @@
   "review_workflow": {
     "status": "resumed_at_user_request",
     "reason": "2026-10-09用户授权继续修订旧数据；先收尾935年第1批，再从934年年末连续段落向前审阅。",
-    "last_round": "round-90",
+    "last_round": "round-94",
     "full_goal_complete": false,
     "review_cursor": {
       "volume": 279,
       "year": 934,
-      "next_reverse_paragraph": "zztj-v279-y0934-p013",
+      "next_reverse_paragraph": "zztj-v279-y0934-p008",
       "next_scope": [
-        "zztj-v279-y0934-p009",
-        "zztj-v279-y0934-p010",
-        "zztj-v279-y0934-p011",
-        "zztj-v279-y0934-p012",
-        "zztj-v279-y0934-p013"
+        "zztj-v279-y0934-p005",
+        "zztj-v279-y0934-p006",
+        "zztj-v279-y0934-p007",
+        "zztj-v279-y0934-p008"
       ],
       "direction": "reverse_review",
       "status": "pending_review"

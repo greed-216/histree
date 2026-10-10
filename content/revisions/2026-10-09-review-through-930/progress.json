@@ -17,7 +17,8 @@
     "933-part01-closure-audit.json",
     "932-v278-part01-03-closure-audit.json",
     "932-v277-part01-03-closure-audit.json",
-    "931-part04-05-closure-audit.json"
+    "931-part04-05-closure-audit.json",
+    "931-part01-03-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -67,15 +68,14 @@
   ],
   "completion_proven": false,
   "remaining_years": [
-    931,
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-109",
+  "last_verified_round": "round-112",
   "review_cursor": {
     "volume": 277,
-    "year": 931,
-    "next_reverse_paragraph": "zztj-v277-y0931-p030",
+    "year": 930,
+    "next_reverse_paragraph": "zztj-v277-y0930-p055",
     "direction": "reverse_review",
     "status": "pending_review"
   },
@@ -116,7 +116,10 @@
     "round-105",
     "round-106",
     "round-107",
-    "round-109"
+    "round-109",
+    "round-108",
+    "round-111",
+    "round-112"
   ],
   "newly_reviewed_fields_latest_stage": 810,
   "latest_follow_up_audits": [
@@ -133,13 +136,17 @@
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
     "batches": [
-      "content/books/zizhi-tongjian/vol-277/year-0931/part-01",
-      "content/books/zizhi-tongjian/vol-277/year-0931/part-02",
-      "content/books/zizhi-tongjian/vol-277/year-0931/part-03"
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-01",
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-02",
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-03",
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-04",
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-05",
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-06",
+      "content/books/zizhi-tongjian/vol-277/year-0930/part-07"
     ],
-    "paragraphs": "卷277，931年第1—30段",
+    "paragraphs": "卷277，930年原55段；公开基线已准备，按连续原文字数和问题复杂度分组复核",
     "status": "public_baseline_prepared_not_reviewed",
-    "draft": "../2026-10-04-modern-chinese-review/round-108"
+    "draft": "../2026-10-04-modern-chinese-review/round-110"
   },
   "newly_reviewed_fields_part07": 419,
   "newly_reviewed_fields_part06": 429,
@@ -188,11 +195,13 @@
   "completed_years": [
     934,
     933,
-    932
+    932,
+    931
   ],
   "completed_year_audits": [
     "934-year-closure-audit.json",
     "933-year-closure-audit.json",
-    "932-year-closure-audit.json"
+    "932-year-closure-audit.json",
+    "931-year-closure-audit.json"
   ]
 }

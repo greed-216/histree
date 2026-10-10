@@ -13,7 +13,8 @@
     "934-part03-closure-audit.json",
     "934-part02-closure-audit.json",
     "933-part05-07-closure-audit.json",
-    "933-part02-04-closure-audit.json"
+    "933-part02-04-closure-audit.json",
+    "933-part01-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -40,21 +41,33 @@
       "status": "pending_textual_review",
       "basis_claim_id": "59bfa38d-5af9-5b23-bbe4-1cc7eed447d7",
       "context_audit": "../2026-10-04-modern-chinese-review/round-95/name-context-verification.json"
+    },
+    {
+      "person_id": "2983cdd4-afcb-50e5-90f9-93d0fc4aaec8",
+      "name": "安重益",
+      "issue": "宫苑使护送安从进的使命，《资治通鉴》与《旧五代史》明宗纪作安重益，李彝超传作安从益；沿当前主体保存字形异说，不强列无疑别名。",
+      "status": "pending_textual_review",
+      "review_round": "round-102"
+    },
+    {
+      "name": "苏继颜／苏继彦",
+      "issue": "同一催李彝超赴任使命，明宗纪与李彝超传姓名异字；保留原字及具体出处，未新增或强合主体。",
+      "status": "pending_textual_review",
+      "context_audit": "../2026-10-04-modern-chinese-review/round-102/name-context-verification.json"
     }
   ],
   "completion_proven": false,
   "remaining_years": [
-    933,
     932,
     931,
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-101",
+  "last_verified_round": "round-102",
   "review_cursor": {
     "volume": 278,
-    "year": 933,
-    "next_reverse_paragraph": "zztj-v278-y0933-p010",
+    "year": 932,
+    "next_reverse_paragraph": "zztj-v278-y0932-p028",
     "direction": "reverse_review",
     "status": "pending_review"
   },
@@ -88,9 +101,10 @@
     "round-98",
     "round-99",
     "round-100",
-    "round-101"
+    "round-101",
+    "round-102"
   ],
-  "newly_reviewed_fields_latest_stage": 1246,
+  "newly_reviewed_fields_latest_stage": 394,
   "latest_follow_up_audits": [
     "934-part10-followup-audit.json",
     "../2026-10-04-modern-chinese-review/round-101/readback-audit.json"
@@ -100,8 +114,12 @@
   "review_method_adoption": "review-method-adoption.json",
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
-    "batch": "content/books/zizhi-tongjian/vol-278/year-0933/part-01",
-    "paragraphs": "从p010起按连续原文合并相邻批次",
+    "batches": [
+      "content/books/zizhi-tongjian/vol-278/year-0932/part-03",
+      "content/books/zizhi-tongjian/vol-278/year-0932/part-02",
+      "content/books/zizhi-tongjian/vol-278/year-0932/part-01"
+    ],
+    "paragraphs": "卷278，932年第1—28段，按连续原文和复杂度合批；本年卷277还有21段待复核。",
     "status": "pending_review"
   },
   "newly_reviewed_fields_part07": 419,
@@ -109,40 +127,19 @@
   "newly_reviewed_fields_part05": 446,
   "combined_scope_status": {
     "batches": [
-      "content/books/zizhi-tongjian/vol-278/year-0933/part-04",
-      "content/books/zizhi-tongjian/vol-278/year-0933/part-03",
-      "content/books/zizhi-tongjian/vol-278/year-0933/part-02"
+      "content/books/zizhi-tongjian/vol-278/year-0933/part-01"
     ],
     "paragraphs": [
-      "zztj-v278-y0933-p031",
-      "zztj-v278-y0933-p032",
-      "zztj-v278-y0933-p033",
-      "zztj-v278-y0933-p034",
-      "zztj-v278-y0933-p035",
-      "zztj-v278-y0933-p036",
-      "zztj-v278-y0933-p037",
-      "zztj-v278-y0933-p038",
-      "zztj-v278-y0933-p039",
-      "zztj-v278-y0933-p021",
-      "zztj-v278-y0933-p022",
-      "zztj-v278-y0933-p023",
-      "zztj-v278-y0933-p024",
-      "zztj-v278-y0933-p025",
-      "zztj-v278-y0933-p026",
-      "zztj-v278-y0933-p027",
-      "zztj-v278-y0933-p028",
-      "zztj-v278-y0933-p029",
-      "zztj-v278-y0933-p030",
-      "zztj-v278-y0933-p011",
-      "zztj-v278-y0933-p012",
-      "zztj-v278-y0933-p013",
-      "zztj-v278-y0933-p014",
-      "zztj-v278-y0933-p015",
-      "zztj-v278-y0933-p016",
-      "zztj-v278-y0933-p017",
-      "zztj-v278-y0933-p018",
-      "zztj-v278-y0933-p019",
-      "zztj-v278-y0933-p020"
+      "zztj-v278-y0933-p001",
+      "zztj-v278-y0933-p002",
+      "zztj-v278-y0933-p003",
+      "zztj-v278-y0933-p004",
+      "zztj-v278-y0933-p005",
+      "zztj-v278-y0933-p006",
+      "zztj-v278-y0933-p007",
+      "zztj-v278-y0933-p008",
+      "zztj-v278-y0933-p009",
+      "zztj-v278-y0933-p010"
     ],
     "complete": true
   },
@@ -150,9 +147,11 @@
   "newly_reviewed_fields_part03": 487,
   "newly_reviewed_fields_part02": 359,
   "completed_years": [
-    934
+    934,
+    933
   ],
   "completed_year_audits": [
-    "934-year-closure-audit.json"
+    "934-year-closure-audit.json",
+    "933-year-closure-audit.json"
   ]
 }

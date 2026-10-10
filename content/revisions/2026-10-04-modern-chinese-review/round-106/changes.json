@@ -1,0 +1,70 @@
+{
+  "scope": [
+    "zztj-v277-y0932-p021"
+  ],
+  "batches": [],
+  "changes": [
+    {
+      "table": "event",
+      "id": "fdd51ec1-248d-5aad-a3e4-963846b7f5af",
+      "baseline": {
+        "id": "fdd51ec1-248d-5aad-a3e4-963846b7f5af",
+        "title": "史书称后唐未答请封后，闽停止职贡",
+        "start_year": null,
+        "end_year": null,
+        "dynasty": "五代十国",
+        "description": "史书称后唐未答请封后，闽停止职贡。",
+        "impact_level": null,
+        "created_at": "2026-10-03T21:00:32.7147+00:00",
+        "image_url": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_name": "闽与后唐",
+        "tags": [],
+        "phases": [],
+        "references": [],
+        "status": "published",
+        "time_original": "不报请封后，持续状态起止未独确年",
+        "location_modern_name": null,
+        "location_precision": "unknown",
+        "location_note": "地点沿用史书记载的名称，现代坐标尚未核实。"
+      },
+      "before": {
+        "time_original": "不报请封后，持续状态起止未独确年"
+      },
+      "after": {
+        "time_original": "后唐没有答复王延钧的封爵请求后，闽停止职贡；具体起止年份未明确记载"
+      },
+      "review": "网页验收发现“未独确年”仍是工作用语；依据原文“自是职贡遂绝”保留相对先后和未确定起止年份。",
+      "preserved_original_dates": "起止年继续留null；只展开原时间说明，不推定932年为开始年。"
+    },
+    {
+      "table": "fact_claim",
+      "id": "01ec0e7d-6106-58c6-bdfc-8046c2b460cc",
+      "baseline": {
+        "id": "01ec0e7d-6106-58c6-bdfc-8046c2b460cc",
+        "subject_table": "event",
+        "subject_id": "fdd51ec1-248d-5aad-a3e4-963846b7f5af",
+        "field_path": "time_original",
+        "claim_text": "不报请封后，持续状态起止未独确年",
+        "source_id": "fcb7222a-bbbc-541a-9ef8-7810b86b86dc",
+        "citation": "卷277·长兴三年（932）·zztj-v277-y0932-p021·原文件第135行",
+        "note": "原文：自是职贡遂绝。；核对说明：时间依据《资治通鉴》及相应补证分别记录；追述和其他史书的日期另作说明，不自行换算公历日期。",
+        "status": "published"
+      },
+      "before": {
+        "claim_text": "不报请封后，持续状态起止未独确年"
+      },
+      "after": {
+        "claim_text": "后唐没有答复王延钧的封爵请求后，闽停止职贡；具体起止年份未明确记载"
+      },
+      "review": "网页验收发现“未独确年”仍是工作用语；依据原文“自是职贡遂绝”保留相对先后和未确定起止年份。",
+      "preserved_original_dates": "起止年继续留null；只展开原时间说明，不推定932年为开始年。"
+    }
+  ],
+  "reviewed_unchanged": [],
+  "full_goal_complete": false,
+  "limitations": [
+    "第105轮网页验收发现的时间说明补正，不改变年代和引文。"
+  ]
+}

@@ -15,7 +15,8 @@
     "933-part05-07-closure-audit.json",
     "933-part02-04-closure-audit.json",
     "933-part01-closure-audit.json",
-    "932-v278-part01-03-closure-audit.json"
+    "932-v278-part01-03-closure-audit.json",
+    "932-v277-part01-03-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -65,16 +66,15 @@
   ],
   "completion_proven": false,
   "remaining_years": [
-    932,
     931,
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-104",
+  "last_verified_round": "round-106",
   "review_cursor": {
     "volume": 277,
-    "year": 932,
-    "next_reverse_paragraph": "zztj-v277-y0932-p021",
+    "year": 931,
+    "next_reverse_paragraph": "zztj-v277-y0931-p050",
     "direction": "reverse_review",
     "status": "pending_review"
   },
@@ -111,13 +111,17 @@
     "round-101",
     "round-102",
     "round-103",
-    "round-104"
+    "round-104",
+    "round-105",
+    "round-106"
   ],
-  "newly_reviewed_fields_latest_stage": 1115,
+  "newly_reviewed_fields_latest_stage": 1382,
   "latest_follow_up_audits": [
     "934-part10-followup-audit.json",
     "../2026-10-04-modern-chinese-review/round-101/readback-audit.json",
-    "../2026-10-04-modern-chinese-review/round-104/readback-audit.json"
+    "../2026-10-04-modern-chinese-review/round-104/readback-audit.json",
+    "../2026-10-04-modern-chinese-review/round-106/readback-audit.json",
+    "../2026-10-04-modern-chinese-review/round-106/browser-audit.json"
   ],
   "review_execution_note": "按连续原文字数与复杂度合并相邻旧批次，事件、人物、关系、出处一次含义检查；正确内容保留，共享来源按稳定ID集中核验，集中守卫写入、匿名读回和网页验收。",
   "review_method": "review-method.md",
@@ -125,11 +129,10 @@
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
     "batches": [
-      "content/books/zizhi-tongjian/vol-277/year-0932/part-03",
-      "content/books/zizhi-tongjian/vol-277/year-0932/part-02",
-      "content/books/zizhi-tongjian/vol-277/year-0932/part-01"
+      "content/books/zizhi-tongjian/vol-277/year-0931/part-04",
+      "content/books/zizhi-tongjian/vol-277/year-0931/part-05"
     ],
-    "paragraphs": "卷277，932年第1—21段，按连续原文和复杂度合批。",
+    "paragraphs": "卷277，931年第31—50段",
     "status": "pending_review"
   },
   "newly_reviewed_fields_part07": 419,
@@ -178,10 +181,12 @@
   "newly_reviewed_fields_part02": 359,
   "completed_years": [
     934,
-    933
+    933,
+    932
   ],
   "completed_year_audits": [
     "934-year-closure-audit.json",
-    "933-year-closure-audit.json"
+    "933-year-closure-audit.json",
+    "932-year-closure-audit.json"
   ]
 }

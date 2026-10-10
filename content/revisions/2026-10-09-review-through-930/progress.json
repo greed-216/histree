@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "completed_verified",
   "objective": "完成一直到930年的旧数据复核",
   "scope": "scope.json",
   "completed_batch_audits": [
@@ -19,7 +19,8 @@
     "932-v277-part01-03-closure-audit.json",
     "931-part04-05-closure-audit.json",
     "931-part01-03-closure-audit.json",
-    "930-part04-07-closure-audit.json"
+    "930-part04-07-closure-audit.json",
+    "930-part01-03-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -65,20 +66,24 @@
       "issue": "《资治通鉴》底本随后作“知诰矢丞相、太师”；矢非繁简对应，动作字待校，未建已接受或已辞去的确定事实。",
       "status": "pending_textual_review",
       "review_round": "round-103"
+    },
+    {
+      "name": "930年六月日食干支癸已",
+      "issue": "《资治通鉴》选定TXT作癸已，已非地支巳；原字及疑字说明保留，不凭历算改动引文或日期。",
+      "status": "pending_textual_review",
+      "review_round": "round-113"
     }
   ],
-  "completion_proven": false,
-  "remaining_years": [
-    930
-  ],
-  "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-110",
+  "completion_proven": true,
+  "remaining_years": [],
+  "note": "原定930—934年37批次299段旧数据复核完成；争议事实保留具体待考说明，不作无证据定论。",
+  "last_verified_round": "round-114",
   "review_cursor": {
     "volume": 277,
     "year": 930,
-    "next_reverse_paragraph": "zztj-v277-y0930-p029",
+    "next_reverse_paragraph": null,
     "direction": "reverse_review",
-    "status": "pending_review"
+    "status": "scope_end_reviewed_verified"
   },
   "newly_reviewed_fields_this_stage": 421,
   "verified_rounds": [
@@ -121,30 +126,28 @@
     "round-108",
     "round-111",
     "round-112",
-    "round-110"
+    "round-110",
+    "round-113",
+    "round-114"
   ],
-  "newly_reviewed_fields_latest_stage": 1470,
+  "newly_reviewed_fields_latest_stage": 1211,
   "latest_follow_up_audits": [
     "934-part10-followup-audit.json",
     "../2026-10-04-modern-chinese-review/round-101/readback-audit.json",
     "../2026-10-04-modern-chinese-review/round-104/readback-audit.json",
     "../2026-10-04-modern-chinese-review/round-106/readback-audit.json",
     "../2026-10-04-modern-chinese-review/round-106/browser-audit.json",
-    "../2026-10-04-modern-chinese-review/round-109/readback-audit.json"
+    "../2026-10-04-modern-chinese-review/round-109/readback-audit.json",
+    "../2026-10-04-modern-chinese-review/round-114/readback-audit.json",
+    "../2026-10-04-modern-chinese-review/round-114/browser-audit.json"
   ],
   "review_execution_note": "按连续原文字数与复杂度合并相邻旧批次，事件、人物、关系、出处一次含义检查；正确内容保留，共享来源按稳定ID集中核验，集中守卫写入、匿名读回和网页验收。",
   "review_method": "review-method.md",
   "review_method_adoption": "review-method-adoption.json",
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
-    "batches": [
-      "content/books/zizhi-tongjian/vol-277/year-0930/part-01",
-      "content/books/zizhi-tongjian/vol-277/year-0930/part-02",
-      "content/books/zizhi-tongjian/vol-277/year-0930/part-03"
-    ],
-    "paragraphs": "卷277，930年第1—29段",
-    "status": "public_baseline_prepared_not_reviewed",
-    "draft": "../2026-10-04-modern-chinese-review/round-113"
+    "status": "original_requested_scope_complete",
+    "next_reverse_paragraph": null
   },
   "newly_reviewed_fields_part07": 419,
   "newly_reviewed_fields_part06": 429,
@@ -194,12 +197,16 @@
     934,
     933,
     932,
-    931
+    931,
+    930
   ],
   "completed_year_audits": [
     "934-year-closure-audit.json",
     "933-year-closure-audit.json",
     "932-year-closure-audit.json",
-    "931-year-closure-audit.json"
-  ]
+    "931-year-closure-audit.json",
+    "930-year-closure-audit.json"
+  ],
+  "completion_audit": "completion-audit.json",
+  "completed_at": "2026-10-10T07:06:52.052731+00:00"
 }

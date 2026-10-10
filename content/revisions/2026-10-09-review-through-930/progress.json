@@ -14,7 +14,8 @@
     "934-part02-closure-audit.json",
     "933-part05-07-closure-audit.json",
     "933-part02-04-closure-audit.json",
-    "933-part01-closure-audit.json"
+    "933-part01-closure-audit.json",
+    "932-v278-part01-03-closure-audit.json"
   ],
   "open_textual_questions": [
     {
@@ -54,6 +55,12 @@
       "issue": "同一催李彝超赴任使命，明宗纪与李彝超传姓名异字；保留原字及具体出处，未新增或强合主体。",
       "status": "pending_textual_review",
       "context_audit": "../2026-10-04-modern-chinese-review/round-102/name-context-verification.json"
+    },
+    {
+      "name": "徐知诰授大丞相、太师后的辞受",
+      "issue": "《资治通鉴》底本随后作“知诰矢丞相、太师”；矢非繁简对应，动作字待校，未建已接受或已辞去的确定事实。",
+      "status": "pending_textual_review",
+      "review_round": "round-103"
     }
   ],
   "completion_proven": false,
@@ -63,11 +70,11 @@
     930
   ],
   "note": "各年逐段推进，并收尾共享人物字段；整批审计仅证明该批，不替代各年完整覆盖审计。",
-  "last_verified_round": "round-102",
+  "last_verified_round": "round-104",
   "review_cursor": {
-    "volume": 278,
+    "volume": 277,
     "year": 932,
-    "next_reverse_paragraph": "zztj-v278-y0932-p028",
+    "next_reverse_paragraph": "zztj-v277-y0932-p021",
     "direction": "reverse_review",
     "status": "pending_review"
   },
@@ -102,12 +109,15 @@
     "round-99",
     "round-100",
     "round-101",
-    "round-102"
+    "round-102",
+    "round-103",
+    "round-104"
   ],
-  "newly_reviewed_fields_latest_stage": 394,
+  "newly_reviewed_fields_latest_stage": 1115,
   "latest_follow_up_audits": [
     "934-part10-followup-audit.json",
-    "../2026-10-04-modern-chinese-review/round-101/readback-audit.json"
+    "../2026-10-04-modern-chinese-review/round-101/readback-audit.json",
+    "../2026-10-04-modern-chinese-review/round-104/readback-audit.json"
   ],
   "review_execution_note": "按连续原文字数与复杂度合并相邻旧批次，事件、人物、关系、出处一次含义检查；正确内容保留，共享来源按稳定ID集中核验，集中守卫写入、匿名读回和网页验收。",
   "review_method": "review-method.md",
@@ -115,11 +125,11 @@
   "newly_reviewed_fields_part08_latest_rounds": 251,
   "next_scope_inventory": {
     "batches": [
-      "content/books/zizhi-tongjian/vol-278/year-0932/part-03",
-      "content/books/zizhi-tongjian/vol-278/year-0932/part-02",
-      "content/books/zizhi-tongjian/vol-278/year-0932/part-01"
+      "content/books/zizhi-tongjian/vol-277/year-0932/part-03",
+      "content/books/zizhi-tongjian/vol-277/year-0932/part-02",
+      "content/books/zizhi-tongjian/vol-277/year-0932/part-01"
     ],
-    "paragraphs": "卷278，932年第1—28段，按连续原文和复杂度合批；本年卷277还有21段待复核。",
+    "paragraphs": "卷277，932年第1—21段，按连续原文和复杂度合批。",
     "status": "pending_review"
   },
   "newly_reviewed_fields_part07": 419,
@@ -127,19 +137,39 @@
   "newly_reviewed_fields_part05": 446,
   "combined_scope_status": {
     "batches": [
-      "content/books/zizhi-tongjian/vol-278/year-0933/part-01"
+      "content/books/zizhi-tongjian/vol-278/year-0932/part-01",
+      "content/books/zizhi-tongjian/vol-278/year-0932/part-02",
+      "content/books/zizhi-tongjian/vol-278/year-0932/part-03"
     ],
     "paragraphs": [
-      "zztj-v278-y0933-p001",
-      "zztj-v278-y0933-p002",
-      "zztj-v278-y0933-p003",
-      "zztj-v278-y0933-p004",
-      "zztj-v278-y0933-p005",
-      "zztj-v278-y0933-p006",
-      "zztj-v278-y0933-p007",
-      "zztj-v278-y0933-p008",
-      "zztj-v278-y0933-p009",
-      "zztj-v278-y0933-p010"
+      "zztj-v278-y0932-p001",
+      "zztj-v278-y0932-p002",
+      "zztj-v278-y0932-p003",
+      "zztj-v278-y0932-p004",
+      "zztj-v278-y0932-p005",
+      "zztj-v278-y0932-p006",
+      "zztj-v278-y0932-p007",
+      "zztj-v278-y0932-p008",
+      "zztj-v278-y0932-p009",
+      "zztj-v278-y0932-p010",
+      "zztj-v278-y0932-p011",
+      "zztj-v278-y0932-p012",
+      "zztj-v278-y0932-p013",
+      "zztj-v278-y0932-p014",
+      "zztj-v278-y0932-p015",
+      "zztj-v278-y0932-p016",
+      "zztj-v278-y0932-p017",
+      "zztj-v278-y0932-p018",
+      "zztj-v278-y0932-p019",
+      "zztj-v278-y0932-p020",
+      "zztj-v278-y0932-p021",
+      "zztj-v278-y0932-p022",
+      "zztj-v278-y0932-p023",
+      "zztj-v278-y0932-p024",
+      "zztj-v278-y0932-p025",
+      "zztj-v278-y0932-p026",
+      "zztj-v278-y0932-p027",
+      "zztj-v278-y0932-p028"
     ],
     "complete": true
   },

@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 88975,
-    "reviewed_verified": 51184
+    "pending": 86294,
+    "reviewed_verified": 53865
   },
   "rounds": [
     {
@@ -789,6 +789,30 @@
       "reviewed_fields": 2,
       "newly_reviewed_fields": 0,
       "structural_fields_verified": 0
+    },
+    {
+      "path": "round-110",
+      "status": "published_verified",
+      "changes": 688,
+      "reviewed_fields": 2132,
+      "newly_reviewed_fields": 1470,
+      "structural_fields_verified": 22
+    },
+    {
+      "path": "round-113",
+      "status": "published_verified",
+      "changes": 772,
+      "reviewed_fields": 1751,
+      "newly_reviewed_fields": 1211,
+      "structural_fields_verified": 40
+    },
+    {
+      "path": "round-114",
+      "status": "published_verified",
+      "changes": 1,
+      "reviewed_fields": 2,
+      "newly_reviewed_fields": 0,
+      "structural_fields_verified": 0
     }
   ],
   "complete": false,
@@ -803,14 +827,14 @@
   "review_workflow": {
     "status": "resumed_at_user_request",
     "reason": "2026-10-09用户授权继续修订旧数据；先收尾935年第1批，再从934年年末连续段落向前审阅。",
-    "last_round": "round-112",
+    "last_round": "round-114",
     "full_goal_complete": false,
     "review_cursor": {
       "volume": 277,
       "year": 930,
-      "next_reverse_paragraph": "zztj-v277-y0930-p055",
+      "next_reverse_paragraph": null,
       "direction": "reverse_review",
-      "status": "pending_review"
+      "status": "scope_end_reviewed_verified"
     },
     "ingestion_cursor_changed": false,
     "requested_target_year_inclusive": 930

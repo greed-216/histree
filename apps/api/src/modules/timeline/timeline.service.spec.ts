@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
 import { TimelineService } from './timeline.service';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 
 describe('TimelineService', () => {
   const calls: Record<string, unknown[]> = {};
@@ -12,7 +12,7 @@ describe('TimelineService', () => {
     range: jest.fn((...args: unknown[]) => { calls.range = args; return Promise.resolve(response); }),
   };
   const client = { from: jest.fn(() => query), rpc: jest.fn() };
-  const service = new TimelineService({ getClient: () => client } as unknown as SupabaseService);
+  const service = new TimelineService({ getClient: () => client } as unknown as MysqlService);
   beforeEach(() => { jest.clearAllMocks(); response = { data: [], error: null }; });
   it('uses a published-only overlap query and bounded page with a lookahead row', async () => {
     response.data = Array.from({ length: 21 }, (_, i) => ({ id: String(i) }));

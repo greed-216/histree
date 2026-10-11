@@ -3,7 +3,7 @@ import { readFile, mkdir } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
 // Run against a Vite server configured with the local test URLs documented in FIRST_READING_RELEASE.md.
-const base = process.env.E2E_WEB_URL || 'http://127.0.0.1:5175/histree/';
+const base = process.env.E2E_WEB_URL || 'http://127.0.0.1:5175/';
 const db = JSON.parse(await readFile(process.env.HISTREE_FIXTURE_PATH || '/tmp/histree-fixture.json', 'utf8'));
 const screenshots = process.env.HISTREE_SCREENSHOTS || '/tmp/histree-screenshots';
 await mkdir(screenshots, { recursive: true });
@@ -40,16 +40,10 @@ async function context(options = {}) {
   const ctx = await browser.newContext(options);
   await ctx.route('**/*', async route => {
     const url = new URL(route.request().url());
-    if (url.origin === new URL(base).origin) return route.continue();
-    if (!['http://127.0.0.1:4319','http://127.0.0.1:54321'].includes(url.origin)) return route.abort();
+    if (!url.pathname.startsWith('/api/v1/')) return route.continue();
+    assert.equal(url.origin,new URL(base).origin);
     const reply = (body, status = 200) => route.fulfill({ status, contentType:'application/json', body:JSON.stringify(body) });
     const path = url.pathname.replace('/api/v1', '');
-    if (path.startsWith('/event/') && route.request().method() === 'PATCH') {
-      assert.ok(route.request().headers().authorization);
-      const row = db.event.find(e => e.id === path.split('/')[2]);
-      Object.assign(row,route.request().postDataJSON());
-      return reply(row);
-    }
     if(path.startsWith('/catalog/'))return reply(failTopics&&path==='/catalog/topic'?{message:'offline'}:catalogue(path.split('/')[2],url.searchParams),failTopics&&path==='/catalog/topic'?503:200);
     if(path.startsWith('/entry-context/'))return reply({...graph(path.split('/')[2]),has_more:false});
     if(path.startsWith('/entry/'))return reply(allNodes().find(n=>n.id===path.split('/')[2]));
@@ -62,16 +56,6 @@ async function context(options = {}) {
     if (path.startsWith('/topics/')) return reply(db.topic.find(t => t.slug === path.split('/')[2]));
     if (path.startsWith('/graph/')) return reply(graph(path.split('/')[2]));
     if (path.startsWith('/evidence/')) { const [, , subject,id] = path.split('/'); return reply(db.fact_claim.filter(c => c.subject_table === subject && c.subject_id === id).map(c => ({...c,source:db.source.find(s => s.id === c.source_id)}))); }
-    if (path.startsWith('/editorial/')) {
-      assert.ok(route.request().headers().authorization, 'admin calls carry bearer token');
-      const [, , table, id] = path.split('/');
-      if (route.request().method() === 'GET') return reply(catalogue(table,url.searchParams,true));
-      const body = route.request().postDataJSON();
-      if (route.request().method() === 'POST') { const row = { ...body, id: crypto.randomUUID() }; db[table].push(row); return reply(row); }
-      if (route.request().method() === 'PATCH') { const row = db[table].find(r => r.id === id); Object.assign(row,body); return reply(row); }
-    }
-    if (path.startsWith('/rest/v1/user_roles')) return reply({ role:'admin' });
-    if (path.startsWith('/auth/v1/user')) return reply({ id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', email:'editor@example.test' });
     return reply({ message:`Unmocked ${path}` },404);
   });
   ctx.on('page', page => page.on('pageerror', e => errors.push(e.message)));
@@ -134,25 +118,6 @@ try {
   for (const path of ['', 'topics/test-reading', `people/${personId}`]) { await mp.goto(base+path); await mp.getByRole('heading',{level:1}).waitFor(); assert.ok(await mp.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `mobile overflow: ${path}`); }
   await mp.screenshot({path:`${screenshots}/entry-mobile.png`,fullPage:true});
   await mp.goto(base); await mp.getByRole('heading',{name:'测试阅读专题',exact:true}).waitFor(); await mp.screenshot({path:`${screenshots}/home-mobile.png`,fullPage:true});
-  const admin = await context({viewport:{width:1280,height:900}});
-  await admin.addInitScript(() => { if(!location.origin.startsWith('http://127.0.0.1:'))return; const enc=o=>btoa(JSON.stringify(o)); const token=`${enc({alg:'HS256',typ:'JWT'})}.${enc({sub:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',exp:4102444800})}.local-test`; localStorage.setItem('sb-127-auth-token',JSON.stringify({access_token:token,refresh_token:'local-refresh',expires_at:4102444800,expires_in:3600,token_type:'bearer',user:{id:'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',email:'editor@example.test'}})); });
-  const ap = await admin.newPage(); await ap.goto(`${base}admin`); await ap.getByRole('link',{name:'专题与出处管理 →'}).waitFor(); await ap.getByRole('link',{name:'专题与出处管理 →'}).click();
-  await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('标题',{exact:true}).fill('测试专题'); await ap.getByLabel('专题地址').fill('test-topic'); await ap.getByLabel('导读').fill('测试导读'); await ap.getByLabel('章节标题').fill('第一章'); await ap.getByLabel('正文',{exact:true}).fill('阅读内容'); await ap.getByLabel('发布状态').selectOption('draft'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').filter({hasText:'已保存'}).waitFor();
-  assert.equal(db.topic.find(t => t.slug === 'test-topic').status,'draft');
-  await ap.getByRole('button',{name:'来源库',exact:true}).click(); await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByLabel('书名／资料标题').fill('测试来源'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').filter({hasText:'已保存'}).waitFor();
-  await ap.getByRole('button',{name:'陈述与引用',exact:true}).click(); await ap.getByRole('button',{name:'＋ 新增'}).click(); await ap.getByRole('group',{name:'具体条目或关系候选'}).getByRole('button',{name:'测试人物甲',exact:true}).click(); await ap.getByLabel('具体陈述').fill('测试陈述'); await ap.getByRole('group',{name:'来源候选'}).getByRole('button',{name:'测试来源',exact:true}).click(); await ap.getByLabel('定位').fill('卷一'); await ap.getByRole('button',{name:'保存',exact:true}).click(); await ap.getByRole('status').filter({hasText:'已保存'}).waitFor(); assert.equal(db.fact_claim.at(-1).status,'draft');
-  await ap.screenshot({path:`${screenshots}/editorial-desktop.png`,fullPage:true});
-  await ap.goto(`${base}admin`);
-  await ap.getByRole('button',{name:'事件',exact:true}).click();
-  await ap.getByRole('row').filter({hasText:'测试事件甲'}).getByRole('button').first().click();
-  await ap.getByPlaceholder('纬度',{exact:true}).fill('');
-  await ap.getByPlaceholder('经度',{exact:true}).fill('');
-  await ap.getByLabel('定位精度',{exact:true}).selectOption('unknown');
-  await ap.getByRole('button',{name:'保存',exact:true}).click();
-  await ap.getByRole('heading',{name:'事件管理',exact:true}).waitFor();
-  await ap.waitForFunction(() => !document.querySelector('input[placeholder="纬度"]'));
-  assert.equal(db.event.find(e=>e.id===eventId).location_lat,null);
-  assert.equal(db.event.find(e=>e.id===eventId).location_lng,null);
   assert.deepEqual(errors,[]);
-  console.log('PASS: map/timeline selection, year/person filters, missing coordinates, zero coordinates, clearing saved coordinates; topic → entry → evidence → graph; event phases; alias search; empty/error/retry; mobile overflow; admin draft topic/source/claim forms; no page exceptions');
+  console.log('PASS: map/timeline selection, year/person filters, missing coordinates, zero coordinates, clearing saved coordinates; topic → entry → evidence → graph; event phases; alias search; empty/error/retry; mobile overflow; no page exceptions or login fixtures');
 } finally { await browser.close(); }

@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
-const base = process.env.E2E_WEB_URL || "http://127.0.0.1:5186/histree/";
+const base = process.env.E2E_WEB_URL || "http://127.0.0.1:5186/";
 const browser = await chromium.launch({ headless: true, channel: "chrome" });
 const errors = [];
 try {
@@ -241,13 +241,13 @@ try {
       await page
         .getByRole("link", { name: "阅读人物资料 →" })
         .getAttribute("href"),
-      "/histree/people/p1",
+      "/people/p1",
     );
     assert.equal(
       await page
         .getByRole("link", { name: "查看人物图谱 →" })
         .getAttribute("href"),
-      "/histree/graph/p1",
+      "/graph/p1",
     );
     assert.equal(revealCalls, 0);
     await page.getByText("回看本局可用史料（1 条）").click();

@@ -1,71 +1,11 @@
-const WEB_URL = process.env.E2E_WEB_URL || 'http://localhost:5173/histree/';
-const API_URL = process.env.E2E_API_URL || 'http://localhost:3000';
-
-async function assertFetch(name, url, options, predicate) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 5000);
-
-  try {
-    const response = await fetch(url, { ...options, signal: controller.signal });
-    const body = await response.text();
-
-    if (!predicate(response, body)) {
-      throw new Error(`${name} failed: ${response.status} ${body.slice(0, 200)}`);
-    }
-
-    console.log(`ok - ${name}`);
-  } finally {
-    clearTimeout(timeout);
-  }
-}
-
-await assertFetch('web app responds', WEB_URL, {}, (response, body) => {
-  return response.ok && body.includes('<div id="root">');
-});
-
-await assertFetch('api health responds', `${API_URL}/`, {}, (response, body) => {
-  return response.ok && body.includes('Hello World');
-});
-
-await assertFetch('admin people create rejects anonymous user', `${API_URL}/api/v1/people`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ name: 'Smoke Test Person' }),
-}, (response) => response.status === 401);
-
-await assertFetch('admin event create rejects anonymous user', `${API_URL}/api/v1/event`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ title: 'Smoke Test Event' }),
-}, (response) => response.status === 401);
-
-await assertFetch('admin person relationship create rejects anonymous user', `${API_URL}/api/v1/relationships/person-relationships`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ person_a: 'person-a', person_b: 'person-b', relation_type: 'ally' }),
-}, (response) => response.status === 401);
-
-await assertFetch('admin person-event create rejects anonymous user', `${API_URL}/api/v1/relationships/person-events`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ person_id: 'person-a', event_id: 'event-a', role: 'participant' }),
-}, (response) => response.status === 401);
-
-await assertFetch('admin event causality create rejects anonymous user', `${API_URL}/api/v1/relationships/event-causalities`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ cause_event_id: 'event-a', effect_event_id: 'event-b' }),
-}, (response) => response.status === 401);
-
-for (const [method, path] of [
-  ['GET', '/editorial/person'],
-  ['GET', '/editorial/fact_claim'],
-  ['POST', '/editorial/topic'],
-  ['PATCH', '/editorial/source/88888888-8888-8888-8888-888888888001'],
-  ['DELETE', '/editorial/fact_claim/77777777-7777-7777-7777-777777777002'],
-]) {
-  await assertFetch(`editorial ${method} rejects anonymous user`, `${API_URL}/api/v1${path}`, {
-    method,
-    ...(method === 'POST' || method === 'PATCH' ? { headers: { 'Content-Type': 'application/json' }, body: '{}' } : {}),
-  }, response => response.status === 401);
-}
+import {readFile,writeFile,mkdtemp,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {spawnSync} from 'node:child_process';
+const directory=await mkdtemp(join(tmpdir(),'histree-smoke-'));
+try {
+ const data=JSON.parse(await readFile(new URL('../apps/web/src/data/history-scroll.json',import.meta.url),'utf8'));
+ const manifest=join(directory,'manifest.json');await writeFile(manifest,JSON.stringify({scroll:data.panels}));
+ const result=spawnSync(process.execPath,['deploy/ecs/verify.mjs',process.env.E2E_WEB_URL || 'http://127.0.0.1:3000',manifest],{stdio:'inherit'});
+ if(result.status!==0)process.exitCode=1;
+}finally{await rm(directory,{recursive:true,force:true});}

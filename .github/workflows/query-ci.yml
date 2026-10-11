@@ -1,36 +1,22 @@
-name: Query regression checks
+name: Application regression checks
 on:
   pull_request:
     paths:
       - 'apps/**'
       - 'packages/**'
-      - 'supabase/migrations/**'
-      - 'supabase/functions/**'
+      - 'database/**'
+      - 'deploy/ecs/**'
       - 'scripts/**'
       - 'package.json'
       - 'pnpm-lock.yaml'
-      - '.github/workflows/query-ci.yml'
+      - 'pnpm-workspace.yaml'
+      - '.dockerignore'
+      - '.github/workflows/**'
 permissions:
   contents: read
+concurrency:
+  group: histree-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   regression:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10.28.1
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.3.3
-      - run: pnpm test
-      - run: pnpm --filter web lint
-      - run: pnpm --filter web build
-      - run: pnpm --filter api build
-      - run: pnpm test:ask-runtime
-      - run: HISTREE_REMOTE_SMOKE=1 pnpm test:ask-runtime
+    uses: ./.github/workflows/application-checks.yml

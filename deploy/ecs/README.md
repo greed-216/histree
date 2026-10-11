@@ -1,60 +1,34 @@
-# ECS deployment: frontend + API
+# ECS 发布操作
 
-Build `apps/api/Dockerfile` for `linux/amd64` with public build arguments `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, then `docker save | gzip`. This single image contains the React frontend and NestJS API. NestJS serves the frontend from `/app/apps/web/dist` via `HISTREE_WEB_ROOT`; browser routes use `/` and application requests use `/api/v1`. Database and authentication remain on Supabase. AI requests go directly to ECS; NestJS enforces identity and quotas, using Supabase only for auth verification and the existing database quota RPC. The ECS host loads this archive without contacting Docker Hub.
+使用 Node.js 24、NestJS/TypeScript、React/Vite 与 RDS MySQL 8。一个镜像同时服务静态前端和 `/api/v1`；Docker 端口仅绑定 `127.0.0.1:3000`，HTTPS 由宿主机 nginx 提供。
 
-Runtime configuration lives only at `/opt/histree/runtime.env` (directory 0700, file 0600):
+## 私密运行配置
 
-- SUPABASE_URL / SUPABASE_ANON_KEY
-- DEEPSEEK_API_KEY
-- HISTREE_ASK_ENABLED=true
-- HISTREE_MODEL=deepseek-flash
-- HISTREE_GATEWAY_SECRET: anonymous signing secret and legacy Edge compatibility
-- HISTREE_QUOTA_KEY: server-only Supabase service-role key for the dedicated quota RPC client
-- HISTREE_AI_ALLOWED_ORIGINS: approved browser origins; defaults include the IP, domain and Pages
-- HISTREE_ALLOW_ANONYMOUS: true by default
-- NODE_ENV=production / PORT=3000
+`/opt/histree/runtime.env` 应为 0600，目录为 0700，字段见 [配置模板](mysql-runtime.env.example)。数据库、模型与签名凭据只存在运行环境，不进入 Git、Docker build args 或公开 artifact。ECS 使用 RDS 内网 host。无 Supabase 运行配置，无网页登录／管理后台。
 
-Configure the quota key only in the private server environment; never pass it as a build argument, give it to dsh, or include it in Git, images or release artifacts. The retrieval client remains anonymous. Do not set the generic SUPABASE_SERVICE_ROLE_KEY as part of this cutover; the quota credential is dedicated to admission.
+## CI 与发布
 
-Each release directory contains `image.tar.gz`, its `sha256sum` file, `compose.yml`, and `release.sh`. Run `bash release.sh /opt/histree/releases/<release> histree-api:<commit>` on the server. The script validates the archive, runs the actual dsh/MCP smoke test, replaces the Histree application, waits for frontend and API health, and restores the previous image on startup failure. It retains old release archives for rollback; monitor disk usage. In-memory conversations reset on deploy.
+PR 和部署共用 `application-checks.yml`：冻结安装、前后端 build/lint、回归、隔离 MySQL、旧 SQL 兼容、内容守卫、实际 linux/amd64 镜像验证。当前运行路径见 [架构](../../docs/DEPLOYMENT.md)。
 
-Port 3000 is bound to loopback. Public access requires an HTTPS reverse proxy. Set `TRUST_PROXY=1` only behind one trusted proxy which overwrites forwarded headers.
+main 发布需要仓库变量 `ECS_DEPLOY_ENABLED=true`、`ECS_INSTANCE_ID`、`ECS_REGION`，以及 `ecs-production` 环境 secret `WORKBENCH_CONFIG`。数据库及模型凭据保留在宿主机，runner 不需要它们。旧 `VITE_SUPABASE_*` 与 `VITE_ASK_API_URL` 仓库变量／secrets 不再被工作流读取。
 
-## GitHub Actions
+ECS 从短期签名地址下载六文件 artifact：`image.tar.gz`、`image.tar.gz.sha256`、`compose.yml`、`release.sh`、`verify.mjs`、`release-manifest.json`。下载后验证 artifact digest 和精确文件清单；GitHub token 不发送到 ECS。artifact 保留七天，ECS 上旧 release 保留供回滚。
 
-`deploy-api.yml` builds/tests both applications on relevant pushes to main or manual dispatch. `deploy.yml` keeps GitHub Pages available only by manual dispatch. Artifacts expire after seven days.
-
-Configure repository variables:
-
-- ECS_INSTANCE_ID: target ECS instance
-- ECS_REGION: cn-beijing
-- ECS_DEPLOY_ENABLED: true (enable only after a manual production test)
-
-Configure the `ecs-production` environment secret `WORKBENCH_CONFIG` with a dedicated Workbench profile JSON. Prefer a RAM identity scoped to the deployment instance; do not use an account administrator key. Keep DeepSeek and Supabase credentials on the server; the workflow never needs them.
-
-The workflow creates a fresh directory on each run. ECS downloads the tested GitHub artifact through a short-lived signed URL; the GitHub token stays on the runner. Before extraction it verifies the artifact digest and exact file list, then checks the image and deploys the exact commit tag. This avoids slow or timed-out runner-to-OSS uploads. Deployments are serialized and never canceled halfway through a release. Protect main and review workflow edits because production deployment credentials are available to this workflow.
-
-Browsers call the ECS `/api/v1` entry directly; signing and quota credentials stay server-side. Follow [direct AI ingress](../../docs/AI_GATEWAY.md) for identity checks, quota configuration, legacy compatibility and verification.
-
-## histree.wiki
-
-1. The existing Beijing ECS public address is `123.56.189.146` (verify before reuse). Complete ICP filing/access requirements before serving the domain from mainland China.
-2. At the DNS provider, point the root `@` A record to the target ECS public IP. Remove conflicting parking/AAAA records if they point elsewhere. Allow public TCP 80/443; keep port 3000 on loopback.
-3. Build with the same public Supabase URL/anonymous key used by the frontend. Never pass service-role, gateway or model credentials as build arguments.
-4. Deploy the combined application with `release.sh`. Verify the frontend and API on loopback before adding the domain.
-5. Use the issued Alibaba Cloud Nginx certificate with `install-domain-certificate.sh` as documented below. Use default `pending` mode during ICP filing, and `serve` only after filing/access readiness and publication authorization. The existing IP gateway is preserved. `domain-setup.sh` is a separate Let's Encrypt alternative for domains without an imported certificate; do not run it over the installed Alibaba Cloud certificate.
-6. Ensure ECS `HISTREE_AI_ALLOWED_ORIGINS` includes `https://histree.wiki`, retaining existing allowed origins. Add the new origin to Supabase Auth Site URL/redirect configuration if using email/OAuth links. Do not disable gateway identity or quotas.
-7. Verify root/deep links, static assets, public records, AI status and login at `https://histree.wiki`. Missing `/api/v1` routes and missing assets must return 404, rather than the frontend shell.
-
-Example build (variables contain only public browser configuration):
+`release.sh` 取得独占锁，检查 image 架构/revision 与实际 dsh runtime，启动后验证 MySQL 就绪、SPA 深链接、长卷 SHA-256、公开接口及停用路径。任一步失败都恢复旧镜像；成功后原子更新 `/opt/histree/current-release`。脚本不编辑 nginx、证书或 runtime.env；部署会结束内存中的对话与游戏。
 
 ```sh
+# repo 为当前已审阅的提交；构建时只传公开 revision。
 docker build --platform linux/amd64 -f apps/api/Dockerfile \
-  --build-arg VITE_SUPABASE_URL --build-arg VITE_SUPABASE_ANON_KEY \
-  -t histree-api:<release> .
+  --build-arg HISTREE_REVISION=<40位提交哈希> -t histree-api:<40位提交哈希> .
+# 正常生产发布使用 Actions 完整 artifact，再在 ECS 执行：
+bash <release>/release.sh /opt/histree/releases/<release-id> histree-api:<40位提交哈希>
 ```
 
-The frontend is immutable per release: changing public build configuration requires a rebuild. Server-only configuration stays in `/opt/histree/runtime.env`. Local Vite and manual Pages builds retain the `/histree/` base unless `VITE_BASE_PATH=/` is specified.
+回滚应用时使用前一 release 的 `.image` 和 `compose.yml`。数据库 schema 更新与史料发布各自独立授权和验证，不随应用自动执行。源库切换档案见 [MySQL 迁移](../../docs/MYSQL_MIGRATION.md)。
+
+## nginx 与域名
+
+当前 IP 网关完整代理应用。初始化脚本 `https-setup.sh` 仅用于没有现有 vhost 的新主机；`open-ip-frontend.sh` 仅适配旧 IP 网关，已开放的网关不需重复执行。域名证书安装脚本保留 pending／serve 两种模式，应用发布不能替用户改变备案状态。生产 TLS 状态以宿主机实际配置与公网验收为准。
 
 ## Installing an issued Alibaba Cloud certificate
 
@@ -66,7 +40,7 @@ bash deploy/ecs/install-domain-certificate.sh histree.wiki /private/path/fullcha
 
 The script verifies hostname, expiry, trust chain and key match, installs a private versioned directory under `/opt/histree/tls/histree.wiki/`, and configures `/etc/nginx/conf.d/histree-domain.conf`. It validates nginx and waits for new workers before checking TLS without disabling certificate verification. Failure restores the previous domain vhost. The existing IP gateway and its certificate remain intact. The IP vhost must use `listen 443 ssl default_server;`: literal-IP TLS clients may omit SNI, and otherwise the earlier domain vhost can serve the wrong certificate. The installer checks this prerequisite before making changes. The IP homepage now serves the combined application; the separate pending domain homepage remains 503 until domain publication is enabled.
 
-Default `pending` mode returns HTTP 503 with the ICP filing pending message. After filing/access readiness and publication authorization, pass `serve` as the fourth argument using the installed full chain and key paths. Configure the ECS AI Origin and applicable Auth callbacks before public acceptance testing. Temporary upload copies can be removed after installation; preserve the active version for rollback.
+Default `pending` mode returns HTTP 503 with the ICP filing pending message. After filing/access readiness and publication authorization, pass `serve` as the fourth argument using the installed full chain and key paths. Configure the ECS AI Origin before public acceptance testing. Temporary upload copies can be removed after installation; preserve the active version for rollback.
 
 As of 2026-10-08, the Alibaba Cloud certificate is installed and valid until **2027-01-06 07:59:59 Asia/Shanghai**. Server-side verification by normal domain resolution succeeded; public TLS handshakes from the current network failed, so public reachability is unverified. Root-domain nginx is in `pending` mode; the certificate also covers www, whose DNS/vhost setup is not part of this cutover.
 
@@ -80,12 +54,12 @@ The IP entry point `https://123.56.189.146/` serves the full frontend and regula
 bash deploy/ecs/open-ip-frontend.sh 123.56.189.146
 ```
 
-The script checks the application build, saves the previous IP nginx configuration in `/opt/histree/nginx-backups/`, replaces only the old homepage 404 rule with an application proxy, retains existing AI routes and access logs, and validates TLS/deep links with bounded reload waits. It restores the backup on failure. Admin routes and AI GatewayGuard remain enforced. The independent domain vhost stays in pending mode.
+The script checks the application build, saves the previous IP nginx configuration in `/opt/histree/nginx-backups/`, replaces only the old homepage 404 rule with an application proxy, retains existing AI routes and access logs, and validates TLS/deep links with bounded reload waits. It restores the backup on failure. The signed anonymous AI boundary remains enforced. The independent domain vhost stays in pending mode.
 
-ECS `HISTREE_AI_ALLOWED_ORIGINS` includes the IP browser Origin and Pages/domain origins. Supabase Edge Origin configuration is used only by the retained legacy compatibility path. Do not put gateway or model secrets in the browser.
+ECS `HISTREE_AI_ALLOWED_ORIGINS` includes the IP and approved domain origins. Do not put gateway or model secrets in the browser.
 
 ## HTTPS without a domain
 
-Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx serves the combined frontend/API and preserves the ask/status and guessing-game locations. Existing gateways receive these exact game routes during a release; certificate and renewal settings are preserved. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
+Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx serves the combined frontend/API and preserves the ask/status and guessing-game locations. Application releases never edit nginx; certificate and renewal settings are preserved. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
 
 Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/bin/certbot renew --dry-run`, and verify the HTTPS origin from the gateway. Six-day IP certificates require working automatic renewal. See https://letsencrypt.org/2026/03/11/shorter-certs-certbot .

@@ -2,13 +2,11 @@
 import argparse,hashlib,json,os,urllib.parse,urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-a=argparse.ArgumentParser();a.add_argument('plan',type=Path);a.add_argument('--apply',action='store_true');args=a.parse_args()
-plan=json.loads(args.plan.read_text());changes=plan['changes'];envpath=Path(os.environ.get('HISTREE_SERVER_ENV',ROOT/'apps/api/.env'))
-env=dict(l.split('=',1) for l in envpath.read_text().splitlines() if '=' in l and not l.startswith('#'))
-def request(query,body=None):
- key=env['SUPABASE_SERVICE_ROLE_KEY' if body else 'SUPABASE_ANON_KEY'];headers={'apikey':key,'Authorization':'Bearer '+key,'Content-Type':'application/json','Prefer':'return=representation'}
- req=urllib.request.Request(env['SUPABASE_URL']+'/rest/v1/fact_claim?'+urllib.parse.urlencode(query),headers=headers,method='PATCH' if body else 'GET',data=json.dumps(body,ensure_ascii=False).encode() if body else None)
- with urllib.request.urlopen(req,timeout=40) as f:return json.load(f)
+a=argparse.ArgumentParser();a.add_argument('plan',type=Path);a.add_argument('--apply',action='store_true');a.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));a.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=a.parse_args()
+plan=json.loads(args.plan.read_text());changes=plan['changes']
+from public_content_client import PublicContentClient
+client=PublicContentClient(args.public_api_url,args.mysql_env,args.apply)
+def request(query,body=None):return client.request('fact_claim',query,body)
 for c in changes:
  assert c['table']=='fact_claim' and set(c['before'])==set(c['after'])=={'citation'}
  assert c['after']['citation']==c['before']['citation'].replace('显德五年（959','显德六年（959') and c['before']!=c['after']
@@ -42,5 +40,5 @@ verified={}
 for offset in range(0,len(ids),100):
  verified.update({r['id']:r for r in request({'id':'in.('+','.join(ids[offset:offset+100])+')','select':'id,citation,source_id,subject_table,subject_id,note,status'})})
 for c in changes:assert verified[c['id']]=={**c['baseline'],**c['after']}
-args.plan.with_name('publication.json').write_text(json.dumps({'status':'applied_anonymous_readback_verified','plan_sha256':digest,'corrected_rows':len(changes),'preserved_fields':['note','source_id','subject_table','subject_id','status']},ensure_ascii=False,indent=2)+'\n')
+args.plan.with_name('publication-mysql.json').write_text(json.dumps({'status':'applied_anonymous_readback_verified','plan_sha256':digest,'corrected_rows':len(changes),'preserved_fields':['note','source_id','subject_table','subject_id','status']},ensure_ascii=False,indent=2)+'\n')
 print('Applied and anonymously verified:',len(changes))

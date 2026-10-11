@@ -4,7 +4,7 @@ import { pg_trgm } from '@electric-sql/pglite/contrib/pg_trgm';
 import { PGlite } from '@electric-sql/pglite';
 const db = new PGlite({ extensions: { pg_trgm } });
 await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY); CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql AS $$ SELECT NULL::uuid $$; CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public,auth TO anon,authenticated;`);
-for (const file of (await readdir(new URL('../supabase/migrations/', import.meta.url))).filter(f => f.endsWith('.sql')).sort()) await db.exec(await readFile(new URL(`../supabase/migrations/${file}`, import.meta.url), 'utf8'));
+for (const file of (await readdir(new URL('../database/legacy-postgres/migrations/', import.meta.url))).filter(f => f.endsWith('.sql')).sort()) await db.exec(await readFile(new URL(`../database/legacy-postgres/migrations/${file}`, import.meta.url), 'utf8'));
 await db.exec(`GRANT SELECT ON ALL TABLES IN SCHEMA public TO anon,authenticated;
 INSERT INTO event(title,start_year,end_year,status) SELECT '时间事件'||i,900,900,'published' FROM generate_series(1,1205) i;
 INSERT INTO event(title,start_year,end_year,status) VALUES ('公元前事件',-403,-400,'published'),('跨年事件',899,905,'published'),('未定年',NULL,NULL,'published'),('隐藏草稿',1000,1000,'draft'); UPDATE event SET title='测试称帝，测试王朝建立' WHERE id=(SELECT id FROM event WHERE start_year=900 ORDER BY id LIMIT 1); SET ROLE anon;`);

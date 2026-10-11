@@ -19,3 +19,6 @@ resources/originals/**/.gitignore
 # Rebuildable local full-text search database; version JSONL and source maps.
 resources/derived/history-library*/*.sqlite
 resources/derived/history-library*/search.sqlite.build
+
+# Private database snapshots, plans and readback evidence
+/backups/

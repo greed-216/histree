@@ -4,7 +4,7 @@ from pathlib import Path
 p=Path(sys.argv[1]).resolve();out=p.parent/'sql'
 # Published batches are immutable archives. Check prospective imports against
 # reviewed corrections before generating any SQL from their reused rows.
-if not (p.parent/'publication.json').exists():
+if not any((p.parent/name).exists() for name in ('publication.json','publication-mysql.json')):
  batch=json.loads(p.read_text())
  revisions={}
  root=Path(__file__).resolve().parents[1]

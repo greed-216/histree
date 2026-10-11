@@ -6,6 +6,11 @@ domain=${1:-histree.wiki}
 certbot=/opt/histree/certbot/bin/certbot
 conf=/etc/nginx/conf.d/histree-domain.conf
 curl --fail --silent http://127.0.0.1:3000/ | grep -q '<div id="root"></div>'
+# Keep an imported Alibaba Cloud certificate under the dedicated installer.
+if [[ -f "$conf" ]] && grep -q '/opt/histree/tls/' "$conf"; then
+  echo 'Imported domain certificate found; use install-domain-certificate.sh' >&2
+  exit 1
+fi
 backup=$(mktemp)
 had_config=false
 if [[ -f "$conf" ]]; then cp "$conf" "$backup"; had_config=true; fi

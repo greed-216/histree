@@ -11,7 +11,7 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json
 
 新书首次录入前检查现有工具支持：`index-book-claims.py` 使用显式书目key与来源前缀映射，新书尚未接入时先补齐映射并验证。当前发布器不支持专题发布，不能将工具未支持的内容假造为其他类型绕过校验。
 
-新增来源先把原文快照提交到仓库，再用该提交哈希生成固定 Git URL；尚未归档来源时不要发布引用。先逐段审查生成的 batch 和 coverage，确认段落连续、下一段正确、复用 key 列入 `reused-keys.json`，并查看只读预检的新增与复用数量。手动检查主语、行动、前后次序、地点和摘录支持范围。勿直接使用通用 `scripts/prepare-content-import.py` 生成的发布/撤回 SQL；`prepare-book-import.py` 才会排除复用对象。
+新增来源先把原文快照提交到仓库，再用该提交哈希生成固定 Git URL；尚未归档来源时不要发布引用。先逐段审查生成的 batch 和 coverage，确认段落连续、下一段正确、复用 key 列入 `reused-keys.json`，并查看只读预检的新增与复用数量。手动检查主语、行动、前后次序、地点和摘录支持范围。准备工具生成的 `sql/key-map.json` 是发布器的稳定 ID 输入；同目录旧格式 PostgreSQL SQL 仅保留兼容档案，不用于 MySQL 生产执行。勿直接使用通用 `scripts/prepare-content-import.py` 生成的发布/撤回 SQL；`prepare-book-import.py` 才会排除复用对象。
 
 当前任务已授权上线时执行：
 
@@ -19,7 +19,7 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json
 python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 ```
 
-检查 `publication.json` 的 `batch_sha256` 与批次文件匹配，`verified: true`，`public_counts` 完整。脚本先插草稿、再逐表公开，最后按匿名权限读回；Supabase REST 分步写入不具整批 SQL 原子性。中断后先看 `stages`、线上记录和来源。若已有 key 内容不同，或姓名别名、关系端点冲突，停止并校核身份。
+当前发布使用 MySQL，私密连接文件默认 `.env.migration.local`，可用 `--mysql-env` 指定；`--public-api-url` 指向实际同源 `/api/v1`。不要将凭据加入提交。检查 `publication-mysql.json` 的 `batch_sha256` 与批次文件匹配，`verified: true`，`public_counts` 完整。脚本先插草稿、再逐表公开，最后按匿名权限读回；每个 MySQL 写入分块使用事务，整批分步公开不具整批原子性；历史 `publication.json` 保留作为旧发布档案。中断后先看 `stages`、线上记录和来源。若已有 key 内容不同，或姓名别名、关系端点冲突，停止并校核身份。
 
 公开读回后，更新本次书段落账本的状态为 `published_verified`，更新该书独立进度中的最后已发布段、下一段、卷/篇章覆盖和批次路径，以及该书已有索引，具体路径与历史兼容项见 [资料目录与定位](source-library.md)。其他书的进度保持不变。确认书目key与来源前缀受索引脚本支持后，再运行 `python3 scripts/index-book-claims.py`；新书未支持时先适配验证，不绕过检查。如需验证问答，选本批的具体问题，检查回答与出处定位；问答成功不替代史料审核。
 

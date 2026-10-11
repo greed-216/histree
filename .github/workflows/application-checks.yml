@@ -1,0 +1,85 @@
+name: Application checks and image
+on:
+  workflow_call:
+    outputs:
+      artifact-id:
+        value: ${{ jobs.check.outputs.artifact-id }}
+      artifact-digest:
+        value: ${{ jobs.check.outputs.artifact-digest }}
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      artifact-id: ${{ steps.image.outputs.artifact-id }}
+      artifact-digest: ${{ steps.image.outputs.artifact-digest }}
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: histree-test-only
+          MYSQL_DATABASE: histree_test_ci
+        ports: [3306:3306]
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -phistree-test-only"
+          --health-interval=5s --health-timeout=5s --health-retries=30
+    env:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: histree_test_ci
+      MYSQL_USER: root
+      MYSQL_PASSWORD: histree-test-only
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build && pnpm lint && pnpm test
+      - name: Native MySQL contracts (disposable service only)
+        run: pnpm test:mysql
+      - name: Historical PostgreSQL import compatibility (never production)
+        run: pnpm test:archive
+      - name: Reviewed content guards
+        run: |
+          python3 -m unittest discover -s scripts/tests
+          python3 scripts/test-book-publish-chunks.py
+      - name: Build exact Linux image and validate runtime
+        run: |
+          set -euo pipefail
+          docker build --platform linux/amd64 -f apps/api/Dockerfile --build-arg HISTREE_REVISION="$GITHUB_SHA" -t histree-api:${GITHUB_SHA} .
+          docker run --rm histree-api:${GITHUB_SHA} node -e "require('./apps/api/dist/app.module.js')"
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
+          docker run --rm -e HISTREE_REMOTE_SMOKE=1 histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs
+          mkdir bundle
+          node --input-type=module -e "import fs from 'node:fs'; const scroll=JSON.parse(fs.readFileSync('apps/web/src/data/history-scroll.json')); fs.writeFileSync('bundle/release-manifest.json',JSON.stringify({revision:process.env.GITHUB_SHA,scroll:scroll.panels.map(({file,sha256})=>({file,sha256}))}));"
+          docker run -d --name histree-image-check --network host -e HISTREE_DATABASE=mysql -e MYSQL_HOST -e MYSQL_PORT -e MYSQL_DATABASE -e MYSQL_USER -e MYSQL_PASSWORD -e HISTREE_ASK_ENABLED=false -e PORT=3000 histree-api:${GITHUB_SHA}
+          trap 'docker logs histree-image-check; docker rm -f histree-image-check' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3000/api/v1/health >/dev/null; then break; fi
+            sleep 1
+          done
+          node deploy/ecs/verify.mjs http://127.0.0.1:3000 bundle/release-manifest.json
+          docker save histree-api:${GITHUB_SHA} | gzip > bundle/image.tar.gz
+          cp deploy/ecs/compose.yml deploy/ecs/release.sh deploy/ecs/verify.mjs bundle/
+          cd bundle
+          sha256sum image.tar.gz > image.tar.gz.sha256
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        id: image
+        with:
+          name: histree-api-${{ github.sha }}
+          path: bundle/
+          archive: true
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 7

@@ -11,33 +11,7 @@ def digest(obj):return hashlib.sha256(json.dumps(obj,ensure_ascii=False,sort_key
 def read(path):return json.loads(path.read_text())
 def write(path,data):path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 def quote(note):return note.split('；核对说明：',1)[0] if note and note.startswith('原文：') else note
-class Client:
- def __init__(self):
-  self.env=dict(line.split('=',1) for line in (ROOT/'apps/api/.env').read_text().splitlines() if '=' in line and not line.startswith('#'))
- def request(self,table,query,payload=None):
-  key=self.env['SUPABASE_ANON_KEY' if payload is None else 'SUPABASE_SERVICE_ROLE_KEY']
-  url=self.env['SUPABASE_URL']+'/rest/v1/'+table+'?'+urllib.parse.urlencode(query,safe=',().:*')
-  headers={'apikey':key,'Authorization':'Bearer '+key,'Content-Type':'application/json','Prefer':'return=representation'}
-  req=urllib.request.Request(url,headers=headers,method='GET' if payload is None else 'PATCH',data=None if payload is None else json.dumps(payload,ensure_ascii=False).encode())
-  # A failed write is inspected by its caller, never retried blindly.
-  attempts=4 if payload is None else 1
-  for attempt in range(attempts):
-   try:
-    with urllib.request.urlopen(req,timeout=45) as response:return json.load(response)
-   except (urllib.error.URLError,TimeoutError,ConnectionError):
-    if attempt+1==attempts:raise
-    time.sleep(1)
- def rows(self,table,rows=None,checkpoint=None):
-  rows=list(rows or [])
-  while True:
-   selection='id,subject_table,subject_id,field_path,claim_text,source_id,citation,note,status' if table=='fact_claim' else '*'
-   query={'select':selection,'order':'id','limit':1000}
-   if rows:query['id']='gt.'+rows[-1]['id']
-   chunk=self.request(table,query)
-   rows+=chunk
-   if checkpoint:checkpoint(rows)
-   if table=='fact_claim':print(table,len(rows),flush=True)
-   if len(chunk)<1000:return rows
+from public_content_client import PublicContentClient as Client
 
 def validate_changes(changes):
  seen=set()
@@ -80,7 +54,7 @@ def apply_change(client,c,apply):
  return dict(table=table,id=rid,fields=fields,verified=True)
 
 def main():
- a=argparse.ArgumentParser();a.add_argument('mode',choices=['snapshot','preflight','apply']);a.add_argument('path',type=Path);a.add_argument('--workers',type=int,default=4);args=a.parse_args();client=Client()
+ a=argparse.ArgumentParser();a.add_argument('mode',choices=['snapshot','preflight','apply']);a.add_argument('path',type=Path);a.add_argument('--workers',type=int,default=4);a.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));a.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=a.parse_args();client=Client(args.public_api_url,args.mysql_env,args.mode=='apply')
  if args.mode=='snapshot':
   state=read(args.path) if args.path.exists() else dict(at=datetime.now(timezone.utc).isoformat(),scope='Anonymous-visible records at inventory time; embedding vectors excluded',tables={},completed_tables=[])
   for table in FIELDS:
@@ -95,12 +69,12 @@ def main():
  if args.mode=='apply':
   preflight=read(args.path.with_name('preflight.json'));assert preflight['read_only'] and preflight['plan_sha256']==hashlib.sha256(args.path.read_bytes()).hexdigest(), 'Preflight must match the reviewed plan'
  results=[];errors=[];jobs=iter(changes)
- with ThreadPoolExecutor(max_workers=max(1,min(args.workers,6))) as pool:
+ with ThreadPoolExecutor(max_workers=1 if args.mode=='apply' else max(1,min(args.workers,6))) as pool:
   active={}
   def submit():
    c=next(jobs,None)
    if c is not None:active[pool.submit(apply_change,client,c,args.mode=='apply')]=c
-  for _ in range(max(1,min(args.workers,6))):submit()
+  for _ in range(1 if args.mode=='apply' else max(1,min(args.workers,6))):submit()
   while active:
    done,_=wait(active,return_when=FIRST_COMPLETED)
    for future in done:
@@ -112,7 +86,7 @@ def main():
    if len(results)%25==0:print('Checked',len(results),'of',len(changes),flush=True)
  assert not errors,errors
  results.sort(key=lambda r:(r['table'],r['id']))
- out=args.path.with_name('publication.json' if args.mode=='apply' else 'preflight.json')
+ out=args.path.with_name('publication-mysql.json' if args.mode=='apply' else 'preflight.json')
  write(out,dict(verified=args.mode=='apply',read_only=args.mode!='apply',plan_sha256=hashlib.sha256(args.path.read_bytes()).hexdigest(),at=datetime.now(timezone.utc).isoformat(),count=len(results),anonymous_readback_verified=args.mode=='apply',protected_fields_unchanged=args.mode=='apply',results=results))
  print('Verified' if args.mode=='apply' else 'Read-only preflight passed',len(results),flush=True)
 if __name__=='__main__':main()

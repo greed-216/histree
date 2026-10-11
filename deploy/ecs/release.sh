@@ -1,44 +1,46 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# Install one tested image; keep runtime secrets and nginx certificates on the host.
+set -Eeuo pipefail
 release=${1:?release directory required}
 image=${2:?image tag required}
-[[ "$release" == /opt/histree/releases/* && "$image" =~ ^histree-api:[a-f0-9]+$ ]] || exit 2
+[[ "$release" =~ ^/opt/histree/releases/[a-zA-Z0-9_-]+$ && "$image" =~ ^histree-api:[a-f0-9]{40}$ ]] || exit 2
+[[ -d "$release" && ! -L "$release" && -f /opt/histree/runtime.env ]]
+exec 9>/opt/histree/release.lock
+flock -n 9 || { echo 'Another release is in progress' >&2; exit 1; }
 cd "$release"
 sha256sum -c image.tar.gz.sha256
 docker load -i image.tar.gz
 [[ $(docker image inspect --format '{{.Architecture}}' "$image") == amd64 ]]
-# Check the exact new image before replacing the running API.
-docker run --rm --memory=1400m --pids-limit=256 "$image" node apps/api/dsh/smoke.mjs
-# Add only the three game routes to the existing HTTPS gateway, preserving certificates.
-if [[ -f /etc/nginx/conf.d/histree.conf ]]; then
-  cp /etc/nginx/conf.d/histree.conf "$release/nginx.previous"
-  python3 - <<'PY_NGINX'
-from pathlib import Path
-config = Path('/etc/nginx/conf.d/histree.conf')
-text = config.read_text()
-marker = '  location = /api/v1/ask {'
-block = '  location ~ ^/api/v1/ask/guess/(status|start|act)$ {\n    proxy_pass http://127.0.0.1:3000;\n    proxy_http_version 1.1;\n    proxy_set_header Host $host;\n    proxy_set_header X-Forwarded-For $remote_addr;\n    proxy_set_header X-Forwarded-Proto https;\n    proxy_read_timeout 180s;\n  }\n'
-if 'location ~ ^/api/v1/ask/guess/(status|start|act)$' not in text:
-    if text.count(marker) != 1:
-        raise RuntimeError('Unexpected Histree nginx configuration')
-    config.write_text(text.replace(marker, block + marker, 1))
-PY_NGINX
-  if ! nginx -t || ! systemctl reload nginx; then
-    cp "$release/nginx.previous" /etc/nginx/conf.d/histree.conf
-    nginx -t && systemctl reload nginx
-    exit 1
-  fi
-fi
+[[ $(docker image inspect --format '{{index .Config.Labels "org.opencontainers.image.revision"}}' "$image") == "${image#histree-api:}" ]]
+# Verify the exact native harness before touching the running container.
+timeout 90s docker run --rm --memory=1400m --pids-limit=256 "$image" node apps/api/dsh/smoke.mjs
+timeout 90s docker run --rm --memory=1400m --pids-limit=256 -e HISTREE_REMOTE_SMOKE=1 "$image" node apps/api/dsh/smoke.mjs
+timeout 90s docker run --rm --memory=1400m --pids-limit=256 "$image" node apps/api/dsh/guess-smoke.mjs
+nginx -t
 previous=$(cat /opt/histree/current-release 2>/dev/null || true)
-export HISTREE_IMAGE="$image"
-if docker compose -p histree -f compose.yml up -d --wait --wait-timeout 120; then
-  printf '%s\n' "$release" > /opt/histree/current-release
-  printf '%s\n' "$image" > .image
-else
-  if [[ -n "$previous" && -f "$previous/.image" ]]; then
-    HISTREE_IMAGE=$(cat "$previous/.image") docker compose -p histree -f "$previous/compose.yml" up -d --wait --wait-timeout 120
+[[ -z "$previous" || "$previous" =~ ^/opt/histree/releases/[a-zA-Z0-9_-]+$ ]]
+if [[ -n "$previous" ]]; then test -f "$previous/.image"; test -f "$previous/compose.yml"; fi
+runtime_before=$(sha256sum /opt/histree/runtime.env | cut -d' ' -f1)
+rollback() {
+  status=$?
+  trap - ERR
+  echo 'Release failed; restoring previous application' >&2
+  if [[ -n "$previous" ]]; then
+    HISTREE_IMAGE=$(cat "$previous/.image") docker compose -p histree -f "$previous/compose.yml" up -d --wait --wait-timeout 120 || echo 'Rollback failed; inspect host logs' >&2
+  else
+    docker compose -p histree -f compose.yml down || true
   fi
-  exit 1
-fi
-docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/status').then(async r=>{if(!r.ok)process.exit(1);console.log(await r.text())}).catch(()=>process.exit(1))"
-docker exec histree-api node -e "fetch('http://127.0.0.1:3000/api/v1/ask/guess/status').then(async r=>{if(!r.ok)process.exit(1);console.log(await r.text())}).catch(()=>process.exit(1))"
+  exit "$status"
+}
+trap rollback ERR
+export HISTREE_IMAGE="$image"
+docker compose -p histree -f compose.yml up -d --wait --wait-timeout 120
+docker cp release-manifest.json histree-api:/tmp/histree-release-manifest.json
+docker exec -i histree-api node --input-type=module - http://127.0.0.1:3000 /tmp/histree-release-manifest.json < verify.mjs
+[[ $(sha256sum /opt/histree/runtime.env | cut -d' ' -f1) == "$runtime_before" ]]
+printf '%s\n' "$image" > .image
+printf '%s\n' "$previous" > previous-release
+printf '%s\n' "$release" > /opt/histree/current-release.next
+mv /opt/histree/current-release.next /opt/histree/current-release
+trap - ERR
+printf 'Released %s\n' "$image"

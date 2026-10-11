@@ -5,34 +5,19 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createClient } from '@supabase/supabase-js';
 
 if (!process.argv.includes('--live')) {
   console.log(
-    'Use --live with Supabase anonymous credentials and DEEPSEEK_API_KEY to run paid model checks.',
+    'Use --live with HISTREE_PUBLIC_API_URL and DEEPSEEK_API_KEY to run paid model checks.',
   );
   process.exit(0);
 }
-const db = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY,
-);
-const { data: person, error } = await db
-  .from('person')
-  .select('*')
-  .eq('name', '朱温')
-  .eq('status', 'published')
-  .single();
-assert.ifError(error);
-const { data, error: evidenceError } = await db.rpc('content_page', {
-  p_table: 'fact_claim',
-  p_page: 0,
-  p_limit: 50,
-  p_admin: false,
-  p_subject: 'person',
-  p_subject_id: person.id,
-});
-assert.ifError(evidenceError);
+const base=(process.env.HISTREE_PUBLIC_API_URL || 'https://123.56.189.146/api/v1').replace(/\/$/,'');
+const read=async(path)=>{const response=await fetch(base+path,{signal:AbortSignal.timeout(15000)});assert.equal(response.status,200);return response.json();};
+const people=await read('/catalog/person?q='+encodeURIComponent('朱温'));
+const summary=people.items.find(p=>p.name==='朱温');assert.ok(summary);
+const person=await read('/entry/'+summary.id);
+const data=await read('/catalog/fact_claim?subject=person&subject_id='+person.id+'&limit=50');
 const claims = data.items.filter(
   (c) => c.source?.title && c.note?.startsWith('原文：'),
 );

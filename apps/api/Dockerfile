@@ -1,6 +1,7 @@
 FROM node:24-bookworm-slim AS builder
 
 # Enable pnpm
+RUN apt-get update && apt-get install -y --no-install-recommends python3 make g++ && rm -rf /var/lib/apt/lists/*
 RUN corepack enable pnpm
 
 WORKDIR /app
@@ -16,28 +17,25 @@ COPY apps/web ./apps/web
 # Install dependencies
 RUN pnpm install --frozen-lockfile
 
-# Build both applications. Only public Supabase configuration belongs in the browser.
-ARG VITE_SUPABASE_URL
-ARG VITE_SUPABASE_ANON_KEY
-ENV VITE_BASE_PATH=/ VITE_API_URL=/api/v1 VITE_ASK_API_URL=/api/v1
-RUN test -n "$VITE_SUPABASE_URL" && test -n "$VITE_SUPABASE_ANON_KEY"
+# Same-origin frontend and API; secrets belong only in runtime.env.
+ENV VITE_API_URL=/api/v1 VITE_ASK_API_URL=/api/v1
+RUN pnpm --filter @histree/shared-types build
 RUN pnpm --filter web build
 RUN pnpm --filter api build
+RUN pnpm --filter api deploy --prod --legacy /runtime
 
 FROM node:24-bookworm-slim AS runner
 
 WORKDIR /app
+ARG HISTREE_REVISION
+LABEL org.opencontainers.image.revision=$HISTREE_REVISION
 
-# Copy built assets and node_modules from builder
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/packages/shared-types ./packages/shared-types
-COPY --from=builder /app/apps/api/node_modules ./apps/api/node_modules
-COPY --from=builder /app/apps/api/dist ./apps/api/dist
-COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
-COPY --from=builder /app/apps/api/dsh ./apps/api/dsh
-COPY --from=builder /app/apps/web/dist ./apps/web/dist
+# Includes only API production dependencies, compiled API and dsh resources.
+COPY --from=builder --chown=node:node /runtime ./apps/api
+COPY --from=builder --chown=node:node /app/apps/web/dist ./apps/web/dist
 ENV NODE_ENV=production HISTREE_WEB_ROOT=/app/apps/web/dist
 
+USER node
 EXPOSE 3000
 
 # Start the NestJS application

@@ -2,15 +2,13 @@
 import argparse,json,urllib.parse,urllib.request,hashlib
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-a=argparse.ArgumentParser();a.add_argument('--env',type=Path,default=ROOT/'apps/web/.env.local');args=a.parse_args()
-env=dict(l.split('=',1) for l in args.env.read_text().splitlines() if '=' in l and not l.startswith('#'))
-url=env['VITE_SUPABASE_URL'].strip('"\'');key=env['VITE_SUPABASE_ANON_KEY'].strip('"\'')
+from public_content_client import PublicContentClient
+ap=argparse.ArgumentParser();ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+client=PublicContentClient(args.public_api_url)
 def rows(table,ids):
  result={}
  for offset in range(0,len(ids),100):
-  query=urllib.parse.urlencode({'id':'in.('+','.join(ids[offset:offset+100])+')','select':'*'})
-  req=urllib.request.Request(url+'/rest/v1/'+table+'?'+query,headers={'apikey':key,'Authorization':'Bearer '+key})
-  with urllib.request.urlopen(req,timeout=35) as f:result.update({r['id']:r for r in json.load(f)})
+  result.update({r['id']:r for r in client.request(table,{'id':'in.('+','.join(ids[offset:offset+100])+')'})})
  assert set(result)==set(ids),(table,'Missing anonymous-visible rows')
  return result
 path=ROOT/'apps/web/src/data/history-guides.json';data=json.loads(path.read_text())

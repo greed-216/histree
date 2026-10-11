@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 const db=new PGlite({ extensions: { pg_trgm } }), dir=await mkdtemp(join(tmpdir(),'histree-907-'));
 try {
  await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY); CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT null::uuid $$; CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public TO anon;`);
- for (const f of (await readdir('supabase/migrations')).filter(x=>x.endsWith('.sql')).sort()) await db.exec(await readFile('supabase/migrations/'+f,'utf8'));
+ for (const f of (await readdir('database/legacy-postgres/migrations')).filter(x=>x.endsWith('.sql')).sort()) await db.exec(await readFile('database/legacy-postgres/migrations/'+f,'utf8'));
  await db.exec('GRANT SELECT ON ALL TABLES IN SCHEMA public TO anon');
  execFileSync('python3',['scripts/prepare-content-import.py','content/later-liang-907-923/content-batch.json',dir]);
  await db.exec(await readFile(join(dir,'import-draft.sql'),'utf8'));await db.exec(await readFile(join(dir,'publish.sql'),'utf8'));

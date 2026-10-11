@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
-const base = process.env.E2E_WEB_URL || "http://127.0.0.1:5187/histree/";
+const base = process.env.E2E_WEB_URL || "http://127.0.0.1:5187/";
 const browser = await chromium.launch({ headless: true, channel: "chrome" });
 try {
   const page = await browser.newPage();
@@ -11,13 +11,9 @@ try {
   await page.route("**/*", async (route) => {
     const request = route.request(),
       url = new URL(request.url());
-    if (url.origin === new URL(base).origin) return route.continue();
-    assert.equal(
-      url.origin,
-      "https://gateway-test.supabase.co",
-      "AI must never contact the compute host",
-    );
-    assert.ok(url.pathname.startsWith("/functions/v1/ai-gateway/"));
+    if (!url.pathname.startsWith('/api/v1/ask')) return route.continue();
+    assert.equal(url.origin,new URL(base).origin,'AI requests remain same-origin');
+    assert.equal(request.headers().authorization,undefined);
     const json = (data) =>
       route.fulfill({
         contentType: "application/json",
@@ -100,7 +96,7 @@ try {
   assert.equal(sessions, 2);
   assert.deepEqual(errors, []);
   console.log(
-    "Browser gateway: Supabase-only requests, anonymous session reuse, NDJSON result and followup passed",
+    "Browser gateway: same-origin API requests, anonymous session reuse, NDJSON result and followup passed",
   );
 } finally {
   await browser.close();

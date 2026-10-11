@@ -50,7 +50,7 @@ const server = createServer(async (req, res) => {
     let body = '';
     for await (const chunk of req) body += chunk;
     const request = JSON.parse(body);
-    if (req.url.startsWith('/rest/v1/rpc/')) {
+    if (req.url.startsWith('/api/v1/read/')) {
       const name = req.url.split('/').at(-1);
       assert.ok(['ask_search', 'content_page'].includes(name));
       const reply =
@@ -163,8 +163,7 @@ if (process.env.HISTREE_REMOTE_SMOKE) {
     join(dir, 'snapshot.json'),
     JSON.stringify({
       mode: 'remote',
-      url: `http://127.0.0.1:${server.address().port}`,
-      anonKey: 'fixture',
+      url: `http://127.0.0.1:${server.address().port}/api/v1/read`,
     }),
   );
   await writeFile(join(dir, 'retrieved.txt.json'), '[]');

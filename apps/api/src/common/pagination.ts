@@ -1,8 +1,8 @@
 import { BadRequestException } from '@nestjs/common';
-import type { SupabaseClient } from '@supabase/supabase-js';
+import type { MysqlService } from '../modules/mysql/mysql.service';
 import { contentRequest, pageNumber } from '@histree/shared-types';
 export async function readContentPage(
-  client: SupabaseClient,
+  client: ReturnType<MysqlService['client']>,
   table: string,
   query: Record<string, string> = {},
   admin = false,

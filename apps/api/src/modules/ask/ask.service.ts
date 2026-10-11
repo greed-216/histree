@@ -11,7 +11,7 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve, join } from 'node:path';
 import { z } from 'zod';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 
 const bodySchema = z
   .object({
@@ -50,7 +50,7 @@ export class AskService {
   private active = 0;
   constructor(
     private readonly config: ConfigService,
-    _db: SupabaseService,
+    _db: MysqlService,
   ) {}
 
   status() {
@@ -128,11 +128,8 @@ export class AskService {
       emit({ type: 'conversation', conversation: ticket.token });
       emit({ type: 'status', message: '正在准备已发布资料检索…' });
       combined.throwIfAborted();
-      const url = this.config.get<string>('SUPABASE_URL');
-      const anonKey = this.config.get<string>('SUPABASE_ANON_KEY');
-      if (!url || !anonKey)
-        throw new Error('Public query configuration is missing');
-      const data = { mode: 'remote', url, anonKey };
+      const url = `http://127.0.0.1:${this.config.get('PORT') || 3000}/api/v1/read`;
+      const data = { mode: 'remote', url };
       directory = await mkdtemp(join(tmpdir(), 'histree-ask-'));
       const snapshot = join(directory, 'published.json');
       const retrieved = join(directory, 'retrieved.txt');

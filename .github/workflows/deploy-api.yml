@@ -88,10 +88,19 @@ jobs:
           )
           echo "::add-mask::$artifact_url"
           remote_command=$(python3 - "$artifact_url" "$release" <<'PY_COMMAND'
-          import os, shlex, sys
+          import base64, json, os, shlex, sys, urllib.request
           url, release = sys.argv[1:]
           digest = os.environ['ARTIFACT_DIGEST']
           assert len(digest) == 64 and all(c in '0123456789abcdef' for c in digest), 'Invalid artifact digest'
+          # Fetch only the downloader from this exact commit; credentials stay on the runner.
+          source_url = 'https://api.github.com/repos/' + os.environ['GITHUB_REPOSITORY'] + '/contents/deploy/ecs/download-artifact.py?ref=' + os.environ['GITHUB_SHA']
+          source_request = urllib.request.Request(source_url, headers={'Authorization': 'Bearer ' + os.environ['GH_TOKEN'], 'Accept': 'application/vnd.github+json'})
+          with urllib.request.urlopen(source_request, timeout=30) as response:
+              source = json.load(response)
+          assert source['path'] == 'deploy/ecs/download-artifact.py' and source['encoding'] == 'base64' and source['size'] < 65536
+          download_source = base64.b64decode(source['content'])
+          assert len(download_source) == source['size'], 'Downloader source size mismatch'
+          download_code = 'import base64;exec(base64.b64decode(' + repr(base64.b64encode(download_source).decode('ascii')) + '))'
           extract = """import hashlib, pathlib, sys, zipfile
           archive, destination, digest = sys.argv[1:]
           hash_value = hashlib.sha256()
@@ -107,7 +116,7 @@ jobs:
               package.extractall(destination)
           """
           commands = [
-              ['curl', '--fail', '--silent', '--show-error', '--connect-timeout', '20', '--max-time', '900', '--retry', '2', url, '-o', release + '/bundle.zip'],
+              ['python3', '-c', download_code, url, release + '/bundle.zip', digest],
               ['python3', '-c', extract, release + '/bundle.zip', release, digest],
               ['bash', release + '/release.sh', release, 'histree-api:' + os.environ['GITHUB_SHA']],
           ]

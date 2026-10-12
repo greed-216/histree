@@ -1,0 +1,28 @@
+{
+  "backend": "mysql",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "changes": [
+    {
+      "table": "source",
+      "id": "81f54a30-37c7-5d11-99f0-991a2a502a18",
+      "before": {
+        "title": "《旧五代史·崔协传世系》"
+      },
+      "after": {
+        "title": "旧五代史·崔协传世系"
+      },
+      "baseline": {
+        "author": "薛居正等",
+        "created_at": "2026-10-12T07:26:42.477548+00:00",
+        "edition": "从选定的EPUB全文TXT逐字导出；电子版本，纸本及异文尚待全面校核。",
+        "id": "81f54a30-37c7-5d11-99f0-991a2a502a18",
+        "note": "《旧五代史》卷五十八，段落 jiu-wudaishi-205deb4a7860-p001541；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "《旧五代史·崔协传世系》",
+        "url": "https://github.com/greed-216/histree/blob/1ea48b6b9b16894d8d7366a8b52047d83b046e24/content/revisions/2026-10-12-review-927/relationship-supplement/sources/library/jiuwudaishi-058-cuixie-ancestry/source.txt"
+      },
+      "review": "网页来源组件自动加书名号，移除标题外层重复书名号；URL、原文、版次及定位保持不变。"
+    }
+  ],
+  "baseline_policy": "源表原生字段；匿名API的label是title派生值，非受保护数据库列。初次PATCH已提交，通过原值守卫的已应用计划回读完成验证，不重复改写。"
+}

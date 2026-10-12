@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "at": "2026-10-12T09:56:20.540860+00:00",
+  "reviewed_main_commit": "d39cf017b56a6f17b086f6867a1db6c04ae61af4",
+  "merged_architecture_pr": 36,
+  "github_application_and_source_checks": "success",
+  "isolation_mysql_check": "included in successful application checks",
+  "local_content_guard_tests": 30,
+  "production_health": {
+    "status": "ok",
+    "database": "mysql"
+  },
+  "native_and_anonymous_row_fields_match": true,
+  "mysql_target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "scope": "926年MySQL及匿名读取复核边界；应用和schema未修改，未运行付费模型。",
+  "local_publisher_chunk_tests": 3,
+  "local_publication_queue_guard_tests": 3,
+  "citation_guard_checks": {
+    "valid_reviewed_plan": true,
+    "reject_changed_locator": true,
+    "reject_quote_note_edit": true,
+    "reject_source_switch": true
+  }
+}

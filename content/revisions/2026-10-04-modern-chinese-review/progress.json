@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 79167,
-    "reviewed_verified": 61196
+    "pending": 73821,
+    "reviewed_verified": 66746
   },
   "rounds": [
     {
@@ -842,6 +842,27 @@
       "newly_reviewed_fields": 2467,
       "structural_fields_verified": 6,
       "supplemental_reviewed_fields": 103
+    },
+    {
+      "path": "round-118",
+      "status": "published_verified",
+      "changes": 3159,
+      "reviewed_fields": 7470,
+      "newly_reviewed_fields": 5346,
+      "structural_fields_verified": 3,
+      "supplemental_reviewed_fields": 204,
+      "followup": {
+        "path": "../2026-10-12-review-926/word-expansion-followup",
+        "changes": 250,
+        "fields": 263,
+        "status": "published_verified"
+      },
+      "citation_followup": {
+        "path": "../2026-10-12-review-926/citation-followup",
+        "changes": 71,
+        "fields": 71,
+        "status": "published_verified"
+      }
     }
   ],
   "complete": false,
@@ -855,24 +876,24 @@
   },
   "review_workflow": {
     "status": "resumed_at_user_request",
-    "reason": "用户授权继续927年旧数据复核、写入并无问题直接合并；正确内容与原文保留。",
-    "last_round": "round-117",
+    "reason": "用户授权继续926年旧数据复核、写入并无问题直接合并；正确内容与原文保留。",
+    "last_round": "round-118",
     "full_goal_complete": false,
     "review_cursor": {
-      "volume": 275,
-      "year": 927,
+      "volume": 274,
+      "year": 926,
       "next_reverse_paragraph": null,
       "direction": "reverse_review",
       "status": "year_complete_reviewed_verified"
     },
     "ingestion_cursor_changed": false,
-    "requested_target_year_inclusive": 927,
+    "requested_target_year_inclusive": 926,
     "next_scope": {
-      "year": 926,
-      "volume": 275,
+      "year": 925,
+      "volume": 274,
       "volumes": [
-        274,
-        275
+        273,
+        274
       ],
       "status": "pending"
     }

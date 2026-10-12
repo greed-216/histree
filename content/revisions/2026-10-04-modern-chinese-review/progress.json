@@ -13,8 +13,8 @@
   },
   "inventory_sha256": "0bfa096f302f31f90222ffff3bcea14d886cce06ecf0790246e834e729fd4180",
   "field_counts": {
-    "pending": 84450,
-    "reviewed_verified": 55745
+    "pending": 81634,
+    "reviewed_verified": 58626
   },
   "rounds": [
     {
@@ -822,6 +822,17 @@
       "newly_reviewed_fields": 1844,
       "structural_fields_verified": 49,
       "supplemental_reviewed_fields": 36
+    },
+    {
+      "path": "round-116",
+      "status": "published_verified",
+      "changes": 1284,
+      "reviewed_fields": 3967,
+      "newly_reviewed_fields": 2816,
+      "structural_fields_verified": 6,
+      "supplemental_reviewed_fields": 65,
+      "browser_followup_records": 5,
+      "browser_followup_fields": 5
     }
   ],
   "complete": false,
@@ -835,21 +846,25 @@
   },
   "review_workflow": {
     "status": "resumed_at_user_request",
-    "reason": "继续用户在原对话最后授权的929年旧数据批量复核，正确内容保留。",
-    "last_round": "round-115",
+    "reason": "用户确认MySQL架构后继续928年旧数据复核并明确授权写入，正确内容保留。",
+    "last_round": "round-116",
     "full_goal_complete": false,
     "review_cursor": {
       "volume": 276,
-      "year": 929,
+      "year": 928,
       "next_reverse_paragraph": null,
       "direction": "reverse_review",
       "status": "year_complete_reviewed_verified"
     },
     "ingestion_cursor_changed": false,
-    "requested_target_year_inclusive": 929,
+    "requested_target_year_inclusive": 928,
     "next_scope": {
-      "year": 928,
+      "year": 927,
       "volume": 276,
+      "volumes": [
+        275,
+        276
+      ],
       "status": "pending"
     }
   }

@@ -19,7 +19,7 @@ const contextPages = {
 };
 export function EntryPage() {
   const { id } = useParams();
-  const graph = useInfiniteResource<EntryContext>(`/entry-context/${id}`, false, contextPages);
+  const graph = useInfiniteResource<EntryContext>(`/entry-context/${id}`, contextPages);
   const topics = useInfiniteResource<PageResult<TopicSummary>>(`/catalog/topic?node=${id}`);
   if (graph.loading || graph.error) return <LoadState {...graph} />;
   if (!graph.data) return null;

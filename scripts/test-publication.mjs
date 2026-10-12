@@ -8,13 +8,13 @@ await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY);
 CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
 CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated;
 GRANT USAGE ON SCHEMA public, auth TO anon, authenticated; GRANT EXECUTE ON FUNCTION auth.uid() TO anon, authenticated;`);
-for (const file of (await readdir(new URL('../supabase/migrations/', import.meta.url))).filter(f => f.endsWith('.sql')).sort()) {
+for (const file of (await readdir(new URL('../database/legacy-postgres/migrations/', import.meta.url))).filter(f => f.endsWith('.sql')).sort()) {
   if (file === '20260928130000_clear_legacy_content.sql') {
     await db.exec(`INSERT INTO auth.users VALUES ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb');
       INSERT INTO user_roles(user_id,role) VALUES ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb','admin');
       INSERT INTO topic(slug,title) VALUES ('legacy','Old topic');`);
   }
-  await db.exec(await readFile(new URL(`../supabase/migrations/${file}`, import.meta.url), 'utf8'));
+  await db.exec(await readFile(new URL(`../database/legacy-postgres/migrations/${file}`, import.meta.url), 'utf8'));
 }
 for (const table of ['person','event','person_relationship','person_event','event_causality','topic','source','fact_claim']) {
   assert.equal((await db.query(`SELECT count(*)::int AS count FROM ${table}`)).rows[0].count, 0, `${table} must be empty after all migrations`);

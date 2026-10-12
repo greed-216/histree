@@ -1,6 +1,5 @@
-import { supabase } from "../supabaseClient";
 
-// AI requests go directly to NestJS on ECS; Supabase remains database/auth only.
+// Signed anonymous AI requests go directly to NestJS on ECS.
 const base = (import.meta.env.VITE_ASK_API_URL || import.meta.env.VITE_API_URL || "/api/v1").replace(/\/$/, "");
 export const aiGatewayConfigured = Boolean(base);
 const storageKey = "histree-anonymous-session-v1";
@@ -53,12 +52,7 @@ export async function aiGatewayFetch(path: string, options: RequestInit = {}) {
     headers.set("Content-Type", "application/json");
   if ((options.method || "GET").toUpperCase() === "POST") {
     options.signal?.throwIfAborted();
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    if (session?.access_token)
-      headers.set("Authorization", `Bearer ${session.access_token}`);
-    else headers.set("x-histree-anonymous", await anonymousToken());
+    headers.set("x-histree-anonymous", await anonymousToken());
     options.signal?.throwIfAborted();
   }
   // No automatic retries: a disconnected model request may already have incurred cost.

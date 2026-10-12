@@ -13,6 +13,11 @@ on:
       - '.dockerignore'
       - 'deploy/ecs/**'
       - '.github/workflows/deploy-api.yml'
+      - '.github/workflows/application-checks.yml'
+      - 'database/mysql/**'
+      - 'scripts/test-mysql-integration.mjs'
+      - 'scripts/test-history-scroll.mjs'
+      - 'scripts/test-timeline-viewport.mjs'
   workflow_dispatch:
 
 permissions:
@@ -25,49 +30,11 @@ concurrency:
 
 jobs:
   build:
-    outputs:
-      artifact-id: ${{ steps.image.outputs.artifact-id }}
-      artifact-digest: ${{ steps.image.outputs.artifact-digest }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.3.3
-      - run: pnpm test
-      - run: pnpm --filter web lint
-      - name: Build and verify Linux image
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-        run: |
-          docker build --platform linux/amd64 -f apps/api/Dockerfile --build-arg VITE_SUPABASE_URL --build-arg VITE_SUPABASE_ANON_KEY -t histree-api:${GITHUB_SHA} .
-          docker run --rm histree-api:${GITHUB_SHA} node -e "const fs=require('node:fs'); if(!fs.readFileSync('/app/apps/web/dist/index.html','utf8').includes('/assets/')) process.exit(1)"
-          docker run --rm histree-api:${GITHUB_SHA} node -e "require('./apps/api/dist/app.module.js')"
-          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
-          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs
-          mkdir bundle
-          docker save histree-api:${GITHUB_SHA} | gzip > bundle/image.tar.gz
-          cp deploy/ecs/compose.yml deploy/ecs/release.sh bundle/
-          cd bundle
-          sha256sum image.tar.gz > image.tar.gz.sha256
-      - uses: actions/upload-artifact@v4
-        id: image
-        with:
-          name: histree-api-${{ github.sha }}
-          path: bundle/
-          retention-days: 7
+    uses: ./.github/workflows/application-checks.yml
 
   deploy:
     needs: build
-    if: vars.ECS_DEPLOY_ENABLED == 'true'
+    if: github.ref == 'refs/heads/main' && vars.ECS_DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment: ecs-production
@@ -134,7 +101,7 @@ jobs:
           if hash_value.hexdigest() != digest:
               raise RuntimeError('Artifact digest mismatch')
           with zipfile.ZipFile(archive) as package:
-              expected = {'image.tar.gz', 'image.tar.gz.sha256', 'compose.yml', 'release.sh'}
+              expected = {'image.tar.gz', 'image.tar.gz.sha256', 'compose.yml', 'release.sh', 'verify.mjs', 'release-manifest.json'}
               if set(package.namelist()) != expected or len(package.namelist()) != len(expected):
                   raise RuntimeError('Unexpected deployment archive contents')
               package.extractall(destination)

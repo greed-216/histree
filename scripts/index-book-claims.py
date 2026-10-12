@@ -16,7 +16,8 @@ subject_remap={}
 citation_revisions={}
 for plan_path in sorted((ROOT/'content/revisions').glob('*/plan.json')):
  plan=json.loads(plan_path.read_text())
- audit_path=plan_path.parent/'publication.json'
+ audit_path=plan_path.parent/'publication-mysql.json'
+ if not audit_path.exists():audit_path=plan_path.parent/'publication.json'
  if audit_path.exists():
   audit=json.loads(audit_path.read_text())
   citation_changes=[c for c in plan.get('changes',[]) if c.get('table')=='fact_claim' and 'citation' in c.get('after',{})]

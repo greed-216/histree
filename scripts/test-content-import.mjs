@@ -12,8 +12,8 @@ try {
  await db.exec(`CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY);
  CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT null::uuid $$;
  CREATE ROLE service_role; CREATE ROLE anon; CREATE ROLE authenticated; GRANT USAGE ON SCHEMA public TO anon;`);
- for (const file of (await readdir('supabase/migrations')).filter(f=>f.endsWith('.sql')).sort()) {
-  await db.exec(await readFile(`supabase/migrations/${file}`,'utf8'));
+ for (const file of (await readdir('database/legacy-postgres/migrations')).filter(f=>f.endsWith('.sql')).sort()) {
+  await db.exec(await readFile(`database/legacy-postgres/migrations/${file}`,'utf8'));
  }
  await db.exec('GRANT SELECT ON ALL TABLES IN SCHEMA public TO anon;');
  const run = async name => db.exec(await readFile(join(dir,name),'utf8'));

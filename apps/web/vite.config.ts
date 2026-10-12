@@ -8,5 +8,6 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: process.env.VITE_BASE_PATH || '/histree/',
+  base: '/',
+  server: { proxy: { '/api/v1': 'http://127.0.0.1:3000' } },
 })

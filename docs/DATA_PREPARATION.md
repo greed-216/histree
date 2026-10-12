@@ -4,11 +4,11 @@
 
 以《资治通鉴》为主书，使用 `content/books/zizhi-tongjian/vol-{卷}/year-{年}/part-{批}/`；按原文连续段落录入，其他书证按书建立索引并关联主书段落与同一实体。唯一续录位置见 `content/yearly-progress.json`。旧专题批次保留为发布档案，不再作为新增目录模板。详见 [content/README.md](../content/README.md)。
 
-书本批次使用 `scripts/prepare-book-import.py` 生成排除复用对象的SQL，`scripts/publish-book-batch.py` 默认为只读预检，`--apply` 发布后匿名读回。下文通用格式仍适用。
+书本批次使用 `scripts/prepare-book-import.py` 生成稳定 key/UUID 映射及旧格式兼容档案，`scripts/publish-book-batch.py` 默认为只读预检，`--apply` 发布后匿名读回。下文通用格式仍适用。
 
 ## 使用方式
 
-复制 `templates/content-batch.json`，填写本批次的草稿。它是内容整理与交接格式，不能直接 POST。`scripts/prepare-content-import.py` 可校验批次并生成草稿导入、发布和下架 SQL；稳定 key 映射为确定 UUID，重复导入跳过已存在记录，不覆盖管理台后续编辑。先审阅 SQL，再通过受信任的数据库管理连接执行。
+复制 `templates/content-batch.json`，填写本批次的草稿。它是内容整理与交接格式，不能直接 POST。`scripts/prepare-content-import.py` 可校验批次并生成草稿导入、发布和下架 SQL；稳定 key 映射为确定 UUID，重复导入跳过已存在记录，不覆盖已有记录。所生成 PostgreSQL SQL 仅是历史兼容档案，不能作为 MySQL 生产导入；书本发布使用 publish-book-batch.py。
 
 首批后梁数据位于 `content/later-liang-907-923/`，包含 6 位人物、9 个事件、一个专题。不要把测试 fixture 或旧迁移里的样例当作内容来源。
 
@@ -76,10 +76,10 @@
 2. 事件开始年不晚于结束年；不详时间保留空值。
 3. 经纬度成对且范围合法，定位精度与说明一致。
 4. 人物、时间、地点及关系等核心说法均有具体出处；不同解释分开记录。
-5. 管理台保存草稿并核对预览；关联条目发布后再发布专题。
+5. 在本地批次中保存草稿和审阅记录；经授权使用发布工具，并独立匿名读回。当前书本发布器不支持专题发布。
 
 ## 当前实现与部署
 
 专题可按人物、年份范围筛选；年份范围采用事件时间区间相交，时间不详的事件始终保留。没有坐标的事件可选择和阅读，但不落点。人物筛选依据已公开的 person_event；关系加载失败时，其他阅读功能保留。
 
-新增字段在 `20260928140000_event_geography.sql`，只改结构、不插入内容。上线前需要按版本顺序完成此前尚未部署的阅读结构及一次性旧内容清理迁移，再应用此迁移；第一次导入新内容后不得再次运行清理迁移。
+当前结构由 `database/mysql` 定义；线上资料通过独立工具发布。应用部署不会重放旧清理 SQL，也不会自动应用数据库变更。

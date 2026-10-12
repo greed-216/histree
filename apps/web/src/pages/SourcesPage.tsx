@@ -11,7 +11,7 @@ const sourcePages = {
 };
 export function SourcePage() {
   const { id } = useParams();
-  const result = useInfiniteResource<SourceClaims>(`/sources/${id}`, false, sourcePages);
+  const result = useInfiniteResource<SourceClaims>(`/sources/${id}`, sourcePages);
   const data = result.data;
   return <div className="max-w-3xl mx-auto space-y-6">
     <Link to="/" className="text-teal-700">← 专题探索</Link><LoadState {...result} />

@@ -11,24 +11,20 @@ export function RecordPicker({
   value,
   onChange,
   label,
-  admin = true,
 }: {
   table: string;
   value?: string;
   onChange: (id: string, label: string) => void;
   label: string;
-  admin?: boolean;
 }) {
   const [query, setQuery] = useState("");
   const settled = useDebounced(query.trim());
-  const root = admin ? "/editorial" : "/catalog";
+  const root = "/catalog";
   const result = useInfiniteResource<PageResult<ContentRow>>(
     `${root}/${table}?${new URLSearchParams({ q: settled, limit: "20" })}`,
-    admin,
   );
   const selected = useResource<PageResult<ContentRow>>(
     value ? `${root}/${table}?ids=${value}` : undefined,
-    admin,
   );
   return (
     <div className="space-y-2">

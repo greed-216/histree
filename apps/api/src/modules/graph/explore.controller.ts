@@ -11,11 +11,11 @@ import {
   contentRequest,
   pageNumber,
 } from '@histree/shared-types';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 
 @Controller('api/v1')
 export class ExploreController {
-  constructor(private readonly supabase: SupabaseService) {}
+  constructor(private readonly database: MysqlService) {}
 
   @Get('search')
   search(@Query() query: Record<string, string>) {
@@ -43,7 +43,7 @@ export class ExploreController {
     } catch {
       throw new BadRequestException('查询参数无效');
     }
-    const { data, error } = await this.supabase
+    const { data, error } = await this.database
       .getClient()
       .rpc('content_page', args);
     if (error) throw error;
@@ -59,7 +59,7 @@ export class ExploreController {
     } catch {
       throw new BadRequestException('查询参数无效');
     }
-    const { data, error } = await this.supabase
+    const { data, error } = await this.database
       .getClient()
       .rpc('entry_context', { p_id: id, p_page: offset });
     if (error) throw error;
@@ -75,7 +75,7 @@ export class ExploreController {
       throw new BadRequestException('查询参数无效');
     }
     if (!request) throw new BadRequestException('查询地址无效');
-    const { data, error } = await this.supabase
+    const { data, error } = await this.database
       .getClient()
       .rpc(request.name, request.args);
     if (error) throw error;

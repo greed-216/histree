@@ -1,31 +1,28 @@
-import { EditorialModule } from './modules/editorial/editorial.module';
+import { CatalogModule } from './modules/catalog/catalog.module';
 import { AskModule } from './modules/ask/ask.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { GraphModule } from './modules/graph/graph.module';
 import { EventModule } from './modules/event/event.module';
 import { TimelineModule } from './modules/timeline/timeline.module';
 import { PersonModule } from './modules/person/person.module';
-import { SupabaseModule } from './modules/supabase/supabase.module';
-import { UploadModule } from './modules/upload/upload.module';
+import { MysqlModule } from './modules/mysql/mysql.module';
 import { RelationshipModule } from './modules/relationship/relationship.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    SupabaseModule,
+    MysqlModule,
     GraphModule,
     EventModule,
     PersonModule,
     TimelineModule,
-    UploadModule,
     RelationshipModule,
-    EditorialModule,
+    CatalogModule,
     AskModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}

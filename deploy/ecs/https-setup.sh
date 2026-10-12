@@ -3,6 +3,8 @@
 set -euo pipefail
 ip=${1:?Public IPv4 required}
 [[ "$ip" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit 2
+# This is a new-host initializer, never a certificate-renewal operation.
+[[ ! -e /etc/nginx/conf.d/histree.conf ]] || { echo 'Existing IP vhost found; use its renewal timer instead' >&2; exit 1; }
 certbot=/opt/histree/certbot/bin/certbot
 install -d -m 755 /var/www/histree-acme
 cat > /etc/nginx/conf.d/histree.conf <<NGINX

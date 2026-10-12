@@ -4,13 +4,15 @@ on:
   push:
     paths:
       - 'resources/**'
-      - 'scripts/*history*.py'
+      - 'scripts/**'
+      - 'AGENTS.md'
       - 'skills/histree-history-ingest/**'
       - '.github/workflows/history-library-ci.yml'
   pull_request:
     paths:
       - 'resources/**'
-      - 'scripts/*history*.py'
+      - 'scripts/**'
+      - 'AGENTS.md'
       - 'skills/histree-history-ingest/**'
       - '.github/workflows/history-library-ci.yml'
 
@@ -22,8 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
       - name: Validate EPUB conversion and provenance
@@ -32,5 +34,9 @@ jobs:
         run: python3 scripts/build-history-library.py --rebuild-search
       - name: Validate paragraphs, search and source exports
         run: python3 scripts/test-history-library.py
+      - name: Validate identity, revision and publication guards
+        run: |
+          python3 -m unittest discover -s scripts/tests
+          python3 scripts/test-book-publish-chunks.py
       - name: Ensure rebuilding preserves versioned files
         run: git diff --exit-code

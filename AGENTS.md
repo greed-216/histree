@@ -14,6 +14,14 @@
 
 《续资治通鉴》（毕沅）作为独立编年体史书，按其960—1368年所载宋元叙事录入，工作TXT在 `resources/originals/xutongjian/`，卷年分段入口在 `resources/derived/history-library/xu-zizhi-tongjian/`；公元年候选需校核，末年不视作全年完整。正式续录时建立独立账本，保留现有通鉴游标。
 
-资料发布需有逐条可回溯的原文、具体定位和校核说明。提交前运行批次验证并审阅身份、时间和异文；发布由 `scripts/publish-book-batch.py` 执行，默认只读预检。`--apply` 会写入线上 Supabase，只在当前任务已授权发布时使用。不要把服务端环境文件或密钥加入提交。
+资料发布需有逐条可回溯的原文、具体定位和校核说明。提交前运行批次验证并审阅身份、时间和异文；发布由 `scripts/publish-book-batch.py` 执行，默认只读预检。`--apply` 会写入目标 MySQL 数据库，只在当前任务已授权发布时使用。不要把服务端环境文件或密钥加入提交。
 
 保留已有发布批次和其他人工作区文件；处理新批次时只暂存本次相关路径。
+
+## 应用、分包与部署
+
+三个 workspace 包是 `apps/web`、`apps/api`、`packages/shared-types`；职责和依赖方向见 README。公共类型包不依赖应用；web 只访问同源 `/api/v1`，数据库和模型凭据只在 api 运行环境。当前是 Node.js 24 + MySQL 8 + ECS 单镜像，旧登录／网页管理／Edge、Pages、Render 部署均已退出。地图原型按用户要求保留并保持关闭，不擅自删除或开放。
+
+仓库很脏或本地检出落后时，先核对 GitHub 最新 main 和实际线上镜像，再在独立工作区按明确路径纳入改动；不能从旧 checkout 覆盖新前端或暂存其他人的史料。保留长卷图片、底本、固定 Git 引用、已发布批次和审计档案。
+
+PR 与部署共用 `.github/workflows/application-checks.yml`。清理或改数据层必须跑隔离 MySQL 回归，不能只跑旧 PostgreSQL 兼容测试；修改 dsh 必须跑实际模拟 harness。发布验收包括数据库就绪、深链接和长卷哈希，不运行付费模型。应用部署不修改 schema、不发布史料、不改 nginx／TLS 或私密配置；生产部署与史料发布的授权分别判断。

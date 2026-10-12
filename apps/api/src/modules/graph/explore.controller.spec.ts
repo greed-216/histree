@@ -1,6 +1,6 @@
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 import { ExploreController } from './explore.controller';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 
 describe('ExploreController', () => {
   const id = '11111111-1111-1111-1111-111111111111';
@@ -12,7 +12,7 @@ describe('ExploreController', () => {
       .mockResolvedValue({ data: { items: [], has_more: false }, error: null });
     controller = new ExploreController({
       getClient: () => ({ rpc }),
-    } as unknown as SupabaseService);
+    } as unknown as MysqlService);
   });
   it('uses the anonymous RPC and the same normalized search contract as the static site', async () => {
     await controller.search({ q: ' 李弘茂 ', kind: 'person', page: '2' });

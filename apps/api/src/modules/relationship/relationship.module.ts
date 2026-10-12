@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { SupabaseModule } from '../supabase/supabase.module';
+import { MysqlModule } from '../mysql/mysql.module';
 import { RelationshipController } from './relationship.controller';
 import { RelationshipService } from './relationship.service';
 
 @Module({
-  imports: [SupabaseModule],
+  imports: [MysqlModule],
   controllers: [RelationshipController],
   providers: [RelationshipService],
 })

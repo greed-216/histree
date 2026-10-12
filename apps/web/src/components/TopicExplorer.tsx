@@ -30,7 +30,7 @@ export function TopicExplorer({ topicSlug }: { topicSlug?: string }) {
   return <section className="space-y-5" aria-label="事件时间线">
     <h2 className="text-2xl font-serif">事件时间线</h2>
     <div className="flex flex-wrap items-end gap-3">
-      <details className="max-w-md" onToggle={e=>setPickerOpen(e.currentTarget.open)}><summary className="text-sm cursor-pointer">筛选参与人物{personId?'（已选择）':''}</summary>{pickerOpen&&<RecordPicker table="person" value={personId} admin={false} label="参与人物" onChange={id=>{setPersonId(id);setSelectedId('');}}/>}</details>
+      <details className="max-w-md" onToggle={e=>setPickerOpen(e.currentTarget.open)}><summary className="text-sm cursor-pointer">筛选参与人物{personId?'（已选择）':''}</summary>{pickerOpen&&<RecordPicker table="person" value={personId} label="参与人物" onChange={id=>{setPersonId(id);setSelectedId('');}}/>}</details>
       <label className="text-sm">起始年<input aria-label="筛选起始年" type="number" step="1" className="block w-28 border rounded-lg p-2 mt-1" placeholder="不限" value={from} onChange={e => setFrom(e.target.value)} /></label>
       <label className="text-sm">结束年<input aria-label="筛选结束年" type="number" step="1" className="block w-28 border rounded-lg p-2 mt-1" placeholder="不限" value={to} onChange={e => setTo(e.target.value)} /></label>
       <button className="text-sm underline p-2" onClick={() => { setPersonId(''); setFrom(''); setTo(''); setSelectedId(''); }}>重置筛选</button>

@@ -1,5 +1,5 @@
 """Publish an audited book-led batch. Default is read-only preflight; --apply writes.
-Existing entities are never overwritten. REST stages are resumable, not transactional.
+Existing entities are never overwritten. MySQL chunks are transactional; full batch publication is staged and resumable.
 """
 import argparse,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
 from datetime import datetime,timezone
@@ -7,7 +7,7 @@ from pathlib import Path
 from history_identity import merged_identity_target
 from history_cross_supplements import validate_cross_supplement
 ROOT=Path(__file__).resolve().parents[1]
-ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',action='store_true');args=ap.parse_args()
+ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
 P=Path(args.batch).resolve().parent
 subprocess.run([sys.executable,str(ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
 batch=json.loads((P/'content-batch.json').read_text());coverage=json.loads((P/'coverage.json').read_text())
@@ -27,17 +27,9 @@ for c in batch['claims']:
   assert extra['source_book'] and extra['relation'] in ['corroborates','adds','conflicts']
 assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] not in primary_keys}, 'Unmatched supplement mapping'
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}
-env=dict(l.strip().split('=',1) for l in (ROOT/'apps/api/.env').read_text().splitlines() if '=' in l and not l.startswith('#'))
-headers={'apikey':env['SUPABASE_SERVICE_ROLE_KEY'],'Authorization':'Bearer '+env['SUPABASE_SERVICE_ROLE_KEY'],'Content-Type':'application/json','Prefer':'return=representation'}
-def req(table,q='',method='GET',body=None):
- r=urllib.request.Request(env['SUPABASE_URL']+'/rest/v1/'+table+'?'+q,headers=headers,method=method,data=None if body is None else json.dumps(body,ensure_ascii=False).encode())
- for attempt in range(3):
-  try:
-   with urllib.request.urlopen(r,timeout=40) as f:return json.load(f)
-  except urllib.error.HTTPError:raise
-  except (urllib.error.URLError,TimeoutError):
-   if method!='GET' or attempt==2:raise
-   time.sleep(1)
+from mysql_content_store import MysqlContentStore
+store=MysqlContentStore(args.mysql_env,args.apply,args.public_api_url)
+def req(table,q='',method='GET',body=None):return store.request(table,q,method,body)
 def allrows(table,select):
  result=[]
  for offset in range(0,100000,1000):
@@ -54,16 +46,26 @@ for group,table in groups:
    if a in r:r[b]=ids[r.pop(a)]
   rows[table].append(r)
 # Audit must match precisely the reviewed bytes.
-sha=hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest();auditpath=P/'publication.json'
+sha=hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest();auditpath=P/'publication-mysql.json'
 audit=json.loads(auditpath.read_text()) if auditpath.exists() else {'batch_sha256':sha,'stages':[]}
 assert audit['batch_sha256']==sha,'Batch changed after publication started'
+assert audit.get('target_fingerprint',store.target_fingerprint)==store.target_fingerprint,'Publication target changed'
+audit['target_fingerprint']=store.target_fingerprint
+audit['backend']='mysql'
 def save(stage):
  audit['stages'].append({'stage':stage,'at':datetime.now(timezone.utc).isoformat()});auditpath.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
-def query(table):return 'id=in.('+','.join(r['id'] for r in rows[table])+')'
+def selected_rows(table,selected,suffix='',method='GET',body=None):
+ result=[]
+ for offset in range(0,len(selected),100):
+  chunk=selected[offset:offset+100]
+  result.extend(req(table,'id=in.('+','.join(chunk)+')'+suffix,method,body))
+ return result
+def table_rows(table,suffix=''):
+ return selected_rows(table,[r['id'] for r in rows[table]],suffix)
 existing={}
 for _,table in groups:
  if not rows[table]:existing[table]={};continue
- existing[table]={r['id']:r for r in req(table,query(table))}
+ existing[table]={r['id']:r for r in table_rows(table)}
  for r in rows[table]:
   old=existing[table].get(r['id'])
   if r['id'] in reused:assert old and (table=='source' or old['status']=='published'),'Missing/unpublished reused row'
@@ -101,22 +103,22 @@ if not args.apply:raise SystemExit(0)
 audit.setdefault('initial_counts',summary);save('preflight_checked')
 for _,table in groups:
  missing=[r for r in rows[table] if r['id'] not in existing[table]]
- if missing:req(table,method='POST',body=missing)
+ for offset in range(0,len(missing),100):req(table,method='POST',body=missing[offset:offset+100])
  if rows[table]:
-  actual={r['id']:r for r in req(table,query(table))};assert len(actual)==len(rows[table])
+  actual={r['id']:r for r in table_rows(table)};assert len(actual)==len(rows[table])
   for r in rows[table]:
    if r['id'] not in reused:assert all(actual[r['id']].get(k)==v for k,v in r.items() if k!='status'),table
  save('drafts_verified_'+table)
 for _,table in groups:
  selected=[r['id'] for r in rows[table] if r['id'] not in reused]
  if table!='source' and selected:
-  result=req(table,'id=in.('+','.join(selected)+')','PATCH',{'status':'published'});assert len(result)==len(selected)
+  result=selected_rows(table,selected,method='PATCH',body={'status':'published'});assert len(result)==len(selected)
  save('published_'+table)
-headers['apikey']=env['SUPABASE_ANON_KEY'];headers['Authorization']='Bearer '+env['SUPABASE_ANON_KEY']
+store.public=True
 counts={}
 for _,table in groups:
  if not rows[table]:counts[table]=0;continue
- actual=req(table,query(table)+('&select=*,source:source_id(*)' if table=='fact_claim' else ''))
+ actual=table_rows(table,'&select=*,source:source_id(*)' if table=='fact_claim' else '')
  assert len(actual)==len(rows[table]),table
  if table!='source':assert all(r['status']=='published' for r in actual)
  if table=='fact_claim':assert all(r['source'] and r['source']['url'].startswith('https://github.com/greed-216/histree/blob/') for r in actual)

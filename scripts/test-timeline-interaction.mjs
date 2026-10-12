@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
-const base=process.env.TIMELINE_TEST_URL||'http://127.0.0.1:5176/histree/timeline';
+const base=process.env.TIMELINE_TEST_URL||'http://127.0.0.1:5176/timeline';
 const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 try {
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors=[];let yearRequests=0;
  page.on('pageerror',e=>errors.push(e.message));
- page.on('request',r=>{if(r.url().includes('/rest/v1/event?')||r.url().includes('/timeline?year='))yearRequests++;});
+ page.on('request',r=>{if(r.url().includes('/timeline?year='))yearRequests++;});
  await page.goto(`${base}?year=900`);
  await page.getByRole('link',{name:/阅读全文与出处/}).first().waitFor();
  const slider=page.getByRole('slider',{name:'选择历史年份'});

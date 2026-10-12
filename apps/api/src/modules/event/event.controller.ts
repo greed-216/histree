@@ -1,15 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  Query,
-  UseGuards,
-} from '@nestjs/common';
-import { AdminGuard } from '../../common/guards/admin.guard';
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { EventService } from './event.service';
 import type { Event, EventDetail, PageResult } from '@histree/shared-types';
 
@@ -32,24 +21,4 @@ export class EventController {
     return this.eventService.getEventDetail(id, page);
   }
 
-  @Post()
-  @UseGuards(AdminGuard)
-  async createEvent(@Body() payload: Partial<Event>): Promise<Event> {
-    return this.eventService.createEvent(payload);
-  }
-
-  @Patch(':id')
-  @UseGuards(AdminGuard)
-  async updateEvent(
-    @Param('id') id: string,
-    @Body() payload: Partial<Event>,
-  ): Promise<Event> {
-    return this.eventService.updateEvent(id, payload);
-  }
-
-  @Delete(':id')
-  @UseGuards(AdminGuard)
-  async deleteEvent(@Param('id') id: string): Promise<{ id: string }> {
-    return this.eventService.deleteEvent(id);
-  }
 }

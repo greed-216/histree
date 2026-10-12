@@ -1,3 +1,9 @@
 packages:
   - 'apps/*'
   - 'packages/*'
+
+# dsh requires native spawn/PTY helpers; keep fresh installs reproducible.
+onlyBuiltDependencies:
+  - '@deepseek-ai/dsh-subprocess-local'
+  - koffi
+  - node-pty

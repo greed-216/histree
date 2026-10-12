@@ -1,6 +1,6 @@
 import { AskService } from './ask.service';
 import { ConfigService } from '@nestjs/config';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 
 describe('Ask admission', () => {
   const make = (enabled = true) =>
@@ -9,7 +9,7 @@ describe('Ask admission', () => {
         HISTREE_ASK_ENABLED: String(enabled),
         DEEPSEEK_API_KEY: 'test',
       }),
-      {} as SupabaseService,
+      {} as MysqlService,
     );
   it('does not admit requests when disabled or malformed', () => {
     expect(() => make(false).reserve({ question: '你好' }, 'a')).toThrow();

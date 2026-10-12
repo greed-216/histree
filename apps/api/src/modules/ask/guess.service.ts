@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { randomBytes, randomInt } from 'node:crypto';
 import { z } from 'zod';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 import { GuessAgentService } from './guess-agent.service';
 
 const filtersSchema = z
@@ -131,7 +131,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
   private refreshTimer?: ReturnType<typeof setInterval>;
   private refreshing = false;
   constructor(
-    private readonly db: SupabaseService,
+    private readonly db: MysqlService,
     private readonly agent: GuessAgentService,
   ) {}
   onModuleInit() {

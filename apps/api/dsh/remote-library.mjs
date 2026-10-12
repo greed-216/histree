@@ -5,8 +5,7 @@ import { safeSourceUrl } from './retrieval.mjs';
 export async function createRemoteLibrary(manifest, ledgerPath) {
   const url = new URL(manifest.url);
   if (
-    !['https:', 'http:'].includes(url.protocol) ||
-    typeof manifest.anonKey !== 'string'
+    !['https:', 'http:'].includes(url.protocol)
   )
     throw new Error('Invalid public query configuration');
   const saved = JSON.parse(
@@ -16,12 +15,10 @@ export async function createRemoteLibrary(manifest, ledgerPath) {
   const byClaim = new Map(saved.map((c) => [c.claimId, c]));
   const rpc = async (name, args) => {
     const response = await fetch(
-      `${url.href.replace(/\/$/, '')}/rest/v1/rpc/${name}`,
+      `${url.href.replace(/\/$/, '')}/${name}`,
       {
         method: 'POST',
         headers: {
-          apikey: manifest.anonKey,
-          Authorization: `Bearer ${manifest.anonKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(args),

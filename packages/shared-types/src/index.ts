@@ -76,7 +76,6 @@ export interface PersonRelationship {
   created_at?: string;
 }
 
-export type PersonRelationshipInput = Omit<PersonRelationship, 'id' | 'created_at'>;
 
 export interface PersonEventRelation {
   status?: PublicationStatus;
@@ -87,7 +86,6 @@ export interface PersonEventRelation {
   created_at?: string;
 }
 
-export type PersonEventRelationInput = Omit<PersonEventRelation, 'id' | 'created_at'>;
 
 export interface EventCausalityRelation {
   status?: PublicationStatus;
@@ -98,7 +96,6 @@ export interface EventCausalityRelation {
   created_at?: string;
 }
 
-export type EventCausalityRelationInput = Omit<EventCausalityRelation, 'id' | 'created_at'>;
 
 export interface RelationshipBundle {
   has_more?: boolean;

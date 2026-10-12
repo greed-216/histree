@@ -1,6 +1,6 @@
 import { GuessService } from './guess.service';
 import { GuessAgentService } from './guess-agent.service';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 const person = {
   id: '11111111-1111-4111-8111-111111111111',
   name: '朱温',
@@ -36,7 +36,7 @@ function make(target = person) {
       }),
   }));
   const service = new GuessService(
-    { getClient: () => ({ rpc }) } as unknown as SupabaseService,
+    { getClient: () => ({ rpc }) } as unknown as MysqlService,
     agent as unknown as GuessAgentService,
   );
   return { service, agent, rpc };

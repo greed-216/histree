@@ -1,5 +1,6 @@
 """Protect original quotations, relation endpoints and row-level concurrency guards."""
-import importlib.util,unittest,http.client,io
+import importlib.util,unittest,http.client,io,sys
+sys.path.insert(0,str(__import__('pathlib').Path(__file__).resolve().parents[1]))
 from unittest.mock import patch
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('copy_review',Path(__file__).parents[1]/'review-public-history-copy.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
@@ -72,10 +73,10 @@ class ReviewGuards(unittest.TestCase):
 class DisconnectedRequests(unittest.TestCase):
  def client(self):
   client=mod.Client.__new__(mod.Client)
-  client.env=dict(SUPABASE_URL='https://example.test',SUPABASE_ANON_KEY='anon-test',SUPABASE_SERVICE_ROLE_KEY='service-test')
+  client.public_url='https://example.test/api/v1';client.store=None
   return client
  def test_read_retries_remote_disconnect(self):
-  with patch.object(mod.urllib.request,'urlopen',side_effect=[http.client.RemoteDisconnected('closed'),io.StringIO('[]')]) as call, patch.object(mod.time,'sleep'):
+  with patch.object(mod.urllib.request,'urlopen',side_effect=[http.client.RemoteDisconnected('closed'),io.StringIO('{"items":[],"has_more":false}')]) as call, patch.object(mod.time,'sleep'):
    self.assertEqual(self.client().request('event',{'id':'eq.id'}),[])
    self.assertEqual(call.call_count,2)
    self.assertTrue(all(c.args[0].get_method()=='GET' for c in call.call_args_list))
@@ -84,10 +85,10 @@ class DisconnectedRequests(unittest.TestCase):
    with self.assertRaises(http.client.RemoteDisconnected):self.client().request('event',{'id':'eq.id'})
    self.assertEqual(call.call_count,4)
  def test_write_request_never_retries_disconnect(self):
-  with patch.object(mod.urllib.request,'urlopen',side_effect=http.client.RemoteDisconnected('closed')) as call:
-   with self.assertRaises(http.client.RemoteDisconnected):self.client().request('event',{'id':'eq.id'},{'title':'new'})
-   self.assertEqual(call.call_count,1)
-   self.assertEqual(call.call_args.args[0].get_method(),'PATCH')
+  from unittest.mock import Mock
+  client=self.client();client.store=Mock();client.store.request.side_effect=http.client.RemoteDisconnected('closed')
+  with self.assertRaises(http.client.RemoteDisconnected):client.request('event',{'id':'eq.id'},{'title':'new'})
+  self.assertEqual(client.store.request.call_count,1)
  def test_disconnected_write_is_inspected_once(self):
   change=ReviewGuards().change()
   for committed in (True,False):

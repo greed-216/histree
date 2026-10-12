@@ -53,13 +53,12 @@ function initial<T>(scope: string): State<T> {
 /** Fetch one bounded batch at a time. Scope changes cancel requests and reset the feed. */
 export function useInfiniteResource<T>(
   path: string | undefined,
-  auth = false,
   options: {
     merge?: (before: T, next: T) => T;
     hasMore?: (data: T, page: number) => boolean;
   } = {},
 ) {
-  const scope = path ? `${auth ? "admin" : "public"}:${path}` : "";
+  const scope = path ? `public:${path}` : "";
   const merge = options.merge ?? appendItems<T>,
     hasMore = options.hasMore ?? moreItems<T>;
   const [state, setState] = useState<State<T>>(() => initial<T>(scope));
@@ -81,7 +80,6 @@ export function useInfiniteResource<T>(
       setState(session.state);
       try {
         const next = await apiFetch<T>(url.pathname + url.search, {
-          auth,
           signal: session.controller.signal,
         });
         if (!session.live) return;
@@ -96,7 +94,7 @@ export function useInfiniteResource<T>(
           loading: false,
           loadingMore: false,
         };
-        if (!auth) {
+        {
           cache.delete(session.state.scope);
           cache.set(session.state.scope, {
             state: session.state,
@@ -118,7 +116,7 @@ export function useInfiniteResource<T>(
         if (session.live) setState(session.state);
       }
     },
-    [auth, merge, hasMore],
+    [merge, hasMore],
   );
   useEffect(() => {
     if (!path) return;

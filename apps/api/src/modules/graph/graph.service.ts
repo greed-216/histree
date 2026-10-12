@@ -5,18 +5,18 @@ import {
 } from '@nestjs/common';
 import { exploreRequest } from '@histree/shared-types';
 import type { EntryContext } from '@histree/shared-types';
-import { SupabaseService } from '../supabase/supabase.service';
+import { MysqlService } from '../mysql/mysql.service';
 import { validPage } from '../../common/pagination';
 @Injectable()
 export class GraphService {
-  constructor(private readonly supabaseService: SupabaseService) {}
+  constructor(private readonly mysqlService: MysqlService) {}
   async getGraph(id: string, page?: string): Promise<EntryContext> {
     try {
       exploreRequest(`/entry/${id}`);
     } catch {
       throw new BadRequestException('无效条目');
     }
-    const { data, error } = await this.supabaseService
+    const { data, error } = await this.mysqlService
       .getClient()
       .rpc('entry_context', { p_id: id, p_page: validPage(page) });
     if (error) throw error;

@@ -2,7 +2,7 @@ import { TimelineExplorer } from "../components/TimelineExplorer";
 
 export function TimelinePage() {
   return (
-    <div className="timeline-page space-y-6">
+    <div className="timeline-page timeline-explore-page">
       <header className="explore-heading">
         <p className="eyebrow">HISTREE · 时间探索</p>
         <h1>让历史，沿时间展开</h1>

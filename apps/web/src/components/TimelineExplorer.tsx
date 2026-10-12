@@ -1,5 +1,7 @@
 import { HistoryScrollBackdrop } from "../components/HistoryScrollBackdrop";
-import { historyScroll, initialScrollWindow, nextScrollZoomSpan, scrollSceneLayout, scrollYearX } from "../lib/historyScroll";
+import { TimelinePeriodBands } from "./TimelinePeriodBands";
+import { polityReferences } from "../lib/timelinePeriods";
+import { historyScroll, initialScrollWindow, minimumScrollSpan, nextScrollZoomSpan, scrollSceneLayout, scrollYearX } from "../lib/historyScroll";
 import { guideHighlights } from "../lib/historyGuides";
 import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -73,16 +75,31 @@ function TimelineRiver({
   const from = window.from,
     to = window.to;
   const span = Math.max(1, to - from);
-  const [chartWidth, setChartWidth] = useState(1000);
+  const [chartWidth, setChartWidth] = useState(800);
+  const [chartHeightBudget, setChartHeightBudget] = useState(280);
+  const [previewExpanded, setPreviewExpanded] = useState(false);
+  const [viewMode, setViewMode] = useState<"scroll" | "detail">("scroll");
+  const [artPosition, setArtPosition] = useState(.5);
   const canvasRef = useRef<HTMLDivElement>(null);
+  const initialCanvasMeasured = useRef(false);
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const observer = new ResizeObserver(([entry]) => setChartWidth(entry.contentRect.width));
+    const observer = new ResizeObserver(([entry]) => {
+      const { width, height } = entry.contentRect;
+      if (width <= 0 || height <= 0) return;
+      setChartWidth(width);
+      setChartHeightBudget(height);
+      if (!initialCanvasMeasured.current) {
+        initialCanvasMeasured.current = true;
+        setWindow(timeWindow(first, last, ordinal(selected),
+          minimumScrollSpan(width, height)));
+      }
+    });
     observer.observe(canvas);
     return () => observer.disconnect();
-  }, []);
-  const scene=scrollSceneLayout(from,to,chartWidth);
+  }, [first, last, selected]);
+  const scene=scrollSceneLayout(from,to,chartWidth,chartHeightBudget,viewMode);
   const riverY=scene.riverY;
   const focus = ordinal(selected);
   const [hoverYear, setHoverYear] = useState<number | null>(null);
@@ -102,6 +119,10 @@ function TimelineRiver({
   const chartRef = useRef<SVGSVGElement>(null);
   const drag = useRef<{
     x: number;
+    y: number;
+    artPosition: number;
+    artTravel: number;
+    horizontal: boolean;
     window: TimeWindow;
     moved: boolean;
     mode: "chart" | "move" | "left" | "right";
@@ -120,6 +141,10 @@ function TimelineRiver({
   }
   function resize(width: number) {
     browse(timeWindow(first, last, (from + to) / 2, width));
+  }
+  function browsePeriod(start: number, end: number) {
+    const width = Math.max(10, (ordinal(end) - ordinal(start)) * 1.12);
+    browse(timeWindow(first, last, (ordinal(start) + ordinal(end)) / 2, width));
   }
   function reveal(year: number) {
     if (ordinal(year) < from || ordinal(year) > to)
@@ -171,17 +196,29 @@ function TimelineRiver({
         browse(initial);
       }
     }
-    drag.current = { x: e.clientX, window: initial, moved: false, mode };
+    drag.current = { x: e.clientX, y: e.clientY, artPosition,
+      artTravel: !overview && scene.cropped
+        ? (scene.naturalHeight - scene.height) * (e.currentTarget.getScreenCTM()?.a ?? 1) : 0,
+      horizontal: false, window: initial, moved: false, mode };
     e.currentTarget.setPointerCapture(e.pointerId);
   }
   function moveDrag(e: PointerEvent<SVGSVGElement>) {
     const start = drag.current;
     if (!start) return false;
     const pixels = e.clientX - start.x;
-    if (Math.abs(pixels) > 5) start.moved = true;
+    const verticalPixels = e.clientY - start.y;
+    const isChart = start.mode === "chart";
+    if (Math.abs(pixels) > 5) start.horizontal = true;
+    if (Math.hypot(pixels, isChart ? verticalPixels : 0) > 5) start.moved = true;
     if (!start.moved) return true;
     suppressClick.current = true;
-    const isChart = start.mode === "chart";
+    if (isChart && start.artTravel > 0) {
+      setArtPosition(Math.max(0, Math.min(1, start.artPosition - verticalPixels / start.artTravel)));
+    }
+    if (isChart && !start.horizontal) {
+      setHoverYear(null);
+      return true;
+    }
     const shift =
       (pixels /
         Math.max(
@@ -260,8 +297,14 @@ function TimelineRiver({
       ),
     ),
   ].filter((y) => ordinal(y) <= to);
-  const ticks = scene.mode === "detail" && span <= 20
-    ? Array.from({length: to - from + 1}, (_, i) => calendar(from + i)) : overviewTicks;
+  const boundaries = [...historyScroll.periods.map(period => period.from_year), historyScroll.to_year]
+    .filter(year => ordinal(year) >= from && ordinal(year) <= to);
+  const candidates = [...boundaries, ...overviewTicks];
+  const ticks: number[] = [];
+  for (const year of candidates) {
+    if (ticks.every(other => Math.abs(x(year) - x(other)) * chartWidth / 1000 >= 58)) ticks.push(year);
+  }
+  ticks.sort((a, b) => a - b);
   const binYears = Math.max(1, Math.ceil((to - from + 1) / 100));
   function choose(year: number, replace = false) {
     year = calendar(Math.max(first, Math.min(last, ordinal(year))));
@@ -338,11 +381,32 @@ function TimelineRiver({
           <div className="timeline-zoom">
             <button
               className="timeline-button"
+              aria-label="画卷全景"
               disabled={to - from >= last - first}
               onClick={() => browse({ from: first, to: last })}
             >
-              画卷全景
+              <span className="timeline-panoramic-full">画卷</span>全景
             </button>
+            <button
+              className="timeline-button"
+              disabled={span >= last - first}
+              onClick={() => resize(nextScrollZoomSpan(span, false))}
+            >
+              缩小
+            </button>
+            <button
+              className="timeline-button"
+              disabled={span <= Math.min(10, last - first)}
+              onClick={() => resize(nextScrollZoomSpan(span, true))}
+            >
+              放大
+            </button>
+            <span>{to - from + 1} 年视窗</span>
+
+          </div>
+          <details className="timeline-more">
+            <summary><span className="timeline-options-full">浏览</span>选项</summary>
+            <div className="timeline-secondary-tools">
             <button
               className="timeline-button"
               onClick={() =>
@@ -358,42 +422,25 @@ function TimelineRiver({
             >
               看已录史事
             </button>
-            <button
-              className="timeline-button"
-              disabled={span >= last - first}
-              onClick={() => resize(nextScrollZoomSpan(span, scene.minimumSpan, false))}
-            >
-              缩小
-            </button>
-            <button
-              className="timeline-button"
-              disabled={span <= Math.min(10, last - first)}
-              onClick={() => resize(nextScrollZoomSpan(span, scene.minimumSpan, true))}
-            >
-              放大
-            </button>
-            <span>{to - from + 1} 年视窗</span>
-            <div className="timeline-view-switch" role="group" aria-label="时间图浏览方式">
-              <button type="button" aria-pressed={scene.mode === "scroll"}
-                onClick={() => { if (scene.mode !== "scroll") resize(scene.minimumSpan); }}>画卷浏览</button>
-              <button type="button" aria-pressed={scene.mode === "detail"}
-                onClick={() => { if (scene.mode !== "detail") resize(Math.min(span, 100, scene.minimumSpan - 1)); }}>史事细览</button>
             </div>
-          </div>
-          {compact ? (
-            <details className="timeline-jump">
-              <summary>跳至年份</summary>
-              {yearJump}
-            </details>
-          ) : (
-            yearJump
-          )}
+          </details>
+          <details className="timeline-jump">
+            <summary>跳至年份</summary>
+            {yearJump}
+          </details>
         </div>
         {invalid && (
           <p role="alert" className="text-sm text-rose-700">
             请输入画卷范围内的整数年份；公元前用负数，没有公元 0 年。
           </p>
         )}
+        <div className="timeline-navigation">
+          <div className="timeline-view-switch" role="group" aria-label="时间图浏览方式">
+            <button type="button" aria-label="画卷浏览" aria-pressed={viewMode === "scroll"}
+              onClick={() => setViewMode("scroll")}>画卷</button>
+            <button type="button" aria-label="史事细览" aria-pressed={viewMode === "detail"}
+              onClick={() => setViewMode("detail")}>史事</button>
+          </div>
         <nav className="timeline-periods" aria-label="浏览历史分期">
           {historyScroll.periods.map((period) => (
             <button
@@ -401,21 +448,15 @@ function TimelineRiver({
               type="button"
               className="timeline-button"
               aria-label={`浏览${period.label}画卷`}
-              onClick={() =>
-                browse(
-                  timeWindow(
-                    first,
-                    last,
-                    (ordinal(period.from_year) + ordinal(period.to_year)) / 2,
-                    ordinal(period.to_year) - ordinal(period.from_year),
-                  ),
-                )
-              }
+              onClick={() => browsePeriod(period.from_year, period.to_year)}
             >
               {period.label}
             </button>
           ))}
         </nav>
+        </div>
+        <div className="timeline-workspace">
+        <div className="timeline-main">
         <div className="timeline-stage">
           <div className="timeline-window-heading">
             <button
@@ -439,6 +480,14 @@ function TimelineRiver({
               后一段 →
             </button>
           </div>
+          <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewYear} onBrowse={browsePeriod}/>
+          <div className="timeline-art-pan">
+            <label htmlFor={compact ? "home-art-position" : "timeline-art-position"}>画面上下</label>
+            <input id={compact ? "home-art-position" : "timeline-art-position"} type="range"
+              aria-label="上下查看画卷" min="0" max="100" disabled={!scene.cropped} value={Math.round(artPosition * 100)}
+              onChange={event => setArtPosition(Number(event.target.value) / 100)}/>
+            <button type="button" disabled={!scene.cropped} onClick={() => resize(scene.minimumSpan)}>看完整画幅</button>
+          </div>
           <div ref={canvasRef} className="timeline-canvas-scroll" data-view={scene.mode}
             aria-label={scene.mode === "scroll" ? "历史画卷" : "史事数量分布"}>
           <svg
@@ -447,9 +496,9 @@ function TimelineRiver({
             data-to={to}
             viewBox={`0 90 1000 ${scene.viewBoxHeight}`}
             style={{aspectRatio:`1000 / ${scene.viewBoxHeight}`}}
-            className={`timeline-chart ${scene.mode === "detail" ? "timeline-detail-chart" : ""}`}
+            className={`timeline-chart ${scene.mode === "detail" ? "timeline-detail-chart" : ""} ${scene.cropped ? "timeline-artwork-draggable" : ""}`}
             role="img"
-            aria-label="历史时间图，拖动浏览，移动光标预览，点击固定年份"
+            aria-label="历史时间图，左右拖动浏览年份，放大后上下拖动查看画卷，移动光标预览，点击固定年份"
             onPointerDown={(e) => startDrag(e)}
             onPointerUp={endDrag}
             onPointerCancel={(e) => {
@@ -477,7 +526,13 @@ function TimelineRiver({
               if (year !== undefined) choose(year);
             }}
           >
-            {scene.mode === "scroll" && <HistoryScrollBackdrop from={from} to={to}/>}
+            {scene.mode === "scroll" && <HistoryScrollBackdrop from={from} to={to} height={scene.height} position={artPosition}/>}
+            <g className="timeline-period-boundaries" aria-hidden="true" pointerEvents="none">
+              {boundaries.map(year => <line key={year} data-boundary-year={year}
+                x1={x(year)} x2={x(year)} y1="96" y2={scene.bottom + 2}
+                stroke="#546854" strokeOpacity=".55" strokeDasharray="3 5"
+                strokeWidth="1" vectorEffect="non-scaling-stroke"/>)}
+            </g>
             <defs>
               <linearGradient id="river-colour" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#427d73" stopOpacity=".8" />
@@ -593,34 +648,8 @@ function TimelineRiver({
                   stroke="#fffdf6"
                   strokeWidth="2"
                 />
-                <rect
-                  x={Math.max(40, Math.min(880, x(selected) - 40))}
-                  y="98"
-                  width="80"
-                  height="24"
-                  rx="12"
-                  fill="#315e52"
-                />
-                <text
-                  x={Math.max(80, Math.min(920, x(selected)))}
-                  y="114"
-                  textAnchor="middle"
-                  fill="#fffdf6"
-                  fontSize="12"
-                >
-                  {selected < 0 ? `前${-selected}` : selected} · 已选
-                </text>
               </g>
             )}
-            <line
-              x1="500"
-              x2="500"
-              y1="132"
-              y2={scene.bottom-4}
-              stroke="#847d65"
-              strokeOpacity=".3"
-              strokeDasharray="1 6"
-            />
             {ticks.map((year) => (
               <g key={year}>
                 <line
@@ -632,10 +661,10 @@ function TimelineRiver({
                 />
                 <text
                   x={x(year)}
-                  y={scene.bottom+30}
-                  textAnchor="middle"
-                  fill="#7a786f"
-                  fontSize="13"
+                  y={scene.bottom + 24 * 1000 / chartWidth}
+                  textAnchor={x(year) < 80 ? "start" : x(year) > 920 ? "end" : "middle"}
+                  fill={boundaries.includes(year) ? "#315e52" : "#7a786f"}
+                  style={{fontSize: 12 * 1000 / chartWidth, fontWeight: boundaries.includes(year) ? 500 : 400}}
                 >
                   {year < 0 ? `前${-year}` : year}
                 </text>
@@ -643,60 +672,19 @@ function TimelineRiver({
             ))}
           </svg>
           </div>
-          <p className="timeline-art-caption">
+          <p className="sr-only">
             {scene.mode === "detail"
               ? `${binYears === 1 ? "按年展示" : `按${binYears}年汇总`}起始事件记录。河流厚度与光点表示记录分布；点击年份查看史事。`
-              : span <= scene.minimumSpan ? "已到画卷适合观看的最大倍率；继续放大进入史事细览。"
-              : "画卷随时间轴同步移动；放大可进入史事细览。"}
+              : scene.cropped ? "左右拖动浏览年份，上下拖动查看画卷局部，也可用画面上下滑块调整；纵向拖动不改变年份。"
+              : "画卷随时间轴同步移动和缩放；史事模式可主动切换。"}
           </p>
         </div>
-        <aside className="timeline-preview" aria-label="年度史事选读">
-          <div className="timeline-preview-year">
-            <p className="eyebrow">
-              {hoverYear === null ? "已选年份" : "浏览预览 · 点击年份选中"}
-            </p>
-            <div className="timeline-preview-title">
-              <h2>{formatDisplayYear(previewYear)}</h2>
-              <span>{preview?.count ?? 0} 条起始事件记录</span>
-            </div>
-          </div>
-          <div className="timeline-preview-content">
-            {preview?.highlights?.length ? (
-              <>
-                <p className="timeline-preview-note">
-                  {selectedHighlights.length
-                    ? "导读精选"
-                    : "系统选例 · 年度提要待整理"}
-                </p>
-                <ul>
-                  {preview.highlights.map((event) => (
-                    <li key={event.id}>
-                      <Link to={`/events/${event.id}`}>{event.title} ↗</Link>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <p>
-                {preview
-                  ? "年度提要尚待整理。"
-                  : "这个年份暂无起始事件记录，背景画面不代表史料已录入。"}
-              </p>
-            )}
-            <Link
-              className="timeline-detail-link"
-              to={`/timeline?year=${previewYear}`}
-            >
-              查看这一年的史事 →
-            </Link>
-          </div>
-        </aside>
-        {!compact && (
+        {(
           <>
             <div className="timeline-overview" aria-label="全程时间导航">
               <div className="timeline-overview-labels">
                 <span>{formatDisplayYear(calendar(first))}</span>
-                <span>全程概览 · 拖动窗口或两端调整范围</span>
+                <span>全程概览<span className="timeline-overview-help"> · 拖动窗口或两端调整范围</span></span>
                 <span>{formatDisplayYear(calendar(last))}</span>
               </div>
               <svg
@@ -717,6 +705,10 @@ function TimelineRiver({
                   stroke="#dadccb"
                   strokeWidth="2"
                 />
+                {historyScroll.periods.map((period, index) => <rect key={period.label}
+                  data-overview-period={period.label} x={overviewX(ordinal(period.from_year))} y="50"
+                  width={Math.max(0, overviewX(ordinal(period.to_year)) - overviewX(ordinal(period.from_year)) - 1)}
+                  height="5" fill={index % 2 ? "#bac7b1" : "#d9dcc9"}/>) }
                 {data.years.map((row) => (
                   <line
                     key={row.year}
@@ -783,11 +775,8 @@ function TimelineRiver({
                 </button>
               </div>
             </div>
-            <div className="timeline-selected">
-              <span className="eyebrow">当前停驻</span>
-              <h2>{formatDisplayYear(selected)}</h2>
-            </div>
             <div className="timeline-slider">
+              <span className="timeline-slider-year">已选 {formatDisplayYear(selected)}</span>
               <button
                 className="timeline-button"
                 disabled={focus <= first}
@@ -827,6 +816,55 @@ function TimelineRiver({
             </div>
           </>
         )}
+        </div>
+        <aside className={`timeline-preview ${previewExpanded ? "is-expanded" : ""}`} aria-label="年度史事选读">
+          <div className="timeline-preview-year">
+            <p className="eyebrow">
+              {hoverYear === null ? "已选年份" : "浏览预览 · 点击年份选中"}
+            </p>
+            <div className="timeline-preview-title">
+              <h2 aria-label={formatDisplayYear(previewYear)}>{previewYear < 0 ? `前${-previewYear}年` : formatDisplayYear(previewYear)}</h2>
+              <span>{preview?.count ?? 0} 条起始事件记录</span>
+            </div>
+          </div>
+          <div className="timeline-preview-content">
+            {preview?.highlights?.length ? (
+              <>
+                <p className="timeline-preview-note">
+                  {selectedHighlights.length
+                    ? "导读精选"
+                    : "系统选例 · 年度提要待整理"}
+                </p>
+                <ul>
+                  {preview.highlights.slice(0, 5).map((event) => (
+                    <li key={event.id}>
+                      <Link to={`/events/${event.id}`}>{event.title} ↗</Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p>
+                {preview
+                  ? "年度提要尚待整理。"
+                  : "这个年份暂无起始事件记录，背景画面不代表史料已录入。"}
+              </p>
+            )}
+            {(preview?.highlights?.length ?? 0) > 2 && <button type="button" className="timeline-preview-expand"
+              aria-expanded={previewExpanded} onClick={() => setPreviewExpanded(value => !value)}>
+              {previewExpanded ? "收起精选" : "展开更多精选"}
+            </button>}
+            <Link
+              className="timeline-detail-link"
+              to={`/timeline?year=${previewYear}`}
+            >
+              查看这一年的史事 →
+            </Link>
+          </div>
+        </aside>
+        </div>
+        <details className="timeline-explanation">
+          <summary>画卷与分期说明</summary>
         <p className="timeline-note">
           画卷与年份刻度使用相同坐标，拖动与缩放同步。细览显示起始事件记录数量。拖动只浏览，点击年份才更新事件清单。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
           {bins.length < to - from + 1 &&
@@ -835,6 +873,11 @@ function TimelineRiver({
         <Link className="timeline-art-link" to="/timeline/scroll">
           查看完整底图与分期比例 →
         </Link>
+          <p className="timeline-note">大分期为浏览导航；主要政权按各自起止年份展开，可能并立，不表示疆域。短时期用外置名称和连接线标示，底部时间条仍按真实年数绘制。画卷放大后保留比例，观察窗显示局部，可上下查看或恢复完整画幅；只有主动切换才进入史事模式。南北朝与五代等为政权群。元从1271年定国号、清从1636年改国号算起，画卷分界仍沿用1279年、1644年。</p>
+          <nav className="timeline-period-references" aria-label="分期参考">
+            {Object.values(polityReferences).map(reference => <a key={reference.url} href={reference.url} target="_blank" rel="noreferrer">{reference.title} ↗</a>)}
+          </nav>
+        </details>
       </section>
       {!compact && <YearEvents key={selected} year={selected} />}
     </>

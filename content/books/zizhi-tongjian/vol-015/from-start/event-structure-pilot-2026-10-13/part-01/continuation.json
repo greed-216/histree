@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-14",
+  "book_key": "zizhi-tongjian",
+  "active_workline_progress": "content/books/zizhi-tongjian/vol-001/from-start-pilot/progress.json",
+  "continuous_cursor": {
+    "volume": 14,
+    "last_reviewed_paragraph": "zizhi-tongjian-a63549944a71-p000163",
+    "next_paragraph": "zizhi-tongjian-a63549944a71-p000164",
+    "batch": "content/books/zizhi-tongjian/vol-014/from-start/release-2026-10-13/part-01",
+    "status": "published_fact_subset_verified_with_deferred_identity",
+    "last_published_paragraph": "zizhi-tongjian-a63549944a71-p000163",
+    "next_volume": 15,
+    "backend": "mysql"
+  },
+  "partial_publication": {
+    "paragraph_id": "zizhi-tongjian-a63549944a71-p000164",
+    "volume": 15,
+    "batch": "content/books/zizhi-tongjian/vol-015/from-start/event-structure-pilot-2026-10-13/part-01",
+    "status": "published_fact_subset_verified",
+    "published_event_key": "event_zztj_v015_jiayi_liang_reorganization",
+    "paragraph_complete": false,
+    "remaining": [
+      "冬十一月幸代、正月还代",
+      "贾谊后岁余死亡，确年待核",
+      "刘喜改封淮南",
+      "匈奴寇狄道",
+      "晁错奏章，跨入p000165"
+    ],
+    "next_paragraph": "zizhi-tongjian-a63549944a71-p000164",
+    "backend": "mysql"
+  },
+  "volume_complete": false,
+  "event_writing_rules": "skills/histree-history-ingest/references/plain-language.md#事件结构",
+  "instruction": "下次从p000164继续，复用已发布样板事件ID与人物，不重复创建，不跳至p000165。正文在首次录入时写好，史料支持多少写多少；不对全站旧事件重跑AI，不新增额外阅读关联配置。"
+}

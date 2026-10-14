@@ -1,0 +1,73 @@
+[
+  {
+    "paragraph_id": "zizhi-tongjian-a63549944a71-p000164",
+    "status": "published_fact_subset_verified",
+    "note": "本次只整理卷十五开头的梁王去世、贾谊上疏、刘武改封这一完整事件单元，并完成其白话、时间、主体和引文核对；整阅读块尚未全部录入，不推进正式游标。 本次叙述样板采用现有description分段交代本事、奏章中的判断、建议及实际结果；不新增跨事件关联，不把贾谊的预期写成已实现的后果。",
+    "observations": [
+      "本段的冬十一月幸代、正月还代、贾谊后岁余死亡、刘喜改封淮南、匈奴寇狄道及晁错奏章，留待正式连续续录。",
+      "晁错奏章跨入p000165；已读上下文识别边界，本样板不摘录或截断该奏章。",
+      "贾谊的方案、备选措施、预期，与叙述者记录的实际改封及范围分层，不为流畅补实施范围。",
+      "既有刘恒、贾谊、刘武、刘揖的key/UUID与简介均保留；未新增人物关系。"
+    ],
+    "relationship_audit": [
+      {
+        "quote": "臣之愚计，愿举淮南地以益淮阳，而为梁王立后，割淮阳北边二、三列城与东郡以益梁。不可者，可徙代王而都睢阳。",
+        "decision": "only_event_participation",
+        "reason": "本段是奏章和改封，不据一次上疏新增永久君臣、师生或盟友边。"
+      },
+      {
+        "quote": "夏，六月，梁怀王揖薨，无子。",
+        "decision": "deferred_no_named_endpoint",
+        "reason": "“无子”无可建立的子女端点，不创建虚构继承人。"
+      }
+    ],
+    "reading_context": {
+      "file": "reading-context.json",
+      "reused_event_ids": [
+        "4b28f296-2a86-5b7b-ba9a-28bf91aea574",
+        "6dbc600c-b6f3-5f1b-9b7b-9bb5e0cee9f9",
+        "6d3d30e1-b051-5b97-bd2f-954e56f68b84",
+        "ff62123b-c020-5219-9754-6a13f0030731",
+        "d5803bf3-e576-5176-925b-a64ec69f1e71"
+      ],
+      "role": "先前关联阅读试验留存；当前样板只使用现有事件description，不显示或发布这些额外关联。",
+      "state": "archived_not_rendered"
+    },
+    "subject_keys": [
+      "event_zztj_v015_jiayi_liang_reorganization",
+      "participation_event_zztj_v015_jiayi_liang_reorganization_person_刘恒",
+      "participation_event_zztj_v015_jiayi_liang_reorganization_person_刘揖",
+      "participation_event_zztj_v015_jiayi_liang_reorganization_person_刘武",
+      "participation_event_zztj_v015_jiayi_liang_reorganization_person_贾谊",
+      "person_刘恒",
+      "person_刘揖",
+      "person_刘武",
+      "person_贾谊"
+    ],
+    "claim_keys": [
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_02",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_03",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_04",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_05",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_06",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_07",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_08",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_09",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_10",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_11",
+      "claim_zztj-v015-event-structure-pilot-20261013_event_zztj_v015_jiayi_liang_reorganization_12",
+      "claim_zztj-v015-event-structure-pilot-20261013_person_刘恒_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_participation_event_zztj_v015_jiayi_liang_reorganization_person_刘恒_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_person_贾谊_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_participation_event_zztj_v015_jiayi_liang_reorganization_person_贾谊_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_person_刘武_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_participation_event_zztj_v015_jiayi_liang_reorganization_person_刘武_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_person_刘揖_01",
+      "claim_zztj-v015-event-structure-pilot-20261013_participation_event_zztj_v015_jiayi_liang_reorganization_person_刘揖_01"
+    ],
+    "publication_status": "published_fact_subset_verified",
+    "paragraph_complete": false,
+    "volume_complete": false
+  }
+]

@@ -69,18 +69,40 @@ export function EntryCard({ node }: { node: Entry }) {
     </Link>
   );
 }
+export interface EvidenceSummary {
+  id: string;
+  count: number;
+  hasMore: boolean;
+  loading: boolean;
+  error?: string;
+  sources: string[];
+}
+
 export function Evidence({
   subject,
   id,
+  onSummary,
 }: {
   subject: ClaimSubject;
   id: string;
+  onSummary?: (summary: EvidenceSummary) => void;
 }) {
   const location=useLocation();const navigate=useNavigate();
   const pinned=/^#claim-[0-9a-f-]{36}$/i.test(location.hash)?location.hash.slice(7):'';
   const params=new URLSearchParams({subject,subject_id:id});
   if(pinned)params.set('claim',pinned);
   const result = useInfiniteResource<PageResult<EvidenceClaim>>(`/catalog/fact_claim?${params}`);
+  useEffect(() => {
+    if (!onSummary) return;
+    const sources = [...new Set((result.data?.items ?? []).flatMap(claim => {
+      if (!claim.source?.title) return [];
+      const [book, ...parts] = claim.source.title.split('·');
+      const volume = /卷(?:第)?[〇零一二三四五六七八九十百千\d]+/.exec(claim.citation || '')?.[0];
+      const location = parts.slice(0, 2).join('·') || volume;
+      return [`《${book.replace(/[《》]/g, '')}》${location ? ` · ${location}` : ''}`];
+    }))];
+    onSummary({ id, count: result.data?.items.length ?? 0, hasMore: result.hasMore, loading: result.loading, error: result.error, sources });
+  }, [id, onSummary, result.data, result.hasMore, result.loading, result.error]);
   return (
     <div className="space-y-4">
       <LoadState {...result} />

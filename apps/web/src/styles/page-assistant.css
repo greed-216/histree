@@ -1,0 +1,63 @@
+.page-assistant { display: flex; flex-direction: column; border: 1px solid #d7dfcd; border-radius: 13px; background: #fdfef9; overflow: hidden; max-height: calc(100dvh - 205px); }
+.assistant-header { display: flex; align-items: center; justify-content: space-between; padding: 17px 18px 12px; }
+.assistant-header .eyebrow { font-size: 9px; }
+.assistant-header h2 { font: 21px 'Songti SC', serif; margin-top: 7px; }
+.assistant-header h2 span { color: #86985a; font-size: 14px; margin-left: 5px; }
+.assistant-header > button { font-size: 23px; color: #89947d; width: 30px; height: 30px; }
+.assistant-context { font-size: 10px; color: #89937e; padding: 0 18px 13px; border-bottom: 1px solid #e4e9dc; }
+.assistant-log { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; flex: 1; padding: 18px; min-height: 120px; }
+.assistant-welcome p:first-child { font: 18px 'Songti SC', serif; margin-bottom: 10px; }
+.assistant-welcome p:last-child { font-size: 12px; line-height: 1.9; color: #849076; }
+.assistant-prompts { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0; }
+.assistant-prompts button { font-size: 11px; border: 1px solid #e0e6d6; color: #6c825b; background: #f1f5e9; padding: 8px 10px; border-radius: 7px; text-align: left; }
+.assistant-turn { border-top: 1px solid #e3e8dc; padding: 16px 0; }
+.assistant-turn h3 { font-size: 13px; font-weight: 600; color: #345a41; margin-bottom: 12px; }
+.assistant-answer-kind { font-size: 9px; color: #a0a88f; margin-bottom: 8px; }
+.assistant-answer { font-size: 14px; line-height: 2; color: #66715c; white-space: pre-wrap; overflow-wrap: anywhere; }
+.assistant-followups { padding: 12px; background: #f1f4e9; border-radius: 8px; margin-top: 15px; }
+.assistant-followups p { font-size: 10px; color: #95a17e; margin-bottom: 7px; }
+.assistant-followups button { display: block; font-size: 11px; color: #5a794f; margin: 8px 0; text-align: left; }
+.assistant-form { padding: 12px 16px; border-top: 1px solid #dfe6d5; background: #f8faf2; }
+.assistant-form textarea { width: 100%; padding: 10px; border: 1px solid #dbe4d0; border-radius: 8px; resize: vertical; font-size: 12px; min-height: 64px; max-height: 160px; background: #fffefb; }
+.assistant-form > div:last-of-type { display: flex; align-items: center; justify-content: space-between; font-size: 10px; margin-top: 9px; color: #8b977c; }
+.assistant-form .assistant-send { background: var(--event-green); color: #fff; border-radius: 6px; padding: 8px 15px; font-size: 12px; }
+.assistant-form > p { font-size: 9px; color: #a0a98f; line-height: 1.8; margin-top: 9px; }
+.assistant-notice { font-size: 12px; color: #967938; line-height: 1.9; margin: 12px 0; }
+.assistant-evidence { font-size: 11px; line-height: 1.9; border: 1px solid #dfe5d6; padding: 10px; border-radius: 7px; margin-top: 10px; overflow-wrap: anywhere; }
+.assistant-evidence blockquote { padding: 9px; background: #eef2e5; margin: 8px 0; }
+.assistant-evidence a { color: #476e43; }
+.assistant-selection { font-size: 10px; color: #7c8c65; padding: 7px; margin-bottom: 8px; display: flex; gap: 8px; justify-content: space-between; background: #eaf0de; }
+.assistant-selection span { max-height: 48px; overflow: auto; }
+
+.entry-assistant-launcher { position: fixed; bottom: 24px; right: 24px; z-index: 45; display: flex; align-items: flex-end; gap: 12px; color: #245747; max-width: calc(100vw - 32px); }
+.entry-assistant-trigger { flex-shrink: 0; background: #245747; color: #fff; padding: 13px 20px; border-radius: 28px; box-shadow: 0 5px 22px #203b2d26; font-size: 14px; }
+.entry-selection-question { border: 1px solid #bdcdb2; background: #f9fcf3; border-radius: 12px; padding: 10px 14px; text-align: left; font-size: 13px; box-shadow: 0 4px 20px #203b2d15; min-width: 0; }
+.entry-selection-question span { display: block; font-size: 11px; color: #728267; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 240px; margin-bottom: 4px; }
+.entry-assistant-dialog { --event-green: #245747; position: fixed; inset: 90px 20px 20px auto; width: min(420px, calc(100vw - 40px)); height: calc(100dvh - 110px); max-height: none; max-width: none; margin: 0; padding: 0; border: 0; border-radius: 15px; color: #2f4037; background: #fdfef9; box-shadow: 0 16px 70px #17342335; overflow: hidden; }
+.entry-assistant-dialog::backdrop { background: #23372925; }
+.entry-assistant-dialog .page-assistant { height: 100%; max-height: none; border-radius: 15px; }
+.entry-assistant-dialog .assistant-log { min-height: 0; }
+.entry-assistant-dialog .assistant-header .eyebrow, .entry-assistant-dialog .assistant-answer-kind { font-size: 11px; color: #75816a; }
+.entry-assistant-dialog .assistant-context { font-size: 12px; color: #75816a; }
+.entry-assistant-dialog .assistant-prompts button, .entry-assistant-dialog .assistant-followups button { font-size: 12px; }
+.entry-assistant-dialog .assistant-form textarea { font-size: 14px; }
+.entry-assistant-dialog .assistant-form > p { font-size: 11px; color: #75816a; }
+.entry-assistant-dialog .assistant-form > div:last-of-type { font-size: 12px; }
+.entry-assistant-dialog .event-citation { color: #50764b; font-size: 11px; margin-left: 4px; vertical-align: super; }
+.entry-assistant-dialog button:focus-visible, .entry-assistant-launcher button:focus-visible, .entry-assistant-dialog a:focus-visible { outline: 2px solid #245747; outline-offset: 3px; }
+@media(max-width: 640px) {
+  /* Curated reading pages reserve the empty logo-row space for the assistant. */
+  .entry-assistant-launcher.entry-assistant-header-mobile { top: 6px; bottom: auto; right: 12px; gap: 6px; align-items: center; }
+  .entry-assistant-header-mobile .entry-assistant-trigger { padding: 8px 12px; box-shadow: none; font-size: 12px; }
+  .entry-assistant-header-mobile .entry-selection-question { padding: 7px 9px; border-radius: 18px; box-shadow: none; font-size: 12px; }
+  .entry-assistant-header-mobile .entry-selection-question span { display: none; }
+  .entry-assistant-launcher { bottom: max(16px, env(safe-area-inset-bottom)); right: 16px; gap: 8px; }
+  .entry-assistant-trigger { font-size: 13px; padding: 12px 16px; }
+  .entry-selection-question span { max-width: 150px; }
+  .entry-assistant-dialog { inset: auto 0 0; margin: 0 auto; width: 100%; height: 88dvh; border-radius: 17px 17px 0 0; }
+  .entry-assistant-dialog .page-assistant { border-radius: 17px 17px 0 0; }
+  .entry-assistant-dialog .assistant-form { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .entry-assistant-dialog .assistant-form textarea { font-size: 16px; }
+  .entry-assistant-dialog .assistant-context { font-size: 11px; }
+  .entry-assistant-dialog .assistant-prompts button, .entry-assistant-dialog .assistant-followups button { font-size: 12px; }
+}

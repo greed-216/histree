@@ -48,7 +48,7 @@ try {
   assert.equal(await page.getByLabel('向本页助手提问').inputValue(),'这条关系是什么意思？有什么史料依据？');
   await page.screenshot({path:`/tmp/histree-global-assistant/graph-relation-${width}.png`,fullPage:true});
   // Desktop panel is non-modal: graph controls remain interactive while it stays open.
-  if(width===1280){await page.getByRole('button',{name:'取消选择',exact:true}).click();await page.waitForFunction(() => document.querySelector('.assistant-context')?.textContent.includes('历史图谱'));assert((await page.locator('.assistant-context').textContent()).includes('历史图谱'));}
+  if(width===1280){const header=await page.locator('.global-assistant-panel .assistant-header').boundingBox();await page.mouse.move(header.x+80,header.y+25);await page.mouse.down();await page.mouse.move(100,header.y+25,{steps:10});await page.mouse.up();await page.getByRole('button',{name:'取消选择',exact:true}).click();await page.waitForFunction(() => document.querySelector('.assistant-context')?.textContent.includes('历史图谱'));assert((await page.locator('.assistant-context').textContent()).includes('历史图谱'));}
   await page.keyboard.press('Escape');
   for(const route of ['search?q=贾谊','people','events','']){
    await page.goto(`${base}/${route}`);await page.getByRole('button',{name:'✦ 史料助手',exact:true}).click();await page.getByRole('dialog',{name:'史料助手',exact:true}).waitFor();assert((await page.locator('.assistant-context').textContent()).includes('全站史料'));await page.keyboard.press('Escape');

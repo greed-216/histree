@@ -22,11 +22,11 @@ export function CitedText({ text, citations, onSource }: {
   })}</>;
 }
 
-export function PageAssistant({ entryId, title, questions, evidence, request, onSection, onClose, onRequestHandled, suggestions = [], context, scopeLabel, focusPrompt }: {
+export function PageAssistant({ entryId, title, questions, evidence, request, onSection, onClose, onRequestHandled, suggestions = [], context, scopeLabel, focusPrompt, movable = false }: {
   entryId: string; title: string; questions: ReadingQuestion[]; evidence: AskCitation[];
   request: { question: string; selectedText?: string; serial: number } | null;
   onSection: (id: string) => void; onClose: () => void; onRequestHandled: () => void;
-  suggestions?: string[]; context?: AskContext | null; scopeLabel?: string; focusPrompt?: string;
+  suggestions?: string[]; context?: AskContext | null; scopeLabel?: string; focusPrompt?: string; movable?: boolean;
 }) {
   const [session, setSession] = useState<Session>(() => sessions.get(entryId) ?? { turns: [], aiTurns: 0 });
   const [question, setQuestion] = useState(() => sessions.get(entryId)?.draft ?? '');
@@ -97,8 +97,8 @@ export function PageAssistant({ entryId, title, questions, evidence, request, on
     } finally { controller.current = null; setBusy(false); setStatus(''); }
   }
   return <section className="page-assistant" aria-label="本页阅读助手">
-    <header className="assistant-header">
-      <div><p className="eyebrow">陪你读懂历史</p><h2>史料助手 <span>✦</span></h2></div>
+    <header className="assistant-header" tabIndex={movable ? 0 : undefined} aria-label={movable ? '移动助手窗口：拖动标题栏，或使用方向键移动' : undefined}>
+      <div><p className="eyebrow">{movable ? '⠿ 拖动标题栏移动' : '陪你读懂历史'}</p><h2>史料助手 <span>✦</span></h2></div>
       <button type="button" onClick={onClose} aria-label="收起史料助手">×</button>
     </header>
     <p className="assistant-context">{scopeLabel || '正在读'} · {title}</p>

@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { PageAssistant } from './PageAssistant';
 import { useAssistant, type AssistantScope } from '../hooks/useAssistant';
+import { useFloatingWindow } from '../hooks/useFloatingWindow';
 import '../styles/page-assistant.css';
 
 export function GlobalAssistant() {
   const { scope, open, request, show, close, handled } = useAssistant();
   const dialog = useRef<HTMLDialogElement>(null);
+  const { restore, ...floatingHandlers } = useFloatingWindow(dialog);
   const launcher = useRef<HTMLButtonElement>(null);
   const [selected, setSelected] = useState({ key: scope.key, text: '' });
   const [memory, setMemory] = useState({ key: scope.key, open, visited: [] as AssistantScope[], viewing: null as AssistantScope | null });
@@ -21,10 +23,11 @@ export function GlobalAssistant() {
     const element = dialog.current;
     if (!element) return;
     if (open && !element.open) {
-      if (window.matchMedia('(max-width: 640px)').matches) element.showModal(); else element.show();
+      element.show();
+      restore();
       element.querySelector<HTMLTextAreaElement>('textarea')?.focus({ preventScroll: true });
     } else if (!open && element.open) { element.close(); launcher.current?.focus({ preventScroll: true }); }
-  }, [open]);
+  }, [open, restore]);
   useEffect(() => {
     function capture() {
       const selected = getSelection();
@@ -42,15 +45,12 @@ export function GlobalAssistant() {
       {selection && !open && <button type="button" className="entry-selection-question" onClick={() => { setViewing(null); show('', selection); }}><span>“{selection.slice(0, 32)}{selection.length > 32 ? '…' : ''}”</span>问这句话 ↗</button>}
       <button ref={launcher} type="button" className="entry-assistant-trigger" aria-haspopup="dialog" aria-expanded={open} onClick={() => { setViewing(null); show(); }}>✦ 史料助手</button>
     </div>
-    <dialog ref={dialog} className="entry-assistant-dialog global-assistant-panel" aria-label="史料助手" onClose={close} onCancel={close} onClick={event => {
-      const box = event.currentTarget.getBoundingClientRect();
-      if (event.target === event.currentTarget && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) close();
-    }}>
+    <dialog ref={dialog} {...floatingHandlers} className="entry-assistant-dialog global-assistant-panel" aria-label="史料助手" onClose={close} onCancel={close}>
       {visited.length > 1 && <div className="assistant-history"><label htmlFor="assistant-history">阅读中的讨论</label><select id="assistant-history" value={active.key} onChange={event => { const found = visited.find(x => x.key === event.target.value); setViewing(found?.key === scope.key ? null : found ?? null); handled(); }}>
         {[scope, ...visited.filter(x => x.key !== scope.key)].map(x => <option key={x.key} value={x.key}>{x.key === scope.key ? '当前 · ' : ''}{x.title}</option>)}
       </select>{viewing && <button onClick={() => setViewing(null)}>回到当前页面</button>}</div>}
       {open && <PageAssistant key={active.key} entryId={active.key} title={active.title} questions={[]} evidence={[]} request={viewing ? null : request}
-        context={active.context ?? null} scopeLabel={active.label} focusPrompt={active.prompt} suggestions={active.suggestions}
+        movable context={active.context ?? null} scopeLabel={active.label} focusPrompt={active.prompt} suggestions={active.suggestions}
         onClose={close} onRequestHandled={handled} onSection={id => { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }}/>} 
     </dialog>
   </>;

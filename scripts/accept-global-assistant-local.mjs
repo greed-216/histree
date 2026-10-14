@@ -24,14 +24,14 @@ try {
   if(kind==='person'){
    await page.goto(`${base}/people/${person}`);await page.locator('.person-overview').waitFor();await page.getByRole('button',{name:'✦ 史料助手'}).click();
   }else{
-   await page.goto(`${base}/graph/${event}`);await page.locator('.graph-detail h2').waitFor();await page.locator('.graph-workspace details > summary').filter({hasText:'关系清单'}).click();await page.locator('.graph-workspace details button').filter({hasText:'贾谊'}).first().click();await page.getByRole('button',{name:'问这条关系 ✦'}).click();
+   await page.goto(`${base}/graph/${event}`);await page.locator('.graph-detail h2').waitFor();await page.locator('.graph-workspace details > summary').filter({hasText:'关系清单'}).click();await page.locator('.graph-workspace details button').filter({hasText:/^贾谊/}).first().click();await page.getByRole('button',{name:'问这条关系 ✦'}).click();
   }
   await page.getByText('提问时查阅当前条目及相关已发布史料，回答附出处。',{exact:true}).waitFor();
   const question=kind==='person'?'贾谊在改封刘武为梁王这件事中做了什么？':'图上这条贾谊与改封事件的连线是什么意思？请给出这条参与记录的出处。';
   await page.getByLabel('向本页助手提问').fill(question);await page.getByRole('button',{name:'提问 ↑',exact:true}).click();
   await Promise.race([page.locator('.assistant-answer').waitFor({timeout:125000}), page.getByRole('alert').waitFor({timeout:125000}).then(async()=>{throw new Error(await page.getByRole('alert').innerText());})] );await page.waitForFunction(() => window.__assistantResult);response = await page.evaluate(() => window.__assistantResult);
   assert(response?.answer);assert.equal(response.insufficientEvidence,false);assert(response.citations.length>0);
-  assert.equal(body.context.kind,kind==='person'?'person':'person_event');if(kind==='person')assert.equal(body.context.id,person);else assert(response.citations.some(c=>c.subjectId===body.context.id),'Answer must cite the exact selected relation');
+  assert.equal(body.context.kind,kind==='person'?'person':'person_event');if(kind==='person')assert.equal(body.context.id,person);else {assert.equal(body.context.id,'f20e5317-365f-5ab3-a987-2f039bc91b22','The selected relation must be Jia Yi participation, not a name inside the event title');assert(response.citations.some(c=>c.subjectId===body.context.id),'Answer must cite the exact selected relation');}
   for(const c of response.citations){const params=new URLSearchParams({subject:c.subjectTable,subject_id:c.subjectId,claim:c.claimId});const readback=await page.request.get(`${base}/api/v1/catalog/fact_claim?${params}`);assert(readback.ok());const claim=(await readback.json()).items.find(x=>x.id===c.claimId);assert(claim?.note);assert.equal(claim.note.slice(3).split('；核对说明：')[0],c.quote);}
   const source=page.locator('.assistant-evidence').first();await source.locator('summary').click();assert((await source.locator('blockquote').textContent()).length>0);await page.screenshot({path:`${output}/real-${kind}.png`});
   audit.push({kind,url:page.url(),question,context:body.context,answer:response.answer,citationCount:response.citations.length,relationCited:kind==='relation',quotesMatchPublishedClaims:true});

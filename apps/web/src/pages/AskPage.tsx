@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { askQuestion, askStatus, type AskAnswer } from '../lib/ask';
+import { askQuestion, askStatus, type AskContext, type AskAnswer } from '../lib/ask';
 
 import { GuessGame } from './GuessGame';
 
@@ -18,7 +18,7 @@ export function AskPage() {
 function EvidenceAskPage() {
   const [params] = useSearchParams();
   const kind = params.get('kind'); const id = params.get('id');
-  const context = (kind === 'person' || kind === 'event') && id ? { kind, id } : undefined;
+  const context: AskContext | undefined = (kind === 'person' || kind === 'event') && id ? { kind, id } : undefined;
   const [question, setQuestion] = useState('');
   const [turns, setTurns] = useState<Array<{ question: string; result: AskAnswer }>>([]);
   const [conversation, setConversation] = useState<string>();

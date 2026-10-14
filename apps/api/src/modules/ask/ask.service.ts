@@ -21,7 +21,7 @@ const bodySchema = z
       .regex(/^[a-f0-9]{64}$/)
       .optional(),
     context: z
-      .object({ kind: z.enum(['person', 'event']), id: z.string().uuid() })
+      .object({ kind: z.enum(['person', 'event', 'person_relationship', 'person_event', 'event_causality']), id: z.string().uuid() })
       .strict()
       .optional(),
   })

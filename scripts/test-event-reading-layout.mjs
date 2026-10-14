@@ -69,15 +69,15 @@ try {
       const selected = getSelection(); selected.removeAllRanges(); selected.addRange(range);
     });
     await page.getByRole('button', { name: /问这句话/ }).click();
-    const dialog = page.getByRole('dialog', { name: '本页阅读助手' });
+    const dialog = page.getByRole('dialog', { name: '史料助手' });
     await dialog.waitFor({ state: 'visible' });
     assert((await dialog.locator('.assistant-selection').textContent()).includes('汉文帝'));
     await dialog.getByLabel('向本页助手提问').fill('贾谊为什么建议这样改封？');
     await page.keyboard.press('Escape');
     await dialog.waitFor({ state: 'hidden' });
-    await page.getByRole('button', { name: '✦ 本页助手', exact: true }).click();
+    await page.getByRole('button', { name: '✦ 史料助手', exact: true }).click();
     assert.equal(await dialog.getByLabel('向本页助手提问').inputValue(), '贾谊为什么建议这样改封？');
-    await dialog.getByRole('button', { name: '收起本页助手' }).click();
+    await dialog.getByRole('button', { name: '收起史料助手' }).click();
     console.log(JSON.stringify({ width, geometry, evidence: 'verbatim quote and pinned citation navigation', assistant: 'selection, dialog, draft, Escape' }));
     await page.close();
   }
@@ -100,8 +100,8 @@ try {
       assert.equal(await page.locator('aside a[href="#overview"]').count(), 0, 'The former sidebar is removed from every event');
       assert.deepEqual(await page.locator('.event-narrative > p').allTextContents(), (stored.description || '事件说明正在整理。').split(/\r?\n\s*\r?\n/).filter(Boolean), 'Published prose remains unchanged');
       assert.equal(await page.locator('#chronology').count(), stored.phases?.length ? 1 : 0, 'Only actual phase data creates phase records');
-      await page.getByRole('button', { name: '✦ 本页助手' }).click();
-      await page.getByRole('dialog', { name: '本页阅读助手' }).waitFor({ state: 'visible' });
+      await page.getByRole('button', { name: '✦ 史料助手' }).click();
+      await page.getByRole('dialog', { name: '史料助手' }).waitFor({ state: 'visible' });
       await page.keyboard.press('Escape');
       const bounds = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth, launcherBottom: document.querySelector('.entry-assistant-launcher').getBoundingClientRect().bottom, headerBottom: document.querySelector('.site-header').getBoundingClientRect().bottom }));
       assert(bounds.scroll <= bounds.width, 'Existing events have no horizontal overflow');
@@ -120,8 +120,8 @@ try {
   const person = await browser.newPage();
   await person.goto(`${base}people/3ddce59a-2d7a-5a32-8c6e-d09d330d167f`);
   await person.locator('article > header h1').waitFor();
-  assert.equal(await person.locator('.entry-reading-page').count(), 0, 'Person pages retain their layout');
-  assert.equal(await person.locator('aside a[href="#overview"]').count(), 1);
+  assert.equal(await person.locator('.entry-reading-page').count(), 1, 'Person pages share the reading layout');
+  assert.equal(await person.locator('aside a[href="#overview"]').count(), 0);
   assert.deepEqual(errors, [], 'No browser runtime errors');
   console.log('One event layout accepted for the sample and two published events on desktop/mobile; prose and person layout preserved.');
 } finally { await browser.close(); }

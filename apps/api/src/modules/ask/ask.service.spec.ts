@@ -21,6 +21,13 @@ describe('Ask admission', () => {
       ),
     ).toThrow();
   });
+  it('accepts a graph relation as scoped context and rejects unsupported subjects', () => {
+    const id = '88309f5d-4302-5431-97c9-98505a221fdf';
+    for (const kind of ['person_relationship', 'person_event', 'event_causality']) {
+      expect(make().reserve({ question: '这条关系有什么依据？', context: { kind, id } }, 'a').input.context).toEqual({ kind, id });
+    }
+    expect(() => make().reserve({ question: '这条关系有什么依据？', context: { kind: 'source', id } }, 'a')).toThrow();
+  });
   it('issues unguessable conversation tokens and rejects unknown or concurrent sessions', () => {
     const service = make();
     const first = service.reserve({ question: '朱温是谁' }, 'a');

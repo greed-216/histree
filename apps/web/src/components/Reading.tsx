@@ -143,7 +143,7 @@ export function EvidenceCard({ claim }: { claim: EvidenceClaim }) {
     <p className="text-xs text-slate-400 mt-2 break-all">引用编号：{claim.id}</p>
   </article>;
 }
-export function Timeline({ events }: { events: Event[] }) {
+export function Timeline({ events, condensed = false, roles = {} }: { events: Event[]; condensed?: boolean; roles?: Record<string, string> }) {
   const sorted = [...events].sort(
     (a, b) => (a.start_year ?? Infinity) - (b.start_year ?? Infinity),
   );
@@ -161,7 +161,9 @@ export function Timeline({ events }: { events: Event[] }) {
           >
             {event.title} ↗
           </Link>
-          {event.phases?.map((phase, index) => (
+          {condensed && roles[event.id] && roles[event.id] !== '参与' && <p className="person-event-role">在这件事中 · {roles[event.id]}</p>}
+          {condensed && event.description && event.description.split(/\r?\n\s*\r?\n/)[0].replace(/[，。；、：\s]/g, '') !== event.title.replace(/[，。；、：\s]/g, '') && <p className="person-event-excerpt">{event.description.split(/\r?\n\s*\r?\n/)[0].slice(0, 160)}{event.description.split(/\r?\n\s*\r?\n/)[0].length > 160 ? '…' : ''}</p>}
+          {!condensed && event.phases?.map((phase, index) => (
             <div className="mt-3 text-sm leading-7" key={index}>
               <span className="text-slate-500">
                 {formatDisplayRange(phase.start_year, phase.end_year)}

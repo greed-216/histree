@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { askQuestion, askStatus, type AskAnswer, type AskCitation } from '../lib/ask';
+import { askQuestion, askStatus, type AskAnswer, type AskContext, type AskCitation } from '../lib/ask';
 
 export interface ReadingQuestion {
   id: string; question: string; aliases: string[]; answer: string; next: string[]; section: string;
@@ -8,6 +8,10 @@ export interface ReadingQuestion {
 type Turn = { question: string; result: AskAnswer; curated: boolean; followups: string[]; section?: string };
 type Session = { turns: Turn[]; conversation?: string; aiTurns: number; draft?: string; selectedText?: string };
 const sessions = new Map<string, Session>();
+function rememberSession(key: string, value: Session) {
+  sessions.delete(key); sessions.set(key, value);
+  while (sessions.size > 32) sessions.delete(sessions.keys().next().value!);
+}
 
 export function CitedText({ text, citations, onSource }: {
   text: string; citations: AskCitation[]; onSource: (key: string) => void;
@@ -18,11 +22,11 @@ export function CitedText({ text, citations, onSource }: {
   })}</>;
 }
 
-export function PageAssistant({ entryId, title, questions, evidence, request, onSection, onClose, onRequestHandled, suggestions = [] }: {
+export function PageAssistant({ entryId, title, questions, evidence, request, onSection, onClose, onRequestHandled, suggestions = [], context, scopeLabel, focusPrompt }: {
   entryId: string; title: string; questions: ReadingQuestion[]; evidence: AskCitation[];
   request: { question: string; selectedText?: string; serial: number } | null;
   onSection: (id: string) => void; onClose: () => void; onRequestHandled: () => void;
-  suggestions?: string[];
+  suggestions?: string[]; context?: AskContext | null; scopeLabel?: string; focusPrompt?: string;
 }) {
   const [session, setSession] = useState<Session>(() => sessions.get(entryId) ?? { turns: [], aiTurns: 0 });
   const [question, setQuestion] = useState(() => sessions.get(entryId)?.draft ?? '');
@@ -35,7 +39,7 @@ export function PageAssistant({ entryId, title, questions, evidence, request, on
   const log = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLTextAreaElement>(null);
   const handled = useRef<number | undefined>(undefined);
-  useEffect(() => { sessions.set(entryId, { ...session, draft: question, selectedText: selection }); }, [entryId, session, question, selection]);
+  useEffect(() => { rememberSession(entryId, { ...session, draft: question, selectedText: selection }); }, [entryId, session, question, selection]);
   useEffect(() => {
     const abort = new AbortController();
     askStatus(abort.signal).then(x => setAvailable(x.available)).catch(() => { if (!abort.signal.aborted) setAvailable(false); });
@@ -76,8 +80,9 @@ export function PageAssistant({ entryId, title, questions, evidence, request, on
     setBusy(true); setError(''); setStatus('正在查找本页及相关史料…');
     try {
       const previous = session.turns.at(-1)?.question;
-      const scopedQuestion = selection ? `我正在读“${title.slice(0, 80)}”。选中的原句是“${selection.slice(0, 300)}”。我的问题：${text}` : previous && text.length <= 550 ? `当前事件：${title.slice(0, 80)}。我刚才问的是“${previous.slice(0, 100)}”。现在的问题：${text}` : text;
-      await askQuestion({ question: scopedQuestion, conversation: session.conversation, context: { kind: 'event', id: entryId } }, abort.signal, event => {
+      const coreQuestion = selection ? `我正在读“${title.slice(0, 80)}”。选中的原句是“${selection.slice(0, 300)}”。我的问题：${text}` : previous && text.length <= 550 ? `当前阅读：${title.slice(0, 80)}。我刚才问的是“${previous.slice(0, 100)}”。现在的问题：${text}` : text;
+      const scopedQuestion = (focusPrompt ? `${focusPrompt.slice(0, 240)}\n我的问题：${coreQuestion}` : coreQuestion).slice(0, 800);
+      await askQuestion({ question: scopedQuestion, conversation: session.conversation, context: context === undefined ? { kind: 'event', id: entryId } : context ?? undefined }, abort.signal, event => {
         if (event.type === 'conversation') setSession(old => ({ ...old, conversation: event.conversation }));
         if (event.type === 'status') setStatus(event.message);
         if (event.type === 'result') {
@@ -93,10 +98,10 @@ export function PageAssistant({ entryId, title, questions, evidence, request, on
   }
   return <section className="page-assistant" aria-label="本页阅读助手">
     <header className="assistant-header">
-      <div><p className="eyebrow">陪你读懂这一页</p><h2>本页助手 <span>✦</span></h2></div>
-      <button type="button" onClick={onClose} aria-label="收起本页助手">×</button>
+      <div><p className="eyebrow">陪你读懂历史</p><h2>史料助手 <span>✦</span></h2></div>
+      <button type="button" onClick={onClose} aria-label="收起史料助手">×</button>
     </header>
-    <p className="assistant-context">正在读 · {title}</p>
+    <p className="assistant-context">{scopeLabel || '正在读'} · {title}</p>
     <div className="assistant-log" ref={log} aria-live="polite" aria-relevant="additions">
       {session.turns.length === 0 && <div className="assistant-welcome"><p>哪里没读懂？</p><p>可以问一个词，也可以问为什么。答案会带你回到原文，或继续看下一步。</p></div>}
       <div className="assistant-prompts" aria-label="提问建议">
@@ -130,11 +135,11 @@ export function PageAssistant({ entryId, title, questions, evidence, request, on
     <form onSubmit={submit} className="assistant-form">
       {selection && <div className="assistant-selection"><span>选中原句：{selection}</span><button type="button" onClick={() => setSelection('')} aria-label="取消选中文字">×</button></div>}
       <label htmlFor="page-question" className="sr-only">向本页助手提问</label>
-      <textarea ref={input} autoFocus id="page-question" value={question} disabled={busy} onChange={e => setQuestion(e.target.value)} maxLength={selection ? 320 : 800} placeholder="例如：这件事为什么发生？这里的词是什么意思？" rows={2}/>
-      <div><button type="button" disabled={busy || !session.turns.length} onClick={() => { setSession({ turns: [], aiTurns: 0 }); setError(''); }}>清空对话</button>
+      <textarea ref={input} autoFocus id="page-question" value={question} disabled={busy} onChange={e => setQuestion(e.target.value)} maxLength={selection ? 320 : 800} placeholder={context?.kind === 'person' ? '例如：他为什么参与这件事？他和谁是什么关系？' : context?.kind && !['person', 'event'].includes(context.kind) ? '例如：这条连线表示什么？哪段史料支持？' : context === null ? '例如：帮我找贾谊上疏相关的史料。' : '例如：这件事为什么发生？这里的词是什么意思？'} rows={2}/>
+      <div><button type="button" disabled={busy || (!session.turns.length && !session.conversation)} onClick={() => { setSession({ turns: [], aiTurns: 0 }); setError(''); }}>清空对话</button>
         {busy ? <button type="button" className="assistant-send" onClick={() => controller.current?.abort()}>停止</button> : <button className="assistant-send" disabled={question.trim().length < 2}>提问 ↑</button>}
       </div>
-      <p>{available === null ? '正在连接史料问答…' : available ? '提问时查阅本页及相关已发布史料，回答附出处。' : '暂时无法连接史料问答，请稍后重新打开助手。'}</p>
+      <p>{available === null ? '正在连接史料问答…' : available ? context === null ? '提问时检索已发布史料，回答附出处。' : '提问时查阅当前条目及相关已发布史料，回答附出处。' : '暂时无法连接史料问答，请稍后重新打开助手。'}</p>
     </form>
   </section>;
 }

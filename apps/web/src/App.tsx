@@ -1,3 +1,5 @@
+import { AssistantProvider } from './components/AssistantProvider';
+import { GlobalAssistant } from './components/GlobalAssistant';
 import { SourcePage, EvidencePage } from './pages/SourcesPage';
 import { MAPS_ENABLED } from './lib/features';
 import { lazy, Suspense } from 'react';
@@ -31,7 +33,7 @@ function App() {
     }`;
 
   return (
-    <div className="site-shell min-h-screen flex flex-col font-sans">
+    <AssistantProvider><div className="site-shell min-h-screen flex flex-col font-sans">
       {/* Top Navigation */}
       <header className="site-header sticky top-0 z-40">
         <div className="site-header-inner mx-auto px-4 md:px-8 min-h-16 py-3 flex flex-wrap gap-3 items-center justify-between">
@@ -93,13 +95,14 @@ function App() {
           <Route path="*" element={<div className="py-12 text-center">页面不存在。<Link className="text-teal-700" to="/">返回专题探索</Link></div>} />
         </Routes></Suspense>
       </main>
+      <GlobalAssistant />
 
 
       
       <footer className="bg-white border-t border-slate-200 py-6 text-center text-slate-400 text-sm mt-auto">
         © {new Date().getFullYear()} Histree 历史之树
       </footer>
-    </div>
+    </div></AssistantProvider>
   );
 }
 

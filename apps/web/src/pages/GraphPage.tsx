@@ -1,3 +1,4 @@
+import { useAssistant, useAssistantScope } from '../hooks/useAssistant';
 import { useCallback, useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import type { GraphResponse, Edge, Person, Event } from '@histree/shared-types';
@@ -20,6 +21,7 @@ export function GraphView({initialId,initialMode='people',initialFrom='',initial
  return <GraphExplorer initialId={initialId} initialMode={initialMode} initialFrom={initialFrom} initialTo={initialTo} initialGraph={initialGraph}/>;
 }
 function GraphExplorer({initialId,initialMode,initialFrom,initialTo,initialGraph}:{initialId?:string;initialMode:GraphViewMode;initialFrom:string;initialTo:string;initialGraph?:GraphResponse}) {
+ const assistant = useAssistant();
  const [mode,setMode]=useState<GraphViewMode>(initialMode);
  const [chapterOnly,setChapterOnly]=useState(Boolean(initialGraph));
  const [selection,setSelection]=useState<GraphSelection>(initialId?{kind:'node',id:initialId}:null);
@@ -53,6 +55,8 @@ function GraphExplorer({initialId,initialMode,initialFrom,initialTo,initialGraph
  const nodeIndex=useMemo(()=>new Map(data.nodes.map(n=>[n.id,n])),[data.nodes]);
  const selectedNode=selection?.kind==='node'?(detail.data??nodeIndex.get(selection.id)):undefined;
  const selectedEdge=selection?.kind==='edge'?data.edges.find(e=>edgeKey(e)===selection.id):undefined;
+ const relationKind = selectedEdge ? edgeSubject(selectedEdge, data.nodes) : null;
+ useAssistantScope(selectedNode ? { key: `${selectedNode.type}:${selectedNode.id}`, title: entryTitle(selectedNode), label: '图谱选中条目', context: { kind: selectedNode.type, id: selectedNode.id }, suggestions: ['用白话介绍这个条目。', '它与周围人物或事件有什么关系？', '有哪些可以继续阅读的史料？'] } : selectedEdge?.id && relationKind ? { key: `${relationKind}:${selectedEdge.id}`, title: relationshipPresentation(selectedEdge, data.nodes, edgeTypeLabel(selectedEdge.type)).sentence, label: '图谱选中关系', context: { kind: relationKind, id: selectedEdge.id }, prompt: `我正在看图谱里的关系：${relationshipPresentation(selectedEdge, data.nodes, edgeTypeLabel(selectedEdge.type)).sentence}。请查阅这条关系与双方的已发布史料。`, suggestions: ['这条关系是什么意思？有什么史料依据？', '这条关系与哪件事有关？', '还有哪些相关人物或事件可以继续了解？'] } : { key: 'page:graph', title: '历史图谱', label: '全站史料', suggestions: ['如何沿人物和事件探索历史？', '帮我查找一个人物的相关史料。'] });
  const select=useCallback((next:GraphSelection)=>{setSelection(next);setEvidence(false);setFocusRequest(v=>v+1);},[]);
  const dive=useCallback((id:string)=>{setChapterOnly(false);setHistory(h=>enterSubgraph(h,id));setDepth(1);select({kind:'node',id});setLabels(l=>({...l,[focus]:nodeIndex.has(focus)?entryTitle(nodeIndex.get(focus)!):l[focus]??'条目',[id]:nodeIndex.has(id)?entryTitle(nodeIndex.get(id)!):l[id]??'条目'}));},[nodeIndex,focus,select]);
  function navigate(index:number){const next=history.slice(0,index+1);setHistory(next);setDepth(1);select(next.length?{kind:'node',id:next.at(-1)!}:null);}
@@ -107,7 +111,7 @@ function GraphExplorer({initialId,initialMode,initialFrom,initialTo,initialGraph
          <div className="detail-monogram" aria-hidden="true">{entryTitle(selectedNode).slice(0,1)}</div><h2 className="font-serif text-2xl leading-9 mt-4">{entryTitle(selectedNode)}</h2>
          <p className="text-sm text-stone-500 mt-2">{selectedNode.type==='event'?formatDisplayRange(selectedNode.start_year,selectedNode.end_year):selectedNode.era||'时代待补充'}</p>
          <p className="text-sm leading-7 mt-4">{selectedNode.description||'条目说明尚待整理。'}</p>
-         <div className="flex flex-wrap gap-2 mt-5"><button className={button} onClick={()=>dive(selectedNode.id)}>进入关系子图</button><Link className="rounded-lg bg-[#285747] px-3 py-2 text-sm text-white" to={entryPath(selectedNode)}>阅读全文与出处 →</Link><Link className={button} to={`/ask?kind=${selectedNode.type}&id=${selectedNode.id}`}>问史料</Link></div>
+         <div className="flex flex-wrap gap-2 mt-5"><button className={button} onClick={()=>dive(selectedNode.id)}>进入关系子图</button><Link className="rounded-lg bg-[#285747] px-3 py-2 text-sm text-white" to={entryPath(selectedNode)}>阅读全文与出处 →</Link><button className={button} onClick={() => assistant.show()}>问这个条目 ✦</button></div>
          {selectedNode.type==='event'&&selectedNode.phases?.map((p,i)=><div key={i} className="border-l-2 border-stone-300 pl-3 mt-4 text-sm"><strong>{p.title}</strong><p className="leading-7 mt-1">{p.description}</p></div>)}
          <h3 className="text-sm font-semibold mt-6 mb-2">当前子图关系 · {adjacent.length}</h3>
          <div className="space-y-2">{adjacent.length===0&&<p className="text-sm text-stone-500 leading-7">当前子图没有展示此条目的关系。可进入它的关系子图或切换视图继续查看。</p>}{adjacent.map(e=><button className="block w-full text-left text-sm p-3 bg-stone-50 rounded-lg hover:bg-teal-50" key={edgeKey(e)} onClick={()=>select({kind:'edge',id:edgeKey(e)})}>{edgeTitle(e)}</button>)}</div>
@@ -115,6 +119,7 @@ function GraphExplorer({initialId,initialMode,initialFrom,initialTo,initialGraph
          <div className="mt-4 space-y-3"><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.source})}>{title(selectedEdge.source)}</button><p className="text-sm text-stone-500">{relationshipPresentation(selectedEdge,data.nodes,edgeTypeLabel(selectedEdge.type)).symmetric ? "—" : "↓"} {edgeTypeLabel(selectedEdge.type)}</p><button className="text-left font-semibold text-teal-800" onClick={()=>select({kind:'node',id:selectedEdge.target})}>{title(selectedEdge.target)}</button></div>
          <p className="mt-4 font-medium">{relationshipPresentation(selectedEdge,data.nodes,edgeTypeLabel(selectedEdge.type)).sentence}</p><p className="text-sm leading-7 mt-5">{selectedEdge.description || (edgeSubject(selectedEdge,data.nodes)==='person_event'?`当前记录的事件角色为“${edgeTypeLabel(selectedEdge.type)}”，具体依据见下方史料。`:'该关系已记录，进一步说明尚待整理。')}</p>
          <p className="text-xs leading-6 text-stone-500 mt-3">{edgeSubject(selectedEdge,data.nodes)==='person_event'?(()=>{const e=data.nodes.find(n=>(n.id===selectedEdge.source||n.id===selectedEdge.target)&&n.type==='event');return e?.type==='event'?`关联事件：${formatDisplayRange(e.start_year,e.end_year)}`:'';})():'关系有效起止时间尚未单独整理。'}</p>
+         <button className="graph-ask-relation" onClick={() => assistant.show('这条关系是什么意思？有什么史料依据？')}>问这条关系 ✦</button>
        </>:<><h2 className="font-serif text-2xl mt-4">从一位人物开始</h2><p className="text-sm leading-7 mt-4">选中人物，画布会自动移到他的位置，并放大到便于阅读的大小。关系线也可以点击，查看双方身份与史料依据。</p><p className="text-sm leading-7 mt-3">双击节点，只看他与相邻人物或事件的子图。可以继续双击探索，或通过上方路径返回。</p></>}
        {(selectedNode||selectedEdge)&&<div className="border-t border-stone-200 mt-6 pt-4"><button className="text-sm text-teal-800 underline" aria-expanded={evidence} onClick={()=>setEvidence(!evidence)}>{evidence?'收起史料依据':'查看史料依据'}</button>{evidence&&(selectedNode?<Evidence key={selectedNode.id} subject={selectedNode.type} id={selectedNode.id}/>:selectedEdge?.id?<Evidence key={edgeKey(selectedEdge)} subject={edgeSubject(selectedEdge,data.nodes)} id={selectedEdge.id}/>:<p className="text-sm mt-3">这条关系的独立出处尚待整理。</p>)}</div>}
        {initialId&&<Link to="/graph" className="block text-sm underline text-teal-700 mt-6">查找其他人物与事件 →</Link>}

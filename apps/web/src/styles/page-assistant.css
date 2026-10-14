@@ -61,3 +61,25 @@
   .entry-assistant-dialog .assistant-context { font-size: 11px; }
   .entry-assistant-dialog .assistant-prompts button, .entry-assistant-dialog .assistant-followups button { font-size: 12px; }
 }
+
+.global-assistant-panel { display: none; }
+.global-assistant-panel[open] { display: flex; flex-direction: column; }
+.global-assistant-panel .page-assistant { flex: 1; min-height: 0; }
+.assistant-history { padding: 10px 16px; border-bottom: 1px solid #dfe6d5; background: #f1f5ed; }
+.assistant-history label { font-size: 11px; color: #71816a; display: block; margin-bottom: 4px; }
+.assistant-history select { width: 100%; min-width: 0; font-size: 12px; color: #345b43; padding: 6px 4px; }
+.assistant-history button { font-size: 12px; color: #345b43; text-decoration: underline; margin-top: 6px; }
+@media (min-width: 641px) {
+  .global-assistant-panel { inset: 90px 20px 20px auto; box-shadow: 0 16px 70px #17342324; }
+  .site-shell:has(.global-assistant-panel[open]) .site-main { padding-right: 460px; }
+  .site-shell:has(.global-assistant-panel[open]) .graph-columns { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .site-header-inner { padding: 6px 12px; min-height: 0; gap: 4px; }
+  .brand-logo { width: 105px; height: 35px; }
+  .site-header nav { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+  .site-header nav a { flex-shrink: 0; font-size: 12px; padding: 6px 9px; }
+  .site-header .brand-link { margin-right: 126px; }
+}
+.global-assistant-launcher.is-open { visibility: hidden; pointer-events: none; }
+.global-assistant-panel { z-index: 60; }

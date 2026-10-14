@@ -111,3 +111,19 @@
   .context-track { padding: 16px 18px 0; }
   .context-convergence > p { font-size: 19px; }
 }
+
+.person-reading-page { max-width: 800px; }
+.person-overview { color: #294a36; scroll-margin-top: 105px; }
+.person-overview > p { font-size: 19px; line-height: 2.05; margin-bottom: 20px; white-space: pre-line; overflow-wrap: anywhere; }
+.person-biography { scroll-margin-top: 105px; }
+.person-biography p { white-space: pre-line; overflow-wrap: anywhere; }
+.person-reading-page #chronology { border-top: 1px solid #dee3d9; padding-top: 28px; }
+.person-section-note { color: #788477; font-size: 13px; line-height: 1.9; margin: -8px 0 26px; }
+.person-event-excerpt { color: #69766a; font-size: 15px; line-height: 1.9; margin-top: 10px; white-space: pre-line; overflow-wrap: anywhere; }
+.person-reading-page .entry-hero img { flex-shrink: 0; }
+.graph-ask-relation { display: inline-block; margin-top: 20px; border: 1px solid #a9c2b2; border-radius: 8px; padding: 10px 14px; font-size: 14px; color: #245747; background: #f1f6ee; }
+@media (max-width: 640px) {
+  .person-overview > p { font-size: 18px; line-height: 2; }
+  .person-event-excerpt { font-size: 14px; }
+}
+.person-event-role { color: #52715d; font-size: 13px; line-height: 1.9; margin-top: 8px; }

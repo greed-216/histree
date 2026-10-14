@@ -2,11 +2,12 @@ import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {chromium} from 'playwright';
 assert.equal(process.env.HISTREE_REAL_ASK_ACCEPTANCE,'1','Explicitly opt in to two real model requests.');
-const base='http://127.0.0.1:5178';
+const base=(process.env.E2E_WEB_URL || 'http://127.0.0.1:5178').replace(/\/$/, '');
+const output=process.env.HISTREE_SCREENSHOTS || '/tmp/histree-global-assistant';
 const person='a49e6156-fa49-5f34-9a0a-f99e0b47d788';
 const event='88309f5d-4302-5431-97c9-98505a221fdf';
 const browser=await chromium.launch({headless:true,channel:'chrome'});
-const audit=[];await mkdir('/tmp/histree-global-assistant',{recursive:true});
+const audit=[];await mkdir(output,{recursive:true});
 try {
  for(const kind of ['person','relation']) {
   const page=await browser.newPage({viewport:{width:1440,height:900}});
@@ -32,9 +33,9 @@ try {
   assert(response?.answer);assert.equal(response.insufficientEvidence,false);assert(response.citations.length>0);
   assert.equal(body.context.kind,kind==='person'?'person':'person_event');if(kind==='person')assert.equal(body.context.id,person);else assert(response.citations.some(c=>c.subjectId===body.context.id),'Answer must cite the exact selected relation');
   for(const c of response.citations){const params=new URLSearchParams({subject:c.subjectTable,subject_id:c.subjectId,claim:c.claimId});const readback=await page.request.get(`${base}/api/v1/catalog/fact_claim?${params}`);assert(readback.ok());const claim=(await readback.json()).items.find(x=>x.id===c.claimId);assert(claim?.note);assert.equal(claim.note.slice(3).split('；核对说明：')[0],c.quote);}
-  const source=page.locator('.assistant-evidence').first();await source.locator('summary').click();assert((await source.locator('blockquote').textContent()).length>0);await page.screenshot({path:`/tmp/histree-global-assistant/real-${kind}.png`});
+  const source=page.locator('.assistant-evidence').first();await source.locator('summary').click();assert((await source.locator('blockquote').textContent()).length>0);await page.screenshot({path:`${output}/real-${kind}.png`});
   audit.push({kind,url:page.url(),question,context:body.context,answer:response.answer,citationCount:response.citations.length,relationCited:kind==='relation',quotesMatchPublishedClaims:true});
   console.log(JSON.stringify(audit.at(-1)));await page.close();
  }
- await writeFile('/tmp/histree-global-assistant/real-answers.json',JSON.stringify(audit,null,2)+'\n');
+ await writeFile(`${output}/real-answers.json`,JSON.stringify(audit,null,2)+'\n');
 }finally{await browser.close();}

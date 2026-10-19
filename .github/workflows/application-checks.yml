@@ -61,6 +61,8 @@ jobs:
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
           docker run --rm -e HISTREE_REMOTE_SMOKE=1 histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs --easy
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs --hard
           mkdir bundle
           node --input-type=module -e "import fs from 'node:fs'; const scroll=JSON.parse(fs.readFileSync('apps/web/src/data/history-scroll.json')); fs.writeFileSync('bundle/release-manifest.json',JSON.stringify({revision:process.env.GITHUB_SHA,scroll:scroll.panels.map(({file,sha256})=>({file,sha256}))}));"
           docker run -d --name histree-image-check --network host -e HISTREE_DATABASE=mysql -e MYSQL_HOST -e MYSQL_PORT -e MYSQL_DATABASE -e MYSQL_USER -e MYSQL_PASSWORD -e HISTREE_ASK_ENABLED=false -e PORT=3000 histree-api:${GITHUB_SHA}

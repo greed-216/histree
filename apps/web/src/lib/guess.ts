@@ -1,6 +1,6 @@
-import { aiGatewayConfigured, aiGatewayFetch } from './aiGateway';
+import { aiGatewayConfigured, aiGatewayFetch } from "./aiGateway";
 export type GuessFilters = {
-  difficulty: number;
+  difficulty: "easy" | "hard" | number;
   from?: number;
   to?: number;
   identity: string;
@@ -68,7 +68,7 @@ export async function guessRequest(
 }
 export async function guessStatus(signal: AbortSignal): Promise<boolean> {
   if (!aiGatewayConfigured) return false;
-  const res = await aiGatewayFetch('/ask/guess/status', { signal });
+  const res = await aiGatewayFetch("/ask/guess/status", { signal });
   if (!res.ok) return false;
   return Boolean((await res.json()).available);
 }

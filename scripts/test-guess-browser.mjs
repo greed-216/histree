@@ -19,7 +19,11 @@ try {
     const token = "a".repeat(64);
     await ctx.route("**/*", async (route) => {
       const url = new URL(route.request().url());
-      if (url.origin === new URL(base).origin && !url.pathname.startsWith("/api/v1/ask")) return route.continue();
+      if (
+        url.origin === new URL(base).origin &&
+        !url.pathname.startsWith("/api/v1/ask")
+      )
+        return route.continue();
       const reply = (body) =>
         route.fulfill({
           contentType: "application/json",
@@ -126,16 +130,37 @@ try {
       return route.abort();
     });
     await page.goto(`${base}ask?mode=guess`);
-    await page.getByRole("button", { name: "极难", exact: false }).click();
+    await page.getByRole("button", { name: /^简单/ }).waitFor();
+    assert.equal(await page.getByRole("button", { name: /^简单/ }).count(), 1);
+    assert.equal(await page.getByRole("button", { name: /^困难/ }).count(), 1);
+    assert.equal(
+      await page.getByLabel("身份", { exact: true }).isVisible(),
+      false,
+    );
+    assert.equal(await page.getByLabel("年代起点").isVisible(), false);
+    await page.screenshot({
+      path: `/tmp/histree-guess-setup-${viewport.width}.png`,
+      fullPage: true,
+    });
+    await page.getByRole("button", { name: /^困难/ }).click();
+    await page.getByRole("button", { name: "隋唐", exact: true }).click();
+    assert.equal(
+      await page
+        .getByRole("button", { name: "隋唐", exact: true })
+        .getAttribute("aria-pressed"),
+      "true",
+    );
+    await page.getByRole("button", { name: "自选年代", exact: true }).click();
     await page.getByLabel("年代起点").fill("800");
     await page.getByLabel("年代终点").fill("960");
+    await page.getByText("高级设置 · 可选", { exact: true }).click();
     await page.getByLabel("身份", { exact: true }).fill("将领");
     await page.getByLabel("性别", { exact: true }).selectOption("male");
     await page.getByLabel("自定义限定", { exact: true }).fill("与后唐有交集");
     await page.getByRole("button", { name: "随机开局" }).click();
     await page.getByRole("heading", { name: "我是谁？" }).waitFor();
     assert.deepEqual(lastFilters, {
-      difficulty: 5,
+      difficulty: "hard",
       from: 800,
       to: 960,
       identity: "将领",

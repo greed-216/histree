@@ -7,19 +7,36 @@ import {
   type GuessState,
 } from "../lib/guess";
 const difficulties = [
-  ["简单", "大众熟知 · 李白、曹操"],
-  ["一般", "历史爱好者熟知 · 朱温、苻坚"],
-  ["较难", "相对少为人知 · 王僧辩、刘琨"],
-  ["困难", "冷门人物 · 孙泰、刘交"],
-  ["极难", "史书寥寥数笔 · 生平残缺"],
+  { value: "easy", label: "简单", description: "从较熟悉的人物和代表事迹猜起" },
+  {
+    value: "hard",
+    label: "困难",
+    description: "挑战冷门人物，沿着细节寻找线索",
+  },
+] as const;
+const eras = [
+  { label: "不限年代", from: "", to: "" },
+  { label: "先秦", from: "-3000", to: "-221" },
+  { label: "秦汉", from: "-221", to: "220" },
+  { label: "魏晋南北朝", from: "220", to: "589" },
+  { label: "隋唐", from: "589", to: "907" },
+  { label: "五代十国", from: "907", to: "979" },
+  { label: "宋元", from: "960", to: "1368" },
+  { label: "明清", from: "1368", to: "1912" },
 ];
+function difficultyLabel(value: GuessState["filters"]["difficulty"]) {
+  if (value === "easy") return "简单";
+  if (value === "hard") return "困难";
+  return ["简单", "一般", "较难", "困难", "极难"][value - 1] || "困难";
+}
 const storageKey = "histree-guess-token";
 const button =
   "rounded-lg bg-teal-800 text-white px-5 py-2 disabled:opacity-40";
 export function GuessGame() {
-  const [difficulty, setDifficulty] = useState(2);
+  const [difficulty, setDifficulty] = useState<"easy" | "hard">("easy");
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
+  const [customYears, setCustomYears] = useState(false);
   const [identity, setIdentity] = useState("");
   const [gender, setGender] = useState("any");
   const [custom, setCustom] = useState("");
@@ -53,7 +70,19 @@ export function GuessGame() {
         .then((state) => {
           setGame(state);
           setToken(saved);
-          setDifficulty(state.filters.difficulty);
+          const value = state.filters.difficulty;
+          setDifficulty(
+            value === "easy" || (typeof value === "number" && value <= 2)
+              ? "easy"
+              : "hard",
+          );
+          setCustomYears(
+            !eras.some(
+              (era) =>
+                era.from === String(state.filters.from ?? "") &&
+                era.to === String(state.filters.to ?? ""),
+            ),
+          );
           setFrom(
             state.filters.from === undefined ? "" : String(state.filters.from),
           );
@@ -65,7 +94,10 @@ export function GuessGame() {
         .catch((err) => {
           if (!controller.signal.aborted) {
             setError(err instanceof Error ? err.message : "无法恢复游戏。");
-            if (err instanceof GuessRequestError && [401, 403, 410].includes(err.status)) {
+            if (
+              err instanceof GuessRequestError &&
+              [401, 403, 410].includes(err.status)
+            ) {
               try {
                 sessionStorage.removeItem(storageKey);
               } catch {
@@ -120,7 +152,10 @@ export function GuessGame() {
     } catch (err) {
       if (!controller.signal.aborted) {
         setError(err instanceof Error ? err.message : "请求未完成，请重试。");
-        if (err instanceof GuessRequestError && [401, 403, 410].includes(err.status)) {
+        if (
+          err instanceof GuessRequestError &&
+          [401, 403, 410].includes(err.status)
+        ) {
           setGame(undefined);
           setToken("");
           try {
@@ -183,14 +218,14 @@ export function GuessGame() {
     >
       <fieldset disabled={busy}>
         <legend className="font-medium mb-3">选一个难度</legend>
-        <div className="grid sm:grid-cols-5 gap-2">
-          {difficulties.map(([label, description], i) => (
+        <div className="grid sm:grid-cols-2 gap-3">
+          {difficulties.map(({ value, label, description }) => (
             <button
               type="button"
               key={label}
-              aria-pressed={difficulty === i + 1}
-              onClick={() => setDifficulty(i + 1)}
-              className={`text-left rounded-xl border p-3 ${difficulty === i + 1 ? "border-teal-700 bg-teal-50 text-teal-900" : "border-stone-200"}`}
+              aria-pressed={difficulty === value}
+              onClick={() => setDifficulty(value)}
+              className={`text-left rounded-xl border p-3 ${difficulty === value ? "border-teal-700 bg-teal-50 text-teal-900" : "border-stone-200"}`}
             >
               <span className="block font-medium">{label}</span>
               <span className="block text-xs leading-5 mt-1 text-stone-500">
@@ -200,70 +235,108 @@ export function GuessGame() {
           ))}
         </div>
       </fieldset>
-      <fieldset disabled={busy} className="grid sm:grid-cols-2 gap-4">
-        <legend className="font-medium mb-3">
-          限定条件{" "}
-          <span className="text-sm font-normal text-stone-500">可选</span>
-        </legend>
-        <label className="text-sm">
-          年代起点
-          <input
-            type="number"
-            min={-3000}
-            max={2100}
-            value={from}
-            onChange={(e) => setFrom(e.target.value)}
-            placeholder="如 600；公元前用负数"
-            className="reading-input w-full mt-2"
-          />
-        </label>
-        <label className="text-sm">
-          年代终点
-          <input
-            type="number"
-            min={-3000}
-            max={2100}
-            value={to}
-            onChange={(e) => setTo(e.target.value)}
-            placeholder="如 960"
-            className="reading-input w-full mt-2"
-          />
-        </label>
-        <label className="text-sm">
-          身份
-          <input
-            value={identity}
-            onChange={(e) => setIdentity(e.target.value)}
-            maxLength={80}
-            placeholder="如皇帝、诗人、将领"
-            className="reading-input w-full mt-2"
-          />
-        </label>
-        <label className="text-sm">
-          性别
-          <select
-            aria-label="性别"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-            className="reading-input w-full mt-2"
+      <fieldset disabled={busy} className="space-y-3">
+        <legend className="font-medium mb-3">想猜哪个时代的人？</legend>
+        <div className="flex flex-wrap gap-2">
+          {eras.map((era) => (
+            <button
+              type="button"
+              key={era.label}
+              aria-pressed={!customYears && from === era.from && to === era.to}
+              onClick={() => {
+                setFrom(era.from);
+                setTo(era.to);
+                setCustomYears(false);
+              }}
+              className={`rounded-full border px-4 py-2 text-sm ${!customYears && from === era.from && to === era.to ? "border-teal-700 bg-teal-50 text-teal-900" : "border-stone-200 text-stone-600"}`}
+            >
+              {era.label}
+            </button>
+          ))}
+          <button
+            type="button"
+            aria-pressed={customYears}
+            onClick={() => setCustomYears(true)}
+            className={`rounded-full border px-4 py-2 text-sm ${customYears ? "border-teal-700 bg-teal-50 text-teal-900" : "border-stone-200 text-stone-600"}`}
           >
-            <option value="any">不限</option>
-            <option value="male">男性</option>
-            <option value="female">女性</option>
-          </select>
-        </label>
-        <label className="text-sm sm:col-span-2">
-          自定义限定
-          <textarea
-            value={custom}
-            onChange={(e) => setCustom(e.target.value)}
-            maxLength={200}
-            placeholder="如：五代十国时期，与后唐有交集的人物"
-            className="reading-input w-full mt-2"
-          />
-        </label>
+            自选年代
+          </button>
+        </div>
+        {customYears && (
+          <div className="grid sm:grid-cols-2 gap-4">
+            <label className="text-sm">
+              年代起点
+              <input
+                type="number"
+                min={-3000}
+                max={2100}
+                value={from}
+                onChange={(e) => setFrom(e.target.value)}
+                placeholder="如 600；公元前用负数"
+                className="reading-input w-full mt-2"
+              />
+            </label>
+            <label className="text-sm">
+              年代终点
+              <input
+                type="number"
+                min={-3000}
+                max={2100}
+                value={to}
+                onChange={(e) => setTo(e.target.value)}
+                placeholder="如 960"
+                className="reading-input w-full mt-2"
+              />
+            </label>
+          </div>
+        )}
+        <p className="text-xs leading-6 text-stone-500">
+          按已收录的生卒年或活动事件筛选；各时代收录仍在补充。
+        </p>
       </fieldset>
-      <div className="flex gap-4 items-center">
+      <details className="rounded-xl border border-stone-200 px-4 py-3">
+        <summary className="cursor-pointer text-sm text-stone-600">
+          高级设置
+          {identity || gender !== "any" || custom ? " · 已设限定" : " · 可选"}
+        </summary>
+        <fieldset disabled={busy} className="grid sm:grid-cols-2 gap-4 mt-4">
+          <legend className="sr-only">更多人物限定</legend>
+          <label className="text-sm">
+            身份
+            <input
+              value={identity}
+              onChange={(e) => setIdentity(e.target.value)}
+              maxLength={80}
+              placeholder="如皇帝、诗人、将领"
+              className="reading-input w-full mt-2"
+            />
+          </label>
+          <label className="text-sm">
+            性别
+            <select
+              aria-label="性别"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+              className="reading-input w-full mt-2"
+            >
+              <option value="any">不限</option>
+              <option value="male">男性</option>
+              <option value="female">女性</option>
+            </select>
+          </label>
+          <label className="text-sm sm:col-span-2">
+            自定义限定
+            <textarea
+              value={custom}
+              onChange={(e) => setCustom(e.target.value)}
+              maxLength={200}
+              placeholder="如：五代十国时期，与后唐有交集的人物"
+              className="reading-input w-full mt-2"
+            />
+          </label>
+        </fieldset>
+      </details>
+      <div className="flex flex-wrap gap-4 items-center">
         <button
           disabled={
             busy || !available || (!!from && !!to && Number(from) > Number(to))
@@ -292,7 +365,7 @@ export function GuessGame() {
             个提示，使用提示也能获胜。史书异说或兼是兼否时回答“是，也不是”；没有记载时回答“不清楚”。
           </p>
           <p>
-            仅从本站已发布且有原文出处的人物中抽选。难度示例用于说明等级，是否能抽到取决于本站收录。年代按生平或明确活动与范围有交集筛选；未知身份、性别不会强行推断。自定义限定由
+            仅从本站已发布且有原文出处的人物中抽选。简单侧重较熟悉的人物，困难侧重冷门人物，不保证每个时代都有符合条件的候选。年代按已收录生卒年或活动事件与范围有交集筛选；年代未知的人物只参与不限年代的抽选。未知身份、性别不会强行推断。自定义限定由
             AI 分析，无法确认时不选入。AI 裁判可能出错，结束后可回查原文。
           </p>
           <p>会话保留 1 小时；刷新可恢复，服务重启会失效。</p>
@@ -310,8 +383,8 @@ export function GuessGame() {
                 : "我是谁？"}
             </h2>
             <span className="text-sm text-stone-500">
-              {difficulties[game.filters.difficulty - 1][0]} · 剩余{" "}
-              {game.remaining} 次 · 提示 {game.hints.length}/3
+              {difficultyLabel(game.filters.difficulty)} · 剩余 {game.remaining}{" "}
+              次 · 提示 {game.hints.length}/3
             </span>
           </div>
           <p className="text-xs text-stone-500">

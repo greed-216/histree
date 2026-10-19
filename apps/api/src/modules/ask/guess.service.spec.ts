@@ -18,7 +18,9 @@ const claim = {
 function make(target = person) {
   const agent = {
     available: jest.fn(() => true),
-    run: jest.fn().mockResolvedValue({ ids: [target.id] }),
+    run: jest
+      .fn<Promise<unknown>, [unknown, AbortSignal]>()
+      .mockResolvedValue({ ids: [target.id] }),
   };
   const rpc = jest.fn((name: string, args: { p_table: string }) => ({
     abortSignal: () =>
@@ -35,15 +37,81 @@ function make(target = person) {
         error: null,
       }),
   }));
+  const rows = jest.fn<Promise<unknown[]>, [string]>((sql) =>
+    Promise.resolve(sql.includes('FROM person p') ? [{ ...target }] : []),
+  );
   const service = new GuessService(
-    { getClient: () => ({ rpc }) } as unknown as MysqlService,
+    { rows, getClient: () => ({ rpc }) } as unknown as MysqlService,
     agent as unknown as GuessAgentService,
   );
-  return { service, agent, rpc };
+  return { service, agent, rpc, rows };
 }
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
 describe('Guess game privacy and lifecycle', () => {
+  it.each([
+    ['easy', '曹操'],
+    ['easy', '朱温'],
+    ['hard', '刘琨'],
+    ['hard', '刘交'],
+  ])('merges fame tiers into %s for %s', async (difficulty, name) => {
+    const { service, agent } = make({ ...person, name });
+    const started = await service.start({ difficulty }, 'a', signal);
+    expect(started.filters.difficulty).toBe(difficulty);
+    expect(started).not.toHaveProperty('person');
+    const selected = agent.run.mock.calls[0][0] as {
+      filters: { difficulty: string };
+    };
+    expect(selected.filters.difficulty).toBe(difficulty);
+  });
+  it('keeps easy anchors out of hard games and respects recorded activity for null lifespans', async () => {
+    const { service, rows } = make();
+    rows.mockImplementation((sql: string) =>
+      Promise.resolve(
+        sql.includes('FROM person p')
+          ? [{ ...person, birth_year: null, death_year: null }]
+          : [{ person_id: person.id, start_year: 900, end_year: 907 }],
+      ),
+    );
+    await expect(
+      service.start({ difficulty: 'hard' }, 'a', signal),
+    ).rejects.toThrow('没有符合');
+    const started = await service.start(
+      { difficulty: 'easy', from: 900, to: 960 },
+      'a',
+      signal,
+    );
+    expect(started.token).toHaveLength(64);
+    await expect(
+      service.start({ difficulty: 'easy', from: 1368, to: 1644 }, 'a', signal),
+    ).rejects.toThrow('没有符合');
+  });
+  it('tries a disjoint sample after an empty model selection without accepting foreign IDs', async () => {
+    const { service, agent, rows } = make();
+    const candidates = Array.from({ length: 121 }, (_, i) => ({
+      ...person,
+      id: `p${i}`,
+      name: `测试人物${i}`,
+    }));
+    rows.mockImplementation((sql: string) =>
+      Promise.resolve(sql.includes('FROM person p') ? candidates : []),
+    );
+    agent.run.mockImplementation((input) => {
+      const call = agent.run.mock.calls.length;
+      const batch = (input as { candidates: typeof candidates }).candidates;
+      return Promise.resolve({ ids: call === 1 ? ['foreign'] : [batch[0].id] });
+    });
+    await service.start({ difficulty: 'hard' }, 'a', signal);
+    expect(agent.run).toHaveBeenCalledTimes(2);
+    const batches = agent.run.mock.calls.map(([input]) =>
+      (input as { candidates: Array<{ id: string }> }).candidates.map(
+        (p) => p.id,
+      ),
+    );
+    expect(batches[0]).toHaveLength(120);
+    expect(batches[1]).toHaveLength(1);
+    expect(batches[0]).not.toContain(batches[1][0]);
+  });
   it.each([
     ['李存勖', '李亚子', 2],
     ['李存勖', '你是李亚子吗？', 2],
@@ -112,7 +180,7 @@ describe('Guess game privacy and lifecycle', () => {
   });
   it('refreshes the catalogue in the background before expiry and rebuilds screening for the new snapshot', async () => {
     jest.useFakeTimers();
-    const { service, agent, rpc } = make();
+    const { service, agent, rows } = make();
     try {
       await service.start(filters, 'a', signal);
       service.onModuleInit();
@@ -121,10 +189,7 @@ describe('Guess game privacy and lifecycle', () => {
       await service.start(filters, 'a', signal);
       expect(agent.run).toHaveBeenCalledTimes(2);
       expect(
-        rpc.mock.calls.filter(
-          ([name, args]) =>
-            name === 'content_page' && args.p_table === 'person',
-        ),
+        rows.mock.calls.filter(([sql]) => sql.includes('FROM person p')),
       ).toHaveLength(2);
     } finally {
       service.onModuleDestroy();
@@ -132,16 +197,14 @@ describe('Guess game privacy and lifecycle', () => {
     }
   });
   it('reuses candidate reads and screening but creates independent games with fresh evidence', async () => {
-    const { service, agent, rpc } = make();
+    const { service, agent, rpc, rows } = make();
     const first = await service.start(filters, 'a', signal);
     const second = await service.start(filters, 'a', signal);
     expect(first.token).not.toBe(second.token);
     expect(second).not.toHaveProperty('person');
     expect(agent.run).toHaveBeenCalledTimes(1);
     expect(
-      rpc.mock.calls.filter(
-        ([name, args]) => name === 'content_page' && args.p_table === 'person',
-      ),
+      rows.mock.calls.filter(([sql]) => sql.includes('FROM person p')),
     ).toHaveLength(1);
     expect(
       rpc.mock.calls.filter(
@@ -157,7 +220,7 @@ describe('Guess game privacy and lifecycle', () => {
     expect(agent.run).toHaveBeenCalledTimes(2);
   });
   it('refreshes expired candidates and never opens a cached person without current published evidence', async () => {
-    const { service, agent, rpc } = make();
+    const { service, agent, rpc, rows } = make();
     await service.start(filters, 'a', signal);
     const original = rpc.getMockImplementation()!;
     rpc.mockImplementation((name, args) =>
@@ -181,10 +244,7 @@ describe('Guess game privacy and lifecycle', () => {
       await service.start(filters, 'a', signal);
       expect(agent.run).toHaveBeenCalledTimes(2);
       expect(
-        rpc.mock.calls.filter(
-          ([name, args]) =>
-            name === 'content_page' && args.p_table === 'person',
-        ),
+        rows.mock.calls.filter(([sql]) => sql.includes('FROM person p')),
       ).toHaveLength(2);
     } finally {
       now.mockRestore();
@@ -215,34 +275,6 @@ describe('Guess game privacy and lifecycle', () => {
     expect((await second).token).toMatch(/^[a-f0-9]{64}$/);
     expect(agent.run).toHaveBeenCalledTimes(2);
   });
-  it('reads candidates beyond the first 1000 published people', async () => {
-    const { service, rpc } = make();
-    const original = rpc.getMockImplementation()!;
-    rpc.mockImplementation((name, args) => {
-      if (name === 'content_page' && args.p_table === 'person') {
-        const page = (args as { p_page?: number }).p_page ?? 0;
-        return {
-          abortSignal: () =>
-            Promise.resolve({
-              data: { items: page === 20 ? [person] : [], has_more: page < 20 },
-              error: null,
-            }),
-        };
-      }
-      return original(name, args);
-    });
-    const started = await service.start(filters, 'a', signal);
-    expect(started.token).toMatch(/^[a-f0-9]{64}$/);
-    expect(rpc).toHaveBeenCalledWith(
-      'content_page',
-      expect.objectContaining({
-        p_table: 'person',
-        p_page: 20,
-        p_admin: false,
-      }),
-    );
-  });
-
   it('keeps identity and evidence server-side until a deterministic guess wins', async () => {
     const { service } = make();
     const started = await service.start(filters, 'a', signal);
@@ -414,10 +446,6 @@ describe('Guess game privacy and lifecycle', () => {
   it('only accepts anonymous published reads and requires a source snapshot before opening a round', async () => {
     const { service, rpc } = make();
     await service.start(filters, 'a', signal);
-    expect(rpc).toHaveBeenCalledWith(
-      'content_page',
-      expect.objectContaining({ p_table: 'person', p_admin: false }),
-    );
     expect(rpc).toHaveBeenCalledWith(
       'content_page',
       expect.objectContaining({

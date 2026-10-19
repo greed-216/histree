@@ -10,10 +10,19 @@ import { randomBytes, randomInt } from 'node:crypto';
 import { z } from 'zod';
 import { MysqlService } from '../mysql/mysql.service';
 import { GuessAgentService } from './guess-agent.service';
+import {
+  loadGuessCatalogue,
+  matchesGuessYears,
+  type GuessPerson as Person,
+} from './guess-catalogue';
 
 const filtersSchema = z
   .object({
-    difficulty: z.number().int().min(1).max(5),
+    // Numeric tiers remain accepted for older clients; new games use two modes.
+    difficulty: z.union([
+      z.enum(['easy', 'hard']),
+      z.number().int().min(1).max(5),
+    ]),
     from: z.number().int().min(-3000).max(2100).optional(),
     to: z.number().int().min(-3000).max(2100).optional(),
     identity: z.string().trim().max(80).default(''),
@@ -34,18 +43,6 @@ const actionSchema = z
   .strict()
   .refine((x) => !['question', 'guess'].includes(x.action) || !!x.text);
 type Filters = z.infer<typeof filtersSchema>;
-type Person = {
-  id: string;
-  name: string;
-  aliases?: string[];
-  courtesy_name?: string;
-  era?: string;
-  birth_year?: number;
-  death_year?: number;
-  description?: string;
-  biography?: string;
-  tags?: string[];
-};
 type Claim = {
   id: string;
   claim_text: string;
@@ -189,26 +186,15 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
     return promise;
   }
   private async loadCatalogue(signal: AbortSignal) {
-    const people: Person[] = [];
-    const first = await this.page('person', 0, signal);
-    people.push(...first.items);
-    if (!first.has_more) return people;
-    // Four bounded pages in flight, preserving page order and the corpus capacity guard.
-    for (let offset = 1; offset < 200; offset += 4) {
-      const pages = await Promise.all(
-        Array.from({ length: Math.min(4, 200 - offset) }, (_, i) =>
-          this.page('person', offset + i, signal),
-        ),
+    try {
+      return await loadGuessCatalogue(this.db, signal);
+    } catch {
+      throw new ServiceUnavailableException(
+        '已发布人物索引暂时无法读取，请稍后重试。',
       );
-      for (const result of pages) {
-        people.push(...result.items);
-        if (!result.has_more) return people;
-      }
     }
-    throw new ServiceUnavailableException(
-      '人物库超过当前游戏候选容量，需扩展候选索引。',
-    );
   }
+
   private async pool(
     filters: Filters,
     catalogue: { people: Person[]; generation: number },
@@ -281,60 +267,64 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
     people: Person[],
     signal: AbortSignal,
   ) {
-    const candidates = people.filter((p) => {
-      const tier = anchors[p.name];
-      if (tier && tier !== filters.difficulty) return false;
-      if (filters.from !== undefined || filters.to !== undefined) {
-        const start = p.birth_year ?? p.death_year,
-          end = p.death_year ?? p.birth_year;
-        // Let the agent inspect descriptions for dated activity when lifespan is unknown.
-        if (
-          start !== undefined &&
-          end !== undefined &&
-          ((filters.from !== undefined && end < filters.from) ||
-            (filters.to !== undefined && start > filters.to))
-        )
-          return false;
-      }
-      return true;
-    });
+    const acceptsTier = (tier: number) =>
+      filters.difficulty === 'easy'
+        ? tier <= 2
+        : filters.difficulty === 'hard'
+          ? tier >= 3
+          : tier === filters.difficulty;
+    const candidates = people.filter(
+      (p) =>
+        (!anchors[p.name] || acceptsTier(anchors[p.name])) &&
+        matchesGuessYears(p, filters),
+    );
     for (let i = candidates.length - 1; i > 0; i--) {
       const j = randomInt(i + 1);
       [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
     }
-    const sample = [
-      ...candidates.filter((p) => anchors[p.name] === filters.difficulty),
+    const ordered = [
+      ...candidates.filter(
+        (p) => anchors[p.name] && acceptsTier(anchors[p.name]),
+      ),
       ...candidates.filter((p) => !anchors[p.name]),
-    ].slice(0, 120);
-    if (!sample.length)
+    ];
+    if (!ordered.length)
       throw new BadRequestException(
         '当前已发布人物中没有符合该难度和年代的候选。',
       );
-    const selection = z
-      .object({ ids: z.array(z.string()).max(120) })
-      .strict()
-      .safeParse(
-        await this.agent.run(
-          {
-            task: 'select',
-            filters,
-            candidates: sample.map((p) => ({
-              ...p,
-              description: p.description?.slice(0, 600),
-              fixedDifficulty: anchors[p.name],
-            })),
-          },
-          signal,
-        ),
-      );
-    if (!selection.success)
-      throw new ServiceUnavailableException('人物筛选未完成，请重试。');
-    const eligible = sample.filter((p) => selection.data.ids.includes(p.id));
-    if (!eligible.length)
-      throw new BadRequestException(
-        '本次候选抽样没有可确认符合全部限定的人物，请放宽条件或重试。',
-      );
-    return eligible;
+    // Try another disjoint sample when restrictive conditions leave the first
+    // empty. Bound model work to three batches under the shared selection timeout.
+    for (
+      let offset = 0;
+      offset < Math.min(ordered.length, 360);
+      offset += 120
+    ) {
+      const sample = ordered.slice(offset, offset + 120);
+      const selection = z
+        .object({ ids: z.array(z.string()).max(120) })
+        .strict()
+        .safeParse(
+          await this.agent.run(
+            {
+              task: 'select',
+              filters,
+              candidates: sample.map((p) => ({
+                ...p,
+                description: p.description?.slice(0, 600),
+                fixedDifficulty: anchors[p.name],
+              })),
+            },
+            signal,
+          ),
+        );
+      if (!selection.success)
+        throw new ServiceUnavailableException('人物筛选未完成，请重试。');
+      const eligible = sample.filter((p) => selection.data.ids.includes(p.id));
+      if (eligible.length) return eligible;
+    }
+    throw new BadRequestException(
+      '本次候选抽样没有可确认符合全部限定的人物，请放宽条件或重试。',
+    );
   }
   async start(body: unknown, actor: string, signal: AbortSignal) {
     const parsed = filtersSchema.safeParse(body);
@@ -348,7 +338,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       const filters = parsed.data;
       const catalogue = await this.waitShared(this.catalogue(), signal);
       const eligible = await this.pool(filters, catalogue, signal);
-      // Select uniformly among confirmed candidates; sparse evidence remains playable on very hard.
+      // Select uniformly among confirmed candidates, then revalidate publication and evidence.
       while (eligible.length) {
         let person = eligible.splice(randomInt(eligible.length), 1)[0];
         const claims: Claim[] = [];

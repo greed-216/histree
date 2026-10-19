@@ -13,6 +13,13 @@ const upstream = process.env.HISTREE_PREVIEW_API || 'https://histree.wiki';
 // Node may be unable to build the site's certificate chain on this workstation.
 function publicApiProxy(request, response, next) {
   if (!request.url?.startsWith('/api/v1/')) return next();
+  if (process.env.HISTREE_PREVIEW_GUESS_UI_ONLY === '1' && request.url.startsWith('/api/v1/ask/guess/')) {
+    response.writeHead(request.method === 'GET' ? 200 : 503, { 'Content-Type': 'application/json; charset=utf-8' });
+    response.end(JSON.stringify(request.method === 'GET'
+      ? { available: false }
+      : { message: '当前为本地界面预览，完整对局需连接新版游戏 API。' }));
+    return;
+  }
   const args = ['--silent', '--show-error', '--max-time', '150', '--request', request.method,
     '--write-out', '\n%{http_code}', new URL(request.url, upstream).href];
   for (const name of ['content-type', 'x-histree-anonymous']) {

@@ -1,3 +1,4 @@
+import { FeedbackButton } from './components/FeedbackButton';
 import { AssistantProvider } from './components/AssistantProvider';
 import { GlobalAssistant } from './components/GlobalAssistant';
 import { SourcePage, EvidencePage } from './pages/SourcesPage';
@@ -21,6 +22,10 @@ import { EntryPage } from './pages/EntryPage';
 import { SearchPage } from './pages/SearchPage';
 const AskPage = lazy(() => import('./pages/AskPage').then(m => ({ default: m.AskPage })));
 
+const LibraryPage = lazy(() => import('./pages/LibraryPage').then(m => ({ default: m.LibraryPage })));
+const LibraryBookPage = lazy(() => import('./pages/LibraryPage').then(m => ({ default: m.LibraryBookPage })));
+const LibraryReaderPage = lazy(() => import('./pages/LibraryPage').then(m => ({ default: m.LibraryReaderPage })));
+
 function App() {
   const location = useLocation();
   useScrollRestoration();
@@ -43,6 +48,7 @@ function App() {
             </Link>
             
             <nav aria-label="主导航" className="order-3 w-full md:order-none md:w-auto flex flex-wrap items-center gap-1">
+              <Link to="/library" className={navLinkClass('/library')}>史料库</Link>
               <Link to="/learn" className={navLinkClass('/learn')}>导读</Link>
               <Link to="/people" className={navLinkClass('/people')}>
                 <UserIcon className="w-4 h-4" />
@@ -65,6 +71,9 @@ function App() {
       {/* Main Content */}
       <main className={`site-main flex-1 w-full mx-auto px-4 md:px-8 py-6 md:py-8 ${location.pathname.startsWith('/graph')?'site-main-graph':''} ${location.pathname === '/' ? 'site-main-home' : ''}`}>
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
+          <Route path="/library" element={<LibraryPage />} />
+          <Route path="/library/:book" element={<LibraryBookPage />} />
+          <Route path="/library/:book/:section" element={<LibraryReaderPage />} />
           <Route path="/sources/:id" element={<SourcePage />} />
           <Route path="/evidence/:subject/:id" element={<EvidencePage />} />
           <Route path="/learn" element={<GuideIndexPage />} />
@@ -97,6 +106,7 @@ function App() {
       
       <footer className="bg-white border-t border-slate-200 py-6 text-center text-slate-400 text-sm mt-auto">
         <p>© {new Date().getFullYear()} Histree 历史之树</p>
+        <div className="mt-2"><FeedbackButton label="意见反馈" /></div>
         <a
           className="mt-2 inline-block text-slate-500 hover:text-slate-700"
           href="https://beian.miit.gov.cn/"

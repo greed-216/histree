@@ -1,4 +1,6 @@
-import { Injectable, OnModuleDestroy } from '@nestjs/common';
+import type { FeedbackRecord } from '../feedback/feedback.service';
+import { createHash } from 'node:crypto';
+import { BadRequestException, ConflictException, Injectable, OnModuleDestroy } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createPool, Pool, RowDataPacket } from 'mysql2/promise';
 
@@ -95,6 +97,51 @@ export class MysqlService implements OnModuleDestroy {
     const backend = config.get('HISTREE_DATABASE');
     if (backend && backend !== 'mysql') throw new Error('Only MySQL is supported');
     this.enabled = true;
+  }
+  async saveFeedback(row: FeedbackRecord) {
+    try {
+      await this.connectionPool().execute(
+        'INSERT INTO feedback(id,claim_id,source_id,page_path,context_label,message,email,request_sha256) VALUES(?,?,?,?,?,?,?,?)',
+        [row.id, row.claim_id, row.source_id, row.page_path, row.context_label, row.message, row.email, row.request_sha256],
+      );
+    } catch (error) {
+      if ((error as { code?: string }).code !== 'ER_DUP_ENTRY') throw error;
+      const existing = await this.rows('SELECT request_sha256 FROM feedback WHERE id=?', [row.id]);
+      if (existing[0]?.request_sha256 !== row.request_sha256) throw new ConflictException('这条反馈已提交，请关闭后重新填写。');
+    }
+  }
+  async sourceText(sourceId: string) {
+    if (!uuid.test(sourceId)) throw new BadRequestException('无效的来源地址');
+    if (!this.enabled) return null;
+    try {
+      const rows = await this.rows(
+        `SELECT t.source_id,t.archive_url,t.content,t.content_sha256 FROM source_text t
+         JOIN source s ON s.id=t.source_id AND s.url=t.archive_url
+         WHERE t.source_id=? AND EXISTS(SELECT 1 FROM fact_claim c WHERE c.source_id=s.id AND ${visible('fact_claim', 'c')}) LIMIT 1`,
+        [sourceId],
+      );
+      return rows[0] || null;
+    } catch (error) {
+      // An older database can serve the rest of the source page before this migration.
+      if ((error as { code?: string }).code === 'ER_NO_SUCH_TABLE') return null;
+      throw error;
+    }
+  }
+  async resolveSourceText(archive: string) {
+    if (!/^https:\/\/github\.com\/greed-216\/histree\/blob\/[a-f0-9]{7,40}\/(?:content|resources\/(?:derived|originals))\/.+\.(?:txt|jsonl)(?:#L[1-9]\d*(?:-L[1-9]\d*)?)?$/.test(archive) || archive.length > 2048)
+      throw new BadRequestException('无效的存档地址');
+    if (!this.enabled) return null;
+    try {
+      const rows = await this.rows(
+        `SELECT t.source_id FROM source_text t JOIN source s ON s.id=t.source_id AND s.url=t.archive_url
+         WHERE t.archive_url_sha256=? AND t.archive_url=? AND EXISTS(SELECT 1 FROM fact_claim c WHERE c.source_id=s.id AND ${visible('fact_claim', 'c')}) ORDER BY t.source_id LIMIT 1`,
+        [createHash('sha256').update(archive).digest('hex'), archive],
+      );
+      return rows[0] || null;
+    } catch (error) {
+      if ((error as { code?: string }).code === 'ER_NO_SUCH_TABLE') return null;
+      throw error;
+    }
   }
   private connectionPool() {
     if (!this.enabled) throw new Error('MySQL is disabled');

@@ -1,0 +1,53 @@
+.library-home { max-width:1040px; margin:0 auto; }
+.library-hero { margin:12px 0 28px; }
+.library-hero h1 { font:600 clamp(34px,5vw,48px)/1.4 'Songti SC',Georgia,serif; color:#344334; margin:8px 0 12px; }
+.library-hero>p:last-child { color:#747969; line-height:1.9; }
+.library-search { display:flex; background:#fffdf8; border:1px solid #d8dccf; padding:8px; border-radius:12px; gap:8px; margin-bottom:30px; }
+.library-search select,.library-search input { padding:10px 12px; font-size:15px; min-width:0; width:100%; background:transparent; outline-offset:2px; }
+.library-search select { border-right:1px solid #e0e2d9; max-width:170px; }
+.library-search-input { flex:1; min-width:0; }
+.library-search button { padding:10px 20px; background:#476747; color:white; border-radius:8px; white-space:nowrap; cursor:pointer; }
+.library-shelf-heading,.library-results-heading { display:flex; justify-content:space-between; align-items:center; margin:30px 0 18px; gap:16px; }
+.library-shelf-heading h2,.library-results-heading h2 { font-size:20px; font-weight:600; }
+.library-shelf-heading>span,.library-results-heading>a { color:#78816f; font-size:14px; }
+.library-shelf { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.library-book { position:relative; padding:24px 24px 24px 30px; background:#fcfbf7; border:1px solid #dedfd3; border-left:6px solid #7c8d69; border-radius:4px 12px 12px 4px; transition:background .15s; }
+.library-book:hover { background:#f0f2e8; }
+.library-book-order { color:#969e8d; font:12px Georgia,serif; }
+.library-book h3 { font:600 25px/1.5 'Songti SC',Georgia,serif; margin:14px 0 8px; color:#344334; }
+.library-book p { font-size:13px; color:#838a79; }
+.library-book-open { display:block; font-size:13px; color:#59784c; margin-top:24px; }
+.library-back,.library-breadcrumb { color:#59784c; font-size:14px; }
+.library-section-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:24px; }
+.library-section-grid a { background:#fffdf8; border:1px solid #dedfd3; border-radius:9px; padding:14px; font-size:14px; line-height:1.7; }
+.library-section-grid a:hover { background:#eef1e6; }
+.library-hint { font-size:13px; color:#7d826f; line-height:1.9; margin:12px 0 18px; }
+.library-result { display:block; background:#fffdf8; border:1px solid #e1e2d6; padding:22px; border-radius:12px; margin:14px 0; }
+.library-result h3 { color:#45613c; font-weight:500; }
+.library-result p { color:#555e4c; font:17px/2 'Songti SC',Georgia,serif; margin:12px 0; overflow-wrap:anywhere; white-space:pre-wrap; }
+.library-result>span { font-size:12px; color:#6c815e; }
+.library-home mark,.library-reader mark { background:#ece0ac; color:inherit; padding:2px 0; }
+.library-empty { padding:40px 0; color:#727b69; }
+.library-pager,.library-volume-nav { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:13px; color:#5d7651; margin:20px 0; }
+.library-pager button { cursor:pointer; }
+.library-pager button:disabled { color:#aaa; cursor:default; }
+.library-reader { max-width:1160px; margin:0 auto; }
+.library-breadcrumb { display:flex; gap:12px; margin-bottom:26px; }
+.library-reading-layout { display:grid; grid-template-columns:210px minmax(0,1fr); gap:38px; align-items:start; }
+.library-reading-layout>aside { position:sticky; top:110px; }
+.library-contents summary { font-size:14px; color:#5c6f4e; cursor:pointer; padding-bottom:12px; }
+.library-contents nav { display:flex; flex-direction:column; max-height:calc(100dvh - 180px); overflow:auto; font-size:13px; }
+.library-contents a { padding:9px 12px; border-radius:7px; color:#78806e; }
+.library-contents a[aria-current] { background:#e7eddd; color:#405a34; font-weight:600; }
+.library-reading-heading h1 { font:600 32px/1.5 'Songti SC',Georgia,serif; margin:6px 0 16px; color:#344334; }
+.library-original { padding:clamp(20px,4vw,38px); background:#fffdf8; border:1px solid #dedfd3; border-radius:14px; }
+.library-paragraph { white-space:pre-wrap; overflow-wrap:anywhere; font:18px/2.25 'Songti SC','Noto Serif CJK SC',Georgia,serif; color:#373f31; margin:0 0 24px; scroll-margin-top:140px; }
+.library-paragraph:last-child { margin-bottom:0; }
+.library-paragraph.is-target { border-left:3px solid #92a173; padding-left:14px; background:#f3f2e5; }
+.library-kind-heading { font-weight:600; color:#4b6040; font-size:20px; }
+.library-kind-annotation { font-size:15px; color:#727765; }
+.library-kind-editorial_notice { font:13px/1.9 sans-serif; color:#828774; background:#f3f4eb; padding:12px; border-radius:8px; }
+.library-notice-label { display:block; font-size:11px; color:#718264; }
+.library-ending { border-top:1px solid #dce0d3; padding-top:22px; margin-top:30px; }
+@media(max-width:800px) { .library-shelf { grid-template-columns:repeat(2,minmax(0,1fr)); } .library-reading-layout { grid-template-columns:1fr; gap:20px; } .library-reading-layout>aside { position:static; } .library-contents nav { max-height:180px; } .library-section-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:520px) { .library-shelf { gap:12px; } .library-book { padding:18px; } .library-book h3 { font-size:22px; } .library-search { flex-wrap:wrap; } .library-search>label:first-child { width:100%; border-bottom:1px solid #e5e6dc; } .library-search select { max-width:none; border:0; } .library-search button { padding:10px 12px; } .library-section-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .library-paragraph { font-size:17px; } }

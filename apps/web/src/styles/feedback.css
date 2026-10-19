@@ -1,0 +1,20 @@
+.feedback-trigger { text-decoration:underline; text-underline-offset:3px; cursor:pointer; color:#45664a; font-size:14px; }
+.feedback-dialog { border:0; padding:0; border-radius:18px; width:min(540px,calc(100vw - 32px)); max-height:calc(100dvh - 40px); margin:auto; color:#333b30; background:#fdfcf8; box-shadow:0 24px 80px #17251933; overflow:auto; }
+.feedback-dialog::backdrop { background:#28332366; }
+.feedback-panel { padding:clamp(20px,4vw,30px); text-align:left; }
+.feedback-heading { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.feedback-heading h2 { font:600 25px/1.4 'Songti SC',Georgia,serif; }
+.feedback-heading>button { font-size:28px; line-height:1; width:36px; height:36px; cursor:pointer; }
+.feedback-context { font-size:13px; line-height:1.9; color:#6a705f; padding:12px; margin-top:16px; border-radius:8px; background:#f0f1e9; overflow-wrap:anywhere; }
+.feedback-panel label { display:block; margin-top:20px; font-size:14px; font-weight:500; }
+.feedback-panel textarea,.feedback-panel input { display:block; width:100%; border:1px solid #d7dacc; border-radius:9px; margin-top:8px; padding:10px 12px; background:white; font:inherit; font-size:16px; line-height:1.8; color:#30382c; }
+.feedback-panel textarea { resize:vertical; min-height:130px; }
+.feedback-panel textarea:focus,.feedback-panel input:focus { outline:2px solid #829970; outline-offset:2px; }
+.feedback-privacy { color:#737a6b; font-size:12px; line-height:1.8; margin-top:10px; }
+.feedback-error { color:#a53b28; font-size:14px; line-height:1.8; margin-top:14px; }
+.feedback-actions { display:flex; justify-content:flex-end; gap:20px; align-items:center; margin-top:24px; font-size:14px; }
+.feedback-actions button { cursor:pointer; }
+.feedback-submit { background:#466744; border-radius:9px; color:white; padding:10px 22px; cursor:pointer; }
+.feedback-panel button:disabled { opacity:.6; cursor:wait; }
+.feedback-success { padding:24px 0 4px; font-size:15px; line-height:1.9; }
+.feedback-success button { display:block; margin:24px 0 0 auto; }

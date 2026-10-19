@@ -1,3 +1,4 @@
+import { sourceReadingPath } from '../lib/source-reading';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { askQuestion, askStatus, type AskContext, type AskAnswer } from '../lib/ask';
@@ -74,7 +75,7 @@ function EvidenceAskPage() {
           {c.review && <p className="mt-3 text-xs leading-6 text-stone-500">{c.review}</p>}
           <div className="flex flex-wrap gap-4 mt-3 text-sm text-teal-800">
             <Link className="underline" to={`/evidence/${c.subjectTable}/${c.subjectId}#claim-${c.claimId}`}>出处与勘误</Link>
-            {c.url && <a className="underline" href={c.url} target="_blank" rel="noreferrer">GitHub 原文 ↗</a>}
+            {c.url && <Link className="underline" to={sourceReadingPath(undefined, c.claimId, c.url)}>阅读原文 →</Link>}
             {(c.subjectTable === 'person' || c.subjectTable === 'event') && <><Link className="underline" to={`/${c.subjectTable === 'person' ? 'people' : 'events'}/${c.subjectId}`}>查看条目</Link><Link className="underline" to={`/graph/${c.subjectId}`}>查看关系图</Link></>}
           </div>
         </details>)}</section>}

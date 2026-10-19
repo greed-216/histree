@@ -133,6 +133,8 @@ export interface Source {
   note?: string;
 }
 
+export interface SourceText { source_id: string; archive_url: string; content: string; content_sha256: string; }
+
 export interface FactClaim {
   status?: PublicationStatus;
   id: string;

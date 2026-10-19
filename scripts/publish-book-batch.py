@@ -98,8 +98,12 @@ for table,fields in [('person_relationship',['person_a','person_b','relation_typ
  for old in allrows(table,'id,'+','.join(fields)):
   for row in rows[table]:assert old['id']==row['id'] or not all(old[k]==row[k] for k in fields), 'Duplicate edge endpoints'
 summary={t:{'new':sum(r['id'] not in existing[t] for r in rs),'reused':sum(r['id'] in reused for r in rs)} for t,rs in rows.items()}
+import source_texts
+source_text_rows=source_texts.batch_texts(batch,ids)
+summary['source_text']=source_texts.preflight(store.connection,source_text_rows,{r['id']:r['url'] for r in rows['source']})
 print(json.dumps(summary,ensure_ascii=False),flush=True)
 if not args.apply:raise SystemExit(0)
+assert summary['source_text']['table_exists'], 'Apply the source_text migration before publishing; no data written'
 audit.setdefault('initial_counts',summary);save('preflight_checked')
 for _,table in groups:
  missing=[r for r in rows[table] if r['id'] not in existing[table]]
@@ -109,6 +113,13 @@ for _,table in groups:
   for r in rows[table]:
    if r['id'] not in reused:assert all(actual[r['id']].get(k)==v for k,v in r.items() if k!='status'),table
  save('drafts_verified_'+table)
+try:
+ source_texts.insert_texts(store.connection,source_text_rows)
+ source_texts.verify_texts(store.connection,source_text_rows)
+ store.connection.commit()
+except Exception:
+ store.connection.rollback();raise
+save('source_texts_verified')
 for _,table in groups:
  selected=[r['id'] for r in rows[table] if r['id'] not in reused]
  if table!='source' and selected:
@@ -123,4 +134,7 @@ for _,table in groups:
  if table!='source':assert all(r['status']=='published' for r in actual)
  if table=='fact_claim':assert all(r['source'] and r['source']['url'].startswith('https://github.com/greed-216/histree/blob/') for r in actual)
  counts[table]=len(actual)
+for row in source_text_rows:
+ with urllib.request.urlopen(args.public_api_url.rstrip('/')+'/sources/'+row['source_id']+'/text',timeout=40) as response: public_text=json.load(response)
+ assert public_text and public_text['content_sha256']==row['content_sha256'] and public_text['content']==row['content'], 'Anonymous source text mismatch'
 audit['public_counts']=counts;audit['verified']=True;save('anonymous_readback_verified');print('Public readback verified',counts)

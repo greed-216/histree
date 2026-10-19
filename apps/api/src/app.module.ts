@@ -1,3 +1,5 @@
+import { FeedbackModule } from './modules/feedback/feedback.module';
+import { LibraryModule } from './modules/library/library.module';
 import { CatalogModule } from './modules/catalog/catalog.module';
 import { AskModule } from './modules/ask/ask.module';
 import { Module } from '@nestjs/common';
@@ -20,6 +22,8 @@ import { RelationshipModule } from './modules/relationship/relationship.module';
     TimelineModule,
     RelationshipModule,
     CatalogModule,
+    FeedbackModule,
+    LibraryModule,
     AskModule,
   ],
   controllers: [AppController],

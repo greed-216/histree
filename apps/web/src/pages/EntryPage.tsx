@@ -261,7 +261,7 @@ export function EntryPage() {
                     <span className="text-xs text-slate-500 mr-2">
                       {referenceTypeLabel(r.reference_type)}
                     </span>
-                    {safeUrl(r.url) ? (
+                    {safeUrl(r.url) && !r.url?.startsWith('https://github.com/') ? (
                       <a
                         href={safeUrl(r.url)}
                         target="_blank"

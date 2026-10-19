@@ -2,6 +2,7 @@ import { lazy, Suspense, useState } from "react";
 import type { GraphResponse } from "@histree/shared-types";
 import { Link, Navigate, useParams } from "react-router-dom";
 import data from "../data/history-guides.json";
+import { sourceReadingPath, sourceTitle, sourceCitation } from '../lib/source-reading';
 const GraphView = lazy(() =>
   import("./GraphPage").then((m) => ({ default: m.GraphView })),
 );
@@ -73,25 +74,20 @@ function EventReadings({ events }: { events: GuideEvent[] }) {
                     to={`/sources/${ref.sourceId}`}
                     className="text-teal-800"
                   >
-                    {ref.title}
+                    {sourceTitle(ref.title)}
                   </Link>
                   <p className="text-xs text-stone-500 mt-2 leading-6">
-                    {ref.citation}
+                    {sourceCitation(ref.citation)}
                   </p>
                   <blockquote className="leading-8 mt-2">
                     {ref.quote}
                   </blockquote>
-                  <a
+                  <Link
                     className="text-sm text-teal-800 underline"
-                    href={ref.url}
-                    target="_blank"
-                    rel="noreferrer"
+                    to={sourceReadingPath(ref.sourceId, ref.id)}
                   >
-                    查看固定版本原文 ↗
-                  </a>
-                  <p className="text-xs text-stone-500 mt-2">
-                    引用编号：{ref.id}
-                  </p>
+                    阅读原文 →
+                  </Link>
                 </div>
               ))}
             </details>

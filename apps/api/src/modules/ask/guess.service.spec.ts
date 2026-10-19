@@ -17,7 +17,7 @@ const claim = {
   source: { title: '测试史书' },
   citation: '测试定位',
 };
-function make(target = person) {
+function make(target = person, evidence = claim) {
   const agent = {
     available: jest.fn(() => true),
     run: jest
@@ -33,7 +33,7 @@ function make(target = person) {
             : name === 'entry_context'
               ? { edges: [], nodes: [] }
               : {
-                  items: args.p_table === 'person' ? [target] : [claim],
+                  items: args.p_table === 'person' ? [target] : [evidence],
                   has_more: false,
                 },
         error: null,
@@ -70,6 +70,63 @@ function make(target = person) {
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
 describe('Guess game privacy and lifecycle', () => {
+  it('answers the reported era variants consistently without requiring lifespan dates or a model verdict', async () => {
+    const wang = {
+      ...person,
+      name: '王羲之',
+      aliases: [],
+      era: '晋',
+      description: '王导从子，348年劝殷浩荀羡勿与桓温构隙。',
+    };
+    const { service, agent } = make(wang, {
+      ...claim,
+      claim_text: '所引记载中的人物对应王羲之。',
+      note: '原文：羲之，导之从子也。；核对说明：身份由本段官号、称谓、已核连续上下文确认。',
+    });
+    const { token } = await service.start(filters, 'a', signal);
+    agent.run.mockClear();
+    for (const text of [
+      '你是秦汉时期的人么',
+      '你是秦汉年代的人么？',
+      '你活跃在秦汉时期吗？',
+      '你是活跃在三国时期的人么？',
+    ]) {
+      const result = await service.act(
+        { token, action: 'question', text },
+        'a',
+        signal,
+      );
+      expect(result.turns.at(-1)?.answer).toBe('不是');
+      expect(result).not.toHaveProperty('person');
+      expect(result).not.toHaveProperty('evidence');
+      expect(JSON.stringify(result)).not.toContain('王羲之');
+    }
+    const result = await service.act(
+      { token, action: 'question', text: '你是晋朝的人吗？' },
+      'a',
+      signal,
+    );
+    expect(result.turns.at(-1)?.answer).toBe('是');
+    expect(result.remaining).toBe(25);
+    expect(agent.run).not.toHaveBeenCalled();
+  });
+
+  it('keeps era questions unknown when the published era is missing', async () => {
+    const { service, agent } = make({ ...person, era: '' });
+    const { token } = await service.start(filters, 'a', signal);
+    agent.run.mockResolvedValueOnce({ verdict: 'unknown', claims: [] });
+    const result = await service.act(
+      { token, action: 'question', text: '你是秦汉时期的人么' },
+      'a',
+      signal,
+    );
+    expect(result.turns[0].answer).toBe('不清楚');
+    expect(agent.run).toHaveBeenLastCalledWith(
+      expect.objectContaining({ task: 'question' }),
+      signal,
+    );
+  });
+
   it.each([
     ['easy', '曹操'],
     ['easy', '朱温'],

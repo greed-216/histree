@@ -10,6 +10,7 @@ import { createHash, randomBytes, randomInt } from 'node:crypto';
 import { z } from 'zod';
 import { MysqlService } from '../mysql/mysql.service';
 import { GuessAgentService } from './guess-agent.service';
+import { judgeEraQuestion } from './guess-era';
 import {
   GuessBankService,
   guessCatalogueRevision,
@@ -523,6 +524,10 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
     game.busy = true;
     this.active++;
     try {
+      const eraVerdict =
+        action === 'question'
+          ? judgeEraQuestion(text!, game.person.era)
+          : undefined;
       if (action === 'reveal') game.outcome = 'revealed';
       else if (
         action === 'guess' ||
@@ -540,6 +545,12 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
           kind: 'guess',
         });
         if (correct) game.outcome = 'won';
+      } else if (eraVerdict !== undefined) {
+        game.turns.push({
+          text: text!,
+          answer: labels[eraVerdict],
+          kind: 'question',
+        });
       } else {
         if (action === 'hint' && game.hints.length >= 3)
           throw new BadRequestException('本局的三个提示已用完。');

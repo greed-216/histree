@@ -18,8 +18,18 @@ const input = selecting
       task: 'select',
       filters: { difficulty: selecting },
       candidates: [
-        { id: 'easy-person', name: '朱温', fixedDifficulty: 2 },
-        { id: 'hard-person', name: '刘交', fixedDifficulty: 4 },
+        {
+          id: 'easy-person',
+          name: '朱温',
+          game_difficulty: 'easy',
+          fixedDifficulty: 2,
+        },
+        {
+          id: 'hard-person',
+          name: '刘交',
+          game_difficulty: 'hard',
+          fixedDifficulty: 4,
+        },
       ],
     }
   : {

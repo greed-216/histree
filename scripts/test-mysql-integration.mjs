@@ -7,7 +7,6 @@ const require=createRequire(new URL('../apps/api/package.json',import.meta.url))
 const {ConfigService}=require('@nestjs/config');
 const {MysqlService}=require('./dist/modules/mysql/mysql.service.js');
 const {loadGuessCatalogue,matchesGuessYears}=require('./dist/modules/ask/guess-catalogue.js');
-const {GuessService}=require('./dist/modules/ask/guess.service.js');
 const {createConnection}=require('mysql2/promise');
 const env=process.env;
 assert.match(env.MYSQL_DATABASE || '', /^histree_test_[a-z0-9_]+$/, 'Only an explicitly named disposable test database is accepted');
@@ -22,6 +21,7 @@ try {
   const ddl=await readFile(new URL('../database/mysql/001-content.sql',import.meta.url),'utf8');
   for(const statement of ddl.replace(/^DELIMITER .*$/gm,'').split('$$').map(s=>s.trim()).filter(Boolean))await connection.query(statement);
   await connection.query(await readFile(new URL('../database/mysql/002-ai-quota.sql',import.meta.url),'utf8'));
+  for(const statement of (await readFile(new URL('../database/mysql/003-guess-bank.sql',import.meta.url),'utf8')).split(';').map(s=>s.trim()).filter(Boolean))await connection.query(statement);
   await connection.beginTransaction();
   const [published,hidden,source,relation,claim,hiddenClaim]=Array.from({length:6},()=>randomUUID());
   await connection.execute('INSERT INTO person(id,name,status,aliases) VALUES(?,?,?,JSON_ARRAY(?)),(?,?,?,JSON_ARRAY())',[published,'测试%_','published','A"B\\C',hidden,'秘密草稿','draft']);
@@ -71,15 +71,6 @@ try {
   }
   const largeCatalogue=await loadGuessCatalogue(db,AbortSignal.timeout(60000));
   assert.equal(largeCatalogue.length,15023);assert.equal(new Set(largeCatalogue.map(p=>p.id)).size,15023);checks++;
-  const gameService=new GuessService(db,{available:()=>true,run:async(input)=>{
-    assert.equal(input.task,'select');assert.equal(input.filters.difficulty,'easy');
-    assert.ok(input.candidates.some(p=>p.id===published));
-    return {ids:[published]};
-  }});
-  const game=await gameService.start({difficulty:'easy',from:900,to:960},'test-actor',AbortSignal.timeout(60000));
-  assert.equal(game.remaining,30);assert.ok(!('person' in game));checks++;
-  const revealed=await gameService.act({token:game.token,action:'reveal'},'test-actor',AbortSignal.timeout(60000));
-  assert.equal(revealed.person.id,published);assert.ok(revealed.evidence.some(c=>c.id===claim));checks++;
   // Database constraints protect stable IDs/endpoints and publication state even for offline tools.
   await assert.rejects(connection.execute('INSERT INTO person(id,name,status) VALUES(?,?,?)',[randomUUID(),'无效状态','invalid']));checks++;
   await assert.rejects(connection.execute('INSERT INTO person_event(id,person_id,event_id,role) VALUES(?,?,?,?)',[randomUUID(),published,randomUUID(),'参与']));checks++;

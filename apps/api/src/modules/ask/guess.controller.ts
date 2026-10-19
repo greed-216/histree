@@ -8,7 +8,10 @@ import { GuessService } from './guess.service';
 @UseGuards(GatewayGuard)
 @Controller('api/v1/ask/guess')
 export class GuessController {
-  constructor(private readonly service: GuessService, private readonly access: AiAccessService) {}
+  constructor(
+    private readonly service: GuessService,
+    private readonly access: AiAccessService,
+  ) {}
   @Get('status') status() {
     const status = this.service.status();
     return { ...status, available: status.available && this.access.ready() };
@@ -37,6 +40,15 @@ export class GuessController {
   ) {
     return this.request(req, res, (signal) =>
       this.service.start(body, req.gatewayActor, signal),
+    );
+  }
+  @Post('feedback') feedback(
+    @Body() body: unknown,
+    @Req() req: GatewayRequest,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    return this.request(req, res, (signal) =>
+      this.service.feedback(body, req.gatewayActor, signal),
     );
   }
   @Post('act') act(

@@ -11,7 +11,7 @@ const difficulties = [
   {
     value: "hard",
     label: "困难",
-    description: "挑战冷门人物，沿着细节寻找线索",
+    description: "人物范围更广，沿着细节寻找线索",
   },
 ] as const;
 const eras = [
@@ -129,7 +129,7 @@ export function GuessGame() {
       });
     }
   }, [notice, error]);
-  async function request(path: "start" | "act", body: unknown) {
+  async function request(path: "start" | "act" | "feedback", body: unknown) {
     if (busy) return;
     const controller = new AbortController();
     abort.current = controller;
@@ -365,7 +365,7 @@ export function GuessGame() {
             个提示，使用提示也能获胜。史书异说或兼是兼否时回答“是，也不是”；没有记载时回答“不清楚”。
           </p>
           <p>
-            仅从本站已发布且有原文出处的人物中抽选。简单侧重较熟悉的人物，困难侧重冷门人物，不保证每个时代都有符合条件的候选。年代按已收录生卒年或活动事件与范围有交集筛选；年代未知的人物只参与不限年代的抽选。未知身份、性别不会强行推断。自定义限定由
+            仅从本站已发布且有原文出处的人物中抽选。普通开局直接从已准备的题库抽取；简单从熟悉人物猜起，困难的人物范围更广，难度会参考玩家反馈逐步调整。不保证每个时代都有符合条件的候选。年代按已收录生卒年或活动事件与范围有交集筛选；年代未知的人物只参与不限年代的抽选。未知身份、性别不会强行推断。自定义限定由
             AI 分析，无法确认时不选入。AI 裁判可能出错，结束后可回查原文。
           </p>
           <p>会话保留 1 小时；刷新可恢复，服务重启会失效。</p>
@@ -527,6 +527,45 @@ export function GuessGame() {
                   继续问史料 →
                 </Link>
               </div>
+              {game.ratingEligible && (
+                <section
+                  className="rounded-xl border border-teal-100 bg-white/70 p-4"
+                  aria-label="本局难度反馈"
+                >
+                  <p className="font-medium">这位人物，对你来说难猜吗？</p>
+                  <p className="mt-1 text-xs leading-6 text-stone-500">
+                    参考你本局选择的“{difficultyLabel(game.filters.difficulty)}
+                    ”难度。你的反馈会帮助后续玩家遇到更合适的人物。
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {(
+                      [
+                        ["easy", "太简单了"],
+                        ["right", "刚刚好"],
+                        ["hard", "有点难"],
+                      ] as const
+                    ).map(([rating, label]) => (
+                      <button
+                        type="button"
+                        key={rating}
+                        disabled={busy || !!game.rating}
+                        aria-pressed={game.rating === rating}
+                        className={`rounded-full border px-4 py-2 text-sm disabled:cursor-default ${game.rating === rating ? "border-teal-700 bg-teal-50 text-teal-900" : "border-stone-200 text-stone-600 disabled:opacity-50"}`}
+                        onClick={() =>
+                          void request("feedback", { token, rating })
+                        }
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  {game.rating && (
+                    <p role="status" className="mt-3 text-sm text-teal-800">
+                      反馈已收下，谢谢你帮我们校准难度。
+                    </p>
+                  )}
+                </section>
+              )}
               <details className="text-sm leading-7">
                 <summary className="cursor-pointer">
                   回看本局可用史料（{game.evidence?.length ?? 0} 条）

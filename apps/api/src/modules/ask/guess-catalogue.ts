@@ -11,6 +11,8 @@ export type GuessPerson = {
   description?: string;
   biography?: string;
   tags?: string[];
+  game_difficulty?: 'easy' | 'hard';
+  game_revision?: number;
   activity?: Array<{ from: number; to: number }>;
 };
 
@@ -53,7 +55,10 @@ export async function loadGuessCatalogue(
       ranges.push({ from: row.start_year, to: row.end_year });
       dates.set(row.person_id, ranges);
     }
-    for (const person of page) person.activity = dates.get(person.id) || [];
+    for (const person of page)
+      person.activity = (dates.get(person.id) || []).sort(
+        (a, b) => a.from - b.from || a.to - b.to,
+      );
     people.push(...page);
     const next = page[page.length - 1].id;
     if (next <= cursor) throw new Error('Invalid game catalogue cursor');

@@ -6,10 +6,16 @@ import {
   OnModuleDestroy,
   ServiceUnavailableException,
 } from '@nestjs/common';
-import { randomBytes, randomInt } from 'node:crypto';
+import { createHash, randomBytes, randomInt } from 'node:crypto';
 import { z } from 'zod';
 import { MysqlService } from '../mysql/mysql.service';
 import { GuessAgentService } from './guess-agent.service';
+import {
+  GuessBankService,
+  guessCatalogueRevision,
+  legacyGuessTiers as anchors,
+  type GuessRating,
+} from './guess-bank';
 import {
   loadGuessCatalogue,
   matchesGuessYears,
@@ -42,7 +48,14 @@ const actionSchema = z
   })
   .strict()
   .refine((x) => !['question', 'guess'].includes(x.action) || !!x.text);
+const ratingSchema = z
+  .object({
+    token: z.string().regex(/^[a-f0-9]{64}$/),
+    rating: z.enum(['easy', 'right', 'hard']),
+  })
+  .strict();
 type Filters = z.infer<typeof filtersSchema>;
+type Catalogue = { people: Person[]; revision: string };
 type Claim = {
   id: string;
   claim_text: string;
@@ -62,6 +75,8 @@ type Game = {
   expires: number;
   busy: boolean;
   outcome?: 'won' | 'revealed' | 'limit';
+  bankRevision?: number;
+  rating?: GuessRating;
 };
 const labels = {
   yes: '是',
@@ -97,32 +112,14 @@ export function directGuess(text: string) {
   );
   return match?.[1] || value;
 }
-// Reference anchors constrain the model's fame classification; absent names remain agent-assessed.
-const anchors: Record<string, number> = Object.fromEntries(
-  [
-    [
-      '李白 杜甫 李世民 曹操 刘邦 项羽 秦始皇 嬴政 武则天 孔子 孟子 诸葛亮 关羽 刘备 孙权 岳飞 朱元璋 李清照 苏轼 白居易',
-      1,
-    ],
-    ['朱温 朱全忠 朱晃 李存勖 柴荣 石勒 苻坚 李克用 刘裕 王安石 赵匡胤', 2],
-    ['王僧辩 刘琨 敬翔 李振 葛从周 王彦章', 3],
-    ['孙泰 刘交', 4],
-  ].flatMap(([names, tier]) =>
-    String(names)
-      .split(' ')
-      .map((name) => [name, Number(tier)]),
-  ),
-);
-
 @Injectable()
 export class GuessService implements OnModuleInit, OnModuleDestroy {
   private readonly games = new Map<string, Game>();
   private readonly quotas = new Map<string, { count: number; reset: number }>();
   private active = 0;
-  private generation = 0;
   private catalogueCache?: {
     expires: number;
-    promise: Promise<{ people: Person[]; generation: number }>;
+    promise: Promise<Catalogue>;
   };
   private readonly candidatePools = new Map<string, Promise<Person[]>>();
   private refreshTimer?: ReturnType<typeof setInterval>;
@@ -130,6 +127,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
   constructor(
     private readonly db: MysqlService,
     private readonly agent: GuessAgentService,
+    private readonly bank: GuessBankService,
   ) {}
   onModuleInit() {
     if (!this.agent.available()) return;
@@ -150,9 +148,11 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       if (this.catalogueCache === previous) {
         this.catalogueCache = {
           expires: Date.now() + 300000,
-          promise: Promise.resolve({ people, generation: ++this.generation }),
+          promise: Promise.resolve({
+            people,
+            revision: guessCatalogueRevision(people),
+          }),
         };
-        this.candidatePools.clear();
       }
     } catch {
       /* Retain the last snapshot within its existing TTL; foreground retry after expiry. */
@@ -173,10 +173,8 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
   private catalogue() {
     if (this.catalogueCache && this.catalogueCache.expires > Date.now())
       return this.catalogueCache.promise;
-    this.candidatePools.clear();
-    const generation = ++this.generation;
     const promise = this.loadCatalogue(AbortSignal.timeout(60000)).then(
-      (people) => ({ people, generation }),
+      (people) => ({ people, revision: guessCatalogueRevision(people) }),
     );
     this.catalogueCache = { expires: Date.now() + 300000, promise };
     void promise.catch(() => {
@@ -187,20 +185,40 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
   }
   private async loadCatalogue(signal: AbortSignal) {
     try {
-      return await loadGuessCatalogue(this.db, signal);
-    } catch {
-      throw new ServiceUnavailableException(
-        '已发布人物索引暂时无法读取，请稍后重试。',
+      return await this.bank.prepare(
+        await loadGuessCatalogue(this.db, signal),
+        signal,
       );
+    } catch {
+      throw new ServiceUnavailableException('游戏题库暂未准备好，请稍后重试。');
     }
   }
 
   private async pool(
     filters: Filters,
-    catalogue: { people: Person[]; generation: number },
+    catalogue: Catalogue,
     signal: AbortSignal,
   ) {
-    const key = JSON.stringify([catalogue.generation, filters]);
+    // Default setup is entirely deterministic: no model, worker startup or AI cache miss.
+    if (
+      typeof filters.difficulty === 'string' &&
+      !filters.identity &&
+      filters.gender === 'any' &&
+      !filters.custom
+    ) {
+      const eligible = catalogue.people.filter(
+        (p) =>
+          p.game_difficulty === filters.difficulty &&
+          matchesGuessYears(p, filters),
+      );
+      if (!eligible.length)
+        throw new BadRequestException(
+          '已准备的题库中暂无符合该难度和年代的人物，请调整条件。',
+        );
+      return eligible;
+    }
+    // Unchanged snapshots share advanced screening even across periodic refreshes.
+    const key = JSON.stringify([catalogue.revision, filters]);
     let pending = this.candidatePools.get(key);
     if (!pending) {
       if (this.candidatePools.size >= 128)
@@ -275,7 +293,9 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
           : tier === filters.difficulty;
     const candidates = people.filter(
       (p) =>
-        (!anchors[p.name] || acceptsTier(anchors[p.name])) &&
+        (typeof filters.difficulty === 'string'
+          ? p.game_difficulty === filters.difficulty
+          : !anchors[p.name] || acceptsTier(anchors[p.name])) &&
         matchesGuessYears(p, filters),
     );
     for (let i = candidates.length - 1; i > 0; i--) {
@@ -341,6 +361,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       // Select uniformly among confirmed candidates, then revalidate publication and evidence.
       while (eligible.length) {
         let person = eligible.splice(randomInt(eligible.length), 1)[0];
+        const bankRevision = person.game_revision;
         const claims: Claim[] = [];
         const [direct, detail, related] = await Promise.all([
           this.page('fact_claim', 0, signal, {
@@ -397,6 +418,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
         const token = randomBytes(32).toString('hex');
         const game: Game = {
           owner: actor,
+          bankRevision,
           person,
           context,
           claims,
@@ -425,6 +447,8 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       remaining: 30 - game.turns.length,
       ...(game.outcome
         ? {
+            ratingEligible: game.turns.length > 0 && !!game.bankRevision,
+            rating: game.rating || null,
             person: {
               id: game.person.id,
               name: game.person.name,
@@ -441,6 +465,48 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
         : {}),
     };
   }
+  async feedback(body: unknown, actor: string, signal: AbortSignal) {
+    const parsed = ratingSchema.safeParse(body);
+    if (!parsed.success) throw new BadRequestException('请选择本局难度感受。');
+    const game = this.games.get(parsed.data.token);
+    if (game && game.owner !== actor)
+      throw new HttpException('无权访问此游戏。', 403);
+    if (!game || game.expires < Date.now())
+      throw new HttpException('游戏已过期，请重新开局。', 410);
+    if (!game.outcome || !game.turns.length || !game.bankRevision)
+      throw new BadRequestException('完成至少一次对答并揭晓后，才能评价难度。');
+    if (game.busy) throw new HttpException('请等待本次操作完成。', 409);
+    if (game.rating) return this.view(game);
+    game.busy = true;
+    try {
+      const result = await this.bank.rate(
+        {
+          person_id: game.person.id,
+          revision: game.bankRevision,
+          actor_hash: createHash('sha256').update(actor).digest('hex'),
+          game_hash: createHash('sha256')
+            .update(parsed.data.token)
+            .digest('hex'),
+          rating: parsed.data.rating,
+          turns: game.turns.length,
+          hints: game.hints.length,
+        },
+        signal,
+      );
+      game.rating = result.rating;
+      if (result.moved || result.revision !== game.bankRevision) {
+        // A new level is used by future games only. No active game is changed.
+        this.catalogueCache = undefined;
+      }
+      return this.view(game);
+    } catch (error) {
+      if (error instanceof HttpException) throw error;
+      throw new ServiceUnavailableException('难度反馈未能保存，请重试。');
+    } finally {
+      game.busy = false;
+    }
+  }
+
   async act(body: unknown, actor: string, signal: AbortSignal) {
     const parsed = actionSchema.safeParse(body);
     if (!parsed.success) throw new BadRequestException('游戏请求格式不正确。');

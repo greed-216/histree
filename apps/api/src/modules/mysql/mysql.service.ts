@@ -1,3 +1,4 @@
+import type { BankSeed, BankFeedback, BankRatingResult, BankRow } from '../ask/guess-bank';
 import type { FeedbackRecord } from '../feedback/feedback.service';
 import { createHash } from 'node:crypto';
 import { BadRequestException, ConflictException, Injectable, OnModuleDestroy } from '@nestjs/common';
@@ -110,6 +111,145 @@ export class MysqlService implements OnModuleDestroy {
       if (existing[0]?.request_sha256 !== row.request_sha256) throw new ConflictException('这条反馈已提交，请关闭后重新填写。');
     }
   }
+  async seedGuessBank(seeds: BankSeed[], signal?: AbortSignal) {
+    for (let offset = 0; offset < seeds.length; offset += 500) {
+      signal?.throwIfAborted();
+      const batch = seeds.slice(offset, offset + 500);
+      if (
+        batch.some(
+          (seed) =>
+            !uuid.test(seed.person_id) ||
+            !['easy', 'hard'].includes(seed.difficulty),
+        )
+      )
+        throw new BadRequestException('无效的游戏题库');
+      const connection = await this.connectionPool().getConnection();
+      const abort = () => connection.destroy();
+      try {
+        signal?.throwIfAborted();
+        signal?.addEventListener('abort', abort, { once: true });
+        await connection.execute(
+          `INSERT INTO guess_bank(person_id,difficulty) VALUES ${batch.map(() => '(?,?)').join(',')} ON DUPLICATE KEY UPDATE person_id=person_id`,
+          batch.flatMap((seed) => [seed.person_id, seed.difficulty]),
+        );
+        signal?.throwIfAborted();
+      } finally {
+        signal?.removeEventListener('abort', abort);
+        connection.release();
+      }
+    }
+  }
+
+  async rateGuessPerson(
+    input: BankFeedback,
+    signal?: AbortSignal,
+  ): Promise<BankRatingResult> {
+    if (
+      !uuid.test(input.person_id) ||
+      !Number.isSafeInteger(input.revision) ||
+      input.revision < 1 ||
+      !/^[a-f0-9]{64}$/.test(input.actor_hash) ||
+      !/^[a-f0-9]{64}$/.test(input.game_hash) ||
+      !['easy', 'right', 'hard'].includes(input.rating) ||
+      !Number.isInteger(input.turns) ||
+      input.turns < 1 ||
+      input.turns > 30 ||
+      !Number.isInteger(input.hints) ||
+      input.hints < 0 ||
+      input.hints > 3
+    )
+      throw new BadRequestException('无效的难度反馈');
+    signal?.throwIfAborted();
+    const connection = await this.connectionPool().getConnection();
+    const abort = () => connection.destroy();
+    try {
+      signal?.throwIfAborted();
+      signal?.addEventListener('abort', abort, { once: true });
+      await connection.query('SET SESSION innodb_lock_wait_timeout=5');
+      await connection.beginTransaction();
+      const [rows] = await connection.execute<RowDataPacket[]>(
+        'SELECT person_id,difficulty,revision,easy_votes,right_votes,hard_votes FROM guess_bank WHERE person_id=? FOR UPDATE',
+        [input.person_id],
+      );
+      const row = rows[0] as BankRow & {
+        easy_votes: number;
+        right_votes: number;
+        hard_votes: number;
+      };
+      if (!row) throw new BadRequestException('对应人物暂时无法反馈');
+      // The bank row lock serializes deduplication and counter updates per person.
+      const [existing] = await connection.execute<RowDataPacket[]>(
+        'SELECT rating FROM guess_difficulty_feedback WHERE game_hash=? OR (person_id=? AND revision=? AND actor_hash=?) LIMIT 1',
+        [input.game_hash, input.person_id, input.revision, input.actor_hash],
+      );
+      if (existing.length) {
+        await connection.commit();
+        return {
+          person_id: row.person_id,
+          difficulty: row.difficulty,
+          revision: row.revision,
+          rating: existing[0].rating as BankRatingResult['rating'],
+          moved: false,
+        };
+      }
+      await connection.execute(
+        'INSERT INTO guess_difficulty_feedback(game_hash,person_id,revision,actor_hash,rating,turns,hints) VALUES(?,?,?,?,?,?,?)',
+        [
+          input.game_hash,
+          input.person_id,
+          input.revision,
+          input.actor_hash,
+          input.rating,
+          input.turns,
+          input.hints,
+        ],
+      );
+      let moved = false;
+      // Late feedback is retained but cannot vote in a newer classification round.
+      if (row.revision === input.revision) {
+        const counts = {
+          easy: row.easy_votes,
+          right: row.right_votes,
+          hard: row.hard_votes,
+        };
+        counts[input.rating]++;
+        const total = counts.easy + counts.right + counts.hard;
+        const contrary = row.difficulty === 'easy' ? counts.hard : counts.easy;
+        moved = total >= 12 && contrary * 4 >= total * 3;
+        if (moved) {
+          row.difficulty = row.difficulty === 'easy' ? 'hard' : 'easy';
+          row.revision++;
+        }
+        await connection.execute(
+          'UPDATE guess_bank SET difficulty=?,revision=?,easy_votes=?,right_votes=?,hard_votes=? WHERE person_id=?',
+          [
+            row.difficulty,
+            row.revision,
+            moved ? 0 : counts.easy,
+            moved ? 0 : counts.right,
+            moved ? 0 : counts.hard,
+            input.person_id,
+          ],
+        );
+      }
+      signal?.throwIfAborted();
+      await connection.commit();
+      return {
+        person_id: row.person_id,
+        difficulty: row.difficulty,
+        revision: row.revision,
+        rating: input.rating,
+        moved,
+      };
+    } catch (error) {
+      await connection.rollback().catch(() => {});
+      throw error;
+    } finally {
+      signal?.removeEventListener('abort', abort);
+      connection.release();
+    }
+  }
+
   async sourceText(sourceId: string) {
     if (!uuid.test(sourceId)) throw new BadRequestException('无效的来源地址');
     if (!this.enabled) return null;

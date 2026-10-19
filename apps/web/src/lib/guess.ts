@@ -15,6 +15,8 @@ export type GuessState = {
   remaining: number;
   outcome: "won" | "revealed" | "limit" | null;
   notice?: string;
+  ratingEligible?: boolean;
+  rating?: "easy" | "right" | "hard" | null;
   person?: { id: string; name: string; description?: string };
   evidence?: Array<{
     id: string;
@@ -32,7 +34,7 @@ export class GuessRequestError extends Error {
   }
 }
 export async function guessRequest(
-  path: "start" | "act",
+  path: "start" | "act" | "feedback",
   body: unknown,
   signal: AbortSignal,
 ): Promise<GuessState> {

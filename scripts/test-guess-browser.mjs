@@ -16,6 +16,8 @@ try {
     let revealCalls = 0;
     let expireNext = false;
     let failNext = false;
+    let ratingCalls = 0;
+    let failRatingNext = false;
     const token = "a".repeat(64);
     await ctx.route("**/*", async (route) => {
       const url = new URL(route.request().url());
@@ -57,6 +59,22 @@ try {
           outcome: null,
         };
         return reply({ token, ...state });
+      }
+      if (url.pathname.endsWith("/ask/guess/feedback")) {
+        const body = route.request().postDataJSON();
+        assert.equal(body.token, token);
+        if (failRatingNext) {
+          failRatingNext = false;
+          return route.fulfill({
+            status: 503,
+            contentType: "application/json",
+            body: JSON.stringify({ message: "难度反馈未能保存，请重试。" }),
+          });
+        }
+        assert.ok(state.outcome && state.turns.length);
+        ratingCalls++;
+        state.rating = body.rating;
+        return reply(state);
       }
       if (url.pathname.endsWith("/ask/guess/act")) {
         const body = route.request().postDataJSON();
@@ -110,6 +128,8 @@ try {
           state.outcome = "revealed";
         }
         if (state.outcome) {
+          state.ratingEligible = state.turns.length > 0;
+          state.rating ||= null;
           state.person = {
             id: "p1",
             name: "朱温",
@@ -275,6 +295,35 @@ try {
       "/graph/p1",
     );
     assert.equal(revealCalls, 0);
+    await page.getByRole("region", { name: "本局难度反馈" }).waitFor();
+    failRatingNext = true;
+    await page.getByRole("button", { name: "有点难", exact: true }).click();
+    await page
+      .getByRole("alert")
+      .filter({ hasText: "难度反馈未能保存" })
+      .waitFor();
+    assert.equal(ratingCalls, 0);
+    await page.getByRole("button", { name: "有点难", exact: true }).click();
+    await page
+      .getByText("反馈已收下，谢谢你帮我们校准难度。", { exact: true })
+      .waitFor();
+    assert.equal(ratingCalls, 1);
+    assert.equal(
+      await page
+        .getByRole("button", { name: "有点难", exact: true })
+        .isDisabled(),
+      true,
+    );
+    await page.reload();
+    await page
+      .getByText("反馈已收下，谢谢你帮我们校准难度。", { exact: true })
+      .waitFor();
+    assert.equal(
+      await page
+        .getByRole("button", { name: "有点难", exact: true })
+        .getAttribute("aria-pressed"),
+      "true",
+    );
     await page.getByText("回看本局可用史料（1 条）").click();
     await page.getByText("原文：测试引文", { exact: true }).waitFor();
     assert.ok(

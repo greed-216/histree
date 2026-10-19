@@ -1,6 +1,8 @@
 import { GuessService } from './guess.service';
 import { GuessAgentService } from './guess-agent.service';
 import { MysqlService } from '../mysql/mysql.service';
+import { GuessBankService, initialGuessDifficulty } from './guess-bank';
+import type { GuessPerson } from './guess-catalogue';
 const person = {
   id: '11111111-1111-4111-8111-111111111111',
   name: '朱温',
@@ -40,11 +42,30 @@ function make(target = person) {
   const rows = jest.fn<Promise<unknown[]>, [string]>((sql) =>
     Promise.resolve(sql.includes('FROM person p') ? [{ ...target }] : []),
   );
+  const bank = {
+    prepare: jest.fn((people: GuessPerson[]) =>
+      Promise.resolve(
+        people.map((p) => ({
+          ...p,
+          game_difficulty: initialGuessDifficulty(p),
+          game_revision: 1,
+        })),
+      ),
+    ),
+    rate: jest.fn().mockResolvedValue({
+      person_id: target.id,
+      difficulty: 'hard',
+      revision: 1,
+      rating: 'hard',
+      moved: false,
+    }),
+  };
   const service = new GuessService(
     { rows, getClient: () => ({ rpc }) } as unknown as MysqlService,
     agent as unknown as GuessAgentService,
+    bank as unknown as GuessBankService,
   );
-  return { service, agent, rpc, rows };
+  return { service, agent, rpc, rows, bank };
 }
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
@@ -59,10 +80,154 @@ describe('Guess game privacy and lifecycle', () => {
     const started = await service.start({ difficulty }, 'a', signal);
     expect(started.filters.difficulty).toBe(difficulty);
     expect(started).not.toHaveProperty('person');
-    const selected = agent.run.mock.calls[0][0] as {
-      filters: { difficulty: string };
-    };
-    expect(selected.filters.difficulty).toBe(difficulty);
+    expect(agent.run).not.toHaveBeenCalled();
+  });
+  it('never calls the model for ordinary starts, including after a new preparation', async () => {
+    const { service, agent, bank } = make();
+    agent.run.mockRejectedValue(new Error('The model must not be called'));
+    const start = await service
+      .start({ difficulty: 'easy', from: 900, to: 960 }, 'a', signal)
+      .catch(() => null);
+    expect(start).toBeNull(); // No known years: do not widen the requested era.
+    const first = await service.start({ difficulty: 'easy' }, 'a', signal);
+    const second = await service.start({ difficulty: 'easy' }, 'a', signal);
+    expect(first.token).not.toBe(second.token);
+    const now = jest.spyOn(Date, 'now').mockReturnValue(Date.now() + 300001);
+    try {
+      await service.start({ difficulty: 'easy' }, 'a', signal);
+    } finally {
+      now.mockRestore();
+    }
+    expect(bank.prepare).toHaveBeenCalledTimes(2);
+    expect(agent.run).not.toHaveBeenCalled();
+  });
+  it('uses feedback-adjusted difficulty instead of a fixed name anchor for new games', async () => {
+    const { service, bank, agent } = make();
+    bank.prepare.mockImplementation((people) =>
+      Promise.resolve(
+        people.map((p) => ({
+          ...p,
+          game_difficulty: 'hard' as const,
+          game_revision: 2,
+        })),
+      ),
+    );
+    await service.start({ difficulty: 'hard' }, 'a', signal);
+    await expect(
+      service.start({ difficulty: 'easy' }, 'a', signal),
+    ).rejects.toThrow('暂无符合');
+    expect(agent.run).not.toHaveBeenCalled();
+  });
+  it('accepts feedback only after a played, owned, revealed game and keeps it on refresh', async () => {
+    const { service, bank } = make();
+    const started = await service.start({ difficulty: 'easy' }, 'a', signal);
+    expect(started).not.toHaveProperty('ratingEligible');
+    await expect(
+      service.feedback({ token: started.token, rating: 'hard' }, 'a', signal),
+    ).rejects.toThrow('揭晓');
+    await expect(
+      service.feedback(
+        { token: started.token, rating: 'hard' },
+        'other',
+        signal,
+      ),
+    ).rejects.toThrow('无权');
+    await service.act(
+      { token: started.token, action: 'question', text: '朱温' },
+      'a',
+      signal,
+    );
+    const rated = await service.feedback(
+      { token: started.token, rating: 'hard' },
+      'a',
+      signal,
+    );
+    expect(rated.rating).toBe('hard');
+    expect(rated.ratingEligible).toBe(true);
+    await service.feedback(
+      { token: started.token, rating: 'easy' },
+      'a',
+      signal,
+    );
+    expect(bank.rate).toHaveBeenCalledTimes(1);
+    expect(bank.rate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        person_id: person.id,
+        revision: 1,
+        turns: 1,
+        hints: 0,
+      }),
+      signal,
+    );
+    expect(
+      (
+        await service.act(
+          { token: started.token, action: 'state' },
+          'a',
+          signal,
+        )
+      ).rating,
+    ).toBe('hard');
+  });
+  it('refreshes a changed level after an idempotent retry that discovers an earlier commit', async () => {
+    const { service, bank, agent } = make();
+    const game = await service.start({ difficulty: 'easy' }, 'a', signal);
+    await service.act(
+      { token: game.token, action: 'guess', text: '朱温' },
+      'a',
+      signal,
+    );
+    bank.rate.mockResolvedValueOnce({
+      person_id: person.id,
+      difficulty: 'hard',
+      revision: 2,
+      rating: 'hard',
+      moved: false,
+    });
+    bank.prepare.mockImplementation((people) =>
+      Promise.resolve(
+        people.map((p) => ({
+          ...p,
+          game_difficulty: 'hard' as const,
+          game_revision: 2,
+        })),
+      ),
+    );
+    await service.feedback({ token: game.token, rating: 'hard' }, 'a', signal);
+    await service.start({ difficulty: 'hard' }, 'a', signal);
+    expect(bank.prepare).toHaveBeenCalledTimes(2);
+    expect(
+      (await service.act({ token: game.token, action: 'state' }, 'a', signal))
+        .filters.difficulty,
+    ).toBe('easy');
+    expect(agent.run).not.toHaveBeenCalled();
+  });
+  it('refuses ratings after a reveal without play, and lets a failed save be retried', async () => {
+    const { service, bank } = make();
+    const empty = await service.start({ difficulty: 'easy' }, 'a', signal);
+    await service.act({ token: empty.token, action: 'reveal' }, 'a', signal);
+    await expect(
+      service.feedback({ token: empty.token, rating: 'hard' }, 'a', signal),
+    ).rejects.toThrow('至少一次');
+    const played = await service.start({ difficulty: 'easy' }, 'a', signal);
+    await service.act(
+      { token: played.token, action: 'guess', text: '朱温' },
+      'a',
+      signal,
+    );
+    bank.rate.mockRejectedValueOnce(new Error('offline'));
+    await expect(
+      service.feedback({ token: played.token, rating: 'hard' }, 'a', signal),
+    ).rejects.toThrow('未能保存');
+    expect(
+      (
+        await service.feedback(
+          { token: played.token, rating: 'hard' },
+          'a',
+          signal,
+        )
+      ).rating,
+    ).toBe('hard');
   });
   it('keeps easy anchors out of hard games and respects recorded activity for null lifespans', async () => {
     const { service, rows } = make();
@@ -75,7 +240,7 @@ describe('Guess game privacy and lifecycle', () => {
     );
     await expect(
       service.start({ difficulty: 'hard' }, 'a', signal),
-    ).rejects.toThrow('没有符合');
+    ).rejects.toThrow('暂无符合');
     const started = await service.start(
       { difficulty: 'easy', from: 900, to: 960 },
       'a',
@@ -84,7 +249,7 @@ describe('Guess game privacy and lifecycle', () => {
     expect(started.token).toHaveLength(64);
     await expect(
       service.start({ difficulty: 'easy', from: 1368, to: 1644 }, 'a', signal),
-    ).rejects.toThrow('没有符合');
+    ).rejects.toThrow('暂无符合');
   });
   it('tries a disjoint sample after an empty model selection without accepting foreign IDs', async () => {
     const { service, agent, rows } = make();
@@ -101,7 +266,11 @@ describe('Guess game privacy and lifecycle', () => {
       const batch = (input as { candidates: typeof candidates }).candidates;
       return Promise.resolve({ ids: call === 1 ? ['foreign'] : [batch[0].id] });
     });
-    await service.start({ difficulty: 'hard' }, 'a', signal);
+    await service.start(
+      { difficulty: 'hard', custom: '测试限定' },
+      'a',
+      signal,
+    );
     expect(agent.run).toHaveBeenCalledTimes(2);
     const batches = agent.run.mock.calls.map(([input]) =>
       (input as { candidates: Array<{ id: string }> }).candidates.map(
@@ -178,7 +347,7 @@ describe('Guess game privacy and lifecycle', () => {
       (await service.act({ token, action: 'state' }, 'a', signal)).remaining,
     ).toBe(29);
   });
-  it('refreshes the catalogue in the background before expiry and rebuilds screening for the new snapshot', async () => {
+  it('refreshes the catalogue without redoing advanced screening for unchanged people', async () => {
     jest.useFakeTimers();
     const { service, agent, rows } = make();
     try {
@@ -187,7 +356,7 @@ describe('Guess game privacy and lifecycle', () => {
       jest.advanceTimersByTime(240000);
       for (let i = 0; i < 20; i++) await Promise.resolve();
       await service.start(filters, 'a', signal);
-      expect(agent.run).toHaveBeenCalledTimes(2);
+      expect(agent.run).toHaveBeenCalledTimes(1);
       expect(
         rows.mock.calls.filter(([sql]) => sql.includes('FROM person p')),
       ).toHaveLength(2);
@@ -242,7 +411,7 @@ describe('Guess game privacy and lifecycle', () => {
     const now = jest.spyOn(Date, 'now').mockReturnValue(Date.now() + 300001);
     try {
       await service.start(filters, 'a', signal);
-      expect(agent.run).toHaveBeenCalledTimes(2);
+      expect(agent.run).toHaveBeenCalledTimes(1);
       expect(
         rows.mock.calls.filter(([sql]) => sql.includes('FROM person p')),
       ).toHaveLength(2);

@@ -1,20 +1,5 @@
 import { useId } from "react";
 import { historyScroll, scrollBackgroundGeometry } from "../lib/historyScroll";
-import { useArtworkSource } from "../hooks/useArtworkSource";
-
-function ScrollPanel({ panel, from, to }: {
-  panel: (typeof historyScroll.panels)[number]; from: number; to: number;
-}) {
-  const artwork = useArtworkSource(`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`, panel.bytes);
-  return <svg data-panel={panel.id}
-    {...scrollBackgroundGeometry(panel,from,to)}
-    viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
-    preserveAspectRatio="xMidYMid meet" overflow="hidden">
-    <image href={artwork.url} xlinkHref={artwork.url} width={panel.width} height={panel.height}
-      data-artwork-status={artwork.status} data-artwork-bytes={artwork.bytes}
-      onError={artwork.recover}/>
-  </svg>;
-}
 /** Preserve aspect ratio and year coordinates inside a bounded observation window. */
 export function HistoryScrollBackdrop({from,to,height,position=.5}: {
   from:number;to:number;height:number;position?:number;
@@ -28,7 +13,13 @@ export function HistoryScrollBackdrop({from,to,height,position=.5}: {
     <g clipPath={`url(#background-${id})`}>
       <rect x="40" y="96" width="920" height={height} fill="#f0ecdf"/>
       <g data-artwork-position={position} transform={`translate(0,${centered-offset})`}>
-      {historyScroll.panels.map(panel => <ScrollPanel key={panel.id} panel={panel} from={from} to={to}/>)}
+      {historyScroll.panels.map(panel => <svg key={panel.id} data-panel={panel.id}
+        {...scrollBackgroundGeometry(panel,from,to)}
+        viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
+        preserveAspectRatio="xMidYMid meet" overflow="hidden">
+        <image href={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
+          width={panel.width} height={panel.height}/>
+      </svg>)}
       </g>
     </g>
   </g>;

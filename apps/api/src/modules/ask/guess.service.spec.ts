@@ -70,6 +70,77 @@ function make(target = person, evidence = claim) {
 const signal = new AbortController().signal;
 const filters = { difficulty: 2 };
 describe('Guess game privacy and lifecycle', () => {
+  it.each([
+    ['你是宋以及宋以前的么？', 'yes', '是'],
+    ['你的生活时期不晚于宋代吗？', 'yes', '是'],
+    ['你是宋以前的人吗？', 'yes', '是'],
+    ['你是宋以后的人吗？', 'no', '不是'],
+    ['你不是宋朝人吗？', 'yes', '是'],
+    ['你不曾生活在宋或更早时期吗？', 'no', '不是'],
+    ['你整个生平都在五代吗？', 'unknown', '不清楚'],
+    ['你是李白的兄弟吗？', 'unknown', '不清楚'],
+    ['你姓朱吗？', 'yes', '是'],
+  ])(
+    'forwards the whole complex proposition once and preserves the verdict: %s',
+    async (text, verdict, answer) => {
+      const { service, agent } = make();
+      const { token } = await service.start(
+        { difficulty: 'easy' },
+        'a',
+        signal,
+      );
+      expect(agent.run).not.toHaveBeenCalled();
+      agent.run.mockResolvedValueOnce({
+        verdict,
+        claims: verdict === 'unknown' ? [] : ['c1'],
+      });
+      const result = await service.act(
+        { token, action: 'question', text },
+        'a',
+        signal,
+      );
+      expect(agent.run).toHaveBeenCalledTimes(1);
+      expect(agent.run.mock.calls[0][0]).toMatchObject({
+        task: 'question',
+        question: text,
+        person: { name: person.name },
+        claims: [{ id: 'c1', note: claim.note }],
+      });
+      expect(agent.run.mock.calls[0][1]).toBe(signal);
+      expect(result.turns).toEqual([{ text, answer, kind: 'question' }]);
+      expect(result.remaining).toBe(29);
+      expect(result.outcome).toBeNull();
+      expect(result).not.toHaveProperty('person');
+      expect(result).not.toHaveProperty('evidence');
+      expect(JSON.stringify(result)).not.toContain(person.name);
+    },
+  );
+
+  it('rejects a single-call judge trying to win with one of several proposed names', async () => {
+    const { service, agent } = make();
+    const { token } = await service.start({ difficulty: 'easy' }, 'a', signal);
+    agent.run.mockResolvedValueOnce({
+      verdict: 'guess',
+      name: '朱温',
+      claims: [],
+    });
+    await expect(
+      service.act(
+        {
+          token,
+          action: 'question',
+          text: '你是朱温还是曹操？',
+        },
+        'a',
+        signal,
+      ),
+    ).rejects.toThrow('确认');
+    const state = await service.act({ token, action: 'state' }, 'a', signal);
+    expect(state.remaining).toBe(30);
+    expect(state.outcome).toBeNull();
+    expect(state).not.toHaveProperty('person');
+  });
+
   it('answers the reported era variants consistently without requiring lifespan dates or a model verdict', async () => {
     const wang = {
       ...person,

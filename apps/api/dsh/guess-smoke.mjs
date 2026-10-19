@@ -6,6 +6,11 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  basicQuestion,
+  nameGuess,
+  questionFixtures,
+} from './guess-question-fixtures.mjs';
 const guessing = process.argv.includes('--guess');
 const selecting = process.argv.includes('--easy')
   ? 'easy'
@@ -13,31 +18,36 @@ const selecting = process.argv.includes('--easy')
     ? 'hard'
     : null;
 const directory = await mkdtemp(join(tmpdir(), 'histree-guess-smoke-'));
-const input = selecting
-  ? {
-      task: 'select',
-      filters: { difficulty: selecting },
-      candidates: [
-        {
-          id: 'easy-person',
-          name: '朱温',
-          game_difficulty: 'easy',
-          fixedDifficulty: 2,
+const fixtures = selecting
+  ? [
+      {
+        name: `${selecting} selection`,
+        input: {
+          task: 'select',
+          filters: { difficulty: selecting },
+          candidates: [
+            {
+              id: 'easy-person',
+              name: '朱温',
+              game_difficulty: 'easy',
+              fixedDifficulty: 2,
+            },
+            {
+              id: 'hard-person',
+              name: '刘交',
+              game_difficulty: 'hard',
+              fixedDifficulty: 4,
+            },
+          ],
         },
-        {
-          id: 'hard-person',
-          name: '刘交',
-          game_difficulty: 'hard',
-          fixedDifficulty: 4,
-        },
-      ],
-    }
-  : {
-      task: 'question',
-      person: { name: '测试人物' },
-      question: guessing ? '你是李亚子吗？' : '你是皇帝吗？',
-      claims: [{ id: 'c1', note: '原文：测试人物称帝。' }],
-    };
+        expected: { ids: [selecting + '-person'] },
+      },
+    ]
+  : process.argv.includes('--questions')
+    ? questionFixtures
+    : [guessing ? nameGuess : basicQuestion];
+let fixture;
+let totalRequests = 0;
 let requests = 0;
 let error;
 const server = createServer(async (req, res) => {
@@ -46,44 +56,63 @@ const server = createServer(async (req, res) => {
     for await (const chunk of req) body += chunk;
     const request = JSON.parse(body);
     requests++;
-    assert.ok(requests <= 2);
+    totalRequests++;
+    assert.equal(requests, 1, `${fixture.name}: exactly one model request`);
     assert.equal(
       (request.tools || []).length,
       0,
       'Game has no shell, filesystem, MCP or other tools',
     );
+    const messages = JSON.stringify(request.messages);
+    const system = JSON.stringify(request.system);
     if (selecting) {
-      assert.equal(requests, 1);
-      const messages = JSON.stringify({
-        system: request.system,
-        messages: request.messages,
-      });
-      assert.ok(messages.includes('合并旧1、2档'));
-      assert.ok(messages.includes('合并旧3、4、5档'));
+      assert.ok(system.includes('合并旧1、2档'));
+      assert.ok(system.includes('合并旧3、4、5档'));
       assert.ok(messages.includes('fixedDifficulty'));
       assert.ok(messages.includes(selecting));
     } else {
+      // The first and only request must contain the original question AND evidence.
+      // The old normalization request fails these assertions before any reply.
       assert.ok(
-        JSON.stringify(request.messages).includes(
-          guessing ? '你是李亚子吗' : '你是皇帝吗',
-        ),
+        messages.includes(fixture.input.question),
+        'Original question is preserved',
       );
-      if (requests === 1) {
+      assert.ok(
+        messages.includes(fixture.input.person.name),
+        'Judge receives the secret person',
+      );
+      for (const claim of fixture.input.claims)
         assert.ok(
-          !JSON.stringify(request.messages).includes('测试人物称帝'),
-          'Normalization cannot see secret evidence',
+          messages.includes(claim.note),
+          'Judge receives each original-text claim',
         );
+      for (const turn of fixture.input.history)
+        assert.ok(messages.includes(turn.answer), 'Prior turns remain data');
+      for (const rule of [
+        '同一次调用内先理解用户的完整命题',
+        '具体姓名猜测只允许',
+        'name只能摘取用户原文中的那个名字',
+        '关系是非问题',
+        '保留否定及其作用范围',
+        '否定不能变为肯定',
+        '宋以前',
+        '宋及以前',
+        '宋以后',
+        '宋及以后',
+        '按是否有交集判断',
+        '按是否全部落入判断',
+        '条件或边界无法确认用unknown',
+        '前轮错误回答不得成为本轮证据',
+        '输出no前须确认证据排除了问题允许的全部范围',
+      ])
         assert.ok(
-          !JSON.stringify(request.messages).includes('测试人物'),
-          'Normalization cannot see secret identity',
+          system.includes(rule),
+          `Single system prompt retains: ${rule}`,
         );
-      } else {
-        assert.ok(JSON.stringify(request.messages).includes('测试人物称帝'));
-        assert.ok(
-          JSON.stringify(request.messages).includes('你曾经担任皇帝吗'),
-          'Judge receives the normalized proposition',
-        );
-      }
+      assert.ok(
+        !system.includes('任务normalize'),
+        'No separate normalization prompt',
+      );
     }
     res.writeHead(200, { 'Content-Type': 'text/event-stream' });
     const send = (type, value) =>
@@ -110,15 +139,7 @@ const server = createServer(async (req, res) => {
       index: 0,
       delta: {
         type: 'text_delta',
-        text: JSON.stringify(
-          selecting
-            ? { ids: [selecting + '-person'] }
-            : guessing
-              ? { kind: 'guess', question: '李亚子' }
-              : requests === 1
-                ? { kind: 'yes_no', question: '你曾经担任皇帝吗？' }
-                : { verdict: 'yes', claims: ['c1'] },
-        ),
+        text: JSON.stringify(fixture.expected),
       },
     });
     send('content_block_stop', { index: 0 });
@@ -135,50 +156,58 @@ const server = createServer(async (req, res) => {
   }
 });
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-const child = fork(
-  fileURLToPath(new URL('./guess-worker.mjs', import.meta.url)),
-  [],
-  {
-    stdio: ['ignore', 'ignore', 'inherit', 'ipc'],
-    env: {
-      PATH: process.env.PATH,
-      HOME: directory,
-      DSH_HOME: directory,
-      HISTREE_GUESS_DEBUG: '1',
-      HISTREE_MODEL: 'deepseek-flash',
-      DEEPSEEK_API_KEY: 'test-only',
-      DEEPSEEK_BASE_URL: `http://127.0.0.1:${server.address().port}/anthropic/v1`,
-    },
-  },
-);
-const timer = setTimeout(() => child.kill('SIGKILL'), 45000);
 try {
-  let result;
-  child.on('message', (message) => {
-    result = message;
-  });
-  const closed = new Promise((resolve, reject) => {
-    child.once('error', reject);
-    child.once('close', resolve);
-  });
-  child.send(input);
-  await closed;
-  if (error) throw error;
-  assert.deepEqual(result, {
-    type: 'result',
-    data: selecting
-      ? { ids: [selecting + '-person'] }
-      : guessing
-        ? { verdict: 'guess', name: '李亚子', claims: [] }
-        : { verdict: 'yes', claims: ['c1'] },
-  });
-  assert.equal(requests, guessing || selecting ? 1 : 2);
+  for (const test of fixtures) {
+    fixture = test;
+    requests = 0;
+    error = undefined;
+    const caseDirectory = await mkdtemp(join(directory, 'case-'));
+    const child = fork(
+      fileURLToPath(new URL('./guess-worker.mjs', import.meta.url)),
+      [],
+      {
+        stdio: ['ignore', 'ignore', 'inherit', 'ipc'],
+        env: {
+          PATH: process.env.PATH,
+          HOME: caseDirectory,
+          DSH_HOME: caseDirectory,
+          HISTREE_GUESS_DEBUG: '1',
+          HISTREE_MODEL: 'deepseek-flash',
+          DEEPSEEK_API_KEY: 'test-only',
+          DEEPSEEK_BASE_URL: `http://127.0.0.1:${server.address().port}/anthropic/v1`,
+        },
+      },
+    );
+    const timer = setTimeout(() => child.kill('SIGKILL'), 45000);
+    try {
+      let result;
+      child.on('message', (message) => {
+        result = message;
+      });
+      const closed = new Promise((resolve, reject) => {
+        child.once('error', reject);
+        child.once('close', resolve);
+      });
+      child.send(fixture.input);
+      await closed;
+      if (error) throw error;
+      assert.deepEqual(
+        result,
+        { type: 'result', data: fixture.expected },
+        fixture.name,
+      );
+      assert.equal(requests, 1, fixture.name);
+      console.log(`PASS: ${fixture.name}; model requests=1`);
+    } finally {
+      clearTimeout(timer);
+      child.kill('SIGKILL');
+    }
+  }
+  assert.equal(totalRequests, fixtures.length);
   console.log(
-    'Guess worker/dsh smoke passed: no tools, bounded JSON reply, fixture evidence, clean worker exit',
+    `Guess worker/dsh smoke passed: ${fixtures.length} fixtures, ${totalRequests} model requests, no tools, no paid calls`,
   );
 } finally {
-  clearTimeout(timer);
-  child.kill('SIGKILL');
   server.closeAllConnections();
   await new Promise((resolve) => server.close(resolve));
   await rm(directory, { recursive: true, force: true });

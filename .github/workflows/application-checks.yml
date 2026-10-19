@@ -61,6 +61,7 @@ jobs:
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
           docker run --rm -e HISTREE_REMOTE_SMOKE=1 histree-api:${GITHUB_SHA} node apps/api/dsh/smoke.mjs
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs
+          docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs --questions
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs --easy
           docker run --rm histree-api:${GITHUB_SHA} node apps/api/dsh/guess-smoke.mjs --hard
           mkdir bundle

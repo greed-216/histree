@@ -100,7 +100,15 @@ function App() {
 
       
       <footer className="bg-white border-t border-slate-200 py-6 text-center text-slate-400 text-sm mt-auto">
-        © {new Date().getFullYear()} Histree 历史之树
+        <p>© {new Date().getFullYear()} Histree 历史之树</p>
+        <a
+          className="mt-2 inline-block text-slate-500 hover:text-slate-700"
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          京ICP备2026006671号-2
+        </a>
       </footer>
     </div></AssistantProvider>
   );

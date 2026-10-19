@@ -27,7 +27,7 @@ export function TopicPage() {
  const {slug}=useParams();const topic=useResource<Topic>(`/topics/${slug}`);
  if(topic.loading||topic.error)return <LoadState {...topic}/>;if(!topic.data)return null;
  const data=topic.data;
- return <div className="space-y-10 pb-12"><Link to="/" className="text-sm text-teal-700">← 专题探索</Link>
+ return <div className="space-y-10 pb-12"><Link to="/" className="text-sm text-teal-700">← 首页</Link>
   <header className="max-w-3xl"><p className="eyebrow mt-6">专题阅读 / {data.sections.length} 个章节</p><h1 className="font-serif text-4xl md:text-5xl mt-4">{data.title}</h1><p className="text-lg leading-8 text-slate-600 mt-6">{data.description}</p></header>
   <TopicExplorer key={data.id} topicSlug={slug}/>
   <div className="grid lg:grid-cols-[1fr_260px] gap-12"><div className="space-y-12">{data.sections.map((section,index)=><TopicSection key={`${data.id}:${index}`} slug={slug!} section={section} index={index}/>)}</div>

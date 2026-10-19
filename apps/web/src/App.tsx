@@ -4,14 +4,14 @@ import { SourcePage, EvidencePage } from './pages/SourcesPage';
 import { MAPS_ENABLED } from './lib/features';
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
-import { UserIcon, AcademicCapIcon, MapIcon } from '@heroicons/react/24/outline';
+import { UserIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
 import { useScrollRestoration } from './hooks/useScrollRestoration';
 const MapEditorPage = lazy(() => import('./pages/MapEditorPage').then(m => ({ default: m.MapEditorPage })));
 const AnnotationEditorPage = lazy(() => import('./pages/AnnotationEditorPage').then(m => ({ default: m.AnnotationEditorPage })));
 const VisualExplorePage = lazy(() => import('./pages/VisualExplorePage').then(m => ({ default: m.VisualExplorePage })));
 import { GuidePage, GuideIndexPage, FiveDynastiesOverviewPage, LegacyZhouGuideRedirect } from './pages/GuidePage';
 import { HistoryScrollPage } from './pages/HistoryScrollPage';
-import { ExplorePage } from './pages/ExplorePage';
+import { HomePage } from './pages/HomePage';
 const TimelinePage = lazy(() => import('./pages/TimelinePage').then(m => ({ default: m.TimelinePage })));
 const GraphPage = lazy(() => import('./pages/GraphPage').then(m => ({ default: m.GraphPage })));
 import { PeoplePage } from './pages/PeoplePage';
@@ -33,7 +33,7 @@ function App() {
     }`;
 
   return (
-    <AssistantProvider><div className="site-shell min-h-screen flex flex-col font-sans">
+    <AssistantProvider><div className={`site-shell min-h-screen flex flex-col font-sans ${location.pathname === '/' ? 'site-shell-home' : ''}`}>
       {/* Top Navigation */}
       <header className="site-header sticky top-0 z-40">
         <div className="site-header-inner mx-auto px-4 md:px-8 min-h-16 py-3 flex flex-wrap gap-3 items-center justify-between">
@@ -43,10 +43,6 @@ function App() {
             </Link>
             
             <nav aria-label="主导航" className="order-3 w-full md:order-none md:w-auto flex flex-wrap items-center gap-1">
-              <Link to="/" className={navLinkClass('/')}>
-                <MapIcon className="w-4 h-4" />
-                探索
-              </Link>
               <Link to="/learn" className={navLinkClass('/learn')}>导读</Link>
               <Link to="/people" className={navLinkClass('/people')}>
                 <UserIcon className="w-4 h-4" />
@@ -67,7 +63,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className={`site-main flex-1 w-full mx-auto px-4 md:px-8 py-6 md:py-8 ${location.pathname.startsWith('/graph')?'site-main-graph':''}`}>
+      <main className={`site-main flex-1 w-full mx-auto px-4 md:px-8 py-6 md:py-8 ${location.pathname.startsWith('/graph')?'site-main-graph':''} ${location.pathname === '/' ? 'site-main-home' : ''}`}>
         <Suspense fallback={<p className="py-12 text-center">加载中…</p>}><Routes>
           <Route path="/sources/:id" element={<SourcePage />} />
           <Route path="/evidence/:subject/:id" element={<EvidencePage />} />
@@ -82,7 +78,7 @@ function App() {
           <Route path="/events/:id" element={<EntryPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/ask" element={<AskPage key={location.search} />} />
-          <Route path="/" element={<ExplorePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/timeline/scroll" element={<HistoryScrollPage />} />
           <Route path="/graph" element={<VisualExplorePage mode="graph" />} />
@@ -92,7 +88,7 @@ function App() {
           <Route path="/graph/:id" element={<GraphPage />} />
           <Route path="/people" element={<PeoplePage />} />
           <Route path="/events" element={<EventsPage />} />
-          <Route path="*" element={<div className="py-12 text-center">页面不存在。<Link className="text-teal-700" to="/">返回专题探索</Link></div>} />
+          <Route path="*" element={<div className="py-12 text-center">页面不存在。<Link className="text-teal-700" to="/">返回首页</Link></div>} />
         </Routes></Suspense>
       </main>
       <GlobalAssistant />

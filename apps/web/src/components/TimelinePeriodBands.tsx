@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useId, useState } from "react";
 import { historyScroll } from "../lib/historyScroll";
 import { formatDisplayRange } from "../lib/content";
 import { layoutBandLabels, visibleInterval, visiblePolityLanes, yearInInterval } from "../lib/timelinePeriods";
@@ -48,36 +48,45 @@ function BandLane({ items, from, to, width, kind, onBrowse }: {
   </div>;
 }
 
-export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse }: {
+export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, collapsed = false, onToggle }: {
   from: number; to: number; width: number; previewYear: number;
   onBrowse: (start: number, end: number) => void;
+  collapsed?: boolean; onToggle?: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const polityId = useId();
   const lanes = visiblePolityLanes(from, to);
   const limit = 4;
   const showPolities = to - from <= 1800 || expanded;
   const shown = showPolities ? lanes.slice(0, expanded ? lanes.length : limit) : [];
   const hidden = showPolities ? lanes.slice(shown.length).flat().length : lanes.flat().length;
 
-  return <div className="timeline-period-bands" aria-label="大分期与主要并立政权">
+  return <div className={`timeline-period-bands${collapsed ? " is-collapsed" : ""}`} aria-label="大分期与主要并立政权">
     <div className="timeline-band-scroll" tabIndex={0} role="region" aria-label="分期与政权时间带，可上下滚动">
     <div className="timeline-band-lanes" style={{width}}>
     <div className="timeline-era-wrapper" aria-label="大分期"><BandLane from={from} to={to} width={width} kind="era" onBrowse={onBrowse}
       items={historyScroll.periods.map((period, index) => ({ ...period, id: period.label, tone: index % 2, note: "浏览分期",
         current: yearInInterval(previewYear, period.from_year, period.to_year) }))}/></div>
-    {shown.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
+    <div id={polityId} hidden={collapsed}>
+    {!collapsed && shown.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
       <BandLane from={from} to={to} width={width} kind="polity" onBrowse={onBrowse}
         items={lane.map(polity => ({ ...polity, fullLabel: polity.label, label: polity.short_label || polity.label,
           tone: polity.lane % 3, polity: polity.id }))}/>
     </div>)}
     </div>
     </div>
+    </div>
     <div className="timeline-band-caption">
-      <span>{shown.length ? expanded ? "主要政权 · 上下滚动查看" : "主要政权 · 点击名称浏览" : lanes.length ? "大分期 · 放大查看并立政权" : "大分期 · 点击名称浏览"}</span>
-      {hidden > 0 && !expanded && <button type="button" onClick={() => setExpanded(true)}>
+      <span>{collapsed ? "大朝代概览 · 点击名称浏览" : shown.length ? expanded ? "主要政权 · 上下滚动查看" : "主要政权 · 点击名称浏览" : lanes.length ? "大分期 · 放大查看并立政权" : "大分期 · 点击名称浏览"}</span>
+      <div className="timeline-band-actions">
+      {!collapsed && hidden > 0 && !expanded && <button type="button" onClick={() => setExpanded(true)}>
         {showPolities ? `另${hidden}个政权` : "展开政权带"} <span aria-hidden="true">⌄</span>
       </button>}
-      {expanded && <button type="button" onClick={() => setExpanded(false)}>收起 <span aria-hidden="true">⌃</span></button>}
+      {!collapsed && expanded && <button type="button" onClick={() => setExpanded(false)}>收起更多 <span aria-hidden="true">⌃</span></button>}
+      {onToggle && <button type="button" aria-expanded={!collapsed} aria-controls={polityId} onClick={onToggle}>
+        {collapsed ? "展开政权时间线" : "收起政权时间线"} <span aria-hidden="true">{collapsed ? "⌄" : "⌃"}</span>
+      </button>}
+      </div>
     </div>
   </div>;
 }

@@ -3,7 +3,7 @@ import { TimelinePeriodBands } from "./TimelinePeriodBands";
 import { polityReferences } from "../lib/timelinePeriods";
 import { historyScroll, initialScrollWindow, minimumScrollSpan, nextScrollZoomSpan, scrollSceneLayout, scrollYearX } from "../lib/historyScroll";
 import { guideHighlights } from "../lib/historyGuides";
-import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type {
   Event,
@@ -25,11 +25,11 @@ import {
   moveWindow,
   type TimeWindow,
 } from "../lib/timelineViewport";
-export function TimelineExplorer({ compact = false }: { compact?: boolean }) {
+export function TimelineExplorer({ compact = false, loadingFallback }: { compact?: boolean; loadingFallback?: ReactNode }) {
   const overview = useResource<TimelineOverview>("/timeline/overview");
   return (
     <div className={compact ? "timeline-page timeline-home" : "timeline-page"}>
-      <LoadState {...overview} />
+      {overview.loading && loadingFallback ? loadingFallback : <LoadState {...overview} />}
       {overview.data &&
         (overview.data.from !== null && overview.data.to !== null ? (
           <TimelineRiver data={overview.data} compact={compact} />
@@ -78,6 +78,7 @@ function TimelineRiver({
   const [chartWidth, setChartWidth] = useState(800);
   const [chartHeightBudget, setChartHeightBudget] = useState(280);
   const [previewExpanded, setPreviewExpanded] = useState(false);
+  const [periodsExpanded, setPeriodsExpanded] = useState(!compact);
   const [viewMode, setViewMode] = useState<"scroll" | "detail">("scroll");
   const [artPosition, setArtPosition] = useState(.5);
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -363,6 +364,7 @@ function TimelineRiver({
       <section
         className={`timeline-river ${compact ? "timeline-river-compact" : ""}`}
         aria-label="历史时间图"
+        data-periods-expanded={periodsExpanded}
       >
         <div className="timeline-topline">
           <div>
@@ -480,7 +482,9 @@ function TimelineRiver({
               后一段 →
             </button>
           </div>
-          <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewYear} onBrowse={browsePeriod}/>
+          <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewYear} onBrowse={browsePeriod}
+            collapsed={compact && !periodsExpanded}
+            onToggle={compact ? () => setPeriodsExpanded(value => !value) : undefined}/>
           <div className="timeline-art-pan">
             <label htmlFor={compact ? "home-art-position" : "timeline-art-position"}>画面上下</label>
             <input id={compact ? "home-art-position" : "timeline-art-position"} type="range"

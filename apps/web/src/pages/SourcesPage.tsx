@@ -14,7 +14,7 @@ export function SourcePage() {
   const result = useInfiniteResource<SourceClaims>(`/sources/${id}`, sourcePages);
   const data = result.data;
   return <div className="max-w-3xl mx-auto space-y-6">
-    <Link to="/" className="text-teal-700">← 专题探索</Link><LoadState {...result} />
+    <Link to="/" className="text-teal-700">← 首页</Link><LoadState {...result} />
     {data && <>
       <header><p className="eyebrow">史料与引用索引</p><h1 className="text-3xl font-semibold mt-2">{data.source.title}</h1>
         <p className="mt-3">{data.source.author} · {data.source.edition}</p>

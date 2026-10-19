@@ -408,10 +408,10 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
  .timeline-controls { flex-wrap:wrap; }
 }
 @media(max-width:760px) {
- .site-shell:has(.timeline-page) .site-header-inner { padding:6px 12px; min-height:0; gap:4px; }
- .site-shell:has(.timeline-page) .brand-logo { width:105px; height:35px; }
- .site-shell:has(.timeline-page) .site-header nav { flex-wrap:nowrap; overflow-x:auto; max-width:100%; }
- .site-shell:has(.timeline-page) .site-header nav a { flex-shrink:0; font-size:12px; padding:6px 9px; }
+ .site-shell:not(.site-shell-home):has(.timeline-page) .site-header-inner { padding:6px 12px; min-height:0; gap:4px; }
+ .site-shell:not(.site-shell-home):has(.timeline-page) .brand-logo { width:105px; height:35px; }
+ .site-shell:not(.site-shell-home):has(.timeline-page) .site-header nav { flex-wrap:nowrap; overflow-x:auto; max-width:100%; }
+ .site-shell:not(.site-shell-home):has(.timeline-page) .site-header nav a { flex-shrink:0; font-size:12px; padding:6px 9px; }
  .site-main:has(.timeline-explore-page) { padding-top:12px; }
  .timeline-explore-page > .explore-heading { margin-bottom:12px; gap:3px; }
  .timeline-explore-page > .explore-heading h1 { font-size:23px; }

@@ -12,3 +12,10 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+// Load the local-only diagnostic controls only for an explicitly requested test URL.
+if (new URLSearchParams(window.location.search).get('scroll-debug') === '1') {
+  const script = document.createElement('script')
+  script.src = `${import.meta.env.BASE_URL}diagnostics/scroll-runtime.js`
+  document.body.appendChild(script)
+}

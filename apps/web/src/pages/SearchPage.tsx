@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { SearchResponse } from '@histree/shared-types';
 import { useInfiniteResource } from '../hooks/useInfiniteResource';
@@ -9,13 +10,30 @@ export function SearchPage() {
   const [params, setParams] = useSearchParams();
   const q = params.get('q') || '';
   const kind = params.get('kind') || 'all';
+  const [draft, setDraft] = useState({ query: q, value: q });
+  const composing = useRef(false);
+  // Follow URL navigation (including Back/Forward), while keeping IME edits local.
+  if (draft.query !== q) setDraft({ query: q, value: q });
   const settled = useDebounced(q.trim());
   const result = useInfiniteResource<SearchResponse>(`/search?${new URLSearchParams({ q: settled, kind, limit: '20' })}`);
-  const pending = settled !== q.trim();
-  function update(q: string, kind: string) { setParams({ q, kind }, { replace: true }); }
+  const pending = settled !== draft.value.trim();
+  function update(nextQuery: string, nextKind: string) {
+    if (nextQuery !== q || nextKind !== kind) setParams({ q: nextQuery, kind: nextKind }, { replace: true });
+  }
   return <div className="space-y-7">
     <header><p className="eyebrow">寻找历史线索</p><h1 className="text-3xl font-serif mt-3">搜索与浏览</h1><Link to="/ask" className="inline-block mt-3 text-sm text-teal-800 underline">想了解来龙去脉？试试问史料 →</Link></header>
-    <label className="block"><span className="sr-only">搜索关键词</span><input type="search" value={q} maxLength={200} onChange={e => update(e.target.value, kind)} placeholder="姓名、别名、事件、标签…" className="reading-input text-lg" /></label>
+    <label className="block"><span className="sr-only">搜索关键词</span><input type="search" value={draft.value} maxLength={200}
+      onChange={e => {
+        setDraft({ query: q, value: e.currentTarget.value });
+        if (!composing.current) update(e.currentTarget.value, kind);
+      }}
+      onCompositionStart={() => { composing.current = true; }}
+      onCompositionEnd={e => {
+        composing.current = false;
+        setDraft({ query: q, value: e.currentTarget.value });
+        update(e.currentTarget.value, kind);
+      }}
+      placeholder="姓名、别名、事件、标签…" className="reading-input text-lg" /></label>
     <div className="flex flex-wrap gap-2">{[['all','全部'],['person','人物'],['event','事件'],['topic','专题']].map(([value,label]) => <button key={value} aria-pressed={kind === value} onClick={() => update(q,value)} className={`px-5 py-2 rounded-full text-sm ${kind === value ? 'bg-teal-800 text-white' : 'bg-white border border-stone-200'}`}>{label}</button>)}</div>
     {pending ? <p role="status">正在搜索…</p> : <LoadState {...result} />}
     {!pending && !result.error && result.data && <>

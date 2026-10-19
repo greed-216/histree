@@ -16,6 +16,7 @@
   var native = false;
   var sequence = 0;
   var probe = null;
+  var probeSource = null;
   var settleTimer = null;
   function target() { return document.querySelector('.timeline-chart'); }
   function rounded(value) { return Math.round(value * 1000) / 1000; }
@@ -28,7 +29,7 @@
     if (!element) return null;
     var css = getComputedStyle(element);
     var attrs = {};
-    ['viewBox', 'x', 'y', 'width', 'height', 'transform', 'clip-path', 'href', 'xlink:href'].forEach(function (key) {
+    ['viewBox', 'x', 'y', 'width', 'height', 'transform', 'clip-path', 'href', 'xlink:href', 'data-artwork-status', 'data-artwork-bytes'].forEach(function (key) {
       if (element.hasAttribute(key)) attrs[key] = element.getAttribute(key);
     });
     return { tag: element.tagName, namespace: element.namespaceURI, rect: rect(element), attrs: attrs,
@@ -36,14 +37,19 @@
   }
   function imageProbe(url) {
     if (!url) return Promise.resolve({ error: '没有找到图片地址' });
-    if (!probe) probe = new Promise(function (resolve) {
-      var image = new Image();
-      var timer = setTimeout(function () { resolve({ error: '图片读取超过 8 秒' }); }, 8000);
-      image.onload = function () { clearTimeout(timer); resolve({ width: image.naturalWidth, height: image.naturalHeight }); };
-      image.onerror = function () { clearTimeout(timer); resolve({ error: '普通图片加载失败' }); };
-      image.src = url;
+    if (probeSource !== url) {
+      probeSource = url;
+      probe = new Promise(function (resolve) {
+        var image = new Image();
+        image.onload = function () { resolve({ width: image.naturalWidth, height: image.naturalHeight }); };
+        image.onerror = function () { resolve({ error: '普通图片加载失败' }); };
+        image.src = url;
+      });
+    }
+    return new Promise(function (resolve) {
+      var timer = setTimeout(function () { resolve({ pending: true, waitMs: 8000 }); }, 8000);
+      probe.then(function (result) { clearTimeout(timer); resolve(result); });
     });
-    return probe;
   }
   function drawNative(chart) {
     if (!native) return;

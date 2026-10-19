@@ -37,6 +37,7 @@ export function HistoryScrollPage() {
               overflow="hidden"
             >
               <image href={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
+                xlinkHref={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
                 width={panel.width} height={panel.height} />
             </svg>
           ))}

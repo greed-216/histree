@@ -18,6 +18,7 @@ export function HistoryScrollBackdrop({from,to,height,position=.5}: {
         viewBox={`${panel.crop.x} ${panel.crop.y} ${panel.crop.width} ${panel.crop.height}`}
         preserveAspectRatio="xMidYMid meet" overflow="hidden">
         <image href={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
+          xlinkHref={`${import.meta.env.BASE_URL}timeline-scroll/${panel.file}`}
           width={panel.width} height={panel.height}/>
       </svg>)}
       </g>

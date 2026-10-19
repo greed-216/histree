@@ -2,7 +2,7 @@
 
 通过人物、事件、关系和可回溯史料，阅读历史的脉络。支持时间长卷、专题导读、关系图谱、搜索、有出处的问答与猜人物。
 
-[访问网站](https://123.56.189.146/) · [历史长卷](https://123.56.189.146/timeline/scroll) · [导读](https://123.56.189.146/learn) · [网站索引](docs/SITE_INDEX.md)
+[访问网站](https://histree.wiki/) · [历史长卷](https://histree.wiki/timeline/scroll) · [导读](https://histree.wiki/learn) · [网站索引](docs/SITE_INDEX.md)
 
 ## 当前架构与分包
 

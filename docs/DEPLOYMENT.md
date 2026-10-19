@@ -11,7 +11,7 @@ flowchart LR
   Worker --> Model[DeepSeek]
 ```
 
-生产入口为 `https://123.56.189.146/`，北京 ECS。容器 `histree-api` 仅暴露宿主机 `127.0.0.1:3000`，前端根路径与 `/api/v1` 同源。技术栈为 Node.js 24、NestJS/TypeScript、React/Vite，不含 Go 服务。
+生产入口为 `https://histree.wiki/`，北京 ECS；原 IP 入口 `https://123.56.189.146/` 保留。容器 `histree-api` 仅暴露宿主机 `127.0.0.1:3000`，前端根路径与 `/api/v1` 同源。技术栈为 Node.js 24、NestJS/TypeScript、React/Vite，不含 Go 服务。
 
 生产数据库是 RDS MySQL 8，ECS 使用 `rm-2zeiv0233csd46w9v.mysql.rds.aliyuncs.com` 内网地址、`histree` 数据库，连接凭据仅在 `/opt/histree/runtime.env`。公开读取由 MySQL 数据层显式检查 published 状态及关系端点；网页登录与管理写入已移除，资料发布改用独立工具。
 
@@ -28,5 +28,13 @@ flowchart LR
 普通应用部署不应用数据库 DDL、不发布史料、不启动付费模型验证。健康检查与 AI 启用开关独立。模型功能关闭时页面与数据库仍可正常通过就绪检查。
 
 当前域名证书及备案模式由宿主机单独管理；域名是否开放须看实际 vhost，不能仅凭 DNS 或应用健康推定。证书安装与续期见 [ECS 操作](../deploy/ecs/README.md)。
+
+## 2026-10-19 正式域名开放
+
+用户确认备案通过，网站备案号为 **京ICP备2026006671号-2**。公共页脚展示完整备案号并链接 `https://beian.miit.gov.cn/`。页脚提交 `e21112e7b3965edaac79aeda601a4b5035d80b04` 经 [生产发布流程](https://github.com/greed-216/histree/actions/runs/39192522027) 验证并部署，ECS 实际镜像和 release 指针均已核实。
+
+域名 vhost 已由 `pending` 切换为 `serve`，复用原阿里云证书；HTTP 308 跳转至同域 HTTPS。原配置保存在 `/opt/histree/nginx-backups/domain-before-icp-20261019.conf`，IP 网关与运行环境保留。此操作没有配置证书自动续期。
+
+公网严格 TLS 验证、SPA 深链接、静态资产与长卷哈希、已发布数据读取、匿名会话签发、外域拒绝共 72 项检查通过；桌面及 390/320px 页脚验证通过，手机浏览器已加载真实数据且未报告页面或网络错误。AI 状态可用；本次未发起付费模型调用。
 
 2026-10-10 切换前完整记录及回退证据见 [MySQL 迁移档案](MYSQL_MIGRATION.md)。旧 PostgreSQL SQL 保存在 `database/legacy-postgres`，不能作为当前部署步骤。旧 Pages、Render 与 Edge 工作流不再使用。

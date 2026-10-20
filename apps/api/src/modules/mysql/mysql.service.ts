@@ -1,13 +1,34 @@
-import type { BankSeed, BankFeedback, BankRatingResult, BankRow } from '../ask/guess-bank';
+import {
+  applyDifficultyRating,
+  type ClueFeedback,
+  type ClueRatingResult,
+} from '../ask/guess-difficulty';
+import type {
+  BankSeed,
+  BankFeedback,
+  BankRatingResult,
+  BankRow,
+} from '../ask/guess-bank';
 import type { FeedbackRecord } from '../feedback/feedback.service';
 import { createHash } from 'node:crypto';
-import { BadRequestException, ConflictException, Injectable, OnModuleDestroy } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+  OnModuleDestroy,
+} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createPool, Pool, RowDataPacket } from 'mysql2/promise';
 
 export type Row = Record<string, any>;
-export type MysqlResult = { data: any; error: Error | null; count?: number | null };
-export interface MysqlRequest extends PromiseLike<MysqlResult> { abortSignal(signal: AbortSignal): MysqlRequest; }
+export type MysqlResult = {
+  data: any;
+  error: Error | null;
+  count?: number | null;
+};
+export interface MysqlRequest extends PromiseLike<MysqlResult> {
+  abortSignal(signal: AbortSignal): MysqlRequest;
+}
 export const tables = [
   'person',
   'event',
@@ -96,19 +117,33 @@ export class MysqlService implements OnModuleDestroy {
   private pool?: Pool;
   constructor(private readonly config: ConfigService) {
     const backend = config.get('HISTREE_DATABASE');
-    if (backend && backend !== 'mysql') throw new Error('Only MySQL is supported');
+    if (backend && backend !== 'mysql')
+      throw new Error('Only MySQL is supported');
     this.enabled = true;
   }
   async saveFeedback(row: FeedbackRecord) {
     try {
       await this.connectionPool().execute(
         'INSERT INTO feedback(id,claim_id,source_id,page_path,context_label,message,email,request_sha256) VALUES(?,?,?,?,?,?,?,?)',
-        [row.id, row.claim_id, row.source_id, row.page_path, row.context_label, row.message, row.email, row.request_sha256],
+        [
+          row.id,
+          row.claim_id,
+          row.source_id,
+          row.page_path,
+          row.context_label,
+          row.message,
+          row.email,
+          row.request_sha256,
+        ],
       );
     } catch (error) {
       if ((error as { code?: string }).code !== 'ER_DUP_ENTRY') throw error;
-      const existing = await this.rows('SELECT request_sha256 FROM feedback WHERE id=?', [row.id]);
-      if (existing[0]?.request_sha256 !== row.request_sha256) throw new ConflictException('这条反馈已提交，请关闭后重新填写。');
+      const existing = await this.rows(
+        'SELECT request_sha256 FROM feedback WHERE id=?',
+        [row.id],
+      );
+      if (existing[0]?.request_sha256 !== row.request_sha256)
+        throw new ConflictException('这条反馈已提交，请关闭后重新填写。');
     }
   }
   async seedGuessBank(seeds: BankSeed[], signal?: AbortSignal) {
@@ -207,19 +242,19 @@ export class MysqlService implements OnModuleDestroy {
       let moved = false;
       // Late feedback is retained but cannot vote in a newer classification round.
       if (row.revision === input.revision) {
-        const counts = {
-          easy: row.easy_votes,
-          right: row.right_votes,
-          hard: row.hard_votes,
-        };
-        counts[input.rating]++;
-        const total = counts.easy + counts.right + counts.hard;
-        const contrary = row.difficulty === 'easy' ? counts.hard : counts.easy;
-        moved = total >= 12 && contrary * 4 >= total * 3;
-        if (moved) {
-          row.difficulty = row.difficulty === 'easy' ? 'hard' : 'easy';
-          row.revision++;
-        }
+        const change = applyDifficultyRating(
+          row.difficulty,
+          {
+            easy: row.easy_votes,
+            right: row.right_votes,
+            hard: row.hard_votes,
+          },
+          input.rating,
+        );
+        const counts = change.counts;
+        moved = change.moved;
+        row.difficulty = change.difficulty;
+        if (moved) row.revision++;
         await connection.execute(
           'UPDATE guess_bank SET difficulty=?,revision=?,easy_votes=?,right_votes=?,hard_votes=? WHERE person_id=?',
           [
@@ -250,6 +285,165 @@ export class MysqlService implements OnModuleDestroy {
     }
   }
 
+  rateGuessClue(
+    input: ClueFeedback,
+    signal?: AbortSignal,
+  ): Promise<ClueRatingResult> {
+    return this.rateGameCharacter('clue', input, signal);
+  }
+  rateGuessCharacterQuestion(
+    input: ClueFeedback,
+    signal?: AbortSignal,
+  ): Promise<ClueRatingResult> {
+    return this.rateGameCharacter('question', input, signal);
+  }
+  private async rateGameCharacter(
+    mode: 'clue' | 'question',
+    input: ClueFeedback,
+    signal?: AbortSignal,
+  ): Promise<ClueRatingResult> {
+    if (
+      !uuid.test(input.person_id) ||
+      ![input.actor_hash, input.game_hash, input.clue_revision].every((v) =>
+        /^[a-f0-9]{64}$/.test(v),
+      ) ||
+      !['easy', 'right', 'hard'].includes(input.rating) ||
+      !['won', 'revealed', ...(mode === 'question' ? ['limit'] : [])].includes(
+        input.outcome,
+      ) ||
+      !Number.isInteger(input.revision) ||
+      input.revision < 1 ||
+      !Number.isInteger(input.knowledge_revision) ||
+      input.knowledge_revision < 1 ||
+      !Number.isInteger(input.guesses) ||
+      input.guesses < 0 ||
+      input.guesses > 80 ||
+      !Number.isInteger(input.unlocked) ||
+      input.unlocked < 1 ||
+      input.unlocked > 6 ||
+      (input.guesses === 0 && input.unlocked === 1)
+    )
+      throw new BadRequestException('无效的难度反馈');
+    const table =
+      mode === 'clue' ? 'guess_clue_feedback' : 'guess_question_feedback';
+    const columns =
+      mode === 'clue'
+        ? {
+            difficulty: 'difficulty',
+            revision: 'difficulty_revision',
+            scope: 'vote_clue_revision',
+            easy: 'easy_votes',
+            right: 'right_votes',
+            hard: 'hard_votes',
+          }
+        : {
+            difficulty: 'question_difficulty',
+            revision: 'question_revision',
+            scope: 'question_vote_clue_revision',
+            easy: 'question_easy_votes',
+            right: 'question_right_votes',
+            hard: 'question_hard_votes',
+          };
+    signal?.throwIfAborted();
+    const connection = await this.connectionPool().getConnection(),
+      abort = () => connection.destroy();
+    try {
+      signal?.throwIfAborted();
+      signal?.addEventListener('abort', abort, { once: true });
+      await connection.query('SET SESSION innodb_lock_wait_timeout=5');
+      await connection.beginTransaction();
+      const [rows] = await connection.execute<RowDataPacket[]>(
+        `SELECT id,${columns.difficulty} difficulty,${columns.revision} difficulty_revision,knowledge_revision,${columns.scope} vote_clue_revision,${columns.easy} easy_votes,${columns.right} right_votes,${columns.hard} hard_votes,enabled FROM guess_character WHERE id=? FOR UPDATE`,
+        [input.person_id],
+      );
+      const row = rows[0];
+      if (!row || !row.enabled)
+        throw new BadRequestException('对应人物暂时无法反馈');
+      const [existing] = await connection.execute<RowDataPacket[]>(
+        `SELECT rating FROM ${table} WHERE game_hash=? OR (person_id=? AND clue_revision=? AND difficulty_revision=? AND actor_hash=?) LIMIT 1`,
+        [
+          input.game_hash,
+          input.person_id,
+          input.clue_revision,
+          input.revision,
+          input.actor_hash,
+        ],
+      );
+      if (existing.length) {
+        await connection.commit();
+        return {
+          rating: existing[0].rating,
+          difficulty: row.difficulty,
+          revision: row.difficulty_revision,
+          moved: false,
+        };
+      }
+      await connection.execute(
+        `INSERT INTO ${table}(game_hash,person_id,clue_revision,difficulty_revision,actor_hash,rating,guesses,unlocked,outcome) VALUES(?,?,?,?,?,?,?,?,?)`,
+        [
+          input.game_hash,
+          input.person_id,
+          input.clue_revision,
+          input.revision,
+          input.actor_hash,
+          input.rating,
+          input.guesses,
+          input.unlocked,
+          input.outcome,
+        ],
+      );
+      let moved = false;
+      // Votes belong to this clue set and classification round, not to the question game.
+      if (
+        row.difficulty_revision === input.revision &&
+        row.knowledge_revision === input.knowledge_revision
+      ) {
+        const previous =
+          row.vote_clue_revision === input.clue_revision
+            ? {
+                easy: row.easy_votes,
+                right: row.right_votes,
+                hard: row.hard_votes,
+              }
+            : { easy: 0, right: 0, hard: 0 };
+        const change = applyDifficultyRating(
+          row.difficulty,
+          previous,
+          input.rating,
+        );
+        moved = change.moved;
+        row.difficulty = change.difficulty;
+        if (moved) row.difficulty_revision++;
+        await connection.execute(
+          `UPDATE guess_character SET ${columns.difficulty}=?,${columns.revision}=?,${columns.scope}=?,${columns.easy}=?,${columns.right}=?,${columns.hard}=? WHERE id=?`,
+          [
+            row.difficulty,
+            row.difficulty_revision,
+            input.clue_revision,
+            change.counts.easy,
+            change.counts.right,
+            change.counts.hard,
+            input.person_id,
+          ],
+        );
+      }
+      signal?.throwIfAborted();
+      await connection.commit();
+      return {
+        rating: input.rating,
+        difficulty: row.difficulty,
+        revision: row.difficulty_revision,
+        moved,
+      };
+    } catch (error) {
+      await connection.rollback().catch(() => {});
+      throw error;
+    } finally {
+      signal?.removeEventListener('abort', abort);
+      connection.release();
+    }
+  }
+
   async sourceText(sourceId: string) {
     if (!uuid.test(sourceId)) throw new BadRequestException('无效的来源地址');
     if (!this.enabled) return null;
@@ -268,7 +462,12 @@ export class MysqlService implements OnModuleDestroy {
     }
   }
   async resolveSourceText(archive: string) {
-    if (!/^https:\/\/github\.com\/greed-216\/histree\/blob\/[a-f0-9]{7,40}\/(?:content|resources\/(?:derived|originals))\/.+\.(?:txt|jsonl)(?:#L[1-9]\d*(?:-L[1-9]\d*)?)?$/.test(archive) || archive.length > 2048)
+    if (
+      !/^https:\/\/github\.com\/greed-216\/histree\/blob\/[a-f0-9]{7,40}\/(?:content|resources\/(?:derived|originals))\/.+\.(?:txt|jsonl)(?:#L[1-9]\d*(?:-L[1-9]\d*)?)?$/.test(
+        archive,
+      ) ||
+      archive.length > 2048
+    )
       throw new BadRequestException('无效的存档地址');
     if (!this.enabled) return null;
     try {
@@ -320,6 +519,31 @@ export class MysqlService implements OnModuleDestroy {
       });
     }
     return this.pool;
+  }
+  async execute(
+    sql: string,
+    args: any[] = [],
+    signal?: AbortSignal,
+  ): Promise<{ affectedRows: number }> {
+    signal?.throwIfAborted();
+    const connection = await this.connectionPool().getConnection();
+    const abort = () => connection.destroy();
+    try {
+      signal?.throwIfAborted();
+      signal?.addEventListener('abort', abort, { once: true });
+      await connection.query('SET NAMES utf8mb4 COLLATE utf8mb4_0900_bin');
+      await connection.query('SET SESSION innodb_lock_wait_timeout=5');
+      const [result] = await connection.execute(sql, args);
+      signal?.throwIfAborted();
+      return {
+        affectedRows: Number(
+          (result as { affectedRows?: number }).affectedRows || 0,
+        ),
+      };
+    } finally {
+      signal?.removeEventListener('abort', abort);
+      connection.release();
+    }
   }
   async rows(
     sql: string,
@@ -413,7 +637,9 @@ export class MysqlService implements OnModuleDestroy {
   async onModuleDestroy() {
     await this.pool?.end();
   }
-  getClient() { return this.client(); }
+  getClient() {
+    return this.client();
+  }
   client() {
     return {
       from: (table: string) => new MysqlQuery(this, table),
@@ -428,7 +654,12 @@ export class MysqlService implements OnModuleDestroy {
         signal = s;
         return request;
       },
-      then: <TResult1 = MysqlResult, TResult2 = never>(resolve?: ((value: MysqlResult) => TResult1 | PromiseLike<TResult1>) | null, reject?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | null) =>
+      then: <TResult1 = MysqlResult, TResult2 = never>(
+        resolve?:
+          | ((value: MysqlResult) => TResult1 | PromiseLike<TResult1>)
+          | null,
+        reject?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | null,
+      ) =>
         run(signal)
           .then((data) => ({ data, error: null }))
           .catch(() => ({ data: null, error: new Error('公开资料查询失败') }))
@@ -1108,7 +1339,10 @@ class MysqlQuery {
     this.signal = s;
     return this;
   }
-  then<TResult1 = MysqlResult, TResult2 = never>(resolve?: ((value: MysqlResult) => TResult1 | PromiseLike<TResult1>) | null, reject?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | null): Promise<TResult1 | TResult2> {
+  then<TResult1 = MysqlResult, TResult2 = never>(
+    resolve?: ((value: MysqlResult) => TResult1 | PromiseLike<TResult1>) | null,
+    reject?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | null,
+  ): Promise<TResult1 | TResult2> {
     return this.run().then(resolve, reject);
   }
   private async run(): Promise<MysqlResult> {

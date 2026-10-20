@@ -84,7 +84,7 @@ export function HomePage() {
             <IdentificationIcon className="home-play-icon" aria-hidden="true" />
             <p className="home-card-kind">线索推理</p>
             <h3>猜猜我是谁</h3>
-            <p className="home-card-description">他是谁，藏在你的问题里。<br />循着线索，认出一位历史人物。</p>
+            <p className="home-card-description">从一条线索开始，<br />认出一位历史人物。</p>
             <span className="home-card-action">开始猜人物 <ArrowUpRightIcon aria-hidden="true" /></span>
           </Link>
           <Link to="/ask" className="home-play-card home-play-ask">

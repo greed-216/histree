@@ -1,7 +1,10 @@
+import { normalizeGuess, guessNames, directGuess } from './guess-names';
+import { GuessGameLibrary, matchesGameEra } from './guess-game-library';
 import {
   BadRequestException,
   HttpException,
   Injectable,
+  Optional,
   OnModuleInit,
   OnModuleDestroy,
   ServiceUnavailableException,
@@ -59,6 +62,7 @@ type Filters = z.infer<typeof filtersSchema>;
 type Catalogue = { people: Person[]; revision: string };
 type Claim = {
   id: string;
+  kind?: string;
   claim_text: string;
   note?: string;
   citation?: string;
@@ -86,33 +90,7 @@ const labels = {
   mixed: '是，也不是',
   refuse: '请问一个是非问题，或提出一个人物名字；不能直接索要答案或候选名单。',
 };
-export function normalizeGuess(text: string) {
-  return text
-    .normalize('NFKC')
-    .replace(/[\s·・，。！？?!]/g, '')
-    .toLocaleLowerCase();
-}
-// Registered identities and user-confirmed common forms; never infer a win from a substring.
-export function guessNames(person: Person) {
-  const common: Record<string, string[]> = {
-    李存勖: ['李亚子'],
-    李白: ['李太白'],
-  };
-  return [
-    person.name,
-    ...(person.aliases || []),
-    person.courtesy_name,
-    ...(common[person.name] || []),
-  ].filter((name): name is string => !!name);
-}
-export function directGuess(text: string) {
-  const value = normalizeGuess(text);
-  // Only anchored affirmative guess forms. A name inside a fact question or a negation cannot win.
-  const match = value.match(
-    /^(?:(?:我猜|我觉得|我认为|答案)(?:是)?|你是不是|你是|你叫|是不是|会不会是|应该是|是)?(.+?)(?:吗|么|吧|对吗)?$/u,
-  );
-  return match?.[1] || value;
-}
+export { normalizeGuess, guessNames, directGuess } from './guess-names';
 @Injectable()
 export class GuessService implements OnModuleInit, OnModuleDestroy {
   private readonly games = new Map<string, Game>();
@@ -129,6 +107,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
     private readonly db: MysqlService,
     private readonly agent: GuessAgentService,
     private readonly bank: GuessBankService,
+    @Optional() private readonly library?: GuessGameLibrary,
   ) {}
   onModuleInit() {
     if (!this.agent.available()) return;
@@ -186,6 +165,7 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
   }
   private async loadCatalogue(signal: AbortSignal) {
     try {
+      if (this.library) return await this.library.catalogue(signal);
       return await this.bank.prepare(
         await loadGuessCatalogue(this.db, signal),
         signal,
@@ -210,7 +190,8 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       const eligible = catalogue.people.filter(
         (p) =>
           p.game_difficulty === filters.difficulty &&
-          matchesGuessYears(p, filters),
+          (matchesGuessYears(p, filters) ||
+            (!!this.library && matchesGameEra(p, filters))),
       );
       if (!eligible.length)
         throw new BadRequestException(
@@ -297,7 +278,8 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
         (typeof filters.difficulty === 'string'
           ? p.game_difficulty === filters.difficulty
           : !anchors[p.name] || acceptsTier(anchors[p.name])) &&
-        matchesGuessYears(p, filters),
+        (matchesGuessYears(p, filters) ||
+          (!!this.library && matchesGameEra(p, filters))),
     );
     for (let i = candidates.length - 1; i > 0; i--) {
       const j = randomInt(i + 1);
@@ -363,6 +345,25 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       while (eligible.length) {
         let person = eligible.splice(randomInt(eligible.length), 1)[0];
         const bankRevision = person.game_revision;
+        const prepared = await this.library?.material(person, signal);
+        if (prepared) {
+          const token = randomBytes(32).toString('hex');
+          const game: Game = {
+            owner: actor,
+            person: prepared.person,
+            claims: prepared.claims,
+            filters,
+            turns: [],
+            hints: [],
+            expires: Date.now() + 3600000,
+            busy: false,
+            bankRevision,
+          };
+          this.games.set(token, game);
+          return { token, ...this.view(game) };
+        }
+        if (person.canonical_person_id === null) continue;
+
         const claims: Claim[] = [];
         const [direct, detail, related] = await Promise.all([
           this.page('fact_claim', 0, signal, {
@@ -451,12 +452,16 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
             ratingEligible: game.turns.length > 0 && !!game.bankRevision,
             rating: game.rating || null,
             person: {
-              id: game.person.id,
+              id:
+                game.person.canonical_person_id === undefined
+                  ? game.person.id
+                  : game.person.canonical_person_id,
               name: game.person.name,
               description: game.person.description,
             },
             evidence: game.claims.map((c) => ({
               id: c.id,
+              kind: c.kind || 'source',
               claim: c.claim_text,
               note: c.note,
               title: c.source?.title,
@@ -480,20 +485,36 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
     if (game.rating) return this.view(game);
     game.busy = true;
     try {
-      const result = await this.bank.rate(
-        {
-          person_id: game.person.id,
-          revision: game.bankRevision,
-          actor_hash: createHash('sha256').update(actor).digest('hex'),
-          game_hash: createHash('sha256')
-            .update(parsed.data.token)
-            .digest('hex'),
-          rating: parsed.data.rating,
-          turns: game.turns.length,
-          hints: game.hints.length,
-        },
-        signal,
-      );
+      const result =
+        game.person.game_feedback === 'character' && this.library
+          ? await this.library.rate(
+              {
+                person: game.person,
+                claims: game.claims,
+                revision: game.bankRevision,
+                token: parsed.data.token,
+                actor,
+                rating: parsed.data.rating,
+                turns: game.turns.length,
+                hints: game.hints.length,
+                outcome: game.outcome,
+              },
+              signal,
+            )
+          : await this.bank.rate(
+              {
+                person_id: game.person.id,
+                revision: game.bankRevision,
+                actor_hash: createHash('sha256').update(actor).digest('hex'),
+                game_hash: createHash('sha256')
+                  .update(parsed.data.token)
+                  .digest('hex'),
+                rating: parsed.data.rating,
+                turns: game.turns.length,
+                hints: game.hints.length,
+              },
+              signal,
+            );
       game.rating = result.rating;
       if (result.moved || result.revision !== game.bankRevision) {
         // A new level is used by future games only. No active game is changed.

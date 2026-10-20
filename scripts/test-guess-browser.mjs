@@ -149,7 +149,7 @@ try {
       }
       return route.abort();
     });
-    await page.goto(`${base}ask?mode=guess`);
+    await page.goto(`${base}ask?mode=guess&play=questions`);
     await page.getByRole("button", { name: /^简单/ }).waitFor();
     assert.equal(await page.getByRole("button", { name: /^简单/ }).count(), 1);
     assert.equal(await page.getByRole("button", { name: /^困难/ }).count(), 1);
@@ -324,7 +324,7 @@ try {
         .getAttribute("aria-pressed"),
       "true",
     );
-    await page.getByText("回看本局可用史料（1 条）").click();
+    await page.getByText("回看本局依据（1 条）").click();
     await page.getByText("原文：测试引文", { exact: true }).waitFor();
     assert.ok(
       await page.evaluate(

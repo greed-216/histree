@@ -1,3 +1,4 @@
+import { ConfigService } from '@nestjs/config';
 import { GuessService } from './guess.service';
 import { GuessGameLibrary, matchesGameEra } from './guess-game-library';
 import { MysqlService } from '../mysql/mysql.service';
@@ -123,4 +124,35 @@ it('prepares missing knowledge for a game-only hard person and reuses it across 
   await library.material(hard, AbortSignal.timeout(10000));
   expect(sets.ensure).toHaveBeenCalledTimes(1);
   expect(db.getClient).not.toHaveBeenCalled();
+});
+
+it('uses the real public reader pagination contract when enriching a cached canonical person', async () => {
+  const canonical = { ...person, canonical_person_id: person.id };
+  const reader = new MysqlService(
+    new ConfigService({ HISTREE_DATABASE: 'mysql' }),
+  );
+  const rows = jest.spyOn(reader, 'rows').mockResolvedValue([]);
+  const db = {
+    rows: jest.fn(async () => [canonical]),
+    getClient: () => reader.getClient(),
+  };
+  const sets = {
+    ready: jest.fn(async () => [
+      {
+        text: '我曾留下闻名后世的诗篇。',
+        explanation: '李白写过《将进酒》等诗篇。',
+      },
+    ]),
+  };
+  const library = new GuessGameLibrary(
+    db as unknown as MysqlService,
+    {} as GuessBankService,
+    sets as unknown as GuessClueSetsService,
+  );
+  const material = await library.material(
+    canonical,
+    AbortSignal.timeout(10000),
+  );
+  expect(material?.claims[0].kind).toBe('general_knowledge');
+  expect(rows).toHaveBeenCalled();
 });

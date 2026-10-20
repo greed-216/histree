@@ -91,7 +91,8 @@ export class GuessGameLibrary {
           p_subject: 'person',
           p_subject_id: profile.person.canonical_person_id,
           p_page: 0,
-          p_limit: 100,
+          // The shared public reader accepts at most 50 records per page.
+          p_limit: 50,
         })
         .abortSignal(signal);
       if (original.error) throw new Error('Historical material unavailable');

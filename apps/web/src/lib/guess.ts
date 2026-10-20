@@ -97,12 +97,15 @@ export async function clueRequest(
   path: "start" | "act" | "feedback",
   body: unknown,
   signal: AbortSignal,
+  onProgress?: (message: string) => void,
 ): Promise<ClueState> {
   const timeout = AbortSignal.timeout(140000);
   let res: Response;
   try {
     res = await aiGatewayFetch(`/ask/guess/clues/${path}`, {
       method: "POST",
+      headers:
+        path === "start" ? { Accept: "application/x-ndjson" } : undefined,
       body: JSON.stringify(body),
       signal: AbortSignal.any([signal, timeout]),
     });
@@ -111,7 +114,51 @@ export async function clueRequest(
       throw new Error("准备线索超时，请稍后重试；已完成的准备会保留。");
     throw error;
   }
-  const data = await res.json().catch(() => null);
+  let data;
+  if (
+    res.ok &&
+    res.headers.get("content-type")?.includes("application/x-ndjson")
+  ) {
+    if (!res.body) throw new Error("开局连接未建立，请重试。");
+    const reader = res.body.getReader(),
+      decoder = new TextDecoder();
+    let buffer = "",
+      completed = false;
+    const consume = (line: string) => {
+      if (!line.trim()) return;
+      const event = JSON.parse(line);
+      if (event.type === "status" && typeof event.message === "string")
+        onProgress?.(event.message);
+      if (event.type === "error")
+        throw new GuessRequestError(event.message, event.status || 503);
+      if (event.type === "result") {
+        data = event.state;
+        completed = true;
+      }
+    };
+    try {
+      for (;;) {
+        const { done, value } = await reader.read();
+        buffer += decoder.decode(value, { stream: !done });
+        if (buffer.length > 100000)
+          throw new Error("开局返回内容异常，请重试。");
+        let end;
+        while ((end = buffer.indexOf("\n")) >= 0) {
+          consume(buffer.slice(0, end));
+          buffer = buffer.slice(end + 1);
+        }
+        if (done) {
+          consume(buffer);
+          break;
+        }
+      }
+      if (!completed)
+        throw new Error("开局连接中断，完成的线索会保留，请重试。");
+    } finally {
+      await reader.cancel().catch(() => {});
+      reader.releaseLock();
+    }
+  } else data = await res.json().catch(() => null);
   if (!res.ok)
     throw new GuessRequestError(
       data?.message || `游戏请求失败（${res.status}）`,

@@ -8,6 +8,7 @@ export type ClueCacheRow = {
   status: 'generating' | 'ready' | 'failed';
   lease_token: string | null;
   clues: unknown;
+  provenance?: unknown;
 };
 @Injectable()
 export class GuessClueStore {
@@ -67,7 +68,7 @@ export class GuessClueStore {
     signal: AbortSignal,
   ): Promise<ClueCacheRow | null> {
     const rows = await this.db.rows(
-      `SELECT status,lease_token,clues FROM guess_clue_set WHERE person_id=? AND profile_revision=? AND generator_version=?`,
+      `SELECT status,lease_token,clues,provenance FROM guess_clue_set WHERE person_id=? AND profile_revision=? AND generator_version=?`,
       [profile.person.id, profile.revision, CLUE_VERSION],
       signal,
     );
@@ -115,11 +116,43 @@ export class GuessClueStore {
       signal,
     );
   }
-  async fail(profile: ClueProfile, token: string, signal: AbortSignal) {
+  async fail(
+    profile: ClueProfile,
+    token: string,
+    signal: AbortSignal,
+    provenance: Record<string, unknown> = {},
+  ) {
     await this.db.execute(
-      `UPDATE guess_clue_set SET status='failed',lease_token=NULL,lease_until=NULL,retry_after=DATE_ADD(UTC_TIMESTAMP(6),INTERVAL 60 SECOND)
+      `UPDATE guess_clue_set SET status='failed',provenance=?,lease_token=NULL,lease_until=NULL,retry_after=DATE_ADD(UTC_TIMESTAMP(6),INTERVAL 60 SECOND)
        WHERE person_id=? AND profile_revision=? AND generator_version=? AND status='generating' AND lease_token=?`,
-      [profile.person.id, profile.revision, CLUE_VERSION, token],
+      [
+        JSON.stringify(provenance),
+        profile.person.id,
+        profile.revision,
+        CLUE_VERSION,
+        token,
+      ],
+      signal,
+    );
+  }
+  async disable(
+    profile: ClueProfile,
+    token: string,
+    provenance: Record<string, unknown>,
+    signal: AbortSignal,
+  ) {
+    return this.db.execute(
+      `UPDATE guess_clue_set s JOIN guess_character c ON c.id=s.person_id
+      SET c.enabled=0,s.status='failed',s.provenance=?,s.lease_token=NULL,s.lease_until=NULL,s.retry_after=NULL
+      WHERE s.person_id=? AND s.profile_revision=? AND s.generator_version=? AND s.status='generating' AND s.lease_token=? AND c.enabled=1 AND c.knowledge_revision=?`,
+      [
+        JSON.stringify(provenance),
+        profile.person.id,
+        profile.revision,
+        CLUE_VERSION,
+        token,
+        profile.person.knowledge_revision || 1,
+      ],
       signal,
     );
   }

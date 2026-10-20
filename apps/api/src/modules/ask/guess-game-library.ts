@@ -1,10 +1,11 @@
-import { Injectable, Optional } from '@nestjs/common';
+import { BadRequestException, Injectable, Optional } from '@nestjs/common';
 import { createHash } from 'node:crypto';
 import { MysqlService } from '../mysql/mysql.service';
 import { GuessBankService, type GuessRating } from './guess-bank';
 import type { GuessPerson } from './guess-catalogue';
 import { GuessCharacterCatalogue } from './guess-character-catalogue';
 import { GuessClueSetsService } from './guess-clue-sets.service';
+import { UnsuitableGamePerson } from './guess-clue-research';
 import { loadClueProfile } from './guess-clues';
 
 type MaterialClaim = {
@@ -55,8 +56,15 @@ export class GuessGameLibrary {
     }
   }
   async material(person: GuessPerson, signal: AbortSignal) {
-    const profile = await loadClueProfile(this.db, person.id, signal);
-    // A new game-only hard character has no legacy source fallback. Prepare its shared cards once.
+    let profile;
+    try {
+      profile = await loadClueProfile(this.db, person.id, signal);
+    } catch (error) {
+      if (error instanceof BadRequestException)
+        throw new UnsuitableGamePerson();
+      throw error;
+    }
+    // Both modes prepare the same six cards and honor the same eligibility decision.
     const clues =
       (await this.sets.ready(profile, signal)) ||
       (person.canonical_person_id === null && person.game_difficulty === 'hard'

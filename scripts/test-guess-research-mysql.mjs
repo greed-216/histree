@@ -48,7 +48,7 @@ try{
   return {decision:'unsuitable',reason:'仅能核实一次地方任官，没有六项有辨识度的事实。',identity:{sourceId:s.id,quote:'合成沈乙曾任某地官职'},facts:[{sourceId:s.id,quote:'合成沈乙曾任某地官职'}]};
  }};
  const sets=new GuessClueSetsService(store,agent,db,research),library=new GuessGameLibrary(db,new GuessBankService(db),sets);
- const before=await library.catalogue(signal());assert(before.some(p=>p.id===ids[1]));checks++;
+ const beforePerson=(await loadClueProfile(db,ids[1],signal())).person;const before=await library.catalogue(signal());assert(!before.some(p=>p.id===ids[1]));checks++;
  const p=await loadClueProfile(db,ids[0],signal());const progress=[];
  assert.equal((await sets.ensure(p,signal(),m=>progress.push(m))).length,6);assert(progress.some(m=>m.includes('补查')));checks++;
  assert.equal(calls,3);await new GuessClueSetsService(new GuessClueStore(db),agent,db,research).ensure(p,signal());assert.equal(calls,3);checks++;
@@ -56,7 +56,7 @@ try{
  const reject=await loadClueProfile(db,ids[1],signal());await assert.rejects(sets.ensure(reject,signal()),e=>e instanceof UnsuitableGamePerson);assert.equal(calls,6);checks++;
  assert.equal((await db.rows('SELECT enabled FROM guess_character WHERE id=?',[ids[1]]))[0].enabled,0);
  assert.equal((await store.candidates({difficulty:'hard'},signal())).some(p=>p.id===ids[1]),false);checks++;
- assert.equal((await library.catalogue(signal())).some(p=>p.id===ids[1]),false);await assert.rejects(library.material(before.find(p=>p.id===ids[1]),signal()),e=>e instanceof UnsuitableGamePerson);checks++;
+ assert.equal((await library.catalogue(signal())).some(p=>p.id===ids[1]),false);await assert.rejects(library.material(beforePerson,signal()),e=>e instanceof UnsuitableGamePerson);checks++;
  assert.equal((await db.rows('SELECT status FROM person WHERE id=?',[ids[1]]))[0].status,'published');assert.equal((await db.rows('SELECT COUNT(*) n FROM guess_bank WHERE person_id=?',[ids[1]]))[0].n,1);checks++;
  const rejected=(await db.rows('SELECT provenance,status,lease_token FROM guess_clue_set WHERE person_id=?',[ids[1]]))[0];assert.equal(rejected.status,'failed');assert.equal(rejected.lease_token,null);assert.equal(rejected.provenance.assessment.decision,'unsuitable');checks++;
  await db.execute('UPDATE guess_character SET knowledge_revision=2 WHERE id=?',[ids[0]]);const changed=await loadClueProfile(db,ids[0],signal()),owned=token();await store.claim(changed,owned,signal());

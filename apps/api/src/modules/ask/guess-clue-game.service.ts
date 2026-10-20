@@ -9,7 +9,6 @@ import { z } from 'zod';
 import { MysqlService } from '../mysql/mysql.service';
 import { guessNames, normalizeGuess, directGuess } from './guess-names';
 import { GuessAgentService } from './guess-agent.service';
-import { UnsuitableGamePerson } from './guess-clue-research';
 import { GuessClueStore } from './guess-clue-store';
 import { GuessClueSetsService } from './guess-clue-sets.service';
 import type { GuessRating } from './guess-bank';
@@ -120,48 +119,26 @@ export class GuessClueGameService {
       throw new HttpException('游戏会话较多，请稍后再试。', 429);
     const filters = parsed.data;
     progress('正在抽选符合难度和年代的人物…');
-    let candidates = await this.store.candidates(filters, signal);
+    let candidates = await this.store.candidates(filters, signal, true);
     const ready = await this.store.readyPeople(signal);
-    if (filters.difficulty === 'easy')
-      candidates = candidates.filter((p) => ready.has(p.id));
+    candidates = candidates.filter((p) => ready.has(p.id));
     if (!candidates.length)
       throw new BadRequestException(
-        filters.difficulty === 'easy'
-          ? '该年代的简单线索尚未准备好，请换个年代或稍后再试。'
-          : '暂无符合难度和年代的人物。',
+        '已准备的题库中暂无符合该难度和年代的人物，请换个条件。',
       );
-    const allCandidates = [...candidates];
     const history = this.recent.get(actor) || [];
     const fresh = candidates.filter((p) => !history.includes(p.id));
     if (fresh.length) candidates = fresh;
-    // Draw from the shared bank; hard cache misses are prepared only when selected.
     for (let i = candidates.length - 1; i > 0; i--) {
       const j = randomInt(i + 1);
       [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
     }
-    // Bound new preparations to two targets. Recent ready targets remain available
-    // after a genuine generation/research attempt, always within the selected filters.
-    const draws =
-      filters.difficulty === 'hard'
-        ? [
-            candidates[0],
-            ...candidates
-              .slice(1)
-              .filter((p) => !ready.has(p.id))
-              .slice(0, 1),
-            ...candidates.filter((p) => ready.has(p.id)),
-            ...allCandidates.filter(
-              (p) => ready.has(p.id) && history.includes(p.id),
-            ),
-          ]
-        : candidates;
-    let preparationError: unknown;
-    const deadline = AbortSignal.any([signal, AbortSignal.timeout(115000)]);
-    for (const person of draws.slice(0, 20)) {
-      if (deadline.aborted) break;
+    // Gameplay only reads prepared sets. Content preparation belongs to the batch job.
+    for (const person of candidates.slice(0, 20)) {
+      signal.throwIfAborted();
       let profile: ClueProfile;
       try {
-        profile = await loadClueProfile(this.db, person.id, deadline);
+        profile = await loadClueProfile(this.db, person.id, signal);
       } catch (error) {
         if (error instanceof BadRequestException) continue;
         throw error;
@@ -171,28 +148,8 @@ export class GuessClueGameService {
         profile.person.game_difficulty !== filters.difficulty
       )
         continue;
-      let clues: Clue[] | null;
-      if (filters.difficulty === 'easy')
-        clues = await this.sets.ready(profile, signal);
-      else {
-        const preparationSignal = deadline;
-        try {
-          clues = await this.sets.ensure(profile, preparationSignal, progress);
-        } catch (error) {
-          signal.throwIfAborted();
-          if (
-            !(error instanceof ServiceUnavailableException) &&
-            !preparationSignal.aborted
-          )
-            throw error;
-          preparationError = error;
-          if (error instanceof UnsuitableGamePerson)
-            progress(
-              '补查后发现该人物缺少可辨认事迹，已退出题库；正在重新抽选…',
-            );
-          continue;
-        }
-      }
+      progress('正在读取已准备的六条线索…');
+      const clues = await this.sets.ready(profile, signal);
       if (!clues) continue;
       const token = randomBytes(32).toString('hex');
       const game: Game = {
@@ -212,10 +169,6 @@ export class GuessClueGameService {
       this.recent.set(actor, [...history.slice(-4), person.id]);
       return { token, ...this.view(game) };
     }
-    if (preparationError)
-      throw new ServiceUnavailableException(
-        '这次未能准备好可靠的困难线索，请稍后再试。',
-      );
     throw new ServiceUnavailableException(
       '人物资料更新后，线索需要重新准备，请稍后再试。',
     );

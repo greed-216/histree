@@ -1,6 +1,5 @@
-import { Injectable, Optional } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { MysqlService } from '../mysql/mysql.service';
-import { GuessCharacterCatalogue } from './guess-character-catalogue';
 import type { ClueFeedback } from './guess-difficulty';
 import { CLUE_VERSION, type Clue, type ClueProfile } from './guess-clues';
 
@@ -12,15 +11,12 @@ export type ClueCacheRow = {
 };
 @Injectable()
 export class GuessClueStore {
-  constructor(
-    private readonly db: MysqlService,
-    @Optional() private readonly characters?: GuessCharacterCatalogue,
-  ) {}
+  constructor(private readonly db: MysqlService) {}
   async candidates(
     filters: { difficulty: 'easy' | 'hard'; from?: number; to?: number },
     signal: AbortSignal,
+    preparedOnly = false,
   ) {
-    await this.characters?.sync(signal);
     const result: Array<{ id: string }> = [];
     let cursor = '';
     while (true) {
@@ -41,7 +37,9 @@ export class GuessClueStore {
         `SELECT c.id FROM guess_character c
         LEFT JOIN person p ON p.id=c.canonical_person_id
         WHERE c.enabled=1 AND (c.canonical_person_id IS NULL OR p.status='published')
-        AND c.difficulty=? AND c.id>? ${years} ORDER BY c.id LIMIT 1000`,
+        AND c.difficulty=? AND c.id>? ${years}
+        ${preparedOnly ? `AND EXISTS(SELECT 1 FROM guess_clue_set s WHERE s.person_id=c.id AND s.status='ready' AND s.generator_version=${CLUE_VERSION})` : ''}
+        ORDER BY c.id LIMIT 1000`,
         args,
         signal,
       );

@@ -243,6 +243,26 @@ describe('Six-clue preparation with actual source research', () => {
     });
     expect(m.store.complete).not.toHaveBeenCalled();
   });
+  it('still independently reviews an invalid draft and saves only the repaired assessment', async () => {
+    const m = chain();
+    const invalid = { decision: 'ready', clues: [] };
+    m.agent.run
+      .mockReset()
+      .mockResolvedValueOnce({ unavailable: true })
+      .mockResolvedValueOnce(invalid)
+      .mockResolvedValueOnce(ready);
+    expect(await m.create().ensure(profile, signal())).toHaveLength(6);
+    expect(m.agent.run.mock.calls[2][0]).toMatchObject({
+      task: 'review_clues',
+      proposed: invalid,
+    });
+    expect(m.store.complete.mock.calls[0][4]).toMatchObject({
+      draftAssessment: invalid,
+      draftValidationFailure: expect.any(String),
+      assessment: ready,
+    });
+    expect(m.store.disable).not.toHaveBeenCalled();
+  });
   it('does not disable on retrieval outage, uncertain identity, invalid output, transport failure or profile change', async () => {
     for (const failure of [
       'retrieval',
@@ -271,6 +291,7 @@ describe('Six-clue preparation with actual source research', () => {
         m.agent.run
           .mockReset()
           .mockResolvedValueOnce({ unavailable: true })
+          .mockResolvedValueOnce({ decision: 'ready', clues: [] })
           .mockResolvedValueOnce({ decision: 'ready', clues: [] });
       if (failure === 'transport')
         m.agent.run

@@ -182,8 +182,16 @@ export class GuessClueSetsService {
           },
           signal,
         );
-        const draft = assessResearch(raw, profile, research);
-        audit = { ...audit, draftAssessment: draft.assessment };
+        audit = { ...audit, draftAssessment: raw };
+        try {
+          assessResearch(raw, profile, research);
+        } catch (error) {
+          audit = {
+            ...audit,
+            draftValidationFailure:
+              error instanceof Error ? error.message : 'invalid_draft',
+          };
+        }
         progress('正在复核六条线索的独立性和人物辨识度…');
         const reviewed = await this.agent.run(
           {
@@ -191,7 +199,7 @@ export class GuessClueSetsService {
             person: profile.person,
             count: 6,
             research,
-            proposed: draft.assessment,
+            proposed: raw,
           },
           signal,
         );

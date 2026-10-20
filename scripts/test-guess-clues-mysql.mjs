@@ -97,7 +97,7 @@ try{
  assert.equal((await db.rows("SELECT COUNT(*) n FROM guess_clue_set WHERE status='ready' AND person_id IN ("+starter.characters.map(()=>'?').join(',')+')',starter.characters.map(p=>p.id)))[0].n,starter.characters.length);checks++;
 
  const library=new GuessGameLibrary(db,new GuessBankService(db),sets),sharedCatalogue=await library.catalogue(AbortSignal.timeout(30000));
- const cluePeople=[...await store.candidates({difficulty:'easy'},AbortSignal.timeout(10000)),...await store.candidates({difficulty:'hard'},AbortSignal.timeout(10000))];
+ const cluePeople=[...await store.candidates({difficulty:'easy'},AbortSignal.timeout(10000),true),...await store.candidates({difficulty:'hard'},AbortSignal.timeout(10000),true)];
  assert.deepEqual(sharedCatalogue.map(p=>p.id).sort(),cluePeople.map(p=>p.id).sort());checks++;
  const mapped=sharedCatalogue.find(p=>p.canonical_person_id&&starter.characters.some(c=>c.id===p.id));
  assert(mapped);

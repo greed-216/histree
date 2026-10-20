@@ -96,7 +96,7 @@ it('uses era categories only for broad presets and never turns them into activit
   ).toBe(false);
 });
 
-it('prepares missing knowledge for a game-only hard person and reuses it across modes', async () => {
+it('never prepares missing knowledge when opening a question game', async () => {
   const hard = { ...person, game_difficulty: 'hard' as const };
   const db = { rows: jest.fn(async () => [hard]), getClient: jest.fn() };
   const clues = [
@@ -118,11 +118,12 @@ it('prepares missing knowledge for a game-only hard person and reuses it across 
     {} as GuessBankService,
     sets as unknown as GuessClueSetsService,
   );
+  expect(await library.material(hard, AbortSignal.timeout(10000))).toBeNull();
+  cached = true;
   expect(
     (await library.material(hard, AbortSignal.timeout(10000)))?.claims[0].kind,
   ).toBe('general_knowledge');
-  await library.material(hard, AbortSignal.timeout(10000));
-  expect(sets.ensure).toHaveBeenCalledTimes(1);
+  expect(sets.ensure).not.toHaveBeenCalled();
   expect(db.getClient).not.toHaveBeenCalled();
 });
 

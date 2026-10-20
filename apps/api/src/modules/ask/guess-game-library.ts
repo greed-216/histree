@@ -1,12 +1,11 @@
-import { BadRequestException, Injectable, Optional } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { createHash } from 'node:crypto';
 import { MysqlService } from '../mysql/mysql.service';
 import { GuessBankService, type GuessRating } from './guess-bank';
 import type { GuessPerson } from './guess-catalogue';
-import { GuessCharacterCatalogue } from './guess-character-catalogue';
 import { GuessClueSetsService } from './guess-clue-sets.service';
 import { UnsuitableGamePerson } from './guess-clue-research';
-import { loadClueProfile } from './guess-clues';
+import { CLUE_VERSION, loadClueProfile } from './guess-clues';
 
 type MaterialClaim = {
   id: string;
@@ -21,14 +20,8 @@ export class GuessGameLibrary {
     private readonly db: MysqlService,
     private readonly bank: GuessBankService,
     private readonly sets: GuessClueSetsService,
-    @Optional() characters?: GuessCharacterCatalogue,
-  ) {
-    this.characters = characters || new GuessCharacterCatalogue(db, bank);
-  }
-  private readonly characters: GuessCharacterCatalogue;
+  ) {}
   async catalogue(signal: AbortSignal): Promise<GuessPerson[]> {
-    const legacy = await this.characters.sync(signal);
-    const activity = new Map(legacy.map((p) => [p.id, p.activity || []]));
     const people: GuessPerson[] = [];
     let cursor = '';
     while (true) {
@@ -41,12 +34,24 @@ export class GuessGameLibrary {
     COALESCE(b.difficulty,c.question_difficulty) game_difficulty,COALESCE(b.revision,c.question_revision) game_revision,
     IF(b.person_id IS NULL,'character','bank') game_feedback
     FROM guess_character c LEFT JOIN person p ON p.id=c.canonical_person_id LEFT JOIN guess_bank b ON b.person_id=c.canonical_person_id
-    WHERE c.enabled=1 AND (c.canonical_person_id IS NULL OR p.status='published') AND c.id>? ORDER BY c.id LIMIT 1000`,
+    WHERE c.enabled=1 AND (c.canonical_person_id IS NULL OR p.status='published') AND c.id>? AND EXISTS(SELECT 1 FROM guess_clue_set s WHERE s.person_id=c.id AND s.status='ready' AND s.generator_version=${CLUE_VERSION}) ORDER BY c.id LIMIT 1000`,
         [cursor],
         signal,
       );
+      const ids = page.map((row) => row.canonical_person_id).filter(Boolean);
+      const dates = ids.length
+        ? await this.db.rows(
+            `SELECT DISTINCT pe.person_id,COALESCE(e.start_year,e.end_year) start_year,COALESCE(e.end_year,e.start_year) end_year
+         FROM person_event pe JOIN event e ON e.id=pe.event_id WHERE pe.status='published' AND e.status='published'
+         AND (e.start_year IS NOT NULL OR e.end_year IS NOT NULL) AND pe.person_id IN (${ids.map(() => '?').join(',')})`,
+            ids,
+            signal,
+          )
+        : [];
       for (const row of page) {
-        const ranges = [...(activity.get(String(row.id)) || [])];
+        const ranges = dates
+          .filter((d) => d.person_id === row.canonical_person_id)
+          .map((d) => ({ from: d.start_year, to: d.end_year }));
         people.push({ ...row, activity: ranges } as GuessPerson);
       }
       if (page.length < 1000) return people;
@@ -64,12 +69,8 @@ export class GuessGameLibrary {
         throw new UnsuitableGamePerson();
       throw error;
     }
-    // Both modes prepare the same six cards and honor the same eligibility decision.
-    const clues =
-      (await this.sets.ready(profile, signal)) ||
-      (person.canonical_person_id === null && person.game_difficulty === 'hard'
-        ? await this.sets.ensure(profile, signal)
-        : null);
+    // Both modes only consume completed sets; batch preparation owns generation.
+    const clues = await this.sets.ready(profile, signal);
     if (!clues) return null;
     const revision = createHash('sha256')
       .update(JSON.stringify([profile.revision, clues]))

@@ -199,7 +199,7 @@ export function ClueGuessGame() {
       </fieldset>
       <button className={primary} disabled={busy || !available}>
         {busy && action === "start"
-          ? "正在准备人物…"
+          ? "正在抽取人物…"
           : game
             ? "再猜一个人物"
             : "给我第一条线索"}
@@ -222,7 +222,7 @@ export function ClueGuessGame() {
             条线索，猜错不会自动结束，也不会自动放开提示。猜中后会展示全部线索和相关故事；也可以主动结束并揭晓。
           </p>
           <p>
-            线索涵盖人物的经历、作品、成就与典故，不限于本站已录入的史料。简单人物提前准备；困难人物首次遇到时可能需要等待生成，之后可以复用。会话保留一小时，刷新可恢复，服务重启后需重新开局。
+            线索涵盖人物的经历、作品、成就与典故，不限于本站已录入的史料。所有人物的六条线索提前准备并保存，开局直接抽题。会话保留一小时，刷新可恢复，服务重启后需重新开局。
           </p>
         </details>
       </header>
@@ -241,11 +241,11 @@ export function ClueGuessGame() {
           <div className="min-w-0 flex-1">
             <p className="font-medium text-teal-900">{progress}</p>
             <p className="mt-2 text-sm text-stone-600">
-              首次遇到的人物需要整理并核对六条线索，准备好后会自动进入游戏。
+              正在从已准备的题库中抽选人物，读到线索后会自动进入游戏。
             </p>
             <p className="mt-2 text-xs text-stone-500" aria-live="off">
               已等待 {elapsed} 秒
-              {elapsed >= 15 ? " · 仍在准备，请保持页面打开，无需刷新。" : ""}
+              {elapsed >= 15 ? " · 正在连接题库，请保持页面打开。" : ""}
             </p>
             <button
               type="button"
@@ -254,7 +254,7 @@ export function ClueGuessGame() {
                 abort.current?.abort();
                 setBusy(false);
                 setAction("");
-                setError("已停止等待；已完成的准备会保留，可稍后重新开局。");
+                setError("已取消本次开局，可以重新抽题。");
               }}
             >
               停止等待

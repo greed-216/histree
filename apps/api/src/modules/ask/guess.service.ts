@@ -1,3 +1,4 @@
+import { UnsuitableGamePerson } from './guess-clue-research';
 import { normalizeGuess, guessNames, directGuess } from './guess-names';
 import { GuessGameLibrary, matchesGameEra } from './guess-game-library';
 import {
@@ -342,10 +343,21 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
       const catalogue = await this.waitShared(this.catalogue(), signal);
       const eligible = await this.pool(filters, catalogue, signal);
       // Select uniformly among confirmed candidates, then revalidate publication and evidence.
+      let newlyRejected = 0;
       while (eligible.length) {
         let person = eligible.splice(randomInt(eligible.length), 1)[0];
         const bankRevision = person.game_revision;
-        const prepared = await this.library?.material(person, signal);
+        let prepared;
+        try {
+          prepared = await this.library?.material(person, signal);
+        } catch (error) {
+          if (error instanceof UnsuitableGamePerson) {
+            this.catalogueCache = undefined;
+            this.candidatePools.clear();
+            if (++newlyRejected < 3) continue;
+          }
+          throw error;
+        }
         if (prepared) {
           const token = randomBytes(32).toString('hex');
           const game: Game = {

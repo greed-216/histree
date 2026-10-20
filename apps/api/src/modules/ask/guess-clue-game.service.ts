@@ -9,6 +9,7 @@ import { z } from 'zod';
 import { MysqlService } from '../mysql/mysql.service';
 import { guessNames, normalizeGuess, directGuess } from './guess-names';
 import { GuessAgentService } from './guess-agent.service';
+import { UnsuitableGamePerson } from './guess-clue-research';
 import { GuessClueStore } from './guess-clue-store';
 import { GuessClueSetsService } from './guess-clue-sets.service';
 import type { GuessRating } from './guess-bank';
@@ -102,7 +103,12 @@ export class GuessClueGameService {
         : {}),
     };
   }
-  async start(body: unknown, actor: string, signal: AbortSignal) {
+  async start(
+    body: unknown,
+    actor: string,
+    signal: AbortSignal,
+    progress: (message: string) => void = () => {},
+  ) {
     const parsed = filtersSchema.safeParse(body);
     if (!parsed.success) throw new BadRequestException('请检查难度和年代。');
     if (!this.agent.available())
@@ -113,6 +119,7 @@ export class GuessClueGameService {
     if (this.games.size >= 500)
       throw new HttpException('游戏会话较多，请稍后再试。', 429);
     const filters = parsed.data;
+    progress('正在抽选符合难度和年代的人物…');
     let candidates = await this.store.candidates(filters, signal);
     const ready = await this.store.readyPeople(signal);
     if (filters.difficulty === 'easy')
@@ -123,6 +130,7 @@ export class GuessClueGameService {
           ? '该年代的简单线索尚未准备好，请换个年代或稍后再试。'
           : '暂无符合难度和年代的人物。',
       );
+    const allCandidates = [...candidates];
     const history = this.recent.get(actor) || [];
     const fresh = candidates.filter((p) => !history.includes(p.id));
     if (fresh.length) candidates = fresh;
@@ -131,16 +139,33 @@ export class GuessClueGameService {
       const j = randomInt(i + 1);
       [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
     }
-    // Try one new hard target; if its knowledge is insufficient, fall back to a
-    // ready target rather than cascading into many model calls in one opening.
+    // Bound new preparations to two targets. Recent ready targets remain available
+    // after a genuine generation/research attempt, always within the selected filters.
     const draws =
       filters.difficulty === 'hard'
-        ? [candidates[0], ...candidates.slice(1).filter((p) => ready.has(p.id))]
+        ? [
+            candidates[0],
+            ...candidates
+              .slice(1)
+              .filter((p) => !ready.has(p.id))
+              .slice(0, 1),
+            ...candidates.filter((p) => ready.has(p.id)),
+            ...allCandidates.filter(
+              (p) => ready.has(p.id) && history.includes(p.id),
+            ),
+          ]
         : candidates;
     let preparationError: unknown;
+    const deadline = AbortSignal.any([signal, AbortSignal.timeout(115000)]);
     for (const person of draws.slice(0, 20)) {
-      signal.throwIfAborted();
-      const profile = await loadClueProfile(this.db, person.id, signal);
+      if (deadline.aborted) break;
+      let profile: ClueProfile;
+      try {
+        profile = await loadClueProfile(this.db, person.id, deadline);
+      } catch (error) {
+        if (error instanceof BadRequestException) continue;
+        throw error;
+      }
       if (
         profile.person.game_difficulty &&
         profile.person.game_difficulty !== filters.difficulty
@@ -150,12 +175,9 @@ export class GuessClueGameService {
       if (filters.difficulty === 'easy')
         clues = await this.sets.ready(profile, signal);
       else {
-        const preparationSignal = AbortSignal.any([
-          signal,
-          AbortSignal.timeout(45000),
-        ]);
+        const preparationSignal = deadline;
         try {
-          clues = await this.sets.ensure(profile, preparationSignal);
+          clues = await this.sets.ensure(profile, preparationSignal, progress);
         } catch (error) {
           signal.throwIfAborted();
           if (
@@ -164,6 +186,10 @@ export class GuessClueGameService {
           )
             throw error;
           preparationError = error;
+          if (error instanceof UnsuitableGamePerson)
+            progress(
+              '补查后发现该人物缺少可辨认事迹，已退出题库；正在重新抽选…',
+            );
           continue;
         }
       }

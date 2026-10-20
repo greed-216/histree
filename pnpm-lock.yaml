@@ -44,6 +44,9 @@ importers:
       mysql2:
         specifier: ^3.24.5
         version: 3.24.5(@types/node@24.12.2)
+      opencc-js:
+        specifier: 1.4.2
+        version: 1.4.2
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -6503,6 +6506,9 @@ packages:
         optional: true
       zod:
         optional: true
+
+  opencc-js@1.4.2:
+    resolution: {integrity: sha512-EdcspgdROiCCZDM+jZR6Pa670xW+EW2QhctPBQ8gRjg6lrx4IHEl+2s+kt5izk/TkxVRgdWuFgaGkaEdIUfdaw==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -15057,6 +15063,8 @@ snapshots:
     optionalDependencies:
       ws: 8.22.0
       zod: 3.25.76
+
+  opencc-js@1.4.2: {}
 
   optionator@0.9.4:
     dependencies:

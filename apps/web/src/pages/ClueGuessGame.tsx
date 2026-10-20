@@ -21,6 +21,17 @@ export function ClueGuessGame() {
   const [available, setAvailable] = useState<boolean | null>(null);
   const [error, setError] = useState("");
   const [action, setAction] = useState("");
+  const [progress, setProgress] = useState("");
+  const [elapsed, setElapsed] = useState(0);
+  useEffect(() => {
+    if (!busy || action !== "start") return;
+    const started = Date.now();
+    const timer = window.setInterval(
+      () => setElapsed(Math.floor((Date.now() - started) / 1000)),
+      1000,
+    );
+    return () => window.clearInterval(timer);
+  }, [busy, action]);
   const abort = useRef<AbortController | null>(null);
   const composition = useRef(false);
   useEffect(() => {
@@ -89,8 +100,15 @@ export function ClueGuessGame() {
     setBusy(true);
     setError("");
     setAction(label);
+    setElapsed(0);
+    setProgress("正在抽选人物…");
     try {
-      const state = await clueRequest(path, body, controller.signal);
+      const state = await clueRequest(
+        path,
+        body,
+        controller.signal,
+        setProgress,
+      );
       setGame(state);
       if (label === "guess" || path === "start") setText("");
       if (state.token) {
@@ -180,7 +198,11 @@ export function ClueGuessGame() {
         </div>
       </fieldset>
       <button className={primary} disabled={busy || !available}>
-        {game ? "再猜一个人物" : "给我第一条线索"}
+        {busy && action === "start"
+          ? "正在准备人物…"
+          : game
+            ? "再猜一个人物"
+            : "给我第一条线索"}
       </button>
     </form>
   );
@@ -205,25 +227,59 @@ export function ClueGuessGame() {
         </details>
       </header>
       {!game && setup}
-      <div
-        aria-live="polite"
-        aria-busy={busy}
-        className="text-sm text-teal-800"
-      >
-        {busy
-          ? action === "start" && difficulty === "hard"
-            ? "正在抽选人物；首次遇到的人物可能需要准备线索，请稍候…"
-            : action === "hint"
+      {busy && action === "start" ? (
+        <section
+          className="reading-card border-teal-200! bg-teal-50/70! flex items-start gap-4"
+          role="status"
+          aria-live="polite"
+          aria-label="人物准备进度"
+        >
+          <span
+            className="mt-1 size-6 shrink-0 rounded-full border-2 border-teal-200 border-t-teal-700 motion-safe:animate-spin"
+            aria-hidden="true"
+          />
+          <div className="min-w-0 flex-1">
+            <p className="font-medium text-teal-900">{progress}</p>
+            <p className="mt-2 text-sm text-stone-600">
+              首次遇到的人物需要整理并核对六条线索，准备好后会自动进入游戏。
+            </p>
+            <p className="mt-2 text-xs text-stone-500" aria-live="off">
+              已等待 {elapsed} 秒
+              {elapsed >= 15 ? " · 仍在准备，请保持页面打开，无需刷新。" : ""}
+            </p>
+            <button
+              type="button"
+              className="mt-3 text-sm text-teal-800 underline underline-offset-4"
+              onClick={() => {
+                abort.current?.abort();
+                setBusy(false);
+                setAction("");
+                setError("已停止等待；已完成的准备会保留，可稍后重新开局。");
+              }}
+            >
+              停止等待
+            </button>
+          </div>
+        </section>
+      ) : (
+        <div
+          aria-live="polite"
+          aria-busy={busy}
+          className="text-sm text-teal-800"
+        >
+          {busy
+            ? action === "hint"
               ? "正在打开下一条线索…"
               : action === "guess"
                 ? "正在核对名字…"
                 : "正在打开这一局…"
-          : available === null
-            ? "正在检查游戏服务…"
-            : !available
-              ? "线索题库暂未就绪。"
-              : ""}
-      </div>
+            : available === null
+              ? "正在检查游戏服务…"
+              : !available
+                ? "线索题库暂未就绪。"
+                : ""}
+        </div>
+      )}
       {error && (
         <p
           role="alert"

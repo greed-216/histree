@@ -90,3 +90,13 @@
   .global-assistant-panel { inset: 92px 12px auto auto; width: min(420px, calc(100vw - 24px)); height: min(600px, calc(100dvh - 104px)); margin: 0; border-radius: 15px; }
   .global-assistant-panel .page-assistant { border-radius: 15px; }
 }
+
+.assistant-waiting { display:flex; align-items:flex-start; gap:10px; padding:16px 0; color:#365f55; }
+.assistant-waiting p { margin:0; line-height:1.7; }
+.assistant-waiting small { display:block; margin-top:6px; color:#78847d; line-height:1.6; }
+.assistant-spinner { flex:none; width:18px; height:18px; margin-top:4px; border:2px solid #d7e5df; border-top-color:#2d6658; border-radius:50%; animation:assistant-spin 1s linear infinite; }
+.assistant-retry { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:14px 0; color:#6a736c; font-size:12px; }
+.assistant-retry button { border:1px solid #d6ded7; border-radius:8px; padding:5px 9px; color:#285b4f; background:#fafcf9; }
+.assistant-pending-selection { margin:8px 0; padding-left:10px; border-left:2px solid #d6ded7; color:#7b817b; font-size:12px; }
+@keyframes assistant-spin { to { transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce) { .assistant-spinner { animation:none; } }

@@ -58,6 +58,83 @@ const fixtures = knowledgeMode
             })),
           },
         },
+        {
+          name: 'researched clues with exact source quotations',
+          input: {
+            task: 'research_clues',
+            person: { name: '合成测试人物' },
+            count: 6,
+            research: {
+              complete: true,
+              issues: [],
+              sources: [
+                {
+                  id: 'claim:fixture',
+                  title: '合成史书',
+                  location: '测试卷',
+                  text: '合成测试人物曾在地方任职。',
+                  identityLinked: true,
+                },
+              ],
+            },
+          },
+          expected: {
+            decision: 'ready',
+            clues: Array.from({ length: 6 }, (_, i) => ({
+              angle: [
+                'origin',
+                'identity',
+                'relationship',
+                'experience',
+                'work',
+                'legacy',
+              ][i],
+              text: `第${i + 1}条合成游戏线索`,
+              explanation: '仅供独立测试的合成解释文字。',
+              evidence: [
+                {
+                  sourceId: 'claim:fixture',
+                  quote: '合成测试人物曾在地方任职。',
+                },
+              ],
+            })),
+          },
+        },
+        {
+          name: 'confirmed insufficient facts eligibility assessment',
+          input: {
+            task: 'research_clues',
+            person: { name: '合成测试人物' },
+            count: 6,
+            research: {
+              complete: true,
+              issues: [],
+              sources: [
+                {
+                  id: 'claim:fixture',
+                  title: '合成史书',
+                  location: '测试卷',
+                  text: '合成测试人物曾在地方任职。',
+                  identityLinked: true,
+                },
+              ],
+            },
+          },
+          expected: {
+            decision: 'unsuitable',
+            reason: '仅能核实一次地方任官，无法准备六项可辨认的事实。',
+            identity: {
+              sourceId: 'claim:fixture',
+              quote: '合成测试人物曾在地方任职。',
+            },
+            facts: [
+              {
+                sourceId: 'claim:fixture',
+                quote: '合成测试人物曾在地方任职。',
+              },
+            ],
+          },
+        },
       ]
     : selecting
       ? [
@@ -87,6 +164,35 @@ const fixtures = knowledgeMode
       : process.argv.includes('--questions')
         ? questionFixtures
         : [guessing ? nameGuess : basicQuestion];
+if (clueMode) {
+  const checked = structuredClone(fixtures[0]);
+  checked.name = 'independent initial clue fact-angle check';
+  checked.input = {
+    task: 'check_clues',
+    person: { name: '合成测试人物' },
+    proposed: checked.expected,
+  };
+  checked.expected = {
+    clues: checked.expected.clues.map((c, i) => ({
+      ...c,
+      angle: [
+        'origin',
+        'identity',
+        'relationship',
+        'experience',
+        'work',
+        'legacy',
+      ][i],
+    })),
+  };
+  fixtures.push(checked);
+  const reviewed = structuredClone(fixtures[1]);
+  reviewed.name = 'independent review of clue ownership and distinctness';
+  reviewed.input.task = 'review_clues';
+  reviewed.input.proposed = reviewed.expected;
+  fixtures.push(reviewed);
+}
+
 let fixture;
 let totalRequests = 0;
 let requests = 0;
@@ -113,10 +219,21 @@ const server = createServer(async (req, res) => {
       assert.ok(messages.includes(selecting));
     } else if (clueMode) {
       assert.ok(system.includes('不能重复'));
-      assert.ok(system.includes('不受本站已录入资料限制'));
-      assert.ok(
-        messages.includes('合成测试人物') && messages.includes('可选参考'),
-      );
+      assert.ok(messages.includes('合成测试人物'));
+      if (['research_clues', 'review_clues'].includes(fixture.input.task)) {
+        if (fixture.input.task === 'review_clues')
+          assert.ok(system.includes('独立复核proposed'));
+        assert.ok(system.includes('逐字复制'));
+        assert.ok(system.includes('research.complete=true'));
+        assert.ok(system.includes('均不能成为停用理由'));
+        assert.ok(messages.includes('claim:fixture'));
+      } else if (fixture.input.task === 'check_clues') {
+        assert.ok(system.includes('独立检查proposed初稿'));
+        assert.ok(system.includes('同一angle最多两条'));
+      } else {
+        assert.ok(system.includes('不受本站已录入资料限制'));
+        assert.ok(messages.includes('可选参考'));
+      }
     } else {
       if (knowledgeMode) assert.ok(system.includes('general_knowledge'));
       // The first and only request must contain the original question AND evidence.

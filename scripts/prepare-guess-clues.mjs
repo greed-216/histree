@@ -9,10 +9,11 @@ const { GuessAgentService } = require('./dist/modules/ask/guess-agent.service.js
 const { GuessBankService } = require('./dist/modules/ask/guess-bank.js');
 const { GuessCharacterCatalogue } = require('./dist/modules/ask/guess-character-catalogue.js');
 const { GuessClueStore } = require('./dist/modules/ask/guess-clue-store.js');
+const { GuessClueResearch } = require('./dist/modules/ask/guess-clue-research.js');
 const { GuessClueSetsService } = require('./dist/modules/ask/guess-clue-sets.service.js');
 const { loadClueProfile, validateCachedClues, CLUE_VERSION } = require('./dist/modules/ask/guess-clues.js');
 const config = new ConfigService(process.env), db = new MysqlService(config), store = new GuessClueStore(db);
-const sets = new GuessClueSetsService(store, new GuessAgentService(config), db);
+const sets = new GuessClueSetsService(store, new GuessAgentService(config), db, new GuessClueResearch(db));
 const args = process.argv.slice(2), apply = args.includes('--apply');
 const value = flag => { const i = args.indexOf(flag); return i < 0 ? undefined : args[i + 1]; };
 const limit = value('--limit') === undefined ? Infinity : Number(value('--limit'));

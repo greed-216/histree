@@ -47,7 +47,7 @@ async function anonymousToken() {
 }
 export async function aiGatewayFetch(path: string, options: RequestInit = {}) {
   if (!aiGatewayConfigured) throw new Error("AI 服务尚未配置");
-  const headers = new Headers();
+  const headers = new Headers(options.headers);
   if (options.body !== undefined)
     headers.set("Content-Type", "application/json");
   if ((options.method || "GET").toUpperCase() === "POST") {

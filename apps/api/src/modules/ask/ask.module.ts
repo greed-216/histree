@@ -1,3 +1,4 @@
+import { GuessClueResearch } from './guess-clue-research';
 import { GuessCharacterCatalogue } from './guess-character-catalogue';
 import { GuessGameLibrary } from './guess-game-library';
 import { GuessClueController } from './guess-clue.controller';
@@ -28,6 +29,7 @@ import { GuessAgentService } from './guess-agent.service';
     GuessClueStore,
     GuessGameLibrary,
     GuessClueSetsService,
+    GuessClueResearch,
     GuessClueGameService,
   ],
 })

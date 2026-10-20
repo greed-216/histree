@@ -36,6 +36,17 @@ export function QuestionGuessGame() {
   const [token, setToken] = useState("");
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
+  const [starting, setStarting] = useState(false);
+  const [elapsed, setElapsed] = useState(0);
+  useEffect(() => {
+    if (!busy || !starting) return;
+    const started = Date.now();
+    const timer = window.setInterval(
+      () => setElapsed(Math.floor((Date.now() - started) / 1000)),
+      1000,
+    );
+    return () => window.clearInterval(timer);
+  }, [busy, starting]);
   const [available, setAvailable] = useState<boolean | null>(null);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
@@ -126,6 +137,8 @@ export function QuestionGuessGame() {
     const controller = new AbortController();
     abort.current = controller;
     setBusy(true);
+    setStarting(path === "start");
+    setElapsed(0);
     setError("");
     setNotice("");
     try {
@@ -158,15 +171,40 @@ export function QuestionGuessGame() {
         }
       }
     } finally {
-      if (!controller.signal.aborted) setBusy(false);
+      if (!controller.signal.aborted) {
+        setBusy(false);
+        setStarting(false);
+      }
     }
   }
   const active = game && !game.outcome;
   const feedbackPanel = (
     <div ref={feedback} className="space-y-2" aria-busy={busy}>
+      {busy && starting && (
+        <div
+          role="status"
+          className="rounded-xl border border-teal-200 bg-teal-50 p-4 flex gap-3 text-teal-900"
+        >
+          <span
+            className="mt-1 size-5 shrink-0 rounded-full border-2 border-teal-200 border-t-teal-700 motion-safe:animate-spin"
+            aria-hidden="true"
+          />
+          <div>
+            <p className="font-medium">正在准备这一局的人物资料…</p>
+            <p className="mt-2 text-sm text-stone-600">
+              首次遇到的人物可能需要补查和核对，完成后会自动进入游戏，无需刷新。
+            </p>
+            <p className="mt-2 text-xs text-stone-500" aria-live="off">
+              已等待 {elapsed} 秒
+            </p>
+          </div>
+        </div>
+      )}
       <p role="status" aria-live="polite" className="text-sm text-teal-800">
         {busy
-          ? "正在核对本局资料，请稍候…"
+          ? starting
+            ? ""
+            : "正在核对本局资料，请稍候…"
           : available === null
             ? "正在检查游戏服务…"
             : !available

@@ -4,7 +4,7 @@ import {createRequire} from 'node:module';
 import {randomUUID,randomBytes} from 'node:crypto';
 import {performance} from 'node:perf_hooks';
 import {createHash} from 'node:crypto';
-import {readFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,rmSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 const require=createRequire(new URL('../apps/api/package.json',import.meta.url));require('reflect-metadata');
 const {ConfigService}=require('@nestjs/config'),{Module}=require('@nestjs/common'),{NestFactory}=require('@nestjs/core');
@@ -96,6 +96,12 @@ try{
  runImport();
  assert.equal((await db.rows("SELECT COUNT(*) n FROM guess_clue_set WHERE status='ready' AND person_id IN ("+starter.characters.map(()=>'?').join(',')+')',starter.characters.map(p=>p.id)))[0].n,starter.characters.length);checks++;
 
+ const manifest='/tmp/histree-direct-manifest-'+randomUUID()+'.json',report=manifest+'.report.json';
+ try{
+  writeFileSync(manifest,JSON.stringify([{id:a.id},{id:b.id}]));
+  execFileSync(process.execPath,[new URL('./prepare-guess-clues.mjs',import.meta.url).pathname,'--apply','--skip-sync','--manifest',manifest,'--engine','resident','--report',report,'--require-complete'],{env:{...process.env,HISTREE_ASK_ENABLED:'false'},maxBuffer:4*1024*1024});
+  const summary=JSON.parse(readFileSync(report,'utf8'));assert.equal(summary.selectedPeople,2);assert.equal(summary.disabled,1);assert.equal(summary.reused,1);assert.equal(summary.modelCalls,0);assert.equal(summary.agent.runtimeStarts,0);assert.equal(summary.complete,true);checks++;
+ }finally{for(const path of [manifest,report,report+'.jsonl',report+'.people.json'])rmSync(path,{force:true})}
  const library=new GuessGameLibrary(db,new GuessBankService(db),sets),sharedCatalogue=await library.catalogue(AbortSignal.timeout(30000));
  const cluePeople=[...await store.candidates({difficulty:'easy'},AbortSignal.timeout(10000),true),...await store.candidates({difficulty:'hard'},AbortSignal.timeout(10000),true)];
  assert.deepEqual(sharedCatalogue.map(p=>p.id).sort(),cluePeople.map(p=>p.id).sort());checks++;

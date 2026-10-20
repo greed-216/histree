@@ -33,67 +33,71 @@ const reviewPrompt =
 尤其排除：把主公或亲属的遭遇独立算作本人的事迹；用同一事件的背景、命令、反应、被捕、上报等流水账拆分凑成六条；把同一个官职换称谓重复；在原文没有依据时推断性别、寿命或官阶高低。与名人共事是可用事实，但名人的其他经历不能占据多条。仅有姓名、时代、性别等泛泛信息而无辨认事迹也不合格。
 若原文支持六项属于本人、不同且有辨识度的事实，返回decision=ready的完整六条（必要时重写），每条保留逐字引用。若充分补查后只能确认不到六项，且身份和覆盖满足条件，返回decision=unsuitable并列出实际可确认的事实与原因；不能为维护初稿而凑数。不能确认则decision=uncertain。沿用上述严格JSON格式。`;
 
-process.once('message', async (input) => {
-  let harness;
-  try {
-    harness = new DeepSeekHarness({
-      profile: 'sdk-minimal',
-      patches: [fileURLToPath(new URL('./guess.patch.yml', import.meta.url))],
-      cwd: process.env.DSH_HOME,
-      processCwd: process.env.DSH_HOME,
-      dshHome: process.env.DSH_HOME,
-      provider: 'deepseek-official',
-      model: process.env.HISTREE_MODEL,
-      maxTokens:
-        input.task === 'select'
-          ? 4800
-          : ['clues', 'check_clues', 'research_clues', 'review_clues'].includes(
-                input.task,
-              )
-            ? 4200
-            : 1200,
-      initializeTimeoutMs: 30000,
-      env: {
-        ...process.env,
-        DSH_SYSTEM_PROMPT:
-          input.task === 'check_clues'
-            ? checkPrompt
-            : input.task === 'review_clues'
-              ? reviewPrompt
-              : input.task === 'research_clues'
-                ? researchPrompt
-                : input.task === 'clues'
-                  ? cluePrompt
-                  : prompt,
-      },
-    });
-    await harness.start();
-    // Interpret and judge the unchanged question with its evidence in one model request.
-    const result = await harness.run(
-      `按系统规则执行以下任务数据：\n${JSON.stringify(input)}`,
-    );
-    const data = JSON.parse(
-      (result.finalResponse || '')
-        .trim()
-        .replace(/^```(?:json)?\s*/, '')
-        .replace(/\s*```$/, ''),
-    );
-    await harness.close();
-    harness = undefined;
-    process.send?.({ type: 'result', data });
-  } catch (error) {
-    if (process.env.HISTREE_GUESS_DEBUG === '1')
-      console.error(
-        String(error)
-          .replaceAll(
-            process.env.DEEPSEEK_API_KEY || '__no_key__',
-            '[redacted]',
-          )
-          .slice(0, 1000),
+export function guessPrompt(task) {
+  return task === 'check_clues'
+    ? checkPrompt
+    : task === 'review_clues'
+      ? reviewPrompt
+      : task === 'research_clues'
+        ? researchPrompt
+        : task === 'clues'
+          ? cluePrompt
+          : prompt;
+}
+export function guessMaxTokens(task) {
+  return task === 'select'
+    ? 4800
+    : ['clues', 'check_clues', 'research_clues', 'review_clues'].includes(task)
+      ? 4200
+      : 1200;
+}
+
+if (process.send)
+  process.once('message', async (input) => {
+    let harness;
+    try {
+      harness = new DeepSeekHarness({
+        profile: 'sdk-minimal',
+        patches: [fileURLToPath(new URL('./guess.patch.yml', import.meta.url))],
+        cwd: process.env.DSH_HOME,
+        processCwd: process.env.DSH_HOME,
+        dshHome: process.env.DSH_HOME,
+        provider: 'deepseek-official',
+        model: process.env.HISTREE_MODEL,
+        maxTokens: guessMaxTokens(input.task),
+        initializeTimeoutMs: 30000,
+        env: {
+          ...process.env,
+          DSH_SYSTEM_PROMPT: guessPrompt(input.task),
+        },
+      });
+      await harness.start();
+      // Interpret and judge the unchanged question with its evidence in one model request.
+      const result = await harness.run(
+        `按系统规则执行以下任务数据：\n${JSON.stringify(input)}`,
       );
-    process.send?.({ type: 'error' });
-  } finally {
-    await harness?.close().catch(() => {});
-    process.disconnect?.();
-  }
-});
+      const data = JSON.parse(
+        (result.finalResponse || '')
+          .trim()
+          .replace(/^```(?:json)?\s*/, '')
+          .replace(/\s*```$/, ''),
+      );
+      await harness.close();
+      harness = undefined;
+      process.send?.({ type: 'result', data });
+    } catch (error) {
+      if (process.env.HISTREE_GUESS_DEBUG === '1')
+        console.error(
+          String(error)
+            .replaceAll(
+              process.env.DEEPSEEK_API_KEY || '__no_key__',
+              '[redacted]',
+            )
+            .slice(0, 1000),
+        );
+      process.send?.({ type: 'error' });
+    } finally {
+      await harness?.close().catch(() => {});
+      process.disconnect?.();
+    }
+  });

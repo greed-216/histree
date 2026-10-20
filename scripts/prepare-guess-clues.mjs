@@ -2,6 +2,7 @@
 import { createRequire } from 'node:module';
 import { readFile, writeFile, rename, appendFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
+import { PreparedClueAgent } from '../apps/api/dsh/guess-preparer.mjs';
 import { randomBytes } from 'node:crypto';
 const require = createRequire(new URL('../apps/api/package.json', import.meta.url));
 const { z } = require('zod'), { ConfigService } = require('@nestjs/config');
@@ -21,11 +22,14 @@ const limit = value('--limit') === undefined ? Infinity : Number(value('--limit'
 if (!(limit === Infinity || (Number.isInteger(limit) && limit > 0))) throw Error('Invalid --limit');
 const difficulty = value('--difficulty') || 'all';
 if (!['easy', 'hard', 'all'].includes(difficulty)) throw Error('Invalid --difficulty');
-const concurrency = Number(value('--concurrency') || 2), passes = Number(value('--passes') || 1);
-if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 8) throw Error('Invalid --concurrency (1 to 8)');
+const engine = value('--engine') || 'resident';
+if (!['resident', 'isolated'].includes(engine)) throw Error('Invalid --engine');
+const concurrency = Number(value('--concurrency') || 8), passes = Number(value('--passes') || 1);
+if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > (engine === 'resident' ? 32 : 8)) throw Error('Invalid --concurrency');
 if (!Number.isInteger(passes) || passes < 1 || passes > 3) throw Error('Invalid --passes (1 to 3)');
 const sample = value('--sample') === undefined ? Infinity : Number(value('--sample'));
 if (!(sample === Infinity || (Number.isInteger(sample) && sample > 0))) throw Error('Invalid --sample');
+const manifestPath = value('--manifest');
 const only = value('--person');
 if (only && !z.string().uuid().safeParse(only).success) throw Error('Invalid --person');
 const charSchema = z.object({ id: z.string().uuid(), canonical_person_id: z.string().uuid().nullable(), name: z.string().min(1).max(100), aliases: z.array(z.string().min(1).max(100)), courtesy_name: z.string().max(100).nullable().optional(), era: z.string().max(100), birth_year: z.number().int().nullable(), death_year: z.number().int().nullable(), description: z.string().max(2000), period_from: z.number().int().nullable().optional(), period_to: z.number().int().nullable().optional(), difficulty: z.enum(['easy', 'hard']), knowledge_revision: z.number().int().positive().optional() }).strict();
@@ -35,12 +39,13 @@ const checkpoint = async summary => {
   await writeFile(reportPath + '.tmp', JSON.stringify(summary, null, 2) + '\n');
   await rename(reportPath + '.tmp', reportPath);
 };
+const resident = engine === 'resident' ? new PreparedClueAgent({enabled: config.get('HISTREE_ASK_ENABLED') === 'true', apiKey: config.get('DEEPSEEK_API_KEY'), model: config.get('HISTREE_MODEL')}) : null;
 try {
   const characters = value('--import') ? z.array(charSchema).parse(JSON.parse(await readFile(value('--import'), 'utf8'))) : [];
   if (new Set(characters.map(c => c.id)).size !== characters.length) throw Error('Duplicate game character IDs');
   if (apply) {
     // Include every original bank member, even if this command runs before either game starts.
-    await new GuessCharacterCatalogue(db, new GuessBankService(db)).sync(AbortSignal.timeout(60000));
+    if (!args.includes('--skip-sync')) await new GuessCharacterCatalogue(db, new GuessBankService(db)).sync(AbortSignal.timeout(60000));
     for (const p of characters) {
       const duplicate = await db.rows("SELECT id FROM person WHERE name=? AND status='published'", [p.name]);
       if (duplicate.length && (!p.canonical_person_id || !duplicate.some(x => x.id === p.canonical_person_id))) throw Error(`Explicit canonical mapping required for ${p.name}`);
@@ -66,8 +71,14 @@ try {
   const levels = difficulty === 'all' ? ['easy', 'hard'] : [difficulty];
   const people = [];
   for (const level of levels) people.push(...await store.candidates({ difficulty: level }, AbortSignal.timeout(60000)));
-  const selected = people.filter(p => !only || p.id === only).slice(0, sample);
-  const summary = { mode: apply ? 'prepare-bank' : 'read-only', generatorVersion: CLUE_VERSION, difficulty, concurrency, passes, startedAt: new Date().toISOString(), updatedAt: null, importCharacters: characters.length, seeded, seedSkipped, totalPeople: people.length, selectedPeople: selected.length, attempted: 0, modelCalls: 0, modelTasks: {}, prepared: 0, reused: 0, disabled: 0, failed: 0, pending: selected.length, ready: 0, complete: false, interrupted: false, details: [] };
+  let selected = people.filter(p => !only || p.id === only).slice(0, sample);
+  if (manifestPath) {
+    const manifest = z.array(z.object({id: z.string().uuid()}).strict()).parse(JSON.parse(await readFile(manifestPath, 'utf8')));
+    const unique = new Set(manifest.map(p => p.id)); if (unique.size !== manifest.length) throw Error('Duplicate manifest people');
+    selected = manifest.filter(p => !only || p.id === only).slice(0, sample);
+  }
+  if (reportPath) await writeFile(reportPath + '.people.json', JSON.stringify(selected) + '\n');
+  const summary = { mode: apply ? 'prepare-bank' : 'read-only', generatorVersion: CLUE_VERSION, engine, difficulty, concurrency, passes, startedAt: new Date().toISOString(), updatedAt: null, importCharacters: characters.length, seeded, seedSkipped, totalPeople: people.length, selectedPeople: selected.length, attempted: 0, modelCalls: 0, modelTasks: {}, prepared: 0, reused: 0, disabled: 0, failed: 0, pending: selected.length, ready: 0, complete: false, interrupted: false, details: [] };
   const results = new Map();
   let stopped = false, savedAt = 0;
   const stop = () => { stopped = true; summary.interrupted = true; };
@@ -81,7 +92,7 @@ try {
       else summary[item.status]++;
     }
     summary.pending = selected.length - results.size;
-    summary.details = [...results.values()]; summary.updatedAt = new Date().toISOString();
+    summary.details = [...results.values()]; summary.agent = resident?.metrics(); summary.updatedAt = new Date().toISOString();
     await checkpoint(summary);
   };
   let saving = Promise.resolve();
@@ -93,7 +104,7 @@ try {
     if (pass > 1 && queue.length) await delay(61000);
     let cursor = 0;
     await Promise.all(Array.from({ length: concurrency }, async () => {
-      const workerAgent = new GuessAgentService(config);
+      const workerAgent = resident || new GuessAgentService(config);
       const countedAgent = { available: () => workerAgent.available(), run: (input, signal) => { summary.modelCalls++; summary.modelTasks[input.task] = (summary.modelTasks[input.task] || 0) + 1; return workerAgent.run(input, signal); } };
       const workerSets = new GuessClueSetsService(store, countedAgent, db, new GuessClueResearch(db));
       while (!stopped && cursor < queue.length) {
@@ -109,6 +120,10 @@ try {
           }
         } catch (error) {
           item = { ...item, person_id: p.id, pass, status: error.name === 'UnsuitableGamePerson' ? 'disabled' : 'failed', error: error.name, message: error.message?.slice(0, 240) };
+          if (error.name === 'BadRequestException') {
+            const current = await db.rows('SELECT enabled FROM guess_character WHERE id=?', [p.id], AbortSignal.timeout(5000)).catch(() => []);
+            if (current.length && !current[0].enabled) item.status = 'disabled';
+          }
         }
         item.elapsedMs = Date.now() - started; item.finishedAt = new Date().toISOString();
         results.set(p.id, item);
@@ -126,4 +141,4 @@ try {
   process.off('SIGTERM', stop); process.off('SIGINT', stop);
   if (summary.failed || (args.includes('--require-complete') && !summary.complete)) process.exitCode = 1;
 
-} finally { await db.onModuleDestroy(); }
+} finally { try { await resident?.close(); } finally { await db.onModuleDestroy(); } }

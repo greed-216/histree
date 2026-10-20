@@ -11,6 +11,8 @@ import {
   nameGuess,
   questionFixtures,
 } from './guess-question-fixtures.mjs';
+const knowledgeMode = process.argv.includes('--knowledge');
+const clueMode = process.argv.includes('--clues');
 const guessing = process.argv.includes('--guess');
 const selecting = process.argv.includes('--easy')
   ? 'easy'
@@ -18,34 +20,73 @@ const selecting = process.argv.includes('--easy')
     ? 'hard'
     : null;
 const directory = await mkdtemp(join(tmpdir(), 'histree-guess-smoke-'));
-const fixtures = selecting
+const fixtures = knowledgeMode
   ? [
       {
-        name: `${selecting} selection`,
+        name: 'question from a shared general-knowledge card',
         input: {
-          task: 'select',
-          filters: { difficulty: selecting },
-          candidates: [
+          task: 'question',
+          person: { name: '王羲之', era: '东晋' },
+          question: '你擅长书法吗？',
+          history: [],
+          claims: [
             {
-              id: 'easy-person',
-              name: '朱温',
-              game_difficulty: 'easy',
-              fixedDifficulty: 2,
-            },
-            {
-              id: 'hard-person',
-              name: '刘交',
-              game_difficulty: 'hard',
-              fixedDifficulty: 4,
+              id: 'knowledge:fixture:1',
+              kind: 'general_knowledge',
+              claim_text: '王羲之是东晋书法家。',
+              note: '游戏通识资料卡，非本站原文引文。',
             },
           ],
         },
-        expected: { ids: [selecting + '-person'] },
+        expected: { verdict: 'yes', claims: ['knowledge:fixture:1'] },
       },
     ]
-  : process.argv.includes('--questions')
-    ? questionFixtures
-    : [guessing ? nameGuess : basicQuestion];
+  : clueMode
+    ? [
+        {
+          name: 'progressive clue ordering',
+          input: {
+            task: 'clues',
+            person: { name: '合成测试人物' },
+            count: 6,
+            context: '可选参考，人物尚无本站史料也可以出题。',
+          },
+          expected: {
+            clues: Array.from({ length: 6 }, (_, i) => ({
+              text: `第${i + 1}条合成游戏线索`,
+              explanation: '仅供独立测试的合成解释文字。',
+            })),
+          },
+        },
+      ]
+    : selecting
+      ? [
+          {
+            name: `${selecting} selection`,
+            input: {
+              task: 'select',
+              filters: { difficulty: selecting },
+              candidates: [
+                {
+                  id: 'easy-person',
+                  name: '朱温',
+                  game_difficulty: 'easy',
+                  fixedDifficulty: 2,
+                },
+                {
+                  id: 'hard-person',
+                  name: '刘交',
+                  game_difficulty: 'hard',
+                  fixedDifficulty: 4,
+                },
+              ],
+            },
+            expected: { ids: [selecting + '-person'] },
+          },
+        ]
+      : process.argv.includes('--questions')
+        ? questionFixtures
+        : [guessing ? nameGuess : basicQuestion];
 let fixture;
 let totalRequests = 0;
 let requests = 0;
@@ -70,7 +111,14 @@ const server = createServer(async (req, res) => {
       assert.ok(system.includes('合并旧3、4、5档'));
       assert.ok(messages.includes('fixedDifficulty'));
       assert.ok(messages.includes(selecting));
+    } else if (clueMode) {
+      assert.ok(system.includes('不能重复'));
+      assert.ok(system.includes('不受本站已录入资料限制'));
+      assert.ok(
+        messages.includes('合成测试人物') && messages.includes('可选参考'),
+      );
     } else {
+      if (knowledgeMode) assert.ok(system.includes('general_knowledge'));
       // The first and only request must contain the original question AND evidence.
       // The old normalization request fails these assertions before any reply.
       assert.ok(

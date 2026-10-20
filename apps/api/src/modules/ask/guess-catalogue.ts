@@ -13,6 +13,11 @@ export type GuessPerson = {
   tags?: string[];
   game_difficulty?: 'easy' | 'hard';
   game_revision?: number;
+  canonical_person_id?: string | null;
+  period_from?: number | null;
+  period_to?: number | null;
+  knowledge_revision?: number;
+  game_feedback?: 'bank' | 'character';
   activity?: Array<{ from: number; to: number }>;
 };
 

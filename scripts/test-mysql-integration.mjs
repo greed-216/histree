@@ -22,6 +22,7 @@ try {
   for(const statement of ddl.replace(/^DELIMITER .*$/gm,'').split('$$').map(s=>s.trim()).filter(Boolean))await connection.query(statement);
   await connection.query(await readFile(new URL('../database/mysql/002-ai-quota.sql',import.meta.url),'utf8'));
   for(const statement of (await readFile(new URL('../database/mysql/003-guess-bank.sql',import.meta.url),'utf8')).split(';').map(s=>s.trim()).filter(Boolean))await connection.query(statement);
+  for(const statement of (await readFile(new URL('../database/mysql/004-guess-clues.sql',import.meta.url),'utf8')).split(';').map(s=>s.trim()).filter(Boolean))await connection.query(statement);
   await connection.beginTransaction();
   const [published,hidden,source,relation,claim,hiddenClaim]=Array.from({length:6},()=>randomUUID());
   await connection.execute('INSERT INTO person(id,name,status,aliases) VALUES(?,?,?,JSON_ARRAY(?)),(?,?,?,JSON_ARRAY())',[published,'测试%_','published','A"B\\C',hidden,'秘密草稿','draft']);

@@ -99,6 +99,10 @@ try{
  const library=new GuessGameLibrary(db,new GuessBankService(db),sets),sharedCatalogue=await library.catalogue(AbortSignal.timeout(30000));
  const cluePeople=[...await store.candidates({difficulty:'easy'},AbortSignal.timeout(10000)),...await store.candidates({difficulty:'hard'},AbortSignal.timeout(10000))];
  assert.deepEqual(sharedCatalogue.map(p=>p.id).sort(),cluePeople.map(p=>p.id).sort());checks++;
+ const mapped=sharedCatalogue.find(p=>p.canonical_person_id&&starter.characters.some(c=>c.id===p.id));
+ assert(mapped);
+ const canonicalMaterial=await library.material(mapped,AbortSignal.timeout(10000));
+ assert(canonicalMaterial.claims.some(c=>c.kind==='general_knowledge'));checks++;
  let judgedPerson,questionCalls=0;
  const questionAgent={available:()=>true,run:async input=>{questionCalls++;judgedPerson=input.person;assert(input.claims.some(c=>c.kind==='general_knowledge'&&c.id.startsWith('knowledge:')));return {verdict:'unknown',claims:[]}}};
  const sharedQuestion=new GuessService(db,questionAgent,new GuessBankService(db),library);

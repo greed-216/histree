@@ -6,7 +6,7 @@ import { MysqlService } from '../mysql/mysql.service';
 import { GuessClueSetsService } from './guess-clue-sets.service';
 import { loadGuessCatalogue } from './guess-catalogue';
 jest.mock('./guess-catalogue', () => ({ loadGuessCatalogue: jest.fn() }));
-it('synchronizes new original-bank identities when clue mode is opened first; both modes share the same sync', async () => {
+it('synchronizes identities only in explicit preparation; both playable catalogues read without writes', async () => {
   const original = {
     id: '11111111-1111-4111-8111-111111111111',
     canonical_person_id: '11111111-1111-4111-8111-111111111111',
@@ -19,10 +19,9 @@ it('synchronizes new original-bank identities when clue mode is opened first; bo
       inserted = true;
       return { affectedRows: 1 };
     }),
-    rows: jest.fn(async () => {
-      expect(inserted).toBe(true);
-      return [original];
-    }),
+    rows: jest.fn(async (sql: string) =>
+      sql.includes('FROM person_event') || !inserted ? [] : [original],
+    ),
   };
   (loadGuessCatalogue as jest.Mock).mockResolvedValue([original]);
   const bank = { prepare: jest.fn(async () => [original]) };
@@ -30,13 +29,22 @@ it('synchronizes new original-bank identities when clue mode is opened first; bo
     db as unknown as MysqlService,
     bank as unknown as GuessBankService,
   );
-  const store = new GuessClueStore(db as unknown as MysqlService, characters);
+  const store = new GuessClueStore(db as unknown as MysqlService);
   const library = new GuessGameLibrary(
     db as unknown as MysqlService,
     bank as unknown as GuessBankService,
     {} as GuessClueSetsService,
-    characters,
   );
+  expect(
+    await store.candidates(
+      { difficulty: 'easy' },
+      AbortSignal.timeout(10000),
+      true,
+    ),
+  ).toEqual([]);
+  expect(await library.catalogue(AbortSignal.timeout(10000))).toEqual([]);
+  expect(db.execute).not.toHaveBeenCalled();
+  await characters.sync(AbortSignal.timeout(10000));
   const [cluePeople, questionPeople] = await Promise.all([
     store.candidates({ difficulty: 'easy' }, AbortSignal.timeout(10000)),
     library.catalogue(AbortSignal.timeout(10000)),

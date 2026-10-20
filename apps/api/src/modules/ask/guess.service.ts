@@ -374,7 +374,8 @@ export class GuessService implements OnModuleInit, OnModuleDestroy {
           this.games.set(token, game);
           return { token, ...this.view(game) };
         }
-        if (person.canonical_person_id === null) continue;
+        // A stale/missing shared clue set must not re-enter through legacy source fallback.
+        if (this.library || person.canonical_person_id === null) continue;
 
         const claims: Claim[] = [];
         const [direct, detail, related] = await Promise.all([

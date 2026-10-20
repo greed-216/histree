@@ -1,4 +1,3 @@
-import { ServiceUnavailableException } from '@nestjs/common';
 import {
   makeClueProfile,
   validateClueSelection,
@@ -302,18 +301,21 @@ describe('Clue game privacy and incremental reveal', () => {
       g.act({ token: s.token, action: 'state' }, 'a', signal()),
     ).rejects.toThrow('已更新');
   });
-  it('opens easy only from prepared caches, while hard prepares on first use', async () => {
-    const m = memory(),
-      g = m.game();
-    m.store.readyPeople.mockResolvedValue(new Set());
-    await expect(
-      g.start({ difficulty: 'easy' }, 'a', signal()),
-    ).rejects.toThrow('尚未准备');
-    expect(m.sets.ensure).not.toHaveBeenCalled();
-    expect(
-      (await g.start({ difficulty: 'hard' }, 'a', signal())).clues,
-    ).toHaveLength(1);
-    expect(m.sets.ensure).toHaveBeenCalledTimes(1);
+  it('opens both difficulties from prepared caches and never generates during a game', async () => {
+    for (const difficulty of ['easy', 'hard']) {
+      const m = memory(),
+        g = m.game();
+      m.store.readyPeople.mockResolvedValue(new Set());
+      await expect(g.start({ difficulty }, 'a', signal())).rejects.toThrow(
+        '已准备',
+      );
+      m.store.readyPeople.mockResolvedValue(new Set([person.id]));
+      expect((await g.start({ difficulty }, 'a', signal())).clues).toHaveLength(
+        1,
+      );
+      expect(m.sets.ensure).not.toHaveBeenCalled();
+      expect(m.agent.run).not.toHaveBeenCalled();
+    }
   });
 });
 
@@ -389,35 +391,21 @@ describe('Clue difficulty feedback', () => {
   });
 });
 
-it('falls back to a prepared hard target when a newly drawn person lacks reliable knowledge', async () => {
+it('skips uncached hard people before reading profiles and cannot make a prepared target wait for generation', async () => {
   const m = memory();
   const other = { ...person, id: '22222222-2222-4222-8222-222222222222' };
   m.store.candidates.mockResolvedValue([{ id: person.id }, { id: other.id }]);
   m.store.readyPeople.mockResolvedValue(new Set([other.id]));
-  m.db.rows.mockImplementation(async (_sql: string, args: unknown[]) => [
-    { ...(args[0] === person.id ? person : other), game_difficulty: 'hard' },
-  ]);
-  m.sets.ensure.mockImplementation(async (p) => {
-    if (p.person.id === person.id)
-      throw new ServiceUnavailableException('没有足够可靠的线索');
-    return clues;
-  });
-  const shuffle = jest
-    .spyOn(
-      jest.requireActual('node:crypto') as { randomInt(max: number): number },
-      'randomInt',
-    )
-    .mockImplementation((max) => max - 1);
-  try {
-    const game = await m
-      .game()
-      .start({ difficulty: 'hard' }, 'fallback-player', signal());
-    expect(game.clues).toHaveLength(1);
-    expect(m.sets.ensure.mock.calls.map(([p]) => p.person.id)).toEqual([
-      person.id,
-      other.id,
-    ]);
-  } finally {
-    shuffle.mockRestore();
-  }
+  m.db.rows.mockResolvedValue([{ ...other, game_difficulty: 'hard' }]);
+  m.sets.ensure.mockRejectedValue(
+    new Error('Generation forbidden in gameplay'),
+  );
+  expect(
+    (await m.game().start({ difficulty: 'hard' }, 'cached-player', signal()))
+      .clues,
+  ).toHaveLength(1);
+  expect(m.db.rows.mock.calls.every(([, args]) => args[0] === other.id)).toBe(
+    true,
+  );
+  expect(m.sets.ensure).not.toHaveBeenCalled();
 });

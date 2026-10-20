@@ -68,7 +68,7 @@ const db={enabled:true,consumeQuota:async()=>true,rows:async(sql,args)=>{
  if(sql.includes('FROM guess_character c')){const p=profiles.find(p=>p.person.id===args?.[0]);return p?[p.person]:[];}
  throw Error('Preview adapter cannot execute arbitrary SQL');
 }};
-const agent={available:()=>true,run:async()=>{throw new ServiceUnavailableException('本地试玩仅使用已准备的通识线索。正式服务支持困难题首次生成。')}};
+const agent={available:()=>true,run:async()=>{throw new ServiceUnavailableException('本地试玩仅使用已准备的通识线索。正式服务同样只读取已准备题目。')}};
 const sets=new GuessClueSetsService(store,agent,db),service=new GuessClueGameService(db,store,sets,agent);
 const access=new AiAccessService(new ConfigService({HISTREE_GATEWAY_SECRET:localSecret,HISTREE_ALLOW_ANONYMOUS:'true',HISTREE_AI_ALLOWED_ORIGINS:base}),db);
 class PreviewModule{}

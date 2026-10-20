@@ -1,6 +1,7 @@
 // Additive game metadata only. Default is read-only: no writes, no model calls.
 import { createRequire } from 'node:module';
-import { readFile, writeFile, rename } from 'node:fs/promises';
+import { readFile, writeFile, rename, appendFile } from 'node:fs/promises';
+import { setTimeout as delay } from 'node:timers/promises';
 import { randomBytes } from 'node:crypto';
 const require = createRequire(new URL('../apps/api/package.json', import.meta.url));
 const { z } = require('zod'), { ConfigService } = require('@nestjs/config');
@@ -18,6 +19,13 @@ const args = process.argv.slice(2), apply = args.includes('--apply');
 const value = flag => { const i = args.indexOf(flag); return i < 0 ? undefined : args[i + 1]; };
 const limit = value('--limit') === undefined ? Infinity : Number(value('--limit'));
 if (!(limit === Infinity || (Number.isInteger(limit) && limit > 0))) throw Error('Invalid --limit');
+const difficulty = value('--difficulty') || 'all';
+if (!['easy', 'hard', 'all'].includes(difficulty)) throw Error('Invalid --difficulty');
+const concurrency = Number(value('--concurrency') || 2), passes = Number(value('--passes') || 1);
+if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 8) throw Error('Invalid --concurrency (1 to 8)');
+if (!Number.isInteger(passes) || passes < 1 || passes > 3) throw Error('Invalid --passes (1 to 3)');
+const sample = value('--sample') === undefined ? Infinity : Number(value('--sample'));
+if (!(sample === Infinity || (Number.isInteger(sample) && sample > 0))) throw Error('Invalid --sample');
 const only = value('--person');
 if (only && !z.string().uuid().safeParse(only).success) throw Error('Invalid --person');
 const charSchema = z.object({ id: z.string().uuid(), canonical_person_id: z.string().uuid().nullable(), name: z.string().min(1).max(100), aliases: z.array(z.string().min(1).max(100)), courtesy_name: z.string().max(100).nullable().optional(), era: z.string().max(100), birth_year: z.number().int().nullable(), death_year: z.number().int().nullable(), description: z.string().max(2000), period_from: z.number().int().nullable().optional(), period_to: z.number().int().nullable().optional(), difficulty: z.enum(['easy', 'hard']), knowledge_revision: z.number().int().positive().optional() }).strict();
@@ -55,30 +63,67 @@ try {
     if ((await store.complete(profile, token, clues, signal, entry.provenance || { kind: 'general_knowledge', method: 'ai', prompt_version: CLUE_VERSION })).affectedRows !== 1) throw Error('Seed save failed');
     seeded++;
   }
-  const people = await store.candidates({ difficulty: 'easy' }, AbortSignal.timeout(60000));
-  const selected = people.filter(p => !only || p.id === only);
-  const summary = { mode: apply ? 'prepare-easy' : 'read-only', generatorVersion: CLUE_VERSION, importCharacters: characters.length, seeded, seedSkipped, easyPeople: people.length, selectedPeople: selected.length, prepared: 0, reused: 0, failed: 0, pending: 0, ready: 0, complete: false, details: [] };
-  let attempts = 0;
-  for (const p of selected) {
-    try {
-      const signal = AbortSignal.timeout(125000), profile = await loadClueProfile(db, p.id, signal);
-      const hit = await sets.ready(profile, signal);
-      let status;
-      if (hit) { summary.reused++; summary.ready++; status = 'reused'; }
-      else if (!apply || attempts >= limit) { summary.pending++; status = 'pending'; }
-      else {
-        attempts++; await sets.ensure(profile, signal); summary.prepared++; summary.ready++; status = 'prepared';
-      }
-      summary.details.push({ person_id: p.id, status, revision: profile.revision });
-    } catch (error) {
-      summary.failed++; summary.details.push({ person_id: p.id, status: 'failed', error: error.name });
+  const levels = difficulty === 'all' ? ['easy', 'hard'] : [difficulty];
+  const people = [];
+  for (const level of levels) people.push(...await store.candidates({ difficulty: level }, AbortSignal.timeout(60000)));
+  const selected = people.filter(p => !only || p.id === only).slice(0, sample);
+  const summary = { mode: apply ? 'prepare-bank' : 'read-only', generatorVersion: CLUE_VERSION, difficulty, concurrency, passes, startedAt: new Date().toISOString(), updatedAt: null, importCharacters: characters.length, seeded, seedSkipped, totalPeople: people.length, selectedPeople: selected.length, attempted: 0, modelCalls: 0, modelTasks: {}, prepared: 0, reused: 0, disabled: 0, failed: 0, pending: selected.length, ready: 0, complete: false, interrupted: false, details: [] };
+  const results = new Map();
+  let stopped = false, savedAt = 0;
+  const stop = () => { stopped = true; summary.interrupted = true; };
+  process.on('SIGTERM', stop); process.on('SIGINT', stop);
+  const save = async (force = false) => {
+    if (!force && Date.now() - savedAt < 10000) return;
+    savedAt = Date.now();
+    Object.assign(summary, { prepared: 0, reused: 0, disabled: 0, failed: 0, ready: 0 });
+    for (const item of results.values()) {
+      if (['prepared', 'reused'].includes(item.status)) { summary[item.status]++; summary.ready++; }
+      else summary[item.status]++;
     }
-    // Resume checks the durable current profile revision, rather than trusting a previous report.
+    summary.pending = selected.length - results.size;
+    summary.details = [...results.values()]; summary.updatedAt = new Date().toISOString();
     await checkpoint(summary);
-    if (apply) console.log(JSON.stringify({ progress: summary.details.length, prepared: summary.prepared, reused: summary.reused, failed: summary.failed, pending: summary.pending }));
+  };
+  let saving = Promise.resolve();
+  const persist = (force = false) => { saving = saving.then(() => save(force)); return saving; };
+  await persist(true);
+  for (let pass = 1; pass <= (apply ? passes : 1) && !stopped; pass++) {
+    summary.pass = pass;
+    const queue = selected.filter(p => !results.has(p.id) || results.get(p.id).status === 'failed');
+    if (pass > 1 && queue.length) await delay(61000);
+    let cursor = 0;
+    await Promise.all(Array.from({ length: concurrency }, async () => {
+      const workerAgent = new GuessAgentService(config);
+      const countedAgent = { available: () => workerAgent.available(), run: (input, signal) => { summary.modelCalls++; summary.modelTasks[input.task] = (summary.modelTasks[input.task] || 0) + 1; return workerAgent.run(input, signal); } };
+      const workerSets = new GuessClueSetsService(store, countedAgent, db, new GuessClueResearch(db));
+      while (!stopped && cursor < queue.length) {
+        const p = queue[cursor++], started = Date.now();
+        let item;
+        try {
+          const signal = AbortSignal.timeout(125000), profile = await loadClueProfile(db, p.id, signal);
+          item = { person_id: p.id, name: profile.person.name, revision: profile.revision, pass };
+          if (await sets.ready(profile, signal)) item.status = results.get(p.id)?.status === 'prepared' ? 'prepared' : 'reused';
+          else if (!apply || summary.attempted >= limit) { if (!results.has(p.id)) continue; else item.status = 'failed'; }
+          else {
+            summary.attempted++; await workerSets.ensure(profile, signal); item.status = 'prepared';
+          }
+        } catch (error) {
+          item = { ...item, person_id: p.id, pass, status: error.name === 'UnsuitableGamePerson' ? 'disabled' : 'failed', error: error.name, message: error.message?.slice(0, 240) };
+        }
+        item.elapsedMs = Date.now() - started; item.finishedAt = new Date().toISOString();
+        results.set(p.id, item);
+        if (reportPath && apply) await appendFile(reportPath + '.jsonl', JSON.stringify(item) + '\n');
+        await persist();
+        if (apply) console.log(JSON.stringify({ progress: results.size, total: selected.length, attempted: summary.attempted, ...item }));
+      }
+    }));
   }
-  summary.complete = summary.failed === 0 && summary.pending === 0;
+  await persist(true);
+  summary.complete = summary.failed === 0 && summary.pending === 0 && !summary.interrupted;
   await checkpoint(summary);
-  console.log(JSON.stringify(summary, null, 2));
+  if (reportPath) console.log(JSON.stringify({ ...summary, details: undefined }));
+  else console.log(JSON.stringify(summary, null, 2));
+  process.off('SIGTERM', stop); process.off('SIGINT', stop);
   if (summary.failed || (args.includes('--require-complete') && !summary.complete)) process.exitCode = 1;
+
 } finally { await db.onModuleDestroy(); }

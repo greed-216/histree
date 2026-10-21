@@ -1,3 +1,4 @@
+import { guessIdentityVariants } from './guess-identity';
 import type { GuessPerson as Person } from './guess-catalogue';
 export function normalizeGuess(text: string) {
   return text
@@ -13,6 +14,7 @@ export function guessNames(person: Person) {
   };
   return [
     person.name,
+    ...guessIdentityVariants(person.name),
     ...(person.aliases || []),
     person.courtesy_name,
     ...(common[person.name] || []),

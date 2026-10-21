@@ -1,0 +1,77 @@
+{
+  "checkedAtUTC": "2026-10-21T07:03:01.025Z",
+  "scope": "production shared game identities only; historical person/source/event tables unchanged",
+  "planSha256": "269ff77550e9a52693c51cf6814837ff4bf261db34a9ecd80dde79f92db297ef",
+  "mergedGroups": [
+    {
+      "from": "李世民",
+      "into": "李世民（李渊子）"
+    },
+    {
+      "from": "郦道元",
+      "into": "郦道元（郦范子）"
+    },
+    {
+      "from": "秦始皇",
+      "into": "秦王政"
+    },
+    {
+      "from": "武则天",
+      "into": "武曌"
+    },
+    {
+      "from": "孟子",
+      "into": "孟轲"
+    },
+    {
+      "from": "项羽",
+      "into": "项籍"
+    }
+  ],
+  "reclassifiedPeople": 54,
+  "enabledPeople": 17266,
+  "readyPeople": 5306,
+  "easyPeople": 208,
+  "hardPeople": 17058,
+  "pendingPeople": 11960,
+  "disabledPeople": 102,
+  "verification": {
+    "checkedAtUTC": "2026-10-21T07:02:41.602Z",
+    "repairedPeople": 54,
+    "duplicateEntrancesRetired": 6,
+    "oldCacheRowsUnchanged": 59,
+    "feedbackRowsUnchanged": 0,
+    "bothModesSamePreparedPeople": 5306,
+    "readOnly": true,
+    "modelCalls": 0
+  },
+  "onlineCacheStarts": [
+    {
+      "difficulty": "easy",
+      "http": 201,
+      "elapsedMs": 378,
+      "total": 6,
+      "visibleClues": 1,
+      "answerHidden": true
+    },
+    {
+      "difficulty": "easy",
+      "http": 201,
+      "elapsedMs": 259,
+      "total": 6,
+      "visibleClues": 1,
+      "answerHidden": true
+    },
+    {
+      "difficulty": "hard",
+      "http": 201,
+      "elapsedMs": 515,
+      "total": 6,
+      "visibleClues": 1,
+      "answerHidden": true
+    }
+  ],
+  "modelCalls": 0,
+  "applicationRelease": "Data repaired in production. Import safeguards, initial difficulty normalization, and eligible status count fix verified locally; application not redeployed. Existing status endpoint still includes six retired cached records (5312 vs 5306 eligible).",
+  "retention": "Old game IDs, all 59 previous cache rows and any feedback are retained; retired game entries have enabled=0. Existing target clues win; Qin Shi Huang cache is copied to the published canonical game ID with original provenance. No player votes were present on the 60 reviewed records."
+}

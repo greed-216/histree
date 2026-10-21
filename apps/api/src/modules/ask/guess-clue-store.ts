@@ -55,7 +55,11 @@ export class GuessClueStore {
   }
   async readyPeople(signal: AbortSignal): Promise<Set<string>> {
     const rows = await this.db.rows(
-      `SELECT DISTINCT person_id FROM guess_clue_set WHERE status='ready' AND generator_version=?`,
+      `SELECT DISTINCT s.person_id FROM guess_clue_set s
+       JOIN guess_character c ON c.id=s.person_id
+       LEFT JOIN person p ON p.id=c.canonical_person_id
+       WHERE s.status='ready' AND s.generator_version=? AND c.enabled=1
+       AND (c.canonical_person_id IS NULL OR p.status='published')`,
       [CLUE_VERSION],
       signal,
     );

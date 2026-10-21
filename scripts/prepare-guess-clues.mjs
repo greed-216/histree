@@ -7,6 +7,7 @@ const require = createRequire(new URL('../apps/api/package.json', import.meta.ur
 const { z } = require('zod'), { ConfigService } = require('@nestjs/config');
 const { MysqlService } = require('./dist/modules/mysql/mysql.service.js');
 const { GuessAgentService } = require('./dist/modules/ask/guess-agent.service.js');
+const { guessIdentityVariants } = require('./dist/modules/ask/guess-identity.js');
 const { GuessBankService } = require('./dist/modules/ask/guess-bank.js');
 const { GuessCharacterCatalogue } = require('./dist/modules/ask/guess-character-catalogue.js');
 const { GuessClueStore } = require('./dist/modules/ask/guess-clue-store.js');
@@ -42,7 +43,10 @@ try {
     // Include every original bank member, even if this command runs before either game starts.
     await new GuessCharacterCatalogue(db, new GuessBankService(db)).sync(AbortSignal.timeout(60000));
     for (const p of characters) {
-      const duplicate = await db.rows("SELECT id FROM person WHERE name=? AND status='published'", [p.name]);
+      const archived = await db.rows('SELECT enabled FROM guess_character WHERE id=?', [p.id]);
+      if (archived[0]?.enabled === 0) continue; // Explicit retirements survive old metadata imports.
+      const variants = guessIdentityVariants(p.name);
+      const duplicate = await db.rows(`SELECT id FROM person WHERE name IN (${variants.map(() => '?').join(',')}) AND status='published'`, variants);
       if (duplicate.length && (!p.canonical_person_id || !duplicate.some(x => x.id === p.canonical_person_id))) throw Error(`Explicit canonical mapping required for ${p.name}`);
       const existing = await db.rows('SELECT canonical_person_id FROM guess_character WHERE id=?', [p.id]);
       if (existing.length && existing[0].canonical_person_id !== p.canonical_person_id) throw Error('Character identity conflict: ' + p.id);
@@ -54,6 +58,8 @@ try {
   const seed = value('--seed') ? JSON.parse(await readFile(value('--seed'), 'utf8')) : { entries: [] };
   let seeded = 0, seedSkipped = 0;
   if (apply) for (const entry of seed.entries) {
+    const archived = await db.rows('SELECT enabled FROM guess_character WHERE id=?', [entry.person_id]);
+    if (archived[0]?.enabled === 0) { seedSkipped++; continue; }
     const profile = await loadClueProfile(db, z.string().uuid().parse(entry.person_id), AbortSignal.timeout(10000));
     if (entry.generator_version !== CLUE_VERSION || entry.profile_revision !== profile.revision) { seedSkipped++; continue; }
     const clues = validateCachedClues(entry.clues, profile), signal = AbortSignal.timeout(10000);

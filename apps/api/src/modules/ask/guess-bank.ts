@@ -1,3 +1,4 @@
+import { editorialGuessName } from './guess-identity';
 import { createHash } from 'node:crypto';
 import { Injectable } from '@nestjs/common';
 import { MysqlService } from '../mysql/mysql.service';
@@ -46,7 +47,7 @@ export const legacyGuessTiers: Record<string, number> = Object.fromEntries(
 
 const familiarNames = new Set(
   (
-    '张良 韩信 萧何 陈平 樊哙 英布 彭越 周勃 周亚夫 窦婴 卫青 霍去病 霍光 张骞 苏武 李广 李陵 刘彻 刘秀 刘恒 刘启 吕雉 王莽 董仲舒 司马迁 班固 班超 班昭 蔡伦 张衡 华佗 张仲景 ' +
+    '祖冲之 张良 韩信 萧何 陈平 樊哙 英布 彭越 周勃 周亚夫 窦婴 卫青 霍去病 霍光 张骞 苏武 李广 李陵 刘彻 刘秀 刘恒 刘启 吕雉 王莽 董仲舒 司马迁 班固 班超 班昭 蔡伦 张衡 华佗 张仲景 ' +
     '张飞 赵云 黄忠 马超 张辽 吕布 董卓 袁绍 袁术 陈宫 许褚 典韦 张郃 徐晃 徐庶 荀彧 荀攸 郭嘉 贾诩 曹仁 曹洪 夏侯惇 夏侯渊 于禁 庞统 法正 姜维 邓艾 钟会 鲁肃 吕蒙 陆逊 周瑜 黄盖 孙坚 孙策 太史慈 甘宁 陆抗 曹丕 曹植 蔡琰 王允 司马懿 司马师 司马昭 司马炎 ' +
     '谢安 谢玄 王羲之 王献之 陶渊明 桓温 桓玄 王敦 王导 祖逖 石虎 冉闵 慕容垂 慕容恪 王猛 刘渊 刘聪 贾南风 刘义隆 萧道成 萧衍 陈霸先 高欢 高洋 高长恭 宇文泰 宇文邕 拓跋珪 拓跋焘 拓跋宏 郦道元 ' +
     '杨坚 杨广 杨素 杨玄感 贺若弼 韩擒虎 韦孝宽 窦建德 王世充 李渊 李建成 李元吉 李靖 李勣 李绩 尉迟恭 秦琼 程咬金 魏征 房玄龄 杜如晦 褚遂良 长孙无忌 狄仁杰 姚崇 宋璟 张九龄 高力士 杨玉环 安禄山 史思明 郭子仪 李光弼 李隆基 李亨 李豫 李适 李纯 李忱 李晔 黄巢 ' +
@@ -55,10 +56,9 @@ const familiarNames = new Set(
 );
 
 export function initialGuessDifficulty(person: GuessPerson): GuessDifficulty {
-  const tier = legacyGuessTiers[person.name];
-  return (tier && tier <= 2) || familiarNames.has(person.name)
-    ? 'easy'
-    : 'hard';
+  const name = editorialGuessName(person.name);
+  const tier = legacyGuessTiers[name];
+  return (tier && tier <= 2) || familiarNames.has(name) ? 'easy' : 'hard';
 }
 export function guessCatalogueRevision(people: GuessPerson[]) {
   return createHash('sha256').update(JSON.stringify(people)).digest('hex');

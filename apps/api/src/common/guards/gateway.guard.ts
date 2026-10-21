@@ -34,7 +34,15 @@ export class GatewayGuard implements CanActivate {
       throw new HttpException('请使用 JSON 请求', 415);
     if (!request.body || typeof request.body !== 'object' || Array.isArray(request.body))
       throw new HttpException('无效请求', 400);
-    await this.access.consumeQuota(actor, path === '/api/v1/ask' ? 'ask' : 'guess');
+    // These clue routes only read prepared sets or save feedback; they never invoke a model.
+    // Keep the exemption explicit so other game endpoints retain their AI cost limits.
+    const cachedClueRequest = request.method === 'POST' && [
+      '/api/v1/ask/guess/clues/start',
+      '/api/v1/ask/guess/clues/act',
+      '/api/v1/ask/guess/clues/feedback',
+    ].includes(path);
+    if (!cachedClueRequest)
+      await this.access.consumeQuota(actor, path === '/api/v1/ask' ? 'ask' : 'guess');
     if (request.aborted || response.destroyed) throw new HttpException('请求已取消', 408);
     request.gatewayActor = actor;
     return true;

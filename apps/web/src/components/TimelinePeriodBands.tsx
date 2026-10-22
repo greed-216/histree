@@ -1,11 +1,14 @@
-import { Fragment, useId, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { historyScroll } from "../lib/historyScroll";
 import { formatDisplayRange } from "../lib/content";
-import { layoutBandLabels, visibleInterval, visiblePolityLanes, yearInInterval } from "../lib/timelinePeriods";
+import { layoutBandLabels, polityTones, visibleInterval, visiblePolityLanes, yearInInterval } from "../lib/timelinePeriods";
+import { ordinal } from "../lib/timelineViewport";
 
 type BandItem = {
   id: string; label: string; from_year: number; to_year: number;
   note?: string; fullLabel?: string; tone?: number; polity?: string; current?: boolean;
+  phases?: { id: string; label: string; from_year: number; to_year: number }[];
+  transition?: { year: number; label: string };
 };
 
 function BandLane({ items, from, to, width, kind, onBrowse }: {
@@ -16,77 +19,111 @@ function BandLane({ items, from, to, width, kind, onBrowse }: {
     const mark = visibleInterval(item.from_year, item.to_year, from, to);
     return mark ? [{ ...item, mark }] : [];
   });
-  const layout = layoutBandLabels(visible.map(item => ({ label: item.label, ...item.mark })), width);
-  return <div className={`timeline-${kind}-lane ${layout.compact ? "timeline-band-lane-compact" : ""}`} style={{ height: layout.height }}>
-    <svg className="timeline-band-connectors" viewBox={`0 0 ${width} ${layout.height}`} aria-hidden="true" preserveAspectRatio="none">
-      {visible.map((item, index) => {
-        const position = layout.positions[index];
-        return position.shifted || position.width > item.mark.width / 100 * width
-          ? <line key={item.id} x1={position.left + position.width / 2} y1={position.track * layout.pitch + layout.labelHeight}
-            x2={position.center} y2={layout.height - 4}/> : null;
-      })}
-    </svg>
-    {visible.map((item, index) => {
-      const position = layout.positions[index], range = formatDisplayRange(item.from_year, item.to_year);
-      return <Fragment key={item.id}>
-      <span aria-hidden="true" data-duration-polity={item.polity}
-        className={`timeline-${kind}-duration timeline-${kind}-tone-${item.tone ?? 0}`}
+  const captions = visible.flatMap(item => (item.phases || [item]).flatMap((phase, index) => {
+    const mark = visibleInterval(phase.from_year, phase.to_year, from, to);
+    return mark ? [{ ...item, ...phase, owner: item.id, polity: item.phases ? phase.id : item.polity,
+      tone: kind === "polity" ? ((item.tone ?? 0) + index) % 5 : item.tone, mark }] : [];
+  }));
+  const layout = layoutBandLabels(captions.map(item => ({ label: item.label, ...item.mark })), width);
+  const height = layout.height - (kind === "era" ? 2 : 0);
+  return <div className={`timeline-${kind}-lane ${layout.compact ? "timeline-band-lane-compact" : ""}`} style={{ height }}>
+    {visible.map(item => <div key={item.id} className="timeline-band-item">
+      {item.phases && <span aria-hidden="true" data-duration-polity={item.polity}
+        className={`timeline-${kind}-duration timeline-${kind}-tone-${item.tone ?? 0} timeline-polity-continuity`}
+        style={{ left: `${item.mark.left}%`, width: `${item.mark.width}%` }}/>}
+      {captions.map((caption, index) => {
+        if (caption.owner !== item.id) return null;
+        const position = layout.positions[index], range = formatDisplayRange(caption.from_year, caption.to_year);
+        return <div key={caption.id} className={`timeline-band-segment timeline-${kind}-tone-${caption.tone ?? 0}`}>
+      <svg className="timeline-band-connectors" viewBox={`0 0 ${width} ${height}`} aria-hidden="true" preserveAspectRatio="none">
+        {(position.shifted || position.width > caption.mark.width / 100 * width) &&
+          <line x1={position.left + position.width / 2} y1={position.track * layout.pitch + layout.labelHeight}
+            x2={position.center} y2={height - 4}/>}
+      </svg>
+      <span aria-hidden="true" data-duration-polity={item.phases ? undefined : item.polity}
+        data-duration-phase={item.phases ? caption.id : undefined}
+        className={`timeline-${kind}-duration${item.phases ? " timeline-polity-phase" : ""}`}
         aria-current={item.current ? "true" : undefined}
-        style={{ left: `${item.mark.left}%`, width: `${item.mark.width}%` }}/>
+        style={{ left: `${caption.mark.left}%`, width: `${caption.mark.width}%` }}/>
       <button type="button"
-        className={`timeline-${kind}-band timeline-${kind}-tone-${item.tone ?? 0}`}
+        className={`timeline-${kind}-band`}
         style={{ left: position.left, width: position.width, top: position.track * layout.pitch }}
-        data-polity={item.polity} data-start={item.from_year} data-end={item.to_year}
-        title={`${item.fullLabel || item.label} · ${range}${item.note ? `。${item.note}` : ""}`}
-        aria-label={`浏览${item.fullLabel || item.label}，${range}${item.note ? `，${item.note}` : ""}`}
+        data-polity={caption.polity} data-start={caption.from_year} data-end={caption.to_year}
+        title={`${item.phases ? caption.label : item.fullLabel || item.label} · ${range}${item.note ? `。${item.note}` : ""}`}
+        aria-label={`浏览${item.phases ? caption.label : item.fullLabel || item.label}，${range}${item.note ? `，${item.note}` : ""}`}
         aria-current={item.current ? "true" : undefined}
-        onClick={() => onBrowse(item.from_year, item.to_year)}>
-        <span className="timeline-band-name">{item.label}</span>
+        onClick={() => onBrowse(caption.from_year, caption.to_year)}>
+        <span className="timeline-band-name">{caption.label}</span>
       </button>
-      </Fragment>;
-    })}
+      </div>;
+      })}
+      {item.transition && ordinal(item.transition.year) >= from && ordinal(item.transition.year) <= to && (() => {
+        const x = (4 + (ordinal(item.transition.year) - from) / (to - from) * 92) / 100 * width;
+        return <div className="timeline-polity-transition" data-transition-year={item.transition.year}>
+          <span className="timeline-transition-tick" style={{ left: x, top: height - 10 }}/>
+        </div>;
+      })()}
+    </div>)}
   </div>;
 }
 
-export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, collapsed = false, onToggle }: {
+export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, navigationKey = 0 }: {
   from: number; to: number; width: number; previewYear: number;
   onBrowse: (start: number, end: number) => void;
-  collapsed?: boolean; onToggle?: () => void;
+  navigationKey?: number;
 }) {
-  const [expanded, setExpanded] = useState(false);
-  const polityId = useId();
+  const [remaining, setRemaining] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [navigationKey]);
+  useEffect(() => {
+    const scroll = scrollRef.current;
+    if (!scroll) return;
+    let frame = 0;
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const bottom = scroll.getBoundingClientRect().bottom;
+        const atEnd = scroll.scrollHeight - scroll.scrollTop - scroll.clientHeight <= 1;
+        setRemaining(atEnd ? 0 : [...scroll.querySelectorAll('[data-polity]')]
+          .filter(item => item.getBoundingClientRect().bottom > bottom + 1).length);
+      });
+    };
+    const observer = new ResizeObserver(update);
+    observer.observe(scroll);
+    if (scroll.firstElementChild) observer.observe(scroll.firstElementChild);
+    scroll.addEventListener('scroll', update, { passive: true });
+    update();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      scroll.removeEventListener('scroll', update);
+    };
+  }, [from, to, width, navigationKey]);
   const lanes = visiblePolityLanes(from, to);
-  const limit = 4;
-  const showPolities = to - from <= 1800 || expanded;
-  const shown = showPolities ? lanes.slice(0, expanded ? lanes.length : limit) : [];
-  const hidden = showPolities ? lanes.slice(shown.length).flat().length : lanes.flat().length;
+  const transition = lanes.flat().find(item => item.transition && ordinal(item.transition.year) >= from && ordinal(item.transition.year) <= to)?.transition;
 
-  return <div className={`timeline-period-bands${collapsed ? " is-collapsed" : ""}`} aria-label="大分期与主要并立政权">
-    <div className="timeline-band-scroll" tabIndex={0} role="region" aria-label="分期与政权时间带，可上下滚动">
+  return <div className="timeline-period-bands" aria-label="大分期与主要并立政权">
+    <div ref={scrollRef} className="timeline-band-scroll" tabIndex={0} role="region" aria-label="分期与政权时间带，可上下滚动">
     <div className="timeline-band-lanes" style={{width}}>
-    <div className="timeline-era-wrapper" aria-label="大分期"><BandLane from={from} to={to} width={width} kind="era" onBrowse={onBrowse}
+    <div className="timeline-era-wrapper" aria-label="朝代分期概览"><BandLane from={from} to={to} width={width} kind="era" onBrowse={onBrowse}
       items={historyScroll.periods.map((period, index) => ({ ...period, id: period.label, tone: index % 2, note: "浏览分期",
         current: yearInInterval(previewYear, period.from_year, period.to_year) }))}/></div>
-    <div id={polityId} hidden={collapsed}>
-    {!collapsed && shown.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
+    <div>
+    {lanes.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
       <BandLane from={from} to={to} width={width} kind="polity" onBrowse={onBrowse}
         items={lane.map(polity => ({ ...polity, fullLabel: polity.label, label: polity.short_label || polity.label,
-          tone: polity.lane % 3, polity: polity.id }))}/>
+          tone: polityTones[polity.id], polity: polity.id }))}/>
     </div>)}
     </div>
     </div>
     </div>
     <div className="timeline-band-caption">
-      <span>{collapsed ? "大朝代概览 · 点击名称浏览" : shown.length ? expanded ? "主要政权 · 上下滚动查看" : "主要政权 · 点击名称浏览" : lanes.length ? "大分期 · 放大查看并立政权" : "大分期 · 点击名称浏览"}</span>
-      <div className="timeline-band-actions">
-      {!collapsed && hidden > 0 && !expanded && <button type="button" onClick={() => setExpanded(true)}>
-        {showPolities ? `另${hidden}个政权` : "展开政权带"} <span aria-hidden="true">⌄</span>
-      </button>}
-      {!collapsed && expanded && <button type="button" onClick={() => setExpanded(false)}>收起更多 <span aria-hidden="true">⌃</span></button>}
-      {onToggle && <button type="button" aria-expanded={!collapsed} aria-controls={polityId} onClick={onToggle}>
-        {collapsed ? "展开政权时间线" : "收起政权时间线"} <span aria-hidden="true">{collapsed ? "⌄" : "⌃"}</span>
-      </button>}
-      </div>
+      <span>{transition ? <span className="timeline-transition-legend">◆ 前221 · {transition.label}</span>
+        : "左右滑动浏览"}</span>
+      {remaining > 0 && <span className="timeline-band-remaining" data-remaining-polities={remaining}
+        title="向下滚动查看其余政权">另 {remaining} 个政权 <span aria-hidden="true">↓</span></span>}
     </div>
   </div>;
 }

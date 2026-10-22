@@ -78,7 +78,7 @@ function TimelineRiver({
   const [chartWidth, setChartWidth] = useState(800);
   const [chartHeightBudget, setChartHeightBudget] = useState(280);
   const [previewExpanded, setPreviewExpanded] = useState(false);
-  const [periodsExpanded, setPeriodsExpanded] = useState(!compact);
+  const [periodNavigation, setPeriodNavigation] = useState(0);
   const [viewMode, setViewMode] = useState<"scroll" | "detail">("scroll");
   const [artPosition, setArtPosition] = useState(.5);
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -118,6 +118,7 @@ function TimelineRiver({
   const [draft, setDraft] = useState("");
   const [invalid, setInvalid] = useState(false);
   const chartRef = useRef<SVGSVGElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
   const drag = useRef<{
     x: number;
     y: number;
@@ -144,6 +145,7 @@ function TimelineRiver({
     browse(timeWindow(first, last, (from + to) / 2, width));
   }
   function browsePeriod(start: number, end: number) {
+    setPeriodNavigation(value => value + 1);
     const width = Math.max(10, (ordinal(end) - ordinal(start)) * 1.12);
     browse(timeWindow(first, last, (ordinal(start) + ordinal(end)) / 2, width));
   }
@@ -153,9 +155,12 @@ function TimelineRiver({
   }
   useEffect(() => {
     const chart = chartRef.current;
-    if (!chart) return;
+    const stage = stageRef.current;
+    if (!chart || !stage) return;
     // Only horizontal trackpad motion pans; vertical wheel motion keeps page reading natural.
     const wheel = (event: WheelEvent) => {
+      if (!(event.target instanceof Element) || !event.target.closest('.timeline-period-bands, .timeline-chart')) return;
+      if (event.ctrlKey) return;
       if (Math.abs(event.deltaX) <= Math.abs(event.deltaY) || !event.deltaX)
         return;
       event.preventDefault();
@@ -168,8 +173,8 @@ function TimelineRiver({
       setWindow((previous) => moveWindow(previous, first, last, shift));
       setHoverYear(null);
     };
-    chart.addEventListener("wheel", wheel, { passive: false });
-    return () => chart.removeEventListener("wheel", wheel);
+    stage.addEventListener("wheel", wheel, { passive: false });
+    return () => stage.removeEventListener("wheel", wheel);
   }, [first, last, span]);
   function startDrag(e: PointerEvent<SVGSVGElement>, overview = false) {
     if (e.button !== 0) return;
@@ -364,7 +369,6 @@ function TimelineRiver({
       <section
         className={`timeline-river ${compact ? "timeline-river-compact" : ""}`}
         aria-label="历史时间图"
-        data-periods-expanded={periodsExpanded}
       >
         <div className="timeline-topline">
           <div>
@@ -459,7 +463,7 @@ function TimelineRiver({
         </div>
         <div className="timeline-workspace">
         <div className="timeline-main">
-        <div className="timeline-stage">
+        <div ref={stageRef} className="timeline-stage">
           <div className="timeline-window-heading">
             <button
               className="timeline-button"
@@ -483,8 +487,7 @@ function TimelineRiver({
             </button>
           </div>
           <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewYear} onBrowse={browsePeriod}
-            collapsed={compact && !periodsExpanded}
-            onToggle={compact ? () => setPeriodsExpanded(value => !value) : undefined}/>
+            navigationKey={periodNavigation}/>
           <div className="timeline-art-pan">
             <label htmlFor={compact ? "home-art-position" : "timeline-art-position"}>画面上下</label>
             <input id={compact ? "home-art-position" : "timeline-art-position"} type="range"
@@ -877,7 +880,7 @@ function TimelineRiver({
         <Link className="timeline-art-link" to="/timeline/scroll">
           查看完整底图与分期比例 →
         </Link>
-          <p className="timeline-note">大分期为浏览导航；主要政权按各自起止年份展开，可能并立，不表示疆域。短时期用外置名称和连接线标示，底部时间条仍按真实年数绘制。画卷放大后保留比例，观察窗显示局部，可上下查看或恢复完整画幅；只有主动切换才进入史事模式。南北朝与五代等为政权群。元从1271年定国号、清从1636年改国号算起，画卷分界仍沿用1279年、1644年。</p>
+          <p className="timeline-note">大分期为浏览导航；主要政权按各自起止年份展开，可能并立，不表示疆域。十六国各国、南朝的宋齐梁陈、北朝的北魏、东魏、西魏、北齐、北周分别显示，可点击各自名称浏览，更多政权可上下滚动查看。短时期用外置名称和连接线标示，底部时间条仍按真实年数绘制。画卷放大后保留比例，观察窗显示局部，可上下查看或恢复完整画幅；只有主动切换才进入史事模式。元从1271年定国号、清从1636年改国号算起，画卷分界仍沿用1279年、1644年。</p>
           <nav className="timeline-period-references" aria-label="分期参考">
             {Object.values(polityReferences).map(reference => <a key={reference.url} href={reference.url} target="_blank" rel="noreferrer">{reference.title} ↗</a>)}
           </nav>

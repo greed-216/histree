@@ -74,13 +74,31 @@ try {
   const fixedUrl = page.url();
   const beforeBrowsing = eventRequests;
   const stableDesktop = await layoutBounds();
+  for (const [label, start, end] of [['三国', 220, 280], ['两晋十六国', 280, 420], ['南北朝', 420, 581]]) {
+    await page.getByRole('button', { name: `浏览${label}画卷`, exact: true }).click();
+    const from = Number(await chart.getAttribute('data-from'));
+    const to = Number(await chart.getAttribute('data-to'));
+    assert.ok(from <= start - 1 && to >= end - 1, `${label} covers its full navigation interval`);
+    assert.ok(Math.abs(to - from - (end - start) * 1.12) < 1, `${label} opens its own focused window`);
+    if (label === '三国') for (const polity of ['wei', 'shu-han', 'wu']) {
+      await page.locator(`[data-polity="${polity}"]`).waitFor();
+    }
+  }
   await page.getByRole('button', { name: '浏览秦汉画卷', exact: true }).click();
-  for (const [polity, start, end] of [['qin', -221, -207], ['western-han', -206, 8], ['xin', 9, 23], ['eastern-han', 25, 220]]) {
+  for (const [polity, start, end] of [['qin-empire', -221, -207], ['western-han', -206, 8], ['xin', 9, 23], ['eastern-han', 25, 220]]) {
     const item = page.locator(`[data-polity="${polity}"]`);
     await item.waitFor();
     assert.equal(await item.getAttribute('data-start'), String(start));
     assert.equal(await item.getAttribute('data-end'), String(end));
   }
+  await page.locator('[data-polity="qin-state"]').waitFor();
+  const qinCountry = await page.locator('[data-duration-phase="qin-state"]').boundingBox();
+  const qinEmpire = await page.locator('[data-duration-phase="qin-empire"]').boundingBox();
+  const qinWhole = await page.locator('[data-duration-polity="qin"]').boundingBox();
+  assert.ok(Math.abs(qinCountry.x + qinCountry.width - qinEmpire.x) < 1, 'Qin country and empire form one uninterrupted duration');
+  assert.ok(Math.abs(qinWhole.width - qinCountry.width - qinEmpire.width) < 1);
+  await page.locator('[data-transition-year="-221"] .timeline-transition-tick').waitFor();
+  await page.getByText('◆ 前221 · 统一六国', { exact: true }).waitFor();
   await assertStable(stableDesktop, 'Qin/Han succession');
   assert.equal(page.url(), fixedUrl);
   assert.equal(eventRequests, beforeBrowsing, 'Qin/Han browsing does not fetch event lists');
@@ -95,8 +113,7 @@ try {
   await assertStable(stableDesktop, 'Era with more polities');
   const assertFourRowsFit = async () => {
     const strip = page.locator('.timeline-band-scroll');
-    assert.equal(await page.locator('.timeline-polity-lane').count(), 4, 'Four polity rows are shown by default');
-    assert.ok(await strip.evaluate(el => el.scrollHeight <= el.clientHeight), 'Era and four polity rows fit without internal scrolling');
+    assert.ok(await page.locator('.timeline-polity-lane').count() >= 4, 'Every polity row is available without a second expansion');
     const stripBox = await strip.boundingBox();
     for (const id of ['northern-song', 'liao', 'jin', 'western-xia']) {
       const label = await page.locator(`[data-polity="${id}"]`).boundingBox();
@@ -107,7 +124,6 @@ try {
   await assertFourRowsFit();
   const yuan = page.locator('[data-polity="yuan"]');
   assert.equal(await yuan.getAttribute('data-start'), '1271', 'Yuan is not truncated to the 1279 macro-era boundary');
-  await page.locator('.timeline-band-caption button').first().click();
   assert.ok(await page.locator('.timeline-band-scroll').evaluate(el => el.scrollHeight > el.clientHeight), 'Additional polities scroll inside the fixed strip');
   const yuanMark = await page.locator('[data-duration-polity="yuan"]').boundingBox();
   const paintingAtYuan = await chart.evaluate(svg => {
@@ -121,21 +137,69 @@ try {
   assert.equal(page.url(), fixedUrl);
   assert.equal(eventRequests, beforeBrowsing);
   await page.locator('.timeline-band-scroll').evaluate(el => { el.scrollTop = 0; });
-  await page.locator('.timeline-band-caption button').first().click();
   await page.mouse.move(0, 0);
   await page.screenshot({ path: `${output}/song-liao-jin.png` });
 
-  await page.getByRole('button', { name: '浏览魏晋南北朝画卷', exact: true }).click();
-  await page.locator('[data-polity="southern-dynasties"]').waitFor();
-  await page.locator('[data-polity="northern-dynasties"]').waitFor();
-  await assertStable(stableDesktop, 'Era with fewer polities');
-  assert.equal(await page.locator('[data-polity="southern-dynasties"]').getAttribute('data-end'), '589');
+  // Trackpad gestures over the polity band share the painting's time window.
+  const strip = page.locator('.timeline-band-scroll');
+  const wheelWindow = [Number(await chart.getAttribute('data-from')), Number(await chart.getAttribute('data-to'))];
+  await strip.evaluate(el => { el.scrollTop = 20; });
+  const verticalPosition = await strip.evaluate(el => el.scrollTop);
+  await page.locator('.timeline-era-band').first().hover();
+  await page.mouse.wheel(120, 0);
+  await page.waitForFunction(previous => Number(document.querySelector('.timeline-chart').dataset.from) > previous, wheelWindow[0]);
+  const movedWindow = [Number(await chart.getAttribute('data-from')), Number(await chart.getAttribute('data-to'))];
+  assert.equal(movedWindow[1] - movedWindow[0], wheelWindow[1] - wheelWindow[0], 'Band wheel pans without zooming');
+  assert.equal(await strip.evaluate(el => el.scrollTop), verticalPosition, 'Horizontal browsing preserves the vertical polity position');
+  await page.mouse.wheel(-120, 0);
+  await page.waitForFunction(previous => Math.abs(Number(document.querySelector('.timeline-chart').dataset.from) - previous) <= 1, wheelWindow[0]);
+  const beforeVerticalWheel = await chart.getAttribute('data-from');
+  await page.mouse.wheel(0, 80);
+  await page.waitForFunction(previous => document.querySelector('.timeline-band-scroll').scrollTop > previous, verticalPosition);
+  assert.equal(await chart.getAttribute('data-from'), beforeVerticalWheel, 'Vertical wheel scrolls polity rows without panning years');
+  assert.equal(page.url(), fixedUrl, 'Band wheel preserves the selected year');
+  assert.equal(eventRequests, beforeBrowsing, 'Band wheel does not query event lists');
+  await assertStable(stableDesktop, 'Horizontal and vertical band wheel');
+
+  await page.getByRole('button', { name: '浏览南北朝画卷', exact: true }).click();
+  for (const polity of ['liu-song', 'southern-qi', 'liang', 'chen', 'northern-wei', 'eastern-wei', 'western-wei', 'northern-qi', 'northern-zhou']) {
+    await page.locator(`[data-polity="${polity}"]`).waitFor();
+  }
+  assert.equal(await page.locator('[data-polity="southern-dynasties"], [data-polity="northern-dynasties"], [data-polity="sixteen-kingdoms"]').count(), 0, 'South/North and Sixteen Kingdoms never merge into summary polities');
+  await assertStable(stableDesktop, 'Individual southern and northern dynasties');
+  assert.equal(await page.locator('[data-polity="chen"]').getAttribute('data-end'), '589');
+  await page.getByRole('button', { name: '浏览两晋十六国画卷', exact: true }).click();
+  for (const polity of ['former-zhao', 'cheng-han', 'later-zhao', 'former-liang', 'former-yan', 'former-qin', 'later-qin', 'later-yan', 'western-qin', 'later-liang', 'southern-liang', 'southern-yan', 'western-liang', 'northern-liang', 'xia-sixteen', 'northern-yan']) {
+    await page.locator(`[data-polity="${polity}"]`).waitFor();
+  }
+  await assertStable(stableDesktop, 'All sixteen distinct polities');
   await page.mouse.move(0, 0);
   await page.screenshot({ path: `${output}/north-south.png` });
+  await page.locator('[data-polity="xia-sixteen"]').click();
+  assert.equal(page.url(), fixedUrl);
+  assert.equal(eventRequests, beforeBrowsing, 'Expanded individual polity browsing is preview-only');
+  await page.getByRole('button', { name: '浏览战国画卷', exact: true }).click();
+  for (const polity of ['qin-state', 'qi-state', 'chu-state', 'yan-state', 'han-state', 'zhao-state', 'wei-state']) {
+    await page.locator(`[data-polity="${polity}"]`).waitFor();
+  }
+  await assertStable(stableDesktop, 'Seven Warring States');
+  assert.equal(await page.locator('.timeline-band-scroll').evaluate(el => el.scrollTop), 0, 'Switching periods starts the polity list at its first row');
+  await page.mouse.move(0, 0);
+  await page.screenshot({ path: `${output}/seven-warring-states.png` });
+  await page.getByRole('button', { name: '浏览五代画卷', exact: true }).click();
+  for (const polity of ['later-liang-five', 'later-tang', 'later-jin-five', 'later-han', 'later-zhou']) {
+    await page.locator(`[data-polity="${polity}"]`).waitFor();
+  }
+  assert.equal(await page.locator('[data-polity="five-dynasties"]').count(), 0);
+  await assertStable(stableDesktop, 'Five individual dynasties');
+  assert.equal(page.url(), fixedUrl);
+  assert.equal(eventRequests, beforeBrowsing);
+  await page.mouse.move(0, 0);
+  await page.screenshot({ path: `${output}/five-individual-dynasties.png` });
+  await page.getByRole('button', { name: '浏览南北朝画卷', exact: true }).click();
   await page.getByRole('button', { name: '放大', exact: true }).click();
   await page.getByRole('button', { name: '放大', exact: true }).click();
-  await page.locator('[data-polity="southern-dynasties"]').waitFor({ state: 'detached' });
-  assert.ok(await page.locator('[data-polity="liu-song"], [data-polity="southern-qi"], [data-polity="liang"], [data-polity="chen"]').count(), 'Zoom reveals individual southern dynasties');
+  assert.ok(await page.locator('[data-polity="liu-song"], [data-polity="southern-qi"], [data-polity="liang"], [data-polity="chen"]').count(), 'Zoom preserves individual dynasties');
   assert.equal(page.url(), fixedUrl, 'Zooming preserves selected year');
   assert.equal(eventRequests, beforeBrowsing, 'Zooming sends no event list requests');
   await assertStable(stableDesktop, 'Zoom into individual dynasties');
@@ -191,13 +255,36 @@ try {
   await assertStable(stableDesktop, 'Fit complete artwork');
 
   // Short-period captions stay readable without falsifying their duration.
-  await page.getByRole('button', { name: '浏览魏晋南北朝画卷', exact: true }).click();
+  await page.getByRole('button', { name: '浏览两晋十六国画卷', exact: true }).click();
+  await page.getByRole('button', { name: '缩小', exact: true }).click();
   await page.getByRole('button', { name: '缩小', exact: true }).click();
   await page.getByRole('button', { name: '缩小', exact: true }).click();
   const shu = page.locator('[data-polity="shu-han"]'), caption = shu.locator('.timeline-band-name');
   assert.equal(await caption.innerText(), '蜀汉');
   assert.ok((await caption.boundingBox()).width > (await page.locator('[data-duration-polity="shu-han"]').boundingBox()).width, 'Short caption is external to its true-duration mark');
   assert.equal(await caption.evaluate(el => getComputedStyle(el).fontSize), '14px');
+  const qiMark = page.locator('[data-duration-polity="northern-qi"]');
+  const zhouMark = page.locator('[data-duration-polity="northern-zhou"]');
+  const suiMark = page.locator('[data-duration-polity="sui"]');
+  const markColor = mark => mark.evaluate(el => getComputedStyle(el).backgroundColor);
+  const qiColor = await markColor(qiMark), suiColor = await markColor(suiMark);
+  assert.notEqual(qiColor, suiColor, 'Adjacent Northern Qi and Sui durations are visually distinct');
+  const qiBox = await qiMark.boundingBox(), zhouBox = await zhouMark.boundingBox();
+  assert.ok(qiBox.x + qiBox.width < zhouBox.x + zhouBox.width, 'Northern Qi ends before Northern Zhou at overview zoom');
+  const qiButton = page.locator('[data-polity="northern-qi"]');
+  const qiConnector = qiButton.locator('..').locator('.timeline-band-connectors line');
+  await qiButton.hover();
+  assert.notEqual(await markColor(qiMark), qiColor, 'Hovering the name highlights its duration');
+  assert.equal(await markColor(suiMark), suiColor, 'Highlighting Northern Qi leaves Sui unchanged');
+  assert.equal(await qiConnector.evaluate(el => getComputedStyle(el).strokeWidth), '2px', 'The matching connector highlights too');
+  await page.screenshot({ path: `${output}/north-south-highlight.png` });
+  await page.mouse.move(0, 0);
+  await qiButton.focus();
+  assert.notEqual(await markColor(qiMark), qiColor, 'Keyboard focus highlights the matching duration');
+  await qiButton.evaluate(el => el.blur());
+  assert.equal(page.url(), fixedUrl);
+  assert.equal(eventRequests, beforeBrowsing, 'Highlighting is preview-only');
+  assert.equal(await page.locator('.timeline-era-band .timeline-band-name').first().evaluate(el => getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)', 'Era overview uses a header style rather than polity chips');
   for (const lane of await page.locator('.timeline-era-lane, .timeline-polity-lane').all()) {
     const labels = await lane.locator('.timeline-band-name').evaluateAll(elements => elements.map(el => {
       const box = el.getBoundingClientRect(); return { x: box.x, right: box.right, y: box.y };
@@ -208,7 +295,7 @@ try {
   }
   await page.mouse.move(0, 0);
   await page.screenshot({ path: `${output}/readable-short-periods.png` });
-  await page.getByRole('button', { name: '浏览魏晋南北朝画卷', exact: true }).click();
+  await page.getByRole('button', { name: '浏览南北朝画卷', exact: true }).click();
   await page.getByRole('button', { name: '放大', exact: true }).click();
   await page.getByRole('button', { name: '放大', exact: true }).click();
 
@@ -265,13 +352,25 @@ try {
     await page.screenshot({ path: `${output}/mobile-${width}.png` });
     await page.getByRole('button', { name: '浏览宋画卷', exact: true }).click();
     await assertFourRowsFit();
-    const expand = page.locator('.timeline-band-caption button').first();
-    await expand.click();
     await page.locator('[data-polity="western-xia"]').waitFor();
     assert.ok((await chart.boundingBox()).height <= 210, 'Mobile expanded polity bands do not enlarge the painting');
     await assertStable(stableMobile, 'Mobile expanded polity strip');
     await page.mouse.move(0, 0);
     await page.screenshot({ path: `${output}/mobile-song-${width}.png` });
+    await page.getByRole('button', { name: '浏览战国画卷', exact: true }).click();
+    for (const polity of ['qin-state', 'qi-state', 'chu-state', 'yan-state', 'han-state', 'zhao-state', 'wei-state']) {
+      await page.locator(`[data-polity="${polity}"]`).waitFor();
+    }
+    await assertStable(stableMobile, 'Mobile seven distinct Warring States');
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.screenshot({ path: `${output}/mobile-warring-${width}.png` });
+    await page.getByRole('button', { name: '浏览两晋十六国画卷', exact: true }).click();
+    for (const polity of ['former-zhao', 'cheng-han', 'later-zhao', 'former-liang', 'former-yan', 'former-qin', 'later-qin', 'later-yan', 'western-qin', 'later-liang', 'southern-liang', 'southern-yan', 'western-liang', 'northern-liang', 'xia-sixteen', 'northern-yan']) {
+      await page.locator(`[data-polity="${polity}"]`).waitFor();
+    }
+    await assertStable(stableMobile, 'Mobile sixteen distinct polities');
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.screenshot({ path: `${output}/mobile-sixteen-${width}.png` });
   }
   const touchContext = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
   try {

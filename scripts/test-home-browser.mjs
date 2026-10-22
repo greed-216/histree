@@ -37,20 +37,39 @@ try {
   await page.goto(base);
   const chart = page.locator('.timeline-chart');
   await chart.waitFor({ timeout: 45000 });
-  const toggle = page.getByRole('button', { name: '展开政权时间线', exact: true });
-  assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
-  assert.equal(await page.locator('.timeline-polity-lane').count(), 0);
-  assert.ok(await page.locator('.timeline-era-lane').count());
+  assert.ok(await page.locator('.timeline-polity-lane').count() > 0, 'Polities load automatically on the homepage');
+  assert.equal(await page.locator('.timeline-band-caption button').count(), 0, 'There is no expansion step');
   const slider = page.getByRole('slider', { name: '选择历史年份' });
   const fixed = { url: page.url(), year: await slider.inputValue() };
-  await toggle.click();
-  const collapse = page.getByRole('button', { name: '收起政权时间线', exact: true });
-  assert.equal(await collapse.getAttribute('aria-expanded'), 'true');
-  assert.ok(await page.locator('.timeline-polity-lane').count() > 0);
-  await collapse.click();
-  assert.equal(page.url(), fixed.url, 'Folding must not select another year');
+  const assertScrollHint = async () => {
+    const strip = page.locator('.timeline-band-scroll');
+    const hint = page.locator('[data-remaining-polities]');
+    await strip.evaluate(el => { el.scrollTop = 0; });
+    await hint.waitFor();
+    const remainingBelow = () => strip.evaluate(el => {
+      const bottom = el.getBoundingClientRect().bottom;
+      return [...el.querySelectorAll('[data-polity]')].filter(item => item.getBoundingClientRect().bottom > bottom + 1).length;
+    });
+    const expected = await remainingBelow();
+    await page.waitForFunction(count => Number(document.querySelector('[data-remaining-polities]')?.dataset.remainingPolities) === count, expected);
+    await strip.evaluate(el => { el.scrollTop = (el.scrollHeight - el.clientHeight) / 2; });
+    const midway = await remainingBelow();
+    assert.ok(midway < expected, 'Scrolling reveals more of the remaining polities');
+    await page.waitForFunction(count => Number(document.querySelector('[data-remaining-polities]')?.dataset.remainingPolities) === count, midway);
+    await strip.evaluate(el => { el.scrollTop = el.scrollHeight; });
+    await hint.waitFor({ state: 'detached' });
+    await strip.evaluate(el => { el.scrollTop = 0; });
+    await hint.waitFor();
+  };
+  await page.getByRole('button', { name: '浏览战国画卷', exact: true }).click();
+  for (const id of ['qin-state', 'qi-state', 'chu-state', 'yan-state', 'han-state', 'zhao-state', 'wei-state']) {
+    await page.locator(`[data-polity="${id}"]`).waitFor();
+  }
+  await assertScrollHint();
+  await page.locator('[data-polity="wei-state"]').scrollIntoViewIfNeeded();
+  assert.ok(await page.locator('.timeline-band-scroll').evaluate(el => el.scrollTop > 0), 'All seven states can be reached by scrolling without another expansion');
+  assert.equal(page.url(), fixed.url, 'Opening the Warring States does not select a year');
   assert.equal(await slider.inputValue(), fixed.year);
-  assert.equal(await page.locator('.timeline-polity-lane').count(), 0);
 
   await page.getByRole('button', { name: '放大', exact: true }).click();
   assert.equal(page.url(), fixed.url, 'Browsing must not commit a year');
@@ -61,10 +80,10 @@ try {
     await page.setViewportSize({ width, height: width < 500 ? 844 : 1000 });
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true,
       `Home must fit a ${width}px viewport`);
-    await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
+    await page.getByRole('button', { name: '浏览战国画卷', exact: true }).click();
+    await assertScrollHint();
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true,
       `Expanded timeline must fit a ${width}px viewport`);
-    await page.getByRole('button', { name: '收起政权时间线', exact: true }).click();
     if (width === 390) {
       await page.evaluate(() => window.scrollTo(0, 0));
       await page.screenshot({ path: `${output}/mobile.png`, fullPage: true });
@@ -87,13 +106,13 @@ try {
       ? Number(new URL(page.url()).searchParams.get('year')) - 1
       : Number(new URL(page.url()).searchParams.get('year'))));
 
-  // The full timeline retains its existing expanded view.
+  // The full timeline also shows polities without an expansion step.
   await page.goto(new URL('timeline?year=907', base).href);
   await chart.waitFor({ timeout: 45000 });
   assert.ok(await page.locator('.timeline-polity-lane').count() > 0);
   assert.equal(await page.getByRole('button', { name: '展开政权时间线', exact: true }).count(), 0);
   assert.deepEqual(errors, []);
-  console.log('PASS: search while timeline is blocked; live timeline and random entry; fold preserves year; gameplay links; 320/390/768/1440px; full timeline unchanged; no page errors.');
+  console.log('PASS: search while timeline is blocked; live timeline and random entry; automatic polity rows and scroll hint count/disappearance; gameplay links; 320/390/768/1440px; full timeline unchanged; no page errors.');
   console.log(`Screenshots: ${output}`);
 } finally {
   await browser.close();

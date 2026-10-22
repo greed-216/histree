@@ -3,6 +3,17 @@ import { ordinal } from "./timelineViewport";
 
 export const polityReferences = data.references;
 export type TimelinePolity = (typeof data.polities)[number];
+// Keep successive states and nearby contemporaries visually distinct.
+export const polityTones: Record<string, number> = {};
+data.polities.forEach((polity, index) => {
+  const previous = data.polities.slice(0, index);
+  const predecessor = previous.findLast(item => item.lane === polity.lane);
+  const nearby = previous.filter(item => Math.abs(item.lane - polity.lane) <= 1 && item.to_year >= polity.from_year);
+  const excluded = new Set([...nearby, ...(predecessor ? [predecessor] : [])].map(item => polityTones[item.id]));
+  const choices = Array.from({ length: 5 }, (_, offset) => (index + offset) % 5);
+  polityTones[polity.id] = choices.find(tone => !excluded.has(tone))
+    ?? choices.find(tone => !predecessor || tone !== polityTones[predecessor.id])!;
+});
 
 /** Clip only to the viewport. Era boundaries never truncate a polity. */
 export function visibleInterval(start: number, end: number, from: number, to: number) {
@@ -14,10 +25,8 @@ export function visibleInterval(start: number, end: number, from: number, to: nu
 }
 
 export function visiblePolityLanes(from: number, to: number) {
-  const detailed = to - from <= 180;
   const visible = data.polities.filter(polity =>
-    (!polity.level || polity.level === (detailed ? "detail" : "overview"))
-    && visibleInterval(polity.from_year, polity.to_year, from, to));
+    visibleInterval(polity.from_year, polity.to_year, from, to));
   return [...new Set(visible.map(polity => polity.lane))].sort((a, b) => a - b)
     .map(lane => visible.filter(polity => polity.lane === lane));
 }

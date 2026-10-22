@@ -32,11 +32,32 @@ for (const [group, start, end, count] of [
   ['southern-dynasties', 400, 600, 4],
   ['northern-dynasties', 380, 600, 5],
   ['five-dynasties', 907, 960, 5],
+  ['ten-kingdoms', 902, 979, 10],
 ]) {
   const full = data.polities.filter(item => item.group === group);
   assert.equal(full.length, count, group);
   const visible = visiblePolityLanes(ordinal(start), ordinal(end)).flat().filter(item => item.group === group);
   assert.deepEqual(new Set(visible.map(item => item.id)), new Set(full.map(item => item.id)), 'Every constituent is independently available in the group window');
+}
+
+const tenKingdoms = data.polities.filter(item => item.group === 'ten-kingdoms');
+assert.deepEqual(new Set(tenKingdoms.map(item => item.id)), new Set([
+  'southern-wu', 'former-shu', 'wuyue', 'chu-ten-kingdoms', 'min',
+  'southern-han', 'jingnan', 'later-shu', 'southern-tang', 'northern-han',
+]));
+// The five-dynasty navigation window must include all ten states, including the late Northern Han.
+const fiveDynastyWindow = visiblePolityLanes(ordinal(907), ordinal(960)).flat();
+assert.deepEqual(new Set(fiveDynastyWindow.filter(item => item.group === 'ten-kingdoms').map(item => item.id)),
+  new Set(tenKingdoms.map(item => item.id)));
+for (const [id, start, end] of [
+  ['southern-wu', 902, 937], ['former-shu', 907, 925], ['wuyue', 907, 978],
+  ['chu-ten-kingdoms', 907, 951], ['min', 909, 945], ['southern-han', 917, 971],
+  ['jingnan', 924, 963], ['later-shu', 934, 965], ['southern-tang', 937, 975],
+  ['northern-han', 951, 979],
+]) {
+  const polity = fiveDynastyWindow.find(item => item.id === id);
+  assert.equal(polity.from_year, start);
+  assert.equal(polity.to_year, end, `${id} keeps its own endpoint across the Song navigation boundary`);
 }
 
 // A shared row expresses succession, never overlapping contemporaneous states.
@@ -59,4 +80,4 @@ assert.notEqual(polityTones['northern-qi'], polityTones['northern-zhou']);
 assert.equal(data.polities.find(item => item.id === 'northern-qi').to_year, 577);
 assert.equal(data.polities.find(item => item.id === 'northern-zhou').to_year, 581);
 assert.equal(data.polities.filter(item => item.group === 'warring-states').every(item => item.note.includes('不用于判定')), true);
-console.log('PASS: seven Warring States, sixteen kingdoms, four southern dynasties, five northern polities and five dynasties stay distinct at every zoom, with sources and non-overlapping rows.');
+console.log('PASS: seven Warring States, sixteen kingdoms, four southern dynasties, five northern polities, five dynasties and all ten kingdoms stay distinct at every zoom, with sources and non-overlapping rows.');

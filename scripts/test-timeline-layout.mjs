@@ -190,12 +190,19 @@ try {
   for (const polity of ['later-liang-five', 'later-tang', 'later-jin-five', 'later-han', 'later-zhou']) {
     await page.locator(`[data-polity="${polity}"]`).waitFor();
   }
+  for (const polity of ['southern-wu', 'former-shu', 'wuyue', 'chu-ten-kingdoms', 'min', 'southern-han', 'jingnan', 'later-shu', 'southern-tang', 'northern-han']) {
+    await page.locator(`[data-polity="${polity}"]`).waitFor();
+  }
+  assert.equal(await page.locator('[data-polity="northern-han"]').getAttribute('data-end'), '979', 'Northern Han extends past the five-dynasty navigation boundary');
   assert.equal(await page.locator('[data-polity="five-dynasties"]').count(), 0);
-  await assertStable(stableDesktop, 'Five individual dynasties');
+  await assertStable(stableDesktop, 'Five dynasties and all ten independent kingdoms');
   assert.equal(page.url(), fixedUrl);
   assert.equal(eventRequests, beforeBrowsing);
   await page.mouse.move(0, 0);
   await page.screenshot({ path: `${output}/five-individual-dynasties.png` });
+  await page.locator('[data-polity="northern-han"]').click();
+  assert.equal(page.url(), fixedUrl, 'Browsing an individual kingdom preserves the selected year');
+  assert.equal(eventRequests, beforeBrowsing);
   await page.getByRole('button', { name: '浏览南北朝画卷', exact: true }).click();
   await page.getByRole('button', { name: '放大', exact: true }).click();
   await page.getByRole('button', { name: '放大', exact: true }).click();
@@ -371,6 +378,15 @@ try {
     await assertStable(stableMobile, 'Mobile sixteen distinct polities');
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     await page.screenshot({ path: `${output}/mobile-sixteen-${width}.png` });
+    await page.getByRole('button', { name: '浏览五代画卷', exact: true }).click();
+    for (const polity of ['southern-wu', 'former-shu', 'wuyue', 'chu-ten-kingdoms', 'min', 'southern-han', 'jingnan', 'later-shu', 'southern-tang', 'northern-han']) {
+      await page.locator(`[data-polity="${polity}"]`).waitFor();
+    }
+    await assertStable(stableMobile, 'Mobile ten independent kingdoms');
+    await page.locator('[data-polity="northern-han"]').scrollIntoViewIfNeeded();
+    await page.locator('[data-remaining-polities]').waitFor({ state: 'detached' });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.screenshot({ path: `${output}/mobile-ten-kingdoms-${width}.png` });
   }
   const touchContext = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
   try {

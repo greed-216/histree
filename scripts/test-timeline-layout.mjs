@@ -16,6 +16,8 @@ try {
     if (url.pathname.endsWith('/api/v1/timeline') && url.searchParams.has('year')) eventRequests++;
   });
   await page.goto(`${base}?year=907`);
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   const chart = page.locator('.timeline-chart');
   const preview = page.getByRole('complementary', { name: '年度史事选读' });
   const layoutBounds = () => page.evaluate(() => Object.fromEntries([
@@ -58,6 +60,8 @@ try {
   await page.screenshot({ path: `${output}/desktop.png` });
   await page.setViewportSize({ width: 1440, height: 768 });
   await page.goto(`${base}?year=907`);
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   await preview.getByRole('heading', { name: '907年', exact: true }).waitFor();
   await page.waitForLoadState('networkidle');
   assert.equal(await page.locator('.timeline-canvas-scroll').getAttribute('data-view'), 'scroll', 'Short desktop viewport still opens on the painting');
@@ -68,6 +72,8 @@ try {
   await page.screenshot({ path: `${output}/desktop-768.png` });
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(`${base}?year=907`);
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   await preview.getByRole('heading', { name: '907年', exact: true }).waitFor();
   await page.waitForLoadState('networkidle');
 
@@ -347,6 +353,8 @@ try {
   for (const width of [390, 320]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto(`${base}?year=907`);
+    assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+    await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
     await preview.getByRole('heading', { name: '907年', exact: true }).waitFor();
     await page.waitForLoadState('networkidle');
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'Mobile layout has no horizontal page overflow');
@@ -398,6 +406,7 @@ try {
       if (url.pathname.endsWith('/api/v1/timeline') && url.searchParams.has('year')) touchRequests++;
     });
     await touchPage.goto(`${base}?year=907`);
+    await touchPage.getByRole('button', { name: '展开政权时间线', exact: true }).click();
     await touchPage.waitForLoadState('networkidle');
     await touchPage.getByRole('button', { name: '放大', exact: true }).click();
     const touchChart = touchPage.locator('.timeline-chart');
@@ -421,12 +430,16 @@ try {
   await page.setViewportSize({ width: 1440, height: 900 });
   for (const year of [-403, 1912]) {
     await page.goto(`${base}?year=${year}`);
+    assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+    await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
     await chart.waitFor();
     await page.waitForLoadState('networkidle');
     const focus = year < 0 ? year : year - 1;
     assert.ok(Number(await chart.getAttribute('data-from')) <= focus && Number(await chart.getAttribute('data-to')) >= focus, 'Initial canvas fitting keeps the selected boundary year visible');
   }
   await page.goto(`${base}?year=907`);
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   await preview.getByRole('heading', { name: '907年', exact: true }).waitFor();
   await page.waitForLoadState('networkidle');
   const beforeEmptyYear = await layoutBounds();
@@ -438,6 +451,8 @@ try {
   await page.locator('.timeline-jump summary').click();
   await assertStable(beforeEmptyYear, 'Select an empty year');
   await page.goto(`${base}?year=1303`);
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'A fresh timeline starts with countries folded');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   await preview.getByRole('heading', { name: '1303年', exact: true }).waitFor();
   await page.waitForLoadState('networkidle');
   await page.mouse.move(0, 0);

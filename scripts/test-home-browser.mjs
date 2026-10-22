@@ -37,10 +37,21 @@ try {
   await page.goto(base);
   const chart = page.locator('.timeline-chart');
   await chart.waitFor({ timeout: 45000 });
-  assert.ok(await page.locator('.timeline-polity-lane').count() > 0, 'Polities load automatically on the homepage');
-  assert.equal(await page.locator('.timeline-band-caption button').count(), 0, 'There is no expansion step');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).waitFor();
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'Countries start folded on the homepage');
+  assert.equal(await page.locator('[data-remaining-polities]').count(), 0);
+  assert.ok(await page.locator('.timeline-era-lane').count());
   const slider = page.getByRole('slider', { name: '选择历史年份' });
   const fixed = { url: page.url(), year: await slider.inputValue() };
+  await page.waitForLoadState('networkidle');
+  const foldWindow = [await chart.getAttribute('data-from'), await chart.getAttribute('data-to')];
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
+  assert.ok(await page.locator('.timeline-polity-lane').count() > 0, 'Opening the countries loads every available row');
+  await page.getByRole('button', { name: '收起政权时间线', exact: true }).click();
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0);
+  assert.equal(page.url(), fixed.url);
+  assert.equal(await slider.inputValue(), fixed.year);
+  assert.deepEqual([await chart.getAttribute('data-from'), await chart.getAttribute('data-to')], foldWindow, 'Fold controls preserve the chosen time window');
   const assertScrollHint = async () => {
     const strip = page.locator('.timeline-band-scroll');
     const hint = page.locator('[data-remaining-polities]');
@@ -62,6 +73,8 @@ try {
     await hint.waitFor();
   };
   await page.getByRole('button', { name: '浏览战国画卷', exact: true }).click();
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0, 'Browsing a dynasty preserves the folded state');
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   for (const id of ['qin-state', 'qi-state', 'chu-state', 'yan-state', 'han-state', 'zhao-state', 'wei-state']) {
     await page.locator(`[data-polity="${id}"]`).waitFor();
   }
@@ -81,6 +94,11 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true,
       `Home must fit a ${width}px viewport`);
     await page.getByRole('button', { name: '浏览战国画卷', exact: true }).click();
+    await assertScrollHint();
+    await page.getByRole('button', { name: '收起政权时间线', exact: true }).click();
+    assert.equal(await page.locator('[data-remaining-polities]').count(), 0);
+    assert.equal(await page.locator('.timeline-polity-lane').count(), 0);
+    await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
     await assertScrollHint();
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true,
       `Expanded timeline must fit a ${width}px viewport`);
@@ -106,13 +124,14 @@ try {
       ? Number(new URL(page.url()).searchParams.get('year')) - 1
       : Number(new URL(page.url()).searchParams.get('year'))));
 
-  // The full timeline also shows polities without an expansion step.
+  // The full timeline also defaults to dynasty overview with a country toggle.
   await page.goto(new URL('timeline?year=907', base).href);
   await chart.waitFor({ timeout: 45000 });
+  assert.equal(await page.locator('.timeline-polity-lane').count(), 0);
+  await page.getByRole('button', { name: '展开政权时间线', exact: true }).click();
   assert.ok(await page.locator('.timeline-polity-lane').count() > 0);
-  assert.equal(await page.getByRole('button', { name: '展开政权时间线', exact: true }).count(), 0);
   assert.deepEqual(errors, []);
-  console.log('PASS: search while timeline is blocked; live timeline and random entry; automatic polity rows and scroll hint count/disappearance; gameplay links; 320/390/768/1440px; full timeline unchanged; no page errors.');
+  console.log('PASS: search while timeline is blocked; live timeline and random entry; default dynasty overview, country folding preserves years, automatic country rows and scroll hint count/disappearance; gameplay links; 320/390/768/1440px; full timeline unchanged; no page errors.');
   console.log(`Screenshots: ${output}`);
 } finally {
   await browser.close();

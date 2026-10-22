@@ -78,6 +78,7 @@ function TimelineRiver({
   const [chartWidth, setChartWidth] = useState(800);
   const [chartHeightBudget, setChartHeightBudget] = useState(280);
   const [previewExpanded, setPreviewExpanded] = useState(false);
+  const [politiesExpanded, setPolitiesExpanded] = useState(false);
   const [periodNavigation, setPeriodNavigation] = useState(0);
   const [viewMode, setViewMode] = useState<"scroll" | "detail">("scroll");
   const [artPosition, setArtPosition] = useState(.5);
@@ -369,6 +370,7 @@ function TimelineRiver({
       <section
         className={`timeline-river ${compact ? "timeline-river-compact" : ""}`}
         aria-label="历史时间图"
+        data-polities-expanded={politiesExpanded}
       >
         <div className="timeline-topline">
           <div>
@@ -487,7 +489,8 @@ function TimelineRiver({
             </button>
           </div>
           <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewYear} onBrowse={browsePeriod}
-            navigationKey={periodNavigation}/>
+            navigationKey={periodNavigation} collapsed={!politiesExpanded}
+            onToggle={() => setPolitiesExpanded(value => !value)}/>
           <div className="timeline-art-pan">
             <label htmlFor={compact ? "home-art-position" : "timeline-art-position"}>画面上下</label>
             <input id={compact ? "home-art-position" : "timeline-art-position"} type="range"

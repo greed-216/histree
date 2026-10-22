@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { historyScroll } from "../lib/historyScroll";
 import { formatDisplayRange } from "../lib/content";
 import { layoutBandLabels, polityTones, visibleInterval, visiblePolityLanes, yearInInterval } from "../lib/timelinePeriods";
@@ -67,19 +67,22 @@ function BandLane({ items, from, to, width, kind, onBrowse }: {
   </div>;
 }
 
-export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, navigationKey = 0 }: {
+export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, navigationKey = 0, collapsed, onToggle }: {
   from: number; to: number; width: number; previewYear: number;
   onBrowse: (start: number, end: number) => void;
   navigationKey?: number;
+  collapsed: boolean;
+  onToggle: () => void;
 }) {
   const [remaining, setRemaining] = useState(0);
+  const polityId = useId();
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = 0;
   }, [navigationKey]);
   useEffect(() => {
     const scroll = scrollRef.current;
-    if (!scroll) return;
+    if (!scroll || collapsed) return;
     let frame = 0;
     const update = () => {
       cancelAnimationFrame(frame);
@@ -100,18 +103,18 @@ export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, na
       observer.disconnect();
       scroll.removeEventListener('scroll', update);
     };
-  }, [from, to, width, navigationKey]);
+  }, [from, to, width, navigationKey, collapsed]);
   const lanes = visiblePolityLanes(from, to);
   const transition = lanes.flat().find(item => item.transition && ordinal(item.transition.year) >= from && ordinal(item.transition.year) <= to)?.transition;
 
-  return <div className="timeline-period-bands" aria-label="大分期与主要并立政权">
+  return <div className={`timeline-period-bands${collapsed ? " is-collapsed" : ""}`} aria-label="大分期与主要并立政权">
     <div ref={scrollRef} className="timeline-band-scroll" tabIndex={0} role="region" aria-label="分期与政权时间带，可上下滚动">
     <div className="timeline-band-lanes" style={{width}}>
     <div className="timeline-era-wrapper" aria-label="朝代分期概览"><BandLane from={from} to={to} width={width} kind="era" onBrowse={onBrowse}
       items={historyScroll.periods.map((period, index) => ({ ...period, id: period.label, tone: index % 2, note: "浏览分期",
         current: yearInInterval(previewYear, period.from_year, period.to_year) }))}/></div>
-    <div>
-    {lanes.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
+    <div id={polityId} hidden={collapsed}>
+    {!collapsed && lanes.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
       <BandLane from={from} to={to} width={width} kind="polity" onBrowse={onBrowse}
         items={lane.map(polity => ({ ...polity, fullLabel: polity.label, label: polity.short_label || polity.label,
           tone: polityTones[polity.id], polity: polity.id }))}/>
@@ -120,10 +123,16 @@ export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, na
     </div>
     </div>
     <div className="timeline-band-caption">
-      <span>{transition ? <span className="timeline-transition-legend">◆ 前221 · {transition.label}</span>
+      <span>{collapsed ? "朝代分期" : transition ? <span className="timeline-transition-legend">◆ 前221 · {transition.label}</span>
         : "左右滑动浏览"}</span>
-      {remaining > 0 && <span className="timeline-band-remaining" data-remaining-polities={remaining}
+      <div className="timeline-band-actions">
+      {!collapsed && remaining > 0 && <span className="timeline-band-remaining" data-remaining-polities={remaining}
         title="向下滚动查看其余政权">另 {remaining} 个政权 <span aria-hidden="true">↓</span></span>}
+      <button type="button" aria-expanded={!collapsed} aria-controls={polityId}
+        aria-label={collapsed ? "展开政权时间线" : "收起政权时间线"} onClick={onToggle}>
+        {collapsed ? "展开国家" : "收起国家"} <span aria-hidden="true">{collapsed ? "⌄" : "⌃"}</span>
+      </button>
+      </div>
     </div>
   </div>;
 }

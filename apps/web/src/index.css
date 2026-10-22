@@ -337,7 +337,10 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .timeline-main { min-width:0; min-height:0; display:grid; grid-template-rows:minmax(0,1fr) 40px 28px; gap:6px; }
 .timeline-workspace .timeline-stage { margin-top:0; min-height:0; display:grid; grid-template-rows:32px 180px 24px minmax(0,1fr); gap:6px; }
 .timeline-window-heading { margin:0; font-size:12px; }
-.timeline-period-bands { display:grid; grid-template-rows:minmax(0,1fr) 25px; min-height:0; height:100%; margin:0; }
+.timeline-period-bands { display:grid; grid-template-rows:minmax(0,1fr) auto; min-height:0; height:100%; margin:0; }
+.timeline-period-bands.is-collapsed { height:auto; min-height:58px; grid-template-rows:auto auto; }
+.timeline-period-bands.is-collapsed .timeline-band-scroll { overflow-y:hidden; }
+.timeline-river[data-polities-expanded="false"] .timeline-stage { grid-template-rows:32px auto 24px minmax(0,1fr); }
 .timeline-band-scroll { width:calc(100% + 10px); min-height:0; overflow-y:auto; overflow-x:hidden; padding-right:10px; scrollbar-width:thin; overscroll-behavior:contain; }
 .timeline-band-lanes { position:relative; }
 .timeline-era-wrapper { position:sticky; top:0; z-index:3; background:#faf8f1; }
@@ -374,7 +377,9 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
 .timeline-era-band .timeline-band-name { background:transparent; font-weight:700; letter-spacing:.5px; }
 .timeline-era-band[aria-current=true] .timeline-band-name { color:#244c41; }
 .timeline-era-band:hover .timeline-band-name { box-shadow:none; text-decoration:underline; text-underline-offset:3px; }
-.timeline-band-caption { display:flex; justify-content:space-between; gap:8px; align-items:center; min-height:25px; padding:0 4%; color:#818775; font-size:11px; }
+.timeline-band-caption { display:flex; flex-wrap:wrap; justify-content:space-between; gap:0 8px; align-items:center; min-height:25px; padding:0 4%; color:#818775; font-size:11px; }
+.timeline-band-actions { display:flex; margin-left:auto; align-items:center; gap:10px; min-height:25px; }
+.timeline-band-actions button { color:#456949; padding:4px 0; white-space:nowrap; }
 .timeline-band-remaining { color:#456949; white-space:nowrap; }
 .timeline-chart { margin-top:0; }
 .timeline-chart.timeline-artwork-draggable { touch-action:none; }
@@ -450,6 +455,7 @@ a.reading-card:hover { border-color: #91ac96; box-shadow: 0 8px 25px #324a3719; 
  .timeline-workspace { grid-template-columns:minmax(0,1fr); grid-template-rows:514px 140px; gap:12px; margin-top:8px; height:666px; }
  .timeline-main { grid-template-rows:minmax(0,1fr) 74px 28px; gap:4px; }
  .timeline-workspace .timeline-stage { grid-template-rows:28px 150px 24px minmax(0,1fr); gap:4px; }
+ .timeline-river[data-polities-expanded="false"] .timeline-stage { grid-template-rows:28px auto 24px minmax(0,1fr); }
  .timeline-window-heading { font-size:11px; margin:0; }
  .timeline-window-heading .timeline-button { padding:4px 5px; }
  .timeline-band-caption { font-size:11px; }

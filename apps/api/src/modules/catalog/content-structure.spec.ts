@@ -5,6 +5,7 @@ import {
   type EventDating,
 } from '@histree/shared-types';
 import type { MysqlService } from '../mysql/mysql.service';
+import { claimFingerprint } from '../mysql/query-contracts';
 import { RevisionCache } from '../mysql/revision-cache';
 import { SearchRepository } from '../mysql/search-repository';
 import { PersonDirectory } from '../person/person-directory';
@@ -32,9 +33,9 @@ describe('Historical structure compatibility', () => {
     );
   });
   const estimate: EventDating = {
-    id:'11111111-1111-4111-8111-111111111111',
-    event_id:'22222222-2222-4222-8222-222222222222',
-    claim_id:'33333333-3333-4333-8333-333333333333',
+    id: '11111111-1111-4111-8111-111111111111',
+    event_id: '22222222-2222-4222-8222-222222222222',
+    claim_id: '33333333-3333-4333-8333-333333333333',
     earliest_year: 900,
     latest_year: 910,
     precision: 'range',
@@ -54,6 +55,26 @@ describe('Historical structure compatibility', () => {
       expect(() =>
         validateDating({ ...estimate, ...changed } as EventDating),
       ).toThrow();
+  });
+  it('invalidates derived interpretations when exact evidence or source changes', () => {
+    const basis = {
+      subject_table: 'event',
+      subject_id: 'event',
+      claim_text: '原义',
+      source_id: 'source',
+      citation: '卷一',
+      note: '原文：\ufeff甲。',
+      archive_url: 'https://example.test/fixed',
+    };
+    const fingerprint = claimFingerprint(basis);
+    for (const key of Object.keys(basis))
+      expect(
+        claimFingerprint({
+          ...basis,
+          [key]: basis[key as keyof typeof basis] + '变更',
+        }),
+      ).not.toBe(fingerprint);
+    expect(claimFingerprint({ ...basis })).toBe(fingerprint);
   });
   it('coalesces versioned reads and invalidates after a committed revision', async () => {
     let revision = 1;

@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS event_dating (
  id CHAR(36) CHARACTER SET ascii COLLATE ascii_bin PRIMARY KEY,
  event_id CHAR(36) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
  claim_id CHAR(36) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ claim_sha256 CHAR(64) NOT NULL,
  earliest_year INT NULL, latest_year INT NULL,
  precision_kind ENUM('year','approximate','range','relative','era','unknown') NOT NULL,
  era_key VARCHAR(100) NULL, basis LONGTEXT NOT NULL,
@@ -35,6 +36,19 @@ CREATE TABLE IF NOT EXISTS library_paragraph_review (
  paragraph_id VARCHAR(128) PRIMARY KEY, content_sha256 CHAR(64) NOT NULL,
  disposition ENUM('published','no_new','deferred') NOT NULL,
  reason LONGTEXT NOT NULL, audit_sha256 CHAR(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin;
+CREATE TABLE IF NOT EXISTS claim_relation (
+ id CHAR(36) CHARACTER SET ascii COLLATE ascii_bin PRIMARY KEY,
+ claim_id CHAR(36) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ related_claim_id CHAR(36) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ claim_sha256 CHAR(64) NOT NULL, related_sha256 CHAR(64) NOT NULL,
+ relation_kind ENUM('corroborates','conflicts','identity_candidate') NOT NULL,
+ review_state ENUM('proposed','reviewed') NOT NULL DEFAULT 'proposed',
+ note LONGTEXT NOT NULL,
+ CHECK(claim_id<>related_claim_id),
+ KEY claim_relation_left(claim_id,review_state), KEY claim_relation_right(related_claim_id,review_state),
+ FOREIGN KEY(claim_id) REFERENCES fact_claim(id) ON DELETE RESTRICT,
+ FOREIGN KEY(related_claim_id) REFERENCES fact_claim(id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_bin;
 CREATE TABLE IF NOT EXISTS content_revision (
  id TINYINT PRIMARY KEY, revision BIGINT UNSIGNED NOT NULL DEFAULT 0, CHECK(id=1)
@@ -80,3 +94,6 @@ CREATE TRIGGER revision_library_paragraph_review_delete AFTER DELETE ON library_
 CREATE INDEX person_directory_era ON person(status,era(64),id);
 CREATE INDEX person_directory_faction ON person(status,faction(64),id);
 CREATE INDEX person_event_chronology ON person_event(status,person_id,event_id);
+CREATE TRIGGER revision_claim_relation_insert AFTER INSERT ON claim_relation FOR EACH ROW UPDATE content_revision SET revision=revision+1 WHERE id=1;
+CREATE TRIGGER revision_claim_relation_update AFTER UPDATE ON claim_relation FOR EACH ROW UPDATE content_revision SET revision=revision+1 WHERE id=1;
+CREATE TRIGGER revision_claim_relation_delete AFTER DELETE ON claim_relation FOR EACH ROW UPDATE content_revision SET revision=revision+1 WHERE id=1;

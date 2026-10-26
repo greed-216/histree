@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 export type Row = Record<string, any>;
 export type MysqlResult = {
   data: any;
@@ -94,3 +95,28 @@ export const trim = (r: Row, kind?: string, length = 600) => {
   if (kind === 'person' || kind === 'event') result.type = kind;
   return result;
 };
+
+const evidenceFields = [
+  'subject_table',
+  'subject_id',
+  'claim_text',
+  'source_id',
+  'citation',
+  'note',
+];
+export function claimFingerprint(row: Row) {
+  return createHash('sha256')
+    .update(
+      [...evidenceFields.map((field) => row[field]), row.archive_url]
+        .map((value) =>
+          Buffer.from(String(value ?? ''), 'utf8')
+            .toString('hex')
+            .toUpperCase(),
+        )
+        .join('|'),
+    )
+    .digest('hex');
+}
+export function claimFingerprintSql(alias: string, sourceAlias: string) {
+  return `SHA2(CONCAT_WS('|',${[...evidenceFields.map((field) => `${alias}.${field}`), `${sourceAlias}.url`].map((field) => `HEX(COALESCE(${field},''))`).join(',')}),256)`;
+}

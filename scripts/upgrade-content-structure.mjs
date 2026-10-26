@@ -11,6 +11,10 @@ const require = createRequire(
   new URL("../apps/api/package.json", import.meta.url),
 );
 const { createConnection } = require("mysql2/promise");
+const {
+  claimFingerprint,
+  visible,
+} = require("./dist/modules/mysql/query-contracts.js");
 const args = process.argv.slice(2),
   arg = (name) =>
     args.includes(name) ? args[args.indexOf(name) + 1] : undefined;
@@ -82,11 +86,52 @@ try {
       coverage = coveragePath
         ? JSON.parse(await readFile(coveragePath, "utf8"))
         : { coverage: [], paragraphs: [] };
+    for (const value of datings) {
+      const [[claim]] = await db.execute(
+        `SELECT c.*,s.url archive_url FROM fact_claim c JOIN source s ON s.id=c.source_id WHERE c.id=? AND c.subject_table='event' AND c.subject_id=? AND ${visible("fact_claim", "c")}`,
+        [value.claim_id, value.event_id],
+      );
+      assert(claim, "Dating evidence unavailable");
+      value.claim_sha256 = claimFingerprint(claim);
+    }
+    const relationPath = arg("--claim-relations"),
+      relations = relationPath
+        ? JSON.parse(await readFile(relationPath, "utf8"))
+        : [];
+    for (const value of relations) {
+      assert(
+        [value.id, value.claim_id, value.related_claim_id].every((id) =>
+          /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(
+            id ?? "",
+          ),
+        ),
+      );
+      assert(typeof value.note === "string" && value.note.trim());
+      assert(
+        ["corroborates", "conflicts", "identity_candidate"].includes(
+          value.relation_kind,
+        ),
+      );
+      assert(value.claim_id !== value.related_claim_id);
+      assert(value.review_state === "reviewed");
+      for (const [idField, hashField] of [
+        ["claim_id", "claim_sha256"],
+        ["related_claim_id", "related_sha256"],
+      ]) {
+        const [[claim]] = await db.execute(
+          `SELECT c.*,s.url archive_url FROM fact_claim c JOIN source s ON s.id=c.source_id WHERE c.id=? AND ${visible("fact_claim", "c")}`,
+          [value[idField]],
+        );
+        assert(claim, "Related evidence unavailable");
+        value[hashField] = claimFingerprint(claim);
+      }
+    }
     const plan = {
       format_version: 1,
       target_fingerprint: fingerprint,
       claim_structure: structures,
       event_dating: datings,
+      claim_relations: relations,
       coverage: coverage.coverage,
       paragraphs: coverage.paragraphs,
       next_after: claims.at(-1)?.id ?? null,
@@ -161,9 +206,20 @@ try {
           "earliest_year",
           "latest_year",
           "precision_kind",
+          "claim_sha256",
           "era_key",
           "basis",
           "review_state",
+        ],
+        claim_relation: [
+          "id",
+          "claim_id",
+          "related_claim_id",
+          "claim_sha256",
+          "related_sha256",
+          "relation_kind",
+          "review_state",
+          "note",
         ],
         library_review_coverage: [
           "book_key",
@@ -227,12 +283,46 @@ try {
         [row.claim_id, row.event_id],
       );
       assert(basis, "Dating evidence or unknown original year changed");
+      const [[current]] = await db.execute(
+        `SELECT c.*,s.url archive_url FROM fact_claim c JOIN source s ON s.id=c.source_id WHERE c.id=? AND ${visible("fact_claim", "c")}`,
+        [row.claim_id],
+      );
+      assert.equal(
+        claimFingerprint(current),
+        row.claim_sha256,
+        "Dating evidence changed",
+      );
       const { precision, ...rest } = row;
       await insert(
         "event_dating",
         { ...rest, precision_kind: precision },
         { id: row.id },
       );
+    }
+    for (const row of plan.claim_relations ?? []) {
+      assert(
+        ["corroborates", "conflicts", "identity_candidate"].includes(
+          row.relation_kind,
+        ) &&
+          row.review_state === "reviewed" &&
+          row.claim_id !== row.related_claim_id,
+      );
+      for (const [idField, hashField] of [
+        ["claim_id", "claim_sha256"],
+        ["related_claim_id", "related_sha256"],
+      ]) {
+        const [[current]] = await db.execute(
+          `SELECT c.*,s.url archive_url FROM fact_claim c JOIN source s ON s.id=c.source_id WHERE c.id=? AND ${visible("fact_claim", "c")} FOR UPDATE`,
+          [row[idField]],
+        );
+        assert(current);
+        assert.equal(
+          claimFingerprint(current),
+          row[hashField],
+          "Related evidence changed",
+        );
+      }
+      await insert("claim_relation", row, { id: row.id });
     }
     for (const row of plan.coverage) {
       const root =

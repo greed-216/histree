@@ -20,7 +20,7 @@
 
 新增 `claim_structure` 是原 note 的无损拆分，保存原 note SHA-256。只有哈希仍相同时才使用结构化值；不匹配就回读旧字段。不能识别的格式保留为 unparsed，不标成校核完成。recorded 表示格式拆分成功，不能据此推定史实或身份已经无争议；待考说明仍保留为 deferred。
 
-书、底本版本、卷章和段落从已经核对的 library_source_link 映射获取，不根据标题或近似文本猜测。来源 URL、存档哈希、当前公开事实及关系端点同时检查。人物简介采用保守规则拆出明确的身份审校句，原 description 不改；无法明确拆分的句子保持原样。目录与详情都提供可展开的待考说明。
+claim_relation 保存经审核的印证、异说或身份候选关联；两侧证据都公开且指纹相符才展示。候选关联不归并人物。书、底本版本、卷章和段落从已经核对的 library_source_link 映射获取，不根据标题或近似文本猜测。来源 URL、存档哈希、当前公开事实及关系端点同时检查。人物简介采用保守规则拆出明确的身份审校句，原 description 不改；无法明确拆分的句子保持原样。目录与详情都提供可展开的待考说明。
 
 ## 年代
 
@@ -28,7 +28,7 @@
 
 - year：已校核到同一年；approximate/range：上下界；relative：可以只有一侧界限；era：仅知时代；unknown：不主张年份。
 - 0年、反向范围、没有依据或引用的记录拒绝导入。proposed 不进入公开筛选。
-- 公开读取只接受 reviewed 且原事件及所引事实仍可公开的记录。
+- 公开读取只接受 reviewed 且原事件及所引事实仍可公开的记录。事实文本、引文、定位或来源改变后，证据指纹不再匹配，旧推断自动退出公开详情和范围筛选，直到重新审核。
 - `dating=dated|undated|estimated` 和 `era` 可用于事件目录；估计范围按界限相交筛选。原来未知的年份仍为 null，年度概览不把估计值算成确年。
 - 自动升级不从卷年标题、生卒年或任官年批量猜事件发生年。具体推定必须有逐条审核的日期计划。
 
@@ -63,7 +63,8 @@
 ```sh
 python3 scripts/project-review-coverage.py --source-root <含完整审计的仓库> --output /private/tmp/coverage.json
 node scripts/upgrade-content-structure.mjs --mysql-env <私密文件> --coverage-plan /private/tmp/coverage.json --output /private/tmp/structure.json
-# 可追加 --dating-plan <已审核日期JSON数组>、--after <上组最后ID>、--limit <1到5000>
+# 可追加 --dating-plan <已审核日期JSON数组>、--claim-relations <已审核证据关联JSON数组>
+# 分块续跑使用 --after <上组最后ID>、--limit <1到5000>
 # --apply 必须同时指定 --plan 和精确 --expected-sha256；目标指纹、旧note和底本均重新核对。
 ```
 

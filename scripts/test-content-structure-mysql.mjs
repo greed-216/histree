@@ -11,6 +11,7 @@ require("reflect-metadata");
 const { ConfigService } = require("@nestjs/config"),
   { Module } = require("@nestjs/common"),
   { NestFactory } = require("@nestjs/core");
+const { claimFingerprint } = require("./dist/modules/mysql/query-contracts.js");
 const { MysqlService } = require("./dist/modules/mysql/mysql.service.js"),
   { LibraryService } = require("./dist/modules/library/library.service.js"),
   {
@@ -27,7 +28,7 @@ assert(["localhost", "127.0.0.1"].includes(process.env.MYSQL_HOST));
 assert.match(process.env.MYSQL_DATABASE ?? "", /^histree_test_[a-z0-9_]+$/);
 const db = new MysqlService(new ConfigService(process.env)),
   sha = (value) => createHash("sha256").update(value).digest("hex");
-const ids = Array.from({ length: 10 }, () => randomUUID()),
+const ids = Array.from({ length: 11 }, () => randomUUID()),
   [
     personA,
     personB,
@@ -39,6 +40,7 @@ const ids = Array.from({ length: 10 }, () => randomUUID()),
     participation,
     dating,
     hiddenClaim,
+    claimRelation,
   ] = ids;
 const book = "structure-fixture",
   section = book + "-s0001",
@@ -125,8 +127,20 @@ try {
     paragraph,
   ]);
   await db.execute(
-    "INSERT INTO event_dating VALUES(?,?,?,900,910,'range',NULL,'依据合成原文给出的上下界','reviewed')",
-    [dating, event, eventClaim],
+    "INSERT INTO event_dating VALUES(?,?,?,?,900,910,'range',NULL,'依据合成原文给出的上下界','reviewed')",
+    [
+      dating,
+      event,
+      eventClaim,
+      claimFingerprint({
+        subject_table: "event",
+        subject_id: event,
+        claim_text: "年代界限",
+        source_id: source,
+        note: "原文：" + quote + "；核对说明：范围依原文",
+        archive_url: archive,
+      }),
+    ],
   );
   await db.execute(
     "INSERT INTO library_review_coverage VALUES(?,'fixture-v1',1,1,1,0,1,?,'fixture/audit.json')",
@@ -144,6 +158,24 @@ try {
     e.review,
     e.review_state,
   ]);
+  const [leftBasis] = await db.rows(
+    "SELECT c.*,s.url archive_url FROM fact_claim c JOIN source s ON s.id=c.source_id WHERE c.id=?",
+    [claim],
+  );
+  const [rightBasis] = await db.rows(
+    "SELECT c.*,s.url archive_url FROM fact_claim c JOIN source s ON s.id=c.source_id WHERE c.id=?",
+    [eventClaim],
+  );
+  await db.execute(
+    "INSERT INTO claim_relation VALUES(?,?,?,?,?,'corroborates','reviewed','合成关联记录')",
+    [
+      claimRelation,
+      claim,
+      eventClaim,
+      claimFingerprint(leftBasis),
+      claimFingerprint(rightBasis),
+    ],
+  );
   const library = new LibraryService(db);
   assert.equal(
     (await library.section(book, section, { paragraph })).paragraphs[0].content,
@@ -166,6 +198,15 @@ try {
   assert.equal(evidence.evidence.quote, quote);
   assert.equal(evidence.evidence.origin, "structured");
   assert.equal(evidence.evidence.location.paragraph_id, paragraph);
+  assert.equal(
+    evidence.evidence.related_claims[0].related_claim_id,
+    eventClaim,
+  );
+  assert.equal(
+    (await db.content({ p_table: "fact_claim", p_claim: eventClaim })).items[0]
+      .evidence.related_claims[0].related_claim_id,
+    claim,
+  );
   checks++;
   await db.execute("UPDATE fact_claim SET note=? WHERE id=?", [
     "旧值已更新",
@@ -177,6 +218,35 @@ try {
     "legacy",
   );
   checks++;
+  assert.equal(
+    (await db.content({ p_table: "fact_claim", p_claim: claim })).items[0]
+      .evidence.related_claims.length,
+    0,
+  );
+  await db.execute("UPDATE fact_claim SET note=? WHERE id=?", [
+    "原文：" + quote + "；核对说明：身份待考",
+    claim,
+  ]);
+  await db.execute("UPDATE fact_claim SET note=? WHERE id=?", [
+    "依据发生变化",
+    eventClaim,
+  ]);
+  assert.equal((await db.entry(event)).datings.length, 0);
+  assert.equal(
+    (
+      await db.content({
+        p_table: "event",
+        p_dating: "estimated",
+        p_from: 905,
+        p_to: 906,
+      })
+    ).items.some((e) => e.id === event),
+    false,
+  );
+  await db.execute("UPDATE fact_claim SET note=? WHERE id=?", [
+    "原文：" + quote + "；核对说明：范围依原文",
+    eventClaim,
+  ]);
   assert.equal((await db.entry(event)).start_year, null);
   assert.equal((await db.entry(event)).datings[0].earliest_year, 900);
   assert.equal(
@@ -327,6 +397,7 @@ try {
 } finally {
   let cleanupFailure;
   for (const [table, column, values] of [
+    ["claim_relation", "id", [claimRelation]],
     ["event_dating", "id", [dating]],
     ["claim_structure", "claim_id", [claim]],
     ["library_paragraph_review", "paragraph_id", [paragraph]],

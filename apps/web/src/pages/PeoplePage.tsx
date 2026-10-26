@@ -73,49 +73,6 @@ export function PeoplePage() {
           </select>
         </label>
         <label>
-          政权与所属
-          <select
-            aria-label="政权与所属"
-            value={params.get("faction") ?? ""}
-            onChange={(e) => update("faction", e.target.value)}
-            className="reading-input block"
-          >
-            <option value="">全部所属</option>
-            {facets.data?.factions.map((x) => (
-              <option key={x}>{x}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          来源书籍
-          <select
-            aria-label="来源书籍"
-            value={params.get("book") ?? ""}
-            onChange={(e) => update("book", e.target.value)}
-            className="reading-input block"
-          >
-            <option value="">全部史书</option>
-            {facets.data?.books.map((x) => (
-              <option key={x.book_key} value={x.book_key}>
-                {x.title}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          年代信息
-          <select
-            aria-label="年代信息"
-            value={params.get("dating") ?? ""}
-            onChange={(e) => update("dating", e.target.value)}
-            className="reading-input block"
-          >
-            <option value="">不限</option>
-            <option value="known">有已知年代</option>
-            <option value="unknown">年代待补</option>
-          </select>
-        </label>
-        <label>
           排列方式
           <select
             aria-label="排列方式"
@@ -128,6 +85,66 @@ export function PeoplePage() {
             <option value="recent">最近录入</option>
           </select>
         </label>
+        <details
+          className="col-span-full"
+          open={
+            Boolean(
+              params.get("faction") ||
+              params.get("book") ||
+              params.get("dating"),
+            ) || undefined
+          }
+        >
+          <summary className="cursor-pointer text-sm text-teal-800">
+            更多筛选 · 所属、来源书籍与年代
+          </summary>
+          <div className="people-directory-advanced mt-4">
+            <label>
+              政权与所属
+              <select
+                aria-label="政权与所属"
+                value={params.get("faction") ?? ""}
+                onChange={(e) => update("faction", e.target.value)}
+                className="reading-input block"
+              >
+                <option value="">全部所属</option>
+                {facets.data?.factions.map((x) => (
+                  <option key={x}>{x}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              来源书籍
+              <select
+                aria-label="来源书籍"
+                value={params.get("book") ?? ""}
+                onChange={(e) => update("book", e.target.value)}
+                className="reading-input block"
+              >
+                <option value="">全部史书</option>
+                {facets.data?.books.map((x) => (
+                  <option key={x.book_key} value={x.book_key}>
+                    {x.title}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              年代信息
+              <select
+                aria-label="年代信息"
+                value={params.get("dating") ?? ""}
+                onChange={(e) => update("dating", e.target.value)}
+                className="reading-input block"
+              >
+                <option value="">不限</option>
+                <option value="known">有已知年代</option>
+                <option value="unknown">年代待补</option>
+              </select>
+            </label>
+          </div>
+        </details>
+
         <div className="col-span-full flex justify-end items-center gap-4">
           <button className="timeline-button" type="submit">
             搜索
@@ -141,9 +158,12 @@ export function PeoplePage() {
           </button>
         </div>
       </form>
-      <p className="text-sm text-stone-500">
-        已知年代优先采用已关联史事的最早年份，无记录时参考已知生卒年；这不表示完整生平。来源书籍筛选仅使用已核对的原文定位。待考身份保留在各人物的“身份辨析与待考”中。
-      </p>
+      <details className="text-sm text-stone-500">
+        <summary className="cursor-pointer">筛选范围说明</summary>
+        <p className="mt-2 leading-7">
+          已知年代优先采用已关联史事的最早年份，无记录时参考已知生卒年；这不表示完整生平。来源书籍筛选仅使用已核对的原文定位。待考身份保留在各人物的“身份辨析与待考”中。
+        </p>
+      </details>
       <LoadState {...result} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {result.data?.items.map((person) => {

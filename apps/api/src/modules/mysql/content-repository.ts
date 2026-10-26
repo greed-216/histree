@@ -1,5 +1,6 @@
 import {
   body,
+  claimFingerprintSql,
   fields,
   id,
   integer,
@@ -194,6 +195,7 @@ export class ContentRepository {
         const bounds = [
           'd.event_id=r.id',
           "d.review_state='reviewed'",
+          `d.claim_sha256=${claimFingerprintSql('c', 'dating_source')}`,
           "c.subject_table='event'",
           'c.subject_id=r.id',
           visible('fact_claim', 'c'),
@@ -213,7 +215,7 @@ export class ContentRepository {
           values.push(a.p_era);
         }
         add(
-          `EXISTS(SELECT 1 FROM event_dating d JOIN fact_claim c ON c.id=d.claim_id WHERE ${bounds.join(' AND ')})`,
+          `EXISTS(SELECT 1 FROM event_dating d JOIN fact_claim c ON c.id=d.claim_id JOIN source dating_source ON dating_source.id=c.source_id WHERE ${bounds.join(' AND ')})`,
           ...values,
         );
       }

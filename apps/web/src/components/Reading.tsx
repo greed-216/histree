@@ -223,6 +223,29 @@ export function EvidenceCard({ claim }: { claim: EvidenceClaim }) {
           </blockquote>
         </details>
       )}
+      {claim.evidence?.related_claims?.length ? (
+        <details className="mt-3 text-sm">
+          <summary className="cursor-pointer text-teal-800">
+            其他记载与身份辨析
+          </summary>
+          {claim.evidence.related_claims.map((related) => (
+            <p key={related.related_claim_id} className="mt-3">
+              <Link
+                className="text-teal-800 underline"
+                to={`/evidence/${related.subject_table}/${related.subject_id}#claim-${related.related_claim_id}`}
+              >
+                {related.relation_kind === "conflicts"
+                  ? "存在不同记载"
+                  : related.relation_kind === "identity_candidate"
+                    ? "身份对应仍待考"
+                    : "相关印证记载"}{" "}
+                →
+              </Link>
+              <span className="block leading-7 mt-1">{related.note}</span>
+            </p>
+          ))}
+        </details>
+      ) : null}
       <div className="flex flex-wrap gap-4 text-sm text-teal-700 mt-3">
         {claim.source && (
           <Link

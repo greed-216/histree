@@ -5,6 +5,13 @@ export interface EvidenceStructure {
   review: string;
   review_state: ReviewState;
   origin: "structured" | "legacy";
+  related_claims?: Array<{
+    related_claim_id: string;
+    subject_table: string;
+    subject_id: string;
+    relation_kind: "corroborates" | "conflicts" | "identity_candidate";
+    note: string;
+  }>;
   location?: {
     book_key: string;
     section_id: string;
@@ -81,7 +88,15 @@ export interface EventDating {
   review_state: "proposed" | "reviewed";
 }
 export function validateDating(value: EventDating) {
-  if([value.id,value.event_id,value.claim_id].some(id=>!/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/i.test(id??'')))throw new Error('Dating needs stable UUIDs');
+  if (
+    [value.id, value.event_id, value.claim_id].some(
+      (id) =>
+        !/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/i.test(
+          id ?? "",
+        ),
+    )
+  )
+    throw new Error("Dating needs stable UUIDs");
   if (!value.basis?.trim() || !value.claim_id || !value.event_id)
     throw new Error("Dating requires traceable evidence");
   if (

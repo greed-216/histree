@@ -1,6 +1,10 @@
 /** Full corpus/evidence/dating/directory chain against native disposable MySQL and real Nest HTTP. */
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { mkdtemp, writeFile, readFile, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { spawnSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
 import { applySchema, schemaFiles } from "./mysql-schema.mjs";
 import { legacyEvidence } from "../packages/shared-types/dist/index.js";
@@ -176,6 +180,90 @@ try {
       claimFingerprint(rightBasis),
     ],
   );
+  const upgradeRoot = await mkdtemp(
+    join(tmpdir(), "histree-structure-upgrade-"),
+  );
+  try {
+    const envFile = join(upgradeRoot, "mysql.env"),
+      planFile = join(upgradeRoot, "plan.json");
+    await writeFile(
+      envFile,
+      Object.entries(process.env)
+        .filter(([key]) => key.startsWith("MYSQL_"))
+        .map(([key, value]) => key + "=" + value)
+        .join("\n"),
+      { mode: 0o600 },
+    );
+    const runUpgrade = (extra) =>
+      spawnSync(
+        process.execPath,
+        [
+          "scripts/upgrade-content-structure.mjs",
+          "--mysql-env",
+          envFile,
+          ...extra,
+        ],
+        { encoding: "utf8", timeout: 30000 },
+      );
+    const prepared = runUpgrade(["--output", planFile, "--limit", "5000"]);
+    assert.equal(prepared.status, 0, prepared.stderr);
+    const plan = JSON.parse(await readFile(planFile, "utf8"));
+    plan.claim_structure = plan.claim_structure.filter((row) =>
+      [claim, eventClaim].includes(row.claim_id),
+    );
+    assert.equal(plan.claim_structure.length, 2);
+    plan.paragraphs = await db.rows(
+      "SELECT * FROM library_paragraph_review WHERE paragraph_id=?",
+      [paragraph],
+    );
+    let bytes = JSON.stringify(plan);
+    await writeFile(planFile, bytes);
+    const applied = runUpgrade([
+      "--apply",
+      "--plan",
+      planFile,
+      "--expected-sha256",
+      sha(bytes),
+    ]);
+    assert.equal(applied.status, 0, applied.stderr);
+    assert.equal(
+      runUpgrade([
+        "--apply",
+        "--plan",
+        planFile,
+        "--expected-sha256",
+        sha(bytes),
+      ]).status,
+      0,
+      "Exact replay must be idempotent",
+    );
+    await db.execute("DELETE FROM claim_structure WHERE claim_id=?", [
+      eventClaim,
+    ]);
+    plan.paragraphs[0].content_sha256 = "0".repeat(64);
+    bytes = JSON.stringify(plan);
+    await writeFile(planFile, bytes);
+    const stale = runUpgrade([
+      "--apply",
+      "--plan",
+      planFile,
+      "--expected-sha256",
+      sha(bytes),
+    ]);
+    assert.notEqual(stale.status, 0, "A late paragraph guard must reject");
+    assert.equal(
+      (
+        await db.rows("SELECT * FROM claim_structure WHERE claim_id=?", [
+          eventClaim,
+        ])
+      ).length,
+      0,
+      "Late rejection must roll back earlier evidence insertion",
+    );
+    checks += 3;
+  } finally {
+    await rm(upgradeRoot, { recursive: true, force: true });
+  }
   const library = new LibraryService(db);
   assert.equal(
     (await library.section(book, section, { paragraph })).paragraphs[0].content,
@@ -426,7 +514,7 @@ try {
   for (const [table, column, values] of [
     ["claim_relation", "id", [claimRelation]],
     ["event_dating", "id", [dating]],
-    ["claim_structure", "claim_id", [claim]],
+    ["claim_structure", "claim_id", [claim, eventClaim]],
     ["library_paragraph_review", "paragraph_id", [paragraph]],
     ["library_review_coverage", "book_key", [book]],
     ["library_source_link", "source_id", [source]],

@@ -58,7 +58,7 @@ claim_relation 保存经审核的印证、异说或身份候选关联；两侧�
 2. `pnpm schema:plan` 查看唯一有序清单。`node scripts/mysql-schema.mjs --bootstrap-test` 只接受本机、空的 histree_test_* 库，不接受生产库。
 3. 在隔离库运行 `pnpm test:mysql`：新原文库全链路使用小型合成样本及真实 Nest HTTP，无付费模型。生产规模验证单独使用 `test-library-mysql.mjs --expected-manifest`，不再把旧总数写进合约测试。
 4. 对现有库独立预检并执行 `005-content-structure.sql`；它依赖清单中此前所有基线和原文库迁移。DDL 不能按事务回滚，不能重放初始化基线；失败须先核对实际已执行语句，不盲目重跑。
-5. 准备并审核侧表计划。覆盖投影不改旧账本；证据按500条分块、按最后ID续跑。日期计划必须逐条给出依据。
+5. 准备并审核侧表计划。覆盖投影不改旧账本；证据默认按500条生成计划（上限5000条）、按最后ID续跑；执行时按100行批量读取旧值并写入，整份计划仍保持单事务，晚发生的校验失败也会回滚之前的写入。日期计划必须逐条给出依据。
 
 ```sh
 python3 scripts/project-review-coverage.py --source-root <含完整审计的仓库> --output /private/tmp/coverage.json

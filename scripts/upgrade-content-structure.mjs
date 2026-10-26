@@ -256,21 +256,120 @@ try {
         Object.values(row),
       );
     }
-    for (const row of plan.claim_structure) {
-      const [[current]] = await db.execute(
-        "SELECT note,status FROM fact_claim WHERE id=? FOR UPDATE",
-        [row.claim_id],
+    // Small bound batches keep packet sizes and row locks predictable. All batches
+    // remain inside the exact-plan transaction, including rollback on a late guard.
+    async function insertGuardedBatches(
+      table,
+      rows,
+      identity,
+      sourceTable,
+      sourceColumns,
+      verify,
+    ) {
+      const contracts = {
+        claim_structure: [
+          "claim_id",
+          "note_sha256",
+          "quote_text",
+          "review_note",
+          "review_state",
+        ],
+        library_paragraph_review: [
+          "paragraph_id",
+          "content_sha256",
+          "disposition",
+          "reason",
+          "audit_sha256",
+        ],
+      };
+      const columns = contracts[table];
+      assert(
+        columns &&
+          rows.every(
+            (row) =>
+              Object.keys(row).length === columns.length &&
+              columns.every((key) => Object.hasOwn(row, key)),
+          ),
+        "Unexpected bulk sidecar fields",
       );
-      assert(current && current.status === "published");
-      assert.equal(sha(current.note ?? ""), row.note_sha256, "Claim changed");
-      const e = legacyEvidence(current.note);
-      assert.deepEqual(
-        [row.quote_text, row.review_note, row.review_state],
-        [e.quote, e.review, e.review_state],
-        "Evidence was not a lossless deterministic split",
+      assert.equal(
+        new Set(rows.map((row) => row[identity])).size,
+        rows.length,
+        "Duplicate sidecar identity",
       );
-      await insert("claim_structure", row, { claim_id: row.claim_id });
+      for (let offset = 0; offset < rows.length; offset += 100) {
+        const batch = rows.slice(offset, offset + 100),
+          ids = batch.map((row) => row[identity]);
+        const placeholders = ids.map(() => "?").join(",");
+        const [basis] = await db.execute(
+          "SELECT " +
+            sourceColumns +
+            " FROM `" +
+            sourceTable +
+            "` WHERE id IN (" +
+            placeholders +
+            ") FOR UPDATE",
+          ids,
+        );
+        const current = new Map(basis.map((row) => [row.id, row]));
+        const [stored] = await db.execute(
+          "SELECT * FROM `" +
+            table +
+            "` WHERE `" +
+            identity +
+            "` IN (" +
+            placeholders +
+            ") FOR UPDATE",
+          ids,
+        );
+        const old = new Map(stored.map((row) => [row[identity], row]));
+        const missing = [];
+        for (const row of batch) {
+          verify(row, current.get(row[identity]));
+          const previous = old.get(row[identity]);
+          if (previous)
+            for (const key of columns)
+              assert.deepEqual(
+                previous[key],
+                row[key],
+                "Existing sidecar differs: " + table,
+              );
+          else missing.push(row);
+        }
+        if (missing.length)
+          await db.execute(
+            "INSERT INTO `" +
+              table +
+              "` (" +
+              columns.map((key) => "`" + key + "`").join(",") +
+              ") VALUES " +
+              missing
+                .map(() => "(" + columns.map(() => "?").join(",") + ")")
+                .join(","),
+            missing.flatMap((row) => columns.map((key) => row[key])),
+          );
+      }
     }
+    await insertGuardedBatches(
+      "claim_structure",
+      plan.claim_structure,
+      "claim_id",
+      "fact_claim",
+      "id,note,status",
+      (row, current) => {
+        assert(
+          current && current.status === "published",
+          "Claim no longer published",
+        );
+        assert.equal(sha(current.note ?? ""), row.note_sha256, "Claim changed");
+        const e = legacyEvidence(current.note);
+        assert.deepEqual(
+          [row.quote_text, row.review_note, row.review_state],
+          [e.quote, e.review, e.review_state],
+          "Evidence was not a lossless deterministic split",
+        );
+      },
+    );
     for (const input of plan.event_dating) {
       const row = validateDating(input);
       assert.equal(
@@ -350,20 +449,20 @@ try {
         volume: row.volume,
       });
     }
-    for (const row of plan.paragraphs) {
-      const [[paragraph]] = await db.execute(
-        "SELECT content_sha256 FROM library_paragraph WHERE id=?",
-        [row.paragraph_id],
-      );
-      assert.equal(
-        paragraph?.content_sha256,
-        row.content_sha256,
-        "Reader paragraph changed",
-      );
-      await insert("library_paragraph_review", row, {
-        paragraph_id: row.paragraph_id,
-      });
-    }
+    await insertGuardedBatches(
+      "library_paragraph_review",
+      plan.paragraphs,
+      "paragraph_id",
+      "library_paragraph",
+      "id,content_sha256",
+      (row, current) => {
+        assert.equal(
+          current?.content_sha256,
+          row.content_sha256,
+          "Reader paragraph changed",
+        );
+      },
+    );
     await db.commit();
     console.log(
       JSON.stringify({

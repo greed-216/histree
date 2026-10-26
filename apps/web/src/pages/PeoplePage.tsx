@@ -39,7 +39,7 @@ export function PeoplePage() {
         <h1 className="text-3xl font-serif mt-3">历史人物</h1>
       </header>
       <form
-        className="reading-card people-directory-filters flex flex-wrap gap-4"
+        className="reading-card people-directory-filters"
         aria-label="人物筛选"
         onSubmit={(e) => {
           e.preventDefault();
@@ -128,16 +128,18 @@ export function PeoplePage() {
             <option value="recent">最近录入</option>
           </select>
         </label>
-        <button className="timeline-button" type="submit">
-          搜索
-        </button>
-        <button
-          className="text-sm underline"
-          type="button"
-          onClick={() => setParams({})}
-        >
-          重置筛选
-        </button>
+        <div className="col-span-full flex justify-end items-center gap-4">
+          <button className="timeline-button" type="submit">
+            搜索
+          </button>
+          <button
+            className="text-sm underline"
+            type="button"
+            onClick={() => setParams({})}
+          >
+            重置筛选
+          </button>
+        </div>
       </form>
       <p className="text-sm text-stone-500">
         已知年代优先采用已关联史事的最早年份，无记录时参考已知生卒年；这不表示完整生平。来源书籍筛选仅使用已核对的原文定位。待考身份保留在各人物的“身份辨析与待考”中。

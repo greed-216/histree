@@ -313,7 +313,11 @@ export function LazyEvidence({
       onToggle={(e) => setOpen(e.currentTarget.open)}
     >
       <summary className="cursor-pointer text-teal-700">
-        查看这条关系的依据
+        {subject === "event"
+          ? "查看这条史事的依据"
+          : subject === "person"
+            ? "查看人物史料依据"
+            : "查看这条关系的依据"}
       </summary>
       {open && (
         <div className="mt-4">

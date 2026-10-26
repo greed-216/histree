@@ -1,5 +1,10 @@
+.people-directory-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 16px;
+  align-items: end;
+}
 .people-directory-filters label {
-  flex: 1 1 180px;
   min-width: 0;
   max-width: 100%;
 }

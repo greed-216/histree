@@ -12,18 +12,58 @@ export const schemaFiles = [
   "apps/api/mysql/migrations/20261019_library.sql",
   "database/mysql/005-content-structure.sql",
 ];
+export function schemaStatements(file, text) {
+  const delimiter = file.endsWith("001-content.sql") ? "$$" : ";";
+  text = text.replace(/^DELIMITER .*$/gm, "");
+  const statements = [];
+  let buffer = "",
+    quote = "";
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    if (quote) {
+      buffer += char;
+      if (char === "\\" && i + 1 < text.length) buffer += text[++i];
+      else if (char === quote) {
+        if (text[i + 1] === quote) buffer += text[++i];
+        else quote = "";
+      }
+      continue;
+    }
+    if (char === "'" || char === '"' || char === "`") {
+      quote = char;
+      buffer += char;
+      continue;
+    }
+    if (char === "-" && text[i + 1] === "-" && /\s/.test(text[i + 2] ?? "")) {
+      while (i < text.length && text[i] !== "\n") i++;
+      buffer += "\n";
+      continue;
+    }
+    if (char === "/" && text[i + 1] === "*") {
+      const end = text.indexOf("*/", i + 2);
+      if (end < 0) throw new Error("Unclosed schema comment");
+      i = end + 1;
+      buffer += " ";
+      continue;
+    }
+    if (text.startsWith(delimiter, i)) {
+      if (buffer.trim()) statements.push(buffer.trim());
+      buffer = "";
+      i += delimiter.length - 1;
+    } else buffer += char;
+  }
+  if (quote) throw new Error("Unclosed schema literal");
+  if (buffer.trim()) statements.push(buffer.trim());
+  return statements;
+}
 export async function applySchema(connection, files = schemaFiles) {
   for (const file of files) {
     const text = await readFile(new URL("../" + file, import.meta.url), "utf8");
-    const delimiter = file.endsWith("001-content.sql") ? "$$" : ";";
-    for (const statement of text
-      .replace(/^DELIMITER .*$/gm, "")
-      .split(delimiter)
-      .map((s) => s.trim())
-      .filter(Boolean))
+    for (const statement of schemaStatements(file, text))
       await connection.query(statement);
   }
 }
+
 if (
   process.argv[1] &&
   import.meta.url === new URL("file://" + process.argv[1]).href

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source-backed historical reading, timelines, relationships and AI",
   "scripts": {
-    "test": "pnpm --filter @histree/shared-types build && pnpm --filter api test --runInBand && pnpm test:graph && pnpm test:timeline && node scripts/test-ask.mjs && pnpm test:map && pnpm test:atlas",
+    "test": "pnpm --filter @histree/shared-types build && pnpm --filter api test --runInBand && pnpm test:graph && pnpm test:timeline && node scripts/test-ask.mjs && pnpm test:map && pnpm test:atlas && node scripts/test-schema-plan.mjs",
     "e2e:smoke": "node scripts/e2e-smoke.mjs",
     "test:ask-runtime": "node apps/api/dsh/smoke.mjs",
     "test:publication": "node scripts/test-publication.mjs",

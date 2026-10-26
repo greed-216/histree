@@ -50,6 +50,7 @@ const book = "structure-fixture",
     "/content/fixture/source.txt";
 let app,
   checks = 0;
+let primaryFailure;
 const connection = await db.connectionPool().getConnection();
 try {
   await applySchema(connection, schemaFiles.slice(4));
@@ -316,7 +317,15 @@ try {
       legacy_dates_preserved_before_explicit_fixture_update: true,
     }),
   );
+} catch (error) {
+  console.error("STRUCTURE_FIXTURE_FAILURE", {
+    code: error.code,
+    message: error.message,
+    sql: error.sql,
+  });
+  primaryFailure = error;
 } finally {
+  let cleanupFailure;
   for (const [table, column, values] of [
     ["event_dating", "id", [dating]],
     ["claim_structure", "claim_id", [claim]],
@@ -334,17 +343,22 @@ try {
     ["library_book", "book_key", [book]],
     ["library_asset", "id", [sha("asset")]],
   ])
-    await db.execute(
-      "DELETE FROM `" +
-        table +
-        "` WHERE `" +
-        column +
-        "` IN (" +
-        values.map(() => "?").join(",") +
-        ")",
-      values,
-    );
+    await db
+      .execute(
+        "DELETE FROM `" +
+          table +
+          "` WHERE `" +
+          column +
+          "` IN (" +
+          values.map(() => "?").join(",") +
+          ")",
+        values,
+      )
+      .catch((error) => {
+        cleanupFailure ??= error;
+      });
   connection.release();
   if (app) await app.close();
   else await db.onModuleDestroy();
+  if (primaryFailure || cleanupFailure) throw primaryFailure ?? cleanupFailure;
 }

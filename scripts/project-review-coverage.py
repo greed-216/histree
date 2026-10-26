@@ -12,7 +12,7 @@ def inside(root,name):
 def project(root):
     catalog=json.loads((root/'resources/derived/history-library/catalog.json').read_text())
     books={b['book_key']:b for b in catalog['books']}
-    indexes={};rows=[];paragraphs=[];skipped=[]
+    indexes={};navigation={};rows=[];paragraphs=[];skipped=[]
     for path in sorted((root/'content/books').glob('*/vol-*/from-start/completion-audit.json')):
         audit=json.loads(path.read_text());book=books.get(audit.get('book_key'))
         if not book or not audit.get('publication_verified') or not audit.get('full_volume_source_coverage'):
@@ -40,7 +40,9 @@ def project(root):
                 artifact=inside(root,book['paragraph_file'])
                 if digest(artifact)!=book['paragraph_sha256']: raise ValueError('Corpus paragraph artifact changed')
                 with gzip.open(artifact,'rt',encoding='utf-8') as f:
-                    indexes[book['book_key']]={p['id']:p['locator']['raw_excerpt_sha256'] for line in f if (p:=json.loads(line)).get('locator')}
+                    records=[json.loads(line) for line in f]
+                    indexes[book['book_key']]={p['id']:p['locator']['raw_excerpt_sha256'] for p in records if p.get('locator')}
+                    navigation[book['book_key']]={p['id'] for p in records if 'editorial_navigation_heading' in p.get('flags',[])}
             entries=json.loads(inside(root,audit['paragraph_ledger']).read_text())['paragraphs'] if audit.get('paragraph_ledger') else legacy_entries
             expected=audit['paragraphs'] if isinstance(audit['paragraphs'],int) else len(audit['paragraphs'])
             if len({p['paragraph_id'] for p in entries})!=expected: raise ValueError('Paragraph count is not whole-volume coverage')
@@ -55,6 +57,7 @@ def project(root):
                 published=entry.get('publication_verified') is True or legacy_source_proof and status.startswith('published_')
                 no_new=status in ['reviewed_no_structured_fact_verified','reviewed_structural_verified'] and not entry.get('claim_keys')
                 if not (published or no_new or pending): raise ValueError('Unknown paragraph disposition')
+                if pid in navigation[book['book_key']]: continue # UI navigation is intentionally absent from the reading DB.
                 counts['reviewed']+=1;counts['published']+=int(published);counts['no_new']+=int(no_new);counts['deferred']+=int(pending)
                 unit.append(dict(paragraph_id=pid,content_sha256=index[pid],disposition='deferred' if pending else 'published' if published else 'no_new',reason=entry.get('note','') or '\n'.join(entry.get('observations',[])),audit_sha256=digest(path)))
             rows.append(dict(book_key=book['book_key'],source_version=book['source_version'],volume=audit['volume'],**counts,audit_sha256=digest(path),audit_path=str(path.relative_to(root))))

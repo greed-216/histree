@@ -18,6 +18,17 @@ class ReviewCoverageTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder);self.fixture(root);result=MODULE.project(root)
    self.assertEqual(result['coverage'][0]['published'],1);self.assertEqual(result['coverage'][0]['deferred'],1);self.assertEqual(result['paragraphs'][0]['disposition'],'deferred');self.assertEqual(result['database_writes'],0)
+ def test_navigation_heading_does_not_require_a_reader_paragraph(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=Path(folder);self.fixture(root)
+   records=root/'resources/derived/history-library/fixture/paragraphs.jsonl.gz'
+   with gzip.open(records,'at') as f:f.write(json.dumps({'id':'fixture-p000002','flags':['editorial_navigation_heading'],'locator':{'raw_excerpt_sha256':'b'*64}})+'\n')
+   catalog=root/'resources/derived/history-library/catalog.json';value=json.loads(catalog.read_text());value['books'][0]['paragraph_sha256']=hashlib.sha256(records.read_bytes()).hexdigest();catalog.write_text(json.dumps(value))
+   base=root/'content/books/fixture/vol-001/from-start'
+   ledger=base/'published-paragraphs.json';value=json.loads(ledger.read_text());value['paragraphs'].append({'paragraph_id':'fixture-p000002','status':'reviewed_structural_verified','editorial_status':'reviewed','source_archive_verified':True});ledger.write_text(json.dumps(value))
+   audit=base/'completion-audit.json';value=json.loads(audit.read_text());value['paragraphs']=2;audit.write_text(json.dumps(value))
+   result=MODULE.project(root)
+   self.assertEqual(result['coverage'][0]['reviewed'],1);self.assertEqual(len(result['paragraphs']),1);self.assertEqual(result['skipped'],[])
  def test_changed_batch_never_becomes_completed_coverage(self):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder);batch=self.fixture(root);batch.write_text('{}');result=MODULE.project(root);self.assertEqual(result['coverage'],[]);self.assertEqual(len(result['skipped']),1)

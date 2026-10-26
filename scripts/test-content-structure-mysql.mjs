@@ -247,6 +247,11 @@ try {
     "原文：" + quote + "；核对说明：范围依原文",
     eventClaim,
   ]);
+  await db.execute("UPDATE event_dating SET latest_year=NULL,precision_kind='relative' WHERE id=?", [dating]);
+  assert((await db.content({p_table:"event",p_dating:"estimated",p_from:905,p_to:906})).items.some((item)=>item.id===event));
+  await db.execute("UPDATE event_dating SET earliest_year=NULL,precision_kind='unknown' WHERE id=?", [dating]);
+  assert(!(await db.content({p_table:"event",p_dating:"estimated"})).items.some((item)=>item.id===event));
+  await db.execute("UPDATE event_dating SET earliest_year=900,latest_year=910,precision_kind='range' WHERE id=?", [dating]);
   assert.equal((await db.entry(event)).start_year, null);
   assert.equal((await db.entry(event)).datings[0].earliest_year, 900);
   assert.equal(

@@ -201,13 +201,18 @@ export class ContentRepository {
           visible('fact_claim', 'c'),
         ];
         const values: unknown[] = [];
-        if (a.p_dating === 'estimated') add('r.start_year IS NULL');
+        if (a.p_dating === 'estimated') {
+          add('r.start_year IS NULL');
+          bounds.push("d.precision_kind<>'unknown'");
+        }
+        if (from !== null || to !== null)
+          bounds.push('(d.earliest_year IS NOT NULL OR d.latest_year IS NOT NULL)');
         if (from !== null) {
-          bounds.push('d.latest_year>=?');
+          bounds.push('(d.latest_year IS NULL OR d.latest_year>=?)');
           values.push(from);
         }
         if (to !== null) {
-          bounds.push('d.earliest_year<=?');
+          bounds.push('(d.earliest_year IS NULL OR d.earliest_year<=?)');
           values.push(to);
         }
         if (a.p_era) {

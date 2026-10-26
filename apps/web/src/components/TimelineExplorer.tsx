@@ -1,7 +1,9 @@
 import { HistoryScrollBackdrop } from "../components/HistoryScrollBackdrop";
+import "../styles/timeline-ancient.css";
 import { TimelinePeriodBands } from "./TimelinePeriodBands";
 import { polityReferences } from "../lib/timelinePeriods";
-import { historyScroll, initialScrollWindow, minimumScrollSpan, nextScrollZoomSpan, scrollSceneLayout, scrollYearX } from "../lib/historyScroll";
+import { historyScroll, initialScrollWindow, minimumScrollSpan, nextScrollZoomSpan, scrollSceneLayout, scrollYearX,
+  ancientChapters, annualStart, scrollStart, scrollPositionX, scrollPositionLabel, chapterAtPosition, chapterById, type AncientChapter } from "../lib/historyScroll";
 import { guideHighlights } from "../lib/historyGuides";
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -55,23 +57,27 @@ function TimelineRiver({
   } catch {
     /* Default to the latest recorded starting year. */
   }
-  const first = ordinal(Math.min(historyScroll.from_year, data.from!)),
+  const first = scrollStart,
     last = ordinal(Math.max(historyScroll.to_year, data.to!));
+  const selectedChapter = chapterById(params.get("era"));
   const preferred = compact
     ? (data.years.find((row) => row.year === 907)?.year ??
       data.years.at(-1)!.year)
     : data.years.at(-1)!.year;
   const selected = calendar(
-    Math.max(first, Math.min(last, ordinal(requested ?? preferred))),
+    Math.max(annualStart, Math.min(last, ordinal(requested ?? preferred))),
   );
+  const focus = selectedChapter ? (selectedChapter.from + selectedChapter.to) / 2 : ordinal(selected);
   const [window, setWindow] = useState<TimeWindow>(() =>
-    initialScrollWindow(selected, data.from!, data.to!, compact),
+    selectedChapter ? timeWindow(first, last, focus, selectedChapter.to - selectedChapter.from + 20)
+      : initialScrollWindow(selected, data.from!, data.to!, compact),
   );
   useEffect(() => {
-    setWindow(previous => ordinal(selected) >= previous.from && ordinal(selected) <= previous.to
-      ? previous : timeWindow(first, last, ordinal(selected), previous.to - previous.from));
+    setWindow(previous => focus >= previous.from && focus <= previous.to
+      ? previous : timeWindow(first, last, focus, previous.to - previous.from));
     setHoverYear(null);
-  }, [selected, first, last]);
+    setHoverChapter(null);
+  }, [focus, first, last]);
   const from = window.from,
     to = window.to;
   const span = Math.max(1, to - from);
@@ -89,22 +95,24 @@ function TimelineRiver({
     if (!canvas) return;
     const observer = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
-      if (width <= 0 || height <= 0) return;
+      if (width <= 0 || height < 80) return;
       setChartWidth(width);
       setChartHeightBudget(height);
       if (!initialCanvasMeasured.current) {
         initialCanvasMeasured.current = true;
-        setWindow(timeWindow(first, last, ordinal(selected),
-          minimumScrollSpan(width, height)));
+        setWindow(timeWindow(first, last, focus,
+          selectedChapter ? Math.max(minimumScrollSpan(width, height), selectedChapter.to - selectedChapter.from + 20)
+            : minimumScrollSpan(width, height)));
       }
     });
     observer.observe(canvas);
     return () => observer.disconnect();
-  }, [first, last, selected]);
+  }, [first, last, focus, selectedChapter]);
   const scene=scrollSceneLayout(from,to,chartWidth,chartHeightBudget,viewMode);
   const riverY=scene.riverY;
-  const focus = ordinal(selected);
   const [hoverYear, setHoverYear] = useState<number | null>(null);
+  const [hoverChapter, setHoverChapter] = useState<AncientChapter | null>(null);
+  const previewChapter = hoverChapter ?? (hoverYear === null ? selectedChapter : undefined);
   const previewYear = hoverYear ?? selected;
   const recordedPreview = data.years.find((row) => row.year === previewYear);
   const selectedHighlights = guideHighlights(previewYear);
@@ -133,11 +141,28 @@ function TimelineRiver({
   const suppressClick = useRef(false);
   const wheelRemainder = useRef(0);
   const x = (year: number) => scrollYearX(year,from,to);
+  const positionX = (position: number) => scrollPositionX(position,from,to);
   const overviewX = (at: number) =>
     20 + ((at - first) / Math.max(1, last - first)) * 960;
   function browse(next: TimeWindow) {
     setWindow(next);
-    setHoverYear(calendar(Math.round((next.from + next.to) / 2)));
+    previewPosition((next.from + next.to) / 2);
+  }
+  function previewPosition(position: number) {
+    const chapter = chapterAtPosition(position);
+    setHoverChapter(chapter ?? null);
+    setHoverYear(chapter ? null : calendar(Math.max(annualStart, Math.round(position))));
+  }
+  function browseChapter(chapter: AncientChapter) {
+    setPeriodNavigation(value => value + 1);
+    browse(timeWindow(first, last, (chapter.from + chapter.to) / 2, Math.max(scene.minimumSpan, (chapter.to - chapter.from) * 1.12)));
+    setHoverChapter(chapter);setHoverYear(null);
+  }
+  function chooseChapter(chapter: AncientChapter) {
+    const next = new URLSearchParams(params);
+    next.set("era", chapter.id);
+    setHoverYear(null);setHoverChapter(null);
+    setParams(next);
   }
   function pan(shift: number) {
     browse(moveWindow(window, first, last, shift));
@@ -173,6 +198,7 @@ function TimelineRiver({
       if (!shift) return;
       setWindow((previous) => moveWindow(previous, first, last, shift));
       setHoverYear(null);
+      setHoverChapter(null);
     };
     stage.addEventListener("wheel", wheel, { passive: false });
     return () => stage.removeEventListener("wheel", wheel);
@@ -267,13 +293,16 @@ function TimelineRiver({
   }
   const bins = useMemo(() => {
     const size = Math.max(1, Math.ceil((to - from + 1) / 100));
+    const bucketFrom = Math.max(annualStart, Math.ceil(from));
+    const bucketTo = Math.floor(to);
     const values = Array.from(
-      { length: Math.ceil((to - from + 1) / size) },
-      (_, i) => ({ at: from + i * size, count: 0 }),
+      { length: Math.max(0, Math.ceil((bucketTo - bucketFrom + 1) / size)) },
+      (_, i) => ({ at: bucketFrom + i * size, count: 0 }),
     );
     for (const row of data.years) {
-      const index = Math.floor((ordinal(row.year) - from) / size);
-      if (ordinal(row.year) >= from && ordinal(row.year) <= to)
+      if (row.year < historyScroll.annual_start_year) continue;
+      const index = Math.floor((ordinal(row.year) - bucketFrom) / size);
+      if (ordinal(row.year) >= bucketFrom && ordinal(row.year) <= bucketTo)
         values[index].count += row.count;
     }
     return values;
@@ -303,7 +332,7 @@ function TimelineRiver({
         calendar(Math.round(from + (span * i) / 6)),
       ),
     ),
-  ].filter((y) => ordinal(y) <= to);
+  ].filter((y) => y >= historyScroll.annual_start_year && ordinal(y) <= to);
   const boundaries = [...historyScroll.periods.map(period => period.from_year), historyScroll.to_year]
     .filter(year => ordinal(year) >= from && ordinal(year) <= to);
   const candidates = [...boundaries, ...overviewTicks];
@@ -314,14 +343,16 @@ function TimelineRiver({
   ticks.sort((a, b) => a - b);
   const binYears = Math.max(1, Math.ceil((to - from + 1) / 100));
   function choose(year: number, replace = false) {
-    year = calendar(Math.max(first, Math.min(last, ordinal(year))));
+    year = calendar(Math.max(annualStart, Math.min(last, ordinal(year))));
     setHoverYear(null);
-    if (year === selected) return;
+    setHoverChapter(null);
+    if (year === selected && !selectedChapter) return;
     const next = new URLSearchParams(params);
+    next.delete("era");
     next.set("year", String(year));
     setParams(next, { replace });
   }
-  function pointYear(
+  function pointPosition(
     e: Pick<
       PointerEvent<SVGSVGElement>,
       "currentTarget" | "clientX" | "clientY"
@@ -333,13 +364,13 @@ function TimelineRiver({
       matrix.inverse(),
     );
     const ratio = Math.max(0, Math.min(1, (point.x - 40) / 920));
-    return calendar(Math.round(Math.min(to, from + ratio * span)));
+    return Math.min(to, from + ratio * span);
   }
   function jump(e: React.FormEvent) {
     e.preventDefault();
     try {
       const year = timelineYear(draft);
-      if (ordinal(year) < first || ordinal(year) > last) throw new Error();
+      if (ordinal(year) < annualStart || ordinal(year) > last) throw new Error();
       choose(year);
       reveal(year);
       setInvalid(false);
@@ -374,7 +405,7 @@ function TimelineRiver({
       >
         <div className="timeline-topline">
           <div>
-            <p className="eyebrow">历史画卷 · 前403年—1912年</p>
+            <p className="eyebrow">历史画卷 · 神话时代—1912年</p>
             <p className="font-serif text-xl mt-2">
               史事记录分布：{formatDisplayYear(data.from)} —{" "}
               {formatDisplayYear(data.to)}
@@ -409,7 +440,7 @@ function TimelineRiver({
             >
               放大
             </button>
-            <span>{to - from + 1} 年视窗</span>
+            <span>{from < annualStart ? "时代与年份视窗" : `${Math.round(to - from + 1)} 年视窗`}</span>
 
           </div>
           <details className="timeline-more">
@@ -439,7 +470,7 @@ function TimelineRiver({
         </div>
         {invalid && (
           <p role="alert" className="text-sm text-rose-700">
-            请输入画卷范围内的整数年份；公元前用负数，没有公元 0 年。
+            请输入前841年至画卷末尾的整数年份；公元前用负数，没有公元 0 年。更早内容请按时代浏览。
           </p>
         )}
         <div className="timeline-navigation">
@@ -450,6 +481,8 @@ function TimelineRiver({
               onClick={() => setViewMode("detail")}>史事</button>
           </div>
         <nav className="timeline-periods" aria-label="浏览历史分期">
+          {ancientChapters.map(chapter => <button key={chapter.id} type="button" className="timeline-button timeline-ancient-button"
+            aria-label={`浏览${chapter.label}画卷`} onClick={() => browseChapter(chapter)}>{chapter.label}</button>)}
           {historyScroll.periods.map((period) => (
             <button
               key={period.label}
@@ -476,8 +509,7 @@ function TimelineRiver({
               ← 前一段
             </button>
             <span>
-              {formatDisplayYear(calendar(from))} —{" "}
-              {formatDisplayYear(calendar(to))}
+              {scrollPositionLabel(from)} — {scrollPositionLabel(to)}
             </span>
             <button
               className="timeline-button"
@@ -488,7 +520,7 @@ function TimelineRiver({
               后一段 →
             </button>
           </div>
-          <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewYear} onBrowse={browsePeriod}
+          <TimelinePeriodBands from={from} to={to} width={chartWidth} previewYear={previewChapter ? null : previewYear} onBrowse={browsePeriod} onBrowseChapter={browseChapter}
             navigationKey={periodNavigation} collapsed={!politiesExpanded}
             onToggle={() => setPolitiesExpanded(value => !value)}/>
           <div className="timeline-art-pan">
@@ -508,7 +540,7 @@ function TimelineRiver({
             style={{aspectRatio:`1000 / ${scene.viewBoxHeight}`}}
             className={`timeline-chart ${scene.mode === "detail" ? "timeline-detail-chart" : ""} ${scene.cropped ? "timeline-artwork-draggable" : ""}`}
             role="img"
-            aria-label="历史时间图，左右拖动浏览年份，放大后上下拖动查看画卷，移动光标预览，点击固定年份"
+            aria-label="历史时间图，前841年以前按时代浏览，之后按年浏览；左右拖动，点击选中时代或年份"
             onPointerDown={(e) => startDrag(e)}
             onPointerUp={endDrag}
             onPointerCancel={(e) => {
@@ -520,23 +552,35 @@ function TimelineRiver({
                 !moveDrag(e) &&
                 (e.pointerType === "mouse" || e.pointerType === "pen")
               ) {
-                const year = pointYear(e);
-                if (year !== undefined) setHoverYear(year);
+                const position = pointPosition(e);
+                if (position !== undefined) previewPosition(position);
               }
             }}
             onPointerLeave={() => {
-              if (!drag.current) setHoverYear(null);
+              if (!drag.current) { setHoverYear(null); setHoverChapter(null); }
             }}
             onClick={(e) => {
               if (suppressClick.current) {
                 suppressClick.current = false;
                 return;
               }
-              const year = pointYear(e);
-              if (year !== undefined) choose(year);
+              const position = pointPosition(e);
+              if (position !== undefined) {
+                const chapter = chapterAtPosition(position);
+                if (chapter) chooseChapter(chapter);
+                else choose(calendar(Math.max(annualStart, Math.round(position))));
+              }
             }}
           >
-            {scene.mode === "scroll" && <HistoryScrollBackdrop from={from} to={to} height={scene.height} position={artPosition}/>}
+            {scene.mode === "scroll" && <HistoryScrollBackdrop from={from} to={to} height={scene.height} position={artPosition} pixelsPerSvgUnit={chartWidth/1000}/>}
+            {ancientChapters.filter(chapter => chapter.to > from && chapter.from < to).map(chapter => <g key={chapter.id} aria-hidden="true" pointerEvents="none">
+              <text x={positionX((Math.max(from,chapter.from)+Math.min(to,chapter.to))/2)} y={scene.bottom+24*1000/chartWidth}
+                textAnchor="middle" fill="#6e755e" style={{fontSize:12*1000/chartWidth}}>{chapter.label}</text>
+            </g>)}
+            {annualStart >= from && annualStart <= to && <g className="timeline-chronology-transition" aria-hidden="true" pointerEvents="none">
+              <line x1={positionX(annualStart)} x2={positionX(annualStart)} y1="96" y2={scene.bottom} stroke="#a48856" strokeDasharray="4 5"/>
+              <text x={Math.min(890,positionX(annualStart)+8)} y="113" fill="#496044" style={{fontSize:11*1000/chartWidth}}>前841年起按年</text>
+            </g>}
             <g className="timeline-period-boundaries" aria-hidden="true" pointerEvents="none">
               {boundaries.map(year => <line key={year} data-boundary-year={year}
                 x1={x(year)} x2={x(year)} y1="96" y2={scene.bottom + 2}
@@ -640,7 +684,7 @@ function TimelineRiver({
                   />
                 </g>
               )}
-            {ordinal(selected) >= from && ordinal(selected) <= to && (
+            {!selectedChapter && ordinal(selected) >= from && ordinal(selected) <= to && (
               <g className="timeline-selected-mark">
                 <line
                   x1={x(selected)}
@@ -693,7 +737,7 @@ function TimelineRiver({
           <>
             <div className="timeline-overview" aria-label="全程时间导航">
               <div className="timeline-overview-labels">
-                <span>{formatDisplayYear(calendar(first))}</span>
+                <span>{ancientChapters[0].label}</span>
                 <span>全程概览<span className="timeline-overview-help"> · 拖动窗口或两端调整范围</span></span>
                 <span>{formatDisplayYear(calendar(last))}</span>
               </div>
@@ -715,11 +759,13 @@ function TimelineRiver({
                   stroke="#dadccb"
                   strokeWidth="2"
                 />
+                {ancientChapters.map((chapter,index) => <rect key={chapter.id} data-overview-chapter={chapter.id}
+                  x={overviewX(chapter.from)} y="50" width={Math.max(0,overviewX(chapter.to)-overviewX(chapter.from)-1)} height="5" fill={index%2?'#c6bea2':'#b5c5ab'}/>)}
                 {historyScroll.periods.map((period, index) => <rect key={period.label}
                   data-overview-period={period.label} x={overviewX(ordinal(period.from_year))} y="50"
                   width={Math.max(0, overviewX(ordinal(period.to_year)) - overviewX(ordinal(period.from_year)) - 1)}
                   height="5" fill={index % 2 ? "#bac7b1" : "#d9dcc9"}/>) }
-                {data.years.map((row) => (
+                {data.years.filter(row=>row.year>=historyScroll.annual_start_year).map((row) => (
                   <line
                     key={row.year}
                     x1={overviewX(ordinal(row.year))}
@@ -770,11 +816,12 @@ function TimelineRiver({
                 <button
                   className="timeline-button"
                   onClick={() => {
-                    reveal(selected);
+                    if (selectedChapter) browseChapter(selectedChapter); else reveal(selected);
                     setHoverYear(null);
+                    setHoverChapter(null);
                   }}
                 >
-                  回到已选年份
+                  {selectedChapter ? "回到已选时代" : "回到已选年份"}
                 </button>
                 <button
                   className="timeline-button"
@@ -786,10 +833,10 @@ function TimelineRiver({
               </div>
             </div>
             <div className="timeline-slider">
-              <span className="timeline-slider-year">已选 {formatDisplayYear(selected)}</span>
+              <span className="timeline-slider-year">已选 {selectedChapter?.label ?? formatDisplayYear(selected)}</span>
               <button
                 className="timeline-button"
-                disabled={focus <= first}
+                disabled={!!selectedChapter || ordinal(selected) <= annualStart}
                 aria-label="上一年"
                 onClick={() => {
                   const year = calendar(focus - 1);
@@ -802,9 +849,10 @@ function TimelineRiver({
               <input
                 type="range"
                 aria-label="选择历史年份"
-                min={first}
+                min={annualStart}
                 max={last}
-                value={focus}
+                value={ordinal(selected)}
+                disabled={!!selectedChapter}
                 onChange={(e) => {
                   const year = calendar(Number(e.target.value));
                   choose(year, true);
@@ -813,7 +861,7 @@ function TimelineRiver({
               />
               <button
                 className="timeline-button"
-                disabled={focus >= last}
+                disabled={!!selectedChapter || ordinal(selected) >= last}
                 aria-label="下一年"
                 onClick={() => {
                   const year = calendar(focus + 1);
@@ -827,7 +875,16 @@ function TimelineRiver({
           </>
         )}
         </div>
-        <aside className={`timeline-preview ${previewExpanded ? "is-expanded" : ""}`} aria-label="年度史事选读">
+        <aside className={`timeline-preview ${previewExpanded ? "is-expanded" : ""} ${previewChapter ? "timeline-era-preview" : ""}`} aria-label={previewChapter ? "时代选读" : "年度史事选读"}>
+          {previewChapter ? <>
+            <div className="timeline-preview-year"><p className="eyebrow">{selectedChapter?.id === previewChapter.id && !hoverChapter ? "已选时代" : "时代预览 · 点击画面选中"}</p>
+              <div className="timeline-preview-title"><h2>{previewChapter.label}</h2><span>按时代选读</span></div>
+            </div>
+            <div className="timeline-preview-content">
+              <p>这一时期的史事选读尚待整理。</p>
+              <button type="button" className="timeline-detail-link" onClick={()=>chooseChapter(previewChapter)}>查看这一时期的史事 →</button>
+            </div>
+          </> : <>
           <div className="timeline-preview-year">
             <p className="eyebrow">
               {hoverYear === null ? "已选年份" : "浏览预览 · 点击年份选中"}
@@ -871,12 +928,13 @@ function TimelineRiver({
               查看这一年的史事 →
             </Link>
           </div>
+          </>}
         </aside>
         </div>
         <details className="timeline-explanation">
           <summary>画卷与分期说明</summary>
         <p className="timeline-note">
-          画卷与年份刻度使用相同坐标，拖动与缩放同步。细览显示起始事件记录数量。拖动只浏览，点击年份才更新事件清单。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
+          前841年以前按时代章节展开，章节宽度不代表年数，不为未定年叙事补造年份。前841年起画卷与年份刻度同步，细览显示起始事件记录数量。拖动只浏览，点击才选中时代或年份。无数据表示暂无记录；画卷为AI生成的文化意象，不作疆域或场景复原。
           {bins.length < to - from + 1 &&
             "全景按时间段聚合，放大可查看更多细节。"}
         </p>
@@ -889,9 +947,18 @@ function TimelineRiver({
           </nav>
         </details>
       </section>
-      {!compact && <YearEvents key={selected} year={selected} />}
+      {!compact && (selectedChapter ? <EraReading chapter={selectedChapter}/> : <YearEvents key={selected} year={selected} />)}
     </>
   );
+}
+function EraReading({ chapter }: { chapter: AncientChapter }) {
+  return <section className="timeline-era-reading min-h-[420px]" aria-label="时代史事">
+    <div className="flex flex-wrap justify-between gap-3 mb-4">
+      <h2 className="reading-heading mb-0">这一时期发生了什么</h2>
+      <span className="text-sm text-stone-500">{chapter.label}</span>
+    </div>
+    <p className="reading-card">这一时期的史事选读尚待整理。</p>
+  </section>;
 }
 function YearEvents({ year }: { year: number }) {
   const result = useInfiniteResource<PageResult<Event>>(

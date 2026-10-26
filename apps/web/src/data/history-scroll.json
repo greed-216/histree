@@ -1,14 +1,48 @@
 {
-  "from_year": -403,
+  "from_year": -841,
   "to_year": 1912,
-  "coordinate_rule": "BCE years are negative; no year zero. Shared panel boundaries are exclusive on the right.",
+  "coordinate_rule": "BCE years are negative; no year zero. Before -841, chapter widths are display positions and do not encode calendar years. Annual scale begins at -841.",
   "generator": "built-in imagegen",
   "artwork_note": "AI生成的历史活动长卷；人物、动作与同框安排为艺术构图，不作为具体现场、人物容貌或政治疆域的复原。",
   "logical_canvas": {
-    "width": 9360,
+    "width": 12732,
     "height": 720
   },
   "panels": [
+    {
+      "id": "zhou-spring-extension-v1",
+      "file": "history-scroll-zhou-spring-v1.webp",
+      "from_year": -841,
+      "to_year": -759,
+      "width": 2172,
+      "height": 724,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 470,
+        "height": 724
+      },
+      "fade_in_pixels": 144,
+      "overlap_note": "前841年至前759年部分，保留右侧山水供下一画面衔接。",
+      "sha256": "f206ef639cf39b87085b1b35d695e1f78fdbd63c129ea47c752b52b3fa6e7ed4"
+    },
+    {
+      "id": "spring-join-v1",
+      "file": "history-scroll-spring-join-v1.webp",
+      "from_year": -759,
+      "to_year": -403,
+      "width": 2171,
+      "height": 724,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 2171,
+        "height": 724
+      },
+      "fade_in_pixels": 100,
+      "sha256": "3b894a3348720ca8969c3229d019426df9f003060d86f112795f2555ff5ace4e",
+      "overlap_note": "完整旧卷左端作为右三分之一参考；右侧在旧卷渐入区重叠。"
+    },
     {
       "id": "history-scroll-v6",
       "file": "history-scroll-v6.webp",
@@ -23,13 +57,24 @@
         "height": 720
       },
       "sha256": "04eadb90c98471d1dc08dbd3453bfdbddbe998594e600c202c5c9a6bb208606f",
-      "bytes": 3865286
+      "bytes": 3865286,
+      "fade_in_pixels": 42
     }
   ],
   "periods": [
     {
+      "label": "西周后期",
+      "from_year": -841,
+      "to_year": -770
+    },
+    {
+      "label": "春秋",
+      "from_year": -770,
+      "to_year": -475
+    },
+    {
       "label": "战国",
-      "from_year": -403,
+      "from_year": -475,
       "to_year": -221
     },
     {
@@ -84,9 +129,28 @@
     }
   ],
   "pixels_per_elapsed_year": 4.044943820224719,
-  "artifact_version": "v6",
-  "provenance_directory": "design/history-scroll-v6",
+  "artifact_version": "v7-ancient",
+  "provenance_directory": "design/history-scroll-ancient-v2",
   "scene_notes": [
+    {
+      "period": "神话时代",
+      "figures": [
+        "尧",
+        "舜",
+        "禹"
+      ],
+      "activity": "议事、田间交谈、勘察与疏水；依据文献叙事构图，不设确定公元年。"
+    },
+    {
+      "period": "夏商西周",
+      "figures": [],
+      "activity": "聚落营建、器物工艺、骨片记录、院落礼仪和田野活动。"
+    },
+    {
+      "period": "西周后期至春秋战国之际",
+      "figures": [],
+      "activity": "礼仪、使者、讲学、集市与商旅，沿山水接回原有战国画面。"
+    },
     {
       "period": "战国",
       "figures": [
@@ -166,5 +230,70 @@
       ],
       "activity": "末端的船厂营建、官员与工程人员交谈；以小幅文书场景收束帝制时代。"
     }
-  ]
+  ],
+  "annual_start_year": -841,
+  "ancient_chapters": [
+    {
+      "id": "five-emperors",
+      "label": "神话时代",
+      "width_pixels": 720,
+      "theme": "尧议事 · 舜耕作 · 禹治水",
+      "note": "依据古代文献叙事构图，人物容貌与同框安排属于艺术表达。",
+      "scenes": [
+        "尧与众人议事",
+        "舜在田间劳作、与人交谈",
+        "禹勘察水势、组织疏水"
+      ]
+    },
+    {
+      "id": "xia",
+      "label": "夏",
+      "width_pixels": 320,
+      "theme": "聚落与营建",
+      "note": "以聚落、营建和日常生产组织画面；具体遗址与王朝的对应保留研究差异。",
+      "scenes": [
+        "聚落日常",
+        "夯土营建",
+        "制陶与粮食搬运"
+      ]
+    },
+    {
+      "id": "shang",
+      "label": "商",
+      "width_pixels": 360,
+      "theme": "工艺与记录",
+      "note": "以工艺、器物和记录活动展开社会生活，画面不作为具体现场复原。",
+      "scenes": [
+        "青铜工艺",
+        "骨片记录",
+        "集体劳作"
+      ]
+    },
+    {
+      "id": "western-zhou-early",
+      "label": "西周前期",
+      "width_pixels": 200,
+      "theme": "礼仪与交往",
+      "note": "本章覆盖共和元年以前的西周叙事；有依据的具体时间仍可在原文与条目中保留。",
+      "scenes": [
+        "院落礼仪",
+        "人员往来",
+        "田野生活"
+      ]
+    }
+  ],
+  "ancient_panel": {
+    "id": "ancient-prefix-v1",
+    "file": "history-scroll-ancient-v1.webp",
+    "width": 2172,
+    "height": 724,
+    "core_width_pixels": 1600,
+    "crop": {
+      "x": 0,
+      "y": 0,
+      "width": 2172,
+      "height": 724
+    },
+    "sha256": "5163638b776d4a6c06c35f6ceacff8cd4a037a51c841049248245e40cb641fad"
+  }
 }

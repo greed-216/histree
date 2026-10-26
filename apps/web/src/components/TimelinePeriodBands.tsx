@@ -1,26 +1,36 @@
 import { useEffect, useId, useRef, useState } from "react";
-import { historyScroll } from "../lib/historyScroll";
+import { historyScroll, ancientChapters, type AncientChapter } from "../lib/historyScroll";
 import { formatDisplayRange } from "../lib/content";
 import { layoutBandLabels, polityTones, visibleInterval, visiblePolityLanes, yearInInterval } from "../lib/timelinePeriods";
 import { ordinal } from "../lib/timelineViewport";
 
 type BandItem = {
-  id: string; label: string; from_year: number; to_year: number;
+  id: string; label: string; from_year?: number; to_year?: number;
+  chapter?: AncientChapter;
   note?: string; fullLabel?: string; tone?: number; polity?: string; current?: boolean;
   phases?: { id: string; label: string; from_year: number; to_year: number }[];
   transition?: { year: number; label: string };
 };
 
-function BandLane({ items, from, to, width, kind, onBrowse }: {
+function BandLane({ items, from, to, width, kind, onBrowse, onBrowseChapter }: {
   items: BandItem[]; from: number; to: number; width: number; kind: "era" | "polity";
   onBrowse: (start: number, end: number) => void;
+  onBrowseChapter?: (chapter: AncientChapter) => void;
 }) {
+  function markFor(item: Pick<BandItem, "from_year" | "to_year" | "chapter">) {
+    if (item.chapter) {
+      const left = Math.max(from, item.chapter.from), right = Math.min(to, item.chapter.to);
+      return right > left ? { left: 4 + (left - from) / (to - from) * 92, width: (right - left) / (to - from) * 92 } : null;
+    }
+    return item.from_year !== undefined && item.to_year !== undefined
+      ? visibleInterval(item.from_year, item.to_year, from, to) : null;
+  }
   const visible = items.flatMap(item => {
-    const mark = visibleInterval(item.from_year, item.to_year, from, to);
+    const mark = markFor(item);
     return mark ? [{ ...item, mark }] : [];
   });
   const captions = visible.flatMap(item => (item.phases || [item]).flatMap((phase, index) => {
-    const mark = visibleInterval(phase.from_year, phase.to_year, from, to);
+    const mark = markFor(phase);
     return mark ? [{ ...item, ...phase, owner: item.id, polity: item.phases ? phase.id : item.polity,
       tone: kind === "polity" ? ((item.tone ?? 0) + index) % 5 : item.tone, mark }] : [];
   }));
@@ -33,7 +43,7 @@ function BandLane({ items, from, to, width, kind, onBrowse }: {
         style={{ left: `${item.mark.left}%`, width: `${item.mark.width}%` }}/>}
       {captions.map((caption, index) => {
         if (caption.owner !== item.id) return null;
-        const position = layout.positions[index], range = formatDisplayRange(caption.from_year, caption.to_year);
+        const position = layout.positions[index], range = caption.chapter ? "按时代浏览，宽度不代表年数" : formatDisplayRange(caption.from_year, caption.to_year);
         return <div key={caption.id} className={`timeline-band-segment timeline-${kind}-tone-${caption.tone ?? 0}`}>
       <svg className="timeline-band-connectors" viewBox={`0 0 ${width} ${height}`} aria-hidden="true" preserveAspectRatio="none">
         {(position.shifted || position.width > caption.mark.width / 100 * width) &&
@@ -48,11 +58,14 @@ function BandLane({ items, from, to, width, kind, onBrowse }: {
       <button type="button"
         className={`timeline-${kind}-band`}
         style={{ left: position.left, width: position.width, top: position.track * layout.pitch }}
-        data-polity={caption.polity} data-start={caption.from_year} data-end={caption.to_year}
+        data-polity={caption.polity} data-chapter={caption.chapter?.id} data-start={caption.from_year} data-end={caption.to_year}
         title={`${item.phases ? caption.label : item.fullLabel || item.label} · ${range}${item.note ? `。${item.note}` : ""}`}
         aria-label={`浏览${item.phases ? caption.label : item.fullLabel || item.label}，${range}${item.note ? `，${item.note}` : ""}`}
         aria-current={item.current ? "true" : undefined}
-        onClick={() => onBrowse(caption.from_year, caption.to_year)}>
+        onClick={() => {
+          if (caption.chapter) onBrowseChapter?.(caption.chapter);
+          else if (caption.from_year !== undefined && caption.to_year !== undefined) onBrowse(caption.from_year, caption.to_year);
+        }}>
         <span className="timeline-band-name">{caption.label}</span>
       </button>
       </div>;
@@ -67,9 +80,10 @@ function BandLane({ items, from, to, width, kind, onBrowse }: {
   </div>;
 }
 
-export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, navigationKey = 0, collapsed, onToggle }: {
-  from: number; to: number; width: number; previewYear: number;
+export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, onBrowseChapter, navigationKey = 0, collapsed, onToggle }: {
+  from: number; to: number; width: number; previewYear: number | null;
   onBrowse: (start: number, end: number) => void;
+  onBrowseChapter: (chapter: AncientChapter) => void;
   navigationKey?: number;
   collapsed: boolean;
   onToggle: () => void;
@@ -110,9 +124,12 @@ export function TimelinePeriodBands({ from, to, width, previewYear, onBrowse, na
   return <div className={`timeline-period-bands${collapsed ? " is-collapsed" : ""}`} aria-label="大分期与主要并立政权">
     <div ref={scrollRef} className="timeline-band-scroll" tabIndex={0} role="region" aria-label="分期与政权时间带，可上下滚动">
     <div className="timeline-band-lanes" style={{width}}>
-    <div className="timeline-era-wrapper" aria-label="朝代分期概览"><BandLane from={from} to={to} width={width} kind="era" onBrowse={onBrowse}
-      items={historyScroll.periods.map((period, index) => ({ ...period, id: period.label, tone: index % 2, note: "浏览分期",
-        current: yearInInterval(previewYear, period.from_year, period.to_year) }))}/></div>
+    <div className="timeline-era-wrapper" aria-label="朝代分期概览"><BandLane from={from} to={to} width={width} kind="era" onBrowse={onBrowse} onBrowseChapter={onBrowseChapter}
+      items={[
+        ...ancientChapters.map((chapter,index) => ({ id: chapter.id, label: chapter.label, chapter, tone: index % 2 })),
+        ...historyScroll.periods.map((period, index) => ({ ...period, id: period.label, tone: index % 2, note: "浏览分期",
+          current: previewYear !== null && yearInInterval(previewYear, period.from_year, period.to_year) })),
+      ]}/></div>
     <div id={polityId} hidden={collapsed}>
     {!collapsed && lanes.map((lane, index) => <div key={lane[0].lane} aria-label={`并立政权第${index + 1}行`}>
       <BandLane from={from} to={to} width={width} kind="polity" onBrowse={onBrowse}

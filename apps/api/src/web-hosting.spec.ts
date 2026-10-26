@@ -20,6 +20,10 @@ describe('combined frontend and API hosting', () => {
     mkdirSync(join(root, 'assets'));
     writeFileSync(join(root, 'index.html'), '<html><div id="root"></div></html>');
     writeFileSync(join(root, 'assets', 'app-123.js'), 'window.fixture = true;');
+    mkdirSync(join(root, 'timeline-scroll', 'tiles'), { recursive: true });
+    writeFileSync(join(root, 'timeline-scroll', 'tiles', 'scroll-low-1234567890abcdef.webp'), 'tile fixture');
+    writeFileSync(join(root, 'timeline-scroll', 'tiles', 'unversioned.webp'), 'unversioned fixture');
+    writeFileSync(join(root, 'timeline-scroll', 'history-scroll-v6.webp'), 'original fixture');
     const module = await Test.createTestingModule({ controllers: [FixtureController] }).compile();
     app = module.createNestApplication<NestExpressApplication>();
     configureWebHosting(app, root);
@@ -44,5 +48,13 @@ describe('combined frontend and API hosting', () => {
   });
   it('refuses to start when the frontend build is missing', () => {
     expect(() => configureWebHosting(app, join(root, 'absent'))).toThrow('Frontend build missing');
+  });
+  it('immutably caches only content-named scroll tiles while keeping originals revalidated', async () => {
+    await request(app.getHttpServer()).get('/timeline-scroll/tiles/scroll-low-1234567890abcdef.webp').expect(200)
+      .expect('Cache-Control', 'public, max-age=31536000, immutable');
+    for (const path of ['/timeline-scroll/tiles/unversioned.webp', '/timeline-scroll/history-scroll-v6.webp']) {
+      await request(app.getHttpServer()).get(path).expect(200).expect('Cache-Control', 'no-cache');
+    }
+    await request(app.getHttpServer()).get('/timeline-scroll/tiles/missing-1234567890abcdef.webp').expect(404);
   });
 });

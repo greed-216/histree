@@ -11,17 +11,17 @@ const {ordinal}=await import(viewportUrl);
 const source=(await readFile(new URL('../apps/web/src/lib/historyScroll.ts',import.meta.url),'utf8'))
  .replace('import scroll from "../data/history-scroll.json";',`const scroll=${JSON.stringify(scroll)};`)
  .replace('"./timelineViewport"',JSON.stringify(viewportUrl));
-const {scrollYearX,scrollPanelGeometry,scrollBackgroundGeometry,scrollSceneLayout,scrollPeriodShare,initialScrollWindow,minimumScrollSpan,nextScrollZoomSpan}=await import(moduleUrl(source));
-const first=ordinal(scroll.from_year),last=ordinal(scroll.to_year),art=scroll.panels[0];
+const {scrollYearX,scrollPanelGeometry,scrollBackgroundGeometry,scrollSceneLayout,scrollPeriodShare,initialScrollWindow,minimumScrollSpan,nextScrollZoomSpan,scrollPanels,scrollStart,ancientChapters}=await import(moduleUrl(source));
+const art=scrollPanels.at(-1),first=ordinal(art.from_year),last=ordinal(art.to_year);
 assert.equal(first,-403);assert.equal(last-first,2314);
 assert.equal(ordinal(1)-ordinal(-1),1);
-assert.equal(scroll.logical_canvas.width,9360);assert.equal(scroll.logical_canvas.height,720);
-assert.equal(scroll.panels.length,1);
-assert.equal(art.from_year,scroll.from_year);assert.equal(art.to_year,scroll.to_year);
+assert.equal(art.width,9360);assert.equal(scroll.logical_canvas.height,720);
+assert.equal(scroll.panels.length,3);
+assert.equal(scroll.from_year,-841);assert.equal(art.from_year,-403);assert.equal(art.to_year,scroll.to_year);
 assert.equal(art.crop.x,0);assert.equal(art.crop.y,0);
 assert.equal(art.crop.width,art.width);assert.equal(art.crop.height,art.height);
-assert.equal(scrollPeriodShare(907,960),53/2314);
-assert.ok(Math.abs(scroll.periods.reduce((sum,p)=>sum+scrollPeriodShare(p.from_year,p.to_year),0)-1)<1e-12);
+assert.equal(scrollPeriodShare(907,960),53/(last-scrollStart));
+assert.ok(Math.abs(scroll.periods.reduce((sum,p)=>sum+scrollPeriodShare(p.from_year,p.to_year),0)+ancientChapters.reduce((sum,c)=>sum+(c.to-c.from)/(last-scrollStart),0)-1)<1e-12);
 // Source-pixel anchors and data years must land at exactly the same screen x at every zoom.
 const pixelForYear=y=>(ordinal(y)-first)/(last-first)*art.width;
 for(const [from,to] of [[first,last],[606,1206],[-50,50],[850,958],[ordinal(907),ordinal(917)]]) {
@@ -67,7 +67,7 @@ for(const width of [320,555,1000,1440]) for(const budget of [190,294,434]) {
 }
 for(const year of [-403,-1,1,907,959,1912])for(const compact of [false,true]) {
  const w=initialScrollWindow(year,852,959,compact);
- assert.ok(w.from<=ordinal(year)&&w.to>=ordinal(year));assert.ok(w.from>=first&&w.to<=last);
+ assert.ok(w.from<=ordinal(year)&&w.to>=ordinal(year));assert.ok(w.from>=scrollStart&&w.to<=last);
 }
 assert.equal(initialScrollWindow(959,852,959,false).to-initialScrollWindow(959,852,959,false).from,600);
 const bytes=await readFile(new URL(`../apps/web/public/timeline-scroll/${art.file}`,import.meta.url));
@@ -81,18 +81,19 @@ for(let offset=12;offset+8<bytes.length;) {
  offset+=8+size+(size%2);
 }
 assert.deepEqual(dimensions,[9360,720]);
-const provenance=scroll.provenance_directory;
+// Keep validating the unchanged v6 source and its original composition independently of new panels.
+const provenance="design/history-scroll-v6";
 const audit=JSON.parse(await readFile(new URL(`../${provenance}/composition.json`,import.meta.url),'utf8'));
 assert.equal(audit.width,9360);assert.equal(audit.overlap_px,360);assert.equal(audit.seams.length,4);
 assert.equal(2160+4*1800,9360,'duplicate overlap pixels must be removed');
-const png=await readFile(new URL(`../${provenance}/history-scroll-${scroll.artifact_version}.png`,import.meta.url));
+const png=await readFile(new URL(`../${provenance}/history-scroll-v6.png`,import.meta.url));
 assert.equal(png.readUInt32BE(16),9360);assert.equal(png.readUInt32BE(20),720);
 assert.equal(createHash('sha256').update(png).digest('hex'),audit.lossless_png_sha256);
 for(const original of audit.originals) {
  const raw=await readFile(new URL(`../${original.file}`,import.meta.url));
  assert.equal(createHash('sha256').update(raw).digest('hex'),original.sha256);
 }
-if(scroll.artifact_version==='v6') {
+if(art.id==='history-scroll-v6') {
  const ending=audit.late_ending;
  assert.equal(ending.from_year,1850);
  assert.equal(ending.global_start_px,Math.ceil(pixelForYear(1850)));
@@ -100,7 +101,7 @@ if(scroll.artifact_version==='v6') {
  const raw=await readFile(new URL(`../${ending.file}`,import.meta.url));
  assert.equal(createHash('sha256').update(raw).digest('hex'),ending.source_sha256);
  const storyboard=JSON.parse(await readFile(new URL(`../${provenance}/storyboard.json`,import.meta.url),'utf8'));
- assert.deepEqual(scroll.scene_notes,storyboard.display_notes);
- assert.equal(scroll.scene_notes.length,10);
+ assert.deepEqual(scroll.scene_notes.slice(3),storyboard.display_notes);
+ assert.equal(storyboard.display_notes.length,10);
 }
 console.log('PASS: 403 BCE–1912, original stitched pixels, era proportions, no year zero, exact artwork/data anchors and pan speed at all zooms, fixed canvas, independent view modes, cropped zoom, complete year axes and asset hashes.');

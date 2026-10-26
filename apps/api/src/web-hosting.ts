@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { basename, resolve } from 'node:path';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import type { Request, Response, NextFunction } from 'express';
 
@@ -10,7 +10,9 @@ export function configureWebHosting(app: NestExpressApplication, webRoot: string
   app.useStaticAssets(root, {
     index: false,
     setHeaders(res, file) {
-      res.setHeader('Cache-Control', file.startsWith(resolve(root, 'assets') + '/')
+      const versionedTile = file.startsWith(resolve(root, 'timeline-scroll', 'tiles') + '/')
+        && /-[a-f0-9]{16}\.webp$/.test(basename(file));
+      res.setHeader('Cache-Control', file.startsWith(resolve(root, 'assets') + '/') || versionedTile
         ? 'public, max-age=31536000, immutable' : 'no-cache');
     },
   });

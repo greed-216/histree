@@ -32,6 +32,29 @@ describe('Historical structure compatibility', () => {
       [],
     );
   });
+  it('separates legacy identity bridge cautions without hiding historical bridge events', () => {
+    expect(
+      personReading('1288年西逃被擒送京，与早库春子无明确桥暂分。'),
+    ).toMatchObject({
+      summary: '1288年西逃被擒送京。',
+      identity_notes: ['与早库春子无明确桥暂分。'],
+      review_state: 'deferred',
+    });
+    expect(personReading('1357年任官守济宁，未证1355同名亲王。')).toMatchObject(
+      {
+        summary: '1357年任官守济宁。',
+        identity_notes: ['未证1355同名亲王。'],
+        review_state: 'deferred',
+      },
+    );
+    expect(
+      personReading('元知枢密，与1366平章转台官缺桥先分。').identity_notes,
+    ).toHaveLength(1);
+    expect(personReading('与敌军交战，因河道缺桥无法渡河。')).toMatchObject({
+      summary: '与敌军交战，因河道缺桥无法渡河。',
+      identity_notes: [],
+    });
+  });
   const estimate: EventDating = {
     id: '11111111-1111-4111-8111-111111111111',
     event_id: '22222222-2222-4222-8222-222222222222',

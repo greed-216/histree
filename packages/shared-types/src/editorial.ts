@@ -49,7 +49,7 @@ export function personReading(description?: string | null): PersonReading {
   const text = description ?? "";
   // Split only explicit editorial clauses, never a negated historical action.
   const marker =
-    /(?:未与[^。；]{0,80}(?:同名|强合|归并)|与前卷[^。；]{0,100}(?:同名|候选)|暂保候选|身份(?:尚)?待考|(?:同名|身份)[^。；]{0,60}(?:待核|存疑))/;
+    /(?:未与[^。；]{0,80}(?:同名|强合|归并)|与前卷[^。；]{0,100}(?:同名|候选)|与[^，,。；]{0,100}(?:无明确桥|缺[^，,。；]{0,12}桥)[^，,。；]{0,20}(?:暂分|先分|分列)|未证[^，,。；]{0,80}同名[^，,。；]{0,20}|暂保候选|身份(?:尚)?待考|(?:同名|身份)[^。；]{0,60}(?:待核|存疑))/;
   const summary: string[] = [],
     identity_notes: string[] = [];
   for (const sentence of text.match(/[^。；]+[。；]?/g) ?? []) {

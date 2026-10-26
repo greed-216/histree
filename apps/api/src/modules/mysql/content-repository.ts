@@ -206,7 +206,9 @@ export class ContentRepository {
           bounds.push("d.precision_kind<>'unknown'");
         }
         if (from !== null || to !== null)
-          bounds.push('(d.earliest_year IS NOT NULL OR d.latest_year IS NOT NULL)');
+          bounds.push(
+            '(d.earliest_year IS NOT NULL OR d.latest_year IS NOT NULL)',
+          );
         if (from !== null) {
           bounds.push('(d.latest_year IS NULL OR d.latest_year>=?)');
           values.push(from);

@@ -1,7 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { apiFetch } from "../lib/api";
 const cache = new Map<string, { data: unknown; expires: number }>();
-const cacheable = (path: string) => path.startsWith('/graph-slice/') || path.startsWith('/entry/') || path === '/timeline/overview';
+const cacheable = (path: string) =>
+  path.startsWith("/graph-slice/") ||
+  path.startsWith("/entry/") ||
+  path.startsWith("/timeline/overview") ||
+  path.startsWith("/timeline/highlights");
 export function useResource<T>(path: string | undefined) {
   const [state, setState] = useState<{
     path: string | undefined;
@@ -15,15 +19,20 @@ export function useResource<T>(path: string | undefined) {
     if (!path) return;
     let active = true;
     const controller = new AbortController();
-    const candidate = revision === 0 && cacheable(path) ? cache.get(path) : undefined;
-    const saved = candidate && candidate.expires > Date.now() ? candidate : undefined;
-    const request = saved && saved.expires > Date.now() ? Promise.resolve(saved.data as T) : apiFetch<T>(path, { signal: controller.signal });
+    const candidate =
+      revision === 0 && cacheable(path) ? cache.get(path) : undefined;
+    const saved =
+      candidate && candidate.expires > Date.now() ? candidate : undefined;
+    const request =
+      saved && saved.expires > Date.now()
+        ? Promise.resolve(saved.data as T)
+        : apiFetch<T>(path, { signal: controller.signal });
     request
       .then((data) => {
         if (active) {
           if (cacheable(path) && !saved) {
-            cache.set(path, { data, expires: Date.now()+20000 });
-            if(cache.size > 32)cache.delete(cache.keys().next().value!);
+            cache.set(path, { data, expires: Date.now() + 20000 });
+            if (cache.size > 32) cache.delete(cache.keys().next().value!);
           }
           setState({ path, revision, data, loading: false });
         }
@@ -42,11 +51,16 @@ export function useResource<T>(path: string | undefined) {
       controller.abort();
     };
   }, [path, revision]);
-  const retry = useCallback(() => { if(path)cache.delete(path); setRevision(v=>v+1); },[path]);
+  const retry = useCallback(() => {
+    if (path) cache.delete(path);
+    setRevision((v) => v + 1);
+  }, [path]);
   return {
-    ...(!path ? { loading: false, data: undefined, error: undefined } : state.path === path && state.revision === revision
-      ? state
-      : { loading: true, data: undefined, error: undefined }),
+    ...(!path
+      ? { loading: false, data: undefined, error: undefined }
+      : state.path === path && state.revision === revision
+        ? state
+        : { loading: true, data: undefined, error: undefined }),
     retry,
   };
 }

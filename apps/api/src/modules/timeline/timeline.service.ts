@@ -1,26 +1,52 @@
-import { timelineYear, pageNumber } from '@histree/shared-types';
+import { pageNumber, timelineYear } from '@histree/shared-types';
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { MysqlService } from '../mysql/mysql.service';
 import { readContentPage } from '../../common/pagination';
+import { MysqlService } from '../mysql/mysql.service';
+import { TimelineRepository } from '../mysql/timeline-repository';
 @Injectable()
 export class TimelineService {
   constructor(private readonly mysqlService: MysqlService) {}
-  async getOverview() {
-    const { data, error } = await this.mysqlService.getClient().rpc('timeline_overview');
+  async getOverview(compact = false) {
+    if (compact) return new TimelineRepository(this.mysqlService).summary();
+    const { data, error } = await this.mysqlService
+      .getClient()
+      .rpc('timeline_overview');
     if (error) throw error;
     return data;
+  }
+  async getHighlights(value: string) {
+    let year: number;
+    try {
+      year = timelineYear(value);
+    } catch {
+      throw new BadRequestException('Invalid year');
+    }
+    return new TimelineRepository(this.mysqlService).highlights(year);
   }
   async getTimeline(query: Record<string, string> = {}) {
     if (query.year !== undefined) {
       let year: number, page: number;
-      try { year = timelineYear(query.year); page = pageNumber(query.page); }
-      catch { throw new BadRequestException('无效的时间图参数'); }
-      const { data, error } = await this.mysqlService.getClient().from('event').select('*')
-        .eq('status', 'published').lte('start_year', year)
+      try {
+        year = timelineYear(query.year);
+        page = pageNumber(query.page);
+      } catch {
+        throw new BadRequestException('无效的时间图参数');
+      }
+      const { data, error } = await this.mysqlService
+        .getClient()
+        .from('event')
+        .select('*')
+        .eq('status', 'published')
+        .lte('start_year', year)
         .or(`end_year.gte.${year},and(end_year.is.null,start_year.eq.${year})`)
-        .order('start_year').order('id').range(page * 20, page * 20 + 20);
+        .order('start_year')
+        .order('id')
+        .range(page * 20, page * 20 + 20);
       if (error) throw error;
-      return { items: (data ?? []).slice(0, 20), has_more: (data?.length ?? 0) > 20 };
+      return {
+        items: (data ?? []).slice(0, 20),
+        has_more: (data?.length ?? 0) > 20,
+      };
     }
     const { start, end, ...rest } = query;
     return readContentPage(this.mysqlService.getClient(), 'event', {

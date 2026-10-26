@@ -1,8 +1,13 @@
-import { lazy, Suspense, useState } from "react";
 import type { GraphResponse } from "@histree/shared-types";
+import { lazy, Suspense, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import data from "../data/history-guides.json";
-import { sourceReadingPath, sourceTitle, sourceCitation } from '../lib/source-reading';
+import { periodReadings } from "../lib/periodReadings";
+import {
+  sourceCitation,
+  sourceReadingPath,
+  sourceTitle,
+} from "../lib/source-reading";
 const GraphView = lazy(() =>
   import("./GraphPage").then((m) => ({ default: m.GraphView })),
 );
@@ -408,9 +413,27 @@ export function GuideIndexPage() {
           />
         </label>
       </section>
+      {(kind === "all" || kind === "period") && (
+        <section>
+          <h2 className="reading-heading">按时期进入史事</h2>
+          <p className="text-sm text-stone-500 mb-4">
+            按时间顺序阅读条目并核查出处；与下方编辑导读分别展示。
+          </p>
+          <nav className="guide-chapters" aria-label="时期阅读路径">
+            {periodReadings
+              .filter((p) => !query || p.label.includes(query))
+              .map((p) => (
+                <Link to={`/learn/period/${p.id}`} key={p.id}>
+                  <h3>{p.label}</h3>
+                  <span>阅读编年条目 →</span>
+                </Link>
+              ))}
+          </nav>
+        </section>
+      )}
       <div>
         <p className="text-sm text-stone-500 mb-5">
-          导读持续整理中。当前开放五代时期的阅读路径，其他时期会随着资料整理逐步加入。
+          可以先按时期阅读已录入的编年条目，也可以进入已经整理的主题与人物导读。
         </p>
         <div className="guide-chapters" aria-label="已整理的导读">
           {items.map((item) => (

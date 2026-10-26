@@ -1,0 +1,29 @@
+.people-directory-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: end;
+}
+.people-directory-filters label {
+  min-width: 0;
+  max-width: 100%;
+}
+.people-directory-filters input,
+.people-directory-filters select {
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+}
+.people-directory-advanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .people-directory-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .people-directory-filters > label:first-child {
+    grid-column: 1/-1;
+  }
+}

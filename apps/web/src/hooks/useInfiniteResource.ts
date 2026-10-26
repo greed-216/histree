@@ -7,6 +7,7 @@ export function uniqueRows<T extends { id: string }>(rows: T[]): T[] {
 type Page = {
   items: Array<{ id: string }>;
   has_more: boolean;
+  next_cursor?: string | null;
   labels?: Record<string, string>;
 };
 function appendItems<T>(before: T, next: T): T {
@@ -70,6 +71,8 @@ export function useInfiniteResource<T>(
       const page = append ? session.state.page + 1 : 0;
       const url = new URL(session.path, "https://histree.local");
       url.searchParams.set("page", String(page));
+      const cursor = (session.state.data as Page | undefined)?.next_cursor;
+      if (append && cursor) url.searchParams.set("cursor", cursor);
       session.state = {
         ...session.state,
         loading: !session.state.data,

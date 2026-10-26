@@ -1,19 +1,18 @@
-import { readContentPage } from '../../common/pagination';
-import {
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
-import type { Person, PageResult } from '@histree/shared-types';
+import type { PageResult, Person } from '@histree/shared-types';
+import { Injectable } from '@nestjs/common';
 import { MysqlService } from '../mysql/mysql.service';
+import { PersonDirectory } from './person-directory';
 
 @Injectable()
 export class PersonService {
   constructor(private mysqlService: MysqlService) {}
 
+  facets() {
+    return new PersonDirectory(this.mysqlService).facets();
+  }
   async getPeople(
     query: Record<string, string> = {},
   ): Promise<PageResult<Person>> {
-    return readContentPage(this.mysqlService.getClient(), 'person', query);
+    return new PersonDirectory(this.mysqlService).list(query);
   }
-
 }

@@ -1,14 +1,23 @@
-import { sourceReadingPath, sourceTitle, sourceCitation } from '../lib/source-reading';
-import { FeedbackButton } from './FeedbackButton';
+import type {
+  ClaimSubject,
+  Event,
+  EvidenceClaim,
+  PageResult,
+} from "@histree/shared-types";
 import { useEffect, useState } from "react";
-import { splitEvidenceNote } from "../lib/evidence";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import type { Event, EvidenceClaim, ClaimSubject, PageResult } from "@histree/shared-types";
+import { useInfiniteResource } from "../hooks/useInfiniteResource";
 import { formatDisplayRange } from "../lib/content";
-import { InfiniteScroll } from './InfiniteScroll';
-import { useInfiniteResource } from '../hooks/useInfiniteResource';
-import { entryTitle, entryPath } from "../lib/reading";
+import { splitEvidenceNote } from "../lib/evidence";
 import type { Entry } from "../lib/reading";
+import { entryPath, entryTitle } from "../lib/reading";
+import {
+  sourceCitation,
+  sourceReadingPath,
+  sourceTitle,
+} from "../lib/source-reading";
+import { FeedbackButton } from "./FeedbackButton";
+import { InfiniteScroll } from "./InfiniteScroll";
 export function LoadState({
   loading,
   error,
@@ -89,58 +98,181 @@ export function Evidence({
   id: string;
   onSummary?: (summary: EvidenceSummary) => void;
 }) {
-  const location=useLocation();const navigate=useNavigate();
-  const pinned=/^#claim-[0-9a-f-]{36}$/i.test(location.hash)?location.hash.slice(7):'';
-  const params=new URLSearchParams({subject,subject_id:id});
-  if(pinned)params.set('claim',pinned);
-  const result = useInfiniteResource<PageResult<EvidenceClaim>>(`/catalog/fact_claim?${params}`);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const pinned = /^#claim-[0-9a-f-]{36}$/i.test(location.hash)
+    ? location.hash.slice(7)
+    : "";
+  const params = new URLSearchParams({ subject, subject_id: id });
+  if (pinned) params.set("claim", pinned);
+  const result = useInfiniteResource<PageResult<EvidenceClaim>>(
+    `/catalog/fact_claim?${params}`,
+  );
   useEffect(() => {
     if (!onSummary) return;
-    const sources = [...new Set((result.data?.items ?? []).flatMap(claim => {
-      if (!claim.source?.title) return [];
-      const [book, ...parts] = claim.source.title.split('·');
-      const volume = /卷(?:第)?[〇零一二三四五六七八九十百千\d]+/.exec(claim.citation || '')?.[0];
-      const location = parts.slice(0, 2).join('·') || volume;
-      return [`《${book.replace(/[《》]/g, '')}》${location ? ` · ${location}` : ''}`];
-    }))];
-    onSummary({ id, count: result.data?.items.length ?? 0, hasMore: result.hasMore, loading: result.loading, error: result.error, sources });
-  }, [id, onSummary, result.data, result.hasMore, result.loading, result.error]);
+    const sources = [
+      ...new Set(
+        (result.data?.items ?? []).flatMap((claim) => {
+          if (!claim.source?.title) return [];
+          const [book, ...parts] = claim.source.title.split("·");
+          const volume = /卷(?:第)?[〇零一二三四五六七八九十百千\d]+/.exec(
+            claim.citation || "",
+          )?.[0];
+          const location = parts.slice(0, 2).join("·") || volume;
+          return [
+            `《${book.replace(/[《》]/g, "")}》${location ? ` · ${location}` : ""}`,
+          ];
+        }),
+      ),
+    ];
+    onSummary({
+      id,
+      count: result.data?.items.length ?? 0,
+      hasMore: result.hasMore,
+      loading: result.loading,
+      error: result.error,
+      sources,
+    });
+  }, [
+    id,
+    onSummary,
+    result.data,
+    result.hasMore,
+    result.loading,
+    result.error,
+  ]);
   return (
     <div className="space-y-4">
       <LoadState {...result} />
       {result.data?.items.length === 0 && (
         <p className="text-sm text-slate-500">这部分的具体出处尚待整理。</p>
       )}
-      {result.data?.items.map((claim) => <EvidenceCard key={claim.id} claim={claim} />)}
-      {pinned?<button className="text-sm underline" onClick={()=>{navigate({pathname:location.pathname,search:location.search,hash:''},{replace:true});}}>查看全部依据</button>:<InfiniteScroll {...result} count={result.data?.items.length} label="史料依据"/>}
+      {result.data?.items.map((claim) => (
+        <EvidenceCard key={claim.id} claim={claim} />
+      ))}
+      {pinned ? (
+        <button
+          className="text-sm underline"
+          onClick={() => {
+            navigate(
+              {
+                pathname: location.pathname,
+                search: location.search,
+                hash: "",
+              },
+              { replace: true },
+            );
+          }}
+        >
+          查看全部依据
+        </button>
+      ) : (
+        <InfiniteScroll
+          {...result}
+          count={result.data?.items.length}
+          label="史料依据"
+        />
+      )}
     </div>
   );
 }
 export function EvidenceCard({ claim }: { claim: EvidenceClaim }) {
-  const { quote, review } = splitEvidenceNote(claim.note);
+  const { quote, review } = claim.evidence ?? splitEvidenceNote(claim.note);
   const anchor = `claim-${claim.id}`;
   const selected = window.location.hash === `#${anchor}`;
   useEffect(() => {
-    if (selected) document.getElementById(anchor)?.scrollIntoView({ block: 'start' });
+    if (selected)
+      document.getElementById(anchor)?.scrollIntoView({ block: "start" });
   }, [anchor, selected]);
-  return <article id={anchor} className="border-l-2 border-teal-600 pl-4 py-2 scroll-mt-28">
-    <p className="leading-7 font-medium">{claim.claim_text}</p>
-    <p className="text-sm text-slate-600 mt-2">
-      {claim.source ? <Link className="text-teal-700 underline" to={`/sources/${claim.source.id}`}>《{sourceTitle(claim.source.title).replace(/[《》]/g, '')}》</Link> : '来源待补充'}
-      {claim.source?.author && ` · ${claim.source.author}`} · {sourceCitation(claim.citation) || '定位待补充'}
-    </p>
-    {review && <details className="text-sm text-slate-500 mt-3 leading-6"><summary className="cursor-pointer">补充说明</summary><p className="mt-2">{review}</p></details>}
-    {quote && <details open={selected || undefined} className="mt-3 rounded-lg bg-stone-100 p-3">
-      <summary className="cursor-pointer text-sm text-teal-800">查看所引原文</summary>
-      <blockquote className="mt-3 whitespace-pre-wrap text-sm leading-7 text-slate-700">{quote}</blockquote>
-    </details>}
-    <div className="flex flex-wrap gap-4 text-sm text-teal-700 mt-3">
-      {claim.source && <Link className="underline" to={sourceReadingPath(claim.source.id, claim.id)}>阅读原文 →</Link>}
-      <FeedbackButton claimId={claim.id} sourceId={claim.source?.id} context={claim.claim_text} />
-    </div>
-  </article>;
+  return (
+    <article
+      id={anchor}
+      className="border-l-2 border-teal-600 pl-4 py-2 scroll-mt-28"
+    >
+      <p className="leading-7 font-medium">{claim.claim_text}</p>
+      <p className="text-sm text-slate-600 mt-2">
+        {claim.source ? (
+          <Link
+            className="text-teal-700 underline"
+            to={`/sources/${claim.source.id}`}
+          >
+            《{sourceTitle(claim.source.title).replace(/[《》]/g, "")}》
+          </Link>
+        ) : (
+          "来源待补充"
+        )}
+        {claim.source?.author && ` · ${claim.source.author}`} ·{" "}
+        {sourceCitation(claim.citation) || "定位待补充"}
+      </p>
+      {review && (
+        <details className="text-sm text-slate-500 mt-3 leading-6">
+          <summary className="cursor-pointer">补充说明</summary>
+          <p className="mt-2">{review}</p>
+        </details>
+      )}
+      {quote && (
+        <details
+          open={selected || undefined}
+          className="mt-3 rounded-lg bg-stone-100 p-3"
+        >
+          <summary className="cursor-pointer text-sm text-teal-800">
+            查看所引原文
+          </summary>
+          <blockquote className="mt-3 whitespace-pre-wrap text-sm leading-7 text-slate-700">
+            {quote}
+          </blockquote>
+        </details>
+      )}
+      {claim.evidence?.related_claims?.length ? (
+        <details className="mt-3 text-sm">
+          <summary className="cursor-pointer text-teal-800">
+            其他记载与身份辨析
+          </summary>
+          {claim.evidence.related_claims.map((related) => (
+            <p key={related.related_claim_id} className="mt-3">
+              <Link
+                className="text-teal-800 underline"
+                to={`/evidence/${related.subject_table}/${related.subject_id}#claim-${related.related_claim_id}`}
+              >
+                {related.relation_kind === "conflicts"
+                  ? "存在不同记载"
+                  : related.relation_kind === "identity_candidate"
+                    ? "身份对应仍待考"
+                    : "相关印证记载"}{" "}
+                →
+              </Link>
+              <span className="block leading-7 mt-1">{related.note}</span>
+            </p>
+          ))}
+        </details>
+      ) : null}
+      <div className="flex flex-wrap gap-4 text-sm text-teal-700 mt-3">
+        {claim.source && (
+          <Link
+            className="underline"
+            to={sourceReadingPath(claim.source.id, claim.id)}
+          >
+            阅读原文 →
+          </Link>
+        )}
+        <FeedbackButton
+          claimId={claim.id}
+          sourceId={claim.source?.id}
+          context={claim.claim_text}
+        />
+      </div>
+    </article>
+  );
 }
-export function Timeline({ events, condensed = false, roles = {} }: { events: Event[]; condensed?: boolean; roles?: Record<string, string> }) {
+export function Timeline({
+  events,
+  condensed = false,
+  roles = {},
+}: {
+  events: Event[];
+  condensed?: boolean;
+  roles?: Record<string, string>;
+}) {
   const sorted = [...events].sort(
     (a, b) => (a.start_year ?? Infinity) - (b.start_year ?? Infinity),
   );
@@ -158,24 +290,63 @@ export function Timeline({ events, condensed = false, roles = {} }: { events: Ev
           >
             {event.title} ↗
           </Link>
-          {condensed && roles[event.id] && roles[event.id] !== '参与' && <p className="person-event-role">在这件事中 · {roles[event.id]}</p>}
-          {condensed && event.description && event.description.split(/\r?\n\s*\r?\n/)[0].replace(/[，。；、：\s]/g, '') !== event.title.replace(/[，。；、：\s]/g, '') && <p className="person-event-excerpt">{event.description.split(/\r?\n\s*\r?\n/)[0].slice(0, 160)}{event.description.split(/\r?\n\s*\r?\n/)[0].length > 160 ? '…' : ''}</p>}
-          {!condensed && event.phases?.map((phase, index) => (
-            <div className="mt-3 text-sm leading-7" key={index}>
-              <span className="text-slate-500">
-                {formatDisplayRange(phase.start_year, phase.end_year)}
-              </span>
-              <p className="font-medium">{phase.title}</p>
-              <p className="text-slate-600">{phase.description}</p>
-            </div>
-          ))}
+          {condensed && roles[event.id] && roles[event.id] !== "参与" && (
+            <p className="person-event-role">在这件事中 · {roles[event.id]}</p>
+          )}
+          {condensed &&
+            event.description &&
+            event.description
+              .split(/\r?\n\s*\r?\n/)[0]
+              .replace(/[，。；、：\s]/g, "") !==
+              event.title.replace(/[，。；、：\s]/g, "") && (
+              <p className="person-event-excerpt">
+                {event.description.split(/\r?\n\s*\r?\n/)[0].slice(0, 160)}
+                {event.description.split(/\r?\n\s*\r?\n/)[0].length > 160
+                  ? "…"
+                  : ""}
+              </p>
+            )}
+          {!condensed &&
+            event.phases?.map((phase, index) => (
+              <div className="mt-3 text-sm leading-7" key={index}>
+                <span className="text-slate-500">
+                  {formatDisplayRange(phase.start_year, phase.end_year)}
+                </span>
+                <p className="font-medium">{phase.title}</p>
+                <p className="text-slate-600">{phase.description}</p>
+              </div>
+            ))}
         </li>
       ))}
     </ol>
   );
 }
 
-export function LazyEvidence({subject,id}:{subject:ClaimSubject;id:string}) {
- const [open,setOpen]=useState(false);
- return <details className="mt-4 text-sm" onToggle={e=>setOpen(e.currentTarget.open)}><summary className="cursor-pointer text-teal-700">查看这条关系的依据</summary>{open&&<div className="mt-4"><Evidence subject={subject} id={id}/></div>}</details>;
+export function LazyEvidence({
+  subject,
+  id,
+}: {
+  subject: ClaimSubject;
+  id: string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <details
+      className="mt-4 text-sm"
+      onToggle={(e) => setOpen(e.currentTarget.open)}
+    >
+      <summary className="cursor-pointer text-teal-700">
+        {subject === "event"
+          ? "查看这条史事的依据"
+          : subject === "person"
+            ? "查看人物史料依据"
+            : "查看这条关系的依据"}
+      </summary>
+      {open && (
+        <div className="mt-4">
+          <Evidence subject={subject} id={id} />
+        </div>
+      )}
+    </details>
+  );
 }

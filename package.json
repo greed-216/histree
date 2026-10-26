@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source-backed historical reading, timelines, relationships and AI",
   "scripts": {
-    "test": "pnpm --filter @histree/shared-types build && pnpm --filter api test --runInBand && pnpm test:graph && pnpm test:timeline && node scripts/test-ask.mjs && pnpm test:map && pnpm test:atlas",
+    "test": "pnpm --filter @histree/shared-types build && pnpm --filter api test --runInBand && pnpm test:graph && pnpm test:timeline && node scripts/test-ask.mjs && pnpm test:map && pnpm test:atlas && node scripts/test-schema-plan.mjs",
     "e2e:smoke": "node scripts/e2e-smoke.mjs",
     "test:ask-runtime": "node apps/api/dsh/smoke.mjs",
     "test:publication": "node scripts/test-publication.mjs",
@@ -14,10 +14,11 @@
     "test:timeline": "node scripts/test-timeline-viewport.mjs && node scripts/test-history-scroll.mjs && node scripts/test-timeline-polities.mjs && node scripts/test-timeline-ancient.mjs && node scripts/test-scroll-tiles.mjs",
     "test:explore": "node scripts/test-explore.mjs",
     "test:archive": "pnpm test:publication && pnpm test:content && pnpm test:explore && node scripts/test-year-0907-import.mjs && node scripts/test-timeline.mjs",
-    "test:mysql": "node scripts/test-mysql-integration.mjs && node scripts/test-guess-bank-mysql.mjs && node scripts/test-guess-clues-mysql.mjs && node scripts/test-guess-research-mysql.mjs && node scripts/test-guess-identities-mysql.mjs",
+    "test:mysql": "node scripts/test-mysql-integration.mjs && node scripts/test-guess-bank-mysql.mjs && node scripts/test-guess-clues-mysql.mjs && node scripts/test-guess-research-mysql.mjs && node scripts/test-guess-identities-mysql.mjs && node scripts/test-content-structure-mysql.mjs",
     "build": "pnpm --filter @histree/shared-types build && pnpm --filter api build && pnpm --filter web build",
     "lint": "pnpm --filter web lint",
-    "test:map": "node scripts/test-map-document.mjs"
+    "test:map": "node scripts/test-map-document.mjs",
+    "schema:plan": "node scripts/mysql-schema.mjs"
   },
   "keywords": [],
   "author": "",

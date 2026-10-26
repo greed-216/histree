@@ -1,6 +1,7 @@
 export interface Person {
   status?: PublicationStatus;
   id: string;
+  reading?: import("./editorial.ts").PersonReading;
   name: string;
   courtesy_name?: string;
   aliases?: string[];
@@ -26,7 +27,7 @@ export interface Person {
   }>;
   references?: ReferenceLink[];
   image_url?: string;
-  type: 'person';
+  type: "person";
 }
 
 export interface Event {
@@ -51,10 +52,11 @@ export interface Event {
   location_lng?: number;
   location_name?: string;
   location_modern_name?: string;
-  location_precision?: 'site' | 'approximate' | 'region' | 'unknown';
+  location_precision?: "site" | "approximate" | "region" | "unknown";
   location_note?: string;
   time_original?: string;
-  type: 'event';
+  datings?: import("./editorial.ts").EventDating[];
+  type: "event";
 }
 
 export interface Edge {
@@ -76,7 +78,6 @@ export interface PersonRelationship {
   created_at?: string;
 }
 
-
 export interface PersonEventRelation {
   status?: PublicationStatus;
   id: string;
@@ -86,7 +87,6 @@ export interface PersonEventRelation {
   created_at?: string;
 }
 
-
 export interface EventCausalityRelation {
   status?: PublicationStatus;
   id: string;
@@ -95,7 +95,6 @@ export interface EventCausalityRelation {
   description?: string;
   created_at?: string;
 }
-
 
 export interface RelationshipBundle {
   has_more?: boolean;
@@ -126,14 +125,19 @@ export interface EventDetail extends Event {
 export interface Source {
   id: string;
   title: string;
-  source_type: 'primary' | 'reference' | 'scholarship' | 'digital' | 'media';
+  source_type: "primary" | "reference" | "scholarship" | "digital" | "media";
   author?: string;
   edition?: string;
   url?: string;
   note?: string;
 }
 
-export interface SourceText { source_id: string; archive_url: string; content: string; content_sha256: string; }
+export interface SourceText {
+  source_id: string;
+  archive_url: string;
+  content: string;
+  content_sha256: string;
+}
 
 export interface FactClaim {
   status?: PublicationStatus;
@@ -146,17 +150,28 @@ export interface FactClaim {
   citation?: string;
   confidence?: number;
   note?: string;
+  evidence?: import("./editorial.ts").EvidenceStructure;
 }
 
 export interface ReferenceLink {
   title: string;
-  reference_type: 'encyclopedia' | 'primary' | 'reference' | 'scholarship' | 'digital';
+  reference_type:
+    | "encyclopedia"
+    | "primary"
+    | "reference"
+    | "scholarship"
+    | "digital";
   url?: string;
   note?: string;
 }
 
-export type PublicationStatus = 'draft' | 'published';
-export type ClaimSubject = 'person' | 'event' | 'person_relationship' | 'person_event' | 'event_causality';
+export type PublicationStatus = "draft" | "published";
+export type ClaimSubject =
+  | "person"
+  | "event"
+  | "person_relationship"
+  | "person_event"
+  | "event_causality";
 export interface Topic {
   id: string;
   slug: string;
@@ -165,18 +180,49 @@ export interface Topic {
   status: PublicationStatus;
   sections: Array<{ heading: string; body: string; node_ids: string[] }>;
 }
-export interface EvidenceClaim extends FactClaim { source: Source | null }
+export interface EvidenceClaim extends FactClaim {
+  source: Source | null;
+}
 
-export type SearchKind = 'all' | 'person' | 'event' | 'topic' | 'nodes';
-export type SearchHit = Person | Event | (Pick<Topic, 'id' | 'slug' | 'title' | 'description'> & { type: 'topic' });
-export interface SearchResponse { items: SearchHit[]; has_more: boolean; }
-export { exploreRequest } from './explore.ts';
+export type SearchKind = "all" | "person" | "event" | "topic" | "nodes";
+export type SearchHit =
+  | Person
+  | Event
+  | (Pick<Topic, "id" | "slug" | "title" | "description"> & { type: "topic" });
+export interface SearchResponse {
+  items: SearchHit[];
+  has_more: boolean;
+}
+export { contentRequest, pageNumber } from "./content-query.ts";
+export { exploreRequest } from "./explore.ts";
 
-export interface PageResult<T> { items: T[]; has_more: boolean; labels?: Record<string,string>; }
-export type ContentRow = { id: string; label?: string; status?: PublicationStatus; [key: string]: unknown };
-export type TopicSummary = Omit<Topic,'sections'> & { section_count: number };
-export interface EntryContext extends GraphResponse { has_more: boolean; }
-export { contentRequest, pageNumber } from './content-query.ts';
+export interface PageResult<T> {
+  next_cursor?: string | null;
+  revision?: string;
+  items: T[];
+  has_more: boolean;
+  labels?: Record<string, string>;
+}
+export type ContentRow = {
+  id: string;
+  label?: string;
+  status?: PublicationStatus;
+  [key: string]: unknown;
+};
+export type TopicSummary = Omit<Topic, "sections"> & { section_count: number };
+export interface EntryContext extends GraphResponse {
+  has_more: boolean;
+}
 
-export { timelineYear } from './timeline.ts';
-export type { TimelineOverview } from './timeline.ts';
+export { timelineYear } from "./timeline.ts";
+export type { TimelineOverview } from "./timeline.ts";
+
+export { legacyEvidence, personReading, validateDating } from "./editorial.ts";
+export type {
+  DatingPrecision,
+  EventDating,
+  EvidenceStructure,
+  PersonReading,
+  ReadingLink,
+  ReviewCoverage,
+} from "./editorial.ts";

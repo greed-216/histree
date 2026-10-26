@@ -33,7 +33,7 @@ export function contentRequest(path: string, admin = false) {
     const value = query.get(key);
     if (value === null || value === "") return null;
     const number = Number(value);
-    if (!Number.isInteger(number) || Math.abs(number) > 10000)
+    if (!Number.isInteger(number) || number === 0 || Math.abs(number) > 10000)
       throw new Error("Invalid year");
     return number;
   };
@@ -50,6 +50,17 @@ export function contentRequest(path: string, admin = false) {
   const limit = pageNumber(query.get("limit"), 20, 50);
   if (limit < 1) throw new Error("Invalid limit");
   return {
+    p_dating: (() => {
+      const value = query.get("dating");
+      if (value && !["dated", "undated", "estimated"].includes(value))
+        throw new Error("Invalid dating");
+      return value;
+    })(),
+    p_era: (() => {
+      const value = query.get("era");
+      if (value && value.length > 100) throw new Error("Invalid era");
+      return value;
+    })(),
     p_table: table,
     p_page: pageNumber(query.get("page")),
     p_limit: limit,

@@ -2,7 +2,6 @@ import type {
   EvidenceClaim,
   PageResult,
   ReadingLink,
-  ReviewCoverage,
 } from "@histree/shared-types";
 import { useEffect, useState } from "react";
 import {
@@ -236,7 +235,6 @@ export function LibraryBookPage() {
   const result = useResource<{
     book: LibraryBook;
     sections: LibrarySection[];
-    coverage?: ReviewCoverage[];
   }>(`/library/${book}`);
   return (
     <div className="library-home">
@@ -251,26 +249,6 @@ export function LibraryBookPage() {
             <h1>{result.data.book.title}</h1>
             <p>选择卷章，开始阅读。</p>
           </header>
-          <section className="reading-card" aria-label="事实校核覆盖">
-            <h2 className="font-serif text-xl">本书事实校核覆盖</h2>
-            {result.data.coverage?.length ? (
-              <>
-                <p className="mt-3">
-                  已同步 {result.data.coverage.length} 卷的校核审计 · 已通读{" "}
-                  {result.data.coverage.reduce((n, c) => n + c.reviewed, 0)} 段
-                  · 保留待考{" "}
-                  {result.data.coverage.reduce((n, c) => n + c.deferred, 0)} 段
-                </p>
-                <p className="text-sm text-stone-500 mt-2">
-                  已发布事实与待考事项可能出现在同一段；通读覆盖不表示穷尽全部史实。未同步卷不据此判为未校核。
-                </p>
-              </>
-            ) : (
-              <p className="mt-3 text-stone-500">
-                原文可连续阅读；事实校核覆盖正在同步。
-              </p>
-            )}
-          </section>
           <SearchForm books={[result.data.book]} bookKey={book} />
           <nav className="library-section-grid" aria-label="卷章目录">
             {result.data.sections.map((section) => (
@@ -301,7 +279,6 @@ export function LibraryReaderPage() {
   const contents = useResource<{
     book: LibraryBook;
     sections: LibrarySection[];
-    coverage?: ReviewCoverage[];
   }>(`/library/${book}`);
   const evidence = useResource<{ items: EvidenceClaim[] }>(
     claimId && /^[a-f0-9-]{36}$/i.test(claimId)

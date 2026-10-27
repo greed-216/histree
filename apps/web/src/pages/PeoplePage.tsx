@@ -41,7 +41,12 @@ export function PeoplePage() {
   filters.delete("page");
   filters.delete("cursor");
   const result = useInfiniteResource<
-    PageResult<Person & { sort_year?: number }>
+    PageResult<
+      Person & {
+        sort_year?: number;
+        sort_year_basis?: "event" | "birth" | "death";
+      }
+    >
   >("/people?" + filters);
   const facets = useResource<PersonDirectoryFacets>("/people/facets");
   function update(key: string, value: string) {
@@ -204,7 +209,7 @@ export function PeoplePage() {
                 <p className="eyebrow">
                   {person.era || "时代待补充"}
                   {person.sort_year != null
-                    ? ` · ${formatDisplayYear(person.sort_year)}`
+                    ? ` · ${{ event: "相关史事", birth: "生年", death: "卒年" }[person.sort_year_basis ?? "event"]}${formatDisplayYear(person.sort_year)}`
                     : ""}
                 </p>
                 <h2 className="text-xl font-serif mt-2">{person.name}</h2>

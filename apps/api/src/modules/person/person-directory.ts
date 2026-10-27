@@ -173,7 +173,7 @@ export class PersonDirectory {
           ? 'r.created_at DESC,r.id'
           : `${known} IS NULL,COALESCE(${known},0),r.name,r.id`;
     const rows = await this.db.rows(
-      `SELECT r.id,r.name,r.aliases,r.era,r.faction,r.native_place,r.birth_year,r.death_year,r.description,r.tags,r.image_url,r.created_at,${known} sort_year
+      `SELECT r.id,r.name,r.aliases,r.era,r.faction,r.native_place,r.birth_year,r.death_year,r.description,r.tags,r.image_url,r.created_at,${known} sort_year,CASE WHEN a.active_year IS NOT NULL THEN 'event' WHEN r.birth_year IS NOT NULL THEN 'birth' WHEN r.death_year IS NOT NULL THEN 'death' ELSE NULL END sort_year_basis
     FROM person r LEFT JOIN (SELECT pe.person_id,MIN(e.start_year) active_year FROM person_event pe JOIN event e ON e.id=pe.event_id AND e.status='published' WHERE pe.status='published' GROUP BY pe.person_id) a ON a.person_id=r.id
     WHERE ${conditions.join(' AND ')} ORDER BY ${order} LIMIT ${limit + 1} OFFSET ${cursor ? 0 : page * limit}`,
       args,

@@ -505,9 +505,13 @@ try {
   // Memorial/retrospective event links do not change the person's recorded era.
   await db.execute("UPDATE person SET era='先秦' WHERE id=?", [personA]);
   await db.execute("UPDATE event SET start_year=960 WHERE id=?", [event]);
-  assert(
-    (await get("/people?period=pre-qin")).items.some((p) => p.id === personA),
+  const memorialPerson = (await get("/people?period=pre-qin")).items.find(
+    (p) => p.id === personA,
   );
+  assert(memorialPerson);
+  assert.equal(memorialPerson.era, "先秦");
+  assert.equal(memorialPerson.sort_year, 960);
+  assert.equal(memorialPerson.sort_year_basis, "event");
   assert(
     !(await get("/people?period=song-liao-jin-xia")).items.some(
       (p) => p.id === personA,

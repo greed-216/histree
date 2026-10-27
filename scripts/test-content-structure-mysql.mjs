@@ -504,6 +504,10 @@ try {
   checks += 6;
   // Memorial/retrospective event links do not change the person's recorded era.
   await db.execute("UPDATE person SET era='先秦' WHERE id=?", [personA]);
+  await db.execute(
+    "INSERT INTO person_event(id,person_id,event_id,status) VALUES(?,?,?,'published')",
+    [participation, personA, event],
+  );
   await db.execute("UPDATE event SET start_year=960 WHERE id=?", [event]);
   const memorialPerson = (await get("/people?period=pre-qin")).items.find(
     (p) => p.id === personA,
@@ -518,6 +522,7 @@ try {
     ),
   );
   await db.execute("UPDATE event SET start_year=NULL WHERE id=?", [event]);
+  await db.execute("DELETE FROM person_event WHERE id=?", [participation]);
   await db.execute("UPDATE person SET era='合成时代' WHERE id IN (?,?,?)", [
     personA,
     personB,

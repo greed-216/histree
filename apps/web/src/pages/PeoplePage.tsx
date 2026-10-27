@@ -1,6 +1,7 @@
 import {
   personReading,
   classifyPersonEra,
+  personEraPeriods,
   type PersonDirectoryFacets,
   type PageResult,
   type Person,
@@ -49,6 +50,12 @@ export function PeoplePage() {
     >
   >("/people?" + filters);
   const facets = useResource<PersonDirectoryFacets>("/people/facets");
+  const selectedPeriodKey = canonicalLegacy || params.get("period") || "";
+  const missingSelectedPeriod = personEraPeriods.find(
+    (period) =>
+      period.key === selectedPeriodKey &&
+      !facets.data?.periods?.some((item) => item.key === period.key),
+  );
   function update(key: string, value: string) {
     const next = new URLSearchParams(params);
     if (key === "period") next.delete("era");
@@ -99,6 +106,12 @@ export function PeoplePage() {
             <option value="">全部时代</option>
             {rawEra && !canonicalLegacy && !params.get("period") && (
               <option value={`legacy:${rawEra}`}>原始记载：{rawEra}</option>
+            )}
+            {missingSelectedPeriod && (
+              <option value={missingSelectedPeriod.key}>
+                {missingSelectedPeriod.label}
+                {facets.data ? "（暂无记录）" : ""}
+              </option>
             )}
             {facets.data?.periods.map((period) => (
               <option key={period.key} value={period.key}>

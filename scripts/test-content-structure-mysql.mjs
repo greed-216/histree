@@ -505,7 +505,7 @@ try {
   // Memorial/retrospective event links do not change the person's recorded era.
   await db.execute("UPDATE person SET era='先秦' WHERE id=?", [personA]);
   await db.execute(
-    "INSERT INTO person_event(id,person_id,event_id,status) VALUES(?,?,?,'published')",
+    "INSERT INTO person_event(id,person_id,event_id,role,status) VALUES(?,?,?,'合成追叙对象','published')",
     [participation, personA, event],
   );
   await db.execute("UPDATE event SET start_year=960 WHERE id=?", [event]);

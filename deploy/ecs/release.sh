@@ -44,3 +44,9 @@ printf '%s\n' "$release" > /opt/histree/current-release.next
 mv /opt/histree/current-release.next /opt/histree/current-release
 trap - ERR
 printf 'Released %s\n' "$image"
+# Only collect after successful acceptance and pointer update. Cleanup failure must
+# not trigger application rollback; leave the healthy release running and fail CI.
+if ! python3 "$release/cleanup-releases.py" --apply --lock-fd 9; then
+  echo 'Retention failed; deployed app remains running. Inspect cleanup-audits.' >&2
+  exit 1
+fi

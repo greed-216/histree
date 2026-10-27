@@ -110,7 +110,7 @@ jobs:
           if hash_value.hexdigest() != digest:
               raise RuntimeError('Artifact digest mismatch')
           with zipfile.ZipFile(archive) as package:
-              expected = {'image.tar.gz', 'image.tar.gz.sha256', 'compose.yml', 'release.sh', 'verify.mjs', 'release-manifest.json'}
+              expected = {'image.tar.gz', 'image.tar.gz.sha256', 'compose.yml', 'release.sh', 'verify.mjs', 'release-manifest.json', 'cleanup-releases.py'}
               if set(package.namelist()) != expected or len(package.namelist()) != len(expected):
                   raise RuntimeError('Unexpected deployment archive contents')
               package.extractall(destination)

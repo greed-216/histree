@@ -76,7 +76,7 @@ jobs:
           done
           node deploy/ecs/verify.mjs http://127.0.0.1:3000 bundle/release-manifest.json
           docker save histree-api:${GITHUB_SHA} | gzip > bundle/image.tar.gz
-          cp deploy/ecs/compose.yml deploy/ecs/release.sh deploy/ecs/verify.mjs bundle/
+          cp deploy/ecs/compose.yml deploy/ecs/release.sh deploy/ecs/verify.mjs deploy/ecs/cleanup-releases.py bundle/
           cd bundle
           sha256sum image.tar.gz > image.tar.gz.sha256
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

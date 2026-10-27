@@ -12,9 +12,9 @@ PR 和部署共用 `application-checks.yml`：冻结安装、前后端 build/lin
 
 main 发布需要仓库变量 `ECS_DEPLOY_ENABLED=true`、`ECS_INSTANCE_ID`、`ECS_REGION`，以及 `ecs-production` 环境 secret `WORKBENCH_CONFIG`。数据库及模型凭据保留在宿主机，runner 不需要它们。旧 `VITE_SUPABASE_*` 与 `VITE_ASK_API_URL` 仓库变量／secrets 不再被工作流读取。
 
-ECS 从短期签名地址下载六文件 artifact：`image.tar.gz`、`image.tar.gz.sha256`、`compose.yml`、`release.sh`、`verify.mjs`、`release-manifest.json`。下载后验证 artifact digest 和精确文件清单；GitHub token 不发送到 ECS。artifact 保留七天，ECS 上旧 release 保留供回滚。
+ECS 从短期签名地址下载七文件 artifact：`image.tar.gz`、`image.tar.gz.sha256`、`compose.yml`、`release.sh`、`verify.mjs`、`release-manifest.json`、`cleanup-releases.py`。下载后验证 artifact digest 和精确文件清单；GitHub token 不发送到 ECS。artifact 保留七天。ECS 在发布验收成功后保留当前版本和最近两个不同提交的成功回滚版本；三份镜像归档校验通过才清理更早的应用镜像与大归档。
 
-`release.sh` 取得独占锁，检查 image 架构/revision 与实际 dsh runtime，启动后验证 MySQL 就绪、SPA 深链接、长卷 SHA-256、公开接口及停用路径。任一步失败都恢复旧镜像；成功后原子更新 `/opt/histree/current-release`。脚本不编辑 nginx、证书或 runtime.env；部署会结束内存中的对话与游戏。
+`release.sh` 取得独占锁，检查 image 架构/revision 与实际 dsh runtime，启动后验证 MySQL 就绪、SPA 深链接、长卷 SHA-256、公开接口及停用路径。切换验收失败恢复旧镜像；成功后原子更新 `/opt/histree/current-release`。脚本不编辑 nginx、证书或 runtime.env；部署会结束内存中的对话与游戏。
 
 ```sh
 # repo 为当前已审阅的提交；构建时只传公开 revision。
@@ -63,3 +63,16 @@ ECS `HISTREE_AI_ALLOWED_ORIGINS` includes the IP and approved domain origins. Do
 Let's Encrypt supports short-lived public-IP certificates. The host needs nginx, Python 3.11, and Certbot 5.4+ in `/opt/histree/certbot`. After explicitly authorizing public TCP 80/443 in the ECS security group, run `bash deploy/ecs/https-setup.sh <public-ip>` on the host. It creates only the Histree nginx configuration and a twice-daily renewal timer. The API stays bound to loopback; nginx serves the combined frontend/API and preserves the ask/status and guessing-game locations. Application releases never edit nginx; certificate and renewal settings are preserved. Set `TRUST_PROXY=1` in the private runtime environment and redeploy the API.
 
 Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/bin/certbot renew --dry-run`, and verify the HTTPS origin from the gateway. Six-day IP certificates require working automatic renewal. See https://letsencrypt.org/2026/03/11/shorter-certs-certbot .
+
+## 发布文件保留策略
+
+保留三个不同提交的镜像、`image.tar.gz`、校验和、compose 与 manifest。重复尝试同一提交不占用回滚名额。所有容器引用的镜像（包括已停止任务）、非标准应用镜像、数据库、配置、证书、迁移备份与小型历史元数据均保留；不运行 Docker prune。
+
+`cleanup-releases.py` 默认只读，持有与部署相同的锁；`--apply` 才执行。清理前校验回滚归档哈希、镜像 revision/架构、当前指针与容器状态；每次删除前检查目标未变化。仅删除标准 release 目录中的旧 `image.tar.gz` 与重复 `bundle.zip`，以及没有容器引用的旧 `histree-api:<revision>` 镜像。保留版本的 ZIP 在 TAR 校验后也可删除。三份可用回滚版本不足或校验不通过时停止，不自动缩减保留数量。
+
+清单与逐步结果写入宿主机 `cleanup-audits/`；清理后复核容器身份、启动时间和 MySQL 健康。清理失败会使发布任务报告失败，但不会回滚已验收的新应用。失败发布不会触发清理。更早的构建不再提供本机即时回滚，需要从对应提交重建。
+
+```sh
+python3 <release>/cleanup-releases.py                  # 只读清单及 plan_sha256
+python3 <release>/cleanup-releases.py --apply --expect-plan <plan_sha256>
+```

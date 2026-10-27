@@ -1,5 +1,7 @@
 import {
   legacyEvidence,
+  classifyPersonEra,
+  personEraPeriods,
   personReading,
   validateDating,
   type EventDating,
@@ -54,6 +56,83 @@ describe('Historical structure compatibility', () => {
       summary: '与敌军交战，因河道缺桥无法渡河。',
       identity_notes: [],
     });
+  });
+  it('normalizes aliases and cross-period labels without inventing dates or collapsing distinct periods', () => {
+    for (const era of ['西汉', '西汉初年', '东汉', '两汉之际', '秦末汉初'])
+      expect(classifyPersonEra(era)).toEqual(['qin-han']);
+    for (const era of [
+      '北宋',
+      '南宋',
+      '辽宋金',
+      '宋金之际',
+      '西夏至北宋',
+      '金宋国别待考',
+    ])
+      expect(classifyPersonEra(era)).toEqual(['song-liao-jin-xia']);
+    expect(classifyPersonEra('元末明初')).toEqual(['mongol-yuan', 'ming']);
+    expect(classifyPersonEra('南宋元')).toEqual([
+      'song-liao-jin-xia',
+      'mongol-yuan',
+    ]);
+    expect(classifyPersonEra('五代至北宋初')).toEqual([
+      'five-dynasties',
+      'song-liao-jin-xia',
+    ]);
+    expect(classifyPersonEra('三国')).toEqual(['three-kingdoms']);
+    expect(classifyPersonEra('晋')).toEqual(['jin-sixteen-kingdoms']);
+    expect(classifyPersonEra('南北朝')).toEqual(['southern-northern']);
+    expect(classifyPersonEra('先秦')).toEqual(['pre-qin']);
+    for (const era of [null, '', '待考', '时代未详', '赵国，具体年代待核'])
+      expect(classifyPersonEra(era)).toEqual(['uncertain']);
+    for (const era of ['齐', '高丽', '古代', '未收录的新写法'])
+      expect(classifyPersonEra(era)).toEqual(['unclassified']);
+    expect(new Set(personEraPeriods.map((period) => period.key)).size).toBe(
+      personEraPeriods.length,
+    );
+  });
+  it('uses the same canonical memberships for facet counts and bound SQL filters', async () => {
+    const labels = [
+      { era: '北宋', count: 2 },
+      { era: '南宋元', count: 1 },
+      { era: '元末明初', count: 1 },
+      { era: '金宋国别待考', count: 1 },
+      { era: null, count: 1 },
+      { era: '齐', count: 1 },
+    ];
+    const rows = jest.fn(async (sql: string) =>
+      sql.includes('GROUP BY era,faction') ? labels : [],
+    );
+    const db = {
+      rows,
+      structure: { optional: async () => [] },
+      cache: {
+        revision: async () => '1',
+        read: async (_key: string, load: () => Promise<unknown>) => load(),
+      },
+    } as unknown as MysqlService;
+    const dir = new PersonDirectory(db),
+      facets = await dir.facets();
+    expect(facets.periods.map((period) => [period.key, period.count])).toEqual([
+      ['song-liao-jin-xia', 4],
+      ['mongol-yuan', 2],
+      ['ming', 1],
+      ['uncertain', 1],
+      ['unclassified', 1],
+    ]);
+    expect(facets.periods.every((period) => !('values' in period))).toBe(true);
+    await dir.list({ period: 'song-liao-jin-xia' });
+    const [sql, args] = (
+      rows.mock.calls as unknown as Array<[string, string[]]>
+    ).at(-1)!;
+    expect(sql).toContain('r.era IN');
+    expect(args).toEqual(
+      expect.arrayContaining(['北宋', '南宋元', '金宋国别待考']),
+    );
+    expect(args).not.toContain('元末明初');
+    await dir.list({ period: 'uncertain' });
+    expect(
+      (rows.mock.calls as unknown as Array<[string, string[]]>).at(-1)![0],
+    ).toContain('r.era IS NULL');
   });
   const estimate: EventDating = {
     id: '11111111-1111-4111-8111-111111111111',
@@ -131,6 +210,8 @@ describe('Historical structure compatibility', () => {
       dir = new PersonDirectory(db);
     for (const query of [
       { sort: 'bad' },
+      { period: 'not-a-period' },
+      { period: 'ming', era: '元末明初' },
       { book: '../../x' },
       { page: '-1' },
       { cursor: 'not-json' },

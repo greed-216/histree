@@ -456,6 +456,70 @@ try {
   checks++;
   assert.equal((await get("/people/facets")).eras.includes("合成时代"), true);
   checks++;
+  // Canonical era navigation expands aliases, including two groups for cross-period people.
+  await db.execute(
+    "UPDATE person SET era=CASE id WHEN ? THEN '西汉初年' WHEN ? THEN '东汉' ELSE '元末明初' END WHERE id IN (?,?,?)",
+    [personA, personB, personA, personB, personC],
+  );
+  const periodFirst = await get("/people?period=qin-han&limit=1");
+  const periodNext = await get(
+    "/people?period=qin-han&limit=1&cursor=" +
+      encodeURIComponent(periodFirst.next_cursor),
+  );
+  assert.equal(periodFirst.items.length, 1);
+  assert.equal(periodNext.items.length, 1);
+  assert.notEqual(periodFirst.items[0].id, periodNext.items[0].id);
+  assert(
+    (await get("/people?period=ming")).items.some(
+      (p) => p.id === personC && p.era === "元末明初",
+    ),
+  );
+  assert(
+    (await get("/people?period=mongol-yuan")).items.some(
+      (p) => p.id === personC,
+    ),
+  );
+  assert.equal(
+    (await get("/people?era=" + encodeURIComponent("西汉初年"))).items.filter(
+      (p) => [personA, personB].includes(p.id),
+    ).length,
+    1,
+  );
+  assert(
+    (await get("/people/facets")).periods.some(
+      (p) => p.key === "qin-han" && p.count >= 2,
+    ),
+  );
+  assert.equal((await fetch(base + "/api/v1/people?period=bad")).status, 400);
+  assert.equal(
+    (
+      await fetch(
+        base +
+          "/api/v1/people?period=ming&era=" +
+          encodeURIComponent("元末明初"),
+      )
+    ).status,
+    400,
+  );
+  checks += 6;
+  // Memorial/retrospective event links do not change the person's recorded era.
+  await db.execute("UPDATE person SET era='先秦' WHERE id=?", [personA]);
+  await db.execute("UPDATE event SET start_year=960 WHERE id=?", [event]);
+  assert(
+    (await get("/people?period=pre-qin")).items.some((p) => p.id === personA),
+  );
+  assert(
+    !(await get("/people?period=song-liao-jin-xia")).items.some(
+      (p) => p.id === personA,
+    ),
+  );
+  await db.execute("UPDATE event SET start_year=NULL WHERE id=?", [event]);
+  await db.execute("UPDATE person SET era='合成时代' WHERE id IN (?,?,?)", [
+    personA,
+    personB,
+    personC,
+  ]);
+  checks++;
   const before = await get("/timeline/overview?compact=1");
   assert(before.years.every((y) => !y.highlights));
   await db.execute("UPDATE event SET start_year=900 WHERE id=?", [event]);

@@ -1,8 +1,12 @@
 import {
   personReading,
+  classifyPersonEra,
+  personEraPeriods,
+  type PersonDirectoryFacets,
   type PageResult,
   type Person,
 } from "@histree/shared-types";
+import { useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { InfiniteScroll } from "../components/InfiniteScroll";
 import { LoadState } from "../components/Reading";
@@ -10,22 +14,51 @@ import { useInfiniteResource } from "../hooks/useInfiniteResource";
 import { useResource } from "../hooks/useResource";
 import { formatDisplayYear } from "../lib/content";
 import "../styles/directory.css";
-type Facets = {
-  eras: string[];
-  factions: string[];
-  books: Array<{ book_key: string; title: string }>;
-};
 export function PeoplePage() {
   const [params, setParams] = useSearchParams();
+  const rawEra = params.get("era") ?? "";
+  const legacyGroups = classifyPersonEra(rawEra);
+  const canonicalLegacy =
+    rawEra &&
+    !params.has("period") &&
+    legacyGroups.length === 1 &&
+    legacyGroups[0] !== "unclassified"
+      ? legacyGroups[0]
+      : "";
+  useEffect(() => {
+    if (!canonicalLegacy) return;
+    const next = new URLSearchParams(params);
+    next.delete("era");
+    next.set("period", canonicalLegacy);
+    next.delete("page");
+    next.delete("cursor");
+    setParams(next, { replace: true });
+  }, [canonicalLegacy, params, setParams]);
   const filters = new URLSearchParams(params);
+  if (canonicalLegacy) {
+    filters.delete("era");
+    filters.set("period", canonicalLegacy);
+  }
   filters.delete("page");
   filters.delete("cursor");
   const result = useInfiniteResource<
-    PageResult<Person & { sort_year?: number }>
+    PageResult<
+      Person & {
+        sort_year?: number;
+        sort_year_basis?: "event" | "birth" | "death";
+      }
+    >
   >("/people?" + filters);
-  const facets = useResource<Facets>("/people/facets");
+  const facets = useResource<PersonDirectoryFacets>("/people/facets");
+  const selectedPeriodKey = canonicalLegacy || params.get("period") || "";
+  const missingSelectedPeriod = personEraPeriods.find(
+    (period) =>
+      period.key === selectedPeriodKey &&
+      !facets.data?.periods?.some((item) => item.key === period.key),
+  );
   function update(key: string, value: string) {
     const next = new URLSearchParams(params);
+    if (key === "period") next.delete("era");
     if (value) next.set(key, value);
     else next.delete(key);
     next.delete("page");
@@ -62,13 +95,28 @@ export function PeoplePage() {
           时代
           <select
             aria-label="时代"
-            value={params.get("era") ?? ""}
-            onChange={(e) => update("era", e.target.value)}
+            value={
+              canonicalLegacy ||
+              params.get("period") ||
+              (rawEra ? `legacy:${rawEra}` : "")
+            }
+            onChange={(e) => update("period", e.target.value)}
             className="reading-input block"
           >
             <option value="">全部时代</option>
-            {facets.data?.eras.map((x) => (
-              <option key={x}>{x}</option>
+            {rawEra && !canonicalLegacy && !params.get("period") && (
+              <option value={`legacy:${rawEra}`}>原始记载：{rawEra}</option>
+            )}
+            {missingSelectedPeriod && (
+              <option value={missingSelectedPeriod.key}>
+                {missingSelectedPeriod.label}
+                {facets.data ? "（暂无记录）" : ""}
+              </option>
+            )}
+            {facets.data?.periods.map((period) => (
+              <option key={period.key} value={period.key}>
+                {period.label}
+              </option>
             ))}
           </select>
         </label>
@@ -161,7 +209,7 @@ export function PeoplePage() {
       <details className="text-sm text-stone-500">
         <summary className="cursor-pointer">筛选范围说明</summary>
         <p className="mt-2 leading-7">
-          已知年代优先采用已关联史事的最早年份，无记录时参考已知生卒年；这不表示完整生平。来源书籍筛选仅使用已核对的原文定位。待考身份保留在各人物的“身份辨析与待考”中。
+          时代按原有标注归组，跨时期人物可在多个时期找到；卡片保留原始时代。无法可靠归类的记录单列，不按关联事件年份推断人物时代。已知年代优先采用已关联史事的最早年份，无记录时参考已知生卒年；这不表示完整生平。来源书籍筛选仅使用已核对的原文定位。待考身份保留在各人物的“身份辨析与待考”中。
         </p>
       </details>
       <LoadState {...result} />
@@ -174,7 +222,7 @@ export function PeoplePage() {
                 <p className="eyebrow">
                   {person.era || "时代待补充"}
                   {person.sort_year != null
-                    ? ` · ${formatDisplayYear(person.sort_year)}`
+                    ? ` · ${{ event: "相关史事", birth: "生年", death: "卒年" }[person.sort_year_basis ?? "event"]}${formatDisplayYear(person.sort_year)}`
                     : ""}
                 </p>
                 <h2 className="text-xl font-serif mt-2">{person.name}</h2>

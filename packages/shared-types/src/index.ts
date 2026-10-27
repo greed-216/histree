@@ -226,3 +226,4 @@ export type {
   ReadingLink,
   ReviewCoverage,
 } from "./editorial.ts";
+export * from "./person-periods";

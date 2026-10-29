@@ -37,4 +37,8 @@ for (let start = 0; start < stories.length; start += 4) {
   }));
   for (const result of results) if (result.status === 'rejected') throw result.reason;
 }
-console.log(JSON.stringify({ verified: true, api: base, chapters: data.chapters.length, published_events: events.items.length, published_claims: claims.items.length, original_paragraphs: stories.length, writes: 0, model_calls: 0 }, null, 2));
+for (const basis of audit.order_corroboration ?? []) {
+  const reading = await get(`/library/${basis.book_key}/sections/${basis.section_id}?paragraph=${basis.paragraph_id}`);
+  assert.ok(reading.paragraphs.find((row) => row.id === basis.paragraph_id)?.content.includes(basis.quote));
+}
+console.log(JSON.stringify({ verified: true, api: base, chapters: data.chapters.length, published_events: events.items.length, published_claims: claims.items.length, original_paragraphs: stories.length, order_corroboration: audit.order_corroboration?.length ?? 0, writes: 0, model_calls: 0 }, null, 2));

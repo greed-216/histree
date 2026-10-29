@@ -59,7 +59,7 @@ export function AncientStoriesReading({ chapter, result }: Props) {
           </li>
         ))}
       </ol>
-      <p className="timeline-note">{chapter.id === "western-zhou-early" ? "往后进入共和元年（前841年），画卷开始按年展开。" : "继续向右浏览，可进入下一个时代。"}</p>
+      <p className="timeline-note">{chapter.id === "western-zhou-early" ? <Link className="timeline-detail-link" to="/timeline?year=-841">从共和元年（前841年）继续按年浏览 →</Link> : "继续向右浏览，可进入下一个时代。"}</p>
     </section>
   );
 }

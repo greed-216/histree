@@ -34,3 +34,7 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 ## 修订已发布资料的进度
 
 旧数据审阅与新增录入使用独立游标。已有文案审阅位置以 `content/revisions/2026-10-04-modern-chinese-review/progress.json` 的 `review_workflow.review_cursor` 为准，按字段记录改写或保留理由，经旧值守卫和独立匿名读回后才标完成。审阅范围以当前任务为准，不在Skill中固定停留年份；不覆盖旧批次或历史审计，不把修订进度计入另一书的连续录入进度。
+
+## 时间校核验收
+
+新批次必须有绑定批次哈希的逐事件时间审计；先在统一草稿填好时间判断，再用 `validate-history-time.py --from-curation` 生成并验证。无统一草稿的旧格式新批次直接准备同格式审计。发布器在首次发布前检查，已有已核验发布档案保持兼容。详见[时间校核](time-review.md)。写入后核验年份、范围精度、异说和对应画卷，不以原文通读覆盖或网页可打开代替年代验收。

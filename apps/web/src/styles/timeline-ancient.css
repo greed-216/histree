@@ -4,6 +4,18 @@
 .timeline-workspace .timeline-era-preview .timeline-preview-title h2{font-size:29px;white-space:normal;line-height:1.35}
 .timeline-era-preview .timeline-detail-link{display:block;text-align:left;margin-top:14px}
 .timeline-era-reading{margin-top:24px}
+.timeline-era-preview-stories{list-style:none;padding:0;margin:14px 0}
+.timeline-era-preview-stories li+li{margin-top:14px}
+.timeline-era-preview-stories li>span{display:block;font-size:11px;color:#858878;margin-bottom:3px}
+.timeline-era-stories{list-style:none;padding:0;margin:24px 0}
+.timeline-era-stories>li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:16px;position:relative;padding-bottom:20px}
+.timeline-era-stories>li:not(:last-child)::before{content:"";position:absolute;left:18px;top:38px;bottom:0;border-left:1px solid #d9dfd1}
+.timeline-era-story-number{display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#e5eadf;border-radius:50%;color:#4d6957;font-size:13px;margin-top:12px}
+.timeline-era-story h3{font-family:var(--font-serif,serif);font-size:20px;line-height:1.6;margin:8px 0}
+.timeline-era-story h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.timeline-era-story-description{font-size:14px;line-height:1.9;color:#626b61;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.timeline-era-story-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:16px;font-size:13px;color:#326b56}
+@media(max-width:760px){.timeline-era-stories>li{grid-template-columns:28px minmax(0,1fr);gap:10px}.timeline-era-story-number{width:28px;height:28px;font-size:11px}.timeline-era-stories>li:not(:last-child)::before{left:13px;top:36px}.timeline-era-story h3{font-size:18px}.timeline-era-story-links{font-size:12px}.timeline-era-preview-stories li+li{margin-top:10px}}
 .timeline-era-themes{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
 .timeline-era-themes>span,.timeline-era-themes>a{background:#e9ecdf;border:1px solid #dce1d0;border-radius:7px;padding:9px 14px;font-size:13px;color:#526648}
 .timeline-era-themes>a:hover{background:#dbe5ce}

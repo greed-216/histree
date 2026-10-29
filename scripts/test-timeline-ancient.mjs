@@ -25,6 +25,13 @@ assert.equal(scrollPositionLabel(-0.1),'1年','Rounding a fractional viewport en
 const from=scrollStart,to=1911;
 const geometry=scrollPanels.map(p=>scrollPanelGeometry(p,from,to));
 for(const g of geometry)assert.ok(Math.abs(g.height-geometry[0].height)<1e-9,'All paintings share the same height without stretching');
+const repair=scrollPanels.find(panel=>panel.id==='zhou-seam-repair-v2');
+assert.ok(repair,'The two Zhou joins are covered by one continuous repaired painting');
+assert.ok(Math.abs((repair.from_position-scrollStart)*scroll.pixels_per_elapsed_year-1200)<1e-9,'Repair registers to the original chapter artwork without moving the annual threshold');
+const spring=scrollPanels.find(panel=>panel.id==='spring-join-v1');
+assert.ok(Math.abs((spring.from_position+759)*scroll.pixels_per_elapsed_year-spring.crop.x*720/spring.crop.height)<1e-9,'Cropping the covered spring reference preserves its original screen position');
+const repairEnd=repair.from_position+repair.crop.width/scroll.pixels_per_elapsed_year;
+assert.ok(repairEnd>=spring.from_position+spring.fade_in_pixels/scroll.pixels_per_elapsed_year,'The repair covers the next panel until it is opaque');
 assert.ok(Math.abs((scrollYearX(-403,from,to)-scrollYearX(-841,from,to))*scroll.pixels_per_elapsed_year*(to-from)/920-1771.685393258427)<1e-7,'438 annual years keep the existing artwork scale');
 assert.ok(Math.abs((scrollYearX(1,from,to)-scrollYearX(-1,from,to))-(scrollYearX(2,from,to)-scrollYearX(1,from,to)))<1e-9,'Annual positions have no year zero');
 for(const panel of scrollPanels){const bytes=await readFile(new URL('../apps/web/public/timeline-scroll/'+panel.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),panel.sha256,panel.file);}

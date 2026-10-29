@@ -16,6 +16,8 @@
 
 新增画面与旧卷在山水参考区重叠，保持相同画高和纵横比。生成原图、提示词、构图初稿与校准记录保存在 `design/history-scroll-ancient-v1/`、`design/history-scroll-ancient-v2/`。全卷预览页沿用相同的绘制和分片逻辑。
 
+前841年附近原先两处未对齐的渐变接缝已用 `history-scroll-zhou-repaired-v2.webp` 的连续画面替换，修补参考、生成结果和提示词保存在 `design/history-scroll-seam-fix-20261029/`。`display_offset_pixels` 只校准画面位置，不改年份坐标或章节宽度；裁去春秋图已覆盖的左侧512px时同步补偿位置，修补区右侧仅用32px边缘过渡。源图与旧分片保留，当前分片清单只引用生效画面。
+
 ## 视窗分片与渐进加载
 
 `python3 scripts/build-scroll-tiles.py` 从已核验源图生成内容哈希命名的 WebP 分片和 `apps/web/src/data/history-scroll-tiles.json`。分片核心最大宽1560px，边缘带2px重叠以避免缩放缝隙；低清档为半尺寸，高清档保留源尺寸。原始整图仍保留，主画卷不再直接请求整张原图。仅绘制当前视窗可见、且未被后续画面完全覆盖的部分；全卷横向预览也按实际滚动窗口请求。

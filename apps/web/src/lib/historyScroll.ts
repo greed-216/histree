@@ -20,7 +20,11 @@ export function scrollPositionLabel(position: number) {
 }
 export const scrollPanels = [
   { ...scroll.ancient_panel, from_position: scrollStart, to_position: annualStart, fade_in_pixels: 0 },
-  ...scroll.panels.map(panel => ({ ...panel, from_position: ordinal(panel.from_year), to_position: ordinal(panel.to_year) })),
+  ...scroll.panels.map(panel => ({ ...panel,
+    // Artwork registration is independent of calendar boundaries. Cropped source
+    // pixels keep their original position instead of jumping back to the year.
+    from_position: ordinal(panel.from_year) + (('display_offset_pixels' in panel ? panel.display_offset_pixels : 0) ?? 0) / pixelsPerPosition,
+    to_position: ordinal(panel.to_year) })),
 ];
 export function scrollPositionX(position: number, from: number, to: number) {
   return 40 + (position - from) / Math.max(1, to - from) * 920;

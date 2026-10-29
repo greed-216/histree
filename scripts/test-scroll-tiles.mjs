@@ -11,6 +11,8 @@ const scrollUrl=moduleUrl((await readFile(new URL('../apps/web/src/lib/historySc
 const tileUrl=moduleUrl((await readFile(new URL('../apps/web/src/lib/scrollTiles.ts',import.meta.url),'utf8')).replace('import manifest from "../data/history-scroll-tiles.json";',`const manifest=${JSON.stringify(manifest)};`).replace('"./historyScroll"',JSON.stringify(scrollUrl)));
 const {scrollPanels,scrollStart,annualStart}=await import(scrollUrl);
 const {visibleScrollTiles}=await import(tileUrl);
+const repair=scrollPanels.find(panel=>panel.id==='zhou-seam-repair-v2');
+assert.equal(visibleScrollTiles(scrollPanels[0],annualStart,annualStart+20,repair).visible.length,0,'The original ghosted overlap is not fetched beneath the opaque repair');
 for(const panel of manifest.panels){
  let cursor=panel.crop.x;
  for(const tile of panel.tiles){

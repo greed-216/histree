@@ -10,21 +10,22 @@
   },
   "panels": [
     {
-      "id": "zhou-spring-extension-v1",
-      "file": "history-scroll-zhou-spring-v1.webp",
+      "id": "zhou-seam-repair-v2",
+      "file": "history-scroll-zhou-repaired-v2.webp",
       "from_year": -841,
-      "to_year": -759,
-      "width": 2172,
-      "height": 724,
+      "to_year": -623,
+      "display_offset_pixels": -400,
+      "width": 1280,
+      "height": 720,
       "crop": {
         "x": 0,
         "y": 0,
-        "width": 470,
-        "height": 724
+        "width": 1280,
+        "height": 720
       },
-      "fade_in_pixels": 144,
-      "overlap_note": "前841年至前759年部分，保留右侧山水供下一画面衔接。",
-      "sha256": "f206ef639cf39b87085b1b35d695e1f78fdbd63c129ea47c752b52b3fa6e7ed4"
+      "fade_in_pixels": 64,
+      "sha256": "25131c33e749751d381afb1aec4fbe31e9c2f091b0868482bc4727baff0655fc",
+      "overlap_note": "前841年附近两处旧接缝合并为一幅连续修补画面；左侧从上古章节画布第1200px开始，年份坐标不变。"
     },
     {
       "id": "spring-join-v1",
@@ -34,14 +35,15 @@
       "width": 2171,
       "height": 724,
       "crop": {
-        "x": 0,
+        "x": 512,
         "y": 0,
-        "width": 2171,
+        "width": 1659,
         "height": 724
       },
-      "fade_in_pixels": 100,
+      "fade_in_pixels": 32,
       "sha256": "3b894a3348720ca8969c3229d019426df9f003060d86f112795f2555ff5ace4e",
-      "overlap_note": "完整旧卷左端作为右三分之一参考；右侧在旧卷渐入区重叠。"
+      "overlap_note": "跳过已由修补画面覆盖的左侧512px，保留同一图像坐标；仅在边缘32px内过渡。",
+      "display_offset_pixels": 509.17127071823205
     },
     {
       "id": "history-scroll-v6",
@@ -129,7 +131,7 @@
     }
   ],
   "pixels_per_elapsed_year": 4.044943820224719,
-  "artifact_version": "v7-ancient",
+  "artifact_version": "v8-zhou-seam-repair",
   "provenance_directory": "design/history-scroll-ancient-v2",
   "scene_notes": [
     {

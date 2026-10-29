@@ -11,6 +11,7 @@ books['songshi']=('宋史',('songshi-',))
 books['hanshu']=('汉书',('hanshu-',))
 books['houhanshu']=('后汉书',('houhanshu-',))
 books['wuyue-beishi']=('吴越备史',('KR2i0019-','wuyuebeishi-'))
+books['shiji']=('史记',('shiji-',))
 indexes={k:{} for k in books}
 subject_remap={}
 citation_revisions={}
@@ -56,6 +57,11 @@ for path in sorted(batch_paths+revision_paths):
   record['batch_files'].append(str(path.relative_to(ROOT)))
 assert citation_revisions.keys() <= {claim for rows in indexes.values() for claim in rows}, 'Citation revision cites unknown claim'
 assert subject_remap.keys() <= {claim for rows in indexes.values() for claim in rows}, 'Revision cites unknown claim'
+from revision_claim_index import derive_time_revision_claims
+for book_key, rows in derive_time_revision_claims(ROOT, books).items():
+ for claim_key, record in rows.items():
+  assert claim_key not in indexes[book_key], 'Revision claim collides with frozen batch'
+  indexes[book_key][claim_key] = record
 for key,(name,_) in books.items():
  out=ROOT/'content/books'/key;out.mkdir(parents=True,exist_ok=True)
  (out/'source-index.json').write_text(json.dumps({'book':name,'scope':'按书索引引用；是否已发布以各批 publication/release-verification 及数据库为准。','claims':list(indexes[key].values())},ensure_ascii=False,indent=2)+'\n')

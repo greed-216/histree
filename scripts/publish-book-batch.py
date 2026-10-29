@@ -11,6 +11,11 @@ ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',
 P=Path(args.batch).resolve().parent
 subprocess.run([sys.executable,str(ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
 batch=json.loads((P/'content-batch.json').read_text());coverage=json.loads((P/'coverage.json').read_text())
+time_review=P/'time-review.json'
+prior_paths=[P/'publication-mysql.json',P/'publication.json']
+legacy_verified=any(p.exists() and json.loads(p.read_text()).get('verified') and json.loads(p.read_text()).get('batch_sha256')==hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest() for p in prior_paths)
+if time_review.exists() or not legacy_verified:
+ subprocess.run([sys.executable,str(ROOT/'scripts/validate-history-time.py'),str(P/'content-batch.json')],check=True)
 assert not batch['topics'], 'Book publisher does not yet publish topics'
 source_keys={r['key'] for r in batch['sources']}
 primary_keys=set(coverage.get('primary_source_keys',[coverage['primary_source_key']]))

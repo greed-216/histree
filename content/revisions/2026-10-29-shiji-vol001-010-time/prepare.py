@@ -35,7 +35,7 @@ for pid,m in source_meta.items():
  if not m.get('new'):continue
  p=PARAS[pid];path=m['raw_path'];m['url']=f'https://github.com/greed-216/histree/blob/{commit}/{path}'
  blob=subprocess.check_output(['git','show',commit+':'+path],cwd=R);assert sha(blob)==m['sha256']
- new_sources[m['id']]=dict(id=m['id'],title=f'史记电子版·卷{p["volume_candidate"]}·纪年对照·{pid}',source_type='secondary',author=None,edition='选定EPUB全文TXT逐字片段；年表公元前年列为现代对照信息，不冒充司马迁原有公元纪年。',url=m['url'],note=f'原文与定位见{pid}；同书年表必要校年补证，不推进连续录入进度。')
+ new_sources[m['id']]=dict(id=m['id'],title=f'史记电子版·卷{p["volume_candidate"]}·纪年对照·{pid}',source_type='reference',author=None,edition='选定EPUB全文TXT逐字片段；年表公元前年列为现代对照信息，不冒充司马迁原有公元纪年。',url=m['url'],note=f'原文与定位见{pid}；同书年表必要校年补证，不推进连续录入进度。')
 key_map={sid(k):k for k in set(curitems)|set(people.values())};key_map.update({m['id']:m['key'] for m in source_meta.values()});new_claims=[];datings=[];updates=[];phase_events=[];pes=[];relations=[];reviews=[];primary_sources=set();used_sources=set()
 def make_claim(subject,table,field,value,pid,note,tag):
  m=source_meta[pid];raw=(R/m['raw_path']).read_bytes();assert sha(raw)==m['sha256'];quote=PARAS[pid]['text'];assert quote in raw.decode('utf-8-sig');p=PARAS[pid];logical_key='claim_shiji_time_20261029_'+tag+'_'+pid+'_'+field;cid=sid(logical_key);key_map[cid]=logical_key

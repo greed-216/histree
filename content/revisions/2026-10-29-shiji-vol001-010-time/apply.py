@@ -21,6 +21,7 @@ for d in plan['event_dating']:
  assert lo is None or hi is None or lo<=hi
  if d['precision_kind'] in ['year','range']:assert lo is not None and hi is not None
  if d['precision_kind']=='year':assert lo==hi
+for source in plan['sources']:assert source['source_type'] in ['primary','reference','scholarship','digital','media'], 'Unsupported source type'
 claims={c['id']:c for c in plan['new_claims']};assert len(claims)==len(plan['new_claims'])
 meta=plan['source_metadata'];srcbyid={m['id']:m for m in meta.values()};texts=[];links=[];structures=[]
 for cid,c in claims.items():

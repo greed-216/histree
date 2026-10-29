@@ -25,3 +25,7 @@
 公开后至少核对：明确日期实际写入且匿名可见；范围/时代保留精度；异说与待考未丢失；有确年的事件进入相应年份画卷，未知年份没有被显示成确年。不得仅凭条目页能打开就宣称年代验收完成。
 
 实际持续过程用 `decision: range` 时另填 `interval_kind: duration`、`start_year`、`end_year`；估计发生范围不能直接写事件持续区间。复用旧对象用 `inherited`，填写 `comparison` 为 `consistent`、`additional_detail`、`unresolved` 或 `conflicting`；后两种保留具体障碍或异说，不把旧日期算成本书新校年。新人物填写生卒年时也必须有对应日期字段的独立证据。
+
+范围、相对先后和时代结论不能只保存在本地审计或 `time_original` 中：关联本批日期声明，按现有结构化流程写入 `event_dating`（`earliest_year`、`latest_year`、`precision_kind`、`era_key`、`basis`、`claim_id` 和 `review_state=reviewed`），声明指纹绑定原文出处。多时点总述如有可核阶段，各阶段分别写确年，总述不取代表年。复用旧对象发现纪年冲突时另建来源限定的声明/年代记录，不覆盖规范日期。
+
+现有 `scripts/upgrade-content-structure.mjs` 可对起始年仍为空的事件准备、校验和发布年代侧表，需先构建依赖并显式指定目标环境、人工审核的 `--dating-plan`、输出计划及执行时的计划哈希。只纳入本批声明，审阅并剔除无关的结构化补齐候选；它对已有确年的对象设有保护，不绕过该保护，改走有旧值守卫的独立修订。侧表发表和匿名可见性核对属于本卷验收的一部分，未完成不能推进独立进度。

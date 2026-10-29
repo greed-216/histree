@@ -57,19 +57,20 @@ try:
     assert set(row)<=s.columns[table],('Unexpected columns',table,set(row)-s.columns[table]);old=norm(table,read(c,table,{k:row[k] for k in ids}))
     if old:assert all(old[k]==v for k,v in row.items()),('Insert identity conflict',table,row.get('id',row.get('source_id')))
   if not apply:s.connection.rollback();print('READONLY VERIFIED',len(updates),'bounded updates;',sum(len(rs) for _,rs,_ in inserts),'inserts, source bytes and canonical dates checked; plan',digest);raise SystemExit(0)
-  audit=dict(plan_sha256=digest,target_fingerprint=s.target_fingerprint,status='applying',verified=False,updates=len(updates),inserts={t:len(rs) for t,rs,_ in inserts});A.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
+  audit=dict(plan_sha256=digest,target_fingerprint=s.target_fingerprint,status='applying',verified=False,updates=len(updates),inserts={t:len(rs) for t,rs,_ in inserts},insert_counts_kind='planned rows; matching existing rows reused',actual_inserted={},actual_updated=0);A.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
   for table,rows,ids in inserts:
    for row in rows:
     if read(c,table,{k:row[k] for k in ids}):continue
+    audit['actual_inserted'][table]=audit['actual_inserted'].get(table,0)+1
     cols=list(row);c.execute('INSERT INTO `'+table+'` ('+','.join(s.column(table,k) for k in cols)+') VALUES ('+','.join('%s' for _ in cols)+')',[s.value(table,k,row[k]) for k in cols])
   for u in updates:
    old=norm(u['table'],read(c,u['table'],dict(id=u['id'])))
    if all(old[k]==v for k,v in u['after'].items()):continue
-   cols=list(u['after']);guards=list(u['before']);c.execute('UPDATE `'+u['table']+'` SET '+','.join(s.column(u['table'],k)+'=%s' for k in cols)+' WHERE id=%s AND '+' AND '.join(s.column(u['table'],k)+' <=> %s' for k in guards),[*[s.value(u['table'],k,u['after'][k]) for k in cols],u['id'],*[s.value(u['table'],k,u['before'][k]) for k in guards]]);assert c.rowcount==1
+   cols=list(u['after']);guards=list(u['before']);c.execute('UPDATE `'+u['table']+'` SET '+','.join(s.column(u['table'],k)+'=%s' for k in cols)+' WHERE id=%s AND '+' AND '.join(s.column(u['table'],k)+' <=> %s' for k in guards),[*[s.value(u['table'],k,u['after'][k]) for k in cols],u['id'],*[s.value(u['table'],k,u['before'][k]) for k in guards]]);assert c.rowcount==1; audit['actual_updated']+=1
   for u in updates:
    actual=norm(u['table'],read(c,u['table'],dict(id=u['id'])));expected=dict(u['full_before'],**u['after']);assert all(actual[k]==v for k,v in expected.items() if k!='updated_at'),('Unplanned field change',u['key'])
   for old in plan['protected_events']:assert norm('event',read(c,'event',dict(id=old['id'])))==old
- s.connection.commit()
+ s.connection.commit();audit['committed']=True;A.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
 except BaseException:s.connection.rollback();raise
 finally:s.connection.close()
 # Anonymous verification is a separate resumable phase; publication is not accepted until it passes.

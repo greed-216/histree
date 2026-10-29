@@ -22,6 +22,8 @@ import { useInfiniteResource } from "../hooks/useInfiniteResource";
 import { useResource } from "../hooks/useResource";
 import { formatDisplayRange, formatDisplayYear } from "../lib/content";
 import { guideHighlights } from "../lib/historyGuides";
+import { ancientStoriesPath } from "../lib/ancientStories";
+import { AncientStoriesPreview, AncientStoriesReading } from "./AncientStories";
 import {
   ancientChapters,
   annualStart,
@@ -175,6 +177,9 @@ function TimelineRiver({
   const [hoverChapter, setHoverChapter] = useState<AncientChapter | null>(null);
   const previewChapter =
     hoverChapter ?? (hoverYear === null ? selectedChapter : undefined);
+  const eraEvents = useResource<PageResult<Event>>(
+    previewChapter || selectedChapter ? ancientStoriesPath : undefined,
+  );
   const previewYear = hoverYear ?? selected;
   const highlightsYear = useDebounced(previewYear, 200);
   const remoteHighlights = useResource<{
@@ -638,7 +643,12 @@ function TimelineRiver({
             ))}
           </nav>
         </div>
-        <div className="timeline-workspace">
+        <div className="timeline-workspace" onPointerLeave={() => {
+          if (!drag.current) {
+            setHoverYear(null);
+            setHoverChapter(null);
+          }
+        }}>
           <div className="timeline-main">
             <div ref={stageRef} className="timeline-stage">
               <div className="timeline-window-heading">
@@ -731,12 +741,6 @@ function TimelineRiver({
                     ) {
                       const position = pointPosition(e);
                       if (position !== undefined) previewPosition(position);
-                    }
-                  }}
-                  onPointerLeave={() => {
-                    if (!drag.current) {
-                      setHoverYear(null);
-                      setHoverChapter(null);
                     }
                   }}
                   onClick={(e) => {
@@ -1222,14 +1226,23 @@ function TimelineRiver({
                   </div>
                 </div>
                 <div className="timeline-preview-content">
-                  <p>这一时期的史事选读尚待整理。</p>
-                  <button
-                    type="button"
-                    className="timeline-detail-link"
-                    onClick={() => chooseChapter(previewChapter)}
-                  >
-                    查看这一时期的史事 →
-                  </button>
+                  <AncientStoriesPreview chapter={previewChapter} result={eraEvents} />
+                  {compact ? (
+                    <Link className="timeline-detail-link" to={`/timeline?era=${previewChapter.id}`}>
+                      查看这一时期的重点史事 →
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className="timeline-detail-link"
+                      onClick={() => {
+                        chooseChapter(previewChapter);
+                        requestAnimationFrame(() => document.getElementById("timeline-era-stories")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+                      }}
+                    >
+                      查看这一时期的重点史事 →
+                    </button>
+                  )}
                 </div>
               </>
             ) : (
@@ -1324,25 +1337,11 @@ function TimelineRiver({
       </section>
       {!compact &&
         (selectedChapter ? (
-          <EraReading chapter={selectedChapter} />
+          <AncientStoriesReading chapter={selectedChapter} result={eraEvents} />
         ) : (
           <YearEvents key={selected} year={selected} />
         ))}
     </>
-  );
-}
-function EraReading({ chapter }: { chapter: AncientChapter }) {
-  return (
-    <section
-      className="timeline-era-reading min-h-[420px]"
-      aria-label="时代史事"
-    >
-      <div className="flex flex-wrap justify-between gap-3 mb-4">
-        <h2 className="reading-heading mb-0">这一时期发生了什么</h2>
-        <span className="text-sm text-stone-500">{chapter.label}</span>
-      </div>
-      <p className="reading-card">这一时期的史事选读尚待整理。</p>
-    </section>
   );
 }
 function YearEvents({ year }: { year: number }) {

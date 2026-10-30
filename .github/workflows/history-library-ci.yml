@@ -38,5 +38,52 @@ jobs:
         run: |
           python3 -m unittest discover -s scripts/tests
           python3 scripts/test-book-publish-chunks.py
+      - name: Validate portable ingestion, table and resume contracts
+        run: |
+          python3 -m pip install PyMySQL==1.1.2
+          python3 scripts/test-history-workbench-portable.py
+          python3 scripts/test-history-ingest.py
+          python3 scripts/test-history-ingest-preflight.py
+          python3 scripts/test-history-sidecars.py
+          python3 scripts/test-history-sidecars-mysql.py --check-safety
+          python3 scripts/test-reuse-history-sources.py
+          python3 scripts/test-archive-history-sources.py
+          python3 scripts/test-history-table-review.py
       - name: Ensure rebuilding preserves versioned files
         run: git diff --exit-code
+  mysql-sidecars:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: histree-test-only
+          MYSQL_DATABASE: histree_test_ingestion
+        ports: [3306:3306]
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -phistree-test-only"
+          --health-interval=5s --health-timeout=5s --health-retries=30
+    env:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: histree_test_ingestion
+      MYSQL_USER: root
+      MYSQL_PASSWORD: histree-test-only
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: python3 -m pip install PyMySQL==1.1.2
+      - name: Bootstrap disposable schema and validate native contracts
+        run: pnpm test:mysql
+      - name: Native sidecar prepare, guarded apply, rollback and idempotence
+        run: python3 scripts/test-history-sidecars-mysql.py

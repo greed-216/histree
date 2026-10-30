@@ -9,12 +9,15 @@ def inside(root,name):
     if not path.is_relative_to(root.resolve()): raise ValueError('Audit path escaped repository')
     return path
 
-def project(root):
+def project(root, book_key=None, volumes=None):
     catalog=json.loads((root/'resources/derived/history-library/catalog.json').read_text())
     books={b['book_key']:b for b in catalog['books']}
     indexes={};navigation={};rows=[];paragraphs=[];skipped=[]
     for path in sorted((root/'content/books').glob('*/vol-*/from-start/completion-audit.json')):
-        audit=json.loads(path.read_text());book=books.get(audit.get('book_key'))
+        if book_key and path.relative_to(root/'content/books').parts[0]!=book_key: continue
+        audit=json.loads(path.read_text())
+        if volumes and audit.get('volume') not in volumes: continue
+        book=books.get(audit.get('book_key'))
         if not book or not audit.get('publication_verified') or not audit.get('full_volume_source_coverage'):
             skipped.append({'audit':str(path.relative_to(root)),'reason':'No full reviewed and publication-verified proof'});continue
         if audit.get('source_version')!=book['source_version']:
@@ -65,5 +68,5 @@ def project(root):
         except (KeyError,ValueError,FileNotFoundError) as error:skipped.append({'audit':str(path.relative_to(root)),'reason':str(error)})
     return dict(format_version=1,coverage=rows,paragraphs=paragraphs,skipped=skipped,database_writes=0)
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--source-root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    result=project(args.source_root.resolve());args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'volumes':len(result['coverage']),'paragraphs':len(result['paragraphs']),'unmapped_audits':len(result['skipped']),'database_writes':0}))
+    parser=argparse.ArgumentParser();parser.add_argument('--source-root',type=Path,default=Path(__file__).resolve().parents[1]);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--book');parser.add_argument('--volume',action='append',type=int);args=parser.parse_args()
+    result=project(args.source_root.resolve(),args.book,set(args.volume or []));args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'volumes':len(result['coverage']),'paragraphs':len(result['paragraphs']),'unmapped_audits':len(result['skipped']),'database_writes':0}))

@@ -1,13 +1,14 @@
 """Publish an audited book-led batch. Default is read-only preflight; --apply writes.
 Existing entities are never overwritten. MySQL chunks are transactional; full batch publication is staged and resumable.
 """
-import argparse,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
+import argparse,concurrent.futures,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
 from datetime import datetime,timezone
 from pathlib import Path
 from history_identity import merged_identity_target
 from history_cross_supplements import validate_cross_supplement
 ROOT=Path(__file__).resolve().parents[1]
-ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+if args.source_root:ROOT=args.source_root.resolve()
 P=Path(args.batch).resolve().parent
 subprocess.run([sys.executable,str(ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
 batch=json.loads((P/'content-batch.json').read_text());coverage=json.loads((P/'coverage.json').read_text())
@@ -139,7 +140,10 @@ for _,table in groups:
  if table!='source':assert all(r['status']=='published' for r in actual)
  if table=='fact_claim':assert all(r['source'] and r['source']['url'].startswith('https://github.com/greed-216/histree/blob/') for r in actual)
  counts[table]=len(actual)
-for row in source_text_rows:
+def verify_source_text(row):
  with urllib.request.urlopen(args.public_api_url.rstrip('/')+'/sources/'+row['source_id']+'/text',timeout=40) as response: public_text=json.load(response)
  assert public_text and public_text['content_sha256']==row['content_sha256'] and public_text['content']==row['content'], 'Anonymous source text mismatch'
+ return row['source_id']
+with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool: verified_text_ids=list(pool.map(verify_source_text,source_text_rows))
+assert set(verified_text_ids)=={r['source_id'] for r in source_text_rows}
 audit['public_counts']=counts;audit['verified']=True;save('anonymous_readback_verified');print('Public readback verified',counts)

@@ -32,4 +32,10 @@ class ReviewCoverageTests(unittest.TestCase):
  def test_changed_batch_never_becomes_completed_coverage(self):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder);batch=self.fixture(root);batch.write_text('{}');result=MODULE.project(root);self.assertEqual(result['coverage'],[]);self.assertEqual(len(result['skipped']),1)
+ def test_scope_filters_leave_other_books_and_volumes_out(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=Path(folder);self.fixture(root)
+   self.assertEqual(len(MODULE.project(root,book_key='fixture',volumes=[1])['coverage']),1)
+   self.assertEqual(MODULE.project(root,book_key='other')['coverage'],[])
+   self.assertEqual(MODULE.project(root,book_key='fixture',volumes=[2])['coverage'],[])
 if __name__=='__main__':unittest.main()

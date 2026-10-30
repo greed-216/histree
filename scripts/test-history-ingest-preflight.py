@@ -30,6 +30,23 @@ class AuthoringTest(unittest.TestCase):
     def analyze(self, curation, packet):
         return preflight.analyze_curation(curation, packet, PERIODS)
 
+    def test_reused_person_cannot_silently_participate_centuries_before_their_era(self):
+        c,p=draft(-195)
+        c['items'] += [dict(group='people',row=dict(key='person_wangzhou',era='晚唐'),evidence=[dict(paragraph_id='p1')]),dict(group='person_events',row=dict(key='pe_wangzhou',person_key='person_wangzhou',event_key='event_a',role='获封'),evidence=[dict(paragraph_id='p1')])]
+        c['reused_keys']=['person_wangzhou'];original=copy.deepcopy(c)
+        periods=PERIODS+[dict(label='隋唐',from_year=581,to_year=907)]
+        report=preflight.analyze_curation(c,p,periods)
+        self.assertEqual(c,original);self.assertFalse(report['ready_to_freeze'])
+        self.assertEqual(report['issues'][0]['code'],'person_period_mismatch')
+        self.assertEqual(report['issues'][0]['subject_key'],'person_wangzhou')
+        c['items'][1]['row']['era']='西汉'
+        self.assertTrue(preflight.analyze_curation(c,p,periods)['ready_to_freeze'])
+
+    def test_unknown_participant_era_does_not_invent_a_lifetime(self):
+        c,p=draft(-195)
+        c['items'] += [dict(group='people',row=dict(key='person_a',era='待考'),evidence=[]),dict(group='person_events',row=dict(key='pe_a',person_key='person_a',event_key='event_a',role='当事人'),evidence=[])]
+        self.assertTrue(self.analyze(c,p)['ready_to_freeze'])
+
     def test_conservative_periods_unknown_and_reused(self):
         for year, dynasty in [(None, '春秋'), (-841, '战国末至秦末'), (-500, '秦'), (220, '汉'), (975, '五代十国')]:
             c, p = draft(year, dynasty)

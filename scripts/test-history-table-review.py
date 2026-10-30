@@ -18,8 +18,12 @@ class Tables(unittest.TestCase):
         self.review['items'][0].update(decision='verified',reason='初封与继承分别核',time_review='元年初封；后格是继侯，不混为同年',bindings=[dict(paragraph_id='p1',column_indices=[2],quote='元年，乙受封。')],regnal_checks=[dict(anchor_year=-1,regnal_year=2,expected_year=1,anchor_basis='合成锚点',era_column_basis='初封栏')])
     def tearDown(self):self.tmp.cleanup()
     def test_empty_cells_are_not_collapsed(self):
-        self.assertEqual(self.review['rows'][0]['raw_cells'],['甲','','元年，乙受封。','二年，丙继。'])
+        self.assertEqual(self.review['rows'][0]['raw_cells'],['甲','','元年，乙受封。','二年，丙继。\n\n'])
         self.assertTrue(M.check(self.batch,self.review)['verified'])
+    def test_normalized_packet_heading_does_not_replace_raw_source(self):
+        path=self.batch/'packet.json';value=M.read(path);value['paragraphs'][0]['text']='甲元年乙受封二年丙继';M.write(path,value)
+        result=M.template(self.batch);self.assertEqual(result['rows'][0]['raw_text'],self.raw.decode());self.assertEqual(result['rows'][0]['raw_cells'][1],'')
+
     def test_extraction_is_not_review(self):
         with self.assertRaises(AssertionError):M.check(self.batch,M.template(self.batch))
     def test_source_packet_and_curation_changes_fail(self):

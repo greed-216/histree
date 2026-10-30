@@ -64,6 +64,14 @@ class Tests(unittest.TestCase):
         self.assertEqual(after[1],json.loads(self.current_before)[1])
         regenerated=dict(key=after[0]['key'],title=after[0]['source_title'],source_type='primary',author=M.AUTHORS.get(self.book_key),edition=M.EDITION,url=after[0]['url'],note=after[0]['reviewed_citation'])
         self.assertEqual(regenerated,self.source)
+    def test_explicit_other_book_supplement_reuses_its_original_metadata(self):
+        other='auxiliary-workline'
+        packet=self.read(self.cur/'packet.json');packet.update(book_key=other,paragraphs=[],supplementary_paragraphs=packet['paragraphs'])
+        new=self.root/'content/books'/other/'vol-017/part-01';new.parent.mkdir(parents=True);shutil.move(str(self.cur),new);self.cur=new;self.write(self.cur/'packet.json',packet)
+        plan,before,after=M.prepare(self.root,self.cur)
+        self.assertEqual(plan['source_book_keys'],sorted([other,self.book_key]));self.assertEqual(after[0]['url'],self.source['url'])
+        self.assertTrue(M.apply_local(self.root,plan,before,after));self.assertEqual(self.read(self.old/'packet.json')['book_key'],self.book_key)
+
     def test_apply_local_is_single_manifest_atomic_and_idempotent(self):
         old_protected={p:M.sha((self.root/p).read_bytes()) for p in [str((self.old/'sources/manifest.json').relative_to(self.root)),str((self.old/'content-batch.json').relative_to(self.root)),str((self.old/'publication-mysql.json').relative_to(self.root))]}
         plan,before,after=M.prepare(self.root,self.cur);self.assertTrue(M.apply_local(self.root,plan,before,after))

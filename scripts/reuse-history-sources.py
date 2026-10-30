@@ -138,7 +138,10 @@ def prepare(root,directory):
     require(type(volume) is int and volume>0,'Invalid packet volume')
     require(len({m['key'] for m in before})==len(before),'Duplicate current source key')
     current={m['key']:m for m in before};matches={};published_batches=[]
-    receipts=sorted(book_directory.rglob('publication-mysql.json'))
+    require(all(p.get('book_key')==book_key for p in packet['paragraphs']),'Wrong source book in primary range')
+    scope_books=sorted({book_key}|{p['book_key'] for p in paras.values()})
+    require(all(re.fullmatch(r'[a-z0-9][a-z0-9-]*',key) for key in scope_books),'Invalid supplementary book key')
+    receipts=sorted({p for key in scope_books for p in (root/'content/books'/key).rglob('publication-mysql.json')})
     for receipt_path in receipts:
         old_dir=receipt_path.parent
         if old_dir.resolve()==directory:continue
@@ -157,12 +160,12 @@ def prepare(root,directory):
         read_file(root,receipt_path,file_hashes);read_file(root,batch_path,file_hashes)
         old_manifest_raw=read_file(root,old_dir/'sources/manifest.json',file_hashes);old_manifest=data(old_manifest_raw)
         old_packet=data(read_file(root,old_dir/'packet.json',file_hashes));old_paras=paragraph_map(old_packet)
-        require(old_packet['book_key']==book_key,'Prior packet book mismatch')
+        require(old_dir.is_relative_to(root/'content/books'/old_packet['book_key']),'Prior packet book mismatch')
         old_ids=data(read_file(root,old_dir/'sql/key-map.json',file_hashes))
         old_bykey={m['key']:m for m in old_manifest};require(len(old_bykey)==len(old_manifest),'Duplicate prior source key')
         for key in sorted(keys):
             require(key in old_bykey and key in old_ids,'Published source absent from manifest/key-map')
-            om=old_bykey[key];p,raw=snapshot(root,old_dir,om,old_paras,file_hashes,book_key);source=sources[key]
+            om=old_bykey[key];p,raw=snapshot(root,old_dir,om,old_paras,file_hashes,paras[current[key]['paragraph_id']]['book_key']);source=sources[key]
             validate_citation(source,om,p)
             commit,archived_path,gitraw=pinned_blob(root,source['url'])
             require(sha(gitraw)==om['sha256'] and gitraw==raw,'Canonical Git blob differs byte-for-byte from published raw snapshot')
@@ -174,7 +177,7 @@ def prepare(root,directory):
         key=m['key']
         if key not in matches:continue
         copies=sorted(matches[key],key=lambda x:(x['published_at'],x['receipt_sha256']))
-        canonical=copies[0];p,raw=snapshot(root,directory,m,paras,protected,book_key)
+        canonical=copies[0];p,raw=snapshot(root,directory,m,paras,protected,paras[m['paragraph_id']]['book_key'])
         cp=canonical['paragraph'];cm=canonical['manifest']
         # An explicitly reviewed current chapter label is also a semantic guard
         # against reusing an old copy/paste note with a different chapter name.
@@ -201,14 +204,14 @@ def prepare(root,directory):
         original_row=copy.deepcopy(m);m.update(restored);m['original_reviewed_citation']=original;m['canonical_source_reuse']=audit
         if m!=original_row:changes.append(dict(source_key=key,paragraph_id=p['id'],before={k:original_row.get(k) for k in RESTORE},after=restored,canonical_batch=canonical['directory'],source_id=canonical['source_id']))
     unpublished(directory)
-    return dict(format_version=1,kind='reuse_history_sources',book_key=book_key,volume=volume,current_directory=str(directory.relative_to(root)),manifest_path=str(manifest_path.relative_to(root)),manifest_before_sha256=sha(before_raw),manifest_after_sha256=sha(encoded(after)) if changes else sha(before_raw),changes=changes,new_source_keys_unchanged=sorted(set(current)-set(matches)),scanned_verified_batches=published_batches,scanned_receipts=[str(p.relative_to(root)) for p in receipts],protected_paths=protected),before_raw,after
+    return dict(format_version=1,kind='reuse_history_sources',book_key=book_key,volume=volume,source_book_keys=scope_books,current_directory=str(directory.relative_to(root)),manifest_path=str(manifest_path.relative_to(root)),manifest_before_sha256=sha(before_raw),manifest_after_sha256=sha(encoded(after)) if changes else sha(before_raw),changes=changes,new_source_keys_unchanged=sorted(set(current)-set(matches)),scanned_verified_batches=published_batches,scanned_receipts=[str(p.relative_to(root)) for p in receipts],protected_paths=protected),before_raw,after
 
 
 def apply_local(root,plan,before_raw,after):
     root=Path(root).resolve();directory=root/plan['current_directory'];unpublished(directory)
     path=root/plan['manifest_path'];require(path==directory/'sources/manifest.json','Unexpected mutation path')
-    book_directory=root/'content/books'/plan['book_key']
-    require([str(p.relative_to(root)) for p in sorted(book_directory.rglob('publication-mysql.json'))]==plan['scanned_receipts'],
+    receipts=sorted({p for key in plan['source_book_keys'] for p in (root/'content/books'/key).rglob('publication-mysql.json')})
+    require([str(p.relative_to(root)) for p in receipts]==plan['scanned_receipts'],
             'Published receipt set changed before local write; prepare again')
     for rel,digest in plan['protected_paths'].items():
         require(sha((root/rel).read_bytes())==digest,'Protected source archive changed before local write: '+rel)

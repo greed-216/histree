@@ -39,6 +39,7 @@ PERIOD_ALIASES = {
     '秦朝': '秦汉', '漢': '秦汉', '汉': '秦汉', '西汉': '秦汉', '西漢': '秦汉',
     '东汉': '秦汉', '東漢': '秦汉', '西汉初年': '秦汉', '秦末汉初': '秦汉',
     '秦末漢初': '秦汉', '秦漢': '秦汉', '三國': '三国',
+    '唐': '隋唐', '唐代': '隋唐', '晚唐': '隋唐', '隋': '隋唐',
 }
 TEMPLATE_PATTERNS = (
     r'本条(?:保存|仅用于)', r'本批(?:次)?(?:整理|复用|校核|新增)',
@@ -226,6 +227,20 @@ def analyze_curation(curation, packet, periods, period_aliases=None):
     # Optional checks are supplied by the author; the packet is never mined for dates.
     period_checks = checklist.get('period_checks', []) if isinstance(checklist, dict) else []
     by_key = {i.get('row', {}).get('key'): i for i in items if i.get('group') == 'people'}
+    events_by_key = {i.get('row', {}).get('key'): i for i in items if i.get('group') == 'events'}
+    # An explicit participation plus an authored event year is an activity check.
+    # This also checks reused people; names or raw text never supply dates here.
+    for edge in person_events:
+        person=by_key.get(edge.get('person_key'));event=events_by_key.get(edge.get('event_key'))
+        if not person or not event:
+            continue
+        years=[event['row'].get(k) for k in ('start_year','end_year') if _year(event['row'].get(k))]
+        if not years:
+            continue
+        context=json_sha256(dict(person=_context(person,paragraphs),event=_context(event,paragraphs),edge=edge))
+        for issue in authored_period_issues(dict(source_active_years=years,reason='显式事件参与：'+edge.get('event_key','')),person,periods,context,period_aliases):
+            issue['message']='参与人物的时代与该事件已核年份不相交；检查跨时代同名误复用，或记录来源差异的具体理由。'
+            issues.append(issue)
     if not isinstance(period_checks, list):
         issues.append(_issue('invalid_authored_period_check', None, 'period_checks', period_checks,
                              'list of authored person checks', 'period_checks需要显式审阅条目列表，不能静默忽略。'))

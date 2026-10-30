@@ -30,7 +30,7 @@ def bundle(batch):
         assert batch in path.parents and not path.is_symlink()
         raw=path.read_bytes();assert digest(raw)==m['sha256']
         # Some exports include terminal line endings; keep snapshot and text hashes separately.
-        text=p['text'];assert text in raw.decode('utf-8-sig')
+        text=raw.decode('utf-8-sig')  # Raw snapshot, never normalized heading/rendered packet text
         rows.append(dict(paragraph_id=p['id'],primary=p['id'] in {r['id'] for r in packet['paragraphs']},source_sha256=m['sha256'],text_sha256=digest(text.encode()),raw_cells=text.split('\t'),raw_text=text))
     identity=[(i['group'],i['row']['key']) for i in curation['items']]
     assert len(set(identity))==len(identity)

@@ -172,7 +172,7 @@ export class LibraryService {
       FROM library_paragraph p JOIN library_book b ON b.book_key=p.book_key AND b.status='available'
       JOIN library_source_link l ON l.paragraph_id=p.id
       JOIN source s ON s.id=l.source_id JOIN source_text st ON st.source_id=s.id AND st.archive_url=s.url AND st.archive_url_sha256=l.archive_url_sha256 AND st.content_sha256=l.snapshot_sha256
-      JOIN fact_claim c ON c.source_id=l.source_id
+      JOIN fact_claim c ON c.source_id=s.id
       LEFT JOIN person ON c.subject_table='person' AND person.id=c.subject_id LEFT JOIN event ON c.subject_table='event' AND event.id=c.subject_id
       WHERE p.book_key=? AND p.section_id=? AND p.id=? AND ${visible('fact_claim', 'c')}
       ORDER BY c.id LIMIT 21 OFFSET ${page * 20}`,

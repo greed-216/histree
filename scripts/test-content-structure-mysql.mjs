@@ -272,6 +272,47 @@ try {
   checks++;
   assert.equal((await library.sourceLocation(source)).paragraph_id, paragraph);
   assert.equal((await library.links(book, section, paragraph)).items.length, 2);
+  // The reader link uses utf8mb4 IDs, while canonical source/claim IDs use
+  // ascii_bin. The real query must retain an indexable canonical ID join.
+  const idCharsets = await db.rows(
+    `SELECT TABLE_NAME AS table_name,CHARACTER_SET_NAME AS character_set_name FROM information_schema.columns
+     WHERE table_schema=DATABASE() AND column_name='source_id'
+       AND table_name IN ('fact_claim','library_source_link')`,
+  );
+  assert.equal(
+    idCharsets.find((r) => r.table_name === "fact_claim").character_set_name,
+    "ascii",
+  );
+  assert.equal(
+    idCharsets.find((r) => r.table_name === "library_source_link")
+      .character_set_name,
+    "utf8mb4",
+  );
+  let linkQuery;
+  const linkProbe = Object.create(db);
+  linkProbe.rows = async (sql, params, signal) => {
+    linkQuery = { sql, params };
+    return db.rows(sql, params, signal);
+  };
+  assert.equal(
+    (await new LibraryService(linkProbe).links(book, section, paragraph)).items
+      .length,
+    2,
+  );
+  // Force this candidate only in EXPLAIN: even tiny fixtures must prove the
+  // source index is usable, rather than hiding a charset conversion in a scan.
+  const indexPlan = await db.rows(
+    "EXPLAIN " +
+      linkQuery.sql.replace(
+        /JOIN fact_claim c\b/,
+        "JOIN fact_claim c FORCE INDEX (claim_source)",
+      ),
+    linkQuery.params,
+  );
+  const claimAccess = indexPlan.find((row) => row.table === "c");
+  assert.equal(claimAccess?.key, "claim_source");
+  assert.equal(claimAccess?.type, "ref");
+  checks += 5;
   assert.equal(
     (await library.links(book, section, paragraph)).items.some(
       (c) => c.claim_id === hiddenClaim,

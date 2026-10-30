@@ -724,6 +724,7 @@ def main(argv=None):
     action.add_argument('--apply',action='store_true')
     action.add_argument('--verify-public',action='store_true')
     parser.add_argument('--expected-plan-sha256')
+    parser.add_argument('--expected-target-fingerprint')
     args=parser.parse_args(argv);root=args.root.resolve();batch_dir=args.batch_dir.resolve()
     require(root in batch_dir.parents,'Batch directory must be inside --root')
     out=batch_dir/'.workflow'
@@ -747,6 +748,7 @@ def main(argv=None):
         require(not prior or not args.refresh_plan,'Cannot replace a plan with an existing receipt')
     db=Database(root,args.mysql_env or root/'.env.migration.local',writable=args.apply)
     try:
+        require(not args.expected_target_fingerprint or db.target_fingerprint==args.expected_target_fingerprint,'Target differs from frozen review')
         if args.apply:
             result=apply_plan(plan,root,db)
             receipt=dict(plan_sha256=digest,target_fingerprint=db.target_fingerprint,

@@ -32,7 +32,7 @@ class Pipeline(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name).resolve();self.book=self.root/'content/books/synthetic-alpha'
         self.batch=self.book/'vol-001/from-start/part-01';self.batch.mkdir(parents=True)
-        self.tools=self.root/'scripts';self.tools.mkdir();self.calls=Counter();self.commands=[];self.fail_once=set();self.hide_timeline=False;self.sql=[];self.live={};self.edge_rows=[]
+        self.tools=self.root/'scripts';self.tools.mkdir();self.calls=Counter();self.commands=[];self.fail_once=set();self.hide_timeline=False;self.sql=[];self.live={};self.edge_rows=[];self.target_fingerprint='offline-target';self.extra_batch=False
         names={p.name for p in M.engines()}|{'reuse-history-sources.py','archive-history-sources.py'}
         for name in names:
             source=SCRIPTS/name;(self.tools/name).write_bytes(source.read_bytes() if source.exists() else b'# synthetic engine\n')
@@ -74,7 +74,7 @@ class Pipeline(unittest.TestCase):
             def close(self):pass
             def cursor(self,*a,**k):return Cursor()
         class Store:
-            def __init__(self,*a,**k):self.connection=Conn();self.target_fingerprint='offline-target'
+            def __init__(self,*a,**k):self.connection=Conn();self.target_fingerprint=owner.target_fingerprint
             def request(self,table,*a,**k):return owner.live.get(table,[])
             def normalize(self,table,row):return row
         self.stack=ExitStack();self.stack.enter_context(patch.object(M,'TOOL_ROOT',self.root));self.stack.enter_context(patch.object(P,'__file__',str(self.tools/'history_ingest_preflight.py')))
@@ -105,7 +105,10 @@ class Pipeline(unittest.TestCase):
         if name=='build':self.build_outputs()
         elif name=='editorial':self.write(self.batch/'.workflow/editorial-report.json',dict(ready_to_freeze=True,issues=[]))
         elif name=='time-review':self.write(self.batch/'time-review.json',dict(verified=True,batch_sha256=M.sha(self.batch/'content-batch.json')))
-        elif name=='volume-audit':self.write(self.batch.parent/'volume-audit.json',dict(book_key='synthetic-alpha',volume=1,full_volume_source_coverage=True,publication_verified=False,paragraphs=2))
+        elif name=='volume-audit':
+            packet=self.read(self.batch/'packet.json');parts=[dict(path='part-01',batch_sha256=M.sha(self.batch/'content-batch.json'),paragraphs=[p['id'] for p in packet['paragraphs']])]
+            if self.extra_batch:parts.append(dict(path='part-02',batch_sha256='f'*64,paragraphs=['unpublished-third']))
+            self.write(self.batch.parent/'volume-audit.json',dict(book_key='synthetic-alpha',source_version='v1',volume=1,full_volume_source_coverage=True,publication_verified=False,paragraphs=3 if self.extra_batch else 2,next_paragraph=packet['next_paragraph'],batches=parts))
         elif name=='prepare-import':
             b=self.read(self.batch/'content-batch.json');self.write(self.batch/'sql/key-map.json',{r['key']:M.sid(r['key']) for g in ('people','events','person_events','person_relationships','claims','sources') for r in b[g]})
         elif name=='mysql-publish':
@@ -114,7 +117,7 @@ class Pipeline(unittest.TestCase):
         elif name=='sidecars-plan':self.write(self.batch/'.workflow/sidecars-plan.json',dict(batch_sha256=M.sha(self.batch/'content-batch.json'),updates=[]))
         elif name in ('sidecars-apply','sidecars-verify'):self.write(self.batch/'.workflow/sidecars-receipt.json',dict(verified=True,committed=True,batch_sha256=M.sha(self.batch/'content-batch.json'),plan_sha256=M.sha(self.batch/'.workflow/sidecars-plan.json'),target_fingerprint='offline-target'))
         elif name=='coverage-project':self.write(self.batch/'.workflow/coverage.json',dict(coverage=[dict(book_key='synthetic-alpha',volume=1,status='published_fact_subset_verified')],skipped=[],paragraphs=['p1','p2']))
-        elif name=='coverage-plan':self.write(self.batch/'.workflow/coverage-structure-plan.json',dict(claim_structure=[],event_dating=[],claim_relations=[],coverage=self.read(self.batch/'.workflow/coverage.json')['coverage']))
+        elif name=='coverage-plan':self.write(self.batch/'.workflow/coverage-structure-plan.json',dict(target_fingerprint=self.target_fingerprint,claim_structure=[],event_dating=[],claim_relations=[],coverage=self.read(self.batch/'.workflow/coverage.json')['coverage']))
         return subprocess.CompletedProcess(command,0)
     def http(self,base,path):
         self.assertEqual(base,self.args.api)
@@ -157,6 +160,26 @@ class Pipeline(unittest.TestCase):
         self.published();side=self.batch/'.workflow/sidecars-receipt.json';value=self.read(side);value['verified']=False;self.write(side,value)
         with redirect_stdout(StringIO()):M.publish(self.args,self.batch)
         self.assertEqual(self.calls['sidecars-verify'],1);self.assertEqual(self.calls['sidecars-apply'],1);self.assertEqual(self.calls['mysql-publish'],1)
+    def test_unpublished_sibling_batch_blocks_whole_volume_pipeline(self):
+        self.extra_batch=True
+        with self.assertRaisesRegex(AssertionError,'complete-volume|Multiple batches'):self.ready()
+        self.assertEqual(self.calls['mysql-preflight'],0);self.assertFalse((self.batch/'.workflow/freeze.json').exists())
+    def test_target_and_public_api_changes_are_blocked_before_write(self):
+        self.ready();self.args.apply=True;self.target_fingerprint='other-target'
+        with self.assertRaisesRegex(AssertionError,'target database'):M.publish(self.args,self.batch)
+        self.target_fingerprint='offline-target';self.args.api='https://other.invalid/api/v1'
+        with self.assertRaisesRegex(AssertionError,'public API'):M.publish(self.args,self.batch)
+        self.assertEqual(self.calls['mysql-publish'],0)
+    def test_period_change_invalidates_editorial_cache_before_freeze(self):
+        self.fail_once.add('time-review')
+        with self.assertRaises(P.StageExecutionError):self.ready()
+        scroll=self.root/'apps/web/src/data/history-scroll.json';value=self.read(scroll);value['periods'][0]['to_year']=201;self.write(scroll,value)
+        self.ready();self.assertEqual(self.calls['editorial'],2)
+    def test_period_change_after_freeze_blocks_publish(self):
+        self.ready();self.args.apply=True;scroll=self.root/'apps/web/src/data/history-scroll.json';scroll.write_bytes(scroll.read_bytes()+b' ')
+        with self.assertRaisesRegex(AssertionError,'period data'):M.publish(self.args,self.batch)
+        self.assertEqual(self.calls['mysql-publish'],0)
+
     def test_field_source_and_tool_mutation_block_frozen_publish(self):
         self.ready();self.args.apply=True
         for path in [self.batch/'curation.json',self.batch/'sources/synthetic-alpha-v1-p000001/source.txt',self.tools/'history-batch-workbench.py']:

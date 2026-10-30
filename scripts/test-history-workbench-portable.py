@@ -79,6 +79,20 @@ class Workbench(unittest.TestCase):
         self.assertTrue(all(c['key'].startswith('claim_portable-v001-p01_') for c in batch['claims']))
         self.assertEqual(self.read(self.batch/'coverage.json')['next_paragraph'],self.ps[2]['id']);self.assertTrue(self.read(self.batch/'workbench-validation.json')['continuous_range_checked'])
         ledger=self.read(self.batch/'paragraphs.json');self.assertEqual(ledger[0]['relationship_audit'][0]['decision'],'new');self.assertIn('逐字底本快照',(self.batch/'review.html').read_text())
+    def new_person_revision(self):
+        row=copy.deepcopy(self.read(self.batch/'curation.json')['items'][0]['row']);row.update(key='person_revision_new',id=sid('person_revision_new'),name='合成新增人物',status='published',aliases=[])
+        path=self.root/'content/revisions/verified-new-person/plan.json';self.write(path,dict(kind='reviewed_history_correction',new_people=[row],updates=[]))
+        receipt=path.parent/'publication-mysql.json';self.write(receipt,dict(verified=True,anonymous_readback_verified=True,plan_sha256=M.sha(path.read_bytes()),new_people=[row]))
+        return path,receipt,row
+    def test_new_people_in_verified_correction_are_reusable(self):
+        path,receipt,row=self.new_person_revision();registry={x['row']['key']:x for x in M.people_registry(exclude=self.batch)}
+        self.assertEqual(registry[row['key']]['row']['name'],row['name'])
+        receipt.write_text('{}');self.assertNotIn(row['key'],{x['row']['key'] for x in M.people_registry(exclude=self.batch)})
+    def test_new_revision_person_requires_matching_receipt_and_stable_uuid(self):
+        path,receipt,row=self.new_person_revision();audit=self.read(receipt);audit['new_people'][0]['name']='被篡改';self.write(receipt,audit)
+        with self.assertRaisesRegex(AssertionError,'differs'):M.people_registry(exclude=self.batch)
+        value=self.read(path);value['new_people'][0]['id']=sid('wrong');self.write(path,value);audit.update(new_people=value['new_people'],plan_sha256=M.sha(path.read_bytes()));self.write(receipt,audit)
+        with self.assertRaisesRegex(AssertionError,'UUID'):M.people_registry(exclude=self.batch)
     def test_noncontinuous_or_reordered_range_rejected(self):
         for paragraphs in [[self.ps[0],self.ps[2]],[self.ps[1],self.ps[0]]]:
             self.packet(lambda p:p.update(paragraphs=paragraphs))

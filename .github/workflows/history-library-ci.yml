@@ -43,6 +43,7 @@ jobs:
           python3 -m pip install PyMySQL==1.1.2
           python3 scripts/test-history-workbench-portable.py
           python3 scripts/test-history-ingest.py
+          python3 scripts/test-history-pipeline-forward.py
           python3 scripts/test-history-ingest-preflight.py
           python3 scripts/test-history-sidecars.py
           python3 scripts/test-history-sidecars-mysql.py --check-safety

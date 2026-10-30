@@ -33,6 +33,10 @@ def write(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
 
 
+def source_key(book_key, paragraph_id):
+    return ('tongjian-' if book_key == 'zizhi-tongjian' else book_key + '-') + paragraph_id
+
+
 def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
@@ -102,7 +106,7 @@ def add_supplement(args):
     folder = directory / 'sources' / p['id']
     assert not folder.exists(), 'Snapshot already exists'
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-    m = dict(key=p['book_key'] + '-' + p['id'], file=p['id'] + '/source.txt', sha256=sha(raw),
+    m = dict(key=source_key(p['book_key'], p['id']), file=p['id'] + '/source.txt', sha256=sha(raw),
              paragraph_id=p['id'], upstream_locator=loc, source_title=args.title,
              url=f'https://github.com/greed-216/histree/blob/{commit}/{quote(loc["source_file"])}',
              snapshot_status='local_draft_not_committed', purpose='scoped_identity_or_textual_check')
@@ -128,7 +132,7 @@ def people_registry(exclude=None):
     # people must remain reusable without rebuilding those immutable archives.
     for path in sorted((ROOT / 'content/revisions').glob('*/plan.json')):
         plan = read(path)
-        if plan.get('kind') not in ('split_cross_era_homonyms', 'split_source_scoped_homonyms'):
+        if plan.get('kind') not in ('split_cross_era_homonyms', 'split_source_scoped_homonyms', 'reviewed_history_correction'):
             continue
         audit_path = path.parent / 'publication-mysql.json'
         if not audit_path.exists():
@@ -137,10 +141,14 @@ def people_registry(exclude=None):
         if not (audit.get('verified') and audit.get('anonymous_readback_verified')
                 and audit.get('plan_sha256') == sha(path.read_bytes())):
             continue
-        for person in plan['people']:
+        people = ([dict(new=p) for p in plan.get('new_people', [])]
+                  if plan.get('kind') == 'reviewed_history_correction' else plan['people'])
+        for person in people:
             new = person['new']
             assert new in audit['new_people'], 'Revision person differs from verified publication'
             assert new['status'] == 'published', 'Revision person is not published'
+            namespace=uuid.uuid5(uuid.NAMESPACE_URL, 'https://github.com/greed-216/histree/content')
+            assert new['id']==str(uuid.uuid5(namespace,new['key'])), 'Revision person stable UUID differs'
             row = {k: v for k, v in new.items() if k != 'id'}
             prior = candidates.get(row['key'])
             if prior:
@@ -288,8 +296,8 @@ def prepare(args):
         upstream = str(source.relative_to(ROOT))
         committed = subprocess.check_output(['git', 'show', f'{commit}:{upstream}'], cwd=ROOT)
         assert sha(committed) == loc['source_sha256'], 'Upstream source is not archived in HEAD'
-        source_key = 'tongjian-' + p['id'] if args.book == 'zizhi-tongjian' else args.book + '-' + p['id']
-        manifests.append(dict(key=source_key, file=p['id'] + '/source.txt', sha256=sha(raw),
+        key = source_key(args.book, p['id'])
+        manifests.append(dict(key=key, file=p['id'] + '/source.txt', sha256=sha(raw),
                               paragraph_id=p['id'], upstream_locator=loc,
                               url=f'https://github.com/greed-216/histree/blob/{commit}/{quote(upstream)}',
                               upstream_commit=commit, snapshot_status='local_draft_not_committed'))

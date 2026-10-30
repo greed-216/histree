@@ -35,7 +35,7 @@ def ready(args,batch):
  source_verification(batch)
  if any('\t' in p['text'] for p in load(batch/'packet.json')['paragraphs']):
   run(args,batch,'table-review',[sys.executable,script('history-table-review.py'),'check',batch,'--require-publishable','--review',batch/'table-review.json','--output',batch/'.workflow/table-review-validation.json'],inputs=[batch/'packet.json',batch/'curation.json',batch/'table-review.json',batch/'sources'],outputs=[batch/'.workflow/table-review-validation.json'])
- run(args,batch,'editorial',[sys.executable,script('history_ingest_preflight.py'),batch,'--scroll',TOOL_ROOT/'apps/web/src/data/history-scroll.json','--output',batch/'.workflow/editorial-report.json','--fail-on-open'],inputs=[batch/'curation.json',batch/'packet.json'],outputs=[batch/'.workflow/editorial-report.json'])
+ run(args,batch,'editorial',[sys.executable,script('history_ingest_preflight.py'),batch,'--scroll',TOOL_ROOT/'apps/web/src/data/history-scroll.json','--output',batch/'.workflow/editorial-report.json','--fail-on-open'],inputs=[batch/'curation.json',batch/'packet.json',TOOL_ROOT/'apps/web/src/data/history-scroll.json'],outputs=[batch/'.workflow/editorial-report.json'])
  # Registry changes invalidate compilation cache; never cache from directory mtime alone.
  registry=[p for p in (args.root/'content').rglob('content-batch.json') if p.parent!=batch]
  registry+=list((args.root/'content/revisions').glob('*/plan.json'))+list((args.root/'content/revisions').glob('*/publication*.json'))
@@ -43,11 +43,12 @@ def ready(args,batch):
  run(args,batch,'build',[sys.executable,script('history-batch-workbench.py'),'--root',args.root,'build',batch],inputs=[batch/'curation.json',batch/'packet.json',*source_files,*registry],outputs=[batch/n for n in ['content-batch.json','coverage.json','paragraphs.json','reused-keys.json','workbench-validation.json']])
  run(args,batch,'time-review',[sys.executable,script('validate-history-time.py'),batch/'content-batch.json','--from-curation',batch/'curation.json'],inputs=[batch/'content-batch.json',batch/'curation.json',*source_files],outputs=[batch/'time-review.json'])
  run(args,batch,'volume-audit',[sys.executable,script('history-batch-workbench.py'),'--root',args.root,'audit',batch.parent],inputs=[batch/'packet.json',batch/'curation.json',batch/'content-batch.json',*source_files],outputs=[batch.parent/'volume-audit.json'])
+ whole_volume(batch)
  run(args,batch,'prepare-import',[sys.executable,script('prepare-book-import.py'),batch/'content-batch.json'],inputs=[batch/'content-batch.json',batch/'reused-keys.json'],outputs=[batch/'sql/key-map.json'])
  online_check(args,batch)
  run(args,batch,'mysql-preflight',publisher(args,batch),kind='fresh_acceptance')
  make_samples(batch)
- f=dict(format_version=1,files=binding(batch),engines={str(p.relative_to(TOOL_ROOT)):sha(p) for p in engines()},source_verification_sha256=sha(batch/'.workflow/source-url-verification.json'),editorial_sha256=sha(batch/'.workflow/editorial-report.json'),online_check_sha256=sha(batch/'.workflow/online-check.json'),volume_audit_sha256=sha(batch.parent/'volume-audit.json'),web_samples_sha256=sha(batch/'.workflow/web-samples.json'))
+ f=dict(format_version=1,target_fingerprint=load(batch/'.workflow/online-check.json')['target_fingerprint'],public_api_url=args.api.rstrip('/'),scroll_sha256=sha(TOOL_ROOT/'apps/web/src/data/history-scroll.json'),files=binding(batch),engines={str(p.relative_to(TOOL_ROOT)):sha(p) for p in engines()},source_verification_sha256=sha(batch/'.workflow/source-url-verification.json'),editorial_sha256=sha(batch/'.workflow/editorial-report.json'),online_check_sha256=sha(batch/'.workflow/online-check.json'),volume_audit_sha256=sha(batch.parent/'volume-audit.json'),web_samples_sha256=sha(batch/'.workflow/web-samples.json'))
  _write_json(batch/'.workflow/freeze.json',f)
  print('READY',sha(batch/'.workflow/freeze.json'))
 
@@ -96,10 +97,26 @@ def online_check(args,batch):
  finally:store.connection.rollback();store.connection.close()
 
 
-def publisher(args,batch):return [sys.executable,script('publish-book-batch.py'),batch/'content-batch.json','--source-root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api]
+def whole_volume(batch):
+ p=load(batch/'packet.json');audit=load(batch.parent/'volume-audit.json')
+ assert audit['full_volume_source_coverage'] and (audit['book_key'],audit['volume'],audit['source_version'])==(p['book_key'],p['volume'],p['source_version'])
+ assert audit['paragraphs']==len(p['paragraphs']) and audit['next_paragraph']==p['next_paragraph'],'Pipeline requires one complete-volume batch'
+ assert len(audit['batches'])==1,'Multiple batches require aggregate acceptance; this pipeline supports one complete-volume batch'
+ item=audit['batches'][0]
+ assert item['path']==str(batch.relative_to(batch.parent)) and item['batch_sha256']==sha(batch/'content-batch.json')
+ assert item['paragraphs']==[r['id'] for r in p['paragraphs']],'Incomplete volume packet'
+ return audit
+
+def publisher(args,batch):return [sys.executable,script('publish-book-batch.py'),batch/'content-batch.json','--source-root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,'--expected-target-fingerprint',load(batch/'.workflow/online-check.json')['target_fingerprint']]
 def frozen(args,batch):
  p=batch/'.workflow/freeze.json';f=load(p)
  assert args.expected_freeze_sha256==sha(p),'Exact reviewed freeze SHA required'
+ assert f['public_api_url']==args.api.rstrip('/'),'Frozen public API changed'
+ assert f['scroll_sha256']==sha(TOOL_ROOT/'apps/web/src/data/history-scroll.json'),'Frozen period data changed'
+ from mysql_content_store import MysqlContentStore
+ store=MysqlContentStore(args.mysql_env)
+ try:assert store.target_fingerprint==f['target_fingerprint'],'Frozen target database changed'
+ finally:store.connection.rollback();store.connection.close()
  assert f['files']==binding(batch),'Frozen batch changed'
  assert all(sha(TOOL_ROOT/n)==h for n,h in f['engines'].items()),'Tool changed after freeze'
  assert f['online_check_sha256']==sha(batch/'.workflow/online-check.json')
@@ -115,10 +132,10 @@ def publish(args,batch):
  side=batch/'.workflow/sidecars-receipt.json'
  if not (side.exists() and load(side).get('verified')):
   plan=batch/'.workflow/sidecars-plan.json'
-  if not plan.exists():run(args,batch,'sidecars-plan',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api],kind='fresh_acceptance')
+  if not plan.exists():run(args,batch,'sidecars-plan',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,'--expected-target-fingerprint',load(batch/'.workflow/freeze.json')['target_fingerprint']],kind='fresh_acceptance')
   if side.exists() and load(side).get('committed'):command=['--verify-public']
   else:command=['--apply','--expected-plan-sha256',sha(plan)]
-  run(args,batch,'sidecars-apply',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,*command],kind='apply' if '--apply' in command else 'fresh_acceptance')
+  run(args,batch,'sidecars-apply',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,'--expected-target-fingerprint',load(batch/'.workflow/freeze.json')['target_fingerprint'],*command],kind='apply' if '--apply' in command else 'fresh_acceptance')
  anonymous(args,batch)
 
 
@@ -168,6 +185,7 @@ def anonymous(args,batch):
 def accept(args,batch):
  assert args.apply and args.progress and args.web_proof,'accept needs --apply, explicit --progress and actual --web-proof'
  frozen(args,batch);p=load(batch/'packet.json');a=load(batch/'publication-mysql.json');q=load(batch/'.workflow/public-acceptance.json');side=load(batch/'.workflow/sidecars-receipt.json');ui=load(args.web_proof);samples=load(batch/'.workflow/web-samples.json')
+ assert a['target_fingerprint']==load(batch/'.workflow/freeze.json')['target_fingerprint']
  assert all(x.get('verified') for x in [a,q,side,ui]);assert all(x['batch_sha256']==sha(batch/'content-batch.json') for x in [a,q,side,ui,samples]);assert ui.get('quote_expansion_verified') or samples['reader_only'] and ui.get('original_text_visible')
  assert {r['id'] for r in samples['samples']}=={r['id'] for r in ui['observations']},'UI proof sample mismatch'
  assert (ui['book_key'],ui['volume'])==(p['book_key'],p['volume']),'UI proof book/volume mismatch'
@@ -179,7 +197,7 @@ def accept(args,batch):
  for group,table in [('people','person'),('events','event'),('person_events','person_event'),('person_relationships','person_relationship'),('sources','source'),('claims','fact_claim')]:
   assert a['public_counts'].get(table)==len(b[group]),'Incomplete anonymous publication counts: '+table
  assert side['plan_sha256']==sha(batch/'.workflow/sidecars-plan.json') and side['target_fingerprint']==a['target_fingerprint']
- audit=load(batch.parent/'volume-audit.json');assert audit['full_volume_source_coverage']
+ audit=whole_volume(batch)
  progress_path=args.progress.resolve();assert args.root in progress_path.parents;old=progress_path.read_bytes();progress=json.loads(old)
  assert progress['book_key']==p['book_key'],'Progress belongs to another book'
  if progress['active_cursor']['volume']==p['volume']+1:
@@ -215,7 +233,8 @@ def coverage(args,batch,completion):
  run(args,batch,'coverage-project',[sys.executable,script('project-review-coverage.py'),'--source-root',args.root,'--book',p['book_key'],'--volume',p['volume'],'--output',plan],kind='fresh_acceptance')
  rows=load(plan);assert len(rows['coverage'])==1 and rows['coverage'][0]['volume']==p['volume'] and rows['coverage'][0]['book_key']==p['book_key'] and not rows['skipped']
  run(args,batch,'coverage-plan',['node',script('upgrade-content-structure.mjs'),'--mysql-env',args.mysql_env,'--source-root',args.root,'--after','ffffffff-ffff-ffff-ffff-ffffffffffff','--limit','1','--coverage-plan',plan,'--output',structure],kind='fresh_acceptance')
- proposed=load(structure);assert not proposed['claim_structure'] and not proposed['event_dating'] and not proposed['claim_relations'] and proposed['coverage']==rows['coverage']
+ proposed=load(structure);assert proposed.get('target_fingerprint')==load(batch/'.workflow/freeze.json')['target_fingerprint']
+ assert not proposed['claim_structure'] and not proposed['event_dating'] and not proposed['claim_relations'] and proposed['coverage']==rows['coverage']
  run(args,batch,'coverage-apply',['node',script('upgrade-content-structure.mjs'),'--mysql-env',args.mysql_env,'--source-root',args.root,'--apply','--plan',structure,'--expected-sha256',sha(structure)],kind='apply')
  actual=get(args.api,'/library/'+p['book_key']);row=next(r for r in actual['coverage'] if r['volume']==p['volume']);assert all(row[k]==v for k,v in rows['coverage'][0].items())
  _write_json(out/'coverage-receipt.json',dict(verified=True,batch_sha256=completion['batch_sha256'],plan_sha256=sha(structure),reader_reviewed=len(rows['paragraphs'])))

@@ -6,17 +6,17 @@ from datetime import datetime,timezone
 from pathlib import Path
 from history_identity import merged_identity_target
 from history_cross_supplements import validate_cross_supplement
-ROOT=Path(__file__).resolve().parents[1]
-ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+ROOT=Path(__file__).resolve().parents[1];TOOL_ROOT=ROOT
+ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-target-fingerprint');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
 if args.source_root:ROOT=args.source_root.resolve()
 P=Path(args.batch).resolve().parent
-subprocess.run([sys.executable,str(ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
+subprocess.run([sys.executable,str(TOOL_ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
 batch=json.loads((P/'content-batch.json').read_text());coverage=json.loads((P/'coverage.json').read_text())
 time_review=P/'time-review.json'
 prior_paths=[P/'publication-mysql.json',P/'publication.json']
 legacy_verified=any(p.exists() and json.loads(p.read_text()).get('verified') and json.loads(p.read_text()).get('batch_sha256')==hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest() for p in prior_paths)
 if time_review.exists() or not legacy_verified:
- subprocess.run([sys.executable,str(ROOT/'scripts/validate-history-time.py'),str(P/'content-batch.json')],check=True)
+ subprocess.run([sys.executable,str(TOOL_ROOT/'scripts/validate-history-time.py'),str(P/'content-batch.json')],check=True)
 assert not batch['topics'], 'Book publisher does not yet publish topics'
 source_keys={r['key'] for r in batch['sources']}
 primary_keys=set(coverage.get('primary_source_keys',[coverage['primary_source_key']]))
@@ -35,6 +35,7 @@ assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] n
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}
 from mysql_content_store import MysqlContentStore
 store=MysqlContentStore(args.mysql_env,args.apply,args.public_api_url)
+assert not args.expected_target_fingerprint or store.target_fingerprint==args.expected_target_fingerprint, 'Target differs from frozen review'
 def req(table,q='',method='GET',body=None):return store.request(table,q,method,body)
 def allrows(table,select):
  result=[]

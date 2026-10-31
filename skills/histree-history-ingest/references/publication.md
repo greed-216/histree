@@ -60,6 +60,8 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 
 必要补证尚无可公开source时，可准备明确标为“仅补证来源”的工作台包，归档后保持people/events/关系/参与/claims/topics全空。标准发布器显式加 `--source-only-evidence`，只发布source及全部固定原文；年代/出处侧表工具依据相同已验模式写原文定位，不制造占位事实，不推进任何书卷进度。随后独立修订才能引用这些source。该模式不能用于隐藏尚未校核的事实，已有事实的批次会拒绝。
 
+原文API只展示已有公开事实引用的source。仅补证包先核固定Git字节、数据库全文与source目录回读；未有可见claim的原文记录为 `pending_published_claim`，不把空响应当已公开展示，也不制造占位事实。普通事实批次和已有可见claim的source必须逐字匿名回读；修订发布后再验收其实际引用和原文入口。该区分不推进卷章验收或连续进度。
+
 发布后发现文案、身份、关系、引用或年份问题，在 `content/revisions/` 单独保存 `kind=reviewed_history_correction` 计划；保留原batch、固定快照、稳定ID和历史审计。使用 `scripts/history_revision.py`，默认只读核对，不通过重建旧批次覆盖已发资料。
 
 计划绑定目标 `target_fingerprint`、相对资料根的 `protected_paths` SHA-256、逐字 `source_bindings`、所有更新行的完整 `full_before` 及仅含改动字段的 `before/after`。需要新增的行放入 `inserts`，来源/原文/定位行列入只读 `protected_rows`；需要保护引用集合时使用 `membership_guards` 和对应的 `invariants_after`。不能修改主键或 `created_at`，同一行不能重复列为更新或新增。新人物的逻辑key写在 `new_people` 元数据，数据库行沿用实际列；不把目录key写成数据库字段。历史年份不使用零年；若已有旧行含零年，先报告工具拒绝，不删改旧值守卫以强行执行。

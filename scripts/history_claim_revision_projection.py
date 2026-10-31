@@ -160,7 +160,11 @@ def project_claim_revisions(root, indexes, books):
             before, after, full = [update.get(k) for k in ('before', 'after', 'full_before')]
             _require(isinstance(before, dict) and isinstance(after, dict) and isinstance(full, dict)
                      and before and before.keys() == after.keys(), 'Correction changed fields differ')
-            ident, key = update.get('id'), update.get('key')
+            ident = update.get('id')
+            # The correction executor permits an omitted redundant row key.
+            # Resolve only from the receipt-bound, UUID5-validated key map;
+            # an explicitly supplied conflicting key must still fail closed.
+            key = update.get('key', keys.get(ident))
             _require(isinstance(ident, str) and ident in keys and key == keys[ident] and full.get('id') == ident,
                      'Correction update UUID/key differs')
             _require('id' not in after, 'Correction cannot change claim UUID')

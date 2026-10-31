@@ -227,3 +227,4 @@ export type {
   ReviewCoverage,
 } from "./editorial.ts";
 export * from "./person-periods";
+export * from "./library";

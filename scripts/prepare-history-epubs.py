@@ -68,7 +68,7 @@ def plain_html(text):
     return ''.join(parser.parts)
 
 
-def extract(raw):
+def extract(raw, capture_layout=False):
     root = ET.fromstring(raw)
     body = root.find('h:body', NS)
     assert body is not None
@@ -182,28 +182,49 @@ def extract(raw):
         header['text'] = literal.sub(lambda m: restore_literal(m, header['element_path']), header['text'])
         assert 'data-mw-variant=' not in header['text'], 'Unrestored header markup'
 
-    rows, current, contexts, kinds = [], [], [], []
+    rows, current, contexts, kinds, owners = [], [], [], [], []
 
-    def append(value, context, kind):
+    def append(value, context, kind, cell=None):
         if not value:
             return
         current.append(re.sub(r'\s+', ' ', value))
+        if capture_layout:
+            owners.append(cell)
         if value.strip():
             if context not in contexts:
                 contexts.append(context)
             kinds.append(kind)
 
     def flush():
-        text = ''.join(current).strip(' \t')
+        joined = ''.join(current)
+        text = joined.strip(' \t')
         if text:
             kind = next((k for k in ('editorial_notice', 'annotation', 'heading', 'table_row') if k in kinds), 'body')
-            rows.append({'text': text, 'element_paths': list(contexts), 'kind': kind})
+            row = {'text': text, 'element_paths': list(contexts), 'kind': kind}
+            if capture_layout and kind == 'table_row':
+                left = len(joined) - len(joined.lstrip(' \t'))
+                right = left + len(text)
+                fragments, cursor = [], 0
+                for piece, owner in zip(current, owners):
+                    start, end = max(cursor, left), min(cursor + len(piece), right)
+                    if owner and start < end:
+                        fragment = dict(path=owner, start=start-left, end=end-left)
+                        if fragments and fragments[-1]['path']==owner and fragments[-1]['end']==fragment['start']:
+                            fragments[-1]['end']=fragment['end']
+                        else:
+                            fragments.append(fragment)
+                    cursor += len(piece)
+                row['cell_fragments'] = fragments
+            rows.append(row)
         current.clear()
         contexts.clear()
         kinds.clear()
+        owners.clear()
 
-    def render(element, context='body', kind='body', in_row=False):
+    def render(element, context='body', kind='body', in_row=False, cell=None):
         tag = element.tag.rsplit('}', 1)[-1]
+        if tag in {'td', 'th'}:
+            cell = paths[id(element)]
         classes = set(element.get('class', '').split())
         if classes & {'mbox-text', 'boilerplate', 'mw-disambig'}:
             kind = 'editorial_notice'
@@ -218,12 +239,14 @@ def extract(raw):
             flush()
         if tag in BLOCKS:
             context = paths[id(element)]
-        append(element.text, context, kind)
+        append(element.text, context, kind, cell)
         for child in element:
-            render(child, context, kind, in_row or tag == 'tr')
-            append(child.tail, context, kind)
+            render(child, context, kind, in_row or tag == 'tr', cell)
+            append(child.tail, context, kind, cell)
             if child.tag.rsplit('}', 1)[-1] in {'td', 'th'}:
                 current.append('\t')
+                if capture_layout:
+                    owners.append(None)
         if boundary:
             flush()
 

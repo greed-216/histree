@@ -1,5 +1,6 @@
 import type {
   EvidenceClaim,
+  LibraryParagraph,
   PageResult,
   ReadingLink,
 } from "@histree/shared-types";
@@ -14,6 +15,8 @@ import {
 import { FeedbackButton } from "../components/FeedbackButton";
 import { InfiniteScroll } from "../components/InfiniteScroll";
 import { LoadState } from "../components/Reading";
+import { LibraryContents } from "../components/LibraryContents";
+import { LibraryTable } from "../components/LibraryTable";
 import { useInfiniteResource } from "../hooks/useInfiniteResource";
 import { useResource } from "../hooks/useResource";
 import { splitEvidenceNote } from "../lib/evidence";
@@ -247,16 +250,17 @@ export function LibraryBookPage() {
           <header className="library-hero">
             <p className="eyebrow">史书原文</p>
             <h1>{result.data.book.title}</h1>
-            <p>选择卷章，开始阅读。</p>
+            <p>
+              {result.data.book.divisions
+                ? "按本纪、表、书、世家、列传查找篇目。"
+                : "选择卷章，开始阅读。"}
+            </p>
           </header>
           <SearchForm books={[result.data.book]} bookKey={book} />
-          <nav className="library-section-grid" aria-label="卷章目录">
-            {result.data.sections.map((section) => (
-              <Link key={section.id} to={`/library/${book}/${section.id}`}>
-                {sectionTitle(section)}
-              </Link>
-            ))}
-          </nav>
+          <LibraryContents
+            book={result.data.book}
+            sections={result.data.sections}
+          />
         </>
       )}
     </div>
@@ -270,6 +274,7 @@ export function LibraryReaderPage() {
   const target = params.get("paragraph") || "";
   const query = params.get("q") || "";
   const claimId = params.get("claim");
+  const [tableView, setTableView] = useState(true);
   const lookup = new URLSearchParams();
   if (target) lookup.set("paragraph", target);
   else if (params.has("page")) lookup.set("page", params.get("page")!);
@@ -293,11 +298,29 @@ export function LibraryReaderPage() {
     : "";
   useEffect(() => {
     if (result.loading || !target) return;
-    document
-      .getElementById("paragraph-" + target)
-      ?.scrollIntoView({ block: "start" });
-  }, [result.loading, result.data, target, quote, location.key]);
+    const paragraph = document.getElementById("paragraph-" + target);
+    paragraph?.scrollIntoView({ block: "start", inline: "nearest" });
+    // Keep the table's own sticky headers on screen after scrolling to a cell.
+    paragraph
+      ?.closest(".library-table-block")
+      ?.scrollIntoView({ block: "start", inline: "nearest" });
+  }, [result.loading, result.data, target, quote, location.key, tableView]);
   const data = result.data;
+  const blocks: Array<
+    | { kind: "table"; paragraphs: LibraryParagraph[] }
+    | { kind: "paragraph"; paragraph: LibraryParagraph }
+  > = [];
+  for (const p of data?.paragraphs || []) {
+    const previous = blocks[blocks.length - 1];
+    if (tableView && p.table_row) {
+      if (
+        previous?.kind === "table" &&
+        previous.paragraphs[0].table_row!.table_id === p.table_row.table_id
+      )
+        previous.paragraphs.push(p);
+      else blocks.push({ kind: "table", paragraphs: [p] });
+    } else blocks.push({ kind: "paragraph", paragraph: p });
+  }
   const pagePath = (page: number) =>
     `/library/${book}/${section}?page=${page}${query ? "&q=" + encodeURIComponent(query) : ""}`;
   const paging = data && (
@@ -330,17 +353,14 @@ export function LibraryReaderPage() {
           <aside>
             <details className="library-contents" open>
               <summary>卷章目录</summary>
-              <nav aria-label="阅读卷章目录">
-                {contents.data?.sections.map((item) => (
-                  <Link
-                    key={item.id}
-                    aria-current={item.id === section ? "page" : undefined}
-                    to={`/library/${book}/${item.id}`}
-                  >
-                    {sectionTitle(item)}
-                  </Link>
-                ))}
-              </nav>
+              {contents.data && (
+                <LibraryContents
+                  book={contents.data.book}
+                  sections={contents.data.sections}
+                  selected={section}
+                  compact
+                />
+              )}
             </details>
           </aside>
           <div>
@@ -369,43 +389,88 @@ export function LibraryReaderPage() {
               <p className="library-hint">本卷部分文字或图表可能缺失。</p>
             )}
             {paging}
-            <article className="library-original" aria-label="史料原文">
-              {data.paragraphs.map((p) => (
-                <div
-                  key={p.id}
-                  id={"paragraph-" + p.id}
-                  className={`library-paragraph library-kind-${p.kind} ${target === p.id ? "is-target" : ""}`}
+            {data.paragraphs.some((p) => p.table_row) && (
+              <div
+                className="library-reading-tools"
+                role="group"
+                aria-label="原文显示方式"
+              >
+                <button
+                  aria-pressed={tableView}
+                  onClick={() => setTableView(true)}
                 >
-                  {p.kind === "editorial_notice" && (
-                    <span className="library-notice-label">资料说明</span>
-                  )}
-                  {p.review && (
-                    <details className="text-sm mb-3 text-stone-600">
-                      <summary>
-                        {p.review.disposition === "deferred"
-                          ? "本段有待考事项"
-                          : p.review.disposition === "no_new"
-                            ? "已校核 · 无新增事实"
-                            : "已发布事实"}
-                      </summary>
-                      <p>{p.review.reason}</p>
-                    </details>
-                  )}
-                  <Marked
-                    text={p.content}
-                    query={
-                      target === p.id && quote && p.content.includes(quote)
-                        ? quote
-                        : query
-                    }
-                  />
-                  <ParagraphLinks
-                    book={book}
-                    section={section}
-                    paragraph={p.id}
-                  />
-                </div>
-              ))}
+                  表格阅读
+                </button>
+                <button
+                  aria-pressed={!tableView}
+                  onClick={() => setTableView(false)}
+                >
+                  逐段原文
+                </button>
+              </div>
+            )}
+            <article className="library-original" aria-label="史料原文">
+              {blocks.map((block) => {
+                if (block.kind === "table")
+                  return (
+                    <LibraryTable
+                      key={block.paragraphs[0].id}
+                      paragraphs={block.paragraphs}
+                      headers={
+                        data.table_headers?.[
+                          block.paragraphs[0].table_row!.table_id
+                        ] || []
+                      }
+                      target={target}
+                      quote={quote}
+                      query={query}
+                      renderLinks={(p) => (
+                        <ParagraphLinks
+                          book={book}
+                          section={section}
+                          paragraph={p.id}
+                        />
+                      )}
+                    />
+                  );
+                const p = block.paragraph;
+                return (
+                  <div
+                    key={p.id}
+                    id={"paragraph-" + p.id}
+                    className={`library-paragraph library-kind-${p.kind} ${target === p.id ? "is-target" : ""}`}
+                  >
+                    {p.kind === "editorial_notice" && (
+                      <span className="library-notice-label">资料说明</span>
+                    )}
+                    {p.review && (
+                      <details className="text-sm mb-3 text-stone-600">
+                        <summary>
+                          {p.review.disposition === "deferred"
+                            ? "本段有待考事项"
+                            : p.review.disposition === "no_new"
+                              ? "已校核 · 无新增事实"
+                              : "已发布事实"}
+                        </summary>
+                        <p>{p.review.reason}</p>
+                      </details>
+                    )}
+                    <Marked
+                      text={p.content}
+                      query={
+                        target === p.id && quote && p.content.includes(quote)
+                          ? quote
+                          : query
+                      }
+                    />
+                    <ParagraphLinks
+                      book={book}
+                      section={section}
+                      paragraph={p.id}
+                    />
+                  </div>
+                );
+              })}
             </article>
             {paging}
             <nav

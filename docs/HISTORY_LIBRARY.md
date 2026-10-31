@@ -1,5 +1,13 @@
 # 统一史料分段与检索
 
+## 阅读排版
+
+《史记》目录按十二本纪、十表、八书、三十世家、七十列传组织，篇名由对应版本的原卷题提取。卷13—22的表格显示使用单独的阅读结构；原始 TXT、段落 ID、原文内容和引用哈希保持不变。
+
+`python3 scripts/build-shiji-reading-layout.py --check` 从原 EPUB 单元格及选定 TXT 校验阅读结构，覆盖空列、合并列、拆段续行与 Unicode 字符位置。运行时匹配书籍、版本及当前原文哈希，并批量查询本页表头；无法匹配时显示原段，不猜测列位。阅读结构随 API 构建发布，不需要修改 MySQL schema 或重导原文。
+
+需要独立打开的排版稿时，运行 `python3 scripts/render-shiji-tables.py --output /tmp/史记十表阅读稿.html`。此文件仅为派生阅读视图，不登记为第二套底本。原文与表格阅读可切换，段落及出处深链接继续有效。
+
 [本地入口](../resources/derived/history-library/README.md)包含二十四史、清史稿的选定EPUB转换TXT及原《资治通鉴》分段。新TXT已切换为本地检索底本。《清史稿》仅预处理，正式录入仍遵循[资料范围](../resources/catalog/ingestion-source-scope.json)；已发布来源、实体key/UUID和通鉴进度保持原有状态。
 
 每书提供 `reading.txt`、`paragraphs.jsonl.gz`、`sections.json`、`index.json`。段落记录包含规范化文字、类型、版本ID、原TXT行号与字符范围、原EPUB文件及XHTML成员、元素路径、来源问题和待核状态。SQLite缓存中的记录采用zlib压缩，由搜索脚本解码；数据库可重建，不作为史料原件。

@@ -65,8 +65,9 @@ def load_blobs(urls, root=ROOT):
     return {url: blobs[blob_spec(url)] for url in urls}
 
 
-def source_rows(sources, claims, ids, skipped=None):
-    used = {c.get('source_id') or ids.get(c.get('source_key')) for c in claims}
+def source_rows(sources, claims, ids, skipped=None, include_unreferenced=False):
+    if type(include_unreferenced) is not bool:raise ValueError('Explicit source selection mode required')
+    used = ({s.get('id') or ids.get(s.get('key')) for s in sources} if include_unreferenced else {c.get('source_id') or ids.get(c.get('source_key')) for c in claims})
     rows = []
     for source in sources:
         sid = source.get('id') or ids.get(source.get('key'))
@@ -114,8 +115,26 @@ def fill_content(rows):
     return sorted(unique.values(), key=lambda row: (row['source_id'], row['archive_url_sha256']))
 
 
-def batch_texts(batch, ids):
-    return fill_content(source_rows(batch['sources'], batch['claims'], ids))
+def batch_texts(batch, ids, source_only_evidence=False):
+    if type(source_only_evidence) is not bool:raise ValueError('Explicit source selection mode required')
+    if source_only_evidence and any(batch.get(k) for k in ('people','events','person_events','person_relationships','claims','topics')):
+        raise ValueError('Source-only evidence cannot contain fact rows')
+    return fill_content(source_rows(batch['sources'], batch['claims'], ids, include_unreferenced=source_only_evidence))
+
+
+def verify_public_text(row, public_text, source_only_evidence=False, has_visible_claim=True):
+    """Unclaimed supplementary text is deliberately hidden by the public API.
+
+    Only the explicit fact-free source mode can defer that visibility check;
+    archive bytes and database text must still be verified by the publisher.
+    """
+    if type(source_only_evidence) is not bool or type(has_visible_claim) is not bool:
+        raise ValueError('Explicit source visibility mode required')
+    if public_text is None and source_only_evidence and not has_visible_claim:
+        return 'pending_published_claim'
+    if not isinstance(public_text, dict) or public_text.get('content_sha256') != row['content_sha256'] or public_text.get('content') != row['content']:
+        raise ValueError('Anonymous source text mismatch')
+    return 'visible_verified'
 
 
 def published_texts(skipped=None):
@@ -131,7 +150,7 @@ def published_texts(skipped=None):
             raise ValueError('Published batch hash mismatch: ' + str(path))
         batch = json.loads(path.read_text())
         ids = json.loads((path.parent / 'sql/key-map.json').read_text())
-        rows.extend(source_rows(batch['sources'], batch['claims'], ids, skipped))
+        rows.extend(source_rows(batch['sources'], batch['claims'], ids, skipped,include_unreferenced=any(a.get('source_only_evidence') is True for a in verified)))
     for path in sorted((ROOT / 'content/revisions').rglob('plan.json')):
         audit = path.parent / 'publication-mysql.json'
         if not audit.exists():

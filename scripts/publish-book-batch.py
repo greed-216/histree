@@ -1,21 +1,23 @@
 """Publish an audited book-led batch. Default is read-only preflight; --apply writes.
 Existing entities are never overwritten. MySQL chunks are transactional; full batch publication is staged and resumable.
 """
-import argparse,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
+import argparse,concurrent.futures,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
 from datetime import datetime,timezone
 from pathlib import Path
 from history_identity import merged_identity_target
 from history_cross_supplements import validate_cross_supplement
-ROOT=Path(__file__).resolve().parents[1]
-ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--apply',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+ROOT=Path(__file__).resolve().parents[1];TOOL_ROOT=ROOT
+ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-target-fingerprint');ap.add_argument('--source-only-evidence',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+if args.source_root:ROOT=args.source_root.resolve()
 P=Path(args.batch).resolve().parent
-subprocess.run([sys.executable,str(ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
+subprocess.run([sys.executable,str(TOOL_ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
 batch=json.loads((P/'content-batch.json').read_text());coverage=json.loads((P/'coverage.json').read_text())
 time_review=P/'time-review.json'
 prior_paths=[P/'publication-mysql.json',P/'publication.json']
 legacy_verified=any(p.exists() and json.loads(p.read_text()).get('verified') and json.loads(p.read_text()).get('batch_sha256')==hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest() for p in prior_paths)
 if time_review.exists() or not legacy_verified:
- subprocess.run([sys.executable,str(ROOT/'scripts/validate-history-time.py'),str(P/'content-batch.json')],check=True)
+ subprocess.run([sys.executable,str(TOOL_ROOT/'scripts/validate-history-time.py'),str(P/'content-batch.json')],check=True)
+if args.source_only_evidence:assert batch['sources'] and not any(batch[k] for k in ('people','events','person_events','person_relationships','claims','topics')), 'Source-only evidence cannot contain fact rows'
 assert not batch['topics'], 'Book publisher does not yet publish topics'
 source_keys={r['key'] for r in batch['sources']}
 primary_keys=set(coverage.get('primary_source_keys',[coverage['primary_source_key']]))
@@ -34,6 +36,7 @@ assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] n
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}
 from mysql_content_store import MysqlContentStore
 store=MysqlContentStore(args.mysql_env,args.apply,args.public_api_url)
+assert not args.expected_target_fingerprint or store.target_fingerprint==args.expected_target_fingerprint, 'Target differs from frozen review'
 def req(table,q='',method='GET',body=None):return store.request(table,q,method,body)
 def allrows(table,select):
  result=[]
@@ -52,7 +55,8 @@ for group,table in groups:
   rows[table].append(r)
 # Audit must match precisely the reviewed bytes.
 sha=hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest();auditpath=P/'publication-mysql.json'
-audit=json.loads(auditpath.read_text()) if auditpath.exists() else {'batch_sha256':sha,'stages':[]}
+audit=json.loads(auditpath.read_text()) if auditpath.exists() else {'batch_sha256':sha,'stages':[],'source_only_evidence':args.source_only_evidence}
+assert bool(audit.get('source_only_evidence'))==args.source_only_evidence,'Source publication mode changed after publication started'
 assert audit['batch_sha256']==sha,'Batch changed after publication started'
 assert audit.get('target_fingerprint',store.target_fingerprint)==store.target_fingerprint,'Publication target changed'
 audit['target_fingerprint']=store.target_fingerprint
@@ -104,7 +108,7 @@ for table,fields in [('person_relationship',['person_a','person_b','relation_typ
   for row in rows[table]:assert old['id']==row['id'] or not all(old[k]==row[k] for k in fields), 'Duplicate edge endpoints'
 summary={t:{'new':sum(r['id'] not in existing[t] for r in rs),'reused':sum(r['id'] in reused for r in rs)} for t,rs in rows.items()}
 import source_texts
-source_text_rows=source_texts.batch_texts(batch,ids)
+source_text_rows=source_texts.batch_texts(batch,ids,source_only_evidence=args.source_only_evidence)
 summary['source_text']=source_texts.preflight(store.connection,source_text_rows,{r['id']:r['url'] for r in rows['source']})
 print(json.dumps(summary,ensure_ascii=False),flush=True)
 if not args.apply:raise SystemExit(0)
@@ -130,6 +134,11 @@ for _,table in groups:
  if table!='source' and selected:
   result=selected_rows(table,selected,method='PATCH',body={'status':'published'});assert len(result)==len(selected)
  save('published_'+table)
+source_visibility={}
+if args.source_only_evidence:
+ from mysql_content_store import visible
+ for row in source_text_rows:
+  source_visibility[row['source_id']]=bool(store.read('fact_claim','r.source_id=%s AND '+visible('fact_claim'),[row['source_id']],'id','r.id',1,0))
 store.public=True
 counts={}
 for _,table in groups:
@@ -139,7 +148,15 @@ for _,table in groups:
  if table!='source':assert all(r['status']=='published' for r in actual)
  if table=='fact_claim':assert all(r['source'] and r['source']['url'].startswith('https://github.com/greed-216/histree/blob/') for r in actual)
  counts[table]=len(actual)
-for row in source_text_rows:
- with urllib.request.urlopen(args.public_api_url.rstrip('/')+'/sources/'+row['source_id']+'/text',timeout=40) as response: public_text=json.load(response)
- assert public_text and public_text['content_sha256']==row['content_sha256'] and public_text['content']==row['content'], 'Anonymous source text mismatch'
-audit['public_counts']=counts;audit['verified']=True;save('anonymous_readback_verified');print('Public readback verified',counts)
+def verify_source_text(row):
+ with urllib.request.urlopen(args.public_api_url.rstrip('/')+'/sources/'+row['source_id']+'/text',timeout=40) as response:
+  raw=response.read()
+  empty_unclaimed=args.source_only_evidence and not source_visibility.get(row['source_id'],True) and not raw and response.headers.get('Content-Length')=='0' and response.headers.get('Content-Type') is None
+  assert response.status==200 and (response.headers.get_content_type()=='application/json' or empty_unclaimed),'Unexpected source text HTTP response'
+  public_text=json.loads(raw) if raw else None
+ state=source_texts.verify_public_text(row,public_text,args.source_only_evidence,source_visibility.get(row['source_id'],True))
+ return row['source_id'],state
+with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool: text_results=dict(pool.map(verify_source_text,source_text_rows))
+assert set(text_results)=={r['source_id'] for r in source_text_rows}
+audit['source_text_visibility']=text_results
+audit['public_counts']=counts;audit['verified']=True;save('source_archive_verified' if args.source_only_evidence else 'anonymous_readback_verified');print('Source archive verified' if args.source_only_evidence else 'Public readback verified',counts)

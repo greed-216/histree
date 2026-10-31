@@ -298,9 +298,12 @@ export function LibraryReaderPage() {
     : "";
   useEffect(() => {
     if (result.loading || !target) return;
-    document
-      .getElementById("paragraph-" + target)
-      ?.scrollIntoView({ block: "start" });
+    const paragraph = document.getElementById("paragraph-" + target);
+    paragraph?.scrollIntoView({ block: "start", inline: "nearest" });
+    // Keep the table's own sticky headers on screen after scrolling to a cell.
+    paragraph
+      ?.closest(".library-table-block")
+      ?.scrollIntoView({ block: "start", inline: "nearest" });
   }, [result.loading, result.data, target, quote, location.key]);
   const data = result.data;
   const blocks: Array<

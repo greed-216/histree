@@ -64,7 +64,7 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 
 发布后发现文案、身份、关系、引用或年份问题，在 `content/revisions/` 单独保存 `kind=reviewed_history_correction` 计划；保留原batch、固定快照、稳定ID和历史审计。使用 `scripts/history_revision.py`，默认只读核对，不通过重建旧批次覆盖已发资料。
 
-计划绑定目标 `target_fingerprint`、相对资料根的 `protected_paths` SHA-256、逐字 `source_bindings`、所有更新行的完整 `full_before` 及仅含改动字段的 `before/after`。需要新增的行放入 `inserts`，来源/原文/定位行列入只读 `protected_rows`；需要保护引用集合时使用 `membership_guards` 和对应的 `invariants_after`。不能修改主键或 `created_at`，同一行不能重复列为更新或新增。新人物的逻辑key写在 `new_people` 元数据，数据库行沿用实际列；不把目录key写成数据库字段。历史年份不使用零年；若已有旧行含零年，先报告工具拒绝，不删改旧值守卫以强行执行。
+计划绑定目标 `target_fingerprint`、相对资料根的 `protected_paths` SHA-256、逐字 `source_bindings`、所有更新行的完整 `full_before` 及仅含改动字段的 `before/after`。需要新增的行放入 `inserts`，来源/原文/定位行列入只读 `protected_rows`；需要保护引用集合时使用 `membership_guards` 和对应的 `invariants_after`。不能修改主键或 `created_at`，同一行不能重复列为更新或新增。新人物的逻辑key写在 `new_people` 元数据，数据库行沿用实际列；不把目录key写成数据库字段。历史年份不使用零年；若已有旧行含零年，先报告工具拒绝，不删改旧值守卫以强行执行。 可选 `key_map` 按“UUID→逻辑key”填写，所有UUID必须由共享内容namespace与该key计算UUID5，key不得重复；`new_people` 使用同规则及 `person_` 前缀。提供 `new_claims` 索引元数据时，必须与 `inserts.fact_claim` 逐行一一同值（仅允许额外携带匹配的key），并解析全部claim/source/subject UUID；预检不通过时不得先写库再修索引。
 
 ```sh
 python3 scripts/history_revision.py '<修订>/plan.json' --root '<资料根>' --mysql-env '<明确环境文件>'

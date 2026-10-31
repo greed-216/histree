@@ -66,6 +66,7 @@ FOREIGN_KEYS = {
 }
 LOCK = 'histree-content-publish'
 BATCH_SIZE = 100
+CONTENT_NAMESPACE = uuid.uuid5(uuid.NAMESPACE_URL, 'https://github.com/greed-216/histree/content')
 
 
 def require(condition, message):
@@ -245,13 +246,40 @@ def validate_plan(plan, root):
     before_signatures = validate_membership(plan.get('membership_guards', []))
     after_signatures = validate_membership(plan.get('invariants_after', []))
     require(before_signatures <= after_signatures, 'Every membership preguard needs an explicit matching after predicate')
+    keys = plan.get('key_map')
+    if 'key_map' in plan:
+        require(isinstance(keys, dict), 'key_map must map UUID to logical key')
+        require(all(isinstance(key, str) and bool(key.strip()) for key in keys.values()), 'Invalid logical key in key_map')
+        require(len(set(keys.values())) == len(keys), 'Logical key must be unique in key_map')
+        for ident, key in keys.items():
+            uuid_value(ident)
+            require(str(uuid.uuid5(CONTENT_NAMESPACE, key)) == ident, 'Stable UUID/key differs from shared namespace')
     people = plan.get('new_people', [])
     require(isinstance(people, list), 'new_people must be a list')
     by_id = {row['id']: row for row in inserts.get('person', [])}
     require(len(people) == len(by_id) and {row['id'] for row in people} == set(by_id), 'new_people must describe every inserted person exactly once')
     for person in people:
-        require(isinstance(person.get('key'), str) and person['key'], 'New person metadata needs a logical key')
+        require(isinstance(person.get('key'), str) and person['key'].startswith('person_')
+                and len(person['key']) > len('person_'), 'New person metadata needs a person_ logical key')
+        require(str(uuid.uuid5(CONTENT_NAMESPACE, person['key'])) == person['id'], 'New person stable UUID/key differs from shared namespace')
         require(all(field == 'key' or field in by_id[person['id']] and equal(value, by_id[person['id']][field]) for field, value in person.items()), 'New person metadata differs from INSERT')
+    if 'new_claims' in plan:
+        claims = plan['new_claims']
+        require(isinstance(claims, list), 'new_claims must be a list')
+        require(isinstance(keys, dict), 'new_claims requires a validated key_map')
+        inserted = {row['id']: row for row in inserts.get('fact_claim', [])}
+        require(all(isinstance(row, dict) and isinstance(row.get('id'), str) for row in claims), 'Invalid new_claims row')
+        require(len(claims) == len(inserted) and {row['id'] for row in claims} == set(inserted), 'new_claims must match every inserted fact_claim exactly once')
+        for row in claims:
+            actual = {field: value for field, value in row.items() if field != 'key'}
+            require(equal(actual, inserted[row['id']]), 'new_claims row differs from inserted fact_claim')
+            require(row.get('status') == 'published', 'Indexed new_claims must be published')
+            require(all(isinstance(row.get(field), str) and row[field] for field in ('field_path', 'claim_text', 'note')),
+                    'Indexed new_claims requires field_path, claim_text and note')
+            require(isinstance(row.get('citation'), str), 'Indexed new_claims requires a text citation')
+            require(all(isinstance(row.get(field), str) and row[field] in keys for field in ('id', 'source_id', 'subject_id')),
+                    'new_claims references an unknown UUID in key_map')
+            require('key' not in row or row['key'] == keys[row['id']], 'new_claims logical key differs from key_map')
     return plan
 
 

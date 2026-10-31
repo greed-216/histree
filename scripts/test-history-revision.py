@@ -22,6 +22,7 @@ IDS = {name: UID(name) for name in ('old-person', 'sentinel', 'old-event', 'old-
                                      'source', 'old-claim', 'old-dating', 'new-person',
                                      'new-event', 'new-relation', 'new-pe', 'new-claim',
                                      'new-dating', 'new-claim-relation')}
+IDS['new-person'] = str(uuid.uuid5(H.CONTENT_NAMESPACE, 'person_synthetic_revision_new'))
 REQUIRED = {
     'person': {'id', 'name'}, 'event': {'id', 'title'},
     'person_relationship': {'id', 'person_a', 'person_b', 'relation_type'},
@@ -390,6 +391,76 @@ class RevisionTests(unittest.TestCase):
         self.assertEqual(len(self.mutation_calls()), count)
         self.db.rows['person'][(IDS['new-person'],)]['family'] = ['unreviewed']
         with self.assertRaisesRegex(ValueError, 'Full row guard'): H.verify_db(self.plan, self.root, self.db, receipt)
+
+    def indexed_fixture(self):
+        # Existing unindexed fixture IDs remain fixed. Only this indexing test
+        # rekeys three identities whose logical keys the index must resolve.
+        logical = {'source': 'synthetic-source', 'new-pe': 'pe_synthetic_revision_new',
+                   'new-claim': 'claim_synthetic_revision_new'}
+        replacements = {IDS[name]: str(uuid.uuid5(H.CONTENT_NAMESPACE, key)) for name, key in logical.items()}
+        plan = copy.deepcopy(self.plan)
+        initial = {table: list(copy.deepcopy(values).values()) for table, values in self.before.items()}
+        text = json.dumps([plan, initial])
+        for old, new in replacements.items(): text = text.replace(old, new)
+        plan, initial = json.loads(text)
+        plan['key_map'] = {replacements[IDS[name]]: key for name, key in logical.items()}
+        plan['key_map'][IDS['new-person']] = 'person_synthetic_revision_new'
+        plan['new_claims'] = copy.deepcopy(plan['inserts']['fact_claim'])
+        return plan, MemoryDatabase(initial)
+
+    def test_index_metadata_uses_shared_uuid_namespace_and_exact_insert_rows(self):
+        plan, db = self.indexed_fixture()
+        plan['new_claims'][0]['key'] = 'claim_synthetic_revision_new'
+        result = H.apply_plan(plan, self.root, db)
+        self.assertEqual(result['status'], 'committed_pending_anonymous')
+        self.assertEqual(db.commits, 1)
+
+    def test_key_map_wrong_namespace_duplicate_key_and_invalid_shape_reject_before_db(self):
+        valid = {IDS['new-person']: 'person_synthetic_revision_new'}
+        for change in ('wrong-ns', 'duplicate-key', 'not-map', 'nontext-key', 'noncanonical-id'):
+            with self.subTest(change=change):
+                plan = copy.deepcopy(self.plan); plan['key_map'] = copy.deepcopy(valid)
+                if change == 'wrong-ns': plan['key_map'] = {UID('old-namespace'): 'person_synthetic_revision_new'}
+                elif change == 'duplicate-key': plan['key_map'][UID('duplicate')] = 'person_synthetic_revision_new'
+                elif change == 'not-map': plan['key_map'] = []
+                elif change == 'nontext-key': plan['key_map'] = {IDS['new-person']: 1}
+                else: plan['key_map'] = {IDS['new-person'].upper(): 'person_synthetic_revision_new'}
+                with self.assertRaises(ValueError): H.apply_plan(plan, self.root, self.db)
+                self.assertEqual(self.db.calls, [])
+
+    def test_new_person_wrong_namespace_or_nonperson_key_reject_before_db(self):
+        for change in ('wrong-ns', 'prefix'):
+            plan = copy.deepcopy(self.plan)
+            key = 'person_synthetic_revision_new' if change == 'wrong-ns' else 'event_synthetic_revision_new'
+            ident = UID('new-person') if change == 'wrong-ns' else str(uuid.uuid5(H.CONTENT_NAMESPACE, key))
+            plan['inserts']['person'][0]['id'] = ident
+            plan['new_people'][0].update(id=ident, key=key)
+            with self.assertRaisesRegex(ValueError, 'person_|namespace'): H.apply_plan(plan, self.root, self.db)
+        self.assertEqual(self.db.calls, [])
+
+    def test_new_claims_missing_extra_duplicate_changed_or_unmapped_reject_before_db(self):
+        for change in ('missing', 'extra', 'duplicate', 'changed', 'extra-default', 'no-map', 'unmapped-source', 'wrong-key', 'non-list'):
+            with self.subTest(change=change):
+                plan, db = self.indexed_fixture()
+                if change == 'missing': plan['new_claims'] = []
+                elif change == 'extra': plan['new_claims'].append(dict(plan['new_claims'][0], id=UID('extra-index-row')))
+                elif change == 'duplicate': plan['new_claims'].append(copy.deepcopy(plan['new_claims'][0]))
+                elif change == 'changed': plan['new_claims'][0]['claim_text'] = 'unreviewed index text'
+                elif change == 'extra-default': plan['new_claims'][0]['created_at'] = TIME
+                elif change == 'no-map': del plan['key_map']
+                elif change == 'unmapped-source': del plan['key_map'][plan['new_claims'][0]['source_id']]
+                elif change == 'wrong-key': plan['new_claims'][0]['key'] = 'claim_wrong'
+                else: plan['new_claims'] = {}
+                with self.assertRaises(ValueError): H.apply_plan(plan, self.root, db)
+                self.assertEqual(db.calls, [])
+
+    def test_new_claim_index_requires_published_complete_fields(self):
+        for field, value in [('status', 'draft'), ('note', None), ('claim_text', ''), ('citation', None)]:
+            with self.subTest(field=field):
+                plan, db = self.indexed_fixture()
+                plan['new_claims'][0][field] = value; plan['inserts']['fact_claim'][0][field] = value
+                with self.assertRaises(ValueError): H.apply_plan(plan, self.root, db)
+                self.assertEqual(db.calls, [])
 
     def test_new_people_metadata_must_match_actual_person_insert(self):
         self.plan['new_people'][0]['name'] = 'different'

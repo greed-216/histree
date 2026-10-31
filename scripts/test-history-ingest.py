@@ -113,6 +113,8 @@ class Pipeline(unittest.TestCase):
         elif program=='upgrade-content-structure.mjs':name='coverage-apply' if '--apply' in command else 'coverage-plan'
         else:name={'reuse-history-sources.py':'source-reuse','history_ingest_preflight.py':'editorial','validate-history-time.py':'time-review','prepare-book-import.py':'prepare-import','project-review-coverage.py':'coverage-project'}[program]
         self.calls[name]+=1
+        if name=='mysql-preflight' and getattr(self,'mutate_core_receipt',False):
+            p=self.batch/'publication-mysql.json';self.write(p,dict(self.read(p),public_counts={}))
         if name in self.fail_once:self.fail_once.remove(name);return subprocess.CompletedProcess(command,1)
         if name=='build':self.build_outputs()
         elif name=='editorial':self.write(self.batch/'.workflow/editorial-report.json',dict(ready_to_freeze=True,issues=[]))
@@ -319,6 +321,10 @@ class Pipeline(unittest.TestCase):
         old=self.core_only();progress=self.args.progress.read_bytes();self.fail_once.add('sidecars-plan')
         with self.assertRaises(P.StageExecutionError),redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
         self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old);self.assertEqual(self.args.progress.read_bytes(),progress)
+    def test_core_only_refresh_binds_the_receipt_from_before_preflight(self):
+        old=self.core_only();self.mutate_core_receipt=True
+        with self.assertRaisesRegex(AssertionError,'changed during'),redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
+        self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
     def test_refresh_can_explicitly_add_a_protected_dependency(self):
         self.published();self.tool_review();extra=self.tools/'new-target-helper.mjs';extra.write_text('// reviewed dependency\n')
         review=self.read(self.args.tool_review);review['changes'].append(dict(path='scripts/new-target-helper.mjs',before_sha256=None,after_sha256=M.sha(extra),reason='new native target contract'));self.write(self.args.tool_review,review)

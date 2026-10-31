@@ -66,7 +66,8 @@ def exact_text_with_structural_edges(snapshot_text, paragraph_text):
 def packet_text_matches_snapshot(snapshot_text, para):
     """Separate legacy reading layout from immutable evidence bytes, never table cells."""
     display=para['text']
-    if exact_text_with_structural_edges(snapshot_text,display):return True
+    exact=snapshot_text[1:] if snapshot_text.startswith('\ufeff') else snapshot_text
+    if exact_text_with_structural_edges(exact,display):return True
     legacy=(para.get('book_key')=='zizhi-tongjian' and para.get('source_version')=='a63549944a71'
             and para.get('kind')=='body' and re.fullmatch(r'zizhi-tongjian-a63549944a71-p\d{6}',para.get('id','')))
     if not legacy or any(c in snapshot_text or c in display for c in ('\t','\r','\ufeff')):return False
@@ -240,7 +241,7 @@ def load_bundle(root, batch_dir):
             # archive and offsets remain authoritative; this unused title is not a fact.
             excluded_structural_headings.append(pid)
         else:
-            require(packet_text_matches_snapshot(raw.decode('utf-8-sig'),para), 'Packet and exact snapshot text differ: ' + pid)
+            require(packet_text_matches_snapshot(raw.decode('utf-8'),para), 'Packet and exact snapshot text differ: ' + pid)
         files[str(path.relative_to(root))] = sha(raw)
         snapshots[pid] = raw
     sources = {s['key']: s for s in batch['sources']}

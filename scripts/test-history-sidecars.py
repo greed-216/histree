@@ -186,7 +186,7 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(S.packet_text_matches_snapshot(raw,para))
         for change in [dict(book_key='shiji'),dict(source_version='other'),dict(kind='table_row'),dict(id='zizhi-tongjian-other-p000157'),dict(text=para['text'].replace('乙','丙'))]:
             self.assertFalse(S.packet_text_matches_snapshot(raw,dict(para,**change)))
-        for bad in [raw.replace('元年','元\t年'),raw.replace('元年','元 年'),raw.replace('\n','\r\n'),raw+'\ufeff']:
+        for bad in [raw.replace('元年','元\t年'),raw.replace('元年','元 年'),raw.replace('\n','\r\n'),raw+'\ufeff','\ufeff'+raw]:
             self.assertFalse(S.packet_text_matches_snapshot(bad,para))
     def rewrite_first_raw_fixture(self,text):
         packet=json.loads((self.b/'packet.json').read_bytes());para=packet['paragraphs'][0];pid=para['id']
@@ -215,6 +215,11 @@ class SourceTests(unittest.TestCase):
         rows['library_paragraph'][0]['content']='甲年， 甲事。'
         rows['library_paragraph'][0]['content_sha256']=S.sha(rows['library_paragraph'][0]['content'].encode())
         with self.assertRaisesRegex(ValueError,'snapshot content mismatch'):S.prepare(bundle,FakeDatabase(rows))
+    def test_loader_preserves_leading_bom_for_the_layout_guard(self):
+        self.rewrite_first_raw_fixture('\ufeff甲年，甲事。')
+        original=S.packet_text_matches_snapshot
+        with mock.patch.object(S,'packet_text_matches_snapshot',wraps=original) as check:S.load_bundle(self.root,self.b)
+        self.assertTrue(check.call_args_list[0].args[0].startswith('\ufeff'))
     def test_interior_whitespace_or_body_glyph_change_rejected_even_with_new_raw_hash(self):
         for text in ['甲年， 甲事。','甲年，乙事。']:
             self.rewrite_first_raw_fixture(text)

@@ -147,6 +147,7 @@ def refresh_tools(args,batch):
  assert changes and declared==changes and len(declared)==len(review['changes']) and all(r['reason'].strip() for r in review['changes']),'Unreviewed tool change'
  sidepaths=[batch/'.workflow'/name for name in ['sidecars-plan.json','sidecars-receipt.json','public-acceptance.json']]
  core_only=not any(p.exists() or p.is_symlink() for p in sidepaths)
+ proofpath=batch/'publication-mysql.json';core_sha=sha(proofpath)
  for name in (['publication-mysql.json'] if core_only else ['publication-mysql.json','.workflow/sidecars-receipt.json','.workflow/public-acceptance.json']):
   proof=load(batch/name);assert proof['verified'] and proof['batch_sha256']==sha(batch/'content-batch.json') and proof['target_fingerprint']==old['target_fingerprint'],'Publication is not fully verified'
  b=load(batch/'content-batch.json');published=load(batch/'publication-mysql.json')
@@ -157,7 +158,6 @@ def refresh_tools(args,batch):
  try:assert store.target_fingerprint==old['target_fingerprint'],'Tool refresh cannot change database target'
  finally:store.connection.rollback();store.connection.close()
  run(args,batch,'tools-refresh-mysql-preflight',publisher(args,batch),kind='fresh_acceptance')
- proofpath=batch/'publication-mysql.json';core_sha=sha(proofpath)
  prepared=batch/'.workflow/tools-refresh-sidecars-plan.json'
  sideargs=['--plan',prepared] if core_only else ['--verify-public','--expected-plan-sha256',sha(batch/'.workflow/sidecars-plan.json')]
  run(args,batch,'tools-refresh-sidecars',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,*sideargs,'--expected-target-fingerprint',old['target_fingerprint']],kind='fresh_acceptance')

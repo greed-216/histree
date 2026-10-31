@@ -14,7 +14,7 @@
     "test:timeline": "node scripts/test-timeline-viewport.mjs && node scripts/test-history-scroll.mjs && node scripts/test-timeline-polities.mjs && node scripts/test-timeline-ancient.mjs && node scripts/test-scroll-tiles.mjs && node scripts/test-ancient-stories.mjs",
     "test:explore": "node scripts/test-explore.mjs",
     "test:archive": "pnpm test:publication && pnpm test:content && pnpm test:explore && node scripts/test-year-0907-import.mjs && node scripts/test-timeline.mjs",
-    "test:mysql": "node scripts/test-mysql-integration.mjs && node scripts/test-guess-bank-mysql.mjs && node scripts/test-guess-clues-mysql.mjs && node scripts/test-guess-research-mysql.mjs && node scripts/test-guess-identities-mysql.mjs && node scripts/test-content-structure-mysql.mjs",
+    "test:mysql": "node scripts/test-mysql-integration.mjs && node scripts/test-guess-bank-mysql.mjs && node scripts/test-guess-clues-mysql.mjs && node scripts/test-guess-research-mysql.mjs && node scripts/test-guess-identities-mysql.mjs && node scripts/test-content-structure-mysql.mjs && node scripts/test-library-layout-mysql.mjs",
     "build": "pnpm --filter @histree/shared-types build && pnpm --filter api build && pnpm --filter web build",
     "lint": "pnpm --filter web lint",
     "test:map": "node scripts/test-map-document.mjs",

@@ -7,9 +7,15 @@ import {
 import { createHash } from 'node:crypto';
 import { MysqlService } from '../mysql/mysql.service';
 import { visible } from '../mysql/query-contracts';
+import {
+  readingLayout,
+  readingRow,
+  readingSection,
+  verifiedHeaders,
+} from './reading-layout';
 
 const key = (value: string) => {
-  if (typeof value!=='string' || !/^[a-z0-9][a-z0-9-]{0,127}$/.test(value))
+  if (typeof value !== 'string' || !/^[a-z0-9][a-z0-9-]{0,127}$/.test(value))
     throw new BadRequestException('无效的史料地址');
   return value;
 };
@@ -50,7 +56,12 @@ export class LibraryService {
       'SELECT c.* FROM library_review_coverage c JOIN library_book b ON b.book_key=c.book_key AND b.source_version=c.source_version WHERE c.book_key=? ORDER BY volume',
       [bookKey],
     );
-    return { book: books[0], sections, coverage };
+    const layout = readingLayout(bookKey, books[0].source_version);
+    return {
+      book: { ...books[0], ...(layout ? { divisions: layout.divisions } : {}) },
+      sections: sections.map((section) => readingSection(section, layout)),
+      coverage,
+    };
   }
   async section(
     bookKey: string,
@@ -61,7 +72,7 @@ export class LibraryService {
     key(sectionId);
     let page = pageIndex(options.page);
     const books = await this.rows(
-      "SELECT book_key,title FROM library_book WHERE book_key=? AND status='available'",
+      "SELECT book_key,title,source_version FROM library_book WHERE book_key=? AND status='available'",
       [bookKey],
     );
     const sections = await this.rows(
@@ -99,26 +110,56 @@ export class LibraryService {
       `SELECT * FROM library_paragraph_review WHERE paragraph_id IN (${paragraphs.map(() => '?').join(',') || 'NULL'})`,
       paragraphs.map((p) => p.id),
     );
-    const reviewedParagraphs = paragraphs
-      .slice(0, 40)
-      .map((p) => ({
-        ...p,
-        review:
-          reviews.find(
-            (r) =>
-              r.paragraph_id === p.id &&
-              r.content_sha256 ===
-                createHash('sha256').update(String(p.content)).digest('hex'),
-          ) ?? null,
-      }));
+    const layout = readingLayout(bookKey, books[0].source_version);
+    const rowLayouts = new Map(
+      paragraphs.slice(0, 40).map((p) => [p.id, readingRow(p, layout, sectionId)]),
+    );
+    const tableIds = [
+      ...new Set(
+        [...rowLayouts.values()]
+          .map((row) => row?.table_id)
+          .filter((id): id is string => Boolean(id)),
+      ),
+    ];
+    const headerIds = layout
+      ? [
+          ...new Set(
+            tableIds.flatMap((id) => layout.tables[id].header_paragraph_ids),
+          ),
+        ]
+      : [];
+    const headerRows = headerIds.length
+      ? await this.rows(
+          `SELECT id,kind,content,ordinal FROM library_paragraph WHERE book_key=? AND section_id=? AND id IN (${headerIds.map(() => '?').join(',')})`,
+          [bookKey, sectionId, ...headerIds],
+        )
+      : [];
+    const tableHeaders = layout
+      ? verifiedHeaders(layout, tableIds, headerRows)
+      : {};
+    const reviewedParagraphs = paragraphs.slice(0, 40).map((p) => ({
+      ...p,
+      ...(rowLayouts.get(p.id) &&
+      Object.hasOwn(tableHeaders, rowLayouts.get(p.id)!.table_id)
+        ? { table_row: rowLayouts.get(p.id) }
+        : {}),
+      review:
+        reviews.find(
+          (r) =>
+            r.paragraph_id === p.id &&
+            r.content_sha256 ===
+              createHash('sha256').update(String(p.content)).digest('hex'),
+        ) ?? null,
+    }));
     return {
-      book: books[0],
-      section: sections[0],
+      book: { ...books[0], ...(layout ? { divisions: layout.divisions } : {}) },
+      section: readingSection(sections[0], layout),
       paragraphs: reviewedParagraphs,
+      ...(tableIds.length ? { table_headers: tableHeaders } : {}),
       page,
       has_more: paragraphs.length > 40,
-      previous: previous[0] || null,
-      next: next[0] || null,
+      previous: previous[0] ? readingSection(previous[0], layout) : null,
+      next: next[0] ? readingSection(next[0], layout) : null,
     };
   }
   async search(query: string, bookKey?: string, pageValue?: string) {

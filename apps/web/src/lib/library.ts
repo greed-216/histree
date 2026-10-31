@@ -1,38 +1,13 @@
-export interface LibraryBook {
-  book_key: string;
-  title: string;
-  section_count?: number;
-  paragraph_count?: number;
-}
-export interface LibrarySection {
-  id: string;
-  title: string;
-  volume: number | null;
-  kind?: string;
-  has_issues?: number;
-}
-export interface LibraryLocation {
-  book_key: string;
-  section_id: string;
-  paragraph_id: string;
-}
-export interface LibraryReading {
-  book: LibraryBook;
-  section: LibrarySection;
-  paragraphs: Array<{
-    id: string;
-    kind: string;
-    content: string;
-    ordinal: number;
-    review?: { disposition: string; reason: string } | null;
-  }>;
-  coverage?: import("@histree/shared-types").ReviewCoverage[];
-  page: number;
-  has_more: boolean;
-  previous: LibrarySection | null;
-  next: LibrarySection | null;
-}
+import type { LibrarySection, LibraryLocation } from "@histree/shared-types";
+export type {
+  LibraryBook,
+  LibrarySection,
+  LibraryLocation,
+  LibraryReading,
+} from "@histree/shared-types";
 export function sectionTitle(section: LibrarySection) {
+  if (section.display_title)
+    return `卷${section.volume} · ${section.display_title}`;
   return section.volume != null && !/^卷/.test(section.title)
     ? `卷${section.volume} · ${section.title}`
     : section.title;

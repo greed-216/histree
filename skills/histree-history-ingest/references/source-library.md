@@ -53,6 +53,8 @@ python3 scripts/search-history-library.py --id '<完整段落ID>' --export /priv
 
 导出核对有效工作文本与原件哈希，生成 `source.txt`、`paragraph.json`、`manifest.json`。`source.txt`保留底本原换行和空格；`reading.txt`或搜索snippet不能替代它。摘录跨多个分段时分别导出并保留各段定位与哈希。
 
+阅读排版单独派生，不覆盖选定 TXT、分段或已发布快照。《史记》十表的阅读结构由 `build-shiji-reading-layout.py` 从同版 EPUB 的实际单元格映射生成：绑定书/版本、段落 ID、原文 SHA 和 Unicode 字符位置，保留空列、合并列及同一物理行拆出的多个段落；不能直接对去掉首尾空白的 TXT 按 tabs 猜列。接口只在当前原文及表头哈希一致时启用结构，引用仍定位原段。`render-shiji-tables.py --output <阅读稿.html>` 可生成一份派生阅读稿，不作为新的录入底本。表格排版与史实校核分别验收。
+
 ## 接入批次
 
 1. 将核对后的导出文件保存到本批 `sources/`，合并manifest，保留段落ID、底本路径、版本、字符/行号、哈希及原件定位。导出结果是草稿审计，不自动构成已校核来源。

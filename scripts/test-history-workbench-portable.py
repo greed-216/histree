@@ -79,6 +79,14 @@ class Workbench(unittest.TestCase):
         self.assertTrue(all(c['key'].startswith('claim_portable-v001-p01_') for c in batch['claims']))
         self.assertEqual(self.read(self.batch/'coverage.json')['next_paragraph'],self.ps[2]['id']);self.assertTrue(self.read(self.batch/'workbench-validation.json')['continuous_range_checked'])
         ledger=self.read(self.batch/'paragraphs.json');self.assertEqual(ledger[0]['relationship_audit'][0]['decision'],'new');self.assertIn('逐字底本快照',(self.batch/'review.html').read_text())
+    def test_canonical_legacy_source_note_and_new_claim_citation_are_independent(self):
+        manifest=self.read(self.batch/'sources/manifest.json');m=manifest[0];full=m['reviewed_citation'];legacy='《合成甲书》合成本纪，段落 '+m['paragraph_id']
+        m.update(reviewed_citation=legacy,authored_claim_citation=full,canonical_source_reuse=dict(source_key=m['key'],paragraph_id=m['paragraph_id'],raw_snapshot_sha256=m['sha256']))
+        self.write(self.batch/'sources/manifest.json',manifest);self.build();batch=self.read(self.batch/'content-batch.json')
+        self.assertEqual(batch['sources'][0]['note'],legacy)
+        self.assertTrue(all(c['citation'].startswith(full+'；') for c in batch['claims'] if c['source_key']==m['key']))
+        del m['canonical_source_reuse'];self.write(self.batch/'sources/manifest.json',manifest)
+        with self.assertRaisesRegex(AssertionError,'verified canonical'):self.compile()
     def new_person_revision(self):
         row=copy.deepcopy(self.read(self.batch/'curation.json')['items'][0]['row']);row.update(key='person_revision_new',id=sid('person_revision_new'),name='合成新增人物',status='published',aliases=[])
         path=self.root/'content/revisions/verified-new-person/plan.json';self.write(path,dict(kind='reviewed_history_correction',new_people=[row],updates=[]))

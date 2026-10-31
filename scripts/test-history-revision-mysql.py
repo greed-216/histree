@@ -11,6 +11,7 @@ import copy
 import importlib.util
 import json
 import os
+import subprocess
 from pathlib import Path
 import sys
 import tempfile
@@ -155,6 +156,13 @@ def run(values):
             H.require([r['id'] for r in matches] == [edge['id']], 'Native endpoint lookup missed the existing participant')
             H.require(not matching_edges(db.store, 'person_event', [dict(edge, role='different role')]), 'Native endpoint lookup ignored role')
             H.require(owned_state(db, owned) == original, 'Read-only endpoint lookup changed fixture rows'); checks += 1
+            target_plan = root / 'native-structure-target.json'
+            subprocess.run(['node', str(SCRIPTS/'upgrade-content-structure.mjs'), '--mysql-env', str(envpath),
+                            '--after', 'ffffffff-ffff-ffff-ffff-ffffffffffff', '--limit', '1', '--output', str(target_plan)], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            target_proof=json.loads(target_plan.read_bytes())
+            H.require(target_proof['publication_target_fingerprint']==db.target_fingerprint, 'Native Node/Python target contract differs')
+            H.require(target_proof['target_fingerprint']!=target_proof['publication_target_fingerprint'], 'Legacy account target guard was replaced')
+            H.require(owned_state(db, owned)==original, 'Read-only native structure plan changed fixture rows');checks += 1
             wrong = copy.deepcopy(plan); wrong['updates'][0]['full_before']['role'] = 'wrong old value'
             before_revision = revision_number(db)
             try: H.apply_plan(wrong, root, db)

@@ -348,12 +348,16 @@ def compile_batch(directory):
     for m in manifest:
         p = paragraphs[m['paragraph_id']]
         reviewed_citation = m.get('reviewed_citation')
+        claim_citation = m.get('authored_claim_citation', reviewed_citation)
+        if m.get('authored_claim_citation') is not None:
+            reuse=m.get('canonical_source_reuse',{})
+            assert (reuse.get('source_key'),reuse.get('paragraph_id'),reuse.get('raw_snapshot_sha256'))==(m['key'],p['id'],m['sha256']), 'Separate claim citation needs verified canonical source reuse'
         if reviewed_citation is not None:
             assert isinstance(reviewed_citation, str) and reviewed_citation.strip(), 'Invalid reviewed citation'
             assert m.get('citation_review_note', '').strip(), 'Reviewed citation needs review note'
-            assert (f"《{p['book']}》" in reviewed_citation
-                    and f"卷{p['volume_candidate']}" in reviewed_citation
-                    and p['id'] in reviewed_citation), 'Reviewed citation must retain book, volume and paragraph'
+            assert (isinstance(claim_citation,str) and f"《{p['book']}》" in claim_citation
+                    and f"卷{p['volume_candidate']}" in claim_citation
+                    and p['id'] in claim_citation), 'Reviewed citation must retain book, volume and paragraph'
         batch['sources'].append(dict(key=m['key'], title=m.get('source_title') or f"{p['book']}·卷{p['volume_candidate']}·{p['section_title']}·{p['id']}",
             source_type='primary', author={'zizhi-tongjian': '司马光等', 'xu-zizhi-tongjian': '毕沅等',
                 'songshi': '脱脱等', 'liaoshi': '脱脱等', 'jiu-wudaishi': '薛居正等', 'xin-wudaishi': '欧阳修'}.get(p['book_key']),
@@ -375,7 +379,7 @@ def compile_batch(directory):
             claim_key = f"claim_{prefix}_{row['key']}_{i+1:02d}" if prefix else f"claim_{row['key']}_{i+1:02d}"
             claim = dict(key=claim_key, subject_table=TABLES[group], subject_key=row['key'],
                          field_path=evidence['field'], claim_text=evidence['text'], source_key=m['key'],
-                         citation=(m.get('reviewed_citation') or f"《{paragraphs[pid]['book']}》卷{paragraphs[pid]['volume_candidate']}·{paragraphs[pid]['section_title']}·{pid}") + f"；{evidence['time_context']}",
+                         citation=(m.get('authored_claim_citation') or m.get('reviewed_citation') or f"《{paragraphs[pid]['book']}》卷{paragraphs[pid]['volume_candidate']}·{paragraphs[pid]['section_title']}·{pid}") + f"；{evidence['time_context']}",
                          note=f"原文：{evidence['quote']}；核对说明：{evidence['note']}", status='draft')
             batch['claims'].append(claim)
             if pid in primary_ids:

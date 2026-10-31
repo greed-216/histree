@@ -55,6 +55,32 @@ class Tests(unittest.TestCase):
     def refresh_receipt(self):
         self.write(self.old/'publication-mysql.json',dict(backend='mysql',verified=True,batch_sha256=M.sha((self.old/'content-batch.json').read_bytes()),stages=[dict(stage='published_source',at='2026-10-20T01:00:00+00:00')]))
     def tearDown(self):self.tmp.cleanup()
+    def text_backfill(self,**changes):
+        path=self.root/'content/books'/self.book_key/'runs/text-backfill/publication-mysql.json'
+        proof=dict(backend='mysql',verified=True,operation='insert_missing_source_text_only',new_people=0,new_events=0,new_relationships=0,new_participations=0,new_claims=0,schema_migrations=0,application_deployments=0)
+        self.write(path,dict(proof,**changes));return path
+    def test_explicit_text_backfill_is_not_a_content_batch(self):
+        path=self.text_backfill();raw=path.read_bytes();plan,_,after=M.prepare(self.root,self.cur)
+        self.assertEqual(after[0]['url'],self.source['url'])
+        self.assertEqual(plan['excluded_non_batch_receipts'],[str(path.relative_to(self.root))])
+        self.assertEqual(plan['protected_paths'][str(path.relative_to(self.root))],M.sha(raw))
+        self.assertEqual(path.read_bytes(),raw)
+    def test_text_backfill_cannot_hide_other_writes_or_a_content_batch(self):
+        path=self.text_backfill(new_claims=1)
+        with self.assertRaisesRegex(ValueError,'other writes'):M.prepare(self.root,self.cur)
+        self.text_backfill();self.write(path.parent/'content-batch.json',dict(sources=[]))
+        with self.assertRaisesRegex(ValueError,'conflicts with a content batch'):M.prepare(self.root,self.cur)
+    def test_unknown_verified_receipt_missing_batch_still_fails(self):
+        self.text_backfill(operation='unknown')
+        with self.assertRaises(FileNotFoundError):M.prepare(self.root,self.cur)
+    def test_legacy_note_keeps_original_metadata_and_new_claim_gets_full_citation(self):
+        legacy='《'+self.book+'》汉兴以来诸侯王年表，段落 '+self.pid+'；旧格式保留'
+        batch=self.read(self.old/'content-batch.json');batch['sources'][0]['note']=legacy;self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
+        manifest=self.read(self.old/'sources/manifest.json');manifest[0]['reviewed_citation']=legacy;self.write(self.old/'sources/manifest.json',manifest)
+        plan,_,after=M.prepare(self.root,self.cur)
+        self.assertEqual(after[0]['reviewed_citation'],legacy)
+        self.assertEqual(after[0]['authored_claim_citation'],self.para['citation'])
+        self.assertEqual(after[0]['source_title'],self.title)
     def test_check_restores_same_paragraph_across_two_volumes_without_writes(self):
         plan,before,after=M.prepare(self.root,self.cur)
         self.assertEqual(len(plan['changes']),1);self.assertEqual((self.cur/'sources/manifest.json').read_bytes(),self.current_before)

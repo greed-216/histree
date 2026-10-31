@@ -128,7 +128,7 @@ class Pipeline(unittest.TestCase):
         elif name=='sidecars-plan':self.write(self.batch/'.workflow/sidecars-plan.json',dict(batch_sha256=M.sha(self.batch/'content-batch.json'),updates=[]))
         elif name in ('sidecars-apply','sidecars-verify'):self.write(self.batch/'.workflow/sidecars-receipt.json',dict(verified=True,committed=True,batch_sha256=M.sha(self.batch/'content-batch.json'),plan_sha256=M.sha(self.batch/'.workflow/sidecars-plan.json'),target_fingerprint='offline-target'))
         elif name=='coverage-project':self.write(self.batch/'.workflow/coverage.json',dict(coverage=[dict(book_key='synthetic-alpha',volume=1,status='published_fact_subset_verified')],skipped=[],paragraphs=['p1','p2']))
-        elif name=='coverage-plan':self.write(self.batch/'.workflow/coverage-structure-plan.json',dict(target_fingerprint=self.target_fingerprint,claim_structure=[],event_dating=[],claim_relations=[],coverage=self.read(self.batch/'.workflow/coverage.json')['coverage']))
+        elif name=='coverage-plan':self.write(self.batch/'.workflow/coverage-structure-plan.json',dict(target_fingerprint='separate-user-bound-target',publication_target_fingerprint=self.target_fingerprint,claim_structure=[],event_dating=[],claim_relations=[],coverage=self.read(self.batch/'.workflow/coverage.json')['coverage']))
         return subprocess.CompletedProcess(command,0)
     def http(self,base,path):
         self.assertEqual(base,self.args.api)
@@ -259,6 +259,48 @@ class Pipeline(unittest.TestCase):
         self.ready();self.args.apply=True;self.hide_timeline=True
         with self.assertRaises(AssertionError),redirect_stdout(StringIO()):M.publish(self.args,self.batch)
         self.assertFalse((self.batch/'.workflow/public-acceptance.json').exists())
+
+    def tool_review(self):
+        old=self.read(self.batch/'.workflow/freeze.json');before=(self.batch/'.workflow/freeze.json').read_bytes()
+        engine=self.tools/'history-ingest.py';engine.write_bytes(engine.read_bytes()+b'\n# reviewed fixture tool repair\n')
+        self.args.tool_review=self.batch/'.workflow/tool-review.json';self.args.apply=False
+        self.write(self.args.tool_review,dict(previous_freeze_sha256=M.sha(self.batch/'.workflow/freeze.json'),ci_verified=True,changes=[dict(path='scripts/history-ingest.py',before_sha256=old['engines']['scripts/history-ingest.py'],after_sha256=M.sha(engine),reason='synthetic coverage adapter repair')]))
+        return before
+    def test_reviewed_tool_refresh_preserves_facts_and_can_resume_acceptance(self):
+        self.published();old=self.tool_review();progress=self.args.progress.read_bytes();batch=(self.batch/'content-batch.json').read_bytes();calls=self.calls.copy()
+        with redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
+        self.assertEqual(self.calls['build'],calls['build']);self.assertEqual(self.calls['mysql-publish'],calls['mysql-publish'])
+        self.assertEqual((self.batch/'content-batch.json').read_bytes(),batch);self.assertEqual(self.args.progress.read_bytes(),progress)
+        archived=self.batch/'.workflow/freezes'/(__import__('hashlib').sha256(old).hexdigest()+'.json');self.assertEqual(archived.read_bytes(),old)
+        self.args.expected_freeze_sha256=M.sha(self.batch/'.workflow/freeze.json');self.args.apply=True
+        self.accept();self.assertEqual(self.read(self.args.progress)['active_cursor']['volume'],2)
+    def test_refresh_rejects_unreviewed_tools_or_changed_published_bytes(self):
+        self.published();old=self.tool_review();review=self.read(self.args.tool_review);self.write(self.args.tool_review,dict(review,changes=[]))
+        with self.assertRaisesRegex(AssertionError,'Unreviewed'):M.refresh_tools(self.args,self.batch)
+        self.write(self.args.tool_review,review);(self.batch/'curation.json').write_bytes((self.batch/'curation.json').read_bytes()+b' ')
+        with self.assertRaisesRegex(AssertionError,'bytes changed'):M.refresh_tools(self.args,self.batch)
+        self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
+    def test_refresh_needs_verified_publication_and_same_target(self):
+        self.published();old=self.tool_review();proofpath=self.batch/'.workflow/public-acceptance.json';proof=self.read(proofpath);self.write(proofpath,dict(proof,verified=False))
+        with self.assertRaisesRegex(AssertionError,'fully verified'):M.refresh_tools(self.args,self.batch)
+        self.write(proofpath,proof);self.target_fingerprint='other-target'
+        with self.assertRaisesRegex(AssertionError,'cannot change database'):M.refresh_tools(self.args,self.batch)
+        self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
+    def test_refresh_failure_does_not_replace_the_prior_freeze(self):
+        self.published();old=self.tool_review();self.fail_once.add('mysql-preflight')
+        with self.assertRaises(P.StageExecutionError),redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
+        self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
+    def test_refresh_can_explicitly_add_a_protected_dependency(self):
+        self.published();self.tool_review();extra=self.tools/'new-target-helper.mjs';extra.write_text('// reviewed dependency\n')
+        review=self.read(self.args.tool_review);review['changes'].append(dict(path='scripts/new-target-helper.mjs',before_sha256=None,after_sha256=M.sha(extra),reason='new native target contract'));self.write(self.args.tool_review,review)
+        original=M.engines
+        with patch.object(M,'engines',side_effect=lambda:original()+[extra]),redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
+        self.assertIn('scripts/new-target-helper.mjs',self.read(self.batch/'.workflow/freeze.json')['engines'])
+    def test_refresh_cannot_remove_prior_engine_guards(self):
+        self.published();old=self.tool_review();original=M.engines
+        with patch.object(M,'engines',side_effect=lambda:[p for p in original() if p.name!='source_texts.py']):
+            with self.assertRaisesRegex(AssertionError,'cannot remove'):M.refresh_tools(self.args,self.batch)
+        self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
 
 
 if __name__=='__main__':unittest.main()

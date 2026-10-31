@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
+import { mysqlPublicationTargetFingerprint } from "./mysql-publication-target.mjs";
 import {
   legacyEvidence,
   validateDating,
@@ -34,6 +35,7 @@ const env = Object.fromEntries(
 const fingerprint = sha(
   [env.MYSQL_HOST, env.MYSQL_DATABASE, env.MYSQL_USER].join("\0"),
 );
+const publicationTarget = mysqlPublicationTargetFingerprint(env);
 assert(
   ["disabled", "require", "verify-full"].includes(
     env.MYSQL_SSL_MODE ?? "disabled",
@@ -129,6 +131,7 @@ try {
     const plan = {
       format_version: 1,
       target_fingerprint: fingerprint,
+      publication_target_fingerprint: publicationTarget,
       claim_structure: structures,
       event_dating: datings,
       claim_relations: relations,
@@ -170,6 +173,9 @@ try {
       fingerprint,
       "Database target changed",
     );
+    if (plan.publication_target_fingerprint !== undefined) {
+      assert.equal(plan.publication_target_fingerprint, publicationTarget, "Publication host/port/schema changed");
+    }
     const [[lock]] = await db.query(
       "SELECT GET_LOCK('histree-content-publish',0) acquired",
     );

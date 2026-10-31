@@ -85,7 +85,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - run: python3 -m pip install PyMySQL==1.1.2
+      - name: Offline correction guards and native connection safety
+        run: |
+          python3 scripts/test-history-revision.py
+          python3 scripts/test-history-revision-mysql.py --check-safety
       - name: Bootstrap disposable schema and validate native contracts
         run: pnpm test:mysql
       - name: Native sidecar prepare, guarded apply, rollback and idempotence
         run: python3 scripts/test-history-sidecars-mysql.py
+      - name: Native correction full-row CAS, transaction and rollback
+        run: python3 scripts/test-history-revision-mysql.py

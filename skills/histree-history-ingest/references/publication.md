@@ -60,7 +60,19 @@ python3 scripts/publish-book-batch.py <批次>/content-batch.json --apply
 
 必要补证尚无可公开source时，可准备明确标为“仅补证来源”的工作台包，归档后保持people/events/关系/参与/claims/topics全空。标准发布器显式加 `--source-only-evidence`，只发布source及全部固定原文；年代/出处侧表工具依据相同已验模式写原文定位，不制造占位事实，不推进任何书卷进度。随后独立修订才能引用这些source。该模式不能用于隐藏尚未校核的事实，已有事实的批次会拒绝。
 
-发布后发现文案、引用语境或年份说明问题，在 `content/revisions/` 单独保存旧值、新值、支持依据和修订审计。执行时用旧值守卫，成功后匿名读回；保留原batch、引文、稳定ID和出处。并发旧值不符则停下重新核对，不能无条件覆盖。当前未提供通用文案修订发布器，不调用不存在的脚本或用批次重建替代修订；沿用可用工具或为本次修订单独实现并验证。
+发布后发现文案、身份、关系、引用或年份问题，在 `content/revisions/` 单独保存 `kind=reviewed_history_correction` 计划；保留原batch、固定快照、稳定ID和历史审计。使用 `scripts/history_revision.py`，默认只读核对，不通过重建旧批次覆盖已发资料。
+
+计划绑定目标 `target_fingerprint`、相对资料根的 `protected_paths` SHA-256、逐字 `source_bindings`、所有更新行的完整 `full_before` 及仅含改动字段的 `before/after`。需要新增的行放入 `inserts`，来源/原文/定位行列入只读 `protected_rows`；需要保护引用集合时使用 `membership_guards` 和对应的 `invariants_after`。不能修改主键或 `created_at`，同一行不能重复列为更新或新增。新人物的逻辑key写在 `new_people` 元数据，数据库行沿用实际列；不把目录key写成数据库字段。历史年份不使用零年；若已有旧行含零年，先报告工具拒绝，不删改旧值守卫以强行执行。
+
+```sh
+python3 scripts/history_revision.py '<修订>/plan.json' --root '<资料根>' --mysql-env '<明确环境文件>'
+python3 scripts/history_revision.py '<修订>/plan.json' --root '<资料根>' --mysql-env '<明确环境文件>' --apply --expected-plan-sha256 '<计划文件精确SHA-256>'
+python3 scripts/history_revision.py '<修订>/plan.json' --root '<资料根>' --mysql-env '<明确环境文件>' --verify-db
+```
+
+只有当前任务已授权修订写入时才执行 `--apply`。工具核对实际schema和目标后，持有统一 `histree-content-publish` 锁，在单一事务内以锁定读执行完整行CAS、固定表新增和逐字段更新，再核对全部更新后的整行、非改字段、新增行及引用集合；任一旧值、原文字节、定位或后置条件冲突均回滚。已有新ID或旧收据不自动跳过或恢复；并发变化必须重新审阅。仅允许8张事实/侧表的INSERT/UPDATE，source、source_text和原文库定位只读保护，不执行DELETE或DDL。
+
+默认收据为修订目录 `publication-mysql.json`，可用 `--receipt` 显式指定。收据绑定计划SHA、目标、计数、新人物元数据和提交后的完整行，状态只为 `committed_pending_anonymous`；`--verify-db` 只读确认数据库after状态，不代表公开核验。随后独立匿名逐项检查主体、参与/关系方向、claim、年代及原文双向定位，再做实际网页/UI验收。数据库提交、匿名API读回和网页验收分别留证，全部完成后才将本修订标为verified；工具不会自动更新书卷进度。
 
 旧数据审阅与新增录入使用独立游标。续接既有文案修订时读取该修订目录实际存在的progress及字段审阅位置，记录改写或保留理由，经旧值守卫和独立匿名读回后才标完成。审阅范围以当前任务为准，不在Skill中固定修订日期或停留年份；不覆盖旧批次或历史审计，不把修订进度计入另一书的连续录入进度。
 

@@ -19,7 +19,7 @@ def binding(batch):
  assert all(batch.resolve() in (batch/n).resolve().parents for n in names),'Frozen path escaped batch'
  return {n:sha(batch/n) for n in names}
 def script(name):return TOOL_ROOT/'scripts'/name
-def engines():return [script(n) for n in ['history-ingest.py','history_ingest_preflight.py','history-batch-workbench.py','history_sidecars.py','history-table-review.py','mysql_connection.py','history_identity.py','history_cross_supplements.py','reuse-history-sources.py','archive-history-sources.py','publish-book-batch.py','mysql_content_store.py','source_texts.py','validate-content-batch.py','validate-history-time.py','prepare-book-import.py','prepare-content-import.py','project-review-coverage.py','upgrade-content-structure.mjs']]
+def engines():return [script(n) for n in ['history-ingest.py','history_ingest_preflight.py','history-batch-workbench.py','history_sidecars.py','history-table-review.py','mysql_connection.py','history_identity.py','history_cross_supplements.py','reuse-history-sources.py','archive-history-sources.py','publish-book-batch.py','mysql_content_store.py','source_texts.py','validate-content-batch.py','validate-history-time.py','prepare-book-import.py','prepare-content-import.py','project-review-coverage.py','upgrade-content-structure.mjs','mysql-publication-target.mjs']]
 def get(base,path):
  with urllib.request.urlopen(base.rstrip('/')+path,timeout=40) as r:return json.load(r)
 def run(args,batch,name,command,inputs=(),outputs=(),kind='mechanical'):
@@ -122,7 +122,48 @@ def frozen(args,batch):
  assert f['online_check_sha256']==sha(batch/'.workflow/online-check.json')
  assert f['volume_audit_sha256']==sha(batch.parent/'volume-audit.json') and f['web_samples_sha256']==sha(batch/'.workflow/web-samples.json')
  assert f['source_verification_sha256']==sha(batch/'.workflow/source-url-verification.json') and f['editorial_sha256']==sha(batch/'.workflow/editorial-report.json')
+ if f.get('tools_review_file'):
+  review=(batch/f['tools_review_file']).resolve();assert batch in review.parents and sha(review)==f['tools_review_sha256']
+  evidence=(batch/f['tools_revalidation_file']).resolve();assert batch in evidence.parents and sha(evidence)==f['tools_revalidation_sha256']
  return f
+
+
+def refresh_tools(args,batch):
+ """Revalidate changed tools after verified publication, without rebuilding or importing facts."""
+ assert not args.apply and args.tool_review,'Tool refresh is read-only against MySQL and needs an explicit reviewed change list'
+ path=batch/'.workflow/freeze.json';oldraw=path.read_bytes();old=load(path)
+ assert args.expected_freeze_sha256==sha(path),'Exact prior freeze SHA required'
+ assert old['files']==binding(batch),'Published batch or source bytes changed'
+ assert old['public_api_url']==args.api.rstrip('/') and old['scroll_sha256']==sha(TOOL_ROOT/'apps/web/src/data/history-scroll.json')
+ for field,name in [('source_verification_sha256','.workflow/source-url-verification.json'),('editorial_sha256','.workflow/editorial-report.json'),('online_check_sha256','.workflow/online-check.json'),('web_samples_sha256','.workflow/web-samples.json')]:assert old[field]==sha(batch/name),'Prior acceptance input changed'
+ assert old['volume_audit_sha256']==sha(batch.parent/'volume-audit.json');whole_volume(batch);source_verification(batch)
+ reviewpath=args.tool_review.resolve();assert batch in reviewpath.parents
+ review=load(reviewpath);assert review['previous_freeze_sha256']==args.expected_freeze_sha256 and review['ci_verified'] is True
+ current={str(p.relative_to(TOOL_ROOT)):sha(p) for p in engines()}
+ assert set(old['engines'])<=set(current),'Tool refresh cannot remove previously protected engines'
+ changes={n:(old['engines'].get(n),current.get(n)) for n in set(old['engines'])|set(current) if old['engines'].get(n)!=current.get(n)}
+ declared={r['path']:(r['before_sha256'],r['after_sha256']) for r in review['changes']}
+ assert changes and declared==changes and len(declared)==len(review['changes']) and all(r['reason'].strip() for r in review['changes']),'Unreviewed tool change'
+ for name in ['publication-mysql.json','.workflow/sidecars-receipt.json','.workflow/public-acceptance.json']:
+  proof=load(batch/name);assert proof['verified'] and proof['batch_sha256']==sha(batch/'content-batch.json') and proof['target_fingerprint']==old['target_fingerprint'],'Publication is not fully verified'
+ b=load(batch/'content-batch.json');published=load(batch/'publication-mysql.json')
+ for group,table in [('people','person'),('events','event'),('person_events','person_event'),('person_relationships','person_relationship'),('sources','source'),('claims','fact_claim')]:assert published['public_counts'].get(table)==len(b[group]),'Incomplete anonymous publication counts'
+ assert load(batch/'.workflow/public-acceptance.json')['public_api_url']==args.api.rstrip('/')
+ from mysql_content_store import MysqlContentStore
+ store=MysqlContentStore(args.mysql_env)
+ try:assert store.target_fingerprint==old['target_fingerprint'],'Tool refresh cannot change database target'
+ finally:store.connection.rollback();store.connection.close()
+ run(args,batch,'tools-refresh-mysql-preflight',publisher(args,batch),kind='fresh_acceptance')
+ run(args,batch,'tools-refresh-sidecars',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,'--verify-public','--expected-plan-sha256',sha(batch/'.workflow/sidecars-plan.json'),'--expected-target-fingerprint',old['target_fingerprint']],kind='fresh_acceptance')
+ evidence=dict(verified=True,read_only=True,previous_freeze_sha256=args.expected_freeze_sha256,batch_sha256=sha(batch/'content-batch.json'),target_fingerprint=old['target_fingerprint'],review_sha256=sha(reviewpath),engines=current,publication_verified=True,facts_rebuilt=False,progress_advanced=False)
+ record=batch/'.workflow'/('tools-revalidation-'+args.expected_freeze_sha256+'.json');_write_json(record,evidence)
+ archive=batch/'.workflow/freezes'/(args.expected_freeze_sha256+'.json');archive.parent.mkdir(exist_ok=True)
+ if archive.exists():assert archive.read_bytes()==oldraw
+ else:archive.write_bytes(oldraw)
+ updated=dict(old,engines=current,previous_freeze_sha256=args.expected_freeze_sha256,tools_review_file=str(reviewpath.relative_to(batch)),tools_review_sha256=sha(reviewpath),tools_revalidation_file=str(record.relative_to(batch)),tools_revalidation_sha256=sha(record))
+ assert path.read_bytes()==oldraw and old['files']==binding(batch),'Published input changed during tool revalidation'
+ assert current=={str(p.relative_to(TOOL_ROOT)):sha(p) for p in engines()} and sha(reviewpath)==updated['tools_review_sha256'],'Tools or review changed during revalidation'
+ _write_json(path,updated);print('TOOLS REVALIDATED',sha(path))
 
 def publish(args,batch):
  assert args.apply,'publish needs --apply; ready is read-only against MySQL';frozen(args,batch)
@@ -235,7 +276,7 @@ def coverage(args,batch,completion):
  run(args,batch,'coverage-project',[sys.executable,script('project-review-coverage.py'),'--source-root',args.root,'--book',p['book_key'],'--volume',p['volume'],'--output',plan],kind='fresh_acceptance')
  rows=load(plan);assert len(rows['coverage'])==1 and rows['coverage'][0]['volume']==p['volume'] and rows['coverage'][0]['book_key']==p['book_key'] and not rows['skipped']
  run(args,batch,'coverage-plan',['node',script('upgrade-content-structure.mjs'),'--mysql-env',args.mysql_env,'--source-root',args.root,'--after','ffffffff-ffff-ffff-ffff-ffffffffffff','--limit','1','--coverage-plan',plan,'--output',structure],kind='fresh_acceptance')
- proposed=load(structure);assert proposed.get('target_fingerprint')==load(batch/'.workflow/freeze.json')['target_fingerprint']
+ proposed=load(structure);assert proposed.get('publication_target_fingerprint')==load(batch/'.workflow/freeze.json')['target_fingerprint']
  assert not proposed['claim_structure'] and not proposed['event_dating'] and not proposed['claim_relations'] and proposed['coverage']==rows['coverage']
  run(args,batch,'coverage-apply',['node',script('upgrade-content-structure.mjs'),'--mysql-env',args.mysql_env,'--source-root',args.root,'--apply','--plan',structure,'--expected-sha256',sha(structure)],kind='apply')
  actual=get(args.api,'/library/'+p['book_key']);row=next(r for r in actual['coverage'] if r['volume']==p['volume']);assert all(row[k]==v for k,v in rows['coverage'][0].items())
@@ -243,11 +284,12 @@ def coverage(args,batch,completion):
 
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('command',choices=['ready','publish','verify','accept','timings','online-check']);ap.add_argument('batch',type=Path);ap.add_argument('--root',type=Path,default=TOOL_ROOT);ap.add_argument('--mysql-env',type=Path);ap.add_argument('--api',default='https://histree.wiki/api/v1');ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-freeze-sha256');ap.add_argument('--progress',type=Path);ap.add_argument('--web-proof',type=Path);args=ap.parse_args();args.root=args.root.resolve();batch=args.batch.resolve();assert args.root in batch.parents;args.mysql_env=args.mysql_env or args.root/'.env.migration.local'
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('command',choices=['ready','publish','verify','accept','refresh-tools','timings','online-check']);ap.add_argument('batch',type=Path);ap.add_argument('--root',type=Path,default=TOOL_ROOT);ap.add_argument('--mysql-env',type=Path);ap.add_argument('--api',default='https://histree.wiki/api/v1');ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-freeze-sha256');ap.add_argument('--progress',type=Path);ap.add_argument('--web-proof',type=Path);ap.add_argument('--tool-review',type=Path);args=ap.parse_args();args.root=args.root.resolve();batch=args.batch.resolve();assert args.root in batch.parents;args.mysql_env=args.mysql_env or args.root/'.env.migration.local'
  if args.command=='ready':ready(args,batch)
  elif args.command=='publish':publish(args,batch)
  elif args.command=='verify':anonymous(args,batch)
  elif args.command=='accept':accept(args,batch)
+ elif args.command=='refresh-tools':refresh_tools(args,batch)
  elif args.command=='online-check':online_check(args,batch)
  else:
   rows=[]

@@ -16,6 +16,8 @@
 
 月次差别与持续时长分别表述：如“四月封、五月卒”只确定次月，不能据此推满一个月或三十日。修正规范叙述时也检查已公开旧声明，避免新增谨慎解释后仍让旧引用保留过强措辞；原始引文和两书时距异说继续保留。
 
+新增事件集中检查存量，而不只检查本地名称或稳定 key。可运行 `history-event-reuse-candidates.py <批次> --root <资料仓库> --mysql-env <环境文件> --expected-target-fingerprint <已核指纹>`，以只读连接导出同已知起止年或已有参与人物的公开事件候选；逐个判断是否同一行动、独立阶段或无关，记录裁决。工具不会合并或发布，不匹配的旧名称也可能因同年被发现；无确年且无已有参与人的事件仍须原文与文本检索。同一任职、死亡已经有事件时复用；同年另次任职或行动不能自动合并。
+
 先用 `history-table-review.py extract <批次> --output <批次>/table-review.json` 导出物理列；不会自动判为已校核。人审为每行填 decision/reason，表格行补完整 column_labels 和 header_basis（缺格明确说明）；为每个 item 填身份、时间或关系判断及全部出处的零基 column_indices/逐字 quote。跨格摘录补 cross_cell_reason，必要换算写有出处的 anchor_basis、era_column_basis、anchor_year、regnal_year、expected_year。更正项引用独立修订，待考项不得伪装成已纠正。
 
 `history-table-review.py check <批次> --review <审阅文件> --output <检查结果>` 只核不可变原文/格位、逐项覆盖、作者判断是否齐备和算术一致，不证明史实正确。`history-ingest.py ready` 对有tabs的主段要求该审阅通过并绑定冻结哈希；旧批次的专项审阅另存修订目录，不重建原批次。明确错误按完整旧值守卫修订，核对人物、关系、时间、原文与画卷的实际公开结果后才结束专项验收。

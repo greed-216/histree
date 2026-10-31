@@ -34,7 +34,7 @@ for c in batch['claims']:
   assert extra['source_book'] and extra['relation'] in ['corroborates','adds','conflicts']
 assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] not in primary_keys}, 'Unmatched supplement mapping'
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}
-from mysql_content_store import MysqlContentStore
+from mysql_content_store import MysqlContentStore,visible
 store=MysqlContentStore(args.mysql_env,args.apply,args.public_api_url)
 assert not args.expected_target_fingerprint or store.target_fingerprint==args.expected_target_fingerprint, 'Target differs from frozen review'
 def req(table,q='',method='GET',body=None):return store.request(table,q,method,body)
@@ -134,6 +134,10 @@ for _,table in groups:
  if table!='source' and selected:
   result=selected_rows(table,selected,method='PATCH',body={'status':'published'});assert len(result)==len(selected)
  save('published_'+table)
+source_visibility={}
+if args.source_only_evidence:
+ for row in source_text_rows:
+  source_visibility[row['source_id']]=bool(store.read('fact_claim','r.source_id=%s AND '+visible('fact_claim'),[row['source_id']],'id','r.id',1,0))
 store.public=True
 counts={}
 for _,table in groups:
@@ -144,9 +148,14 @@ for _,table in groups:
  if table=='fact_claim':assert all(r['source'] and r['source']['url'].startswith('https://github.com/greed-216/histree/blob/') for r in actual)
  counts[table]=len(actual)
 def verify_source_text(row):
- with urllib.request.urlopen(args.public_api_url.rstrip('/')+'/sources/'+row['source_id']+'/text',timeout=40) as response: public_text=json.load(response)
- assert public_text and public_text['content_sha256']==row['content_sha256'] and public_text['content']==row['content'], 'Anonymous source text mismatch'
- return row['source_id']
-with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool: verified_text_ids=list(pool.map(verify_source_text,source_text_rows))
-assert set(verified_text_ids)=={r['source_id'] for r in source_text_rows}
-audit['public_counts']=counts;audit['verified']=True;save('anonymous_readback_verified');print('Public readback verified',counts)
+ with urllib.request.urlopen(args.public_api_url.rstrip('/')+'/sources/'+row['source_id']+'/text',timeout=40) as response:
+  raw=response.read()
+  empty_unclaimed=args.source_only_evidence and not source_visibility.get(row['source_id'],True) and not raw and response.headers.get('Content-Length')=='0' and response.headers.get('Content-Type') is None
+  assert response.status==200 and (response.headers.get_content_type()=='application/json' or empty_unclaimed),'Unexpected source text HTTP response'
+  public_text=json.loads(raw) if raw else None
+ state=source_texts.verify_public_text(row,public_text,args.source_only_evidence,source_visibility.get(row['source_id'],True))
+ return row['source_id'],state
+with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool: text_results=dict(pool.map(verify_source_text,source_text_rows))
+assert set(text_results)=={r['source_id'] for r in source_text_rows}
+audit['source_text_visibility']=text_results
+audit['public_counts']=counts;audit['verified']=True;save('source_archive_verified' if args.source_only_evidence else 'anonymous_readback_verified');print('Source archive verified' if args.source_only_evidence else 'Public readback verified',counts)

@@ -19,5 +19,13 @@ class SourceOnly(unittest.TestCase):
    batch=dict(self.batch,**{kind:[dict(key='fact')]})
    with self.assertRaises(ValueError):S.batch_texts(batch,{'source_fixture':self.sid},True)
   with self.assertRaises(ValueError):S.batch_texts(self.batch,{'source_fixture':self.sid},'yes')
+ def test_only_fact_free_unclaimed_text_may_defer_visibility(self):
+  row={'content':'raw','content_sha256':'a'*64}
+  self.assertEqual(S.verify_public_text(row,None,True,False),'pending_published_claim')
+  for mode,visible in ((False,False),(False,True),(True,True)):
+   with self.assertRaises(ValueError):S.verify_public_text(row,None,mode,visible)
+  self.assertEqual(S.verify_public_text(row,dict(row),True,False),'visible_verified')
+  for value in ('',{},dict(row,content='wrong')):
+   with self.assertRaises(ValueError):S.verify_public_text(row,value,True,False)
 
 if __name__=='__main__':unittest.main()

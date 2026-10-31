@@ -122,6 +122,21 @@ def batch_texts(batch, ids, source_only_evidence=False):
     return fill_content(source_rows(batch['sources'], batch['claims'], ids, include_unreferenced=source_only_evidence))
 
 
+def verify_public_text(row, public_text, source_only_evidence=False, has_visible_claim=True):
+    """Unclaimed supplementary text is deliberately hidden by the public API.
+
+    Only the explicit fact-free source mode can defer that visibility check;
+    archive bytes and database text must still be verified by the publisher.
+    """
+    if type(source_only_evidence) is not bool or type(has_visible_claim) is not bool:
+        raise ValueError('Explicit source visibility mode required')
+    if public_text is None and source_only_evidence and not has_visible_claim:
+        return 'pending_published_claim'
+    if not isinstance(public_text, dict) or public_text.get('content_sha256') != row['content_sha256'] or public_text.get('content') != row['content']:
+        raise ValueError('Anonymous source text mismatch')
+    return 'visible_verified'
+
+
 def published_texts(skipped=None):
     skipped = [] if skipped is None else skipped
     rows = []

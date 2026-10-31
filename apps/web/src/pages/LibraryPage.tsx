@@ -304,7 +304,7 @@ export function LibraryReaderPage() {
     paragraph
       ?.closest(".library-table-block")
       ?.scrollIntoView({ block: "start", inline: "nearest" });
-  }, [result.loading, result.data, target, quote, location.key]);
+  }, [result.loading, result.data, target, quote, location.key, tableView]);
   const data = result.data;
   const blocks: Array<
     | { kind: "table"; paragraphs: LibraryParagraph[] }

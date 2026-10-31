@@ -149,6 +149,12 @@ def run(values):
                 guard['full_before'] = get_owned(db, guard['table'], key)
             H.require(H.check_plan(plan, root, db)['status'] == 'before_state_matches', 'Native preflight failed'); checks += 1
             original = owned_state(db, owned)
+            from history_identity import matching_edges
+            edge = get_owned(db, 'person_event', (FIXTURE.IDS['old-pe'],))
+            matches = matching_edges(db.store, 'person_event', [edge])
+            H.require([r['id'] for r in matches] == [edge['id']], 'Native endpoint lookup missed the existing participant')
+            H.require(not matching_edges(db.store, 'person_event', [dict(edge, role='different role')]), 'Native endpoint lookup ignored role')
+            H.require(owned_state(db, owned) == original, 'Read-only endpoint lookup changed fixture rows'); checks += 1
             wrong = copy.deepcopy(plan); wrong['updates'][0]['full_before']['role'] = 'wrong old value'
             before_revision = revision_number(db)
             try: H.apply_plan(wrong, root, db)

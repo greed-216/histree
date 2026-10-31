@@ -4,7 +4,7 @@ Existing entities are never overwritten. MySQL chunks are transactional; full ba
 import argparse,concurrent.futures,hashlib,json,subprocess,sys,time,urllib.request,urllib.error
 from datetime import datetime,timezone
 from pathlib import Path
-from history_identity import merged_identity_target
+from history_identity import matching_edges,merged_identity_target
 from history_cross_supplements import validate_cross_supplement
 ROOT=Path(__file__).resolve().parents[1];TOOL_ROOT=ROOT
 ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-target-fingerprint');ap.add_argument('--source-only-evidence',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
@@ -104,7 +104,7 @@ for old in people.values():
   assert old['id']==row['id'] or redirects.get(old['id'])==row['id'] or not oldnames.intersection(norm(x) for x in [row['name']]+row.get('aliases',[])), 'Person identity collision: '+row['name']
 for table,fields in [('person_relationship',['person_a','person_b','relation_type']),('person_event',['person_id','event_id','role'])]:
  if not rows[table]:continue
- for old in allrows(table,'id,'+','.join(fields)):
+ for old in matching_edges(store,table,rows[table]):
   for row in rows[table]:assert old['id']==row['id'] or not all(old[k]==row[k] for k in fields), 'Duplicate edge endpoints'
 summary={t:{'new':sum(r['id'] not in existing[t] for r in rs),'reused':sum(r['id'] in reused for r in rs)} for t,rs in rows.items()}
 import source_texts

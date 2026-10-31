@@ -220,6 +220,17 @@ class ProjectionTests(unittest.TestCase):
         u=self.update(citation='改');u['key']='claim_two';self.write(updates=[u])
         with self.assertRaisesRegex(ValueError, 'UUID/key'): self.project()
 
+    def test_omitted_update_key_uses_bound_validated_uuid_map(self):
+        u=self.update(subject_id=self.ident('person_two'));u.pop('key')
+        path=self.write(updates=[u]);out=self.project()
+        self.assertEqual(out['alpha']['claim_one']['subject_key'],'person_two')
+        self.assertIn(str(path.relative_to(self.root)),out['alpha']['claim_one']['revision_files'])
+
+    def test_omitted_update_key_cannot_invent_missing_uuid_mapping(self):
+        u=self.update(citation='改');u.pop('key');keys=dict(self.keys);keys.pop(u['id'])
+        self.write(updates=[u],plan_patch={'key_map':keys})
+        with self.assertRaisesRegex(ValueError,'UUID/key'):self.project()
+
     def test_full_before_identity_mismatch_fails(self):
         u=self.update(citation='改');u['full_before']['id']=self.ident('claim_two');self.write(updates=[u])
         with self.assertRaisesRegex(ValueError, 'UUID/key'): self.project()

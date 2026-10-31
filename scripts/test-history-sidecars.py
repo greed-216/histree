@@ -180,6 +180,14 @@ class SourceTests(unittest.TestCase):
         self.assertFalse(S.exact_text_with_structural_edges('甲年， 甲事。','甲年，甲事。'))
         self.assertFalse(S.exact_text_with_structural_edges('甲年，乙事。','甲年，甲事。'))
         self.assertFalse(S.exact_text_with_structural_edges('甲年，甲事。正文','甲年，甲事。'))
+    def test_legacy_tongjian_reading_transform_is_exact_and_version_scoped(self):
+        para=dict(id='zizhi-tongjian-a63549944a71-p000157',book_key='zizhi-tongjian',source_version='a63549944a71',kind='body',text='甲事。 ◎ 元年乙事。')
+        raw='甲事。\n◎\n元年\n乙事。\n'
+        self.assertTrue(S.packet_text_matches_snapshot(raw,para))
+        for change in [dict(book_key='shiji'),dict(source_version='other'),dict(kind='table_row'),dict(id='zizhi-tongjian-other-p000157'),dict(text=para['text'].replace('乙','丙'))]:
+            self.assertFalse(S.packet_text_matches_snapshot(raw,dict(para,**change)))
+        for bad in [raw.replace('元年','元\t年'),raw.replace('元年','元 年'),raw.replace('\n','\r\n'),raw+'\ufeff']:
+            self.assertFalse(S.packet_text_matches_snapshot(bad,para))
     def rewrite_first_raw_fixture(self,text):
         packet=json.loads((self.b/'packet.json').read_bytes());para=packet['paragraphs'][0];pid=para['id']
         manifest=json.loads((self.b/'sources/manifest.json').read_bytes());m=next(x for x in manifest if x['paragraph_id']==pid)
@@ -200,6 +208,13 @@ class SourceTests(unittest.TestCase):
         lib=rows['library_paragraph'][0]
         self.assertNotEqual(link['snapshot_sha256'],lib['content_sha256'])
         self.assertEqual(link['snapshot_sha256'],S.sha('\n甲年，甲事。\n\n'.encode()))
+    def test_library_can_preserve_raw_edges_instead_of_packet_display_layout(self):
+        text='\n甲年，甲事。\n\n';rows=self.rewrite_first_raw_fixture(text)
+        rows['library_paragraph'][0].update(content=text,content_sha256=S.sha(text.encode()))
+        bundle=S.load_bundle(self.root,self.b);db=FakeDatabase(rows);plan=S.prepare(bundle,db);S.guard_plan(plan,self.root,db)
+        rows['library_paragraph'][0]['content']='甲年， 甲事。'
+        rows['library_paragraph'][0]['content_sha256']=S.sha(rows['library_paragraph'][0]['content'].encode())
+        with self.assertRaisesRegex(ValueError,'snapshot content mismatch'):S.prepare(bundle,FakeDatabase(rows))
     def test_interior_whitespace_or_body_glyph_change_rejected_even_with_new_raw_hash(self):
         for text in ['甲年， 甲事。','甲年，乙事。']:
             self.rewrite_first_raw_fixture(text)

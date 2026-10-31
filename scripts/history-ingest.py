@@ -145,18 +145,24 @@ def refresh_tools(args,batch):
  changes={n:(old['engines'].get(n),current.get(n)) for n in set(old['engines'])|set(current) if old['engines'].get(n)!=current.get(n)}
  declared={r['path']:(r['before_sha256'],r['after_sha256']) for r in review['changes']}
  assert changes and declared==changes and len(declared)==len(review['changes']) and all(r['reason'].strip() for r in review['changes']),'Unreviewed tool change'
- for name in ['publication-mysql.json','.workflow/sidecars-receipt.json','.workflow/public-acceptance.json']:
+ sidepaths=[batch/'.workflow'/name for name in ['sidecars-plan.json','sidecars-receipt.json','public-acceptance.json']]
+ core_only=not any(p.exists() or p.is_symlink() for p in sidepaths)
+ for name in (['publication-mysql.json'] if core_only else ['publication-mysql.json','.workflow/sidecars-receipt.json','.workflow/public-acceptance.json']):
   proof=load(batch/name);assert proof['verified'] and proof['batch_sha256']==sha(batch/'content-batch.json') and proof['target_fingerprint']==old['target_fingerprint'],'Publication is not fully verified'
  b=load(batch/'content-batch.json');published=load(batch/'publication-mysql.json')
  for group,table in [('people','person'),('events','event'),('person_events','person_event'),('person_relationships','person_relationship'),('sources','source'),('claims','fact_claim')]:assert published['public_counts'].get(table)==len(b[group]),'Incomplete anonymous publication counts'
- assert load(batch/'.workflow/public-acceptance.json')['public_api_url']==args.api.rstrip('/')
+ if not core_only:assert load(batch/'.workflow/public-acceptance.json')['public_api_url']==args.api.rstrip('/')
  from mysql_content_store import MysqlContentStore
  store=MysqlContentStore(args.mysql_env)
  try:assert store.target_fingerprint==old['target_fingerprint'],'Tool refresh cannot change database target'
  finally:store.connection.rollback();store.connection.close()
  run(args,batch,'tools-refresh-mysql-preflight',publisher(args,batch),kind='fresh_acceptance')
- run(args,batch,'tools-refresh-sidecars',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,'--verify-public','--expected-plan-sha256',sha(batch/'.workflow/sidecars-plan.json'),'--expected-target-fingerprint',old['target_fingerprint']],kind='fresh_acceptance')
- evidence=dict(verified=True,read_only=True,previous_freeze_sha256=args.expected_freeze_sha256,batch_sha256=sha(batch/'content-batch.json'),target_fingerprint=old['target_fingerprint'],review_sha256=sha(reviewpath),engines=current,publication_verified=True,facts_rebuilt=False,progress_advanced=False)
+ proofpath=batch/'publication-mysql.json';core_sha=sha(proofpath)
+ prepared=batch/'.workflow/tools-refresh-sidecars-plan.json'
+ sideargs=['--plan',prepared] if core_only else ['--verify-public','--expected-plan-sha256',sha(batch/'.workflow/sidecars-plan.json')]
+ run(args,batch,'tools-refresh-sidecars',[sys.executable,script('history_sidecars.py'),batch,'--root',args.root,'--mysql-env',args.mysql_env,'--public-api-url',args.api,*sideargs,'--expected-target-fingerprint',old['target_fingerprint']],kind='fresh_acceptance')
+ prepared_sha=sha(prepared) if core_only else None
+ evidence=dict(verified=True,read_only=True,previous_freeze_sha256=args.expected_freeze_sha256,batch_sha256=sha(batch/'content-batch.json'),target_fingerprint=old['target_fingerprint'],review_sha256=sha(reviewpath),engines=current,publication_verified=not core_only,core_verified_sidecars_prepared=core_only,sidecar_prepare_sha256=prepared_sha,facts_rebuilt=False,progress_advanced=False)
  record=batch/'.workflow'/('tools-revalidation-'+args.expected_freeze_sha256+'.json');_write_json(record,evidence)
  archive=batch/'.workflow/freezes'/(args.expected_freeze_sha256+'.json');archive.parent.mkdir(exist_ok=True)
  if archive.exists():assert archive.read_bytes()==oldraw
@@ -164,6 +170,7 @@ def refresh_tools(args,batch):
  updated=dict(old,engines=current,previous_freeze_sha256=args.expected_freeze_sha256,tools_review_file=str(reviewpath.relative_to(batch)),tools_review_sha256=sha(reviewpath),tools_revalidation_file=str(record.relative_to(batch)),tools_revalidation_sha256=sha(record))
  assert path.read_bytes()==oldraw and old['files']==binding(batch),'Published input changed during tool revalidation'
  assert current=={str(p.relative_to(TOOL_ROOT)):sha(p) for p in engines()} and sha(reviewpath)==updated['tools_review_sha256'],'Tools or review changed during revalidation'
+ if core_only:assert not any(p.exists() or p.is_symlink() for p in sidepaths) and sha(prepared)==prepared_sha and sha(proofpath)==core_sha,'Partial publication changed during read-only revalidation'
  _write_json(path,updated);print('TOOLS REVALIDATED',sha(path))
 
 def publish(args,batch):

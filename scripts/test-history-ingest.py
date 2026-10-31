@@ -126,7 +126,7 @@ class Pipeline(unittest.TestCase):
         elif name=='mysql-publish':
             b=self.read(self.batch/'content-batch.json');counts={table:len(b[group]) for group,table in [('people','person'),('events','event'),('sources','source'),('person_events','person_event'),('person_relationships','person_relationship'),('claims','fact_claim')]};counts['source_text']=len(b['sources'])
             self.write(self.batch/'publication-mysql.json',dict(verified=True,batch_sha256=M.sha(self.batch/'content-batch.json'),target_fingerprint='offline-target',public_counts=counts,backend='mysql',stages=[dict(stage='anonymous_readback_verified',at='2026-01-01T00:00:00+00:00')]))
-        elif name=='sidecars-plan':self.write(self.batch/'.workflow/sidecars-plan.json',dict(batch_sha256=M.sha(self.batch/'content-batch.json'),updates=[]))
+        elif name=='sidecars-plan':self.write(Path(command[command.index('--plan')+1]) if '--plan' in command else self.batch/'.workflow/sidecars-plan.json',dict(batch_sha256=M.sha(self.batch/'content-batch.json'),updates=[]))
         elif name in ('sidecars-apply','sidecars-verify'):self.write(self.batch/'.workflow/sidecars-receipt.json',dict(verified=True,committed=True,batch_sha256=M.sha(self.batch/'content-batch.json'),plan_sha256=M.sha(self.batch/'.workflow/sidecars-plan.json'),target_fingerprint='offline-target'))
         elif name=='coverage-project':self.write(self.batch/'.workflow/coverage.json',dict(coverage=[dict(book_key='synthetic-alpha',volume=1,status='published_fact_subset_verified')],skipped=[],paragraphs=['p1','p2']))
         elif name=='coverage-plan':self.write(self.batch/'.workflow/coverage-structure-plan.json',dict(target_fingerprint='separate-user-bound-target',publication_target_fingerprint=self.target_fingerprint,claim_structure=[],event_dating=[],claim_relations=[],coverage=self.read(self.batch/'.workflow/coverage.json')['coverage']))
@@ -291,6 +291,34 @@ class Pipeline(unittest.TestCase):
         self.published();old=self.tool_review();self.fail_once.add('mysql-preflight')
         with self.assertRaises(P.StageExecutionError),redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
         self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
+    def core_only(self):
+        self.ready();self.args.apply=True;self.fail_once.add('sidecars-plan')
+        with self.assertRaises(P.StageExecutionError),redirect_stdout(StringIO()):M.publish(self.args,self.batch)
+        self.assertTrue(self.read(self.batch/'publication-mysql.json')['verified'])
+        return self.tool_review()
+    def test_core_only_refresh_prepares_sidecars_without_republishing_or_advancing(self):
+        old=self.core_only();progress=self.args.progress.read_bytes();calls=self.calls.copy()
+        with redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
+        self.assertEqual(self.calls['mysql-publish'],calls['mysql-publish']);self.assertEqual(self.calls['sidecars-apply'],0)
+        self.assertEqual(self.args.progress.read_bytes(),progress)
+        self.assertFalse((self.batch/'.workflow/sidecars-plan.json').exists())
+        evidence=self.read(self.batch/'.workflow'/('tools-revalidation-'+__import__('hashlib').sha256(old).hexdigest()+'.json'))
+        self.assertFalse(evidence['publication_verified']);self.assertTrue(evidence['core_verified_sidecars_prepared'])
+        self.args.expected_freeze_sha256=M.sha(self.batch/'.workflow/freeze.json');self.args.apply=True
+        with redirect_stdout(StringIO()):M.publish(self.args,self.batch)
+        samples=self.read(self.batch/'.workflow/web-samples.json')
+        self.write(self.args.web_proof,dict(verified=True,batch_sha256=M.sha(self.batch/'content-batch.json'),book_key='synthetic-alpha',volume=1,quote_expansion_verified=True,observations=[dict(r,book_key='synthetic-alpha',volume=1,observation='合成页面验收夹具，非真实线上证明') for r in samples['samples']]))
+        self.assertEqual(self.calls['mysql-publish'],calls['mysql-publish']);self.accept()
+    def test_core_only_refresh_rejects_every_mixed_sidecar_state(self):
+        old=self.core_only()
+        for name in ['sidecars-plan.json','sidecars-receipt.json','public-acceptance.json']:
+            path=self.batch/'.workflow'/name;self.write(path,{})
+            with self.assertRaises((AssertionError,KeyError,FileNotFoundError)):M.refresh_tools(self.args,self.batch)
+            path.unlink();self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old)
+    def test_core_only_prepare_failure_keeps_prior_freeze_and_progress(self):
+        old=self.core_only();progress=self.args.progress.read_bytes();self.fail_once.add('sidecars-plan')
+        with self.assertRaises(P.StageExecutionError),redirect_stdout(StringIO()):M.refresh_tools(self.args,self.batch)
+        self.assertEqual((self.batch/'.workflow/freeze.json').read_bytes(),old);self.assertEqual(self.args.progress.read_bytes(),progress)
     def test_refresh_can_explicitly_add_a_protected_dependency(self):
         self.published();self.tool_review();extra=self.tools/'new-target-helper.mjs';extra.write_text('// reviewed dependency\n')
         review=self.read(self.args.tool_review);review['changes'].append(dict(path='scripts/new-target-helper.mjs',before_sha256=None,after_sha256=M.sha(extra),reason='new native target contract'));self.write(self.args.tool_review,review)

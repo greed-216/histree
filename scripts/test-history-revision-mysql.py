@@ -104,6 +104,38 @@ def revision_number(db):
         return cursor.fetchone()[0]
 
 
+def native_audited_edge_lookup(db, root, owned, initial):
+    """Native reads of an isolated after-merge fixture; receipt flags are synthetic, not HTTP acceptance."""
+    from history_identity import audited_hidden_edge
+    shadow_id, canonical_id, claim_id, left_id = [FIXTURE.UID('native-'+key) for key in ('edge-shadow','edge-canonical','edge-claim','edge-left')]
+    person=initial['person'][0]['id'];event=initial['event'][0]['id'];source=initial['source'][0]['id']
+    seeded=[('person_event',dict(id=shadow_id,person_id=person,event_id=event,role='合成归并参与',status='draft')),
+            ('person_event',dict(id=canonical_id,person_id=person,event_id=event,role='合成归并参与',status='published')),
+            ('fact_claim',dict(id=claim_id,subject_table='person_event',subject_id=canonical_id,field_path='role',claim_text='合成关系依据',source_id=source,status='published')),
+            ('fact_claim',dict(id=left_id,subject_table='person_event',subject_id=shadow_id,field_path='role',claim_text='合成未迁移引用',source_id=source,status='draft'))]
+    for table,row in seeded:
+        H.require(get_owned(db,table,(row['id'],)) is None,'Native edge fixture ID already exists')
+        owned[table].add((row['id'],));insert_fixture(db,table,row)
+    db.connection.commit()
+    shadow=get_owned(db,'person_event',(shadow_id,));canonical=get_owned(db,'person_event',(canonical_id,));claim=get_owned(db,'fact_claim',(claim_id,))
+    oldshadow=dict(shadow,status='published');oldclaim=dict(claim,subject_id=shadow_id)
+    plan=dict(kind='reviewed_history_correction',target_fingerprint=db.target_fingerprint,updates=[dict(table='person_event',id=shadow_id,full_before=oldshadow,before=dict(status='published'),after=dict(status='draft')),dict(table='fact_claim',id=claim_id,full_before=oldclaim,before=dict(subject_id=shadow_id),after=dict(subject_id=canonical_id))],protected_rows=[dict(table='person_event',full_before=canonical)])
+    directory=root/'content/revisions/native-edge-fixture';directory.mkdir(parents=True)
+    raw=json.dumps(plan).encode();(directory/'plan.json').write_bytes(raw)
+    receipt=dict(synthetic_native_fixture=True,verified=True,anonymous_readback_verified=True,target_fingerprint=db.target_fingerprint,plan_sha256=H.digest(raw),after_rows=[dict(table='person_event',full_after=shadow),dict(table='person_event',full_after=canonical),dict(table='fact_claim',full_after=claim)])
+    (directory/'publication-mysql.json').write_text(json.dumps(receipt))
+    H.require(not audited_hidden_edge(root,db.store,'person_event',shadow,canonical_id),'Unpublished remaining claim was silently ignored')
+    with db.connection.cursor() as cursor:cursor.execute('DELETE FROM fact_claim WHERE id=%s',(left_id,))
+    db.connection.commit()
+    H.require(audited_hidden_edge(root,db.store,'person_event',shadow,canonical_id),'Native verified archived edge was not reusable')
+    plan['protected_rows']=[];receipt['after_rows']=[r for r in receipt['after_rows'] if not (r['table']=='person_event' and r['full_after']['id']==canonical_id)]
+    raw=json.dumps(plan).encode();(directory/'plan.json').write_bytes(raw);receipt['plan_sha256']=H.digest(raw);(directory/'publication-mysql.json').write_text(json.dumps(receipt))
+    H.require(audited_hidden_edge(root,db.store,'person_event',shadow,canonical_id),'Older receipt identity guard failed without canonical prose snapshot')
+    before=owned_state(db,owned)
+    H.require(not audited_hidden_edge(root,db.store,'person_event',shadow,FIXTURE.IDS['old-pe']),'Wrong canonical edge accepted')
+    H.require(owned_state(db,owned)==before,'Read-only archived-edge lookup changed rows')
+
+
 def library_rows(root, initial, plan):
     source = initial['source'][0]; text = initial['source_text'][0]
     raw = (root / 'raw/source.txt').read_bytes(); display = raw.decode('utf-8').lstrip('\ufeff').strip()
@@ -218,6 +250,7 @@ def run(values):
             except ValueError: pass
             else: raise AssertionError('An already committed plan was silently replayed')
             H.require(owned_state(db, owned) == committed and revision_number(db) == committed_revision, 'Replay rejection changed data'); checks += 1
+            native_audited_edge_lookup(db,root,owned,initial); checks += 1
             print(json.dumps(dict(native_mysql=True, passed=checks, mutations=result['counts'], late_guard_rollbacks=3,
                                   fk_rollback=1, anonymous_verified=False, ddl=0, http=0, production_env_reads=0), sort_keys=True))
         finally:

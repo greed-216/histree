@@ -66,6 +66,7 @@ def source_verification(batch):
     assert archive['manifest_after_sha256']==sha(batch/'sources/manifest.json')
 
 def online_check(args,batch):
+ from history_identity import audited_hidden_edge
  from mysql_content_store import MysqlContentStore
  import pymysql
  curated=load(batch/'curation.json');reused=set(curated['reused_keys']);issues=[];seen=[]
@@ -89,7 +90,7 @@ def online_check(args,batch):
     with store.connection.cursor(pymysql.cursors.DictCursor) as cursor:cursor.execute(sql,[v for pair in pairs for v in pair]);oldrows=[store.normalize(table,r) for r in cursor.fetchall()]
     for r,values in zip(chunk,pairs):
      for old in oldrows:
-      if old['id']!=sid(r['key']) and all(old[f]==v for f,v in zip(fields,values)):issues.append(dict(code='duplicate_edge_endpoints',table=table,key=r['key'],live=old))
+      if old['id']!=sid(r['key']) and all(old[f]==v for f,v in zip(fields,values)) and not audited_hidden_edge(args.root,store,table,old,sid(r['key'])):issues.append(dict(code='duplicate_edge_endpoints',table=table,key=r['key'],live=old))
   result=dict(ready_to_freeze=not issues,read_only=True,target_fingerprint=store.target_fingerprint,curation_sha256=sha(batch/'curation.json'),issues=issues,matched_canonical_rows=seen)
   _write_json(batch/'.workflow/online-check.json',result)
   assert not issues,'Resolve online-check.json before freezing; no automatic identity merge'

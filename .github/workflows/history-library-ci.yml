@@ -54,6 +54,7 @@ jobs:
           python3 scripts/test-history-table-review.py
           python3 scripts/test-history-event-reuse-candidates.py
           python3 scripts/test-history-identity-edges.py
+          python3 scripts/test-history-audited-edges.py
           python3 scripts/test-mysql-publication-target.py
       - name: Ensure rebuilding preserves versioned files
         run: git diff --exit-code

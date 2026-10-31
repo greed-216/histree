@@ -222,11 +222,11 @@ def make_commit(root,plan):
 
 
 def link_sources(root,batch,commit,prefix):
-    subprocess.run([sys.executable,str(root/'scripts/history-batch-workbench.py'),'link-sources',str(batch),'--commit',commit,'--archive-prefix',prefix],cwd=root,check=True)
+    subprocess.run([sys.executable,str(ROOT/'scripts/history-batch-workbench.py'),'--root',str(root),'link-sources',str(batch),'--commit',commit,'--archive-prefix',prefix],cwd=root,check=True)
 
 
 def reuse_sources(root,batch):
-    subprocess.run([sys.executable,str(root/'scripts/reuse-history-sources.py'),str(batch),'--root',str(root),'--apply-local'],cwd=root,check=True,stdout=subprocess.PIPE)
+    subprocess.run([sys.executable,str(ROOT/'scripts/reuse-history-sources.py'),str(batch),'--root',str(root),'--apply-local'],cwd=root,check=True,stdout=subprocess.PIPE)
 
 
 def fixed_url(url):

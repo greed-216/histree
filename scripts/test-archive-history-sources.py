@@ -212,6 +212,9 @@ class Tests(unittest.TestCase):
             args=[x.args[0] for x in run.call_args_list]
             self.assertEqual(Path(args[0][1]).name,'history-batch-workbench.py');self.assertIn('link-sources',args[0])
             self.assertEqual(Path(args[1][1]).name,'reuse-history-sources.py');self.assertIn('--apply-local',args[1]);self.assertIn('--root',args[1])
+            self.assertEqual(Path(args[0][1]).parent,M.ROOT/'scripts');self.assertEqual(Path(args[1][1]).parent,M.ROOT/'scripts')
+            self.assertEqual(args[0][args[0].index('--root')+1],str(self.root))
+            self.assertEqual(args[1][args[1].index('--root')+1],str(self.root))
 
 
 class UrlTests(unittest.TestCase):

@@ -63,6 +63,17 @@ def exact_text_with_structural_edges(snapshot_text, paragraph_text):
     return re.fullmatch(r'\s*'+re.escape(paragraph_text)+r'\s*',snapshot_text) is not None
 
 
+def packet_text_matches_snapshot(snapshot_text, para):
+    """Separate legacy reading layout from immutable evidence bytes, never table cells."""
+    display=para['text']
+    exact=snapshot_text[1:] if snapshot_text.startswith('\ufeff') else snapshot_text
+    if exact_text_with_structural_edges(exact,display):return True
+    legacy=(para.get('book_key')=='zizhi-tongjian' and para.get('source_version')=='a63549944a71'
+            and para.get('kind')=='body' and re.fullmatch(r'zizhi-tongjian-a63549944a71-p\d{6}',para.get('id','')))
+    if not legacy or any(c in snapshot_text or c in display for c in ('\t','\r','\ufeff')):return False
+    return snapshot_text.replace('\n◎\n',' ◎ ').replace('\n','').strip()==display
+
+
 def claim_fingerprint(claim, source_url):
     # Exactly the deployed query-contracts.ts HEX(COALESCE(...,'')) SQL contract.
     vals = [claim.get(k) for k in FINGERPRINT_FIELDS] + [source_url]
@@ -230,7 +241,7 @@ def load_bundle(root, batch_dir):
             # archive and offsets remain authoritative; this unused title is not a fact.
             excluded_structural_headings.append(pid)
         else:
-            require(exact_text_with_structural_edges(raw.decode('utf-8-sig'),para['text']), 'Packet and exact snapshot text differ: ' + pid)
+            require(packet_text_matches_snapshot(raw.decode('utf-8'),para), 'Packet and exact snapshot text differ: ' + pid)
         files[str(path.relative_to(root))] = sha(raw)
         snapshots[pid] = raw
     sources = {s['key']: s for s in batch['sources']}
@@ -357,7 +368,7 @@ def _prepare_rows(bundle, db):
         asset = protect('library_asset', {'id':library['asset_id']})
         require(book['source_version'] == para['source_version'] and book['status'] == 'available', 'Library book/version is not the bound available source')
         require(library['book_key'] == para['book_key'] and library['section_id'] == para['section_id'], 'Library paragraph belongs to another book/section')
-        require(library['content'] == para['text'] and exact_text_with_structural_edges(text['content'],para['text']) and library['content_sha256'] == sha(para['text'].encode('utf-8')), 'Library/source snapshot content mismatch')
+        require(exact_text_with_structural_edges(text['content'],library['content']) and library['content_sha256'] == sha(library['content'].encode('utf-8')), 'Library/source snapshot content mismatch')
         loc = para['locator']
         require(library['char_start'] == loc['char_start'] and library['char_end'] == loc['char_end'], 'Library paragraph source offsets differ')
         require(asset['source_file'] == loc['source_file'] and asset['source_sha256'] == loc['source_sha256'], 'Library asset/bottom-text hash mismatch')

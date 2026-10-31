@@ -9,7 +9,7 @@ from collections import Counter
 from contextlib import ExitStack, redirect_stdout
 import copy
 import importlib.util
-from io import StringIO
+from io import BytesIO, StringIO
 import json
 from pathlib import Path
 import subprocess
@@ -81,6 +81,17 @@ class Pipeline(unittest.TestCase):
         self.stack.enter_context(patch.object(P.subprocess,'run',side_effect=self.execute));self.stack.enter_context(patch.object(M,'get',side_effect=self.http));self.stack.enter_context(patch.object(M.urllib.request,'urlopen',side_effect=AssertionError('Unexpected real network')))
         self.stack.enter_context(patch.dict(sys.modules,dict(mysql_content_store=types.SimpleNamespace(MysqlContentStore=Store),pymysql=types.SimpleNamespace(cursors=types.SimpleNamespace(DictCursor=object())))))
     def tearDown(self):self.stack.close();self.tmp.cleanup()
+    def test_real_raw_archive_proof_is_accepted_by_pipeline(self):
+        spec=importlib.util.spec_from_file_location('raw_proof_archive',SCRIPTS/'archive-history-sources.py')
+        archive=importlib.util.module_from_spec(spec);spec.loader.exec_module(archive)
+        manifest=self.read(self.batch/'sources/manifest.json')
+        contents={archive.fixed_url(m['url']):(self.batch/'sources'/m['file']).read_bytes() for m in manifest}
+        with patch.object(archive.urllib.request,'urlopen',side_effect=lambda request,**kw:BytesIO(contents[request.full_url])):
+            checks=[archive.verify_url(m) for m in manifest]
+        proof=self.read(self.batch/'.workflow/source-url-verification.json');proof['sources']=checks
+        self.write(self.batch/'.workflow/source-url-verification.json',proof)
+        M.source_verification(self.batch)
+        self.assertTrue(all(c['request_url']!=c['url'] for c in checks))
     def build_outputs(self):
         c=self.read(self.batch/'curation.json');packet=self.read(self.batch/'packet.json');manifest=self.read(self.batch/'sources/manifest.json')
         b=dict(format_version=1,batch_key=c['batch_key'],people=[],events=[],person_events=[],person_relationships=[],sources=[],claims=[],topics=[])

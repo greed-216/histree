@@ -219,7 +219,10 @@ class UrlTests(unittest.TestCase):
         self.raw='\ufeff原文。\n'.encode();self.m=dict(key='s',url='https://github.com/greed-216/histree/blob/'+'a'*40+'/content/books/songshi/s/source.txt',sha256=M.sha(self.raw))
     def test_raw_bytes_are_checked(self):
         with patch.object(M.urllib.request,'urlopen',return_value=BytesIO(self.raw)):
-            self.assertEqual(M.verify_url(self.m)['method'],'anonymous_raw')
+            proof=M.verify_url(self.m)
+            self.assertEqual(proof['method'],'anonymous_raw')
+            self.assertEqual(proof['url'],self.m['url'])
+            self.assertEqual(proof['request_url'],M.fixed_url(self.m['url']))
     def test_raw_failure_uses_only_sha_exact_immutable_rawlines(self):
         html=('<script type="application/json">'+json.dumps(dict(payload=dict(rawLines=['\ufeff原文。'])))+'</script>').encode()
         with patch.object(M.urllib.request,'urlopen',side_effect=[OSError('raw down'),BytesIO(html)]):

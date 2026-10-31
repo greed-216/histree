@@ -53,6 +53,7 @@ jobs:
           python3 scripts/test-archive-history-sources.py
           python3 scripts/test-history-table-review.py
           python3 scripts/test-history-event-reuse-candidates.py
+          python3 scripts/test-history-identity-edges.py
       - name: Ensure rebuilding preserves versioned files
         run: git diff --exit-code
   mysql-sidecars:

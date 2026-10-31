@@ -250,7 +250,7 @@ def verify_url(m):
         with urllib.request.urlopen(urllib.request.Request(target,headers={'User-Agent':'Histree-source-verification'}),timeout=timeout) as response:return response.read()
     try:
         require(sha(get(url,15))==m['sha256'],'Anonymous raw SHA mismatch')
-        return dict(key=m['key'],url=url,sha256=m['sha256'],verified=True,method='anonymous_raw')
+        return dict(key=m['key'],url=m['url'],request_url=url,sha256=m['sha256'],verified=True,method='anonymous_raw')
     except Exception:pass
     for attempt in range(3):
         try:

@@ -44,6 +44,7 @@ jobs:
           python3 scripts/test-history-workbench-portable.py
           python3 scripts/test-history-ingest.py
           python3 scripts/test-history-pipeline-forward.py
+          python3 scripts/test-history-claim-revision-projection.py
           python3 scripts/test-history-ingest-preflight.py
           python3 scripts/test-history-sidecars.py
           python3 scripts/test-history-sidecars-mysql.py --check-safety

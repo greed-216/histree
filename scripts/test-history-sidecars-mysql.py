@@ -15,6 +15,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import sys
 import tempfile
 import uuid
@@ -299,6 +300,18 @@ def run(env):
             assert PARAGRAPHS[3] not in {r['paragraph_id'] for r in plan['inserts']['library_source_link']};checks+=1
             first_link=next(r for r in plan['inserts']['library_source_link'] if r['paragraph_id']==PARAGRAPHS[0])
             assert first_link['snapshot_sha256']!=db.get('library_paragraph',dict(id=PARAGRAPHS[0]))['content_sha256'];checks+=1
+            # A provenance-only package publishes real source links without inventing claims.
+            source_only_dir=directory.parent.parent/'source-only/part-01'
+            shutil.copytree(directory,source_only_dir)
+            b=json.loads((source_only_dir/'content-batch.json').read_bytes())
+            for field in ('people','events','person_events','person_relationships','claims','topics'):b[field]=[]
+            b['batch_key']='native-source-only';(source_only_dir/'content-batch.json').write_bytes(S.dump(b))
+            cur=json.loads((source_only_dir/'curation.json').read_bytes());cur.update(batch_key=b['batch_key'],claim_namespace=b['batch_key'],items=[]);(source_only_dir/'curation.json').write_bytes(S.dump(cur))
+            proof=json.loads((source_only_dir/'publication-mysql.json').read_bytes());proof.update(source_only_evidence=True,batch_sha256=S.sha((source_only_dir/'content-batch.json').read_bytes()));(source_only_dir/'publication-mysql.json').write_bytes(S.dump(proof))
+            (source_only_dir/'time-review.json').write_bytes(S.dump(dict(batch_sha256=proof['batch_sha256'],events=[])))
+            source_plan=S.prepare(S.load_bundle(root,source_only_dir),db)
+            assert len(source_plan['inserts']['library_source_link'])==3 and not source_plan['inserts']['claim_structure'] and not source_plan['inserts']['event_dating']
+            linked=S.apply_plan(source_plan,root,db);assert all(n==0 for n in linked['actual_inserted'].values());checks+=1
             print(json.dumps(dict(passed=checks,native_mysql=True,model_calls=0,ddl=0,bulk_statistics=db.bulk_statistics,late_conflict_rollbacks=2),sort_keys=True))
     finally:
         if db is not None:db.connection.close()  # releases the global publication lock

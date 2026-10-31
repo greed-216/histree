@@ -154,6 +154,7 @@ def make_samples(batch):
 
 
 def anonymous(args,batch):
+ frozen(args,batch)
  b=load(batch/'content-batch.json');a=load(batch/'publication-mysql.json');assert a['verified'] and a['batch_sha256']==sha(batch/'content-batch.json')
  assert load(batch/'.workflow/sidecars-receipt.json')['verified'];ids=load(batch/'sql/key-map.json');reused=set(load(batch/'reused-keys.json'));expected={}
  for e in b['events']:
@@ -178,14 +179,15 @@ def anonymous(args,batch):
    if not d['has_more']:break
   else:raise ValueError('Reader pagination exceeded bound')
   assert ids[c['key']] in found;reader.append(dict(paragraph_id=pid,reverse_claims=len(found)))
- _write_json(batch/'.workflow/public-acceptance.json',dict(verified=True,batch_sha256=a['batch_sha256'],annual_years=years,new_dated_events=len({x for s in expected.values() for x in s}),reader=reader,checked_at=datetime.now(timezone.utc).isoformat()))
+ _write_json(batch/'.workflow/public-acceptance.json',dict(verified=True,public_api_url=args.api.rstrip('/'),target_fingerprint=a['target_fingerprint'],batch_sha256=a['batch_sha256'],annual_years=years,new_dated_events=len({x for s in expected.values() for x in s}),reader=reader,checked_at=datetime.now(timezone.utc).isoformat()))
  print('ANONYMOUS ACCEPTED',len(years),'years',flush=True)
 
 
 def accept(args,batch):
  assert args.apply and args.progress and args.web_proof,'accept needs --apply, explicit --progress and actual --web-proof'
  frozen(args,batch);p=load(batch/'packet.json');a=load(batch/'publication-mysql.json');q=load(batch/'.workflow/public-acceptance.json');side=load(batch/'.workflow/sidecars-receipt.json');ui=load(args.web_proof);samples=load(batch/'.workflow/web-samples.json')
- assert a['target_fingerprint']==load(batch/'.workflow/freeze.json')['target_fingerprint']
+ assert a['target_fingerprint']==q['target_fingerprint']==load(batch/'.workflow/freeze.json')['target_fingerprint']
+ assert q['public_api_url']==args.api.rstrip('/'),'Anonymous verification belongs to another API'
  assert all(x.get('verified') for x in [a,q,side,ui]);assert all(x['batch_sha256']==sha(batch/'content-batch.json') for x in [a,q,side,ui,samples]);assert ui.get('quote_expansion_verified') or samples['reader_only'] and ui.get('original_text_visible')
  assert {r['id'] for r in samples['samples']}=={r['id'] for r in ui['observations']},'UI proof sample mismatch'
  assert (ui['book_key'],ui['volume'])==(p['book_key'],p['volume']),'UI proof book/volume mismatch'

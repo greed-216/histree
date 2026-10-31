@@ -231,6 +231,12 @@ class Pipeline(unittest.TestCase):
     def test_empty_public_counts_must_block_acceptance(self):
         self.published();receipt=self.batch/'publication-mysql.json';a=self.read(receipt);a['public_counts']={};self.write(receipt,a)
         with self.assertRaises(AssertionError):self.accept()
+    def test_anonymous_proof_from_another_api_or_target_cannot_advance(self):
+        self.published();path=self.batch/'.workflow/public-acceptance.json';old=self.read(path)
+        for changes in [dict(public_api_url='https://wrong.invalid/api/v1'),dict(target_fingerprint='other-target')]:
+            self.write(path,dict(old,**changes))
+            with self.assertRaises(AssertionError):self.accept()
+
     def test_missing_publication_component_blocks_progress(self):
         self.published();old=self.args.progress.read_bytes()
         for path in [self.batch/'publication-mysql.json',self.batch/'.workflow/sidecars-receipt.json',self.batch/'.workflow/public-acceptance.json']:

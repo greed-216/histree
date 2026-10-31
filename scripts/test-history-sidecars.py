@@ -116,6 +116,19 @@ class SourceTests(unittest.TestCase):
         write('time-review.json',dict(batch_sha256=S.sha((self.b/'content-batch.json').read_bytes()),events=[dict(key=it['row']['key'],**it['temporal_review']) for it in items]))
         self.bundle=S.load_bundle(self.root,self.b);self.db=FakeDatabase(self.rows);self.plan=S.prepare(self.bundle,self.db)
     def tearDown(self):self.tmp.cleanup()
+    def test_source_only_evidence_links_all_sources_without_fact_inserts(self):
+        batch=json.loads((self.b/'content-batch.json').read_bytes())
+        for field in ('people','events','person_events','person_relationships','claims','topics'):batch[field]=[]
+        (self.b/'content-batch.json').write_bytes(S.dump(batch))
+        cur=json.loads((self.b/'curation.json').read_bytes());cur['items']=[];(self.b/'curation.json').write_bytes(S.dump(cur))
+        proof=json.loads((self.b/'publication-mysql.json').read_bytes());proof.update(source_only_evidence=True,batch_sha256=S.sha((self.b/'content-batch.json').read_bytes()));(self.b/'publication-mysql.json').write_bytes(S.dump(proof))
+        (self.b/'time-review.json').write_bytes(S.dump(dict(batch_sha256=proof['batch_sha256'],events=[])))
+        result=S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))
+        self.assertEqual(len(result['inserts']['library_source_link']),3)
+        self.assertEqual(result['inserts']['claim_structure'],[]);self.assertEqual(result['inserts']['event_dating'],[])
+    def test_source_only_receipt_rejects_a_batch_containing_facts(self):
+        proof=json.loads((self.b/'publication-mysql.json').read_bytes());proof['source_only_evidence']=True;(self.b/'publication-mysql.json').write_bytes(S.dump(proof))
+        with self.assertRaisesRegex(ValueError,'cannot contain fact'):S.load_bundle(self.root,self.b)
     def test_accumulates_each_source_year_without_last_call_overwrite(self):
         ds=self.plan['inserts']['event_dating'];self.assertEqual(sorted(d['earliest_year'] for d in ds),[-209,-208,-180])
         many=[d for d in ds if d['event_id']==U('event_many')];self.assertEqual(len({d['claim_id'] for d in many}),2)

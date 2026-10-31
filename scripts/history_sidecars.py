@@ -183,6 +183,8 @@ def load_bundle(root, batch_dir):
     require(publication.get('batch_sha256') == files[str((batch_dir/'content-batch.json').relative_to(root))],
             'Published batch SHA mismatch')
     require(batch['batch_key'] == cur['batch_key'] == cur['claim_namespace'], 'Curation/batch namespace mismatch')
+    if publication.get('source_only_evidence') is True:
+        require(not any(batch[k] for k in ('people','events','person_events','person_relationships','claims','topics')),'Source-only evidence cannot contain fact rows')
     require(isinstance(packet.get('book_key'),str) and re.fullmatch(r'[a-z0-9][a-z0-9-]*',packet['book_key']), 'Invalid packet book key')
     require(isinstance(packet.get('source_version'),str) and bool(packet['source_version'].strip()), 'Missing packet source version')
     require(type(packet.get('volume')) is int and packet['volume'] > 0, 'Invalid packet volume')
@@ -312,6 +314,10 @@ def normalized_claim(c, ids):
             'source_id':ids[c['source_key']], 'status':'published'}
 
 
+def used_sources(bundle):
+    return ({m['key'] for pid,m in bundle['manifest'].items() if pid not in bundle['excluded_structural_headings']} if bundle['publication'].get('source_only_evidence') is True else {c['source_key'] for c in bundle['batch']['claims']})
+
+
 def _prepare_rows(bundle, db):
     db.schema()
     require(db.target_fingerprint == bundle['publication']['target_fingerprint'], 'Publication target changed')
@@ -331,7 +337,7 @@ def _prepare_rows(bundle, db):
         require(live['status'] == 'published', 'Claim is not public')
         claim_by_key[c['key']] = live
         claims_by_subject.setdefault(c['subject_key'], []).append((c, live))
-    used = {c['source_key'] for c in batch['claims']}
+    used = used_sources(bundle)
     by_source = {m['key']:pid for pid,m in manifest.items()}
     for sk in sorted(used):
         require(sk in by_source, 'Used source has no exact manifest paragraph')
@@ -628,7 +634,7 @@ class Database(_RowDatabase):
 
 def preload_prepare(bundle,db):
     """Known IDs come only from the bound batch; assets are a second dependent read."""
-    ids=bundle['ids'];batch=bundle['batch'];used={c['source_key'] for c in batch['claims']}
+    ids=bundle['ids'];batch=bundle['batch'];used=used_sources(bundle)
     by_source={m['key']:pid for pid,m in bundle['manifest'].items()}
     pairs=[]
     pairs += [('fact_claim',dict(id=ids[c['key']])) for c in batch['claims']]

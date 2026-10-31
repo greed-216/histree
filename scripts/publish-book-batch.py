@@ -7,7 +7,7 @@ from pathlib import Path
 from history_identity import merged_identity_target
 from history_cross_supplements import validate_cross_supplement
 ROOT=Path(__file__).resolve().parents[1];TOOL_ROOT=ROOT
-ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-target-fingerprint');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
+ap=argparse.ArgumentParser();ap.add_argument('batch');ap.add_argument('--source-root',type=Path);ap.add_argument('--apply',action='store_true');ap.add_argument('--expected-target-fingerprint');ap.add_argument('--source-only-evidence',action='store_true');ap.add_argument('--mysql-env',default=str(ROOT/'.env.migration.local'));ap.add_argument('--public-api-url',default='https://123.56.189.146/api/v1');args=ap.parse_args()
 if args.source_root:ROOT=args.source_root.resolve()
 P=Path(args.batch).resolve().parent
 subprocess.run([sys.executable,str(TOOL_ROOT/'scripts/validate-content-batch.py'),str(P/'content-batch.json')],check=True,stdout=subprocess.DEVNULL)
@@ -17,6 +17,7 @@ prior_paths=[P/'publication-mysql.json',P/'publication.json']
 legacy_verified=any(p.exists() and json.loads(p.read_text()).get('verified') and json.loads(p.read_text()).get('batch_sha256')==hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest() for p in prior_paths)
 if time_review.exists() or not legacy_verified:
  subprocess.run([sys.executable,str(TOOL_ROOT/'scripts/validate-history-time.py'),str(P/'content-batch.json')],check=True)
+if args.source_only_evidence:assert batch['sources'] and not any(batch[k] for k in ('people','events','person_events','person_relationships','claims','topics')), 'Source-only evidence cannot contain fact rows'
 assert not batch['topics'], 'Book publisher does not yet publish topics'
 source_keys={r['key'] for r in batch['sources']}
 primary_keys=set(coverage.get('primary_source_keys',[coverage['primary_source_key']]))
@@ -54,7 +55,8 @@ for group,table in groups:
   rows[table].append(r)
 # Audit must match precisely the reviewed bytes.
 sha=hashlib.sha256((P/'content-batch.json').read_bytes()).hexdigest();auditpath=P/'publication-mysql.json'
-audit=json.loads(auditpath.read_text()) if auditpath.exists() else {'batch_sha256':sha,'stages':[]}
+audit=json.loads(auditpath.read_text()) if auditpath.exists() else {'batch_sha256':sha,'stages':[],'source_only_evidence':args.source_only_evidence}
+assert bool(audit.get('source_only_evidence'))==args.source_only_evidence,'Source publication mode changed after publication started'
 assert audit['batch_sha256']==sha,'Batch changed after publication started'
 assert audit.get('target_fingerprint',store.target_fingerprint)==store.target_fingerprint,'Publication target changed'
 audit['target_fingerprint']=store.target_fingerprint
@@ -106,7 +108,7 @@ for table,fields in [('person_relationship',['person_a','person_b','relation_typ
   for row in rows[table]:assert old['id']==row['id'] or not all(old[k]==row[k] for k in fields), 'Duplicate edge endpoints'
 summary={t:{'new':sum(r['id'] not in existing[t] for r in rs),'reused':sum(r['id'] in reused for r in rs)} for t,rs in rows.items()}
 import source_texts
-source_text_rows=source_texts.batch_texts(batch,ids)
+source_text_rows=source_texts.batch_texts(batch,ids,source_only_evidence=args.source_only_evidence)
 summary['source_text']=source_texts.preflight(store.connection,source_text_rows,{r['id']:r['url'] for r in rows['source']})
 print(json.dumps(summary,ensure_ascii=False),flush=True)
 if not args.apply:raise SystemExit(0)

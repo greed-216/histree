@@ -1,7 +1,8 @@
 """Index legacy and current evidence by book without changing public entity/source IDs."""
-import json,hashlib
+import argparse,json,hashlib
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--source-root',type=Path,default=ROOT);ap.add_argument('--book',action='append');args=ap.parse_args();ROOT=args.source_root.resolve()
 books={'zizhi-tongjian':('资治通鉴',('tongjian-',)),'jiuwudaishi':('旧五代史',('jiuwudaishi-',)),'xinwudaishi':('新五代史',('xinwudaishi-','new-wudaishi-')),'wuyue-beishi':('吴越备史',('KR2i0019-',)),'shu-taowu':('蜀梼杌',('KR2i0016-',))}
 books.update({'jiutangshu':('旧唐书',('jiutangshu-',)), 'shiguochunqiu':('十国春秋',('shiguochunqiu-',))})
 books.update({'beimeng-suoyan':('北梦琐言',('beimeng-suoyan-',))})
@@ -12,6 +13,12 @@ books['hanshu']=('汉书',('hanshu-',))
 books['houhanshu']=('后汉书',('houhanshu-',))
 books['wuyue-beishi']=('吴越备史',('KR2i0019-','wuyuebeishi-'))
 books['shiji']=('史记',('shiji-',))
+catalog_path=ROOT/'resources/derived/history-library/catalog.json'
+if catalog_path.exists():
+ for book in json.loads(catalog_path.read_text())['books']:
+  books.setdefault(book['book_key'],(book['book'],(book['book_key']+'-',)))
+selected=set(args.book or books)
+assert selected<=set(books),'Unknown requested source book'
 indexes={k:{} for k in books}
 subject_remap={}
 citation_revisions={}
@@ -27,7 +34,8 @@ for plan_path in sorted((ROOT/'content/revisions').glob('*/plan.json')):
    for change in citation_changes:
     assert change.get('key') and set(change['before'])==set(change['after'])=={'citation'}
     citation_revisions.setdefault(change['key'],[]).append((change['before']['citation'],change['after']['citation']))
- for claim_key, subject_key in plan.get('claim_subject_remap',{}).items():
+ verified=(audit_path.exists() and audit.get('verified') and audit.get('plan_sha256',audit.get('revision_sha256'))==hashlib.sha256(plan_path.read_bytes()).hexdigest())
+ for claim_key, subject_key in (plan.get('claim_subject_remap',{}) if verified else {}).items():
   assert claim_key not in subject_remap or subject_remap[claim_key]==subject_key, claim_key
   subject_remap[claim_key]=subject_key
 batch_paths=list((ROOT/'content').rglob('content-batch.json'))
@@ -62,7 +70,13 @@ for book_key, rows in derive_time_revision_claims(ROOT, books).items():
  for claim_key, record in rows.items():
   assert claim_key not in indexes[book_key], 'Revision claim collides with frozen batch'
   indexes[book_key][claim_key] = record
+from history_claim_revision_projection import project_claim_revisions,retain_verified_existing_claims
+indexes=retain_verified_existing_claims(ROOT,indexes,books,selected)
+projected=project_claim_revisions(ROOT,indexes,books)
+assert all(projected[k]==indexes[k] for k in set(books)-selected),'Revision affects another source book; include all affected --book selections before writing'
+indexes=projected
 for key,(name,_) in books.items():
+ if key not in selected:continue
  out=ROOT/'content/books'/key;out.mkdir(parents=True,exist_ok=True)
  (out/'source-index.json').write_text(json.dumps({'book':name,'scope':'按书索引引用；是否已发布以各批 publication/release-verification 及数据库为准。','claims':list(indexes[key].values())},ensure_ascii=False,indent=2)+'\n')
 print({books[k][0]:len(v) for k,v in indexes.items()})

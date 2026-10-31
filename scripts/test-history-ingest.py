@@ -76,6 +76,7 @@ class Pipeline(unittest.TestCase):
         class Store:
             def __init__(self,*a,**k):self.connection=Conn();self.target_fingerprint=owner.target_fingerprint
             def request(self,table,*a,**k):return owner.live.get(table,[])
+            def read(self,table,where,params,selection,order,limit,offset):return owner.edge_rows if table in ('person_event','person_relationship') else []
             def normalize(self,table,row):return row
         self.stack=ExitStack();self.stack.enter_context(patch.object(M,'TOOL_ROOT',self.root));self.stack.enter_context(patch.object(P,'__file__',str(self.tools/'history_ingest_preflight.py')))
         self.stack.enter_context(patch.object(P.subprocess,'run',side_effect=self.execute));self.stack.enter_context(patch.object(M,'get',side_effect=self.http));self.stack.enter_context(patch.object(M.urllib.request,'urlopen',side_effect=AssertionError('Unexpected real network')))

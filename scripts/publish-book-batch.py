@@ -34,7 +34,7 @@ for c in batch['claims']:
   assert extra['source_book'] and extra['relation'] in ['corroborates','adds','conflicts']
 assert set(supplements)=={c['key'] for c in batch['claims'] if c['source_key'] not in primary_keys}, 'Unmatched supplement mapping'
 ids=json.loads((P/'sql/key-map.json').read_text());reused={ids[k] for k in json.loads((P/'reused-keys.json').read_text())}
-from mysql_content_store import MysqlContentStore,visible
+from mysql_content_store import MysqlContentStore
 store=MysqlContentStore(args.mysql_env,args.apply,args.public_api_url)
 assert not args.expected_target_fingerprint or store.target_fingerprint==args.expected_target_fingerprint, 'Target differs from frozen review'
 def req(table,q='',method='GET',body=None):return store.request(table,q,method,body)
@@ -136,6 +136,7 @@ for _,table in groups:
  save('published_'+table)
 source_visibility={}
 if args.source_only_evidence:
+ from mysql_content_store import visible
  for row in source_text_rows:
   source_visibility[row['source_id']]=bool(store.read('fact_claim','r.source_id=%s AND '+visible('fact_claim'),[row['source_id']],'id','r.id',1,0))
 store.public=True

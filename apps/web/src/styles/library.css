@@ -83,6 +83,5 @@
 .library-table-original summary { color:#567548; cursor:pointer; }
 .library-table-original details>div { margin:12px 0; }
 .library-table-original pre { font:13px/1.9 'Songti SC',Georgia,serif; white-space:pre-wrap; }
-.library-kind-table_row { overflow-x:auto; white-space:pre; font-size:15px; }
 @media(max-width:800px) { .library-shelf { grid-template-columns:repeat(2,minmax(0,1fr)); } .library-reading-layout { grid-template-columns:1fr; gap:20px; } .library-reading-layout>aside { position:static; } .library-contents nav { max-height:180px; } .library-section-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media(max-width:520px) { .library-shelf { gap:12px; } .library-book { padding:18px; } .library-book h3 { font-size:22px; } .library-search { flex-wrap:wrap; } .library-search>label:first-child { width:100%; border-bottom:1px solid #e5e6dc; } .library-search select { max-width:none; border:0; } .library-search button { padding:10px 12px; } .library-section-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .library-paragraph { font-size:17px; } }

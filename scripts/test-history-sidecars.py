@@ -134,6 +134,8 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(event['time_original'],'已核的新说明')
         self.assertFalse(plan['constraints']['canonical_updates'])
         self.assertEqual(sorted(d['earliest_year'] for d in plan['inserts']['event_dating']),[-209,-208,-180])
+        self.assertIn(str((self.b/'.workflow/online-check.json').relative_to(self.root)),plan['files'])
+        self.assertNotIn(str((self.b/'.workflow/freeze.json').relative_to(self.root)),plan['files'])
     def test_new_event_cannot_use_online_row_to_bypass_frozen_batch(self):
         self.frozen_reuse_fixture(reused=False)
         with self.assertRaisesRegex(ValueError,'Frozen canonical event old values differ'):S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))

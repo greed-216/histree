@@ -269,7 +269,8 @@ def load_bundle(root, batch_dir):
             key = match['key']; row = match['row']
             require(key not in canonical_events and row['id'] == ids[key] and row['status'] == 'published', 'Invalid frozen reused event')
             canonical_events[key] = row
-        files[str(freeze_path.relative_to(root))] = sha(freeze_raw)
+        # Bind the evidence snapshot, not the replaceable tool-version freeze:
+        # refresh-tools may revalidate engines without changing canonical data.
         files[str(online_path.relative_to(root))] = sha(online_raw)
     return dict(root=root, batch_dir=batch_dir, batch=batch, cur=cur, packet=packet, ids=ids,
                 publication=publication, manifest=manifest, paras=paras,

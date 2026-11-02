@@ -22,6 +22,22 @@ type Layout = {
     division: string;
   }[];
   tables: Record<string, Table>;
+  calendar_groups: Record<
+    string,
+    { section_id: string; caption: string; paragraph_ids: string[] }
+  >;
+  calendar_paragraphs: Record<
+    string,
+    { group_id: string; content_sha256: string }
+  >;
+  annotations: Record<
+    string,
+    {
+      section_id: string;
+      content_sha256: string;
+      spans: Array<[number, number]>;
+    }
+  >;
   paragraphs: Record<
     string,
     {
@@ -33,6 +49,51 @@ type Layout = {
   >;
 };
 const layout = shiji as unknown as Layout;
+
+export function readingAnnotations(
+  p: Paragraph,
+  data: Layout | null,
+  sectionId: string,
+) {
+  const annotation = data?.annotations[p.id as string];
+  if (
+    annotation?.section_id === sectionId &&
+    typeof p.content === 'string' &&
+    createHash('sha256').update(p.content).digest('hex') ===
+      annotation.content_sha256
+  )
+    return annotation.spans;
+}
+
+export function verifiedReadingGroups(
+  data: Layout | null,
+  ids: string[],
+  rows: Paragraph[],
+  sectionId: string,
+) {
+  const result: Record<string, { caption: string; paragraphs: Paragraph[] }> =
+    {};
+  for (const id of ids) {
+    const group = data?.calendar_groups[id];
+    if (!group || group.section_id !== sectionId) continue;
+    const members = group.paragraph_ids.map((pid) =>
+      rows.find((p) => p.id === pid),
+    );
+    if (
+      members.some(
+        (p, i) =>
+          !p ||
+          typeof p.content !== 'string' ||
+          p.kind !== 'body' ||
+          createHash('sha256').update(p.content).digest('hex') !==
+            data!.calendar_paragraphs[group.paragraph_ids[i]].content_sha256,
+      )
+    )
+      continue;
+    result[id] = { caption: group.caption, paragraphs: members as Paragraph[] };
+  }
+  return result;
+}
 
 export function readingLayout(book: string, version: string): Layout | null {
   return book === layout.book_key && version === layout.source_version

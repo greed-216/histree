@@ -182,14 +182,15 @@ def extract(raw, capture_layout=False):
         header['text'] = literal.sub(lambda m: restore_literal(m, header['element_path']), header['text'])
         assert 'data-mw-variant=' not in header['text'], 'Unrestored header markup'
 
-    rows, current, contexts, kinds, owners = [], [], [], [], []
+    rows, current, contexts, kinds, owners, annotations = [], [], [], [], [], []
 
-    def append(value, context, kind, cell=None):
+    def append(value, context, kind, cell=None, annotation=False):
         if not value:
             return
         current.append(re.sub(r'\s+', ' ', value))
         if capture_layout:
             owners.append(cell)
+            annotations.append(annotation)
         if value.strip():
             if context not in contexts:
                 contexts.append(context)
@@ -215,16 +216,28 @@ def extract(raw, capture_layout=False):
                             fragments.append(fragment)
                     cursor += len(piece)
                 row['cell_fragments'] = fragments
+            if capture_layout and any(annotations):
+                left = len(joined) - len(joined.lstrip(' \t'));right = left + len(text)
+                spans=[];cursor=0
+                for piece,is_annotation in zip(current,annotations):
+                    start,end=max(cursor,left)-left,min(cursor+len(piece),right)-left
+                    if is_annotation and start<end:
+                        if spans and spans[-1][1]==start:spans[-1][1]=end
+                        else:spans.append([start,end])
+                    cursor+=len(piece)
+                if spans:row['annotation_fragments']=spans
             rows.append(row)
         current.clear()
         contexts.clear()
         kinds.clear()
         owners.clear()
+        annotations.clear()
 
-    def render(element, context='body', kind='body', in_row=False, cell=None):
+    def render(element, context='body', kind='body', in_row=False, cell=None, annotation=False):
         tag = element.tag.rsplit('}', 1)[-1]
         if tag in {'td', 'th'}:
             cell = paths[id(element)]
+        annotation = annotation or tag == 'small'
         classes = set(element.get('class', '').split())
         if classes & {'mbox-text', 'boilerplate', 'mw-disambig'}:
             kind = 'editorial_notice'
@@ -239,14 +252,15 @@ def extract(raw, capture_layout=False):
             flush()
         if tag in BLOCKS:
             context = paths[id(element)]
-        append(element.text, context, kind, cell)
+        append(element.text, context, kind, cell, annotation)
         for child in element:
-            render(child, context, kind, in_row or tag == 'tr', cell)
-            append(child.tail, context, kind, cell)
+            render(child, context, kind, in_row or tag == 'tr', cell, annotation)
+            append(child.tail, context, kind, cell, annotation)
             if child.tag.rsplit('}', 1)[-1] in {'td', 'th'}:
                 current.append('\t')
                 if capture_layout:
                     owners.append(None)
+                    annotations.append(False)
         if boundary:
             flush()
 

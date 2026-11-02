@@ -85,3 +85,50 @@
 .library-table-original pre { font:13px/1.9 'Songti SC',Georgia,serif; white-space:pre-wrap; }
 @media(max-width:800px) { .library-shelf { grid-template-columns:repeat(2,minmax(0,1fr)); } .library-reading-layout { grid-template-columns:1fr; gap:20px; } .library-reading-layout>aside { position:static; } .library-contents nav { max-height:180px; } .library-section-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media(max-width:520px) { .library-shelf { gap:12px; } .library-book { padding:18px; } .library-book h3 { font-size:22px; } .library-search { flex-wrap:wrap; } .library-search>label:first-child { width:100%; border-bottom:1px solid #e5e6dc; } .library-search select { max-width:none; border:0; } .library-search button { padding:10px 12px; } .library-section-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .library-paragraph { font-size:17px; } }
+
+.library-calendar-group {
+  border: 1px solid var(--line, #deded2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+.library-calendar-direction {
+  color: #64725d;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+.library-calendar-group dl {
+  margin: 0;
+}
+.library-calendar-field {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  scroll-margin-top: 8rem;
+}
+.library-calendar-field dt {
+  font-size: 0.85rem;
+  color: #68715f;
+}
+.library-calendar-field dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.library-calendar-field.is-target {
+  background: #f2edce;
+}
+@media (max-width: 600px) {
+  .library-calendar-field {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+.library-inline-annotation {
+  font-size: 0.82em;
+  color: #697265;
+  background: #eeeede;
+  padding: 0.1em 0.25em;
+  border-radius: 0.2em;
+}

@@ -95,6 +95,37 @@ function Marked({ text, query }: { text: string; query?: string }) {
   );
 }
 
+function AnnotatedOriginal({
+  paragraph,
+  query,
+  enabled,
+}: {
+  paragraph: LibraryParagraph;
+  query: string;
+  enabled: boolean;
+}) {
+  const spans = enabled ? paragraph.annotation_spans : undefined;
+  // A quote may cross a note boundary: keep the complete highlighted source in that case.
+  if (!spans?.length || (query && paragraph.content.includes(query)))
+    return <Marked text={paragraph.content} query={query} />;
+  const chars = Array.from(paragraph.content);
+  const parts = [];
+  let cursor = 0;
+  for (const [start, end] of spans) {
+    parts.push(
+      <span key={`body-${start}`}>{chars.slice(cursor, start).join("")}</span>,
+    );
+    parts.push(
+      <small key={`note-${start}`} className="library-inline-annotation">
+        {chars.slice(start, end).join("")}
+      </small>,
+    );
+    cursor = end;
+  }
+  parts.push(<span key="ending">{chars.slice(cursor).join("")}</span>);
+  return <>{parts}</>;
+}
+
 type SearchResults = {
   query: string;
   page: number;
@@ -308,11 +339,23 @@ export function LibraryReaderPage() {
   const data = result.data;
   const blocks: Array<
     | { kind: "table"; paragraphs: LibraryParagraph[] }
+    | { kind: "calendar"; id: string }
     | { kind: "paragraph"; paragraph: LibraryParagraph }
   > = [];
   for (const p of data?.paragraphs || []) {
     const previous = blocks[blocks.length - 1];
-    if (tableView && p.table_row) {
+    if (
+      tableView &&
+      p.reading_group_id &&
+      data?.reading_groups?.[p.reading_group_id]
+    ) {
+      if (
+        !blocks.some(
+          (b) => b.kind === "calendar" && b.id === p.reading_group_id,
+        )
+      )
+        blocks.push({ kind: "calendar", id: p.reading_group_id });
+    } else if (tableView && p.table_row) {
       if (
         previous?.kind === "table" &&
         previous.paragraphs[0].table_row!.table_id === p.table_row.table_id
@@ -389,7 +432,9 @@ export function LibraryReaderPage() {
               <p className="library-hint">本卷部分文字或图表可能缺失。</p>
             )}
             {paging}
-            {data.paragraphs.some((p) => p.table_row) && (
+            {data.paragraphs.some(
+              (p) => p.table_row || p.reading_group_id || p.annotation_spans,
+            ) && (
               <div
                 className="library-reading-tools"
                 role="group"
@@ -399,7 +444,9 @@ export function LibraryReaderPage() {
                   aria-pressed={tableView}
                   onClick={() => setTableView(true)}
                 >
-                  表格阅读
+                  {data.paragraphs.some((p) => p.table_row)
+                    ? "表格阅读"
+                    : "排版阅读"}
                 </button>
                 <button
                   aria-pressed={!tableView}
@@ -411,6 +458,57 @@ export function LibraryReaderPage() {
             )}
             <article className="library-original" aria-label="史料原文">
               {blocks.map((block) => {
+                if (block.kind === "calendar") {
+                  const group = data.reading_groups![block.id];
+                  return (
+                    <section
+                      key={block.id}
+                      className="library-calendar-group"
+                      aria-label={`${group.caption}历算条目`}
+                    >
+                      <p className="library-calendar-direction">
+                        {group.caption}
+                      </p>
+                      <dl>
+                        {group.paragraphs.map((p, i) => (
+                          <div
+                            key={p.id}
+                            id={"paragraph-" + p.id}
+                            className={`library-calendar-field ${target === p.id ? "is-target" : ""}`}
+                          >
+                            <dt>
+                              {
+                                [
+                                  "月数",
+                                  "余数第一行",
+                                  "余数第二行",
+                                  "岁名及纪年",
+                                ][i]
+                              }
+                            </dt>
+                            <dd>
+                              <Marked
+                                text={p.content}
+                                query={
+                                  target === p.id &&
+                                  quote &&
+                                  p.content.includes(quote)
+                                    ? quote
+                                    : query
+                                }
+                              />
+                              <ParagraphLinks
+                                book={book}
+                                section={section}
+                                paragraph={p.id}
+                              />
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </section>
+                  );
+                }
                 if (block.kind === "table")
                   return (
                     <LibraryTable
@@ -455,8 +553,9 @@ export function LibraryReaderPage() {
                         <p>{p.review.reason}</p>
                       </details>
                     )}
-                    <Marked
-                      text={p.content}
+                    <AnnotatedOriginal
+                      paragraph={p}
+                      enabled={tableView}
                       query={
                         target === p.id && quote && p.content.includes(quote)
                           ? quote

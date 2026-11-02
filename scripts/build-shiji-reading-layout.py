@@ -118,7 +118,52 @@ def build(root=ROOT):
                 if table['rows'][row_index] and all(c[3] for c in table['rows'][row_index]):table['header_paragraph_ids'].append(p['id'])
     for table in tables.values():table.pop('_positions')
     assert set(layouts)=={p['id'] for p in wanted}
-    return dict(format_version=1,book_key='shiji',source_version=index['source_version'],source_sha256=manifest['txt_sha256'],epub_sha256=manifest['epub_sha256'],offset_unit='unicode-codepoints',divisions=[dict(id=k,title=t,start_volume=a,end_volume=b) for k,t,a,b in DIVISIONS],chapters=chapters,tables=tables,paragraphs=layouts)
+    # The calendrical list is p + dl(dd, dd) + p, not a flat paragraph sequence.
+    groups={};group_paragraphs={}
+    with zipfile.ZipFile(epubpath) as archive:
+        ps=[p for p in paragraphs if p.get('volume_candidate')==26]
+        member=ps[0]['locator']['epub_member'];source=archive.read(member)
+        assert all(sha(source)==p['locator']['member_sha256'] for p in ps)
+        body=ET.fromstring(source).find('h:body',EPUB.NS);paths=elements(body)
+        lookup={tuple(p['locator']['element_paths']):p for p in ps if p['locator']['element_paths']}
+        for path,section in paths.items():
+            if tag(section)!='section':continue
+            children=list(section)
+            if not children or tag(children[0])!='h3':continue
+            caption=''.join(children[0].itertext()).strip()
+            if caption not in ('正北','正西','正南','正東'):continue
+            blocks=children[1:];assert len(blocks)==57
+            reverse={id(e):path for path,e in paths.items()}
+            for i in range(0,len(blocks),3):
+                a,dl,b=blocks[i:i+3];assert [tag(e) for e in (a,dl,b)]==['p','dl','p']
+                assert [tag(e) for e in dl]==['dd','dd']
+                nodes=[a,*list(dl),b];ids=[]
+                for node in nodes:
+                    p=lookup[(reverse[id(node)],)];text=txt[p['locator']['char_start']:p['locator']['char_end']]
+                    assert ''.join(node.itertext()).strip()==text.strip()
+                    assert sha(text.encode())==p['locator']['raw_excerpt_sha256']
+                    ids.append(p['id'])
+                gid='shiji-calendar-'+ids[0];groups[gid]=dict(section_id=ps[0]['section_id'],caption=caption,paragraph_ids=ids)
+                for pid in ids:group_paragraphs[pid]=dict(group_id=gid,content_sha256=next(p['locator']['raw_excerpt_sha256'] for p in ps if p['id']==pid))
+    assert len(groups)==76 and len(group_paragraphs)==304
+    annotations={}
+    with zipfile.ZipFile(epubpath) as archive:
+        for volume in range(23,31):
+            ps=[p for p in paragraphs if p.get('volume_candidate')==volume]
+            member=ps[0]['locator']['epub_member'];rawmember=archive.read(member)
+            assert all(sha(rawmember)==p['locator']['member_sha256'] for p in ps)
+            lookup=defaultdict(deque)
+            for row in EPUB.extract(rawmember,capture_layout=True)[1]:
+                lookup[(tuple(row['element_paths']),row['text'])].append(row)
+            for p in ps:
+                loc=p['locator'];text=txt[loc['char_start']:loc['char_end']]
+                key=(tuple(loc['element_paths']),text.strip('\n'))
+                if not lookup[key]:continue
+                row=lookup[key].popleft()
+                if row.get('annotation_fragments'):
+                    assert sha(text.encode())==loc['raw_excerpt_sha256']
+                    annotations[p['id']]=dict(section_id=p['section_id'],content_sha256=loc['raw_excerpt_sha256'],spans=row['annotation_fragments'])
+    return dict(annotations=annotations,calendar_groups=groups,calendar_paragraphs=group_paragraphs,format_version=1,book_key='shiji',source_version=index['source_version'],source_sha256=manifest['txt_sha256'],epub_sha256=manifest['epub_sha256'],offset_unit='unicode-codepoints',divisions=[dict(id=k,title=t,start_volume=a,end_volume=b) for k,t,a,b in DIVISIONS],chapters=chapters,tables=tables,paragraphs=layouts)
 
 
 def main():

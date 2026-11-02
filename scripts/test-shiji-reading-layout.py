@@ -30,7 +30,7 @@ class ReadingLayout(unittest.TestCase):
             for member in sorted({t['epub_member'] for t in self.data['tables'].values()}):
                 raw=z.read(member);old=M.EPUB.extract(raw);new=M.EPUB.extract(raw,capture_layout=True)
                 self.assertEqual(old[0],new[0]);self.assertEqual(old[2:],new[2:])
-                self.assertEqual(old[1],[{k:v for k,v in row.items() if k!='cell_fragments'} for row in new[1]])
+                self.assertEqual(old[1],[{k:v for k,v in row.items() if k not in ('cell_fragments','annotation_fragments')} for row in new[1]])
     def test_missing_leading_empty_cells_do_not_move_a_month_to_column_zero(self):
         row=self.paragraph('p001800');table=self.data['tables'][row['table_id']]
         self.assertEqual(table['rows'][row['row_index']][row['fragments'][0][0]][0],2)
@@ -47,6 +47,31 @@ class ReadingLayout(unittest.TestCase):
             self.assertTrue(all(i in covered or c.isspace() for i,c in enumerate(source)))
             found_span|=any(c[1]>1 for c in cells);found_rare|=any(ord(c)>0xffff for c in source)
         self.assertTrue(found_span);self.assertTrue(found_rare)
+    def test_epub_small_notes_are_disjoint_hash_bound_spans(self):
+        self.assertGreater(len(self.data['annotations']),90)
+        for pid,note in self.data['annotations'].items():
+            p=self.ps[pid];raw=self.raw[p['locator']['char_start']:p['locator']['char_end']]
+            self.assertEqual(M.sha(raw.encode()),note['content_sha256'])
+            self.assertEqual(p['section_id'],note['section_id'])
+            cursor=0
+            for start,end in note['spans']:
+                self.assertTrue(cursor<=start<end<=len(raw));cursor=end
+
+    def test_calendar_groups_follow_epub_lists_without_altering_paragraphs(self):
+        groups=self.data['calendar_groups'];layout=self.data['calendar_paragraphs']
+        self.assertEqual(len(groups),76);self.assertEqual(len(layout),304)
+        self.assertEqual({g['caption'] for g in groups.values()},{'正北','正西','正南','正東'})
+        seen=[]
+        for gid,g in groups.items():
+            self.assertEqual(len(g['paragraph_ids']),4)
+            for pid in g['paragraph_ids']:
+                p=self.ps[pid];seen.append(pid)
+                self.assertEqual(p['volume_candidate'],26)
+                self.assertEqual(layout[pid]['group_id'],gid)
+                raw=self.raw[p['locator']['char_start']:p['locator']['char_end']]
+                self.assertEqual(M.sha(raw.encode()),layout[pid]['content_sha256'])
+        self.assertEqual(len(seen),len(set(seen)))
+
     def test_grid_preserves_rowspan_and_rejects_overlaps(self):
         trs=[ET.fromstring('<tr><td rowspan="2">甲</td><td>乙</td></tr>'),ET.fromstring('<tr><td>丙</td></tr>')]
         rows,_,width=M.grid([('r'+str(i),r) for i,r in enumerate(trs)]);self.assertEqual(width,2);self.assertEqual(rows[1][0][0],1)

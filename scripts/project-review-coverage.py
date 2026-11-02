@@ -13,7 +13,9 @@ def project(root, book_key=None, volumes=None):
     catalog=json.loads((root/'resources/derived/history-library/catalog.json').read_text())
     books={b['book_key']:b for b in catalog['books']}
     indexes={};navigation={};rows=[];paragraphs=[];skipped=[]
-    for path in sorted((root/'content/books').glob('*/vol-*/from-start/completion-audit.json')):
+    paths=set((root/'content/books').glob('*/vol-*/from-start/completion-audit.json'))
+    paths.update((root/'content/books').glob('*/vol-*/completion-audit.json'))
+    for path in sorted(paths):
         if book_key and path.relative_to(root/'content/books').parts[0]!=book_key: continue
         audit=json.loads(path.read_text())
         if volumes and audit.get('volume') not in volumes: continue
@@ -63,6 +65,7 @@ def project(root, book_key=None, volumes=None):
                 if pid in navigation[book['book_key']]: continue # UI navigation is intentionally absent from the reading DB.
                 counts['reviewed']+=1;counts['published']+=int(published);counts['no_new']+=int(no_new);counts['deferred']+=int(pending)
                 unit.append(dict(paragraph_id=pid,content_sha256=index[pid],disposition='deferred' if pending else 'published' if published else 'no_new',reason=entry.get('note','') or '\n'.join(entry.get('observations',[])),audit_sha256=digest(path)))
+            if any(r['book_key']==book['book_key'] and r['volume']==audit['volume'] for r in rows): raise ValueError('Multiple completion audits for one book volume; resolve explicitly')
             rows.append(dict(book_key=book['book_key'],source_version=book['source_version'],volume=audit['volume'],**counts,audit_sha256=digest(path),audit_path=str(path.relative_to(root))))
             paragraphs.extend(unit)
         except (KeyError,ValueError,FileNotFoundError) as error:skipped.append({'audit':str(path.relative_to(root)),'reason':str(error)})

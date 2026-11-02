@@ -54,3 +54,8 @@ python3 scripts/search-history-library.py --id '<完整段落ID>' --export /priv
 ## 重建与校验
 
 规范化规则及完整重建流程见 [文本规范化说明](HISTORY_TEXT_NORMALIZATION.md)。转换、字符覆盖、卷序、原行/字符定位、逐书FTS、两字查询、旧缺卷搜索回归和原文导出均已有校验，报告见 [validation.json](../resources/derived/history-library/validation.json)。重建不联网、不发布、不改线上数据库。
+
+
+### 《史记》八书阅读
+
+八书沿用现有分卷分类。阅读层从同版 EPUB 派生《历书》四方共76组历算列表，每组保留月数、两行余数、岁名纪年的原顺序和四个独立段落 ID。跨页时一次批量补齐组内原文；任何成员哈希不符，整组退回逐段正文。《天官书》等篇目原 EPUB 的 small 注文按 Unicode 字符区间区分显示；引用高亮优先显示完整原句。可以切回逐段原文，不修改 TXT、来源快照、史实或进度。

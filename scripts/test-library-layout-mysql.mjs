@@ -55,6 +55,15 @@ for (const id of [...wanted])
   data.tables[data.paragraphs[id].table_id].header_paragraph_ids.forEach(
     (pid) => wanted.add(pid),
   );
+// Include original prefix so page 1 intentionally cuts a four-member calendar list.
+corpus
+  .filter((p) => p.volume_candidate === 26)
+  .slice(0, 135)
+  .forEach((p) => wanted.add(p.id));
+Object.values(data.calendar_groups)
+  .filter((g) => g.paragraph_ids.some((id) => wanted.has(id)))
+  .forEach((g) => g.paragraph_ids.forEach((id) => wanted.add(id)));
+wanted.add("shiji-174f8dfa444c-p003150");
 const rows = corpus.filter((p) => wanted.has(p.id));
 const sections = data.chapters.filter((c) =>
   rows.some((p) => p.section_id === c.section_id),
@@ -96,7 +105,7 @@ try {
     const content = source
       .slice(p.locator.char_start, p.locator.char_end)
       .join("");
-    assert.equal(sha(content), data.paragraphs[p.id].content_sha256);
+    assert.equal(sha(content), p.locator.raw_excerpt_sha256);
     await db.execute(
       "INSERT INTO library_paragraph VALUES(?,?,?,?,?,?,?,?,?,?,JSON_ARRAY())",
       [
@@ -115,7 +124,11 @@ try {
   }
   const book = await library.book("shiji");
   assert.equal(book.book.divisions.length, 5);
-  assert(book.sections.every((s) => s.division === "biao" && s.display_title));
+  assert(
+    book.sections.every(
+      (s) => ["biao", "shu"].includes(s.division) && s.display_title,
+    ),
+  );
   checks++;
   const section = sections.find((s) => s.volume === 22).section_id;
   const page = await library.section("shiji", section, { page: "1" });
@@ -153,6 +166,45 @@ try {
   const drift = await library.section("shiji", section, { page: "1" });
   assert(drift.paragraphs.every((p) => !p.table_row));
   assert.deepEqual(drift.table_headers, {});
+  checks++;
+  const calendarSection = sections.find((s) => s.volume === 26).section_id;
+  const calendar = await library.section("shiji", calendarSection, {
+    page: "3",
+  });
+  const fragment = calendar.paragraphs.find((p) => p.reading_group_id);
+  assert(fragment);
+  const group = calendar.reading_groups[fragment.reading_group_id];
+  assert.equal(group.paragraphs.length, 4);
+  assert(
+    group.paragraphs.some(
+      (p) => !calendar.paragraphs.some((q) => q.id === p.id),
+    ),
+  );
+  checks++;
+  const changed = group.paragraphs[0];
+  await db.execute(
+    "UPDATE library_paragraph SET content='changed',content_sha256=? WHERE id=?",
+    [sha("changed"), changed.id],
+  );
+  const invalidCalendar = await library.section("shiji", calendarSection, {
+    page: "3",
+  });
+  assert(!invalidCalendar.reading_groups[fragment.reading_group_id]);
+  assert(
+    invalidCalendar.paragraphs
+      .filter((p) => group.paragraphs.some((q) => q.id === p.id))
+      .every((p) => !p.reading_group_id),
+  );
+  checks++;
+  const annotationSection = sections.find((s) => s.volume === 27).section_id;
+  const annotationPage = await library.section("shiji", annotationSection);
+  assert(annotationPage.paragraphs[0].annotation_spans.length > 0);
+  await db.execute(
+    "UPDATE library_paragraph SET content='changed',content_sha256=? WHERE id=?",
+    [sha("changed"), "shiji-174f8dfa444c-p003150"],
+  );
+  const annotationDrift = await library.section("shiji", annotationSection);
+  assert(!annotationDrift.paragraphs[0].annotation_spans);
   checks++;
   await db.execute(
     "UPDATE library_book SET source_version='unbound-edition' WHERE book_key='shiji'",

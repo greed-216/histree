@@ -45,12 +45,20 @@ export interface LibraryParagraph {
   ordinal: number;
   review?: { disposition: string; reason: string } | null;
   table_row?: LibraryTableRow;
+  reading_group_id?: string;
+  annotation_spans?: Array<[start: number, end: number]>;
+}
+/** A source-verified EPUB list; all members retain their original paragraph IDs. */
+export interface LibraryReadingGroup {
+  caption: string;
+  paragraphs: LibraryParagraph[];
 }
 export interface LibraryReading {
   book: LibraryBook;
   section: LibrarySection;
   paragraphs: LibraryParagraph[];
   table_headers?: Record<string, LibraryParagraph[]>;
+  reading_groups?: Record<string, LibraryReadingGroup>;
   page: number;
   has_more: boolean;
   previous: LibrarySection | null;

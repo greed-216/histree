@@ -12,6 +12,8 @@ import {
   readingRow,
   readingSection,
   verifiedHeaders,
+  verifiedReadingGroups,
+  readingAnnotations,
 } from './reading-layout';
 
 const key = (value: string) => {
@@ -112,7 +114,9 @@ export class LibraryService {
     );
     const layout = readingLayout(bookKey, books[0].source_version);
     const rowLayouts = new Map(
-      paragraphs.slice(0, 40).map((p) => [p.id, readingRow(p, layout, sectionId)]),
+      paragraphs
+        .slice(0, 40)
+        .map((p) => [p.id, readingRow(p, layout, sectionId)]),
     );
     const tableIds = [
       ...new Set(
@@ -137,8 +141,45 @@ export class LibraryService {
     const tableHeaders = layout
       ? verifiedHeaders(layout, tableIds, headerRows)
       : {};
+    const groupIds = [
+      ...new Set(
+        paragraphs.slice(0, 40).flatMap((p) => {
+          const id = layout?.calendar_paragraphs[p.id as string]?.group_id;
+          return id ? [id] : [];
+        }),
+      ),
+    ];
+    const groupMemberIds = layout
+      ? groupIds.flatMap((id) => layout.calendar_groups[id].paragraph_ids)
+      : [];
+    // One bounded batch query also completes a group split across a 40-paragraph page.
+    const groupRows = groupMemberIds.length
+      ? await this.rows(
+          `SELECT id,kind,content,ordinal FROM library_paragraph WHERE book_key=? AND section_id=? AND id IN (${groupMemberIds.map(() => '?').join(',')})`,
+          [bookKey, sectionId, ...groupMemberIds],
+        )
+      : [];
+    const readingGroups = verifiedReadingGroups(
+      layout,
+      groupIds,
+      groupRows,
+      sectionId,
+    );
     const reviewedParagraphs = paragraphs.slice(0, 40).map((p) => ({
       ...p,
+      ...(readingAnnotations(p, layout, sectionId)
+        ? { annotation_spans: readingAnnotations(p, layout, sectionId) }
+        : {}),
+      ...(layout?.calendar_paragraphs[p.id as string] &&
+      Object.hasOwn(
+        readingGroups,
+        layout.calendar_paragraphs[p.id as string].group_id,
+      )
+        ? {
+            reading_group_id:
+              layout.calendar_paragraphs[p.id as string].group_id,
+          }
+        : {}),
       ...(rowLayouts.get(p.id) &&
       Object.hasOwn(tableHeaders, rowLayouts.get(p.id)!.table_id)
         ? { table_row: rowLayouts.get(p.id) }
@@ -156,6 +197,7 @@ export class LibraryService {
       section: readingSection(sections[0], layout),
       paragraphs: reviewedParagraphs,
       ...(tableIds.length ? { table_headers: tableHeaders } : {}),
+      ...(groupIds.length ? { reading_groups: readingGroups } : {}),
       page,
       has_more: paragraphs.length > 40,
       previous: previous[0] ? readingSection(previous[0], layout) : null,

@@ -317,6 +317,9 @@ def run(env):
             cur=json.loads((source_only_dir/'curation.json').read_bytes());cur.update(batch_key=b['batch_key'],claim_namespace=b['batch_key'],items=[]);(source_only_dir/'curation.json').write_bytes(S.dump(cur))
             proof=json.loads((source_only_dir/'publication-mysql.json').read_bytes());proof.update(source_only_evidence=True,batch_sha256=S.sha((source_only_dir/'content-batch.json').read_bytes()));(source_only_dir/'publication-mysql.json').write_bytes(S.dump(proof))
             (source_only_dir/'time-review.json').write_bytes(S.dump(dict(batch_sha256=proof['batch_sha256'],events=[])))
+            # This is a separate source-only packet, not the frozen fact packet.
+            # Do not inherit the latter's canonical-row snapshot and freeze.
+            shutil.rmtree(source_only_dir/'.workflow')
             source_plan=S.prepare(S.load_bundle(root,source_only_dir),db)
             assert len(source_plan['inserts']['library_source_link'])==3 and not source_plan['inserts']['claim_structure'] and not source_plan['inserts']['event_dating']
             linked=S.apply_plan(source_plan,root,db);assert all(n==0 for n in linked['actual_inserted'].values());checks+=1

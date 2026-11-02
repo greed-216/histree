@@ -116,6 +116,36 @@ class SourceTests(unittest.TestCase):
         write('time-review.json',dict(batch_sha256=S.sha((self.b/'content-batch.json').read_bytes()),events=[dict(key=it['row']['key'],**it['temporal_review']) for it in items]))
         self.bundle=S.load_bundle(self.root,self.b);self.db=FakeDatabase(self.rows);self.plan=S.prepare(self.bundle,self.db)
     def tearDown(self):self.tmp.cleanup()
+    def frozen_reuse_fixture(self,reused=True):
+        key='event_many';row=copy.deepcopy(self.rows['event'][0]);row['time_original']='已核的新说明'
+        cur=json.loads((self.b/'curation.json').read_bytes());cur['reused_keys']=[key] if reused else []
+        (self.b/'curation.json').write_bytes(S.dump(cur))
+        online=dict(ready_to_freeze=True,read_only=True,target_fingerprint='target',matched_canonical_rows=[dict(table='event',key=key,row=row)])
+        path=self.b/'.workflow';path.mkdir(exist_ok=True)
+        (path/'online-check.json').write_bytes(S.dump(online))
+        freeze=dict(online_check_sha256=S.sha((path/'online-check.json').read_bytes()),target_fingerprint='target',files={n:S.sha((self.b/n).read_bytes()) for n in ['content-batch.json','curation.json']})
+        (path/'freeze.json').write_bytes(S.dump(freeze))
+        self.rows['event'][0]=row
+        return path
+    def test_reused_event_guards_frozen_online_row_without_canonical_updates(self):
+        self.frozen_reuse_fixture()
+        plan=S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))
+        event=next(p['row'] for p in plan['protected_rows'] if p['table']=='event' and p['row']['id']==U('event_many'))
+        self.assertEqual(event['time_original'],'已核的新说明')
+        self.assertFalse(plan['constraints']['canonical_updates'])
+        self.assertEqual(sorted(d['earliest_year'] for d in plan['inserts']['event_dating']),[-209,-208,-180])
+    def test_new_event_cannot_use_online_row_to_bypass_frozen_batch(self):
+        self.frozen_reuse_fixture(reused=False)
+        with self.assertRaisesRegex(ValueError,'Frozen canonical event old values differ'):S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))
+    def test_reused_event_rejects_live_drift_after_frozen_snapshot(self):
+        self.frozen_reuse_fixture();self.rows['event'][0]['time_original']='再次变化'
+        with self.assertRaisesRegex(ValueError,'Frozen canonical event old values differ'):S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))
+    def test_reused_event_rejects_tampered_online_snapshot(self):
+        path=self.frozen_reuse_fixture();(path/'online-check.json').write_bytes((path/'online-check.json').read_bytes()+b' ')
+        with self.assertRaisesRegex(ValueError,'snapshot hash mismatch'):S.load_bundle(self.root,self.b)
+    def test_reused_event_rejects_wrong_database_target(self):
+        path=self.frozen_reuse_fixture();freeze=json.loads((path/'freeze.json').read_bytes());freeze['target_fingerprint']='other';(path/'freeze.json').write_bytes(S.dump(freeze))
+        with self.assertRaisesRegex(ValueError,'target mismatch'):S.load_bundle(self.root,self.b)
     def test_source_only_evidence_links_all_sources_without_fact_inserts(self):
         batch=json.loads((self.b/'content-batch.json').read_bytes())
         for field in ('people','events','person_events','person_relationships','claims','topics'):batch[field]=[]

@@ -251,9 +251,29 @@ def load_bundle(root, batch_dir):
     for c in batch['claims']:
         require(c['key'] in ids and c['subject_key'] in ids and c['source_key'] in ids,
                 'Claim absent from key map')
+    canonical_events = {}
+    freeze_path = batch_dir/'.workflow/freeze.json'
+    if freeze_path.exists():
+        freeze_raw = freeze_path.read_bytes(); freeze = json.loads(freeze_raw)
+        online_path = batch_dir/'.workflow/online-check.json'
+        online_raw = online_path.read_bytes(); online = json.loads(online_raw)
+        require(sha(online_raw) == freeze['online_check_sha256'], 'Frozen canonical snapshot hash mismatch')
+        require(freeze['files']['content-batch.json'] == publication['batch_sha256'] and
+                freeze['files']['curation.json'] == sha((batch_dir/'curation.json').read_bytes()), 'Frozen reuse inputs changed')
+        require(online['ready_to_freeze'] is True and online['read_only'] is True and
+                online['target_fingerprint'] == freeze['target_fingerprint'] == publication['target_fingerprint'], 'Frozen reuse target mismatch')
+        reused = set(cur.get('reused_keys', []))
+        for match in online['matched_canonical_rows']:
+            if match['table'] != 'event' or match['key'] not in reused:
+                continue
+            key = match['key']; row = match['row']
+            require(key not in canonical_events and row['id'] == ids[key] and row['status'] == 'published', 'Invalid frozen reused event')
+            canonical_events[key] = row
+        files[str(freeze_path.relative_to(root))] = sha(freeze_raw)
+        files[str(online_path.relative_to(root))] = sha(online_raw)
     return dict(root=root, batch_dir=batch_dir, batch=batch, cur=cur, packet=packet, ids=ids,
                 publication=publication, manifest=manifest, paras=paras,
-                snapshots=snapshots, files=files, sources=sources, excluded_structural_headings=excluded_structural_headings)
+                snapshots=snapshots, files=files, sources=sources, canonical_events=canonical_events, excluded_structural_headings=excluded_structural_headings)
 
 
 class _RowDatabase:
@@ -390,7 +410,10 @@ def _prepare_rows(bundle, db):
         require(event['status'] == 'published', 'Event is not published')
         batch_event = next((e for e in batch['events'] if e['key'] == key), None)
         require(batch_event is not None, 'Curated event absent from frozen batch')
-        require(all(event.get(k) == v for k,v in batch_event.items() if k not in ('key','status')),
+        # Explicit reuse never updates canonical fields. Guard the exact published
+        # row captured before publication, rather than its older local draft.
+        expected_event = bundle.get('canonical_events', {}).get(key, batch_event)
+        require(all(event.get(k) == v for k,v in expected_event.items() if k not in ('key','status')),
                 'Frozen canonical event old values differ: '+key)
         assertions, reason = authored_assertions(item, manifest)
         if reason:

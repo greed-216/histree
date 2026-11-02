@@ -230,6 +230,8 @@ def run(env):
         baseline=primary_keys(conn)  # CI schema must already exist; never bootstrapped here.
         with tempfile.TemporaryDirectory(prefix='histree-sidecars-mysql-') as temp:
             root=Path(temp);directory,envfile,seed,ids=fixtures(root,fp)
+            # A reviewed canonical row can predate this batch's older local copy.
+            seed['event'][0]['time_original']='已核修订后的原纪年说明'
             for table,rows in seed.items():
                 columns=TABLE_KEYS[table]
                 S.require(not any(tuple(r[k] for k in columns) in baseline[table] for r in rows),'Fixed fixture IDs already exist; refusing to adopt/delete them')
@@ -240,9 +242,15 @@ def run(env):
             for table,rows in seed.items():
                 for row in rows:insert(conn,table,row)
             conn.commit();seeded=True
-            bundle=S.load_bundle(root,directory)
             readonly=S.Database(root,envfile,writable=False);connection_identity(readonly.connection,env)
             try:
+                cur=json.loads((directory/'curation.json').read_bytes());cur['reused_keys']=[EVENT_KEYS[0]]
+                (directory/'curation.json').write_bytes(S.dump(cur))
+                online=dict(ready_to_freeze=True,read_only=True,target_fingerprint=fp,matched_canonical_rows=[dict(table='event',key=EVENT_KEYS[0],row=readonly.get('event',dict(id=EVENT_IDS[0])))])
+                workflow=directory/'.workflow';workflow.mkdir()
+                (workflow/'online-check.json').write_bytes(S.dump(online))
+                (workflow/'freeze.json').write_bytes(S.dump(dict(target_fingerprint=fp,online_check_sha256=S.sha((workflow/'online-check.json').read_bytes()),files={n:S.sha((directory/n).read_bytes()) for n in ['content-batch.json','curation.json']})))
+                bundle=S.load_bundle(root,directory)
                 plan=S.prepare(bundle,readonly);counts=S.guard_plan(plan,root,readonly)
                 assert {t:v['new'] for t,v in counts.items()}==dict(event_dating=3,claim_structure=5,library_source_link=3)
                 assert count_sidecars(readonly)==dict(event_dating=0,claim_structure=0,library_source_link=0)

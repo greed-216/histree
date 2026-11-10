@@ -190,7 +190,19 @@ def prepare(root,directory):
         components=[x for x in str(m.get('source_title','')).split('·') if x and x not in (p['book'],f'《{p["book"]}》',p['id']) and not re.fullmatch(r'卷[0-9〇零一二三四五六七八九十百]+',x)]
         require(bool(components),'Current source needs an explicitly reviewed chapter label before canonical reuse')
         chapter=components[0]
-        require(chapter in canonical['source']['title'] and chapter in canonical['source']['note'], 'Canonical note/title does not retain the reviewed chapter label; source revision required: '+key)
+        note=canonical['source']['note']
+        # Early supplementary exports used the catalog's generic volume citation.
+        # Keep those published bytes intact, but require a curator's exact binding
+        # before using a full chapter citation for the new claim. A wrong chapter
+        # is never a generic citation and must still fail.
+        generic_review=m.get('generic_citation_review',{})
+        generic_pattern=r'《'+re.escape(p['book'])+r'》卷[0-9〇零一二三四五六七八九十百]+，段落 '+re.escape(p['id'])+r'；EPUB电子本，纸本及异文待核'
+        reviewed_generic=(note==cp.get('citation') and re.fullmatch(generic_pattern,note)
+                          and generic_review.get('source_key')==key
+                          and generic_review.get('note_sha256')==sha(note.encode('utf-8'))
+                          and generic_review.get('raw_snapshot_sha256')==m['sha256']
+                          and isinstance(generic_review.get('reason'),str) and generic_review['reason'].strip())
+        require(chapter in canonical['source']['title'] and (chapter in note or reviewed_generic), 'Canonical note/title does not retain the reviewed chapter label; source revision required: '+key)
         require(str(uuid.UUID(canonical['source_id']))==canonical['source_id'],'Canonical source key-map UUID is invalid')
         require(m['paragraph_id']==cm['paragraph_id']==p['id']==cp['id'],'Shared source key has different paragraph identity')
         require(p['source_version']==cp['source_version'],'Shared source version differs: '+key)

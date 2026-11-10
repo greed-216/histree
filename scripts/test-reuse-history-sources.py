@@ -133,6 +133,30 @@ class Tests(unittest.TestCase):
         batch=self.read(self.old/'content-batch.json');batch['sources'][0]['note']=self.note.replace('汉兴以来诸侯王年表','樊郦滕灌列传');self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
         ms=self.read(self.old/'sources/manifest.json');ms[0]['reviewed_citation']=batch['sources'][0]['note'];self.write(self.old/'sources/manifest.json',ms)
         with self.assertRaisesRegex(ValueError,'reviewed chapter label.*source revision required'):M.prepare(self.root,self.cur)
+    def generic_citation_fixture(self):
+        legacy='《'+self.book+'》卷十七，段落 '+self.pid+'；EPUB电子本，纸本及异文待核'
+        batch=self.read(self.old/'content-batch.json');batch['sources'][0]['note']=legacy;self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
+        ms=self.read(self.old/'sources/manifest.json');ms[0]['reviewed_citation']=legacy;self.write(self.old/'sources/manifest.json',ms)
+        packet=self.read(self.old/'packet.json');packet['supplementary_paragraphs'][0]['citation']=legacy;self.write(self.old/'packet.json',packet)
+        current=self.read(self.cur/'sources/manifest.json');current[0]['generic_citation_review']=dict(source_key=self.key,note_sha256=M.sha(legacy.encode()),raw_snapshot_sha256=current[0]['sha256'],reason='Manually checked the same chapter, volume, raw text and paragraph locator.');self.write(self.cur/'sources/manifest.json',current)
+        return legacy
+    def test_generic_catalog_citation_needs_exact_review_and_preserves_old_bytes(self):
+        legacy=self.generic_citation_fixture();protected={p:p.read_bytes() for p in self.old.rglob('*') if p.is_file()}
+        plan,before,after=M.prepare(self.root,self.cur);self.assertEqual(after[0]['reviewed_citation'],legacy);self.assertEqual(after[0]['authored_claim_citation'],self.para['citation'])
+        self.assertTrue(M.apply_local(self.root,plan,before,after))
+        for p,raw in protected.items():self.assertEqual(p.read_bytes(),raw)
+    def test_generic_catalog_citation_rejects_missing_or_stale_review(self):
+        self.generic_citation_fixture();path=self.cur/'sources/manifest.json';original=self.read(path)
+        for field in ['source_key','note_sha256','raw_snapshot_sha256','reason']:
+            current=copy.deepcopy(original);current[0]['generic_citation_review'][field]='';self.write(path,current)
+            with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
+    def test_generic_review_cannot_authorize_a_wrong_chapter(self):
+        self.generic_citation_fixture();wrong=self.note.replace('汉兴以来诸侯王年表','樊郦滕灌列传')
+        batch=self.read(self.old/'content-batch.json');batch['sources'][0]['note']=wrong;self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
+        old=self.read(self.old/'sources/manifest.json');old[0]['reviewed_citation']=wrong;self.write(self.old/'sources/manifest.json',old)
+        packet=self.read(self.old/'packet.json');packet['supplementary_paragraphs'][0]['citation']=wrong;self.write(self.old/'packet.json',packet)
+        current=self.read(self.cur/'sources/manifest.json');current[0]['generic_citation_review']['note_sha256']=M.sha(wrong.encode());self.write(self.cur/'sources/manifest.json',current)
+        with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
     def test_existing_current_publication_receipt_blocks_check_and_apply(self):
         self.write(self.cur/'publication-mysql.json',dict(verified=False))
         with self.assertRaisesRegex(ValueError,'publication receipt'):M.prepare(self.root,self.cur)

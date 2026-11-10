@@ -98,6 +98,54 @@ class Tests(unittest.TestCase):
         self.assertEqual(plan['source_book_keys'],sorted([other,self.book_key]));self.assertEqual(after[0]['url'],self.source['url'])
         self.assertTrue(M.apply_local(self.root,plan,before,after));self.assertEqual(self.read(self.old/'packet.json')['book_key'],self.book_key)
 
+    def test_current_primary_finds_legacy_supplement_published_under_another_book(self):
+        other='xu-zizhi-tongjian'
+        new=self.root/'content/books'/other/'vol-102/part-01'
+        new.parent.mkdir(parents=True);shutil.move(str(self.old),new);self.old=new
+        packet=self.read(self.old/'packet.json');packet['book_key']=other
+        legacy=f'《{self.book}》卷十七，段落 {self.pid}；EPUB电子本，纸本及异文待核'
+        packet['supplementary_paragraphs'][0]['citation']=legacy
+        self.write(self.old/'packet.json',packet)
+        batch=self.read(self.old/'content-batch.json')
+        title=f'《{self.book}》卷十七汉兴以来诸侯王年表：纪年桥接'
+        batch['sources'][0].update(title=title,note=legacy)
+        self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
+        manifest=self.read(self.old/'sources/manifest.json')
+        manifest[0].update(source_title=title);manifest[0].pop('reviewed_citation')
+        self.write(self.old/'sources/manifest.json',manifest)
+        current=self.read(self.cur/'sources/manifest.json')
+        current[0]['generic_citation_review']=dict(source_key=self.key,note_sha256=M.sha(legacy.encode()),raw_snapshot_sha256=current[0]['sha256'],reason='Checked the legacy identity bridge against the same original paragraph.')
+        self.write(self.cur/'sources/manifest.json',current)
+        old_bytes={p:p.read_bytes() for p in self.old.rglob('*') if p.is_file()}
+        plan,before,after=M.prepare(self.root,self.cur)
+        self.assertIn(other,plan['source_book_keys'])
+        self.assertEqual(after[0]['source_title'],title)
+        self.assertEqual(after[0]['reviewed_citation'],legacy)
+        self.assertEqual(after[0]['authored_claim_citation'],self.para['citation'])
+        self.assertTrue(M.apply_local(self.root,plan,before,after))
+        self.assertTrue(all(p.read_bytes()==raw for p,raw in old_bytes.items()))
+        current=self.read(self.cur/'sources/manifest.json')
+        current[0]['generic_citation_review']['note_sha256']='stale'
+        self.write(self.cur/'sources/manifest.json',current)
+        with self.assertRaisesRegex(ValueError,'reviewed chapter'):M.prepare(self.root,self.cur)
+
+    def test_unpublished_foreign_run_manifest_is_not_a_source_receipt(self):
+        path=self.root/'content/books/other/runs/in-progress/sources/manifest.json'
+        self.write(path,dict(files=[self.key],status='not_published'))
+        plan,_,after=M.prepare(self.root,self.cur)
+        self.assertEqual(plan['source_book_keys'],[self.book_key])
+        self.assertEqual(after[0]['url'],self.source['url'])
+
+    def test_chinese_volume_forms_preserve_numeric_identity(self):
+        self.assertEqual(M.volume_numbers('卷四十七孔子世家'),{47})
+        self.assertEqual(M.volume_numbers('卷二百零六；卷二〇六'),{206})
+        self.assertEqual(M.volume_numbers('卷一七与卷七'),{17,7})
+        wrong=dict(self.source,title=self.title.replace('卷'+str(self.volume),'卷七'))
+        manifest=self.read(self.old/'sources/manifest.json')[0]
+        manifest['source_title']=wrong['title']
+        with self.assertRaisesRegex(ValueError,'wrong book/volume'):
+            M.validate_citation(wrong,manifest,self.para)
+
     def test_apply_local_is_single_manifest_atomic_and_idempotent(self):
         old_protected={p:M.sha((self.root/p).read_bytes()) for p in [str((self.old/'sources/manifest.json').relative_to(self.root)),str((self.old/'content-batch.json').relative_to(self.root)),str((self.old/'publication-mysql.json').relative_to(self.root))]}
         plan,before,after=M.prepare(self.root,self.cur);self.assertTrue(M.apply_local(self.root,plan,before,after))

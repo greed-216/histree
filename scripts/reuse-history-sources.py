@@ -215,7 +215,9 @@ def prepare(root,directory):
         # An explicitly reviewed current chapter label is also a semantic guard
         # against reusing an old copy/paste note with a different chapter name.
         components=[x for x in str(m.get('source_title','')).split('·') if x and x not in (p['book'],f'《{p["book"]}》',p['id']) and not re.fullmatch(r'卷[0-9〇零一二三四五六七八九十百]+',x)]
-        chapter=components[0] if components else None
+        chapter_review=m.get('canonical_chapter_review',{})
+        title_chapter=components[0] if components else None
+        chapter=title_chapter or chapter_review.get('chapter')
         note=canonical['source']['note']
         # Early supplementary exports used the catalog's generic volume citation.
         # Keep those published bytes intact, but require a curator's exact binding
@@ -244,8 +246,24 @@ def prepare(root,directory):
                             and generic_review.get('canonical_title_sha256')==sha(old_title.encode('utf-8'))
                             and authored==f"《{p['book']}》卷{p['volume_candidate']}·{p['id']}"
                             and generic_review.get('authored_citation_sha256')==sha(authored.encode('utf-8')))
-        chapter_match=bool(chapter and chapter in old_title and (chapter in note or reviewed_generic))
-        require(chapter_match or volume_only_review, 'Canonical note/title does not retain the reviewed chapter label; source revision required: '+key)
+        # A published source can retain a real chapter in its note while its
+        # title still uses the catalog volume heading. Require an explicit
+        # byte-bound review; a wrong named title or chapter remains an error.
+        named_note_review=(isinstance(chapter,str) and bool(chapter)
+                           and re.fullmatch(r'卷[0-9〇零一二三四五六七八九十百]+',section) is not None
+                           and volume_numbers(section)=={p['volume_candidate']}
+                           and old_title==f"{p['book']}·卷{p['volume_candidate']}·{section}·{p['id']}"
+                           and isinstance(authored,str) and chapter in note and chapter in authored
+                           and volume_numbers(note)=={p['volume_candidate']}
+                           and chapter_review.get('chapter')==chapter
+                           and chapter_review.get('source_key')==key
+                           and chapter_review.get('note_sha256')==sha(note.encode('utf-8'))
+                           and chapter_review.get('canonical_title_sha256')==sha(old_title.encode('utf-8'))
+                           and chapter_review.get('raw_snapshot_sha256')==m['sha256']
+                           and chapter_review.get('authored_citation_sha256')==sha(authored.encode('utf-8'))
+                           and isinstance(chapter_review.get('reason'),str) and chapter_review['reason'].strip())
+        chapter_match=bool(title_chapter and title_chapter in old_title and (title_chapter in note or reviewed_generic))
+        require(chapter_match or volume_only_review or named_note_review, 'Canonical note/title does not retain the reviewed chapter label; source revision required: '+key)
         require(str(uuid.UUID(canonical['source_id']))==canonical['source_id'],'Canonical source key-map UUID is invalid')
         require(m['paragraph_id']==cm['paragraph_id']==p['id']==cp['id'],'Shared source key has different paragraph identity')
         require(p['source_version']==cp['source_version'],'Shared source version differs: '+key)
@@ -266,6 +284,8 @@ def prepare(root,directory):
         audit=dict(canonical_batch=canonical['directory'],canonical_published_at=canonical['published_at'].isoformat(),canonical_time_basis=canonical['time_basis'],canonical_source_id=canonical['source_id'],canonical_batch_sha256=canonical['batch_sha256'],canonical_receipt_sha256=canonical['receipt_sha256'],canonical_manifest_sha256=canonical['manifest_sha256'],source_key=key,paragraph_id=p['id'],source_version=p['source_version'],source_sha256=p['locator']['source_sha256'],raw_snapshot_sha256=m['sha256'],canonical_git_blob_sha256=sha(canonical['raw']),canonical_commit=canonical['commit'],canonical_archived_file=canonical['archived_path'],verified_prior_copies=[dict(batch=x['directory'],published_at=x['published_at'].isoformat(),time_basis=x['time_basis'],batch_sha256=x['batch_sha256'],receipt_sha256=x['receipt_sha256'],manifest_sha256=x['manifest_sha256']) for x in copies])
         if volume_only_review:
             audit['volume_only_citation_review']={field:generic_review[field] for field in ('canonical_title_sha256','authored_citation_sha256')}
+        if named_note_review:
+            audit['named_note_chapter_review']=copy.deepcopy(chapter_review)
         original_row=copy.deepcopy(m);m.update(restored);m['original_reviewed_citation']=original;m['authored_claim_citation']=authored;m['canonical_source_reuse']=audit
         if m!=original_row:changes.append(dict(source_key=key,paragraph_id=p['id'],before={k:original_row.get(k) for k in RESTORE},after=restored,canonical_batch=canonical['directory'],source_id=canonical['source_id']))
     unpublished(directory)

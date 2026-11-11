@@ -205,6 +205,48 @@ class Tests(unittest.TestCase):
         packet=self.read(self.old/'packet.json');packet['supplementary_paragraphs'][0]['citation']=wrong;self.write(self.old/'packet.json',packet)
         current=self.read(self.cur/'sources/manifest.json');current[0]['generic_citation_review']['note_sha256']=M.sha(wrong.encode());self.write(self.cur/'sources/manifest.json',current)
         with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
+    def volume_only_fixture(self):
+        legacy=self.generic_citation_fixture()
+        title=f'{self.book}·卷{self.volume}·卷{self.volume}·{self.pid}'
+        for path,field in [(self.old/'packet.json','supplementary_paragraphs'),(self.cur/'packet.json','paragraphs')]:
+            packet=self.read(path);packet[field][0]['section_title']=f'卷{self.volume}';self.write(path,packet)
+        batch=self.read(self.old/'content-batch.json');batch['sources'][0]['title']=title;self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
+        old=self.read(self.old/'sources/manifest.json');old[0]['source_title']=title;self.write(self.old/'sources/manifest.json',old)
+        citation=f'《{self.book}》卷{self.volume}·{self.pid}'
+        current=self.read(self.cur/'sources/manifest.json');current[0].update(source_title=title,reviewed_citation=citation)
+        current[0]['generic_citation_review'].update(canonical_title_sha256=M.sha(title.encode()),authored_citation_sha256=M.sha(citation.encode()))
+        self.write(self.cur/'sources/manifest.json',current)
+        return legacy,title,citation
+    def test_reviewed_volume_only_source_keeps_old_bytes_and_is_idempotent(self):
+        legacy,title,citation=self.volume_only_fixture();protected={p:p.read_bytes() for p in self.old.rglob('*') if p.is_file()}
+        plan,before,after=M.prepare(self.root,self.cur)
+        self.assertEqual(after[0]['source_title'],title);self.assertEqual(after[0]['reviewed_citation'],legacy)
+        self.assertEqual(after[0]['authored_claim_citation'],citation)
+        self.assertIn('volume_only_citation_review',after[0]['canonical_source_reuse'])
+        self.assertTrue(M.apply_local(self.root,plan,before,after))
+        self.assertEqual(M.prepare(self.root,self.cur)[0]['changes'],[])
+        for p,raw in protected.items():self.assertEqual(p.read_bytes(),raw)
+    def test_volume_only_compatibility_requires_both_extra_exact_hashes(self):
+        self.volume_only_fixture();path=self.cur/'sources/manifest.json';original=self.read(path)
+        for field in ['canonical_title_sha256','authored_citation_sha256']:
+            current=copy.deepcopy(original);current[0]['generic_citation_review'][field]='0'*64;self.write(path,current)
+            with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
+    def test_volume_only_review_cannot_add_an_unverified_chapter(self):
+        self.volume_only_fixture();path=self.cur/'sources/manifest.json';current=self.read(path)
+        current[0]['source_title']=current[0]['source_title'].replace(f'·卷{self.volume}·{self.pid}',f'·误写篇名·{self.pid}')
+        self.write(path,current)
+        with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
+    def test_volume_only_review_cannot_replace_old_named_chapter_check(self):
+        self.volume_only_fixture();title=f'{self.book}·卷{self.volume}·另一篇名·{self.pid}'
+        batch=self.read(self.old/'content-batch.json');batch['sources'][0]['title']=title;self.write(self.old/'content-batch.json',batch);self.refresh_receipt()
+        old=self.read(self.old/'sources/manifest.json');old[0]['source_title']=title;self.write(self.old/'sources/manifest.json',old)
+        current=self.read(self.cur/'sources/manifest.json');current[0]['generic_citation_review']['canonical_title_sha256']=M.sha(title.encode());self.write(self.cur/'sources/manifest.json',current)
+        with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
+    def test_volume_only_citation_cannot_smuggle_a_named_chapter(self):
+        self.volume_only_fixture();path=self.cur/'sources/manifest.json';current=self.read(path)
+        citation=f'《{self.book}》卷{self.volume}·误写篇名·{self.pid}';current[0]['reviewed_citation']=citation
+        current[0]['generic_citation_review']['authored_citation_sha256']=M.sha(citation.encode());self.write(path,current)
+        with self.assertRaisesRegex(ValueError,'reviewed chapter label'):M.prepare(self.root,self.cur)
     def test_existing_current_publication_receipt_blocks_check_and_apply(self):
         self.write(self.cur/'publication-mysql.json',dict(verified=False))
         with self.assertRaisesRegex(ValueError,'publication receipt'):M.prepare(self.root,self.cur)

@@ -38,7 +38,7 @@ def ready(args,batch):
  run(args,batch,'editorial',[sys.executable,script('history_ingest_preflight.py'),batch,'--scroll',TOOL_ROOT/'apps/web/src/data/history-scroll.json','--output',batch/'.workflow/editorial-report.json','--fail-on-open'],inputs=[batch/'curation.json',batch/'packet.json',TOOL_ROOT/'apps/web/src/data/history-scroll.json'],outputs=[batch/'.workflow/editorial-report.json'])
  # Registry changes invalidate compilation cache; never cache from directory mtime alone.
  registry=[p for p in (args.root/'content').rglob('content-batch.json') if p.parent!=batch]
- registry+=list((args.root/'content/revisions').glob('*/plan.json'))+list((args.root/'content/revisions').glob('*/publication*.json'))
+ registry+=list((args.root/'content/revisions').glob('*/plan.json'))+list((args.root/'content/revisions').glob('*/aliases.json'))+list((args.root/'content/revisions').glob('*/revision.json'))+list((args.root/'content/revisions').glob('*/publication*.json'))
  source_files=[p for p in (batch/'sources').rglob('*') if p.is_file()]
  run(args,batch,'build',[sys.executable,script('history-batch-workbench.py'),'--root',args.root,'build',batch],inputs=[batch/'curation.json',batch/'packet.json',*source_files,*registry],outputs=[batch/n for n in ['content-batch.json','coverage.json','paragraphs.json','reused-keys.json','workbench-validation.json']])
  run(args,batch,'time-review',[sys.executable,script('validate-history-time.py'),batch/'content-batch.json','--from-curation',batch/'curation.json'],inputs=[batch/'content-batch.json',batch/'curation.json',*source_files],outputs=[batch/'time-review.json'])

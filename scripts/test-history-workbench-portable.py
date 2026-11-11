@@ -190,6 +190,28 @@ class Workbench(unittest.TestCase):
         self.write(path.parent/'publication.json',dict(verified=True,revision_sha256=M.sha(path.read_bytes()),method='Guarded alias merge; published claim checks; anonymous readback',count=1))
         self.curation(lambda c:(c.update(reused_keys=[row['key']]),c['items'][0]['row'].update(aliases=['甲字','甲号'])))
         self.assertEqual(self.compile()[0]['people'][0]['aliases'],['甲字','甲号'])
+    def legacy_revision_alias(self):
+        prior,row=self.prior();path=self.root/'content/revisions/old-alias-file/revision.json'
+        self.write(path,dict(people=[dict(id=sid(row['key']),name=row['name'],before=[],after=['甲号'],claim_ids=['published-claim'])]))
+        receipt=path.parent/'publication.json'
+        self.write(receipt,dict(verified=True,revision_sha256=M.sha(path.read_bytes()),method='Guarded alias merge; published claim checks; anonymous readback',count=1))
+        self.curation(lambda c:(c.update(reused_keys=[row['key']]),c['items'][0]['row'].update(aliases=['甲号'])))
+        return prior,path,receipt
+    def test_legacy_revision_filename_reuses_actual_alias_receipt_without_old_edits(self):
+        prior,path,receipt=self.legacy_revision_alias();protected={p:p.read_bytes() for p in [prior,path,receipt]}
+        self.assertEqual(self.compile()[0]['people'][0]['aliases'],['甲号'])
+        for p,raw in protected.items():self.assertEqual(p.read_bytes(),raw)
+    def test_legacy_revision_filename_rejects_stale_hash_or_unverified_receipt(self):
+        _,path,receipt=self.legacy_revision_alias();original=self.read(receipt)
+        for change in [dict(verified=False),dict(revision_sha256='0'*64),dict(method='unrelated method')]:
+            self.write(receipt,dict(original,**change))
+            with self.assertRaisesRegex(AssertionError,'Existing person changed'):self.compile()
+    def test_legacy_revision_alias_still_requires_claims_and_monotonic_append(self):
+        _,path,receipt=self.legacy_revision_alias();original=self.read(path)
+        for change in [dict(claim_ids=[]),dict(before=['不能删除'],after=['甲号'])]:
+            value=copy.deepcopy(original);value['people'][0].update(change);self.write(path,value)
+            proof=self.read(receipt);proof['revision_sha256']=M.sha(path.read_bytes());self.write(receipt,proof)
+            with self.assertRaisesRegex(AssertionError,'evidence claims|removes existing'):self.compile()
     def test_seed_identity_snapshot_requires_hash_bound_published_rows(self):
         row=self.read(self.batch/'curation.json')['items'][0]['row'];snap=self.root/'content/fixtures/identity-snapshot.json';self.write(snap,dict(person=[dict(row,id=sid(row['key']),status='published')]))
         baseline=dict(kind='mysql_seed_person_reuse',snapshot=str(snap.relative_to(self.root)),snapshot_sha256=M.sha(snap.read_bytes()),people=[row]);self.write(self.batch/'identity-baseline.json',baseline)

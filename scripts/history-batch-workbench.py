@@ -160,12 +160,14 @@ def people_registry(exclude=None):
     revisions = defaultdict(list)
     namespace = uuid.uuid5(uuid.NAMESPACE_URL, 'https://github.com/greed-216/histree/content')
     by_id = {str(uuid.uuid5(namespace, key)): key for key in candidates}
-    revision_files = list((ROOT / 'content/revisions').glob('*/plan.json')) + list((ROOT / 'content/revisions').glob('*/aliases.json'))
+    revision_files = (list((ROOT / 'content/revisions').glob('*/plan.json'))
+                      + list((ROOT / 'content/revisions').glob('*/aliases.json'))
+                      + list((ROOT / 'content/revisions').glob('*/revision.json')))
     for path in sorted(revision_files):
         audit_path = path.parent / 'publication-mysql.json'
         # Verified pre-MySQL alias append archives remain the historical reuse
         # baseline after migration. This never authorizes a database write.
-        if not audit_path.exists() and path.name == 'aliases.json':
+        if not audit_path.exists() and path.name in ('aliases.json', 'revision.json'):
             audit_path = path.parent / 'publication.json'
         if not audit_path.exists():
             continue
@@ -178,6 +180,8 @@ def people_registry(exclude=None):
         alias_verified = (audit.get('verified')
                           and audit.get('revision_sha256') == sha(path.read_bytes())
                           and audit.get('method') == 'Guarded alias merge; published claim checks; anonymous readback')
+        if path.name == 'revision.json' and not alias_verified:
+            continue  # Only the hash-bound historical alias protocol is supported.
         updates = plan.get('updates', [])
         if alias_verified:
             people = plan.get('people', [])

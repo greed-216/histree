@@ -74,6 +74,19 @@ def packet_text_matches_snapshot(snapshot_text, para):
     return snapshot_text.replace('\n◎\n',' ◎ ').replace('\n','').strip()==display
 
 
+def reviewed_unused_reading_layout(snapshot_text, para, used):
+    """One reviewed legacy divination layout, never an alternative fact source.
+
+    The library builder removed inter-CJK spaces in this body-classified layout.
+    Keep the raw archive and frozen packet intact; do not generalize to table cells.
+    """
+    return (not used and para.get('id')=='shiji-174f8dfa444c-p007689'
+            and para.get('book_key')=='shiji' and para.get('source_version')=='174f8dfa444c'
+            and para.get('kind')=='body'
+            and sha(snapshot_text.encode('utf-8'))=='6c72d1e3db1e87ccfb16fe98620c4a3e47849e331aed310f676236a8e3d94a2c'
+            and para.get('text')==snapshot_text.replace(' ',''))
+
+
 def claim_fingerprint(claim, source_url):
     # Exactly the deployed query-contracts.ts HEX(COALESCE(...,'')) SQL contract.
     vals = [claim.get(k) for k in FINGERPRINT_FIELDS] + [source_url]
@@ -241,7 +254,9 @@ def load_bundle(root, batch_dir):
             # archive and offsets remain authoritative; this unused title is not a fact.
             excluded_structural_headings.append(pid)
         else:
-            require(packet_text_matches_snapshot(raw.decode('utf-8'),para), 'Packet and exact snapshot text differ: ' + pid)
+            require(packet_text_matches_snapshot(raw.decode('utf-8'),para)
+                    or reviewed_unused_reading_layout(raw.decode('utf-8'),para,m['key'] in used_source_keys),
+                    'Packet and exact snapshot text differ: ' + pid)
         files[str(path.relative_to(root))] = sha(raw)
         snapshots[pid] = raw
     sources = {s['key']: s for s in batch['sources']}

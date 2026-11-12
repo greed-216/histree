@@ -232,6 +232,15 @@ class SourceTests(unittest.TestCase):
         source.update(content=text,content_sha256=S.sha(raw),archive_blob_sha256=S.sha(raw))
         next(x for x in dbrows['library_paragraph'] if x['id']==pid)['char_end']=para['locator']['char_end']
         return dbrows
+    def test_reviewed_unused_divination_layout_is_exact_and_cannot_support_claims(self):
+        raw='十一月 十二月 正月 二月 三月 中關內高外下 四月 首仰足開肣開首俛大 五月 橫吉首俛大 六月 七月 八月 九月 十月'
+        para=dict(id='shiji-174f8dfa444c-p007689',book_key='shiji',source_version='174f8dfa444c',kind='body',text=raw.replace(' ',''))
+        self.assertTrue(S.reviewed_unused_reading_layout(raw,para,False))
+        self.assertFalse(S.reviewed_unused_reading_layout(raw,para,True))
+        for change in [dict(id='shiji-174f8dfa444c-p007690'),dict(book_key='other'),dict(source_version='other'),dict(kind='table_row'),dict(text=para['text'].replace('十一月','十二月'))]:
+            self.assertFalse(S.reviewed_unused_reading_layout(raw,dict(para,**change),False))
+        for bad in [raw.replace(' ','\t'),raw.replace(' ','  '),raw.replace('開','閉'),raw+'\n','\ufeff'+raw]:
+            self.assertFalse(S.reviewed_unused_reading_layout(bad,para,False))
     def test_edge_whitespace_survives_bundle_prepare_and_plan_link_guard(self):
         rows=self.rewrite_first_raw_fixture('\n甲年，甲事。\n\n')
         bundle=S.load_bundle(self.root,self.b);db=FakeDatabase(rows);plan=S.prepare(bundle,db)

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   ArrowUpRightIcon,
+  BookOpenIcon,
   ChatBubbleLeftRightIcon,
   IdentificationIcon,
   MagnifyingGlassIcon,
@@ -61,6 +62,8 @@ export function HomePage() {
           <button type="submit">搜索</button>
         </form>
         <div className="home-shortcuts" aria-label="快捷入口">
+          <Link to="/stories">看个故事 <ArrowUpRightIcon aria-hidden="true" /></Link>
+          <span aria-hidden="true">·</span>
           <Link to="/ask?mode=guess">猜一个人物 <ArrowUpRightIcon aria-hidden="true" /></Link>
           <span aria-hidden="true">·</span>
           <Link to="/ask">问问史料 <ArrowUpRightIcon aria-hidden="true" /></Link>
@@ -80,6 +83,13 @@ export function HomePage() {
           <p>从一个问题开始，遇见一段故事。</p>
         </div>
         <div className="home-play-grid">
+          <Link to="/stories" className="home-play-card home-play-stories">
+            <BookOpenIcon className="home-play-icon" aria-hidden="true" />
+            <p className="home-card-kind">翻开小人书</p>
+            <h3>说故事</h3>
+            <p className="home-card-description">翻几页连环画，<br />看一段有意思的旧时故事。</p>
+            <span className="home-card-action">看个故事 <ArrowUpRightIcon aria-hidden="true" /></span>
+          </Link>
           <Link to="/ask?mode=guess" className="home-play-card home-play-guess">
             <IdentificationIcon className="home-play-icon" aria-hidden="true" />
             <p className="home-card-kind">线索推理</p>

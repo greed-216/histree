@@ -1,3 +1,4 @@
+import { StorageModule } from './modules/storage/storage.module';
 import { FeedbackModule } from './modules/feedback/feedback.module';
 import { LibraryModule } from './modules/library/library.module';
 import { CatalogModule } from './modules/catalog/catalog.module';
@@ -16,6 +17,7 @@ import { RelationshipModule } from './modules/relationship/relationship.module';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     MysqlModule,
+    StorageModule,
     GraphModule,
     EventModule,
     PersonModule,

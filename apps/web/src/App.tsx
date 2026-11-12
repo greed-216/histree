@@ -48,6 +48,9 @@ const AskPage = lazy(() =>
   import("./pages/AskPage").then((m) => ({ default: m.AskPage })),
 );
 
+const StoriesPage = lazy(() => import("./pages/StoriesPage").then((m) => ({ default: m.StoriesPage })));
+const StoryPage = lazy(() => import("./pages/StoriesPage").then((m) => ({ default: m.StoryPage })));
+
 const LibraryPage = lazy(() =>
   import("./pages/LibraryPage").then((m) => ({ default: m.LibraryPage })),
 );
@@ -103,6 +106,7 @@ function App() {
                 <Link to="/learn" className={navLinkClass("/learn")}>
                   导读
                 </Link>
+                <Link to="/stories" className={navLinkClass("/stories")}>说故事</Link>
                 <Link to="/people" className={navLinkClass("/people")}>
                   <UserIcon className="w-4 h-4" />
                   人物
@@ -136,6 +140,8 @@ function App() {
         >
           <Suspense fallback={<p className="py-12 text-center">加载中…</p>}>
             <Routes>
+              <Route path="/stories" element={<StoriesPage />} />
+              <Route path="/stories/:slug" element={<StoryPage />} />
               <Route path="/library" element={<LibraryPage />} />
               <Route path="/library/:book" element={<LibraryBookPage />} />
               <Route
@@ -228,7 +234,7 @@ function App() {
             </Routes>
           </Suspense>
         </main>
-        <GlobalAssistant />
+        {!/^\/stories(?:\/|$)/.test(location.pathname) && <GlobalAssistant />}
 
         <footer className="bg-white border-t border-slate-200 py-6 text-center text-slate-400 text-sm mt-auto">
           <p>© {new Date().getFullYear()} Histree 历史之树</p>

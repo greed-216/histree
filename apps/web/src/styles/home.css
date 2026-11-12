@@ -37,7 +37,7 @@
 .home-timeline-failed { padding:80px 20px; text-align:center; border:1px solid #dedfd1; border-radius:12px; color:#6e7967; line-height:1.8; }
 .home-timeline-failed button { margin-top:18px; color:#315e4e; text-decoration:underline; text-underline-offset:4px; }
 .home-play { margin-top:58px; }
-.home-play-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.home-play-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
 .home-play-card { display:flex; flex-direction:column; align-items:flex-start; min-width:0; padding:28px 26px 25px; border:1px solid #d7dfd0; border-radius:16px; background:#fffdf7; color:#2b5141; transition:border-color .18s,background .18s; }
 a.home-play-card:hover { border-color:#8da58c; background:#fffffa; }
 .home-play-icon { width:30px; height:30px; color:#6e8a6e; stroke-width:1.25; }
@@ -56,7 +56,7 @@ a.home-play-card:hover .home-card-action svg { transform:translate(2px,-2px); }
 .home-reading-links>span { color:#8c9383; }
 .home-reading-links a:hover { text-decoration:underline; text-underline-offset:4px; }
 @media(max-width:1000px) and (min-width:761px) {
- .home-play-grid { gap:14px; }
+ .home-play-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
  .home-play-card { padding:23px 20px; }
 }
 @media(max-width:760px) {

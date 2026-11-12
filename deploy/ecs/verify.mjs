@@ -8,7 +8,7 @@ let checks=0;
 const request=async(path,init)=>fetch(base+path,{...init,signal:AbortSignal.timeout(10000)});
 const json=async(path)=>{const r=await request(path);assert.equal(r.status,200,path);checks++;return r.json();};
 assert.deepEqual(await json('/api/v1/health'),{status:'ok',database:'mysql'});
-for(const path of ['/','/people','/timeline/scroll','/learn/five-dynasties/later-zhou','/graph','/ask?mode=guess','/ask?mode=guess&play=questions']){
+for(const path of ['/','/stories','/stories/yi-mu-li-xin','/people','/timeline/scroll','/learn/five-dynasties/later-zhou','/graph','/ask?mode=guess','/ask?mode=guess&play=questions']){
  const r=await request(path);assert.equal(r.status,200,path);const html=await r.text();assert.ok(html.includes('<div id="root"></div>'));assert.match(html,/\/assets\/[^" ]+\.js/);checks++;
  for(const asset of html.matchAll(/(?:src|href)="(\/assets\/[^" ]+)"/g))assert.equal((await request(asset[1])).status,200,asset[1]);
 }

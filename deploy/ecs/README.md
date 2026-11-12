@@ -76,3 +76,8 @@ Check `systemctl list-timers histree-certbot.timer`, run `/opt/histree/certbot/b
 python3 <release>/cleanup-releases.py                  # 只读清单及 plan_sha256
 python3 <release>/cleanup-releases.py --apply --expect-plan <plan_sha256>
 ```
+
+
+## OSS 图片存储
+
+Bucket、ECS 实例角色、素材上传和验证步骤见 [对象存储说明](../../docs/OBJECT_STORAGE.md)。OSS 环境配置单独准备，应用发布器继续保留服务器运行配置。

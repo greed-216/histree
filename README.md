@@ -20,6 +20,8 @@ Node.js 24 + pnpm 10.28.1 workspace。北京 ECS 运行一个 Docker 镜像，�
 
 三个 workspace 包都存在实际调用，均保留。旧登录、网页管理、上传、Supabase SDK／Edge 网关、Render 与 Pages 发布已经退出当前流程。按用户要求保留暂停的地图原型及其测试，`MAPS_ENABLED=false`；本机绘图草稿不会写入数据库。
 
+图片素材使用私有 OSS 存储，网站通过同源图片地址读取；上传由受控工具执行，见 [对象存储](docs/OBJECT_STORAGE.md)。
+
 ## 本地开发
 
 准备 Node.js 24、pnpm 10.28.1、Python 3.12 和 MySQL 8。在**空开发库**中按顺序执行 `database/mysql/001-content.sql` 与 `002-ai-quota.sql`；不要在现有生产库重放初始化 SQL。

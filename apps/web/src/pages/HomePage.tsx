@@ -11,6 +11,8 @@ import {
 import type { TimelineOverview } from "@histree/shared-types";
 import { HomeTimeline } from "../components/HomeTimeline";
 import { apiFetch } from "../lib/api";
+import { stories } from "../lib/stories";
+import { pickRandomStory } from "../lib/story-random";
 import "../styles/home.css";
 
 export function HomePage() {
@@ -62,7 +64,10 @@ export function HomePage() {
           <button type="submit">搜索</button>
         </form>
         <div className="home-shortcuts" aria-label="快捷入口">
-          <Link to="/stories">看个故事 <ArrowUpRightIcon aria-hidden="true" /></Link>
+          <button type="button" onClick={() => {
+            const story = pickRandomStory(stories);
+            if (story) navigate(`/stories/${story.slug}`);
+          }}>随机看故事 <ArrowUpRightIcon aria-hidden="true" /></button>
           <span aria-hidden="true">·</span>
           <Link to="/ask?mode=guess">猜一个人物 <ArrowUpRightIcon aria-hidden="true" /></Link>
           <span aria-hidden="true">·</span>

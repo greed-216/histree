@@ -241,14 +241,25 @@ function App() {
           <div className="mt-2">
             <FeedbackButton label="意见反馈" />
           </div>
-          <a
-            className="mt-2 inline-block text-slate-500 hover:text-slate-700"
-            href="https://beian.miit.gov.cn/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            京ICP备2026006671号-2
-          </a>
+          <nav aria-label="备案信息" className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-4">
+            <a
+              className="whitespace-nowrap text-slate-500 hover:text-slate-700"
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              京ICP备2026006671号-2
+            </a>
+            <a
+              className="inline-flex items-center gap-1.5 whitespace-nowrap text-slate-500 hover:text-slate-700"
+              href="https://beian.mps.gov.cn/#/query/webSearch?code=11011402057557"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/brand/beian-public-security.png" alt="" width="18" height="20" />
+              <span>京公网安备11011402057557号</span>
+            </a>
+          </nav>
         </footer>
       </div>
     </AssistantProvider>

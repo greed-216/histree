@@ -53,19 +53,28 @@
  .story-reader-controls { margin-top:18px; }
  .story-reader-controls button { padding:11px 16px; }
 }
-
-.story-introduction { margin:0 0 22px; padding:18px 22px; border-left:3px solid #ad9876; background:#f3efe3; color:#695e4c; }
-.story-introduction h2 { margin:0 0 8px; font:400 19px/1.6 'Songti SC','STSong',serif; color:#59452f; }
-.story-introduction p { margin:0; font-size:15px; line-height:1.95; }
-.story-afterword { margin-top:30px; padding:28px 30px; border:1px solid #d8cfb9; background:#fbf6e9; color:#5d5344; }
-.story-afterword h2 { margin:10px 0 18px; font:400 26px/1.6 'Songti SC','STSong',serif; color:#51412e; }
-.story-afterword>p:not(.stories-eyebrow):not(.story-source-note),.story-takeaway p { font-size:16px; line-height:2; margin:12px 0; }
-.story-takeaway { margin-top:24px; padding:20px 0 0; border-top:1px solid #ded4bd; }
-.story-takeaway h3 { margin:0 0 10px; color:#395440; font-size:16px; font-weight:500; }
-.story-afterword .story-source-note { margin:24px 0 0; font-size:12px; line-height:1.8; color:#8a806c; }
+.story-chapters { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin-bottom:16px; }
+.story-chapters button { min-height:34px; padding:6px 8px; border-bottom:2px solid #ded7c5; color:#8a806b; font-size:13px; }
+.story-chapters button[aria-current=step] { border-color:#315e4e; color:#315e4e; background:#eaf0e5; }
+.story-chapters button:focus-visible { outline:2px solid #315e4e; outline-offset:2px; }
+.story-reading-surface { touch-action:pan-y pinch-zoom; }
+.story-prose-page { display:flex; flex-direction:column; justify-content:center; min-height:380px; padding:38px 42px; border:1px solid #a49272; background:#fbf1dd; box-shadow:0 7px 24px #5c422217; color:#5d5344; }
+.story-prose-page h2 { margin:14px 0 20px; font:400 28px/1.6 'Songti SC','STSong',serif; color:#51412e; }
+.story-prose-page .story-prose-copy { margin:8px 0; font:400 20px/1.95 'Songti SC','STSong',serif; }
+.story-prose-footer { margin:28px 0 0; padding-top:18px; border-top:1px solid #daceb6; color:#95866a; font-size:13px; }
+.story-prose-page .story-source-note { margin:26px 0 0; padding-top:20px; border-top:1px solid #daceb6; font-size:12px; line-height:1.8; color:#8a806c; }
+.story-prose-meaning h2 { color:#315e4e; }
+.story-reader-controls { position:sticky; bottom:0; z-index:10; padding:12px 0; margin-top:8px; background:#f6f5ee; box-shadow:0 -8px 12px #f6f5eecc; }
+.story-reader-hint { margin-top:3px; }
 @media(max-width:650px) {
- .story-introduction { padding:15px 17px; margin-bottom:18px; }
- .story-introduction h2 { font-size:18px; }
- .story-afterword { margin-top:24px; padding:22px 20px; }
- .story-afterword h2 { font-size:23px; }
+ .story-reader-heading { margin:6px 0 12px; }
+ .story-reader-topline a { padding:4px 0; }
+ .story-chapters { margin-bottom:14px; }
+ .story-chapters button { min-height:32px; font-size:12px; }
+ .story-prose-page { min-height:340px; padding:25px 23px; }
+ .story-prose-page h2 { margin:10px 0 16px; font-size:23px; }
+ .story-prose-page .story-prose-copy { font-size:18px; line-height:1.9; }
+ .story-reader-controls button { padding:11px 12px; }
+ .story-reader-controls { gap:8px; }
+ .story-position { font-size:11px; }
 }

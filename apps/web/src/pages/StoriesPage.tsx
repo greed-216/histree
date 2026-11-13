@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { StoryArtwork } from "../components/StoryArtwork";
 import { stories, storyBySlug, type IllustratedStory } from "../lib/stories";
@@ -28,13 +28,29 @@ export function StoriesPage() {
 }
 
 function StoryReader({ story }: { story: IllustratedStory }) {
-  const [index, setIndex] = useState(0);
+  const [page, setPage] = useState(0);
+  const heading = useRef<HTMLElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const count = story.panels.length;
-  const panel = story.panels[index];
-  const last = index === count - 1;
+  const total = count + 3;
+  const panel = page >= 1 && page <= count ? story.panels[page - 1] : undefined;
+  const last = page === total - 1;
+  const chapter = page === 0 ? "introduction" : panel ? "comic" : last ? "meaning" : "afterword";
+  const chapters = [
+    { id: "introduction", label: "开场", page: 0 },
+    { id: "comic", label: "连环画", page: 1 },
+    { id: "afterword", label: "后记", page: count + 1 },
+    { id: "meaning", label: "寓意", page: count + 2 },
+  ];
+  const nextLabel = page === 0 ? "翻开连环画 →" : page === count ? "看故事后记 →" : page === count + 1 ? "看故事寓意 →" : "下一格 →";
   const nextStory = stories.length > 1 ? stories[(stories.indexOf(story) + 1) % stories.length] : undefined;
-  const move = useCallback((direction: number) => setIndex((value) => Math.max(0, Math.min(count - 1, value + direction))), [count]);
+  const move = useCallback((direction: number) => setPage((value) => Math.max(0, Math.min(total - 1, value + direction))), [total]);
+
+  useLayoutEffect(() => {
+    const top = heading.current?.getBoundingClientRect().top;
+    const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom ?? 0;
+    if (top !== undefined && top < headerBottom + 12) window.scrollBy(0, top - headerBottom - 12);
+  }, [page]);
 
   useEffect(() => {
     const previousTitle = document.title;
@@ -60,15 +76,16 @@ function StoryReader({ story }: { story: IllustratedStory }) {
       <Link to="/stories">← 说故事</Link>
       <a href={story.image.url} target="_blank" rel="noopener noreferrer">看整页 ↗</a>
     </div>
-    <header className="story-reader-heading">
+    <header ref={heading} className="story-reader-heading">
       <h1>{story.title}</h1>
-      <p>第 {index + 1} / {count} 格</p>
+      <p aria-live="polite">第 {page + 1} / {total} 页</p>
     </header>
-    {index === 0 && <section className="story-introduction" aria-labelledby="story-introduction-title">
-      <h2 id="story-introduction-title">{story.introduction.title}</h2>
-      <p>{story.introduction.text}</p>
-    </section>}
-    <figure className="story-book" data-panel={panel.number}
+    <nav className="story-chapters" aria-label="故事章节">
+      {chapters.map((item) => <button key={item.id} type="button"
+        aria-current={chapter === item.id ? "step" : undefined}
+        onClick={() => setPage(item.page)}>{item.label}</button>)}
+    </nav>
+    <div className="story-reading-surface" data-page={page + 1} data-chapter={chapter}
       onTouchCancel={() => { touch.current = null; }}
       onTouchStart={(event) => { const point = event.touches[0]; touch.current = point ? { x: point.clientX, y: point.clientY } : null; }}
       onTouchEnd={(event) => {
@@ -78,35 +95,35 @@ function StoryReader({ story }: { story: IllustratedStory }) {
         const dx = end.clientX - start.x, dy = end.clientY - start.y;
         if (Math.abs(dx) > 60 && Math.abs(dy) < Math.abs(dx) / 2) move(dx < 0 ? 1 : -1);
       }}>
-      <StoryArtwork image={story.image} panel={panel} />
-      <figcaption aria-live="polite" aria-atomic="true">
-        <span className="story-panel-number" aria-hidden="true">{panel.number}</span>
-        <p>{panel.caption}</p>
-      </figcaption>
-    </figure>
-    <div className="story-reader-controls" aria-label="翻页">
-      <button type="button" className="story-previous" disabled={index === 0} onClick={() => move(-1)}>← 上一格</button>
-      <span className="story-position" aria-hidden="true">{index + 1} / {count}</span>
-      {last
-        ? <button type="button" className="story-next" onClick={() => setIndex(0)}>再看一遍 ↻</button>
-        : <button type="button" className="story-next" onClick={() => move(1)}>下一格 →</button>}
+      {panel ? <figure className="story-book" data-panel={panel.number}>
+        <StoryArtwork image={story.image} panel={panel} />
+        <figcaption aria-live="polite" aria-atomic="true">
+          <span className="story-panel-number" aria-hidden="true">{panel.number}</span>
+          <p>{panel.caption}</p>
+        </figcaption>
+      </figure> : <section className={`story-prose-page story-prose-${chapter}`} aria-labelledby="story-page-title">
+        <p className="stories-eyebrow">{page === 0 ? "故事开场" : last ? "读完这一篇" : "故事后记"}</p>
+        <h2 id="story-page-title">{page === 0 ? story.introduction.title : last ? story.afterword.takeaway.title : story.afterword.title}</h2>
+        {page === 0 ? <>
+          <p className="story-prose-copy">{story.introduction.text}</p>
+          <p className="story-prose-footer">接下来 · {count} 格连环画</p>
+        </> : last ? <>
+          <p className="story-prose-copy">{story.afterword.takeaway.text}</p>
+          <p className="story-source-note">{story.afterword.sourceNote}</p>
+        </> : story.afterword.paragraphs.map((text) => <p className="story-prose-copy" key={text}>{text}</p>)}
+      </section>}
     </div>
-    {last ? <>
-      <section className="story-afterword" aria-labelledby="story-afterword-title">
-        <p className="stories-eyebrow">故事之后</p>
-        <h2 id="story-afterword-title">{story.afterword.title}</h2>
-        {story.afterword.paragraphs.map((text) => <p key={text}>{text}</p>)}
-        <div className="story-takeaway">
-          <h3>{story.afterword.takeaway.title}</h3>
-          <p>{story.afterword.takeaway.text}</p>
-        </div>
-        <p className="story-source-note">{story.afterword.sourceNote}</p>
-      </section>
-      <div className="story-ending">
+    <div className="story-reader-controls" aria-label="翻页">
+      <button type="button" className="story-previous" disabled={page === 0} onClick={() => move(-1)}>← 上一页</button>
+      <span className="story-position" aria-hidden="true">{page + 1} / {total}</span>
+      {last
+        ? <button type="button" className="story-next" onClick={() => setPage(0)}>再看一遍 ↻</button>
+        : <button type="button" className="story-next" onClick={() => move(1)}>{nextLabel}</button>}
+    </div>
+    {last ? <div className="story-ending">
       {nextStory && <Link to={`/stories/${nextStory.slug}`}>再看一个：{nextStory.title} →</Link>}
       <Link to="/stories">返回说故事</Link>
-      </div>
-    </> : <p className="story-reader-hint">左右滑动，或点击下一格</p>}
+    </div> : <p className="story-reader-hint">左右滑动，或点击按钮翻页</p>}
   </div>;
 }
 

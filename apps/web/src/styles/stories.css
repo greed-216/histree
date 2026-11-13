@@ -78,3 +78,9 @@
  .story-reader-controls { gap:8px; }
  .story-position { font-size:11px; }
 }
+@media(max-width:650px) and (max-height:740px) {
+ .story-prose-page { min-height:300px; padding:20px; }
+ .story-prose-page h2 { font-size:21px; margin-bottom:12px; }
+ .story-prose-page .story-prose-copy { font-size:17px; line-height:1.8; }
+ .story-prose-page .story-source-note { margin-top:18px; padding-top:14px; }
+}

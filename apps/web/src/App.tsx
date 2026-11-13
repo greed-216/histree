@@ -64,6 +64,7 @@ const LibraryReaderPage = lazy(() =>
 function App() {
   const location = useLocation();
   useScrollRestoration();
+  const isStoryReader = /^\/stories\/[^/]+\/?$/.test(location.pathname);
 
   const navLinkClass = (path: string) =>
     `flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -76,7 +77,7 @@ function App() {
   return (
     <AssistantProvider>
       <div
-        className={`site-shell min-h-screen flex flex-col font-sans ${location.pathname === "/" ? "site-shell-home" : ""}`}
+        className={`site-shell min-h-screen flex flex-col font-sans ${isStoryReader ? "site-shell-story-reader" : ""} ${location.pathname === "/" ? "site-shell-home" : ""}`}
       >
         {/* Top Navigation */}
         <header className="site-header sticky top-0 z-40">

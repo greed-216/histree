@@ -9,6 +9,12 @@ for (const story of catalog.stories) {
   assert.ok(!slugs.has(story.slug), `Duplicate story: ${story.slug}`);
   slugs.add(story.slug);
   for (const key of ['title', 'description']) assert.ok(typeof story[key] === 'string' && story[key].trim(), key);
+  for (const section of [story.introduction, story.afterword.takeaway]) {
+    for (const key of ['title', 'text']) assert.ok(typeof section[key] === 'string' && section[key].trim(), key);
+  }
+  assert.ok(story.afterword.title?.trim() && story.afterword.sourceNote?.trim());
+  assert.ok(Array.isArray(story.afterword.paragraphs) && story.afterword.paragraphs.length > 0);
+  for (const text of story.afterword.paragraphs) assert.ok(typeof text === 'string' && text.trim());
   assert.ok(Number.isFinite(story.readingMinutes) && story.readingMinutes > 0);
   assert.match(story.image.sha256, /^[a-f0-9]{64}$/);
   assert.match(story.image.url, new RegExp(`^/api/v1/media/images/${story.image.sha256}\\.(png|jpg|webp|gif)$`));

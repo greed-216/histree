@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { StoryArtwork } from "../components/StoryArtwork";
 import { stories, storyBySlug, type IllustratedStory } from "../lib/stories";
@@ -29,7 +29,11 @@ export function StoriesPage() {
 
 function StoryReader({ story }: { story: IllustratedStory }) {
   const [page, setPage] = useState(0);
-  const heading = useRef<HTMLElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [notice, setNotice] = useState("");
+  const reader = useRef<HTMLDivElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const count = story.panels.length;
   const total = count + 3;
@@ -37,30 +41,51 @@ function StoryReader({ story }: { story: IllustratedStory }) {
   const last = page === total - 1;
   const chapter = page === 0 ? "introduction" : panel ? "comic" : last ? "meaning" : "afterword";
   const chapters = [
-    { id: "introduction", label: "开场", page: 0 },
-    { id: "comic", label: "连环画", page: 1 },
-    { id: "afterword", label: "后记", page: count + 1 },
-    { id: "meaning", label: "寓意", page: count + 2 },
+    { id: "introduction", label: "故事开场", page: 0 },
+    { id: "comic", label: `连环画 · ${count} 格`, page: 1 },
+    { id: "afterword", label: "故事后记", page: count + 1 },
+    { id: "meaning", label: "故事寓意", page: count + 2 },
   ];
-  const nextLabel = page === 0 ? "翻开连环画 →" : page === count ? "看故事后记 →" : page === count + 1 ? "看故事寓意 →" : "下一格 →";
+  const nextLabel = page === 0 ? "翻开故事 →" : page === count ? "看后记 →" : page === count + 1 ? "看寓意 →" : "下一页 →";
   const nextStory = stories.length > 1 ? stories[(stories.indexOf(story) + 1) % stories.length] : undefined;
   const move = useCallback((direction: number) => setPage((value) => Math.max(0, Math.min(total - 1, value + direction))), [total]);
 
-  useLayoutEffect(() => {
-    const top = heading.current?.getBoundingClientRect().top;
-    const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom ?? 0;
-    if (top !== undefined && top < headerBottom + 12) window.scrollBy(0, top - headerBottom - 12);
-  }, [page]);
-
   useEffect(() => {
     const previousTitle = document.title;
+    const previousOverflow = document.body.style.overflow;
     document.title = `${story.title} · 说故事 · Histree`;
-    return () => { document.title = previousTitle; };
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.title = previousTitle;
+      document.body.style.overflow = previousOverflow;
+    };
   }, [story.title]);
 
   useEffect(() => {
+    const update = () => setFullscreen(document.fullscreenElement === reader.current);
+    document.addEventListener("fullscreenchange", update);
+    return () => document.removeEventListener("fullscreenchange", update);
+  }, []);
+
+  useEffect(() => {
+    if (!notice) return;
+    const timer = window.setTimeout(() => setNotice(""), 5000);
+    return () => window.clearTimeout(timer);
+  }, [notice]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !menu.current?.contains(event.target)) setMenuOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    return () => document.removeEventListener("pointerdown", closeOutside);
+  }, [menuOpen]);
+
+  useEffect(() => {
     function keydown(event: KeyboardEvent) {
-      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
+      if (event.key === "Escape") { setMenuOpen(false); return; }
+      if (menuOpen || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey ||
         (event.target instanceof Element && event.target.closest("input,textarea,select,[contenteditable],dialog"))) return;
       if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
         event.preventDefault();
@@ -69,22 +94,39 @@ function StoryReader({ story }: { story: IllustratedStory }) {
     }
     document.addEventListener("keydown", keydown);
     return () => document.removeEventListener("keydown", keydown);
-  }, [move]);
+  }, [move, menuOpen]);
 
-  return <div className="story-reader" data-story={story.slug}>
-    <div className="story-reader-topline">
-      <Link to="/stories">← 说故事</Link>
-      <a href={story.image.url} target="_blank" rel="noopener noreferrer">看整页 ↗</a>
-    </div>
-    <header ref={heading} className="story-reader-heading">
-      <h1>{story.title}</h1>
-      <p aria-live="polite">第 {page + 1} / {total} 页</p>
+  async function toggleFullscreen() {
+    try {
+      if (document.fullscreenElement === reader.current) {
+        await document.exitFullscreen();
+      } else if (document.fullscreenEnabled && reader.current?.requestFullscreen) {
+        await reader.current.requestFullscreen();
+      } else {
+        setNotice("当前浏览器不支持系统全屏，已使用整屏阅读布局。");
+      }
+    } catch {
+      setNotice("暂时无法进入系统全屏，仍可使用整屏阅读布局。");
+    }
+  }
+
+  return <div ref={reader} className="story-reader" data-story={story.slug}>
+    <header className="story-reader-toolbar">
+      <Link to="/stories" className="story-reader-back">← 说故事</Link>
+      <h1 title={story.title}>{story.title}</h1>
+      <div className="story-reader-tools">
+        <div ref={menu} className="story-directory">
+          <button type="button" aria-expanded={menuOpen} aria-controls="story-directory" onClick={() => setMenuOpen(!menuOpen)}>目录</button>
+          {menuOpen && <nav id="story-directory" className="story-directory-menu" aria-label="故事目录">
+            {chapters.map((item) => <button key={item.id} type="button"
+              aria-current={chapter === item.id ? "step" : undefined}
+              onClick={() => { setPage(item.page); setMenuOpen(false); }}>{item.label}</button>)}
+            <a href={story.image.url} target="_blank" rel="noopener noreferrer">看整页原画 ↗</a>
+          </nav>}
+        </div>
+        <button type="button" onClick={() => void toggleFullscreen()} aria-pressed={fullscreen}>{fullscreen ? "退出全屏" : "全屏"}</button>
+      </div>
     </header>
-    <nav className="story-chapters" aria-label="故事章节">
-      {chapters.map((item) => <button key={item.id} type="button"
-        aria-current={chapter === item.id ? "step" : undefined}
-        onClick={() => setPage(item.page)}>{item.label}</button>)}
-    </nav>
     <div className="story-reading-surface" data-page={page + 1} data-chapter={chapter}
       onTouchCancel={() => { touch.current = null; }}
       onTouchStart={(event) => { const point = event.touches[0]; touch.current = point ? { x: point.clientX, y: point.clientY } : null; }}
@@ -110,20 +152,21 @@ function StoryReader({ story }: { story: IllustratedStory }) {
         </> : last ? <>
           <p className="story-prose-copy">{story.afterword.takeaway.text}</p>
           <p className="story-source-note">{story.afterword.sourceNote}</p>
+          {nextStory && <Link className="story-next-story" to={`/stories/${nextStory.slug}`}>再看一个：{nextStory.title} →</Link>}
         </> : story.afterword.paragraphs.map((text) => <p className="story-prose-copy" key={text}>{text}</p>)}
       </section>}
     </div>
-    <div className="story-reader-controls" aria-label="翻页">
-      <button type="button" className="story-previous" disabled={page === 0} onClick={() => move(-1)}>← 上一页</button>
-      <span className="story-position" aria-hidden="true">{page + 1} / {total}</span>
-      {last
-        ? <button type="button" className="story-next" onClick={() => setPage(0)}>再看一遍 ↻</button>
-        : <button type="button" className="story-next" onClick={() => move(1)}>{nextLabel}</button>}
+    <div className="story-reader-bottom">
+      <div className="story-reading-progress" aria-hidden="true"><span style={{ width: `${(page + 1) / total * 100}%` }} /></div>
+      <nav className="story-reader-controls" aria-label="翻页">
+        <button type="button" className="story-previous" disabled={page === 0} onClick={() => move(-1)}>← 上一页</button>
+        <span className="story-position" aria-live="polite" aria-label={`第 ${page + 1} 页，共 ${total} 页`}>{page + 1} / {total}</span>
+        {last
+          ? <button type="button" className="story-next" onClick={() => setPage(0)}>再看一遍 ↻</button>
+          : <button type="button" className="story-next" onClick={() => move(1)}>{nextLabel}</button>}
+      </nav>
     </div>
-    {last ? <div className="story-ending">
-      {nextStory && <Link to={`/stories/${nextStory.slug}`}>再看一个：{nextStory.title} →</Link>}
-      <Link to="/stories">返回说故事</Link>
-    </div> : <p className="story-reader-hint">左右滑动，或点击按钮翻页</p>}
+    {notice && <p className="story-reader-notice" role="status">{notice}</p>}
   </div>;
 }
 

@@ -13,6 +13,13 @@ export interface IllustratedStory {
   title: string;
   description: string;
   readingMinutes: number;
+  introduction: { title: string; text: string };
+  afterword: {
+    title: string;
+    paragraphs: string[];
+    takeaway: { title: string; text: string };
+    sourceNote: string;
+  };
   image: { url: string; width: number; height: number; sha256: string };
   panels: StoryPanel[];
 }

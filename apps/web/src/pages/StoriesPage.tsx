@@ -64,6 +64,10 @@ function StoryReader({ story }: { story: IllustratedStory }) {
       <h1>{story.title}</h1>
       <p>第 {index + 1} / {count} 格</p>
     </header>
+    {index === 0 && <section className="story-introduction" aria-labelledby="story-introduction-title">
+      <h2 id="story-introduction-title">{story.introduction.title}</h2>
+      <p>{story.introduction.text}</p>
+    </section>}
     <figure className="story-book" data-panel={panel.number}
       onTouchCancel={() => { touch.current = null; }}
       onTouchStart={(event) => { const point = event.touches[0]; touch.current = point ? { x: point.clientX, y: point.clientY } : null; }}
@@ -87,11 +91,22 @@ function StoryReader({ story }: { story: IllustratedStory }) {
         ? <button type="button" className="story-next" onClick={() => setIndex(0)}>再看一遍 ↻</button>
         : <button type="button" className="story-next" onClick={() => move(1)}>下一格 →</button>}
     </div>
-    {last ? <div className="story-ending">
-      <p>故事讲完了。</p>
+    {last ? <>
+      <section className="story-afterword" aria-labelledby="story-afterword-title">
+        <p className="stories-eyebrow">故事之后</p>
+        <h2 id="story-afterword-title">{story.afterword.title}</h2>
+        {story.afterword.paragraphs.map((text) => <p key={text}>{text}</p>)}
+        <div className="story-takeaway">
+          <h3>{story.afterword.takeaway.title}</h3>
+          <p>{story.afterword.takeaway.text}</p>
+        </div>
+        <p className="story-source-note">{story.afterword.sourceNote}</p>
+      </section>
+      <div className="story-ending">
       {nextStory && <Link to={`/stories/${nextStory.slug}`}>再看一个：{nextStory.title} →</Link>}
       <Link to="/stories">返回说故事</Link>
-    </div> : <p className="story-reader-hint">左右滑动，或点击下一格</p>}
+      </div>
+    </> : <p className="story-reader-hint">左右滑动，或点击下一格</p>}
   </div>;
 }
 

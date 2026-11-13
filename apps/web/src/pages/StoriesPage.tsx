@@ -1,20 +1,30 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { StoryArtwork } from "../components/StoryArtwork";
 import { stories, storyBySlug, type IllustratedStory } from "../lib/stories";
+import { pickRandomStory } from "../lib/story-random";
 import "../styles/stories.css";
 
 export function StoriesPage() {
+  const navigate = useNavigate();
+  function openRandom() {
+    const story = pickRandomStory(stories);
+    if (story) navigate(`/stories/${story.slug}`);
+  }
   return <div className="stories-page">
     <header className="stories-heading">
       <p className="stories-eyebrow">翻开一本小人书</p>
       <h1>说故事</h1>
       <p>翻几页，看一段有意思的旧时故事。</p>
+      <div className="stories-random-entry">
+        <button type="button" onClick={openRandom}>随机看故事 <span aria-hidden="true">↗</span></button>
+        <span>{stories.length} 篇故事，随手翻开一本。</span>
+      </div>
     </header>
     <div className="stories-shelf">
       {stories.map((story) => <article className="story-card" key={story.slug}>
         <Link to={`/stories/${story.slug}`} className="story-card-cover" aria-label={`翻开《${story.title}》`}>
-          <StoryArtwork image={story.image} panel={story.panels[0]} />
+          <StoryArtwork image={story.image} panel={story.panels[0]} lazy />
         </Link>
         <div className="story-card-copy">
           <p className="stories-eyebrow">{story.panels.length} 格连环画 · 约 {story.readingMinutes} 分钟</p>
@@ -28,6 +38,7 @@ export function StoriesPage() {
 }
 
 function StoryReader({ story }: { story: IllustratedStory }) {
+  const navigate = useNavigate();
   const [page, setPage] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
@@ -47,7 +58,10 @@ function StoryReader({ story }: { story: IllustratedStory }) {
     { id: "meaning", label: "故事寓意", page: count + 2 },
   ];
   const nextLabel = page === 0 ? "翻开故事 →" : page === count ? "看后记 →" : page === count + 1 ? "看寓意 →" : "下一页 →";
-  const nextStory = stories.length > 1 ? stories[(stories.indexOf(story) + 1) % stories.length] : undefined;
+  function openAnother() {
+    const next = pickRandomStory(stories, story.slug);
+    if (next) navigate(`/stories/${next.slug}`);
+  }
   const move = useCallback((direction: number) => setPage((value) => Math.max(0, Math.min(total - 1, value + direction))), [total]);
 
   useEffect(() => {
@@ -122,6 +136,7 @@ function StoryReader({ story }: { story: IllustratedStory }) {
               aria-current={chapter === item.id ? "step" : undefined}
               onClick={() => { setPage(item.page); setMenuOpen(false); }}>{item.label}</button>)}
             <a href={story.image.url} target="_blank" rel="noopener noreferrer">看整页原画 ↗</a>
+            {stories.length > 1 && <button type="button" onClick={openAnother}>随机换个故事 ↗</button>}
           </nav>}
         </div>
         <button type="button" onClick={() => void toggleFullscreen()} aria-pressed={fullscreen}>{fullscreen ? "退出全屏" : "全屏"}</button>
@@ -152,7 +167,7 @@ function StoryReader({ story }: { story: IllustratedStory }) {
         </> : last ? <>
           <p className="story-prose-copy">{story.afterword.takeaway.text}</p>
           <p className="story-source-note">{story.afterword.sourceNote}</p>
-          {nextStory && <Link className="story-next-story" to={`/stories/${nextStory.slug}`}>再看一个：{nextStory.title} →</Link>}
+          {stories.length > 1 && <button type="button" className="story-next-story" onClick={openAnother}>随机再看一篇 →</button>}
         </> : story.afterword.paragraphs.map((text) => <p className="story-prose-copy" key={text}>{text}</p>)}
       </section>}
     </div>

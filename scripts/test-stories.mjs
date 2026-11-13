@@ -1,6 +1,7 @@
 /** Validate author-managed story records before publishing new illustrated stories. */
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { pickRandomStory } from '../apps/web/src/lib/story-random.ts';
 const catalog = JSON.parse(await readFile(new URL('../apps/web/src/data/stories.json', import.meta.url), 'utf8'));
 assert.ok(Array.isArray(catalog.stories) && catalog.stories.length > 0);
 const slugs = new Set();
@@ -34,3 +35,18 @@ for (const story of catalog.stories) {
   assert.ok(audit.source.locator && audit.source.excerpt && audit.adaptations.length);
 }
 console.log(`PASS: ${catalog.stories.length} story catalogs, image references, panel order/bounds and editorial audits`);
+// The random entry opens actual readable slugs and never reopens the current story.
+const shelf = [{ slug: 'a' }, { slug: 'b' }, { slug: 'c' }];
+assert.equal(pickRandomStory([], undefined, () => 0), undefined);
+assert.equal(pickRandomStory(shelf.slice(0, 1), 'a', () => 0)?.slug, 'a');
+assert.equal(pickRandomStory(shelf, undefined, () => 0)?.slug, 'a');
+assert.equal(pickRandomStory(shelf, undefined, () => 0.5)?.slug, 'b');
+assert.equal(pickRandomStory(shelf, undefined, () => 0.999)?.slug, 'c');
+for (const current of shelf) {
+  const picked = [0, 0.25, 0.5, 0.999].map(value => pickRandomStory(shelf, current.slug, () => value)?.slug);
+  assert.ok(!picked.includes(current.slug));
+  assert.deepEqual(new Set(picked), new Set(shelf.filter(s => s !== current).map(s => s.slug)));
+}
+assert.equal(pickRandomStory(shelf, 'missing', () => 0)?.slug, 'a');
+assert.equal(pickRandomStory(shelf, undefined, () => 1)?.slug, 'c');
+console.log('PASS: random story reachability, exclusion and empty/single-story behavior');

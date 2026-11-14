@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { StoryArtwork } from "../components/StoryArtwork";
+import { StoryText } from "../components/StoryText";
 import { stories, storyBySlug, type IllustratedStory } from "../lib/stories";
 import { pickRandomStory } from "../lib/story-random";
 import "../styles/stories.css";
@@ -136,6 +137,8 @@ function StoryReader({ story }: { story: IllustratedStory }) {
               aria-current={chapter === item.id ? "step" : undefined}
               onClick={() => { setPage(item.page); setMenuOpen(false); }}>{item.label}</button>)}
             <a href={story.image.url} target="_blank" rel="noopener noreferrer">看整页原画 ↗</a>
+            {story.sourceLinks.map(source => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a>)}
+            {story.people.map(person => <a key={person.id} href={`/people/${person.id}`} target="_blank" rel="noopener noreferrer">人物 · {person.name} ↗</a>)}
             {stories.length > 1 && <button type="button" onClick={openAnother}>随机换个故事 ↗</button>}
           </nav>}
         </div>
@@ -156,19 +159,19 @@ function StoryReader({ story }: { story: IllustratedStory }) {
         <StoryArtwork image={story.image} panel={panel} />
         <figcaption aria-live="polite" aria-atomic="true">
           <span className="story-panel-number" aria-hidden="true">{panel.number}</span>
-          <p>{panel.caption}</p>
+          <p><StoryText text={panel.caption} story={story} /></p>
         </figcaption>
       </figure> : <section className={`story-prose-page story-prose-${chapter}`} aria-labelledby="story-page-title">
         <p className="stories-eyebrow">{page === 0 ? "故事开场" : last ? "读完这一篇" : "故事后记"}</p>
         <h2 id="story-page-title">{page === 0 ? story.introduction.title : last ? story.afterword.takeaway.title : story.afterword.title}</h2>
         {page === 0 ? <>
-          <p className="story-prose-copy">{story.introduction.text}</p>
+          <p className="story-prose-copy"><StoryText text={story.introduction.text} story={story} /></p>
           <p className="story-prose-footer">接下来 · {count} 格连环画</p>
         </> : last ? <>
           <p className="story-prose-copy">{story.afterword.takeaway.text}</p>
-          <p className="story-source-note">{story.afterword.sourceNote}</p>
+          <p className="story-source-note">{story.afterword.sourceNote}{" "}{story.sourceLinks.map(source => <a className="story-source-link" key={source.url} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a>)}</p>
           {stories.length > 1 && <button type="button" className="story-next-story" onClick={openAnother}>随机再看一篇 →</button>}
-        </> : story.afterword.paragraphs.map((text) => <p className="story-prose-copy" key={text}>{text}</p>)}
+        </> : story.afterword.paragraphs.map((text) => <p className="story-prose-copy" key={text}><StoryText text={text} story={story} /></p>)}
       </section>}
     </div>
     <div className="story-reader-bottom">

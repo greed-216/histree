@@ -8,6 +8,8 @@
 
 ## 添加一篇
 
+人物通过 `people` 显式绑定已核对的站内稳定 ID；`aliases` 只收录本故事中无歧义的简称，正文中的姓名可点击。匿名寓言角色不自动匹配人物。`sourceLinks` 保存具体原文入口：站内阅读需提供卷段与 paragraph 锚点，未收录的古籍可链接核对过的外部原文。目录与寓意页都提供出处链接；在新标签页打开，保留故事阅读位置。
+
 1. 确定故事脚本、逐格画面、独立图下注文和替代文本，审核并取得画风确认。史实出处与艺术改编边界记入 `docs/stories/<slug>.json`，不把叙事对白当原文引语。
 2. 按 `docs/OBJECT_STORAGE.md` 的服务端 CLI 上传确认的原图（5 MiB 内），取得同源 `/api/v1/media/images/<sha256>.png` 地址；不提交图片二进制、签名 URL 或凭证。
 3. 在 `apps/web/src/data/stories.json` 添加稳定 slug、标题、简介、阅读时长、开场 `introduction`、后记 `afterword`（解释、寓意及出处）、原图尺寸及 SHA256、顺序编号的 panels。`crop` 使用原图像素坐标，框住每格插图，不包含原图嵌入的字幕；网页在图下单独排版 `caption`。原图不会被修改。各格共用同一图片 URL，浏览器可复用缓存。

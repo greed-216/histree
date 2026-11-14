@@ -13,6 +13,8 @@ export interface IllustratedStory {
   title: string;
   description: string;
   readingMinutes: number;
+  people: { name: string; id: string; aliases?: string[] }[];
+  sourceLinks: { label: string; url: string }[];
   introduction: { title: string; text: string };
   afterword: {
     title: string;

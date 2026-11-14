@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { StoryArtwork } from "../components/StoryArtwork";
 import { StoryText } from "../components/StoryText";
+import { useStoryPreload } from "../hooks/useStoryPreload";
 import { stories, storyBySlug, type IllustratedStory } from "../lib/stories";
 import { pickRandomStory } from "../lib/story-random";
 import "../styles/stories.css";
@@ -25,7 +26,7 @@ export function StoriesPage() {
     <div className="stories-shelf">
       {stories.map((story) => <article className="story-card" key={story.slug}>
         <Link to={`/stories/${story.slug}`} className="story-card-cover" aria-label={`翻开《${story.title}》`}>
-          <StoryArtwork image={story.image} panel={story.panels[0]} lazy />
+          <StoryArtwork artwork={story.cover} alt={story.panels[0].alt} lazy />
         </Link>
         <div className="story-card-copy">
           <p className="stories-eyebrow">{story.panels.length} 格连环画 · 约 {story.readingMinutes} 分钟</p>
@@ -44,6 +45,7 @@ function StoryReader({ story }: { story: IllustratedStory }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [notice, setNotice] = useState("");
+  useStoryPreload(story.panels, page);
   const reader = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDivElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
@@ -156,7 +158,7 @@ function StoryReader({ story }: { story: IllustratedStory }) {
         if (Math.abs(dx) > 60 && Math.abs(dy) < Math.abs(dx) / 2) move(dx < 0 ? 1 : -1);
       }}>
       {panel ? <figure className="story-book" data-panel={panel.number}>
-        <StoryArtwork image={story.image} panel={panel} />
+        <StoryArtwork artwork={panel.image} alt={panel.alt} />
         <figcaption aria-live="polite" aria-atomic="true">
           <span className="story-panel-number" aria-hidden="true">{panel.number}</span>
           <p><StoryText text={panel.caption} story={story} /></p>

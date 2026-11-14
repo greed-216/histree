@@ -1,11 +1,20 @@
 import catalog from "../data/stories.json";
 
+export interface StoryImage {
+  url: string;
+  width: number;
+  height: number;
+  sha256: string;
+  bytes: number;
+}
+
 export interface StoryPanel {
   number: number;
   title: string;
   crop: { x: number; y: number; width: number; height: number };
   alt: string;
   caption: string;
+  image: StoryImage;
 }
 
 export interface IllustratedStory {
@@ -13,6 +22,7 @@ export interface IllustratedStory {
   title: string;
   description: string;
   readingMinutes: number;
+  cover: StoryImage;
   people: { name: string; id: string; aliases?: string[] }[];
   sourceLinks: { label: string; url: string }[];
   introduction: { title: string; text: string };

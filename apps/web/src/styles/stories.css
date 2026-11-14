@@ -37,7 +37,7 @@
 .story-directory-menu a { margin-top:4px; border-top:1px solid #ded5c0; color:#897a5f; }
 .story-reading-surface { display:flex; align-items:center; justify-content:center; min-width:0; min-height:0; padding:16px 0; touch-action:pan-y pinch-zoom; }
 .story-book { display:flex; flex-direction:column; flex:0 1 100%; width:100%; max-width:1000px; max-height:100%; min-height:0; margin:0; overflow:hidden; border:1px solid #726047; background:#fbf1dd; box-shadow:0 7px 24px #5c422217; }
-.story-artwork { display:block; width:100%; height:auto; background:#f8efd9; }
+.story-artwork { display:block; width:100%; height:auto; object-fit:contain; background:#f8efd9; }
 .story-book>.story-artwork { flex:1 1 auto; min-height:0; }
 .story-book figcaption { display:flex; flex:0 0 auto; gap:14px; padding:16px 22px; border-top:1px solid #726047; color:#362d22; }
 .story-book figcaption p { margin:0; font:400 clamp(17px,2.6vmin,22px)/1.65 'Songti SC','STSong','SimSun',serif; }

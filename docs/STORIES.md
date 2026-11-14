@@ -12,10 +12,16 @@
 
 1. 确定故事脚本、逐格画面、独立图下注文和替代文本，审核并取得画风确认。史实出处与艺术改编边界记入 `docs/stories/<slug>.json`，不把叙事对白当原文引语。
 2. 按 `docs/OBJECT_STORAGE.md` 的服务端 CLI 上传确认的原图（5 MiB 内），取得同源 `/api/v1/media/images/<sha256>.png` 地址；不提交图片二进制、签名 URL 或凭证。
-3. 在 `apps/web/src/data/stories.json` 添加稳定 slug、标题、简介、阅读时长、开场 `introduction`、后记 `afterword`（解释、寓意及出处）、原图尺寸及 SHA256、顺序编号的 panels。`crop` 使用原图像素坐标，框住每格插图，不包含原图嵌入的字幕；网页在图下单独排版 `caption`。原图不会被修改。各格共用同一图片 URL，浏览器可复用缓存。
+3. 在 `apps/web/src/data/stories.json` 添加稳定 slug、标题、简介、阅读时长、开场 `introduction`、后记 `afterword`（解释、寓意及出处）、原图尺寸及 SHA256、顺序编号的 panels。`crop` 使用原图像素坐标，框住每格插图，不包含原图嵌入的字幕；网页在图下单独排版 `caption`。原图不会被修改，`image` 仍保留原画入口；`panel.image` 引用裁切好的 WebP 单格图，`cover` 引用最长边不超过 360px 的独立封面。阅读和书架都不自动下载整张原画。
 4. 执行 `pnpm test:stories`、Web build/lint，实际检查 1440×693、390×844、360×640、844×390 四种视口的所有页面：画面、文字在阅读区域内，翻页栏在屏幕内，文档和正文没有溢出；再检查目录、重看、全屏切换及退出阅读后站点导航与备案页脚恢复。经现有 PR/CI/ECS 发布流程上线，并核对公开图片的 SHA256。
 
 图片通过服务端读取私有 OSS，访客无需阿里云签名或账号。故障时提供重试，详情链接可直接访问。故事目录随版本发布，当前没有开放网页上传或管理端。
+
+## 网页图片与预加载
+
+使用 `scripts/prepare-story-images.py --catalog apps/web/src/data/stories.json --source-dir /absolute/originals --output /absolute/derivatives --update-catalog` 生成衍生图（需要 Pillow 和 cwebp）。按目录 SHA256 匹配原图，严格按已审核的 crop 裁切；单格保留原始像素尺寸，WebP quality 86；封面最长边 360px、quality 80。输出 manifest 保留原画哈希、裁切位置、编码质量、衍生图哈希及大小。通过已有 OSS 工具上传后核对公开 URL 与哈希，再发布目录。
+
+书架使用原生懒加载封面。阅读器在开场预加载前六格，阅读中滚动预加载后五格，后台最多两个并行请求、低优先级，并复用已完成的预加载；跳页时替换等待队列，离开故事后不再启动等待中的请求。正在传输的至多两张小图可以完成，原画只在主动打开“看整页原画”时读取。当前图片仍走 ECS 到 OSS，没有启用 CDN。
 
 ## 后续声音与视频
 

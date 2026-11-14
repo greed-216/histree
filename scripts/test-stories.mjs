@@ -17,6 +17,22 @@ for (const story of catalog.stories) {
   assert.ok(Array.isArray(story.afterword.paragraphs) && story.afterword.paragraphs.length > 0);
   for (const text of story.afterword.paragraphs) assert.ok(typeof text === 'string' && text.trim());
   assert.ok(Number.isFinite(story.readingMinutes) && story.readingMinutes > 0);
+  assert.ok(Array.isArray(story.people));
+  for (const person of story.people) {
+    assert.ok(person.name.trim());
+    assert.match(person.id, /^[a-f0-9-]{36}$/);
+  }
+  assert.ok(story.sourceLinks.length > 0);
+  for (const source of story.sourceLinks) {
+    assert.ok(source.label.trim());
+    const url = new URL(source.url, 'https://histree.wiki');
+    assert.equal(url.protocol, 'https:');
+    assert.ok(['histree.wiki', 'zh.wikisource.org'].includes(url.hostname));
+    if (url.hostname === 'histree.wiki') {
+      assert.ok(url.pathname.startsWith('/library/'));
+      assert.ok(url.searchParams.get('paragraph'));
+    }
+  }
   assert.match(story.image.sha256, /^[a-f0-9]{64}$/);
   assert.match(story.image.url, new RegExp(`^/api/v1/media/images/${story.image.sha256}\\.(png|jpg|webp|gif)$`));
   for (const key of ['width', 'height']) assert.ok(Number.isInteger(story.image[key]) && story.image[key] > 0);

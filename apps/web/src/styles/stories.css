@@ -99,3 +99,6 @@
  .story-reader-bottom { padding-bottom:max(6px,env(safe-area-inset-bottom)); }
 }
 .story-directory-menu { max-height:calc(100dvh - 80px); overflow-y:auto; }
+.story-person-link { color:#315e4e; text-decoration:underline; text-decoration-color:#8f9c82; text-underline-offset:3px; }
+.story-person-link:hover,.story-source-link:hover { color:#963e2d; }
+.story-source-link { display:inline; margin-right:10px; color:#315e4e; text-decoration:underline; text-underline-offset:3px; }

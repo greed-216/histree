@@ -1,0 +1,222 @@
+{
+  "slug": "zi-chan-zhi-zheng",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "49cf5701bff853be09c73da627bb0159291883a24aac707eb86e34252bf3aebb",
+  "source": {
+    "book": "据《史记》卷一百一十九《循吏列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p007388",
+    "excerpt": "子産者，鄭之列大夫也。鄭昭君之時，以所愛徐贄爲相，國亂，上下不親，父子不和。大宮子期言之君，以子産爲相。爲相一年，豎子不戲狎，斑白不提挈，僮子不犁畔。二年，市不豫賈。三年，門不夜關，道不拾遺。四年，田器不歸。五年，士無尺籍，喪期不令而治。治鄭二十六年而死，丁壯號哭，老人兒啼，曰：「子産去我死乎！民將安歸？」",
+    "excerptSha256": "593192454e84f0511971355df58bee192a692d1950c2953561d433819147451a",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p007388",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 725083,
+        "char_end": 725237,
+        "line_start": 14769,
+        "line_end": 14769,
+        "raw_excerpt_sha256": "593192454e84f0511971355df58bee192a692d1950c2953561d433819147451a",
+        "epub_member": "OPS/c119_shi_ji_juan119.xhtml",
+        "member_sha256": "63297e07a21e55bb415842413e230bcc344eb9299b6a7b25dceab42d4368494b",
+        "element_paths": [
+          "body/section[4]/p[1]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p007388/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p007388",
+      "batch": "content/books/shiji/vol-119/part-01",
+      "batchSha256": "d92bef8b897cdd73a9d444a7fa11eb528cca797d2534f6349fa8da5b142b9bef",
+      "publicationBatchSha256": "d92bef8b897cdd73a9d444a7fa11eb528cca797d2534f6349fa8da5b142b9bef",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_子产",
+          "title": "子产"
+        },
+        {
+          "group": "people",
+          "key": "person_徐贽（郑相）",
+          "title": "徐贽（郑相）"
+        },
+        {
+          "group": "people",
+          "key": "person_子期（荐子产者）",
+          "title": "子期（荐子产者）"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v119_zichan_appointed",
+          "title": "本传记子期荐子产为郑相"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v119_zichan_appointed_person_子期（荐子产者）",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v119_zichan_appointed_person_子产",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v014_p1394_a4",
+          "title": "子产去世"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v014_p1394_a4_子产",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "郑国出现失序",
+      "caption": "书中写，郑国一度上下不亲、家人失和，后来改任子产为相。",
+      "scene": "书中写，郑国一度上下不亲、家人失和，后来改任子产为相。",
+      "alt": "郑国出现失序：书中写，郑国一度上下不亲、家人失和，后来改任子产为相。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007388",
+          "excerpt": "以子産爲相"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "照看老人",
+      "caption": "子产为相第一年，书中写老人不必再提挈重物。",
+      "scene": "子产为相第一年，书中写老人不必再提挈重物。",
+      "alt": "照看老人：子产为相第一年，书中写老人不必再提挈重物。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007388",
+          "excerpt": "斑白不提挈"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "市场有变化",
+      "caption": "第二年，市场交易出现新的秩序。",
+      "scene": "第二年，市场交易出现新的秩序。",
+      "alt": "市场有变化：第二年，市场交易出现新的秩序。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007388",
+          "excerpt": "市不豫賈"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "乡里更安定",
+      "caption": "第三年，记载出现夜不闭户、路不拾遗的情形。",
+      "scene": "第三年，记载出现夜不闭户、路不拾遗的情形。",
+      "alt": "乡里更安定：第三年，记载出现夜不闭户、路不拾遗的情形。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007388",
+          "excerpt": "門不夜關"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "田野也安宁",
+      "caption": "第四年，农具可以留在田间。后来的丧事礼俗也能自行有序。",
+      "scene": "第四年，农具可以留在田间。后来的丧事礼俗也能自行有序。",
+      "alt": "田野也安宁：第四年，农具可以留在田间。后来的丧事礼俗也能自行有序。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007388",
+          "excerpt": "田器不歸"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "百姓的怀念",
+      "caption": "子产去世，壮年人与老人一同哀哭，担心失去依靠。",
+      "scene": "子产去世，壮年人与老人一同哀哭，担心失去依靠。",
+      "alt": "百姓的怀念：子产去世，壮年人与老人一同哀哭，担心失去依靠。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007388",
+          "excerpt": "丁壯號哭"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已查看整张原画及各格：格数、阅读顺序、人物衣色与关键器物连续。",
+      "核对图下注文与原文证据；无图内文字、无空白占位、无改变主要结局的画面。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      399,
+      805,
+      1233
+    ],
+    "columnEdges": [
+      0,
+      636,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《子产治郑》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 子产中年深蓝袍长须，百姓朴素衣饰。前五格为不同年份的生活场景，不把所有好转挤在同一天；最后只画悼念，无尸体。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 书中写，郑国一度上下不亲、家人失和，后来改任子产为相。\n2. 子产为相第一年，书中写老人不必再提挈重物。\n3. 第二年，市场交易出现新的秩序。\n4. 第三年，记载出现夜不闭户、路不拾遗的情形。\n5. 第四年，农具可以留在田间。后来的丧事礼俗也能自行有序。\n6. 子产去世，壮年人与老人一同哀哭，担心失去依靠。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

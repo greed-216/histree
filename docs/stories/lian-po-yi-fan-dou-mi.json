@@ -1,0 +1,228 @@
+{
+  "slug": "lian-po-yi-fan-dou-mi",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "4d8f9b9ebaf49a6643cdf2223349c81a15ceaea9da4d15098ab5bb7a06992681",
+  "source": {
+    "book": "据《史记》卷八十一《廉颇蔺相如列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p006183",
+    "excerpt": "廉頗居梁久之，魏不能信用。趙以數困於秦兵，趙王思復得廉頗，廉頗亦思復用於趙。趙王使使者視廉頗尚可用否。廉頗之仇郭開多與使者金，令毀之。趙使者既見廉頗，廉頗爲之一飯斗米，肉十斤，被甲上馬，以示尚可用。趙使還報王曰：「廉將軍雖老，尚善飯，然與臣坐，頃之三遺矢矣。」趙王以爲老，遂不召。",
+    "excerptSha256": "48745e91f01cfb08008b3102619070615eb1b18568042c3a616c03bdc280cdc3",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p006183",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 553725,
+        "char_end": 553865,
+        "line_start": 12359,
+        "line_end": 12359,
+        "raw_excerpt_sha256": "48745e91f01cfb08008b3102619070615eb1b18568042c3a616c03bdc280cdc3",
+        "epub_member": "OPS/c81_shi_ji_juan081.xhtml",
+        "member_sha256": "5d60ebca081fd27db77a8cd085cb761562c5bfd7f19e48350cef136a3e36f888",
+        "element_paths": [
+          "body/section[2]/section[2]/p[4]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p006183/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p006183",
+      "batch": "content/books/shiji/vol-081/part-01",
+      "batchSha256": "1e90a465571618f3c1182379c8d5a14bbc2aaef1c08bb7ca9552771ec3d72445",
+      "publicationBatchSha256": "1e90a465571618f3c1182379c8d5a14bbc2aaef1c08bb7ca9552771ec3d72445",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_廉颇",
+          "title": "廉颇"
+        },
+        {
+          "group": "people",
+          "key": "person_郭开",
+          "title": "郭开"
+        },
+        {
+          "group": "person_relationships",
+          "key": "relationship_person_郭开_person_廉颇_仇家",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v006_lianpo_guokai",
+          "title": "赵王欲复用廉颇，郭开贿赂使者诋毁，赵王因此未召廉颇；廉颇后来为楚将，死于寿春"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v006_lianpo_guokai_person_郭开",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v006_lianpo_guokai_person_廉颇",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "两边都有期待",
+      "caption": "赵王想再用廉颇，廉颇也想回赵国任事。",
+      "scene": "赵王想再用廉颇，廉颇也想回赵国任事。",
+      "alt": "两边都有期待：赵王想再用廉颇，廉颇也想回赵国任事。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006183",
+          "excerpt": "廉頗亦思復用於趙"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "使者前来察看",
+      "caption": "赵王派使者，察看廉颇是否还可任用。",
+      "scene": "赵王派使者，察看廉颇是否还可任用。",
+      "alt": "使者前来察看：赵王派使者，察看廉颇是否还可任用。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006183",
+          "excerpt": "視廉頗尚可用否"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "暗中有人行贿",
+      "caption": "廉颇的仇人郭开给使者很多金钱，叫他毁谤廉颇。",
+      "scene": "廉颇的仇人郭开给使者很多金钱，叫他毁谤廉颇。",
+      "alt": "暗中有人行贿：廉颇的仇人郭开给使者很多金钱，叫他毁谤廉颇。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006183",
+          "excerpt": "令毀之"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "展示身体与本领",
+      "caption": "廉颇当着使者吃下许多饭肉，又披甲上马。",
+      "scene": "廉颇当着使者吃下许多饭肉，又披甲上马。",
+      "alt": "展示身体与本领：廉颇当着使者吃下许多饭肉，又披甲上马。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006183",
+          "excerpt": "被甲上馬"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "报告被歪曲",
+      "caption": "使者回去，承认他能吃，却捏造衰老失态的说辞。",
+      "scene": "使者回去，承认他能吃，却捏造衰老失态的说辞。",
+      "alt": "报告被歪曲：使者回去，承认他能吃，却捏造衰老失态的说辞。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006183",
+          "excerpt": "趙使還報王"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "终于未被召回",
+      "caption": "赵王因此认定廉颇已老，没有再召他。",
+      "scene": "赵王因此认定廉颇已老，没有再召他。",
+      "alt": "终于未被召回：赵王因此认定廉颇已老，没有再召他。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006183",
+          "excerpt": "遂不召"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。",
+    "首格以清楚的想象云框分隔赵王与远方廉颇，不补造两人会谈。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v2.png",
+    "checked": [
+      "已逐格查看正式原画，核对格数、阅读顺序、人物身份、关键动作、器物与原文结局。"
+    ],
+    "sourceNotes": [
+      "首格以清楚的想象云框分隔赵王与远方廉颇，不补造两人会谈。"
+    ],
+    "corrections": [
+      {
+        "file": "atlas-v2.png",
+        "input": "atlas-v1.png",
+        "prompt": "Edit this exact existing six-panel Histree atlas. Preserve all six equal panels in a STRICT 2 columns x 3 rows, vintage flat Chinese ink-and-paper style, gutters, characters, colors, and no text. Correct ONLY panel 1 (TOP LEFT): King Zhao and elderly General Lian Po DID NOT meet in person in this story. Keep the king seated at the LEFT with an attendant or messenger nearby. Show white-bearded Lian Po at the RIGHT ONLY INSIDE a clearly bounded cloud-shaped thought vignette with a DIFFERENT plain outdoor background, to express the king thinking of this distant general. No shared floor, seat or physical interaction between king and Lian Po. All other five panels must remain unchanged, including the purple official bribing the russet messenger, Lian Po eating and riding, the messenger reporting falsely, and the disappointed king. No text anywhere."
+      }
+    ],
+    "originalPrompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《廉颇一饭斗米》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 廉颇年长白须灰蓝甲，郭开成年紫袍，使者赭袍。吃饭用古碗盘，不夸张到撑裂；披甲骑马有力，最后失望而非倒地。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 赵王想再用廉颇，廉颇也想回赵国任事。\n2. 赵王派使者，察看廉颇是否还可任用。\n3. 廉颇的仇人郭开给使者很多金钱，叫他毁谤廉颇。\n4. 廉颇当着使者吃下许多饭肉，又披甲上马。\n5. 使者回去，承认他能吃，却捏造衰老失态的说辞。\n6. 赵王因此认定廉颇已老，没有再召他。",
+    "rowEdges": [
+      0,
+      412,
+      817,
+      1233
+    ],
+    "columnEdges": [
+      0,
+      638,
+      1276
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《廉颇一饭斗米》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 廉颇年长白须灰蓝甲，郭开成年紫袍，使者赭袍。吃饭用古碗盘，不夸张到撑裂；披甲骑马有力，最后失望而非倒地。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 赵王想再用廉颇，廉颇也想回赵国任事。\n2. 赵王派使者，察看廉颇是否还可任用。\n3. 廉颇的仇人郭开给使者很多金钱，叫他毁谤廉颇。\n4. 廉颇当着使者吃下许多饭肉，又披甲上马。\n5. 使者回去，承认他能吃，却捏造衰老失态的说辞。\n6. 赵王因此认定廉颇已老，没有再召他。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": [
+      {
+        "file": "atlas-v2.png",
+        "input": "atlas-v1.png",
+        "prompt": "Edit this exact existing six-panel Histree atlas. Preserve all six equal panels in a STRICT 2 columns x 3 rows, vintage flat Chinese ink-and-paper style, gutters, characters, colors, and no text. Correct ONLY panel 1 (TOP LEFT): King Zhao and elderly General Lian Po DID NOT meet in person in this story. Keep the king seated at the LEFT with an attendant or messenger nearby. Show white-bearded Lian Po at the RIGHT ONLY INSIDE a clearly bounded cloud-shaped thought vignette with a DIFFERENT plain outdoor background, to express the king thinking of this distant general. No shared floor, seat or physical interaction between king and Lian Po. All other five panels must remain unchanged, including the purple official bribing the russet messenger, Lian Po eating and riding, the messenger reporting falsely, and the disappointed king. No text anywhere."
+      }
+    ]
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

@@ -1,0 +1,216 @@
+{
+  "slug": "zhang-liang-quan-li-qin-gong",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "05bf74f53360f5cec3a9572ecc0e74ec82d76801117c26318b79a3960e32c060",
+  "source": {
+    "book": "据《史记》卷五十五《留侯世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005229",
+    "excerpt": "沛公入秦宮，宮室帷帳狗馬重寶婦女以千數，意欲留居之。樊噲諫沛公出舍，沛公不聽。良曰：「夫秦為無道，故沛公得至此。夫為天下除殘賊，宜縞素為資。今始入秦，即安其樂，此所謂『助桀為虐』。且『忠言逆耳利於行，毒藥苦口利於病』，願沛公聽樊噲言。」沛公乃還軍霸上。",
+    "excerptSha256": "70e1e37701bd5b46ed06beb0dba760bcb3303e4ee3322722d06b7187f893a424",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005229",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 444980,
+        "char_end": 445106,
+        "line_start": 10453,
+        "line_end": 10453,
+        "raw_excerpt_sha256": "70e1e37701bd5b46ed06beb0dba760bcb3303e4ee3322722d06b7187f893a424",
+        "epub_member": "OPS/c55_shi_ji_juan055.xhtml",
+        "member_sha256": "f601ed0cac4d253ebed7d03b3d12b0e7e344aaee7dde3c081c9126dd6bdae5c5",
+        "element_paths": [
+          "body/section[2]/p[8]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p005229/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005229",
+      "batch": "content/books/shiji/vol-055/part-01",
+      "batchSha256": "6769da937a706c63382c9892d246ce15d23831fb95cd8035387d8d44e82262f4",
+      "publicationBatchSha256": "6769da937a706c63382c9892d246ce15d23831fb95cd8035387d8d44e82262f4",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_张良",
+          "title": "张良"
+        },
+        {
+          "group": "people",
+          "key": "person_刘邦",
+          "title": "刘邦"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v009_xiaohe_documents",
+          "title": "刘邦进入咸阳，萧何先收秦丞相府图籍；刘邦接受樊哙、张良劝告返回霸上"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v009_xiaohe_documents_person_张良",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v009_xiaohe_documents_person_刘邦",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_樊哙",
+          "title": "樊哙"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v009_xiaohe_documents_person_樊哙",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "进入秦宫",
+      "caption": "刘邦进入秦宫，看见宫室、帷帐与大量珍宝。",
+      "scene": "刘邦进入秦宫，看见宫室、帷帐与大量珍宝。",
+      "alt": "进入秦宫：刘邦进入秦宫，看见宫室、帷帐与大量珍宝。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005229",
+          "excerpt": "沛公入秦宮"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "想要留下",
+      "caption": "眼前的享乐使他想留在宫中居住。",
+      "scene": "眼前的享乐使他想留在宫中居住。",
+      "alt": "想要留下：眼前的享乐使他想留在宫中居住。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005229",
+          "excerpt": "意欲留居之"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "樊哙先劝",
+      "caption": "樊哙劝他到宫外驻扎，刘邦没有接受。",
+      "scene": "樊哙劝他到宫外驻扎，刘邦没有接受。",
+      "alt": "樊哙先劝：樊哙劝他到宫外驻扎，刘邦没有接受。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005229",
+          "excerpt": "沛公不聽"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "张良说明缘由",
+      "caption": "张良提醒，秦政无道才给了入秦的机会，此时不可安享其乐。",
+      "scene": "张良提醒，秦政无道才给了入秦的机会，此时不可安享其乐。",
+      "alt": "张良说明缘由：张良提醒，秦政无道才给了入秦的机会，此时不可安享其乐。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005229",
+          "excerpt": "今始入秦，即安其樂"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "再说逆耳忠言",
+      "caption": "他请刘邦听樊哙的话，指出忠言虽逆耳，却有益于行动。",
+      "scene": "他请刘邦听樊哙的话，指出忠言虽逆耳，却有益于行动。",
+      "alt": "再说逆耳忠言：他请刘邦听樊哙的话，指出忠言虽逆耳，却有益于行动。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005229",
+          "excerpt": "忠言逆耳利於行"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "回到霸上",
+      "caption": "刘邦接受劝谏，把军队撤回霸上。",
+      "scene": "刘邦接受劝谏，把军队撤回霸上。",
+      "alt": "回到霸上：刘邦接受劝谏，把军队撤回霸上。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005229",
+          "excerpt": "沛公乃還軍霸上"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已逐格查看正式原画，核对格数、阅读顺序、人物身份、关键动作、器物与原文结局。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      411,
+      809,
+      1233
+    ],
+    "columnEdges": [
+      0,
+      638,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《张良劝离秦宫》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 刘邦成年黑须赭袍，樊哙灰蓝甲，张良青绿袍。宫室富丽但平涂简洁，无裸露侍女、无现代床；结尾军营朴素。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 刘邦进入秦宫，看见宫室、帷帐与大量珍宝。\n2. 眼前的享乐使他想留在宫中居住。\n3. 樊哙劝他到宫外驻扎，刘邦没有接受。\n4. 张良提醒，秦政无道才给了入秦的机会，此时不可安享其乐。\n5. 他请刘邦听樊哙的话，指出忠言虽逆耳，却有益于行动。\n6. 刘邦接受劝谏，把军队撤回霸上。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

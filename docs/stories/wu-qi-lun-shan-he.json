@@ -1,0 +1,212 @@
+{
+  "slug": "wu-qi-lun-shan-he",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "b8e1faf58dcd15731faa716aaf396c7222a03575bf042ef6517154d2d021aaef",
+  "source": {
+    "book": "据《史记》卷六十五《孙子吴起列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005529",
+    "excerpt": "文侯以吳起善用兵，廉平，盡能得士心，乃以為西河守，以拒秦、韓。魏文侯既卒，起事其子武侯。武侯浮西河而下，中流，顧而謂吳起曰：「美哉乎山河之固，此魏國之寶也！」起對曰：「在德不在險。昔三苗氏左洞庭，右彭蠡，德義不修，禹滅之。夏桀之居，左河濟，右泰華，伊闕在其南，羊腸在其北，修政不仁，湯放之。殷紂之國，左孟門，右太行，常山在其北，大河經其南，修政不德，武王殺之。由此觀之，在德不在險。若君不修德，舟中之人盡為敵國也。」武侯曰：「善。」",
+    "excerptSha256": "6d495304d0f73e1b9726ddd41a5b1dec40bf165a7f449a55255ba74b1228ab47",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005529",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 477262,
+        "char_end": 477478,
+        "line_start": 11053,
+        "line_end": 11053,
+        "raw_excerpt_sha256": "6d495304d0f73e1b9726ddd41a5b1dec40bf165a7f449a55255ba74b1228ab47",
+        "epub_member": "OPS/c65_shi_ji_juan065.xhtml",
+        "member_sha256": "b1b28c1ebb52569ade9b2a06aecd713494867da8edcbeb898bcc2e019648fd6f",
+        "element_paths": [
+          "body/section[4]/p[5]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p005529/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005529",
+      "batch": "content/books/shiji/vol-065/part-01",
+      "batchSha256": "7a9f8c1e7dd7467a5b54bb6762cb43dbc95146dbd4d1eb6342251418db16e7b6",
+      "publicationBatchSha256": "7a9f8c1e7dd7467a5b54bb6762cb43dbc95146dbd4d1eb6342251418db16e7b6",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_吴起",
+          "title": "吴起"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v001_wuqi_advises_weiwuhou",
+          "title": "吴起劝魏武侯以德治国，不要只依赖山川险固"
+        },
+        {
+          "group": "people",
+          "key": "person_魏击",
+          "title": "魏击"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v001_wuqi_advises_weiwuhou_person_魏击",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v001_wuqi_advises_weiwuhou_person_吴起",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "relationship_person_吴起_person_魏击_将领",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "乘船顺流",
+      "caption": "魏武侯乘船沿西河而下，吴起在旁。",
+      "scene": "魏武侯乘船沿西河而下，吴起在旁。",
+      "alt": "乘船顺流：魏武侯乘船沿西河而下，吴起在旁。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005529",
+          "excerpt": "武侯浮西河而下"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "赞叹山河",
+      "caption": "武侯赞叹山河坚固，是魏国的宝物。",
+      "scene": "武侯赞叹山河坚固，是魏国的宝物。",
+      "alt": "赞叹山河：武侯赞叹山河坚固，是魏国的宝物。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005529",
+          "excerpt": "此魏國之寶也"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "吴起提出提醒",
+      "caption": "吴起说，关键在德，不只在地势险要。",
+      "scene": "吴起说，关键在德，不只在地势险要。",
+      "alt": "吴起提出提醒：吴起说，关键在德，不只在地势险要。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005529",
+          "excerpt": "在德不在險"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "举旧事说明",
+      "caption": "他列举三苗、夏桀、殷纣的例子，说明有险可守也会失国。",
+      "scene": "他列举三苗、夏桀、殷纣的例子，说明有险可守也会失国。",
+      "alt": "举旧事说明：他列举三苗、夏桀、殷纣的例子，说明有险可守也会失国。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005529",
+          "excerpt": "修政不德"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "说到同船之人",
+      "caption": "吴起提醒，若不修德，同船的人也可能成为敌人。",
+      "scene": "吴起提醒，若不修德，同船的人也可能成为敌人。",
+      "alt": "说到同船之人：吴起提醒，若不修德，同船的人也可能成为敌人。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005529",
+          "excerpt": "舟中之人盡為敵國也"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "武侯听进了",
+      "caption": "魏武侯听完，回答：好。",
+      "scene": "魏武侯听完，回答：好。",
+      "alt": "武侯听进了：魏武侯听完，回答：好。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005529",
+          "excerpt": "武侯曰：「善。」"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已查看整张原画及各格：格数、阅读顺序、人物衣色与关键器物连续。",
+      "核对图下注文与原文证据；无图内文字、无空白占位、无改变主要结局的画面。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      404,
+      801,
+      1235
+    ],
+    "columnEdges": [
+      0,
+      637,
+      1274
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《吴起论山河之险》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 武侯成年赭红袍冠，吴起中年灰蓝甲短须；两人始终在古代木船上。历史例证用淡墨远景而不表现现代地图、战争伤亡。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 魏武侯乘船沿西河而下，吴起在旁。\n2. 武侯赞叹山河坚固，是魏国的宝物。\n3. 吴起说，关键在德，不只在地势险要。\n4. 他列举三苗、夏桀、殷纣的例子，说明有险可守也会失国。\n5. 吴起提醒，若不修德，同船的人也可能成为敌人。\n6. 魏武侯听完，回答：好。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

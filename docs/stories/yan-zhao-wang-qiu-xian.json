@@ -1,0 +1,241 @@
+{
+  "slug": "yan-zhao-wang-qiu-xian",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "a5180778155fba78305bf71a595005219f8c992f76e05686a1f66cce93bcc809",
+  "source": {
+    "book": "据《史记》卷三十四《燕召公世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p003815",
+    "excerpt": "燕昭王於破燕之後卽位，卑身厚幣以招賢者。謂郭隗曰：「齊因孤之國亂而襲破燕，孤極知燕小力少，不足以報。然誠得賢士以共國，以雪先王之恥，孤之願也。先生視可者，得身事之。」郭隗曰：「王必欲致士，先從隗始。況賢於隗者，豈遠千里哉！」於是昭王爲隗改筑宮而師事之。樂毅自魏往，鄒衍自齊往，劇辛自趙往，士爭趨燕。燕王噲死問孤，與百姓同甘苦。",
+    "excerptSha256": "4bc1910eedb4ccb936bf7641057315785587466d28921946307b3ffa5ed09999",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p003815",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 322789,
+        "char_end": 322952,
+        "line_start": 7625,
+        "line_end": 7625,
+        "raw_excerpt_sha256": "4bc1910eedb4ccb936bf7641057315785587466d28921946307b3ffa5ed09999",
+        "epub_member": "OPS/c34_shi_ji_juan034.xhtml",
+        "member_sha256": "6ca2e915c6384724f5ef99a54b62afcc13d160b8eb8c0fa002b7abded9fb8de8",
+        "element_paths": [
+          "body/section[20]/p[1]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p003815/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p003815",
+      "batch": "content/books/shiji/vol-034/part-01",
+      "batchSha256": "4eee31b0a8c72dc927996e66897c7ef2dc3835afa671293a5ed48aedf4cf69f2",
+      "publicationBatchSha256": "4eee31b0a8c72dc927996e66897c7ef2dc3835afa671293a5ed48aedf4cf69f2",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_燕昭王",
+          "title": "燕昭王"
+        },
+        {
+          "group": "people",
+          "key": "person_郭隗",
+          "title": "郭隗"
+        },
+        {
+          "group": "person_relationships",
+          "key": "relationship_person_郭隗_person_燕昭王_老师",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v003_yan_zhao_ascends",
+          "title": "本书记燕人共立太子平为燕昭王，燕昭王吊祭死者、慰问孤者并招贤"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_yan_zhao_ascends_person_燕昭王",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_乐毅",
+          "title": "乐毅"
+        },
+        {
+          "group": "people",
+          "key": "person_剧辛",
+          "title": "剧辛"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v034_recruit_person_郭隗",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v034_recruit_person_乐毅",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_邹衍",
+          "title": "邹衍"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v034_recruit_person_邹衍",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v034_recruit_person_剧辛",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "承认处境",
+      "caption": "燕昭王在燕国被攻破之后即位，知道本国弱小，想求贤相助。",
+      "scene": "燕昭王在燕国被攻破之后即位，知道本国弱小，想求贤相助。",
+      "alt": "承认处境：燕昭王在燕国被攻破之后即位，知道本国弱小，想求贤相助。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003815",
+          "excerpt": "卑身厚幣以招賢者"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "向郭隗请教",
+      "caption": "他请郭隗介绍可用的人，表示愿意亲自侍奉贤者。",
+      "scene": "他请郭隗介绍可用的人，表示愿意亲自侍奉贤者。",
+      "alt": "向郭隗请教：他请郭隗介绍可用的人，表示愿意亲自侍奉贤者。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003815",
+          "excerpt": "得身事之"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "先从身边开始",
+      "caption": "郭隗说：若真想招贤，就先从我开始。",
+      "scene": "郭隗说：若真想招贤，就先从我开始。",
+      "alt": "先从身边开始：郭隗说：若真想招贤，就先从我开始。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003815",
+          "excerpt": "先從隗始"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "尊郭隗为师",
+      "caption": "昭王为郭隗改筑居所，并以老师的礼节相待。",
+      "scene": "昭王为郭隗改筑居所，并以老师的礼节相待。",
+      "alt": "尊郭隗为师：昭王为郭隗改筑居所，并以老师的礼节相待。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003815",
+          "excerpt": "而師事之"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "贤士陆续前来",
+      "caption": "乐毅从魏国来，邹衍从齐国来，剧辛从赵国来。",
+      "scene": "乐毅从魏国来，邹衍从齐国来，剧辛从赵国来。",
+      "alt": "贤士陆续前来：乐毅从魏国来，邹衍从齐国来，剧辛从赵国来。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003815",
+          "excerpt": "士爭趨燕"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "与百姓共苦乐",
+      "caption": "燕昭王也与百姓同甘共苦，着手经营国家。",
+      "scene": "燕昭王也与百姓同甘共苦，着手经营国家。",
+      "alt": "与百姓共苦乐：燕昭王也与百姓同甘共苦，着手经营国家。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003815",
+          "excerpt": "與百姓同甘苦"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已逐格查看原画，格数、叙事顺序、关键器物和人物行动符合脚本，原文与改编边界已核对。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      407,
+      804,
+      1233
+    ],
+    "columnEdges": [
+      0,
+      636,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《燕昭王求贤》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 昭王成年赭红袍短须，郭隗年长白须灰蓝袍；来访贤士衣色各异。无马骨、黄金台或买死马情节，不画报仇战斗结局。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 燕昭王在燕国被攻破之后即位，知道本国弱小，想求贤相助。\n2. 他请郭隗介绍可用的人，表示愿意亲自侍奉贤者。\n3. 郭隗说：若真想招贤，就先从我开始。\n4. 昭王为郭隗改筑居所，并以老师的礼节相待。\n5. 乐毅从魏国来，邹衍从齐国来，剧辛从赵国来。\n6. 燕昭王也与百姓同甘共苦，着手经营国家。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

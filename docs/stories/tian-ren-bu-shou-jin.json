@@ -1,0 +1,184 @@
+{
+  "slug": "tian-ren-bu-shou-jin",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 4,
+  "imageSha256": "4b1515d28402922e7fdcf812c6b014a2d805f724bd8e344342be049d527b147b",
+  "source": {
+    "book": "据《史记》卷一百零四《田叔列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p006835",
+    "excerpt": "數年，叔以官卒，魯以百金祠，少子仁不受也，曰：「不以百金傷先人名。」",
+    "excerptSha256": "ed6e56392ba44f3d6650f1726d35774f77483389a50b32beaa99f9810e2494a5",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p006835",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 642776,
+        "char_end": 642810,
+        "line_start": 13663,
+        "line_end": 13663,
+        "raw_excerpt_sha256": "ed6e56392ba44f3d6650f1726d35774f77483389a50b32beaa99f9810e2494a5",
+        "epub_member": "OPS/c104_shi_ji_juan104.xhtml",
+        "member_sha256": "52fd282d241a489246588f63522a621d93eaa6d341c66a406b0edfbc5ee08bcb",
+        "element_paths": [
+          "body/section[2]/p[7]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p006835/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p006835",
+      "batch": "content/books/shiji/vol-104/part-01",
+      "batchSha256": "1c53bce61d524b42a569daf26ed08a3ddd3f1f2e97d95320ff1bbccb8a26d9c3",
+      "publicationBatchSha256": "1c53bce61d524b42a569daf26ed08a3ddd3f1f2e97d95320ff1bbccb8a26d9c3",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_田叔",
+          "title": "田叔"
+        },
+        {
+          "group": "people",
+          "key": "person_田仁",
+          "title": "田仁"
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v104_person_田叔_父亲_person_田仁",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v104_tianshu_death_tianren_refuses",
+          "title": "田叔在鲁相任上去世，田仁拒受百金祠赠"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v104_tianshu_death_tianren_refuses_person_田叔",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v104_tianshu_death_tianren_refuses_person_田仁",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "田叔卒于任上",
+      "caption": "数年之后，田叔在鲁相任上去世。",
+      "scene": "数年之后，田叔在鲁相任上去世。",
+      "alt": "田叔卒于任上：数年之后，田叔在鲁相任上去世。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006835",
+          "excerpt": "叔以官卒"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "鲁地送来祭金",
+      "caption": "鲁地拿出百金，打算用来祭祀田叔。",
+      "scene": "鲁地拿出百金，打算用来祭祀田叔。",
+      "alt": "鲁地送来祭金：鲁地拿出百金，打算用来祭祀田叔。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006835",
+          "excerpt": "魯以百金祠"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "小儿子不受",
+      "caption": "田叔的小儿子田仁，拒绝接受这笔金钱。",
+      "scene": "田叔的小儿子田仁，拒绝接受这笔金钱。",
+      "alt": "小儿子不受：田叔的小儿子田仁，拒绝接受这笔金钱。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006835",
+          "excerpt": "少子仁不受也"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "说出所重",
+      "caption": "田仁说，不能因为百金，损伤先人的名声。",
+      "scene": "田仁说，不能因为百金，损伤先人的名声。",
+      "alt": "说出所重：田仁说，不能因为百金，损伤先人的名声。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006835",
+          "excerpt": "不以百金傷先人名"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "逐格检查格数、人物、动作顺序与结局，图与史料改写相符；未出现图内文字或占位图。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      505,
+      1009
+    ],
+    "columnEdges": [
+      0,
+      781,
+      1559
+    ],
+    "reviewedPanels": 4
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《田仁不受百金》. EXACTLY 4 equal landscape illustrations, STRICT TWO columns × 2 rows. Read left to right, top to bottom. Target 1024×660. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 田仁年轻成年青绿袍，父亲田叔只以祠中朴素空座代表；鲁地使者成年赭褐衣捧金包。四格2列2行，无亡者复活、无把金送给田叔本人。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 数年之后，田叔在鲁相任上去世。\n2. 鲁地拿出百金，打算用来祭祀田叔。\n3. 田叔的小儿子田仁，拒绝接受这笔金钱。\n4. 田仁说，不能因为百金，损伤先人的名声。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

@@ -1,0 +1,204 @@
+{
+  "slug": "bo-yi-shu-qi-xiang-rang",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 4,
+  "imageSha256": "3e2885d8780337e2952ce1a761ea9a490611cfcda886a095b8c97087e89b2160",
+  "source": {
+    "book": "据《史记》卷六十一《伯夷列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005447",
+    "excerpt": "伯夷、叔齊，孤竹君之二子也。父欲立叔齊，及父卒，叔齊讓伯夷。伯夷曰：「父命也。」遂逃去。叔齊亦不肯立而逃之。國人立其中子。",
+    "excerptSha256": "8f413105bf58f936948feb4f330bf28b7da246546c449307301d4fbe319ce4f1",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005447",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 469501,
+        "char_end": 469562,
+        "line_start": 10889,
+        "line_end": 10889,
+        "raw_excerpt_sha256": "8f413105bf58f936948feb4f330bf28b7da246546c449307301d4fbe319ce4f1",
+        "epub_member": "OPS/c61_shi_ji_juan061.xhtml",
+        "member_sha256": "7793809618f8cacdc72e99037efbc898903099be3b28f0266a49afba8ab6c30b",
+        "element_paths": [
+          "body/section[2]/p[1]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p005447/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005447",
+      "batch": "content/books/shiji/vol-061/part-01",
+      "batchSha256": "af4f4ded6c890c7c64db32785154ad16f7b15c9a32ae5f4a27bae11a126cbc52",
+      "publicationBatchSha256": "af4f4ded6c890c7c64db32785154ad16f7b15c9a32ae5f4a27bae11a126cbc52",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_伯夷",
+          "title": "伯夷"
+        },
+        {
+          "group": "people",
+          "key": "person_叔齐",
+          "title": "叔齐"
+        },
+        {
+          "group": "people",
+          "key": "person_孤竹君",
+          "title": "孤竹君"
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v061_person_孤竹君_父亲_person_伯夷",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v061_person_孤竹君_父亲_person_叔齐",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v061_person_伯夷_兄弟_person_叔齐",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v061_guzhu_succession",
+          "title": "伯夷叔齐互让君位后离开孤竹"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v061_guzhu_succession_person_伯夷",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v061_guzhu_succession_person_叔齐",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "父亲留下安排",
+      "caption": "孤竹君生前想让叔齐继位。父亲去世后，兄弟面对这项安排。",
+      "scene": "孤竹君生前想让叔齐继位。父亲去世后，兄弟面对这项安排。",
+      "alt": "父亲留下安排：孤竹君生前想让叔齐继位。父亲去世后，兄弟面对这项安排。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005447",
+          "excerpt": "父欲立叔齊"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "叔齐让兄长",
+      "caption": "叔齐不肯受位，要把君位让给兄长伯夷。",
+      "scene": "叔齐不肯受位，要把君位让给兄长伯夷。",
+      "alt": "叔齐让兄长：叔齐不肯受位，要把君位让给兄长伯夷。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005447",
+          "excerpt": "叔齊讓伯夷"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "伯夷也离开",
+      "caption": "伯夷说这是父亲的命令，自己逃离。叔齐也不肯继位，离开了。",
+      "scene": "伯夷说这是父亲的命令，自己逃离。叔齐也不肯继位，离开了。",
+      "alt": "伯夷也离开：伯夷说这是父亲的命令，自己逃离。叔齐也不肯继位，离开了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005447",
+          "excerpt": "叔齊亦不肯立而逃之"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "国人另作选择",
+      "caption": "国人最终拥立了中间的儿子。",
+      "scene": "国人最终拥立了中间的儿子。",
+      "alt": "国人另作选择：国人最终拥立了中间的儿子。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005447",
+          "excerpt": "國人立其中子"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。",
+    "首格表现父亲生前的继位意愿；让位、离开与另立发生在父亲去世后。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已查看整张原画及各格：格数、阅读顺序、人物衣色与关键器物连续。",
+      "核对图下注文与原文证据；无图内文字、无空白占位、无改变主要结局的画面。"
+    ],
+    "sourceNotes": [
+      "首格表现父亲生前的继位意愿；让位、离开与另立发生在父亲去世后。"
+    ],
+    "originalPrompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《伯夷叔齐相让》. EXACTLY 4 equal landscape illustrations, STRICT TWO columns × 2 rows. Read left to right, top to bottom. Target 1024×660. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 伯夷年长成年瘦脸灰蓝袍短须，叔齐年轻成年青绿袍；父亲不在场，国人拥立的中子为赭袍成年男子。四格无争斗、无王冠转赠。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 孤竹君原想让小儿子叔齐继位，后来父亲去世。\n2. 叔齐不肯受位，要把君位让给兄长伯夷。\n3. 伯夷说这是父亲的命令，自己逃离。叔齐也不肯继位，离开了。\n4. 国人最终拥立了中间的儿子。",
+    "rowEdges": [
+      0,
+      506,
+      1008
+    ],
+    "columnEdges": [
+      0,
+      784,
+      1560
+    ],
+    "reviewedPanels": 4
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《伯夷叔齐相让》. EXACTLY 4 equal landscape illustrations, STRICT TWO columns × 2 rows. Read left to right, top to bottom. Target 1024×660. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 伯夷年长成年瘦脸灰蓝袍短须，叔齐年轻成年青绿袍；父亲不在场，国人拥立的中子为赭袍成年男子。四格无争斗、无王冠转赠。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 孤竹君原想让小儿子叔齐继位，后来父亲去世。\n2. 叔齐不肯受位，要把君位让给兄长伯夷。\n3. 伯夷说这是父亲的命令，自己逃离。叔齐也不肯继位，离开了。\n4. 国人最终拥立了中间的儿子。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

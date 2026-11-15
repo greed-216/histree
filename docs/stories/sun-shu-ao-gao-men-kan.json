@@ -1,0 +1,207 @@
+{
+  "slug": "sun-shu-ao-gao-men-kan",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "4aa93f2b20d0dc87f0248fb98f5fb8a1cd4361d2926064901d3fd76ad8a78ba5",
+  "source": {
+    "book": "据《史记》卷一百一十九《循吏列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p007385",
+    "excerpt": "楚民俗好庳車，王以爲庳車不便馬，欲下令使髙之。相曰：「令數下，民不知所從，不可。王必欲髙車，臣請教閭里使髙其梱。乘車者皆君子，君子不能數下車。」王許之。居半歳，民悉自髙其車。",
+    "excerptSha256": "7e4478c4aed5bcec5585c7a1cdc2962b1be655dcb718df5937e73450bb12ad13",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p007385",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 724933,
+        "char_end": 725020,
+        "line_start": 14763,
+        "line_end": 14763,
+        "raw_excerpt_sha256": "7e4478c4aed5bcec5585c7a1cdc2962b1be655dcb718df5937e73450bb12ad13",
+        "epub_member": "OPS/c119_shi_ji_juan119.xhtml",
+        "member_sha256": "63297e07a21e55bb415842413e230bcc344eb9299b6a7b25dceab42d4368494b",
+        "element_paths": [
+          "body/section[3]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p007385/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p007385",
+      "batch": "content/books/shiji/vol-119/part-01",
+      "batchSha256": "d92bef8b897cdd73a9d444a7fa11eb528cca797d2534f6349fa8da5b142b9bef",
+      "publicationBatchSha256": "d92bef8b897cdd73a9d444a7fa11eb528cca797d2534f6349fa8da5b142b9bef",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_孙叔敖",
+          "title": "孙叔敖"
+        },
+        {
+          "group": "people",
+          "key": "person_楚庄王",
+          "title": "楚庄王"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v119_sunshuao_cart",
+          "title": "孙叔敖以提高里门门槛促民改用高车"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v119_sunshuao_cart_person_孙叔敖",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v119_sunshuao_cart_person_楚庄王",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "楚人喜用低车",
+      "caption": "楚地百姓习惯使用低矮的车。",
+      "scene": "楚地百姓习惯使用低矮的车。",
+      "alt": "楚人喜用低车：楚地百姓习惯使用低矮的车。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007385",
+          "excerpt": "楚民俗好庳車"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "国君想下令",
+      "caption": "楚庄王觉得低车不便于马，想下令把车改高。",
+      "scene": "楚庄王觉得低车不便于马，想下令把车改高。",
+      "alt": "国君想下令：楚庄王觉得低车不便于马，想下令把车改高。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007385",
+          "excerpt": "欲下令使髙之"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "孙叔敖劝缓",
+      "caption": "孙叔敖担心命令频繁，百姓会不知道该听从什么。",
+      "scene": "孙叔敖担心命令频繁，百姓会不知道该听从什么。",
+      "alt": "孙叔敖劝缓：孙叔敖担心命令频繁，百姓会不知道该听从什么。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007385",
+          "excerpt": "民不知所從"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "换一个办法",
+      "caption": "他建议教各里提高门槛，让乘车者不得不考虑改车。",
+      "scene": "他建议教各里提高门槛，让乘车者不得不考虑改车。",
+      "alt": "换一个办法：他建议教各里提高门槛，让乘车者不得不考虑改车。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007385",
+          "excerpt": "使髙其梱"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "出入需要适应",
+      "caption": "乘车的人不愿频繁下车，便逐渐把自己的车改高。",
+      "scene": "乘车的人不愿频繁下车，便逐渐把自己的车改高。",
+      "alt": "出入需要适应：乘车的人不愿频繁下车，便逐渐把自己的车改高。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007385",
+          "excerpt": "君子不能數下車"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "半年后的变化",
+      "caption": "过了半年，百姓的车辆都改高了。",
+      "scene": "过了半年，百姓的车辆都改高了。",
+      "alt": "半年后的变化：过了半年，百姓的车辆都改高了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007385",
+          "excerpt": "民悉自髙其車"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已查看整张原画及各格：格数、阅读顺序、人物衣色与关键器物连续。",
+      "核对图下注文与原文证据；无图内文字、无空白占位、无改变主要结局的画面。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      478,
+      930,
+      1424
+    ],
+    "columnEdges": [
+      0,
+      551,
+      1105
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《孙叔敖与高门槛》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 孙叔敖青蓝袍，庄王赭红袍。门槛横在村门底部，低车无法方便通过，高车车身抬高；不画现代栏杆收费站。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 楚地百姓习惯使用低矮的车。\n2. 楚庄王觉得低车不便于马，想下令把车改高。\n3. 孙叔敖担心命令频繁，百姓会不知道该听从什么。\n4. 他建议教各里提高门槛，让乘车者不得不考虑改车。\n5. 乘车的人不愿频繁下车，便逐渐把自己的车改高。\n6. 过了半年，百姓的车辆都改高了。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

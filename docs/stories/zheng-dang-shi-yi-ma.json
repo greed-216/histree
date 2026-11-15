@@ -1,0 +1,186 @@
+{
+  "slug": "zheng-dang-shi-yi-ma",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "2a4c8f4f83abeeb399347791952cc8b39accd576320d3efddfef9719caff2b5d",
+  "source": {
+    "book": "据《史记》卷一百二十《汲郑列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p007418",
+    "excerpt": "鄭莊以任俠自喜，脫張羽於緦聲聞梁楚之閒。孝景時，為太子舍人。每五日洗沐，常置驛馬安諸郊，存諸故人，請謝賓客，夜以繼日，至其明旦，常恐不遍。莊好黃老之言，其慕長者如恐不見。年少官薄，然其游知交皆其大父行，天下有名之士也。武帝立，莊稍遷為魯中尉、濟南太守、江都相，至九卿為右內史。以武安侯魏其時議，貶秩為詹事，遷為大農令。",
+    "excerptSha256": "32aa825e31fffeaed462c128f1ba26e7c33c59e306ffdad05dc9361f4c800561",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p007418",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 728328,
+        "char_end": 728487,
+        "line_start": 14829,
+        "line_end": 14829,
+        "raw_excerpt_sha256": "32aa825e31fffeaed462c128f1ba26e7c33c59e306ffdad05dc9361f4c800561",
+        "epub_member": "OPS/c120_shi_ji_juan120.xhtml",
+        "member_sha256": "0703e24daffd3e05ed6455cef03baf412dcb13bea21566d345cb82c3ac65c7dc",
+        "element_paths": [
+          "body/section[3]/p[2]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p007418/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p007418",
+      "batch": "content/books/shiji/vol-120/part-01",
+      "batchSha256": "9e48f4140807130526dff30b5e8b272dfade961efd48f03da24d515f9a4772be",
+      "publicationBatchSha256": "9e48f4140807130526dff30b5e8b272dfade961efd48f03da24d515f9a4772be",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_郑当时",
+          "title": "郑当时"
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "年少官位不高",
+      "caption": "郑当时年轻时官位不高，却很敬慕长者与名士。",
+      "scene": "郑当时年轻时官位不高，却很敬慕长者与名士。",
+      "alt": "年少官位不高：郑当时年轻时官位不高，却很敬慕长者与名士。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007418",
+          "excerpt": "年少官薄"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "休沐先备马",
+      "caption": "每逢五日休沐，他常把驿马预备在各处郊外。",
+      "scene": "每逢五日休沐，他常把驿马预备在各处郊外。",
+      "alt": "休沐先备马：每逢五日休沐，他常把驿马预备在各处郊外。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007418",
+          "excerpt": "常置驛馬安諸郊"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "探访故人",
+      "caption": "他利用这些马匹往来，探问故人的近况。",
+      "scene": "他利用这些马匹往来，探问故人的近况。",
+      "alt": "探访故人：他利用这些马匹往来，探问故人的近况。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007418",
+          "excerpt": "存諸故人"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "拜谢宾客",
+      "caption": "他也去问候、答谢宾客，认真维系往来。",
+      "scene": "他也去问候、答谢宾客，认真维系往来。",
+      "alt": "拜谢宾客：他也去问候、答谢宾客，认真维系往来。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007418",
+          "excerpt": "請謝賓客"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "夜里仍在赶路",
+      "caption": "探访常从白天继续到夜晚，直至次日清晨。",
+      "scene": "探访常从白天继续到夜晚，直至次日清晨。",
+      "alt": "夜里仍在赶路：探访常从白天继续到夜晚，直至次日清晨。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007418",
+          "excerpt": "夜以繼日"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "总怕没有走遍",
+      "caption": "即使如此，他仍担心没有探访周全，与许多年长名士成为朋友。",
+      "scene": "即使如此，他仍担心没有探访周全，与许多年长名士成为朋友。",
+      "alt": "总怕没有走遍：即使如此，他仍担心没有探访周全，与许多年长名士成为朋友。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007418",
+          "excerpt": "常恐不遍"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已逐格查看原画，格数、叙事顺序、关键器物和人物行动符合脚本，原文与改编边界已核对。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      402,
+      811,
+      1234
+    ],
+    "columnEdges": [
+      0,
+      638,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《郑当时置驿马》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 郑当时年轻成年青绿袍短须，长者灰白须赭褐袍；古代驿马无现代马鞍用品；一昼一夜光线变化，无电子时钟、无官款赠礼。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 郑当时年轻时官位不高，却很敬慕长者与名士。\n2. 每逢五日休沐，他常把驿马预备在各处郊外。\n3. 他利用这些马匹往来，探问故人的近况。\n4. 他也去问候、答谢宾客，认真维系往来。\n5. 探访常从白天继续到夜晚，直至次日清晨。\n6. 即使如此，他仍担心没有探访周全，与许多年长名士成为朋友。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

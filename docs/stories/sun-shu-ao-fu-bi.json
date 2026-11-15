@@ -1,0 +1,207 @@
+{
+  "slug": "sun-shu-ao-fu-bi",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "5ea94f7fe0514176558bb3d13d9109babef7e8ab50c7277c2f53a273cb14e782",
+  "source": {
+    "book": "据《史记》卷一百一十九《循吏列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p007384",
+    "excerpt": "莊王以爲幣輕，更以小爲大，百姓不便，皆去其業。市令言之相曰：「市亂，民莫安其處，次行不定。」相曰：「如此幾何頃乎？」市令曰：「三月頃。」相曰：「罷，吾今令之復矣。」後五日，朝，相言之王曰：「前日更幣，以爲輕。今市令來言曰『市亂，民莫安其處，次行之不定』。臣請遂令復如故。」王許之，下令三日而市復如故。",
+    "excerptSha256": "40c7057516aac79f1fd061e5d0806acff0c20b7313ea5523bab7fe41e3f05da4",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p007384",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 724781,
+        "char_end": 724931,
+        "line_start": 14761,
+        "line_end": 14761,
+        "raw_excerpt_sha256": "40c7057516aac79f1fd061e5d0806acff0c20b7313ea5523bab7fe41e3f05da4",
+        "epub_member": "OPS/c119_shi_ji_juan119.xhtml",
+        "member_sha256": "63297e07a21e55bb415842413e230bcc344eb9299b6a7b25dceab42d4368494b",
+        "element_paths": [
+          "body/section[3]/p[2]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p007384/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p007384",
+      "batch": "content/books/shiji/vol-119/part-01",
+      "batchSha256": "d92bef8b897cdd73a9d444a7fa11eb528cca797d2534f6349fa8da5b142b9bef",
+      "publicationBatchSha256": "d92bef8b897cdd73a9d444a7fa11eb528cca797d2534f6349fa8da5b142b9bef",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_孙叔敖",
+          "title": "孙叔敖"
+        },
+        {
+          "group": "people",
+          "key": "person_楚庄王",
+          "title": "楚庄王"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v119_sunshuao_currency",
+          "title": "孙叔敖劝楚庄王恢复旧币制"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v119_sunshuao_currency_person_孙叔敖",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v119_sunshuao_currency_person_楚庄王",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "改用新币",
+      "caption": "楚庄王认为钱币太轻，改小币为大币。",
+      "scene": "楚庄王认为钱币太轻，改小币为大币。",
+      "alt": "改用新币：楚庄王认为钱币太轻，改小币为大币。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007384",
+          "excerpt": "更以小爲大"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "市场不安定",
+      "caption": "百姓觉得不便，生业受到影响，市场次序也乱了。",
+      "scene": "百姓觉得不便，生业受到影响，市场次序也乱了。",
+      "alt": "市场不安定：百姓觉得不便，生业受到影响，市场次序也乱了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007384",
+          "excerpt": "百姓不便"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "市令来报告",
+      "caption": "市令向孙叔敖报告，已经这样大约三个月了。",
+      "scene": "市令向孙叔敖报告，已经这样大约三个月了。",
+      "alt": "市令来报告：市令向孙叔敖报告，已经这样大约三个月了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007384",
+          "excerpt": "三月頃"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "先作回应",
+      "caption": "孙叔敖请市令回去，说自己会设法恢复。",
+      "scene": "孙叔敖请市令回去，说自己会设法恢复。",
+      "alt": "先作回应：孙叔敖请市令回去，说自己会设法恢复。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007384",
+          "excerpt": "吾今令之復矣"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "向国君说明",
+      "caption": "五天后朝会，孙叔敖报告市场实情，请恢复旧制。",
+      "scene": "五天后朝会，孙叔敖报告市场实情，请恢复旧制。",
+      "alt": "向国君说明：五天后朝会，孙叔敖报告市场实情，请恢复旧制。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007384",
+          "excerpt": "臣請遂令復如故"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "市场恢复如故",
+      "caption": "楚庄王同意。下令三日后，市场恢复如前。",
+      "scene": "楚庄王同意。下令三日后，市场恢复如前。",
+      "alt": "市场恢复如故：楚庄王同意。下令三日后，市场恢复如前。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007384",
+          "excerpt": "市復如故"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已查看整张原画及各格：格数、阅读顺序、人物衣色与关键器物连续。",
+      "核对图下注文与原文证据；无图内文字、无空白占位、无改变主要结局的画面。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      402,
+      809,
+      1234
+    ],
+    "columnEdges": [
+      0,
+      637,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《孙叔敖恢复旧币》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 孙叔敖中年青蓝袍短须，庄王赭红袍，市令灰袍。旧币新币用不同大小的古代货币表示，不画现代纸钞或精确伪造铭文。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 楚庄王认为钱币太轻，改小币为大币。\n2. 百姓觉得不便，生业受到影响，市场次序也乱了。\n3. 市令向孙叔敖报告，已经这样大约三个月了。\n4. 孙叔敖请市令回去，说自己会设法恢复。\n5. 五天后朝会，孙叔敖报告市场实情，请恢复旧制。\n6. 楚庄王同意。下令三日后，市场恢复如前。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

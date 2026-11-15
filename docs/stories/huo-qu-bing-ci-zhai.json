@@ -1,0 +1,184 @@
+{
+  "slug": "huo-qu-bing-ci-zhai",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 4,
+  "imageSha256": "283d860082ee6905cc0ad39bb1eae1155cd2631512b4dec4b9017a57cfeb47a4",
+  "source": {
+    "book": "据《史记》卷一百一十一《卫将军骠骑列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p007111",
+    "excerpt": "驃騎將軍為人少言不泄，有氣敢任。天子嘗欲教之孫吳兵法，對曰：「顧方略何如耳，不至學古兵法。」天子為治第，令驃騎視之，對曰：「匈奴未滅，無以家為也。」由此上益重愛之。然少而侍中，貴，不省士。其從軍，天子為遣太官齎數十乘，既還，重車餘棄粱肉，而士有饑者。其在塞外，卒乏糧，或不能自振，而驃騎尚穿域蹋鞠。事多此類。大將軍為人仁善退讓，以和柔自媚於上，然天下未有稱也。",
+    "excerptSha256": "cfa7d2ce223f3100227690a6936f2df6a4fab1e325208f1d61093a00a34e6db6",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p007111",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 687619,
+        "char_end": 687799,
+        "line_start": 14215,
+        "line_end": 14215,
+        "raw_excerpt_sha256": "cfa7d2ce223f3100227690a6936f2df6a4fab1e325208f1d61093a00a34e6db6",
+        "epub_member": "OPS/c111_shi_ji_juan111.xhtml",
+        "member_sha256": "ffc5f9738ad13236edbb0ba1c67ce2a1c43cf848772d619554371e36e975ba07",
+        "element_paths": [
+          "body/section[3]/p[11]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p007111/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p007111",
+      "batch": "content/books/shiji/vol-111/part-01",
+      "batchSha256": "29bd2a3ecbe64d0d70a2509bc2584ab7d541a8b395752a5777c418429fe24d08",
+      "publicationBatchSha256": "29bd2a3ecbe64d0d70a2509bc2584ab7d541a8b395752a5777c418429fe24d08",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_卫青",
+          "title": "卫青"
+        },
+        {
+          "group": "people",
+          "key": "person_刘彻",
+          "title": "刘彻"
+        },
+        {
+          "group": "people",
+          "key": "person_霍去病",
+          "title": "霍去病"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v019_huo_rejects_house",
+          "title": "霍去病辞新第，武帝更加重爱"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v019_huo_rejects_house_person_霍去病",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v019_huo_rejects_house_person_刘彻",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "皇帝营建宅第",
+      "caption": "汉武帝为霍去病修建宅第。",
+      "scene": "汉武帝为霍去病修建宅第。",
+      "alt": "皇帝营建宅第：汉武帝为霍去病修建宅第。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007111",
+          "excerpt": "天子為治第"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "让将军去看",
+      "caption": "皇帝让霍去病去看看这处住所。",
+      "scene": "皇帝让霍去病去看看这处住所。",
+      "alt": "让将军去看：皇帝让霍去病去看看这处住所。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007111",
+          "excerpt": "令驃騎視之"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "回答未竟之事",
+      "caption": "霍去病回答，匈奴未平，自己无心经营家室。",
+      "scene": "霍去病回答，匈奴未平，自己无心经营家室。",
+      "alt": "回答未竟之事：霍去病回答，匈奴未平，自己无心经营家室。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007111",
+          "excerpt": "無以家為也"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "皇帝更加看重",
+      "caption": "汉武帝听后，更加器重喜爱他。",
+      "scene": "汉武帝听后，更加器重喜爱他。",
+      "alt": "皇帝更加看重：汉武帝听后，更加器重喜爱他。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p007111",
+          "excerpt": "由此上益重愛之"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已逐格查看正式原画，核对格数、阅读顺序、人物身份、关键动作、器物与原文结局。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      505,
+      1007
+    ],
+    "columnEdges": [
+      0,
+      778,
+      1562
+    ],
+    "reviewedPanels": 4
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《霍去病辞宅》. EXACTLY 4 equal landscape illustrations, STRICT TWO columns × 2 rows. Read left to right, top to bottom. Target 1024×660. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 霍去病年轻成年束发灰蓝甲赭披风，武帝成年黑红袍；宅第为施工后空屋，无搬家入住、无将军享宴。四格2列2行。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 汉武帝为霍去病修建宅第。\n2. 皇帝让霍去病去看看这处住所。\n3. 霍去病回答，匈奴未平，自己无心经营家室。\n4. 汉武帝听后，更加器重喜爱他。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

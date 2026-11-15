@@ -1,0 +1,228 @@
+{
+  "slug": "yue-fa-san-zhang",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 8,
+  "imageSha256": "fe3b1a82e70c75e134b530377c6c898da7af92c33feac78bee859e4f980d224e",
+  "source": {
+    "book": "据《史记》卷八《高祖本纪》改编。",
+    "locator": "local:shiji-174f8dfa444c-p000730",
+    "excerpt": "漢元年十月，沛公兵遂先諸侯至霸上。秦王子嬰素車白馬，系頸以組，封皇帝璽符節，降軹道旁。諸將或言誅秦王。沛公曰：「始懷王遣我，固以能寬容；且人已服降，又殺之，不祥。」乃以秦王屬吏，遂西入咸陽。欲止宮休舍，樊噲、張良諫，乃封秦重寶財物府庫，還軍霸上。召諸縣父老豪桀曰：「父老苦秦苛法久矣，誹謗者族，偶語者棄市。吾與諸侯約，先入關者王之，吾當王關中。與父老約，法三章耳：殺人者死，傷人及盜抵罪。餘悉除去秦法。諸吏人皆案堵如故。凡吾所以來，為父老除害，非有所侵暴，無恐！且吾所以還軍霸上，待諸侯至而定約束耳。」乃使人與秦吏行縣鄉邑，告諭之。秦人大喜，爭持牛羊酒食獻饗軍士。沛公又讓不受，曰：「倉粟多，非乏，不欲費人。」人又益喜，唯恐沛公不為秦王。",
+    "excerptSha256": "53264caaddf3dc369dc523ca8439bc28d706c7e18dbb3c8efe764e3176faa239",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p000730",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 68223,
+        "char_end": 68542,
+        "line_start": 1459,
+        "line_end": 1459,
+        "raw_excerpt_sha256": "53264caaddf3dc369dc523ca8439bc28d706c7e18dbb3c8efe764e3176faa239",
+        "epub_member": "OPS/c8_shi_ji_juan008.xhtml",
+        "member_sha256": "521f5ee25f4851045242cd6b45fd572b71f27e590e3f4bbf76844aaf81b4bdf1",
+        "element_paths": [
+          "body/section[2]/p[22]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p000730/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p000730",
+      "batch": "content/books/shiji/vol-008/from-start/part-01",
+      "batchSha256": "c5e8ef978345bab627256945d7b161b6b4e843d9e38c0f5a6be4a95bd3421c23",
+      "publicationBatchSha256": "c5e8ef978345bab627256945d7b161b6b4e843d9e38c0f5a6be4a95bd3421c23",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_子婴",
+          "title": "子婴"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v009_ziying_surrender",
+          "title": "子婴在轵道旁向刘邦投降，刘邦拒绝杀降王的建议，将他交给属吏"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v009_xiaohe_documents",
+          "title": "刘邦进入咸阳，萧何先收秦丞相府图籍；刘邦接受樊哙、张良劝告返回霸上"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v009_three_laws",
+          "title": "刘邦十一月向关中父老宣布约法三章，命人告谕郡县，并拒收民众馈赠"
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "秦王投降",
+      "caption": "刘邦先入关中，接受秦王子婴投降，没有杀他。",
+      "scene": "刘邦先入关中，接受秦王子婴投降，没有杀他。",
+      "alt": "秦王投降：刘邦先入关中，接受秦王子婴投降，没有杀他。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "乃以秦王屬吏"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "封存府库",
+      "caption": "听取劝谏后，他封存秦朝的贵重财物与府库。",
+      "scene": "听取劝谏后，他封存秦朝的贵重财物与府库。",
+      "alt": "封存府库：听取劝谏后，他封存秦朝的贵重财物与府库。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "乃封秦重寶財物府庫"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "退军霸上",
+      "caption": "刘邦把军队撤回霸上，不留居秦宫。",
+      "scene": "刘邦把军队撤回霸上，不留居秦宫。",
+      "alt": "退军霸上：刘邦把军队撤回霸上，不留居秦宫。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "還軍霸上"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "召见地方父老",
+      "caption": "他召集各县父老豪杰，说明百姓久受苛法之苦。",
+      "scene": "他召集各县父老豪杰，说明百姓久受苛法之苦。",
+      "alt": "召见地方父老：他召集各县父老豪杰，说明百姓久受苛法之苦。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "父老苦秦苛法久矣"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "约定三项原则",
+      "caption": "他提出杀人者死、伤人和盗窃者按罪惩处，废除其余秦苛法。",
+      "scene": "他提出杀人者死、伤人和盗窃者按罪惩处，废除其余秦苛法。",
+      "alt": "约定三项原则：他提出杀人者死、伤人和盗窃者按罪惩处，废除其余秦苛法。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "法三章耳"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "传告乡邑",
+      "caption": "他派人同秦朝原有官吏一起，到县乡传告。",
+      "scene": "他派人同秦朝原有官吏一起，到县乡传告。",
+      "alt": "传告乡邑：他派人同秦朝原有官吏一起，到县乡传告。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "行縣鄉邑，告諭之"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "百姓送来食物",
+      "caption": "秦地百姓高兴，争着拿牛羊酒食慰劳军士。",
+      "scene": "秦地百姓高兴，争着拿牛羊酒食慰劳军士。",
+      "alt": "百姓送来食物：秦地百姓高兴，争着拿牛羊酒食慰劳军士。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "爭持牛羊酒食"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "拒绝耗费民众",
+      "caption": "刘邦说仓中粮食很多，不愿再耗费百姓，因此不受。",
+      "scene": "刘邦说仓中粮食很多，不愿再耗费百姓，因此不受。",
+      "alt": "拒绝耗费民众：刘邦说仓中粮食很多，不愿再耗费百姓，因此不受。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p000730",
+          "excerpt": "不欲費人"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已逐格查看正式原画，核对格数、阅读顺序、人物身份、关键动作、器物与原文结局。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      354,
+      714,
+      1064,
+      1424
+    ],
+    "columnEdges": [
+      0,
+      548,
+      1105
+    ],
+    "reviewedPanels": 8
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《约法三章》. EXACTLY 8 equal landscape illustrations, STRICT TWO columns × 4 rows. Read left to right, top to bottom. Target 1024×1320. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 刘邦成年黑须赭袍，张良青绿袍，樊哙灰蓝甲，子婴素白衣。无处刑、无受降者绳索勒颈。父老皆成年百姓，木牍无字。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 刘邦先入关中，接受秦王子婴投降，没有杀他。\n2. 听取劝谏后，他封存秦朝的贵重财物与府库。\n3. 刘邦把军队撤回霸上，不留居秦宫。\n4. 他召集各县父老豪杰，说明百姓久受苛法之苦。\n5. 他提出杀人者死、伤人和盗窃者按罪惩处，废除其余秦苛法。\n6. 他派人同秦朝原有官吏一起，到县乡传告。\n7. 秦地百姓高兴，争着拿牛羊酒食慰劳军士。\n8. 刘邦说仓中粮食很多，不愿再耗费百姓，因此不受。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

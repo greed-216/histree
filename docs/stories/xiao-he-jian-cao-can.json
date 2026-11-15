@@ -1,0 +1,184 @@
+{
+  "slug": "xiao-he-jian-cao-can",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 4,
+  "imageSha256": "a6b9ed7ce0fed4d8a3d2abfba14f30be3e66d5e7d18eabb1ac9cc1a395634353",
+  "source": {
+    "book": "据《史记》卷五十三《萧相国世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005190",
+    "excerpt": "何素不與曹參相能，及何病，孝惠自臨視相國病，因問曰：「君即百歲後，誰可代君者？」對曰：「知臣莫如主。」孝惠曰：「曹參何如？」何頓首曰：「帝得之矣！臣死不恨矣！」",
+    "excerptSha256": "51a3a81d2b89ff84ca828310a5690b7ee74fd5f9826de85a67d3932a6d4db3d2",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005190",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 441000,
+        "char_end": 441080,
+        "line_start": 10375,
+        "line_end": 10375,
+        "raw_excerpt_sha256": "51a3a81d2b89ff84ca828310a5690b7ee74fd5f9826de85a67d3932a6d4db3d2",
+        "epub_member": "OPS/c53_shi_ji_juan053.xhtml",
+        "member_sha256": "64bb2b44fa08ff20f0fa17370abc80c7fb587b5f6501e1a98d68b874c42984ce",
+        "element_paths": [
+          "body/section[2]/p[13]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p005190/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005190",
+      "batch": "content/books/shiji/vol-053/part-01",
+      "batchSha256": "eaab16c8969fa08366daca2b7a06030ddb3ff9592301a05971131ef558912c3b",
+      "publicationBatchSha256": "eaab16c8969fa08366daca2b7a06030ddb3ff9592301a05971131ef558912c3b",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_萧何",
+          "title": "萧何"
+        },
+        {
+          "group": "people",
+          "key": "person_刘盈",
+          "title": "刘盈"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v012_xiao_death",
+          "title": "萧何病中向刘盈认可曹参继任，七月辛未去世"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v012_xiao_death_person_萧何",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v012_xiao_death_person_刘盈",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_曹参",
+          "title": "曹参"
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "皇帝来探病",
+      "caption": "萧何病重，汉惠帝亲自来探望。",
+      "scene": "萧何病重，汉惠帝亲自来探望。",
+      "alt": "皇帝来探病：萧何病重，汉惠帝亲自来探望。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005190",
+          "excerpt": "孝惠自臨視相國病"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "问起继任者",
+      "caption": "惠帝问，他百年之后，谁可以接替相国。",
+      "scene": "惠帝问，他百年之后，谁可以接替相国。",
+      "alt": "问起继任者：惠帝问，他百年之后，谁可以接替相国。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005190",
+          "excerpt": "誰可代君者"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "皇帝提出曹参",
+      "caption": "萧何说了解臣子莫过于君主，惠帝便问曹参如何。",
+      "scene": "萧何说了解臣子莫过于君主，惠帝便问曹参如何。",
+      "alt": "皇帝提出曹参：萧何说了解臣子莫过于君主，惠帝便问曹参如何。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005190",
+          "excerpt": "曹參何如"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "萧何郑重赞同",
+      "caption": "萧何叩头说，皇帝找对了人，自己死而无憾。",
+      "scene": "萧何叩头说，皇帝找对了人，自己死而无憾。",
+      "alt": "萧何郑重赞同：萧何叩头说，皇帝找对了人，自己死而无憾。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005190",
+          "excerpt": "帝得之矣"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "已逐格查看正式原画，核对格数、阅读顺序、人物身份、关键动作、器物与原文结局。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      501,
+      1008
+    ],
+    "columnEdges": [
+      0,
+      783,
+      1561
+    ],
+    "reviewedPanels": 4
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《萧何荐曹参》. EXACTLY 4 equal landscape illustrations, STRICT TWO columns × 2 rows. Read left to right, top to bottom. Target 1024×660. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 萧何年长灰白须深蓝袍卧榻，惠帝年轻成年赭红袍；曹参仅回忆剪影青绿官袍。无帝王病亡画面，四格2列2行。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 萧何病重，汉惠帝亲自来探望。\n2. 惠帝问，他百年之后，谁可以接替相国。\n3. 萧何说了解臣子莫过于君主，惠帝便问曹参如何。\n4. 萧何叩头说，皇帝找对了人，自己死而无憾。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

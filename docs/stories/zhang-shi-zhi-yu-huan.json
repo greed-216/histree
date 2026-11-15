@@ -1,0 +1,226 @@
+{
+  "slug": "zhang-shi-zhi-yu-huan",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并扩展至100篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "449812eaa16778c47379bb19157b3fd9b57f67ac94bc7f508a607a8ad42e85fe",
+  "source": {
+    "book": "据《史记》卷一百零二《张释之冯唐列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p006782",
+    "excerpt": "其後有人盜高廟坐前玉環，捕得，文帝怒，下廷尉治。釋之案律盜宗廟服御物者爲奏，奏當棄市。上大怒曰：「人之無道，乃盜先帝廟器，吾屬廷尉者，欲致之族，而君以法奏之，非吾所以共承宗廟意也。」釋之免冠頓首謝曰：「法如是足也。且罪等，然以逆順爲差。今盜宗廟器而族之，有如萬分之一，假令愚民取長陵一抔土，陛下何以加其法乎？」久之，文帝與太后言之，乃許廷尉當。是時，中尉條侯周亞夫與梁相山都侯王恬開見釋之持議平，乃結爲親友。張廷尉由此天下稱之。",
+    "excerptSha256": "941f14947ed66b485ab9b8d59381b43429bfe9d1b10f6b4113824ba716781921",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p006782",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 637204,
+        "char_end": 637418,
+        "line_start": 13557,
+        "line_end": 13557,
+        "raw_excerpt_sha256": "941f14947ed66b485ab9b8d59381b43429bfe9d1b10f6b4113824ba716781921",
+        "epub_member": "OPS/c102_shi_ji_juan102.xhtml",
+        "member_sha256": "e0530110ea4307e875e83c05231985effc68005a3bbb3cf17bc9c029bdf84bd4",
+        "element_paths": [
+          "body/section[2]/p[7]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-hundred/sources/shiji-174f8dfa444c-p006782/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p006782",
+      "batch": "content/books/shiji/vol-102/part-01",
+      "batchSha256": "906225d26277718ee99cc7ce014765741df4866613ffbcabe33002799d5a6cda",
+      "publicationBatchSha256": "906225d26277718ee99cc7ce014765741df4866613ffbcabe33002799d5a6cda",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_张释之",
+          "title": "张释之"
+        },
+        {
+          "group": "people",
+          "key": "person_刘恒",
+          "title": "刘恒"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v014_temple_ring_sentence",
+          "title": "张释之按法判盗高庙玉环者弃市，文帝欲族诛；张释之以量刑有序辩解后，帝禀太后同意"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v014_temple_ring_sentence_person_刘恒",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v014_temple_ring_sentence_person_张释之",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_王恬关",
+          "title": "王恬关"
+        },
+        {
+          "group": "people",
+          "key": "person_周亚夫",
+          "title": "周亚夫"
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v102_person_周亚夫_友人_person_张释之",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v102_person_王恬关_友人_person_张释之",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "高庙玉环失窃",
+      "caption": "有人偷走高庙座前玉环，被捕后交廷尉审理。",
+      "scene": "有人偷走高庙座前玉环，被捕后交廷尉审理。",
+      "alt": "高庙玉环失窃：有人偷走高庙座前玉环，被捕后交廷尉审理。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006782",
+          "excerpt": "盜高廟坐前玉環"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "张释之按律奏报",
+      "caption": "张释之按盗窃宗庙器物的法律，奏请判处死刑。",
+      "scene": "张释之按盗窃宗庙器物的法律，奏请判处死刑。",
+      "alt": "张释之按律奏报：张释之按盗窃宗庙器物的法律，奏请判处死刑。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006782",
+          "excerpt": "釋之案律"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "文帝希望族诛",
+      "caption": "文帝大怒，认为应当连其家族一并重罚。",
+      "scene": "文帝大怒，认为应当连其家族一并重罚。",
+      "alt": "文帝希望族诛：文帝大怒，认为应当连其家族一并重罚。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006782",
+          "excerpt": "欲致之族"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "解释刑罚尺度",
+      "caption": "张释之摘冠叩头，说明法律规定如此，已经足够。",
+      "scene": "张释之摘冠叩头，说明法律规定如此，已经足够。",
+      "alt": "解释刑罚尺度：张释之摘冠叩头，说明法律规定如此，已经足够。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006782",
+          "excerpt": "法如是足也"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "用更重情形追问",
+      "caption": "他问，若偷庙器便族诛，将来有人取长陵之土，又该怎样加罚？",
+      "scene": "他问，若偷庙器便族诛，将来有人取长陵之土，又该怎样加罚？",
+      "alt": "用更重情形追问：他问，若偷庙器便族诛，将来有人取长陵之土，又该怎样加罚？",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006782",
+          "excerpt": "陛下何以加其法乎"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "皇帝批准原判",
+      "caption": "文帝与太后商议后，批准廷尉原来的判决。",
+      "scene": "文帝与太后商议后，批准廷尉原来的判决。",
+      "alt": "皇帝批准原判：文帝与太后商议后，批准廷尉原来的判决。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006782",
+          "excerpt": "乃許廷尉當"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "checked": [
+      "逐格检查格数、人物、动作顺序与结局，图与史料改写相符；未出现图内文字或占位图。"
+    ],
+    "sourceNotes": [],
+    "rowEdges": [
+      0,
+      411,
+      805,
+      1234
+    ],
+    "columnEdges": [
+      0,
+      640,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Make ONE finished Histree vintage Chinese lianhuanhua atlas for《张释之审盗环案》. EXACTLY 6 equal landscape illustrations, STRICT TWO columns × 3 rows. Read left to right, top to bottom. Target 1024×990. Straight thin cream gutters 6px, no outer margin/header/footer, no merged cells or insets. NO TEXT anywhere: no Chinese, letters, numerals, captions, labels, calligraphy, speech bubbles, watermarks. Documents must be blank.\nThe supplied image is ONLY a STYLE reference: match early Shanghai animation / classic 1950s Chinese small-picture books, expressive stylized ADULT folk-art people with angular eyebrows and noses, larger heads, compact adult bodies, spare fluid BLACK ink lines, FLAT matte indigo/ochre/cinnabar/green blocks, subtle paper grain and warm cream negative space. Simple geometric buildings and restrained landscapes. No realistic skin modeling, brocade detail, modern anime, 3D or glossy shading. Do NOT copy the reference's story, props, characters or lettering.\nCharacter continuity and physical invariants: 张释之中年长须深蓝袍，文帝赭红袍，太后年长灰绿衣；玉环完整圆玉，盗者成年普通衣。只画审议不画囚具、处刑、尸体或族人受害。\nIllustrate these events EXACTLY in order. The following Chinese describes scenes, NEVER render the text:\n1. 有人偷走高庙座前玉环，被捕后交廷尉审理。\n2. 张释之按盗窃宗庙器物的法律，奏请判处死刑。\n3. 文帝大怒，认为应当连其家族一并重罚。\n4. 张释之摘冠叩头，说明法律规定如此，已经足够。\n5. 他问，若偷庙器便族诛，将来有人取长陵之土，又该怎样加罚？\n6. 文帝与太后商议后，批准廷尉原来的判决。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

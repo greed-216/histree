@@ -1,10 +1,19 @@
 // Read-only local preview of the built web app and this batch's actual image bytes.
 import http from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, stat, readdir } from 'node:fs/promises';
 import { resolve, basename, extname } from 'node:path';
 const root = resolve(import.meta.dirname, '../../..');
 const dist = resolve(root, 'apps/web/dist');
 const assets = resolve(root, 'artifacts/stories-fifty-20261115/upload');
+const legacy=new Map();
+async function scan(dir) {
+  for(const entry of await readdir(dir,{withFileTypes:true})) {
+    const p=resolve(dir,entry.name);
+    if(entry.isDirectory())await scan(p);
+    else if(/^[a-f0-9]{64}\.webp$/.test(entry.name))legacy.set(entry.name,p);
+  }
+}
+if(process.argv[2])await scan(resolve(process.argv[2]));
 const types = { '.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.webp':'image/webp', '.svg':'image/svg+xml', '.json':'application/json' };
 const server = http.createServer(async (req,res) => {
   try {
@@ -15,7 +24,7 @@ const server = http.createServer(async (req,res) => {
       if (url.pathname.startsWith('/api/v1/media/images/')) {
         const name=basename(url.pathname);
         if (/^[a-f0-9]{64}\.(png|webp)$/.test(name)) {
-          try { file=resolve(assets,name); await stat(file); } catch { file=undefined; }
+          try { file=resolve(assets,name); await stat(file); } catch { file=legacy.get(name); }
         }
       }
       if (!file) {

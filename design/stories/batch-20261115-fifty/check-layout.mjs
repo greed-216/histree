@@ -22,6 +22,10 @@ try {
         await page.waitForFunction(i=>document.querySelector('.story-reading-surface')?.getAttribute('data-page')===String(i+1),index);
         if(index>0 && index<=story.panels.length) await page.waitForFunction(()=>{
           const img=document.querySelector('.story-book img');return img?.complete&&img.naturalWidth>0;
+        },undefined,{timeout:60000}).catch(async error=>{
+          const image=await page.locator('.story-reading-surface').innerHTML();
+          await page.screenshot({path:new URL('layout-failure.png',out).pathname});
+          throw new Error(`${story.slug}/${index} at ${viewport.width}: ${image}\n${error.message}`);
         });
         const state=await page.evaluate(()=>{
           const surface=document.querySelector('.story-reading-surface');

@@ -1,0 +1,207 @@
+{
+  "slug": "li-guang-she-shi",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "0d0cc61c64e6860f2cc2b03008d45cb199524e73e8b40ffab8de5e1e227c9fee",
+  "source": {
+    "book": "据《史记》卷一百零九《李将军列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p006997",
+    "excerpt": "廣出獵，見草中石，以爲虎而射之，中石沒鏃，視之石也。因復更射之，終不能復入石矣。廣所居郡聞有虎，嘗自射之。及居右北平射虎，虎騰傷廣，廣亦竟射殺之。",
+    "excerptSha256": "d91f1b61706f68ec202c4ef89fef9f91f7d06b315130212df4636a3f6f87d5c6",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p006997",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 669461,
+        "char_end": 669534,
+        "line_start": 13987,
+        "line_end": 13987,
+        "raw_excerpt_sha256": "d91f1b61706f68ec202c4ef89fef9f91f7d06b315130212df4636a3f6f87d5c6",
+        "epub_member": "OPS/c109_shi_ji_juan109.xhtml",
+        "member_sha256": "8ee4e27f5f0e7494232969d355c25e31cf3ec673ec51e5c60993c86966fb01c9",
+        "element_paths": [
+          "body/section[2]/p[8]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p006997/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p006997",
+      "batch": "content/books/shiji/vol-109/part-01",
+      "batchSha256": "45af7a1ecd64709f2cba4e7728bede3c23056b59e0e0072da1ca1ef838577b51",
+      "publicationBatchSha256": "45af7a1ecd64709f2cba4e7728bede3c23056b59e0e0072da1ca1ef838577b51",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_李广",
+          "title": "李广"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v109_li_shoots_stone",
+          "title": "《李将军列传》记李广误认石为虎射入箭头"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v109_li_shoots_stone_person_李广",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v109_li_shoots_tiger",
+          "title": "李广在右北平射虎受伤后仍杀虎"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v109_li_shoots_tiger_person_李广",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "出猎途中",
+      "caption": "李广外出打猎，来到草木丛生的地方。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006997",
+          "excerpt": "廣出獵"
+        }
+      ],
+      "scene": "李广外出打猎，来到草木丛生的地方。",
+      "alt": "出猎途中：李广外出打猎，来到草木丛生的地方。"
+    },
+    {
+      "number": 2,
+      "title": "误认作虎",
+      "caption": "他看见草里的石头，以为那是一只虎。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006997",
+          "excerpt": "以爲虎"
+        }
+      ],
+      "scene": "他看见草里的石头，以为那是一只虎。",
+      "alt": "误认作虎：他看见草里的石头，以为那是一只虎。"
+    },
+    {
+      "number": 3,
+      "title": "一箭射去",
+      "caption": "李广举弓射去，箭头竟没入石中。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006997",
+          "excerpt": "中石沒鏃"
+        }
+      ],
+      "scene": "李广举弓射去，箭头竟没入石中。",
+      "alt": "一箭射去：李广举弓射去，箭头竟没入石中。"
+    },
+    {
+      "number": 4,
+      "title": "近看是石",
+      "caption": "走近查看，他才发现，眼前原来是一块石头。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006997",
+          "excerpt": "視之石也"
+        }
+      ],
+      "scene": "走近查看，他才发现，眼前原来是一块石头。",
+      "alt": "近看是石：走近查看，他才发现，眼前原来是一块石头。"
+    },
+    {
+      "number": 5,
+      "title": "再试一次",
+      "caption": "李广又向石头射箭，想重现方才的情形。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006997",
+          "excerpt": "因復更射之"
+        }
+      ],
+      "scene": "李广又向石头射箭，想重现方才的情形。",
+      "alt": "再试一次：李广又向石头射箭，想重现方才的情形。"
+    },
+    {
+      "number": 6,
+      "title": "不能再入",
+      "caption": "可再怎么射，箭也没能像先前那样进入石头。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006997",
+          "excerpt": "終不能復入石矣"
+        }
+      ],
+      "scene": "可再怎么射，箭也没能像先前那样进入石头。",
+      "alt": "不能再入：可再怎么射，箭也没能像先前那样进入石头。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。",
+    "选取本段前半射石叙事，止于再射不入，不把后半实际射虎并入本篇。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "误认始终是灰石而非真虎，首次箭入、发现石头、再射失败顺序完整。",
+    "sourceNotes": [
+      "选取本段前半射石叙事，止于再射不入，不把后半实际射虎并入本篇。"
+    ],
+    "rowEdges": [
+      0,
+      411,
+      823,
+      1233
+    ],
+    "columnEdges": [
+      0,
+      638,
+      1276
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《李广射石》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 李广中年短须深青袍皮护腕，持古弓；灰色石头隐在草中，轮廓似虎但始终石头；无真正老虎，无发光箭，箭尖入石不穿透。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 李广外出打猎，来到草木丛生的地方。\n2. 他看见草里的石头，以为那是一只虎。\n3. 李广举弓射去，箭头竟没入石中。\n4. 走近查看，他才发现，眼前原来是一块石头。\n5. 李广又向石头射箭，想重现方才的情形。\n6. 可再怎么射，箭也没能像先前那样进入石头。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

@@ -1,0 +1,248 @@
+{
+  "slug": "gou-jian-chang-dan",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "467b80c73fc626797ae3c5d11863907142698599d8997722063eb2bfc4e127f7",
+  "source": {
+    "book": "据《史记》卷四十一《越王勾践世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p004426",
+    "excerpt": "呉旣赦越，越王句踐反國，乃苦身焦思，置膽於坐，坐臥卽仰膽，飲食亦嘗膽也。曰：「女忘會稽之恥邪？」身自耕作，夫人自織，食不加肉，衣不重采，折節下賢人，厚遇賓客，振貧弔死，與百姓同其勞。欲使范蠡治國政，蠡對曰：「兵甲之事，種不如蠡；塡撫國家，親附百姓，蠡不如種。」於是舉國政屬大夫種，而使范蠡與大夫柘稽行成，爲質於呉。二歳而呉歸蠡。",
+    "excerptSha256": "1ced38ba15326e614ba7137853a2bc53aa9dbe50cfb6f927a0abeec0db31fe81",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p004426",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 370794,
+        "char_end": 370958,
+        "line_start": 8847,
+        "line_end": 8847,
+        "raw_excerpt_sha256": "1ced38ba15326e614ba7137853a2bc53aa9dbe50cfb6f927a0abeec0db31fe81",
+        "epub_member": "OPS/c41_shi_ji_juan041.xhtml",
+        "member_sha256": "9b9881cc319365e7abf3bdc8641848068d1583eef9068367d09d8749f0ba6acb",
+        "element_paths": [
+          "body/section[2]/p[6]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p004426/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p004426",
+      "batch": "content/books/shiji/vol-041/part-01",
+      "batchSha256": "15d0ff7fc5227c84b1ec9ed2c413eb780ea53d9d3fe1d00ee0a372293b38a6f5",
+      "publicationBatchSha256": "15d0ff7fc5227c84b1ec9ed2c413eb780ea53d9d3fe1d00ee0a372293b38a6f5",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_范蠡",
+          "title": "范蠡"
+        },
+        {
+          "group": "people",
+          "key": "person_柘稽（越大夫）",
+          "title": "柘稽（越大夫）"
+        },
+        {
+          "group": "people",
+          "key": "person_越王句践",
+          "title": "越王句践"
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v041_person_范蠡_臣下_person_越王句践",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_文种",
+          "title": "文种"
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v041_person_文种_臣下_person_越王句践",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v041_person_柘稽（越大夫）_臣下_person_越王句践",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v041_goujian_governance",
+          "title": "句践归越后尝胆躬耕，任文种治政"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v041_goujian_governance_person_越王句践",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v041_goujian_governance_person_文种",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v041_goujian_governance_person_范蠡",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v041_hostage",
+          "title": "范蠡与柘稽赴吴为质，两年后范蠡归"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v041_hostage_person_范蠡",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v041_hostage_person_柘稽（越大夫）",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "回到越国",
+      "caption": "吴国赦免勾践后，他回到了越国。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004426",
+          "excerpt": "越王句踐反國"
+        }
+      ],
+      "scene": "吴国赦免勾践后，他回到了越国。",
+      "alt": "回到越国：吴国赦免勾践后，他回到了越国。"
+    },
+    {
+      "number": 2,
+      "title": "座旁苦胆",
+      "caption": "他把苦胆放在座旁，坐卧时都能看见。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004426",
+          "excerpt": "置膽於坐"
+        }
+      ],
+      "scene": "他把苦胆放在座旁，坐卧时都能看见。",
+      "alt": "座旁苦胆：他把苦胆放在座旁，坐卧时都能看见。"
+    },
+    {
+      "number": 3,
+      "title": "尝一尝苦味",
+      "caption": "进食时，他也尝胆，提醒自己不要忘记会稽的耻辱。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004426",
+          "excerpt": "飲食亦嘗膽也"
+        }
+      ],
+      "scene": "进食时，他也尝胆，提醒自己不要忘记会稽的耻辱。",
+      "alt": "尝一尝苦味：进食时，他也尝胆，提醒自己不要忘记会稽的耻辱。"
+    },
+    {
+      "number": 4,
+      "title": "从自己做起",
+      "caption": "勾践亲自耕作，夫人亲自织布，衣食不求奢华。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004426",
+          "excerpt": "身自耕作，夫人自織"
+        }
+      ],
+      "scene": "勾践亲自耕作，夫人亲自织布，衣食不求奢华。",
+      "alt": "从自己做起：勾践亲自耕作，夫人亲自织布，衣食不求奢华。"
+    },
+    {
+      "number": 5,
+      "title": "与百姓共劳",
+      "caption": "他礼遇贤人，救助贫困者，与百姓一同劳作。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004426",
+          "excerpt": "與百姓同其勞"
+        }
+      ],
+      "scene": "他礼遇贤人，救助贫困者，与百姓一同劳作。",
+      "alt": "与百姓共劳：他礼遇贤人，救助贫困者，与百姓一同劳作。"
+    },
+    {
+      "number": 6,
+      "title": "各用所长",
+      "caption": "范蠡自陈长于军事、文种长于治国。勾践把国政交给了文种。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004426",
+          "excerpt": "舉國政屬大夫種"
+        }
+      ],
+      "scene": "范蠡自陈长于军事、文种长于治国。勾践把国政交给了文种。",
+      "alt": "各用所长：范蠡自陈长于军事、文种长于治国。勾践把国政交给了文种。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "苦胆、耕织、助民和文种受托均可辨，不使用卧薪或灭吴结局。",
+    "rowEdges": [
+      0,
+      342,
+      684,
+      1024
+    ],
+    "columnEdges": [
+      0,
+      766,
+      1536
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《勾践尝胆》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 勾践瘦长脸黑须、深赭素袍；夫人青绿素衣；范蠡蓝袍，文种灰紫袍。苦胆是小型悬挂器物，不画薪柴床，不画最终灭吴。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 吴国赦免勾践后，他回到了越国。\n2. 他把苦胆放在座旁，坐卧时都能看见。\n3. 进食时，他也尝胆，提醒自己不要忘记会稽的耻辱。\n4. 勾践亲自耕作，夫人亲自织布，衣食不求奢华。\n5. 他礼遇贤人，救助贫困者，与百姓一同劳作。\n6. 范蠡自陈长于军事、文种长于治国。勾践把国政交给了文种。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

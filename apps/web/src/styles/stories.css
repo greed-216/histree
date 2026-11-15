@@ -102,3 +102,6 @@
 .story-person-link { color:#315e4e; text-decoration:underline; text-decoration-color:#8f9c82; text-underline-offset:3px; }
 .story-person-link:hover,.story-source-link:hover { color:#963e2d; }
 .story-source-link { display:inline; margin-right:10px; color:#315e4e; text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:380px) {
+ .story-prose-afterword .story-prose-copy { font-size:16px; line-height:1.75; }
+}

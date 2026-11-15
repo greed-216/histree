@@ -1,0 +1,290 @@
+{
+  "slug": "ji-ming-gou-dao",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 8,
+  "imageSha256": "30e26e1e0ea119b432be48c9520259811911685d5cf6a47d0f4a83afde508222",
+  "source": {
+    "book": "据《史记》卷七十五《孟尝君列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p006000",
+    "excerpt": "齊湣王二十五年，復卒使孟嘗君入秦，昭王即以孟嘗君爲秦相。人或説秦昭王曰：「孟嘗君賢，而又齊族也，今相秦，必先齊而後秦，秦其危矣。」於是秦昭王乃止。囚孟嘗君，謀欲殺之。孟嘗君使人抵昭王幸姬求解。幸姬曰：「妾願得君狐白裘。」此時孟嘗君有一狐白裘，直千金，天下無雙，入秦獻之昭王，更無他裘。孟嘗君患之，遍問客，莫能對。最下坐有能爲狗盜者，曰：「臣能得狐白裘。」乃夜爲狗，以入秦宮臧中，取所獻狐白裘至，以獻秦王幸姬。幸姬爲言昭王，昭王釋孟嘗君。孟嘗君得出，即馳去，更封傳，變名姓以出關。夜半至函谷關。秦昭王後悔出孟嘗君，求之已去，即使人馳傳逐之。孟嘗君至關，關法鷄鳴而出客，孟嘗君恐追至，客之居下坐者有能爲鷄鳴，而鷄齊鳴，遂發傳出。出如食頃，秦追果至關，已後孟嘗君出，乃還。始孟嘗君列此二人於賓客，賓客盡羞之，及孟嘗君有秦難，卒此二人拔之。自是之後，客皆服。",
+    "excerptSha256": "5c33eafab5117a4f7f53cb2208fe1ea9bf73f38767f4a1dbb02a4b1b9c78ea5c",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p006000",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 523271,
+        "char_end": 523646,
+        "line_start": 11995,
+        "line_end": 11995,
+        "raw_excerpt_sha256": "5c33eafab5117a4f7f53cb2208fe1ea9bf73f38767f4a1dbb02a4b1b9c78ea5c",
+        "epub_member": "OPS/c75_shi_ji_juan075.xhtml",
+        "member_sha256": "fc5693c075a77eaf9304ce54816105a5972727afba6177a865e2124c7cd20b30",
+        "element_paths": [
+          "body/section[2]/p[6]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p006000/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p006000",
+      "batch": "content/books/shiji/vol-075/part-01",
+      "batchSha256": "e92df79cb6e48c39beea0ec1014d99e945cc0cb424f9a5e415b469948f76fcac",
+      "publicationBatchSha256": "e92df79cb6e48c39beea0ec1014d99e945cc0cb424f9a5e415b469948f76fcac",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_孟尝君",
+          "title": "孟尝君"
+        },
+        {
+          "group": "people",
+          "key": "person_秦昭襄王",
+          "title": "秦昭襄王"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v003_mengtian_qin_chancellor",
+          "title": "秦昭襄王以泾阳君质齐来求孟尝君，孟尝君入秦并任丞相"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_qin_chancellor_person_孟尝君",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_qin_chancellor_person_秦昭襄王",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v003_mengtian_imprisoned",
+          "title": "有人劝秦昭襄王认为孟尝君会先齐后秦，秦王改任楼缓为相并囚孟尝君，准备杀他"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_imprisoned_person_孟尝君",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_imprisoned_person_秦昭襄王",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v003_mengtian_fox_fur",
+          "title": "孟尝君门客盗回已献秦王的狐白裘，献给秦王幸姬，幸姬说情让孟尝君获释"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_fox_fur_person_孟尝君",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v003_mengtian_cock_escape",
+          "title": "秦王后悔而派人追孟尝君，门客模仿鸡鸣使关门提前开放，孟尝君脱身返回"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_cock_escape_person_孟尝君",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v003_mengtian_cock_escape_person_秦昭襄王",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "relationship_person_孟尝君_person_秦昭襄王_国相",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "被困秦国",
+      "caption": "秦昭王一度任孟尝君为相，后来又将他囚禁，打算杀他。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "囚孟嘗君"
+        }
+      ],
+      "scene": "秦昭王一度任孟尝君为相，后来又将他囚禁，打算杀他。",
+      "alt": "被困秦国：秦昭王一度任孟尝君为相，后来又将他囚禁，打算杀他。"
+    },
+    {
+      "number": 2,
+      "title": "一件狐白裘",
+      "caption": "孟尝君托人求救，对方想要狐白裘，可那件裘早已献给秦王。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "更無他裘"
+        }
+      ],
+      "scene": "孟尝君托人求救，对方想要狐白裘，可那件裘早已献给秦王。",
+      "alt": "一件狐白裘：孟尝君托人求救，对方想要狐白裘，可那件裘早已献给秦王。"
+    },
+    {
+      "number": 3,
+      "title": "门客夜取裘",
+      "caption": "一名善于潜入的门客，夜里进入宫中藏处，取回了狐白裘。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "取所獻狐白裘至"
+        }
+      ],
+      "scene": "一名善于潜入的门客，夜里进入宫中藏处，取回了狐白裘。",
+      "alt": "门客夜取裘：一名善于潜入的门客，夜里进入宫中藏处，取回了狐白裘。"
+    },
+    {
+      "number": 4,
+      "title": "获释即远走",
+      "caption": "孟尝君献上裘，终于获释，立即改换姓名和通关文书，赶往函谷关。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "變名姓以出關"
+        }
+      ],
+      "scene": "孟尝君献上裘，终于获释，立即改换姓名和通关文书，赶往函谷关。",
+      "alt": "获释即远走：孟尝君献上裘，终于获释，立即改换姓名和通关文书，赶往函谷关。"
+    },
+    {
+      "number": 5,
+      "title": "夜半关未开",
+      "caption": "半夜抵达关口，按规矩，要等鸡鸣才能放行。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "關法鷄鳴而出客"
+        }
+      ],
+      "scene": "半夜抵达关口，按规矩，要等鸡鸣才能放行。",
+      "alt": "夜半关未开：半夜抵达关口，按规矩，要等鸡鸣才能放行。"
+    },
+    {
+      "number": 6,
+      "title": "学鸡引群鸣",
+      "caption": "另一名门客学起鸡叫，周围的鸡也跟着叫了起来。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "而鷄齊鳴"
+        }
+      ],
+      "scene": "另一名门客学起鸡叫，周围的鸡也跟着叫了起来。",
+      "alt": "学鸡引群鸣：另一名门客学起鸡叫，周围的鸡也跟着叫了起来。"
+    },
+    {
+      "number": 7,
+      "title": "赶在追兵之前",
+      "caption": "关门开启，孟尝君一行出关不久，秦国追兵就赶到了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "秦追果至關"
+        }
+      ],
+      "scene": "关门开启，孟尝君一行出关不久，秦国追兵就赶到了。",
+      "alt": "赶在追兵之前：关门开启，孟尝君一行出关不久，秦国追兵就赶到了。"
+    },
+    {
+      "number": 8,
+      "title": "众客改观",
+      "caption": "两位曾被轻视的门客救了大家，宾客们这才信服。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006000",
+          "excerpt": "客皆服"
+        }
+      ],
+      "scene": "两位曾被轻视的门客救了大家，宾客们这才信服。",
+      "alt": "众客改观：两位曾被轻视的门客救了大家，宾客们这才信服。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v2.png",
+    "notes": "修正第4格交裘对象为秦王宠姬；其余七格顺序和人物保持。",
+    "corrections": [
+      {
+        "inputFile": "atlas-v1.png",
+        "outputFile": "atlas-v2.png",
+        "mode": "built-in image_gen",
+        "prompt": "Change ONLY cell 4 (row 2, right). Replace the man receiving the white fur cloak with the Qin king's favored WOMAN, an adult elegant lady in muted green and cinnabar ancient robes with a simple hair bun. Lord Mengchang in maroon hands the WHITE FUR CLOAK to HER, asking her help. No Qin king in this cell. This is a request for intercession, not a royal audience. Keep all other seven cells, events, character identities/colors, strict 2×4 grid, no text, and the established flat ink folk-art style unchanged."
+      }
+    ],
+    "rowEdges": [
+      0,
+      353,
+      709,
+      1065,
+      1424
+    ],
+    "columnEdges": [
+      0,
+      551,
+      1105
+    ],
+    "reviewedPanels": 8
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《鸡鸣狗盗》, EXACTLY 8 illustrations in STRICT 2 columns × 4 rows, equal cells, left to right then down. Target canvas 1024×1320. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 孟尝君紫红袍短须；取裘门客瘦小深灰衣；学鸡门客蓝绿衣圆脸。狐白裘为白毛披风，不画活狐。潜入者是人，不变狗。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 秦昭王一度任孟尝君为相，后来又将他囚禁，打算杀他。\n2. 孟尝君托人求救，对方想要狐白裘，可那件裘早已献给秦王。\n3. 一名善于潜入的门客，夜里进入宫中藏处，取回了狐白裘。\n4. 孟尝君献上裘，终于获释，立即改换姓名和通关文书，赶往函谷关。\n5. 半夜抵达关口，按规矩，要等鸡鸣才能放行。\n6. 另一名门客学起鸡叫，周围的鸡也跟着叫了起来。\n7. 关门开启，孟尝君一行出关不久，秦国追兵就赶到了。\n8. 两位曾被轻视的门客救了大家，宾客们这才信服。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": [
+      {
+        "inputFile": "atlas-v1.png",
+        "outputFile": "atlas-v2.png",
+        "mode": "built-in image_gen",
+        "prompt": "Change ONLY cell 4 (row 2, right). Replace the man receiving the white fur cloak with the Qin king's favored WOMAN, an adult elegant lady in muted green and cinnabar ancient robes with a simple hair bun. Lord Mengchang in maroon hands the WHITE FUR CLOAK to HER, asking her help. No Qin king in this cell. This is a request for intercession, not a royal audience. Keep all other seven cells, events, character identities/colors, strict 2×4 grid, no text, and the established flat ink folk-art style unchanged."
+      }
+    ]
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

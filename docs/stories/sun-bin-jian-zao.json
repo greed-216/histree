@@ -1,0 +1,300 @@
+{
+  "slug": "sun-bin-jian-zao",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 8,
+  "imageSha256": "980846b5197e4e8844245a7ce5ccbc0f79e77dc2e13372bce32ff84f05a38b7d",
+  "source": {
+    "book": "据《史记》卷六十五《孙子吴起列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005523",
+    "excerpt": "後十三歲，魏與趙攻韓，韓告急於齊。齊使田忌將而往，直走大梁。魏將龐涓聞之，去韓而歸，齊軍既已過而西矣。孫子謂田忌曰：「彼三晉之兵素悍勇而輕齊，齊號為怯，善戰者因其勢而利導之。兵法，百里而趣利者蹶上將，五十里而趣利者軍半至。使齊軍入魏地為十萬灶，明日為五萬灶，又明日為三萬灶。」龐涓行三日，大喜，曰：「我固知齊軍怯，入吾地三日，士卒亡者過半矣。」乃棄其步軍，與其輕銳倍日并行逐之。孫子度其行，暮當至馬陵。馬陵道陜，而旁多阻隘，可伏兵，乃斫大樹白而書之曰「龐涓死于此樹之下」。於是令齊軍善射者萬弩，夾道而伏，期曰「暮見火舉而俱發」。龐涓果夜至斫木下，見白書，乃鉆火燭之。讀其書未畢，齊軍萬弩俱發，魏軍大亂相失。龐涓自知智窮兵敗，乃自剄，曰：「遂成豎子之名！」齊因乘勝盡破其軍，虜魏太子申以歸。孫臏以此名顯天下，世傳其兵法。",
+    "excerptSha256": "241d0baddce15a4e900bca2009c5400aee52a5faa00997082ee0ba733668ec5c",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005523",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 476425,
+        "char_end": 476784,
+        "line_start": 11041,
+        "line_end": 11041,
+        "raw_excerpt_sha256": "241d0baddce15a4e900bca2009c5400aee52a5faa00997082ee0ba733668ec5c",
+        "epub_member": "OPS/c65_shi_ji_juan065.xhtml",
+        "member_sha256": "b1b28c1ebb52569ade9b2a06aecd713494867da8edcbeb898bcc2e019648fd6f",
+        "element_paths": [
+          "body/section[3]/p[4]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p005523/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005523",
+      "batch": "content/books/shiji/vol-065/part-01",
+      "batchSha256": "7a9f8c1e7dd7467a5b54bb6762cb43dbc95146dbd4d1eb6342251418db16e7b6",
+      "publicationBatchSha256": "7a9f8c1e7dd7467a5b54bb6762cb43dbc95146dbd4d1eb6342251418db16e7b6",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_孙膑",
+          "title": "孙膑"
+        },
+        {
+          "group": "people",
+          "key": "person_庞涓",
+          "title": "庞涓"
+        },
+        {
+          "group": "people",
+          "key": "person_田忌",
+          "title": "田忌"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v002_pangjuan_attacks_han",
+          "title": "庞涓率魏军攻韩，韩国向齐国求援"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_pangjuan_attacks_han_person_庞涓",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v002_qi_sends_army_han",
+          "title": "齐国派田忌、田婴、田盼率军援韩，孙膑担任谋师"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_qi_sends_army_han_person_田忌",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v002_pangjuan_returns_from_han",
+          "title": "庞涓离开韩国回救，魏国又以太子申率军抵御齐军"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_pangjuan_returns_from_han_person_庞涓",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v002_sunbin_decreases_stoves",
+          "title": "孙膑安排齐军逐日减少营灶，引诱庞涓轻兵追击"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_sunbin_decreases_stoves_person_孙膑",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_sunbin_decreases_stoves_person_田忌",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_sunbin_decreases_stoves_person_庞涓",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_魏太子申",
+          "title": "魏太子申"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v002_maling_ambush",
+          "title": "孙膑在马陵设伏，庞涓夜至中伏后自刭，齐军俘获魏太子申"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_maling_ambush_person_孙膑",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v065_p5523_zztj_v002_maling_ambush_person_田忌",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_maling_ambush_person_庞涓",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v002_maling_ambush_person_魏太子申",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "齐军救韩",
+      "caption": "魏、赵攻韩，齐国派田忌出兵，直向魏都大梁。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "直走大梁"
+        }
+      ],
+      "scene": "魏、赵攻韩，齐国派田忌出兵，直向魏都大梁。",
+      "alt": "齐军救韩：魏、赵攻韩，齐国派田忌出兵，直向魏都大梁。"
+    },
+    {
+      "number": 2,
+      "title": "借对方的轻视",
+      "caption": "孙膑对田忌说，魏军勇悍而轻视齐军，可以顺着这个想法设法引导。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "素悍勇而輕齊"
+        }
+      ],
+      "scene": "孙膑对田忌说，魏军勇悍而轻视齐军，可以顺着这个想法设法引导。",
+      "alt": "借对方的轻视：孙膑对田忌说，魏军勇悍而轻视齐军，可以顺着这个想法设法引导。"
+    },
+    {
+      "number": 3,
+      "title": "第一天多设灶",
+      "caption": "齐军进入魏境，第一天做十万灶。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "為十萬灶"
+        }
+      ],
+      "scene": "齐军进入魏境，第一天做十万灶。",
+      "alt": "第一天多设灶：齐军进入魏境，第一天做十万灶。"
+    },
+    {
+      "number": 4,
+      "title": "一天天减少",
+      "caption": "第二天减为五万灶，第三天又减为三万灶。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "又明日為三萬灶"
+        }
+      ],
+      "scene": "第二天减为五万灶，第三天又减为三万灶。",
+      "alt": "一天天减少：第二天减为五万灶，第三天又减为三万灶。"
+    },
+    {
+      "number": 5,
+      "title": "庞涓信以为真",
+      "caption": "庞涓高兴地认定：齐军胆怯，入魏三天，士卒已逃了一半多。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "士卒亡者過半矣"
+        }
+      ],
+      "scene": "庞涓高兴地认定：齐军胆怯，入魏三天，士卒已逃了一半多。",
+      "alt": "庞涓信以为真：庞涓高兴地认定：齐军胆怯，入魏三天，士卒已逃了一半多。"
+    },
+    {
+      "number": 6,
+      "title": "轻兵急追",
+      "caption": "他舍下步军，只带轻锐部队加速追赶。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "乃棄其步軍"
+        }
+      ],
+      "scene": "他舍下步军，只带轻锐部队加速追赶。",
+      "alt": "轻兵急追：他舍下步军，只带轻锐部队加速追赶。"
+    },
+    {
+      "number": 7,
+      "title": "马陵设伏",
+      "caption": "孙膑估计他傍晚会到马陵，在狭窄道路两旁设下伏兵。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "夾道而伏"
+        }
+      ],
+      "scene": "孙膑估计他傍晚会到马陵，在狭窄道路两旁设下伏兵。",
+      "alt": "马陵设伏：孙膑估计他傍晚会到马陵，在狭窄道路两旁设下伏兵。"
+    },
+    {
+      "number": 8,
+      "title": "误判的代价",
+      "caption": "庞涓夜至马陵，伏兵齐发，魏军大乱，齐军乘势获胜。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005523",
+          "excerpt": "魏軍大亂相失"
+        }
+      ],
+      "scene": "庞涓夜至马陵，伏兵齐发，魏军大乱，齐军乘势获胜。",
+      "alt": "误判的代价：庞涓夜至马陵，伏兵齐发，魏军大乱，齐军乘势获胜。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "八格灶由多变少、轻兵追击与伏兵顺序清楚；孙膑以木车出现，未画庞涓自杀。",
+    "rowEdges": [
+      0,
+      355,
+      713,
+      1064,
+      1424
+    ],
+    "columnEdges": [
+      0,
+      553,
+      1105
+    ],
+    "reviewedPanels": 8
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《孙膑减灶》, EXACTLY 8 illustrations in STRICT 2 columns × 4 rows, equal cells, left to right then down. Target canvas 1024×1320. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 孙膑坐简易木车，蓝袍成年短须；田忌赭甲；庞涓黑须紫灰甲。营灶依次密集、较少、稀少；不画数字文字；末格远景交战无自杀无血腥。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 魏、赵攻韩，齐国派田忌出兵，直向魏都大梁。\n2. 孙膑对田忌说，魏军勇悍而轻视齐军，可以顺着这个想法设法引导。\n3. 齐军进入魏境，第一天做十万灶。\n4. 第二天减为五万灶，第三天又减为三万灶。\n5. 庞涓高兴地认定：齐军胆怯，入魏三天，士卒已逃了一半多。\n6. 他舍下步军，只带轻锐部队加速追赶。\n7. 孙膑估计他傍晚会到马陵，在狭窄道路两旁设下伏兵。\n8. 庞涓夜至马陵，伏兵齐发，魏军大乱，齐军乘势获胜。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

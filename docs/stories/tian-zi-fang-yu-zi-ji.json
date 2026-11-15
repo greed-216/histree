@@ -1,0 +1,248 @@
+{
+  "slug": "tian-zi-fang-yu-zi-ji",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "dbb63fd117621beb3008f67c95683a9d4d5970811613e29501b4cdcd6bea3258",
+  "source": {
+    "book": "据《史记》卷四十四《魏世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p004705",
+    "excerpt": "十七年，伐中山，使子撃守之，趙倉唐傅之。子撃逢文侯之師田子方於朝謌，引車避，下謁。田子方不爲禮。子撃因問曰：『富貴者驕人乎？且貧賤者驕人乎？』子方曰：『亦貧賤者驕人耳。夫諸侯而驕人則失其國，大夫而驕人則失其家。貧賤者，行不合，言不用，則去之楚、越，若脱屣然，柰何其同之哉！』子撃不懌而去。西攻秦，至鄭而還，筑雒陰、合陽。",
+    "excerptSha256": "3c8196bf32d83d102c852563a4963683dc6744fd1a6cb87c3bd7a8be5edec5a1",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p004705",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 396290,
+        "char_end": 396450,
+        "line_start": 9405,
+        "line_end": 9405,
+        "raw_excerpt_sha256": "3c8196bf32d83d102c852563a4963683dc6744fd1a6cb87c3bd7a8be5edec5a1",
+        "epub_member": "OPS/c44_shi_ji_juan044.xhtml",
+        "member_sha256": "267a01b0595ae411ce354e436d2528dbf6cde96515348e22aa38a60f9ca77d6e",
+        "element_paths": [
+          "body/section[9]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p004705/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p004705",
+      "batch": "content/books/shiji/vol-044/part-01",
+      "batchSha256": "db6237149a458eb8a4ccf61c2442781f0100dc65f26ae1879f48587327cde819",
+      "publicationBatchSha256": "db6237149a458eb8a4ccf61c2442781f0100dc65f26ae1879f48587327cde819",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_赵仓唐（魏击傅）",
+          "title": "赵仓唐（魏击傅）"
+        },
+        {
+          "group": "people",
+          "key": "person_魏斯",
+          "title": "魏斯"
+        },
+        {
+          "group": "people",
+          "key": "person_魏击",
+          "title": "魏击"
+        },
+        {
+          "group": "person_relationships",
+          "key": "relationship_person_魏斯_person_魏击_父亲",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_田子方",
+          "title": "田子方"
+        },
+        {
+          "group": "person_relationships",
+          "key": "relationship_person_田子方_person_魏斯_老师",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v044_person_赵仓唐（魏击傅）_老师_person_魏击",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v001_leyang_conquers_zhongshan",
+          "title": "乐羊奉魏文侯之命攻克中山，魏文侯以中山封魏击"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v001_leyang_conquers_zhongshan_person_魏斯",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v001_leyang_conquers_zhongshan_person_魏击",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v044_r4705_zhongshan_person_赵仓唐（魏击傅）",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v001_weiji_apologizes_tianzifang",
+          "title": "魏击因田子方没有回礼而发怒，听其解释后道歉"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v001_weiji_apologizes_tianzifang_person_魏击",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v001_weiji_apologizes_tianzifang_person_田子方",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "路上相逢",
+      "caption": "魏文侯之子子击，在朝歌遇见文侯的老师田子方。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004705",
+          "excerpt": "逢文侯之師田子方"
+        }
+      ],
+      "scene": "魏文侯之子子击，在朝歌遇见文侯的老师田子方。",
+      "alt": "路上相逢：魏文侯之子子击，在朝歌遇见文侯的老师田子方。"
+    },
+    {
+      "number": 2,
+      "title": "下车拜见",
+      "caption": "子击让车避开，下车拜见；田子方却没有回礼。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004705",
+          "excerpt": "田子方不爲禮"
+        }
+      ],
+      "scene": "子击让车避开，下车拜见；田子方却没有回礼。",
+      "alt": "下车拜见：子击让车避开，下车拜见；田子方却没有回礼。"
+    },
+    {
+      "number": 3,
+      "title": "问谁可以骄人",
+      "caption": "子击问：富贵的人可以傲视别人，还是贫贱的人可以？",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004705",
+          "excerpt": "富貴者驕人乎"
+        }
+      ],
+      "scene": "子击问：富贵的人可以傲视别人，还是贫贱的人可以？",
+      "alt": "问谁可以骄人：子击问：富贵的人可以傲视别人，还是贫贱的人可以？"
+    },
+    {
+      "number": 4,
+      "title": "富贵者有所失",
+      "caption": "田子方说，诸侯骄人会失国，大夫骄人会失家。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004705",
+          "excerpt": "則失其國"
+        }
+      ],
+      "scene": "田子方说，诸侯骄人会失国，大夫骄人会失家。",
+      "alt": "富贵者有所失：田子方说，诸侯骄人会失国，大夫骄人会失家。"
+    },
+    {
+      "number": 5,
+      "title": "不合便可离去",
+      "caption": "贫贱之士的意见不被采用，可以转往别国，像脱鞋一样离开。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004705",
+          "excerpt": "若脱屣然"
+        }
+      ],
+      "scene": "贫贱之士的意见不被采用，可以转往别国，像脱鞋一样离开。",
+      "alt": "不合便可离去：贫贱之士的意见不被采用，可以转往别国，像脱鞋一样离开。"
+    },
+    {
+      "number": 6,
+      "title": "不悦而去",
+      "caption": "子击听完，并不高兴地离开了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004705",
+          "excerpt": "子撃不懌而去"
+        }
+      ],
+      "scene": "子击听完，并不高兴地离开了。",
+      "alt": "不悦而去：子击听完，并不高兴地离开了。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "下车见礼与不回礼分明，末格子击不悦离去，没有补画和解。",
+    "rowEdges": [
+      0,
+      341,
+      681,
+      1024
+    ],
+    "columnEdges": [
+      0,
+      768,
+      1536
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《田子方与子击》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 子击年轻成年赭红贵族袍；田子方中老年长须青灰袍。古车停在路边；脱鞋只为比喻，不画实际脱鞋羞辱。末格子击不悦离去，非和好。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 魏文侯之子子击，在朝歌遇见文侯的老师田子方。\n2. 子击让车避开，下车拜见；田子方却没有回礼。\n3. 子击问：富贵的人可以傲视别人，还是贫贱的人可以？\n4. 田子方说，诸侯骄人会失国，大夫骄人会失家。\n5. 贫贱之士的意见不被采用，可以转往别国，像脱鞋一样离开。\n6. 子击听完，并不高兴地离开了。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

@@ -1,0 +1,203 @@
+{
+  "slug": "zou-ji-lun-qin",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "a2144e7f876e2b9ff18914376d994a8edabdb5ea01712dd222c48b82ab184f3d",
+  "source": {
+    "book": "据《史记》卷四十六《田敬仲完世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p004868",
+    "excerpt": "騶忌子以鼓琴見威王，威王説而捨之右室。須臾，王鼓琴，騶忌子推戸入曰：「善哉鼓琴！」王勃然不説，去琴按劍曰：「夫子見容未察，何以知其善也？」騶忌子曰：「夫大絃濁以春温者，君也；小絃廉折以淸者，相也；攫之深，醳之愉者，政令也；鈞諧以鳴，大小相益，回邪而不相害者，四時也：吾是以知其善也。」王曰：「善語音。」騶忌子曰：「何獨語音，夫治國家而弭人民皆在其中。」王又勃然不説曰：「若夫語五音之紀，信未有如夫子者也。若夫治國家而弭人民，又何爲乎絲桐之閒？」騶忌子曰：「夫大絃濁以春温者，君也；小絃廉折以淸者，相也；攫之深而捨之愉者，政令也；鈞諧以鳴，大小相益，回邪而不相害者，四時也。夫復而不亂者，所以治昌也；連而徑者，所以存亡也：故曰琴音調而天下治。夫治國家而弭人民者，無若乎五音者。」王曰：「善。」",
+    "excerptSha256": "5ff8c9551c9fd628c1b046d347a6239fee706d8cd4b39f5503ae0f728b54772b",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p004868",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 408743,
+        "char_end": 409088,
+        "line_start": 9731,
+        "line_end": 9731,
+        "raw_excerpt_sha256": "5ff8c9551c9fd628c1b046d347a6239fee706d8cd4b39f5503ae0f728b54772b",
+        "epub_member": "OPS/c46_shi_ji_juan046.xhtml",
+        "member_sha256": "5b96023b32da3747eb0dff9892a985f42aa97509e66c9d39ee57e4465c45e041",
+        "element_paths": [
+          "body/section[11]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p004868/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p004868",
+      "batch": "content/books/shiji/vol-046/part-01",
+      "batchSha256": "4cbb8bac6b15648fcbdb7c1007c83bb03f9ff1d0eb0f4a1ebccb067c074834cc",
+      "publicationBatchSha256": "4cbb8bac6b15648fcbdb7c1007c83bb03f9ff1d0eb0f4a1ebccb067c074834cc",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_齐威王",
+          "title": "齐威王"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v015_p1549_a2",
+          "title": "邹忌以弹琴求见齐威王"
+        },
+        {
+          "group": "people",
+          "key": "person_邹忌",
+          "title": "邹忌"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v015_p1549_a2_邹忌",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v015_p1549_a2_齐威王",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "以琴求见",
+      "caption": "邹忌以弹琴求见齐威王，齐威王很喜欢，让他住在右室。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004868",
+          "excerpt": "以鼓琴見威王"
+        }
+      ],
+      "scene": "邹忌以弹琴求见齐威王，齐威王很喜欢，让他住在右室。",
+      "alt": "以琴求见：邹忌以弹琴求见齐威王，齐威王很喜欢，让他住在右室。"
+    },
+    {
+      "number": 2,
+      "title": "听琴称善",
+      "caption": "不久，威王弹琴，邹忌推门进来，称赞弹得好。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004868",
+          "excerpt": "善哉鼓琴"
+        }
+      ],
+      "scene": "不久，威王弹琴，邹忌推门进来，称赞弹得好。",
+      "alt": "听琴称善：不久，威王弹琴，邹忌推门进来，称赞弹得好。"
+    },
+    {
+      "number": 3,
+      "title": "威王不悦",
+      "caption": "威王停琴按剑，问他还没听仔细，凭什么说好？",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004868",
+          "excerpt": "何以知其善也"
+        }
+      ],
+      "scene": "威王停琴按剑，问他还没听仔细，凭什么说好？",
+      "alt": "威王不悦：威王停琴按剑，问他还没听仔细，凭什么说好？"
+    },
+    {
+      "number": 4,
+      "title": "弦中有君臣",
+      "caption": "邹忌把大弦、小弦比作君与相，把拨弦比作政令。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004868",
+          "excerpt": "君也"
+        }
+      ],
+      "scene": "邹忌把大弦、小弦比作君与相，把拨弦比作政令。",
+      "alt": "弦中有君臣：邹忌把大弦、小弦比作君与相，把拨弦比作政令。"
+    },
+    {
+      "number": 5,
+      "title": "从音乐谈治理",
+      "caption": "威王认为两者无关。邹忌继续说明：诸弦相和，才能互相增益。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004868",
+          "excerpt": "大小相益"
+        }
+      ],
+      "scene": "威王认为两者无关。邹忌继续说明：诸弦相和，才能互相增益。",
+      "alt": "从音乐谈治理：威王认为两者无关。邹忌继续说明：诸弦相和，才能互相增益。"
+    },
+    {
+      "number": 6,
+      "title": "终于听懂",
+      "caption": "邹忌说明调和与秩序的道理，威王听完，说：好。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p004868",
+          "excerpt": "王曰：「善。」"
+        }
+      ],
+      "scene": "邹忌说明调和与秩序的道理，威王听完，说：好。",
+      "alt": "终于听懂：邹忌说明调和与秩序的道理，威王听完，说：好。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "琴与君臣比喻以交谈表现，古琴形制可辨，威王按剑未出鞘；表情由不悦到认可。",
+    "rowEdges": [
+      0,
+      341,
+      679,
+      1024
+    ],
+    "columnEdges": [
+      0,
+      768,
+      1536
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《邹忌论琴》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 邹忌瘦长脸青绿袍；齐威王黑须赭红袍冠。琴为古七弦琴横放，不能画琵琶钢琴；按剑只手放剑柄，不拔剑。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 邹忌以弹琴求见齐威王，齐威王很喜欢，让他住在右室。\n2. 不久，威王弹琴，邹忌推门进来，称赞弹得好。\n3. 威王停琴按剑，问他还没听仔细，凭什么说好？\n4. 邹忌把大弦、小弦比作君与相，把拨弦比作政令。\n5. 威王认为两者无关。邹忌继续说明：诸弦相和，才能互相增益。\n6. 邹忌说明调和与秩序的道理，威王听完，说：好。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

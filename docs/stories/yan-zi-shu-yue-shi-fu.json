@@ -1,0 +1,208 @@
+{
+  "slug": "yan-zi-shu-yue-shi-fu",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "b84f2e23992781a84563c42d1a2150c727eaf8a332972e2c6e9777ccd790afe1",
+  "source": {
+    "book": "据《史记》卷六十二《管晏列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005466",
+    "excerpt": "越石父賢，在縲紲中。晏子出，遭之涂，解左驂贖之，載歸。弗謝，入閨。久之，越石父請絕。晏子懼然，攝衣冠謝曰：「嬰雖不仁，免子於緦何子求絕之速也？」石父曰：「不然。吾聞君子詘於不知己而信於知己者。方吾在縲紲中，彼不知我也。夫子既已感寤而贖我，是知己；知己而無禮，固不如在縲紲之中。」晏子於是延入為上客。",
+    "excerptSha256": "fdaa6f3608d5c778f491d43f2d5278c9b4033ad765ec67ba9dc3f74b81bcef6a",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005466",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 471030,
+        "char_end": 471179,
+        "line_start": 10927,
+        "line_end": 10927,
+        "raw_excerpt_sha256": "fdaa6f3608d5c778f491d43f2d5278c9b4033ad765ec67ba9dc3f74b81bcef6a",
+        "epub_member": "OPS/c62_shi_ji_juan062.xhtml",
+        "member_sha256": "5de5b5186fe4b0568c570083e88b71c4033e500ef75465c61a90359d2c89fbff",
+        "element_paths": [
+          "body/section[3]/p[2]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p005466/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005466",
+      "batch": "content/books/shiji/vol-062/part-01",
+      "batchSha256": "1935ea21e54fbd815bb972957a2de630f09f1af24dd32a15cb2e251f141a3236",
+      "publicationBatchSha256": "1935ea21e54fbd815bb972957a2de630f09f1af24dd32a15cb2e251f141a3236",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_晏婴",
+          "title": "晏婴"
+        },
+        {
+          "group": "people",
+          "key": "person_越石父",
+          "title": "越石父"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v062_yueshifu_ransomed",
+          "title": "晏婴赎出越石父并礼待为上客"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v062_yueshifu_ransomed_person_晏婴",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v062_yueshifu_ransomed_person_越石父",
+          "title": ""
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v062_person_越石父_宾客_person_晏婴",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "路遇囚徒",
+      "caption": "晏子出行，在路上遇见被拘系的越石父。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005466",
+          "excerpt": "遭之涂"
+        }
+      ],
+      "scene": "晏子出行，在路上遇见被拘系的越石父。",
+      "alt": "路遇囚徒：晏子出行，在路上遇见被拘系的越石父。"
+    },
+    {
+      "number": 2,
+      "title": "解马赎人",
+      "caption": "他解下车旁的一匹马，用它赎出越石父。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005466",
+          "excerpt": "解左驂贖之"
+        }
+      ],
+      "scene": "他解下车旁的一匹马，用它赎出越石父。",
+      "alt": "解马赎人：他解下车旁的一匹马，用它赎出越石父。"
+    },
+    {
+      "number": 3,
+      "title": "载他回家",
+      "caption": "晏子把越石父载回家，自己却进了内室，没有以礼相接。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005466",
+          "excerpt": "弗謝，入閨"
+        }
+      ],
+      "scene": "晏子把越石父载回家，自己却进了内室，没有以礼相接。",
+      "alt": "载他回家：晏子把越石父载回家，自己却进了内室，没有以礼相接。"
+    },
+    {
+      "number": 4,
+      "title": "提出绝交",
+      "caption": "过了许久，越石父请人转告：他要与晏子断绝交往。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005466",
+          "excerpt": "越石父請絕"
+        }
+      ],
+      "scene": "过了许久，越石父请人转告：他要与晏子断绝交往。",
+      "alt": "提出绝交：过了许久，越石父请人转告：他要与晏子断绝交往。"
+    },
+    {
+      "number": 5,
+      "title": "说出缘由",
+      "caption": "晏子出来致歉。越石父说：既然了解我，就不该失礼相待。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005466",
+          "excerpt": "知己而無禮"
+        }
+      ],
+      "scene": "晏子出来致歉。越石父说：既然了解我，就不该失礼相待。",
+      "alt": "说出缘由：晏子出来致歉。越石父说：既然了解我，就不该失礼相待。"
+    },
+    {
+      "number": 6,
+      "title": "请为上客",
+      "caption": "晏子听懂了，郑重请越石父入内，把他待为上客。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005466",
+          "excerpt": "延入為上客"
+        }
+      ],
+      "scene": "晏子听懂了，郑重请越石父入内，把他待为上客。",
+      "alt": "请为上客：晏子听懂了，郑重请越石父入内，把他待为上客。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "解马赎人后束缚解除，失礼、请绝、致歉与上客顺序明确。",
+    "rowEdges": [
+      0,
+      404,
+      804,
+      1234
+    ],
+    "columnEdges": [
+      0,
+      637,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《晏子赎越石父》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 晏子瘦小成年长须，深蓝袍黑帽；越石父高个成年短须，旧灰袍，获释后手腕不得继续上锁。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 晏子出行，在路上遇见被拘系的越石父。\n2. 他解下车旁的一匹马，用它赎出越石父。\n3. 晏子把越石父载回家，自己却进了内室，没有以礼相接。\n4. 过了许久，越石父请人转告：他要与晏子断绝交往。\n5. 晏子出来致歉。越石父说：既然了解我，就不该失礼相待。\n6. 晏子听懂了，郑重请越石父入内，把他待为上客。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

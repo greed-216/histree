@@ -1,0 +1,238 @@
+{
+  "slug": "zhou-gong-dai-shi",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "4e2bf2a9b7d064c8d77b523ef6796390845746bbc9a737f349c8afc426c7a755",
+  "source": {
+    "book": "据《史记》卷三十三《鲁周公世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p003654",
+    "excerpt": "其後武王既崩，成王少，在彊葆之中。周公恐天下聞武王崩而畔，周公乃踐阼代成王攝行政當國。管叔及其群弟流言於國曰：『周公將不利於成王。』周公乃告太公望、召公奭曰：『我之所以弗辟而攝行政者，恐天下畔周，無以告我先王太王、王季、文王。三王之憂勞天下久矣，於今而后成。武王蚤終，成王少，將以成周，我所以爲之若此。』於是卒相成王，而使其子伯禽代就封於魯。周公戒伯禽曰：『我文王之子，武王之弟，成王之叔父，我於天下亦不賤矣。然我一沐三捉髮，一飯三吐哺，起以待士，猶恐失天下之賢人。子之魯，慎無以國驕人。』",
+    "excerptSha256": "ab99ea7816cb3b94db8729fdf2a18c366932e0c8dc7f6d76a0fe7fddba862e02",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p003654",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 313781,
+        "char_end": 314026,
+        "line_start": 7303,
+        "line_end": 7303,
+        "raw_excerpt_sha256": "ab99ea7816cb3b94db8729fdf2a18c366932e0c8dc7f6d76a0fe7fddba862e02",
+        "epub_member": "OPS/c33_shi_ji_juan033.xhtml",
+        "member_sha256": "6565085f08834c5c5995625a283f208630a8c0f73c95cf533db2e9cea39568f1",
+        "element_paths": [
+          "body/section[2]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p003654/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p003654",
+      "batch": "content/books/shiji/vol-033/part-01",
+      "batchSha256": "40345aea31551a928bf17ceeb03edf324740a3f819c578750eefd34300d75650",
+      "publicationBatchSha256": "40345aea31551a928bf17ceeb03edf324740a3f819c578750eefd34300d75650",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_周公",
+          "title": "周公"
+        },
+        {
+          "group": "people",
+          "key": "person_伯禽",
+          "title": "伯禽"
+        },
+        {
+          "group": "person_relationships",
+          "key": "rel_shiji_v033_person_周公_父亲_person_伯禽",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v033_regency",
+          "title": "周公在成王年幼时代理王政"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v033_regency_person_周公",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_周成王",
+          "title": "周成王"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v033_regency_person_周成王",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_管叔",
+          "title": "管叔"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v033_regency_person_管叔",
+          "title": ""
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v033_boqin_lu",
+          "title": "周公使伯禽代赴鲁国封地"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v033_boqin_lu_person_周公",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v033_boqin_lu_person_伯禽",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "伯禽赴鲁",
+      "caption": "周公派儿子伯禽代自己前往鲁国。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003654",
+          "excerpt": "使其子伯禽代就封於魯"
+        }
+      ],
+      "scene": "周公派儿子伯禽代自己前往鲁国。",
+      "alt": "伯禽赴鲁：周公派儿子伯禽代自己前往鲁国。"
+    },
+    {
+      "number": 2,
+      "title": "临行叮嘱",
+      "caption": "周公告诉伯禽：不要因为拥有封国，就对人骄傲。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003654",
+          "excerpt": "慎無以國驕人"
+        }
+      ],
+      "scene": "周公告诉伯禽：不要因为拥有封国，就对人骄傲。",
+      "alt": "临行叮嘱：周公告诉伯禽：不要因为拥有封国，就对人骄傲。"
+    },
+    {
+      "number": 3,
+      "title": "以自身作比",
+      "caption": "他是文王之子、武王之弟、成王之叔，却仍不敢自满。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003654",
+          "excerpt": "我於天下亦不賤矣"
+        }
+      ],
+      "scene": "他是文王之子、武王之弟、成王之叔，却仍不敢自满。",
+      "alt": "以自身作比：他是文王之子、武王之弟、成王之叔，却仍不敢自满。"
+    },
+    {
+      "number": 4,
+      "title": "洗头也起身",
+      "caption": "周公说，自己有时一次洗头，多次握住头发，起身接待来者。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003654",
+          "excerpt": "一沐三捉髮"
+        }
+      ],
+      "scene": "周公说，自己有时一次洗头，多次握住头发，起身接待来者。",
+      "alt": "洗头也起身：周公说，自己有时一次洗头，多次握住头发，起身接待来者。"
+    },
+    {
+      "number": 5,
+      "title": "吃饭也停下",
+      "caption": "一顿饭，也会多次停下，起身接待贤士。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003654",
+          "excerpt": "一飯三吐哺"
+        }
+      ],
+      "scene": "一顿饭，也会多次停下，起身接待贤士。",
+      "alt": "吃饭也停下：一顿饭，也会多次停下，起身接待贤士。"
+    },
+    {
+      "number": 6,
+      "title": "唯恐错过贤人",
+      "caption": "即使这样，他仍担心错过天下有才能的人。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003654",
+          "excerpt": "猶恐失天下之賢人"
+        }
+      ],
+      "scene": "即使这样，他仍担心错过天下有才能的人。",
+      "alt": "唯恐错过贤人：即使这样，他仍担心错过天下有才能的人。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "六格临行教诫、捉发接客和停饭接客清楚；未画呕吐或裸身。",
+    "rowEdges": [
+      0,
+      341,
+      669,
+      1024
+    ],
+    "columnEdges": [
+      0,
+      768,
+      1536
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《周公待士》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 周公中年白面黑长须深蓝袍；伯禽年轻成年青绿袍。洗头只画披散头发用布束起，不裸体；吐哺以放下饭碗示意，无呕吐。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 周公派儿子伯禽代自己前往鲁国。\n2. 周公告诉伯禽：不要因为拥有封国，就对人骄傲。\n3. 他是文王之子、武王之弟、成王之叔，却仍不敢自满。\n4. 周公说，自己有时一次洗头，多次握住头发，起身接待来者。\n5. 一顿饭，也会多次停下，起身接待贤士。\n6. 即使这样，他仍担心错过天下有才能的人。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

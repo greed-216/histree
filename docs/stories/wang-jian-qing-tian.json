@@ -1,0 +1,203 @@
+{
+  "slug": "wang-jian-qing-tian",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "0941ebc8faf7780017163b6bcc228050b18d27ef47efc716bce41dbaea92d955",
+  "source": {
+    "book": "据《史记》卷七十三《白起王翦列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p005962",
+    "excerpt": "始皇聞之，大怒，自馳如頻陽，見謝王翦曰：「寡人以不用將軍計，李信果辱秦軍。今聞荊兵日進而西，將軍雖病，獨忍棄寡人乎！」王翦謝曰：「老臣罷病悖亂，唯大王更擇賢將。」始皇謝曰：「已矣，將軍勿復言！」王翦曰：「大王必不得已用臣，非六十萬人不可。」始皇曰：「為聽將軍計耳。」於是王翦將兵六十萬人，始皇自送至灞上。王翦行，請美田宅園池甚眾。始皇曰：「將軍行矣，何憂貧乎？」王翦曰：「為大王將，有功終不得封侯，故及大王之向臣，臣亦及時以請園池為子孫業耳。」始皇大笑。王翦既至關，使使還請善田者五輩。或曰：「將軍之乞貸，亦已甚矣。」王翦曰：「不然。夫秦王怚而不信人。今空秦國甲士而專委於我，我不多請田宅為子孫業以自堅，顧令秦王坐而疑我邪？」",
+    "excerptSha256": "8e017d104d52e8829f4e72187a084cd9152c617cc63cff11d5b6cfe81df871c5",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p005962",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 519406,
+        "char_end": 519719,
+        "line_start": 11919,
+        "line_end": 11919,
+        "raw_excerpt_sha256": "8e017d104d52e8829f4e72187a084cd9152c617cc63cff11d5b6cfe81df871c5",
+        "epub_member": "OPS/c73_shi_ji_juan073.xhtml",
+        "member_sha256": "a3e7a72d3fc305e803e327e5dd4805db48bb7e576154e22d970d5eb4f3892d1d",
+        "element_paths": [
+          "body/section[3]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p005962/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p005962",
+      "batch": "content/books/shiji/vol-073/part-01",
+      "batchSha256": "3cc925c7c1315e7e3598cb3fa2f870eb79fc8e3e12e4de11b07158b874326c83",
+      "publicationBatchSha256": "3cc925c7c1315e7e3598cb3fa2f870eb79fc8e3e12e4de11b07158b874326c83",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_王翦",
+          "title": "王翦"
+        },
+        {
+          "group": "people",
+          "key": "person_秦王政",
+          "title": "秦王政"
+        },
+        {
+          "group": "events",
+          "key": "event_zztj_v007_wangjian_recalled",
+          "title": "秦王政亲自向王翦谢过，依六十万之议任他攻楚；王翦多次请求田宅以免秦王疑忌"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v007_wangjian_recalled_person_秦王政",
+          "title": ""
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v007_wangjian_recalled_person_王翦",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "重新请老将",
+      "caption": "李信出兵失利后，秦王亲自向王翦致歉，请他出征。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005962",
+          "excerpt": "見謝王翦"
+        }
+      ],
+      "scene": "李信出兵失利后，秦王亲自向王翦致歉，请他出征。",
+      "alt": "重新请老将：李信出兵失利后，秦王亲自向王翦致歉，请他出征。"
+    },
+    {
+      "number": 2,
+      "title": "坚持所需兵力",
+      "caption": "王翦坚持，若要用他，非六十万兵不可；秦王答应了。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005962",
+          "excerpt": "非六十萬人不可"
+        }
+      ],
+      "scene": "王翦坚持，若要用他，非六十万兵不可；秦王答应了。",
+      "alt": "坚持所需兵力：王翦坚持，若要用他，非六十万兵不可；秦王答应了。"
+    },
+    {
+      "number": 3,
+      "title": "出发先请田宅",
+      "caption": "秦王送行到灞上，王翦却索求许多好田、住宅和园池。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005962",
+          "excerpt": "請美田宅園池甚眾"
+        }
+      ],
+      "scene": "秦王送行到灞上，王翦却索求许多好田、住宅和园池。",
+      "alt": "出发先请田宅：秦王送行到灞上，王翦却索求许多好田、住宅和园池。"
+    },
+    {
+      "number": 4,
+      "title": "接连派人回去",
+      "caption": "出关后，他又五次派使者回来请求好田。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005962",
+          "excerpt": "使使還請善田者五輩"
+        }
+      ],
+      "scene": "出关后，他又五次派使者回来请求好田。",
+      "alt": "接连派人回去：出关后，他又五次派使者回来请求好田。"
+    },
+    {
+      "number": 5,
+      "title": "旁人不解",
+      "caption": "有人问：将军这样求取，是不是太过了？",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005962",
+          "excerpt": "亦已甚矣"
+        }
+      ],
+      "scene": "有人问：将军这样求取，是不是太过了？",
+      "alt": "旁人不解：有人问：将军这样求取，是不是太过了？"
+    },
+    {
+      "number": 6,
+      "title": "说出顾虑",
+      "caption": "王翦说，秦王多疑，重兵全交给我；多求子孙产业，是要让他安心。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p005962",
+          "excerpt": "顧令秦王坐而疑我邪"
+        }
+      ],
+      "scene": "王翦说，秦王多疑，重兵全交给我；多求子孙产业，是要让他安心。",
+      "alt": "说出顾虑：王翦说，秦王多疑，重兵全交给我；多求子孙产业，是要让他安心。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "六格老将与君主、请田和解释顾虑连续；无虚构攻楚结局。",
+    "rowEdges": [
+      0,
+      411,
+      814,
+      1234
+    ],
+    "columnEdges": [
+      0,
+      638,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《王翦请田》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 王翦白须老将灰蓝甲赭披风；秦王黑红袍高冠；无铜钱堆，田宅用庭园与空白木牍象征。六格不画攻楚结局。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 李信出兵失利后，秦王亲自向王翦致歉，请他出征。\n2. 王翦坚持，若要用他，非六十万兵不可；秦王答应了。\n3. 秦王送行到灞上，王翦却索求许多好田、住宅和园池。\n4. 出关后，他又五次派使者回来请求好田。\n5. 有人问：将军这样求取，是不是太过了？\n6. 王翦说，秦王多疑，重兵全交给我；多求子孙产业，是要让他安心。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

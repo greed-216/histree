@@ -1,0 +1,193 @@
+{
+  "slug": "shao-gong-gan-tang",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "e134eddb1acd2da4e6b9d11487b6ceae3393afeb67cbc93ee572580221bde744",
+  "source": {
+    "book": "据《史记》卷三十四《燕召公世家》改编。",
+    "locator": "local:shiji-174f8dfa444c-p003776",
+    "excerpt": "召公之治西方，甚得兆民和。召公巡行鄕邑，有棠樹，決獄政事其下，自侯伯至庶人各得其所，無失職者。召公卒，而民人思召公之政，懷棠樹不敢伐，哥詠之，作甘棠之詩。",
+    "excerptSha256": "726ce960d2979e74d7af57b69f8ea5fb4105565aac6698963e152d4f75a25bdb",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p003776",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 320947,
+        "char_end": 321024,
+        "line_start": 7547,
+        "line_end": 7547,
+        "raw_excerpt_sha256": "726ce960d2979e74d7af57b69f8ea5fb4105565aac6698963e152d4f75a25bdb",
+        "epub_member": "OPS/c34_shi_ji_juan034.xhtml",
+        "member_sha256": "6ca2e915c6384724f5ef99a54b62afcc13d160b8eb8c0fa002b7abded9fb8de8",
+        "element_paths": [
+          "body/section[2]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p003776/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p003776",
+      "batch": "content/books/shiji/vol-034/part-01",
+      "batchSha256": "4eee31b0a8c72dc927996e66897c7ef2dc3835afa671293a5ed48aedf4cf69f2",
+      "publicationBatchSha256": "4eee31b0a8c72dc927996e66897c7ef2dc3835afa671293a5ed48aedf4cf69f2",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "people",
+          "key": "person_召公奭",
+          "title": "召公奭"
+        },
+        {
+          "group": "events",
+          "key": "event_shiji_v034_gansang",
+          "title": "召公在棠树下处理政事，民众作诗追怀"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v034_gansang_person_召公奭",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "巡行乡邑",
+      "caption": "召公治理西方，巡行乡里，了解各地事务。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003776",
+          "excerpt": "巡行鄕邑"
+        }
+      ],
+      "scene": "召公治理西方，巡行乡里，了解各地事务。",
+      "alt": "巡行乡邑：召公治理西方，巡行乡里，了解各地事务。"
+    },
+    {
+      "number": 2,
+      "title": "一棵棠树",
+      "caption": "途中有一棵棠树，他就在树下停留。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003776",
+          "excerpt": "有棠樹"
+        }
+      ],
+      "scene": "途中有一棵棠树，他就在树下停留。",
+      "alt": "一棵棠树：途中有一棵棠树，他就在树下停留。"
+    },
+    {
+      "number": 3,
+      "title": "树下理事",
+      "caption": "召公在树下处理狱讼和政事。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003776",
+          "excerpt": "決獄政事其下"
+        }
+      ],
+      "scene": "召公在树下处理狱讼和政事。",
+      "alt": "树下理事：召公在树下处理狱讼和政事。"
+    },
+    {
+      "number": 4,
+      "title": "各得其所",
+      "caption": "记载说，从诸侯到平民，都各得其所。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003776",
+          "excerpt": "自侯伯至庶人各得其所"
+        }
+      ],
+      "scene": "记载说，从诸侯到平民，都各得其所。",
+      "alt": "各得其所：记载说，从诸侯到平民，都各得其所。"
+    },
+    {
+      "number": 5,
+      "title": "留下怀念",
+      "caption": "召公去世，人们怀念他的治理，也珍惜这棵树，不忍砍伐。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003776",
+          "excerpt": "懷棠樹不敢伐"
+        }
+      ],
+      "scene": "召公去世，人们怀念他的治理，也珍惜这棵树，不忍砍伐。",
+      "alt": "留下怀念：召公去世，人们怀念他的治理，也珍惜这棵树，不忍砍伐。"
+    },
+    {
+      "number": 6,
+      "title": "歌中记住他",
+      "caption": "人们歌咏这份怀念，作成《甘棠》之诗。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p003776",
+          "excerpt": "作甘棠之詩"
+        }
+      ],
+      "scene": "人们歌咏这份怀念，作成《甘棠》之诗。",
+      "alt": "歌中记住他：人们歌咏这份怀念，作成《甘棠》之诗。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "六格树下理事、去世后怀念与歌咏可辨，无虚构具体案件判决。",
+    "rowEdges": [
+      0,
+      407,
+      808,
+      1233
+    ],
+    "columnEdges": [
+      0,
+      638,
+      1275
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《召公与甘棠树》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 召公成年长须深蓝宽袍简冠；棠树枝叶淡绿有白花；百姓朴素衣。无现代法院无判决文字，不编具体案件胜败。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 召公治理西方，巡行乡里，了解各地事务。\n2. 途中有一棵棠树，他就在树下停留。\n3. 召公在树下处理狱讼和政事。\n4. 记载说，从诸侯到平民，都各得其所。\n5. 召公去世，人们怀念他的治理，也珍惜这棵树，不忍砍伐。\n6. 人们歌咏这份怀念，作成《甘棠》之诗。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

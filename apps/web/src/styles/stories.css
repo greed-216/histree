@@ -89,6 +89,7 @@
  .story-reader-toolbar { min-height:42px; padding-top:4px; padding-bottom:4px; }
  .story-reading-surface { padding:8px 0; }
  .story-prose-page { min-height:0; padding:16px 22px; }
+ .story-prose-afterword { padding-top:12px; padding-bottom:12px; }
  .story-prose-page h2 { margin:6px 0 10px; font-size:21px; }
  .story-prose-copy { margin:5px 0; font-size:16px; line-height:1.65; }
  .story-prose-footer,.story-source-note { margin-top:12px; padding-top:10px; }
@@ -102,3 +103,7 @@
 .story-person-link { color:#315e4e; text-decoration:underline; text-decoration-color:#8f9c82; text-underline-offset:3px; }
 .story-person-link:hover,.story-source-link:hover { color:#963e2d; }
 .story-source-link { display:inline; margin-right:10px; color:#315e4e; text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:380px) {
+ .story-prose-afterword { padding:18px; }
+ .story-prose-afterword .story-prose-copy { margin:6px 0; font-size:16px; line-height:1.75; }
+}

@@ -1,0 +1,203 @@
+{
+  "slug": "han-xin-ren-ru",
+  "status": "approved",
+  "reviewDate": "2026-11-15",
+  "reviewer": "Codex source, script and image editorial review",
+  "authorization": "用户要求从已有录入历史中整理故事并录入至50篇，特别重视后记和寓意；沿用既定画风。本轮编辑审图不代称用户逐幅确认。",
+  "kind": "史传故事",
+  "panelCount": 6,
+  "imageSha256": "3b45d4e57092df5b82d0928e43bedbae136e8efc1634d7a8acefac74f1430c26",
+  "source": {
+    "book": "据《史记》卷九十二《淮阴侯列传》改编。",
+    "locator": "local:shiji-174f8dfa444c-p006492",
+    "excerpt": "淮陰屠中少年有侮信者，曰：『若雖長大，好帶刀劍，中情怯耳。』眾辱之曰：『信能死，刺我；不能死，出我袴下。』於是信孰視之，俛出袴下，蒲伏。一市人皆笑信，以爲怯。",
+    "excerptSha256": "361574d843ae77ce91d708cf28f564a7c9277806d3531547874db83d3e6a0436",
+    "paragraphs": [
+      {
+        "id": "shiji-174f8dfa444c-p006492",
+        "source_file": "resources/originals/twenty-four-histories/01史记-EPUB全文.txt",
+        "source_sha256": "5423910b1148c1a825bbd01d13c998475dacc464b88c2710337d42932476d828",
+        "original_file": "resources/originals/twenty-four-histories/backup/史記.epub",
+        "original_sha256": "3477626573e75c3ad9c453c28f60983bec0adc8aea0f1689dd25a8e32c13dda6",
+        "char_start": 596467,
+        "char_end": 596546,
+        "line_start": 12977,
+        "line_end": 12977,
+        "raw_excerpt_sha256": "361574d843ae77ce91d708cf28f564a7c9277806d3531547874db83d3e6a0436",
+        "epub_member": "OPS/c92_shi_ji_juan092.xhtml",
+        "member_sha256": "72e9cabbb955274f4c0859a9679fbc865bf14f3aa22aa277ca630084d78a9d10",
+        "element_paths": [
+          "body/section[1]/p[3]"
+        ],
+        "conversion_manifest": "resources/derived/epub-txt/01史记/manifest.json"
+      }
+    ],
+    "snapshots": [
+      "design/stories/batch-20261115-fifty/sources/shiji-174f8dfa444c-p006492/source.txt"
+    ],
+    "transcriptionNote": "从选定TXT逐字导出，保留原件与工作文本哈希和行、字符定位；电子转录不宣称纸本异文全校。"
+  },
+  "existingIngestion": [
+    {
+      "paragraphId": "shiji-174f8dfa444c-p006492",
+      "batch": "content/books/shiji/vol-092/part-01",
+      "batchSha256": "36dfba080c31a22e1f8d8db6a73559f5477730862bbb0a7e4289a70376636cc5",
+      "publicationBatchSha256": "36dfba080c31a22e1f8d8db6a73559f5477730862bbb0a7e4289a70376636cc5",
+      "publicationStages": [
+        "preflight_checked",
+        "drafts_verified_source",
+        "drafts_verified_person",
+        "drafts_verified_event",
+        "drafts_verified_person_relationship",
+        "drafts_verified_person_event",
+        "drafts_verified_fact_claim",
+        "source_texts_verified",
+        "published_source",
+        "published_person",
+        "published_event",
+        "published_person_relationship",
+        "published_person_event",
+        "published_fact_claim",
+        "anonymous_readback_verified"
+      ],
+      "facts": [
+        {
+          "group": "events",
+          "key": "event_zztj_v009_hanxin_early",
+          "title": "《资治通鉴》回顾淮阴韩信早年寄食，获漂母给饭，并忍受屠中少年的胯下羞辱"
+        },
+        {
+          "group": "people",
+          "key": "person_淮阴韩信",
+          "title": "淮阴韩信"
+        },
+        {
+          "group": "person_events",
+          "key": "participation_event_zztj_v009_hanxin_early_person_淮阴韩信",
+          "title": ""
+        },
+        {
+          "group": "people",
+          "key": "person_淮阴少年（使韩信受胯下辱者）",
+          "title": "淮阴少年（使韩信受胯下辱者）"
+        },
+        {
+          "group": "person_events",
+          "key": "pe_shiji_v092_p6492_zztj_v009_hanxin_early_person_淮阴少年（使韩信受胯下辱者）",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "number": 1,
+      "title": "集市遭拦",
+      "caption": "淮阴集市上，一名屠户中的年轻人当众侮辱韩信。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006492",
+          "excerpt": "有侮信者"
+        }
+      ],
+      "scene": "淮阴集市上，一名屠户中的年轻人当众侮辱韩信。",
+      "alt": "集市遭拦：淮阴集市上，一名屠户中的年轻人当众侮辱韩信。"
+    },
+    {
+      "number": 2,
+      "title": "故意挑衅",
+      "caption": "他嘲讽韩信：你虽长得高、喜欢带剑，心里其实胆怯。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006492",
+          "excerpt": "中情怯耳"
+        }
+      ],
+      "scene": "他嘲讽韩信：你虽长得高、喜欢带剑，心里其实胆怯。",
+      "alt": "故意挑衅：他嘲讽韩信：你虽长得高、喜欢带剑，心里其实胆怯。"
+    },
+    {
+      "number": 3,
+      "title": "逼他作答",
+      "caption": "他逼韩信选择：敢拼命就刺我，不敢就从我的胯下过去。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006492",
+          "excerpt": "出我袴下"
+        }
+      ],
+      "scene": "他逼韩信选择：敢拼命就刺我，不敢就从我的胯下过去。",
+      "alt": "逼他作答：他逼韩信选择：敢拼命就刺我，不敢就从我的胯下过去。"
+    },
+    {
+      "number": 4,
+      "title": "仔细看他",
+      "caption": "韩信认真地看了看眼前这个人，没有拔剑。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006492",
+          "excerpt": "信孰視之"
+        }
+      ],
+      "scene": "韩信认真地看了看眼前这个人，没有拔剑。",
+      "alt": "仔细看他：韩信认真地看了看眼前这个人，没有拔剑。"
+    },
+    {
+      "number": 5,
+      "title": "俯身过去",
+      "caption": "韩信俯下身，从他的胯下爬了过去。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006492",
+          "excerpt": "俛出袴下"
+        }
+      ],
+      "scene": "韩信俯下身，从他的胯下爬了过去。",
+      "alt": "俯身过去：韩信俯下身，从他的胯下爬了过去。"
+    },
+    {
+      "number": 6,
+      "title": "承受嘲笑",
+      "caption": "整个集市的人都笑韩信，以为他胆小。事情没有变成一场杀伤。",
+      "evidence": [
+        {
+          "paragraphId": "shiji-174f8dfa444c-p006492",
+          "excerpt": "一市人皆笑信"
+        }
+      ],
+      "scene": "整个集市的人都笑韩信，以为他胆小。事情没有变成一场杀伤。",
+      "alt": "承受嘲笑：整个集市的人都笑韩信，以为他胆小。事情没有变成一场杀伤。"
+    }
+  ],
+  "adaptations": [
+    "图下注文与对白为现代白话改写，画中衣色、神态、布景为艺术表现；不冒充原文逐字引语。",
+    "后记解释情节与人物处境，寓意为现代阅读理解，不新增人物事件或强定原文未载的年份。",
+    "没有可唯一核对的已发布人物时保留姓名，不猜配稳定ID；匿名角色不配真人。"
+  ],
+  "unboundPeople": [],
+  "imageReview": {
+    "status": "approved",
+    "file": "atlas-v1.png",
+    "notes": "韩信未拔剑，胯下受辱后离去；围观者嘲笑，不将欺凌表现为自愿游戏。",
+    "rowEdges": [
+      0,
+      341,
+      676,
+      1024
+    ],
+    "columnEdges": [
+      0,
+      766,
+      1536
+    ],
+    "reviewedPanels": 6
+  },
+  "generation": {
+    "mode": "built-in image_gen",
+    "useCase": "illustration-story",
+    "prompt": "Use case: illustration-story. Create one finished Histree Chinese lianhuanhua atlas for《韩信忍辱》, EXACTLY 6 illustrations in STRICT 2 columns × 3 rows, equal cells, left to right then down. Target canvas 1024×990. Thin straight cream gutters about 6px, no outer margin, no header/footer, no inset, no merged cells. Each cell is a LANDSCAPE illustration. NO TEXT, captions, numbers, letters, calligraphy, speech balloons, watermark anywhere. Documents must be blank.\nSTYLE REFERENCE: attached image is only the established visual style, NOT story content/layout/text. Match exaggerated expressive ADULT folk-art characters, larger heads with angular noses/eyebrows and spare fine BLACK ink contours, FLAT matte indigo/ochre/cinnabar/green color blocks, restrained subtle paper grain, cream negative space and simple geometric backgrounds, early Shanghai animation / 1950s Chinese small-picture books. No realistic facial modeling, elaborate brocade, modern anime, 3D, glossy digital painting or dense brown noise. Preserve ancient Chinese clothing and props. No props/events copied from the reference.\nCHARACTERS AND INVARIANTS: 韩信高个年轻成年青灰旧袍佩鞘剑；挑衅者赭黄短衣成年男子；六格无出鞘无殴打，围观者表情为嘲笑，不能画韩信笑脸主动游戏。\nScenes, exactly in this order (Chinese captions here describe events to ILLUSTRATE; never render their text):\n1. 淮阴集市上，一名屠户中的年轻人当众侮辱韩信。\n2. 他嘲讽韩信：你虽长得高、喜欢带剑，心里其实胆怯。\n3. 他逼韩信选择：敢拼命就刺我，不敢就从我的胯下过去。\n4. 韩信认真地看了看眼前这个人，没有拔剑。\n5. 韩信俯下身，从他的胯下爬了过去。\n6. 整个集市的人都笑韩信，以为他胆小。事情没有变成一场杀伤。",
+    "reference": "design/stories/yi-mu-li-xin-v2/images/yi-mu-li-xin-eight-panels-vintage-v2.png",
+    "corrections": []
+  },
+  "publicationScope": "仅故事目录与公开图片；不写事实库、不推进任何史书账本。"
+}

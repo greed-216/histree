@@ -1,0 +1,352 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 0,
+    "inserts": {
+      "claim_structure": 4,
+      "event": 1,
+      "event_dating": 1,
+      "fact_claim": 4,
+      "person_event": 1
+    },
+    "protected_rows": 7,
+    "membership_guards": 1
+  },
+  "after_rows": [
+    {
+      "table": "person",
+      "identity": {
+        "id": "dcea035d-3e49-5a98-8114-73f7b2bdfec3"
+      },
+      "full_after": {
+        "aliases": [
+          "劉惟敬"
+        ],
+        "biography": null,
+        "birth_year": null,
+        "courtesy_name": null,
+        "created_at": "2026-11-17T10:09:25.013904+00:00",
+        "death_year": null,
+        "description": "明代官员，洪武2年（1369年）三月，刘惟敬调任广西参政。",
+        "era": "明",
+        "faction": null,
+        "family": [],
+        "historical_evaluation": null,
+        "id": "dcea035d-3e49-5a98-8114-73f7b2bdfec3",
+        "image_url": null,
+        "name": "刘惟敬",
+        "native_place": null,
+        "references": [],
+        "social_relations": [],
+        "status": "published",
+        "tags": []
+      }
+    },
+    {
+      "table": "source",
+      "identity": {
+        "id": "27eb0824-8ec7-5565-82b6-f10af7684eba"
+      },
+      "full_after": {
+        "author": null,
+        "created_at": "2026-11-17T08:43:56.883986+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "27eb0824-8ec7-5565-82b6-f10af7684eba",
+        "note": "《明史》卷一百〇九，段落 mingshi-2f603db3d81e-p018062；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "明史·卷109·卷一百〇九·mingshi-2f603db3d81e-p018062",
+        "url": "https://github.com/greed-216/histree/blob/c7c7da6a6300a8fe47d0e0ed6d383b92a0e534e9/content/books/mingshi/vol-109/table-first/part-01/sources/mingshi-2f603db3d81e-p018062/source.txt"
+      }
+    },
+    {
+      "table": "source",
+      "identity": {
+        "id": "e50229ad-4905-5b79-831d-e1191a6e86b0"
+      },
+      "full_after": {
+        "author": null,
+        "created_at": "2026-11-17T08:43:56.703443+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "e50229ad-4905-5b79-831d-e1191a6e86b0",
+        "note": "《明史》卷一百〇九，段落 mingshi-2f603db3d81e-p018057；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "明史·卷109·卷一百〇九·mingshi-2f603db3d81e-p018057",
+        "url": "https://github.com/greed-216/histree/blob/c7c7da6a6300a8fe47d0e0ed6d383b92a0e534e9/content/books/mingshi/vol-109/table-first/part-01/sources/mingshi-2f603db3d81e-p018057/source.txt"
+      }
+    },
+    {
+      "table": "source_text",
+      "identity": {
+        "archive_url_sha256": "d4b79a07163030de8982844e11de08683f0d99f2e46d6044caba62cb65ee9e24",
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba"
+      },
+      "full_after": {
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba",
+        "archive_url_sha256": "d4b79a07163030de8982844e11de08683f0d99f2e46d6044caba62cb65ee9e24",
+        "archive_url": "https://github.com/greed-216/histree/blob/c7c7da6a6300a8fe47d0e0ed6d383b92a0e534e9/content/books/mingshi/vol-109/table-first/part-01/sources/mingshi-2f603db3d81e-p018062/source.txt",
+        "content": "李伯昇 正月，同知詹事院事。\t劉惟敬 十二月任。",
+        "content_sha256": "9ff25aa2527da67c16b43463df62738ed3ef1985bc47efb418e87c4b1129a9f1",
+        "archive_blob_sha256": "9ff25aa2527da67c16b43463df62738ed3ef1985bc47efb418e87c4b1129a9f1",
+        "archive_commit": "c7c7da6a6300a8fe47d0e0ed6d383b92a0e534e9",
+        "created_at": "2026-11-17T08:44:01.068119+00:00"
+      }
+    },
+    {
+      "table": "source_text",
+      "identity": {
+        "archive_url_sha256": "56e6b716a8e354b85efb12a42ba584d1632f3b8bc1ebfad568eb1e47454ff503",
+        "source_id": "e50229ad-4905-5b79-831d-e1191a6e86b0"
+      },
+      "full_after": {
+        "source_id": "e50229ad-4905-5b79-831d-e1191a6e86b0",
+        "archive_url_sha256": "56e6b716a8e354b85efb12a42ba584d1632f3b8bc1ebfad568eb1e47454ff503",
+        "archive_url": "https://github.com/greed-216/histree/blob/c7c7da6a6300a8fe47d0e0ed6d383b92a0e534e9/content/books/mingshi/vol-109/table-first/part-01/sources/mingshi-2f603db3d81e-p018057/source.txt",
+        "content": "太祖洪武元年戊申\t中書令 時中書及都督府議倣元制，設中書令，太子為之。太祖曰：「吾子年未長，學未充，更事未多。所宜尊禮師傅，講習經傳，博通古今，識達機宜。他日軍國重務，皆令啟聞，何必作中書令乎？」遂不設。",
+        "content_sha256": "f9123a017ef7a96c9107afa669b9534763b39600e0cba6b70c1b5e1a907e8e3d",
+        "archive_blob_sha256": "f9123a017ef7a96c9107afa669b9534763b39600e0cba6b70c1b5e1a907e8e3d",
+        "archive_commit": "c7c7da6a6300a8fe47d0e0ed6d383b92a0e534e9",
+        "created_at": "2026-11-17T08:44:01.068119+00:00"
+      }
+    },
+    {
+      "table": "library_source_link",
+      "identity": {
+        "archive_url_sha256": "d4b79a07163030de8982844e11de08683f0d99f2e46d6044caba62cb65ee9e24",
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba"
+      },
+      "full_after": {
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba",
+        "archive_url_sha256": "d4b79a07163030de8982844e11de08683f0d99f2e46d6044caba62cb65ee9e24",
+        "snapshot_sha256": "9ff25aa2527da67c16b43463df62738ed3ef1985bc47efb418e87c4b1129a9f1",
+        "paragraph_id": "mingshi-2f603db3d81e-p018062"
+      }
+    },
+    {
+      "table": "library_source_link",
+      "identity": {
+        "archive_url_sha256": "56e6b716a8e354b85efb12a42ba584d1632f3b8bc1ebfad568eb1e47454ff503",
+        "source_id": "e50229ad-4905-5b79-831d-e1191a6e86b0"
+      },
+      "full_after": {
+        "source_id": "e50229ad-4905-5b79-831d-e1191a6e86b0",
+        "archive_url_sha256": "56e6b716a8e354b85efb12a42ba584d1632f3b8bc1ebfad568eb1e47454ff503",
+        "snapshot_sha256": "f9123a017ef7a96c9107afa669b9534763b39600e0cba6b70c1b5e1a907e8e3d",
+        "paragraph_id": "mingshi-2f603db3d81e-p018057"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "7fcb6d90-be3a-565f-a1c0-3522a48ab3b7"
+      },
+      "full_after": {
+        "claim_id": "7fcb6d90-be3a-565f-a1c0-3522a48ab3b7",
+        "note_sha256": "934bf43b93c475fd78f49598b49ccbc4e745947d9e276cb3bfbdd99b50ccb046",
+        "quote_text": "劉惟敬 十二月任。",
+        "review_note": "已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "review_state": "recorded"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "1450b4c9-08dc-57bd-a755-fcd2d461b3d9"
+      },
+      "full_after": {
+        "claim_id": "1450b4c9-08dc-57bd-a755-fcd2d461b3d9",
+        "note_sha256": "7e5e5ab9810d6d1a0ddc3e49312868cef9bdda5edfc7487b2c20b338a62fd854",
+        "quote_text": "太祖洪武元年戊申",
+        "review_note": "已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "review_state": "recorded"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "07a02992-9f2b-5b0f-889f-8e69bd60e2b7"
+      },
+      "full_after": {
+        "claim_id": "07a02992-9f2b-5b0f-889f-8e69bd60e2b7",
+        "note_sha256": "934bf43b93c475fd78f49598b49ccbc4e745947d9e276cb3bfbdd99b50ccb046",
+        "quote_text": "劉惟敬 十二月任。",
+        "review_note": "已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "review_state": "recorded"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "efb30f4f-07a3-55ca-87a7-29320128c5f5"
+      },
+      "full_after": {
+        "claim_id": "efb30f4f-07a3-55ca-87a7-29320128c5f5",
+        "note_sha256": "934bf43b93c475fd78f49598b49ccbc4e745947d9e276cb3bfbdd99b50ccb046",
+        "quote_text": "劉惟敬 十二月任。",
+        "review_note": "已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "review_state": "recorded"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "d085987b-7639-558f-a4f4-433443f6102d"
+      },
+      "full_after": {
+        "created_at": "2026-11-17T10:19:59.999212+00:00",
+        "description": "洪武元年（1368年）十二月，刘惟敬出任参知政事。",
+        "dynasty": "明",
+        "end_year": 1368,
+        "id": "d085987b-7639-558f-a4f4-433443f6102d",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1368,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武元年十二月",
+        "title": "刘惟敬任参知政事"
+      }
+    },
+    {
+      "table": "event_dating",
+      "identity": {
+        "id": "0a9331a1-d23f-5f6a-9944-75a7bf21ddb2"
+      },
+      "full_after": {
+        "id": "0a9331a1-d23f-5f6a-9944-75a7bf21ddb2",
+        "event_id": "d085987b-7639-558f-a4f4-433443f6102d",
+        "claim_id": "1450b4c9-08dc-57bd-a755-fcd2d461b3d9",
+        "claim_sha256": "f2505ce056ff287a77232e5546ab7ab0a785f0a139858988c331b75e8cdf5612",
+        "earliest_year": 1368,
+        "latest_year": 1368,
+        "precision_kind": "year",
+        "era_key": null,
+        "basis": "卷109原EPUB洪武元年跨行年栏覆盖刘惟敬十二月任职格；元年锚点已核为1368年。",
+        "review_state": "reviewed"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "7fcb6d90-be3a-565f-a1c0-3522a48ab3b7"
+      },
+      "full_after": {
+        "citation": "《明史》卷109·宰辅年表一·mingshi-2f603db3d81e-p018062；洪武元年（1368年）",
+        "claim_text": "洪武元年（1368年）十二月，刘惟敬出任参知政事。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:20:00.148616+00:00",
+        "field_path": "description",
+        "id": "7fcb6d90-be3a-565f-a1c0-3522a48ab3b7",
+        "note": "原文：劉惟敬 十二月任。；核对说明：已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba",
+        "status": "published",
+        "subject_id": "d085987b-7639-558f-a4f4-433443f6102d",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "1450b4c9-08dc-57bd-a755-fcd2d461b3d9"
+      },
+      "full_after": {
+        "citation": "《明史》卷109·宰辅年表一·mingshi-2f603db3d81e-p018057；洪武元年（1368年）",
+        "claim_text": "刘惟敬这次任职发生在洪武元年，即1368年。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:20:00.148616+00:00",
+        "field_path": "start_year",
+        "id": "1450b4c9-08dc-57bd-a755-fcd2d461b3d9",
+        "note": "原文：太祖洪武元年戊申；核对说明：已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "source_id": "e50229ad-4905-5b79-831d-e1191a6e86b0",
+        "status": "published",
+        "subject_id": "d085987b-7639-558f-a4f4-433443f6102d",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "07a02992-9f2b-5b0f-889f-8e69bd60e2b7"
+      },
+      "full_after": {
+        "citation": "《明史》卷109·宰辅年表一·mingshi-2f603db3d81e-p018062；洪武元年（1368年）",
+        "claim_text": "刘惟敬出任参知政事。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:20:00.148616+00:00",
+        "field_path": "role",
+        "id": "07a02992-9f2b-5b0f-889f-8e69bd60e2b7",
+        "note": "原文：劉惟敬 十二月任。；核对说明：已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba",
+        "status": "published",
+        "subject_id": "7bab605b-5805-510a-b7ca-6b75af99c38c",
+        "subject_table": "person_event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "efb30f4f-07a3-55ca-87a7-29320128c5f5"
+      },
+      "full_after": {
+        "citation": "《明史》卷109·宰辅年表一·mingshi-2f603db3d81e-p018062；洪武元年（1368年）",
+        "claim_text": "洪武元年（1368年）十二月，刘惟敬出任参知政事。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:20:00.148616+00:00",
+        "field_path": "biography",
+        "id": "efb30f4f-07a3-55ca-87a7-29320128c5f5",
+        "note": "原文：劉惟敬 十二月任。；核对说明：已按原EPUB参知政事栏、跨行洪武元年年栏和次年惟敬的连续记载核对；没有将刘惟敬改为近名刘惟谦。",
+        "source_id": "27eb0824-8ec7-5565-82b6-f10af7684eba",
+        "status": "published",
+        "subject_id": "dcea035d-3e49-5a98-8114-73f7b2bdfec3",
+        "subject_table": "person"
+      }
+    },
+    {
+      "table": "person_event",
+      "identity": {
+        "id": "7bab605b-5805-510a-b7ca-6b75af99c38c"
+      },
+      "full_after": {
+        "created_at": "2026-11-17T10:20:00.084121+00:00",
+        "event_id": "d085987b-7639-558f-a4f4-433443f6102d",
+        "id": "7bab605b-5805-510a-b7ca-6b75af99c38c",
+        "person_id": "dcea035d-3e49-5a98-8114-73f7b2bdfec3",
+        "role": "出任参知政事",
+        "status": "published"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "58266e06d8bcf804743e4968efe6a4bcb8b0c033b764a9113fbf04a8a3f34761",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "event_entries": 1,
+    "new_claims": 4,
+    "participations": 1,
+    "source_locations": 2,
+    "year": 1368,
+    "quote_expansion_verified": true,
+    "checked_at": "2026-11-17T10:24:42.382Z"
+  },
+  "audit": {
+    "updates": 0,
+    "inserts": {
+      "claim_structure": 4,
+      "event": 1,
+      "event_dating": 1,
+      "fact_claim": 4,
+      "person_event": 1
+    },
+    "basis": "事务收据的插入计数，已由 after_rows 完整行、独立 --verify-db 与匿名读回再次核实。"
+  }
+}

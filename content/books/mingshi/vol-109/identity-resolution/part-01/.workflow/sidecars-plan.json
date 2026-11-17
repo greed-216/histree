@@ -1,0 +1,271 @@
+{
+  "batch_dir": "content/books/mingshi/vol-109/identity-resolution/part-01",
+  "batch_key": "mingshi-v109-wang-pu-identity-20261117",
+  "batch_sha256": "ef53eeca4fefe08f07726634f18eda7d920c30fb6de4049e26d6346d91adb00f",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "a5b81d436b69f20074aaa672d682b9ddc68847fa63a4df1507225d14f10a1a7e",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [],
+  "format_version": 1,
+  "implementation_sha256": "a5b81d436b69f20074aaa672d682b9ddc68847fa63a4df1507225d14f10a1a7e",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "4e3bbd4f-76b7-54e0-948c-4bd121b29a1e",
+        "note_sha256": "4a88e94bb897dec626d13699ec8c354e0a2318d6a8c7e18f01cee0f00485f7ed",
+        "quote_text": "從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。",
+        "review_note": "同书王溥附传明确连接陈友谅建昌守将、降附后中书右丞和洪武元年副詹事；排除晚唐、后周宋初同名王溥及洪武末桂林籍广东参政。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8ff4cc02-33a9-5c81-bc67-9e73b44a3a5c",
+        "note_sha256": "4a88e94bb897dec626d13699ec8c354e0a2318d6a8c7e18f01cee0f00485f7ed",
+        "quote_text": "從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。",
+        "review_note": "同书王溥附传明确连接陈友谅建昌守将、降附后中书右丞和洪武元年副詹事；排除晚唐、后周宋初同名王溥及洪武末桂林籍广东参政。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "3a4432c3-9417-5af5-aa7c-425700a4cfa3",
+        "note_sha256": "4a88e94bb897dec626d13699ec8c354e0a2318d6a8c7e18f01cee0f00485f7ed",
+        "quote_text": "從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。",
+        "review_note": "同书王溥附传明确连接陈友谅建昌守将、降附后中书右丞和洪武元年副詹事；排除晚唐、后周宋初同名王溥及洪武末桂林籍广东参政。",
+        "review_state": "recorded"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "明确记洪武元年，同前批已发布的朝臣兼东宫官事件一致；不另造一次兼官事件。 洪武元年=1368，按本卷已核年号锚点。",
+        "claim_id": "8ff4cc02-33a9-5c81-bc67-9e73b44a3a5c",
+        "claim_sha256": "2355dcfa3950bba40cca10c9c7dbfcfbd11c3a474f2338e157ab017276afa1dc",
+        "earliest_year": 1368,
+        "era_key": null,
+        "event_id": "f470c02c-e216-5c59-a88b-e84faa1d2611",
+        "id": "9bfe7ff4-7cce-5d6b-b533-49244dbbfaca",
+        "latest_year": 1368,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "4f10cfdc9947379b391aba46b68ff5a087cf2cedcb94cb04ba5a1c853b4fe5b9",
+        "paragraph_id": "mingshi-2f603db3d81e-p021794",
+        "snapshot_sha256": "81caabed443beee313e31b7f3aac5419cda85f2823364218e54ae818daf53fe7",
+        "source_id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-109/identity-resolution/part-01/content-batch.json": "ef53eeca4fefe08f07726634f18eda7d920c30fb6de4049e26d6346d91adb00f",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/curation.json": "e4310f817eabe5c85e747351bac67715f982417a8a6eb974026082c0cdb6cdf3",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/packet.json": "2b67544f7bce5c8b91ca8f88d5148cc581f6849dcb9518b20529736b76631e8f",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/publication-mysql.json": "166b79f64ff5d8db2ff662d79aa32eca883291215c3cb69e38b7ec4625f375d2",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/sources/manifest.json": "8c2a1259c02285907e7ddd896b7d3a6b3f9851ec0fb309b36ab1c664b0cda60d",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/sources/mingshi-2f603db3d81e-p021794/source.txt": "81caabed443beee313e31b7f3aac5419cda85f2823364218e54ae818daf53fe7",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/sql/key-map.json": "adbb052fa2b482db685f6f58a5f62e8db9763ce29ea146f9089c7252937627e5",
+    "content/books/mingshi/vol-109/identity-resolution/part-01/time-review.json": "d456356ec23e188d11dc69c8894c58a2e2d1155083b2755b84ddf67e136ff417"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "4e3bbd4f-76b7-54e0-948c-4bd121b29a1e"
+      },
+      "row": {
+        "citation": "《明史》卷134·卷一百三十四·mingshi-2f603db3d81e-p021794；洪武元年，即1368年；仅补证卷109待考身份，不推进卷134连续录入。",
+        "claim_text": "洪武元年，中书右丞王溥兼任詹事府副詹事；本书附传将他明确承接为此前陈友谅的建昌守将。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:15:24.822792+00:00",
+        "field_path": "biography",
+        "id": "4e3bbd4f-76b7-54e0-948c-4bd121b29a1e",
+        "note": "原文：從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。；核对说明：同书王溥附传明确连接陈友谅建昌守将、降附后中书右丞和洪武元年副詹事；排除晚唐、后周宋初同名王溥及洪武末桂林籍广东参政。",
+        "source_id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe",
+        "status": "published",
+        "subject_id": "8106f6d1-94c7-56af-ba58-48f6cb1b7b4d",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8ff4cc02-33a9-5c81-bc67-9e73b44a3a5c"
+      },
+      "row": {
+        "citation": "《明史》卷134·卷一百三十四·mingshi-2f603db3d81e-p021794；洪武元年，即1368年；仅补证卷109待考身份，不推进卷134连续录入。",
+        "claim_text": "洪武元年朝臣兼任东宫官的安排中，王溥以中书右丞兼任副詹事。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:15:24.862473+00:00",
+        "field_path": "description",
+        "id": "8ff4cc02-33a9-5c81-bc67-9e73b44a3a5c",
+        "note": "原文：從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。；核对说明：同书王溥附传明确连接陈友谅建昌守将、降附后中书右丞和洪武元年副詹事；排除晚唐、后周宋初同名王溥及洪武末桂林籍广东参政。",
+        "source_id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe",
+        "status": "published",
+        "subject_id": "f470c02c-e216-5c59-a88b-e84faa1d2611",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3a4432c3-9417-5af5-aa7c-425700a4cfa3"
+      },
+      "row": {
+        "citation": "《明史》卷134·卷一百三十四·mingshi-2f603db3d81e-p021794；洪武元年，即1368年；仅补证卷109待考身份，不推进卷134连续录入。",
+        "claim_text": "王溥兼任詹事府副詹事。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:15:24.892207+00:00",
+        "field_path": "role",
+        "id": "3a4432c3-9417-5af5-aa7c-425700a4cfa3",
+        "note": "原文：從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。；核对说明：同书王溥附传明确连接陈友谅建昌守将、降附后中书右丞和洪武元年副詹事；排除晚唐、后周宋初同名王溥及洪武末桂林籍广东参政。",
+        "source_id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe",
+        "status": "published",
+        "subject_id": "8d381080-1d31-5f01-b352-77e994dc11b8",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-17T10:15:24.387955+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe",
+        "note": "《明史》卷一百三十四，段落 mingshi-2f603db3d81e-p021794；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "明史·卷134·卷一百三十四·mingshi-2f603db3d81e-p021794",
+        "url": "https://github.com/greed-216/histree/blob/190e5fec5eba910aa2c04bd2e7dcb23864aebe38/content/books/mingshi/vol-109/identity-resolution/part-01/sources/mingshi-2f603db3d81e-p021794/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "4f10cfdc9947379b391aba46b68ff5a087cf2cedcb94cb04ba5a1c853b4fe5b9",
+        "source_id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe"
+      },
+      "row": {
+        "archive_blob_sha256": "81caabed443beee313e31b7f3aac5419cda85f2823364218e54ae818daf53fe7",
+        "archive_commit": "190e5fec5eba910aa2c04bd2e7dcb23864aebe38",
+        "archive_url": "https://github.com/greed-216/histree/blob/190e5fec5eba910aa2c04bd2e7dcb23864aebe38/content/books/mingshi/vol-109/identity-resolution/part-01/sources/mingshi-2f603db3d81e-p021794/source.txt",
+        "archive_url_sha256": "4f10cfdc9947379b391aba46b68ff5a087cf2cedcb94cb04ba5a1c853b4fe5b9",
+        "content": "溥，安仁人。仕陳友諒為平章，守建昌。太祖命將攻之，不克。硃亮祖擊於饒之安仁港，亦失利。友諒將李明道之寇信州也，溥弟漢二在軍，俱為胡大海擒，歸於行省李文忠，文忠命二人招溥。是歲，太祖拔江州，友諒走武昌，溥乃遣使降，命仍守建昌。明年，太祖次龍興，帥其眾來見，數慰勞。從歸建康，賜第聚寶門外，號其街曰「宰相街」，以寵異之。尋遣取撫州及江西未附郡縣。從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。從大將軍北征，屢有功。賜文幣，擢河南行省平章，不署事。歲祿視李伯升、潘元明。",
+        "content_sha256": "81caabed443beee313e31b7f3aac5419cda85f2823364218e54ae818daf53fe7",
+        "created_at": "2026-11-17T10:15:25.037812+00:00",
+        "source_id": "1c0dacbe-53e7-579e-98cb-5d90ae793afe"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p021794"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 1376381,
+        "char_start": 1376147,
+        "content": "溥，安仁人。仕陳友諒為平章，守建昌。太祖命將攻之，不克。硃亮祖擊於饒之安仁港，亦失利。友諒將李明道之寇信州也，溥弟漢二在軍，俱為胡大海擒，歸於行省李文忠，文忠命二人招溥。是歲，太祖拔江州，友諒走武昌，溥乃遣使降，命仍守建昌。明年，太祖次龍興，帥其眾來見，數慰勞。從歸建康，賜第聚寶門外，號其街曰「宰相街」，以寵異之。尋遣取撫州及江西未附郡縣。從克武昌，進中書右丞。洪武元年，命兼詹事府副詹事。從大將軍北征，屢有功。賜文幣，擢河南行省平章，不署事。歲祿視李伯升、潘元明。",
+        "content_sha256": "81caabed443beee313e31b7f3aac5419cda85f2823364218e54ae818daf53fe7",
+        "flags": [
+          "section_has_source_issues"
+        ],
+        "id": "mingshi-2f603db3d81e-p021794",
+        "kind": "body",
+        "ordinal": 21658,
+        "section_id": "mingshi-2f603db3d81e-s0135"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "f470c02c-e216-5c59-a88b-e84faa1d2611"
+      },
+      "row": {
+        "created_at": "2026-10-26T03:50:29.236229+00:00",
+        "description": "周宗请求重视教导太子，获准。中书省、都督府请仿元制，以太子为中书令，朱元璋拒绝，命詹同考察历代制度，由李善长、徐达、常遇春等兼任东宫官，以免另设府僚后发生嫌隙。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1368,
+        "id": "f470c02c-e216-5c59-a88b-e84faa1d2611",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1368,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷220；本事原载纪年折合公元1368年，具体月日依引文。",
+        "title": "朱元璋设朝臣兼任东宫官，不采用元太子中书令制"
+      },
+      "table": "event"
+    }
+  ],
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "1c0dacbe-53e7-579e-98cb-5d90ae793afe": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p021794",
+      "section_id": "mingshi-2f603db3d81e-s0135",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 134
+}

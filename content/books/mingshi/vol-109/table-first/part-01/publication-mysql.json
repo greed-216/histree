@@ -1,0 +1,108 @@
+{
+  "batch_sha256": "bf5a2c4aef54dc4123c0b16a3fb51f089f62fc28d58752a42b2d0f14fb49900a",
+  "stages": [
+    {
+      "stage": "preflight_checked",
+      "at": "2026-11-17T08:43:56.054161+00:00"
+    },
+    {
+      "stage": "drafts_verified_source",
+      "at": "2026-11-17T08:43:56.732766+00:00"
+    },
+    {
+      "stage": "drafts_verified_person",
+      "at": "2026-11-17T08:43:56.776964+00:00"
+    },
+    {
+      "stage": "drafts_verified_event",
+      "at": "2026-11-17T08:43:57.004601+00:00"
+    },
+    {
+      "stage": "drafts_verified_person_relationship",
+      "at": "2026-11-17T08:43:57.005272+00:00"
+    },
+    {
+      "stage": "drafts_verified_person_event",
+      "at": "2026-11-17T08:43:57.397026+00:00"
+    },
+    {
+      "stage": "drafts_verified_fact_claim",
+      "at": "2026-11-17T08:44:00.570242+00:00"
+    },
+    {
+      "stage": "source_texts_verified",
+      "at": "2026-11-17T08:44:00.768258+00:00"
+    },
+    {
+      "stage": "published_source",
+      "at": "2026-11-17T08:44:00.768511+00:00"
+    },
+    {
+      "stage": "published_person",
+      "at": "2026-11-17T08:44:00.768772+00:00"
+    },
+    {
+      "stage": "published_event",
+      "at": "2026-11-17T08:44:00.989382+00:00"
+    },
+    {
+      "stage": "published_person_relationship",
+      "at": "2026-11-17T08:44:00.989630+00:00"
+    },
+    {
+      "stage": "published_person_event",
+      "at": "2026-11-17T08:44:01.163247+00:00"
+    },
+    {
+      "stage": "published_fact_claim",
+      "at": "2026-11-17T08:44:01.343977+00:00"
+    },
+    {
+      "stage": "anonymous_readback_verified",
+      "at": "2026-11-17T08:44:04.222907+00:00"
+    }
+  ],
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "backend": "mysql",
+  "initial_counts": {
+    "source": {
+      "new": 12,
+      "reused": 0
+    },
+    "person": {
+      "new": 0,
+      "reused": 11
+    },
+    "event": {
+      "new": 3,
+      "reused": 2
+    },
+    "person_relationship": {
+      "new": 0,
+      "reused": 0
+    },
+    "person_event": {
+      "new": 7,
+      "reused": 6
+    },
+    "fact_claim": {
+      "new": 54,
+      "reused": 0
+    },
+    "source_text": {
+      "table_exists": true,
+      "new": 7,
+      "reused": 0
+    }
+  },
+  "public_counts": {
+    "source": 12,
+    "person": 11,
+    "event": 5,
+    "person_relationship": 0,
+    "person_event": 13,
+    "fact_claim": 54,
+    "source_text": 7
+  },
+  "verified": true
+}

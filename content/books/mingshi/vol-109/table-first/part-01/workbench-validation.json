@@ -8,11 +8,15 @@
   "local_identity_registry_checked": true,
   "paragraph_reviews": 10,
   "pending_textual_review": [],
-  "online_preflight": false,
-  "published": false,
+  "online_preflight": true,
+  "published": true,
   "release_requirements": [
     "Resolve or explicitly isolate pending textual issues.",
     "Commit new snapshots and verify their fixed source URLs.",
     "Run online identity preflight before authorized publication."
-  ]
+  ],
+  "publication_verified": true,
+  "publication_audit": "publication-mysql.json",
+  "sidecars_verified": true,
+  "web_verification": ".workflow/web-proof.json"
 }

@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import type { LibraryDivision, LibraryTableRow } from '@histree/shared-types';
 import shiji from '../../data/shiji-reading-layout.json';
+import mingshi from '../../data/mingshi-reading-layout.json';
 
 type Paragraph = Record<string, unknown>;
 type Table = {
@@ -10,6 +11,7 @@ type Table = {
   columns: number;
   rows: LibraryTableRow['cells'][];
   header_paragraph_ids: string[];
+  column_labels?: string[];
 };
 type Layout = {
   book_key: string;
@@ -45,10 +47,13 @@ type Layout = {
       table_id: string;
       row_index: number;
       fragments: LibraryTableRow['fragments'];
+      context_cells?: LibraryTableRow['context_cells'];
+      calendar_year?: number;
+      calendar_note?: string;
     }
   >;
 };
-const layout = shiji as unknown as Layout;
+const layouts = [shiji, mingshi] as unknown as Layout[];
 
 export function readingAnnotations(
   p: Paragraph,
@@ -96,9 +101,11 @@ export function verifiedReadingGroups(
 }
 
 export function readingLayout(book: string, version: string): Layout | null {
-  return book === layout.book_key && version === layout.source_version
-    ? layout
-    : null;
+  return (
+    layouts.find(
+      (layout) => book === layout.book_key && version === layout.source_version,
+    ) ?? null
+  );
 }
 
 export function readingSection<T extends Record<string, unknown>>(
@@ -139,7 +146,27 @@ export function readingRow(
     cells,
     fragments: row.fragments,
     is_header: table.header_paragraph_ids.includes(paragraph.id),
+    ...(table.column_labels ? { column_labels: table.column_labels } : {}),
+    ...(row.context_cells ? { context_cells: row.context_cells } : {}),
+    ...(row.calendar_year ? { calendar_year: row.calendar_year } : {}),
+    ...(row.calendar_note ? { calendar_note: row.calendar_note } : {}),
   };
+}
+
+/** Context is also live original text; missing or edited owners disable carry-over. */
+export function verifiedTableContexts(
+  data: Layout | null,
+  ids: string[],
+  rows: Paragraph[],
+  sectionId: string,
+) {
+  const result: Record<string, Paragraph & { table_row: LibraryTableRow }> = {};
+  for (const id of ids) {
+    const p = rows.find((row) => row.id === id);
+    const row = p && readingRow(p, data, sectionId);
+    if (p && row) result[id] = { ...p, table_row: row };
+  }
+  return result;
 }
 
 /** A changed or missing original header disables layout for its whole table. */

@@ -4,6 +4,7 @@ import {
   readingRow,
   readingSection,
   verifiedHeaders,
+  verifiedTableContexts,
 } from './reading-layout';
 
 const hash = (text: string) => createHash('sha256').update(text).digest('hex');
@@ -74,5 +75,31 @@ describe('Reading layout is independent of immutable text and evidence', () => {
         t.rows.some((row) => row.some((cell) => cell[1] > 1)),
       ),
     ).toBe(true);
+  });
+  it('binds Ming year carry-over to live original text and the correct section', () => {
+    const ming = readingLayout('mingshi', '2f603db3d81e')!;
+    const id = 'mingshi-2f603db3d81e-p018057';
+    const source = {
+      id,
+      kind: 'table_row',
+      content:
+        '太祖洪武元年戊申\t中書令 時中書及都督府議倣元制，設中書令，太子為之。太祖曰：「吾子年未長，學未充，更事未多。所宜尊禮師傅，講習經傳，博通古今，識達機宜。他日軍國重務，皆令啟聞，何必作中書令乎？」遂不設。',
+    };
+    expect(readingRow(source, ming)?.calendar_year).toBe(1368);
+    expect(
+      verifiedTableContexts(ming, [id], [source], 'mingshi-2f603db3d81e-s0110')[
+        id
+      ],
+    ).toBeDefined();
+    expect(
+      verifiedTableContexts(
+        ming,
+        [id],
+        [{ ...source, content: 'changed' }],
+        'mingshi-2f603db3d81e-s0110',
+      ),
+    ).toEqual({});
+    expect(verifiedTableContexts(ming, [id], [source], 'other')).toEqual({});
+    expect(readingLayout('mingshi', 'different')).toBeNull();
   });
 });

@@ -14,6 +14,7 @@ import {
   verifiedHeaders,
   verifiedReadingGroups,
   readingAnnotations,
+  verifiedTableContexts,
 } from './reading-layout';
 
 const key = (value: string) => {
@@ -141,6 +142,25 @@ export class LibraryService {
     const tableHeaders = layout
       ? verifiedHeaders(layout, tableIds, headerRows)
       : {};
+    const contextIds = [
+      ...new Set(
+        [...rowLayouts.values()].flatMap(
+          (row) => row?.context_cells?.map((cell) => cell.paragraph_id) || [],
+        ),
+      ),
+    ];
+    const contextRows = contextIds.length
+      ? await this.rows(
+          `SELECT id,kind,content,ordinal FROM library_paragraph WHERE book_key=? AND section_id=? AND id IN (${contextIds.map(() => '?').join(',')})`,
+          [bookKey, sectionId, ...contextIds],
+        )
+      : [];
+    const tableContexts = verifiedTableContexts(
+      layout,
+      contextIds,
+      contextRows,
+      sectionId,
+    );
     const groupIds = [
       ...new Set(
         paragraphs.slice(0, 40).flatMap((p) => {
@@ -181,7 +201,10 @@ export class LibraryService {
           }
         : {}),
       ...(rowLayouts.get(p.id) &&
-      Object.hasOwn(tableHeaders, rowLayouts.get(p.id)!.table_id)
+      Object.hasOwn(tableHeaders, rowLayouts.get(p.id)!.table_id) &&
+      (rowLayouts.get(p.id)!.context_cells || []).every((cell) =>
+        Object.hasOwn(tableContexts, cell.paragraph_id),
+      )
         ? { table_row: rowLayouts.get(p.id) }
         : {}),
       review:
@@ -197,6 +220,7 @@ export class LibraryService {
       section: readingSection(sections[0], layout),
       paragraphs: reviewedParagraphs,
       ...(tableIds.length ? { table_headers: tableHeaders } : {}),
+      ...(contextIds.length ? { table_contexts: tableContexts } : {}),
       ...(groupIds.length ? { reading_groups: readingGroups } : {}),
       page,
       has_more: paragraphs.length > 40,

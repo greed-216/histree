@@ -37,6 +37,17 @@ export interface LibraryTableRow {
     [column: number, colspan: number, rowspan: number, header: boolean]
   >;
   fragments: Array<[cell: number, start: number, end: number]>;
+  column_labels?: string[];
+  calendar_year?: number;
+  calendar_note?: string;
+  context_cells?: Array<{
+    column: number;
+    colspan: number;
+    rowspan: number;
+    paragraph_id: string;
+    start: number;
+    end: number;
+  }>;
 }
 export interface LibraryParagraph {
   id: string;
@@ -58,6 +69,7 @@ export interface LibraryReading {
   section: LibrarySection;
   paragraphs: LibraryParagraph[];
   table_headers?: Record<string, LibraryParagraph[]>;
+  table_contexts?: Record<string, LibraryParagraph>;
   reading_groups?: Record<string, LibraryReadingGroup>;
   page: number;
   has_more: boolean;

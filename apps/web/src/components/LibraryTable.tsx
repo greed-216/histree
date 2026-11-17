@@ -39,6 +39,7 @@ function Fragment({
 export function LibraryTable({
   paragraphs,
   headers,
+  contexts = {},
   target,
   quote,
   query,
@@ -46,6 +47,7 @@ export function LibraryTable({
 }: {
   paragraphs: LibraryParagraph[];
   headers: LibraryParagraph[];
+  contexts?: Record<string, LibraryParagraph>;
   target: string;
   quote: string;
   query: string;
@@ -67,6 +69,46 @@ export function LibraryTable({
       const layout = parts[0].table_row!;
       const cells: ReactNode[] = [];
       let column = 0;
+      const carry = !heading
+        ? (layout.context_cells || []).filter(
+            (cell) =>
+              (occupied.get(cell.column) ?? -1) < rowIndex &&
+              contexts[cell.paragraph_id],
+          )
+        : [];
+      for (const cell of carry) {
+        const source = contexts[cell.paragraph_id];
+        cells.push(
+          <td
+            key={`carry-${cell.column}`}
+            colSpan={cell.colspan}
+            rowSpan={cell.rowspan}
+            className="library-table-first"
+          >
+            <div className="library-table-year">
+              <Fragment
+                paragraph={source}
+                start={cell.start}
+                end={cell.end}
+                query={query}
+              />
+              {layout.calendar_year && (
+                <small className="library-table-calendar">
+                  公元{layout.calendar_year}年
+                </small>
+              )}
+              {layout.calendar_note && (
+                <small className="library-table-note">
+                  {layout.calendar_note}
+                </small>
+              )}
+            </div>
+          </td>,
+        );
+        for (let c = cell.column; c < cell.column + cell.colspan; c++)
+          occupied.set(c, rowIndex + cell.rowspan - 1);
+        column = cell.column + cell.colspan;
+      }
       for (const [
         index,
         [at, colspan, rowspan, header],
@@ -85,47 +127,67 @@ export function LibraryTable({
             scope={heading ? "col" : header ? "row" : undefined}
             className={at === 0 ? "library-table-first" : undefined}
           >
-            {parts.flatMap((p) =>
-              p
-                .table_row!.fragments.filter(([cell]) => cell === index)
-                .map(([, start, end], i) => {
-                  const needle =
-                    target === p.id && quote && p.content.includes(quote)
-                      ? quote
-                      : query;
-                  const found = needle ? p.content.indexOf(needle) : -1;
-                  const focus =
-                    found >= 0
-                      ? Array.from(p.content.slice(0, found)).length
-                      : p.table_row!.fragments[0][1];
-                  const focusFragment = p.table_row!.fragments.find(
-                    ([, , right]) => right > focus,
-                  );
-                  const anchor =
-                    actual.has(p.id) &&
-                    !anchors.has(p.id) &&
-                    start === focusFragment?.[1];
-                  if (anchor) anchors.add(p.id);
-                  return (
-                    <span
-                      key={`${p.id}-${i}`}
-                      id={anchor ? `paragraph-${p.id}` : undefined}
-                      className={`library-table-fragment ${p.id === target ? "is-target" : ""}`}
-                    >
-                      <Fragment
-                        paragraph={p}
-                        start={start}
-                        end={end}
-                        query={
-                          target === p.id && quote && p.content.includes(quote)
-                            ? quote
-                            : query
-                        }
-                      />
-                    </span>
-                  );
-                }),
-            )}
+            <div
+              className={
+                at === 0 && layout.calendar_year
+                  ? "library-table-year"
+                  : undefined
+              }
+            >
+              {parts.flatMap((p) =>
+                p
+                  .table_row!.fragments.filter(([cell]) => cell === index)
+                  .map(([, start, end], i) => {
+                    const needle =
+                      target === p.id && quote && p.content.includes(quote)
+                        ? quote
+                        : query;
+                    const found = needle ? p.content.indexOf(needle) : -1;
+                    const focus =
+                      found >= 0
+                        ? Array.from(p.content.slice(0, found)).length
+                        : p.table_row!.fragments[0][1];
+                    const focusFragment = p.table_row!.fragments.find(
+                      ([, , right]) => right > focus,
+                    );
+                    const anchor =
+                      actual.has(p.id) &&
+                      !anchors.has(p.id) &&
+                      start === focusFragment?.[1];
+                    if (anchor) anchors.add(p.id);
+                    return (
+                      <span
+                        key={`${p.id}-${i}`}
+                        id={anchor ? `paragraph-${p.id}` : undefined}
+                        className={`library-table-fragment ${p.id === target ? "is-target" : ""}`}
+                      >
+                        <Fragment
+                          paragraph={p}
+                          start={start}
+                          end={end}
+                          query={
+                            target === p.id &&
+                            quote &&
+                            p.content.includes(quote)
+                              ? quote
+                              : query
+                          }
+                        />
+                      </span>
+                    );
+                  }),
+              )}
+              {at === 0 && layout.calendar_year && (
+                <small className="library-table-calendar">
+                  公元{layout.calendar_year}年
+                </small>
+              )}
+              {at === 0 && layout.calendar_note && (
+                <small className="library-table-note">
+                  {layout.calendar_note}
+                </small>
+              )}
+            </div>
           </Tag>,
         );
         for (let c = at; c < at + colspan; c++)
@@ -196,6 +258,22 @@ export function LibraryTable({
         >
           <caption>{table.caption}</caption>
           {headerRows.length > 0 && <thead>{rows(headerRows, true)}</thead>}
+          {headerRows.length === 0 && table.column_labels && (
+            <thead>
+              <tr>
+                {table.column_labels.map((label, i) => (
+                  <th
+                    key={label}
+                    scope="col"
+                    className={i === 0 ? "library-table-first" : undefined}
+                  >
+                    {label}
+                  </th>
+                ))}
+                <th scope="col">原文与关联</th>
+              </tr>
+            </thead>
+          )}
           <tbody>{rows(bodyRows, false)}</tbody>
         </table>
       </div>

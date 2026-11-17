@@ -32,6 +32,8 @@ jobs:
         run: python3 scripts/test-history-epubs.py
       - name: Validate Shiji reading layout against unchanged sources
         run: python3 scripts/test-shiji-reading-layout.py
+      - name: Validate Ming History table and year coordinates
+        run: python3 scripts/test-mingshi-reading-layout.py
       - name: Rebuild search from versioned paragraphs
         run: python3 scripts/build-history-library.py --rebuild-search
       - name: Validate paragraphs, search and source exports

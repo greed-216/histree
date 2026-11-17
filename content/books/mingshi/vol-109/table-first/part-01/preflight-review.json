@@ -1,0 +1,32 @@
+{
+  "status": "read_only_preflight_passed_not_published",
+  "batch_sha256": "bf5a2c4aef54dc4123c0b16a3fb51f089f62fc28d58752a42b2d0f14fb49900a",
+  "source": {
+    "new": 12,
+    "reused": 0
+  },
+  "person": {
+    "new": 0,
+    "reused": 11
+  },
+  "event": {
+    "new": 3,
+    "reused": 2
+  },
+  "person_event": {
+    "new": 7,
+    "reused": 6
+  },
+  "fact_claim": {
+    "new": 54,
+    "reused": 0
+  },
+  "source_text": {
+    "table_exists": true,
+    "new": 7,
+    "reused": 0
+  },
+  "public_api_url": "https://histree.wiki/api/v1",
+  "command": "python3 scripts/publish-book-batch.py content/books/mingshi/vol-109/table-first/part-01/content-batch.json --public-api-url https://histree.wiki/api/v1",
+  "note": "使用本机被忽略的 MySQL 环境文件执行只读预检；未调用 --apply。"
+}

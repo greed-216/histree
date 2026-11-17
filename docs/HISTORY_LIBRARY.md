@@ -8,6 +8,10 @@
 
 需要独立打开的排版稿时，运行 `python3 scripts/render-shiji-tables.py --output /tmp/史记十表阅读稿.html`。此文件仅为派生阅读视图，不登记为第二套底本。原文与表格阅读可切换，段落及出处深链接继续有效。
 
+《明史》卷109《宰辅年表一》使用相同的原文片段排版方式。前表按纪年、左右丞相、平章政事、左右丞、参知政事分为五列，后表按纪年与宰辅入阁、拜免记录分为两列。`python3 scripts/build-mingshi-reading-layout.py --check` 校验549行表格、133个纪年对应年份及完整原文位置；结构审计保存在 `content/books/mingshi/vol-109/table-first/structure-review.json`，不代表全卷事实已录入。
+
+纪年旁补充核过的公元年；1381—1401年原表无记录，保留其空档。洪武十二年“己末”、弘治二年“乙酉”保留原字并注明干支疑误。跨页需要的纪年原格由 API 查询当前原文并核验哈希，原格缺失或被改动时回退原段显示，不继续沿用缓存的对应关系。`scripts/test-mingshi-reading-layout-mysql.mjs` 在隔离 MySQL 检查跨页纪年及原文变更后的回退。
+
 [本地入口](../resources/derived/history-library/README.md)包含二十四史、清史稿的选定EPUB转换TXT及原《资治通鉴》分段。新TXT已切换为本地检索底本。《清史稿》仅预处理，正式录入仍遵循[资料范围](../resources/catalog/ingestion-source-scope.json)；已发布来源、实体key/UUID和通鉴进度保持原有状态。
 
 每书提供 `reading.txt`、`paragraphs.jsonl.gz`、`sections.json`、`index.json`。段落记录包含规范化文字、类型、版本ID、原TXT行号与字符范围、原EPUB文件及XHTML成员、元素路径、来源问题和待核状态。SQLite缓存中的记录采用zlib压缩，由搜索脚本解码；数据库可重建，不作为史料原件。

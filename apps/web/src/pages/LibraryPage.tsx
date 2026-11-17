@@ -514,6 +514,7 @@ export function LibraryReaderPage() {
                     <LibraryTable
                       key={block.paragraphs[0].id}
                       paragraphs={block.paragraphs}
+                      contexts={data.table_contexts || {}}
                       headers={
                         data.table_headers?.[
                           block.paragraphs[0].table_row!.table_id

@@ -4,4 +4,4 @@
 
 已校核部分复用11位已有历史人物、2件已有事件；新增3件有明载月份的事件。展示文案写成完整白话，摘录保留原字。王溥、刘惟敬保留在 deferred-items.json，不创建确定人物或相应任免事实。胡廷瑞／胡廷端保留来源异文，不新增别名。
 
-review.html 为逐段审阅入口；table-review.json 记录空格位、合并格与纪年所属。预检报告 preflight-review.json 通过，当前未发布。结构审计覆盖全卷549表行，事实草稿仅覆盖本批10段，卷109仍未完成。
+review.html 为逐段审阅入口；table-review.json 记录空格位、合并格与纪年所属。预检报告 preflight-review.json 为发布前历史记录；本批已发布，publication-mysql.json、.workflow/sidecars-receipt.json 与 .workflow/web-proof.json 分别记录事实、来源年代及实际网页验收。结构审计覆盖全卷549表行，事实草稿仅覆盖本批10段，卷109仍未完成。

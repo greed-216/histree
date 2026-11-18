@@ -156,11 +156,30 @@ def legacy_supplement_title(source,manifest,paragraph,packet):
 
 
 def legacy_ming_supplement_note(source,manifest,paragraph,packet,chapter):
+    # One early Taizu-era identity comparison used a specific title for Chengzu's opening.
+    chengzu_identity = (
+        chapter == '成祖一' and paragraph['id'] == 'mingshi-2f603db3d81e-p000941'
+        and paragraph.get('volume_candidate') == 5 and packet['volume'] == 109
+        and source['title'] == '《明史》卷5·成祖燕王身份'
+    )
     return (paragraph['book_key']=='mingshi' and paragraph['source_version']=='2f603db3d81e'
             and packet['book_key']=='mingshi'
             and any(p['id']==paragraph['id'] for p in packet.get('supplementary_paragraphs',[]))
             and manifest.get('purpose')=='scoped_identity_or_textual_check'
-            and chapter in source['title'] and source['note']==paragraph['citation'])
+            and (chapter in source['title'] or chengzu_identity) and source['note']==paragraph['citation'])
+
+
+def legacy_ming_jianwen_identity_source(source, manifest, paragraph, packet, chapter):
+    """The published Seven Ministers table cites the Jianwen emperor's identity excerpt by volume."""
+    pid='mingshi-2f603db3d81e-p000875'
+    title=f'《明史》卷4·{pid}'
+    note=f'{title}；选定EPUB电子本原文快照，原字保留，纸本及异文未全面校核。'
+    return (chapter=='恭闵帝' and paragraph['id']==pid and paragraph['book_key']=='mingshi'
+            and paragraph['source_version']=='2f603db3d81e' and paragraph['volume_candidate']==4
+            and packet['book_key']=='mingshi' and packet['volume']==111
+            and any(p['id']==pid for p in packet.get('supplementary_paragraphs',[]))
+            and manifest.get('purpose')=='scoped_identity_or_textual_check'
+            and source['title']==title and source['note']==note)
 
 
 def prepare(root,directory):
@@ -234,7 +253,8 @@ def prepare(root,directory):
         require(bool(components),'Current source needs an explicitly reviewed chapter label before canonical reuse')
         chapter=components[0]
         require(canonical['legacy_supplement_title'] or chapter in canonical['source']['title'] and chapter in canonical['source']['note']
-                or legacy_ming_supplement_note(canonical['source'],canonical['manifest'],canonical['paragraph'],canonical['packet'],chapter),
+                or legacy_ming_supplement_note(canonical['source'],canonical['manifest'],canonical['paragraph'],canonical['packet'],chapter)
+                or legacy_ming_jianwen_identity_source(canonical['source'],canonical['manifest'],canonical['paragraph'],canonical['packet'],chapter),
                 'Canonical note/title does not retain the reviewed chapter label; source revision required: '+key)
         require(str(uuid.UUID(canonical['source_id']))==canonical['source_id'],'Canonical source key-map UUID is invalid')
         require(m['paragraph_id']==cm['paragraph_id']==p['id']==cp['id'],'Shared source key has different paragraph identity')

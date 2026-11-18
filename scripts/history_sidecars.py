@@ -74,6 +74,24 @@ def packet_text_matches_snapshot(snapshot_text, para):
     return snapshot_text.replace('\n◎\n',' ◎ ').replace('\n','').strip()==display
 
 
+def identity_heading_reference(snapshot_text, para, claims):
+    """An original title may name a person without being a reading-body paragraph.
+
+    Reproduce only the library's CJK-space display transform. Preserve the raw
+    snapshot and never make a library link from these unequal byte sequences.
+    Navigation headings, dates and event assertions receive no exception.
+    """
+    flags=set(para.get('flags',[]))
+    if (para.get('kind')!='heading' or 'not_historical_body' not in flags
+            or 'editorial_navigation_heading' in flags or not claims):
+        return False
+    if not all(c.get('subject_table')=='person' and c.get('field_path') in ('name','aliases','biography') for c in claims):
+        return False
+    cjk='\u3400-\u9fff\uf900-\ufaff\ue000-\uf8ff\U00020000-\U0003134f'
+    display=re.sub(f'(?<=[{cjk}]) +(?=[{cjk}])','',snapshot_text.strip())
+    return display==para.get('text')
+
+
 def claim_fingerprint(claim, source_url):
     # Exactly the deployed query-contracts.ts HEX(COALESCE(...,'')) SQL contract.
     vals = [claim.get(k) for k in FINGERPRINT_FIELDS] + [source_url]
@@ -225,6 +243,7 @@ def load_bundle(root, batch_dir):
     snapshots = {}
     used_source_keys={claim['source_key'] for claim in batch['claims']}
     excluded_structural_headings=[]
+    reference_only_headings=[]
     for pid, m in manifest.items():
         require(pid in paras, 'Manifest paragraph absent from bound packet')
         path = (batch_dir/'sources'/m['file']).resolve()
@@ -240,6 +259,14 @@ def load_bundle(root, batch_dir):
             # The segmentation library normalizes display headings. The immutable raw
             # archive and offsets remain authoritative; this unused title is not a fact.
             excluded_structural_headings.append(pid)
+        elif not packet_text_matches_snapshot(raw.decode('utf-8'),para) and identity_heading_reference(
+                raw.decode('utf-8'),para,[c for c in batch['claims'] if c['source_key']==m['key']]):
+            for claim in (c for c in batch['claims'] if c['source_key']==m['key']):
+                quote,_=parse_note(claim['note'])
+                require(any(item['group']=='people' and item['row']['key']==claim['subject_key'] and
+                            any(e['paragraph_id']==pid and e['field']==claim['field_path'] and e['text']==claim['claim_text'] and e['quote']==quote for e in item['evidence'])
+                            for item in cur['items']), 'Identity heading claim lacks exact authored person evidence')
+            reference_only_headings.append(pid)
         else:
             require(packet_text_matches_snapshot(raw.decode('utf-8'),para), 'Packet and exact snapshot text differ: ' + pid)
         files[str(path.relative_to(root))] = sha(raw)
@@ -274,7 +301,7 @@ def load_bundle(root, batch_dir):
         files[str(online_path.relative_to(root))] = sha(online_raw)
     return dict(root=root, batch_dir=batch_dir, batch=batch, cur=cur, packet=packet, ids=ids,
                 publication=publication, manifest=manifest, paras=paras,
-                snapshots=snapshots, files=files, sources=sources, canonical_events=canonical_events, excluded_structural_headings=excluded_structural_headings)
+                snapshots=snapshots, files=files, sources=sources, canonical_events=canonical_events, excluded_structural_headings=excluded_structural_headings, reference_only_headings=reference_only_headings)
 
 
 class _RowDatabase:
@@ -361,7 +388,7 @@ def _prepare_rows(bundle, db):
         protected[key] = dict(table=table, identity=identity, row=row)
         return row
     ids = bundle['ids']; batch = bundle['batch']; manifest = bundle['manifest']
-    source_by_key = {}; source_meta = {}; claim_by_key = {}; claims_by_subject = {}
+    source_by_key = {}; source_meta = {}; reference_sources = {}; claim_by_key = {}; claims_by_subject = {}
     reviews = {r['paragraph_id']: r for r in bundle['cur']['paragraph_reviews']}
     for c in batch['claims']:
         expected = normalized_claim(c, ids); live = protect('fact_claim', {'id':expected['id']})
@@ -384,6 +411,10 @@ def _prepare_rows(bundle, db):
         require(text['archive_url'] == url and text['archive_commit'] == match[1], 'Snapshot archive URL/commit mismatch')
         require(text['content'].encode('utf-8') == raw and text['content_sha256'] == sha(raw), 'Published source_text differs from manifest bytes: '+pid)
         require(re.fullmatch('[a-f0-9]{64}', text['archive_blob_sha256']) is not None, 'Missing archived blob hash')
+        source_by_key[sk] = source
+        if pid in bundle.get('reference_only_headings',[]):
+            reference_sources[source['id']]=dict(paragraph_id=pid,archive_url=url,content_sha256=sha(raw))
+            continue
         library = protect('library_paragraph', {'id':pid})
         book = protect('library_book', {'book_key':para['book_key']})
         asset = protect('library_asset', {'id':library['asset_id']})
@@ -421,7 +452,7 @@ def _prepare_rows(bundle, db):
             skipped.append(dict(event_key=key, decision=item['temporal_review']['decision'], reason=reason))
         for a in assertions:
             pid = a['paragraph_id']; sk = manifest[pid]['key']
-            require(pid not in bundle['excluded_structural_headings'], 'Unused structural heading cannot be a dating basis')
+            require(pid not in bundle['excluded_structural_headings']+bundle.get('reference_only_headings',[]), 'Structural reference heading cannot be a dating basis')
             evs = [ev for ev in item['evidence'] if ev['paragraph_id'] == pid]
             candidates = []
             for c, live in claims_by_subject.get(key, []):
@@ -445,7 +476,7 @@ def _prepare_rows(bundle, db):
                 target_fingerprint=db.target_fingerprint, protected_paths=bundle['files'],
                 protected_rows=list(protected.values()),
                 inserts={t:list(rows.values()) for t,rows in inserts.items()},
-                source_locations=source_meta, skipped_independent_dates=skipped, excluded_structural_headings=bundle['excluded_structural_headings'],
+                source_locations=source_meta, reference_only_sources=reference_sources, reference_only_headings=bundle.get('reference_only_headings',[]), skipped_independent_dates=skipped, excluded_structural_headings=bundle['excluded_structural_headings'],
                 constraints=dict(canonical_updates=False, ddl=False, claim_structure_review_state='recorded/deferred: actual schema enum', event_dating_review_state='reviewed'))
 
 
@@ -458,6 +489,9 @@ def _guard_rows(plan, root, db, lock=False):
     require(all(plan[k]==bundle['packet'][k] for k in ('book_key','source_version','volume')), 'Plan packet book/version/volume mismatch')
     require(bundle['files']==plan['protected_paths'] and bundle['batch']['batch_key']==plan['batch_key'] and bundle['publication']['batch_sha256']==plan['batch_sha256'], 'Plan is not completely bound to current verified volume archives')
     require(plan['excluded_structural_headings']==bundle['excluded_structural_headings'], 'Unused structural heading exclusion changed')
+    require(plan.get('reference_only_headings',[])==bundle.get('reference_only_headings',[]), 'Identity heading reference set changed')
+    expected_references={bundle['ids'][bundle['manifest'][pid]['key']]:dict(paragraph_id=pid,archive_url=bundle['manifest'][pid]['url'],content_sha256=sha(bundle['snapshots'][pid])) for pid in bundle.get('reference_only_headings',[])}
+    require(plan.get('reference_only_sources',{})==expected_references, 'Identity heading snapshot metadata changed')
     db.schema()
     for relative, digest in plan['protected_paths'].items():
         path = (root/relative).resolve()
@@ -500,6 +534,11 @@ def _guard_rows(plan, root, db, lock=False):
     texts={(p['row']['source_id'],p['row']['archive_url_sha256']):p['row'] for p in plan['protected_rows'] if p['table']=='source_text'}
     paragraphs={p['row']['id']:p['row'] for p in plan['protected_rows'] if p['table']=='library_paragraph'}
     books={p['row']['book_key']:p['row'] for p in plan['protected_rows'] if p['table']=='library_book'}
+    for sid,reference in plan.get('reference_only_sources',{}).items():
+        require(sid in sources and sid not in plan['source_locations'], 'Identity heading must not claim a reading-body location')
+        source=sources[sid];text=texts[(sid,sha(source['url'].encode('utf-8')))];pid=reference['paragraph_id']
+        require(text['archive_url']==source['url']==reference['archive_url'] and text['content'].encode('utf-8')==bundle['snapshots'][pid] and text['content_sha256']==reference['content_sha256']==sha(bundle['snapshots'][pid]), 'Identity heading raw source changed')
+        require(not any(r['source_id']==sid for r in plan['inserts']['library_source_link']), 'Identity heading cannot be linked to normalized body bytes')
     for row in plan['inserts']['library_source_link']:
         require(row['source_id'] in sources, 'Link lacks published source guard')
         token=(row['source_id'],row['archive_url_sha256']);require(token in texts, 'Link lacks exact source_text guard')
@@ -541,7 +580,11 @@ def verify_public(plan, base, getter=http_json):
         checks['event_entries']=len(list(pool.map(entry_check,sorted(dates))))
     structures={r['claim_id']:r for r in plan['inserts']['claim_structure']}
     claims={p['row']['id']:p['row'] for p in plan['protected_rows'] if p['table']=='fact_claim'}
-    verified=set(); claim_ids=sorted(structures)
+    verified=set(); heading_verified=set(); claim_ids=sorted(structures)
+    reference_sources=plan.get('reference_only_sources',{})
+    for sid,reference in reference_sources.items():
+        text=getter(base+'/sources/'+sid+'/text')
+        require(isinstance(text,dict) and text.get('source_id')==sid and text.get('archive_url')==reference['archive_url'] and text.get('content_sha256')==reference['content_sha256'] and sha(text.get('content','').encode('utf-8'))==reference['content_sha256'], 'Anonymous identity heading exact text missing or changed')
     for offset in range(0,len(claim_ids),50):
         group=claim_ids[offset:offset+50]; found={}
         for page in range(30):
@@ -554,10 +597,15 @@ def verify_public(plan, base, getter=http_json):
             claim=claims[cid]; structure=structures[cid]; ev=row.get('evidence',{})
             require(ev.get('origin')=='structured' and ev.get('quote')==structure['quote_text'] and ev.get('review')==structure['review_note'] and ev.get('review_state')==structure['review_state'],'Anonymous structured evidence mismatch: '+cid)
             require(all(row.get(k)==claim[k] for k in FINGERPRINT_FIELDS),'Anonymous claim content changed')
-            loc=plan['source_locations'][claim['source_id']]
-            require(all(ev.get('location',{}).get(k)==v for k,v in loc.items()),'Original-text evidence location missing: '+cid)
+            if claim['source_id'] in reference_sources:
+                require(claim['subject_table']=='person' and claim['field_path'] in ('name','aliases','biography') and not ev.get('location'), 'Identity heading has an invalid body location or assertion')
+                heading_verified.add(cid)
+            else:
+                loc=plan['source_locations'][claim['source_id']]
+                require(all(ev.get('location',{}).get(k)==v for k,v in loc.items()),'Original-text evidence location missing: '+cid)
             verified.add(cid)
-    checks['claims_with_original_locations']=len(verified)
+    checks['claims_with_original_locations']=len(verified-heading_verified)
+    if reference_sources:checks['identity_heading_claims_with_exact_text']=len(heading_verified)
     checks['reviewed_datings']=sum(map(len,dates.values()))
     checks['canonical_public_dates_unchanged']=True
     return checks
@@ -677,11 +725,14 @@ def preload_prepare(bundle,db):
     for sk in sorted(used):
         require(sk in by_source,'Used source has no exact manifest paragraph')
         pid=by_source[sk];para=bundle['paras'][pid];url=bundle['sources'][sk]['url']
-        pairs += [('source',dict(id=ids[sk])),('source_text',dict(source_id=ids[sk],archive_url_sha256=sha(url.encode('utf-8')))),('library_paragraph',dict(id=pid)),('library_book',dict(book_key=para['book_key']))]
+        pairs += [('source',dict(id=ids[sk])),('source_text',dict(source_id=ids[sk],archive_url_sha256=sha(url.encode('utf-8'))))]
+        if pid not in bundle.get('reference_only_headings',[]):pairs += [('library_paragraph',dict(id=pid)),('library_book',dict(book_key=para['book_key']))]
     db.preload(unique_read_set(pairs))
     assets=[]
     for sk in sorted(used):
-        pid=by_source[sk];row=db.get('library_paragraph',dict(id=pid))
+        pid=by_source[sk]
+        if pid in bundle.get('reference_only_headings',[]):continue
+        row=db.get('library_paragraph',dict(id=pid))
         if row is not None:assets.append(('library_asset',dict(id=row['asset_id'])))
     db.preload(unique_read_set(assets))
 

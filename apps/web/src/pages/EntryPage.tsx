@@ -460,6 +460,15 @@ export function EntryPage() {
                     nodes,
                     edgeTypeLabel(edge.type),
                   );
+                  const recordDescription =
+                    edge.description ||
+                    (!isEvent && edge.subject_table === "person_event"
+                      ? to.type === "event"
+                        ? to.description
+                        : from.type === "event"
+                          ? from.description
+                          : undefined
+                      : undefined);
                   return (
                     <div key={edge.id ?? index} className="reading-card">
                       <div className="flex flex-wrap gap-2 items-center text-sm">
@@ -490,9 +499,11 @@ export function EntryPage() {
                           ).sentence
                         }
                       </p>
-                      <p className="mt-3 text-sm leading-7 text-slate-600">
-                        {edge.description || "关系说明正在整理。"}
-                      </p>
+                      {recordDescription && (
+                        <p className="mt-3 text-sm leading-7 text-slate-600">
+                          {recordDescription}
+                        </p>
+                      )}
                       {edge.id && edge.subject_table && (
                         <LazyEvidence
                           subject={edge.subject_table}

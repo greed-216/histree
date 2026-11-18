@@ -1,0 +1,72 @@
+{
+  "kind": "reviewed_history_audit_annotation",
+  "status": "verified_annotation_no_database_mutation",
+  "subject_key": "event_mingshi_v110_p018774_a01",
+  "frozen_files": {
+    "content/books/mingshi/vol-110/table-first/part-01/curation.json": "7e20057620e4b945489677ab4a91661817c4a1af5ad14b2270fdded8f1ef1c52",
+    "content/books/mingshi/vol-110/table-first/part-01/time-review.json": "2ba92788ffb5f5a717098fc0931e3556b5fad3a3fc7de09e3db6dcad2dbb9543"
+  },
+  "affected_unexecuted_field": "temporal_review.source_assertions",
+  "superseded_unexecuted_values": [
+    {
+      "paragraph_id": "mingshi-2f603db3d81e-p018774",
+      "decision": "exact",
+      "year": 1570,
+      "basis": "宰辅年表记隆庆四年十一月入阁；本月全在1570年。"
+    },
+    {
+      "paragraph_id": "mingshi-2f603db3d81e-p020072",
+      "decision": "range",
+      "earliest_year": 1570,
+      "latest_year": 1571,
+      "basis": "七卿年表作隆庆四年十二月，与本表十一月异文；十二月跨公元1570—1571，缺日不定单年。"
+    }
+  ],
+  "reason": "早期人工暂存字段source_assertions并非侧表工具读取的source_dating_assertions，未被执行；其中将十一月判为单一1570年、十二月判为跨年范围的说明不准确。本轮实际执行的temporal_review及已公开年代自始按历表保留正确范围，现以独立批注更正未启用元数据，保留冻结档案。",
+  "corrected_source_interpretations": [
+    {
+      "paragraph_id": "mingshi-2f603db3d81e-p018774",
+      "source_date": "隆庆四年十一月",
+      "calendar_row_ids": [
+        39155
+      ],
+      "month_first": "1570-12-08",
+      "month_last": "1571-01-05",
+      "decision": "range",
+      "earliest_year": 1570,
+      "latest_year": 1571
+    },
+    {
+      "paragraph_id": "mingshi-2f603db3d81e-p020072",
+      "source_date": "隆庆四年十二月",
+      "calendar_row_ids": [
+        39156
+      ],
+      "month_first": "1571-01-06",
+      "month_last": "1571-02-04",
+      "decision": "exact",
+      "year": 1571
+    }
+  ],
+  "executed_decision": {
+    "decision": "range",
+    "earliest_year": 1570,
+    "latest_year": 1571
+  },
+  "public_verification": {
+    "path": "content/books/mingshi/vol-112/table-first/part-01/.workflow/calendar-variants-web-proof.json",
+    "sha256": "911eed48e17e5ba54536acebcda84c20102aaa2ad6b1301c20f8168f8a3d627e",
+    "source_scoped_dating": {
+      "id": "a3163a9d-c8c8-5125-9565-7d7f4d64c558",
+      "event_id": "3d4ad362-723a-54e3-8529-b1b37671630d",
+      "earliest_year": 1571,
+      "latest_year": 1571,
+      "precision": "year",
+      "era_key": null,
+      "basis": "已逐对对照当事人、年次、月次、原官职和新官职；这里是同一次调任、入阁、即位或死亡的复见，只增加独立出处。月次差异或省略按来源保留，不覆盖规范事件；穆宗二月/十二月异文已经单独说明。 本表年号元年锚点已经与教育部年号对照表核对；本项按隆庆4年（年号对照1570年）整理。追记、跨页和干支疑字的处理见本卷structure-review.json。 历法依据：法鼓文理学院DDBC Time Authority中国历表2012-02公开版；按JDN换算延伸格里历，所用原始行、月首月末与压缩包SHA-256见本工作线calendar-review.json。年栏对照年和行动实际公元年分别保存。",
+      "claim_id": "f8a24dda-8c51-5025-815c-5d83beae8bc3",
+      "review_state": "reviewed"
+    }
+  },
+  "database_writes": 0
+}

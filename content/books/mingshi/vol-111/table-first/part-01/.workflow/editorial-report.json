@@ -1,0 +1,89 @@
+{
+  "format_version": 1,
+  "rule_version": 1,
+  "ready_to_freeze": true,
+  "summary": {
+    "issues": 2,
+    "open": 0,
+    "accepted_exceptions": 2
+  },
+  "issues": [
+    {
+      "version": 1,
+      "code": "person_period_mismatch",
+      "subject_key": "person_李善长",
+      "field": "era",
+      "observed": {
+        "label": "元",
+        "source_active_years": [
+          1380,
+          1380
+        ],
+        "source_reason": "显式事件参与：event_mingshi_v111_p019149_a01"
+      },
+      "expected": {
+        "label": "元",
+        "from_year": 1279,
+        "to_year": 1368
+      },
+      "context_sha256": "59c6f68df53a950416bcb78b92539269af22213379afcad85a9917250ec4fc80",
+      "issue_id": "person_period_mismatch:d2032a0657b9b022a4102c85ed52f7d7d9bb2768e5a13b2d00640822d7bcd5e1",
+      "message": "参与人物的时代与该事件已核年份不相交；检查跨时代同名误复用，或记录来源差异的具体理由。",
+      "waivable": true,
+      "status": "accepted_exception",
+      "exception_review": {
+        "issue_id": "person_period_mismatch:d2032a0657b9b022a4102c85ed52f7d7d9bb2768e5a13b2d00640822d7bcd5e1",
+        "reason": "已核是跨元明的同一人物：本卷洪武十三年明确记李善长主持御史台事务；旧库时代字段仅记元，不据旧标签拆分人物。当前事件按明代及原年号整理；本卷来源公开后另建旧值守卫修订补全该人物的跨朝时代标签，保留原档。"
+      }
+    },
+    {
+      "version": 1,
+      "code": "person_period_mismatch",
+      "subject_key": "person_朱元璋",
+      "field": "era",
+      "observed": {
+        "label": "元",
+        "source_active_years": [
+          1380,
+          1380
+        ],
+        "source_reason": "显式事件参与：event_mingshi_v109_p018093_a01"
+      },
+      "expected": {
+        "label": "元",
+        "from_year": 1279,
+        "to_year": 1368
+      },
+      "context_sha256": "c21c5c59f0c3b8641fcacd939572c1576697562114d1f489b71e13e4098fab91",
+      "issue_id": "person_period_mismatch:a22f14e0a3efc7ee22b1051b03aec68375c0ad48ce10f5c7f7d3d6515ef1714b",
+      "message": "参与人物的时代与该事件已核年份不相交；检查跨时代同名误复用，或记录来源差异的具体理由。",
+      "waivable": true,
+      "status": "accepted_exception",
+      "exception_review": {
+        "issue_id": "person_period_mismatch:a22f14e0a3efc7ee22b1051b03aec68375c0ad48ce10f5c7f7d3d6515ef1714b",
+        "reason": "卷109已发布的洪武元年表格明确记明太祖本人，本篇序文再次明指太祖废相；已核是跨元明同一人物。元是旧库不完整时代标签，当前明代事件照常保留，不据旧标签另建人物。本卷公开来源后，以独立旧值守卫修订补全时代，不改旧发布档案。"
+      }
+    }
+  ],
+  "unused_exception_ids": [
+    "person_period_mismatch:14216eb05b2f9b704f2b18d9d15680e888c7f73c1fe6c6b1e417054faa54d35f"
+  ],
+  "note": "机械疑点报告；不证明史实正确、关系完整或已经发布。",
+  "inputs": {
+    "curation": {
+      "path": "/Users/liushuang/project/histree/content/books/mingshi/vol-111/table-first/part-01/curation.json",
+      "kind": "file",
+      "sha256": "b60ef17625cb60cd60dc18d2a2093f58d5a9cd0457bcf737467a71c37bd74638"
+    },
+    "packet": {
+      "path": "/Users/liushuang/project/histree/content/books/mingshi/vol-111/table-first/part-01/packet.json",
+      "kind": "file",
+      "sha256": "54d0ff1f037298580f4b9e9137df9d61467fbee900835ffe6bf9a45f5daca876"
+    },
+    "scroll": {
+      "path": "/private/tmp/histree-mingshi-v109-20261116/apps/web/src/data/history-scroll.json",
+      "kind": "file",
+      "sha256": "22eae1694272ad120e1b48b92db98f183d813225d78f52d4863c5fb40c8cea41"
+    }
+  }
+}

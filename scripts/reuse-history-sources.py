@@ -156,20 +156,20 @@ def legacy_supplement_title(source,manifest,paragraph,packet):
 
 
 def legacy_ming_supplement_note(source,manifest,paragraph,packet,chapter):
-    # The chancellors table published these two comparisons with descriptive titles.
-    chengzu_source_titles = {
-        'mingshi-2f603db3d81e-p000941': '《明史》卷5·成祖燕王身份',
-        'mingshi-2f603db3d81e-p000976': '《明史》卷5·成祖本纪六月即位，与年表月份异文对照',
+    # Match reviewed chapter labels to exact descriptive titles in the older
+    # chancellors table, where the note still identifies the original excerpt.
+    descriptive_titles = {
+        (109, 5, 'mingshi-2f603db3d81e-p000941', '成祖一'): '《明史》卷5·成祖燕王身份',
+        (109, 5, 'mingshi-2f603db3d81e-p000976', '成祖一'): '《明史》卷5·成祖本纪六月即位，与年表月份异文对照',
+        (109, 10, 'mingshi-2f603db3d81e-p001427', '英宗前纪'): '《明史》卷10·英宗身份',
     }
-    chengzu_identity = (
-        chapter == '成祖一' and paragraph.get('volume_candidate') == 5 and packet['volume'] == 109
-        and source['title'] == chengzu_source_titles.get(paragraph['id'])
-    )
+    archived_title = descriptive_titles.get((packet.get('volume'), paragraph.get('volume_candidate'),
+                                              paragraph['id'], chapter))
     return (paragraph['book_key']=='mingshi' and paragraph['source_version']=='2f603db3d81e'
             and packet['book_key']=='mingshi'
             and any(p['id']==paragraph['id'] for p in packet.get('supplementary_paragraphs',[]))
             and manifest.get('purpose')=='scoped_identity_or_textual_check'
-            and (chapter in source['title'] or chengzu_identity) and source['note']==paragraph['citation'])
+            and (chapter in source['title'] or source['title']==archived_title) and source['note']==paragraph['citation'])
 
 
 def legacy_ming_jianwen_identity_source(source, manifest, paragraph, packet, chapter):

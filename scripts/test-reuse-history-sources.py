@@ -285,6 +285,20 @@ class Tests(unittest.TestCase):
         self.assertFalse(check(dict(src,title='《明史》卷5·成祖燕王身份'),manifest,para,packet,'成祖一'))
         self.assertFalse(check(src,manifest,para,dict(packet,supplementary_paragraphs=[]),'成祖一'))
 
+    def test_yingzong_identity_title_is_bound_to_the_existing_annals_excerpt(self):
+        pid='mingshi-2f603db3d81e-p001427'
+        para=dict(id=pid,book_key='mingshi',source_version='2f603db3d81e',volume_candidate=10,
+                  citation=f'《明史》卷十，段落 {pid}')
+        packet=dict(book_key='mingshi',volume=109,supplementary_paragraphs=[para])
+        manifest=dict(purpose='scoped_identity_or_textual_check')
+        src=dict(title='《明史》卷10·英宗身份',note=para['citation'])
+        check=M.legacy_ming_supplement_note
+        self.assertTrue(check(src,manifest,para,packet,'英宗前纪'))
+        self.assertFalse(check(src,manifest,para,packet,'英宗后纪'))
+        self.assertFalse(check(src,manifest,para,dict(packet,volume=111),'英宗前纪'))
+        self.assertFalse(check(src,{},para,packet,'英宗前纪'))
+        self.assertFalse(check(dict(src,note='wrong'),manifest,para,packet,'英宗前纪'))
+
     def test_legacy_ming_note_may_keep_section_citation_only_with_matching_title(self):
         para=dict(book_key='mingshi',source_version='2f603db3d81e',id='mingshi-test',
                   citation='《明史》卷二，段落 mingshi-test')

@@ -1,0 +1,472 @@
+{
+  "source": "DDBC Time Authority Database, Chinese calendar, February 2012",
+  "source_url": "https://authority.dila.edu.tw/downloads/authority_time_chinese.2012-02.zip",
+  "archive_sha256": "53937ef60dbe8061a2e56aa8ef2feaaa08a1fa4d1a62a117a4b9932046f55530",
+  "license": "CC BY-SA 3.0",
+  "conversion": "延伸格里历。干支日以(JDN+49)对60取余，找对应月内唯一匹配；仅有月份则按月界。",
+  "ganzhi_days": {
+    "798": {
+      "戊子": "1392-02-07",
+      "庚寅": "1392-02-09",
+      "乙未": "1392-02-14",
+      "辛丑": "1392-02-20",
+      "壬寅": "1392-02-21"
+    },
+    "799": {
+      "戊午": "1392-03-08",
+      "丙寅": "1392-03-16",
+      "庚辰": "1392-03-30"
+    },
+    "800": {
+      "癸未": "1392-04-02",
+      "庚寅": "1392-04-09"
+    },
+    "801": {
+      "壬子": "1392-05-01",
+      "癸丑": "1392-05-02",
+      "丙子": "1392-05-25",
+      "戊寅": "1392-05-27"
+    },
+    "802": {
+      "辛巳": "1392-05-30",
+      "己丑": "1392-06-07"
+    },
+    "803": {
+      "丁卯": "1392-07-15"
+    },
+    "804": {
+      "庚辰": "1392-07-28",
+      "癸未": "1392-07-31"
+    },
+    "805": {
+      "己未": "1392-09-05",
+      "丁卯": "1392-09-13",
+      "甲戌": "1392-09-20",
+      "丙子": "1392-09-22"
+    },
+    "806": {
+      "庚寅": "1392-10-06"
+    },
+    "807": {
+      "乙亥": "1392-11-20"
+    },
+    "808": {
+      "甲午": "1392-12-09"
+    },
+    "809": {
+      "甲戌": "1393-01-18"
+    },
+    "810": {
+      "戊戌": "1393-02-11"
+    },
+    "813": {
+      "戊申": "1393-02-21",
+      "辛酉": "1393-03-06"
+    },
+    "814": {
+      "丁丑": "1393-03-22",
+      "乙酉": "1393-03-30",
+      "己丑": "1393-04-03",
+      "庚寅": "1393-04-04"
+    },
+    "815": {
+      "辛亥": "1393-04-25",
+      "丙辰": "1393-04-30",
+      "庚申": "1393-05-04",
+      "壬戌": "1393-05-06"
+    },
+    "816": {
+      "乙亥": "1393-05-19",
+      "戊子": "1393-06-01",
+      "庚寅": "1393-06-03",
+      "丙申": "1393-06-09"
+    },
+    "817": {
+      "甲辰": "1393-08-16",
+      "戊申": "1393-08-20"
+    },
+    "819": {
+      "癸丑": "1393-10-24"
+    },
+    "820": {
+      "丙申": "1393-12-06"
+    }
+  },
+  "months": [
+    {
+      "id": 36894,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 1,
+      "month_label": "正",
+      "leap": false,
+      "first_jdn": 2229510,
+      "last_jdn": 2229538,
+      "first": "1392-02-02",
+      "last": "1392-03-01",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36895,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 2,
+      "month_label": "二",
+      "leap": false,
+      "first_jdn": 2229539,
+      "last_jdn": 2229568,
+      "first": "1392-03-02",
+      "last": "1392-03-31",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36896,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 3,
+      "month_label": "三",
+      "leap": false,
+      "first_jdn": 2229569,
+      "last_jdn": 2229598,
+      "first": "1392-04-01",
+      "last": "1392-04-30",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36897,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 4,
+      "month_label": "四",
+      "leap": false,
+      "first_jdn": 2229599,
+      "last_jdn": 2229627,
+      "first": "1392-05-01",
+      "last": "1392-05-29",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36898,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 5,
+      "month_label": "五",
+      "leap": false,
+      "first_jdn": 2229628,
+      "last_jdn": 2229657,
+      "first": "1392-05-30",
+      "last": "1392-06-28",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36899,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 6,
+      "month_label": "六",
+      "leap": false,
+      "first_jdn": 2229658,
+      "last_jdn": 2229686,
+      "first": "1392-06-29",
+      "last": "1392-07-27",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36900,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 7,
+      "month_label": "七",
+      "leap": false,
+      "first_jdn": 2229687,
+      "last_jdn": 2229716,
+      "first": "1392-07-28",
+      "last": "1392-08-26",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36901,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 8,
+      "month_label": "八",
+      "leap": false,
+      "first_jdn": 2229717,
+      "last_jdn": 2229745,
+      "first": "1392-08-27",
+      "last": "1392-09-24",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36902,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 9,
+      "month_label": "九",
+      "leap": false,
+      "first_jdn": 2229746,
+      "last_jdn": 2229775,
+      "first": "1392-09-25",
+      "last": "1392-10-24",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36903,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 10,
+      "month_label": "十",
+      "leap": false,
+      "first_jdn": 2229776,
+      "last_jdn": 2229804,
+      "first": "1392-10-25",
+      "last": "1392-11-22",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36904,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 11,
+      "month_label": "十一",
+      "leap": false,
+      "first_jdn": 2229805,
+      "last_jdn": 2229833,
+      "first": "1392-11-23",
+      "last": "1392-12-21",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36905,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 12,
+      "month_label": "十二",
+      "leap": false,
+      "first_jdn": 2229834,
+      "last_jdn": 2229863,
+      "first": "1392-12-22",
+      "last": "1393-01-20",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36906,
+      "era": "洪武",
+      "regnal_year": 25,
+      "month": 12,
+      "month_label": "閏十二",
+      "leap": true,
+      "first_jdn": 2229864,
+      "last_jdn": 2229893,
+      "first": "1393-01-21",
+      "last": "1393-02-19",
+      "ganzhi": "壬申",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36907,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 1,
+      "month_label": "正",
+      "leap": false,
+      "first_jdn": 2229894,
+      "last_jdn": 2229922,
+      "first": "1393-02-20",
+      "last": "1393-03-20",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36908,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 2,
+      "month_label": "二",
+      "leap": false,
+      "first_jdn": 2229923,
+      "last_jdn": 2229952,
+      "first": "1393-03-21",
+      "last": "1393-04-19",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36909,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 3,
+      "month_label": "三",
+      "leap": false,
+      "first_jdn": 2229953,
+      "last_jdn": 2229981,
+      "first": "1393-04-20",
+      "last": "1393-05-18",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36910,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 4,
+      "month_label": "四",
+      "leap": false,
+      "first_jdn": 2229982,
+      "last_jdn": 2230011,
+      "first": "1393-05-19",
+      "last": "1393-06-17",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36911,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 5,
+      "month_label": "五",
+      "leap": false,
+      "first_jdn": 2230012,
+      "last_jdn": 2230041,
+      "first": "1393-06-18",
+      "last": "1393-07-17",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36912,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 6,
+      "month_label": "六",
+      "leap": false,
+      "first_jdn": 2230042,
+      "last_jdn": 2230070,
+      "first": "1393-07-18",
+      "last": "1393-08-15",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36913,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 7,
+      "month_label": "七",
+      "leap": false,
+      "first_jdn": 2230071,
+      "last_jdn": 2230100,
+      "first": "1393-08-16",
+      "last": "1393-09-14",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36914,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 8,
+      "month_label": "八",
+      "leap": false,
+      "first_jdn": 2230101,
+      "last_jdn": 2230129,
+      "first": "1393-09-15",
+      "last": "1393-10-13",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36915,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 9,
+      "month_label": "九",
+      "leap": false,
+      "first_jdn": 2230130,
+      "last_jdn": 2230159,
+      "first": "1393-10-14",
+      "last": "1393-11-12",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36916,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 10,
+      "month_label": "十",
+      "leap": false,
+      "first_jdn": 2230160,
+      "last_jdn": 2230188,
+      "first": "1393-11-13",
+      "last": "1393-12-11",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36917,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 11,
+      "month_label": "十一",
+      "leap": false,
+      "first_jdn": 2230189,
+      "last_jdn": 2230218,
+      "first": "1393-12-12",
+      "last": "1394-01-10",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    },
+    {
+      "id": 36918,
+      "era": "洪武",
+      "regnal_year": 26,
+      "month": 12,
+      "month_label": "十二",
+      "leap": false,
+      "first_jdn": 2230219,
+      "last_jdn": 2230247,
+      "first": "1394-01-11",
+      "last": "1394-02-08",
+      "ganzhi": "癸酉",
+      "start_from": 1,
+      "status": "S"
+    }
+  ]
+}

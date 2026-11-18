@@ -202,6 +202,57 @@ def authored_assertions(item, manifest):
                  basis=review['reason'] + ' ' + review['anchor_note'])], None
 
 
+def revised_event_baseline(root, batch_dir, batch, ids, reused, target, files):
+    """Resolve an archived date correction without changing either published batch."""
+    root, batch_dir = root.resolve(), batch_dir.resolve()
+    path = batch_dir/'.workflow/reused-event-revisions.json'
+    if not path.is_file():
+        return {}
+
+    def read_bound(file):
+        require(file.resolve().is_relative_to(root), 'Revision evidence escapes source root')
+        raw = file.read_bytes()
+        files[str(file.relative_to(root))] = sha(raw)
+        return json.loads(raw), sha(raw)
+
+    selection, _ = read_bound(path)
+    require(selection.get('format_version') == 1, 'Unknown reused event revision selection')
+    revised = {}
+    events = {row['key']: row for row in batch['events']}
+    for entry in selection['revisions']:
+        plan_path = (root/entry['plan']).resolve()
+        require(plan_path.is_relative_to(root/'content/revisions') and plan_path.name == 'plan.json',
+                'Reused event requires a revision plan in content/revisions')
+        plan, digest = read_bound(plan_path)
+        proof, _ = read_bound(plan_path.with_name('publication-mysql.json'))
+        require(plan['kind'] == 'reviewed_history_correction' and proof['verified'] is True
+                and proof['anonymous_readback_verified'] is True and proof['plan_sha256'] == digest,
+                'Reused event revision is not verified')
+        require(target and target == plan['target_fingerprint'] == proof['target_fingerprint'],
+                'Reused event revision targets a different database')
+        for key in entry['event_keys']:
+            require(key in reused and key in events and key not in revised, 'Invalid revised event identity')
+            event_id = ids[key]
+            updates = [u for u in plan['updates'] if u['table'] == 'event' and u.get('id') == event_id]
+            after = [r['full_after'] for r in proof['after_rows']
+                     if r['table'] == 'event' and r['identity'] == {'id': event_id}]
+            require(len(updates) == len(after) == 1, 'Missing unique event correction and published readback')
+            change = updates[0]
+            before = change['full_before']
+            fields = set(events[key]) - {'key', 'status'}
+            require(before['id'] == event_id and before['status'] == 'published'
+                    and all(field in before and before[field] == events[key][field] for field in fields),
+                    'Event revision does not start at the archived reused values')
+            changed = set(change['after'])
+            require(changed and changed == set(change['before'])
+                    and changed <= {'start_year', 'end_year', 'time_original', 'description'}
+                    and all(change['before'][field] == before[field] for field in changed)
+                    and after[0] == dict(before, **change['after']),
+                    'Event revision readback differs from the guarded change')
+            revised[key] = {field: after[0][field] for field in fields}
+    return revised
+
+
 def load_bundle(root, batch_dir):
     root = root.resolve()
     batch_dir = Path(batch_dir).resolve()
@@ -310,6 +361,10 @@ def load_bundle(root, batch_dir):
         # Bind the evidence snapshot, not the replaceable tool-version freeze:
         # refresh-tools may revalidate engines without changing canonical data.
         files[str(online_path.relative_to(root))] = sha(online_raw)
+    else:
+        canonical_events = revised_event_baseline(root, batch_dir, batch, ids,
+                                                   set(cur.get('reused_keys', [])),
+                                                   publication.get('target_fingerprint'), files)
     return dict(root=root, batch_dir=batch_dir, batch=batch, cur=cur, packet=packet, ids=ids,
                 publication=publication, manifest=manifest, paras=paras,
                 snapshots=snapshots, files=files, sources=sources, canonical_events=canonical_events, excluded_structural_headings=excluded_structural_headings, reference_only_headings=reference_only_headings)

@@ -1,0 +1,155 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 5,
+    "inserts": {},
+    "protected_rows": 2,
+    "membership_guards": 2
+  },
+  "after_rows": [
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "48c5d5b8-a5c8-522b-8a5c-65831f486645"
+      },
+      "full_after": {
+        "citation": "《明史》卷2·本纪第二·太祖二·mingshi-2f603db3d81e-p000634；洪武十二年十二月",
+        "claim_text": "《明史》本纪记载，十二月汪广洋被贬往广南并被赐死。此卷校勘记指出，卷一〇九《宰辅年表》和《太祖实录》作“海南”。",
+        "confidence": null,
+        "created_at": "2026-11-18T11:57:08.832785+00:00",
+        "field_path": "description",
+        "id": "48c5d5b8-a5c8-522b-8a5c-65831f486645",
+        "note": "原文：十二月，汪廣洋貶廣南[7]，賜死。；核对说明：同一原历月份及同一被贬赐死事件。年表写海南，本纪写广南；原历十二月在公元1380年，与卷109已验收的公元年修订一致。",
+        "source_id": "79ad13b5-0d5e-5f14-83cd-2c345513dd49",
+        "status": "published",
+        "subject_id": "d1283172-77ac-5185-adb4-f9403bf58a53",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "48c5d5b8-a5c8-522b-8a5c-65831f486645"
+      },
+      "full_after": {
+        "claim_id": "48c5d5b8-a5c8-522b-8a5c-65831f486645",
+        "note_sha256": "4d56e7739edd917d62c2876409bf16235a65dbfd987a7fed0c66d3e7327b8335",
+        "quote_text": "十二月，汪廣洋貶廣南[7]，賜死。",
+        "review_note": "同一原历月份及同一被贬赐死事件。年表写海南，本纪写广南；原历十二月在公元1380年，与卷109已验收的公元年修订一致。",
+        "review_state": "deferred"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "54147a04-9830-5ccd-92fa-3529bbb71b40"
+      },
+      "full_after": {
+        "citation": "《明史》卷2·本纪第二·太祖二·mingshi-2f603db3d81e-p000634；洪武十二年十二月",
+        "claim_text": "原历洪武十二年十二月。DDBC历表换算所据为1380-01-16至1380-02-14，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T11:57:08.903430+00:00",
+        "field_path": "time_original",
+        "id": "54147a04-9830-5ccd-92fa-3529bbb71b40",
+        "note": "原文：十二月，汪廣洋貶廣南[7]，賜死。；核对说明：同一原历月份及同一被贬赐死事件。年表写海南，本纪写广南；原历十二月在公元1380年，与卷109已验收的公元年修订一致。",
+        "source_id": "79ad13b5-0d5e-5f14-83cd-2c345513dd49",
+        "status": "published",
+        "subject_id": "d1283172-77ac-5185-adb4-f9403bf58a53",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "54147a04-9830-5ccd-92fa-3529bbb71b40"
+      },
+      "full_after": {
+        "claim_id": "54147a04-9830-5ccd-92fa-3529bbb71b40",
+        "note_sha256": "4d56e7739edd917d62c2876409bf16235a65dbfd987a7fed0c66d3e7327b8335",
+        "quote_text": "十二月，汪廣洋貶廣南[7]，賜死。",
+        "review_note": "同一原历月份及同一被贬赐死事件。年表写海南，本纪写广南；原历十二月在公元1380年，与卷109已验收的公元年修订一致。",
+        "review_state": "deferred"
+      }
+    },
+    {
+      "table": "event_dating",
+      "identity": {
+        "id": "01554157-7b4c-58af-84a3-4d698559a621"
+      },
+      "full_after": {
+        "id": "01554157-7b4c-58af-84a3-4d698559a621",
+        "event_id": "d1283172-77ac-5185-adb4-f9403bf58a53",
+        "claim_id": "54147a04-9830-5ccd-92fa-3529bbb71b40",
+        "claim_sha256": "17356702a2a307f84f5e052f34d75494ae611b5e741cdfc33dc1548fcc32020a",
+        "earliest_year": 1380,
+        "latest_year": 1380,
+        "precision_kind": "year",
+        "era_key": null,
+        "basis": "原历洪武十二年十二月。DDBC历表换算所据为1380-01-16至1380-02-14，据此核对公元发生年份。",
+        "review_state": "reviewed"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "d1283172-77ac-5185-adb4-f9403bf58a53"
+      },
+      "full_after": {
+        "created_at": "2026-11-17T10:09:29.683320+00:00",
+        "description": "洪武12年（年号对照1379年）十二月，汪广洋被贬往海南，并被赐死。按原历月份核对，本项发生在公元1380年。",
+        "dynasty": "明",
+        "end_year": 1380,
+        "id": "d1283172-77ac-5185-adb4-f9403bf58a53",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1380,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武12年（年号对照1379年）十二月；原历月份对应延伸格里历1380-01-16至1380-02-14；原文未记具体日，故本项记为公元1380年，不把整月的月首当成行动日期。",
+        "title": "汪广洋被贬往海南，并被赐死"
+      }
+    },
+    {
+      "table": "source",
+      "identity": {
+        "id": "79ad13b5-0d5e-5f14-83cd-2c345513dd49"
+      },
+      "full_after": {
+        "author": null,
+        "created_at": "2026-11-18T11:56:51.192952+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "79ad13b5-0d5e-5f14-83cd-2c345513dd49",
+        "note": "《明史》卷2·本纪第二·太祖二·mingshi-2f603db3d81e-p000634",
+        "source_type": "primary",
+        "title": "明史·卷2·太祖二·mingshi-2f603db3d81e-p000634",
+        "url": "https://github.com/greed-216/histree/blob/8d2c2d8d64b5ce0d3d79ce9975942fe61c4fcc1c/content/books/mingshi/vol-002/from-start/part-06/sources/mingshi-2f603db3d81e-p000634/source.txt"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "667126a515046d9af2f76936928be97ba9236b4ed0ecee271ff3d37c20af49b6",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "667126a515046d9af2f76936928be97ba9236b4ed0ecee271ff3d37c20af49b6",
+    "claims": [
+      "48c5d5b8-a5c8-522b-8a5c-65831f486645",
+      "54147a04-9830-5ccd-92fa-3529bbb71b40"
+    ],
+    "event": "d1283172-77ac-5185-adb4-f9403bf58a53",
+    "year": 1380,
+    "path": "/evidence/event/d1283172-77ac-5185-adb4-f9403bf58a53#claim-48c5d5b8-a5c8-522b-8a5c-65831f486645",
+    "checked_at": "2026-11-18T12:09:35.919Z"
+  }
+}

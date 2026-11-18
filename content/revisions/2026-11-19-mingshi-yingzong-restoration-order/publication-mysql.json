@@ -1,0 +1,104 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 3,
+    "inserts": {},
+    "protected_rows": 1,
+    "membership_guards": 5
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad"
+      },
+      "full_after": {
+        "created_at": "2026-11-17T10:09:35.493234+00:00",
+        "description": "景泰八年正月壬午，明英宗朱祁镇在奉天殿恢复帝位。同月丙戌，明英宗另下诏改元天顺。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰8年（1457年）正月壬午",
+        "title": "朱祁镇恢复帝位"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "8df89753-c26d-5491-816b-65391bc2e74b"
+      },
+      "full_after": {
+        "citation": "《明史》卷109·卷一百〇九·mingshi-2f603db3d81e-p018359；景泰8年（1457年）",
+        "claim_text": "《宰辅年表》记朱祁镇在景泰八年正月壬午恢复帝位，并合记改元。《英宗后纪》将改元诏另系于同月丙戌。",
+        "confidence": null,
+        "created_at": "2026-11-17T10:10:22.238538+00:00",
+        "field_path": "description",
+        "id": "8df89753-c26d-5491-816b-65391bc2e74b",
+        "note": "原文：八年丁丑正月壬午，英宗復皇帝位，改天順元年。；核对说明：卷109《宰辅年表》将复位与改元合记。卷十一《景帝本纪》记壬午迎复，卷十二《英宗后纪》记壬午日中即位、同月丙戌颁改元诏。",
+        "source_id": "897b1369-94f0-5b11-836c-3a59af6bba41",
+        "status": "published",
+        "subject_id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "8df89753-c26d-5491-816b-65391bc2e74b"
+      },
+      "full_after": {
+        "claim_id": "8df89753-c26d-5491-816b-65391bc2e74b",
+        "note_sha256": "a61955f7456f5fc4594544879b04f30c0b95c32f484f6c41e5357fba1ea7798f",
+        "quote_text": "八年丁丑正月壬午，英宗復皇帝位，改天順元年。",
+        "review_note": "卷109《宰辅年表》将复位与改元合记。卷十一《景帝本纪》记壬午迎复，卷十二《英宗后纪》记壬午日中即位、同月丙戌颁改元诏。",
+        "review_state": "recorded"
+      }
+    },
+    {
+      "table": "source",
+      "identity": {
+        "id": "897b1369-94f0-5b11-836c-3a59af6bba41"
+      },
+      "full_after": {
+        "author": null,
+        "created_at": "2026-11-17T10:09:15.283952+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "897b1369-94f0-5b11-836c-3a59af6bba41",
+        "note": "《明史》卷一百〇九，段落 mingshi-2f603db3d81e-p018359；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "明史·卷109·卷一百〇九·mingshi-2f603db3d81e-p018359",
+        "url": "https://github.com/greed-216/histree/blob/cb439a169cc71dd4e5983450b2fd8fe1696ec89f/content/books/mingshi/vol-109/table-first/part-02/sources/mingshi-2f603db3d81e-p018359/source.txt"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "e6f1f617894a36485b3f3c4dcb4acf20d3a96bf82b576d0bf4fb04d254cfee72",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "e6f1f617894a36485b3f3c4dcb4acf20d3a96bf82b576d0bf4fb04d254cfee72",
+    "claims": [
+      "8df89753-c26d-5491-816b-65391bc2e74b"
+    ],
+    "event": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+    "year": 1457,
+    "path": "/evidence/event/febef8c3-857e-5bbf-9e2b-b2e32686d1ad#claim-8df89753-c26d-5491-816b-65391bc2e74b",
+    "checked_at": "2026-11-18T18:52:36.059Z"
+  }
+}

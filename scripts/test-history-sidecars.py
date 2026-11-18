@@ -311,7 +311,7 @@ class SourceTests(unittest.TestCase):
                        dict(text='↑ 太祖年原作二十五。')]:
             self.assertFalse(S.packet_text_matches_snapshot(raw, dict(para, **change)))
         self.assertFalse(S.packet_text_matches_snapshot(raw.replace('年 ', '年\t'), para))
-    def test_archived_event_revision_supplies_exact_guarded_canonical_dates(self):
+    def test_archived_event_revision_supplies_exact_guarded_canonical_fields(self):
         plan_path = self.root/'content/revisions/calendar/plan.json'
         plan_path.parent.mkdir(parents=True)
         path = self.b/'.workflow/reused-event-revisions.json'
@@ -319,11 +319,11 @@ class SourceTests(unittest.TestCase):
         event = dict(key='event_fixture', status='draft', title='某事件', start_year=1371, end_year=1371)
         identity = U('event_fixture')
         before = dict(id=identity, status='published', title=event['title'], start_year=1371, end_year=1371)
-        after = dict(start_year=1372, end_year=1372)
+        after = dict(start_year=1372, end_year=1372, title='校正后的事件标题')
         target = 'a'*64
         plan = dict(kind='reviewed_history_correction', target_fingerprint=target,
                     updates=[dict(table='event', id=identity, full_before=before,
-                                  before=dict(start_year=1371, end_year=1371), after=after)])
+                                  before=dict(start_year=1371, end_year=1371, title=event['title']), after=after)])
         plan_path.write_bytes(S.dump(plan))
         proof = dict(verified=True, anonymous_readback_verified=True, target_fingerprint=target,
                      plan_sha256=S.sha(plan_path.read_bytes()),
@@ -334,7 +334,9 @@ class SourceTests(unittest.TestCase):
             plan=str(plan_path.relative_to(self.root)), event_keys=[event['key']])])))
         args = (self.root, self.b, {'events': [event]}, {event['key']: identity}, {event['key']}, target)
         files = {}
-        self.assertEqual(S.revised_event_baseline(*args, files)[event['key']]['start_year'], 1372)
+        canonical = S.revised_event_baseline(*args, files)[event['key']]
+        self.assertEqual(canonical['start_year'], 1372)
+        self.assertEqual(canonical['title'], after['title'])
         self.assertEqual(len(files), 3)
         proof['after_rows'][0]['full_after']['start_year'] = 1373
         receipt.write_bytes(S.dump(proof))

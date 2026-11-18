@@ -175,17 +175,31 @@ def legacy_ming_supplement_note(source,manifest,paragraph,packet,chapter):
             and (chapter in source['title'] or source['title']==archived_title) and source['note']==paragraph['citation'])
 
 
-def legacy_ming_jianwen_identity_source(source, manifest, paragraph, packet, chapter):
-    """The published Seven Ministers table cites the Jianwen emperor's identity excerpt by volume."""
-    pid='mingshi-2f603db3d81e-p000875'
-    title=f'《明史》卷4·{pid}'
-    note=f'{title}；选定EPUB电子本原文快照，原字保留，纸本及异文未全面校核。'
-    return (chapter=='恭闵帝' and paragraph['id']==pid and paragraph['book_key']=='mingshi'
-            and paragraph['source_version']=='2f603db3d81e' and paragraph['volume_candidate']==4
-            and packet['book_key']=='mingshi' and packet['volume']==111
-            and any(p['id']==pid for p in packet.get('supplementary_paragraphs',[]))
-            and manifest.get('purpose')=='scoped_identity_or_textual_check'
-            and source['title']==title and source['note']==note)
+def legacy_ming_table_excerpt_source(source, manifest, paragraph, packet, chapter):
+    """Older table notes cite these specific annals excerpts by volume and paragraph."""
+    known_excerpts = {
+        (111, 4, 'mingshi-2f603db3d81e-p000875', '恭闵帝'),
+        (110, 19, 'mingshi-2f603db3d81e-p002942', '穆宗'),
+        (110, 19, 'mingshi-2f603db3d81e-p002944', '穆宗'),
+        (110, 20, 'mingshi-2f603db3d81e-p003016', '神宗一'),
+        (110, 21, 'mingshi-2f603db3d81e-p003495', '神宗二'),
+        (110, 21, 'mingshi-2f603db3d81e-p003499', '神宗二'),
+        (110, 22, 'mingshi-2f603db3d81e-p003513', '熹宗'),
+        (110, 22, 'mingshi-2f603db3d81e-p003527', '熹宗'),
+        (110, 22, 'mingshi-2f603db3d81e-p003539', '熹宗'),
+        (110, 23, 'mingshi-2f603db3d81e-p003613', '庄烈帝一'),
+    }
+    pid = paragraph['id']
+    volume = paragraph['volume_candidate']
+    if (packet.get('volume'), volume, pid, chapter) not in known_excerpts:
+        return False
+    title = f'《明史》卷{volume}·{pid}'
+    note = f'{title}；选定EPUB电子本原文快照，原字保留，纸本及异文未全面校核。'
+    return (paragraph['book_key'] == 'mingshi' and paragraph['source_version'] == '2f603db3d81e'
+            and packet['book_key'] == 'mingshi'
+            and any(p['id'] == pid for p in packet.get('supplementary_paragraphs', []))
+            and manifest.get('purpose') == 'scoped_identity_or_textual_check'
+            and source['title'] == title and source['note'] == note)
 
 
 def prepare(root,directory):
@@ -260,7 +274,7 @@ def prepare(root,directory):
         chapter=components[0]
         require(canonical['legacy_supplement_title'] or chapter in canonical['source']['title'] and chapter in canonical['source']['note']
                 or legacy_ming_supplement_note(canonical['source'],canonical['manifest'],canonical['paragraph'],canonical['packet'],chapter)
-                or legacy_ming_jianwen_identity_source(canonical['source'],canonical['manifest'],canonical['paragraph'],canonical['packet'],chapter),
+                or legacy_ming_table_excerpt_source(canonical['source'],canonical['manifest'],canonical['paragraph'],canonical['packet'],chapter),
                 'Canonical note/title does not retain the reviewed chapter label; source revision required: '+key)
         require(str(uuid.UUID(canonical['source_id']))==canonical['source_id'],'Canonical source key-map UUID is invalid')
         require(m['paragraph_id']==cm['paragraph_id']==p['id']==cp['id'],'Shared source key has different paragraph identity')

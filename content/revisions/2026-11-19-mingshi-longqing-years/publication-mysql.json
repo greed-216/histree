@@ -1,0 +1,132 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 2,
+    "inserts": {},
+    "protected_rows": 2,
+    "membership_guards": 6
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "516abe81-c479-57c8-ba74-a89c0446306f"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:15.203364+00:00",
+        "description": "隆庆四年十一月乙酉，赵贞吉离任，本纪作罢，宰辅年表作致仕。按原历干支换算，为公元1570年12月28日。",
+        "dynasty": "明",
+        "end_year": 1570,
+        "id": "516abe81-c479-57c8-ba74-a89c0446306f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1570,
+        "status": "published",
+        "tags": [],
+        "time_original": "隆庆四年十一月乙酉（公元1570年12月28日，延伸格里历）",
+        "title": "赵贞吉获准退休"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "3d4ad362-723a-54e3-8529-b1b37671630d"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:15.243890+00:00",
+        "description": "隆庆四年十一月己丑，礼部尚书殷士儋兼文渊阁大学士，入阁参与机务。宰辅年表另载入阁时有太子太保衔，并记他随后晋少保、武英殿大学士，晋阶确日未载。按原历干支换算，为公元1571年1月1日。",
+        "dynasty": "明",
+        "end_year": 1571,
+        "id": "3d4ad362-723a-54e3-8529-b1b37671630d",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1571,
+        "status": "published",
+        "tags": [],
+        "time_original": "隆庆四年十一月己丑（公元1571年1月1日，延伸格里历）",
+        "title": "殷士儋以太子太保、礼部尚书兼文渊阁大学士身份进入内阁任职；年表接着记他在入阁后获授少保、武英殿大学士；原表以“逾月”交代先后，未标出这次晋衔的具体月份"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "d8453224-f5be-5060-8fd2-e895e825fb93"
+      },
+      "full_after": {
+        "citation": "《明史》卷19·本纪第十九·穆宗·mingshi-2f603db3d81e-p002990；隆庆四年十一月乙酉",
+        "claim_text": "十一月乙酉，赵贞吉离任。本纪记作“罢”，宰辅年表记作致仕。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:15:30.627225+00:00",
+        "field_path": "description",
+        "id": "d8453224-f5be-5060-8fd2-e895e825fb93",
+        "note": "原文：乙酉，趙貞吉罷；核对说明：年表和本纪同记隆庆四年十一月赵贞吉离任。本纪称罢，年表称致仕，保留两处措辞，本纪补乙酉。",
+        "source_id": "eb10d2de-eb0b-5f3e-abd9-1ab64c89fafd",
+        "status": "published",
+        "subject_id": "516abe81-c479-57c8-ba74-a89c0446306f",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "22e3010c-000b-5a0a-8ac1-654758d9336d"
+      },
+      "full_after": {
+        "citation": "《明史》卷19·本纪第十九·穆宗·mingshi-2f603db3d81e-p002990；隆庆四年十一月己丑",
+        "claim_text": "十一月己丑，礼部尚书殷士儋兼文渊阁大学士，入阁参与机务。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:15:30.711972+00:00",
+        "field_path": "description",
+        "id": "22e3010c-000b-5a0a-8ac1-654758d9336d",
+        "note": "原文：己丑，禮部尚書殷士儋兼文淵閣大學士，預機務；核对说明：年表与本纪同记隆庆四年十一月殷士儋任礼部尚书兼文渊阁大学士入阁，本纪补己丑。年表另载加衔与后续晋阶。",
+        "source_id": "eb10d2de-eb0b-5f3e-abd9-1ab64c89fafd",
+        "status": "published",
+        "subject_id": "3d4ad362-723a-54e3-8529-b1b37671630d",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "8a8358ca68774bde3b83cc4f86811f50fbb626f3d1d1be935a6ce01f2fbcb00a",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "8a8358ca68774bde3b83cc4f86811f50fbb626f3d1d1be935a6ce01f2fbcb00a",
+    "observations": [
+      {
+        "event_id": "516abe81-c479-57c8-ba74-a89c0446306f",
+        "claim_id": "d8453224-f5be-5060-8fd2-e895e825fb93",
+        "year": 1570,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      },
+      {
+        "event_id": "3d4ad362-723a-54e3-8529-b1b37671630d",
+        "claim_id": "22e3010c-000b-5a0a-8ac1-654758d9336d",
+        "year": 1571,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      }
+    ],
+    "checked_at": "2026-11-18T23:18:01.074Z"
+  }
+}

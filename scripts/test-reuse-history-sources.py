@@ -253,12 +253,31 @@ class Tests(unittest.TestCase):
         para=dict(id=pid,book_key='mingshi',source_version='2f603db3d81e',volume_candidate=4)
         packet=dict(book_key='mingshi',volume=111,supplementary_paragraphs=[para])
         manifest=dict(purpose='scoped_identity_or_textual_check')
-        check=M.legacy_ming_jianwen_identity_source
+        check=M.legacy_ming_table_excerpt_source
         self.assertTrue(check(src,manifest,para,packet,'恭闵帝'))
         self.assertFalse(check(src,manifest,para,packet,'成祖一'))
         self.assertFalse(check(src,manifest,para,dict(packet,volume=110),'恭闵帝'))
         self.assertFalse(check(src,manifest,dict(para,id=pid.replace('875','877')),packet,'恭闵帝'))
         self.assertFalse(check(dict(src,note='wrong'),manifest,para,packet,'恭闵帝'))
+
+    def test_chancellors_table_openings_require_their_own_chapter_and_source_label(self):
+        for volume, pid, chapter in (
+            (19, 'mingshi-2f603db3d81e-p002942', '穆宗'),
+            (19, 'mingshi-2f603db3d81e-p002944', '穆宗'),
+            (20, 'mingshi-2f603db3d81e-p003016', '神宗一'),
+        ):
+            with self.subTest(chapter=chapter):
+                title = f'《明史》卷{volume}·{pid}'
+                source = dict(title=title, note=f'{title}；选定EPUB电子本原文快照，原字保留，纸本及异文未全面校核。')
+                para = dict(id=pid, book_key='mingshi', source_version='2f603db3d81e', volume_candidate=volume)
+                packet = dict(book_key='mingshi', volume=110, supplementary_paragraphs=[para])
+                manifest = dict(purpose='scoped_identity_or_textual_check')
+                check = M.legacy_ming_table_excerpt_source
+                self.assertTrue(check(source, manifest, para, packet, chapter))
+                self.assertFalse(check(source, manifest, para, packet, '世宗二'))
+                self.assertFalse(check(source, manifest, para, dict(packet, volume=111), chapter))
+                self.assertFalse(check(source, manifest, para, dict(packet, supplementary_paragraphs=[]), chapter))
+                self.assertFalse(check(dict(source, note='wrong'), manifest, para, packet, chapter))
 
     def test_chengzu_opening_alias_remains_scoped_to_its_table_snapshot(self):
         pid='mingshi-2f603db3d81e-p000941'

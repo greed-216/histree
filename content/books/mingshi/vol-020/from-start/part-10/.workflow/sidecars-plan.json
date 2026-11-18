@@ -1,0 +1,3839 @@
+{
+  "batch_dir": "content/books/mingshi/vol-020/from-start/part-10",
+  "batch_key": "mingshi-v020-from-start-10",
+  "batch_sha256": "7052948734b5fefc66be71e0446d62779b14c7f002d70c466848732ee6fa540b",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p003258",
+    "mingshi-2f603db3d81e-p003268"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "e7616084-40a5-5147-9e4d-1b4fcfe6ba34",
+        "note_sha256": "b90d7bcf2eb7cfa5ece43779d1f294be5e5fb49f4a270ef5e25961c207600b4a",
+        "quote_text": "辛未，湖廣災，蠲振有差",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "69d0bab3-2836-5490-94ea-ecef5241a19d",
+        "note_sha256": "344c668438da5a6b95ef760233a4c2045368927d974b6abcfb8f1706458ce55c",
+        "quote_text": "辛未，湖廣災，蠲振有差",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "774355dd-6336-59b5-a66e-da0dd494927b",
+        "note_sha256": "53bb4a0997ef6c4d6f99b8f720d2e13bf7b6e9ca6222ff4b770a41dfceb167b2",
+        "quote_text": "辛丑，大學士趙志皐等請發留中章奏，不報",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bd9b125b-9d8e-5de7-a4ed-325e8e1e1b20",
+        "note_sha256": "ddfd620283e1e42c200cefa48072b829f51bac24058d6c6b1d5b4082c84937aa",
+        "quote_text": "辛丑，大學士趙志皐等請發留中章奏，不報",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "14b64dfc-323b-598d-844f-e8d52b6bdab3",
+        "note_sha256": "63775a25c4f0a44af880171c874af0272fe6af1a7655d499c6088a4a3727bc44",
+        "quote_text": "辛丑，大學士趙志皐等請發留中章奏，不報",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ff6c077c-dadd-59b6-b937-565b52bc7d05",
+        "note_sha256": "fc2107c42f6ced174da2dbb4b05897624f4bf5a197448c091f3fa14df777ec8f",
+        "quote_text": "辛丑，大學士趙志皐等請發留中章奏，不報",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "70917ba2-a9d6-576f-8f4b-657692f56885",
+        "note_sha256": "aa549cca5b5e50f5cdb49a16cebd1ed3b2ba10665f8d1ee50e8ce9025ceff7fa",
+        "quote_text": "是年，江北大水，淮溢，浸泗州祖陵",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9221037c-9e4d-5094-8411-6b39f34cb24c",
+        "note_sha256": "acacaf806c011e07b86c912b4b7872cd61c2bb16bc8908af264586d1d7267e6e",
+        "quote_text": "是年，江北大水，淮溢，浸泗州祖陵",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "156526f1-f564-58b0-ab6c-5c87039fe06b",
+        "note_sha256": "829a1464173b22cc394542f69dec15c5aa796856922dfca43642733279e63968",
+        "quote_text": "戊申，麻貴襲河套部，敗之",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "0a4458a7-7a18-5db3-8465-f814ad017e32",
+        "note_sha256": "44d266854e0bec63b9c7b60464a72225b37f9a8fbed39231449d2e58ebcd5182",
+        "quote_text": "戊申，麻貴襲河套部，敗之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "de0ba463-171a-5b98-99d1-f446fdee9148",
+        "note_sha256": "dffa20050f342ebf252230ac70b02872f9154abd7cddf085d2325b24a275b958",
+        "quote_text": "戊申，麻貴襲河套部，敗之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "bc1fc94d-48b6-5841-bdf9-4c86c8e33016",
+        "note_sha256": "f5b71070333d30f62779f20e909148f01b9b20ca9453cc942e6d342c65f0640a",
+        "quote_text": "戊申，麻貴襲河套部，敗之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "0e8adf95-c176-5f45-bc9f-43f28c813980",
+        "note_sha256": "df1f74957690042b5d7cbd8a701d12ca4748e51af8b724ce97c1102734750df7",
+        "quote_text": "乙亥，乾清、坤寧兩宮災，敕修省",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "7e098937-4107-5489-91de-24fc9ed9271f",
+        "note_sha256": "1d0cd98cd8d1d3e3fb10330f06d66352f728d1ed27b7c1905713ff58178e2398",
+        "quote_text": "乙亥，乾清、坤寧兩宮災，敕修省",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5ee2e0dd-bfe0-5f56-9b6d-57b4d34561f6",
+        "note_sha256": "7a193cb44cea80e1ad57b7e59729ad3c3959c32bb5cda20ef823b061eb30c800",
+        "quote_text": "壬辰，下詔自責",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b88bdd55-7ebd-5217-aebd-f6abc3e0c714",
+        "note_sha256": "cf4a888e56d70f3c118d0e8f5a4ca59a8122bcd394b2aaad7176cf4a7dc50253",
+        "quote_text": "壬辰，下詔自責",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "3207b9c6-b0ec-5d25-b264-e6fd9c148e16",
+        "note_sha256": "eef681ebec117ff1b8915d12c36db0a02a350c48fe2fbb97f9fcab9fcff72176",
+        "quote_text": "壬辰，下詔自責",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "20633843-58b6-5421-ab44-488769580acb",
+        "note_sha256": "d1b19449c222f66a7c7a69dcb5c17fa7314a59525f962fbf990499df534921ae",
+        "quote_text": "壬辰，下詔自責",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b2bb2212-af39-532e-8644-d0a9c777ab96",
+        "note_sha256": "b203ab0497737d17018a9669c6c0fc32d484e2d286e90059b2b48b4fdc36e876",
+        "quote_text": "是月，火落赤犯洮河，總兵官劉綎破走之",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "86bf5443-6d87-57ec-b64e-777dffb20717",
+        "note_sha256": "b203ab0497737d17018a9669c6c0fc32d484e2d286e90059b2b48b4fdc36e876",
+        "quote_text": "是月，火落赤犯洮河，總兵官劉綎破走之",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9355eb75-947e-5cd4-8e86-de8a99b5c1ef",
+        "note_sha256": "b8b683ea37eaffe844e583c8f53e5f4db515dde7900901f48b19e6f3617106b0",
+        "quote_text": "是月，火落赤犯洮河，總兵官劉綎破走之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "67552aa9-2477-536d-89b0-b195de1ce038",
+        "note_sha256": "d85063c1371b6ff3434bae982bb01fd1e3a3fd9a6423aee903d637e2b25153a6",
+        "quote_text": "是月，火落赤犯洮河，總兵官劉綎破走之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "20689572-bf7a-5534-9c50-74fbe33a056d",
+        "note_sha256": "7fde3ebb2a2764697ef6e8328053d1cf59ee3fccf8609dab77a4aa81e2aebb5d",
+        "quote_text": "是月，火落赤犯洮河，總兵官劉綎破走之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9173d861-30d9-5291-8788-adfcd8679cd2",
+        "note_sha256": "7fde3ebb2a2764697ef6e8328053d1cf59ee3fccf8609dab77a4aa81e2aebb5d",
+        "quote_text": "是月，火落赤犯洮河，總兵官劉綎破走之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "db1a9df3-a535-516d-b9d2-3e88d181fd98",
+        "note_sha256": "d4861520d05d69c4c4a792ff20214f654d79be7b63d81c5458b6fca81d33aa5d",
+        "quote_text": "己亥，李宗城自倭營奔還王京",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "13261a79-f6e1-525c-83cc-9a4861f4c674",
+        "note_sha256": "40ae04fa77212cbaced8852a7f12bdd22067fe8c35e48fd7f108c92faf3d2812",
+        "quote_text": "己亥，李宗城自倭營奔還王京",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a17edcf4-bb8b-5e82-ac72-fffadf61e5b8",
+        "note_sha256": "ea75d6160ceef620a72e55f9fde0a99128e518a8d940c87fdcb98ca81d5e769c",
+        "quote_text": "己亥，李宗城自倭營奔還王京",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c29b5742-8ef2-5b4b-b95a-e221bd37275c",
+        "note_sha256": "d9ae69a84bf66e91cb21d8821e97e6c11a3fb1898ae6c7ee2afd182d1fcf067d",
+        "quote_text": "己亥，李宗城自倭營奔還王京",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8f0ff45f-1969-5b8f-b3c6-fa52a51d009b",
+        "note_sha256": "0f766c94f3e60fc6ecfedea35de810e40e9ee03f100c4099e664f23c671ecef3",
+        "quote_text": "戊辰，河套部敵犯甘肅，總兵官楊濬擊破之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "62eb4882-1743-547f-aa41-91dc4e8bf0f1",
+        "note_sha256": "bccdea58089f698dab785086f8090f6b0cc020eab215c3e204654eb1515ce658",
+        "quote_text": "戊辰，河套部敵犯甘肅，總兵官楊濬擊破之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b9ec0224-9eb0-5899-83b0-97507c64b066",
+        "note_sha256": "a879f68e7fdec5a318c28041998b5f65635539607d743447b840d17061d9d87c",
+        "quote_text": "庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e429c17d-e8f1-5db2-8ece-af902d0bdf6d",
+        "note_sha256": "2542fac1e6ed56edaeec633a9d96d907f1f5e04ccaf4c99f3062d9b5fd4e47be",
+        "quote_text": "庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往",
+        "review_note": "卷322日本传及卷320朝鲜传同记其以游击身份办理万历朝日本封贡议和。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9462b689-1e11-57a3-9a1c-375e57c62ef3",
+        "note_sha256": "421a416a14323577fd705825ab2b32fa7f2cfceb59b05f2e92f4ad0b0a3f92b3",
+        "quote_text": "庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "efa8aad7-aa47-5b4f-ba28-39fa31710a28",
+        "note_sha256": "75b52bbd9072e4e30a9c7110218450e6135e1b191a351fe5fdd7165096ba0148",
+        "quote_text": "庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c34eb03e-ad8e-5937-b319-6c57fc9e53f5",
+        "note_sha256": "46ccd224e6208b38f13d05f80c588d8ec574d348a47b6e8c523df7ca7cb49d97",
+        "quote_text": "庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8b4226d9-d1b1-5894-88e8-ad0896fb2f40",
+        "note_sha256": "46ccd224e6208b38f13d05f80c588d8ec574d348a47b6e8c523df7ca7cb49d97",
+        "quote_text": "庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d16e581b-dff6-5bed-977c-9916d4a8674c",
+        "note_sha256": "5ff1981b5f12ec7b0dab447a67c29b84082a3b18c3a51f28bb20e97489bcf961",
+        "quote_text": "六月，振福建饑",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c1f5950d-1314-583f-9de9-3604c378b08a",
+        "note_sha256": "060f9946ac0e22f153fc36d9dde2d4ffd14150e26cf2041ede01c9f7dfab94f0",
+        "quote_text": "六月，振福建饑",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "afbdfa28-f1e9-5831-990d-9f9575619858",
+        "note_sha256": "a8afcc5ff4b868a7ee104d19f85babfab5621af93e60a4af81a06bfc2c5fd043",
+        "quote_text": "丁卯，吏部尚書孫丕揚請發推補官員章疏，不報",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0f888382-31b1-54e7-91b0-0616645abf0b",
+        "note_sha256": "0eae054c005880359b864cc8bcaedf28d2536ab236464d0f43498c8bc0781f04",
+        "quote_text": "丁卯，吏部尚書孫丕揚請發推補官員章疏，不報",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "385f5767-2f37-5714-9ae4-91f3804e779c",
+        "note_sha256": "6f5aee9e08c82279da87719766b6b84d31743eb48104b1317762b0a012eb5746",
+        "quote_text": "丁卯，吏部尚書孫丕揚請發推補官員章疏，不報",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ee7609af-29e0-5dfc-8169-77da68cfc53e",
+        "note_sha256": "c4cbf211ab3cc59e94d6b0e87d9a1344702c273609de4bebcb7b8c8be1ad502f",
+        "quote_text": "丁卯，吏部尚書孫丕揚請發推補官員章疏，不報",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "693b2f5b-a835-5097-a7e2-f9ee3525f9e8",
+        "note_sha256": "5cc645a44d47da8230ee580ef7a4eae13fe06ddb49a8ab0c5e282d0ab524b5fd",
+        "quote_text": "戊寅，仁聖皇太后崩",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "56367610-b555-58ce-9146-3bce610f2533",
+        "note_sha256": "f72e6c4762e246d5694a6e486300c9760f8f793292619aa0dec47c81d5ebec52",
+        "quote_text": "戊寅，仁聖皇太后崩",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1f7a290e-72ba-5e36-8238-105df3dfecc8",
+        "note_sha256": "8ec3f3dd53e368e0653ae985e39b6ee9eab96a93f2064962d119d2ff9d008227",
+        "quote_text": "戊寅，仁聖皇太后崩",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "caf7fd28-4d12-584a-bbfb-19a6b112188b",
+        "note_sha256": "135b85c8555ccc3fb9f70192a6b7495e49d737e29518a5cb8e8ace15618c5f97",
+        "quote_text": "戊寅，仁聖皇太后崩",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1458a5ff-63b2-58a3-b63f-d352ce945e44",
+        "note_sha256": "8bb38f0345e3ec8b89a9a71fcd19735af7ec5e0a0cbc92224ffffc653eac1953",
+        "quote_text": "乙酉，始遣中官開礦於畿內",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cf482eb3-b8de-5454-8582-2bcb2af98d0c",
+        "note_sha256": "4a1f72f2127038cd34cbfc5feb902153d1bcc77bbb6635d51045dac75aed04b9",
+        "quote_text": "乙酉，始遣中官開礦於畿內",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dd714d1c-c8c7-5299-a56b-7f6146d2ac63",
+        "note_sha256": "e1ef2a96ee8f71d586d1859e48123aefa681a9ef5acfe8e11761385759405d51",
+        "quote_text": "閏八月乙丑朔，日有食之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "78a53de3-b405-5f8c-bda9-a2bcb08b9ddc",
+        "note_sha256": "6a27820db377b92d4793c1d906d2168a0e5fb638dfe6bf5e3f0e224d804d9372",
+        "quote_text": "閏八月乙丑朔，日有食之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "d9441c7e-c7a6-5c10-9b9d-cd45050e1b37",
+        "note_sha256": "a3bf69bcef683cd6cb5efe12c4d86476cea279267d785831b6a2c78b1daaae00",
+        "quote_text": "丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "954caf67-debf-55ea-82b9-db18ec3ea31f",
+        "note_sha256": "bc504b7d49ef76b8ecc097d3043b05f0864077961b025a5e63e9812379ee8b69",
+        "quote_text": "丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9d68a58f-be48-5787-bfa5-a6d67a8631dc",
+        "note_sha256": "e8dc39ede9fb561c04ee84d00c2f713525139943216b893f1a0ae57fa5997c51",
+        "quote_text": "丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "1f01c006-f5e6-5e80-bcdd-23344e2e879e",
+        "note_sha256": "186e75cc0ca4786562db5fd5afc6822a32c69402170ef6343666437c0dc778e4",
+        "quote_text": "乙未，楊方亨至日本，平秀吉不受封",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b00b024a-b817-5d4b-9204-2dda0ebfc1ff",
+        "note_sha256": "2eb8986a69691ff4e006785da0436ed037289d60f84c245914ae23a8426a90cd",
+        "quote_text": "乙未，楊方亨至日本，平秀吉不受封",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "631ee381-ab7b-5f4e-8528-b2c735208939",
+        "note_sha256": "077e6c7cc8dcb920e66102927c06ada352e948bfe5257024478e60a5a143570f",
+        "quote_text": "乙未，楊方亨至日本，平秀吉不受封",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1a688265-ab52-5ddf-a2de-6d356cb7523d",
+        "note_sha256": "444b6d233ec5a97d8ba71a7e13162ab4ca090364f135ec8ad5f50d941b68478d",
+        "quote_text": "乙未，楊方亨至日本，平秀吉不受封",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "048764fa-27c7-5de8-bbbf-f9d7bc8e9ead",
+        "note_sha256": "444b6d233ec5a97d8ba71a7e13162ab4ca090364f135ec8ad5f50d941b68478d",
+        "quote_text": "乙未，楊方亨至日本，平秀吉不受封",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "32f4c5dc-5689-5317-8d47-0aaf7d63709d",
+        "note_sha256": "95ff6d18a439ab37cf4715895027e7d55977229bbf851995e189f7f1ef4cbd2e",
+        "quote_text": "乙卯，葬孝安莊皇后",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3ffdd99e-dda4-56f5-807a-1da79be29404",
+        "note_sha256": "89c7e7d945f099ba2b0e6d8ba551d599076b6154aca711cdd6eaef5a1a926d9d",
+        "quote_text": "乙卯，葬孝安莊皇后",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2840a709-dbb0-55b9-8def-552b130cfc0d",
+        "note_sha256": "fc0a4793925ef23953671b205a7e18f45d4f946e480a26a9785c9d848eeecc17",
+        "quote_text": "乙卯，葬孝安莊皇后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "28ba4526-73bb-58a3-9e24-3314702ea411",
+        "note_sha256": "104b27b0cdbd44311129e4ea10776dcdb914154a6d7d4dbf680087db797ecc3a",
+        "quote_text": "是月，河套部犯寧夏。總兵官李如柏擊敗之",
+        "review_note": "卷238李成梁后列李如柏传，万历年间任边镇总兵，也参与后续辽东战事。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f15e0a33-93b7-5dd3-b363-c09f7be7b75a",
+        "note_sha256": "21799a5a7f347594cbacbb23d57f10e93ed0b6fca470eea56d62db782d3b77fa",
+        "quote_text": "是月，河套部犯寧夏。總兵官李如柏擊敗之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "760ddb43-ca5c-550e-b1e2-98595cac7dde",
+        "note_sha256": "b7d161d2253732989595a182461032d51b78a777beb6659eff396848121cd2aa",
+        "quote_text": "是月，河套部犯寧夏。總兵官李如柏擊敗之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2e42fe30-6ada-5a74-8ee2-d1f79bbd7884",
+        "note_sha256": "34a576a069dd12a03d2ef535374dc38b10adeb62d178e820ba0d5b400d75eecd",
+        "quote_text": "是月，河套部犯寧夏。總兵官李如柏擊敗之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ee530bfe-1c18-53eb-886c-f28ffb00f132",
+        "note_sha256": "53ab335f832ff8d6c423af0b1697a5af3fa655e2dd636d92c4356c2d6d162264",
+        "quote_text": "丙子，停刑",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "15a6a5c5-72e4-5f9c-9f9e-9070befd64ed",
+        "note_sha256": "9dc5ff80c12d296f6fd72b4089f7f35ad86e0cd679ad1e0c2cb7d5d3c761b92c",
+        "quote_text": "丙子，停刑",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d8604e69-f3c1-5ea5-b78b-ef93dbe608a8",
+        "note_sha256": "b4df026c09f43e2f0f8cb6a2761c351c1e984ddf5cde1da37715702a1ea6d20b",
+        "quote_text": "乙酉，始命中官榷稅通州",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f652d63f-6995-579e-a9e8-46c8457a2fa5",
+        "note_sha256": "622c1633e8baa1ccb0718119a0f19379f2d45871202e73403ab29e58697451ee",
+        "quote_text": "乙酉，始命中官榷稅通州",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dd0d80da-b045-5eef-a08d-042b11fcab95",
+        "note_sha256": "8792ea328890cdafe742b30acf8ff1651e4d5e73afd3fe3a3d2baa8a863fe531",
+        "quote_text": "十二月乙亥，陳于陛卒",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9e4c9193-87b7-5640-b703-e27a3563e30b",
+        "note_sha256": "4c30d1492abde16067937946fd8e7bc4c6fd006aa568987a94477392376104cd",
+        "quote_text": "十二月乙亥，陳于陛卒",
+        "review_note": "年表与本纪同记万历二十四年十二月陈于陛去世，本纪补乙亥。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "a81c9b28-7092-5924-84da-1761617d1b54",
+        "note_sha256": "4c30d1492abde16067937946fd8e7bc4c6fd006aa568987a94477392376104cd",
+        "quote_text": "十二月乙亥，陳于陛卒",
+        "review_note": "年表与本纪同记万历二十四年十二月陈于陛去世，本纪补乙亥。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "0184dd55-6a7d-59c6-876c-5a125bd32961",
+        "note_sha256": "517cf304294de8500b92c820758de7d6b2b805937fa00d6bd9af80ad4caa5452",
+        "quote_text": "十二月乙亥，陳于陛卒",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "2ea63ce2-f899-5c1a-b347-6e0c8fc5a654",
+        "note_sha256": "592508ff054422cc4bc1e0d5843e297c17b7880f80a01d974f814ab500ae9854",
+        "quote_text": "未幾，河南、山東、山西、浙江、陝西悉令開採，以中官領之。羣臣屢諫不聽",
+        "review_note": "原文以“未几”说明各地扩展，无独立日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e96b2148-e782-5a34-8975-eb11c49c0813",
+        "note_sha256": "592508ff054422cc4bc1e0d5843e297c17b7880f80a01d974f814ab500ae9854",
+        "quote_text": "未幾，河南、山東、山西、浙江、陝西悉令開採，以中官領之。羣臣屢諫不聽",
+        "review_note": "原文以“未几”说明各地扩展，无独立日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7951a3e2-5d65-56f8-824e-80ba94c0e9e6",
+        "note_sha256": "01d0ef81349e758c3cb075df9857635a6776e169cf898f559cadc9cca5013b54",
+        "quote_text": "是秋，河決黃堌口",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1fe80997-403f-5597-8e49-d15b7daee144",
+        "note_sha256": "b4035b7903ac1e4de65c8db41bfd1c64342573c3bf4934d7ea1acd5e383a5306",
+        "quote_text": "是秋，河決黃堌口",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历万历二十三年十一月辛未。DDBC历表换算所据为1595-12-03至1595-12-03，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003255的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "69d0bab3-2836-5490-94ea-ecef5241a19d",
+        "claim_sha256": "d5089b783598827457cc6b2ef91da83c15edbac457fd7ce01f491ebb28970015",
+        "earliest_year": 1595,
+        "era_key": null,
+        "event_id": "f972e10c-b20f-50f8-a9b6-e732c489c332",
+        "id": "51c55331-5a6b-515d-8f73-fa5e5f443bbf",
+        "latest_year": 1595,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十三年十二月辛丑。DDBC历表换算所据为1596-01-02至1596-01-02，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003256的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "14b64dfc-323b-598d-844f-e8d52b6bdab3",
+        "claim_sha256": "13cc2320fa9a88334091a993cdace79ec3ff4e9a751c005b5030b0adbeca6a30",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "aa1c1ba6-1ad6-57eb-b1f7-5ba06d68e966",
+        "id": "29d6937b-d290-5c26-b78d-4b3b85ef8cee",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十三年。DDBC历表换算所据为1595-02-09至1596-01-28，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003257的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9221037c-9e4d-5094-8411-6b39f34cb24c",
+        "claim_sha256": "536aa3cd119ea229b6c42dd8b9e2220c837b7c1f535b9ee9354a225835a95e48",
+        "earliest_year": 1595,
+        "era_key": null,
+        "event_id": "65fff7da-f320-557d-b65f-b3dab9ab1a71",
+        "id": "6ff490bd-83af-5cd0-801f-280a97898cf4",
+        "latest_year": 1596,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年二月戊申。DDBC历表换算所据为1596-03-09至1596-03-09，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003259的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "de0ba463-171a-5b98-99d1-f446fdee9148",
+        "claim_sha256": "e6a824d920d746aba8daac755d8257592692835917d70ee49d48022bd6303dfb",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "f8beb1cc-58f5-53dc-bb7a-9fb8e04ce561",
+        "id": "d82cb72a-7816-53d6-94f9-53b1ecb407f8",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年三月乙亥。DDBC历表换算所据为1596-04-05至1596-04-05，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003260的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "7e098937-4107-5489-91de-24fc9ed9271f",
+        "claim_sha256": "78310530447e0c50527d82850a27bab531dfa2478ef00d78c18946312311e667",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "4ee01a62-03b2-5eb4-98a7-ecc7cf4e7489",
+        "id": "36803561-443c-5cb8-abc0-debe96ee761d",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年三月壬辰。DDBC历表换算所据为1596-04-22至1596-04-22，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003260的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3207b9c6-b0ec-5d25-b264-e6fd9c148e16",
+        "claim_sha256": "65acccd7b7b9eca08c3caf4cf0a1bba7c947281884b01f114a2c7fa1e1bdc3c0",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "c5c70ed1-c865-5f37-b805-79e2439f1bf1",
+        "id": "0c9015eb-4672-5162-a8c0-59c36a34691d",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年三月。DDBC历表换算所据为1596-03-29至1596-04-26，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003260的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "67552aa9-2477-536d-89b0-b195de1ce038",
+        "claim_sha256": "f65493977cde9b3bf37d8c755834f5dc2fbcea954e0a6765fdc346914851fa57",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "59581c9d-3a62-5730-b60f-4e4a14380952",
+        "id": "5da27f5d-b475-5d31-a7be-f72743defd66",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年四月己亥。DDBC历表换算所据为1596-04-29至1596-04-29，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003261的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "a17edcf4-bb8b-5e82-ac72-fffadf61e5b8",
+        "claim_sha256": "8b70a231e7f1ffac67546b811eec3a8ff072de8d398ff44ae4690cab2da61672",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "4feb43eb-990b-52c8-b14c-53420df9f3dd",
+        "id": "ec0ede2e-9d67-58c6-b8ee-511fc1899c9c",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年五月戊辰。DDBC历表换算所据为1596-05-28至1596-05-28，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003261的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "62eb4882-1743-547f-aa41-91dc4e8bf0f1",
+        "claim_sha256": "64bdd7c3391962b1a45b78e6221c5708643b9d0e05bef461ce41e5d1bd0343b9",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "cecac713-9382-56dc-aa67-2851fdffdf14",
+        "id": "93222cf2-117b-5d07-9298-a79917442633",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年五月庚午。DDBC历表换算所据为1596-05-30至1596-05-30，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003261的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "efa8aad7-aa47-5b4f-ba28-39fa31710a28",
+        "claim_sha256": "96d58f94d189a6361edd8ed208b64e2ee0f5ab7788be4238e739e86639de2de2",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "5cae48d5-6f23-5e28-8c9c-948922ebacf7",
+        "id": "044c7003-8a3c-54b9-9380-c15008b40207",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年六月。DDBC历表换算所据为1596-06-26至1596-07-24，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003262的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c1f5950d-1314-583f-9de9-3604c378b08a",
+        "claim_sha256": "f57049c1c9eee5ef3eb6283e5aece001a5f0ff017cc96e191eb59fa3c1302cc1",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "521be90b-dc1e-5e5f-87b7-64c9ca15a528",
+        "id": "bfa5c647-5600-5d4c-b80c-b13369fcf675",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年七月丁卯。DDBC历表换算所据为1596-07-26至1596-07-26，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003263的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "385f5767-2f37-5714-9ae4-91f3804e779c",
+        "claim_sha256": "3e51ac62caf1ddf5cacb4537de7ae038d4539fcb9361b9250648b9257f4f715f",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "39839f58-0078-5f5d-a9c1-78bc5d3cc31f",
+        "id": "f2f7f76a-a6ef-5d89-a8fd-73328281abdd",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年七月戊寅。DDBC历表换算所据为1596-08-06至1596-08-06，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003263的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1f7a290e-72ba-5e36-8238-105df3dfecc8",
+        "claim_sha256": "06cfa6e8ecb94775b19aa2b1c2c659f314206ab2bd46c2b18cda890866f60072",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "47dbd60d-aaa5-5054-93c5-b86ee4204d55",
+        "id": "75dbdf5c-342f-5430-bead-19c1b2a8c86c",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年七月乙酉。DDBC历表换算所据为1596-08-13至1596-08-13，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003263的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "cf482eb3-b8de-5454-8582-2bcb2af98d0c",
+        "claim_sha256": "76cfa74022bf55b20324075dee7bcd4ff022aa459946a3f50b07ed33036d2060",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "76294308-244a-560f-badd-33c6a16bc5c0",
+        "id": "1177ed27-19b7-553f-b112-8ccacf7191ad",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年闰八月乙丑朔。DDBC历表换算所据为1596-09-22至1596-09-22，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003264的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "78a53de3-b405-5f8c-bda9-a2bcb08b9ddc",
+        "claim_sha256": "cc62f6060afd0610a2dba26361c9c0356f8c8cd6efd5d91e41a20eb6b6c130a1",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "43eff8d1-6b9d-5477-be3c-102063d8138f",
+        "id": "931f3abb-a022-59d6-91db-d53ff4d1d3fd",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年闰八月丁卯。DDBC历表换算所据为1596-09-24至1596-09-24，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003264的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "954caf67-debf-55ea-82b9-db18ec3ea31f",
+        "claim_sha256": "042f60cacda1978ce5efbbd485869f1d9383242fe985f647bcc8b32e6cea8c34",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "0fd28625-40a2-5f57-8c6f-e353f0e76275",
+        "id": "b9716f1c-dff0-54b5-8ef0-65882fa6df6b",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年九月乙未。DDBC历表换算所据为1596-10-22至1596-10-22，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003265的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "631ee381-ab7b-5f4e-8528-b2c735208939",
+        "claim_sha256": "99506addee856daded2da3a0b6933afb4736a0fcfd5e497967d4e38cb3e61c11",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "ee4ebc66-d011-52fc-bd7c-e962518ab5ce",
+        "id": "7034114e-982d-5158-803e-422efcc26e97",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年九月乙卯。DDBC历表换算所据为1596-11-11至1596-11-11，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003265的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3ffdd99e-dda4-56f5-807a-1da79be29404",
+        "claim_sha256": "cd9d3efabc81080bcca3d8c6baf4c6b497ac378eb24f971834c8bfd2deb7d265",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "272fc9aa-1a7f-5126-a4d8-5a3c916722bb",
+        "id": "9f6d3e45-16ea-578e-a113-c60e0a36b0d6",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年九月。DDBC历表换算所据为1596-10-21至1596-11-19，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003265的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "760ddb43-ca5c-550e-b1e2-98595cac7dde",
+        "claim_sha256": "3cbabb760614e65d173d7a616f96fe65617d97afeb96adb6feb59b1d6b60d140",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "90c67f94-94b3-581f-a014-66d4dc951660",
+        "id": "63d899ef-7bf9-504f-a27a-7e83d5bbefac",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年十月丙子。DDBC历表换算所据为1596-12-02至1596-12-02，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003266的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "15a6a5c5-72e4-5f9c-9f9e-9070befd64ed",
+        "claim_sha256": "d1a17ba7d70411bd5115b4c3cb5880f2a9b9abbf6f9ca40981c48f10c6ded928",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "eed7751b-7326-5f2f-8897-401f3d0c260c",
+        "id": "5009dca7-9aa3-5587-9a0f-e5095f083a77",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年十月乙酉。DDBC历表换算所据为1596-12-11至1596-12-11，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003266的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f652d63f-6995-579e-a9e8-46c8457a2fa5",
+        "claim_sha256": "d2ddc9005e9f7a78110fe507683ac20a37f75ba2c5b3606da5cbbad2279c97b6",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "7e19719b-442f-5f3d-8043-7ee8d3e64844",
+        "id": "b6d6f966-697e-525b-b616-38cd86619365",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年十二月乙亥。DDBC历表换算所据为1597-01-30至1597-01-30，据此核对公元发生年份。",
+        "claim_id": "a81c9b28-7092-5924-84da-1761617d1b54",
+        "claim_sha256": "96c06d7b08e2bca888410c28ab1de418c78e7d06edd03c94cd51b079ae4adec1",
+        "earliest_year": 1597,
+        "era_key": null,
+        "event_id": "493aa98b-3817-5c50-b8dc-3d2f3719558f",
+        "id": "71f9a159-00f6-599f-8103-43d3d57abacc",
+        "latest_year": 1597,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原文以“未几”说明各地扩展，无独立日期。 卷二十mingshi-2f603db3d81e-p003263的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。原文以“未几”说明各地扩展，无独立日期。",
+        "claim_id": "e96b2148-e782-5a34-8975-eb11c49c0813",
+        "claim_sha256": "0e9658098f12b46b57150508f0fa3d5540bc0875b4a9b659bad9be632607333d",
+        "earliest_year": null,
+        "era_key": null,
+        "event_id": "4ca6e128-fee6-5a4e-b535-5a0c8606ba28",
+        "id": "8b6ad08c-5468-5543-b82b-23a6b06d5ac2",
+        "latest_year": null,
+        "precision_kind": "relative",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历万历二十四年秋。DDBC历表换算所据为1596-07-25至1596-11-19，据此核对公元发生年份。 卷二十mingshi-2f603db3d81e-p003265的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1fe80997-403f-5597-8e49-d15b7daee144",
+        "claim_sha256": "c0af0677c892e176d9c135e8a2a03e4c6b3025ebaba4a7bb79cc95d1cba4cd0e",
+        "earliest_year": 1596,
+        "era_key": null,
+        "event_id": "6d8405cd-ebe6-592e-b606-6f5fa6f93a46",
+        "id": "c54df1cc-5f3a-528a-939d-aa88527ec454",
+        "latest_year": 1596,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "5c5882c0af5ced968428e452d4d543d232e68d1562e7ccab0360f8c3f1d7c050",
+        "paragraph_id": "mingshi-2f603db3d81e-p003255",
+        "snapshot_sha256": "51daf7ee948ab27a68359796b6bda917408c61b6514d939a406be63a829eeb12",
+        "source_id": "7738406e-5b26-5b0a-a118-9931e6157bc6"
+      },
+      {
+        "archive_url_sha256": "417885d50068155e15c755a55295f6c82a2a02f937c2ed7fcb54f9c10ac375eb",
+        "paragraph_id": "mingshi-2f603db3d81e-p003256",
+        "snapshot_sha256": "af4d8e77fe7b610b78c0d033f673b0ebfd1b785e84ddc8778e8a01179da87954",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134"
+      },
+      {
+        "archive_url_sha256": "f40393ab9c42f9a5d24122378345982d860a74db725c809902c394da6646a800",
+        "paragraph_id": "mingshi-2f603db3d81e-p003257",
+        "snapshot_sha256": "1a8012dd53b570cd18250b5a500137bfb3780f7d11ff0c5182f6c5f758e6803e",
+        "source_id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa"
+      },
+      {
+        "archive_url_sha256": "336fdf931c779f3b8606b4769d54f1553e374e8f57f20ce7fd71910e861763e6",
+        "paragraph_id": "mingshi-2f603db3d81e-p003259",
+        "snapshot_sha256": "9069e4021766d32297d2aff04a4d073f5c49b741f5a7c90a31dea2afad63f62a",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7"
+      },
+      {
+        "archive_url_sha256": "d13ad11baa63556361f9a5a1937c6e7714ea77f4fb288af72aacf27112758fce",
+        "paragraph_id": "mingshi-2f603db3d81e-p003260",
+        "snapshot_sha256": "7157bd631bc8de8bf839d6df6bcef67e1b63e8cab42caa2bc0e252ab6d966e7e",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b"
+      },
+      {
+        "archive_url_sha256": "94e8ef4670df9e76bc3185163491a73e654de09442f5797b6632e41c4cdda59d",
+        "paragraph_id": "mingshi-2f603db3d81e-p003261",
+        "snapshot_sha256": "5c8103df471f44ed433b8b0bfad02f8ba9e107c5828bd132a3cf84f590878465",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5"
+      },
+      {
+        "archive_url_sha256": "5f262fc6452ec302de5911f793bb96d892b39b2d5242928180d1ab211bea4f89",
+        "paragraph_id": "mingshi-2f603db3d81e-p003262",
+        "snapshot_sha256": "9c418a812b1239f8354ae58b780170e36cdcd6048f7c46c67f4c9b2f517526a5",
+        "source_id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47"
+      },
+      {
+        "archive_url_sha256": "37b9af8e2c44dc403854ebfe4e5503ed9deca3721782e972be364ab5c58f4024",
+        "paragraph_id": "mingshi-2f603db3d81e-p003263",
+        "snapshot_sha256": "d85c1c27b485e4aacdaecb8bc4e1075a45ced505d3b838b5714f43310f51ac4a",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c"
+      },
+      {
+        "archive_url_sha256": "94ec61eea4cf1a922b208bf44efd8c4ac9cd4b3f9e82546f89c04182adf29395",
+        "paragraph_id": "mingshi-2f603db3d81e-p003264",
+        "snapshot_sha256": "6bbd09be4ecccb8f99020e9a743a24dc9fedbff84405cd3152eafa0b2bcd91c1",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b"
+      },
+      {
+        "archive_url_sha256": "615f08688873711971b1688d1fb9f6c1673c65a306d65ae0bc90396b85267b1e",
+        "paragraph_id": "mingshi-2f603db3d81e-p003265",
+        "snapshot_sha256": "af89c4101a03bfe7eae23f5dcc0fb0005415e996082a5617b3b16f4253fd157f",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1"
+      },
+      {
+        "archive_url_sha256": "a7adabe8eb80202d61456ce1fa8661f604e903ca90cc04818d4472841fedb1eb",
+        "paragraph_id": "mingshi-2f603db3d81e-p003266",
+        "snapshot_sha256": "e98a420e5f4d4de194217903f63b54d401b677e387ae3ed586fdf4b10c30214f",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91"
+      },
+      {
+        "archive_url_sha256": "dbff5590f5d60869ac9535af172767fcf287116680799481a3f6b770780729a9",
+        "paragraph_id": "mingshi-2f603db3d81e-p003267",
+        "snapshot_sha256": "b1cfa1adf0d901c7a3348043dfa1b48d837f93dfe52b295f1d4c6342d113a362",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-020/from-start/part-10/content-batch.json": "7052948734b5fefc66be71e0446d62779b14c7f002d70c466848732ee6fa540b",
+    "content/books/mingshi/vol-020/from-start/part-10/curation.json": "78f7f60c35bf94be7d2ba45bd530031bc732590f09f081c8a2b83609eb050f92",
+    "content/books/mingshi/vol-020/from-start/part-10/packet.json": "f46dcdedc845933e56a411ade816e4cb16ff85b300bded44b57928c009249f9c",
+    "content/books/mingshi/vol-020/from-start/part-10/publication-mysql.json": "175870050f85b8b239f0b7bf048bf6636085742896a1a601e3541f9990c6723f",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/manifest.json": "b04c0c6599fc239df58f63b4efcd920452deeecfca6c1e3e0512dce91c0dbfa9",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003255/source.txt": "51daf7ee948ab27a68359796b6bda917408c61b6514d939a406be63a829eeb12",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003256/source.txt": "af4d8e77fe7b610b78c0d033f673b0ebfd1b785e84ddc8778e8a01179da87954",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003257/source.txt": "1a8012dd53b570cd18250b5a500137bfb3780f7d11ff0c5182f6c5f758e6803e",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003258/source.txt": "b36e05dd7a78d251f5a3b933517bc412268a9a1cf4fb3bd25b3500313d70d113",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003259/source.txt": "9069e4021766d32297d2aff04a4d073f5c49b741f5a7c90a31dea2afad63f62a",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003260/source.txt": "7157bd631bc8de8bf839d6df6bcef67e1b63e8cab42caa2bc0e252ab6d966e7e",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003261/source.txt": "5c8103df471f44ed433b8b0bfad02f8ba9e107c5828bd132a3cf84f590878465",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003262/source.txt": "9c418a812b1239f8354ae58b780170e36cdcd6048f7c46c67f4c9b2f517526a5",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003263/source.txt": "d85c1c27b485e4aacdaecb8bc4e1075a45ced505d3b838b5714f43310f51ac4a",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003264/source.txt": "6bbd09be4ecccb8f99020e9a743a24dc9fedbff84405cd3152eafa0b2bcd91c1",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003265/source.txt": "af89c4101a03bfe7eae23f5dcc0fb0005415e996082a5617b3b16f4253fd157f",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003266/source.txt": "e98a420e5f4d4de194217903f63b54d401b677e387ae3ed586fdf4b10c30214f",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003267/source.txt": "b1cfa1adf0d901c7a3348043dfa1b48d837f93dfe52b295f1d4c6342d113a362",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003268/source.txt": "4b61221599d66126ed56ba05a2f0011e029fc3bd80c413e163d89d2d67796dee",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003269/source.txt": "865fd421460d0bd054edb80dae7572f39fb02acc7ee71a94e00937620289c544",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003270/source.txt": "f4ab816daaab2ecbbd7c7fb89c655173c4f67054dc17c9bafcdf91e8826bc7e3",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003271/source.txt": "936a569182b2a4858048b5d7e56c3a52fb41aea9b597ac62d0e6fe74bce28cae",
+    "content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003272/source.txt": "9baa13572fbe461fefe2563949b350824f8752939a4b860d3453c5288245094f",
+    "content/books/mingshi/vol-020/from-start/part-10/sql/key-map.json": "57a10d9b8e793b6c7372907d9c38858bcc219b8de3ae5d1d1fadbfb4b965f175",
+    "content/books/mingshi/vol-020/from-start/part-10/time-review.json": "cb1a4ee2924c2f6773ab413801bbcece0e5496f8f14c7cb728d4d9f6f525d4d1"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "e7616084-40a5-5147-9e4d-1b4fcfe6ba34"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003255；万历二十三年十一月辛未",
+        "claim_text": "万历二十三年十一月辛未，湖广受灾，朝廷按不同情形减免赋税并给予赈济。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.727263+00:00",
+        "field_path": "description",
+        "id": "e7616084-40a5-5147-9e4d-1b4fcfe6ba34",
+        "note": "原文：辛未，湖廣災，蠲振有差；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "7738406e-5b26-5b0a-a118-9931e6157bc6",
+        "status": "published",
+        "subject_id": "f972e10c-b20f-50f8-a9b6-e732c489c332",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "69d0bab3-2836-5490-94ea-ecef5241a19d"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003255；万历二十三年十一月辛未",
+        "claim_text": "原历万历二十三年十一月辛未。DDBC历表换算所据为1595-12-03至1595-12-03，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.747685+00:00",
+        "field_path": "time_original",
+        "id": "69d0bab3-2836-5490-94ea-ecef5241a19d",
+        "note": "原文：辛未，湖廣災，蠲振有差；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "7738406e-5b26-5b0a-a118-9931e6157bc6",
+        "status": "published",
+        "subject_id": "f972e10c-b20f-50f8-a9b6-e732c489c332",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "774355dd-6336-59b5-a66e-da0dd494927b"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003256；万历二十三年十二月辛丑",
+        "claim_text": "赵志皋上奏请求。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.782070+00:00",
+        "field_path": "description",
+        "id": "774355dd-6336-59b5-a66e-da0dd494927b",
+        "note": "原文：辛丑，大學士趙志皐等請發留中章奏，不報；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134",
+        "status": "published",
+        "subject_id": "47fed8c6-6412-5851-b94d-947858b3f852",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bd9b125b-9d8e-5de7-a4ed-325e8e1e1b20"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003256；万历二十三年十二月辛丑",
+        "claim_text": "万历二十三年十二月辛丑，大学士赵志皋等人请求将留在宫中未发的章奏交有关官员办理，未获答复。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.807051+00:00",
+        "field_path": "description",
+        "id": "bd9b125b-9d8e-5de7-a4ed-325e8e1e1b20",
+        "note": "原文：辛丑，大學士趙志皐等請發留中章奏，不報；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134",
+        "status": "published",
+        "subject_id": "aa1c1ba6-1ad6-57eb-b1f7-5ba06d68e966",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "14b64dfc-323b-598d-844f-e8d52b6bdab3"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003256；万历二十三年十二月辛丑",
+        "claim_text": "原历万历二十三年十二月辛丑。DDBC历表换算所据为1596-01-02至1596-01-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.827988+00:00",
+        "field_path": "time_original",
+        "id": "14b64dfc-323b-598d-844f-e8d52b6bdab3",
+        "note": "原文：辛丑，大學士趙志皐等請發留中章奏，不報；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134",
+        "status": "published",
+        "subject_id": "aa1c1ba6-1ad6-57eb-b1f7-5ba06d68e966",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ff6c077c-dadd-59b6-b937-565b52bc7d05"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003256；万历二十三年十二月辛丑",
+        "claim_text": "上奏请求",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.857717+00:00",
+        "field_path": "role",
+        "id": "ff6c077c-dadd-59b6-b937-565b52bc7d05",
+        "note": "原文：辛丑，大學士趙志皐等請發留中章奏，不報；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134",
+        "status": "published",
+        "subject_id": "f491a74a-8447-5d9f-9655-97e9dfe7ed2e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "70917ba2-a9d6-576f-8f4b-657692f56885"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003257；万历二十三年",
+        "claim_text": "万历二十三年，江北发生大水，淮水溢出，浸入泗州祖陵。 按原历纪年，事情发生在公元1595至1596年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.882289+00:00",
+        "field_path": "description",
+        "id": "70917ba2-a9d6-576f-8f4b-657692f56885",
+        "note": "原文：是年，江北大水，淮溢，浸泗州祖陵；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa",
+        "status": "published",
+        "subject_id": "65fff7da-f320-557d-b65f-b3dab9ab1a71",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9221037c-9e4d-5094-8411-6b39f34cb24c"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003257；万历二十三年",
+        "claim_text": "原历万历二十三年。DDBC历表换算所据为1595-02-09至1596-01-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.902683+00:00",
+        "field_path": "time_original",
+        "id": "9221037c-9e4d-5094-8411-6b39f34cb24c",
+        "note": "原文：是年，江北大水，淮溢，浸泗州祖陵；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa",
+        "status": "published",
+        "subject_id": "65fff7da-f320-557d-b65f-b3dab9ab1a71",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "156526f1-f564-58b0-ab6c-5c87039fe06b"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003259；万历二十四年二月戊申",
+        "claim_text": "麻贵领兵袭击。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.937275+00:00",
+        "field_path": "description",
+        "id": "156526f1-f564-58b0-ab6c-5c87039fe06b",
+        "note": "原文：戊申，麻貴襲河套部，敗之；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7",
+        "status": "published",
+        "subject_id": "e881aa7d-6bd6-59ee-80c5-f49f04abe45a",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0a4458a7-7a18-5db3-8465-f814ad017e32"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003259；万历二十四年二月戊申",
+        "claim_text": "万历二十四年二月戊申，麻贵袭击河套部并将其击败。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.962067+00:00",
+        "field_path": "description",
+        "id": "0a4458a7-7a18-5db3-8465-f814ad017e32",
+        "note": "原文：戊申，麻貴襲河套部，敗之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7",
+        "status": "published",
+        "subject_id": "f8beb1cc-58f5-53dc-bb7a-9fb8e04ce561",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "de0ba463-171a-5b98-99d1-f446fdee9148"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003259；万历二十四年二月戊申",
+        "claim_text": "原历万历二十四年二月戊申。DDBC历表换算所据为1596-03-09至1596-03-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:05.982352+00:00",
+        "field_path": "time_original",
+        "id": "de0ba463-171a-5b98-99d1-f446fdee9148",
+        "note": "原文：戊申，麻貴襲河套部，敗之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7",
+        "status": "published",
+        "subject_id": "f8beb1cc-58f5-53dc-bb7a-9fb8e04ce561",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bc1fc94d-48b6-5841-bdf9-4c86c8e33016"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003259；万历二十四年二月戊申",
+        "claim_text": "领兵袭击",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.017330+00:00",
+        "field_path": "role",
+        "id": "bc1fc94d-48b6-5841-bdf9-4c86c8e33016",
+        "note": "原文：戊申，麻貴襲河套部，敗之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7",
+        "status": "published",
+        "subject_id": "65dd3f7e-bf19-5678-b4ab-0a8a565d0282",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0e8adf95-c176-5f45-bc9f-43f28c813980"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月乙亥",
+        "claim_text": "万历二十四年三月乙亥，乾清宫和坤宁宫失火，朝廷敕令修省。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.042057+00:00",
+        "field_path": "description",
+        "id": "0e8adf95-c176-5f45-bc9f-43f28c813980",
+        "note": "原文：乙亥，乾清、坤寧兩宮災，敕修省；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "4ee01a62-03b2-5eb4-98a7-ecc7cf4e7489",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7e098937-4107-5489-91de-24fc9ed9271f"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月乙亥",
+        "claim_text": "原历万历二十四年三月乙亥。DDBC历表换算所据为1596-04-05至1596-04-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.062531+00:00",
+        "field_path": "time_original",
+        "id": "7e098937-4107-5489-91de-24fc9ed9271f",
+        "note": "原文：乙亥，乾清、坤寧兩宮災，敕修省；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "4ee01a62-03b2-5eb4-98a7-ecc7cf4e7489",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5ee2e0dd-bfe0-5f56-9b6d-57b4d34561f6"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月壬辰",
+        "claim_text": "朱翊钧下诏。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.083151+00:00",
+        "field_path": "description",
+        "id": "5ee2e0dd-bfe0-5f56-9b6d-57b4d34561f6",
+        "note": "原文：壬辰，下詔自責；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "96c8d5fb-ed5b-52d1-9a4e-8e0595e91709",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b88bdd55-7ebd-5217-aebd-f6abc3e0c714"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月壬辰",
+        "claim_text": "三月壬辰，明神宗在乾清、坤宁两宫失火后下诏自责。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.107119+00:00",
+        "field_path": "description",
+        "id": "b88bdd55-7ebd-5217-aebd-f6abc3e0c714",
+        "note": "原文：壬辰，下詔自責；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "c5c70ed1-c865-5f37-b805-79e2439f1bf1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3207b9c6-b0ec-5d25-b264-e6fd9c148e16"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月壬辰",
+        "claim_text": "原历万历二十四年三月壬辰。DDBC历表换算所据为1596-04-22至1596-04-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.128181+00:00",
+        "field_path": "time_original",
+        "id": "3207b9c6-b0ec-5d25-b264-e6fd9c148e16",
+        "note": "原文：壬辰，下詔自責；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "c5c70ed1-c865-5f37-b805-79e2439f1bf1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "20633843-58b6-5421-ab44-488769580acb"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月壬辰",
+        "claim_text": "下诏",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.152224+00:00",
+        "field_path": "role",
+        "id": "20633843-58b6-5421-ab44-488769580acb",
+        "note": "原文：壬辰，下詔自責；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "18537389-609c-55fe-82ca-2570714cbd0c",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b2bb2212-af39-532e-8644-d0a9c777ab96"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月",
+        "claim_text": "火落赤率部入犯。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.182171+00:00",
+        "field_path": "description",
+        "id": "b2bb2212-af39-532e-8644-d0a9c777ab96",
+        "note": "原文：是月，火落赤犯洮河，總兵官劉綎破走之；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "e8b65a83-bd9d-513b-a5fb-89e62dabd32d",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "86bf5443-6d87-57ec-b64e-777dffb20717"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月",
+        "claim_text": "刘綎领兵迎击。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.202585+00:00",
+        "field_path": "description",
+        "id": "86bf5443-6d87-57ec-b64e-777dffb20717",
+        "note": "原文：是月，火落赤犯洮河，總兵官劉綎破走之；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "19add4d9-1ed0-5f6e-a24e-cbdb91bbc912",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9355eb75-947e-5cd4-8e86-de8a99b5c1ef"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月",
+        "claim_text": "万历二十四年三月，火落赤进犯洮河，总兵官刘綎率军将其击败并逐退。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.222965+00:00",
+        "field_path": "description",
+        "id": "9355eb75-947e-5cd4-8e86-de8a99b5c1ef",
+        "note": "原文：是月，火落赤犯洮河，總兵官劉綎破走之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "59581c9d-3a62-5730-b60f-4e4a14380952",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "67552aa9-2477-536d-89b0-b195de1ce038"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月",
+        "claim_text": "原历万历二十四年三月。DDBC历表换算所据为1596-03-29至1596-04-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.257113+00:00",
+        "field_path": "time_original",
+        "id": "67552aa9-2477-536d-89b0-b195de1ce038",
+        "note": "原文：是月，火落赤犯洮河，總兵官劉綎破走之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "59581c9d-3a62-5730-b60f-4e4a14380952",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "20689572-bf7a-5534-9c50-74fbe33a056d"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月",
+        "claim_text": "率部入犯",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.277712+00:00",
+        "field_path": "role",
+        "id": "20689572-bf7a-5534-9c50-74fbe33a056d",
+        "note": "原文：是月，火落赤犯洮河，總兵官劉綎破走之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "94698f7d-f477-5cf5-a6a7-ba95d1b914f7",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9173d861-30d9-5291-8788-adfcd8679cd2"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260；万历二十四年三月",
+        "claim_text": "领兵迎击",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.297131+00:00",
+        "field_path": "role",
+        "id": "9173d861-30d9-5291-8788-adfcd8679cd2",
+        "note": "原文：是月，火落赤犯洮河，總兵官劉綎破走之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "status": "published",
+        "subject_id": "88d95b15-a597-543a-83ff-dd4e0944cc9f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "db1a9df3-a535-516d-b9d2-3e88d181fd98"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年四月己亥",
+        "claim_text": "李宗城从日军营离开。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.317669+00:00",
+        "field_path": "description",
+        "id": "db1a9df3-a535-516d-b9d2-3e88d181fd98",
+        "note": "原文：己亥，李宗城自倭營奔還王京；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "856193d8-0f7e-5139-9d51-c456fe6acb25",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "13261a79-f6e1-525c-83cc-9a4861f4c674"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年四月己亥",
+        "claim_text": "万历二十四年四月己亥，李宗城从日军营中奔回朝鲜王京。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.342814+00:00",
+        "field_path": "description",
+        "id": "13261a79-f6e1-525c-83cc-9a4861f4c674",
+        "note": "原文：己亥，李宗城自倭營奔還王京；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "4feb43eb-990b-52c8-b14c-53420df9f3dd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a17edcf4-bb8b-5e82-ac72-fffadf61e5b8"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年四月己亥",
+        "claim_text": "原历万历二十四年四月己亥。DDBC历表换算所据为1596-04-29至1596-04-29，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.362679+00:00",
+        "field_path": "time_original",
+        "id": "a17edcf4-bb8b-5e82-ac72-fffadf61e5b8",
+        "note": "原文：己亥，李宗城自倭營奔還王京；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "4feb43eb-990b-52c8-b14c-53420df9f3dd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c29b5742-8ef2-5b4b-b95a-e221bd37275c"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年四月己亥",
+        "claim_text": "从日军营离开",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.386987+00:00",
+        "field_path": "role",
+        "id": "c29b5742-8ef2-5b4b-b95a-e221bd37275c",
+        "note": "原文：己亥，李宗城自倭營奔還王京；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "85cbfcfb-945e-59bb-a55e-0b38d5d36232",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8f0ff45f-1969-5b8f-b3c6-fa52a51d009b"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月戊辰",
+        "claim_text": "五月戊辰，河套部进犯甘肃，明军总兵官杨濬率军击败来敌。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.417363+00:00",
+        "field_path": "description",
+        "id": "8f0ff45f-1969-5b8f-b3c6-fa52a51d009b",
+        "note": "原文：戊辰，河套部敵犯甘肅，總兵官楊濬擊破之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "cecac713-9382-56dc-aa67-2851fdffdf14",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "62eb4882-1743-547f-aa41-91dc4e8bf0f1"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月戊辰",
+        "claim_text": "原历万历二十四年五月戊辰。DDBC历表换算所据为1596-05-28至1596-05-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.437481+00:00",
+        "field_path": "time_original",
+        "id": "62eb4882-1743-547f-aa41-91dc4e8bf0f1",
+        "note": "原文：戊辰，河套部敵犯甘肅，總兵官楊濬擊破之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "cecac713-9382-56dc-aa67-2851fdffdf14",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b9ec0224-9eb0-5899-83b0-97507c64b066"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月庚午",
+        "claim_text": "杨方亨奉命出使。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.462363+00:00",
+        "field_path": "description",
+        "id": "b9ec0224-9eb0-5899-83b0-97507c64b066",
+        "note": "原文：庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "4daaa47a-4ce0-5816-96e3-9fa0d400993a",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e429c17d-e8f1-5db2-8ece-af902d0bdf6d"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月庚午",
+        "claim_text": "沈惟敬奉命出使。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.482954+00:00",
+        "field_path": "description",
+        "id": "e429c17d-e8f1-5db2-8ece-af902d0bdf6d",
+        "note": "原文：庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往；核对说明：卷322日本传及卷320朝鲜传同记其以游击身份办理万历朝日本封贡议和。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "26c3c61b-d37a-5f75-934a-9af81c77c32e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9462b689-1e11-57a3-9a1c-375e57c62ef3"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月庚午",
+        "claim_text": "五月庚午，朝廷再次商议对日本的册封，命都督佥事杨方亨与游击沈惟敬前往。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.507039+00:00",
+        "field_path": "description",
+        "id": "9462b689-1e11-57a3-9a1c-375e57c62ef3",
+        "note": "原文：庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "5cae48d5-6f23-5e28-8c9c-948922ebacf7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "efa8aad7-aa47-5b4f-ba28-39fa31710a28"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月庚午",
+        "claim_text": "原历万历二十四年五月庚午。DDBC历表换算所据为1596-05-30至1596-05-30，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.527568+00:00",
+        "field_path": "time_original",
+        "id": "efa8aad7-aa47-5b4f-ba28-39fa31710a28",
+        "note": "原文：庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "5cae48d5-6f23-5e28-8c9c-948922ebacf7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c34eb03e-ad8e-5937-b319-6c57fc9e53f5"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月庚午",
+        "claim_text": "奉命出使",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.547446+00:00",
+        "field_path": "role",
+        "id": "c34eb03e-ad8e-5937-b319-6c57fc9e53f5",
+        "note": "原文：庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "c0eec5ad-b435-56ad-a12e-2b0f5ed27406",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8b4226d9-d1b1-5894-88e8-ad0896fb2f40"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261；万历二十四年五月庚午",
+        "claim_text": "奉命出使",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.577856+00:00",
+        "field_path": "role",
+        "id": "8b4226d9-d1b1-5894-88e8-ad0896fb2f40",
+        "note": "原文：庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "status": "published",
+        "subject_id": "555854bb-967e-5264-8293-56d0b91d6d8e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d16e581b-dff6-5bed-977c-9916d4a8674c"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003262；万历二十四年六月",
+        "claim_text": "万历二十四年六月，朝廷赈济福建饥民。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.602084+00:00",
+        "field_path": "description",
+        "id": "d16e581b-dff6-5bed-977c-9916d4a8674c",
+        "note": "原文：六月，振福建饑；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47",
+        "status": "published",
+        "subject_id": "521be90b-dc1e-5e5f-87b7-64c9ca15a528",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c1f5950d-1314-583f-9de9-3604c378b08a"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003262；万历二十四年六月",
+        "claim_text": "原历万历二十四年六月。DDBC历表换算所据为1596-06-26至1596-07-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.622296+00:00",
+        "field_path": "time_original",
+        "id": "c1f5950d-1314-583f-9de9-3604c378b08a",
+        "note": "原文：六月，振福建饑；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47",
+        "status": "published",
+        "subject_id": "521be90b-dc1e-5e5f-87b7-64c9ca15a528",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "afbdfa28-f1e9-5831-990d-9f9575619858"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月丁卯",
+        "claim_text": "孙丕扬上疏请求。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.642749+00:00",
+        "field_path": "description",
+        "id": "afbdfa28-f1e9-5831-990d-9f9575619858",
+        "note": "原文：丁卯，吏部尚書孫丕揚請發推補官員章疏，不報；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "5ad32489-1cf2-5102-8cac-510a9a7c8340",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0f888382-31b1-54e7-91b0-0616645abf0b"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月丁卯",
+        "claim_text": "万历二十四年七月丁卯，吏部尚书孙丕扬请求将推举补任官员的章疏发交办理，未得到答复。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.672129+00:00",
+        "field_path": "description",
+        "id": "0f888382-31b1-54e7-91b0-0616645abf0b",
+        "note": "原文：丁卯，吏部尚書孫丕揚請發推補官員章疏，不報；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "39839f58-0078-5f5d-a9c1-78bc5d3cc31f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "385f5767-2f37-5714-9ae4-91f3804e779c"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月丁卯",
+        "claim_text": "原历万历二十四年七月丁卯。DDBC历表换算所据为1596-07-26至1596-07-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.692925+00:00",
+        "field_path": "time_original",
+        "id": "385f5767-2f37-5714-9ae4-91f3804e779c",
+        "note": "原文：丁卯，吏部尚書孫丕揚請發推補官員章疏，不報；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "39839f58-0078-5f5d-a9c1-78bc5d3cc31f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ee7609af-29e0-5dfc-8169-77da68cfc53e"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月丁卯",
+        "claim_text": "上疏请求",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.717085+00:00",
+        "field_path": "role",
+        "id": "ee7609af-29e0-5dfc-8169-77da68cfc53e",
+        "note": "原文：丁卯，吏部尚書孫丕揚請發推補官員章疏，不報；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "ceec6a77-3530-5052-9c38-5c44f1bf2cdc",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "693b2f5b-a835-5097-a7e2-f9ee3525f9e8"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月戊寅",
+        "claim_text": "陈太后去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.742359+00:00",
+        "field_path": "description",
+        "id": "693b2f5b-a835-5097-a7e2-f9ee3525f9e8",
+        "note": "原文：戊寅，仁聖皇太后崩；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "05019157-fa69-5b0f-af95-e973d740a56b",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "56367610-b555-58ce-9146-3bce610f2533"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月戊寅",
+        "claim_text": "七月戊寅，仁圣皇太后陈氏去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.762982+00:00",
+        "field_path": "description",
+        "id": "56367610-b555-58ce-9146-3bce610f2533",
+        "note": "原文：戊寅，仁聖皇太后崩；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "47dbd60d-aaa5-5054-93c5-b86ee4204d55",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1f7a290e-72ba-5e36-8238-105df3dfecc8"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月戊寅",
+        "claim_text": "原历万历二十四年七月戊寅。DDBC历表换算所据为1596-08-06至1596-08-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.787964+00:00",
+        "field_path": "time_original",
+        "id": "1f7a290e-72ba-5e36-8238-105df3dfecc8",
+        "note": "原文：戊寅，仁聖皇太后崩；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "47dbd60d-aaa5-5054-93c5-b86ee4204d55",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "caf7fd28-4d12-584a-bbfb-19a6b112188b"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月戊寅",
+        "claim_text": "去世",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.817339+00:00",
+        "field_path": "role",
+        "id": "caf7fd28-4d12-584a-bbfb-19a6b112188b",
+        "note": "原文：戊寅，仁聖皇太后崩；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "73d41f12-d659-5f91-8a59-97d9d261f2bf",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1458a5ff-63b2-58a3-b63f-d352ce945e44"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月乙酉",
+        "claim_text": "七月乙酉，朝廷开始派宦官主管畿内开矿。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.837353+00:00",
+        "field_path": "description",
+        "id": "1458a5ff-63b2-58a3-b63f-d352ce945e44",
+        "note": "原文：乙酉，始遣中官開礦於畿內；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "76294308-244a-560f-badd-33c6a16bc5c0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cf482eb3-b8de-5454-8582-2bcb2af98d0c"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月乙酉",
+        "claim_text": "原历万历二十四年七月乙酉。DDBC历表换算所据为1596-08-13至1596-08-13，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.857694+00:00",
+        "field_path": "time_original",
+        "id": "cf482eb3-b8de-5454-8582-2bcb2af98d0c",
+        "note": "原文：乙酉，始遣中官開礦於畿內；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "76294308-244a-560f-badd-33c6a16bc5c0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dd714d1c-c8c7-5299-a56b-7f6146d2ac63"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003264；万历二十四年闰八月乙丑朔",
+        "claim_text": "万历二十四年闰八月乙丑朔，本纪记有日食。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.882454+00:00",
+        "field_path": "description",
+        "id": "dd714d1c-c8c7-5299-a56b-7f6146d2ac63",
+        "note": "原文：閏八月乙丑朔，日有食之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b",
+        "status": "published",
+        "subject_id": "43eff8d1-6b9d-5477-be3c-102063d8138f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "78a53de3-b405-5f8c-bda9-a2bcb08b9ddc"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003264；万历二十四年闰八月乙丑朔",
+        "claim_text": "原历万历二十四年闰八月乙丑朔。DDBC历表换算所据为1596-09-22至1596-09-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.907006+00:00",
+        "field_path": "time_original",
+        "id": "78a53de3-b405-5f8c-bda9-a2bcb08b9ddc",
+        "note": "原文：閏八月乙丑朔，日有食之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b",
+        "status": "published",
+        "subject_id": "43eff8d1-6b9d-5477-be3c-102063d8138f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d9441c7e-c7a6-5c10-9b9d-cd45050e1b37"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003264；万历二十四年闰八月丁卯",
+        "claim_text": "闰八月丁卯，大学士赵志皋请明神宗临朝处理政务、下发章奏并停止采矿，没有得到答复。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.927015+00:00",
+        "field_path": "description",
+        "id": "d9441c7e-c7a6-5c10-9b9d-cd45050e1b37",
+        "note": "原文：丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b",
+        "status": "published",
+        "subject_id": "0fd28625-40a2-5f57-8c6f-e353f0e76275",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "954caf67-debf-55ea-82b9-db18ec3ea31f"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003264；万历二十四年闰八月丁卯",
+        "claim_text": "原历万历二十四年闰八月丁卯。DDBC历表换算所据为1596-09-24至1596-09-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.947564+00:00",
+        "field_path": "time_original",
+        "id": "954caf67-debf-55ea-82b9-db18ec3ea31f",
+        "note": "原文：丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b",
+        "status": "published",
+        "subject_id": "0fd28625-40a2-5f57-8c6f-e353f0e76275",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9d68a58f-be48-5787-bfa5-a6d67a8631dc"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003264；万历二十四年闰八月丁卯",
+        "claim_text": "进言请求",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:06.981966+00:00",
+        "field_path": "role",
+        "id": "9d68a58f-be48-5787-bfa5-a6d67a8631dc",
+        "note": "原文：丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b",
+        "status": "published",
+        "subject_id": "31703466-c5e9-5c44-992e-568c1fb4718c",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1f01c006-f5e6-5e80-bcdd-23344e2e879e"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙未",
+        "claim_text": "丰臣秀吉拒绝接受册封。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.002832+00:00",
+        "field_path": "description",
+        "id": "1f01c006-f5e6-5e80-bcdd-23344e2e879e",
+        "note": "原文：乙未，楊方亨至日本，平秀吉不受封；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "049f58f7-0a5d-5bb0-a177-b097e9fa1612",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b00b024a-b817-5d4b-9204-2dda0ebfc1ff"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙未",
+        "claim_text": "万历二十四年九月乙未，杨方亨到达日本，本纪记丰臣秀吉拒绝接受明朝册封。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.032242+00:00",
+        "field_path": "description",
+        "id": "b00b024a-b817-5d4b-9204-2dda0ebfc1ff",
+        "note": "原文：乙未，楊方亨至日本，平秀吉不受封；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "ee4ebc66-d011-52fc-bd7c-e962518ab5ce",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "631ee381-ab7b-5f4e-8528-b2c735208939"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙未",
+        "claim_text": "原历万历二十四年九月乙未。DDBC历表换算所据为1596-10-22至1596-10-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.067555+00:00",
+        "field_path": "time_original",
+        "id": "631ee381-ab7b-5f4e-8528-b2c735208939",
+        "note": "原文：乙未，楊方亨至日本，平秀吉不受封；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "ee4ebc66-d011-52fc-bd7c-e962518ab5ce",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1a688265-ab52-5ddf-a2de-6d356cb7523d"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙未",
+        "claim_text": "抵达日本",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.087631+00:00",
+        "field_path": "role",
+        "id": "1a688265-ab52-5ddf-a2de-6d356cb7523d",
+        "note": "原文：乙未，楊方亨至日本，平秀吉不受封；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "a6e80898-3350-54af-a863-41136fb0665f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "048764fa-27c7-5de8-bbbf-f9d7bc8e9ead"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙未",
+        "claim_text": "拒绝接受册封",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.112131+00:00",
+        "field_path": "role",
+        "id": "048764fa-27c7-5de8-bbbf-f9d7bc8e9ead",
+        "note": "原文：乙未，楊方亨至日本，平秀吉不受封；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "e7fa0eab-ef63-54da-a4a0-4e83b9f00662",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "32f4c5dc-5689-5317-8d47-0aaf7d63709d"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙卯",
+        "claim_text": "九月乙卯，朝廷安葬孝安庄皇后陈氏。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.142083+00:00",
+        "field_path": "description",
+        "id": "32f4c5dc-5689-5317-8d47-0aaf7d63709d",
+        "note": "原文：乙卯，葬孝安莊皇后；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "272fc9aa-1a7f-5126-a4d8-5a3c916722bb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3ffdd99e-dda4-56f5-807a-1da79be29404"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙卯",
+        "claim_text": "原历万历二十四年九月乙卯。DDBC历表换算所据为1596-11-11至1596-11-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.167127+00:00",
+        "field_path": "time_original",
+        "id": "3ffdd99e-dda4-56f5-807a-1da79be29404",
+        "note": "原文：乙卯，葬孝安莊皇后；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "272fc9aa-1a7f-5126-a4d8-5a3c916722bb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2840a709-dbb0-55b9-8def-552b130cfc0d"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月乙卯",
+        "claim_text": "下葬",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.192368+00:00",
+        "field_path": "role",
+        "id": "2840a709-dbb0-55b9-8def-552b130cfc0d",
+        "note": "原文：乙卯，葬孝安莊皇后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "14be4e98-b7a5-57e8-84c9-dc7d61d70c52",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "28ba4526-73bb-58a3-9e24-3314702ea411"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月",
+        "claim_text": "李如柏领兵迎击。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.232194+00:00",
+        "field_path": "description",
+        "id": "28ba4526-73bb-58a3-9e24-3314702ea411",
+        "note": "原文：是月，河套部犯寧夏。總兵官李如柏擊敗之；核对说明：卷238李成梁后列李如柏传，万历年间任边镇总兵，也参与后续辽东战事。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "f2d99a59-97a2-5795-8b07-746379a3fa28",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f15e0a33-93b7-5dd3-b363-c09f7be7b75a"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月",
+        "claim_text": "万历二十四年九月，河套部进犯宁夏，明军总兵官李如柏率军将其击败。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.262849+00:00",
+        "field_path": "description",
+        "id": "f15e0a33-93b7-5dd3-b363-c09f7be7b75a",
+        "note": "原文：是月，河套部犯寧夏。總兵官李如柏擊敗之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "90c67f94-94b3-581f-a014-66d4dc951660",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "760ddb43-ca5c-550e-b1e2-98595cac7dde"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月",
+        "claim_text": "原历万历二十四年九月。DDBC历表换算所据为1596-10-21至1596-11-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.297656+00:00",
+        "field_path": "time_original",
+        "id": "760ddb43-ca5c-550e-b1e2-98595cac7dde",
+        "note": "原文：是月，河套部犯寧夏。總兵官李如柏擊敗之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "90c67f94-94b3-581f-a014-66d4dc951660",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2e42fe30-6ada-5a74-8ee2-d1f79bbd7884"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年九月",
+        "claim_text": "领兵迎击",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.317276+00:00",
+        "field_path": "role",
+        "id": "2e42fe30-6ada-5a74-8ee2-d1f79bbd7884",
+        "note": "原文：是月，河套部犯寧夏。總兵官李如柏擊敗之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "1ee7fe29-4367-5849-8aa2-dd71430b244a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ee530bfe-1c18-53eb-886c-f28ffb00f132"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003266；万历二十四年十月丙子",
+        "claim_text": "万历二十四年十月丙子，朝廷暂停行刑。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.342106+00:00",
+        "field_path": "description",
+        "id": "ee530bfe-1c18-53eb-886c-f28ffb00f132",
+        "note": "原文：丙子，停刑；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91",
+        "status": "published",
+        "subject_id": "eed7751b-7326-5f2f-8897-401f3d0c260c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "15a6a5c5-72e4-5f9c-9f9e-9070befd64ed"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003266；万历二十四年十月丙子",
+        "claim_text": "原历万历二十四年十月丙子。DDBC历表换算所据为1596-12-02至1596-12-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.362641+00:00",
+        "field_path": "time_original",
+        "id": "15a6a5c5-72e4-5f9c-9f9e-9070befd64ed",
+        "note": "原文：丙子，停刑；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91",
+        "status": "published",
+        "subject_id": "eed7751b-7326-5f2f-8897-401f3d0c260c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d8604e69-f3c1-5ea5-b78b-ef93dbe608a8"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003266；万历二十四年十月乙酉",
+        "claim_text": "十月乙酉，朝廷开始命宦官在通州负责征收榷税。本纪继记各省后来相继设税使。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.387630+00:00",
+        "field_path": "description",
+        "id": "d8604e69-f3c1-5ea5-b78b-ef93dbe608a8",
+        "note": "原文：乙酉，始命中官榷稅通州；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91",
+        "status": "published",
+        "subject_id": "7e19719b-442f-5f3d-8043-7ee8d3e64844",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f652d63f-6995-579e-a9e8-46c8457a2fa5"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003266；万历二十四年十月乙酉",
+        "claim_text": "原历万历二十四年十月乙酉。DDBC历表换算所据为1596-12-11至1596-12-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.407548+00:00",
+        "field_path": "time_original",
+        "id": "f652d63f-6995-579e-a9e8-46c8457a2fa5",
+        "note": "原文：乙酉，始命中官榷稅通州；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91",
+        "status": "published",
+        "subject_id": "7e19719b-442f-5f3d-8043-7ee8d3e64844",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dd0d80da-b045-5eef-a08d-042b11fcab95"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003267；万历二十四年十二月乙亥",
+        "claim_text": "陈于陛去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.427622+00:00",
+        "field_path": "description",
+        "id": "dd0d80da-b045-5eef-a08d-042b11fcab95",
+        "note": "原文：十二月乙亥，陳于陛卒；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a",
+        "status": "published",
+        "subject_id": "ec2cf26d-2f54-5789-b3d7-9d81feafebbc",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9e4c9193-87b7-5640-b703-e27a3563e30b"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003267；万历二十四年十二月乙亥",
+        "claim_text": "万历二十四年十二月乙亥，陈于陛去世。该纪日换算在公元1597年。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.457115+00:00",
+        "field_path": "description",
+        "id": "9e4c9193-87b7-5640-b703-e27a3563e30b",
+        "note": "原文：十二月乙亥，陳于陛卒；核对说明：年表与本纪同记万历二十四年十二月陈于陛去世，本纪补乙亥。",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a",
+        "status": "published",
+        "subject_id": "493aa98b-3817-5c50-b8dc-3d2f3719558f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a81c9b28-7092-5924-84da-1761617d1b54"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003267；万历二十四年十二月乙亥",
+        "claim_text": "原历万历二十四年十二月乙亥。DDBC历表换算所据为1597-01-30至1597-01-30，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.477663+00:00",
+        "field_path": "time_original",
+        "id": "a81c9b28-7092-5924-84da-1761617d1b54",
+        "note": "原文：十二月乙亥，陳于陛卒；核对说明：年表与本纪同记万历二十四年十二月陈于陛去世，本纪补乙亥。",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a",
+        "status": "published",
+        "subject_id": "493aa98b-3817-5c50-b8dc-3d2f3719558f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0184dd55-6a7d-59c6-876c-5a125bd32961"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003267；万历二十四年十二月乙亥",
+        "claim_text": "去世",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.502121+00:00",
+        "field_path": "role",
+        "id": "0184dd55-6a7d-59c6-876c-5a125bd32961",
+        "note": "原文：十二月乙亥，陳于陛卒；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a",
+        "status": "published",
+        "subject_id": "e3622535-c429-56f5-99c2-bdad2501f37f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2ea63ce2-f899-5c1a-b347-6e0c8fc5a654"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月乙酉命内官在畿内开矿后不久",
+        "claim_text": "畿内开始由宦官主管开矿后不久，朝廷也命河南、山东、山西、浙江、陕西开矿，由宦官主持。群臣多次进谏，未获采纳。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.537748+00:00",
+        "field_path": "description",
+        "id": "2ea63ce2-f899-5c1a-b347-6e0c8fc5a654",
+        "note": "原文：未幾，河南、山東、山西、浙江、陝西悉令開採，以中官領之。羣臣屢諫不聽；核对说明：原文以“未几”说明各地扩展，无独立日期。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "4ca6e128-fee6-5a4e-b535-5a0c8606ba28",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e96b2148-e782-5a34-8975-eb11c49c0813"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263；万历二十四年七月乙酉命内官在畿内开矿后不久",
+        "claim_text": "原文以“未几”说明各地扩展，无独立日期。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.562386+00:00",
+        "field_path": "time_original",
+        "id": "e96b2148-e782-5a34-8975-eb11c49c0813",
+        "note": "原文：未幾，河南、山東、山西、浙江、陝西悉令開採，以中官領之。羣臣屢諫不聽；核对说明：原文以“未几”说明各地扩展，无独立日期。",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "status": "published",
+        "subject_id": "4ca6e128-fee6-5a4e-b535-5a0c8606ba28",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7951a3e2-5d65-56f8-824e-80ba94c0e9e6"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年秋",
+        "claim_text": "万历二十四年秋，黄河在黄堌口决口。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.582912+00:00",
+        "field_path": "description",
+        "id": "7951a3e2-5d65-56f8-824e-80ba94c0e9e6",
+        "note": "原文：是秋，河決黃堌口；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "6d8405cd-ebe6-592e-b606-6f5fa6f93a46",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1fe80997-403f-5597-8e49-d15b7daee144"
+      },
+      "row": {
+        "citation": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265；万历二十四年秋",
+        "claim_text": "原历万历二十四年秋。DDBC历表换算所据为1596-07-25至1596-11-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:42:07.617366+00:00",
+        "field_path": "time_original",
+        "id": "1fe80997-403f-5597-8e49-d15b7daee144",
+        "note": "原文：是秋，河決黃堌口；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "status": "published",
+        "subject_id": "6d8405cd-ebe6-592e-b606-6f5fa6f93a46",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7738406e-5b26-5b0a-a118-9931e6157bc6"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.527737+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "7738406e-5b26-5b0a-a118-9931e6157bc6",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003255",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003255",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003255/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5c5882c0af5ced968428e452d4d543d232e68d1562e7ccab0360f8c3f1d7c050",
+        "source_id": "7738406e-5b26-5b0a-a118-9931e6157bc6"
+      },
+      "row": {
+        "archive_blob_sha256": "51daf7ee948ab27a68359796b6bda917408c61b6514d939a406be63a829eeb12",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003255/source.txt",
+        "archive_url_sha256": "5c5882c0af5ced968428e452d4d543d232e68d1562e7ccab0360f8c3f1d7c050",
+        "content": "冬十一月辛未，湖廣災，蠲振有差。",
+        "content_sha256": "51daf7ee948ab27a68359796b6bda917408c61b6514d939a406be63a829eeb12",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "7738406e-5b26-5b0a-a118-9931e6157bc6"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003255"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128641,
+        "char_start": 128625,
+        "content": "冬十一月辛未，湖廣災，蠲振有差。",
+        "content_sha256": "51daf7ee948ab27a68359796b6bda917408c61b6514d939a406be63a829eeb12",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003255",
+        "kind": "body",
+        "ordinal": 3233,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "748a59ed-84cc-56f0-a508-e729c3089134"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.552007+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "748a59ed-84cc-56f0-a508-e729c3089134",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003256",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003256",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003256/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "417885d50068155e15c755a55295f6c82a2a02f937c2ed7fcb54f9c10ac375eb",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134"
+      },
+      "row": {
+        "archive_blob_sha256": "af4d8e77fe7b610b78c0d033f673b0ebfd1b785e84ddc8778e8a01179da87954",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003256/source.txt",
+        "archive_url_sha256": "417885d50068155e15c755a55295f6c82a2a02f937c2ed7fcb54f9c10ac375eb",
+        "content": "十二月辛丑，大學士趙志皐等請發留中章奏，不報。",
+        "content_sha256": "af4d8e77fe7b610b78c0d033f673b0ebfd1b785e84ddc8778e8a01179da87954",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "748a59ed-84cc-56f0-a508-e729c3089134"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003256"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128666,
+        "char_start": 128643,
+        "content": "十二月辛丑，大學士趙志皐等請發留中章奏，不報。",
+        "content_sha256": "af4d8e77fe7b610b78c0d033f673b0ebfd1b785e84ddc8778e8a01179da87954",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003256",
+        "kind": "body",
+        "ordinal": 3234,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.582336+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003257",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003257",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003257/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "f40393ab9c42f9a5d24122378345982d860a74db725c809902c394da6646a800",
+        "source_id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa"
+      },
+      "row": {
+        "archive_blob_sha256": "1a8012dd53b570cd18250b5a500137bfb3780f7d11ff0c5182f6c5f758e6803e",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003257/source.txt",
+        "archive_url_sha256": "f40393ab9c42f9a5d24122378345982d860a74db725c809902c394da6646a800",
+        "content": "是年，江北大水，淮溢，浸泗州祖陵。",
+        "content_sha256": "1a8012dd53b570cd18250b5a500137bfb3780f7d11ff0c5182f6c5f758e6803e",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003257"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128685,
+        "char_start": 128668,
+        "content": "是年，江北大水，淮溢，浸泗州祖陵。",
+        "content_sha256": "1a8012dd53b570cd18250b5a500137bfb3780f7d11ff0c5182f6c5f758e6803e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003257",
+        "kind": "body",
+        "ordinal": 3235,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.622875+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003259",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003259",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003259/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "336fdf931c779f3b8606b4769d54f1553e374e8f57f20ce7fd71910e861763e6",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7"
+      },
+      "row": {
+        "archive_blob_sha256": "9069e4021766d32297d2aff04a4d073f5c49b741f5a7c90a31dea2afad63f62a",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003259/source.txt",
+        "archive_url_sha256": "336fdf931c779f3b8606b4769d54f1553e374e8f57f20ce7fd71910e861763e6",
+        "content": "二十四年春二月戊申，麻貴襲河套部，敗之。",
+        "content_sha256": "9069e4021766d32297d2aff04a4d073f5c49b741f5a7c90a31dea2afad63f62a",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "3d321359-3d0f-5a53-8b1b-d277909ec8e7"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003259"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128715,
+        "char_start": 128695,
+        "content": "二十四年春二月戊申，麻貴襲河套部，敗之。",
+        "content_sha256": "9069e4021766d32297d2aff04a4d073f5c49b741f5a7c90a31dea2afad63f62a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003259",
+        "kind": "body",
+        "ordinal": 3237,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "583e1a9b-084a-52d4-abd0-6ca35142b77b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.657350+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "583e1a9b-084a-52d4-abd0-6ca35142b77b",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003260",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003260",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003260/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "d13ad11baa63556361f9a5a1937c6e7714ea77f4fb288af72aacf27112758fce",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b"
+      },
+      "row": {
+        "archive_blob_sha256": "7157bd631bc8de8bf839d6df6bcef67e1b63e8cab42caa2bc0e252ab6d966e7e",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003260/source.txt",
+        "archive_url_sha256": "d13ad11baa63556361f9a5a1937c6e7714ea77f4fb288af72aacf27112758fce",
+        "content": "三月乙亥，乾清、坤寧兩宮災，敕修省。壬辰，下詔自責。是月，火落赤犯洮河，總兵官劉綎破走之。",
+        "content_sha256": "7157bd631bc8de8bf839d6df6bcef67e1b63e8cab42caa2bc0e252ab6d966e7e",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "583e1a9b-084a-52d4-abd0-6ca35142b77b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003260"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128762,
+        "char_start": 128717,
+        "content": "三月乙亥，乾清、坤寧兩宮災，敕修省。壬辰，下詔自責。是月，火落赤犯洮河，總兵官劉綎破走之。",
+        "content_sha256": "7157bd631bc8de8bf839d6df6bcef67e1b63e8cab42caa2bc0e252ab6d966e7e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003260",
+        "kind": "body",
+        "ordinal": 3238,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "000127f1-b7cd-5015-abba-284c1f06a7f5"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.682147+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "000127f1-b7cd-5015-abba-284c1f06a7f5",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003261",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003261",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003261/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "94e8ef4670df9e76bc3185163491a73e654de09442f5797b6632e41c4cdda59d",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5"
+      },
+      "row": {
+        "archive_blob_sha256": "5c8103df471f44ed433b8b0bfad02f8ba9e107c5828bd132a3cf84f590878465",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003261/source.txt",
+        "archive_url_sha256": "94e8ef4670df9e76bc3185163491a73e654de09442f5797b6632e41c4cdda59d",
+        "content": "夏四月己亥，李宗城自倭營奔還王京。五月戊辰，河套部敵犯甘肅，總兵官楊濬擊破之。庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往。",
+        "content_sha256": "5c8103df471f44ed433b8b0bfad02f8ba9e107c5828bd132a3cf84f590878465",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "000127f1-b7cd-5015-abba-284c1f06a7f5"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003261"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128827,
+        "char_start": 128764,
+        "content": "夏四月己亥，李宗城自倭營奔還王京。五月戊辰，河套部敵犯甘肅，總兵官楊濬擊破之。庚午，復議封倭，命都督僉事楊方亨、遊擊沈惟敬往。",
+        "content_sha256": "5c8103df471f44ed433b8b0bfad02f8ba9e107c5828bd132a3cf84f590878465",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003261",
+        "kind": "body",
+        "ordinal": 3239,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.707004+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003262",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003262",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003262/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5f262fc6452ec302de5911f793bb96d892b39b2d5242928180d1ab211bea4f89",
+        "source_id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47"
+      },
+      "row": {
+        "archive_blob_sha256": "9c418a812b1239f8354ae58b780170e36cdcd6048f7c46c67f4c9b2f517526a5",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003262/source.txt",
+        "archive_url_sha256": "5f262fc6452ec302de5911f793bb96d892b39b2d5242928180d1ab211bea4f89",
+        "content": "六月，振福建饑。",
+        "content_sha256": "9c418a812b1239f8354ae58b780170e36cdcd6048f7c46c67f4c9b2f517526a5",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003262"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128837,
+        "char_start": 128829,
+        "content": "六月，振福建饑。",
+        "content_sha256": "9c418a812b1239f8354ae58b780170e36cdcd6048f7c46c67f4c9b2f517526a5",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003262",
+        "kind": "body",
+        "ordinal": 3240,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.737299+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003263",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003263",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003263/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "37b9af8e2c44dc403854ebfe4e5503ed9deca3721782e972be364ab5c58f4024",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c"
+      },
+      "row": {
+        "archive_blob_sha256": "d85c1c27b485e4aacdaecb8bc4e1075a45ced505d3b838b5714f43310f51ac4a",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003263/source.txt",
+        "archive_url_sha256": "37b9af8e2c44dc403854ebfe4e5503ed9deca3721782e972be364ab5c58f4024",
+        "content": "秋七月丁卯，吏部尚書孫丕揚請發推補官員章疏，不報。戊寅，仁聖皇太后崩。乙酉，始遣中官開礦於畿內。未幾，河南、山東、山西、浙江、陝西悉令開採，以中官領之。羣臣屢諫不聽。",
+        "content_sha256": "d85c1c27b485e4aacdaecb8bc4e1075a45ced505d3b838b5714f43310f51ac4a",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "3654d04f-150b-59d4-8ffe-2a9d796ba74c"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003263"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128922,
+        "char_start": 128839,
+        "content": "秋七月丁卯，吏部尚書孫丕揚請發推補官員章疏，不報。戊寅，仁聖皇太后崩。乙酉，始遣中官開礦於畿內。未幾，河南、山東、山西、浙江、陝西悉令開採，以中官領之。羣臣屢諫不聽。",
+        "content_sha256": "d85c1c27b485e4aacdaecb8bc4e1075a45ced505d3b838b5714f43310f51ac4a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003263",
+        "kind": "body",
+        "ordinal": 3241,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "d91b60bb-85b5-523e-a164-2c4b0a48225b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.761973+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d91b60bb-85b5-523e-a164-2c4b0a48225b",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003264",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003264",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003264/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "94ec61eea4cf1a922b208bf44efd8c4ac9cd4b3f9e82546f89c04182adf29395",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b"
+      },
+      "row": {
+        "archive_blob_sha256": "6bbd09be4ecccb8f99020e9a743a24dc9fedbff84405cd3152eafa0b2bcd91c1",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003264/source.txt",
+        "archive_url_sha256": "94ec61eea4cf1a922b208bf44efd8c4ac9cd4b3f9e82546f89c04182adf29395",
+        "content": "閏八月乙丑朔，日有食之。丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報。",
+        "content_sha256": "6bbd09be4ecccb8f99020e9a743a24dc9fedbff84405cd3152eafa0b2bcd91c1",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "d91b60bb-85b5-523e-a164-2c4b0a48225b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003264"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 128960,
+        "char_start": 128924,
+        "content": "閏八月乙丑朔，日有食之。丁卯，大學士趙志皐請視朝，發章奏，罷採礦，不報。",
+        "content_sha256": "6bbd09be4ecccb8f99020e9a743a24dc9fedbff84405cd3152eafa0b2bcd91c1",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003264",
+        "kind": "body",
+        "ordinal": 3242,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.782408+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003265",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003265",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003265/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "615f08688873711971b1688d1fb9f6c1673c65a306d65ae0bc90396b85267b1e",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1"
+      },
+      "row": {
+        "archive_blob_sha256": "af89c4101a03bfe7eae23f5dcc0fb0005415e996082a5617b3b16f4253fd157f",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003265/source.txt",
+        "archive_url_sha256": "615f08688873711971b1688d1fb9f6c1673c65a306d65ae0bc90396b85267b1e",
+        "content": "九月乙未，楊方亨至日本，平秀吉不受封，復侵朝鮮。乙卯，葬孝安莊皇后。是月，河套部犯寧夏。總兵官李如柏擊敗之。是秋，河決黃堌口。",
+        "content_sha256": "af89c4101a03bfe7eae23f5dcc0fb0005415e996082a5617b3b16f4253fd157f",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003265"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 129025,
+        "char_start": 128962,
+        "content": "九月乙未，楊方亨至日本，平秀吉不受封，復侵朝鮮。乙卯，葬孝安莊皇后。是月，河套部犯寧夏。總兵官李如柏擊敗之。是秋，河決黃堌口。",
+        "content_sha256": "af89c4101a03bfe7eae23f5dcc0fb0005415e996082a5617b3b16f4253fd157f",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003265",
+        "kind": "body",
+        "ordinal": 3243,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.802745+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003266",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003266",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003266/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "a7adabe8eb80202d61456ce1fa8661f604e903ca90cc04818d4472841fedb1eb",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91"
+      },
+      "row": {
+        "archive_blob_sha256": "e98a420e5f4d4de194217903f63b54d401b677e387ae3ed586fdf4b10c30214f",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003266/source.txt",
+        "archive_url_sha256": "a7adabe8eb80202d61456ce1fa8661f604e903ca90cc04818d4472841fedb1eb",
+        "content": "冬十月丙子，停刑。乙酉，始命中官榷稅通州。是後，各省皆設稅使。羣臣屢諫不聽。",
+        "content_sha256": "e98a420e5f4d4de194217903f63b54d401b677e387ae3ed586fdf4b10c30214f",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "9a256718-5eb6-52cf-b5af-ccf97bfbbe91"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003266"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 129065,
+        "char_start": 129027,
+        "content": "冬十月丙子，停刑。乙酉，始命中官榷稅通州。是後，各省皆設稅使。羣臣屢諫不聽。",
+        "content_sha256": "e98a420e5f4d4de194217903f63b54d401b677e387ae3ed586fdf4b10c30214f",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003266",
+        "kind": "body",
+        "ordinal": 3244,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T23:42:02.827515+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a",
+        "note": "《明史》卷20·本纪第二十·神宗一·mingshi-2f603db3d81e-p003267",
+        "source_type": "primary",
+        "title": "明史·卷20·神宗一·mingshi-2f603db3d81e-p003267",
+        "url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003267/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "dbff5590f5d60869ac9535af172767fcf287116680799481a3f6b770780729a9",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a"
+      },
+      "row": {
+        "archive_blob_sha256": "b1cfa1adf0d901c7a3348043dfa1b48d837f93dfe52b295f1d4c6342d113a362",
+        "archive_commit": "a88548998bc487d74455bb07cd0e032a23db2f59",
+        "archive_url": "https://github.com/greed-216/histree/blob/a88548998bc487d74455bb07cd0e032a23db2f59/content/books/mingshi/vol-020/from-start/part-10/sources/mingshi-2f603db3d81e-p003267/source.txt",
+        "archive_url_sha256": "dbff5590f5d60869ac9535af172767fcf287116680799481a3f6b770780729a9",
+        "content": "十二月乙亥，陳于陛卒。",
+        "content_sha256": "b1cfa1adf0d901c7a3348043dfa1b48d837f93dfe52b295f1d4c6342d113a362",
+        "created_at": "2026-11-18T23:42:09.832475+00:00",
+        "source_id": "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p003267"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 129078,
+        "char_start": 129067,
+        "content": "十二月乙亥，陳于陛卒。",
+        "content_sha256": "b1cfa1adf0d901c7a3348043dfa1b48d837f93dfe52b295f1d4c6342d113a362",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p003267",
+        "kind": "body",
+        "ordinal": 3245,
+        "section_id": "mingshi-2f603db3d81e-s0021"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "f972e10c-b20f-50f8-a9b6-e732c489c332"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.652098+00:00",
+        "description": "万历二十三年十一月辛未，湖广受灾，朝廷按不同情形减免赋税并给予赈济。",
+        "dynasty": "明",
+        "end_year": 1595,
+        "id": "f972e10c-b20f-50f8-a9b6-e732c489c332",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1595,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十三年十一月辛未",
+        "title": "湖广遭灾，朝廷减免赋税并给予救济"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "aa1c1ba6-1ad6-57eb-b1f7-5ba06d68e966"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.677151+00:00",
+        "description": "万历二十三年十二月辛丑，大学士赵志皋等人请求将留在宫中未发的章奏交有关官员办理，未获答复。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "aa1c1ba6-1ad6-57eb-b1f7-5ba06d68e966",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十三年十二月辛丑",
+        "title": "赵志皋等请下发留中章奏，未获答复"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "65fff7da-f320-557d-b65f-b3dab9ab1a71"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.702372+00:00",
+        "description": "万历二十三年，江北发生大水，淮水溢出，浸入泗州祖陵。 按原历纪年，事情发生在公元1595至1596年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "65fff7da-f320-557d-b65f-b3dab9ab1a71",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十三年",
+        "title": "江北大水，淮水漫浸泗州祖陵"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "f8beb1cc-58f5-53dc-bb7a-9fb8e04ce561"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.722722+00:00",
+        "description": "万历二十四年二月戊申，麻贵袭击河套部并将其击败。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "f8beb1cc-58f5-53dc-bb7a-9fb8e04ce561",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年二月戊申",
+        "title": "麻贵袭击河套部并取得胜利"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "4ee01a62-03b2-5eb4-98a7-ecc7cf4e7489"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.746995+00:00",
+        "description": "万历二十四年三月乙亥，乾清宫和坤宁宫失火，朝廷敕令修省。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "4ee01a62-03b2-5eb4-98a7-ecc7cf4e7489",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年三月乙亥",
+        "title": "乾清、坤宁两宫失火，朝廷敕令修省"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c5c70ed1-c865-5f37-b805-79e2439f1bf1"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.778035+00:00",
+        "description": "三月壬辰，明神宗在乾清、坤宁两宫失火后下诏自责。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "c5c70ed1-c865-5f37-b805-79e2439f1bf1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年三月壬辰",
+        "title": "明神宗在宫中火灾后下诏自责"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "59581c9d-3a62-5730-b60f-4e4a14380952"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.801950+00:00",
+        "description": "万历二十四年三月，火落赤进犯洮河，总兵官刘綎率军将其击败并逐退。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "59581c9d-3a62-5730-b60f-4e4a14380952",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年三月",
+        "title": "火落赤进犯洮河，被刘綎击退"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "4feb43eb-990b-52c8-b14c-53420df9f3dd"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.822359+00:00",
+        "description": "万历二十四年四月己亥，李宗城从日军营中奔回朝鲜王京。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "4feb43eb-990b-52c8-b14c-53420df9f3dd",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年四月己亥",
+        "title": "李宗城从日军营中返回朝鲜王京"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "cecac713-9382-56dc-aa67-2851fdffdf14"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.842072+00:00",
+        "description": "五月戊辰，河套部进犯甘肃，明军总兵官杨濬率军击败来敌。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "cecac713-9382-56dc-aa67-2851fdffdf14",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年五月戊辰",
+        "title": "杨濬在甘肃击败来犯河套部"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5cae48d5-6f23-5e28-8c9c-948922ebacf7"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.862104+00:00",
+        "description": "五月庚午，朝廷再次商议对日本的册封，命都督佥事杨方亨与游击沈惟敬前往。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "5cae48d5-6f23-5e28-8c9c-948922ebacf7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年五月庚午",
+        "title": "朝廷再议对日册封，命杨方亨和沈惟敬前往"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "521be90b-dc1e-5e5f-87b7-64c9ca15a528"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.882652+00:00",
+        "description": "万历二十四年六月，朝廷赈济福建饥民。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "521be90b-dc1e-5e5f-87b7-64c9ca15a528",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年六月",
+        "title": "朝廷赈济福建饥民"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "39839f58-0078-5f5d-a9c1-78bc5d3cc31f"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.907185+00:00",
+        "description": "万历二十四年七月丁卯，吏部尚书孙丕扬请求将推举补任官员的章疏发交办理，未得到答复。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "39839f58-0078-5f5d-a9c1-78bc5d3cc31f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年七月丁卯",
+        "title": "孙丕扬请求下发补官章疏，未获答复"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "47dbd60d-aaa5-5054-93c5-b86ee4204d55"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.937054+00:00",
+        "description": "七月戊寅，仁圣皇太后陈氏去世。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "47dbd60d-aaa5-5054-93c5-b86ee4204d55",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年七月戊寅",
+        "title": "仁圣皇太后陈氏去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "76294308-244a-560f-badd-33c6a16bc5c0"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.958043+00:00",
+        "description": "七月乙酉，朝廷开始派宦官主管畿内开矿。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "76294308-244a-560f-badd-33c6a16bc5c0",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年七月乙酉",
+        "title": "朝廷开始派内官在畿内开矿"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "43eff8d1-6b9d-5477-be3c-102063d8138f"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:03.987500+00:00",
+        "description": "万历二十四年闰八月乙丑朔，本纪记有日食。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "43eff8d1-6b9d-5477-be3c-102063d8138f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年闰八月乙丑朔",
+        "title": "闰八月朔发生日食"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0fd28625-40a2-5f57-8c6f-e353f0e76275"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.017229+00:00",
+        "description": "闰八月丁卯，大学士赵志皋请明神宗临朝处理政务、下发章奏并停止采矿，没有得到答复。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "0fd28625-40a2-5f57-8c6f-e353f0e76275",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年闰八月丁卯",
+        "title": "赵志皋请皇帝入朝理政、下发章奏和停矿，未获答复"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ee4ebc66-d011-52fc-bd7c-e962518ab5ce"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.037160+00:00",
+        "description": "万历二十四年九月乙未，杨方亨到达日本，本纪记丰臣秀吉拒绝接受明朝册封。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "ee4ebc66-d011-52fc-bd7c-e962518ab5ce",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年九月乙未",
+        "title": "杨方亨到日本，丰臣秀吉拒绝受封"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "272fc9aa-1a7f-5126-a4d8-5a3c916722bb"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.062055+00:00",
+        "description": "九月乙卯，朝廷安葬孝安庄皇后陈氏。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "272fc9aa-1a7f-5126-a4d8-5a3c916722bb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年九月乙卯",
+        "title": "孝安庄皇后陈氏下葬"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "90c67f94-94b3-581f-a014-66d4dc951660"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.082699+00:00",
+        "description": "万历二十四年九月，河套部进犯宁夏，明军总兵官李如柏率军将其击败。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "90c67f94-94b3-581f-a014-66d4dc951660",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年九月",
+        "title": "李如柏在宁夏击败河套部来军"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "eed7751b-7326-5f2f-8897-401f3d0c260c"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.102921+00:00",
+        "description": "万历二十四年十月丙子，朝廷暂停行刑。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "eed7751b-7326-5f2f-8897-401f3d0c260c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年十月丙子",
+        "title": "朝廷暂停行刑"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7e19719b-442f-5f3d-8043-7ee8d3e64844"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.132147+00:00",
+        "description": "十月乙酉，朝廷开始命宦官在通州负责征收榷税。本纪继记各省后来相继设税使。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "7e19719b-442f-5f3d-8043-7ee8d3e64844",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年十月乙酉",
+        "title": "朝廷开始命宦官在通州征收榷税"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "493aa98b-3817-5c50-b8dc-3d2f3719558f"
+      },
+      "row": {
+        "created_at": "2026-11-18T03:55:22.008546+00:00",
+        "description": "万历24年（年号对照1596年）十二月，陈于陛去世。按原历月份对照，这项行动发生在公元1597年。",
+        "dynasty": "明",
+        "end_year": 1597,
+        "id": "493aa98b-3817-5c50-b8dc-3d2f3719558f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1597,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历24年（年号对照1596年）十二月；公元年核为1597年。",
+        "title": "陈于陛去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "4ca6e128-fee6-5a4e-b535-5a0c8606ba28"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.157230+00:00",
+        "description": "畿内开始由宦官主管开矿后不久，朝廷也命河南、山东、山西、浙江、陕西开矿，由宦官主持。群臣多次进谏，未获采纳。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "4ca6e128-fee6-5a4e-b535-5a0c8606ba28",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年七月乙酉命内官在畿内开矿后不久",
+        "title": "朝廷陆续命各省开矿，由内官主管"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6d8405cd-ebe6-592e-b606-6f5fa6f93a46"
+      },
+      "row": {
+        "created_at": "2026-11-18T23:42:04.182456+00:00",
+        "description": "万历二十四年秋，黄河在黄堌口决口。",
+        "dynasty": "明",
+        "end_year": 1596,
+        "id": "6d8405cd-ebe6-592e-b606-6f5fa6f93a46",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1596,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历二十四年秋",
+        "title": "黄河在黄堌口决口"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "000127f1-b7cd-5015-abba-284c1f06a7f5": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003261",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "3654d04f-150b-59d4-8ffe-2a9d796ba74c": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003263",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "3d321359-3d0f-5a53-8b1b-d277909ec8e7": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003259",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "3e71ae8d-e7fd-577c-b325-1c2c73d5b31a": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003267",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "583e1a9b-084a-52d4-abd0-6ca35142b77b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003260",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "748a59ed-84cc-56f0-a508-e729c3089134": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003256",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "7738406e-5b26-5b0a-a118-9931e6157bc6": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003255",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "7cf2b007-4fc8-5ed6-9ba3-f1dc9ff676aa": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003257",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "9a256718-5eb6-52cf-b5af-ccf97bfbbe91": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003266",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "9cf74478-eb83-5a36-ac6f-2a6a7afde0e1": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003265",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "ca83dec3-f323-5fcf-8d4b-5bcfe0595b47": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003262",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    },
+    "d91b60bb-85b5-523e-a164-2c4b0a48225b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p003264",
+      "section_id": "mingshi-2f603db3d81e-s0021",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 20
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build a read-only coverage plan from versioned corpus records and verified publication audits."""
-import argparse,gzip,hashlib,json
+import argparse,gzip,hashlib,json,re
 from pathlib import Path
 
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -29,7 +29,11 @@ def project(root, book_key=None, volumes=None):
             if not batches: raise ValueError('Missing batch audit')
             legacy_entries=[]; legacy_source_proof=False
             for batch in batches:
-                candidates=[inside(root,audit.get('batch',''))] if len(batches)==1 else list(path.parent.glob('release-*/'+batch['path']))
+                if len(batches)==1:
+                    candidates=[inside(root,audit.get('batch',''))]
+                else:
+                    if not re.fullmatch(r'part-\d+',batch['path']): raise ValueError('Invalid batch part name')
+                    candidates=[path.parent/batch['path'],*path.parent.glob('release-*/'+batch['path'])]
                 candidates=[p for p in candidates if (p/'content-batch.json').is_file() and digest(p/'content-batch.json')==batch['batch_sha256']]
                 if len(candidates)!=1: raise ValueError('Cannot uniquely bind batch bytes')
                 proof_path=next((candidates[0]/name for name in ['publication-mysql.json','publication.json'] if (candidates[0]/name).exists()),None)

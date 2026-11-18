@@ -1,0 +1,3851 @@
+{
+  "batch_dir": "content/books/mingshi/vol-001/from-start/part-01",
+  "batch_key": "mingshi-v001-from-start-01",
+  "batch_sha256": "0605f1bf9f6e518ccaac98c4feb9a16e82f6d917f6570dc4d9410da89315fce0",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "42468e30b6d099c5e8b86c65c933dc4eaf555586748c5ba0248b14427d00defd",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p000343",
+    "mingshi-2f603db3d81e-p000344",
+    "mingshi-2f603db3d81e-p000346",
+    "mingshi-2f603db3d81e-p000348",
+    "mingshi-2f603db3d81e-p000352",
+    "mingshi-2f603db3d81e-p000355"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "42468e30b6d099c5e8b86c65c933dc4eaf555586748c5ba0248b14427d00defd",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "e1b1ec61-3ac5-577e-b86c-cd265ccff496",
+        "note_sha256": "60ad16c1886d5caccedce1100cd408b1c70cf82b4f9cc4b3fd95e9a1db8b1d4c",
+        "quote_text": "諱元璋，字國瑞，姓朱氏。先世家沛，徙句容，再徙泗州。父世珍，始徙濠州之鍾離。生四子，太祖其季也。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e2d051ba-f945-5cb4-a4a2-e0b35f7ecf30",
+        "note_sha256": "f8d7657ec4049e832e9ee2b1682bc2c5ad90a9f6fe7c09f652a1294657c40c23",
+        "quote_text": "父世珍，始徙濠州之鍾離。生四子，太祖其季也。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "67d12bb7-7369-598e-a5ca-deebd9f1ed8e",
+        "note_sha256": "9654b561306d3dd7efc3d3d27c407f2bc0ba2956b5da85331f72aa683c6c97e5",
+        "quote_text": "母陳氏。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "4226ab90-3789-5610-a856-f7ee3bbcd0ce",
+        "note_sha256": "39ba6b869851c6672057689989d66675c8d7f238f9009a92e8f0965466139714",
+        "quote_text": "太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4181127a-fab5-5bfc-af70-312e5cf3b47e",
+        "note_sha256": "a784535646b6c5f5a26b842108f2b53879ce51fae2f0ecb0f81dcf3d2b7e28e6",
+        "quote_text": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8ff6c2e3-47fd-5e68-923b-9949b3cfccb1",
+        "note_sha256": "48ec1e011bb1f708c49a8660ed2ccc6ccdcad3611c296f29cea674e718adf154",
+        "quote_text": "定遠人郭子興與其黨孫德崖等起兵濠州。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3966293a-7b6a-56d4-8161-7deb16b140a3",
+        "note_sha256": "9b22cb0dd6bb7a0359b67f67530abd5623b83ecad34163d3e1b69c27f6491b16",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "eec964cb-4fee-5eb8-a469-965cbfb0907e",
+        "note_sha256": "be88ec77f8e933a810edc1d57c86aa323c352c80252222e5c6302193c367a691",
+        "quote_text": "所撫馬公女，即高皇后也。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "38df6067-2da9-54ea-b5c9-794caf03e86c",
+        "note_sha256": "408b6b3ae710434ed2bb62be2a340b265ab430b267e33ebc1ba7fa127a5a185a",
+        "quote_text": "彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1b50ba76-b6d9-54be-bd88-975b373bef40",
+        "note_sha256": "408b6b3ae710434ed2bb62be2a340b265ab430b267e33ebc1ba7fa127a5a185a",
+        "quote_text": "彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6a9d162e-2813-5caf-b482-188f301ac7a7",
+        "note_sha256": "f18663cf4e6992a13739bcdc3d40c8dfe15cffac9efcac622c638cbe9cdae059",
+        "quote_text": "元兵復徐州，李二走死，彭大、趙均用奔濠",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a88d72ce-9566-5d01-8db4-08c62f4cdeec",
+        "note_sha256": "6d9130b2eea339097ec4b6add85a76a954176413a08a928d74b58989bb3c6185",
+        "quote_text": "是冬，元將賈魯圍濠。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "d12dc435-4363-52ec-80fa-4c2e95fdc4cb",
+        "note_sha256": "79427bdf6a31c60e1db346a46df8a8057de84e93d60097b02e55c2022852a38d",
+        "quote_text": "獨與徐達、湯和、費聚等南略定遠。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4fc0e073-86af-5253-a457-c4f52c2d87a7",
+        "note_sha256": "79427bdf6a31c60e1db346a46df8a8057de84e93d60097b02e55c2022852a38d",
+        "quote_text": "獨與徐達、湯和、費聚等南略定遠。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d63186d3-0875-54c3-8056-8bb9da9a93e7",
+        "note_sha256": "79427bdf6a31c60e1db346a46df8a8057de84e93d60097b02e55c2022852a38d",
+        "quote_text": "獨與徐達、湯和、費聚等南略定遠。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9aca6642-4f33-5e11-9919-e58b01e80141",
+        "note_sha256": "48886f8f33757271494fa7101c8fbd890172d2df8eaf2ce1a55a298eafcebf22",
+        "quote_text": "道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9d315e95-d502-5a9f-ba48-897dc527a6de",
+        "note_sha256": "5f21d963649eb547c0f4499ad8886677a75fb02f066a1d1d64a531d1be858a2d",
+        "quote_text": "是年，張士誠據高郵，自稱誠王。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "1243ff1e-3a2f-519f-b62d-033064eb2e5d",
+        "note_sha256": "16eb17a6b4afdb5ac133759925950032a45ea344a1eab1e08cec148871c16579",
+        "quote_text": "元丞相脫脫大敗士誠於高郵，分兵圍六合。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "91282e31-71ab-5fae-9b9d-166173597e62",
+        "note_sha256": "74247c6cfd9a4bd9b65524981150e4c6bcc0e9a59170a826c7ef34c40f099752",
+        "quote_text": "與耿再成軍瓦梁壘，救之。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "68aac923-5ba8-5587-b603-1e3cd93a3052",
+        "note_sha256": "ea33e4d55be37ae6fe5dcd524b698f44fd5c3faf69f09c974480886c438677bc",
+        "quote_text": "父世珍，始徙濠州之鍾離。生四子，太祖其季也。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "0005ae5a-b322-55b4-afbc-5a4feae05bd7",
+        "note_sha256": "67889398bf5f8384a65f6190c989c709f86f69a4f4a02cdf37400f5437811633",
+        "quote_text": "母陳氏。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "ab18a0a9-a0bb-5997-9199-3ec253c6454e",
+        "note_sha256": "c37e4734a523a2a31610a3b53c295c7101bf85849641e75c829ad700c9ab8279",
+        "quote_text": "子興奇其狀貌，留為親兵。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3e21cac6-2179-5999-b910-13a16439dd61",
+        "note_sha256": "251dbaf02354b2d85f4b1d6258de26aaf977ee30d49834e9107a4bbcd369e402",
+        "quote_text": "遂妻以所撫馬公女",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "acb2d871-bfbe-509b-b536-7c088ff3b96a",
+        "note_sha256": "62f6ea67712e4f3e6603393751a9621e3171d2aded8748a5f2c7dbf2711131ca",
+        "quote_text": "所撫馬公女",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "48fa9a00-16c2-54a9-94c8-ee6764e97efc",
+        "note_sha256": "26a341a1e34ca0eeadf11056e542c9d82277cf78d6ca197514c8d206ecbf761d",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5ad63999-94a2-5c4d-bb4c-123a6ecd7765",
+        "note_sha256": "e74f46c36e8880d8ab32bc1f1565d4afd37a1489f1a6786d0820c0fbf6022bdc",
+        "quote_text": "至正四年，旱蝗，大饑疫。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "db058287-8715-5341-9aea-e8d44963b5cd",
+        "note_sha256": "5446c22773baf4e02b628168cc87dfc16f8a1848764534b4dd8670c1611eafcd",
+        "quote_text": "至正四年，旱蝗，大饑疫。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "11ead836-d2ea-5d65-9c4b-93f17ccc3167",
+        "note_sha256": "5521b8d412c7e8252a564d147c2a3fa5df46f1690faf83f849682c7d7ec9b7cc",
+        "quote_text": "太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6106f7c9-8019-5b08-a805-625c11c96613",
+        "note_sha256": "9ac9e9eb4369970e787bfe8b3457d983a276e03099d49217f73d299653ec6938",
+        "quote_text": "太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1735811d-7eb6-55a7-8f71-1f19dd2c3dae",
+        "note_sha256": "e13e15b2182878082f19881b4393f891d55d6d34c3f16be1c75fe43357524d3d",
+        "quote_text": "太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7250f933-409a-5398-9efd-29b64d3104bf",
+        "note_sha256": "e13e15b2182878082f19881b4393f891d55d6d34c3f16be1c75fe43357524d3d",
+        "quote_text": "太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "92ca22cf-9d4d-539f-a43c-dc4c681cd201",
+        "note_sha256": "0dab354a266278e7710c8947f4b4b9d90d74b9597ea20826931c93afe60cd6b2",
+        "quote_text": "太祖孤無所依，乃入皇覺寺為僧。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cab61475-65d2-574d-9123-dfe17a4aa351",
+        "note_sha256": "d6f2d554ad221e6cfd90386c1cfcfaaabef737b78cdd9e9fa4a978ffb45c7bdf",
+        "quote_text": "太祖孤無所依，乃入皇覺寺為僧。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f00196eb-5336-581f-97b9-fd9137f29532",
+        "note_sha256": "945b7b104d638a4e887972e53d83a6357caa0311d355597f25b6d626c1bc1a69",
+        "quote_text": "太祖孤無所依，乃入皇覺寺為僧。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b0b7b409-8f71-5efa-83ba-70e713a5e999",
+        "note_sha256": "08c48bbbdd99c775bed4a58d6671c0ca3f9a8cfd1e1afeace1338e43eeed1369",
+        "quote_text": "逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。",
+        "review_note": "原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a773e213-2a62-5d36-befb-2c3ddc13da0d",
+        "note_sha256": "08c48bbbdd99c775bed4a58d6671c0ca3f9a8cfd1e1afeace1338e43eeed1369",
+        "quote_text": "逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。",
+        "review_note": "原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4837ec51-fc9f-5287-a965-65168d98a9f3",
+        "note_sha256": "1f01497862e52ec0c671d34af329e8c0a4f8574bf547037b4191d99d79efaaab",
+        "quote_text": "逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "11f44e07-e60b-5fe3-a13d-2cb8a4afed3f",
+        "note_sha256": "f41ed3c469d16e90d3d2218f0a79e86e070afc9799df84e0ea114c4d82324c4a",
+        "quote_text": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。",
+        "review_note": "两书均记郭子兴与孙德崖共同聚众起兵。本纪未单独叙其陷城，起兵段绑定已有聚众事件。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c356befd-4a53-5008-a55b-91e3fec125e3",
+        "note_sha256": "f41ed3c469d16e90d3d2218f0a79e86e070afc9799df84e0ea114c4d82324c4a",
+        "quote_text": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。",
+        "review_note": "两书均记郭子兴与孙德崖共同聚众起兵。本纪未单独叙其陷城，起兵段绑定已有聚众事件。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6861518e-4e7a-53b1-8091-9b505b7e9758",
+        "note_sha256": "61f6e1688c0e965223405d3ce1a2fe94416afc1f02437776d4dc5091e3c7a516",
+        "quote_text": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "74ef881b-ed80-5385-8f2a-84efdb8bdd4a",
+        "note_sha256": "61f6e1688c0e965223405d3ce1a2fe94416afc1f02437776d4dc5091e3c7a516",
+        "quote_text": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "57dd411d-2395-5408-954e-31748cf8ac93",
+        "note_sha256": "84dde2b6891d3b9159b5baab8097db4789b3adfa40398c83c1284e7a1a8d97ec",
+        "quote_text": "遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。",
+        "review_note": "进濠见郭子兴并留在左右与《续资治通鉴》为同一行动。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "48b0d5b8-0c08-5c9e-826e-a21a6a4e7ecb",
+        "note_sha256": "84dde2b6891d3b9159b5baab8097db4789b3adfa40398c83c1284e7a1a8d97ec",
+        "quote_text": "遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。",
+        "review_note": "进濠见郭子兴并留在左右与《续资治通鉴》为同一行动。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7c59a891-3599-530e-a251-ffa1054255b0",
+        "note_sha256": "1c6ce3630ac2cafffd8d3b33e133d53e56af5103bd506a4e804c73cb543098fc",
+        "quote_text": "遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f10b423c-4e52-521b-be23-5389cc7bc1e7",
+        "note_sha256": "1c6ce3630ac2cafffd8d3b33e133d53e56af5103bd506a4e804c73cb543098fc",
+        "quote_text": "遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "236f7948-f48e-5f42-a96f-d6f8a33ebbec",
+        "note_sha256": "342a8ea3cd8aea48da5ea0337ffb9be9a3028f2527256bf81a30cdbe16c76ed2",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "两书都记郭子兴把所抚养的马氏嫁给朱元璋。本句承接闰三月投军事，不把投军的月日当成婚期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2adc6553-9f2e-5007-b48b-0663080b06b5",
+        "note_sha256": "342a8ea3cd8aea48da5ea0337ffb9be9a3028f2527256bf81a30cdbe16c76ed2",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "两书都记郭子兴把所抚养的马氏嫁给朱元璋。本句承接闰三月投军事，不把投军的月日当成婚期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a4353504-df0f-5828-be83-456d12cb524e",
+        "note_sha256": "dfd506c1ef941bbf7554e23e31263171dcece350d43c4c663d9481e40301c4ec",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cae1cb05-95a0-5cd2-b4b6-11c38a915cc4",
+        "note_sha256": "dfd506c1ef941bbf7554e23e31263171dcece350d43c4c663d9481e40301c4ec",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8dfacac6-ba41-5b3d-ae38-d29b2575d7a7",
+        "note_sha256": "dfd506c1ef941bbf7554e23e31263171dcece350d43c4c663d9481e40301c4ec",
+        "quote_text": "遂妻以所撫馬公女，即高皇后也。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d1c8eb34-e450-5577-bfb1-e49d51c8618e",
+        "note_sha256": "966141ea6b0c120af4adc781357b8e8cbcc229dad239a07a2458a93ed5a13745",
+        "quote_text": "秋九月，元兵復徐州，李二走死，彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "收复徐州与《续资治通鉴》写的托克托破徐州为同一次战事。李二结局一书作走死，一书只记逃走，本条先绑共同可证的破城部分。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "68f3880e-1f37-50de-ae3a-19086c221f6b",
+        "note_sha256": "966141ea6b0c120af4adc781357b8e8cbcc229dad239a07a2458a93ed5a13745",
+        "quote_text": "秋九月，元兵復徐州，李二走死，彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "收复徐州与《续资治通鉴》写的托克托破徐州为同一次战事。李二结局一书作走死，一书只记逃走，本条先绑共同可证的破城部分。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7f74deae-5bc5-547a-8128-913add3ea4fb",
+        "note_sha256": "397ac2a6966bd3ad46fdb7abedf666acba3e3fb93162ffb4da9b89242a154d6c",
+        "quote_text": "彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "两书同记彭大、赵君用（本纪作均用）于徐州失守后奔濠，现有事件还载元军追击。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fd417061-50f5-50e0-a731-09a57d4db8d2",
+        "note_sha256": "397ac2a6966bd3ad46fdb7abedf666acba3e3fb93162ffb4da9b89242a154d6c",
+        "quote_text": "彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "两书同记彭大、赵君用（本纪作均用）于徐州失守后奔濠，现有事件还载元军追击。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "68f07dbd-94c8-5fa7-a261-e3f6b86e5c5a",
+        "note_sha256": "3d4fcc4858ca2cbc987fb3b190f3121f31a8db659d2c73783989efabc8635ce2",
+        "quote_text": "彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fbd96a38-c0fa-55ce-a670-580016a30710",
+        "note_sha256": "3d4fcc4858ca2cbc987fb3b190f3121f31a8db659d2c73783989efabc8635ce2",
+        "quote_text": "彭大、趙均用奔濠，德崖等納之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4e152fd6-a483-5cb2-9a1c-170148b3d68b",
+        "note_sha256": "1eb1fcb7f9dead05c6b46ba79c66fb2523e26a71925a080233b2effa95ed327e",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "两书的冲突起因、拘押者、求援和解械过程一致，复用事件和已明确的参与连接。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5d61ddc6-5cad-5af4-b621-591626f81178",
+        "note_sha256": "1eb1fcb7f9dead05c6b46ba79c66fb2523e26a71925a080233b2effa95ed327e",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "两书的冲突起因、拘押者、求援和解械过程一致，复用事件和已明确的参与连接。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "82b79e6c-904b-5114-8d3b-f76629af65c0",
+        "note_sha256": "874b0709c249aa78b8d76fd0384e37cc9b5d1b06a8f404314ac933ed23aa6f5d",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f1ce4c18-d3e4-5c16-b5c2-af8f81062051",
+        "note_sha256": "874b0709c249aa78b8d76fd0384e37cc9b5d1b06a8f404314ac933ed23aa6f5d",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7235a238-0c6e-50b3-a5e4-94dfc655fb52",
+        "note_sha256": "874b0709c249aa78b8d76fd0384e37cc9b5d1b06a8f404314ac933ed23aa6f5d",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "555ea828-7e54-5184-9545-d34386ed7823",
+        "note_sha256": "874b0709c249aa78b8d76fd0384e37cc9b5d1b06a8f404314ac933ed23aa6f5d",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2459a6d6-aa91-508d-9c50-7537ca4c4c9d",
+        "note_sha256": "874b0709c249aa78b8d76fd0384e37cc9b5d1b06a8f404314ac933ed23aa6f5d",
+        "quote_text": "子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1d14c26e-d659-5783-8ea8-c318852595d0",
+        "note_sha256": "f6e936da645811f2e348726abcdb9656b735f3c9a92e24d87216f00adc4e8901",
+        "quote_text": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "review_note": "两书均记贾鲁率元军围濠州。本纪还记朱元璋与郭子兴守城，冬季时间粗于另一书所用日期。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c84c2282-cf2d-524d-bb26-acd88124be36",
+        "note_sha256": "f6e936da645811f2e348726abcdb9656b735f3c9a92e24d87216f00adc4e8901",
+        "quote_text": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "review_note": "两书均记贾鲁率元军围濠州。本纪还记朱元璋与郭子兴守城，冬季时间粗于另一书所用日期。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e4557ef2-d641-554d-978a-9ddfb1ec9b68",
+        "note_sha256": "f4801d86e995de8ba60b3b5b86e9b9986765a1e8a179673755576f5b1d9d19c7",
+        "quote_text": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "26913ca0-8b62-5868-b81d-0e102d117b70",
+        "note_sha256": "f4801d86e995de8ba60b3b5b86e9b9986765a1e8a179673755576f5b1d9d19c7",
+        "quote_text": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "ae59c307-3d4b-552e-852a-d5de3e2284b6",
+        "note_sha256": "f4801d86e995de8ba60b3b5b86e9b9986765a1e8a179673755576f5b1d9d19c7",
+        "quote_text": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "ca5c93c1-cf07-5907-9d50-76df0ae0b5f4",
+        "note_sha256": "338ad03ef44b35dd9c3a968d4a3be5566095bb7c88d161cf96047ec346411624",
+        "quote_text": "十三年春，賈魯死，圍解。",
+        "review_note": "两书同记贾鲁围濠期间去世并随即解围；季月须保留各书表述。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "afa94155-738e-5436-a359-c800be189015",
+        "note_sha256": "338ad03ef44b35dd9c3a968d4a3be5566095bb7c88d161cf96047ec346411624",
+        "quote_text": "十三年春，賈魯死，圍解。",
+        "review_note": "两书同记贾鲁围濠期间去世并随即解围；季月须保留各书表述。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9c25083e-99df-538c-91d7-71e5dc6e818f",
+        "note_sha256": "3d61a0873283590a85c363799fa08c985b964dd959ec6571d38663be07e9a59a",
+        "quote_text": "十三年春，賈魯死，圍解。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e7301ef-9097-59af-bd7d-3eaf0e983e24",
+        "note_sha256": "5376ff6f286f67512c795de84f981a3e3367d27d100b173ae1cb9b1d9adc41ca",
+        "quote_text": "太祖收里中兵得七百人。子興喜，署為鎮撫。",
+        "review_note": "两书同记解围后归乡募兵并获授镇抚。本纪作七百，另一书作七百余；任命不套前句所记春季。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c4c3e7b6-176c-59ba-aecd-79013734afed",
+        "note_sha256": "5376ff6f286f67512c795de84f981a3e3367d27d100b173ae1cb9b1d9adc41ca",
+        "quote_text": "太祖收里中兵得七百人。子興喜，署為鎮撫。",
+        "review_note": "两书同记解围后归乡募兵并获授镇抚。本纪作七百，另一书作七百余；任命不套前句所记春季。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ee83d966-70b2-5d82-be56-948479b92050",
+        "note_sha256": "6b98b2488ed726f23a1e3a24ff72484ebeb27af1971e5bbd1588333dec00d980",
+        "quote_text": "太祖收里中兵得七百人。子興喜，署為鎮撫。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c5f8a2f1-bb51-52ba-9ab8-138eae1a7a01",
+        "note_sha256": "6b98b2488ed726f23a1e3a24ff72484ebeb27af1971e5bbd1588333dec00d980",
+        "quote_text": "太祖收里中兵得七百人。子興喜，署為鎮撫。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fd06d34f-8e89-50a4-9d04-c475814304bd",
+        "note_sha256": "0c8c84f38cdc62b2c1147edab8216b858827d21a508beacda37cdaca51816deb",
+        "quote_text": "乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。",
+        "review_note": "两书都载交兵别将、随行者徐达与费聚、驴牌寨三千人归降；本纪另明确列汤和。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a005e978-a65b-53a8-8c4f-4dac0e19c3c6",
+        "note_sha256": "0c8c84f38cdc62b2c1147edab8216b858827d21a508beacda37cdaca51816deb",
+        "quote_text": "乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。",
+        "review_note": "两书都载交兵别将、随行者徐达与费聚、驴牌寨三千人归降；本纪另明确列汤和。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2c9ac697-b435-549b-9f9b-38a573eb734d",
+        "note_sha256": "e4e86c65e76ad3ed8bd6afce840740ae034598ddcc342040444eda7c79e45714",
+        "quote_text": "乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4b38db4b-4986-542e-bffb-73abd7a4892a",
+        "note_sha256": "e4e86c65e76ad3ed8bd6afce840740ae034598ddcc342040444eda7c79e45714",
+        "quote_text": "乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "25f1259a-6baa-5af7-b245-830d12252f45",
+        "note_sha256": "e4e86c65e76ad3ed8bd6afce840740ae034598ddcc342040444eda7c79e45714",
+        "quote_text": "乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "53145559-9791-559d-ab1d-fc14b3fb2f7d",
+        "note_sha256": "e4e86c65e76ad3ed8bd6afce840740ae034598ddcc342040444eda7c79e45714",
+        "quote_text": "乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7e69ddee-55f7-5375-9e3d-9f501e5b76d5",
+        "note_sha256": "6213ff977d8c09935709c29a49f15aab84b54699b6b91d83c69872de37ee517d",
+        "quote_text": "夜襲元將張知院於橫澗山，收其卒二萬。",
+        "review_note": "地点、夜袭、兵数及在定远招兵后的先后一致。旧事件记花云奉命袭击、缪大亨归降，本纪作张知院，保留两书原称，暂不合并个人身份。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2a97c13b-77db-5e8f-be81-7e04ef0e1415",
+        "note_sha256": "6213ff977d8c09935709c29a49f15aab84b54699b6b91d83c69872de37ee517d",
+        "quote_text": "夜襲元將張知院於橫澗山，收其卒二萬。",
+        "review_note": "地点、夜袭、兵数及在定远招兵后的先后一致。旧事件记花云奉命袭击、缪大亨归降，本纪作张知院，保留两书原称，暂不合并个人身份。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a0b7a767-8dc5-5603-bb4d-b4eec1fe1b71",
+        "note_sha256": "64e033626cdf0dd8475d1432f3bb5f51d5f81b6c1eb348e30cf586bf416ee5aa",
+        "quote_text": "夜襲元將張知院於橫澗山，收其卒二萬。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6d6cee1e-a27e-52b8-95c8-741c0dbc5f7c",
+        "note_sha256": "2c5ee832e253be4e855e659e0541b457dc72c650a8836c203c185618ded925b5",
+        "quote_text": "道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "review_note": "地点、路线、姓名及交谈投契相符。本纪支持相识和同行，幕书记任命细节由原有来源支持。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "da61cbd9-04ac-5402-bc30-1d1d20383974",
+        "note_sha256": "2c5ee832e253be4e855e659e0541b457dc72c650a8836c203c185618ded925b5",
+        "quote_text": "道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "review_note": "地点、路线、姓名及交谈投契相符。本纪支持相识和同行，幕书记任命细节由原有来源支持。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "59a4ae44-77c0-59c9-a21c-6e36a86e1ea2",
+        "note_sha256": "de60baa92babf24f8b806d687f59bdb41e69769fc00e4b1cbf073cd39b57fec3",
+        "quote_text": "道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9e64386f-f42b-54d4-906a-11d4563c7228",
+        "note_sha256": "de60baa92babf24f8b806d687f59bdb41e69769fc00e4b1cbf073cd39b57fec3",
+        "quote_text": "道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e467ce66-3720-5785-aab3-605c7d1d8ebe",
+        "note_sha256": "baeb1622128c39d3a13001f8b60e477d9b100e7eb9723711d12fdd300b6204f0",
+        "quote_text": "是年，張士誠據高郵，自稱誠王。",
+        "review_note": "《续资治通鉴》同在至正十三年记其据高邮称诚王。本纪未记该次建号的月份。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c1de1227-276c-5f8e-a149-fda735d1b825",
+        "note_sha256": "baeb1622128c39d3a13001f8b60e477d9b100e7eb9723711d12fdd300b6204f0",
+        "quote_text": "是年，張士誠據高郵，自稱誠王。",
+        "review_note": "《续资治通鉴》同在至正十三年记其据高邮称诚王。本纪未记该次建号的月份。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "38aa4f64-db87-520f-93b0-0ab9c40cd49d",
+        "note_sha256": "fbb8e97a88fe830ad627d4a6c75a40437674650a284d0f9b3342ff4edd010d15",
+        "quote_text": "是年，張士誠據高郵，自稱誠王。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "6c314814-26cf-57bd-a0bb-d9077a507259",
+        "note_sha256": "d07090eff45f302c18be7b12a189ddad6ee17ed88fe022e412dc65d198e8ed77",
+        "quote_text": "十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。",
+        "review_note": "战场、交战方和分兵六合的前后过程相同。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "55ec5c5f-ad57-5bc7-80be-f22ca8c29f9a",
+        "note_sha256": "d07090eff45f302c18be7b12a189ddad6ee17ed88fe022e412dc65d198e8ed77",
+        "quote_text": "十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。",
+        "review_note": "战场、交战方和分兵六合的前后过程相同。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ffa322f5-a7c4-50e9-8aea-184f1c0c9efc",
+        "note_sha256": "ff8f8c8123d24b87677256c82b5d81a757195b8700af640c688d63516b18129e",
+        "quote_text": "十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "75347650-97d1-5a95-bacf-3fc1196899e4",
+        "note_sha256": "ff8f8c8123d24b87677256c82b5d81a757195b8700af640c688d63516b18129e",
+        "quote_text": "十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f35cad1e-6040-5bad-9260-05303f3c2950",
+        "note_sha256": "39b49fa7907dcdd3f9a9dc5b7671b06a3dbe18c2fb8c290ea6ffad567d0ef300",
+        "quote_text": "與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。",
+        "review_note": "两书均记朱元璋与耿再成救六合，先守瓦梁垒，再伏击、归还所获马匹，复用同一次战事。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2b3e7f2e-58b6-54b4-9dbe-c57d0f25fc6e",
+        "note_sha256": "39b49fa7907dcdd3f9a9dc5b7671b06a3dbe18c2fb8c290ea6ffad567d0ef300",
+        "quote_text": "與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。",
+        "review_note": "两书均记朱元璋与耿再成救六合，先守瓦梁垒，再伏击、归还所获马匹，复用同一次战事。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5e9c700b-524a-5da1-a49a-1a2c13f2d8c8",
+        "note_sha256": "24f9289f5f920c07ad58914b0b40715a7d0ef18acacbfd93f6b3c60f94593711",
+        "quote_text": "與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a0c3f66e-867e-5f59-b351-b8e51a151ec5",
+        "note_sha256": "24f9289f5f920c07ad58914b0b40715a7d0ef18acacbfd93f6b3c60f94593711",
+        "quote_text": "與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历至正四年。DDBC历表所涉区间为1344-01-24至1345-02-10，据此核对公元发生年份。 卷一mingshi-2f603db3d81e-p000347的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "db058287-8715-5341-9aea-e8d44963b5cd",
+        "claim_sha256": "7c2600b784b4b188722b5f0075757d30eee8c6f436b9f3ead1a06683ba6393cf",
+        "earliest_year": 1344,
+        "era_key": null,
+        "event_id": "995ac677-5f50-56e5-b386-efd4c3fb1a0a",
+        "id": "3701c40c-3e2e-5b09-9d5a-896f460816b5",
+        "latest_year": 1345,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历至正四年所叙家难。DDBC历表所涉区间为1344-01-24至1345-02-10，据此核对公元发生年份。 卷一mingshi-2f603db3d81e-p000347的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "6106f7c9-8019-5b08-a805-625c11c96613",
+        "claim_sha256": "62e5b30966ffcb0ce51e5bf2f6b1437937695227cc1e0545d12106dd5a8098f4",
+        "earliest_year": 1344,
+        "era_key": null,
+        "event_id": "86ed304c-9fe3-5ac3-b9eb-6c245ec6a994",
+        "id": "f2a12454-aa0c-54de-8b0d-60a93ece462c",
+        "latest_year": 1345,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历至正四年家难之后。DDBC历表所涉区间为1344-01-24至1345-02-10，据此核对公元发生年份。 卷一mingshi-2f603db3d81e-p000347的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "cab61475-65d2-574d-9123-dfe17a4aa351",
+        "claim_sha256": "ff072277be45f8145bbf561185130c802d04c8282c61ce6a223c58a70f376670",
+        "earliest_year": 1344,
+        "era_key": null,
+        "event_id": "7afa5cb6-fa2e-577c-9855-71b76f21cea5",
+        "id": "ec8c9274-bfa3-5cc5-a5a0-fd8c7b3b8f19",
+        "latest_year": 1345,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。 卷一mingshi-2f603db3d81e-p000347的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。",
+        "claim_id": "a773e213-2a62-5d36-befb-2c3ddc13da0d",
+        "claim_sha256": "f7aa85d6d9f0262e871c6ae2ea7816b52725d855076f7f9a5363d108dc024922",
+        "earliest_year": null,
+        "era_key": null,
+        "event_id": "fc783e00-5cab-5224-bd3b-5e10935c528f",
+        "id": "022eaffc-b3c9-55f4-9393-a2683c3756b9",
+        "latest_year": null,
+        "precision_kind": "relative",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "e8d4b82dc8d93c47eb5772dbe1b084bdbdb1cae4907c5cfc4244de12d93aab8a",
+        "paragraph_id": "mingshi-2f603db3d81e-p000345",
+        "snapshot_sha256": "fcc8d4ecf4188cacd8c620291bdc9b6578fbadbcae5a2c1922bc0e1382015323",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714"
+      },
+      {
+        "archive_url_sha256": "6e497b0ea35a002668dee5833c2deb46e42165f444ee0677be78dc4ddaadb15f",
+        "paragraph_id": "mingshi-2f603db3d81e-p000347",
+        "snapshot_sha256": "b7c93973cd6d176f4670bed70cc7b29dabb70a5183ba8903014a9311ee689e35",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b"
+      },
+      {
+        "archive_url_sha256": "ba044230a494ca61bc21217d07fed3b04f8875d6a4450e0fef7fc7d74ad061ca",
+        "paragraph_id": "mingshi-2f603db3d81e-p000349",
+        "snapshot_sha256": "3f1ebb0822f7d97b64929f0f2c1a8c6b97f96dd0e5814ce3b37af32fbc9ab7ad",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2"
+      },
+      {
+        "archive_url_sha256": "833d87894860de7f13e6ab5bb7e2f8dfb336133ec47aa620581dd51e5ce73943",
+        "paragraph_id": "mingshi-2f603db3d81e-p000350",
+        "snapshot_sha256": "592f563f0e7a841e65e4fcc23cf16da5f803d5d944c387506224ce2b6552a185",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5"
+      },
+      {
+        "archive_url_sha256": "4394aa36a4b267ced11d9404a9832becde411f358e1c26f40c7760b1c58a6926",
+        "paragraph_id": "mingshi-2f603db3d81e-p000351",
+        "snapshot_sha256": "2055b820320ba7cd4a9d1acba23b18c4c7de51a4b9f853159c636e60ddcd0394",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f"
+      },
+      {
+        "archive_url_sha256": "a26318b32022c5b45f7c21a3a7b74dea84257e5ae5ec97006b0b9ea73e23433e",
+        "paragraph_id": "mingshi-2f603db3d81e-p000353",
+        "snapshot_sha256": "afb5980f2fdeed56f9a9963d886fe70ea9071884e5acafadd24cce89d7248f91",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f"
+      },
+      {
+        "archive_url_sha256": "d6bdf632eb0289d775be8625e2003a10b10cfbb97a49a126d930fa79fb31b515",
+        "paragraph_id": "mingshi-2f603db3d81e-p000354",
+        "snapshot_sha256": "d4ba9dddfcce32fc73c2fc8a699729b11d7759fd157ad30d52940a15f647b8a5",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd"
+      },
+      {
+        "archive_url_sha256": "6b60bc4e1e2a8f6319f67225e2d5cea1abbd108c635c36bdd66777d87ba83ec7",
+        "paragraph_id": "mingshi-2f603db3d81e-p000356",
+        "snapshot_sha256": "e2756d6261a7483b4c388846a39e68fb436384791fd79bfe28c13d90b8ac87b9",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-001/from-start/part-01/content-batch.json": "0605f1bf9f6e518ccaac98c4feb9a16e82f6d917f6570dc4d9410da89315fce0",
+    "content/books/mingshi/vol-001/from-start/part-01/curation.json": "38be46cda27c7632d48c0834e352f4f53dfb064589b0b5e8ef9b42d91f12fb04",
+    "content/books/mingshi/vol-001/from-start/part-01/packet.json": "b10bada757376f003633e7437b44196d6509ce156442c83456d8f7cf261df51c",
+    "content/books/mingshi/vol-001/from-start/part-01/publication-mysql.json": "92d9edce3fc8290e8b7a28a9819a66cd32da99cd86f036977d5fe358791cbe55",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/manifest.json": "79f578f6cfa5f2b00f90d6435d3fdace78d2da9e8e835ef0143cb98639ef7fe2",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000343/source.txt": "365ceaee93a62d8ca42ebc8e0ef64c9bf00765b0ec14a2222ddf4ef00cf393c1",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000344/source.txt": "a82d8e58106fef6ea943fa6af6f2a6642ff21b8045e9433441da361565356529",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000345/source.txt": "fcc8d4ecf4188cacd8c620291bdc9b6578fbadbcae5a2c1922bc0e1382015323",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000346/source.txt": "ee49363b4193b6b0b8413d181a75919822847b73994e8602def1e8ee1b18e6ce",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000347/source.txt": "b7c93973cd6d176f4670bed70cc7b29dabb70a5183ba8903014a9311ee689e35",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000348/source.txt": "34ca405e5518c8ab141538aa8f552136acc0b73245c5a9da67dfd2368c3541b2",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000349/source.txt": "3f1ebb0822f7d97b64929f0f2c1a8c6b97f96dd0e5814ce3b37af32fbc9ab7ad",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000350/source.txt": "592f563f0e7a841e65e4fcc23cf16da5f803d5d944c387506224ce2b6552a185",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000351/source.txt": "2055b820320ba7cd4a9d1acba23b18c4c7de51a4b9f853159c636e60ddcd0394",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000352/source.txt": "abed237d18b0e646ef4ef0799ca339afa187bc53af7ca25a46045f655f7fdd91",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000353/source.txt": "afb5980f2fdeed56f9a9963d886fe70ea9071884e5acafadd24cce89d7248f91",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000354/source.txt": "d4ba9dddfcce32fc73c2fc8a699729b11d7759fd157ad30d52940a15f647b8a5",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000355/source.txt": "c37c41e4776a01c8626dbae40b7328f4d852ff501d53e5bab71f063c9d1cd3e1",
+    "content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000356/source.txt": "e2756d6261a7483b4c388846a39e68fb436384791fd79bfe28c13d90b8ac87b9",
+    "content/books/mingshi/vol-001/from-start/part-01/sql/key-map.json": "a7f20df74917f81f57405228b24321380e3acfffb603698bdd5c8e64af1cba20",
+    "content/books/mingshi/vol-001/from-start/part-01/time-review.json": "29fd6d148f152c59f92536ac0f8fcb27f34a55d70440c2215f829e3b015c0298"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "e1b1ec61-3ac5-577e-b86c-cd265ccff496"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000345；元末，原文未载这项身份的具体年月",
+        "claim_text": "明太祖朱元璋，字国瑞。他的父亲朱世珍把家迁到濠州钟离。朱元璋是家中最小的儿子。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.101003+00:00",
+        "field_path": "description",
+        "id": "e1b1ec61-3ac5-577e-b86c-cd265ccff496",
+        "note": "原文：諱元璋，字國瑞，姓朱氏。先世家沛，徙句容，再徙泗州。父世珍，始徙濠州之鍾離。生四子，太祖其季也。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714",
+        "status": "published",
+        "subject_id": "3d83c7c6-23fc-5e89-9e9b-b70713a0a63e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e2d051ba-f945-5cb4-a4a2-e0b35f7ecf30"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000345；元末，原文未载这项身份的具体年月",
+        "claim_text": "朱世珍是朱元璋的父亲。他把家迁到濠州钟离。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.137432+00:00",
+        "field_path": "description",
+        "id": "e2d051ba-f945-5cb4-a4a2-e0b35f7ecf30",
+        "note": "原文：父世珍，始徙濠州之鍾離。生四子，太祖其季也。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714",
+        "status": "published",
+        "subject_id": "f2517fbe-fc97-56b3-bd90-0c7a1b27d74f",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "67d12bb7-7369-598e-a5ca-deebd9f1ed8e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000345；元末，原文未载这项身份的具体年月",
+        "claim_text": "陈氏是朱元璋的母亲。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.185196+00:00",
+        "field_path": "description",
+        "id": "67d12bb7-7369-598e-a5ca-deebd9f1ed8e",
+        "note": "原文：母陳氏。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714",
+        "status": "published",
+        "subject_id": "3ba6e580-092e-5b69-8c09-c5dbef1dfd98",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4226ab90-3789-5610-a856-f7ee3bbcd0ce"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；元末，原文未载这项身份的具体年月",
+        "claim_text": "刘继祖是朱元璋的同乡。朱家没有地方安葬亡故的亲人时，他把土地给了朱家。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.419953+00:00",
+        "field_path": "description",
+        "id": "4226ab90-3789-5610-a856-f7ee3bbcd0ce",
+        "note": "原文：太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "2e65780b-449d-5b1f-a3d2-049df703491e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4181127a-fab5-5bfc-af70-312e5cf3b47e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；元末，原文未载这项身份的具体年月",
+        "claim_text": "郭子兴是定远人，至正十二年与孙德崖等人在濠州起兵。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.472823+00:00",
+        "field_path": "description",
+        "id": "4181127a-fab5-5bfc-af70-312e5cf3b47e",
+        "note": "原文：十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "1496aa3f-23c8-51d2-bbe6-07e3bfda07bd",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8ff6c2e3-47fd-5e68-923b-9949b3cfccb1"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；元末，原文未载这项身份的具体年月",
+        "claim_text": "孙德崖与郭子兴等人在濠州起兵。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.524746+00:00",
+        "field_path": "description",
+        "id": "8ff6c2e3-47fd-5e68-923b-9949b3cfccb1",
+        "note": "原文：定遠人郭子興與其黨孫德崖等起兵濠州。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "b85cbc5f-c7d2-52e3-8ecc-4edd681847c1",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3966293a-7b6a-56d4-8161-7deb16b140a3"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；元末，原文未载这项身份的具体年月",
+        "claim_text": "郭子兴抚养马公的女儿，并把她嫁给朱元璋。她后来成为高皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.569364+00:00",
+        "field_path": "description",
+        "id": "3966293a-7b6a-56d4-8161-7deb16b140a3",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "4b0e7356-b115-5755-bcaf-fc1dd998b656",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "eec964cb-4fee-5eb8-a469-965cbfb0907e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；元末，原文未载这项身份的具体年月",
+        "claim_text": "马公的女儿由郭子兴抚养，后来嫁给朱元璋。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.625604+00:00",
+        "field_path": "description",
+        "id": "eec964cb-4fee-5eb8-a469-965cbfb0907e",
+        "note": "原文：所撫馬公女，即高皇后也。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "ddf0cb54-c719-564c-ad4d-65408a6ec4ec",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "38df6067-2da9-54ea-b5c9-794caf03e86c"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；元末，原文未载这项身份的具体年月",
+        "claim_text": "徐州被元军攻克后，彭大与赵均用逃往濠州。《续资治通鉴》在同一事件中也称他为彭大。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.708401+00:00",
+        "field_path": "description",
+        "id": "38df6067-2da9-54ea-b5c9-794caf03e86c",
+        "note": "原文：彭大、趙均用奔濠，德崖等納之。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "2f4dddf1-de05-5220-8b77-96f5107d88b5",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1b50ba76-b6d9-54be-bd88-975b373bef40"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；元末，原文未载这项身份的具体年月",
+        "claim_text": "《明史》作赵均用。《续资治通鉴》作赵君用，同样记载他与彭大从徐州逃到濠州。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.777338+00:00",
+        "field_path": "description",
+        "id": "1b50ba76-b6d9-54be-bd88-975b373bef40",
+        "note": "原文：彭大、趙均用奔濠，德崖等納之。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "352c2555-5c49-5bd2-985f-bfc346efd6da",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6a9d162e-2813-5caf-b482-188f301ac7a7"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；元末，原文未载这项身份的具体年月",
+        "claim_text": "李二曾在徐州起事。《明史》记元军收复徐州后，他在逃亡途中死去。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.824169+00:00",
+        "field_path": "description",
+        "id": "6a9d162e-2813-5caf-b482-188f301ac7a7",
+        "note": "原文：元兵復徐州，李二走死，彭大、趙均用奔濠；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "cbabd469-3dfe-5bd5-832d-9e74aa856f26",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a88d72ce-9566-5d01-8db4-08c62f4cdeec"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351；元末，原文未载这项身份的具体年月",
+        "claim_text": "贾鲁是元朝将领。至正十二年冬，他率军围攻濠州。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.897370+00:00",
+        "field_path": "description",
+        "id": "a88d72ce-9566-5d01-8db4-08c62f4cdeec",
+        "note": "原文：是冬，元將賈魯圍濠。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "status": "published",
+        "subject_id": "cfed2ba9-8008-5f3d-bd9b-12b92d00dbdc",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d12dc435-4363-52ec-80fa-4c2e95fdc4cb"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；元末，原文未载这项身份的具体年月",
+        "claim_text": "徐达与汤和、费聚等人随朱元璋南下定远。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.939387+00:00",
+        "field_path": "description",
+        "id": "d12dc435-4363-52ec-80fa-4c2e95fdc4cb",
+        "note": "原文：獨與徐達、湯和、費聚等南略定遠。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "0f28446e-78b0-5db1-9677-98777005803e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4fc0e073-86af-5253-a457-c4f52c2d87a7"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；元末，原文未载这项身份的具体年月",
+        "claim_text": "汤和与徐达、费聚等人随朱元璋南下定远。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:38.974719+00:00",
+        "field_path": "description",
+        "id": "4fc0e073-86af-5253-a457-c4f52c2d87a7",
+        "note": "原文：獨與徐達、湯和、費聚等南略定遠。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "76a3c1b3-e175-593d-99d7-63da30cef072",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d63186d3-0875-54c3-8056-8bb9da9a93e7"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；元末，原文未载这项身份的具体年月",
+        "claim_text": "费聚随朱元璋南下定远。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.104995+00:00",
+        "field_path": "description",
+        "id": "d63186d3-0875-54c3-8056-8bb9da9a93e7",
+        "note": "原文：獨與徐達、湯和、費聚等南略定遠。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "36ba4a1f-2076-5446-9a83-4d7c8bf799f6",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9aca6642-4f33-5e11-9919-e58b01e80141"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；元末，原文未载这项身份的具体年月",
+        "claim_text": "李善长是定远人。朱元璋在路上遇见他，与他交谈投契，随后一道进攻滁州。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.160345+00:00",
+        "field_path": "description",
+        "id": "9aca6642-4f33-5e11-9919-e58b01e80141",
+        "note": "原文：道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "fcb986aa-d440-5732-984a-f4c744f5a06d",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9d315e95-d502-5a9f-ba48-897dc527a6de"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000354；元末，原文未载这项身份的具体年月",
+        "claim_text": "张士诚据守高邮，自称诚王。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.189696+00:00",
+        "field_path": "description",
+        "id": "9d315e95-d502-5a9f-ba48-897dc527a6de",
+        "note": "原文：是年，張士誠據高郵，自稱誠王。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd",
+        "status": "published",
+        "subject_id": "7fbe0af4-cc39-5fb7-9fa8-c94e110ad986",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1243ff1e-3a2f-519f-b62d-033064eb2e5d"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；元末，原文未载这项身份的具体年月",
+        "claim_text": "元朝丞相脱脱率军在高邮击败张士诚，随后分兵围攻六合。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.229284+00:00",
+        "field_path": "description",
+        "id": "1243ff1e-3a2f-519f-b62d-033064eb2e5d",
+        "note": "原文：元丞相脫脫大敗士誠於高郵，分兵圍六合。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "6ac59c55-e3f1-5a47-bb1d-406fa510ba1d",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "91282e31-71ab-5fae-9b9d-166173597e62"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；元末，原文未载这项身份的具体年月",
+        "claim_text": "耿再成和朱元璋率军驻扎瓦梁垒，支援六合。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.270082+00:00",
+        "field_path": "description",
+        "id": "91282e31-71ab-5fae-9b9d-166173597e62",
+        "note": "原文：與耿再成軍瓦梁壘，救之。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "e2654eb1-d625-5630-ab59-98ae745307ea",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "68aac923-5ba8-5587-b603-1e3cd93a3052"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000345；关系见本段，保留原有时间精度",
+        "claim_text": "朱元璋是朱世珍四个儿子中最小的一个。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.377511+00:00",
+        "field_path": "description",
+        "id": "68aac923-5ba8-5587-b603-1e3cd93a3052",
+        "note": "原文：父世珍，始徙濠州之鍾離。生四子，太祖其季也。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714",
+        "status": "published",
+        "subject_id": "0f6dbb49-c2c9-5980-bfd1-1a5a68454710",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0005ae5a-b322-55b4-afbc-5a4feae05bd7"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000345；关系见本段，保留原有时间精度",
+        "claim_text": "陈氏是朱元璋的母亲。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.449300+00:00",
+        "field_path": "description",
+        "id": "0005ae5a-b322-55b4-afbc-5a4feae05bd7",
+        "note": "原文：母陳氏。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714",
+        "status": "published",
+        "subject_id": "9f16ba07-a6f1-5111-8561-8f9c7826630d",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ab18a0a9-a0bb-5997-9199-3ec253c6454e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；关系见本段，保留原有时间精度",
+        "claim_text": "朱元璋到濠州投奔郭子兴后，担任他的亲兵。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.504766+00:00",
+        "field_path": "description",
+        "id": "ab18a0a9-a0bb-5997-9199-3ec253c6454e",
+        "note": "原文：子興奇其狀貌，留為親兵。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "c69255b8-8c89-527b-9d7b-0d5f2bcb1737",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3e21cac6-2179-5999-b910-13a16439dd61"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；关系见本段，保留原有时间精度",
+        "claim_text": "马公的女儿由郭子兴抚养。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.554433+00:00",
+        "field_path": "description",
+        "id": "3e21cac6-2179-5999-b910-13a16439dd61",
+        "note": "原文：遂妻以所撫馬公女；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "ccc39fb6-da61-54aa-b1fa-ed865eff07de",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "acb2d871-bfbe-509b-b536-7c088ff3b96a"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；关系见本段，保留原有时间精度",
+        "claim_text": "后来的高皇后是马公的女儿。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.602348+00:00",
+        "field_path": "description",
+        "id": "acb2d871-bfbe-509b-b536-7c088ff3b96a",
+        "note": "原文：所撫馬公女；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "e30850fa-33e3-5e9f-a069-a3de81e9bd17",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "48fa9a00-16c2-54a9-94c8-ee6764e97efc"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；关系见本段，保留原有时间精度",
+        "claim_text": "郭子兴把马氏嫁给朱元璋。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.650016+00:00",
+        "field_path": "description",
+        "id": "48fa9a00-16c2-54a9-94c8-ee6764e97efc",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "0e992389-971d-593e-b9a8-dcbb27857c7e",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5ad63999-94a2-5c4d-bb4c-123a6ecd7765"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年",
+        "claim_text": "《明史》记至正四年当地遭遇旱灾和蝗灾，接着发生严重的饥荒和疫病。 按原历纪年，事情发生在公元1344至1345年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.689290+00:00",
+        "field_path": "description",
+        "id": "5ad63999-94a2-5c4d-bb4c-123a6ecd7765",
+        "note": "原文：至正四年，旱蝗，大饑疫。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "995ac677-5f50-56e5-b386-efd4c3fb1a0a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "db058287-8715-5341-9aea-e8d44963b5cd"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年",
+        "claim_text": "原历至正四年。DDBC历表所涉区间为1344-01-24至1345-02-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.738893+00:00",
+        "field_path": "time_original",
+        "id": "db058287-8715-5341-9aea-e8d44963b5cd",
+        "note": "原文：至正四年，旱蝗，大饑疫。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "995ac677-5f50-56e5-b386-efd4c3fb1a0a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "11ead836-d2ea-5d65-9c4b-93f17ccc3167"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年所叙家难",
+        "claim_text": "父母和一位兄长相继去世后，朱元璋家贫，无法安葬亲人。同乡刘继祖给了他一块地，他才得以安葬。史书说这处墓地就是后来的凤阳陵。 按原历纪年，事情发生在公元1344至1345年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.819648+00:00",
+        "field_path": "description",
+        "id": "11ead836-d2ea-5d65-9c4b-93f17ccc3167",
+        "note": "原文：太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "86ed304c-9fe3-5ac3-b9eb-6c245ec6a994",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6106f7c9-8019-5b08-a805-625c11c96613"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年所叙家难",
+        "claim_text": "原历至正四年所叙家难。DDBC历表所涉区间为1344-01-24至1345-02-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.864933+00:00",
+        "field_path": "time_original",
+        "id": "6106f7c9-8019-5b08-a805-625c11c96613",
+        "note": "原文：太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "86ed304c-9fe3-5ac3-b9eb-6c245ec6a994",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1735811d-7eb6-55a7-8f71-1f19dd2c3dae"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年所叙家难",
+        "claim_text": "获赠墓地并安葬亲人",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.915691+00:00",
+        "field_path": "role",
+        "id": "1735811d-7eb6-55a7-8f71-1f19dd2c3dae",
+        "note": "原文：太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "519097b5-82c4-59c4-9786-cf344b1e239a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7250f933-409a-5398-9efd-29b64d3104bf"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年所叙家难",
+        "claim_text": "给朱元璋墓地",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:39.962765+00:00",
+        "field_path": "role",
+        "id": "7250f933-409a-5398-9efd-29b64d3104bf",
+        "note": "原文：太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "903fcd75-5f52-534e-8ec9-cb7572f0a288",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "92ca22cf-9d4d-539f-a43c-dc4c681cd201"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年家难之后",
+        "claim_text": "亲人去世后，朱元璋失去依靠，便到皇觉寺做了僧人。 按原历纪年，事情发生在公元1344至1345年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.059985+00:00",
+        "field_path": "description",
+        "id": "92ca22cf-9d4d-539f-a43c-dc4c681cd201",
+        "note": "原文：太祖孤無所依，乃入皇覺寺為僧。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "7afa5cb6-fa2e-577c-9855-71b76f21cea5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cab61475-65d2-574d-9123-dfe17a4aa351"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年家难之后",
+        "claim_text": "原历至正四年家难之后。DDBC历表所涉区间为1344-01-24至1345-02-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.180208+00:00",
+        "field_path": "time_original",
+        "id": "cab61475-65d2-574d-9123-dfe17a4aa351",
+        "note": "原文：太祖孤無所依，乃入皇覺寺為僧。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "7afa5cb6-fa2e-577c-9855-71b76f21cea5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f00196eb-5336-581f-97b9-fd9137f29532"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；至正四年家难之后",
+        "claim_text": "入寺为僧",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.235190+00:00",
+        "field_path": "role",
+        "id": "f00196eb-5336-581f-97b9-fd9137f29532",
+        "note": "原文：太祖孤無所依，乃入皇覺寺為僧。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "c169666b-24f6-53a9-8480-2beee388d661",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b0b7b409-8f71-5efa-83ba-70e713a5e999"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；入皇觉寺逾月后外出，历时三年",
+        "claim_text": "入寺一个多月后，朱元璋外出到合肥一带谋生。《明史》说他在途中生病，由两名穿紫衣的人照料，病好后便找不到他们。他先后走过光、固、汝、颍等州，历时三年才回到寺里。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.317560+00:00",
+        "field_path": "description",
+        "id": "b0b7b409-8f71-5efa-83ba-70e713a5e999",
+        "note": "原文：逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。；核对说明：原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "fc783e00-5cab-5224-bd3b-5e10935c528f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a773e213-2a62-5d36-befb-2c3ddc13da0d"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；入皇觉寺逾月后外出，历时三年",
+        "claim_text": "原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.374568+00:00",
+        "field_path": "time_original",
+        "id": "a773e213-2a62-5d36-befb-2c3ddc13da0d",
+        "note": "原文：逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。；核对说明：原文只交代入寺、外出与回寺的相对次序及历时，无逐项可核的启程和回寺公元年。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "fc783e00-5cab-5224-bd3b-5e10935c528f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4837ec51-fc9f-5287-a965-65168d98a9f3"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000347；入皇觉寺逾月后外出，历时三年",
+        "claim_text": "在外谋生后回寺",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.442827+00:00",
+        "field_path": "role",
+        "id": "4837ec51-fc9f-5287-a965-65168d98a9f3",
+        "note": "原文：逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "status": "published",
+        "subject_id": "0a46759d-67d4-558c-b96b-d18044d8aa07",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "11f44e07-e60b-5fe3-a13d-2cb8a4afed3f"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年春二月",
+        "claim_text": "至正十二年春二月，定远人郭子兴和孙德崖等人在濠州起兵。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.499999+00:00",
+        "field_path": "description",
+        "id": "11f44e07-e60b-5fe3-a13d-2cb8a4afed3f",
+        "note": "原文：十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。；核对说明：两书均记郭子兴与孙德崖共同聚众起兵。本纪未单独叙其陷城，起兵段绑定已有聚众事件。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "ed770a46-f36f-5d4c-b33d-c993517abad5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c356befd-4a53-5008-a55b-91e3fec125e3"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年春二月",
+        "claim_text": "原历至正十二年春二月。DDBC历表所涉区间为1352-02-24至1352-03-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.560622+00:00",
+        "field_path": "time_original",
+        "id": "c356befd-4a53-5008-a55b-91e3fec125e3",
+        "note": "原文：十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。；核对说明：两书均记郭子兴与孙德崖共同聚众起兵。本纪未单独叙其陷城，起兵段绑定已有聚众事件。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "ed770a46-f36f-5d4c-b33d-c993517abad5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6861518e-4e7a-53b1-8091-9b505b7e9758"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年春二月",
+        "claim_text": "在濠州起兵",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.622443+00:00",
+        "field_path": "role",
+        "id": "6861518e-4e7a-53b1-8091-9b505b7e9758",
+        "note": "原文：十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "2de8e74f-2f15-5ea7-946d-7cc7c8c73e15",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "74ef881b-ed80-5385-8f2a-84efdb8bdd4a"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年春二月",
+        "claim_text": "参与起兵",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.692358+00:00",
+        "field_path": "role",
+        "id": "74ef881b-ed80-5385-8f2a-84efdb8bdd4a",
+        "note": "原文：十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "a246f848-d1b8-5e6b-95df-8ea3f8cdfc7a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "57dd411d-2395-5408-954e-31748cf8ac93"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年闰三月甲戌朔",
+        "claim_text": "至正十二年闰三月初一，朱元璋进入濠州见郭子兴。郭子兴留下他当亲兵。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.757331+00:00",
+        "field_path": "description",
+        "id": "57dd411d-2395-5408-954e-31748cf8ac93",
+        "note": "原文：遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。；核对说明：进濠见郭子兴并留在左右与《续资治通鉴》为同一行动。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "d1e5b3d0-292a-5689-88d0-7bd4738442b7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "48b0d5b8-0c08-5c9e-826e-a21a6a4e7ecb"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年闰三月甲戌朔",
+        "claim_text": "原历至正十二年闰三月甲戌朔。DDBC历表所涉区间为1352-04-23至1352-05-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.812701+00:00",
+        "field_path": "time_original",
+        "id": "48b0d5b8-0c08-5c9e-826e-a21a6a4e7ecb",
+        "note": "原文：遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。；核对说明：进濠见郭子兴并留在左右与《续资治通鉴》为同一行动。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "d1e5b3d0-292a-5689-88d0-7bd4738442b7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7c59a891-3599-530e-a251-ffa1054255b0"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年闰三月甲戌朔",
+        "claim_text": "到濠州投军",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.862479+00:00",
+        "field_path": "role",
+        "id": "7c59a891-3599-530e-a251-ffa1054255b0",
+        "note": "原文：遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "1fcdd528-c5c7-5f99-815e-4b0306379353",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f10b423c-4e52-521b-be23-5389cc7bc1e7"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年闰三月甲戌朔",
+        "claim_text": "留用为亲兵",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:40.940588+00:00",
+        "field_path": "role",
+        "id": "f10b423c-4e52-521b-be23-5389cc7bc1e7",
+        "note": "原文：遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "47ab06a4-2141-5629-b1cb-9e855cd79311",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "236f7948-f48e-5f42-a96f-d6f8a33ebbec"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年朱元璋投军后，婚期未另标",
+        "claim_text": "朱元璋投奔郭子兴后，郭子兴把所抚养的马氏嫁给他。马氏后来成为高皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.017366+00:00",
+        "field_path": "description",
+        "id": "236f7948-f48e-5f42-a96f-d6f8a33ebbec",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：两书都记郭子兴把所抚养的马氏嫁给朱元璋。本句承接闰三月投军事，不把投军的月日当成婚期。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "0dc55137-dc78-5a10-9bc4-16a2f1fbbbb0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2adc6553-9f2e-5007-b48b-0663080b06b5"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年朱元璋投军后，婚期未另标",
+        "claim_text": "原历至正十二年朱元璋投军后，婚期未另标。DDBC历表所涉区间为1352-01-26至1353-02-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.079684+00:00",
+        "field_path": "time_original",
+        "id": "2adc6553-9f2e-5007-b48b-0663080b06b5",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：两书都记郭子兴把所抚养的马氏嫁给朱元璋。本句承接闰三月投军事，不把投军的月日当成婚期。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "0dc55137-dc78-5a10-9bc4-16a2f1fbbbb0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a4353504-df0f-5828-be83-456d12cb524e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年朱元璋投军后，婚期未另标",
+        "claim_text": "作主嫁养女",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.222623+00:00",
+        "field_path": "role",
+        "id": "a4353504-df0f-5828-be83-456d12cb524e",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "bddf7512-0c05-57f3-a82e-f02d073a4dc7",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cae1cb05-95a0-5cd2-b4b6-11c38a915cc4"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年朱元璋投军后，婚期未另标",
+        "claim_text": "与朱元璋成婚",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.297158+00:00",
+        "field_path": "role",
+        "id": "cae1cb05-95a0-5cd2-b4b6-11c38a915cc4",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "f905d8ef-ede3-51ff-8c8e-f6db005730d0",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8dfacac6-ba41-5b3d-ae38-d29b2575d7a7"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349；至正十二年朱元璋投军后，婚期未另标",
+        "claim_text": "与马氏成婚",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.352711+00:00",
+        "field_path": "role",
+        "id": "8dfacac6-ba41-5b3d-ae38-d29b2575d7a7",
+        "note": "原文：遂妻以所撫馬公女，即高皇后也。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "status": "published",
+        "subject_id": "98d650e2-e6cf-5b15-818a-364495ba6414",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d1c8eb34-e450-5577-bfb1-e49d51c8618e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年秋九月",
+        "claim_text": "至正十二年秋九月，元军收复徐州。彭大和赵均用逃往濠州，孙德崖等人接纳了他们。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.394346+00:00",
+        "field_path": "description",
+        "id": "d1c8eb34-e450-5577-bfb1-e49d51c8618e",
+        "note": "原文：秋九月，元兵復徐州，李二走死，彭大、趙均用奔濠，德崖等納之。；核对说明：收复徐州与《续资治通鉴》写的托克托破徐州为同一次战事。李二结局一书作走死，一书只记逃走，本条先绑共同可证的破城部分。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "42cd3699-cbcd-53fe-adb4-e1cf4cc3c291",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "68f3880e-1f37-50de-ae3a-19086c221f6b"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年秋九月",
+        "claim_text": "原历至正十二年秋九月。DDBC历表所涉区间为1352-10-17至1352-11-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.465366+00:00",
+        "field_path": "time_original",
+        "id": "68f3880e-1f37-50de-ae3a-19086c221f6b",
+        "note": "原文：秋九月，元兵復徐州，李二走死，彭大、趙均用奔濠，德崖等納之。；核对说明：收复徐州与《续资治通鉴》写的托克托破徐州为同一次战事。李二结局一书作走死，一书只记逃走，本条先绑共同可证的破城部分。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "42cd3699-cbcd-53fe-adb4-e1cf4cc3c291",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7f74deae-5bc5-547a-8128-913add3ea4fb"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年九月徐州收复后",
+        "claim_text": "元军收复徐州后，彭大和赵均用逃到濠州，孙德崖等人接纳了他们。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.493201+00:00",
+        "field_path": "description",
+        "id": "7f74deae-5bc5-547a-8128-913add3ea4fb",
+        "note": "原文：彭大、趙均用奔濠，德崖等納之。；核对说明：两书同记彭大、赵君用（本纪作均用）于徐州失守后奔濠，现有事件还载元军追击。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "38b4d28b-3ee9-5f30-96b3-c414f28cd8bb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fd417061-50f5-50e0-a731-09a57d4db8d2"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年九月徐州收复后",
+        "claim_text": "原历至正十二年九月徐州收复后。DDBC历表所涉区间为1352-10-17至1352-11-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.544628+00:00",
+        "field_path": "time_original",
+        "id": "fd417061-50f5-50e0-a731-09a57d4db8d2",
+        "note": "原文：彭大、趙均用奔濠，德崖等納之。；核对说明：两书同记彭大、赵君用（本纪作均用）于徐州失守后奔濠，现有事件还载元军追击。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "38b4d28b-3ee9-5f30-96b3-c414f28cd8bb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "68f07dbd-94c8-5fa7-a261-e3f6b86e5c5a"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年九月徐州收复后",
+        "claim_text": "从徐州逃到濠州",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.624887+00:00",
+        "field_path": "role",
+        "id": "68f07dbd-94c8-5fa7-a261-e3f6b86e5c5a",
+        "note": "原文：彭大、趙均用奔濠，德崖等納之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "5759f196-d387-59ed-9ec2-b2717aeae736",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fbd96a38-c0fa-55ce-a670-580016a30710"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年九月徐州收复后",
+        "claim_text": "从徐州逃到濠州",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.662577+00:00",
+        "field_path": "role",
+        "id": "fbd96a38-c0fa-55ce-a670-580016a30710",
+        "note": "原文：彭大、趙均用奔濠，德崖等納之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "e296dcbb-130e-5c56-86bb-dd7699495af1",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4e152fd6-a483-5cb2-9a1c-170148b3d68b"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "孙德崖与赵均用合谋扣押郭子兴，准备杀死他。朱元璋从淮北赶回来向彭大求援。彭大带兵赶去，朱元璋打开关押郭子兴的屋子，除去刑具，让人把他背回去。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.714726+00:00",
+        "field_path": "description",
+        "id": "4e152fd6-a483-5cb2-9a1c-170148b3d68b",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：两书的冲突起因、拘押者、求援和解械过程一致，复用事件和已明确的参与连接。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "7758cec3-386c-54ba-ab88-26f43d8b252a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5d61ddc6-5cad-5af4-b621-591626f81178"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "原历至正十二年徐州收复、彭赵入濠后。DDBC历表所涉区间为1352-01-26至1353-02-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.785352+00:00",
+        "field_path": "time_original",
+        "id": "5d61ddc6-5cad-5af4-b621-591626f81178",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：两书的冲突起因、拘押者、求援和解械过程一致，复用事件和已明确的参与连接。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "7758cec3-386c-54ba-ab88-26f43d8b252a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "82b79e6c-904b-5114-8d3b-f76629af65c0"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "带兵救郭子兴",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.857662+00:00",
+        "field_path": "role",
+        "id": "82b79e6c-904b-5114-8d3b-f76629af65c0",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "9504d3dd-5986-5968-9e12-415876b395e6",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f1ce4c18-d3e4-5c16-b5c2-af8f81062051"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "与孙德崖合谋扣押",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.910000+00:00",
+        "field_path": "role",
+        "id": "f1ce4c18-d3e4-5c16-b5c2-af8f81062051",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "f87dc49b-a2c8-55f1-af06-50e80728730a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7235a238-0c6e-50b3-a5e4-94dfc655fb52"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "参与扣押",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:41.949259+00:00",
+        "field_path": "role",
+        "id": "7235a238-0c6e-50b3-a5e4-94dfc655fb52",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "722b9b12-7ce1-51d6-bab9-b5de32aa6012",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "555ea828-7e54-5184-9545-d34386ed7823"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "被拘后获救",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.017374+00:00",
+        "field_path": "role",
+        "id": "555ea828-7e54-5184-9545-d34386ed7823",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "1bf1118a-27f1-5834-81ec-e0dbc66e6c2b",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2459a6d6-aa91-508d-9c50-7537ca4c4c9d"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000350；至正十二年徐州收复、彭赵入濠后",
+        "claim_text": "求援并救出郭子兴",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.072386+00:00",
+        "field_path": "role",
+        "id": "2459a6d6-aa91-508d-9c50-7537ca4c4c9d",
+        "note": "原文：子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "status": "published",
+        "subject_id": "36e68c51-8f64-5924-94d6-75630ee44a04",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1d14c26e-d659-5783-8ea8-c318852595d0"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351；至正十二年冬",
+        "claim_text": "至正十二年冬，贾鲁率元军围攻濠州。朱元璋和郭子兴共同抵御。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.102754+00:00",
+        "field_path": "description",
+        "id": "1d14c26e-d659-5783-8ea8-c318852595d0",
+        "note": "原文：是冬，元將賈魯圍濠。太祖與子興力拒之。；核对说明：两书均记贾鲁率元军围濠州。本纪还记朱元璋与郭子兴守城，冬季时间粗于另一书所用日期。",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "status": "published",
+        "subject_id": "07f316e6-8818-56e3-9a07-2ad6d3d82247",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c84c2282-cf2d-524d-bb26-acd88124be36"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351；至正十二年冬",
+        "claim_text": "原历至正十二年冬。DDBC历表所涉区间为1352-11-16至1353-02-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.230088+00:00",
+        "field_path": "time_original",
+        "id": "c84c2282-cf2d-524d-bb26-acd88124be36",
+        "note": "原文：是冬，元將賈魯圍濠。太祖與子興力拒之。；核对说明：两书均记贾鲁率元军围濠州。本纪还记朱元璋与郭子兴守城，冬季时间粗于另一书所用日期。",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "status": "published",
+        "subject_id": "07f316e6-8818-56e3-9a07-2ad6d3d82247",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e4557ef2-d641-554d-978a-9ddfb1ec9b68"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351；至正十二年冬",
+        "claim_text": "率军围濠州",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.264389+00:00",
+        "field_path": "role",
+        "id": "e4557ef2-d641-554d-978a-9ddfb1ec9b68",
+        "note": "原文：是冬，元將賈魯圍濠。太祖與子興力拒之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "status": "published",
+        "subject_id": "3b41d0d4-dea0-5a1f-b169-ac645bded727",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "26913ca0-8b62-5868-b81d-0e102d117b70"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351；至正十二年冬",
+        "claim_text": "抵御围攻",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.305254+00:00",
+        "field_path": "role",
+        "id": "26913ca0-8b62-5868-b81d-0e102d117b70",
+        "note": "原文：是冬，元將賈魯圍濠。太祖與子興力拒之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "status": "published",
+        "subject_id": "ff3fd025-7593-574c-b094-18fd03e7cfd5",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ae59c307-3d4b-552e-852a-d5de3e2284b6"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351；至正十二年冬",
+        "claim_text": "抵御围攻",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.354770+00:00",
+        "field_path": "role",
+        "id": "ae59c307-3d4b-552e-852a-d5de3e2284b6",
+        "note": "原文：是冬，元將賈魯圍濠。太祖與子興力拒之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "status": "published",
+        "subject_id": "2944be24-71de-54a2-94cb-8ab6e8cc0655",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ca5c93c1-cf07-5907-9d50-76df0ae0b5f4"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；《明史》作至正十三年春",
+        "claim_text": "至正十三年春，《明史》记贾鲁去世，元军解除了对濠州的围攻。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.400123+00:00",
+        "field_path": "description",
+        "id": "ca5c93c1-cf07-5907-9d50-76df0ae0b5f4",
+        "note": "原文：十三年春，賈魯死，圍解。；核对说明：两书同记贾鲁围濠期间去世并随即解围；季月须保留各书表述。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "da7ea1f9-1cf2-5820-873e-a3187432d232",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "afa94155-738e-5436-a359-c800be189015"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；《明史》作至正十三年春",
+        "claim_text": "原历《明史》作至正十三年春。DDBC历表所涉区间为1353-02-13至1353-05-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.431344+00:00",
+        "field_path": "time_original",
+        "id": "afa94155-738e-5436-a359-c800be189015",
+        "note": "原文：十三年春，賈魯死，圍解。；核对说明：两书同记贾鲁围濠期间去世并随即解围；季月须保留各书表述。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "da7ea1f9-1cf2-5820-873e-a3187432d232",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9c25083e-99df-538c-91d7-71e5dc6e818f"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；《明史》作至正十三年春",
+        "claim_text": "围濠期间去世",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.481162+00:00",
+        "field_path": "role",
+        "id": "9c25083e-99df-538c-91d7-71e5dc6e818f",
+        "note": "原文：十三年春，賈魯死，圍解。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "1641c909-7df7-5c18-ab54-b43407173657",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e7301ef-9097-59af-bd7d-3eaf0e983e24"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年濠州解围后",
+        "claim_text": "濠州解围后，朱元璋在乡里招募到七百人。郭子兴很高兴，任命他为镇抚。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.540166+00:00",
+        "field_path": "description",
+        "id": "1e7301ef-9097-59af-bd7d-3eaf0e983e24",
+        "note": "原文：太祖收里中兵得七百人。子興喜，署為鎮撫。；核对说明：两书同记解围后归乡募兵并获授镇抚。本纪作七百，另一书作七百余；任命不套前句所记春季。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "00618338-e919-57e4-a4fa-df0b567f864e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c4c3e7b6-176c-59ba-aecd-79013734afed"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年濠州解围后",
+        "claim_text": "原历至正十三年濠州解围后。DDBC历表所涉区间为1353-02-13至1354-02-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.580567+00:00",
+        "field_path": "time_original",
+        "id": "c4c3e7b6-176c-59ba-aecd-79013734afed",
+        "note": "原文：太祖收里中兵得七百人。子興喜，署為鎮撫。；核对说明：两书同记解围后归乡募兵并获授镇抚。本纪作七百，另一书作七百余；任命不套前句所记春季。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "00618338-e919-57e4-a4fa-df0b567f864e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ee83d966-70b2-5d82-be56-948479b92050"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年濠州解围后",
+        "claim_text": "募兵并获任镇抚",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.624430+00:00",
+        "field_path": "role",
+        "id": "ee83d966-70b2-5d82-be56-948479b92050",
+        "note": "原文：太祖收里中兵得七百人。子興喜，署為鎮撫。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "c89c34c8-c3c5-58f4-91b2-32e3a54a826a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c5f8a2f1-bb51-52ba-9ab8-138eae1a7a01"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年濠州解围后",
+        "claim_text": "任命镇抚",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.676725+00:00",
+        "field_path": "role",
+        "id": "c5f8a2f1-bb51-52ba-9ab8-138eae1a7a01",
+        "note": "原文：太祖收里中兵得七百人。子興喜，署為鎮撫。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "9470f6c0-3655-5dab-a8fa-dc819e23a5bb",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fd06d34f-8e89-50a4-9d04-c475814304bd"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年朱元璋任镇抚后",
+        "claim_text": "朱元璋把先前招募的部队交给别的将领，与徐达、汤和、费聚等南下定远，设法使驴牌寨的三千民兵归降，率他们往东走。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.737518+00:00",
+        "field_path": "description",
+        "id": "fd06d34f-8e89-50a4-9d04-c475814304bd",
+        "note": "原文：乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。；核对说明：两书都载交兵别将、随行者徐达与费聚、驴牌寨三千人归降；本纪另明确列汤和。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "791c339b-b431-599b-b687-3100b26168de",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a005e978-a65b-53a8-8c4f-4dac0e19c3c6"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年朱元璋任镇抚后",
+        "claim_text": "原历至正十三年朱元璋任镇抚后。DDBC历表所涉区间为1353-02-13至1354-02-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.837803+00:00",
+        "field_path": "time_original",
+        "id": "a005e978-a65b-53a8-8c4f-4dac0e19c3c6",
+        "note": "原文：乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。；核对说明：两书都载交兵别将、随行者徐达与费聚、驴牌寨三千人归降；本纪另明确列汤和。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "791c339b-b431-599b-b687-3100b26168de",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2c9ac697-b435-549b-9f9b-38a573eb734d"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年朱元璋任镇抚后",
+        "claim_text": "南下并招降民兵",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.893408+00:00",
+        "field_path": "role",
+        "id": "2c9ac697-b435-549b-9f9b-38a573eb734d",
+        "note": "原文：乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "005a9167-d653-5978-86e3-aea53a2b0c81",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4b38db4b-4986-542e-bffb-73abd7a4892a"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年朱元璋任镇抚后",
+        "claim_text": "随军南下",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.952301+00:00",
+        "field_path": "role",
+        "id": "4b38db4b-4986-542e-bffb-73abd7a4892a",
+        "note": "原文：乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "5681ad3f-69d5-5799-9500-284b40371795",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "25f1259a-6baa-5af7-b245-830d12252f45"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年朱元璋任镇抚后",
+        "claim_text": "随军南下",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:42.992656+00:00",
+        "field_path": "role",
+        "id": "25f1259a-6baa-5af7-b245-830d12252f45",
+        "note": "原文：乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "c24ed620-e628-5e6a-a0dd-fee711fbf71c",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "53145559-9791-559d-ab1d-fc14b3fb2f7d"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年朱元璋任镇抚后",
+        "claim_text": "随军南下",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.037367+00:00",
+        "field_path": "role",
+        "id": "53145559-9791-559d-ab1d-fc14b3fb2f7d",
+        "note": "原文：乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "69d1dcea-010a-561f-b7c8-5806de6602e5",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7e69ddee-55f7-5375-9e3d-9f501e5b76d5"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年招降驴牌寨后",
+        "claim_text": "朱元璋一方夜袭横涧山，收编敌方两万人。《明史》称对方将领为张知院。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.097644+00:00",
+        "field_path": "description",
+        "id": "7e69ddee-55f7-5375-9e3d-9f501e5b76d5",
+        "note": "原文：夜襲元將張知院於橫澗山，收其卒二萬。；核对说明：地点、夜袭、兵数及在定远招兵后的先后一致。旧事件记花云奉命袭击、缪大亨归降，本纪作张知院，保留两书原称，暂不合并个人身份。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "6511c7ed-436b-5582-b913-2bfeace3481c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2a97c13b-77db-5e8f-be81-7e04ef0e1415"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年招降驴牌寨后",
+        "claim_text": "原历至正十三年招降驴牌寨后。DDBC历表所涉区间为1353-02-13至1354-02-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.139705+00:00",
+        "field_path": "time_original",
+        "id": "2a97c13b-77db-5e8f-be81-7e04ef0e1415",
+        "note": "原文：夜襲元將張知院於橫澗山，收其卒二萬。；核对说明：地点、夜袭、兵数及在定远招兵后的先后一致。旧事件记花云奉命袭击、缪大亨归降，本纪作张知院，保留两书原称，暂不合并个人身份。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "6511c7ed-436b-5582-b913-2bfeace3481c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a0b7a767-8dc5-5603-bb4d-b4eec1fe1b71"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年招降驴牌寨后",
+        "claim_text": "所率军队夜袭",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.200269+00:00",
+        "field_path": "role",
+        "id": "a0b7a767-8dc5-5603-bb4d-b4eec1fe1b71",
+        "note": "原文：夜襲元將張知院於橫澗山，收其卒二萬。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "56905869-3b99-5a98-98df-3d5bc7af9ab2",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6d6cee1e-a27e-52b8-95c8-741c0dbc5f7c"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年进军滁州途中",
+        "claim_text": "朱元璋向滁州进兵，途中遇到定远人李善长。他和李善长谈得投契，便带他一同行军。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.339597+00:00",
+        "field_path": "description",
+        "id": "6d6cee1e-a27e-52b8-95c8-741c0dbc5f7c",
+        "note": "原文：道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。；核对说明：地点、路线、姓名及交谈投契相符。本纪支持相识和同行，幕书记任命细节由原有来源支持。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "d124f8e2-346a-59f2-b7c6-a66102fb7949",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "da61cbd9-04ac-5402-bc30-1d1d20383974"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年进军滁州途中",
+        "claim_text": "原历至正十三年进军滁州途中。DDBC历表所涉区间为1353-02-13至1354-02-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.417103+00:00",
+        "field_path": "time_original",
+        "id": "da61cbd9-04ac-5402-bc30-1d1d20383974",
+        "note": "原文：道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。；核对说明：地点、路线、姓名及交谈投契相符。本纪支持相识和同行，幕书记任命细节由原有来源支持。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "d124f8e2-346a-59f2-b7c6-a66102fb7949",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "59a4ae44-77c0-59c9-a21c-6e36a86e1ea2"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年进军滁州途中",
+        "claim_text": "在途中结识李善长",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.465012+00:00",
+        "field_path": "role",
+        "id": "59a4ae44-77c0-59c9-a21c-6e36a86e1ea2",
+        "note": "原文：道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "352769e7-bca5-51d3-815f-426d417e6ff8",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9e64386f-f42b-54d4-906a-11d4563c7228"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353；至正十三年进军滁州途中",
+        "claim_text": "与朱元璋相识并同行",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.524521+00:00",
+        "field_path": "role",
+        "id": "9e64386f-f42b-54d4-906a-11d4563c7228",
+        "note": "原文：道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "status": "published",
+        "subject_id": "063ee214-ce21-57c3-843c-0b044bcdd5f2",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e467ce66-3720-5785-aab3-605c7d1d8ebe"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000354；至正十三年",
+        "claim_text": "在至正十三年的记载中，《明史》说张士诚占据高邮，自称诚王。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.550084+00:00",
+        "field_path": "description",
+        "id": "e467ce66-3720-5785-aab3-605c7d1d8ebe",
+        "note": "原文：是年，張士誠據高郵，自稱誠王。；核对说明：《续资治通鉴》同在至正十三年记其据高邮称诚王。本纪未记该次建号的月份。",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd",
+        "status": "published",
+        "subject_id": "e0cf5d04-27ac-53cd-9839-b4c39d7e6079",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c1de1227-276c-5f8e-a149-fda735d1b825"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000354；至正十三年",
+        "claim_text": "原历至正十三年。DDBC历表所涉区间为1353-02-13至1354-02-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.609314+00:00",
+        "field_path": "time_original",
+        "id": "c1de1227-276c-5f8e-a149-fda735d1b825",
+        "note": "原文：是年，張士誠據高郵，自稱誠王。；核对说明：《续资治通鉴》同在至正十三年记其据高邮称诚王。本纪未记该次建号的月份。",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd",
+        "status": "published",
+        "subject_id": "e0cf5d04-27ac-53cd-9839-b4c39d7e6079",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "38aa4f64-db87-520f-93b0-0ab9c40cd49d"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000354；至正十三年",
+        "claim_text": "据高邮称诚王",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.672325+00:00",
+        "field_path": "role",
+        "id": "38aa4f64-db87-520f-93b0-0ab9c40cd49d",
+        "note": "原文：是年，張士誠據高郵，自稱誠王。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd",
+        "status": "published",
+        "subject_id": "38e1f994-81e6-5a68-9b23-2d75fcf79106",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6c314814-26cf-57bd-a0bb-d9077a507259"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬十月",
+        "claim_text": "至正十四年冬十月，元丞相脱脱在高邮击败张士诚，并分兵围攻六合。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.715163+00:00",
+        "field_path": "description",
+        "id": "6c314814-26cf-57bd-a0bb-d9077a507259",
+        "note": "原文：十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。；核对说明：战场、交战方和分兵六合的前后过程相同。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "aeeb750e-f748-5ba0-b623-cfdc6ae96a9d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "55ec5c5f-ad57-5bc7-80be-f22ca8c29f9a"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬十月",
+        "claim_text": "原历至正十四年冬十月。DDBC历表所涉区间为1354-10-25至1354-11-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.770137+00:00",
+        "field_path": "time_original",
+        "id": "55ec5c5f-ad57-5bc7-80be-f22ca8c29f9a",
+        "note": "原文：十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。；核对说明：战场、交战方和分兵六合的前后过程相同。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "aeeb750e-f748-5ba0-b623-cfdc6ae96a9d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ffa322f5-a7c4-50e9-8aea-184f1c0c9efc"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬十月",
+        "claim_text": "在高邮击败张士诚并分兵",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.817206+00:00",
+        "field_path": "role",
+        "id": "ffa322f5-a7c4-50e9-8aea-184f1c0c9efc",
+        "note": "原文：十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "dcb9c35a-6202-58d6-96fd-747dca63e7bd",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "75347650-97d1-5a95-bacf-3fc1196899e4"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬十月",
+        "claim_text": "在高邮战败",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.899629+00:00",
+        "field_path": "role",
+        "id": "75347650-97d1-5a95-bacf-3fc1196899e4",
+        "note": "原文：十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "ca8c8edd-0f3b-5613-985f-3db184f80d91",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f35cad1e-6040-5bad-9260-05303f3c2950"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬脱脱分兵六合之后",
+        "claim_text": "朱元璋担心六合失守后滁州也保不住，和耿再成驻守瓦梁垒，护送老弱百姓回滁州。元军随后进攻滁州，朱元璋设伏将其击退。他担心对方增兵再来，派地方父老送还缴获的马匹，并带牛酒劳军。元军撤离，滁州得以保全。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.955097+00:00",
+        "field_path": "description",
+        "id": "f35cad1e-6040-5bad-9260-05303f3c2950",
+        "note": "原文：與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。；核对说明：两书均记朱元璋与耿再成救六合，先守瓦梁垒，再伏击、归还所获马匹，复用同一次战事。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "c6c6db8e-6a6d-5bb7-a723-c1ecf12d2cf1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2b3e7f2e-58b6-54b4-9dbe-c57d0f25fc6e"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬脱脱分兵六合之后",
+        "claim_text": "原历至正十四年冬脱脱分兵六合之后。DDBC历表所涉区间为1354-10-25至1355-01-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:43.987969+00:00",
+        "field_path": "time_original",
+        "id": "2b3e7f2e-58b6-54b4-9dbe-c57d0f25fc6e",
+        "note": "原文：與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。；核对说明：两书均记朱元璋与耿再成救六合，先守瓦梁垒，再伏击、归还所获马匹，复用同一次战事。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "c6c6db8e-6a6d-5bb7-a723-c1ecf12d2cf1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5e9c700b-524a-5da1-a49a-1a2c13f2d8c8"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬脱脱分兵六合之后",
+        "claim_text": "率军救援、设伏并遣人交涉",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:44.105097+00:00",
+        "field_path": "role",
+        "id": "5e9c700b-524a-5da1-a49a-1a2c13f2d8c8",
+        "note": "原文：與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "360a9a7e-cd9f-547a-9730-7eec4bf39700",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a0c3f66e-867e-5f59-b351-b8e51a151ec5"
+      },
+      "row": {
+        "citation": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356；至正十四年冬脱脱分兵六合之后",
+        "claim_text": "率军守瓦梁垒",
+        "confidence": null,
+        "created_at": "2026-11-18T09:28:44.129425+00:00",
+        "field_path": "role",
+        "id": "a0c3f66e-867e-5f59-b351-b8e51a151ec5",
+        "note": "原文：與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "status": "published",
+        "subject_id": "6914166a-2a32-56bb-98df-26c65bf434fd",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4f0daaa2-2bcf-5a68-9150-a094a614a714"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T09:28:33.409703+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4f0daaa2-2bcf-5a68-9150-a094a614a714",
+        "note": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000345",
+        "source_type": "primary",
+        "title": "明史·卷1·太祖一·mingshi-2f603db3d81e-p000345",
+        "url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000345/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "e8d4b82dc8d93c47eb5772dbe1b084bdbdb1cae4907c5cfc4244de12d93aab8a",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714"
+      },
+      "row": {
+        "archive_blob_sha256": "fcc8d4ecf4188cacd8c620291bdc9b6578fbadbcae5a2c1922bc0e1382015323",
+        "archive_commit": "6d426044282e36d203f2aef040ba934a79ee3237",
+        "archive_url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000345/source.txt",
+        "archive_url_sha256": "e8d4b82dc8d93c47eb5772dbe1b084bdbdb1cae4907c5cfc4244de12d93aab8a",
+        "content": "太祖開天行道肇紀立極大聖至神仁文義武俊德成功高皇帝，諱元璋，字國瑞，姓朱氏。先世家沛，徙句容，再徙泗州。父世珍，始徙濠州之鍾離。生四子，太祖其季也。母陳氏。方娠，夢神授藥一丸，置掌中有光，吞之寤，口餘香氣。及產，紅光滿室。自是，夜數有光起。鄰里望見，驚以為火，輒奔救，至則無有。比長，姿貌雄傑，奇骨貫頂。志意廓然，人莫能測。",
+        "content_sha256": "fcc8d4ecf4188cacd8c620291bdc9b6578fbadbcae5a2c1922bc0e1382015323",
+        "created_at": "2026-11-18T09:28:51.459548+00:00",
+        "source_id": "4f0daaa2-2bcf-5a68-9150-a094a614a714"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000345"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11204,
+        "char_start": 11042,
+        "content": "太祖開天行道肇紀立極大聖至神仁文義武俊德成功高皇帝，諱元璋，字國瑞，姓朱氏。先世家沛，徙句容，再徙泗州。父世珍，始徙濠州之鍾離。生四子，太祖其季也。母陳氏。方娠，夢神授藥一丸，置掌中有光，吞之寤，口餘香氣。及產，紅光滿室。自是，夜數有光起。鄰里望見，驚以為火，輒奔救，至則無有。比長，姿貌雄傑，奇骨貫頂。志意廓然，人莫能測。",
+        "content_sha256": "fcc8d4ecf4188cacd8c620291bdc9b6578fbadbcae5a2c1922bc0e1382015323",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000345",
+        "kind": "body",
+        "ordinal": 342,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-10-25T21:32:11.084336+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b",
+        "note": "《明史》卷一，段落 mingshi-2f603db3d81e-p000347；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "卷211必要身份、断句、官序及异文补证",
+        "url": "https://github.com/greed-216/histree/blob/775e719311e9050588de30f8afe52e8c4984e1a1/content/books/xu-zizhi-tongjian/runs/2026-10-24-vol-211-220/source-archive/mingshi-2f603db3d81e-p000347/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "6e497b0ea35a002668dee5833c2deb46e42165f444ee0677be78dc4ddaadb15f",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b"
+      },
+      "row": {
+        "archive_blob_sha256": "b7c93973cd6d176f4670bed70cc7b29dabb70a5183ba8903014a9311ee689e35",
+        "archive_commit": "775e719311e9050588de30f8afe52e8c4984e1a1",
+        "archive_url": "https://github.com/greed-216/histree/blob/775e719311e9050588de30f8afe52e8c4984e1a1/content/books/xu-zizhi-tongjian/runs/2026-10-24-vol-211-220/source-archive/mingshi-2f603db3d81e-p000347/source.txt",
+        "archive_url_sha256": "6e497b0ea35a002668dee5833c2deb46e42165f444ee0677be78dc4ddaadb15f",
+        "content": "至正四年，旱蝗，大饑疫。太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。太祖孤無所依，乃入皇覺寺為僧。逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。當是時，元政不綱，盜賊四起，劉福通奉韓山童假宋後起潁，徐壽輝僭帝號起蘄，李二、彭大、趙均用起徐，眾各數萬，並置將帥，殺吏，侵略郡縣，而方國珍已先起海上。他盜擁兵據地，寇掠甚眾。天下大亂。",
+        "content_sha256": "b7c93973cd6d176f4670bed70cc7b29dabb70a5183ba8903014a9311ee689e35",
+        "created_at": "2026-10-25T21:32:29.774493+00:00",
+        "source_id": "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000347"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11418,
+        "char_start": 11212,
+        "content": "至正四年，旱蝗，大饑疫。太祖時年十七，父母兄相繼歿，貧不克葬。里人劉繼祖與之地，乃克葬，即鳳陽陵也。太祖孤無所依，乃入皇覺寺為僧。逾月，遊食合肥。道病，二紫衣人與俱，護視甚至。病已，失所在。凡歷光、固、汝、潁諸州三年，復還寺。當是時，元政不綱，盜賊四起，劉福通奉韓山童假宋後起潁，徐壽輝僭帝號起蘄，李二、彭大、趙均用起徐，眾各數萬，並置將帥，殺吏，侵略郡縣，而方國珍已先起海上。他盜擁兵據地，寇掠甚眾。天下大亂。",
+        "content_sha256": "b7c93973cd6d176f4670bed70cc7b29dabb70a5183ba8903014a9311ee689e35",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000347",
+        "kind": "body",
+        "ordinal": 344,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "e1af1c62-96cc-5882-9798-966a33568cd2"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T09:28:33.569992+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "e1af1c62-96cc-5882-9798-966a33568cd2",
+        "note": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000349",
+        "source_type": "primary",
+        "title": "明史·卷1·太祖一·mingshi-2f603db3d81e-p000349",
+        "url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000349/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "ba044230a494ca61bc21217d07fed3b04f8875d6a4450e0fef7fc7d74ad061ca",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2"
+      },
+      "row": {
+        "archive_blob_sha256": "3f1ebb0822f7d97b64929f0f2c1a8c6b97f96dd0e5814ce3b37af32fbc9ab7ad",
+        "archive_commit": "6d426044282e36d203f2aef040ba934a79ee3237",
+        "archive_url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000349/source.txt",
+        "archive_url_sha256": "ba044230a494ca61bc21217d07fed3b04f8875d6a4450e0fef7fc7d74ad061ca",
+        "content": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。元將徹里不花憚不敢攻，而日俘良民以邀賞。太祖時年二十五[2]，謀避兵，卜於神，去留皆不吉。乃曰：「得毋當舉大事乎？」卜之吉，大喜，遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。戰輒勝。遂妻以所撫馬公女，即高皇后也。子興與德崖齟齬，太祖屢調護之。",
+        "content_sha256": "3f1ebb0822f7d97b64929f0f2c1a8c6b97f96dd0e5814ce3b37af32fbc9ab7ad",
+        "created_at": "2026-11-18T09:28:51.459548+00:00",
+        "source_id": "e1af1c62-96cc-5882-9798-966a33568cd2"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000349"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11577,
+        "char_start": 11427,
+        "content": "十二年春二月，定遠人郭子興與其黨孫德崖等起兵濠州。元將徹里不花憚不敢攻，而日俘良民以邀賞。太祖時年二十五[2]，謀避兵，卜於神，去留皆不吉。乃曰：「得毋當舉大事乎？」卜之吉，大喜，遂以閏三月甲戌朔入濠見子興。子興奇其狀貌，留為親兵。戰輒勝。遂妻以所撫馬公女，即高皇后也。子興與德崖齟齬，太祖屢調護之。",
+        "content_sha256": "3f1ebb0822f7d97b64929f0f2c1a8c6b97f96dd0e5814ce3b37af32fbc9ab7ad",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000349",
+        "kind": "body",
+        "ordinal": 346,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "0497732d-5657-5ba2-af6e-70e6f6becac5"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-10-25T21:32:11.099806+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "0497732d-5657-5ba2-af6e-70e6f6becac5",
+        "note": "《明史》卷一，段落 mingshi-2f603db3d81e-p000350；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "卷211必要身份、断句、官序及异文补证",
+        "url": "https://github.com/greed-216/histree/blob/775e719311e9050588de30f8afe52e8c4984e1a1/content/books/xu-zizhi-tongjian/runs/2026-10-24-vol-211-220/source-archive/mingshi-2f603db3d81e-p000350/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "833d87894860de7f13e6ab5bb7e2f8dfb336133ec47aa620581dd51e5ce73943",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5"
+      },
+      "row": {
+        "archive_blob_sha256": "592f563f0e7a841e65e4fcc23cf16da5f803d5d944c387506224ce2b6552a185",
+        "archive_commit": "775e719311e9050588de30f8afe52e8c4984e1a1",
+        "archive_url": "https://github.com/greed-216/histree/blob/775e719311e9050588de30f8afe52e8c4984e1a1/content/books/xu-zizhi-tongjian/runs/2026-10-24-vol-211-220/source-archive/mingshi-2f603db3d81e-p000350/source.txt",
+        "archive_url_sha256": "833d87894860de7f13e6ab5bb7e2f8dfb336133ec47aa620581dd51e5ce73943",
+        "content": "秋九月，元兵復徐州，李二走死，彭大、趙均用奔濠，德崖等納之。子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "content_sha256": "592f563f0e7a841e65e4fcc23cf16da5f803d5d944c387506224ce2b6552a185",
+        "created_at": "2026-10-25T21:32:29.774493+00:00",
+        "source_id": "0497732d-5657-5ba2-af6e-70e6f6becac5"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000350"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11696,
+        "char_start": 11579,
+        "content": "秋九月，元兵復徐州，李二走死，彭大、趙均用奔濠，德崖等納之。子興禮大而易均用，均用怨之。德崖遂與謀，伺子興出，執而械諸孫氏，將殺之。太祖方在淮北，聞難馳至，訴於彭大。大怒，呼兵以行，太祖亦甲而擁盾，發屋出子興，破械，使人負以歸，遂免。",
+        "content_sha256": "592f563f0e7a841e65e4fcc23cf16da5f803d5d944c387506224ce2b6552a185",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000350",
+        "kind": "body",
+        "ordinal": 347,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "b35bb829-6615-5fc8-9b5b-23ea947e103f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T09:28:33.634763+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "b35bb829-6615-5fc8-9b5b-23ea947e103f",
+        "note": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000351",
+        "source_type": "primary",
+        "title": "明史·卷1·太祖一·mingshi-2f603db3d81e-p000351",
+        "url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000351/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "4394aa36a4b267ced11d9404a9832becde411f358e1c26f40c7760b1c58a6926",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f"
+      },
+      "row": {
+        "archive_blob_sha256": "2055b820320ba7cd4a9d1acba23b18c4c7de51a4b9f853159c636e60ddcd0394",
+        "archive_commit": "6d426044282e36d203f2aef040ba934a79ee3237",
+        "archive_url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000351/source.txt",
+        "archive_url_sha256": "4394aa36a4b267ced11d9404a9832becde411f358e1c26f40c7760b1c58a6926",
+        "content": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "content_sha256": "2055b820320ba7cd4a9d1acba23b18c4c7de51a4b9f853159c636e60ddcd0394",
+        "created_at": "2026-11-18T09:28:51.459548+00:00",
+        "source_id": "b35bb829-6615-5fc8-9b5b-23ea947e103f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000351"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11717,
+        "char_start": 11698,
+        "content": "是冬，元將賈魯圍濠。太祖與子興力拒之。",
+        "content_sha256": "2055b820320ba7cd4a9d1acba23b18c4c7de51a4b9f853159c636e60ddcd0394",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000351",
+        "kind": "body",
+        "ordinal": 348,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T09:28:33.739238+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f",
+        "note": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000353",
+        "source_type": "primary",
+        "title": "明史·卷1·太祖一·mingshi-2f603db3d81e-p000353",
+        "url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000353/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "a26318b32022c5b45f7c21a3a7b74dea84257e5ae5ec97006b0b9ea73e23433e",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f"
+      },
+      "row": {
+        "archive_blob_sha256": "afb5980f2fdeed56f9a9963d886fe70ea9071884e5acafadd24cce89d7248f91",
+        "archive_commit": "6d426044282e36d203f2aef040ba934a79ee3237",
+        "archive_url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000353/source.txt",
+        "archive_url_sha256": "a26318b32022c5b45f7c21a3a7b74dea84257e5ae5ec97006b0b9ea73e23433e",
+        "content": "十三年春，賈魯死，圍解。太祖收里中兵得七百人。子興喜，署為鎮撫。時彭、趙所部暴橫，子興弱，太祖度無足與共事，乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。夜襲元將張知院於橫澗山，收其卒二萬。道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "content_sha256": "afb5980f2fdeed56f9a9963d886fe70ea9071884e5acafadd24cce89d7248f91",
+        "created_at": "2026-11-18T09:28:51.459548+00:00",
+        "source_id": "6b8f774b-8149-529f-aa6a-5470ac5d8f4f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000353"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11859,
+        "char_start": 11726,
+        "content": "十三年春，賈魯死，圍解。太祖收里中兵得七百人。子興喜，署為鎮撫。時彭、趙所部暴橫，子興弱，太祖度無足與共事，乃以兵屬他將，獨與徐達、湯和、費聚等南略定遠。計降驢牌寨民兵三千，與俱東。夜襲元將張知院於橫澗山，收其卒二萬。道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "content_sha256": "afb5980f2fdeed56f9a9963d886fe70ea9071884e5acafadd24cce89d7248f91",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000353",
+        "kind": "body",
+        "ordinal": 350,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T09:28:33.890451+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd",
+        "note": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000354",
+        "source_type": "primary",
+        "title": "明史·卷1·太祖一·mingshi-2f603db3d81e-p000354",
+        "url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000354/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "d6bdf632eb0289d775be8625e2003a10b10cfbb97a49a126d930fa79fb31b515",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd"
+      },
+      "row": {
+        "archive_blob_sha256": "d4ba9dddfcce32fc73c2fc8a699729b11d7759fd157ad30d52940a15f647b8a5",
+        "archive_commit": "6d426044282e36d203f2aef040ba934a79ee3237",
+        "archive_url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000354/source.txt",
+        "archive_url_sha256": "d6bdf632eb0289d775be8625e2003a10b10cfbb97a49a126d930fa79fb31b515",
+        "content": "是年，張士誠據高郵，自稱誠王。",
+        "content_sha256": "d4ba9dddfcce32fc73c2fc8a699729b11d7759fd157ad30d52940a15f647b8a5",
+        "created_at": "2026-11-18T09:28:51.459548+00:00",
+        "source_id": "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000354"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 11876,
+        "char_start": 11861,
+        "content": "是年，張士誠據高郵，自稱誠王。",
+        "content_sha256": "d4ba9dddfcce32fc73c2fc8a699729b11d7759fd157ad30d52940a15f647b8a5",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000354",
+        "kind": "body",
+        "ordinal": 351,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "4896b6b0-1c10-53fb-bf85-de4befcc121d"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T09:28:34.014712+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4896b6b0-1c10-53fb-bf85-de4befcc121d",
+        "note": "《明史》卷1·本纪第一·太祖一·mingshi-2f603db3d81e-p000356",
+        "source_type": "primary",
+        "title": "明史·卷1·太祖一·mingshi-2f603db3d81e-p000356",
+        "url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000356/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "6b60bc4e1e2a8f6319f67225e2d5cea1abbd108c635c36bdd66777d87ba83ec7",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d"
+      },
+      "row": {
+        "archive_blob_sha256": "e2756d6261a7483b4c388846a39e68fb436384791fd79bfe28c13d90b8ac87b9",
+        "archive_commit": "6d426044282e36d203f2aef040ba934a79ee3237",
+        "archive_url": "https://github.com/greed-216/histree/blob/6d426044282e36d203f2aef040ba934a79ee3237/content/books/mingshi/vol-001/from-start/part-01/sources/mingshi-2f603db3d81e-p000356/source.txt",
+        "archive_url_sha256": "6b60bc4e1e2a8f6319f67225e2d5cea1abbd108c635c36bdd66777d87ba83ec7",
+        "content": "十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。太祖曰：「六合破，滁且不免。」與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。脫脫既破士誠，軍聲大振，會中讒，遽解兵柄，江、淮亂益熾。",
+        "content_sha256": "e2756d6261a7483b4c388846a39e68fb436384791fd79bfe28c13d90b8ac87b9",
+        "created_at": "2026-11-18T09:28:51.459548+00:00",
+        "source_id": "4896b6b0-1c10-53fb-bf85-de4befcc121d"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000356"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 12047,
+        "char_start": 11885,
+        "content": "十四年冬十月，元丞相脫脫大敗士誠於高郵，分兵圍六合。太祖曰：「六合破，滁且不免。」與耿再成軍瓦梁壘，救之。力戰，衞老弱還滁。元兵尋大至，攻滁，太祖設伏誘敗之。然度元兵勢盛且再至，乃還所獲馬，遣父老具牛酒謝元將曰：「守城備他盜耳，奈何舍巨寇戮良民。」元兵引去，城賴以完。脫脫既破士誠，軍聲大振，會中讒，遽解兵柄，江、淮亂益熾。",
+        "content_sha256": "e2756d6261a7483b4c388846a39e68fb436384791fd79bfe28c13d90b8ac87b9",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000356",
+        "kind": "body",
+        "ordinal": 353,
+        "section_id": "mingshi-2f603db3d81e-s0002"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "995ac677-5f50-56e5-b386-efd4c3fb1a0a"
+      },
+      "row": {
+        "created_at": "2026-11-18T09:28:36.224682+00:00",
+        "description": "《明史》记至正四年当地遭遇旱灾和蝗灾，接着发生严重的饥荒和疫病。 按原历纪年，事情发生在公元1344至1345年之间。",
+        "dynasty": "元及同时诸政权",
+        "end_year": null,
+        "id": "995ac677-5f50-56e5-b386-efd4c3fb1a0a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "至正四年",
+        "title": "濠州一带发生饥荒和疫病"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "86ed304c-9fe3-5ac3-b9eb-6c245ec6a994"
+      },
+      "row": {
+        "created_at": "2026-11-18T09:28:36.294828+00:00",
+        "description": "父母和一位兄长相继去世后，朱元璋家贫，无法安葬亲人。同乡刘继祖给了他一块地，他才得以安葬。史书说这处墓地就是后来的凤阳陵。 按原历纪年，事情发生在公元1344至1345年之间。",
+        "dynasty": "元及同时诸政权",
+        "end_year": null,
+        "id": "86ed304c-9fe3-5ac3-b9eb-6c245ec6a994",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "至正四年所叙家难",
+        "title": "刘继祖给朱元璋土地安葬亲人"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7afa5cb6-fa2e-577c-9855-71b76f21cea5"
+      },
+      "row": {
+        "created_at": "2026-11-18T09:28:36.360286+00:00",
+        "description": "亲人去世后，朱元璋失去依靠，便到皇觉寺做了僧人。 按原历纪年，事情发生在公元1344至1345年之间。",
+        "dynasty": "元及同时诸政权",
+        "end_year": null,
+        "id": "7afa5cb6-fa2e-577c-9855-71b76f21cea5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "至正四年家难之后",
+        "title": "朱元璋到皇觉寺为僧"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "fc783e00-5cab-5224-bd3b-5e10935c528f"
+      },
+      "row": {
+        "created_at": "2026-11-18T09:28:36.414454+00:00",
+        "description": "入寺一个多月后，朱元璋外出到合肥一带谋生。《明史》说他在途中生病，由两名穿紫衣的人照料，病好后便找不到他们。他先后走过光、固、汝、颍等州，历时三年才回到寺里。",
+        "dynasty": "元及同时诸政权",
+        "end_year": null,
+        "id": "fc783e00-5cab-5224-bd3b-5e10935c528f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "入皇觉寺逾月后外出，历时三年",
+        "title": "朱元璋外出谋生后返回皇觉寺"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ed770a46-f36f-5d4c-b33d-c993517abad5"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:10:10.249042+00:00",
+        "description": "定远郭子兴散家财结壮士，集少年数千，称节制元帅，与孙德崖及俞鲁潘等人攻城。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "ed770a46-f36f-5d4c-b33d-c993517abad5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷210；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "郭子兴聚众称元帅攻城"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d1e5b3d0-292a-5689-88d0-7bd4738442b7"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:10:10.564579+00:00",
+        "description": "皇觉寺毁于战乱后，钟离朱元璋赴濠州投郭子兴，入城时一度被疑为间谍，郭询问缘由后留在左右。其后领九夫、参议和奉命攻讨属后续相对官序，另保未明年月。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "d1e5b3d0-292a-5689-88d0-7bd4738442b7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷210；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "朱元璋投郭子兴濠州军"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0dc55137-dc78-5a10-9bc4-16a2f1fbbbb0"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:10:10.591832+00:00",
+        "description": "郭子兴与妾张氏商议招揽豪杰，决定将养女马氏嫁给朱元璋，遂成婚。马氏为故交马公最小的女儿，托付和收养属于此前附叙，另分未知年月，不由婚年推父卒年或女儿年龄。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "0dc55137-dc78-5a10-9bc4-16a2f1fbbbb0",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷210；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "郭子兴以养女马氏妻朱元璋"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "42cd3699-cbcd-53fe-adb4-e1cf4cc3c291"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.073825+00:00",
+        "description": "托克托攻徐州西门，按伊苏计用巨石炮昼夜攻，城破芝麻李逃，元军获旗鼓伞、焚积聚擒千户，遂屠城。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "42cd3699-cbcd-53fe-adb4-e1cf4cc3c291",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "托克托破徐州屠城芝麻李逃"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "38b4d28b-3ee9-5f30-96b3-c414f28cd8bb"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.136854+00:00",
+        "description": "徐州失后彭大赵君用率余军赴濠，托克托命贾鲁追击。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "38b4d28b-3ee9-5f30-96b3-c414f28cd8bb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "贾鲁追彭大赵君用"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7758cec3-386c-54ba-ab88-26f43d8b252a"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.152084+00:00",
+        "description": "孙德崖纳彭赵后受制，赵君用怨郭厚彭薄己，与孙拘郭欲杀。朱元璋携郭子求彭大援，合兵破械救郭。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "7758cec3-386c-54ba-ab88-26f43d8b252a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "朱元璋彭大救郭子兴"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "07f316e6-8818-56e3-9a07-2ad6d3d82247"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.310134+00:00",
+        "description": "贾鲁率兵围濠州。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1352,
+        "id": "07f316e6-8818-56e3-9a07-2ad6d3d82247",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1352,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1352年，具体月日依引文。",
+        "title": "贾鲁围濠州"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "da7ea1f9-1cf2-5820-873e-a3187432d232"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.813855+00:00",
+        "description": "贾鲁与伊撤察喇攻濠，誓当日取城后食，临城头眩病急仍令军不散，后拒药卒，官军解围。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1353,
+        "id": "da7ea1f9-1cf2-5820-873e-a3187432d232",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1353,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1353年，具体月日依引文。",
+        "title": "贾鲁围濠军中卒"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "00618338-e919-57e4-a4fa-df0b567f864e"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.889598+00:00",
+        "description": "濠州解围后，朱元璋返乡募七百余人，六月回濠，郭子兴授镇抚。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1353,
+        "id": "00618338-e919-57e4-a4fa-df0b567f864e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1353,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1353年，具体月日依引文。",
+        "title": "朱元璋募700归濠授镇抚"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "791c339b-b431-599b-b687-3100b26168de"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.905353+00:00",
+        "description": "朱元璋因彭赵暴横，交出七百军，与徐达等二十四人南略，病返后仍赴定远张家堡劝降，遣费聚留候。得知其拟另投，率三百诱拘其帅，招三千壮士，又降秦把头八百余。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1353,
+        "id": "791c339b-b431-599b-b687-3100b26168de",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1353,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1353年，具体月日依引文。",
+        "title": "朱元璋南略招降定远民兵"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6511c7ed-436b-5582-b913-2bfeace3481c"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.931533+00:00",
+        "description": "朱元璋命花云夜袭横涧山，缪大亨率二万众降。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1353,
+        "id": "6511c7ed-436b-5582-b913-2bfeace3481c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1353,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1353年，具体月日依引文。",
+        "title": "花云夜破缪大亨降2万"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d124f8e2-346a-59f2-b7c6-a66102fb7949"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:14.044603+00:00",
+        "description": "朱元璋略滁阳遇李善长，留任幕书记，令其协诸将、不效毁将致败之幕客。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1353,
+        "id": "d124f8e2-346a-59f2-b7c6-a66102fb7949",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1353,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1353年，具体月日依引文。",
+        "title": "朱元璋留李善长掌书记"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e0cf5d04-27ac-53cd-9839-b4c39d7e6079"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:32:13.865357+00:00",
+        "description": "纳苏喇鼎守高邮，阿苏卫等友军退走，他命三子离开，两子不肯，与他一同战死。张士诚以高邮为都、称诚王、国号大周、改元天祐。本书在至正十三年叙此，明史张士诚传同明确十三年；不据常见后说直接改本书年条，也不说三子全死。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1353,
+        "id": "e0cf5d04-27ac-53cd-9839-b4c39d7e6079",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1353,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷211；本事原载纪年折合公元1353年，具体月日依引文。",
+        "title": "高邮陷纳苏喇鼎父子死张建周"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "aeeb750e-f748-5ba0-b623-cfdc6ae96a9d"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:56:12.934442+00:00",
+        "description": "托克托至高邮，在城外大败张士诚，分军西取六合。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1354,
+        "id": "aeeb750e-f748-5ba0-b623-cfdc6ae96a9d",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1354,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷212；本事原载纪年折合公元1354年，具体月日依引文。",
+        "title": "托克托高邮败张西平六合"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c6c6db8e-6a6d-5bb7-a723-c1ecf12d2cf1"
+      },
+      "row": {
+        "created_at": "2026-10-25T21:56:12.958164+00:00",
+        "description": "郭子兴因私怨不愿救六合，朱元璋以两城相依说服他，领兵与耿再成守瓦梁垒，设伏击退官军，又以牛酒还马、自称良民自保的策略使对方撤军，滁州得以保全。自辩是战术说辞，不等同没有军事目的。",
+        "dynasty": "元及同时诸政权",
+        "end_year": 1354,
+        "id": "c6c6db8e-6a6d-5bb7-a723-c1ecf12d2cf1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1354,
+        "status": "published",
+        "tags": [],
+        "time_original": "《续资治通鉴》卷212；本事原载纪年折合公元1354年，具体月日依引文。",
+        "title": "朱援六合诈战解滁危"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v210_p035291",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v210_p035317",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v210_p035319",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035368",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035373",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035374",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035386",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035430",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035436",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035437",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035438",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035448",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v211_p035434",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v212_p035529",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_xztj_v212_p035531",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    }
+  ],
+  "source_locations": {
+    "0497732d-5657-5ba2-af6e-70e6f6becac5": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000350",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "4896b6b0-1c10-53fb-bf85-de4befcc121d": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000356",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "4bd1111f-c798-53fa-8fc1-7d1e98a3f73b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000347",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "4f0daaa2-2bcf-5a68-9150-a094a614a714": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000345",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "6b8f774b-8149-529f-aa6a-5470ac5d8f4f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000353",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "8d2c5fec-fc0b-5921-8cf1-4d8e6a5e4fcd": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000354",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "b35bb829-6615-5fc8-9b5b-23ea947e103f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000351",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    },
+    "e1af1c62-96cc-5882-9798-966a33568cd2": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000349",
+      "section_id": "mingshi-2f603db3d81e-s0002",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 1
+}

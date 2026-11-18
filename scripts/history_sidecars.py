@@ -68,10 +68,23 @@ def packet_text_matches_snapshot(snapshot_text, para):
     display=para['text']
     exact=snapshot_text[1:] if snapshot_text.startswith('\ufeff') else snapshot_text
     if exact_text_with_structural_edges(exact,display):return True
+    ming_annotation = (para.get('book_key') == 'mingshi' and para.get('source_version') == '2f603db3d81e'
+                       and para.get('kind') == 'annotation'
+                       and re.fullmatch(r'mingshi-2f603db3d81e-p\d{6}', para.get('id', ''))
+                       and snapshot_text.startswith('↑ ') and display.startswith('↑ '))
+    if ming_annotation:
+        # The corpus removes ASCII spaces between CJK characters in annotation display.
+        # The archive, claim quote, and database library paragraph still use exact raw bytes.
+        return cjk_space_display(snapshot_text) == display
     legacy=(para.get('book_key')=='zizhi-tongjian' and para.get('source_version')=='a63549944a71'
             and para.get('kind')=='body' and re.fullmatch(r'zizhi-tongjian-a63549944a71-p\d{6}',para.get('id','')))
     if not legacy or any(c in snapshot_text or c in display for c in ('\t','\r','\ufeff')):return False
     return snapshot_text.replace('\n◎\n',' ◎ ').replace('\n','').strip()==display
+
+
+def cjk_space_display(snapshot_text):
+    cjk='\u3400-\u9fff\uf900-\ufaff\ue000-\uf8ff\U00020000-\U0003134f'
+    return re.sub(f'(?<=[{cjk}]) +(?=[{cjk}])','',snapshot_text.strip())
 
 
 def identity_heading_reference(snapshot_text, para, claims):
@@ -87,9 +100,7 @@ def identity_heading_reference(snapshot_text, para, claims):
         return False
     if not all(c.get('subject_table')=='person' and c.get('field_path') in ('name','aliases','biography') for c in claims):
         return False
-    cjk='\u3400-\u9fff\uf900-\ufaff\ue000-\uf8ff\U00020000-\U0003134f'
-    display=re.sub(f'(?<=[{cjk}]) +(?=[{cjk}])','',snapshot_text.strip())
-    return display==para.get('text')
+    return cjk_space_display(snapshot_text)==para.get('text')
 
 
 def claim_fingerprint(claim, source_url):

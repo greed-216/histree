@@ -1,0 +1,2759 @@
+{
+  "batch_dir": "content/books/mingshi/vol-015/from-start/part-10",
+  "batch_key": "mingshi-v015-from-start-10",
+  "batch_sha256": "db73d00149101590fc7b421023e10053376b821d6b42bd72253bb30ae71471db",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p002248",
+    "mingshi-2f603db3d81e-p002253",
+    "mingshi-2f603db3d81e-p002255"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "2a1e01e4-6228-5c40-9643-9dbff3b33701",
+        "note_sha256": "373d7b1332a5179c15f4a5fb37e303a92975b9bc632f20fa4ae88bee08358436",
+        "quote_text": "十八年春正月己丑，小王子諸部圍靈州，入花馬池，遂掠韋州、環縣",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b49736f6-bbe4-5e36-ba17-1a98c178b8ae",
+        "note_sha256": "f1d0c96ff5c08ba5103788550b4387d3b780be18b9eff177ba8f2ca2d0564885",
+        "quote_text": "十八年春正月己丑，小王子諸部圍靈州，入花馬池，遂掠韋州、環縣",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "33023a74-273d-506c-a03a-e1e7ec0e16c2",
+        "note_sha256": "4bf37d4794c83d53c148c5c54b7604160e276e531ad6a36c7d5c4afdde76474b",
+        "quote_text": "戶部侍郎顧佐理陝西軍餉",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dca70986-baab-51c1-8453-27672ba7f669",
+        "note_sha256": "46ffc3b652d35abd024ca0c419133f8a2359299bb205245897f04c5307c46cb8",
+        "quote_text": "戶部侍郎顧佐理陝西軍餉",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "136767c5-45e7-50a6-9b90-768b705c1d51",
+        "note_sha256": "ac9b3081b611d05de40d456d4b3076118ff10bc9196e4b1cc1af11c895ebd2cd",
+        "quote_text": "戶部侍郎顧佐理陝西軍餉",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7a134a01-5a2e-5d6c-9199-24013ee2c848",
+        "note_sha256": "02256d47b2255855e13c3da306fb8a5cf34aebba6974171cb4ac2dd9fc3577c2",
+        "quote_text": "戶部侍郎顧佐理陝西軍餉",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dddf670f-09c6-518a-be7f-bbfebc797088",
+        "note_sha256": "869376badc21d90eb7da511d14a9a9a73feb5518c8072dad165b2f9715717725",
+        "quote_text": "乙未，大祀天地於南郊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "10920dca-0692-509b-aafd-5a3ae86c1487",
+        "note_sha256": "eb0de4dfaa26aa0f4b5b5337c81f787ba41305b871e060173ff8d712e67fced1",
+        "quote_text": "乙未，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "47a5e390-9836-5715-ba25-f9bfa2b9244a",
+        "note_sha256": "443c313c3eeee303479aea4c1c6bf8b9a4d1a8f4526f734a9c92ef53e7743126",
+        "quote_text": "乙未，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a5e19ecc-d252-5732-838d-2b049dff9442",
+        "note_sha256": "fc0838c38fcc46027c548254f7694d830c2a81bec0cb0cad9956f1187f8a2121",
+        "quote_text": "乙未，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4c2b2b4d-9d9d-51ed-b8e4-cfdf1e3ecabe",
+        "note_sha256": "85a2ae08bf1a23d1e628c581e8a4be5b51c18cda8b51ff51ba8409a4434d0c7b",
+        "quote_text": "甲辰，小王子陷寧夏清水營",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c16a3077-5587-52ac-a214-24f6f5b4afef",
+        "note_sha256": "00469feffd181c12fe4575f0c2323b01d652aee52b3609a476a97622229088e3",
+        "quote_text": "甲辰，小王子陷寧夏清水營",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9df601dd-d6b6-5f3f-86a5-a92488632a7a",
+        "note_sha256": "3f4a901c8cd47aff9dd8a6384146b14158ee6501e948e940e728952cce28015e",
+        "quote_text": "二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5a37a126-bd3c-5fba-bac3-12b9baf4ebdf",
+        "note_sha256": "95242eee88ac1c06b522dad137cedf2c4f00399ad155521622b8bcd11dc25538",
+        "quote_text": "二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9e9449ed-fca0-5445-8f58-aaa10729740b",
+        "note_sha256": "3b482b822db725f3d2c80e473256522dc1cb34a5df277511595ce3eb4f668b21",
+        "quote_text": "二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "29642b32-6de9-56e0-a8ce-2bd222841aa3",
+        "note_sha256": "1dcc6eaebb989883d48cb69ae34b56530199bcf49991c8e94f748191fc1ce229",
+        "quote_text": "三月癸卯，賜顧鼎臣等進士及第、出身有差",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dfc2ec1e-ee20-559b-a914-a8bf66cd4499",
+        "note_sha256": "7b6b081e922d79042e81ac765df113c97d64d244c334c54eb893ee71021a9d18",
+        "quote_text": "三月癸卯，賜顧鼎臣等進士及第、出身有差",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "580b103e-6827-5bb7-a75a-b9610eaea936",
+        "note_sha256": "8159d76a7f39b9191f51ccdb8ea47512fee051d08970ff536f69afacf1588439",
+        "quote_text": "三月癸卯，賜顧鼎臣等進士及第、出身有差",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6d78c5e5-99b5-59bf-aa0c-2d24a9012796",
+        "note_sha256": "6017de2717d4917cea1bf4484e9a31c7deb2921fb7597b1049c09c9dc2fada81",
+        "quote_text": "三月癸卯，賜顧鼎臣等進士及第、出身有差",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f2c066ad-ba55-5b5c-82ab-7604880a5cd5",
+        "note_sha256": "88277a5edfa7dde0cf0b9966c0e489c6d687bf7670421d6c030c1ac60ed6af99",
+        "quote_text": "夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "82c029d2-5074-5dd4-b9b8-90b17839554c",
+        "note_sha256": "9fb959978f4cd607231a42a58d3eb43f74ede304ea742e1a4b3c2741e3a9594f",
+        "quote_text": "夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e867d0cc-2fbf-512e-8ac1-193cf3751787",
+        "note_sha256": "b7113a7b1c0e863609c4e8896bddd7194f59b8847db47abaf7b912313fc8c52c",
+        "quote_text": "夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "21e1b182-a56c-5bd8-b2f8-a1276b55c5db",
+        "note_sha256": "332c3d1829e0f65db78b080a62346e056a825fb9acb71b33f97d1014d2759223",
+        "quote_text": "夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c384a62b-4bb8-5a6c-b5c2-68d94a5b7dec",
+        "note_sha256": "781914609b5e0a896ae6edc3f47950c4f6e04fa5f4b826518b3516ba7b9aeec7",
+        "quote_text": "甲申，帝不豫",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2e03042f-1b8d-509d-a3fc-165843fe3757",
+        "note_sha256": "a555223817fb7209946e90a2dadf7820275df1c9e943e7d3e9eeef34f11f8e31",
+        "quote_text": "甲申，帝不豫",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "efc0388b-cb69-5b1a-bec3-d316a4ada594",
+        "note_sha256": "bcbbe230e5ca4105dac92b804592d461dcec071aa18cbaa442eb24ca2489ec16",
+        "quote_text": "甲申，帝不豫",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1672e950-6a1f-5b45-94c0-876d4830fbb0",
+        "note_sha256": "d4bffd1b486836b7b14aacd4902d994bf46d9014170eda5bdbabc78a74490a5c",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3271186c-bf1a-5882-b95a-56c908d6acdb",
+        "note_sha256": "d4bffd1b486836b7b14aacd4902d994bf46d9014170eda5bdbabc78a74490a5c",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "278e9f95-a8e4-5447-9da7-0d5896063f31",
+        "note_sha256": "d4bffd1b486836b7b14aacd4902d994bf46d9014170eda5bdbabc78a74490a5c",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b53ef2c3-fc05-59b1-b15f-a343c928599f",
+        "note_sha256": "489602cf9ae6c1e50390184b82ac8eb3b9213018d262f4ca8673c077e68b7654",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "22f3c7f3-6985-59ea-9bdb-25c9db5705f8",
+        "note_sha256": "244b943ef6f2ce28ede9ae9ff767b47932a92b0b7d35c04570b9e4862f2ebc3e",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "70d68809-1a0b-52b1-93bb-200f1770d3f0",
+        "note_sha256": "4504b7c497c7afddd5e8d6199d275fe426f04e4846006a904489116ff442bf1a",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "85a81c93-e74b-5ce7-8cbe-55aa55da6d2d",
+        "note_sha256": "4504b7c497c7afddd5e8d6199d275fe426f04e4846006a904489116ff442bf1a",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5bf81e52-8221-5e06-9b1f-ba5adc1cacac",
+        "note_sha256": "4504b7c497c7afddd5e8d6199d275fe426f04e4846006a904489116ff442bf1a",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0086c51c-b0e6-5c35-821d-cc500d68fec1",
+        "note_sha256": "4504b7c497c7afddd5e8d6199d275fe426f04e4846006a904489116ff442bf1a",
+        "quote_text": "五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d3bfddf6-cf15-56ab-8849-d48806d544c5",
+        "note_sha256": "8b6aabeda3ccf2a7246b46d174fa0124ecf52a32489b8d6cdc31ecfe279bf1dc",
+        "quote_text": "辛卯，崩於乾清宮，年三十有六",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1f62c42f-f787-566c-8df3-2ec8ff1914e1",
+        "note_sha256": "5008aa9e59bd00f5ed169906a465e51fa6ba67d26d82cb3e95a1aafad7aba796",
+        "quote_text": "辛卯，崩於乾清宮，年三十有六",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f659c767-7fea-57da-998f-07affa6fde81",
+        "note_sha256": "1a2fb234d3657d7972ab0ad002f67ba14e733b35d6f07d6e6a1dd71e5069bd24",
+        "quote_text": "辛卯，崩於乾清宮，年三十有六",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a422600b-8aec-5c63-9d02-cb3641e21100",
+        "note_sha256": "b68b10c9431b32730eef2379125dd010e131ea38893ac554bdeac389e09d3168",
+        "quote_text": "六月庚申，上尊謚，廟號孝宗",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b4c4caee-aff8-566c-b320-e66e17b71b65",
+        "note_sha256": "eea696cd18b21ca05288c2a7dd70813178dbfba7b83282a563f5435a6a061259",
+        "quote_text": "六月庚申，上尊謚，廟號孝宗",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "86942fd7-bd24-574f-b8a4-f86d2a91069c",
+        "note_sha256": "12d993346979f9189f043790c8b02727c13c4b88d3aff34e0d5df7387b357204",
+        "quote_text": "建天，原作「達天」，誠純，原作「純誠」，據孝宗實錄改。",
+        "review_note": "此校记与卷首全称及六月上尊谥相关，原文异字保留。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "afe31a83-03fb-5879-bbb2-93f524383e1f",
+        "note_sha256": "76bfdb5c5c68455936813a8e5737fa6898c64494651706e1766b5b77b01d292e",
+        "quote_text": "六月庚申，上尊謚，廟號孝宗",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "eb4f1dde-3f4a-5e2f-a121-c9ab07e9b825",
+        "note_sha256": "babad54379461bc2cb2c3236e077310507eab8d10c969675b9109b56d68a260f",
+        "quote_text": "葬泰陵",
+        "review_note": "卷十五在六月上尊谥与庙号之后总叙葬泰陵。卷十六 p002270 另明记十月庚午葬敬皇帝于泰陵，同一次下葬按明载日校定。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6e74e841-97e2-508f-abc9-b6f9ab8003c6",
+        "note_sha256": "babad54379461bc2cb2c3236e077310507eab8d10c969675b9109b56d68a260f",
+        "quote_text": "葬泰陵",
+        "review_note": "卷十五在六月上尊谥与庙号之后总叙葬泰陵。卷十六 p002270 另明记十月庚午葬敬皇帝于泰陵，同一次下葬按明载日校定。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4123e001-4c91-5968-b071-1b27b75332e6",
+        "note_sha256": "bd694f1f96801a98f87d56086c120319d54c7d043dbb58fbe8abe83ce573f275",
+        "quote_text": "葬泰陵",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cbe8ccf7-9f26-502a-ba95-719cf9372ecf",
+        "note_sha256": "2050630e3e08820867349dc6c234e0a0309b0f687551f4ffb0c5b75ca3720bc5",
+        "quote_text": "原脫「九月」。「己酉」承上文「八月」，即成為八月己酉。按是年八月乙亥朔，不得有己酉日。孝宗實錄卷一一七繫「己酉」於九月，據補。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "996c4f70-dbc8-52b5-ab2e-120b269685d6",
+        "note_sha256": "2050630e3e08820867349dc6c234e0a0309b0f687551f4ffb0c5b75ca3720bc5",
+        "quote_text": "原脫「九月」。「己酉」承上文「八月」，即成為八月己酉。按是年八月乙亥朔，不得有己酉日。孝宗實錄卷一一七繫「己酉」於九月，據補。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5e9038bb-56e2-52ca-8994-2625a6d04f30",
+        "note_sha256": "5403b865452f4b96db0967394135830076348acee09772118566a8c88daa99ff",
+        "quote_text": "孝宗實錄卷一五一、國榷卷四四頁二七三七均繫於六月癸卯。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "681ff658-86d9-58a3-9c10-55844e780a22",
+        "note_sha256": "5403b865452f4b96db0967394135830076348acee09772118566a8c88daa99ff",
+        "quote_text": "孝宗實錄卷一五一、國榷卷四四頁二七三七均繫於六月癸卯。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b788216b-c1f2-54d9-96e7-fa68b957ef11",
+        "note_sha256": "09a1107cce9aeeafc47512d9858597c5146f67d7b86a7820e15c47ed93e7be05",
+        "quote_text": "此「九月壬午」係兵部議奏征討之日，非始事之日，參見孝宗實錄卷一五四。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "eea2be5f-0d24-550a-93cc-b7ecb540dea7",
+        "note_sha256": "09a1107cce9aeeafc47512d9858597c5146f67d7b86a7820e15c47ed93e7be05",
+        "quote_text": "此「九月壬午」係兵部議奏征討之日，非始事之日，參見孝宗實錄卷一五四。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ba620cd7-a459-55f9-a1f9-b9e5e8ec58a7",
+        "note_sha256": "e4664596e89a318136db0df633de0da176fec8158b7cfcb9b5e2aa0d4939a020",
+        "quote_text": "張俊，原作「張浚」，據本書卷一七五張俊傳、孝宗實錄卷一六二改。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8bd99025-4fb7-54fd-9970-009ffc740f26",
+        "note_sha256": "e4664596e89a318136db0df633de0da176fec8158b7cfcb9b5e2aa0d4939a020",
+        "quote_text": "張俊，原作「張浚」，據本書卷一七五張俊傳、孝宗實錄卷一六二改。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "2b91c0ee-5cdd-5fd6-947e-fa4768fd12c7",
+        "note_sha256": "bcfadce810e153129bc2a9f1d555fc19363d18946ba0de8809b9aab721cfb26e",
+        "quote_text": "秦紘，原作「秦綋」。本書卷一六武宗紀、孝宗實錄卷一七九都作「秦紘」。按本書卷一七八有秦紘傳，事跡與紀合，據改。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5484cca3-af78-51a7-9583-973ec5e43b3a",
+        "note_sha256": "bcfadce810e153129bc2a9f1d555fc19363d18946ba0de8809b9aab721cfb26e",
+        "quote_text": "秦紘，原作「秦綋」。本書卷一六武宗紀、孝宗實錄卷一七九都作「秦紘」。按本書卷一七八有秦紘傳，事跡與紀合，據改。",
+        "review_note": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "review_state": "recorded"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历弘治十八年正月己丑。DDBC历表换算所据为1505-02-16至1505-02-16，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002249的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "b49736f6-bbe4-5e36-ba17-1a98c178b8ae",
+        "claim_sha256": "2eef73b2e497897647eaa5ede2e367d87c783ddf8b7f224f8765c18c3c92f72c",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "fe05637d-1c69-51a9-af66-9ab1e8c6b65f",
+        "id": "97453b19-0eec-57fc-99b1-43ee9865e650",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年正月。DDBC历表换算所据为1505-02-14至1505-03-15，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002249的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "136767c5-45e7-50a6-9b90-768b705c1d51",
+        "claim_sha256": "12c09df81fb2957896f20cfdde8a53838c21b7ee6de73a230cf800fd0d79a5de",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "276df7a4-2fb6-5c11-bfc4-948447903155",
+        "id": "04d208df-8073-5ef4-95f4-5d0d5ca824b2",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年正月乙未。DDBC历表换算所据为1505-02-22至1505-02-22，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002249的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "47a5e390-9836-5715-ba25-f9bfa2b9244a",
+        "claim_sha256": "605dd2036210ddbbca90f0d3f1ccfd702988ba4ed3ce3565cc96ac56f8ed1e23",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "633ede7b-46c5-5c36-88e7-fc4160f40593",
+        "id": "057e2c28-e036-5952-8c5a-cc89ec3f5bc2",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年正月甲辰。DDBC历表换算所据为1505-03-03至1505-03-03，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002249的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c16a3077-5587-52ac-a214-24f6f5b4afef",
+        "claim_sha256": "268edbfe8bf6c0292661f7fbb203f3d80416f077563e0d0cd95da758fd39edfa",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "edff3cd5-fde1-5b91-9db9-11e38d89a9ae",
+        "id": "5337a1e1-8c9a-57ec-9165-2109544ded4c",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年二月戊辰。DDBC历表换算所据为1505-03-27至1505-03-27，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002250的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5a37a126-bd3c-5fba-bac3-12b9baf4ebdf",
+        "claim_sha256": "6f3d6d2fff617a7984d752668d2c7f59d088a45cc0d17b9364710a2d3b5ea321",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "baba2a34-0836-560b-86a0-2d61a55ef2ce",
+        "id": "09c99b76-e1a3-500c-8367-c32134a61c86",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年三月癸卯。DDBC历表换算所据为1505-05-01至1505-05-01，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002251的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "580b103e-6827-5bb7-a75a-b9610eaea936",
+        "claim_sha256": "61b1d22480d62be19b385c5de11d0d62eb6fc52ccb6762c8b0768610461efc7e",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "76257941-5c99-5083-9c79-e50441d36c52",
+        "id": "1b08b2e3-8ce7-5085-af28-762a2d7d25ae",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年四月戊寅。DDBC历表换算所据为1505-06-05至1505-06-05，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002252的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "e867d0cc-2fbf-512e-8ac1-193cf3751787",
+        "claim_sha256": "258cf7993b54605653773e92d1bd81cb6b0ba5e887ea960682239c30974e72a1",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "7d017e0b-6a4d-5271-b9fc-25e7bd62c381",
+        "id": "4b05d868-1660-5af6-a8ef-6e74b1d044e1",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年四月甲申。DDBC历表换算所据为1505-06-11至1505-06-11，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002252的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "2e03042f-1b8d-509d-a3fc-165843fe3757",
+        "claim_sha256": "0d6c2cdef9a916760fe119c45dfda0912dbed462213eba28675c899f7d1accad",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "9b7639df-1401-51dd-b7ac-ed5e6ebe5323",
+        "id": "93a578af-46eb-548b-8067-8a2f2d877109",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年五月庚寅。DDBC历表换算所据为1505-06-17至1505-06-17，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002252的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "22f3c7f3-6985-59ea-9bdb-25c9db5705f8",
+        "claim_sha256": "70e61b3ecaecf760f638b5ae162c3e1eeb8f7360b67ddd17d2b4dbe84473e6cc",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "cb3d35d1-0586-5fb7-9100-8ee2b084ab6b",
+        "id": "9ea6336f-0ab4-5033-8b75-d1f56700b815",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年五月辛卯。DDBC历表换算所据为1505-06-18至1505-06-18，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002252的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1f62c42f-f787-566c-8df3-2ec8ff1914e1",
+        "claim_sha256": "c9bf7dc787d7ffc96ac6d5f996bc003875e7b274cadeb29ec944326d3e3a28f9",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "ea3b5bf0-30bb-5cde-8da9-0549fbcd2a17",
+        "id": "808b004f-b773-5d8b-8622-ce12c66d0a86",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年六月庚申。DDBC历表换算所据为1505-07-17至1505-07-17，据此核对公元发生年份。 卷十五mingshi-2f603db3d81e-p002252的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "b4c4caee-aff8-566c-b320-e66e17b71b65",
+        "claim_sha256": "0bd502a78b0419accfe5099e3f907d067e924b6c174e2d4c521e273a25d1b97c",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "611bed42-3bca-5794-a9fd-8dee20aceeca",
+        "id": "a1f39806-2630-51c7-b9f6-33313c927424",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历弘治十八年十月庚午。DDBC历表换算所据为1505-11-24至1505-11-24，据此核对公元发生年份。 卷十五在六月上尊谥与庙号之后总叙葬泰陵。卷十六 p002270 另明记十月庚午葬敬皇帝于泰陵，同一次下葬按明载日校定。 卷十五mingshi-2f603db3d81e-p002252的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "6e74e841-97e2-508f-abc9-b6f9ab8003c6",
+        "claim_sha256": "0e2343045ddb079dc1b167db1e14298de4f30c70c2755eaa166e14e4ec8a104c",
+        "earliest_year": 1505,
+        "era_key": null,
+        "event_id": "884f0455-3195-5e94-b98d-f3e282546966",
+        "id": "424505b8-9a9c-5498-8b13-0f0f6bd2f2e9",
+        "latest_year": 1505,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "6334828bea0e9474ced740109c696de98de3b15c0ac4341367e29ff65c7fae1f",
+        "paragraph_id": "mingshi-2f603db3d81e-p002249",
+        "snapshot_sha256": "085c07e9ec5e1b789da424d076546ad765832214100fe987d61f7cd2eaa51408",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d"
+      },
+      {
+        "archive_url_sha256": "5c617cd244e8f34003be5efb69eb755fdcb3fa58cb09309b34475a645933971e",
+        "paragraph_id": "mingshi-2f603db3d81e-p002250",
+        "snapshot_sha256": "7ced9e7849962efe54beff2e3a0793ca6832d8435cf0a2e586dbb18de7355a16",
+        "source_id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3"
+      },
+      {
+        "archive_url_sha256": "c1939686675b420119eb9ad6747e825fedeacccb2d2de9585f1a016ba0943c3c",
+        "paragraph_id": "mingshi-2f603db3d81e-p002251",
+        "snapshot_sha256": "a670c4ba63b08ee5bd231b78c5dafbe5d82f449374958e3e671977ff5d9c4a43",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073"
+      },
+      {
+        "archive_url_sha256": "bea9417fe390f3636486b553d20e01670bcd7ab21f5e1a17ec1127afc8a88e2d",
+        "paragraph_id": "mingshi-2f603db3d81e-p002252",
+        "snapshot_sha256": "08c909e99b0f052c4eed10c1f2c47adea9343546785a2dfcbd787fe43eb7224a",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46"
+      },
+      {
+        "archive_url_sha256": "3a87d9b6266cb6677eca38084f5f5b9551fba707a922341e49da566f12afff33",
+        "paragraph_id": "mingshi-2f603db3d81e-p002256",
+        "snapshot_sha256": "3804220fdb145a7b97f49f615a02f532bf1b4b56a0fde03f69f6dc651746d7be",
+        "source_id": "b6e46e19-64de-5145-a791-3a547e3b42c5"
+      },
+      {
+        "archive_url_sha256": "32c662ecb061ff806b4c94b38ae08da559e80badb70c60317eb79c8a431d21ff",
+        "paragraph_id": "mingshi-2f603db3d81e-p002257",
+        "snapshot_sha256": "0dd7367f079ad609660aabfd856056f99fa2c39657e30ca8545a27067284c6d7",
+        "source_id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e"
+      },
+      {
+        "archive_url_sha256": "c9b707486e0c7c887037643ed9c69a8e67c8c62d89760e06a33ae1601a70eeb1",
+        "paragraph_id": "mingshi-2f603db3d81e-p002258",
+        "snapshot_sha256": "a92e79136bca62349fbd48ab22102505828635d7814c136d4fbb4433ff228f0b",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191"
+      },
+      {
+        "archive_url_sha256": "c60d12b372b28989e1038eaa72857cefeae4d77c1ec50dcc6e54287d0fbda864",
+        "paragraph_id": "mingshi-2f603db3d81e-p002259",
+        "snapshot_sha256": "4b151519684091febd08a83a36e17bcd8c715d1d29bc1f68e68d1ceaa247020e",
+        "source_id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293"
+      },
+      {
+        "archive_url_sha256": "636ff9f5e3b756b2d12151753c6788cdffb2e298ebf352953b67d2cb7c97b085",
+        "paragraph_id": "mingshi-2f603db3d81e-p002260",
+        "snapshot_sha256": "5066a36f89edad8cdaceb6cd702a18cd78d3ea674cf465d509194dd43ce06c07",
+        "source_id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-015/from-start/part-10/content-batch.json": "db73d00149101590fc7b421023e10053376b821d6b42bd72253bb30ae71471db",
+    "content/books/mingshi/vol-015/from-start/part-10/curation.json": "b8fe5111d033e2056e6715396bc75a377c659f5f5d06cda1193443ba0e8aae92",
+    "content/books/mingshi/vol-015/from-start/part-10/packet.json": "b5ae75ce56a08ebf5279b7ffaca8535798f52ee25c424c3ef3086055c63d23b9",
+    "content/books/mingshi/vol-015/from-start/part-10/publication-mysql.json": "0cb8e5c631ccfbcb0fcea47e82e3923be575b28bc31f0c7af3610cbb3ea7b0c1",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/manifest.json": "5e4be06c3307ae3e2d20b7c2837cbc8e23dd7e21a82c35953158cbf79e88dc44",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002248/source.txt": "b295eb159571483598ed2b6144af7db12d6c202dd70eb54c885e8186ef32afde",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002249/source.txt": "085c07e9ec5e1b789da424d076546ad765832214100fe987d61f7cd2eaa51408",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002250/source.txt": "7ced9e7849962efe54beff2e3a0793ca6832d8435cf0a2e586dbb18de7355a16",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002251/source.txt": "a670c4ba63b08ee5bd231b78c5dafbe5d82f449374958e3e671977ff5d9c4a43",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002252/source.txt": "08c909e99b0f052c4eed10c1f2c47adea9343546785a2dfcbd787fe43eb7224a",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002253/source.txt": "b12d347771978cc825841dd9ecd1df2b57f427ecd6d8d42f5274f68273852754",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002254/source.txt": "8ddfa925ec097f1576f1bfc8ea97af751b3bfabc28d33576bff75a38b373c346",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002255/source.txt": "4b61221599d66126ed56ba05a2f0011e029fc3bd80c413e163d89d2d67796dee",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002256/source.txt": "3804220fdb145a7b97f49f615a02f532bf1b4b56a0fde03f69f6dc651746d7be",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002257/source.txt": "0dd7367f079ad609660aabfd856056f99fa2c39657e30ca8545a27067284c6d7",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002258/source.txt": "a92e79136bca62349fbd48ab22102505828635d7814c136d4fbb4433ff228f0b",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002259/source.txt": "4b151519684091febd08a83a36e17bcd8c715d1d29bc1f68e68d1ceaa247020e",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002260/source.txt": "5066a36f89edad8cdaceb6cd702a18cd78d3ea674cf465d509194dd43ce06c07",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002261/source.txt": "12df0e7493c1c6c6034414ee664ae3ab9c5046017c0ce77ad0a5528db9e86dc1",
+    "content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002262/source.txt": "2c8b97b7815348615769bff45a621c9791e913c148ad24d3df40a2ce65076965",
+    "content/books/mingshi/vol-015/from-start/part-10/sql/key-map.json": "8fc63472bf6fabb52983489f598de9b6c8c9512f42a62d73f08b5aa0c603d32f",
+    "content/books/mingshi/vol-015/from-start/part-10/time-review.json": "8e1ae428a68a2da617123536c9eb2487593a6f4101e3878dd0544a44103ebd9a"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "2a1e01e4-6228-5c40-9643-9dbff3b33701"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月己丑",
+        "claim_text": "弘治十八年正月己丑，本纪记小王子诸部包围灵州，进入花马池，随后劫掠韦州、环县。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:15.996336+00:00",
+        "field_path": "description",
+        "id": "2a1e01e4-6228-5c40-9643-9dbff3b33701",
+        "note": "原文：十八年春正月己丑，小王子諸部圍靈州，入花馬池，遂掠韋州、環縣；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "fe05637d-1c69-51a9-af66-9ab1e8c6b65f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b49736f6-bbe4-5e36-ba17-1a98c178b8ae"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月己丑",
+        "claim_text": "原历弘治十八年正月己丑。DDBC历表换算所据为1505-02-16至1505-02-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.046531+00:00",
+        "field_path": "time_original",
+        "id": "b49736f6-bbe4-5e36-ba17-1a98c178b8ae",
+        "note": "原文：十八年春正月己丑，小王子諸部圍靈州，入花馬池，遂掠韋州、環縣；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "fe05637d-1c69-51a9-af66-9ab1e8c6b65f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "33023a74-273d-506c-a03a-e1e7ec0e16c2"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月",
+        "claim_text": "顾佐奉命办理陕西军饷。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.088260+00:00",
+        "field_path": "description",
+        "id": "33023a74-273d-506c-a03a-e1e7ec0e16c2",
+        "note": "原文：戶部侍郎顧佐理陝西軍餉；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "293d8ef9-f599-5601-99f0-2fe16d09b135",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dca70986-baab-51c1-8453-27672ba7f669"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月",
+        "claim_text": "弘治十八年正月，户部侍郎顾佐负责办理陕西军饷。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.124328+00:00",
+        "field_path": "description",
+        "id": "dca70986-baab-51c1-8453-27672ba7f669",
+        "note": "原文：戶部侍郎顧佐理陝西軍餉；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "276df7a4-2fb6-5c11-bfc4-948447903155",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "136767c5-45e7-50a6-9b90-768b705c1d51"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月",
+        "claim_text": "原历弘治十八年正月。DDBC历表换算所据为1505-02-14至1505-03-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.160298+00:00",
+        "field_path": "time_original",
+        "id": "136767c5-45e7-50a6-9b90-768b705c1d51",
+        "note": "原文：戶部侍郎顧佐理陝西軍餉；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "276df7a4-2fb6-5c11-bfc4-948447903155",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7a134a01-5a2e-5d6c-9199-24013ee2c848"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月",
+        "claim_text": "奉命办理陕西军饷",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.211950+00:00",
+        "field_path": "role",
+        "id": "7a134a01-5a2e-5d6c-9199-24013ee2c848",
+        "note": "原文：戶部侍郎顧佐理陝西軍餉；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "d1af4b66-cfad-532d-89bb-0ffa074db06c",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dddf670f-09c6-518a-be7f-bbfebc797088"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月乙未",
+        "claim_text": "朱祐樘主持祭祀。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.258041+00:00",
+        "field_path": "description",
+        "id": "dddf670f-09c6-518a-be7f-bbfebc797088",
+        "note": "原文：乙未，大祀天地於南郊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "5a2e2245-487a-5385-9b7e-8cb6b9a40df1",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "10920dca-0692-509b-aafd-5a3ae86c1487"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月乙未",
+        "claim_text": "弘治十八年正月乙未，明孝宗朱祐樘在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.297949+00:00",
+        "field_path": "description",
+        "id": "10920dca-0692-509b-aafd-5a3ae86c1487",
+        "note": "原文：乙未，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "633ede7b-46c5-5c36-88e7-fc4160f40593",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "47a5e390-9836-5715-ba25-f9bfa2b9244a"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月乙未",
+        "claim_text": "原历弘治十八年正月乙未。DDBC历表换算所据为1505-02-22至1505-02-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.338192+00:00",
+        "field_path": "time_original",
+        "id": "47a5e390-9836-5715-ba25-f9bfa2b9244a",
+        "note": "原文：乙未，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "633ede7b-46c5-5c36-88e7-fc4160f40593",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a5e19ecc-d252-5732-838d-2b049dff9442"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月乙未",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.398527+00:00",
+        "field_path": "role",
+        "id": "a5e19ecc-d252-5732-838d-2b049dff9442",
+        "note": "原文：乙未，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "94925489-ca83-5e58-bba0-455994f2c66a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4c2b2b4d-9d9d-51ed-b8e4-cfdf1e3ecabe"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月甲辰",
+        "claim_text": "弘治十八年正月甲辰，本纪记小王子所部攻陷宁夏清水营。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.444294+00:00",
+        "field_path": "description",
+        "id": "4c2b2b4d-9d9d-51ed-b8e4-cfdf1e3ecabe",
+        "note": "原文：甲辰，小王子陷寧夏清水營；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "edff3cd5-fde1-5b91-9db9-11e38d89a9ae",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c16a3077-5587-52ac-a214-24f6f5b4afef"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249；弘治十八年正月甲辰",
+        "claim_text": "原历弘治十八年正月甲辰。DDBC历表换算所据为1505-03-03至1505-03-03，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.485218+00:00",
+        "field_path": "time_original",
+        "id": "c16a3077-5587-52ac-a214-24f6f5b4afef",
+        "note": "原文：甲辰，小王子陷寧夏清水營；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "status": "published",
+        "subject_id": "edff3cd5-fde1-5b91-9db9-11e38d89a9ae",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9df601dd-d6b6-5f3f-86a5-a92488632a7a"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002250；弘治十八年二月戊辰",
+        "claim_text": "弘治十八年二月戊辰，明孝宗在奉天门告谕户部、兵部和工部。他指出人口渐增，登记户口和军伍却不断减损，认为是有关官员抚恤失当、长期敷衍所致，命三部商议弊政并上报。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.524269+00:00",
+        "field_path": "description",
+        "id": "9df601dd-d6b6-5f3f-86a5-a92488632a7a",
+        "note": "原文：二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3",
+        "status": "published",
+        "subject_id": "baba2a34-0836-560b-86a0-2d61a55ef2ce",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5a37a126-bd3c-5fba-bac3-12b9baf4ebdf"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002250；弘治十八年二月戊辰",
+        "claim_text": "原历弘治十八年二月戊辰。DDBC历表换算所据为1505-03-27至1505-03-27，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.568338+00:00",
+        "field_path": "time_original",
+        "id": "5a37a126-bd3c-5fba-bac3-12b9baf4ebdf",
+        "note": "原文：二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3",
+        "status": "published",
+        "subject_id": "baba2a34-0836-560b-86a0-2d61a55ef2ce",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9e9449ed-fca0-5445-8f58-aaa10729740b"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002250；弘治十八年二月戊辰",
+        "claim_text": "告谕户、兵、工三部议查弊政",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:16.741468+00:00",
+        "field_path": "role",
+        "id": "9e9449ed-fca0-5445-8f58-aaa10729740b",
+        "note": "原文：二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3",
+        "status": "published",
+        "subject_id": "a3f75d05-2662-5af1-8e0b-2922af969ce8",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "29642b32-6de9-56e0-a8ce-2bd222841aa3"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002251；弘治十八年三月癸卯",
+        "claim_text": "顾鼎臣获赐进士及第。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:17.733014+00:00",
+        "field_path": "description",
+        "id": "29642b32-6de9-56e0-a8ce-2bd222841aa3",
+        "note": "原文：三月癸卯，賜顧鼎臣等進士及第、出身有差；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073",
+        "status": "published",
+        "subject_id": "1e0daaf5-16df-51a3-a9a8-e0a70458ad62",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dfc2ec1e-ee20-559b-a914-a8bf66cd4499"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002251；弘治十八年三月癸卯",
+        "claim_text": "弘治十八年三月癸卯，朝廷赐顾鼎臣等人进士及第或进士出身，名次、等第各有差别。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:17.793277+00:00",
+        "field_path": "description",
+        "id": "dfc2ec1e-ee20-559b-a914-a8bf66cd4499",
+        "note": "原文：三月癸卯，賜顧鼎臣等進士及第、出身有差；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073",
+        "status": "published",
+        "subject_id": "76257941-5c99-5083-9c79-e50441d36c52",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "580b103e-6827-5bb7-a75a-b9610eaea936"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002251；弘治十八年三月癸卯",
+        "claim_text": "原历弘治十八年三月癸卯。DDBC历表换算所据为1505-05-01至1505-05-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:17.844001+00:00",
+        "field_path": "time_original",
+        "id": "580b103e-6827-5bb7-a75a-b9610eaea936",
+        "note": "原文：三月癸卯，賜顧鼎臣等進士及第、出身有差；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073",
+        "status": "published",
+        "subject_id": "76257941-5c99-5083-9c79-e50441d36c52",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6d78c5e5-99b5-59bf-aa0c-2d24a9012796"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002251；弘治十八年三月癸卯",
+        "claim_text": "获赐进士及第",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:17.885221+00:00",
+        "field_path": "role",
+        "id": "6d78c5e5-99b5-59bf-aa0c-2d24a9012796",
+        "note": "原文：三月癸卯，賜顧鼎臣等進士及第、出身有差；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073",
+        "status": "published",
+        "subject_id": "f693f235-a239-5399-9371-78711e26b80e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f2c066ad-ba55-5b5c-82ab-7604880a5cd5"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月戊寅",
+        "claim_text": "何鉴奉命安抚和安置荆襄流民。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:17.925145+00:00",
+        "field_path": "description",
+        "id": "f2c066ad-ba55-5b5c-82ab-7604880a5cd5",
+        "note": "原文：夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "2e1f6a99-5988-5ba1-a921-a39e0959ae3e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "82c029d2-5074-5dd4-b9b8-90b17839554c"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月戊寅",
+        "claim_text": "弘治十八年四月戊寅，朝廷命刑部侍郎何鉴安抚和安置荆州、襄阳一带的流民。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:17.969943+00:00",
+        "field_path": "description",
+        "id": "82c029d2-5074-5dd4-b9b8-90b17839554c",
+        "note": "原文：夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "7d017e0b-6a4d-5271-b9fc-25e7bd62c381",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e867d0cc-2fbf-512e-8ac1-193cf3751787"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月戊寅",
+        "claim_text": "原历弘治十八年四月戊寅。DDBC历表换算所据为1505-06-05至1505-06-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.023143+00:00",
+        "field_path": "time_original",
+        "id": "e867d0cc-2fbf-512e-8ac1-193cf3751787",
+        "note": "原文：夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "7d017e0b-6a4d-5271-b9fc-25e7bd62c381",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "21e1b182-a56c-5bd8-b2f8-a1276b55c5db"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月戊寅",
+        "claim_text": "奉命安抚和安置荆襄流民",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.064929+00:00",
+        "field_path": "role",
+        "id": "21e1b182-a56c-5bd8-b2f8-a1276b55c5db",
+        "note": "原文：夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "fec39242-2654-5cc7-832a-8f59d30b7fe9",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c384a62b-4bb8-5a6c-b5c2-68d94a5b7dec"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月甲申",
+        "claim_text": "弘治十八年四月甲申，明孝宗朱祐樘身体不适。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.115070+00:00",
+        "field_path": "description",
+        "id": "c384a62b-4bb8-5a6c-b5c2-68d94a5b7dec",
+        "note": "原文：甲申，帝不豫；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "9b7639df-1401-51dd-b7ac-ed5e6ebe5323",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2e03042f-1b8d-509d-a3fc-165843fe3757"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月甲申",
+        "claim_text": "原历弘治十八年四月甲申。DDBC历表换算所据为1505-06-11至1505-06-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.163078+00:00",
+        "field_path": "time_original",
+        "id": "2e03042f-1b8d-509d-a3fc-165843fe3757",
+        "note": "原文：甲申，帝不豫；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "9b7639df-1401-51dd-b7ac-ed5e6ebe5323",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "efc0388b-cb69-5b1a-bec3-d316a4ada594"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年四月甲申",
+        "claim_text": "身体不适",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.200281+00:00",
+        "field_path": "role",
+        "id": "efc0388b-cb69-5b1a-bec3-d316a4ada594",
+        "note": "原文：甲申，帝不豫；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "09705e67-cc03-5701-a0ae-37c2a1954e13",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1672e950-6a1f-5b45-94c0-876d4830fbb0"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "刘健奉召接受顾命。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.244378+00:00",
+        "field_path": "description",
+        "id": "1672e950-6a1f-5b45-94c0-876d4830fbb0",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "bf18ae60-9d7b-5b10-86c8-a485942a6e93",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3271186c-bf1a-5882-b95a-56c908d6acdb"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "李东阳奉召接受顾命。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.277240+00:00",
+        "field_path": "description",
+        "id": "3271186c-bf1a-5882-b95a-56c908d6acdb",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "5fa4791e-375c-5f59-9425-4f1d90728c20",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "278e9f95-a8e4-5447-9da7-0d5896063f31"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "谢迁奉召接受顾命。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.315151+00:00",
+        "field_path": "description",
+        "id": "278e9f95-a8e4-5447-9da7-0d5896063f31",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "b39b8e4b-3afe-5596-9914-4c5fc2458ee7",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b53ef2c3-fc05-59b1-b15f-a343c928599f"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "弘治十八年五月庚寅，明孝宗病情危重，召大学士刘健、李东阳和谢迁接受临终嘱托。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.354005+00:00",
+        "field_path": "description",
+        "id": "b53ef2c3-fc05-59b1-b15f-a343c928599f",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "cb3d35d1-0586-5fb7-9100-8ee2b084ab6b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "22f3c7f3-6985-59ea-9bdb-25c9db5705f8"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "原历弘治十八年五月庚寅。DDBC历表换算所据为1505-06-17至1505-06-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.389059+00:00",
+        "field_path": "time_original",
+        "id": "22f3c7f3-6985-59ea-9bdb-25c9db5705f8",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "cb3d35d1-0586-5fb7-9100-8ee2b084ab6b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "70d68809-1a0b-52b1-93bb-200f1770d3f0"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "病重时向三位大学士下顾命",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.427439+00:00",
+        "field_path": "role",
+        "id": "70d68809-1a0b-52b1-93bb-200f1770d3f0",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "7d56e47b-b9ae-5e09-8103-d95fe82cc4dd",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "85a81c93-e74b-5ce7-8cbe-55aa55da6d2d"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "奉召接受顾命",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.465151+00:00",
+        "field_path": "role",
+        "id": "85a81c93-e74b-5ce7-8cbe-55aa55da6d2d",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "8b3630f8-bb24-554a-8c71-739a66968b4a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5bf81e52-8221-5e06-9b1f-ba5adc1cacac"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "奉召接受顾命",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.523127+00:00",
+        "field_path": "role",
+        "id": "5bf81e52-8221-5e06-9b1f-ba5adc1cacac",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "62e89dab-cd17-5937-9f04-1bbdafcf05f8",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0086c51c-b0e6-5c35-821d-cc500d68fec1"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月庚寅",
+        "claim_text": "奉召接受顾命",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.565265+00:00",
+        "field_path": "role",
+        "id": "0086c51c-b0e6-5c35-821d-cc500d68fec1",
+        "note": "原文：五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "fbd08500-006c-5df3-b89f-5545e99bf275",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d3bfddf6-cf15-56ab-8849-d48806d544c5"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月辛卯",
+        "claim_text": "弘治十八年五月辛卯，明孝宗朱祐樘在乾清宫去世。《明史》记享年三十六。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.615066+00:00",
+        "field_path": "description",
+        "id": "d3bfddf6-cf15-56ab-8849-d48806d544c5",
+        "note": "原文：辛卯，崩於乾清宮，年三十有六；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "ea3b5bf0-30bb-5cde-8da9-0549fbcd2a17",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1f62c42f-f787-566c-8df3-2ec8ff1914e1"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月辛卯",
+        "claim_text": "原历弘治十八年五月辛卯。DDBC历表换算所据为1505-06-18至1505-06-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.655302+00:00",
+        "field_path": "time_original",
+        "id": "1f62c42f-f787-566c-8df3-2ec8ff1914e1",
+        "note": "原文：辛卯，崩於乾清宮，年三十有六；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "ea3b5bf0-30bb-5cde-8da9-0549fbcd2a17",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f659c767-7fea-57da-998f-07affa6fde81"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年五月辛卯",
+        "claim_text": "在乾清宫去世",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.700355+00:00",
+        "field_path": "role",
+        "id": "f659c767-7fea-57da-998f-07affa6fde81",
+        "note": "原文：辛卯，崩於乾清宮，年三十有六；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "e012c4bb-202e-5dca-bd58-80b2b2da19a9",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a422600b-8aec-5c63-9d02-cb3641e21100"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年六月庚申",
+        "claim_text": "弘治十八年六月庚申，朝廷给去世的朱祐樘上尊谥，庙号孝宗。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.739373+00:00",
+        "field_path": "description",
+        "id": "a422600b-8aec-5c63-9d02-cb3641e21100",
+        "note": "原文：六月庚申，上尊謚，廟號孝宗；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "611bed42-3bca-5794-a9fd-8dee20aceeca",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b4c4caee-aff8-566c-b320-e66e17b71b65"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年六月庚申",
+        "claim_text": "原历弘治十八年六月庚申。DDBC历表换算所据为1505-07-17至1505-07-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.779096+00:00",
+        "field_path": "time_original",
+        "id": "b4c4caee-aff8-566c-b320-e66e17b71b65",
+        "note": "原文：六月庚申，上尊謚，廟號孝宗；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "611bed42-3bca-5794-a9fd-8dee20aceeca",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "86942fd7-bd24-574f-b8a4-f86d2a91069c"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002256；弘治十八年六月庚申上尊谥（校记释字）",
+        "claim_text": "卷末校记指出，孝宗尊谥中的建天旧作达天、诚纯旧作纯诚，均据《孝宗实录》校正。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.819337+00:00",
+        "field_path": "description",
+        "id": "86942fd7-bd24-574f-b8a4-f86d2a91069c",
+        "note": "原文：建天，原作「達天」，誠純，原作「純誠」，據孝宗實錄改。；核对说明：此校记与卷首全称及六月上尊谥相关，原文异字保留。",
+        "source_id": "b6e46e19-64de-5145-a791-3a547e3b42c5",
+        "status": "published",
+        "subject_id": "611bed42-3bca-5794-a9fd-8dee20aceeca",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "afe31a83-03fb-5879-bbb2-93f524383e1f"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年六月庚申",
+        "claim_text": "获上尊谥和庙号",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.857262+00:00",
+        "field_path": "role",
+        "id": "afe31a83-03fb-5879-bbb2-93f524383e1f",
+        "note": "原文：六月庚申，上尊謚，廟號孝宗；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "8df1d7a2-d053-5631-b7f9-67ce37d42734",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "eb4f1dde-3f4a-5e2f-a121-c9ab07e9b825"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年十月庚午",
+        "claim_text": "弘治十八年十月庚午，明廷将明孝宗朱祐樘葬于泰陵。本卷记陵名，卷十六明确记下葬日期。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.894248+00:00",
+        "field_path": "description",
+        "id": "eb4f1dde-3f4a-5e2f-a121-c9ab07e9b825",
+        "note": "原文：葬泰陵；核对说明：卷十五在六月上尊谥与庙号之后总叙葬泰陵。卷十六 p002270 另明记十月庚午葬敬皇帝于泰陵，同一次下葬按明载日校定。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "884f0455-3195-5e94-b98d-f3e282546966",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6e74e841-97e2-508f-abc9-b6f9ab8003c6"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年十月庚午",
+        "claim_text": "原历弘治十八年十月庚午。DDBC历表换算所据为1505-11-24至1505-11-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.929290+00:00",
+        "field_path": "time_original",
+        "id": "6e74e841-97e2-508f-abc9-b6f9ab8003c6",
+        "note": "原文：葬泰陵；核对说明：卷十五在六月上尊谥与庙号之后总叙葬泰陵。卷十六 p002270 另明记十月庚午葬敬皇帝于泰陵，同一次下葬按明载日校定。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "884f0455-3195-5e94-b98d-f3e282546966",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4123e001-4c91-5968-b071-1b27b75332e6"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252；弘治十八年十月庚午",
+        "claim_text": "去世后安葬于泰陵",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:18.972378+00:00",
+        "field_path": "role",
+        "id": "4123e001-4c91-5968-b071-1b27b75332e6",
+        "note": "原文：葬泰陵；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "status": "published",
+        "subject_id": "f55befc6-ea1e-5c72-a6d2-2a649cce0738",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cbe8ccf7-9f26-502a-ba95-719cf9372ecf"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002257；卷末校记，沿正文所定日期",
+        "claim_text": "禁势家侵夺民利条原脱九月。历表和《孝宗实录》支持九月己酉，正文已补。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.027341+00:00",
+        "field_path": "description",
+        "id": "cbe8ccf7-9f26-502a-ba95-719cf9372ecf",
+        "note": "原文：原脫「九月」。「己酉」承上文「八月」，即成為八月己酉。按是年八月乙亥朔，不得有己酉日。孝宗實錄卷一一七繫「己酉」於九月，據補。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e",
+        "status": "published",
+        "subject_id": "d7be271f-6640-5caa-b314-692fd8838b42",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "996c4f70-dbc8-52b5-ab2e-120b269685d6"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002257；卷末校记，沿正文所定日期",
+        "claim_text": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.065209+00:00",
+        "field_path": "time_original",
+        "id": "996c4f70-dbc8-52b5-ab2e-120b269685d6",
+        "note": "原文：原脫「九月」。「己酉」承上文「八月」，即成為八月己酉。按是年八月乙亥朔，不得有己酉日。孝宗實錄卷一一七繫「己酉」於九月，據補。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e",
+        "status": "published",
+        "subject_id": "d7be271f-6640-5caa-b314-692fd8838b42",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5e9038bb-56e2-52ca-8994-2625a6d04f30"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002258；卷末校记，沿正文所定日期",
+        "claim_text": "卷末校记引《孝宗实录》《国榷》，米鲁起事的一处明确日期系于弘治十二年六月癸卯。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.107123+00:00",
+        "field_path": "description",
+        "id": "5e9038bb-56e2-52ca-8994-2625a6d04f30",
+        "note": "原文：孝宗實錄卷一五一、國榷卷四四頁二七三七均繫於六月癸卯。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191",
+        "status": "published",
+        "subject_id": "ad2fbead-7c0a-5d85-a3bb-3d6ea1762361",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "681ff658-86d9-58a3-9c10-55844e780a22"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002258；卷末校记，沿正文所定日期",
+        "claim_text": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.147367+00:00",
+        "field_path": "time_original",
+        "id": "681ff658-86d9-58a3-9c10-55844e780a22",
+        "note": "原文：孝宗實錄卷一五一、國榷卷四四頁二七三七均繫於六月癸卯。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191",
+        "status": "published",
+        "subject_id": "ad2fbead-7c0a-5d85-a3bb-3d6ea1762361",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b788216b-c1f2-54d9-96e7-fa68b957ef11"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002258；卷末校记，沿正文所定日期",
+        "claim_text": "卷末校记指出九月壬午是兵部议奏征讨之日，另与六月记载的起事分录。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.187161+00:00",
+        "field_path": "description",
+        "id": "b788216b-c1f2-54d9-96e7-fa68b957ef11",
+        "note": "原文：此「九月壬午」係兵部議奏征討之日，非始事之日，參見孝宗實錄卷一五四。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191",
+        "status": "published",
+        "subject_id": "cbed1ab3-e447-5b1f-ac29-6314955b9d4d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "eea2be5f-0d24-550a-93cc-b7ecb540dea7"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002258；卷末校记，沿正文所定日期",
+        "claim_text": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.219914+00:00",
+        "field_path": "time_original",
+        "id": "eea2be5f-0d24-550a-93cc-b7ecb540dea7",
+        "note": "原文：此「九月壬午」係兵部議奏征討之日，非始事之日，參見孝宗實錄卷一五四。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191",
+        "status": "published",
+        "subject_id": "cbed1ab3-e447-5b1f-ac29-6314955b9d4d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ba620cd7-a459-55f9-a1f9-b9e5e8ec58a7"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002259；卷末校记，沿正文所定日期",
+        "claim_text": "大同左卫战事所涉游击将军为张俊。原作张浚，校记据列传和实录改正。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.267261+00:00",
+        "field_path": "description",
+        "id": "ba620cd7-a459-55f9-a1f9-b9e5e8ec58a7",
+        "note": "原文：張俊，原作「張浚」，據本書卷一七五張俊傳、孝宗實錄卷一六二改。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293",
+        "status": "published",
+        "subject_id": "dd32e621-5446-5702-b18d-8ad591ddf93a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8bd99025-4fb7-54fd-9970-009ffc740f26"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002259；卷末校记，沿正文所定日期",
+        "claim_text": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.307470+00:00",
+        "field_path": "time_original",
+        "id": "8bd99025-4fb7-54fd-9970-009ffc740f26",
+        "note": "原文：張俊，原作「張浚」，據本書卷一七五張俊傳、孝宗實錄卷一六二改。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293",
+        "status": "published",
+        "subject_id": "dd32e621-5446-5702-b18d-8ad591ddf93a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2b91c0ee-5cdd-5fd6-947e-fa4768fd12c7"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002260；卷末校记，沿正文所定日期",
+        "claim_text": "卷末校记据卷十六、《孝宗实录》及秦纮列传，将秦綋校为秦纮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.347034+00:00",
+        "field_path": "description",
+        "id": "2b91c0ee-5cdd-5fd6-947e-fa4768fd12c7",
+        "note": "原文：秦紘，原作「秦綋」。本書卷一六武宗紀、孝宗實錄卷一七九都作「秦紘」。按本書卷一七八有秦紘傳，事跡與紀合，據改。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9",
+        "status": "published",
+        "subject_id": "6c6536ba-dea0-55e9-8dc1-67821908c438",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5484cca3-af78-51a7-9583-973ec5e43b3a"
+      },
+      "row": {
+        "citation": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002260；卷末校记，沿正文所定日期",
+        "claim_text": "校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:44:19.387211+00:00",
+        "field_path": "time_original",
+        "id": "5484cca3-af78-51a7-9583-973ec5e43b3a",
+        "note": "原文：秦紘，原作「秦綋」。本書卷一六武宗紀、孝宗實錄卷一七九都作「秦紘」。按本書卷一七八有秦紘傳，事跡與紀合，據改。；核对说明：校勘对象与主体、事件内容及前段日期相合，补挂校记原文。",
+        "source_id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9",
+        "status": "published",
+        "subject_id": "6c6536ba-dea0-55e9-8dc1-67821908c438",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:10.971092+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002249",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002249",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002249/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "6334828bea0e9474ced740109c696de98de3b15c0ac4341367e29ff65c7fae1f",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d"
+      },
+      "row": {
+        "archive_blob_sha256": "085c07e9ec5e1b789da424d076546ad765832214100fe987d61f7cd2eaa51408",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002249/source.txt",
+        "archive_url_sha256": "6334828bea0e9474ced740109c696de98de3b15c0ac4341367e29ff65c7fae1f",
+        "content": "十八年春正月己丑，小王子諸部圍靈州，入花馬池，遂掠韋州、環縣。戶部侍郎顧佐理陝西軍餉。乙未，大祀天地於南郊。甲辰，小王子陷寧夏清水營。",
+        "content_sha256": "085c07e9ec5e1b789da424d076546ad765832214100fe987d61f7cd2eaa51408",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "2066a7cd-e22c-55ae-bfb2-12d0d064146d"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002249"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 96654,
+        "char_start": 96587,
+        "content": "十八年春正月己丑，小王子諸部圍靈州，入花馬池，遂掠韋州、環縣。戶部侍郎顧佐理陝西軍餉。乙未，大祀天地於南郊。甲辰，小王子陷寧夏清水營。",
+        "content_sha256": "085c07e9ec5e1b789da424d076546ad765832214100fe987d61f7cd2eaa51408",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002249",
+        "kind": "body",
+        "ordinal": 2232,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.018641+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002250",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002250",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002250/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5c617cd244e8f34003be5efb69eb755fdcb3fa58cb09309b34475a645933971e",
+        "source_id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3"
+      },
+      "row": {
+        "archive_blob_sha256": "7ced9e7849962efe54beff2e3a0793ca6832d8435cf0a2e586dbb18de7355a16",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002250/source.txt",
+        "archive_url_sha256": "5c617cd244e8f34003be5efb69eb755fdcb3fa58cb09309b34475a645933971e",
+        "content": "二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」",
+        "content_sha256": "7ced9e7849962efe54beff2e3a0793ca6832d8435cf0a2e586dbb18de7355a16",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002250"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 96720,
+        "char_start": 96656,
+        "content": "二月戊辰，御奉天門，諭戶、兵、工三部曰：「方今生齒漸繁，而戶口、軍伍日就耗損，此皆官司撫卹無方，因仍苟且所致。其悉議弊政以聞。」",
+        "content_sha256": "7ced9e7849962efe54beff2e3a0793ca6832d8435cf0a2e586dbb18de7355a16",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002250",
+        "kind": "body",
+        "ordinal": 2233,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.071642+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002251",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002251",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002251/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c1939686675b420119eb9ad6747e825fedeacccb2d2de9585f1a016ba0943c3c",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073"
+      },
+      "row": {
+        "archive_blob_sha256": "a670c4ba63b08ee5bd231b78c5dafbe5d82f449374958e3e671977ff5d9c4a43",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002251/source.txt",
+        "archive_url_sha256": "c1939686675b420119eb9ad6747e825fedeacccb2d2de9585f1a016ba0943c3c",
+        "content": "三月癸卯，賜顧鼎臣等進士及第、出身有差。",
+        "content_sha256": "a670c4ba63b08ee5bd231b78c5dafbe5d82f449374958e3e671977ff5d9c4a43",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "bf71fcd6-0580-53e6-8f7d-d5e16cc35073"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002251"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 96742,
+        "char_start": 96722,
+        "content": "三月癸卯，賜顧鼎臣等進士及第、出身有差。",
+        "content_sha256": "a670c4ba63b08ee5bd231b78c5dafbe5d82f449374958e3e671977ff5d9c4a43",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002251",
+        "kind": "body",
+        "ordinal": 2234,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.130353+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002252",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002252",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002252/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "bea9417fe390f3636486b553d20e01670bcd7ab21f5e1a17ec1127afc8a88e2d",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46"
+      },
+      "row": {
+        "archive_blob_sha256": "08c909e99b0f052c4eed10c1f2c47adea9343546785a2dfcbd787fe43eb7224a",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002252/source.txt",
+        "archive_url_sha256": "bea9417fe390f3636486b553d20e01670bcd7ab21f5e1a17ec1127afc8a88e2d",
+        "content": "夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民。甲申，帝不豫。五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命。辛卯，崩於乾清宮，年三十有六。六月庚申，上尊謚，廟號孝宗，葬泰陵。",
+        "content_sha256": "08c909e99b0f052c4eed10c1f2c47adea9343546785a2dfcbd787fe43eb7224a",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "0d9e4099-1dae-56a3-aa3e-6799432a1b46"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002252"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 96829,
+        "char_start": 96744,
+        "content": "夏四月戊寅，刑部侍郎何鑑撫輯荊、襄流民。甲申，帝不豫。五月庚寅，大漸，召大學士劉健、李東陽、謝遷受顧命。辛卯，崩於乾清宮，年三十有六。六月庚申，上尊謚，廟號孝宗，葬泰陵。",
+        "content_sha256": "08c909e99b0f052c4eed10c1f2c47adea9343546785a2dfcbd787fe43eb7224a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002252",
+        "kind": "body",
+        "ordinal": 2235,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "b6e46e19-64de-5145-a791-3a547e3b42c5"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.351404+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "b6e46e19-64de-5145-a791-3a547e3b42c5",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002256",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002256",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002256/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "3a87d9b6266cb6677eca38084f5f5b9551fba707a922341e49da566f12afff33",
+        "source_id": "b6e46e19-64de-5145-a791-3a547e3b42c5"
+      },
+      "row": {
+        "archive_blob_sha256": "3804220fdb145a7b97f49f615a02f532bf1b4b56a0fde03f69f6dc651746d7be",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002256/source.txt",
+        "archive_url_sha256": "3a87d9b6266cb6677eca38084f5f5b9551fba707a922341e49da566f12afff33",
+        "content": "↑ 孝宗建天明道誠純中正聖文神武至仁大德敬皇帝 建天，原作「達天」，誠純，原作「純誠」，據孝宗實錄改。",
+        "content_sha256": "3804220fdb145a7b97f49f615a02f532bf1b4b56a0fde03f69f6dc651746d7be",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "b6e46e19-64de-5145-a791-3a547e3b42c5"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002256"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 97045,
+        "char_start": 96994,
+        "content": "↑ 孝宗建天明道誠純中正聖文神武至仁大德敬皇帝 建天，原作「達天」，誠純，原作「純誠」，據孝宗實錄改。",
+        "content_sha256": "3804220fdb145a7b97f49f615a02f532bf1b4b56a0fde03f69f6dc651746d7be",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002256",
+        "kind": "annotation",
+        "ordinal": 2239,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.398714+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002257",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002257",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002257/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "32c662ecb061ff806b4c94b38ae08da559e80badb70c60317eb79c8a431d21ff",
+        "source_id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e"
+      },
+      "row": {
+        "archive_blob_sha256": "0dd7367f079ad609660aabfd856056f99fa2c39657e30ca8545a27067284c6d7",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002257/source.txt",
+        "archive_url_sha256": "32c662ecb061ff806b4c94b38ae08da559e80badb70c60317eb79c8a431d21ff",
+        "content": "↑ 九月己酉禁勢家侵奪民利 原脫「九月」。「己酉」承上文「八月」，即成為八月己酉。按是年八月乙亥朔，不得有己酉日。孝宗實錄卷一一七繫「己酉」於九月，據補。",
+        "content_sha256": "0dd7367f079ad609660aabfd856056f99fa2c39657e30ca8545a27067284c6d7",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "a84f274c-3b7e-5f64-8d2b-a8a97108398e"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002257"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 97124,
+        "char_start": 97047,
+        "content": "↑ 九月己酉禁勢家侵奪民利 原脫「九月」。「己酉」承上文「八月」，即成為八月己酉。按是年八月乙亥朔，不得有己酉日。孝宗實錄卷一一七繫「己酉」於九月，據補。",
+        "content_sha256": "0dd7367f079ad609660aabfd856056f99fa2c39657e30ca8545a27067284c6d7",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002257",
+        "kind": "annotation",
+        "ordinal": 2240,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "7f66967a-1c6d-57b6-a562-7fd423fe8191"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.452096+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "7f66967a-1c6d-57b6-a562-7fd423fe8191",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002258",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002258",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002258/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c9b707486e0c7c887037643ed9c69a8e67c8c62d89760e06a33ae1601a70eeb1",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191"
+      },
+      "row": {
+        "archive_blob_sha256": "a92e79136bca62349fbd48ab22102505828635d7814c136d4fbb4433ff228f0b",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002258/source.txt",
+        "archive_url_sha256": "c9b707486e0c7c887037643ed9c69a8e67c8c62d89760e06a33ae1601a70eeb1",
+        "content": "↑ 九月壬午普安賊婦米魯作亂 孝宗實錄卷一五一、國榷卷四四頁二七三七均繫於六月癸卯。此「九月壬午」係兵部議奏征討之日，非始事之日，參見孝宗實錄卷一五四。",
+        "content_sha256": "a92e79136bca62349fbd48ab22102505828635d7814c136d4fbb4433ff228f0b",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "7f66967a-1c6d-57b6-a562-7fd423fe8191"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002258"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 97202,
+        "char_start": 97126,
+        "content": "↑ 九月壬午普安賊婦米魯作亂 孝宗實錄卷一五一、國榷卷四四頁二七三七均繫於六月癸卯。此「九月壬午」係兵部議奏征討之日，非始事之日，參見孝宗實錄卷一五四。",
+        "content_sha256": "a92e79136bca62349fbd48ab22102505828635d7814c136d4fbb4433ff228f0b",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002258",
+        "kind": "annotation",
+        "ordinal": 2241,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.520517+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002259",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002259",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002259/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c60d12b372b28989e1038eaa72857cefeae4d77c1ec50dcc6e54287d0fbda864",
+        "source_id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293"
+      },
+      "row": {
+        "archive_blob_sha256": "4b151519684091febd08a83a36e17bcd8c715d1d29bc1f68e68d1ceaa247020e",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002259/source.txt",
+        "archive_url_sha256": "c60d12b372b28989e1038eaa72857cefeae4d77c1ec50dcc6e54287d0fbda864",
+        "content": "↑ 遊擊將軍張俊禦卻之 張俊，原作「張浚」，據本書卷一七五張俊傳、孝宗實錄卷一六二改。",
+        "content_sha256": "4b151519684091febd08a83a36e17bcd8c715d1d29bc1f68e68d1ceaa247020e",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "7e2218c5-ec9b-58d2-9e06-86d0716d1293"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002259"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 97247,
+        "char_start": 97204,
+        "content": "↑ 遊擊將軍張俊禦卻之 張俊，原作「張浚」，據本書卷一七五張俊傳、孝宗實錄卷一六二改。",
+        "content_sha256": "4b151519684091febd08a83a36e17bcd8c715d1d29bc1f68e68d1ceaa247020e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002259",
+        "kind": "annotation",
+        "ordinal": 2242,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:44:11.610277+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9",
+        "note": "《明史》卷15·本纪第十五·孝宗·mingshi-2f603db3d81e-p002260",
+        "source_type": "primary",
+        "title": "明史·卷15·孝宗·mingshi-2f603db3d81e-p002260",
+        "url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002260/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "636ff9f5e3b756b2d12151753c6788cdffb2e298ebf352953b67d2cb7c97b085",
+        "source_id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9"
+      },
+      "row": {
+        "archive_blob_sha256": "5066a36f89edad8cdaceb6cd702a18cd78d3ea674cf465d509194dd43ce06c07",
+        "archive_commit": "e00e441652405dcc47eb4657bfa391a332eccbcc",
+        "archive_url": "https://github.com/greed-216/histree/blob/e00e441652405dcc47eb4657bfa391a332eccbcc/content/books/mingshi/vol-015/from-start/part-10/sources/mingshi-2f603db3d81e-p002260/source.txt",
+        "archive_url_sha256": "636ff9f5e3b756b2d12151753c6788cdffb2e298ebf352953b67d2cb7c97b085",
+        "content": "↑ 起秦紘為戶部尚書兼副都御史 秦紘，原作「秦綋」。本書卷一六武宗紀、孝宗實錄卷一七九都作「秦紘」。按本書卷一七八有秦紘傳，事跡與紀合，據改。",
+        "content_sha256": "5066a36f89edad8cdaceb6cd702a18cd78d3ea674cf465d509194dd43ce06c07",
+        "created_at": "2026-11-18T20:44:23.564281+00:00",
+        "source_id": "954d7cef-540c-5c3f-9f15-e7bb899ad9b9"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p002260"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 97320,
+        "char_start": 97249,
+        "content": "↑ 起秦紘為戶部尚書兼副都御史 秦紘，原作「秦綋」。本書卷一六武宗紀、孝宗實錄卷一七九都作「秦紘」。按本書卷一七八有秦紘傳，事跡與紀合，據改。",
+        "content_sha256": "5066a36f89edad8cdaceb6cd702a18cd78d3ea674cf465d509194dd43ce06c07",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p002260",
+        "kind": "annotation",
+        "ordinal": 2243,
+        "section_id": "mingshi-2f603db3d81e-s0016"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "fe05637d-1c69-51a9-af66-9ab1e8c6b65f"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.698034+00:00",
+        "description": "弘治十八年正月己丑，本纪记小王子诸部包围灵州，进入花马池，随后劫掠韦州、环县。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "fe05637d-1c69-51a9-af66-9ab1e8c6b65f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年正月己丑",
+        "title": "本纪记小王子诸部围灵州并劫掠韦州、环县"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "276df7a4-2fb6-5c11-bfc4-948447903155"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.735110+00:00",
+        "description": "弘治十八年正月，户部侍郎顾佐负责办理陕西军饷。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "276df7a4-2fb6-5c11-bfc4-948447903155",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年正月",
+        "title": "户部侍郎顾佐办理陕西军饷"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "633ede7b-46c5-5c36-88e7-fc4160f40593"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.777959+00:00",
+        "description": "弘治十八年正月乙未，明孝宗朱祐樘在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "633ede7b-46c5-5c36-88e7-fc4160f40593",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年正月乙未",
+        "title": "明孝宗在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "edff3cd5-fde1-5b91-9db9-11e38d89a9ae"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.818192+00:00",
+        "description": "弘治十八年正月甲辰，本纪记小王子所部攻陷宁夏清水营。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "edff3cd5-fde1-5b91-9db9-11e38d89a9ae",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年正月甲辰",
+        "title": "本纪记小王子所部攻陷宁夏清水营"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "baba2a34-0836-560b-86a0-2d61a55ef2ce"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.858077+00:00",
+        "description": "弘治十八年二月戊辰，明孝宗在奉天门告谕户部、兵部和工部。他指出人口渐增，登记户口和军伍却不断减损，认为是有关官员抚恤失当、长期敷衍所致，命三部商议弊政并上报。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "baba2a34-0836-560b-86a0-2d61a55ef2ce",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年二月戊辰",
+        "title": "明孝宗命户部等三部议查户籍和军籍耗损积弊"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "76257941-5c99-5083-9c79-e50441d36c52"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.897884+00:00",
+        "description": "弘治十八年三月癸卯，朝廷赐顾鼎臣等人进士及第或进士出身，名次、等第各有差别。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "76257941-5c99-5083-9c79-e50441d36c52",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年三月癸卯",
+        "title": "明廷赐顾鼎臣等进士及第、出身"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7d017e0b-6a4d-5271-b9fc-25e7bd62c381"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.938338+00:00",
+        "description": "弘治十八年四月戊寅，朝廷命刑部侍郎何鉴安抚和安置荆州、襄阳一带的流民。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "7d017e0b-6a4d-5271-b9fc-25e7bd62c381",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年四月戊寅",
+        "title": "明廷命何鉴安抚和安置荆襄流民"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "9b7639df-1401-51dd-b7ac-ed5e6ebe5323"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:13.978058+00:00",
+        "description": "弘治十八年四月甲申，明孝宗朱祐樘身体不适。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "9b7639df-1401-51dd-b7ac-ed5e6ebe5323",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年四月甲申",
+        "title": "明孝宗身体不适"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "cb3d35d1-0586-5fb7-9100-8ee2b084ab6b"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:14.018275+00:00",
+        "description": "弘治十八年五月庚寅，明孝宗病情危重，召大学士刘健、李东阳和谢迁接受临终嘱托。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "cb3d35d1-0586-5fb7-9100-8ee2b084ab6b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年五月庚寅",
+        "title": "明孝宗病重，召刘健、李东阳、谢迁受顾命"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ea3b5bf0-30bb-5cde-8da9-0549fbcd2a17"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:14.058073+00:00",
+        "description": "弘治十八年五月辛卯，明孝宗朱祐樘在乾清宫去世。《明史》记享年三十六。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "ea3b5bf0-30bb-5cde-8da9-0549fbcd2a17",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年五月辛卯",
+        "title": "明孝宗朱祐樘在乾清宫去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "611bed42-3bca-5794-a9fd-8dee20aceeca"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:14.098506+00:00",
+        "description": "弘治十八年六月庚申，朝廷给去世的朱祐樘上尊谥，庙号孝宗。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "611bed42-3bca-5794-a9fd-8dee20aceeca",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年六月庚申",
+        "title": "明廷为朱祐樘上尊谥和庙号孝宗"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "884f0455-3195-5e94-b98d-f3e282546966"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:44:14.137419+00:00",
+        "description": "弘治十八年十月庚午，明廷将明孝宗朱祐樘葬于泰陵。本卷记陵名，卷十六明确记下葬日期。",
+        "dynasty": "明",
+        "end_year": 1505,
+        "id": "884f0455-3195-5e94-b98d-f3e282546966",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1505,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十八年十月庚午",
+        "title": "明廷将明孝宗葬于泰陵"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d7be271f-6640-5caa-b314-692fd8838b42"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:32:41.335348+00:00",
+        "description": "弘治九年九月己酉，朝廷禁止权势之家侵夺百姓利益。",
+        "dynasty": "明",
+        "end_year": 1496,
+        "id": "d7be271f-6640-5caa-b314-692fd8838b42",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1496,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治九年九月己酉",
+        "title": "明廷禁止权势之家侵夺百姓利益"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ad2fbead-7c0a-5d85-a3bb-3d6ea1762361"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:36:58.324984+00:00",
+        "description": "普安的米鲁起事。《明史》卷末校记据《孝宗实录》《国榷》系于弘治十二年六月癸卯，并区分了九月兵部议奏出兵。",
+        "dynasty": "明",
+        "end_year": 1499,
+        "id": "ad2fbead-7c0a-5d85-a3bb-3d6ea1762361",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1499,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十二年六月癸卯",
+        "title": "米鲁在普安起事"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "cbed1ab3-e447-5b1f-ac29-6314955b9d4d"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:36:58.397782+00:00",
+        "description": "弘治十二年九月壬午，兵部议奏征讨普安的米鲁。卷末校记指出，本纪此处的壬午日对应议奏，起事本身另有六月日期。",
+        "dynasty": "明",
+        "end_year": 1499,
+        "id": "cbed1ab3-e447-5b1f-ac29-6314955b9d4d",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1499,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十二年九月壬午",
+        "title": "兵部议奏征讨普安米鲁"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "dd32e621-5446-5702-b18d-8ad591ddf93a"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:36:59.020374+00:00",
+        "description": "弘治十三年五月癸亥，火筛所部大举进攻大同左卫，明军游击将军张俊将其击退。",
+        "dynasty": "明",
+        "end_year": 1500,
+        "id": "dd32e621-5446-5702-b18d-8ad591ddf93a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1500,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十三年五月癸亥",
+        "title": "火筛所部进攻大同左卫，张俊将其击退"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6c6536ba-dea0-55e9-8dc1-67821908c438"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:39:26.750634+00:00",
+        "description": "弘治十四年九月甲辰，朝廷召回史琳，起用秦纮为户部尚书兼副都御史，接替史琳。",
+        "dynasty": "明",
+        "end_year": 1501,
+        "id": "6c6536ba-dea0-55e9-8dc1-67821908c438",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1501,
+        "status": "published",
+        "tags": [],
+        "time_original": "弘治十四年九月甲辰",
+        "title": "明廷召回史琳，起用秦纮接替"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v015_p002156_land",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v015_p002185_milu",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v015_p002185_milu_deliberation",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v015_p002191_datong",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v015_p002206_qin",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    }
+  ],
+  "source_locations": {
+    "0d9e4099-1dae-56a3-aa3e-6799432a1b46": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002252",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "2066a7cd-e22c-55ae-bfb2-12d0d064146d": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002249",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "7e2218c5-ec9b-58d2-9e06-86d0716d1293": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002259",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "7f66967a-1c6d-57b6-a562-7fd423fe8191": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002258",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "954d7cef-540c-5c3f-9f15-e7bb899ad9b9": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002260",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "a1a8e5d3-1f5e-53bf-9b75-f3ece8ce11e3": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002250",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "a84f274c-3b7e-5f64-8d2b-a8a97108398e": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002257",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "b6e46e19-64de-5145-a791-3a547e3b42c5": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002256",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    },
+    "bf71fcd6-0580-53e6-8f7d-d5e16cc35073": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p002251",
+      "section_id": "mingshi-2f603db3d81e-s0016",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 15
+}

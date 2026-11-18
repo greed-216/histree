@@ -47,6 +47,11 @@ jobs:
       - run: pnpm build && pnpm lint && pnpm test
       - name: Native MySQL contracts (disposable service only)
         run: pnpm test:mysql
+      - name: Ming History additional tables (disposable service only)
+        run: |
+          for volume in 110 111 112; do
+            MING_TABLE_VOLUME="$volume" node scripts/test-mingshi-reading-layout-mysql.mjs || exit 1
+          done
       - name: Historical PostgreSQL import compatibility (never production)
         run: pnpm test:archive
       - name: Reviewed content guards

@@ -15,10 +15,14 @@ assert.match(process.env.MYSQL_DATABASE ?? "", /^histree_test_[a-z0-9_]+$/);
 const db = new MysqlService(new ConfigService(process.env));
 const service = new LibraryService(db);
 const sha = (text) => createHash("sha256").update(text).digest("hex");
+const volume = Number(process.env.MING_TABLE_VOLUME ?? 109);
+assert([109, 110, 111, 112].includes(volume));
 const layout = JSON.parse(
   await readFile(
     new URL(
-      "../apps/api/src/data/mingshi-reading-layout.json",
+      volume === 109
+        ? "../apps/api/src/data/mingshi-reading-layout.json"
+        : "../apps/api/src/data/mingshi-office-reading-layout.json",
       import.meta.url,
     ),
     "utf8",
@@ -47,7 +51,7 @@ const rows = gunzipSync(
   .map(JSON.parse)
   .filter(
     (p) =>
-      p.volume_candidate === 109 &&
+      p.volume_candidate === volume &&
       !p.flags.includes("editorial_navigation_heading"),
   );
 const section = rows[0].section_id;
@@ -104,11 +108,17 @@ try {
     );
   }
   const first = await service.section("mingshi", section);
-  assert.equal(
-    first.paragraphs.find((p) => p.id.endsWith("p018062")).table_row
-      .calendar_year,
-    1368,
-  );
+  const sample = {
+    109: ["p018062", 1368, 5],
+    110: ["p018609", 1522, 2],
+    111: ["p019148", 1380, 8],
+    112: ["p019790", 1522, 8],
+  }[volume];
+  const sampleRow = first.paragraphs.find((p) =>
+    p.id.endsWith(sample[0]),
+  ).table_row;
+  assert.equal(sampleRow.calendar_year, sample[1]);
+  assert.equal(sampleRow.columns, sample[2]);
   const cut = Array.from(
     { length: Math.ceil(rows.length / 40) },
     (_, page) => page,
@@ -153,6 +163,7 @@ try {
     JSON.stringify({
       native_mysql: true,
       book: "mingshi",
+      volume,
       year_carry_over: true,
       edited_context_fails_closed: true,
       production_env_reads: 0,

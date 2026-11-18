@@ -1,0 +1,2414 @@
+{
+  "batch_dir": "content/books/mingshi/vol-011/from-start/part-08",
+  "batch_key": "mingshi-v011-from-start-08",
+  "batch_sha256": "8cc9c1edb04eac12bbab470213641cde29fd7670fda872f12bcabe0241588aa7",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001698",
+    "mingshi-2f603db3d81e-p001702",
+    "mingshi-2f603db3d81e-p001704"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "eb51eaed-dbac-5ede-ba8f-eacfe5535c1d",
+        "note_sha256": "38939f2dac015c8a7221819ba74ee5eadb392b88da8bd4ec31f60e466b650370",
+        "quote_text": "八年春正月戊辰，免江西被災稅糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "56e5f41f-d480-54ec-bcbf-2c09c4ad484f",
+        "note_sha256": "08622f4d7858397741baeae2d24985c0b9376832300f2ec4b7fbfa57bb90ba8a",
+        "quote_text": "八年春正月戊辰，免江西被災稅糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a973cf22-fd4f-5919-9325-b05f30ee571d",
+        "note_sha256": "d0c10d50637ce64a4fef8f9c726a6484587fc188d708fc7d1b08722b4602778a",
+        "quote_text": "丁丑，帝輿疾宿南郊齋宮",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6f556c30-f879-5e38-96d2-f2c6a0f4fd45",
+        "note_sha256": "f5da4125fdf854ebc4832046e0fcaeab12bf99b6676ba730d55c028aaf304f12",
+        "quote_text": "丁丑，帝輿疾宿南郊齋宮",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a8a31f57-81a8-5a7f-90cf-807a40b446ff",
+        "note_sha256": "720f5afe6e3ddc78b3837db8b20ff90fb710623c3a5ae0ada2c0a55adf8f4ace",
+        "quote_text": "丁丑，帝輿疾宿南郊齋宮",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bec0c60d-dae9-5072-a6cc-84c8a834be5d",
+        "note_sha256": "1d9a07bfe21a70016b358018a55aeb0a34fb7b926c9b1f9b5fa2e5099474e221",
+        "quote_text": "丁丑，帝輿疾宿南郊齋宮",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0bd228d3-a40d-5955-b3d8-38f95a85d926",
+        "note_sha256": "a4a836fa44c4b45605b2801569334380b5118f07651721cc6fd6de93f0b49779",
+        "quote_text": "己卯，羣臣請建太子，不聽",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "abfb1002-0652-515f-8f83-49f6dadfb835",
+        "note_sha256": "9a08254e8f70b0fd0e8459e15b9426f196199632fe2719513005d46bb8cb131a",
+        "quote_text": "己卯，羣臣請建太子，不聽",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "452b0930-bb79-545a-be6d-989255ed51dc",
+        "note_sha256": "2b97b5c81aeefddb6068515ac348a3198d2b0336924497486980433de527c123",
+        "quote_text": "己卯，羣臣請建太子，不聽",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a7ace376-4175-5e88-92c1-b8df6e8d93c6",
+        "note_sha256": "4ca09b3b973de9f0a02710477ac48f28ad429ceac0a30236485c4672f655f90c",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c51c9941-f7df-5b7c-9a66-8f12aa50fa7d",
+        "note_sha256": "4ca09b3b973de9f0a02710477ac48f28ad429ceac0a30236485c4672f655f90c",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e4dd3cb8-5360-5532-b81f-7fd83b5338db",
+        "note_sha256": "4ca09b3b973de9f0a02710477ac48f28ad429ceac0a30236485c4672f655f90c",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "69ad6671-171e-5137-8ee6-c64861999196",
+        "note_sha256": "68b02897623d907d443088b39601006337dddcf0dbb88bda2def7060f5b433a8",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "卷十一和宰辅年表同记正月壬午英宗复位。《英宗后纪》将改元诏另载于丙戌，本条时点为复位。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "826fb199-1219-5321-a7a0-73f18d08ab80",
+        "note_sha256": "68b02897623d907d443088b39601006337dddcf0dbb88bda2def7060f5b433a8",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "卷十一和宰辅年表同记正月壬午英宗复位。《英宗后纪》将改元诏另载于丙戌，本条时点为复位。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8efe60c0-e425-5101-8f89-69cf1dd3712f",
+        "note_sha256": "0ed10a6e259f8f15c4fa9e89c9758146b1e95fe899ce2eb84039476a8b43d182",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e9602dd7-c629-5722-97aa-a48acb7b54df",
+        "note_sha256": "0ed10a6e259f8f15c4fa9e89c9758146b1e95fe899ce2eb84039476a8b43d182",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d47f2a7d-ca1a-5f96-aa0d-8932b8328ed3",
+        "note_sha256": "0ed10a6e259f8f15c4fa9e89c9758146b1e95fe899ce2eb84039476a8b43d182",
+        "quote_text": "壬午，武清侯石亨、副都御史徐有貞等迎上皇復位",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "30c79d9d-dae5-55b1-ada6-52ce49e5f2fa",
+        "note_sha256": "c2a7e03e7cf1009c72ebe6620a4c1c8f24320a8b522af81c3aa9a1d9dd52e5a8",
+        "quote_text": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c70c57d6-ff80-5b86-8742-5a12fdc15e3e",
+        "note_sha256": "75ad649b38727c0271432460eb8acddc355f09d040cb3f23f0d50dde9a6e5d29",
+        "quote_text": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "46b51a06-b372-525c-899d-c6ce8f6d5512",
+        "note_sha256": "a99fbe56b3dedb96af97d5a688810f395dc06a2858f6b42f92f587e92a979587",
+        "quote_text": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "76dbf012-5fcb-5a7b-a751-a34e7045b9ef",
+        "note_sha256": "5993d953bd1c5425f94c26a4abf207dad86073797d5f6c291c67dba2a39647af",
+        "quote_text": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ccb2d0d7-6982-5938-b335-8f52a688f62a",
+        "note_sha256": "5993d953bd1c5425f94c26a4abf207dad86073797d5f6c291c67dba2a39647af",
+        "quote_text": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a26801e4-0e0a-59af-b849-0ce93b0a1b7c",
+        "note_sha256": "5993d953bd1c5425f94c26a4abf207dad86073797d5f6c291c67dba2a39647af",
+        "quote_text": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b42ed058-5d98-50fe-9344-4c4738af1bc3",
+        "note_sha256": "dfd1e59177d960b989e58c52b22bea514102afdab58f72faa4973b3beb8d5567",
+        "quote_text": "癸丑，王薨於西宮，年三十",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f87d2755-aa44-58fc-86d1-cb11ad65010a",
+        "note_sha256": "737da4125ff49a6e3ed1dcc50f8a37ec8358bbf61516192594248e29f5caed78",
+        "quote_text": "癸丑，王薨於西宮，年三十",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6259bf9c-56e3-557a-8b31-60f52821e461",
+        "note_sha256": "50d7a64a305dd83184642d707d49181878cb46ab33dce56ab417b0b76cf95a54",
+        "quote_text": "癸丑，王薨於西宮，年三十",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6d0d847a-cdf1-517b-8bfc-fc40eae8c51d",
+        "note_sha256": "8b0f8d186b78290a017e0e9a55a6f7088f1c7398bd034f29c4e7502f175b4d8b",
+        "quote_text": "諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d15d22cb-6915-5383-88bb-6ef87df9eb94",
+        "note_sha256": "236ca00ff79f02276afa65a99529e10020d84523a33fa08c2eb909c5acfbfb63",
+        "quote_text": "諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bf641f6e-adce-5917-b30d-4998aa9c53cc",
+        "note_sha256": "cd12fad3f67a714a44968fbfb1cddd9bdc3d0a0e07546f4309e109ba9c84ab45",
+        "quote_text": "諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "858797cd-6239-56f7-b322-56fe6dbd3b3c",
+        "note_sha256": "965dc7d70aa8897ce04b084216d0e932d680cbcced16f08ad3b613f811310784",
+        "quote_text": "朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "384856ad-e7cc-58b0-86f1-6faf316c2217",
+        "note_sha256": "297923d68a7b83dc8aca3ff3f48d2970c8e14b9d7d2044bc11cc8c9ff3be97ca",
+        "quote_text": "朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "89b0730b-7136-5a9b-a040-badbf5aee882",
+        "note_sha256": "4f37f9fbdca4eb5158df25c053f63dc13ef4f47b67d37cfe65b82f00000ddeeb",
+        "quote_text": "朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "da351c1e-5db7-5a48-9879-889572ca4974",
+        "note_sha256": "e7c4526fee744219ee090d5a742a1fc61a7816dff2dcdefb28d4653775e422da",
+        "quote_text": "朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c1995e8a-9679-508e-bf57-511b0d4369bd",
+        "note_sha256": "e7c4526fee744219ee090d5a742a1fc61a7816dff2dcdefb28d4653775e422da",
+        "quote_text": "朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2703e662-c087-5942-bc46-d9428b6829a1",
+        "note_sha256": "2d3167bb27becf615e0cbf15cfcce41239c105efc3632a1a48876b9feb359645",
+        "quote_text": "遂上尊諡。敕有司繕陵寢，祭饗視諸陵",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bb05c95d-e6f3-55c7-bc86-a9a3d4ee548d",
+        "note_sha256": "5d3551348a8259982ee146441ed89396d8751700621b0765d99c8ca396a4301b",
+        "quote_text": "遂上尊諡。敕有司繕陵寢，祭饗視諸陵",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a2a5b5b3-9225-5c2c-9ec5-4ef9e412e4c0",
+        "note_sha256": "8bf51b52df794a939b307c67de8ab6df792ce2818fc821337c549c9f5a630b94",
+        "quote_text": "遂上尊諡。敕有司繕陵寢，祭饗視諸陵",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ec8663d0-babe-5c56-a24e-7390010c0341",
+        "note_sha256": "5d6452ad71b13c109490d62c50f6587d6a3dad534675e6dfe47a809873a10be6",
+        "quote_text": "按本書卷一七０于謙傳、又卷一七七王復傳，國榷卷二八頁一八０四都作「趙榮」。本書卷一七一楊善傳附有趙榮傳，事跡與紀合。",
+        "review_note": "卷末校记所指就是卷十一王复、赵荣赴也先营事件，保存异名校勘依据。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9cbb8fc8-0ea6-5b51-b635-95afbe3887a7",
+        "note_sha256": "5d6452ad71b13c109490d62c50f6587d6a3dad534675e6dfe47a809873a10be6",
+        "quote_text": "按本書卷一七０于謙傳、又卷一七七王復傳，國榷卷二八頁一八０四都作「趙榮」。本書卷一七一楊善傳附有趙榮傳，事跡與紀合。",
+        "review_note": "卷末校记所指就是卷十一王复、赵荣赴也先营事件，保存异名校勘依据。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "ff169909-4385-5cbd-b19c-81c762e3bee7",
+        "note_sha256": "4642cacad636c0b65f3040c0139521dcd9ad0eedb8da8c277b42f25a14b9aa2b",
+        "quote_text": "按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。",
+        "review_note": "校记与宰辅年表同一次奔丧。正文九月系起复疑误。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b8fa6fe1-9b52-5ceb-a6c1-86d2598ad2ac",
+        "note_sha256": "4642cacad636c0b65f3040c0139521dcd9ad0eedb8da8c277b42f25a14b9aa2b",
+        "quote_text": "按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。",
+        "review_note": "校记与宰辅年表同一次奔丧。正文九月系起复疑误。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c6c6cd43-1535-5198-a214-c71c6b4893cb",
+        "note_sha256": "bf7bf5964535492b76c6447d4521f6dc7d03ef3c186d191045eafd2383a08c25",
+        "quote_text": "按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。",
+        "review_note": "校勘记与年表同记景泰四年四月还任，校记正文异文已附同事件。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "0c488278-59e7-5e94-9b9d-38b97fdc667e",
+        "note_sha256": "bf7bf5964535492b76c6447d4521f6dc7d03ef3c186d191045eafd2383a08c25",
+        "quote_text": "按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。",
+        "review_note": "校勘记与年表同记景泰四年四月还任，校记正文异文已附同事件。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5213f3d9-e982-55a2-9f98-dd9f3132c034",
+        "note_sha256": "c44c7354333eb33572d3ab7af1fde22ccf8cd7667c57353c55574a90c68c5ecf",
+        "quote_text": "英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。",
+        "review_note": "校记引实录明确丁母忧奔丧在五月己巳，补年表五月丁忧确日。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c6667108-ac98-54c5-bbf9-d05fdc752ba8",
+        "note_sha256": "c44c7354333eb33572d3ab7af1fde22ccf8cd7667c57353c55574a90c68c5ecf",
+        "quote_text": "英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。",
+        "review_note": "校记引实录明确丁母忧奔丧在五月己巳，补年表五月丁忧确日。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8dd053bd-dc0b-5fe8-b568-012131470384",
+        "note_sha256": "af5e3f5184be159c576051d3f61caabde3d2d778acbe3c049d26d6061d4c935a",
+        "quote_text": "英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。此記起復於五月己巳，合二事為一，顯有脫訛。",
+        "review_note": "校记引实录明确九月甲寅返任，并指出正文合并两事。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "90dabdc6-ce35-530f-bce9-7a15bbb08c3c",
+        "note_sha256": "af5e3f5184be159c576051d3f61caabde3d2d778acbe3c049d26d6061d4c935a",
+        "quote_text": "英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。此記起復於五月己巳，合二事為一，顯有脫訛。",
+        "review_note": "校记引实录明确九月甲寅返任，并指出正文合并两事。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9b44365b-4d06-5b8d-9071-c3204e37beb0",
+        "note_sha256": "2a67c5d1b2be067591067d1ba72ab1ca0358a222fe08d82c0f6804481e14a665",
+        "quote_text": "左僉都御史，本書卷一七一徐有貞傳、國榷卷三一頁一九六六同。明史稿紀九景帝紀及英宗實錄卷二三四均作「右僉都御史」。",
+        "review_note": "校记针对同一次任命，保留两种官衔写法。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "403c57ba-b855-529b-a53f-339292c30fe5",
+        "note_sha256": "2a67c5d1b2be067591067d1ba72ab1ca0358a222fe08d82c0f6804481e14a665",
+        "quote_text": "左僉都御史，本書卷一七一徐有貞傳、國榷卷三一頁一九六六同。明史稿紀九景帝紀及英宗實錄卷二三四均作「右僉都御史」。",
+        "review_note": "校记针对同一次任命，保留两种官衔写法。",
+        "review_state": "recorded"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历景泰八年正月戊辰。DDBC历表换算所据为1457-02-06至1457-02-06，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001699的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "56e5f41f-d480-54ec-bcbf-2c09c4ad484f",
+        "claim_sha256": "83ac67c9021d8e2cfe7161a94a7c3229446daabe61fe7b54d2bf90bd80f02167",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "adfa6ff8-8887-5893-b4e4-ccf805a8f469",
+        "id": "e79fd0b2-b87b-55eb-b14f-caab4f9507a5",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰八年正月丁丑。DDBC历表换算所据为1457-02-15至1457-02-15，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001699的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "a8a31f57-81a8-5a7f-90cf-807a40b446ff",
+        "claim_sha256": "bdddb4793fc986692cafd14c3e8a70814d6201309b93c17fbcd227791ec85711",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "622a7801-194d-5523-89bd-0598b7b8c09e",
+        "id": "621ad822-9d10-5653-bb57-391dd4aa0b1f",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰八年正月己卯。DDBC历表换算所据为1457-02-17至1457-02-17，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001699的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "abfb1002-0652-515f-8f83-49f6dadfb835",
+        "claim_sha256": "c162eff9996991a9b16608d224cedc5a15fc39f92d28ea73c4bb39c17759e25e",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "b4c059b8-f350-598c-88e7-303279709a01",
+        "id": "792da89f-6b16-5c45-a892-e476bc3dbc7b",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰八年正月壬午。DDBC历表换算所据为1457-02-20至1457-02-20，据此核对公元发生年份。",
+        "claim_id": "826fb199-1219-5321-a7a0-73f18d08ab80",
+        "claim_sha256": "019ed41efea56843cdfc4023601a99173b35644c1f05ca6e704d33f57bd0df66",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+        "id": "660c14ac-bb26-5bde-b487-cb0f09d26e25",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰八年二月乙未。DDBC历表换算所据为1457-03-05至1457-03-05，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001700的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "46b51a06-b372-525c-899d-c6ce8f6d5512",
+        "claim_sha256": "749bb6fe176b27f7da7e74d3cc7b528cab03c05d65c7cca29318470d32d9cc06",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "05b22b67-1c38-51eb-a3cc-7f724ef1e85f",
+        "id": "c5204228-855f-58e7-a2ec-975289bfc630",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰八年二月癸丑。DDBC历表换算所据为1457-03-23至1457-03-23，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001700的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f87d2755-aa44-58fc-86d1-cb11ad65010a",
+        "claim_sha256": "8aeec67ff63dd36f0cd413b654b72c760cb96423721653c0d0a49b10ef78bf7b",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "1663eb32-d37a-57cf-a0c8-034e98047ac7",
+        "id": "2ca44a91-016e-5642-9407-926ceca961b9",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰八年二月。DDBC历表换算所据为1457-03-05至1457-04-02，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001700的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d15d22cb-6915-5383-88bb-6ef87df9eb94",
+        "claim_sha256": "2134e8ec1cdb6112e8ce74dc498be8cff8ead9529be5cd78e456ebcce9bce382",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "236ed6af-a2d8-5aff-8024-16ec5eadff8e",
+        "id": "63dd52dc-c27d-524c-9d84-f94f5427f4c2",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十一年十二月戊子。DDBC历表换算所据为1476-01-18至1476-01-18，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001701的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "89b0730b-7136-5a9b-a040-badbf5aee882",
+        "claim_sha256": "31b725364e8ae52d0196437238e7be12ac71e1ef76041df4759e02fc093e38de",
+        "earliest_year": 1476,
+        "era_key": null,
+        "event_id": "6d188136-7a51-50a5-b06e-47f89a4da015",
+        "id": "00ddb0a0-8b89-579a-bbae-b12dc600d010",
+        "latest_year": 1476,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十一年十二月。DDBC历表换算所据为1476-01-06至1476-02-04，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001701的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "bb05c95d-e6f3-55c7-bc86-a9a3d4ee548d",
+        "claim_sha256": "b9756ebab79f607440e0ff4bddab1f3f935daf768673430c988dd3084625e2ea",
+        "earliest_year": 1476,
+        "era_key": null,
+        "event_id": "78b57fa0-b83b-5eaf-8ef7-c52234ede023",
+        "id": "94fcff0b-7eb2-5c08-91bc-472e432b60f4",
+        "latest_year": 1476,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰三年九月奔丧（卷末校勘记）。DDBC历表换算所据为1452-09-22至1452-10-21，据此核对公元发生年份。",
+        "claim_id": "b8fa6fe1-9b52-5ceb-a6c1-86d2598ad2ac",
+        "claim_sha256": "6ba2e467180af6e01307acf31119b00a59e808d2b298ac950d2b09ab6812d69a",
+        "earliest_year": 1452,
+        "era_key": null,
+        "event_id": "9c0541ed-95c1-5669-8189-8d5c81b940eb",
+        "id": "bc7152d6-8352-51ee-84c3-a6ea57713560",
+        "latest_year": 1452,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年四月还任（卷末校勘记）。DDBC历表换算所据为1453-05-18至1453-06-15，据此核对公元发生年份。",
+        "claim_id": "0c488278-59e7-5e94-9b9d-38b97fdc667e",
+        "claim_sha256": "9e8a61cfe61c137b32affe3d78c85c59b15fdb890b2e17e6b7b7e9618614098e",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "b795f7ef-c88c-5f9f-a8c5-a292edef2a23",
+        "id": "2365f898-4f80-5510-82bb-643eb54f59ff",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年五月己巳奔丧（卷末校勘记）。DDBC历表换算所据为1453-06-28至1453-06-28，据此核对公元发生年份。",
+        "claim_id": "c6667108-ac98-54c5-bbf9-d05fdc752ba8",
+        "claim_sha256": "e4620bfce7f66a5df7ca538e15a1b3d96609be98b01aed52b335b960a23c0814",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "86a196bc-8a7b-58b4-b1f2-f2d8e003b385",
+        "id": "ac5ee9f2-1828-5194-ad03-3dc3aeb92f3f",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年九月甲寅起复（卷末校勘记）。DDBC历表换算所据为1453-10-11至1453-10-11，据此核对公元发生年份。",
+        "claim_id": "90dabdc6-ce35-530f-bce9-7a15bbb08c3c",
+        "claim_sha256": "25a7397333b19185d40e9a9b874e7ba27960ed65851fc781d388227f52c376b8",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "id": "ed6a4a0e-7134-5646-8122-f68318cd6ed6",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "c6261050407ad0d2abf6d9119d09e62ad920add24b2fe467beab79e3c838d8d3",
+        "paragraph_id": "mingshi-2f603db3d81e-p001699",
+        "snapshot_sha256": "230b65e1bf5deec5630dc9967fe8f4ba8358851d78bd15d3fe29ef252a93a2b1",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe"
+      },
+      {
+        "archive_url_sha256": "6863921719805d95d3b0bb1501a47382fb74e33933489250dba65dc07ef311b9",
+        "paragraph_id": "mingshi-2f603db3d81e-p001700",
+        "snapshot_sha256": "5f95a36430b9070073974f271e3bb47588e7bdbf0af8ae15e74838f83a82f74a",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae"
+      },
+      {
+        "archive_url_sha256": "12538e6046d07e888509badd53169e64d57b76e90072e596f7a7573b4d84e598",
+        "paragraph_id": "mingshi-2f603db3d81e-p001701",
+        "snapshot_sha256": "6d8fc0a538e74533308c0e670d143b1b0daab586e4e20b0b4aa1980a1d5724e6",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8"
+      },
+      {
+        "archive_url_sha256": "592f8ecd39f3d3cedc663027ee6def54751eabbf6481a9f22c372e9f09d95f0e",
+        "paragraph_id": "mingshi-2f603db3d81e-p001705",
+        "snapshot_sha256": "8edb36f042cb3b91e45d4e1b4086b7aafb08c8bcaffda166b795111942fc3774",
+        "source_id": "717052a9-c719-5afc-bfea-aa3a71d36329"
+      },
+      {
+        "archive_url_sha256": "c322efde32355b0e44ac4a0426805a74c499213f49c4017ec1038862952f8851",
+        "paragraph_id": "mingshi-2f603db3d81e-p001706",
+        "snapshot_sha256": "4bb92e13bbf021e447fd252d4ef4ce54d19598f948af1fbe0960ed1fd017f536",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29"
+      },
+      {
+        "archive_url_sha256": "a2dd12e133f70a74974b689f4cdbf6ba05a09d8111e3362d9419a05cb36387f7",
+        "paragraph_id": "mingshi-2f603db3d81e-p001707",
+        "snapshot_sha256": "6601a9e1727c68ea829574135ebf924e4c25330b67b8b9f98ba8a150078a092c",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34"
+      },
+      {
+        "archive_url_sha256": "a8d5f74566ae28d2e15bd3da9ece88ed3811e90bcdbd25a98c9e1b356d6eb476",
+        "paragraph_id": "mingshi-2f603db3d81e-p001708",
+        "snapshot_sha256": "f90f640560f064bb8cd33898e53ae9b6740174211f4cbcbc4902d99082b06052",
+        "source_id": "fa93c439-11fd-5ec6-97f2-5811757020cb"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-011/from-start/part-08/content-batch.json": "8cc9c1edb04eac12bbab470213641cde29fd7670fda872f12bcabe0241588aa7",
+    "content/books/mingshi/vol-011/from-start/part-08/curation.json": "ebe38a6b7d5258759bb48011818020b3e33d4b08b6d0359c8b54c48b828c3997",
+    "content/books/mingshi/vol-011/from-start/part-08/packet.json": "e35af6ed961bf700e0b5462880239bcff19ef38759585ef64c47d90acecc7bee",
+    "content/books/mingshi/vol-011/from-start/part-08/publication-mysql.json": "494a412d253b1186bdedb817879bdc0b832298e3665a2dd989cc7c57d8e5ebb6",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/manifest.json": "52eea858fb536eff5a0f146d226da379cdf6b488751a800b3e788a90942fc378",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001698/source.txt": "e9a01e1d2461bc3c5d1262a7176b892c8637f39cfb384498b79322e37abde0b1",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001699/source.txt": "230b65e1bf5deec5630dc9967fe8f4ba8358851d78bd15d3fe29ef252a93a2b1",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001700/source.txt": "5f95a36430b9070073974f271e3bb47588e7bdbf0af8ae15e74838f83a82f74a",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001701/source.txt": "6d8fc0a538e74533308c0e670d143b1b0daab586e4e20b0b4aa1980a1d5724e6",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001702/source.txt": "b12d347771978cc825841dd9ecd1df2b57f427ecd6d8d42f5274f68273852754",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001703/source.txt": "c0aecb5c5a0028c5b367692f82be254b05b3d3a554f7d2e4fdd5f6e9f6ce4578",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001704/source.txt": "4b61221599d66126ed56ba05a2f0011e029fc3bd80c413e163d89d2d67796dee",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001705/source.txt": "8edb36f042cb3b91e45d4e1b4086b7aafb08c8bcaffda166b795111942fc3774",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001706/source.txt": "4bb92e13bbf021e447fd252d4ef4ce54d19598f948af1fbe0960ed1fd017f536",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001707/source.txt": "6601a9e1727c68ea829574135ebf924e4c25330b67b8b9f98ba8a150078a092c",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001708/source.txt": "f90f640560f064bb8cd33898e53ae9b6740174211f4cbcbc4902d99082b06052",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001709/source.txt": "12df0e7493c1c6c6034414ee664ae3ab9c5046017c0ce77ad0a5528db9e86dc1",
+    "content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001710/source.txt": "2c8b97b7815348615769bff45a621c9791e913c148ad24d3df40a2ce65076965",
+    "content/books/mingshi/vol-011/from-start/part-08/sql/key-map.json": "41aa2c191cd8f7762291383ca4b45490da849c3609bdc7329524c637b4042d5a",
+    "content/books/mingshi/vol-011/from-start/part-08/time-review.json": "8bdaaf7494aa68109448be69bdba4417246e10048472597c1878e17ac34e61e7"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "eb51eaed-dbac-5ede-ba8f-eacfe5535c1d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月戊辰",
+        "claim_text": "景泰八年正月戊辰，朝廷免除江西受灾地区应缴纳的税粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.718794+00:00",
+        "field_path": "description",
+        "id": "eb51eaed-dbac-5ede-ba8f-eacfe5535c1d",
+        "note": "原文：八年春正月戊辰，免江西被災稅糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "adfa6ff8-8887-5893-b4e4-ccf805a8f469",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "56e5f41f-d480-54ec-bcbf-2c09c4ad484f"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月戊辰",
+        "claim_text": "原历景泰八年正月戊辰。DDBC历表换算所据为1457-02-06至1457-02-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.758869+00:00",
+        "field_path": "time_original",
+        "id": "56e5f41f-d480-54ec-bcbf-2c09c4ad484f",
+        "note": "原文：八年春正月戊辰，免江西被災稅糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "adfa6ff8-8887-5893-b4e4-ccf805a8f469",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a973cf22-fd4f-5919-9325-b05f30ee571d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月丁丑",
+        "claim_text": "朱祁钰带病在南郊斋宫留宿。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.819050+00:00",
+        "field_path": "description",
+        "id": "a973cf22-fd4f-5919-9325-b05f30ee571d",
+        "note": "原文：丁丑，帝輿疾宿南郊齋宮；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "beac1b51-89b3-5024-bf3a-2d45bc5afe2b",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6f556c30-f879-5e38-96d2-f2c6a0f4fd45"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月丁丑",
+        "claim_text": "景泰八年正月丁丑，病中的明景帝朱祁钰乘舆前往南郊斋宫，并在此留宿。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.865938+00:00",
+        "field_path": "description",
+        "id": "6f556c30-f879-5e38-96d2-f2c6a0f4fd45",
+        "note": "原文：丁丑，帝輿疾宿南郊齋宮；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "622a7801-194d-5523-89bd-0598b7b8c09e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a8a31f57-81a8-5a7f-90cf-807a40b446ff"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月丁丑",
+        "claim_text": "原历景泰八年正月丁丑。DDBC历表换算所据为1457-02-15至1457-02-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.903865+00:00",
+        "field_path": "time_original",
+        "id": "a8a31f57-81a8-5a7f-90cf-807a40b446ff",
+        "note": "原文：丁丑，帝輿疾宿南郊齋宮；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "622a7801-194d-5523-89bd-0598b7b8c09e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bec0c60d-dae9-5072-a6cc-84c8a834be5d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月丁丑",
+        "claim_text": "带病在南郊斋宫留宿",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.961510+00:00",
+        "field_path": "role",
+        "id": "bec0c60d-dae9-5072-a6cc-84c8a834be5d",
+        "note": "原文：丁丑，帝輿疾宿南郊齋宮；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "8b383ec7-7618-5e4b-b1ad-0daaba236f43",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0bd228d3-a40d-5955-b3d8-38f95a85d926"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月己卯",
+        "claim_text": "景泰八年正月己卯，群臣请求册立皇太子，明景帝朱祁钰没有同意。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:57.998871+00:00",
+        "field_path": "description",
+        "id": "0bd228d3-a40d-5955-b3d8-38f95a85d926",
+        "note": "原文：己卯，羣臣請建太子，不聽；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "b4c059b8-f350-598c-88e7-303279709a01",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "abfb1002-0652-515f-8f83-49f6dadfb835"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月己卯",
+        "claim_text": "原历景泰八年正月己卯。DDBC历表换算所据为1457-02-17至1457-02-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.035809+00:00",
+        "field_path": "time_original",
+        "id": "abfb1002-0652-515f-8f83-49f6dadfb835",
+        "note": "原文：己卯，羣臣請建太子，不聽；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "b4c059b8-f350-598c-88e7-303279709a01",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "452b0930-bb79-545a-be6d-989255ed51dc"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月己卯",
+        "claim_text": "未允群臣册立太子的请求",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.078992+00:00",
+        "field_path": "role",
+        "id": "452b0930-bb79-545a-be6d-989255ed51dc",
+        "note": "原文：己卯，羣臣請建太子，不聽；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "836969c1-8d39-5d9f-bf81-d7e938092a3d",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a7ace376-4175-5e88-92c1-b8df6e8d93c6"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "朱祁镇恢复帝位。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.114902+00:00",
+        "field_path": "description",
+        "id": "a7ace376-4175-5e88-92c1-b8df6e8d93c6",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "368e5a42-621f-5c8c-88c7-f59b8bb8a5cf",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c51c9941-f7df-5b7c-9a66-8f12aa50fa7d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "石亨参与迎奉英宗复位。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.162758+00:00",
+        "field_path": "description",
+        "id": "c51c9941-f7df-5b7c-9a66-8f12aa50fa7d",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "9892b251-a863-5d74-9c23-727ee42a25de",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e4dd3cb8-5360-5532-b81f-7fd83b5338db"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "徐有贞参与迎奉英宗复位。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.199270+00:00",
+        "field_path": "description",
+        "id": "e4dd3cb8-5360-5532-b81f-7fd83b5338db",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "a2c2c258-40a6-5fa1-b82d-a741f40d91fb",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "69ad6671-171e-5137-8ee6-c64861999196"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "景泰八年正月壬午，武清侯石亨、副都御史徐有贞等迎奉太上皇朱祁镇恢复帝位。改元诏见《英宗后纪》，在同月丙戌颁布。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.268815+00:00",
+        "field_path": "description",
+        "id": "69ad6671-171e-5137-8ee6-c64861999196",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：卷十一和宰辅年表同记正月壬午英宗复位。《英宗后纪》将改元诏另载于丙戌，本条时点为复位。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "826fb199-1219-5321-a7a0-73f18d08ab80"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "原历景泰八年正月壬午。DDBC历表换算所据为1457-02-20至1457-02-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.316126+00:00",
+        "field_path": "time_original",
+        "id": "826fb199-1219-5321-a7a0-73f18d08ab80",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：卷十一和宰辅年表同记正月壬午英宗复位。《英宗后纪》将改元诏另载于丙戌，本条时点为复位。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8efe60c0-e425-5101-8f89-69cf1dd3712f"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "恢复帝位",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.354717+00:00",
+        "field_path": "role",
+        "id": "8efe60c0-e425-5101-8f89-69cf1dd3712f",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "d5245ff4-6724-554e-a548-a0008a5065b9",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e9602dd7-c629-5722-97aa-a48acb7b54df"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "参与迎奉英宗复位",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.402836+00:00",
+        "field_path": "role",
+        "id": "e9602dd7-c629-5722-97aa-a48acb7b54df",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "7218fb2a-2a31-52e2-9f06-072f3cfe328d",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d47f2a7d-ca1a-5f96-aa0d-8932b8328ed3"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699；景泰八年正月壬午",
+        "claim_text": "参与迎奉英宗复位",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.448668+00:00",
+        "field_path": "role",
+        "id": "d47f2a7d-ca1a-5f96-aa0d-8932b8328ed3",
+        "note": "原文：壬午，武清侯石亨、副都御史徐有貞等迎上皇復位；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "status": "published",
+        "subject_id": "04fcd39e-a642-51ae-9aff-b6ab8227dc63",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "30c79d9d-dae5-55b1-ada6-52ce49e5f2fa"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月乙未",
+        "claim_text": "吴氏恢复旧封号。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:58.622128+00:00",
+        "field_path": "description",
+        "id": "30c79d9d-dae5-55b1-ada6-52ce49e5f2fa",
+        "note": "原文：二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "3f05f558-cc1d-5d3c-a972-c6e156b55ded",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c70c57d6-ff80-5b86-8742-5a12fdc15e3e"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月乙未",
+        "claim_text": "景泰八年二月乙未，复位的明英宗朱祁镇废朱祁钰为郕王，将他迁往西内，原为皇太后的吴氏等恢复旧封号。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.622006+00:00",
+        "field_path": "description",
+        "id": "c70c57d6-ff80-5b86-8742-5a12fdc15e3e",
+        "note": "原文：二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "05b22b67-1c38-51eb-a3cc-7f724ef1e85f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "46b51a06-b372-525c-899d-c6ce8f6d5512"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月乙未",
+        "claim_text": "原历景泰八年二月乙未。DDBC历表换算所据为1457-03-05至1457-03-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.709069+00:00",
+        "field_path": "time_original",
+        "id": "46b51a06-b372-525c-899d-c6ce8f6d5512",
+        "note": "原文：二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "05b22b67-1c38-51eb-a3cc-7f724ef1e85f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "76dbf012-5fcb-5a7b-a751-a34e7045b9ef"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月乙未",
+        "claim_text": "下令废朱祁钰帝位",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.742923+00:00",
+        "field_path": "role",
+        "id": "76dbf012-5fcb-5a7b-a751-a34e7045b9ef",
+        "note": "原文：二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "ca51e31a-b08a-5274-955f-daf7214d6d95",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ccb2d0d7-6982-5938-b335-8f52a688f62a"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月乙未",
+        "claim_text": "被废为郕王并迁往西内",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.781840+00:00",
+        "field_path": "role",
+        "id": "ccb2d0d7-6982-5938-b335-8f52a688f62a",
+        "note": "原文：二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "10fba3a9-e8d2-5714-a0ce-1c4ffca1f914",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a26801e4-0e0a-59af-b849-0ce93b0a1b7c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月乙未",
+        "claim_text": "恢复旧封号",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.816920+00:00",
+        "field_path": "role",
+        "id": "a26801e4-0e0a-59af-b849-0ce93b0a1b7c",
+        "note": "原文：二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "724144d4-a228-55ec-9ad1-fd9ba3f28f72",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b42ed058-5d98-50fe-9344-4c4738af1bc3"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月癸丑",
+        "claim_text": "景泰八年二月癸丑，被废为郕王的朱祁钰在西宫去世。《明史》本纪记其年三十。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.852101+00:00",
+        "field_path": "description",
+        "id": "b42ed058-5d98-50fe-9344-4c4738af1bc3",
+        "note": "原文：癸丑，王薨於西宮，年三十；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "1663eb32-d37a-57cf-a0c8-034e98047ac7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f87d2755-aa44-58fc-86d1-cb11ad65010a"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月癸丑",
+        "claim_text": "原历景泰八年二月癸丑。DDBC历表换算所据为1457-03-23至1457-03-23，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.886777+00:00",
+        "field_path": "time_original",
+        "id": "f87d2755-aa44-58fc-86d1-cb11ad65010a",
+        "note": "原文：癸丑，王薨於西宮，年三十；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "1663eb32-d37a-57cf-a0c8-034e98047ac7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6259bf9c-56e3-557a-8b31-60f52821e461"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月癸丑",
+        "claim_text": "在西宫去世",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.922333+00:00",
+        "field_path": "role",
+        "id": "6259bf9c-56e3-557a-8b31-60f52821e461",
+        "note": "原文：癸丑，王薨於西宮，年三十；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "67c4e0c8-68d4-5e7c-87f8-ac07d31de287",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6d0d847a-cdf1-517b-8bfc-fc40eae8c51d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月",
+        "claim_text": "景泰八年二月条记，朝廷为朱祁钰上谥号戾，拆毁先前营建的寿陵，以亲王礼把他安葬在西山，拨武成中卫军二百户守护。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.957382+00:00",
+        "field_path": "description",
+        "id": "6d0d847a-cdf1-517b-8bfc-fc40eae8c51d",
+        "note": "原文：諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "236ed6af-a2d8-5aff-8024-16ec5eadff8e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d15d22cb-6915-5383-88bb-6ef87df9eb94"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月",
+        "claim_text": "原历景泰八年二月。DDBC历表换算所据为1457-03-05至1457-04-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:43:59.991961+00:00",
+        "field_path": "time_original",
+        "id": "d15d22cb-6915-5383-88bb-6ef87df9eb94",
+        "note": "原文：諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "236ed6af-a2d8-5aff-8024-16ec5eadff8e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bf641f6e-adce-5917-b30d-4998aa9c53cc"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700；景泰八年二月",
+        "claim_text": "以亲王礼安葬于西山",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.027056+00:00",
+        "field_path": "role",
+        "id": "bf641f6e-adce-5917-b30d-4998aa9c53cc",
+        "note": "原文：諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "status": "published",
+        "subject_id": "718f01e0-6886-5a0a-bd5d-621c87d05188",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "858797cd-6239-56f7-b322-56fe6dbd3b3c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月戊子",
+        "claim_text": "朱见深下诏恢复景帝帝号。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.062047+00:00",
+        "field_path": "description",
+        "id": "858797cd-6239-56f7-b322-56fe6dbd3b3c",
+        "note": "原文：朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "71fde383-1de5-538d-bb25-2cc9e4cc7d1c",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "384856ad-e7cc-58b0-86f1-6faf316c2217"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月戊子",
+        "claim_text": "成化十一年十二月戊子，明宪宗朱见深下诏恢复叔父朱祁钰的皇帝称号，命大臣议定谥号。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.097121+00:00",
+        "field_path": "description",
+        "id": "384856ad-e7cc-58b0-86f1-6faf316c2217",
+        "note": "原文：朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "6d188136-7a51-50a5-b06e-47f89a4da015",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "89b0730b-7136-5a9b-a040-badbf5aee882"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月戊子",
+        "claim_text": "原历成化十一年十二月戊子。DDBC历表换算所据为1476-01-18至1476-01-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.130316+00:00",
+        "field_path": "time_original",
+        "id": "89b0730b-7136-5a9b-a040-badbf5aee882",
+        "note": "原文：朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "6d188136-7a51-50a5-b06e-47f89a4da015",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "da351c1e-5db7-5a48-9879-889572ca4974"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月戊子",
+        "claim_text": "下诏恢复景帝帝号",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.167250+00:00",
+        "field_path": "role",
+        "id": "da351c1e-5db7-5a48-9879-889572ca4974",
+        "note": "原文：朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "ae7cb90c-0a22-5dea-8531-bff044f04650",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c1995e8a-9679-508e-bf57-511b0d4369bd"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月戊子",
+        "claim_text": "死后恢复皇帝称号",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.201926+00:00",
+        "field_path": "role",
+        "id": "c1995e8a-9679-508e-bf57-511b0d4369bd",
+        "note": "原文：朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "3d716acd-a209-56ab-a5ac-7e3c1520d0a4",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2703e662-c087-5942-bc46-d9428b6829a1"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月",
+        "claim_text": "《明史》在成化十一年十二月条记载，恢复朱祁钰帝号后，朝廷上尊谥，下诏整修陵寝，祭祀依照其他皇帝陵寝的礼制。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.236889+00:00",
+        "field_path": "description",
+        "id": "2703e662-c087-5942-bc46-d9428b6829a1",
+        "note": "原文：遂上尊諡。敕有司繕陵寢，祭饗視諸陵；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "78b57fa0-b83b-5eaf-8ef7-c52234ede023",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bb05c95d-e6f3-55c7-bc86-a9a3d4ee548d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月",
+        "claim_text": "原历成化十一年十二月。DDBC历表换算所据为1476-01-06至1476-02-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.272115+00:00",
+        "field_path": "time_original",
+        "id": "bb05c95d-e6f3-55c7-bc86-a9a3d4ee548d",
+        "note": "原文：遂上尊諡。敕有司繕陵寢，祭饗視諸陵；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "78b57fa0-b83b-5eaf-8ef7-c52234ede023",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a2a5b5b3-9225-5c2c-9ec5-4ef9e412e4c0"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701；成化十一年十二月",
+        "claim_text": "被上尊谥并按皇帝陵寝礼制受祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.306701+00:00",
+        "field_path": "role",
+        "id": "a2a5b5b3-9225-5c2c-9ec5-4ef9e412e4c0",
+        "note": "原文：遂上尊諡。敕有司繕陵寢，祭饗視諸陵；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "status": "published",
+        "subject_id": "3f9d6090-6974-56c8-b8d0-5df84b160b05",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ec8663d0-babe-5c56-a24e-7390010c0341"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001705；正统十四年十月己未出使条校记",
+        "claim_text": "卷末校记指出，使者赵荣原误作王荣。《于谦传》《王复传》《赵荣附传》和《国榷》也记作赵荣。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.341736+00:00",
+        "field_path": "description",
+        "id": "ec8663d0-babe-5c56-a24e-7390010c0341",
+        "note": "原文：按本書卷一七０于謙傳、又卷一七七王復傳，國榷卷二八頁一八０四都作「趙榮」。本書卷一七一楊善傳附有趙榮傳，事跡與紀合。；核对说明：卷末校记所指就是卷十一王复、赵荣赴也先营事件，保存异名校勘依据。",
+        "source_id": "717052a9-c719-5afc-bfea-aa3a71d36329",
+        "status": "published",
+        "subject_id": "e388db22-76d9-56ef-9c8a-dcb31bd519d6",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9cbb8fc8-0ea6-5b51-b635-95afbe3887a7"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001705；正统十四年十月己未出使条校记",
+        "claim_text": "卷末校记所指就是卷十一王复、赵荣赴也先营事件，保存异名校勘依据。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.376804+00:00",
+        "field_path": "time_original",
+        "id": "9cbb8fc8-0ea6-5b51-b635-95afbe3887a7",
+        "note": "原文：按本書卷一七０于謙傳、又卷一七七王復傳，國榷卷二八頁一八０四都作「趙榮」。本書卷一七一楊善傳附有趙榮傳，事跡與紀合。；核对说明：卷末校记所指就是卷十一王复、赵荣赴也先营事件，保存异名校勘依据。",
+        "source_id": "717052a9-c719-5afc-bfea-aa3a71d36329",
+        "status": "published",
+        "subject_id": "e388db22-76d9-56ef-9c8a-dcb31bd519d6",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ff169909-4385-5cbd-b19c-81c762e3bee7"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001706；景泰三年九月奔丧（卷末校勘记）",
+        "claim_text": "卷末校记征引宰辅年表和《英宗实录》，景泰三年九月江渊是奔丧，次年四月才返任。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.411939+00:00",
+        "field_path": "description",
+        "id": "ff169909-4385-5cbd-b19c-81c762e3bee7",
+        "note": "原文：按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。；核对说明：校记与宰辅年表同一次奔丧。正文九月系起复疑误。",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29",
+        "status": "published",
+        "subject_id": "9c0541ed-95c1-5669-8189-8d5c81b940eb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b8fa6fe1-9b52-5ceb-a6c1-86d2598ad2ac"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001706；景泰三年九月奔丧（卷末校勘记）",
+        "claim_text": "原历景泰三年九月奔丧（卷末校勘记）。DDBC历表换算所据为1452-09-22至1452-10-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.447093+00:00",
+        "field_path": "time_original",
+        "id": "b8fa6fe1-9b52-5ceb-a6c1-86d2598ad2ac",
+        "note": "原文：按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。；核对说明：校记与宰辅年表同一次奔丧。正文九月系起复疑误。",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29",
+        "status": "published",
+        "subject_id": "9c0541ed-95c1-5669-8189-8d5c81b940eb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c6c6cd43-1535-5198-a214-c71c6b4893cb"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001706；景泰四年四月还任（卷末校勘记）",
+        "claim_text": "卷末校记认为，江渊起复在景泰四年四月，本纪正文将起复写在前一年九月可疑。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.482746+00:00",
+        "field_path": "description",
+        "id": "c6c6cd43-1535-5198-a214-c71c6b4893cb",
+        "note": "原文：按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。；核对说明：校勘记与年表同记景泰四年四月还任，校记正文异文已附同事件。",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29",
+        "status": "published",
+        "subject_id": "b795f7ef-c88c-5f9f-a8c5-a292edef2a23",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0c488278-59e7-5e94-9b9d-38b97fdc667e"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001706；景泰四年四月还任（卷末校勘记）",
+        "claim_text": "原历景泰四年四月还任（卷末校勘记）。DDBC历表换算所据为1453-05-18至1453-06-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.533043+00:00",
+        "field_path": "time_original",
+        "id": "0c488278-59e7-5e94-9b9d-38b97fdc667e",
+        "note": "原文：按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。；核对说明：校勘记与年表同记景泰四年四月还任，校记正文异文已附同事件。",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29",
+        "status": "published",
+        "subject_id": "b795f7ef-c88c-5f9f-a8c5-a292edef2a23",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5213f3d9-e982-55a2-9f98-dd9f3132c034"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001707；景泰四年五月己巳奔丧（卷末校勘记）",
+        "claim_text": "卷末校记根据宰辅年表和《英宗实录》，景泰四年五月己巳，王文因母丧离职回乡奔丧。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.587944+00:00",
+        "field_path": "description",
+        "id": "5213f3d9-e982-55a2-9f98-dd9f3132c034",
+        "note": "原文：英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。；核对说明：校记引实录明确丁母忧奔丧在五月己巳，补年表五月丁忧确日。",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34",
+        "status": "published",
+        "subject_id": "86a196bc-8a7b-58b4-b1f2-f2d8e003b385",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c6667108-ac98-54c5-bbf9-d05fdc752ba8"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001707；景泰四年五月己巳奔丧（卷末校勘记）",
+        "claim_text": "原历景泰四年五月己巳奔丧（卷末校勘记）。DDBC历表换算所据为1453-06-28至1453-06-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.622008+00:00",
+        "field_path": "time_original",
+        "id": "c6667108-ac98-54c5-bbf9-d05fdc752ba8",
+        "note": "原文：英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。；核对说明：校记引实录明确丁母忧奔丧在五月己巳，补年表五月丁忧确日。",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34",
+        "status": "published",
+        "subject_id": "86a196bc-8a7b-58b4-b1f2-f2d8e003b385",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8dd053bd-dc0b-5fe8-b568-012131470384"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001707；景泰四年九月甲寅起复（卷末校勘记）",
+        "claim_text": "卷末校记根据宰辅年表和《英宗实录》，王文景泰四年九月甲寅起复。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.657058+00:00",
+        "field_path": "description",
+        "id": "8dd053bd-dc0b-5fe8-b568-012131470384",
+        "note": "原文：英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。此記起復於五月己巳，合二事為一，顯有脫訛。；核对说明：校记引实录明确九月甲寅返任，并指出正文合并两事。",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34",
+        "status": "published",
+        "subject_id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "90dabdc6-ce35-530f-bce9-7a15bbb08c3c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001707；景泰四年九月甲寅起复（卷末校勘记）",
+        "claim_text": "原历景泰四年九月甲寅起复（卷末校勘记）。DDBC历表换算所据为1453-10-11至1453-10-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.692134+00:00",
+        "field_path": "time_original",
+        "id": "90dabdc6-ce35-530f-bce9-7a15bbb08c3c",
+        "note": "原文：英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。此記起復於五月己巳，合二事為一，顯有脫訛。；核对说明：校记引实录明确九月甲寅返任，并指出正文合并两事。",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34",
+        "status": "published",
+        "subject_id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9b44365b-4d06-5b8d-9071-c3204e37beb0"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001708；景泰四年十月甲午任命条校记",
+        "claim_text": "卷末校记说明，《明史》徐有贞本传与《国榷》作左佥都御史，《明史稿》和《英宗实录》作右佥都御史。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.732087+00:00",
+        "field_path": "description",
+        "id": "9b44365b-4d06-5b8d-9071-c3204e37beb0",
+        "note": "原文：左僉都御史，本書卷一七一徐有貞傳、國榷卷三一頁一九六六同。明史稿紀九景帝紀及英宗實錄卷二三四均作「右僉都御史」。；核对说明：校记针对同一次任命，保留两种官衔写法。",
+        "source_id": "fa93c439-11fd-5ec6-97f2-5811757020cb",
+        "status": "published",
+        "subject_id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "403c57ba-b855-529b-a53f-339292c30fe5"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001708；景泰四年十月甲午任命条校记",
+        "claim_text": "校记针对同一次任命，保留两种官衔写法。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:44:00.766673+00:00",
+        "field_path": "time_original",
+        "id": "403c57ba-b855-529b-a53f-339292c30fe5",
+        "note": "原文：左僉都御史，本書卷一七一徐有貞傳、國榷卷三一頁一九六六同。明史稿紀九景帝紀及英宗實錄卷二三四均作「右僉都御史」。；核对说明：校记针对同一次任命，保留两种官衔写法。",
+        "source_id": "fa93c439-11fd-5ec6-97f2-5811757020cb",
+        "status": "published",
+        "subject_id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "44193ee9-e95f-566d-869c-4bc9722b6cbe"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.211008+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "44193ee9-e95f-566d-869c-4bc9722b6cbe",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001699",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001699",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001699/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c6261050407ad0d2abf6d9119d09e62ad920add24b2fe467beab79e3c838d8d3",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe"
+      },
+      "row": {
+        "archive_blob_sha256": "230b65e1bf5deec5630dc9967fe8f4ba8358851d78bd15d3fe29ef252a93a2b1",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001699/source.txt",
+        "archive_url_sha256": "c6261050407ad0d2abf6d9119d09e62ad920add24b2fe467beab79e3c838d8d3",
+        "content": "八年春正月戊辰，免江西被災稅糧。丁丑，帝輿疾宿南郊齋宮。己卯，羣臣請建太子，不聽。壬午，武清侯石亨、副都御史徐有貞等迎上皇復位。",
+        "content_sha256": "230b65e1bf5deec5630dc9967fe8f4ba8358851d78bd15d3fe29ef252a93a2b1",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "44193ee9-e95f-566d-869c-4bc9722b6cbe"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001699"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79011,
+        "char_start": 78947,
+        "content": "八年春正月戊辰，免江西被災稅糧。丁丑，帝輿疾宿南郊齋宮。己卯，羣臣請建太子，不聽。壬午，武清侯石亨、副都御史徐有貞等迎上皇復位。",
+        "content_sha256": "230b65e1bf5deec5630dc9967fe8f4ba8358851d78bd15d3fe29ef252a93a2b1",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001699",
+        "kind": "body",
+        "ordinal": 1686,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.251032+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001700",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001700",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001700/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "6863921719805d95d3b0bb1501a47382fb74e33933489250dba65dc07ef311b9",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae"
+      },
+      "row": {
+        "archive_blob_sha256": "5f95a36430b9070073974f271e3bb47588e7bdbf0af8ae15e74838f83a82f74a",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001700/source.txt",
+        "archive_url_sha256": "6863921719805d95d3b0bb1501a47382fb74e33933489250dba65dc07ef311b9",
+        "content": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號。癸丑，王薨於西宮，年三十。諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護。",
+        "content_sha256": "5f95a36430b9070073974f271e3bb47588e7bdbf0af8ae15e74838f83a82f74a",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001700"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79083,
+        "char_start": 79013,
+        "content": "二月乙未，廢帝為郕王，遷西內，皇太后吳氏以下悉仍舊號。癸丑，王薨於西宮，年三十。諡曰戾。毀所營壽陵，以親王禮葬西山，給武成中衞軍二百戶守護。",
+        "content_sha256": "5f95a36430b9070073974f271e3bb47588e7bdbf0af8ae15e74838f83a82f74a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001700",
+        "kind": "body",
+        "ordinal": 1687,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "dac922a4-2967-559a-bb25-820e3cfa7be8"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.297020+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "dac922a4-2967-559a-bb25-820e3cfa7be8",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001701",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001701",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001701/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "12538e6046d07e888509badd53169e64d57b76e90072e596f7a7573b4d84e598",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8"
+      },
+      "row": {
+        "archive_blob_sha256": "6d8fc0a538e74533308c0e670d143b1b0daab586e4e20b0b4aa1980a1d5724e6",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001701/source.txt",
+        "archive_url_sha256": "12538e6046d07e888509badd53169e64d57b76e90072e596f7a7573b4d84e598",
+        "content": "成化十一年十二月戊子，制曰：「朕叔郕王踐阼，戡難保邦，奠安宗社，殆將八載。彌留之際，奸臣貪功，妄興讒構，請削帝號。先帝旋知其枉，每用悔恨，以次抵諸奸於法，不幸上賓，未及舉正。朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞。」遂上尊諡。敕有司繕陵寢，祭饗視諸陵。",
+        "content_sha256": "6d8fc0a538e74533308c0e670d143b1b0daab586e4e20b0b4aa1980a1d5724e6",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "dac922a4-2967-559a-bb25-820e3cfa7be8"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001701"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79215,
+        "char_start": 79085,
+        "content": "成化十一年十二月戊子，制曰：「朕叔郕王踐阼，戡難保邦，奠安宗社，殆將八載。彌留之際，奸臣貪功，妄興讒構，請削帝號。先帝旋知其枉，每用悔恨，以次抵諸奸於法，不幸上賓，未及舉正。朕敦念親親，用成先志，可仍皇帝之號，其議諡以聞。」遂上尊諡。敕有司繕陵寢，祭饗視諸陵。",
+        "content_sha256": "6d8fc0a538e74533308c0e670d143b1b0daab586e4e20b0b4aa1980a1d5724e6",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001701",
+        "kind": "body",
+        "ordinal": 1688,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "717052a9-c719-5afc-bfea-aa3a71d36329"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.480889+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "717052a9-c719-5afc-bfea-aa3a71d36329",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001705",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001705",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001705/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "592f8ecd39f3d3cedc663027ee6def54751eabbf6481a9f22c372e9f09d95f0e",
+        "source_id": "717052a9-c719-5afc-bfea-aa3a71d36329"
+      },
+      "row": {
+        "archive_blob_sha256": "8edb36f042cb3b91e45d4e1b4086b7aafb08c8bcaffda166b795111942fc3774",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001705/source.txt",
+        "archive_url_sha256": "592f8ecd39f3d3cedc663027ee6def54751eabbf6481a9f22c372e9f09d95f0e",
+        "content": "↑ 右通政王復太常少卿趙榮使也先營 趙榮，原作「王榮」。明史稿紀九景帝紀、英宗實錄卷一八四同。按本書卷一七０于謙傳、又卷一七七王復傳，國榷卷二八頁一八０四都作「趙榮」。本書卷一七一楊善傳附有趙榮傳，事跡與紀合。明史稿、英宗實錄顯蒙上文「王復」的「王」字而誤，今改正。",
+        "content_sha256": "8edb36f042cb3b91e45d4e1b4086b7aafb08c8bcaffda166b795111942fc3774",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "717052a9-c719-5afc-bfea-aa3a71d36329"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001705"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79475,
+        "char_start": 79342,
+        "content": "↑ 右通政王復太常少卿趙榮使也先營 趙榮，原作「王榮」。明史稿紀九景帝紀、英宗實錄卷一八四同。按本書卷一七０于謙傳、又卷一七七王復傳，國榷卷二八頁一八０四都作「趙榮」。本書卷一七一楊善傳附有趙榮傳，事跡與紀合。明史稿、英宗實錄顯蒙上文「王復」的「王」字而誤，今改正。",
+        "content_sha256": "8edb36f042cb3b91e45d4e1b4086b7aafb08c8bcaffda166b795111942fc3774",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001705",
+        "kind": "annotation",
+        "ordinal": 1692,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3e7f587f-9256-5488-a406-e3217dca5b29"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.523712+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3e7f587f-9256-5488-a406-e3217dca5b29",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001706",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001706",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001706/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c322efde32355b0e44ac4a0426805a74c499213f49c4017ec1038862952f8851",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29"
+      },
+      "row": {
+        "archive_blob_sha256": "4bb92e13bbf021e447fd252d4ef4ce54d19598f948af1fbe0960ed1fd017f536",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001706/source.txt",
+        "archive_url_sha256": "c322efde32355b0e44ac4a0426805a74c499213f49c4017ec1038862952f8851",
+        "content": "↑ 九月庚寅江淵起復 按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。",
+        "content_sha256": "4bb92e13bbf021e447fd252d4ef4ce54d19598f948af1fbe0960ed1fd017f536",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "3e7f587f-9256-5488-a406-e3217dca5b29"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001706"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79547,
+        "char_start": 79477,
+        "content": "↑ 九月庚寅江淵起復 按本書卷一０九宰輔年表、英宗實錄卷二二０都作「九月奔喪」，宰輔年表作四年「四月還任」，是起復在下一年四月，紀文疑有誤。",
+        "content_sha256": "4bb92e13bbf021e447fd252d4ef4ce54d19598f948af1fbe0960ed1fd017f536",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001706",
+        "kind": "annotation",
+        "ordinal": 1693,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3eb933d4-aa72-5192-ac2c-307d62608d34"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.560689+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3eb933d4-aa72-5192-ac2c-307d62608d34",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001707",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001707",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001707/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "a2dd12e133f70a74974b689f4cdbf6ba05a09d8111e3362d9419a05cb36387f7",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34"
+      },
+      "row": {
+        "archive_blob_sha256": "6601a9e1727c68ea829574135ebf924e4c25330b67b8b9f98ba8a150078a092c",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001707/source.txt",
+        "archive_url_sha256": "a2dd12e133f70a74974b689f4cdbf6ba05a09d8111e3362d9419a05cb36387f7",
+        "content": "↑ 己巳王文起復 按本書卷一０九宰輔年表記王文事，作「五月丁憂，九月起復」。英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。此記起復於五月己巳，合二事為一，顯有脫訛。",
+        "content_sha256": "6601a9e1727c68ea829574135ebf924e4c25330b67b8b9f98ba8a150078a092c",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "3eb933d4-aa72-5192-ac2c-307d62608d34"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001707"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79641,
+        "char_start": 79549,
+        "content": "↑ 己巳王文起復 按本書卷一０九宰輔年表記王文事，作「五月丁憂，九月起復」。英宗實錄卷二二九繫王文丁母憂奔喪於五月己巳，繫王文起復於九月甲寅。此記起復於五月己巳，合二事為一，顯有脫訛。",
+        "content_sha256": "6601a9e1727c68ea829574135ebf924e4c25330b67b8b9f98ba8a150078a092c",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001707",
+        "kind": "annotation",
+        "ordinal": 1694,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "fa93c439-11fd-5ec6-97f2-5811757020cb"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:43:53.603935+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "fa93c439-11fd-5ec6-97f2-5811757020cb",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001708",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001708",
+        "url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001708/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "a8d5f74566ae28d2e15bd3da9ece88ed3811e90bcdbd25a98c9e1b356d6eb476",
+        "source_id": "fa93c439-11fd-5ec6-97f2-5811757020cb"
+      },
+      "row": {
+        "archive_blob_sha256": "f90f640560f064bb8cd33898e53ae9b6740174211f4cbcbc4902d99082b06052",
+        "archive_commit": "1b73eebbad6423bd9ca4766cc72e0bde31997e62",
+        "archive_url": "https://github.com/greed-216/histree/blob/1b73eebbad6423bd9ca4766cc72e0bde31997e62/content/books/mingshi/vol-011/from-start/part-08/sources/mingshi-2f603db3d81e-p001708/source.txt",
+        "archive_url_sha256": "a8d5f74566ae28d2e15bd3da9ece88ed3811e90bcdbd25a98c9e1b356d6eb476",
+        "content": "↑ 諭德徐有貞為左僉都御史 左僉都御史，本書卷一七一徐有貞傳、國榷卷三一頁一九六六同。明史稿紀九景帝紀及英宗實錄卷二三四均作「右僉都御史」。按本書敍及官銜，「左」「右」往往相混，以後此類不再出校記。",
+        "content_sha256": "f90f640560f064bb8cd33898e53ae9b6740174211f4cbcbc4902d99082b06052",
+        "created_at": "2026-11-18T18:44:03.061999+00:00",
+        "source_id": "fa93c439-11fd-5ec6-97f2-5811757020cb"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001708"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 79742,
+        "char_start": 79643,
+        "content": "↑ 諭德徐有貞為左僉都御史 左僉都御史，本書卷一七一徐有貞傳、國榷卷三一頁一九六六同。明史稿紀九景帝紀及英宗實錄卷二三四均作「右僉都御史」。按本書敍及官銜，「左」「右」往往相混，以後此類不再出校記。",
+        "content_sha256": "f90f640560f064bb8cd33898e53ae9b6740174211f4cbcbc4902d99082b06052",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001708",
+        "kind": "annotation",
+        "ordinal": 1695,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "adfa6ff8-8887-5893-b4e4-ccf805a8f469"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.699132+00:00",
+        "description": "景泰八年正月戊辰，朝廷免除江西受灾地区应缴纳的税粮。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "adfa6ff8-8887-5893-b4e4-ccf805a8f469",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰八年正月戊辰",
+        "title": "明廷豁免江西灾区税粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "622a7801-194d-5523-89bd-0598b7b8c09e"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.738839+00:00",
+        "description": "景泰八年正月丁丑，病中的明景帝朱祁钰乘舆前往南郊斋宫，并在此留宿。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "622a7801-194d-5523-89bd-0598b7b8c09e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰八年正月丁丑",
+        "title": "景帝带病到南郊斋宫留宿"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b4c059b8-f350-598c-88e7-303279709a01"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.778811+00:00",
+        "description": "景泰八年正月己卯，群臣请求册立皇太子，明景帝朱祁钰没有同意。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "b4c059b8-f350-598c-88e7-303279709a01",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰八年正月己卯",
+        "title": "景帝未同意群臣册立太子的请求"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:35.493234+00:00",
+        "description": "景泰8年（1457年）正月壬午，朱祁镇恢复皇帝位，并改元天顺。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "febef8c3-857e-5bbf-9e2b-b2e32686d1ad",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰8年（1457年）正月壬午",
+        "title": "朱祁镇恢复皇帝位，并改元天顺"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "05b22b67-1c38-51eb-a3cc-7f724ef1e85f"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.820059+00:00",
+        "description": "景泰八年二月乙未，复位的明英宗朱祁镇废朱祁钰为郕王，将他迁往西内，原为皇太后的吴氏等恢复旧封号。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "05b22b67-1c38-51eb-a3cc-7f724ef1e85f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰八年二月乙未",
+        "title": "明英宗废朱祁钰为郕王并迁往西内"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1663eb32-d37a-57cf-a0c8-034e98047ac7"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.855809+00:00",
+        "description": "景泰八年二月癸丑，被废为郕王的朱祁钰在西宫去世。《明史》本纪记其年三十。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "1663eb32-d37a-57cf-a0c8-034e98047ac7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰八年二月癸丑",
+        "title": "朱祁钰在西宫去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "236ed6af-a2d8-5aff-8024-16ec5eadff8e"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.889049+00:00",
+        "description": "景泰八年二月条记，朝廷为朱祁钰上谥号戾，拆毁先前营建的寿陵，以亲王礼把他安葬在西山，拨武成中卫军二百户守护。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "236ed6af-a2d8-5aff-8024-16ec5eadff8e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰八年二月",
+        "title": "明廷谥朱祁钰为戾，以亲王礼葬于西山"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6d188136-7a51-50a5-b06e-47f89a4da015"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.925043+00:00",
+        "description": "成化十一年十二月戊子，明宪宗朱见深下诏恢复叔父朱祁钰的皇帝称号，命大臣议定谥号。",
+        "dynasty": "明",
+        "end_year": 1476,
+        "id": "6d188136-7a51-50a5-b06e-47f89a4da015",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1476,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十一年十二月戊子",
+        "title": "明宪宗下诏恢复朱祁钰帝号"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "78b57fa0-b83b-5eaf-8ef7-c52234ede023"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:43:55.962000+00:00",
+        "description": "《明史》在成化十一年十二月条记载，恢复朱祁钰帝号后，朝廷上尊谥，下诏整修陵寝，祭祀依照其他皇帝陵寝的礼制。",
+        "dynasty": "明",
+        "end_year": 1476,
+        "id": "78b57fa0-b83b-5eaf-8ef7-c52234ede023",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1476,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十一年十二月",
+        "title": "明廷为朱祁钰上尊谥，命修陵并依诸帝陵祭祀"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e388db22-76d9-56ef-9c8a-dcb31bd519d6"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:19:39.800282+00:00",
+        "description": "正统十四年十月己未，右通政王复与太常少卿赵荣出使瓦剌太师也先的军营，在土城拜见太上皇朱祁镇。",
+        "dynasty": "明",
+        "end_year": 1449,
+        "id": "e388db22-76d9-56ef-9c8a-dcb31bd519d6",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1449,
+        "status": "published",
+        "tags": [],
+        "time_original": "正统十四年十月己未",
+        "title": "王复、赵荣出使也先军营，在土城拜见太上皇"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "9c0541ed-95c1-5669-8189-8d5c81b940eb"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:34.733571+00:00",
+        "description": "景泰3年（1452年）九月，江渊回乡奔丧。",
+        "dynasty": "明",
+        "end_year": 1452,
+        "id": "9c0541ed-95c1-5669-8189-8d5c81b940eb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1452,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰3年（1452年）九月",
+        "title": "江渊回乡奔丧"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b795f7ef-c88c-5f9f-a8c5-a292edef2a23"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:35.078732+00:00",
+        "description": "景泰4年（1453年）四月，江渊返回原任。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "b795f7ef-c88c-5f9f-a8c5-a292edef2a23",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰4年（1453年）四月",
+        "title": "江渊返回原任"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "86a196bc-8a7b-58b4-b1f2-f2d8e003b385"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:34.999168+00:00",
+        "description": "景泰4年（1453年）五月，王文离职守丧。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "86a196bc-8a7b-58b4-b1f2-f2d8e003b385",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰4年（1453年）五月",
+        "title": "王文离职守丧"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d07995e7-af04-5f65-8f47-2e7481a07f51"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:35.043719+00:00",
+        "description": "景泰4年（1453年）九月，王文恢复任职。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰4年（1453年）九月",
+        "title": "王文恢复任职"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.301638+00:00",
+        "description": "景泰四年十月甲午，朝廷任命谕德徐有贞为左佥都御史，派他治理沙湾黄河决口。《英宗实录》作右佥都御史，卷末校记保留两种写法。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十月甲午",
+        "title": "徐有贞受命治理沙湾河患"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v011_p001603_envoys",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v011_p001658_xu",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    }
+  ],
+  "source_locations": {
+    "3e7f587f-9256-5488-a406-e3217dca5b29": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001706",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "3eb933d4-aa72-5192-ac2c-307d62608d34": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001707",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "44193ee9-e95f-566d-869c-4bc9722b6cbe": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001699",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "717052a9-c719-5afc-bfea-aa3a71d36329": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001705",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "9a94b9a3-c6f7-57c1-bedd-42ce6e1badae": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001700",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "dac922a4-2967-559a-bb25-820e3cfa7be8": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001701",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "fa93c439-11fd-5ec6-97f2-5811757020cb": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001708",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 11
+}

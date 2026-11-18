@@ -8,10 +8,10 @@
   "total_source_paragraphs": 3529,
   "completed_volumes": [],
   "active_cursor": {
-    "volume": 9,
-    "next_paragraph": "mingshi-2f603db3d81e-p001287"
+    "volume": 10,
+    "next_paragraph": "mingshi-2f603db3d81e-p001425"
   },
-  "last_published_paragraph": "mingshi-2f603db3d81e-p001286",
+  "last_published_paragraph": "mingshi-2f603db3d81e-p001424",
   "working_drafts": [],
   "volumes": [
     {
@@ -170,7 +170,11 @@
         "annotation": 3
       },
       "source_snapshot_check": "verified",
-      "publication_status": "not_published"
+      "publication_status": "full_source_reviewed_clear_facts_published_with_deferred",
+      "processed_source_paragraphs": 138,
+      "completion_audit": "content/books/mingshi/vol-009/from-start/completion-audit.json",
+      "coverage_receipt": "content/books/mingshi/vol-009/from-start/coverage-receipt.json",
+      "all_facts_resolved": false
     },
     {
       "volume": 10,
@@ -1440,6 +1444,131 @@
         ".workflow/sidecars-receipt.json": "b1403725e7a1ad3dfd8902a69d40ea63def8618e8a2844dfc2314e0562c6b994",
         ".workflow/web-proof.json": "18b6d3cb43920fa6acfe2aea5b018a850447603c97cf47370ca475c75dec3925"
       }
+    },
+    {
+      "batch": "content/books/mingshi/vol-009/from-start/part-01",
+      "batch_sha256": "0e8f563bef0cf5baef50a4f5d778e3f069cbda377673f5e43eb1146f0d6b4db6",
+      "range": [
+        "mingshi-2f603db3d81e-p001287",
+        "mingshi-2f603db3d81e-p001313"
+      ],
+      "source_paragraphs": 27,
+      "status": "published_fact_subset_verified",
+      "new_counts": {
+        "source": 26,
+        "person": 3,
+        "event": 53,
+        "person_relationship": 2,
+        "person_event": 47,
+        "fact_claim": 200,
+        "source_text": 22
+      },
+      "deferred": 17,
+      "proofs": {
+        "publication-mysql.json": "b8009592ac3142c975eeb148b1e5909646fa9e65f2c11b025dfde2a66cb86fc7",
+        ".workflow/sidecars-receipt.json": "d33fd70f489d658ad4a10fe4a25432c904644f83e3f43e360f8dc35d30359c14",
+        ".workflow/web-proof.json": "685d4fafbd44c3923f65559c21b64e0b757a1e3d0704beb87c28a5e9cc02a5ff"
+      }
+    },
+    {
+      "batch": "content/books/mingshi/vol-009/from-start/part-02",
+      "batch_sha256": "10a3eeed6713b5935171511ac385a81c789db0440e0cb40518b90e886ea349d0",
+      "range": [
+        "mingshi-2f603db3d81e-p001314",
+        "mingshi-2f603db3d81e-p001341"
+      ],
+      "source_paragraphs": 28,
+      "status": "published_fact_subset_verified",
+      "new_counts": {
+        "source": 28,
+        "person": 1,
+        "event": 53,
+        "person_relationship": 2,
+        "person_event": 31,
+        "fact_claim": 161,
+        "source_text": 26
+      },
+      "deferred": 15,
+      "proofs": {
+        "publication-mysql.json": "0bbd457d2b35cc94589188f8613e238572d71fe00be4c0463985d43713704868",
+        ".workflow/sidecars-receipt.json": "ee3e02df3703f4d9df5564c4c8a8f84272a6b604c9c1053681183b13adcf035e",
+        ".workflow/web-proof.json": "381efc1922b7dfe4cb1d2c646dba57f870c6ff99687a1dbbc6933d68f7eb8be7"
+      }
+    },
+    {
+      "batch": "content/books/mingshi/vol-009/from-start/part-03",
+      "batch_sha256": "22ce7856826c4ef1e0b9a65b3085566f53da6d3ac4e03f6401acb543c2a2ba4b",
+      "range": [
+        "mingshi-2f603db3d81e-p001342",
+        "mingshi-2f603db3d81e-p001369"
+      ],
+      "source_paragraphs": 28,
+      "status": "published_fact_subset_verified",
+      "new_counts": {
+        "source": 28,
+        "person": 1,
+        "event": 48,
+        "person_relationship": 0,
+        "person_event": 30,
+        "fact_claim": 155,
+        "source_text": 26
+      },
+      "deferred": 16,
+      "proofs": {
+        "publication-mysql.json": "21212d8420a07749eab6f5568e3bba2092a6c06ca09eea0bea6f041c17b5615c",
+        ".workflow/sidecars-receipt.json": "cb99e29091eec835d759f70e3c5419dddc1c6b6b2a5389c7e6e6e910a1477466",
+        ".workflow/web-proof.json": "b55bbaebb4c5be4a5710122d013eb3158645015ae3ce9659e8b5c516750e35ee"
+      }
+    },
+    {
+      "batch": "content/books/mingshi/vol-009/from-start/part-04",
+      "batch_sha256": "ab118e75b9c1167aa7cfb175df7a2a500df9468d3390b3b4eb3b700e5b3a6ee8",
+      "range": [
+        "mingshi-2f603db3d81e-p001370",
+        "mingshi-2f603db3d81e-p001390"
+      ],
+      "source_paragraphs": 21,
+      "status": "published_fact_subset_verified",
+      "new_counts": {
+        "source": 21,
+        "person": 1,
+        "event": 30,
+        "person_relationship": 0,
+        "person_event": 8,
+        "fact_claim": 77,
+        "source_text": 19
+      },
+      "deferred": 12,
+      "proofs": {
+        "publication-mysql.json": "61f4d2334f2db56f1dba4d7524682277081533708e0803d8bb3a8e5638b778da",
+        ".workflow/sidecars-receipt.json": "a9cea1413d5f277c8608e24eeb8d6eb337b3468f31c5b4863a7dcd94fa987151",
+        ".workflow/web-proof.json": "6aa8ecf611396c32e67ef72d910a5fb849832b51641c37c79a2d53ee082790ed"
+      }
+    },
+    {
+      "batch": "content/books/mingshi/vol-009/from-start/part-05",
+      "batch_sha256": "1ccbcf7adb39c2c4d0998fe44e56fe60b482727ce93d02e13205b693f1ad76b2",
+      "range": [
+        "mingshi-2f603db3d81e-p001391",
+        "mingshi-2f603db3d81e-p001424"
+      ],
+      "source_paragraphs": 34,
+      "status": "published_fact_subset_verified",
+      "new_counts": {
+        "source": 34,
+        "person": 1,
+        "event": 53,
+        "person_relationship": 1,
+        "person_event": 22,
+        "fact_claim": 142,
+        "source_text": 28
+      },
+      "deferred": 15,
+      "proofs": {
+        "publication-mysql.json": "cacca30998a3555b206d35954211f033217a24b8b08e183b10aacd3789b08664",
+        ".workflow/sidecars-receipt.json": "d00864772d98684a996e3ca18ebe37524d26e400e994e1994ecba8a8a76b87fd",
+        ".workflow/web-proof.json": "98f3418c6d623fe78a5e15c61152fed719572cb93d8d5877388dc6fd714c5643"
+      }
     }
   ],
   "pending_items": "content/books/mingshi/from-start/pending-items.json",
@@ -1451,6 +1580,7 @@
     5,
     6,
     7,
-    8
+    8,
+    9
   ]
 }

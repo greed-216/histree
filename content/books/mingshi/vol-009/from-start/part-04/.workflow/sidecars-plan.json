@@ -1,0 +1,4573 @@
+{
+  "batch_dir": "content/books/mingshi/vol-009/from-start/part-04",
+  "batch_key": "mingshi-v009-from-start-04",
+  "batch_sha256": "ab118e75b9c1167aa7cfb175df7a2a500df9468d3390b3b4eb3b700e5b3a6ee8",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001370",
+    "mingshi-2f603db3d81e-p001381"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "69e9cee9-64a2-5d48-8f3d-da28d608c1b7",
+        "note_sha256": "50b8e7d4dd1cef965b8b6a420203d16b3397181894c59eb15bbe81434a804ff1",
+        "quote_text": "六年春正月丁丑，大祀天地於南郊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "824235f2-b8c5-5cdb-828a-c127ced9084c",
+        "note_sha256": "58ad5558001ccb04ce50e8973649fde516483e6a0e15ab8ba87afbab347795cf",
+        "quote_text": "六年春正月丁丑，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "16063d70-cfa2-5f75-8ace-d555157ad850",
+        "note_sha256": "b902e0be464508facb2b5c01ef1e909e767dd30171b21bcf8cbe3c3e46e11865",
+        "quote_text": "六年春正月丁丑，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "af7ec096-7b67-5c3f-b09b-c316be39d597",
+        "note_sha256": "80cb80257a2e4edf5a2f4d32999e3d4ea0a9c2133d8098de0a6031d5a5b393d5",
+        "quote_text": "六年春正月丁丑，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "95034bed-dfa4-5fd2-a224-a7cc591dd101",
+        "note_sha256": "01fa28c9da316f5b353999cadee51746de8fd8a3b583c3593814712afe6afedd",
+        "quote_text": "庚辰，大雨雷電",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9b1cca8b-aef3-50b9-9ae1-4fe8e4e9d56e",
+        "note_sha256": "efb777caf390dcec0e9d9a5e39ad877a3900e93977ed5632007ea290edb23da7",
+        "quote_text": "庚辰，大雨雷電",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "a7650cc1-3ee1-5c1b-932a-9e3ab07e7dfd",
+        "note_sha256": "10438e8566ee4184288aaa6548e7f0feec180d8f5d6d46b5205df8a898cf7ef3",
+        "quote_text": "二月丁酉，侍郎羅汝敬督陝西屯田",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ae675946-84e4-5c38-a32f-bbdad909b9bc",
+        "note_sha256": "81bdda50777b305a87f517fd720229161572d0dba2e9ea976f2247dadb193327",
+        "quote_text": "二月丁酉，侍郎羅汝敬督陝西屯田",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "16108914-5bda-5b5a-9bc8-6c78bd988650",
+        "note_sha256": "f544aecbca675250c9fdc36cc144f41189b7c73bc5a32d346f150e1b97e3967b",
+        "quote_text": "己亥，濬金龍口，引河達徐州以便漕",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "adb23b02-e301-5667-add4-fb2a779fad52",
+        "note_sha256": "2fa382c97a908a2bbca66afcc7aed4e32e7fdc9ea567c41bf62a72cf254bfec1",
+        "quote_text": "己亥，濬金龍口，引河達徐州以便漕",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "712d0e73-fcfa-5ba6-baa4-d84526e3e2ce",
+        "note_sha256": "70ec1fa453dd44369f2c29a6ba55a753f8f33f734735836110dab65749957ad9",
+        "quote_text": "三月乙亥，命吏部考察外官自布政、按察二司始，著為令",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8560348c-fc54-517d-ae65-5cfd70ffe0a9",
+        "note_sha256": "e3340395746e027d4e81f2899522c49ab2e4965f9e02c095ee930163577315bb",
+        "quote_text": "三月乙亥，命吏部考察外官自布政、按察二司始，著為令",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "586f6938-a48c-5805-89d7-75db33277e63",
+        "note_sha256": "69b22bfde4ca35fb38c736ce31223bb117eacd81e907d26c09e07b3406974649",
+        "quote_text": "夏四月己酉，侍郎柴車經理山西屯田",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "fec6f44b-64d8-59b0-aab9-d92b45a5058b",
+        "note_sha256": "e01e47c3f96cb8669ff55d47a1cf3e3a9c60eb4b587c48b66afdec0d63ee19b9",
+        "quote_text": "夏四月己酉，侍郎柴車經理山西屯田",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "9644193b-dd08-5f3c-9f60-054f5e470068",
+        "note_sha256": "5e786a946a8e5abda4af8741fb1ea619c778eadc6bc350c4ba4e98cdb5aa8a1f",
+        "quote_text": "夏四月己酉，侍郎柴車經理山西屯田",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "33fea47a-81f5-544e-8a02-e9f6fd4aa990",
+        "note_sha256": "0ddaa1b4f5c867d2d50ab8d9b80a5eee78a4d5ee8168c54ef0ffa31a0a44343a",
+        "quote_text": "夏四月己酉，侍郎柴車經理山西屯田",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "61f3f9d3-b79c-5e24-850c-ddb6e8021ada",
+        "note_sha256": "0998ad5fc30db27b85b32b1fde6e06e0638d12d5ca5b6400bfcb1b1c7be5a99d",
+        "quote_text": "六月己亥，遣使詔黎利權署安南國事",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "85f70e99-14c7-56a7-85d0-9d490a674ca3",
+        "note_sha256": "8ce8aeb664dbb8f07ddaba6fa55c5a2dd7111d9c3337603237925c17c0788361",
+        "quote_text": "六月己亥，遣使詔黎利權署安南國事",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e10a9f49-606b-583b-9200-410bb500a931",
+        "note_sha256": "6b34060a4586ded1181c571c2b4a33ad42c752dc52d14968500442736fd7e192",
+        "quote_text": "六月己亥，遣使詔黎利權署安南國事",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1659eeca-effa-54d6-baf6-55efe178fec9",
+        "note_sha256": "3588fae85bd08ad4eb5c16bda4de81d0c7b413a8b86c141014353eae3bf913a9",
+        "quote_text": "六月己亥，遣使詔黎利權署安南國事",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3b8335a6-e986-5015-8400-eb52f149b542",
+        "note_sha256": "aac5d4efd3d85753085abcd2323500f284d492dca4442628a20d5de351894dd0",
+        "quote_text": "秋七月己巳，錄囚",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e68e1d8-1b89-596d-8e3a-283a783b0362",
+        "note_sha256": "b84959b342f56ff6faa99c52681f5f938ee84413b455ca73d3ae1fa3a85f9e58",
+        "quote_text": "秋七月己巳，錄囚",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6bdbaf24-d0ff-5164-b53e-b49a32e775d1",
+        "note_sha256": "fba5c0e5061ed5562f858200be5286b6ed7335789392290a6741326899a8b7f7",
+        "quote_text": "壬午，許朵顏三衞市易",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9b41d563-67be-5b49-89e7-46549a90439c",
+        "note_sha256": "7b6f2ac01a7efdbce4b7c784d5b4c25621f97806f2002069d2ffaa4ff6ea3873",
+        "quote_text": "壬午，許朵顏三衞市易",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bbad317b-3398-5d60-b97c-2c240bb0f65a",
+        "note_sha256": "a807324556b9c5e9f0dd47d40f33aab55611e9111ddcc31357feb63dce7250fd",
+        "quote_text": "冬十月甲辰，陳懷平松潘蠻",
+        "review_note": "《明史》卷一五五陈怀传载其以都督同知出征松潘，后进封平乡伯，与本纪所指相合。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "665087fd-dfa9-518c-a585-dcf3180d8d57",
+        "note_sha256": "a683e640ca1294ef8f0b792ba873028e1208bfc322625e2e4b2a74814a4f166e",
+        "quote_text": "冬十月甲辰，陳懷平松潘蠻",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "99c292a9-7b16-5d2a-9b04-d6d9706d2747",
+        "note_sha256": "cf6440cb5dbfc7cecafe7fc1fd8ece19e8a01655fda3d4e06c2ec5ffe9ac67ad",
+        "quote_text": "冬十月甲辰，陳懷平松潘蠻",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "78e1a292-601f-51c6-b27a-aa9715b7e97f",
+        "note_sha256": "e47849a6710edcfcd77a5f1cbdeb552a03764ba19108eb38417d944e5d405f08",
+        "quote_text": "冬十月甲辰，陳懷平松潘蠻",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "75cc4279-0ab7-5e69-9c83-9f5714a76092",
+        "note_sha256": "0bddb69bb9c124dd2896198008664351bdcede35984ab34f89f3bd4d6e98c723",
+        "quote_text": "十一月丙子，始命官軍兌運民糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f3826085-c2f4-5b25-a0cb-e4c1bb5a92f7",
+        "note_sha256": "81ae593b4ff14a6d1b36fa819a5533671a12d2c4f768ad6fc29b0da861384731",
+        "quote_text": "十一月丙子，始命官軍兌運民糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ec6e8028-7e99-52a7-a2eb-a9ae44f31c75",
+        "note_sha256": "34f2dcbd8590ead50b2c904f6e7c4fd01106cb56ed97ed3b13658f640aebf7df",
+        "quote_text": "乙酉，分遣御史往逮貪暴中官袁琦等",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "570ee8f0-fde8-5d82-aa87-61111c352ee4",
+        "note_sha256": "0df141e0b188fa5febdea6f59a9bc8dbd24d2aca7a54cfce84853a858f0a335f",
+        "quote_text": "乙酉，分遣御史往逮貪暴中官袁琦等",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a76111de-85ca-5f12-bc60-fa40c5c0048a",
+        "note_sha256": "ec4da4765d53fe174386dca69f1252717eb4bd97beddbf7bef45cceffb765259",
+        "quote_text": "十二月乙未，袁琦等十一人棄市，榜其罪示天下",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4bfe6173-5ba9-5458-9efd-fc8de6287cb1",
+        "note_sha256": "3bd062e76b0b71635dbc9df4bb930e380c930a4c0fc677d65e8e8f4ca0a02c08",
+        "quote_text": "十二月乙未，袁琦等十一人棄市，榜其罪示天下",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c30775ea-b05c-55ca-8084-affd7c7d633f",
+        "note_sha256": "2343331b01ade263058c2c29b50561905ea3c89e737e7203b1a57397059b0522",
+        "quote_text": "丁未，金幼孜卒",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cfc3cf90-1e05-54ab-ae36-850682f5043b",
+        "note_sha256": "aa00387ee64e4eb62282994c9ecffae208b33514805a861b8e958a5ff5b76ef2",
+        "quote_text": "丁未，金幼孜卒",
+        "review_note": "年表和本纪同载金幼孜去世于宣德六年十二月。本纪补丁未，DDBC换算此日为1432年1月28日，旧条把年号对照年1431年当作发生年。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d441431a-ebf2-5b2f-a81d-a9bd93fc5626",
+        "note_sha256": "aa00387ee64e4eb62282994c9ecffae208b33514805a861b8e958a5ff5b76ef2",
+        "quote_text": "丁未，金幼孜卒",
+        "review_note": "年表和本纪同载金幼孜去世于宣德六年十二月。本纪补丁未，DDBC换算此日为1432年1月28日，旧条把年号对照年1431年当作发生年。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "50df4806-6e29-5243-afd2-42d52dc19938",
+        "note_sha256": "02adc01cc3029529555ded3be719c7dab8d8d2d7f2805e16c89442a2547dc5b5",
+        "quote_text": "丁未，金幼孜卒",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4d64cf2c-6bed-564d-90f5-fe55703611c8",
+        "note_sha256": "4a9cc6dbcebeaa7fa2c7603e66cdff0b04c16bd9e67993d1071938211e8b6e81",
+        "quote_text": "庚戌，遣御史巡視寧夏甘州屯田水利",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7ed87ba5-2351-58e1-b2f8-729cf6a2b2eb",
+        "note_sha256": "fbb01903fe29a7ee49adbb3d92f9a57b4e89c652e7ad6ba9d75f8607a919d9ac",
+        "quote_text": "庚戌，遣御史巡視寧夏甘州屯田水利",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a7179f94-d336-5d6a-9507-fb3c7ab1a411",
+        "note_sha256": "bfd8540f231a8a4d59cc3f8742dcb0d8ac77437ac3bc458f312d4a66eafb186b",
+        "quote_text": "是年，占城、琉球、瓦剌、哈密、蘇門答剌、亦力把里入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "09eae0df-376f-5a59-89df-8c09c2434c55",
+        "note_sha256": "c1b581496b37f30c1faad6029f555fd3ee5f477aea830d65fc9a5c6f5ae48762",
+        "quote_text": "是年，占城、琉球、瓦剌、哈密、蘇門答剌、亦力把里入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4fd4c170-5fc1-539b-907f-35ca8d4f95f5",
+        "note_sha256": "703c461444e7284769a750d944addf38cd6eccdc8d9a4467421462eda3610fa7",
+        "quote_text": "七年春正月辛酉朔，日有食之，免朝賀",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "94b0313e-503d-5104-a081-34974053cda8",
+        "note_sha256": "d0d6bec34bb3ff0ca46966e90d10c92275914a5a8e913a38db494a75a2d29a36",
+        "quote_text": "七年春正月辛酉朔，日有食之，免朝賀",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5b329aed-3ccd-5e14-8a37-8a571828e260",
+        "note_sha256": "499d769640b0401e912b93e9d3b17b91978cda9b65e2d24c8168aeadb934eb59",
+        "quote_text": "癸酉，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "88fb5ca7-4800-54d1-8d64-03d1c65d2a29",
+        "note_sha256": "b6d2c793af1dff92438867e733d28dfacdbc1e4d1e1d64d0b7a530888224c6c8",
+        "quote_text": "癸酉，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "358340d5-5f22-5a84-af35-f39f73f621a3",
+        "note_sha256": "29259c4c1cf3f5cabb86331bde47dc242a60f39cc7c74512bb633375cc2c583a",
+        "quote_text": "癸酉，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "a909c32c-d51b-540b-abf8-26f0a82ef2f0",
+        "note_sha256": "408787dd3f95e1223963318d339127588b614979bfff2d1ef07721416c7d5a5a",
+        "quote_text": "二月甲午，以春和諭法司錄囚",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "d01548a1-570d-5639-9dd3-fb24560950f9",
+        "note_sha256": "928f56181eeac20cccdf898a0e2318c15e228011afd1b19bf08c9bf5daa0521a",
+        "quote_text": "二月甲午，以春和諭法司錄囚",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "ab85f638-b47f-5047-a82d-748cd336afa5",
+        "note_sha256": "ed25b0e735b1802eab7f84632b4c5d2c33d2944f53a928d57e21dfc1309c4375",
+        "quote_text": "二月甲午，以春和諭法司錄囚",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "6c3384f6-7ad4-5dcc-88b5-107c44cf53ef",
+        "note_sha256": "ed5d06cea3a69aad81ca32a4fea3456a78627ce1bed785296a19682e575dcd6d",
+        "quote_text": "三月庚申，下詔行寬卹之政",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "02c9abe9-ec8e-5545-be8b-e58f6460da49",
+        "note_sha256": "fa616205e44a6396603203533ab3a3746ece7ca08a25b55050ac95bae7f74784",
+        "quote_text": "三月庚申，下詔行寬卹之政",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "770dc2a6-0489-5bcd-b4c5-237e54d95d00",
+        "note_sha256": "bbcf93dd588be8ad25fe2eb28d9d72bfbcf84eec91742813af170d51ca0a2c55",
+        "quote_text": "辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5db469b4-efe2-5189-a030-cef756cf93fb",
+        "note_sha256": "8a11044f854f689e725f0a2d088cd6a80166113a68694a7a11325873e0f94527",
+        "quote_text": "辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "27cae9c9-2bad-5adf-914a-fac32fc343a7",
+        "note_sha256": "b1f2ee70e3b410c4e527a8ca3990896f349d4387df218a9187e55dd9564b67e8",
+        "quote_text": "辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "89097d82-67fd-53bc-8494-2fdd71276ee9",
+        "note_sha256": "d0f676128a4bcf33d4c44307df2e78f366146e64e6514c66a15f6c32a3fbf4af",
+        "quote_text": "夏四月辛丑，免山西逋賦",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5e8d8d78-5b8a-5e7b-ba07-ed8d07c77d67",
+        "note_sha256": "caad4cd900595e58b675510d5aa87cc25a9227d3411efa6d8e4ad7a934e38134",
+        "quote_text": "夏四月辛丑，免山西逋賦",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "dae7c18f-1c60-52a9-9db7-4e1629a882a9",
+        "note_sha256": "b122bde72c0b2652bb73927698c8fbea6df190c749ffe3a2fa37be07c9129743",
+        "quote_text": "壬寅，募商中鹽輸粟入邊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "722678cf-88df-5f72-85f2-2f7ffbf628f5",
+        "note_sha256": "010f5a4288185d7112c5c3a9ab3d26549040795e782523814adc0db2b48c75d8",
+        "quote_text": "壬寅，募商中鹽輸粟入邊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8cd5ed4d-ca85-51e1-9eb6-482c452a7c1e",
+        "note_sha256": "c62ce9c003e4c944d73e14b754f3b84e0e55cd3834bea767e1d79a021cae79e0",
+        "quote_text": "六月癸卯，錄囚",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "47fe877e-18a9-5caf-8b59-e5d313eb41db",
+        "note_sha256": "70dcc52ebb5285f0db9cb5669d080ec6cf8f67a2c15d21b0864d721cfe7d9489",
+        "quote_text": "六月癸卯，錄囚",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5ea24bdb-d7c6-5385-a2aa-9531641414d8",
+        "note_sha256": "4adce01bcf0d8b3545ec6b8392c2a7d3012f9f58b66fad99a716049aff7925a5",
+        "quote_text": "癸丑，罷中官入番市馬",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c6956a95-5123-5b72-9797-d71dca44b483",
+        "note_sha256": "ee769828c5693328532bc426f887611a5daaf1354f78b0e09ee16f3fe53b4531",
+        "quote_text": "癸丑，罷中官入番市馬",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "56ed04e1-3a11-57a5-893e-e38c5414f178",
+        "note_sha256": "336db5fdab03c4fddab500ee15405278b22656959ee0c9d1c64ddd24a8cac06b",
+        "quote_text": "是月，作官箴成，凡三十五篇，示百官",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8227576c-8755-5ded-b8b4-1909acafefe0",
+        "note_sha256": "144c221ffda72e65c6d1b8a62d75e710a7f8ffcc4c9da0cf53bac490aa04777a",
+        "quote_text": "是月，作官箴成，凡三十五篇，示百官",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "44e52691-7daf-5522-96f0-1bbe3911795a",
+        "note_sha256": "a3b062f45284e3952f77cea52c5aab1215f0e9a3be0a5d886c40a33293d6229d",
+        "quote_text": "秋八月乙未，敕京官三品以上舉才行文學之士，吏部、都察院黜方面有司不職者",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "baa55c8b-ec4a-5e66-8408-f39d2c7dada8",
+        "note_sha256": "50ef8c00241d83995396b086d6b90e51445388e279ac7740719e41e47c2a8d40",
+        "quote_text": "秋八月乙未，敕京官三品以上舉才行文學之士，吏部、都察院黜方面有司不職者",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "55d7b7f5-2965-5de0-b295-db42016c8ec6",
+        "note_sha256": "0f648e58e739985d24fce5b754f0e5cd5e233420258cee9b17c9cfde72fd4ff4",
+        "quote_text": "九月庚午，諸將巡邊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "66895ecd-ff0f-5902-9044-d9a2ce84bee2",
+        "note_sha256": "182caa029af13546dac92d3af4d77d57bf012576441361c33b14448e741630c3",
+        "quote_text": "九月庚午，諸將巡邊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e5f3eaf2-5949-5abe-8e99-4c5aa13ace6e",
+        "note_sha256": "142a1aea2ce7aa9cd6786fe66db0c67c1f63e2daf4c06e41c9045018973f322d",
+        "quote_text": "是秋，免兩畿及嘉興、湖州水災稅糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "55df17f0-38a8-5be3-a52b-395fd4278ce1",
+        "note_sha256": "26819f4b8ce0d60001610911e7cfcb88c7ea1f7ff26361da77eb68ca0c18a9cf",
+        "quote_text": "是秋，免兩畿及嘉興、湖州水災稅糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e4579b9e-def7-59d6-b113-b1218bb2f1d7",
+        "note_sha256": "e7b1fbc341ec0efb6b69126c3d924b570da7e25d9bfa86d1b69b63720c4f9801",
+        "quote_text": "冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "afc193fc-0cd1-5eba-99d1-15524f82c357",
+        "note_sha256": "52ba9d0f8cbda2fa7cc121dee846f2f9bfabf77c3508e4e3151d271892df094b",
+        "quote_text": "冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f0348a08-0d5b-519a-b68d-6f1bc02fff5d",
+        "note_sha256": "426afa31e906e323eb680c80e92fcf0a8d5c76bb45d17a49933040d3f3883414",
+        "quote_text": "冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b02ce7c8-1ca7-5ac8-a242-0934efb9aa5b",
+        "note_sha256": "4d58ce39289d664c64384920f8317d9dbf880b048355a1c5eb1a21257561fde1",
+        "quote_text": "冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "31cfad17-93c1-5901-8a73-970aad73a425",
+        "note_sha256": "b3c40290f0c831d5e2ac57ae0cb35cb06f6e86d6b633d1f4da473c987171206e",
+        "quote_text": "是年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "90f6c74d-b2ee-512e-ac1e-786ac0b99696",
+        "note_sha256": "4b833d5f8ba954eba7dba011e8c1e7c42ca2ba7f22aeafbf90bcc0dbef3f2532",
+        "quote_text": "是年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历宣德六年正月丁丑。DDBC历表换算所据为1431-03-04至1431-03-04，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001371的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "16063d70-cfa2-5f75-8ace-d555157ad850",
+        "claim_sha256": "37036066fbbeae71d6a0c703314c3a3540fe8857f6dd6da45ec2801b50ebd13d",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "123bf201-2760-56e5-8db8-f268b7ab0834",
+        "id": "f301a335-1dde-5ce1-8244-083e86f7aa19",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年正月庚辰。DDBC历表换算所据为1431-03-07至1431-03-07，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001371的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9b1cca8b-aef3-50b9-9ae1-4fe8e4e9d56e",
+        "claim_sha256": "a83839c529c103f703810efbb0eb23c885fae40261b98f9ceadc47733c40d125",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "8764dbde-2731-574f-b6a4-d6f344828b34",
+        "id": "9a4505be-06ff-53e9-b6b8-d7068cad54c0",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年二月丁酉。DDBC历表换算所据为1431-03-24至1431-03-24，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001372的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "ae675946-84e4-5c38-a32f-bbdad909b9bc",
+        "claim_sha256": "55f2a4fdf401f4dfbf0647dd54fe609934f9cfd96c1a5c7d30a37e8fa8e37bd5",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "908443b8-47b1-548f-807e-5a2dd5c57cdb",
+        "id": "e9fc3039-572d-577f-b772-9902fe6af27c",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年二月己亥。DDBC历表换算所据为1431-03-26至1431-03-26，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001372的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "adb23b02-e301-5667-add4-fb2a779fad52",
+        "claim_sha256": "919f99911d71da29a00f073ad66b3aa4d149c509d6d019f927aa3ea22c0bc3a1",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "0a05940f-1b93-5ee1-8bbb-104f7fdb8954",
+        "id": "7b9c4c6e-6099-5dde-92b9-f72c02aeaf83",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年三月乙亥。DDBC历表换算所据为1431-05-01至1431-05-01，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001373的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "8560348c-fc54-517d-ae65-5cfd70ffe0a9",
+        "claim_sha256": "fbb6626860e0d4174bb4f1c14fb39604ec7c16e7738721fc7c4e4387339d76f8",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "dda61682-8561-5293-9995-34e1885ad9e5",
+        "id": "92ef7e37-5c16-567f-80e0-da6ed45e6a92",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年四月己酉。DDBC历表换算所据为1431-06-04至1431-06-04，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001374的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9644193b-dd08-5f3c-9f60-054f5e470068",
+        "claim_sha256": "78783524c89237a34b85b347281e2f6ec1f6f59cedb0e61f937e38ffcf0341fc",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "06fcf22e-74f8-5d3c-968b-79e9b4e219a4",
+        "id": "a87160d4-4736-5186-a298-3edb7454c37a",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年六月己亥。DDBC历表换算所据为1431-07-24至1431-07-24，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001375的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "e10a9f49-606b-583b-9200-410bb500a931",
+        "claim_sha256": "e82306543609ecafe10207b27b1dee703157f37e74e90cdbbc67798cc39ad7b5",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "0db21e81-524d-5470-969d-e1708b0e69bc",
+        "id": "f4fb1bd5-1b14-5617-bd48-b53e87eacd14",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年七月己巳。DDBC历表换算所据为1431-08-23至1431-08-23，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001376的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1e68e1d8-1b89-596d-8e3a-283a783b0362",
+        "claim_sha256": "e3c93f7ff70e135f206427a95f150849e44d22531c80654e68f90ae130288547",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "0fa6abc7-cfa0-5a41-9232-7c47a0943fa8",
+        "id": "44c1ee14-8daa-5efb-ac36-eb8add0cba01",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年七月壬午。DDBC历表换算所据为1431-09-05至1431-09-05，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001376的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9b41d563-67be-5b49-89e7-46549a90439c",
+        "claim_sha256": "fb4789bff6f4f303e09e5d527884e232c2c9cfecfe33170befeb26c6bddaf65a",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "7bd6638c-e02a-57d0-acd6-9c93708e7f85",
+        "id": "3c12ab96-89ff-570d-ae79-5b4bae6f1a34",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年十月甲辰。DDBC历表换算所据为1431-11-26至1431-11-26，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001377的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "99c292a9-7b16-5d2a-9b04-d6d9706d2747",
+        "claim_sha256": "4c5409f134098b19f51b96e3c737bdbf36dde975642859dbbfadd4c4581fbb49",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "2b97b2ea-e828-51ef-9305-791ae0b5b637",
+        "id": "05689ed7-d387-52f7-863f-1691b4b91ece",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年十一月丙子。DDBC历表换算所据为1431-12-28至1431-12-28，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001378的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f3826085-c2f4-5b25-a0cb-e4c1bb5a92f7",
+        "claim_sha256": "bb32c65ad17d00ad27b5b4e6046dde800131e7cae8feeb71ef1b577d575e4c19",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "e938819c-a6e4-53b8-ade9-4007cfefa163",
+        "id": "8fcf6af1-3cc0-543e-8f30-09914b7de26f",
+        "latest_year": 1431,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年十一月乙酉。DDBC历表换算所据为1432-01-06至1432-01-06，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001378的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "570ee8f0-fde8-5d82-aa87-61111c352ee4",
+        "claim_sha256": "a723d5079231235a396bced1a287be8576f8b6fddb2851722d8c75dd5c95ee62",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "8878b1a3-6acd-5560-bd37-59dd1a063e63",
+        "id": "23c7cf08-4ff4-5da1-b509-92a562cde4d0",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年十二月乙未。DDBC历表换算所据为1432-01-16至1432-01-16，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001379的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "4bfe6173-5ba9-5458-9efd-fc8de6287cb1",
+        "claim_sha256": "9120189763548a0f4ef4da0be7258639f233eb390f9a944865964207244ee06c",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "e30f5bb3-bea1-5816-b9a6-d7227f24f748",
+        "id": "fc2d26bf-af64-5155-ac55-53869dcd9d72",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年十二月丁未。DDBC历表换算所据为1432-01-28至1432-01-28，据此核对公元发生年份。",
+        "claim_id": "d441431a-ebf2-5b2f-a81d-a9bd93fc5626",
+        "claim_sha256": "c6e4bf82eee2cf56ed443754c8079b382fa89373e288630b6521dae5e186383e",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "208715c8-6ed8-552e-990f-17ad00175069",
+        "id": "33c56af0-ef5e-59ca-bb36-f3ba079566f8",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年十二月庚戌。DDBC历表换算所据为1432-01-31至1432-01-31，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001379的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "7ed87ba5-2351-58e1-b2f8-729cf6a2b2eb",
+        "claim_sha256": "659722dd69ac9b7acf128ef46f2dc3be1d64fd6df5ff1ec69061095591ab7e81",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "83169a8e-3dbe-526a-a930-d8757470f585",
+        "id": "86158a2f-d24b-50fe-b226-00ef0cc2079b",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德六年。DDBC历表换算所据为1431-02-21至1432-02-10，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001380的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "09eae0df-376f-5a59-89df-8c09c2434c55",
+        "claim_sha256": "75f747b590c7304ec375b7e1d9a57d89c4b60398b36c99c1a7674cc11e336a5b",
+        "earliest_year": 1431,
+        "era_key": null,
+        "event_id": "456f48ac-f689-5753-a17b-504cf58cdfc5",
+        "id": "fb1dc58f-dbe1-5ce7-bb73-5b7e605c48eb",
+        "latest_year": 1432,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年正月辛酉朔。DDBC历表换算所据为1432-02-11至1432-02-11，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001382的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "94b0313e-503d-5104-a081-34974053cda8",
+        "claim_sha256": "6d621158b355b958767a70a7601e1b5cbf0704dbde25131067af37fa7eb508ee",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "8eb2ca23-12e2-5605-95f0-c1e063a1777c",
+        "id": "dcbbad8a-d787-5569-95d2-3a4994b46737",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年正月癸酉。DDBC历表换算所据为1432-02-23至1432-02-23，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001382的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "88fb5ca7-4800-54d1-8d64-03d1c65d2a29",
+        "claim_sha256": "ee993be2fa38eb0ece67e9c32e394b5a1b1425d0e28a87c8edf8853158a5caee",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "96dfba7e-9d18-57c5-ad6e-b8ed0f1dc294",
+        "id": "41d81f22-2588-5d88-85e4-9b1d29f56417",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年二月甲午。DDBC历表换算所据为1432-03-15至1432-03-15，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001383的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d01548a1-570d-5639-9dd3-fb24560950f9",
+        "claim_sha256": "aa5af0270cf53255aacfadd12a1a05cb0992b3b0f41a84fa9c0ffb7747be5a9b",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "276e701d-06e8-521e-874c-80af5643fd78",
+        "id": "085206d0-1230-5889-8100-fa9a22dc39ce",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年三月庚申。DDBC历表换算所据为1432-04-10至1432-04-10，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001384的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "02c9abe9-ec8e-5545-be8b-e58f6460da49",
+        "claim_sha256": "e40feb275324d9a617683702fc4ba79c06a6380b15b01c707c9992529e6c4822",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "e6739ebb-a11a-5d5f-9772-07ca42ec0dfb",
+        "id": "d227afe3-f195-5f66-8948-4ab83e49d4a0",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年三月辛酉。DDBC历表换算所据为1432-04-11至1432-04-11，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001384的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5db469b4-efe2-5189-a030-cef756cf93fb",
+        "claim_sha256": "ba909f0c57b9afa33981c371e4b0e2f99fa3035251e8bf7a7a1b7df29a4ee68b",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "5134aba9-18dd-53e6-8dd7-c8664b1de0d9",
+        "id": "625703b0-a495-5946-8bb0-cd6e0bdc66f0",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年四月辛丑。DDBC历表换算所据为1432-05-21至1432-05-21，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001385的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5e8d8d78-5b8a-5e7b-ba07-ed8d07c77d67",
+        "claim_sha256": "df1a325c581d931ac7eca4c5f75a45b86aa0f6da5a7aef657f4672cb07102ce1",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "1142daf7-6adb-5de6-8b09-063ea862a102",
+        "id": "91c2e2cc-3d7f-595a-ac73-723787336b31",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年四月壬寅。DDBC历表换算所据为1432-05-22至1432-05-22，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001385的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "722678cf-88df-5f72-85f2-2f7ffbf628f5",
+        "claim_sha256": "7a5339bdacb74b3d94b7586f63439c61ad6a9c751c72fbbace2f9f8f9e98ddd3",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "be1e8acb-7dc6-527e-b1dd-eda56ecbbd85",
+        "id": "94b5a22c-b069-5098-9168-d2b8ad18b16d",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年六月癸卯。DDBC历表换算所据为1432-07-22至1432-07-22，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001386的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "47fe877e-18a9-5caf-8b59-e5d313eb41db",
+        "claim_sha256": "5e049e0b22044d3996e9e514e1d265f78e983a9488befb5cc31ab8b6f156ed07",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "c73f4da1-e77a-508c-8e90-dba96db9e904",
+        "id": "61f17cf5-56e6-5d92-acd4-fc6c69741b97",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年六月癸丑。DDBC历表换算所据为1432-08-01至1432-08-01，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001386的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c6956a95-5123-5b72-9797-d71dca44b483",
+        "claim_sha256": "0f01a7aac1220740ba6e83e2da6763ccefa0b3009e2bf0001561c6bf889b063f",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "09d40baf-9f4a-5b80-951c-4a8865bb17a7",
+        "id": "0d780a6f-7ee9-562e-84d2-dd2ad24a8d75",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年六月。DDBC历表换算所据为1432-07-07至1432-08-04，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001386的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "8227576c-8755-5ded-b8b4-1909acafefe0",
+        "claim_sha256": "b576709e816e8460cac90c7b7bab1c2399c5b2e60198c8f2953a05c30df058a3",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "82a510a3-3d03-55ee-80bc-fd8fdd590de4",
+        "id": "5a6938f0-9ae6-53db-85e1-83d52b99badb",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年八月乙未。DDBC历表换算所据为1432-09-12至1432-09-12，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001387的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "baa55c8b-ec4a-5e66-8408-f39d2c7dada8",
+        "claim_sha256": "6981c60ec48d0e1de46d5116b616b5d18f1c6c29edab053221588067bab115a3",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "19accf82-770e-5623-b5c9-c067755120a5",
+        "id": "2884ebf2-d2fa-531e-8ace-23057623f958",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年九月庚午。DDBC历表换算所据为1432-10-17至1432-10-17，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001388的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "66895ecd-ff0f-5902-9044-d9a2ce84bee2",
+        "claim_sha256": "e47741fdf5ed28371b92e88c8c3646ea5e07afa9b7a93b7fa8de3d3cf6a641a8",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "7280547c-e748-573a-9c1b-e58321d1d120",
+        "id": "edc3a20f-fb82-5a02-9e3a-747f161d42bf",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年秋。DDBC历表换算所据为1432-08-05至1432-11-01，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001388的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "55df17f0-38a8-5be3-a52b-395fd4278ce1",
+        "claim_sha256": "0c31ed9fe302f36305e8665fa7811ea3a96756980d525afb0408abe88ee01a5a",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "cb7fe52b-e589-5aa2-b971-1fe34a1f494a",
+        "id": "6ca3a3ae-9af3-5940-980b-96e79dca71dc",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年十一月辛酉。DDBC历表换算所据为1432-12-07至1432-12-07，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001389的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f0348a08-0d5b-519a-b68d-6f1bc02fff5d",
+        "claim_sha256": "447523f5f40ae94efef612d0eba1faced2f853eb682da6b8dae4b3dc1ecaef67",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "a5b3fe46-96e0-55a9-826f-e9eae1c04213",
+        "id": "f8a047fb-cb91-5aea-9365-a473df8081aa",
+        "latest_year": 1432,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历宣德七年。DDBC历表换算所据为1432-02-11至1433-01-29，据此核对公元发生年份。 卷九mingshi-2f603db3d81e-p001390的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "90f6c74d-b2ee-512e-ac1e-786ac0b99696",
+        "claim_sha256": "4025c63ad4c78f72757db2690667f12296fffd7e8be9ad81115de51a2a99b6c2",
+        "earliest_year": 1432,
+        "era_key": null,
+        "event_id": "7f26e662-2ca2-5870-b9d0-5ade8dfbd891",
+        "id": "20e1eb7e-e17a-57fa-8f8f-79405fc5c6d9",
+        "latest_year": 1433,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "5c707144227721d17c862af62c0c0e980f56c337b1acc7463d57639ba2be02a1",
+        "paragraph_id": "mingshi-2f603db3d81e-p001371",
+        "snapshot_sha256": "8f9a2b0ec93fe2525dcec604b2c62af1887ad977f1c59792ffe3b220bc71fc2e",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0"
+      },
+      {
+        "archive_url_sha256": "ecd8341874c430bca307d4053221122f9df793ebcb77075a3f8d0e5e82112429",
+        "paragraph_id": "mingshi-2f603db3d81e-p001372",
+        "snapshot_sha256": "8a4aa585f268826ffcdcd58c67ef8faec083b68c5a4db3462d0eedcd483d6a8a",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e"
+      },
+      {
+        "archive_url_sha256": "ee9fd3e3d214b1982b6fa389c34a329b6be2a88708c9b47e9922a1ccfaec56f5",
+        "paragraph_id": "mingshi-2f603db3d81e-p001373",
+        "snapshot_sha256": "bc36cabc4183991f7252b675798e9807032b68580514179b8467994c2cf85796",
+        "source_id": "ae539f98-f927-5756-aaf3-f7179d817bd0"
+      },
+      {
+        "archive_url_sha256": "b37a08b5f7197a0cb14a895fd8e2bbe181cadcda36ac572b818f4468ae7926bd",
+        "paragraph_id": "mingshi-2f603db3d81e-p001374",
+        "snapshot_sha256": "c5c0a9e19ff0097c0660542548641818b8ae707566bf05d318e5179d7d83389e",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f"
+      },
+      {
+        "archive_url_sha256": "f34f7d7e64475f318e1bbfbc688476bb13a980ca2ac894ba32868fb602c2671f",
+        "paragraph_id": "mingshi-2f603db3d81e-p001375",
+        "snapshot_sha256": "7eb95c825f33c72136e625bc018be51ee205101b5a2043b3c67a8a4a367c2136",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f"
+      },
+      {
+        "archive_url_sha256": "e0c419bb5a686213716b1c932bd696eec8ae9fe42d71463643c1619aa87e07e5",
+        "paragraph_id": "mingshi-2f603db3d81e-p001376",
+        "snapshot_sha256": "ff8271d9d85c379bfcb17ddf2e95cf956ff73dcae3275bba34de555e5ede6930",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0"
+      },
+      {
+        "archive_url_sha256": "694b4dd3bef0e0c263db6ed59edcf123e6fedce3bbe5bd3bec2ac283e5a97b37",
+        "paragraph_id": "mingshi-2f603db3d81e-p001377",
+        "snapshot_sha256": "c552ae2ebdada658aed43dd6670779374a39739095e91b82ef48d1006e2464fa",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7"
+      },
+      {
+        "archive_url_sha256": "2699792271e0c8b66085d4adc0c0e2ac4bdba3815936df22ef1741f8f061f557",
+        "paragraph_id": "mingshi-2f603db3d81e-p001378",
+        "snapshot_sha256": "20e196a5a9c85439f583c4062b7ad37f159139eef043ffefeed8051d7f282719",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f"
+      },
+      {
+        "archive_url_sha256": "5bd5cb7f1920c8f7774406437cd58cda01f4d7940d89947e26b8e9f9ff572b41",
+        "paragraph_id": "mingshi-2f603db3d81e-p001379",
+        "snapshot_sha256": "d8ef2623f75c144cf1431c015f574c9063039e1d2c98a393ebdc7d78b85a4dbe",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1"
+      },
+      {
+        "archive_url_sha256": "d142475758f4f1d7ca0842619fa0016a7fdaf7abf4323c186729881bed9fbea7",
+        "paragraph_id": "mingshi-2f603db3d81e-p001380",
+        "snapshot_sha256": "92c956b210852bf4afbbeb93019e8cdc2de74a2e800eba5addf6552d03ab6fe3",
+        "source_id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027"
+      },
+      {
+        "archive_url_sha256": "b9fa567313547b259743f2bc8718cef075ba7cfa93a513c65299769a225f14a1",
+        "paragraph_id": "mingshi-2f603db3d81e-p001382",
+        "snapshot_sha256": "4ca210060d022889b4e2af2c96315fa850a6f3ecbce48106ba455e695127f1a8",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f"
+      },
+      {
+        "archive_url_sha256": "170eb9722578c8ed87962478b6266a2b65f2bee7dd58d4585b848b4c96ffc477",
+        "paragraph_id": "mingshi-2f603db3d81e-p001383",
+        "snapshot_sha256": "ae05116cf055f805877997b8532b641f91b5d791d0ad9795ecb361f506fe06fe",
+        "source_id": "f63ca9ea-e4dc-5031-9269-6d87482de14a"
+      },
+      {
+        "archive_url_sha256": "c74705f6bcc5b04b0f5dcd5433e19807482fa2a453c909a5c6fc4e6be2286c90",
+        "paragraph_id": "mingshi-2f603db3d81e-p001384",
+        "snapshot_sha256": "7174aad33620f0f752a103053abfda215e236110f9de445cecf48fb25ce2a98e",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793"
+      },
+      {
+        "archive_url_sha256": "eccf1bdcfa0a8d25873b4c3ec641b5e3f94d36a7f19f669dabf845912ebe944c",
+        "paragraph_id": "mingshi-2f603db3d81e-p001385",
+        "snapshot_sha256": "e36887acc95a758d3df3329d3aaa121819b636d1cf24fe4ec9b549765768e7fa",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b"
+      },
+      {
+        "archive_url_sha256": "7a18337b107cc521f864eb1190e69d802202d6912bc7363ae6ee4de44a95b5d9",
+        "paragraph_id": "mingshi-2f603db3d81e-p001386",
+        "snapshot_sha256": "844d7561a12f8b13acd989ae53b752cb0752a58de42b5933115c8d5c41357304",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f"
+      },
+      {
+        "archive_url_sha256": "bbdb60f05f29f3e13fdf13888859ad1b5232650fc962fd0db912155cd6e13d70",
+        "paragraph_id": "mingshi-2f603db3d81e-p001387",
+        "snapshot_sha256": "8b377f6223fa8d3957a9f50bb72fde8d897779d71887d3ec752acb1c68b74986",
+        "source_id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c"
+      },
+      {
+        "archive_url_sha256": "a7d5c2d8962464fd086d9dd8df3331fd826e2e3b978126152991b3156660c9b9",
+        "paragraph_id": "mingshi-2f603db3d81e-p001388",
+        "snapshot_sha256": "305ed875f2e6aeb56123bedf040db452f3c90e115219bccbeefd6bbc04d52903",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f"
+      },
+      {
+        "archive_url_sha256": "b04d5b6aac7fb750096bb6ac5b5f477effbea02b81147417b4c75341d0bc3336",
+        "paragraph_id": "mingshi-2f603db3d81e-p001389",
+        "snapshot_sha256": "c4b7850be44071a493da1280a745780619db2f4b005674b73c7271a4e1119bff",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9"
+      },
+      {
+        "archive_url_sha256": "362182fa0b1ee6cadd49ab9e0015570f1d38a5bd51510967beb27472e97bb59b",
+        "paragraph_id": "mingshi-2f603db3d81e-p001390",
+        "snapshot_sha256": "9527c22f4644a1859b9bb8b7b7c6f2d00275043454d0ae7367a7bb08ec6edf03",
+        "source_id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-009/from-start/part-04/.workflow/reused-event-revisions.json": "d04c2544c0313457d6781c11cc674beef829488ca387af6441595081adc49cbb",
+    "content/books/mingshi/vol-009/from-start/part-04/content-batch.json": "ab118e75b9c1167aa7cfb175df7a2a500df9468d3390b3b4eb3b700e5b3a6ee8",
+    "content/books/mingshi/vol-009/from-start/part-04/curation.json": "68483cb3650c87635d44203fb8b75315c99b78a9038e03bad35ae1fa0191502f",
+    "content/books/mingshi/vol-009/from-start/part-04/packet.json": "e84ec31fc2c70268c991517c5a5072c94992e7a488a88d3839510c871e120840",
+    "content/books/mingshi/vol-009/from-start/part-04/publication-mysql.json": "61f4d2334f2db56f1dba4d7524682277081533708e0803d8bb3a8e5638b778da",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/manifest.json": "ec502e02567017a0b0f75183b02ee2784afd52d8a7d56720fd50048d66ddf739",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001370/source.txt": "8c6680148f083e73bb95aba60eeeefd345420c083323109632b85abf3e8b1ca6",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001371/source.txt": "8f9a2b0ec93fe2525dcec604b2c62af1887ad977f1c59792ffe3b220bc71fc2e",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001372/source.txt": "8a4aa585f268826ffcdcd58c67ef8faec083b68c5a4db3462d0eedcd483d6a8a",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001373/source.txt": "bc36cabc4183991f7252b675798e9807032b68580514179b8467994c2cf85796",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001374/source.txt": "c5c0a9e19ff0097c0660542548641818b8ae707566bf05d318e5179d7d83389e",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001375/source.txt": "7eb95c825f33c72136e625bc018be51ee205101b5a2043b3c67a8a4a367c2136",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001376/source.txt": "ff8271d9d85c379bfcb17ddf2e95cf956ff73dcae3275bba34de555e5ede6930",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001377/source.txt": "c552ae2ebdada658aed43dd6670779374a39739095e91b82ef48d1006e2464fa",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001378/source.txt": "20e196a5a9c85439f583c4062b7ad37f159139eef043ffefeed8051d7f282719",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001379/source.txt": "d8ef2623f75c144cf1431c015f574c9063039e1d2c98a393ebdc7d78b85a4dbe",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001380/source.txt": "92c956b210852bf4afbbeb93019e8cdc2de74a2e800eba5addf6552d03ab6fe3",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001381/source.txt": "b753ad34cd856f1bb5a45b089912480979525e7af43cb82c1e0649a9bec90bbc",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001382/source.txt": "4ca210060d022889b4e2af2c96315fa850a6f3ecbce48106ba455e695127f1a8",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001383/source.txt": "ae05116cf055f805877997b8532b641f91b5d791d0ad9795ecb361f506fe06fe",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001384/source.txt": "7174aad33620f0f752a103053abfda215e236110f9de445cecf48fb25ce2a98e",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001385/source.txt": "e36887acc95a758d3df3329d3aaa121819b636d1cf24fe4ec9b549765768e7fa",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001386/source.txt": "844d7561a12f8b13acd989ae53b752cb0752a58de42b5933115c8d5c41357304",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001387/source.txt": "8b377f6223fa8d3957a9f50bb72fde8d897779d71887d3ec752acb1c68b74986",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001388/source.txt": "305ed875f2e6aeb56123bedf040db452f3c90e115219bccbeefd6bbc04d52903",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001389/source.txt": "c4b7850be44071a493da1280a745780619db2f4b005674b73c7271a4e1119bff",
+    "content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001390/source.txt": "9527c22f4644a1859b9bb8b7b7c6f2d00275043454d0ae7367a7bb08ec6edf03",
+    "content/books/mingshi/vol-009/from-start/part-04/sql/key-map.json": "ed07e2d4a3d3472ddf5ea75ba7d5ca214d4e5c22b5c78f0bd0492fd09c7cc103",
+    "content/books/mingshi/vol-009/from-start/part-04/time-review.json": "1f97f2d1c888ce86efee86e3384bb678bec8e46f28dd37921c602ce6307e8e23",
+    "content/revisions/2026-11-18-mingshi-v109-calendar-years/plan.json": "8d7b2449bd5d2179e4069cae847db83f15dfe7922724d136f5ab36b14b4a50e1",
+    "content/revisions/2026-11-18-mingshi-v109-calendar-years/publication-mysql.json": "dc799ae5cc64193ca2fa524a9d8becdfe1be879baf7d13e76e7e57f5df0471d4"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "69e9cee9-64a2-5d48-8f3d-da28d608c1b7"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371；宣德六年正月丁丑",
+        "claim_text": "朱瞻基主持祭祀。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.671958+00:00",
+        "field_path": "description",
+        "id": "69e9cee9-64a2-5d48-8f3d-da28d608c1b7",
+        "note": "原文：六年春正月丁丑，大祀天地於南郊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "status": "published",
+        "subject_id": "888fc961-674c-52bf-b645-1351d5637434",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "824235f2-b8c5-5cdb-828a-c127ced9084c"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371；宣德六年正月丁丑",
+        "claim_text": "宣德六年正月丁丑，明宣宗朱瞻基在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.724988+00:00",
+        "field_path": "description",
+        "id": "824235f2-b8c5-5cdb-828a-c127ced9084c",
+        "note": "原文：六年春正月丁丑，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "status": "published",
+        "subject_id": "123bf201-2760-56e5-8db8-f268b7ab0834",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "16063d70-cfa2-5f75-8ace-d555157ad850"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371；宣德六年正月丁丑",
+        "claim_text": "原历宣德六年正月丁丑。DDBC历表换算所据为1431-03-04至1431-03-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.765909+00:00",
+        "field_path": "time_original",
+        "id": "16063d70-cfa2-5f75-8ace-d555157ad850",
+        "note": "原文：六年春正月丁丑，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "status": "published",
+        "subject_id": "123bf201-2760-56e5-8db8-f268b7ab0834",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "af7ec096-7b67-5c3f-b09b-c316be39d597"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371；宣德六年正月丁丑",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.868927+00:00",
+        "field_path": "role",
+        "id": "af7ec096-7b67-5c3f-b09b-c316be39d597",
+        "note": "原文：六年春正月丁丑，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "status": "published",
+        "subject_id": "7cd323f8-6cfc-510b-b64e-5472a29895c5",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "95034bed-dfa4-5fd2-a224-a7cc591dd101"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371；宣德六年正月庚辰",
+        "claim_text": "宣德六年正月庚辰，《明史》本纪记当天大雨，并有雷电。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.928978+00:00",
+        "field_path": "description",
+        "id": "95034bed-dfa4-5fd2-a224-a7cc591dd101",
+        "note": "原文：庚辰，大雨雷電；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "status": "published",
+        "subject_id": "8764dbde-2731-574f-b6a4-d6f344828b34",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9b1cca8b-aef3-50b9-9ae1-4fe8e4e9d56e"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371；宣德六年正月庚辰",
+        "claim_text": "原历宣德六年正月庚辰。DDBC历表换算所据为1431-03-07至1431-03-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.965566+00:00",
+        "field_path": "time_original",
+        "id": "9b1cca8b-aef3-50b9-9ae1-4fe8e4e9d56e",
+        "note": "原文：庚辰，大雨雷電；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "status": "published",
+        "subject_id": "8764dbde-2731-574f-b6a4-d6f344828b34",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a7650cc1-3ee1-5c1b-932a-9e3ab07e7dfd"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001372；宣德六年二月丁酉",
+        "claim_text": "宣德六年二月丁酉，明廷命侍郎罗汝敬督办陕西屯田。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:51.994759+00:00",
+        "field_path": "description",
+        "id": "a7650cc1-3ee1-5c1b-932a-9e3ab07e7dfd",
+        "note": "原文：二月丁酉，侍郎羅汝敬督陝西屯田；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e",
+        "status": "published",
+        "subject_id": "908443b8-47b1-548f-807e-5a2dd5c57cdb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ae675946-84e4-5c38-a32f-bbdad909b9bc"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001372；宣德六年二月丁酉",
+        "claim_text": "原历宣德六年二月丁酉。DDBC历表换算所据为1431-03-24至1431-03-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.036618+00:00",
+        "field_path": "time_original",
+        "id": "ae675946-84e4-5c38-a32f-bbdad909b9bc",
+        "note": "原文：二月丁酉，侍郎羅汝敬督陝西屯田；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e",
+        "status": "published",
+        "subject_id": "908443b8-47b1-548f-807e-5a2dd5c57cdb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "16108914-5bda-5b5a-9bc8-6c78bd988650"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001372；宣德六年二月己亥",
+        "claim_text": "宣德六年二月己亥，朝廷疏浚金龙口，引河水通到徐州，便利水路运粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.081736+00:00",
+        "field_path": "description",
+        "id": "16108914-5bda-5b5a-9bc8-6c78bd988650",
+        "note": "原文：己亥，濬金龍口，引河達徐州以便漕；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e",
+        "status": "published",
+        "subject_id": "0a05940f-1b93-5ee1-8bbb-104f7fdb8954",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "adb23b02-e301-5667-add4-fb2a779fad52"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001372；宣德六年二月己亥",
+        "claim_text": "原历宣德六年二月己亥。DDBC历表换算所据为1431-03-26至1431-03-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.140611+00:00",
+        "field_path": "time_original",
+        "id": "adb23b02-e301-5667-add4-fb2a779fad52",
+        "note": "原文：己亥，濬金龍口，引河達徐州以便漕；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e",
+        "status": "published",
+        "subject_id": "0a05940f-1b93-5ee1-8bbb-104f7fdb8954",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "712d0e73-fcfa-5ba6-baa4-d84526e3e2ce"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001373；宣德六年三月乙亥",
+        "claim_text": "宣德六年三月乙亥，朝廷命吏部考察地方官时，先从布政使司和按察使司开始，并将做法定为法令。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.305640+00:00",
+        "field_path": "description",
+        "id": "712d0e73-fcfa-5ba6-baa4-d84526e3e2ce",
+        "note": "原文：三月乙亥，命吏部考察外官自布政、按察二司始，著為令；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "ae539f98-f927-5756-aaf3-f7179d817bd0",
+        "status": "published",
+        "subject_id": "dda61682-8561-5293-9995-34e1885ad9e5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8560348c-fc54-517d-ae65-5cfd70ffe0a9"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001373；宣德六年三月乙亥",
+        "claim_text": "原历宣德六年三月乙亥。DDBC历表换算所据为1431-05-01至1431-05-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.342965+00:00",
+        "field_path": "time_original",
+        "id": "8560348c-fc54-517d-ae65-5cfd70ffe0a9",
+        "note": "原文：三月乙亥，命吏部考察外官自布政、按察二司始，著為令；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "ae539f98-f927-5756-aaf3-f7179d817bd0",
+        "status": "published",
+        "subject_id": "dda61682-8561-5293-9995-34e1885ad9e5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "586f6938-a48c-5805-89d7-75db33277e63"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001374；宣德六年四月己酉",
+        "claim_text": "柴车以侍郎身份经办山西屯田。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.408664+00:00",
+        "field_path": "description",
+        "id": "586f6938-a48c-5805-89d7-75db33277e63",
+        "note": "原文：夏四月己酉，侍郎柴車經理山西屯田；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f",
+        "status": "published",
+        "subject_id": "55a68f00-9d84-5661-8c06-9bf22e7430c6",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fec6f44b-64d8-59b0-aab9-d92b45a5058b"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001374；宣德六年四月己酉",
+        "claim_text": "宣德六年四月己酉，明廷命侍郎柴车经办山西屯田。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.445975+00:00",
+        "field_path": "description",
+        "id": "fec6f44b-64d8-59b0-aab9-d92b45a5058b",
+        "note": "原文：夏四月己酉，侍郎柴車經理山西屯田；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f",
+        "status": "published",
+        "subject_id": "06fcf22e-74f8-5d3c-968b-79e9b4e219a4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9644193b-dd08-5f3c-9f60-054f5e470068"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001374；宣德六年四月己酉",
+        "claim_text": "原历宣德六年四月己酉。DDBC历表换算所据为1431-06-04至1431-06-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.482789+00:00",
+        "field_path": "time_original",
+        "id": "9644193b-dd08-5f3c-9f60-054f5e470068",
+        "note": "原文：夏四月己酉，侍郎柴車經理山西屯田；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f",
+        "status": "published",
+        "subject_id": "06fcf22e-74f8-5d3c-968b-79e9b4e219a4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "33fea47a-81f5-544e-8a02-e9f6fd4aa990"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001374；宣德六年四月己酉",
+        "claim_text": "以侍郎身份经办山西屯田",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.548888+00:00",
+        "field_path": "role",
+        "id": "33fea47a-81f5-544e-8a02-e9f6fd4aa990",
+        "note": "原文：夏四月己酉，侍郎柴車經理山西屯田；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f",
+        "status": "published",
+        "subject_id": "4f578775-ec56-52e5-9478-7b1959044cea",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "61f3f9d3-b79c-5e24-850c-ddb6e8021ada"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001375；宣德六年六月己亥",
+        "claim_text": "黎利奉诏暂掌安南国事。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.585712+00:00",
+        "field_path": "description",
+        "id": "61f3f9d3-b79c-5e24-850c-ddb6e8021ada",
+        "note": "原文：六月己亥，遣使詔黎利權署安南國事；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f",
+        "status": "published",
+        "subject_id": "c3cb3b52-845e-5798-86eb-c3dfdd072dcd",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "85f70e99-14c7-56a7-85d0-9d490a674ca3"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001375；宣德六年六月己亥",
+        "claim_text": "宣德六年六月己亥，明廷派使者向黎利传诏，命他暂时管理安南国事。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.648495+00:00",
+        "field_path": "description",
+        "id": "85f70e99-14c7-56a7-85d0-9d490a674ca3",
+        "note": "原文：六月己亥，遣使詔黎利權署安南國事；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f",
+        "status": "published",
+        "subject_id": "0db21e81-524d-5470-969d-e1708b0e69bc",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e10a9f49-606b-583b-9200-410bb500a931"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001375；宣德六年六月己亥",
+        "claim_text": "原历宣德六年六月己亥。DDBC历表换算所据为1431-07-24至1431-07-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:52.686756+00:00",
+        "field_path": "time_original",
+        "id": "e10a9f49-606b-583b-9200-410bb500a931",
+        "note": "原文：六月己亥，遣使詔黎利權署安南國事；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f",
+        "status": "published",
+        "subject_id": "0db21e81-524d-5470-969d-e1708b0e69bc",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1659eeca-effa-54d6-baf6-55efe178fec9"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001375；宣德六年六月己亥",
+        "claim_text": "奉诏暂掌安南国事",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:53.817839+00:00",
+        "field_path": "role",
+        "id": "1659eeca-effa-54d6-baf6-55efe178fec9",
+        "note": "原文：六月己亥，遣使詔黎利權署安南國事；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f",
+        "status": "published",
+        "subject_id": "d81538ed-633e-5c15-b9dd-8aac5b13c562",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3b8335a6-e986-5015-8400-eb52f149b542"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001376；宣德六年七月己巳",
+        "claim_text": "宣德六年七月己巳，朝廷审录在押囚犯。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:53.877789+00:00",
+        "field_path": "description",
+        "id": "3b8335a6-e986-5015-8400-eb52f149b542",
+        "note": "原文：秋七月己巳，錄囚；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0",
+        "status": "published",
+        "subject_id": "0fa6abc7-cfa0-5a41-9232-7c47a0943fa8",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e68e1d8-1b89-596d-8e3a-283a783b0362"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001376；宣德六年七月己巳",
+        "claim_text": "原历宣德六年七月己巳。DDBC历表换算所据为1431-08-23至1431-08-23，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:53.918912+00:00",
+        "field_path": "time_original",
+        "id": "1e68e1d8-1b89-596d-8e3a-283a783b0362",
+        "note": "原文：秋七月己巳，錄囚；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0",
+        "status": "published",
+        "subject_id": "0fa6abc7-cfa0-5a41-9232-7c47a0943fa8",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6bdbaf24-d0ff-5164-b53e-b49a32e775d1"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001376；宣德六年七月壬午",
+        "claim_text": "宣德六年七月壬午，朝廷准许朵颜三卫进行市场交易。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:53.957151+00:00",
+        "field_path": "description",
+        "id": "6bdbaf24-d0ff-5164-b53e-b49a32e775d1",
+        "note": "原文：壬午，許朵顏三衞市易；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0",
+        "status": "published",
+        "subject_id": "7bd6638c-e02a-57d0-acd6-9c93708e7f85",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9b41d563-67be-5b49-89e7-46549a90439c"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001376；宣德六年七月壬午",
+        "claim_text": "原历宣德六年七月壬午。DDBC历表换算所据为1431-09-05至1431-09-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.031774+00:00",
+        "field_path": "time_original",
+        "id": "9b41d563-67be-5b49-89e7-46549a90439c",
+        "note": "原文：壬午，許朵顏三衞市易；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0",
+        "status": "published",
+        "subject_id": "7bd6638c-e02a-57d0-acd6-9c93708e7f85",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bbad317b-3398-5d60-b97c-2c240bb0f65a"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001377；宣德六年十月甲辰",
+        "claim_text": "陈怀率军在松潘作战。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.067661+00:00",
+        "field_path": "description",
+        "id": "bbad317b-3398-5d60-b97c-2c240bb0f65a",
+        "note": "原文：冬十月甲辰，陳懷平松潘蠻；核对说明：《明史》卷一五五陈怀传载其以都督同知出征松潘，后进封平乡伯，与本纪所指相合。",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7",
+        "status": "published",
+        "subject_id": "1f04c0a5-7d79-541c-ab2f-9938d38aad23",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "665087fd-dfa9-518c-a585-dcf3180d8d57"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001377；宣德六年十月甲辰",
+        "claim_text": "宣德六年十月甲辰，《明史》本纪记陈怀率军平息松潘一带与明廷的战事。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.097506+00:00",
+        "field_path": "description",
+        "id": "665087fd-dfa9-518c-a585-dcf3180d8d57",
+        "note": "原文：冬十月甲辰，陳懷平松潘蠻；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7",
+        "status": "published",
+        "subject_id": "2b97b2ea-e828-51ef-9305-791ae0b5b637",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "99c292a9-7b16-5d2a-9b04-d6d9706d2747"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001377；宣德六年十月甲辰",
+        "claim_text": "原历宣德六年十月甲辰。DDBC历表换算所据为1431-11-26至1431-11-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.136913+00:00",
+        "field_path": "time_original",
+        "id": "99c292a9-7b16-5d2a-9b04-d6d9706d2747",
+        "note": "原文：冬十月甲辰，陳懷平松潘蠻；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7",
+        "status": "published",
+        "subject_id": "2b97b2ea-e828-51ef-9305-791ae0b5b637",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "78e1a292-601f-51c6-b27a-aa9715b7e97f"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001377；宣德六年十月甲辰",
+        "claim_text": "率军在松潘作战",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.196940+00:00",
+        "field_path": "role",
+        "id": "78e1a292-601f-51c6-b27a-aa9715b7e97f",
+        "note": "原文：冬十月甲辰，陳懷平松潘蠻；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7",
+        "status": "published",
+        "subject_id": "31dd73a8-6311-596f-a782-ab9ec55219cf",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "75cc4279-0ab7-5e69-9c83-9f5714a76092"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001378；宣德六年十一月丙子",
+        "claim_text": "宣德六年十一月丙子，朝廷开始命官军按兑运办法接运民户所缴粮食。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.237045+00:00",
+        "field_path": "description",
+        "id": "75cc4279-0ab7-5e69-9c83-9f5714a76092",
+        "note": "原文：十一月丙子，始命官軍兌運民糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f",
+        "status": "published",
+        "subject_id": "e938819c-a6e4-53b8-ade9-4007cfefa163",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f3826085-c2f4-5b25-a0cb-e4c1bb5a92f7"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001378；宣德六年十一月丙子",
+        "claim_text": "原历宣德六年十一月丙子。DDBC历表换算所据为1431-12-28至1431-12-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.264906+00:00",
+        "field_path": "time_original",
+        "id": "f3826085-c2f4-5b25-a0cb-e4c1bb5a92f7",
+        "note": "原文：十一月丙子，始命官軍兌運民糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f",
+        "status": "published",
+        "subject_id": "e938819c-a6e4-53b8-ade9-4007cfefa163",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ec6e8028-7e99-52a7-a2eb-a9ae44f31c75"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001378；宣德六年十一月乙酉",
+        "claim_text": "宣德六年十一月乙酉，朝廷分别派御史前往逮捕被指贪婪残暴的宦官袁琦等人。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.306984+00:00",
+        "field_path": "description",
+        "id": "ec6e8028-7e99-52a7-a2eb-a9ae44f31c75",
+        "note": "原文：乙酉，分遣御史往逮貪暴中官袁琦等；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f",
+        "status": "published",
+        "subject_id": "8878b1a3-6acd-5560-bd37-59dd1a063e63",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "570ee8f0-fde8-5d82-aa87-61111c352ee4"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001378；宣德六年十一月乙酉",
+        "claim_text": "原历宣德六年十一月乙酉。DDBC历表换算所据为1432-01-06至1432-01-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.339097+00:00",
+        "field_path": "time_original",
+        "id": "570ee8f0-fde8-5d82-aa87-61111c352ee4",
+        "note": "原文：乙酉，分遣御史往逮貪暴中官袁琦等；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f",
+        "status": "published",
+        "subject_id": "8878b1a3-6acd-5560-bd37-59dd1a063e63",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a76111de-85ca-5f12-bc60-fa40c5c0048a"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月乙未",
+        "claim_text": "宣德六年十二月乙未，袁琦等十一人被处死。朝廷张榜公布他们的罪名。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.371726+00:00",
+        "field_path": "description",
+        "id": "a76111de-85ca-5f12-bc60-fa40c5c0048a",
+        "note": "原文：十二月乙未，袁琦等十一人棄市，榜其罪示天下；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "e30f5bb3-bea1-5816-b9a6-d7227f24f748",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4bfe6173-5ba9-5458-9efd-fc8de6287cb1"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月乙未",
+        "claim_text": "原历宣德六年十二月乙未。DDBC历表换算所据为1432-01-16至1432-01-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.406674+00:00",
+        "field_path": "time_original",
+        "id": "4bfe6173-5ba9-5458-9efd-fc8de6287cb1",
+        "note": "原文：十二月乙未，袁琦等十一人棄市，榜其罪示天下；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "e30f5bb3-bea1-5816-b9a6-d7227f24f748",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c30775ea-b05c-55ca-8084-affd7c7d633f"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月丁未",
+        "claim_text": "金幼孜去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.436842+00:00",
+        "field_path": "description",
+        "id": "c30775ea-b05c-55ca-8084-affd7c7d633f",
+        "note": "原文：丁未，金幼孜卒；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "01f8c39e-a2e9-5539-9e26-8926e64fc703",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cfc3cf90-1e05-54ab-ae36-850682f5043b"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月丁未",
+        "claim_text": "宣德六年十二月丁未，金幼孜去世。这天按原历换算已在公元1432年。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.471785+00:00",
+        "field_path": "description",
+        "id": "cfc3cf90-1e05-54ab-ae36-850682f5043b",
+        "note": "原文：丁未，金幼孜卒；核对说明：年表和本纪同载金幼孜去世于宣德六年十二月。本纪补丁未，DDBC换算此日为1432年1月28日，旧条把年号对照年1431年当作发生年。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "208715c8-6ed8-552e-990f-17ad00175069",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d441431a-ebf2-5b2f-a81d-a9bd93fc5626"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月丁未",
+        "claim_text": "原历宣德六年十二月丁未。DDBC历表换算所据为1432-01-28至1432-01-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.502953+00:00",
+        "field_path": "time_original",
+        "id": "d441431a-ebf2-5b2f-a81d-a9bd93fc5626",
+        "note": "原文：丁未，金幼孜卒；核对说明：年表和本纪同载金幼孜去世于宣德六年十二月。本纪补丁未，DDBC换算此日为1432年1月28日，旧条把年号对照年1431年当作发生年。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "208715c8-6ed8-552e-990f-17ad00175069",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "50df4806-6e29-5243-afd2-42d52dc19938"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月丁未",
+        "claim_text": "去世",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.554511+00:00",
+        "field_path": "role",
+        "id": "50df4806-6e29-5243-afd2-42d52dc19938",
+        "note": "原文：丁未，金幼孜卒；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "7f6afdbb-298e-5f30-ae54-89df9652fe0e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4d64cf2c-6bed-564d-90f5-fe55703611c8"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月庚戌",
+        "claim_text": "宣德六年十二月庚戌，朝廷派御史巡视宁夏和甘州的屯田与水利事务。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.591852+00:00",
+        "field_path": "description",
+        "id": "4d64cf2c-6bed-564d-90f5-fe55703611c8",
+        "note": "原文：庚戌，遣御史巡視寧夏甘州屯田水利；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "83169a8e-3dbe-526a-a930-d8757470f585",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7ed87ba5-2351-58e1-b2f8-729cf6a2b2eb"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379；宣德六年十二月庚戌",
+        "claim_text": "原历宣德六年十二月庚戌。DDBC历表换算所据为1432-01-31至1432-01-31，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.623084+00:00",
+        "field_path": "time_original",
+        "id": "7ed87ba5-2351-58e1-b2f8-729cf6a2b2eb",
+        "note": "原文：庚戌，遣御史巡視寧夏甘州屯田水利；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "status": "published",
+        "subject_id": "83169a8e-3dbe-526a-a930-d8757470f585",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a7179f94-d336-5d6a-9507-fb3c7ab1a411"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001380；宣德六年",
+        "claim_text": "宣德六年，占城、琉球、瓦剌、哈密、苏门答剌和亦力把里入贡。 按原历纪年，事情发生在公元1431至1432年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.661686+00:00",
+        "field_path": "description",
+        "id": "a7179f94-d336-5d6a-9507-fb3c7ab1a411",
+        "note": "原文：是年，占城、琉球、瓦剌、哈密、蘇門答剌、亦力把里入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027",
+        "status": "published",
+        "subject_id": "456f48ac-f689-5753-a17b-504cf58cdfc5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "09eae0df-376f-5a59-89df-8c09c2434c55"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001380；宣德六年",
+        "claim_text": "原历宣德六年。DDBC历表换算所据为1431-02-21至1432-02-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.696531+00:00",
+        "field_path": "time_original",
+        "id": "09eae0df-376f-5a59-89df-8c09c2434c55",
+        "note": "原文：是年，占城、琉球、瓦剌、哈密、蘇門答剌、亦力把里入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027",
+        "status": "published",
+        "subject_id": "456f48ac-f689-5753-a17b-504cf58cdfc5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4fd4c170-5fc1-539b-907f-35ca8d4f95f5"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001382；宣德七年正月辛酉朔",
+        "claim_text": "宣德七年正月初一，发生日食，朝廷取消朝贺。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.731519+00:00",
+        "field_path": "description",
+        "id": "4fd4c170-5fc1-539b-907f-35ca8d4f95f5",
+        "note": "原文：七年春正月辛酉朔，日有食之，免朝賀；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f",
+        "status": "published",
+        "subject_id": "8eb2ca23-12e2-5605-95f0-c1e063a1777c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "94b0313e-503d-5104-a081-34974053cda8"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001382；宣德七年正月辛酉朔",
+        "claim_text": "原历宣德七年正月辛酉朔。DDBC历表换算所据为1432-02-11至1432-02-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.764655+00:00",
+        "field_path": "time_original",
+        "id": "94b0313e-503d-5104-a081-34974053cda8",
+        "note": "原文：七年春正月辛酉朔，日有食之，免朝賀；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f",
+        "status": "published",
+        "subject_id": "8eb2ca23-12e2-5605-95f0-c1e063a1777c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5b329aed-3ccd-5e14-8a37-8a571828e260"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001382；宣德七年正月癸酉",
+        "claim_text": "宣德七年正月癸酉，明宣宗朱瞻基在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.800960+00:00",
+        "field_path": "description",
+        "id": "5b329aed-3ccd-5e14-8a37-8a571828e260",
+        "note": "原文：癸酉，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f",
+        "status": "published",
+        "subject_id": "96dfba7e-9d18-57c5-ad6e-b8ed0f1dc294",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "88fb5ca7-4800-54d1-8d64-03d1c65d2a29"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001382；宣德七年正月癸酉",
+        "claim_text": "原历宣德七年正月癸酉。DDBC历表换算所据为1432-02-23至1432-02-23，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.853014+00:00",
+        "field_path": "time_original",
+        "id": "88fb5ca7-4800-54d1-8d64-03d1c65d2a29",
+        "note": "原文：癸酉，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f",
+        "status": "published",
+        "subject_id": "96dfba7e-9d18-57c5-ad6e-b8ed0f1dc294",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "358340d5-5f22-5a84-af35-f39f73f621a3"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001382；宣德七年正月癸酉",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.903971+00:00",
+        "field_path": "role",
+        "id": "358340d5-5f22-5a84-af35-f39f73f621a3",
+        "note": "原文：癸酉，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f",
+        "status": "published",
+        "subject_id": "5682b5dc-2075-5d9c-a770-ab840d6b9c18",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a909c32c-d51b-540b-abf8-26f0a82ef2f0"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001383；宣德七年二月甲午",
+        "claim_text": "宣德七年二月甲午，春天气候转暖，明宣宗朱瞻基命主管司法的官署审录在押囚犯。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.950682+00:00",
+        "field_path": "description",
+        "id": "a909c32c-d51b-540b-abf8-26f0a82ef2f0",
+        "note": "原文：二月甲午，以春和諭法司錄囚；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "f63ca9ea-e4dc-5031-9269-6d87482de14a",
+        "status": "published",
+        "subject_id": "276e701d-06e8-521e-874c-80af5643fd78",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d01548a1-570d-5639-9dd3-fb24560950f9"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001383；宣德七年二月甲午",
+        "claim_text": "原历宣德七年二月甲午。DDBC历表换算所据为1432-03-15至1432-03-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:54.994639+00:00",
+        "field_path": "time_original",
+        "id": "d01548a1-570d-5639-9dd3-fb24560950f9",
+        "note": "原文：二月甲午，以春和諭法司錄囚；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "f63ca9ea-e4dc-5031-9269-6d87482de14a",
+        "status": "published",
+        "subject_id": "276e701d-06e8-521e-874c-80af5643fd78",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ab85f638-b47f-5047-a82d-748cd336afa5"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001383；宣德七年二月甲午",
+        "claim_text": "告谕司法官署审录囚犯",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.034869+00:00",
+        "field_path": "role",
+        "id": "ab85f638-b47f-5047-a82d-748cd336afa5",
+        "note": "原文：二月甲午，以春和諭法司錄囚；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "f63ca9ea-e4dc-5031-9269-6d87482de14a",
+        "status": "published",
+        "subject_id": "c9178a47-d093-554a-8676-92ad22b2c6e0",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6c3384f6-7ad4-5dcc-88b5-107c44cf53ef"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001384；宣德七年三月庚申",
+        "claim_text": "宣德七年三月庚申，朝廷下诏推行减轻民众负担的宽恤政策。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.066924+00:00",
+        "field_path": "description",
+        "id": "6c3384f6-7ad4-5dcc-88b5-107c44cf53ef",
+        "note": "原文：三月庚申，下詔行寬卹之政；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793",
+        "status": "published",
+        "subject_id": "e6739ebb-a11a-5d5f-9772-07ca42ec0dfb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "02c9abe9-ec8e-5545-be8b-e58f6460da49"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001384；宣德七年三月庚申",
+        "claim_text": "原历宣德七年三月庚申。DDBC历表换算所据为1432-04-10至1432-04-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.103822+00:00",
+        "field_path": "time_original",
+        "id": "02c9abe9-ec8e-5545-be8b-e58f6460da49",
+        "note": "原文：三月庚申，下詔行寬卹之政；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793",
+        "status": "published",
+        "subject_id": "e6739ebb-a11a-5d5f-9772-07ca42ec0dfb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "770dc2a6-0489-5bcd-b4c5-237e54d95d00"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001384；宣德七年三月辛酉",
+        "claim_text": "宣德七年三月辛酉，明宣宗告谕礼部，官田赋税重，已命减去三成。他听说先前免租命令没有得到户部执行，明确要求各司今后落实诏令。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.158144+00:00",
+        "field_path": "description",
+        "id": "770dc2a6-0489-5bcd-b4c5-237e54d95d00",
+        "note": "原文：辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793",
+        "status": "published",
+        "subject_id": "5134aba9-18dd-53e6-8dd7-c8664b1de0d9",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5db469b4-efe2-5189-a030-cef756cf93fb"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001384；宣德七年三月辛酉",
+        "claim_text": "原历宣德七年三月辛酉。DDBC历表换算所据为1432-04-11至1432-04-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.195929+00:00",
+        "field_path": "time_original",
+        "id": "5db469b4-efe2-5189-a030-cef756cf93fb",
+        "note": "原文：辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793",
+        "status": "published",
+        "subject_id": "5134aba9-18dd-53e6-8dd7-c8664b1de0d9",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "27cae9c9-2bad-5adf-914a-fac32fc343a7"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001384；宣德七年三月辛酉",
+        "claim_text": "要求落实官田减税",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.244955+00:00",
+        "field_path": "role",
+        "id": "27cae9c9-2bad-5adf-914a-fac32fc343a7",
+        "note": "原文：辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793",
+        "status": "published",
+        "subject_id": "1d637b13-8539-527a-bcbe-6489cd1a19e3",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "89097d82-67fd-53bc-8494-2fdd71276ee9"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001385；宣德七年四月辛丑",
+        "claim_text": "宣德七年四月辛丑，朝廷免除山西积欠的赋税。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.291689+00:00",
+        "field_path": "description",
+        "id": "89097d82-67fd-53bc-8494-2fdd71276ee9",
+        "note": "原文：夏四月辛丑，免山西逋賦；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b",
+        "status": "published",
+        "subject_id": "1142daf7-6adb-5de6-8b09-063ea862a102",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5e8d8d78-5b8a-5e7b-ba07-ed8d07c77d67"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001385；宣德七年四月辛丑",
+        "claim_text": "原历宣德七年四月辛丑。DDBC历表换算所据为1432-05-21至1432-05-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.321986+00:00",
+        "field_path": "time_original",
+        "id": "5e8d8d78-5b8a-5e7b-ba07-ed8d07c77d67",
+        "note": "原文：夏四月辛丑，免山西逋賦；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b",
+        "status": "published",
+        "subject_id": "1142daf7-6adb-5de6-8b09-063ea862a102",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dae7c18f-1c60-52a9-9db7-4e1629a882a9"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001385；宣德七年四月壬寅",
+        "claim_text": "宣德七年四月壬寅，朝廷招募商人按中盐办法向边地输送粮食。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.364972+00:00",
+        "field_path": "description",
+        "id": "dae7c18f-1c60-52a9-9db7-4e1629a882a9",
+        "note": "原文：壬寅，募商中鹽輸粟入邊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b",
+        "status": "published",
+        "subject_id": "be1e8acb-7dc6-527e-b1dd-eda56ecbbd85",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "722678cf-88df-5f72-85f2-2f7ffbf628f5"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001385；宣德七年四月壬寅",
+        "claim_text": "原历宣德七年四月壬寅。DDBC历表换算所据为1432-05-22至1432-05-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.413241+00:00",
+        "field_path": "time_original",
+        "id": "722678cf-88df-5f72-85f2-2f7ffbf628f5",
+        "note": "原文：壬寅，募商中鹽輸粟入邊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b",
+        "status": "published",
+        "subject_id": "be1e8acb-7dc6-527e-b1dd-eda56ecbbd85",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8cd5ed4d-ca85-51e1-9eb6-482c452a7c1e"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386；宣德七年六月癸卯",
+        "claim_text": "宣德七年六月癸卯，朝廷审录在押囚犯。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.454711+00:00",
+        "field_path": "description",
+        "id": "8cd5ed4d-ca85-51e1-9eb6-482c452a7c1e",
+        "note": "原文：六月癸卯，錄囚；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "status": "published",
+        "subject_id": "c73f4da1-e77a-508c-8e90-dba96db9e904",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "47fe877e-18a9-5caf-8b59-e5d313eb41db"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386；宣德七年六月癸卯",
+        "claim_text": "原历宣德七年六月癸卯。DDBC历表换算所据为1432-07-22至1432-07-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.496677+00:00",
+        "field_path": "time_original",
+        "id": "47fe877e-18a9-5caf-8b59-e5d313eb41db",
+        "note": "原文：六月癸卯，錄囚；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "status": "published",
+        "subject_id": "c73f4da1-e77a-508c-8e90-dba96db9e904",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5ea24bdb-d7c6-5385-a2aa-9531641414d8"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386；宣德七年六月癸丑",
+        "claim_text": "宣德七年六月癸丑，朝廷停止派宦官到本纪所称番地采购马匹。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.535008+00:00",
+        "field_path": "description",
+        "id": "5ea24bdb-d7c6-5385-a2aa-9531641414d8",
+        "note": "原文：癸丑，罷中官入番市馬；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "status": "published",
+        "subject_id": "09d40baf-9f4a-5b80-951c-4a8865bb17a7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c6956a95-5123-5b72-9797-d71dca44b483"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386；宣德七年六月癸丑",
+        "claim_text": "原历宣德七年六月癸丑。DDBC历表换算所据为1432-08-01至1432-08-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.585002+00:00",
+        "field_path": "time_original",
+        "id": "c6956a95-5123-5b72-9797-d71dca44b483",
+        "note": "原文：癸丑，罷中官入番市馬；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "status": "published",
+        "subject_id": "09d40baf-9f4a-5b80-951c-4a8865bb17a7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "56ed04e1-3a11-57a5-893e-e38c5414f178"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386；宣德七年六月",
+        "claim_text": "宣德七年六月，三十五篇《官箴》完成，朝廷将它们发给百官阅看。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.616621+00:00",
+        "field_path": "description",
+        "id": "56ed04e1-3a11-57a5-893e-e38c5414f178",
+        "note": "原文：是月，作官箴成，凡三十五篇，示百官；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "status": "published",
+        "subject_id": "82a510a3-3d03-55ee-80bc-fd8fdd590de4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8227576c-8755-5ded-b8b4-1909acafefe0"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386；宣德七年六月",
+        "claim_text": "原历宣德七年六月。DDBC历表换算所据为1432-07-07至1432-08-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.655065+00:00",
+        "field_path": "time_original",
+        "id": "8227576c-8755-5ded-b8b4-1909acafefe0",
+        "note": "原文：是月，作官箴成，凡三十五篇，示百官；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "status": "published",
+        "subject_id": "82a510a3-3d03-55ee-80bc-fd8fdd590de4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "44e52691-7daf-5522-96f0-1bbe3911795a"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001387；宣德七年八月乙未",
+        "claim_text": "宣德七年八月乙未，朝廷命三品以上京官举荐有才干、品行和学问的人，并令吏部和都察院罢黜不称职的地方官员。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.694514+00:00",
+        "field_path": "description",
+        "id": "44e52691-7daf-5522-96f0-1bbe3911795a",
+        "note": "原文：秋八月乙未，敕京官三品以上舉才行文學之士，吏部、都察院黜方面有司不職者；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c",
+        "status": "published",
+        "subject_id": "19accf82-770e-5623-b5c9-c067755120a5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "baa55c8b-ec4a-5e66-8408-f39d2c7dada8"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001387；宣德七年八月乙未",
+        "claim_text": "原历宣德七年八月乙未。DDBC历表换算所据为1432-09-12至1432-09-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.746058+00:00",
+        "field_path": "time_original",
+        "id": "baa55c8b-ec4a-5e66-8408-f39d2c7dada8",
+        "note": "原文：秋八月乙未，敕京官三品以上舉才行文學之士，吏部、都察院黜方面有司不職者；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c",
+        "status": "published",
+        "subject_id": "19accf82-770e-5623-b5c9-c067755120a5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "55d7b7f5-2965-5de0-b295-db42016c8ec6"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001388；宣德七年九月庚午",
+        "claim_text": "宣德七年九月庚午，明廷诸将巡视边境。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.784658+00:00",
+        "field_path": "description",
+        "id": "55d7b7f5-2965-5de0-b295-db42016c8ec6",
+        "note": "原文：九月庚午，諸將巡邊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f",
+        "status": "published",
+        "subject_id": "7280547c-e748-573a-9c1b-e58321d1d120",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "66895ecd-ff0f-5902-9044-d9a2ce84bee2"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001388；宣德七年九月庚午",
+        "claim_text": "原历宣德七年九月庚午。DDBC历表换算所据为1432-10-17至1432-10-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.814210+00:00",
+        "field_path": "time_original",
+        "id": "66895ecd-ff0f-5902-9044-d9a2ce84bee2",
+        "note": "原文：九月庚午，諸將巡邊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f",
+        "status": "published",
+        "subject_id": "7280547c-e748-573a-9c1b-e58321d1d120",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e5f3eaf2-5949-5abe-8e99-4c5aa13ace6e"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001388；宣德七年秋",
+        "claim_text": "宣德七年秋，朝廷免除两畿及嘉兴、湖州水灾所涉税粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.853629+00:00",
+        "field_path": "description",
+        "id": "e5f3eaf2-5949-5abe-8e99-4c5aa13ace6e",
+        "note": "原文：是秋，免兩畿及嘉興、湖州水災稅糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f",
+        "status": "published",
+        "subject_id": "cb7fe52b-e589-5aa2-b971-1fe34a1f494a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "55df17f0-38a8-5be3-a52b-395fd4278ce1"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001388；宣德七年秋",
+        "claim_text": "原历宣德七年秋。DDBC历表换算所据为1432-08-05至1432-11-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.904771+00:00",
+        "field_path": "time_original",
+        "id": "55df17f0-38a8-5be3-a52b-395fd4278ce1",
+        "note": "原文：是秋，免兩畿及嘉興、湖州水災稅糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f",
+        "status": "published",
+        "subject_id": "cb7fe52b-e589-5aa2-b971-1fe34a1f494a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e4579b9e-def7-59d6-b113-b1218bb2f1d7"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001389；宣德七年十一月辛酉",
+        "claim_text": "陈瑄奉召岁末入京商议粮赋。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.944754+00:00",
+        "field_path": "description",
+        "id": "e4579b9e-def7-59d6-b113-b1218bb2f1d7",
+        "note": "原文：冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9",
+        "status": "published",
+        "subject_id": "104b6c7a-fa0b-5961-86b0-c745c1c2ad68",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "afc193fc-0cd1-5eba-99d1-15524f82c357"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001389；宣德七年十一月辛酉",
+        "claim_text": "宣德七年十一月辛酉，朝廷召督办漕运的平江伯陈瑄、侍郎赵新等人在年底到京，商议粮赋事务利弊。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:55.985053+00:00",
+        "field_path": "description",
+        "id": "afc193fc-0cd1-5eba-99d1-15524f82c357",
+        "note": "原文：冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9",
+        "status": "published",
+        "subject_id": "a5b3fe46-96e0-55a9-826f-e9eae1c04213",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f0348a08-0d5b-519a-b68d-6f1bc02fff5d"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001389；宣德七年十一月辛酉",
+        "claim_text": "原历宣德七年十一月辛酉。DDBC历表换算所据为1432-12-07至1432-12-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:56.017974+00:00",
+        "field_path": "time_original",
+        "id": "f0348a08-0d5b-519a-b68d-6f1bc02fff5d",
+        "note": "原文：冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9",
+        "status": "published",
+        "subject_id": "a5b3fe46-96e0-55a9-826f-e9eae1c04213",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b02ce7c8-1ca7-5ac8-a242-0934efb9aa5b"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001389；宣德七年十一月辛酉",
+        "claim_text": "奉召岁末入京商议粮赋",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:56.056594+00:00",
+        "field_path": "role",
+        "id": "b02ce7c8-1ca7-5ac8-a242-0934efb9aa5b",
+        "note": "原文：冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9",
+        "status": "published",
+        "subject_id": "d4ab228c-324f-5a4a-abb1-dfe74cc07acf",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "31cfad17-93c1-5901-8a73-970aad73a425"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001390；宣德七年",
+        "claim_text": "宣德七年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入贡。 按原历纪年，事情发生在公元1432至1433年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:56.091653+00:00",
+        "field_path": "description",
+        "id": "31cfad17-93c1-5901-8a73-970aad73a425",
+        "note": "原文：是年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32",
+        "status": "published",
+        "subject_id": "7f26e662-2ca2-5870-b9d0-5ade8dfbd891",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "90f6c74d-b2ee-512e-ac1e-786ac0b99696"
+      },
+      "row": {
+        "citation": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001390；宣德七年",
+        "claim_text": "原历宣德七年。DDBC历表换算所据为1432-02-11至1433-01-29，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T17:15:56.134853+00:00",
+        "field_path": "time_original",
+        "id": "90f6c74d-b2ee-512e-ac1e-786ac0b99696",
+        "note": "原文：是年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32",
+        "status": "published",
+        "subject_id": "7f26e662-2ca2-5870-b9d0-5ade8dfbd891",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.341545+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001371",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001371",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001371/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5c707144227721d17c862af62c0c0e980f56c337b1acc7463d57639ba2be02a1",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0"
+      },
+      "row": {
+        "archive_blob_sha256": "8f9a2b0ec93fe2525dcec604b2c62af1887ad977f1c59792ffe3b220bc71fc2e",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001371/source.txt",
+        "archive_url_sha256": "5c707144227721d17c862af62c0c0e980f56c337b1acc7463d57639ba2be02a1",
+        "content": "六年春正月丁丑，大祀天地於南郊。庚辰，大雨雷電。",
+        "content_sha256": "8f9a2b0ec93fe2525dcec604b2c62af1887ad977f1c59792ffe3b220bc71fc2e",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001371"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66747,
+        "char_start": 66723,
+        "content": "六年春正月丁丑，大祀天地於南郊。庚辰，大雨雷電。",
+        "content_sha256": "8f9a2b0ec93fe2525dcec604b2c62af1887ad977f1c59792ffe3b220bc71fc2e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001371",
+        "kind": "body",
+        "ordinal": 1360,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.399575+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001372",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001372",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001372/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "ecd8341874c430bca307d4053221122f9df793ebcb77075a3f8d0e5e82112429",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e"
+      },
+      "row": {
+        "archive_blob_sha256": "8a4aa585f268826ffcdcd58c67ef8faec083b68c5a4db3462d0eedcd483d6a8a",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001372/source.txt",
+        "archive_url_sha256": "ecd8341874c430bca307d4053221122f9df793ebcb77075a3f8d0e5e82112429",
+        "content": "二月丁酉，侍郎羅汝敬督陝西屯田。己亥，濬金龍口，引河達徐州以便漕。",
+        "content_sha256": "8a4aa585f268826ffcdcd58c67ef8faec083b68c5a4db3462d0eedcd483d6a8a",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "ec65d7ac-1611-5eb0-b7ac-57e213513c3e"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001372"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66782,
+        "char_start": 66749,
+        "content": "二月丁酉，侍郎羅汝敬督陝西屯田。己亥，濬金龍口，引河達徐州以便漕。",
+        "content_sha256": "8a4aa585f268826ffcdcd58c67ef8faec083b68c5a4db3462d0eedcd483d6a8a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001372",
+        "kind": "body",
+        "ordinal": 1361,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "ae539f98-f927-5756-aaf3-f7179d817bd0"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.436944+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "ae539f98-f927-5756-aaf3-f7179d817bd0",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001373",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001373",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001373/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "ee9fd3e3d214b1982b6fa389c34a329b6be2a88708c9b47e9922a1ccfaec56f5",
+        "source_id": "ae539f98-f927-5756-aaf3-f7179d817bd0"
+      },
+      "row": {
+        "archive_blob_sha256": "bc36cabc4183991f7252b675798e9807032b68580514179b8467994c2cf85796",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001373/source.txt",
+        "archive_url_sha256": "ee9fd3e3d214b1982b6fa389c34a329b6be2a88708c9b47e9922a1ccfaec56f5",
+        "content": "三月乙亥，命吏部考察外官自布政、按察二司始，著為令。",
+        "content_sha256": "bc36cabc4183991f7252b675798e9807032b68580514179b8467994c2cf85796",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "ae539f98-f927-5756-aaf3-f7179d817bd0"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001373"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66810,
+        "char_start": 66784,
+        "content": "三月乙亥，命吏部考察外官自布政、按察二司始，著為令。",
+        "content_sha256": "bc36cabc4183991f7252b675798e9807032b68580514179b8467994c2cf85796",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001373",
+        "kind": "body",
+        "ordinal": 1362,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.469606+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001374",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001374",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001374/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "b37a08b5f7197a0cb14a895fd8e2bbe181cadcda36ac572b818f4468ae7926bd",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f"
+      },
+      "row": {
+        "archive_blob_sha256": "c5c0a9e19ff0097c0660542548641818b8ae707566bf05d318e5179d7d83389e",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001374/source.txt",
+        "archive_url_sha256": "b37a08b5f7197a0cb14a895fd8e2bbe181cadcda36ac572b818f4468ae7926bd",
+        "content": "夏四月己酉，侍郎柴車經理山西屯田。",
+        "content_sha256": "c5c0a9e19ff0097c0660542548641818b8ae707566bf05d318e5179d7d83389e",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "8ae55575-13b1-5f92-b9f4-2b49500ec01f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001374"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66829,
+        "char_start": 66812,
+        "content": "夏四月己酉，侍郎柴車經理山西屯田。",
+        "content_sha256": "c5c0a9e19ff0097c0660542548641818b8ae707566bf05d318e5179d7d83389e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001374",
+        "kind": "body",
+        "ordinal": 1363,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.509746+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001375",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001375",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001375/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "f34f7d7e64475f318e1bbfbc688476bb13a980ca2ac894ba32868fb602c2671f",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f"
+      },
+      "row": {
+        "archive_blob_sha256": "7eb95c825f33c72136e625bc018be51ee205101b5a2043b3c67a8a4a367c2136",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001375/source.txt",
+        "archive_url_sha256": "f34f7d7e64475f318e1bbfbc688476bb13a980ca2ac894ba32868fb602c2671f",
+        "content": "六月己亥，遣使詔黎利權署安南國事。",
+        "content_sha256": "7eb95c825f33c72136e625bc018be51ee205101b5a2043b3c67a8a4a367c2136",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001375"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66848,
+        "char_start": 66831,
+        "content": "六月己亥，遣使詔黎利權署安南國事。",
+        "content_sha256": "7eb95c825f33c72136e625bc018be51ee205101b5a2043b3c67a8a4a367c2136",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001375",
+        "kind": "body",
+        "ordinal": 1364,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "be39c720-e447-574c-9948-a4dd8fd263d0"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.544751+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "be39c720-e447-574c-9948-a4dd8fd263d0",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001376",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001376",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001376/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "e0c419bb5a686213716b1c932bd696eec8ae9fe42d71463643c1619aa87e07e5",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0"
+      },
+      "row": {
+        "archive_blob_sha256": "ff8271d9d85c379bfcb17ddf2e95cf956ff73dcae3275bba34de555e5ede6930",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001376/source.txt",
+        "archive_url_sha256": "e0c419bb5a686213716b1c932bd696eec8ae9fe42d71463643c1619aa87e07e5",
+        "content": "秋七月己巳，錄囚。壬午，許朵顏三衞市易。",
+        "content_sha256": "ff8271d9d85c379bfcb17ddf2e95cf956ff73dcae3275bba34de555e5ede6930",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "be39c720-e447-574c-9948-a4dd8fd263d0"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001376"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66870,
+        "char_start": 66850,
+        "content": "秋七月己巳，錄囚。壬午，許朵顏三衞市易。",
+        "content_sha256": "ff8271d9d85c379bfcb17ddf2e95cf956ff73dcae3275bba34de555e5ede6930",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001376",
+        "kind": "body",
+        "ordinal": 1365,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.584493+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001377",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001377",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001377/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "694b4dd3bef0e0c263db6ed59edcf123e6fedce3bbe5bd3bec2ac283e5a97b37",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7"
+      },
+      "row": {
+        "archive_blob_sha256": "c552ae2ebdada658aed43dd6670779374a39739095e91b82ef48d1006e2464fa",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001377/source.txt",
+        "archive_url_sha256": "694b4dd3bef0e0c263db6ed59edcf123e6fedce3bbe5bd3bec2ac283e5a97b37",
+        "content": "冬十月甲辰，陳懷平松潘蠻。",
+        "content_sha256": "c552ae2ebdada658aed43dd6670779374a39739095e91b82ef48d1006e2464fa",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "ef77adec-ebbb-5f21-a6c0-4a68977672b7"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001377"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66885,
+        "char_start": 66872,
+        "content": "冬十月甲辰，陳懷平松潘蠻。",
+        "content_sha256": "c552ae2ebdada658aed43dd6670779374a39739095e91b82ef48d1006e2464fa",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001377",
+        "kind": "body",
+        "ordinal": 1366,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "60c99b60-ce4b-5b37-8523-cb658c14737f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.624767+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "60c99b60-ce4b-5b37-8523-cb658c14737f",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001378",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001378",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001378/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "2699792271e0c8b66085d4adc0c0e2ac4bdba3815936df22ef1741f8f061f557",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f"
+      },
+      "row": {
+        "archive_blob_sha256": "20e196a5a9c85439f583c4062b7ad37f159139eef043ffefeed8051d7f282719",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001378/source.txt",
+        "archive_url_sha256": "2699792271e0c8b66085d4adc0c0e2ac4bdba3815936df22ef1741f8f061f557",
+        "content": "十一月丙子，始命官軍兌運民糧。乙酉，分遣御史往逮貪暴中官袁琦等。",
+        "content_sha256": "20e196a5a9c85439f583c4062b7ad37f159139eef043ffefeed8051d7f282719",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "60c99b60-ce4b-5b37-8523-cb658c14737f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001378"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66919,
+        "char_start": 66887,
+        "content": "十一月丙子，始命官軍兌運民糧。乙酉，分遣御史往逮貪暴中官袁琦等。",
+        "content_sha256": "20e196a5a9c85439f583c4062b7ad37f159139eef043ffefeed8051d7f282719",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001378",
+        "kind": "body",
+        "ordinal": 1367,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "fceb0957-89aa-5c61-820c-be1e7c9200d1"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.659645+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "fceb0957-89aa-5c61-820c-be1e7c9200d1",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001379",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001379",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001379/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5bd5cb7f1920c8f7774406437cd58cda01f4d7940d89947e26b8e9f9ff572b41",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1"
+      },
+      "row": {
+        "archive_blob_sha256": "d8ef2623f75c144cf1431c015f574c9063039e1d2c98a393ebdc7d78b85a4dbe",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001379/source.txt",
+        "archive_url_sha256": "5bd5cb7f1920c8f7774406437cd58cda01f4d7940d89947e26b8e9f9ff572b41",
+        "content": "十二月乙未，袁琦等十一人棄市，榜其罪示天下。丁未，金幼孜卒。庚戌，遣御史巡視寧夏甘州屯田水利。",
+        "content_sha256": "d8ef2623f75c144cf1431c015f574c9063039e1d2c98a393ebdc7d78b85a4dbe",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "fceb0957-89aa-5c61-820c-be1e7c9200d1"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001379"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66968,
+        "char_start": 66921,
+        "content": "十二月乙未，袁琦等十一人棄市，榜其罪示天下。丁未，金幼孜卒。庚戌，遣御史巡視寧夏甘州屯田水利。",
+        "content_sha256": "d8ef2623f75c144cf1431c015f574c9063039e1d2c98a393ebdc7d78b85a4dbe",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001379",
+        "kind": "body",
+        "ordinal": 1368,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.699820+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001380",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001380",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001380/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "d142475758f4f1d7ca0842619fa0016a7fdaf7abf4323c186729881bed9fbea7",
+        "source_id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027"
+      },
+      "row": {
+        "archive_blob_sha256": "92c956b210852bf4afbbeb93019e8cdc2de74a2e800eba5addf6552d03ab6fe3",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001380/source.txt",
+        "archive_url_sha256": "d142475758f4f1d7ca0842619fa0016a7fdaf7abf4323c186729881bed9fbea7",
+        "content": "是年，占城、琉球、瓦剌、哈密、蘇門答剌、亦力把里入貢。",
+        "content_sha256": "92c956b210852bf4afbbeb93019e8cdc2de74a2e800eba5addf6552d03ab6fe3",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "9cf571fc-f209-5cf5-ac1e-c32cbd55f027"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001380"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 66997,
+        "char_start": 66970,
+        "content": "是年，占城、琉球、瓦剌、哈密、蘇門答剌、亦力把里入貢。",
+        "content_sha256": "92c956b210852bf4afbbeb93019e8cdc2de74a2e800eba5addf6552d03ab6fe3",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001380",
+        "kind": "body",
+        "ordinal": 1369,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "d98b0779-4941-5885-bebc-677dba77809f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.777806+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d98b0779-4941-5885-bebc-677dba77809f",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001382",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001382",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001382/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "b9fa567313547b259743f2bc8718cef075ba7cfa93a513c65299769a225f14a1",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f"
+      },
+      "row": {
+        "archive_blob_sha256": "4ca210060d022889b4e2af2c96315fa850a6f3ecbce48106ba455e695127f1a8",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001382/source.txt",
+        "archive_url_sha256": "b9fa567313547b259743f2bc8718cef075ba7cfa93a513c65299769a225f14a1",
+        "content": "七年春正月辛酉朔，日有食之，免朝賀。癸酉，大祀天地於南郊。",
+        "content_sha256": "4ca210060d022889b4e2af2c96315fa850a6f3ecbce48106ba455e695127f1a8",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "d98b0779-4941-5885-bebc-677dba77809f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001382"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67034,
+        "char_start": 67005,
+        "content": "七年春正月辛酉朔，日有食之，免朝賀。癸酉，大祀天地於南郊。",
+        "content_sha256": "4ca210060d022889b4e2af2c96315fa850a6f3ecbce48106ba455e695127f1a8",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001382",
+        "kind": "body",
+        "ordinal": 1371,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "f63ca9ea-e4dc-5031-9269-6d87482de14a"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.824596+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "f63ca9ea-e4dc-5031-9269-6d87482de14a",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001383",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001383",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001383/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "170eb9722578c8ed87962478b6266a2b65f2bee7dd58d4585b848b4c96ffc477",
+        "source_id": "f63ca9ea-e4dc-5031-9269-6d87482de14a"
+      },
+      "row": {
+        "archive_blob_sha256": "ae05116cf055f805877997b8532b641f91b5d791d0ad9795ecb361f506fe06fe",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001383/source.txt",
+        "archive_url_sha256": "170eb9722578c8ed87962478b6266a2b65f2bee7dd58d4585b848b4c96ffc477",
+        "content": "二月甲午，以春和諭法司錄囚。",
+        "content_sha256": "ae05116cf055f805877997b8532b641f91b5d791d0ad9795ecb361f506fe06fe",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "f63ca9ea-e4dc-5031-9269-6d87482de14a"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001383"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67050,
+        "char_start": 67036,
+        "content": "二月甲午，以春和諭法司錄囚。",
+        "content_sha256": "ae05116cf055f805877997b8532b641f91b5d791d0ad9795ecb361f506fe06fe",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001383",
+        "kind": "body",
+        "ordinal": 1372,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "33073d20-b1e8-5b23-9b74-e2006d82c793"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.864611+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "33073d20-b1e8-5b23-9b74-e2006d82c793",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001384",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001384",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001384/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c74705f6bcc5b04b0f5dcd5433e19807482fa2a453c909a5c6fc4e6be2286c90",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793"
+      },
+      "row": {
+        "archive_blob_sha256": "7174aad33620f0f752a103053abfda215e236110f9de445cecf48fb25ce2a98e",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001384/source.txt",
+        "archive_url_sha256": "c74705f6bcc5b04b0f5dcd5433e19807482fa2a453c909a5c6fc4e6be2286c90",
+        "content": "三月庚申，下詔行寬卹之政。辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」",
+        "content_sha256": "7174aad33620f0f752a103053abfda215e236110f9de445cecf48fb25ce2a98e",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "33073d20-b1e8-5b23-9b74-e2006d82c793"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001384"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67142,
+        "char_start": 67052,
+        "content": "三月庚申，下詔行寬卹之政。辛酉，諭禮部曰：「朕以官田賦重，十減其三。乃聞異時蠲租詔下，戶部皆不行，甚者戒約有司，不得以詔書為辭。是廢格詔令，使澤不下究也。自今令在必行，毋有所遏。」",
+        "content_sha256": "7174aad33620f0f752a103053abfda215e236110f9de445cecf48fb25ce2a98e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001384",
+        "kind": "body",
+        "ordinal": 1373,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.904710+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001385",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001385",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001385/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "eccf1bdcfa0a8d25873b4c3ec641b5e3f94d36a7f19f669dabf845912ebe944c",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b"
+      },
+      "row": {
+        "archive_blob_sha256": "e36887acc95a758d3df3329d3aaa121819b636d1cf24fe4ec9b549765768e7fa",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001385/source.txt",
+        "archive_url_sha256": "eccf1bdcfa0a8d25873b4c3ec641b5e3f94d36a7f19f669dabf845912ebe944c",
+        "content": "夏四月辛丑，免山西逋賦。壬寅，募商中鹽輸粟入邊。",
+        "content_sha256": "e36887acc95a758d3df3329d3aaa121819b636d1cf24fe4ec9b549765768e7fa",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "49242d4b-0079-55d4-836a-c3fcc18f2a8b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001385"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67168,
+        "char_start": 67144,
+        "content": "夏四月辛丑，免山西逋賦。壬寅，募商中鹽輸粟入邊。",
+        "content_sha256": "e36887acc95a758d3df3329d3aaa121819b636d1cf24fe4ec9b549765768e7fa",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001385",
+        "kind": "body",
+        "ordinal": 1374,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.944830+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001386",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001386",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001386/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "7a18337b107cc521f864eb1190e69d802202d6912bc7363ae6ee4de44a95b5d9",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f"
+      },
+      "row": {
+        "archive_blob_sha256": "844d7561a12f8b13acd989ae53b752cb0752a58de42b5933115c8d5c41357304",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001386/source.txt",
+        "archive_url_sha256": "7a18337b107cc521f864eb1190e69d802202d6912bc7363ae6ee4de44a95b5d9",
+        "content": "六月癸卯，錄囚。癸丑，罷中官入番市馬。是月，作官箴成，凡三十五篇，示百官。",
+        "content_sha256": "844d7561a12f8b13acd989ae53b752cb0752a58de42b5933115c8d5c41357304",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "d40127a5-aba3-5c60-9a67-fc05dcf69b6f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001386"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67207,
+        "char_start": 67170,
+        "content": "六月癸卯，錄囚。癸丑，罷中官入番市馬。是月，作官箴成，凡三十五篇，示百官。",
+        "content_sha256": "844d7561a12f8b13acd989ae53b752cb0752a58de42b5933115c8d5c41357304",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001386",
+        "kind": "body",
+        "ordinal": 1375,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:45.983630+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001387",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001387",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001387/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "bbdb60f05f29f3e13fdf13888859ad1b5232650fc962fd0db912155cd6e13d70",
+        "source_id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c"
+      },
+      "row": {
+        "archive_blob_sha256": "8b377f6223fa8d3957a9f50bb72fde8d897779d71887d3ec752acb1c68b74986",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001387/source.txt",
+        "archive_url_sha256": "bbdb60f05f29f3e13fdf13888859ad1b5232650fc962fd0db912155cd6e13d70",
+        "content": "秋八月乙未，敕京官三品以上舉才行文學之士，吏部、都察院黜方面有司不職者。",
+        "content_sha256": "8b377f6223fa8d3957a9f50bb72fde8d897779d71887d3ec752acb1c68b74986",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "a6c9501c-ba4b-538b-83b2-bf804f1c260c"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001387"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67245,
+        "char_start": 67209,
+        "content": "秋八月乙未，敕京官三品以上舉才行文學之士，吏部、都察院黜方面有司不職者。",
+        "content_sha256": "8b377f6223fa8d3957a9f50bb72fde8d897779d71887d3ec752acb1c68b74986",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001387",
+        "kind": "body",
+        "ordinal": 1376,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a20e9f16-1adb-5053-a1a8-c13e7888954f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:46.023748+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a20e9f16-1adb-5053-a1a8-c13e7888954f",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001388",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001388",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001388/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "a7d5c2d8962464fd086d9dd8df3331fd826e2e3b978126152991b3156660c9b9",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f"
+      },
+      "row": {
+        "archive_blob_sha256": "305ed875f2e6aeb56123bedf040db452f3c90e115219bccbeefd6bbc04d52903",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001388/source.txt",
+        "archive_url_sha256": "a7d5c2d8962464fd086d9dd8df3331fd826e2e3b978126152991b3156660c9b9",
+        "content": "九月庚午，諸將巡邊。是秋，免兩畿及嘉興、湖州水災稅糧。",
+        "content_sha256": "305ed875f2e6aeb56123bedf040db452f3c90e115219bccbeefd6bbc04d52903",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "a20e9f16-1adb-5053-a1a8-c13e7888954f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001388"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67274,
+        "char_start": 67247,
+        "content": "九月庚午，諸將巡邊。是秋，免兩畿及嘉興、湖州水災稅糧。",
+        "content_sha256": "305ed875f2e6aeb56123bedf040db452f3c90e115219bccbeefd6bbc04d52903",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001388",
+        "kind": "body",
+        "ordinal": 1377,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "effdeaa0-dbb5-567a-9782-65d32609dee9"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:46.061749+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "effdeaa0-dbb5-567a-9782-65d32609dee9",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001389",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001389",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001389/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "b04d5b6aac7fb750096bb6ac5b5f477effbea02b81147417b4c75341d0bc3336",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9"
+      },
+      "row": {
+        "archive_blob_sha256": "c4b7850be44071a493da1280a745780619db2f4b005674b73c7271a4e1119bff",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001389/source.txt",
+        "archive_url_sha256": "b04d5b6aac7fb750096bb6ac5b5f477effbea02b81147417b4c75341d0bc3336",
+        "content": "冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊。",
+        "content_sha256": "c4b7850be44071a493da1280a745780619db2f4b005674b73c7271a4e1119bff",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "effdeaa0-dbb5-567a-9782-65d32609dee9"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001389"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67307,
+        "char_start": 67276,
+        "content": "冬十一月辛酉，召督漕平江伯陳瑄、侍郎趙新等歲終至京議糧賦利弊。",
+        "content_sha256": "c4b7850be44071a493da1280a745780619db2f4b005674b73c7271a4e1119bff",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001389",
+        "kind": "body",
+        "ordinal": 1378,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T17:15:46.104836+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32",
+        "note": "《明史》卷9·本纪第九·宣宗·mingshi-2f603db3d81e-p001390",
+        "source_type": "primary",
+        "title": "明史·卷9·宣宗·mingshi-2f603db3d81e-p001390",
+        "url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001390/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "362182fa0b1ee6cadd49ab9e0015570f1d38a5bd51510967beb27472e97bb59b",
+        "source_id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32"
+      },
+      "row": {
+        "archive_blob_sha256": "9527c22f4644a1859b9bb8b7b7c6f2d00275043454d0ae7367a7bb08ec6edf03",
+        "archive_commit": "f1e43a109ac8e57d24420479d7c3266b510567f9",
+        "archive_url": "https://github.com/greed-216/histree/blob/f1e43a109ac8e57d24420479d7c3266b510567f9/content/books/mingshi/vol-009/from-start/part-04/sources/mingshi-2f603db3d81e-p001390/source.txt",
+        "archive_url_sha256": "362182fa0b1ee6cadd49ab9e0015570f1d38a5bd51510967beb27472e97bb59b",
+        "content": "是年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入貢。",
+        "content_sha256": "9527c22f4644a1859b9bb8b7b7c6f2d00275043454d0ae7367a7bb08ec6edf03",
+        "created_at": "2026-11-18T17:16:00.502838+00:00",
+        "source_id": "c73a4f3d-b74b-59e4-a516-ab1521d29b32"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001390"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 67334,
+        "char_start": 67309,
+        "content": "是年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入貢。",
+        "content_sha256": "9527c22f4644a1859b9bb8b7b7c6f2d00275043454d0ae7367a7bb08ec6edf03",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001390",
+        "kind": "body",
+        "ordinal": 1379,
+        "section_id": "mingshi-2f603db3d81e-s0010"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "123bf201-2760-56e5-8db8-f268b7ab0834"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.306818+00:00",
+        "description": "宣德六年正月丁丑，明宣宗朱瞻基在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "123bf201-2760-56e5-8db8-f268b7ab0834",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年正月丁丑",
+        "title": "明宣宗在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8764dbde-2731-574f-b6a4-d6f344828b34"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.354780+00:00",
+        "description": "宣德六年正月庚辰，《明史》本纪记当天大雨，并有雷电。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "8764dbde-2731-574f-b6a4-d6f344828b34",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年正月庚辰",
+        "title": "本纪记有大雨雷电"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "908443b8-47b1-548f-807e-5a2dd5c57cdb"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.394811+00:00",
+        "description": "宣德六年二月丁酉，明廷命侍郎罗汝敬督办陕西屯田。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "908443b8-47b1-548f-807e-5a2dd5c57cdb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年二月丁酉",
+        "title": "侍郎罗汝敬奉命督办陕西屯田"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0a05940f-1b93-5ee1-8bbb-104f7fdb8954"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.436764+00:00",
+        "description": "宣德六年二月己亥，朝廷疏浚金龙口，引河水通到徐州，便利水路运粮。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "0a05940f-1b93-5ee1-8bbb-104f7fdb8954",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年二月己亥",
+        "title": "明廷疏浚金龙口，引河水至徐州以便利漕运"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "dda61682-8561-5293-9995-34e1885ad9e5"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.474776+00:00",
+        "description": "宣德六年三月乙亥，朝廷命吏部考察地方官时，先从布政使司和按察使司开始，并将做法定为法令。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "dda61682-8561-5293-9995-34e1885ad9e5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年三月乙亥",
+        "title": "明廷规定考察地方官由布政、按察两司开始"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "06fcf22e-74f8-5d3c-968b-79e9b4e219a4"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.535542+00:00",
+        "description": "宣德六年四月己酉，明廷命侍郎柴车经办山西屯田。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "06fcf22e-74f8-5d3c-968b-79e9b4e219a4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年四月己酉",
+        "title": "侍郎柴车奉命经办山西屯田"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0db21e81-524d-5470-969d-e1708b0e69bc"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.583790+00:00",
+        "description": "宣德六年六月己亥，明廷派使者向黎利传诏，命他暂时管理安南国事。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "0db21e81-524d-5470-969d-e1708b0e69bc",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年六月己亥",
+        "title": "明廷诏令黎利暂掌安南国事"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0fa6abc7-cfa0-5a41-9232-7c47a0943fa8"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.624778+00:00",
+        "description": "宣德六年七月己巳，朝廷审录在押囚犯。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "0fa6abc7-cfa0-5a41-9232-7c47a0943fa8",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年七月己巳",
+        "title": "明廷审录在押囚犯"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7bd6638c-e02a-57d0-acd6-9c93708e7f85"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.663900+00:00",
+        "description": "宣德六年七月壬午，朝廷准许朵颜三卫进行市场交易。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "7bd6638c-e02a-57d0-acd6-9c93708e7f85",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年七月壬午",
+        "title": "明廷准许朵颜三卫交易"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "2b97b2ea-e828-51ef-9305-791ae0b5b637"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.704639+00:00",
+        "description": "宣德六年十月甲辰，《明史》本纪记陈怀率军平息松潘一带与明廷的战事。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "2b97b2ea-e828-51ef-9305-791ae0b5b637",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年十月甲辰",
+        "title": "本纪记陈怀平息松潘战事"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e938819c-a6e4-53b8-ade9-4007cfefa163"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.757911+00:00",
+        "description": "宣德六年十一月丙子，朝廷开始命官军按兑运办法接运民户所缴粮食。",
+        "dynasty": "明",
+        "end_year": 1431,
+        "id": "e938819c-a6e4-53b8-ade9-4007cfefa163",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1431,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年十一月丙子",
+        "title": "明廷开始由官军接运民户所缴粮食"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8878b1a3-6acd-5560-bd37-59dd1a063e63"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.804492+00:00",
+        "description": "宣德六年十一月乙酉，朝廷分别派御史前往逮捕被指贪婪残暴的宦官袁琦等人。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "8878b1a3-6acd-5560-bd37-59dd1a063e63",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年十一月乙酉",
+        "title": "明廷派御史逮捕袁琦等宦官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e30f5bb3-bea1-5816-b9a6-d7227f24f748"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.844814+00:00",
+        "description": "宣德六年十二月乙未，袁琦等十一人被处死。朝廷张榜公布他们的罪名。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "e30f5bb3-bea1-5816-b9a6-d7227f24f748",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年十二月乙未",
+        "title": "袁琦等十一人被处死，明廷张榜公布罪名"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "208715c8-6ed8-552e-990f-17ad00175069"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:33.209169+00:00",
+        "description": "宣德6年（年号对照1431年）十二月，金幼孜去世。按原历月份核对，本项发生在公元1432年。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "208715c8-6ed8-552e-990f-17ad00175069",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德6年（年号对照1431年）十二月；原历月份对应延伸格里历1432-01-13至1432-02-10；原文未记具体日，故本项记为公元1432年，不把整月的月首当成行动日期。",
+        "title": "金幼孜去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "83169a8e-3dbe-526a-a930-d8757470f585"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.903662+00:00",
+        "description": "宣德六年十二月庚戌，朝廷派御史巡视宁夏和甘州的屯田与水利事务。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "83169a8e-3dbe-526a-a930-d8757470f585",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年十二月庚戌",
+        "title": "明廷派御史巡视宁夏、甘州屯田水利"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "456f48ac-f689-5753-a17b-504cf58cdfc5"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.944990+00:00",
+        "description": "宣德六年，占城、琉球、瓦剌、哈密、苏门答剌和亦力把里入贡。 按原历纪年，事情发生在公元1431至1432年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "456f48ac-f689-5753-a17b-504cf58cdfc5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德六年",
+        "title": "本纪汇记宣德六年多地入贡"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8eb2ca23-12e2-5605-95f0-c1e063a1777c"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:47.983649+00:00",
+        "description": "宣德七年正月初一，发生日食，朝廷取消朝贺。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "8eb2ca23-12e2-5605-95f0-c1e063a1777c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年正月辛酉朔",
+        "title": "本纪记初一日食，明廷取消朝贺"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "96dfba7e-9d18-57c5-ad6e-b8ed0f1dc294"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:48.034809+00:00",
+        "description": "宣德七年正月癸酉，明宣宗朱瞻基在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "96dfba7e-9d18-57c5-ad6e-b8ed0f1dc294",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年正月癸酉",
+        "title": "明宣宗在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "276e701d-06e8-521e-874c-80af5643fd78"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:48.074841+00:00",
+        "description": "宣德七年二月甲午，春天气候转暖，明宣宗朱瞻基命主管司法的官署审录在押囚犯。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "276e701d-06e8-521e-874c-80af5643fd78",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年二月甲午",
+        "title": "明宣宗命司法官署审录在押囚犯"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e6739ebb-a11a-5d5f-9772-07ca42ec0dfb"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.053024+00:00",
+        "description": "宣德七年三月庚申，朝廷下诏推行减轻民众负担的宽恤政策。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "e6739ebb-a11a-5d5f-9772-07ca42ec0dfb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年三月庚申",
+        "title": "明廷下诏施行宽恤政策"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5134aba9-18dd-53e6-8dd7-c8664b1de0d9"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.106594+00:00",
+        "description": "宣德七年三月辛酉，明宣宗告谕礼部，官田赋税重，已命减去三成。他听说先前免租命令没有得到户部执行，明确要求各司今后落实诏令。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "5134aba9-18dd-53e6-8dd7-c8664b1de0d9",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年三月辛酉",
+        "title": "明宣宗要求落实官田减税诏令"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1142daf7-6adb-5de6-8b09-063ea862a102"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.144903+00:00",
+        "description": "宣德七年四月辛丑，朝廷免除山西积欠的赋税。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "1142daf7-6adb-5de6-8b09-063ea862a102",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年四月辛丑",
+        "title": "明廷免除山西积欠的赋税"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "be1e8acb-7dc6-527e-b1dd-eda56ecbbd85"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.180754+00:00",
+        "description": "宣德七年四月壬寅，朝廷招募商人按中盐办法向边地输送粮食。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "be1e8acb-7dc6-527e-b1dd-eda56ecbbd85",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年四月壬寅",
+        "title": "明廷招募商人向边地运粮并办理盐引"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c73f4da1-e77a-508c-8e90-dba96db9e904"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.216773+00:00",
+        "description": "宣德七年六月癸卯，朝廷审录在押囚犯。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "c73f4da1-e77a-508c-8e90-dba96db9e904",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年六月癸卯",
+        "title": "明廷审录在押囚犯"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "09d40baf-9f4a-5b80-951c-4a8865bb17a7"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.256901+00:00",
+        "description": "宣德七年六月癸丑，朝廷停止派宦官到本纪所称番地采购马匹。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "09d40baf-9f4a-5b80-951c-4a8865bb17a7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年六月癸丑",
+        "title": "明廷叫停由宦官赴外地买马"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "82a510a3-3d03-55ee-80bc-fd8fdd590de4"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.296779+00:00",
+        "description": "宣德七年六月，三十五篇《官箴》完成，朝廷将它们发给百官阅看。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "82a510a3-3d03-55ee-80bc-fd8fdd590de4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年六月",
+        "title": "三十五篇《官箴》完成并发给百官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "19accf82-770e-5623-b5c9-c067755120a5"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.361879+00:00",
+        "description": "宣德七年八月乙未，朝廷命三品以上京官举荐有才干、品行和学问的人，并令吏部和都察院罢黜不称职的地方官员。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "19accf82-770e-5623-b5c9-c067755120a5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年八月乙未",
+        "title": "明廷命高级京官荐才并罢黜不称职的地方官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7280547c-e748-573a-9c1b-e58321d1d120"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.411680+00:00",
+        "description": "宣德七年九月庚午，明廷诸将巡视边境。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "7280547c-e748-573a-9c1b-e58321d1d120",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年九月庚午",
+        "title": "明廷命诸将巡视边境"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "cb7fe52b-e589-5aa2-b971-1fe34a1f494a"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.466898+00:00",
+        "description": "宣德七年秋，朝廷免除两畿及嘉兴、湖州水灾所涉税粮。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "cb7fe52b-e589-5aa2-b971-1fe34a1f494a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年秋",
+        "title": "明廷减免两畿与嘉兴、湖州灾税"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a5b3fe46-96e0-55a9-826f-e9eae1c04213"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.516615+00:00",
+        "description": "宣德七年十一月辛酉，朝廷召督办漕运的平江伯陈瑄、侍郎赵新等人在年底到京，商议粮赋事务利弊。",
+        "dynasty": "明",
+        "end_year": 1432,
+        "id": "a5b3fe46-96e0-55a9-826f-e9eae1c04213",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1432,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年十一月辛酉",
+        "title": "明廷召陈瑄、赵新等年底进京讨论粮赋"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7f26e662-2ca2-5870-b9d0-5ade8dfbd891"
+      },
+      "row": {
+        "created_at": "2026-11-18T17:15:49.556604+00:00",
+        "description": "宣德七年，占城、琉球、哈密、哈烈、瓦剌、亦力把里入贡。 按原历纪年，事情发生在公元1432至1433年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "7f26e662-2ca2-5870-b9d0-5ade8dfbd891",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "宣德七年",
+        "title": "本纪汇记宣德七年多地入贡"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "33073d20-b1e8-5b23-9b74-e2006d82c793": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001384",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "415e81d4-8c38-5bc1-aaaa-db79b4e0b7b0": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001371",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "49242d4b-0079-55d4-836a-c3fcc18f2a8b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001385",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "60c99b60-ce4b-5b37-8523-cb658c14737f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001378",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "8ae55575-13b1-5f92-b9f4-2b49500ec01f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001374",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "9cf571fc-f209-5cf5-ac1e-c32cbd55f027": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001380",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "a20e9f16-1adb-5053-a1a8-c13e7888954f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001388",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "a6c9501c-ba4b-538b-83b2-bf804f1c260c": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001387",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "ae539f98-f927-5756-aaf3-f7179d817bd0": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001373",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "bdf3b09b-7feb-5890-a33c-3d8f9e5d505f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001375",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "be39c720-e447-574c-9948-a4dd8fd263d0": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001376",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "c73a4f3d-b74b-59e4-a516-ab1521d29b32": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001390",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "d40127a5-aba3-5c60-9a67-fc05dcf69b6f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001386",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "d98b0779-4941-5885-bebc-677dba77809f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001382",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "ec65d7ac-1611-5eb0-b7ac-57e213513c3e": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001372",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "ef77adec-ebbb-5f21-a6c0-4a68977672b7": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001377",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "effdeaa0-dbb5-567a-9782-65d32609dee9": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001389",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "f63ca9ea-e4dc-5031-9269-6d87482de14a": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001383",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    },
+    "fceb0957-89aa-5c61-820c-be1e7c9200d1": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001379",
+      "section_id": "mingshi-2f603db3d81e-s0010",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 9
+}

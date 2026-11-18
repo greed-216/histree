@@ -1,0 +1,3423 @@
+{
+  "batch_dir": "content/books/mingshi/vol-011/from-start/part-05",
+  "batch_key": "mingshi-v011-from-start-05",
+  "batch_sha256": "60b12b3c4fd4c92d0e09a7636894c652b878669ec60b1b6fc62e0a4c8b150970",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001649"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "1c645491-b178-5864-9a12-8e0c97590488",
+        "note_sha256": "95b08222fd49bcc107c2bffbcdc7cd4095117cedc977d8dab3cf05034b2e33dc",
+        "quote_text": "四年春正月辛未，大祀天地於南郊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5f1da1e5-52ac-5c97-9c53-ead42bfd2176",
+        "note_sha256": "fb43884ed0f36eb204154eeba3b4fa4330744ea0d2d57b641176908b402aede5",
+        "quote_text": "四年春正月辛未，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5695b1dd-be1b-5d64-b4ca-ee8ebd0a9067",
+        "note_sha256": "b592f6b5a516ed6737fc21050970c0174257b877a8a8faaabcbc131767c537d6",
+        "quote_text": "四年春正月辛未，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "dd321bf5-cf22-55b0-b994-3594347efcea",
+        "note_sha256": "eb3ecc55c9fd74c930ecd87442747e7b7a6e150eaa5c7d2cefe93d66f54524c2",
+        "quote_text": "四年春正月辛未，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "613fc97e-ba71-5326-aed9-9bf16bbf9c1f",
+        "note_sha256": "eb719acb79f23b19599d64ce27f4b14da5f2c63dfd6ab8011827e55c0c965f48",
+        "quote_text": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "832e877a-4170-56ad-8da3-66cbfa1c4c3b",
+        "note_sha256": "eb719acb79f23b19599d64ce27f4b14da5f2c63dfd6ab8011827e55c0c965f48",
+        "quote_text": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "284faad5-131f-5e28-a608-9512bc2148ab",
+        "note_sha256": "b0012ab1777efb70cfc66d7edd6c6b8a139f2ae723adb304e3adb33a5d81930e",
+        "quote_text": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "50bbd699-cda8-5fa7-bc74-c084ef166efe",
+        "note_sha256": "807fc3ac8c1f31baf4be9ffe1eafae3dc14f8d45964a6474ba5028ae335f46f8",
+        "quote_text": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7663a4f2-3ec1-53ca-818a-ce436abebd93",
+        "note_sha256": "6e423d3ee21948e35d7f43a0d6fa3c41040ba534942aa0692e35c96889319a52",
+        "quote_text": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4820d0ae-4876-5d56-be42-8655e94efc8d",
+        "note_sha256": "6e423d3ee21948e35d7f43a0d6fa3c41040ba534942aa0692e35c96889319a52",
+        "quote_text": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d87af86e-dfe1-5f53-acfe-8eedb1b86c7f",
+        "note_sha256": "89eae7be65a62bd59c4a043668c43693c9ece0ff35a375bef39731f993b9cb57",
+        "quote_text": "庚戌，免江西去年被災秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f52729bd-6b8b-55e9-8881-7254342b9b19",
+        "note_sha256": "f70e07a88991abaef34ba43810382a20cb62938ddd9728b44d792d133ace9cce",
+        "quote_text": "庚戌，免江西去年被災秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bd8cfd3a-0e2e-5154-bc60-8b7614d5b0c7",
+        "note_sha256": "581118e4783efdfe281879a7484f951661a1402d0b4e088908725e88d25d201a",
+        "quote_text": "三月戊寅，開建寧銀場",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5afd4188-a1bf-57b3-962c-0fb04c934dec",
+        "note_sha256": "aedd7df2ffebda984ee3e30a6f1a1007d507be2dd163c17d381a0a6751947780",
+        "quote_text": "三月戊寅，開建寧銀場",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4a65efab-1724-53e6-9aeb-47b69dda3956",
+        "note_sha256": "0a563fa01136987b1eed7f0ddabd37e037006aa28f1b1ad5cab0a14049e7588b",
+        "quote_text": "夏四月戊子，築沙灣決口",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "66e839b6-e498-51e5-895f-b418f770a0a1",
+        "note_sha256": "dc9387d32b4d2fc78d59cd4db43856f43524eba27f7225200b8c955c57bfa996",
+        "quote_text": "夏四月戊子，築沙灣決口",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b0f9dc5c-7f00-5ae9-bf04-ab63e5e02145",
+        "note_sha256": "ebef2ad77d55d7299a42fa3bf6c09177864dd10fd4a90f3a6011d4b87bc7823a",
+        "quote_text": "運南京倉粟振徐州",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "002deec6-1dc3-5c28-87c9-8a21f136360f",
+        "note_sha256": "cf114dce46c01583715f0163374362cbba9b7a1ac0ce45b6a1fb9522e877a7cf",
+        "quote_text": "運南京倉粟振徐州",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5d16f641-e57e-529d-adaf-3518ea369300",
+        "note_sha256": "120a1d2b107e20c2ba981893e904c01e913c1ab56022a214ae44b60a7054eaf7",
+        "quote_text": "五月丁巳，發徐、淮倉振饑民",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "43f41bf2-3572-58d6-92b3-70be87d776d9",
+        "note_sha256": "80e079cd1acc42eba05153c6bc84d3c36dfad6db797802bf416290670e463368",
+        "quote_text": "五月丁巳，發徐、淮倉振饑民",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "90d09b5c-7a5c-54db-a2f8-d963e2eeec90",
+        "note_sha256": "d30de9ff6378df658246a56d64085f27ecd6b074a092ee5c6bb661464d386c58",
+        "quote_text": "甲戌，徐州復大水，民益饑。發支運及鹽課糧振之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d7953bfc-a0b2-5a26-b813-4a0500704dfe",
+        "note_sha256": "6629c9d40666c27c3f2e18d752cfba97f9eaa258377bb65311faa04a2f1ab43b",
+        "quote_text": "甲戌，徐州復大水，民益饑。發支運及鹽課糧振之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6b99277a-fba4-56fc-99f6-9357cd2808fc",
+        "note_sha256": "4fd993cde75cf30c568a599e761f8d7ac666d5111279ba9b001e755c2cdc1ec7",
+        "quote_text": "丁丑，發淮安倉振鳳陽",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1dc3232b-b108-5c74-b197-4d48dd429ca4",
+        "note_sha256": "9ad58c01697071ade0ebf9de86ac3a9e4dd1b66286ce9d444684c99d9518fb25",
+        "quote_text": "丁丑，發淮安倉振鳳陽",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "443f871c-8385-55f3-a9e9-48fc84948440",
+        "note_sha256": "09c638d3c7cd50c77ffc4f7f0ec5a6953cd848805b65d6737f562e0f282aabbc",
+        "quote_text": "乙酉，沙灣河復決",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "67cde0f8-6421-5a21-be40-6da616a1ec39",
+        "note_sha256": "613854c71065035edafcca33cb167fd6e339278dc9bc6e65fbcc3187a138db4d",
+        "quote_text": "乙酉，沙灣河復決",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8f34b6f1-f02b-5a35-b6f4-231f7610d7ec",
+        "note_sha256": "fbca62ee4d29f8ad7eaceb0f819639273ce829d2e646017c004febdee318e09e",
+        "quote_text": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cbb534fb-97dc-51fe-951e-c60416f90e2c",
+        "note_sha256": "fbca62ee4d29f8ad7eaceb0f819639273ce829d2e646017c004febdee318e09e",
+        "quote_text": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9a86842d-2946-5017-8e89-80dd5af9b6f3",
+        "note_sha256": "6dd9bd815bf8767b723a5ef8126e0165ea9989bec830fc4282f376163eba30f2",
+        "quote_text": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕",
+        "review_note": "七卿年表和本纪同记何文渊景泰四年六月下狱并奉命退休，本纪补壬辰与林聪奏言。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b692c4fb-551b-52c5-bfe3-648d93793a8c",
+        "note_sha256": "6dd9bd815bf8767b723a5ef8126e0165ea9989bec830fc4282f376163eba30f2",
+        "quote_text": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕",
+        "review_note": "七卿年表和本纪同记何文渊景泰四年六月下狱并奉命退休，本纪补壬辰与林聪奏言。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0d4f7d2e-7a09-5c66-9ab1-aa8bc06d6e03",
+        "note_sha256": "f521670e2bbd3d2ef94c4d4658282ce56dff6620135c57e2ed73958e81269659",
+        "quote_text": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "328406ee-4d05-5794-beac-310ede474480",
+        "note_sha256": "f521670e2bbd3d2ef94c4d4658282ce56dff6620135c57e2ed73958e81269659",
+        "quote_text": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "66305c36-4018-562d-b7ce-cc85dca3c4e0",
+        "note_sha256": "bb37272f9f27c1990b58bc2082e0367eb5f11ccfc9c18f772e739ea6172ed37a",
+        "quote_text": "辛亥，瘞土木、大同、紫荊關暴骸",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3b53b0bc-0ae0-5ce7-aaef-3dccc1a718d4",
+        "note_sha256": "5fd8f2b193c0a7efd8ec9b20c4fd735b11acfc1987d0d4c3ace45e221f176827",
+        "quote_text": "辛亥，瘞土木、大同、紫荊關暴骸",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bca11239-eab9-5a73-a2a1-1e5b4bf4b833",
+        "note_sha256": "dbb0c2a4230b3fc218b1d643bcb5e8472e90a8960d754154e05de0687a8d3b39",
+        "quote_text": "秋七月庚辰，停諸不急工役",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "35ba0b69-ef4b-5de4-9765-8d3332eed5d0",
+        "note_sha256": "ad45b2179745b9ecf8b6fe7aaad8a7b9dc91f7eba9103208ebc0f91d498a9cf5",
+        "quote_text": "秋七月庚辰，停諸不急工役",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "5db9fa54-915a-5c44-ae4d-e198404d54e1",
+        "note_sha256": "4c5826da8a6adb4235c358f7a0a4aad11683bfe41293f4f133fa978abc1a7ac2",
+        "quote_text": "八月己丑，振河南饑",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "33d3d68a-55bc-5a8e-89b4-bc5bda1c8191",
+        "note_sha256": "9e374f82915735459773c8b0b728db61bce57f9e6154c59227a8882ae5ebc6d6",
+        "quote_text": "八月己丑，振河南饑",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0e607284-eab0-5eae-a2e9-5d2d311ee4f6",
+        "note_sha256": "89bd2863f3d83a5b884809db5b27b6d12886bd83eb1f75207e4e18a9a65af07e",
+        "quote_text": "甲午，也先自立為可汗",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6afe5b05-963d-577d-b5f7-5ec675d03732",
+        "note_sha256": "b5c8a16030df4ee9ff25bf5cb9f45f24e3bc1f9c79efba75a9917a4bb47e2fee",
+        "quote_text": "甲午，也先自立為可汗",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f0dba5ea-8f8a-51d9-a4a9-8ea48667c545",
+        "note_sha256": "aac6a11e4cec5422994e60daea93217df7ddffa27b1d94463d68d465383c8d61",
+        "quote_text": "甲午，也先自立為可汗",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fd35b020-09f2-56fc-bc8a-ca7042073c2d",
+        "note_sha256": "502f6400293e3943aa488adbd8b6728c32bd17a07506a55a91c1e1d6c2e5df95",
+        "quote_text": "甲午，也先自立為可汗",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "750da0a7-bab2-55c3-9934-5f6b65ee6b32",
+        "note_sha256": "2acd90cb158a9a6b859d8a1f00d47e706801225a03c99a5765a4245e63a6aee3",
+        "quote_text": "冬十月庚寅，詔天下鎮守、巡撫官督課農桑",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5c394059-bf83-5fae-8613-d70f1c4ed665",
+        "note_sha256": "0b8402b59a35e1a6b44936e57b3c03c9d90b003b31d3701c35fcf714299acd73",
+        "quote_text": "冬十月庚寅，詔天下鎮守、巡撫官督課農桑",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3553f520-c746-5e53-ba37-f8e691e1aaea",
+        "note_sha256": "b3961bd02e05ab5c843054437ad1785883e8ec910f2b3b42749a8570f4ffecd8",
+        "quote_text": "甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "86f83a2d-c00c-5a78-ba9e-6da587bb1abe",
+        "note_sha256": "64d816811b627152c22e34b6b9c1de64015bda1ffa88c46f857af2207577c212",
+        "quote_text": "甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "22d2224c-bda5-539a-b135-649b4a8012c8",
+        "note_sha256": "c6503dcc5451f2c6e472350b0efa58dd3b5900099e454c4ed927bcf418939db0",
+        "quote_text": "甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7b2ee33f-e5c1-547d-aeff-ac29fbd02c0c",
+        "note_sha256": "33ab4c2f5c131314f6637f47b07c7d2a65acda4f6c1582531cbe270dcc4886da",
+        "quote_text": "甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "55c9e1c0-c685-55cd-8120-42f6f93bc289",
+        "note_sha256": "d5d4cd99754b333aa2fdf5af1bf91dfa4a126e564b08d623f23835e42eba8827",
+        "quote_text": "戊戌，也先遣使來",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "30b5d389-504d-556d-b14d-571912f07ff9",
+        "note_sha256": "01e5ea63e4ff8b7838d0838eae682f68b732cf645d6f1ad4430d0cb1123537be",
+        "quote_text": "戊戌，也先遣使來",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6c8a24ce-0423-58c3-99ce-a7fb8e2f4ce6",
+        "note_sha256": "3beffa036ec31388c3e5cdb38cdcd0958ef91efac1d8517c9675b1870a57aa3b",
+        "quote_text": "戊戌，也先遣使來",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7d87fbe1-2571-5533-a753-46fb2032d684",
+        "note_sha256": "900334b0e502b958915aa2f3aa177ef2e3acdfdfd3d7fc16c80a7e5a1521bcc6",
+        "quote_text": "十一月辛未，皇太子見濟薨",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bca168f6-0e77-566c-a841-8480f875dec0",
+        "note_sha256": "5d0391ca518b93764f40acf4857eb9a8b42244b902a6136bc7af7dccf8706457",
+        "quote_text": "十一月辛未，皇太子見濟薨",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "25102e7d-61d9-5839-960f-c14e4bee796a",
+        "note_sha256": "e4e3a96ecc03d76015eec2941b18fd054b2a868cba42b6671f3ff5c0e2932470",
+        "quote_text": "十一月辛未，皇太子見濟薨",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "03c2ae34-f0c1-5bb8-adc6-bf1e6be6aa6f",
+        "note_sha256": "a1c5ba858013a82be171ed93aea8578430ffc1a137e30cb329b7266b974e3f5f",
+        "quote_text": "十一月辛未，皇太子見濟薨",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4811b15c-e690-5567-b818-db2ca7cdc00c",
+        "note_sha256": "804722af5d672f9b7e055400ce4d953e022c8a20c6fe90aad9f45b4e3e9a8804",
+        "quote_text": "十二月乙未，免山東被災稅糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "6a5ca95e-840d-59b2-a365-0e8a5df4ece9",
+        "note_sha256": "aef389fe474b5c849b525cd0d999184d5c782383ee1edf827e8bcd358167384d",
+        "quote_text": "十二月乙未，免山東被災稅糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "15972150-c6d7-5dc8-a71f-5cd30410c0f0",
+        "note_sha256": "0517f1e9451539872011fb92a78a6651c758a4aba338f32849283853fa9d6b2c",
+        "quote_text": "乙巳，賚邊軍",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "1c28e880-688f-59bd-8342-123c55a6ed64",
+        "note_sha256": "29931a0eda7c0267320992d90a3e64e69defe14fc120368806d612f362f22868",
+        "quote_text": "乙巳，賚邊軍",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "96ab8b68-2f76-505d-86d9-7f5deb86b987",
+        "note_sha256": "7eda4b8d199b6d56a3fdd9ab21586f7e0754e6d1a683c754860d648da1aeaaf3",
+        "quote_text": "是年，琉球中山、安南、爪哇、日本、占城、哈密、瓦剌入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e0496a79-e2c8-577c-887e-03b0bf1da911",
+        "note_sha256": "d296ca22ce896dad997c669b1184246bef2f5087dfbf513d5f6a51382606092c",
+        "quote_text": "是年，琉球中山、安南、爪哇、日本、占城、哈密、瓦剌入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8110110c-5f5e-552e-b3de-d2ec8923a14e",
+        "note_sha256": "c3199f831fa4e84ea368a08b471c1bb8741ca2d61278c7f8575d4058133a9a7e",
+        "quote_text": "己巳，王文起復[3]。",
+        "review_note": "同书宰辅年表与卷末校记均区分五月丁忧与九月起复。保存本纪异文于原条，沿用已核九月时点。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2906b350-790b-51a7-a34d-7cee594582d8",
+        "note_sha256": "c3199f831fa4e84ea368a08b471c1bb8741ca2d61278c7f8575d4058133a9a7e",
+        "quote_text": "己巳，王文起復[3]。",
+        "review_note": "同书宰辅年表与卷末校记均区分五月丁忧与九月起复。保存本纪异文于原条，沿用已核九月时点。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历景泰四年正月辛未。DDBC历表换算所据为1453-03-02至1453-03-02，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001650的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5695b1dd-be1b-5d64-b4ca-ee8ebd0a9067",
+        "claim_sha256": "fac6aadb18a18da93d6b40f7ec6c8e00c97e6e0513e5e73c89731966a9444665",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "8fd16dd5-08e0-5174-bf76-89137a14e53b",
+        "id": "235d5f9f-b818-5614-b18d-c05d4e1106a9",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年二月戊子。DDBC历表换算所据为1453-03-19至1453-03-19，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001651的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "50bbd699-cda8-5fa7-bc74-c084ef166efe",
+        "claim_sha256": "67227541af3eefd14c6897528ea558fc7d0ee809a59d00a8ba9c303f4db06b71",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "fad91e91-b4c9-516c-bb95-cf77d65ac038",
+        "id": "36915e39-8588-5c70-816e-94ee9c23d365",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年二月庚戌。DDBC历表换算所据为1453-04-10至1453-04-10，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001651的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f52729bd-6b8b-55e9-8881-7254342b9b19",
+        "claim_sha256": "d0b4e4cdbe48398a0f7098f86682f303de2b7906b80a539b9184446db032e5c2",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "a7b82370-0496-5404-8518-5742fc935573",
+        "id": "e5617320-af60-55d5-a805-6826f2f0713e",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年三月戊寅。DDBC历表换算所据为1453-05-08至1453-05-08，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001652的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5afd4188-a1bf-57b3-962c-0fb04c934dec",
+        "claim_sha256": "f2805a18097903f95bb0d736adc874cbd858ce4bd89dbbb08229b8bf5c898c0b",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "011fa683-a1e7-5c9d-92ce-a4bc41cc8588",
+        "id": "31540cfe-2ba2-5466-aecc-4cb6a1a06a79",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年四月戊子。DDBC历表换算所据为1453-05-18至1453-05-18，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001653的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "66e839b6-e498-51e5-895f-b418f770a0a1",
+        "claim_sha256": "987643439b4b12e97997bca433641f838947eb2aabdf2bcdd3f58cac848b665c",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "6ec7581b-7186-5627-8854-b8cc8f990031",
+        "id": "684fd4e9-a498-5ad3-8773-ad1c6a8ffa26",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年四月。DDBC历表换算所据为1453-05-18至1453-06-15，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001653的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "002deec6-1dc3-5c28-87c9-8a21f136360f",
+        "claim_sha256": "e7f2b7690d31a4739c5870f3da202ab66fa80ebb713dd4427bf8da125b86e5ac",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "969e81ce-703a-5e8f-a78d-4e1c8bdfe93b",
+        "id": "f1ebc3e5-ab6f-5878-a05c-cc14772ad76d",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年五月丁巳。DDBC历表换算所据为1453-06-16至1453-06-16，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001654的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "43f41bf2-3572-58d6-92b3-70be87d776d9",
+        "claim_sha256": "2db1ae7f61935c859e0b515dd484f3c938bc92c98f5d383612f0a2ce8677e6b1",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "3daa48c4-3d22-5787-818d-20d465c3b40c",
+        "id": "8170c9ed-1ea1-5f7c-a730-0f1eb6fb9bc4",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年五月甲戌。DDBC历表换算所据为1453-07-03至1453-07-03，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001654的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d7953bfc-a0b2-5a26-b813-4a0500704dfe",
+        "claim_sha256": "5f3ac038411ab20294265018a417207d1632631b88f542b4011882a40223b8b9",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "983bbf33-9e29-57b9-a393-d1c309263d43",
+        "id": "73167fd1-adb7-5dd7-83db-2937b14933c6",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年五月丁丑。DDBC历表换算所据为1453-07-06至1453-07-06，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001654的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1dc3232b-b108-5c74-b197-4d48dd429ca4",
+        "claim_sha256": "b6d7127ba4e4ddfd3492cc512c6f57021d79181914eccb44cf4b892f70a3e6bf",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "dddd3e0e-d634-57da-a0cf-bd71309325d2",
+        "id": "766d93c6-c055-5814-ad33-add88153dfd8",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年五月乙酉。DDBC历表换算所据为1453-07-14至1453-07-14，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001654的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "67cde0f8-6421-5a21-be40-6da616a1ec39",
+        "claim_sha256": "2baf42c471422c16bc82f38cc3eef530f0d5753071a83136d06b60e2a5c52e14",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "8f0c6b2d-98a5-57b6-a019-921459345e6b",
+        "id": "94542bab-170d-58f3-8f03-e293948b08b6",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年六月壬辰。DDBC历表换算所据为1453-07-21至1453-07-21，据此核对公元发生年份。",
+        "claim_id": "b692c4fb-551b-52c5-bfe3-648d93793a8c",
+        "claim_sha256": "9a6f0de97e8f77e5f1437f7bce175b1969b01ee064aea2ec6b06d614e225f318",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "ab3de641-5af5-5dd0-a769-82387053d6da",
+        "id": "1c701b96-edf4-54fb-8a06-d0f8b080d20e",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年六月辛亥。DDBC历表换算所据为1453-08-09至1453-08-09，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001655的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3b53b0bc-0ae0-5ce7-aaef-3dccc1a718d4",
+        "claim_sha256": "ef3833e79cc0c86027954188c11f095615907128e66bb9d6cf7073ff06aadf55",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "62cf2d78-47f4-56f4-a079-ad39c5ad412b",
+        "id": "8d87d768-7958-5258-864f-bbde88074bfb",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年七月庚辰。DDBC历表换算所据为1453-09-07至1453-09-07，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001656的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "35ba0b69-ef4b-5de4-9765-8d3332eed5d0",
+        "claim_sha256": "a01bfe83cf24bea09db5381ad3b59e6f15cb0bfbc108ceefc4132323401f6f8c",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "016d44cf-19bd-5a96-902a-0dacfd6a33ca",
+        "id": "ab038f9b-ed34-5ff5-936c-6c2a2fc3aa96",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年八月己丑。DDBC历表换算所据为1453-09-16至1453-09-16，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001657的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "33d3d68a-55bc-5a8e-89b4-bc5bda1c8191",
+        "claim_sha256": "4f78dba9a40a2e4a7950250d82c83354c44021421738f59e4e57353691252164",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "492ec4ce-2fd7-539f-b550-4f98e1c59ddb",
+        "id": "a8fc9171-c23c-5abd-b983-48a1165526b0",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年八月甲午。DDBC历表换算所据为1453-09-21至1453-09-21，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001657的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f0dba5ea-8f8a-51d9-a4a9-8ea48667c545",
+        "claim_sha256": "a1c369fa085021f004f9156055e6d04a0a63b0d57eb73ce584d7172196618554",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "b7732179-3465-5c21-b465-dbb7fed1abad",
+        "id": "b4e444e1-d14c-5fb8-a032-2cf3c9147241",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年十月庚寅。DDBC历表换算所据为1453-11-16至1453-11-16，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001658的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5c394059-bf83-5fae-8613-d70f1c4ed665",
+        "claim_sha256": "6ebfddef839dab99f4aa46351a4c0489344c73201279f62af6edc836578b89a4",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "d251fe05-9b0a-5862-981f-d17c92734c99",
+        "id": "cdc228d0-f19b-5853-8633-77cf881e9748",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年十月甲午。DDBC历表换算所据为1453-11-20至1453-11-20，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001658的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "22d2224c-bda5-539a-b135-649b4a8012c8",
+        "claim_sha256": "ff82b8cbab528f5feb630230334af7165b86b21d030344dcf585eff1ea7891af",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "id": "f3090e71-9be8-52f8-859d-db33f1c4a880",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年十月戊戌。DDBC历表换算所据为1453-11-24至1453-11-24，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001658的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "30b5d389-504d-556d-b14d-571912f07ff9",
+        "claim_sha256": "d0cbdd2d1ab118c52c40044ef6d8da5e93acbed3f280a736800d4e1744aca288",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "ced92ec5-2583-53fb-9655-4c360c80d041",
+        "id": "821d4fe4-d89e-5959-88af-535f70156052",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年十一月辛未。DDBC历表换算所据为1453-12-27至1453-12-27，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001659的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "25102e7d-61d9-5839-960f-c14e4bee796a",
+        "claim_sha256": "2c326554ad976fe58dea8b169abcee4034625f141c6e0f428f2ef668a66ce802",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "030a3718-78d3-551e-b1be-b31948b8f3b2",
+        "id": "957ebe75-0ff8-5bc3-b799-03e981cb2787",
+        "latest_year": 1453,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年十二月乙未。DDBC历表换算所据为1454-01-20至1454-01-20，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001660的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "6a5ca95e-840d-59b2-a365-0e8a5df4ece9",
+        "claim_sha256": "d4008cb43788c911251659fb9cb3462cacfd1f63148466a8325db4436a8dc20a",
+        "earliest_year": 1454,
+        "era_key": null,
+        "event_id": "7a15452b-6e5c-5ef6-8fc9-3fe6c18c4180",
+        "id": "3cdf34c4-245f-55c7-9dd0-9f8ae68d6b06",
+        "latest_year": 1454,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年十二月乙巳。DDBC历表换算所据为1454-01-30至1454-01-30，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001660的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1c28e880-688f-59bd-8342-123c55a6ed64",
+        "claim_sha256": "106e0240eb1745f84ecb6348d4d7d60317268edaa8e644159c69d09e2ee4d678",
+        "earliest_year": 1454,
+        "era_key": null,
+        "event_id": "a94b3d1f-bca4-56f0-9005-dabfee38d4ac",
+        "id": "188ed69d-06c8-52cf-ac8b-2cf0da560fc5",
+        "latest_year": 1454,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰四年。DDBC历表换算所据为1453-02-18至1454-02-06，据此核对公元发生年份。 卷十一mingshi-2f603db3d81e-p001661的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "e0496a79-e2c8-577c-887e-03b0bf1da911",
+        "claim_sha256": "7f183cc7bda27a908d621657cdb741990466163c8cf335e96322aa726e7f6061",
+        "earliest_year": 1453,
+        "era_key": null,
+        "event_id": "842c9bb4-e2b1-5bd0-a0f2-60f8a112b184",
+        "id": "205ad0b6-af3a-5def-9c4d-174023024653",
+        "latest_year": 1454,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "223e92ef5a152fc63767b3a718298797a086aee4c4d1545b97b67feaf247dcda",
+        "paragraph_id": "mingshi-2f603db3d81e-p001650",
+        "snapshot_sha256": "64d77e2db6d85c268ebb5d496907d9ed280edb064a046e73a7a85dfa0669a3ed",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13"
+      },
+      {
+        "archive_url_sha256": "5b9ff7466d92457754c2e119e349694e5403638c11d08c17b071f721a3bff7ea",
+        "paragraph_id": "mingshi-2f603db3d81e-p001651",
+        "snapshot_sha256": "8da663c73218adb1c61cf5f0318ef12d51619d9b12100ab2353671ff488754e0",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710"
+      },
+      {
+        "archive_url_sha256": "508e78831b1a12f1b6e151b0636a1a2d7af166a8ffe40bee7cd36fa7fdd26605",
+        "paragraph_id": "mingshi-2f603db3d81e-p001652",
+        "snapshot_sha256": "692ea4115a31f64eee666dbb6811fc6324fc2a9a3326ccc09bcf35b66e4529f7",
+        "source_id": "73230cfa-cdae-5443-916c-eb94077c1d9b"
+      },
+      {
+        "archive_url_sha256": "389e734bec524b7be6c4e50543d00087928024a9a15dd372c27c10a7748d0662",
+        "paragraph_id": "mingshi-2f603db3d81e-p001653",
+        "snapshot_sha256": "55505fb24b090e9be06e6e6b33db4f9b461c6169e80ac827e1092e4fb0f925ac",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64"
+      },
+      {
+        "archive_url_sha256": "f8cc36f94f54d7544a998930acf63a294845572bd527fa3a9e71a881f8dd18cc",
+        "paragraph_id": "mingshi-2f603db3d81e-p001654",
+        "snapshot_sha256": "ef93265feb24ed762db938d89936a97319c448af642eb087d269933548fef64b",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756"
+      },
+      {
+        "archive_url_sha256": "7e33ca513a5bb3f6f1d587afa13f1ee26d8eb3abb74b12533b75316074dc9165",
+        "paragraph_id": "mingshi-2f603db3d81e-p001655",
+        "snapshot_sha256": "4f4199b957b86cf639535c241f9f9bab2de02a9184c72869c82ddbfb84459db9",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813"
+      },
+      {
+        "archive_url_sha256": "5cab7dee43a4ec7be5a570786c645f887fb44a8fb27e0c654237cc5db5450bd0",
+        "paragraph_id": "mingshi-2f603db3d81e-p001656",
+        "snapshot_sha256": "2186fdcb3906464deddca9b3c329cafe127d2085387e84fe9057a1d080cf110d",
+        "source_id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce"
+      },
+      {
+        "archive_url_sha256": "74729fc869f4d00df69524e3ad5fe859b2b4a98938435bd8bc3c64c49670f0d9",
+        "paragraph_id": "mingshi-2f603db3d81e-p001657",
+        "snapshot_sha256": "3f883aafc3c009a506faaa7d0692ac5c5cc64e8088ae9e2ccffd86e39b5eff89",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9"
+      },
+      {
+        "archive_url_sha256": "3b1ef94451d8cddbaeda52005813979b452819e35bb6b42a97853d29f181a394",
+        "paragraph_id": "mingshi-2f603db3d81e-p001658",
+        "snapshot_sha256": "1fda299446026da0b2b9971810bf24181ed957ad02d5fab9b964e9b41e8d6ba3",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786"
+      },
+      {
+        "archive_url_sha256": "631ea1d087b26747f8bf538e4fc545beee33019c432fb21092da287af03890ab",
+        "paragraph_id": "mingshi-2f603db3d81e-p001659",
+        "snapshot_sha256": "f8d7ae3026178f13e4a9e267cf137bed425da33ca0a01065f6aef4f5ae611aef",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57"
+      },
+      {
+        "archive_url_sha256": "7d94968975783f2d59b930cae60920dfda3729f741562648c4db623cddbcaa08",
+        "paragraph_id": "mingshi-2f603db3d81e-p001660",
+        "snapshot_sha256": "474fbe90996a0598969e2771452c19bdf272fa4c5baf48d0558c236e68210a82",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9"
+      },
+      {
+        "archive_url_sha256": "0b458bc3792bde3175d008199c15694cacca90076ca553d896cb727c186dcb3a",
+        "paragraph_id": "mingshi-2f603db3d81e-p001661",
+        "snapshot_sha256": "a3688db93c0a144ad88078cd4785c21a3e0ef294390bf5b872b0f4102a40163a",
+        "source_id": "6ccc918e-f9ce-52ee-8d66-83438ba48179"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-011/from-start/part-05/content-batch.json": "60b12b3c4fd4c92d0e09a7636894c652b878669ec60b1b6fc62e0a4c8b150970",
+    "content/books/mingshi/vol-011/from-start/part-05/curation.json": "bc588280cdebf48e6c24ecf1d6df24a45f01aaf17a8c218d58ee62ec850d2e6b",
+    "content/books/mingshi/vol-011/from-start/part-05/packet.json": "407d5668d50241f4d4a9e241aeab70106a23eee2a7f65a55d7dbc7927a8195e7",
+    "content/books/mingshi/vol-011/from-start/part-05/publication-mysql.json": "41475933305fd5c6e2fde25e61d0c21230630b69e2bd211898b22b93dc1e8b8a",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/manifest.json": "bec55d69d5e963dc482314d6c3bbb75088e8176b0fe4da48421c9d8e8aa2f4a5",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001649/source.txt": "1ac22274c544aa59c57a325ae8766e5a5392537be2930e3a84670095c065f4de",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001650/source.txt": "64d77e2db6d85c268ebb5d496907d9ed280edb064a046e73a7a85dfa0669a3ed",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001651/source.txt": "8da663c73218adb1c61cf5f0318ef12d51619d9b12100ab2353671ff488754e0",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001652/source.txt": "692ea4115a31f64eee666dbb6811fc6324fc2a9a3326ccc09bcf35b66e4529f7",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001653/source.txt": "55505fb24b090e9be06e6e6b33db4f9b461c6169e80ac827e1092e4fb0f925ac",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001654/source.txt": "ef93265feb24ed762db938d89936a97319c448af642eb087d269933548fef64b",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001655/source.txt": "4f4199b957b86cf639535c241f9f9bab2de02a9184c72869c82ddbfb84459db9",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001656/source.txt": "2186fdcb3906464deddca9b3c329cafe127d2085387e84fe9057a1d080cf110d",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001657/source.txt": "3f883aafc3c009a506faaa7d0692ac5c5cc64e8088ae9e2ccffd86e39b5eff89",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001658/source.txt": "1fda299446026da0b2b9971810bf24181ed957ad02d5fab9b964e9b41e8d6ba3",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001659/source.txt": "f8d7ae3026178f13e4a9e267cf137bed425da33ca0a01065f6aef4f5ae611aef",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001660/source.txt": "474fbe90996a0598969e2771452c19bdf272fa4c5baf48d0558c236e68210a82",
+    "content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001661/source.txt": "a3688db93c0a144ad88078cd4785c21a3e0ef294390bf5b872b0f4102a40163a",
+    "content/books/mingshi/vol-011/from-start/part-05/sql/key-map.json": "49f0a17a6d1292db7f508a900fd4fac2579b33e4799f4c6dc156a8a8cea8a67a",
+    "content/books/mingshi/vol-011/from-start/part-05/time-review.json": "759a15e18f49c049529733f640aa387ac47e17879e0a735e53240de464a5050a"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "1c645491-b178-5864-9a12-8e0c97590488"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001650；景泰四年正月辛未",
+        "claim_text": "朱祁钰主持祭祀。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.221792+00:00",
+        "field_path": "description",
+        "id": "1c645491-b178-5864-9a12-8e0c97590488",
+        "note": "原文：四年春正月辛未，大祀天地於南郊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13",
+        "status": "published",
+        "subject_id": "beac1b51-89b3-5024-bf3a-2d45bc5afe2b",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5f1da1e5-52ac-5c97-9c53-ead42bfd2176"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001650；景泰四年正月辛未",
+        "claim_text": "景泰四年正月辛未，明景帝朱祁钰在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.261579+00:00",
+        "field_path": "description",
+        "id": "5f1da1e5-52ac-5c97-9c53-ead42bfd2176",
+        "note": "原文：四年春正月辛未，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13",
+        "status": "published",
+        "subject_id": "8fd16dd5-08e0-5174-bf76-89137a14e53b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5695b1dd-be1b-5d64-b4ca-ee8ebd0a9067"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001650；景泰四年正月辛未",
+        "claim_text": "原历景泰四年正月辛未。DDBC历表换算所据为1453-03-02至1453-03-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.301450+00:00",
+        "field_path": "time_original",
+        "id": "5695b1dd-be1b-5d64-b4ca-ee8ebd0a9067",
+        "note": "原文：四年春正月辛未，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13",
+        "status": "published",
+        "subject_id": "8fd16dd5-08e0-5174-bf76-89137a14e53b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dd321bf5-cf22-55b0-b994-3594347efcea"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001650；景泰四年正月辛未",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.341441+00:00",
+        "field_path": "role",
+        "id": "dd321bf5-cf22-55b0-b994-3594347efcea",
+        "note": "原文：四年春正月辛未，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13",
+        "status": "published",
+        "subject_id": "cfe4050b-0aa8-583e-a90c-3c9dd6eada76",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "613fc97e-ba71-5326-aed9-9bf16bbf9c1f"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月戊子",
+        "claim_text": "梁珤领兵征讨。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.382839+00:00",
+        "field_path": "description",
+        "id": "613fc97e-ba71-5326-aed9-9bf16bbf9c1f",
+        "note": "原文：二月戊子，五開、清浪諸苗復叛，梁珤、王來討之；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "341faff8-5d67-5789-92bc-4208bdaba6d2",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "832e877a-4170-56ad-8da3-66cbfa1c4c3b"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月戊子",
+        "claim_text": "王来领兵征讨。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.421478+00:00",
+        "field_path": "description",
+        "id": "832e877a-4170-56ad-8da3-66cbfa1c4c3b",
+        "note": "原文：二月戊子，五開、清浪諸苗復叛，梁珤、王來討之；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "a5950c64-7d84-533e-aaaa-e6827cc87737",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "284faad5-131f-5e28-a608-9512bc2148ab"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月戊子",
+        "claim_text": "景泰四年二月戊子，本纪记五开、清浪一带再次发生苗民起事，梁珤、王来率军征讨。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.455638+00:00",
+        "field_path": "description",
+        "id": "284faad5-131f-5e28-a608-9512bc2148ab",
+        "note": "原文：二月戊子，五開、清浪諸苗復叛，梁珤、王來討之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "fad91e91-b4c9-516c-bb95-cf77d65ac038",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "50bbd699-cda8-5fa7-bc74-c084ef166efe"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月戊子",
+        "claim_text": "原历景泰四年二月戊子。DDBC历表换算所据为1453-03-19至1453-03-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.491623+00:00",
+        "field_path": "time_original",
+        "id": "50bbd699-cda8-5fa7-bc74-c084ef166efe",
+        "note": "原文：二月戊子，五開、清浪諸苗復叛，梁珤、王來討之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "fad91e91-b4c9-516c-bb95-cf77d65ac038",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7663a4f2-3ec1-53ca-818a-ce436abebd93"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月戊子",
+        "claim_text": "领兵征讨",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.540602+00:00",
+        "field_path": "role",
+        "id": "7663a4f2-3ec1-53ca-818a-ce436abebd93",
+        "note": "原文：二月戊子，五開、清浪諸苗復叛，梁珤、王來討之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "f98aa44e-c9c2-5c8c-9400-ddcfee286077",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4820d0ae-4876-5d56-be42-8655e94efc8d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月戊子",
+        "claim_text": "领兵征讨",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.581296+00:00",
+        "field_path": "role",
+        "id": "4820d0ae-4876-5d56-be42-8655e94efc8d",
+        "note": "原文：二月戊子，五開、清浪諸苗復叛，梁珤、王來討之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "e051dc64-e1c4-5df2-8eee-8e3aad82f61f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d87af86e-dfe1-5f53-acfe-8eedb1b86c7f"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月庚戌",
+        "claim_text": "景泰四年二月庚戌，朝廷免除江西上年受灾地区应缴的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.615520+00:00",
+        "field_path": "description",
+        "id": "d87af86e-dfe1-5f53-acfe-8eedb1b86c7f",
+        "note": "原文：庚戌，免江西去年被災秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "a7b82370-0496-5404-8518-5742fc935573",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f52729bd-6b8b-55e9-8881-7254342b9b19"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651；景泰四年二月庚戌",
+        "claim_text": "原历景泰四年二月庚戌。DDBC历表换算所据为1453-04-10至1453-04-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.659644+00:00",
+        "field_path": "time_original",
+        "id": "f52729bd-6b8b-55e9-8881-7254342b9b19",
+        "note": "原文：庚戌，免江西去年被災秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "status": "published",
+        "subject_id": "a7b82370-0496-5404-8518-5742fc935573",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bd8cfd3a-0e2e-5154-bc60-8b7614d5b0c7"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001652；景泰四年三月戊寅",
+        "claim_text": "景泰四年三月戊寅，明廷在建宁开设银场。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.700924+00:00",
+        "field_path": "description",
+        "id": "bd8cfd3a-0e2e-5154-bc60-8b7614d5b0c7",
+        "note": "原文：三月戊寅，開建寧銀場；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "73230cfa-cdae-5443-916c-eb94077c1d9b",
+        "status": "published",
+        "subject_id": "011fa683-a1e7-5c9d-92ce-a4bc41cc8588",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5afd4188-a1bf-57b3-962c-0fb04c934dec"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001652；景泰四年三月戊寅",
+        "claim_text": "原历景泰四年三月戊寅。DDBC历表换算所据为1453-05-08至1453-05-08，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.741693+00:00",
+        "field_path": "time_original",
+        "id": "5afd4188-a1bf-57b3-962c-0fb04c934dec",
+        "note": "原文：三月戊寅，開建寧銀場；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "73230cfa-cdae-5443-916c-eb94077c1d9b",
+        "status": "published",
+        "subject_id": "011fa683-a1e7-5c9d-92ce-a4bc41cc8588",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4a65efab-1724-53e6-9aeb-47b69dda3956"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001653；景泰四年四月戊子",
+        "claim_text": "景泰四年四月戊子，明廷组织修筑沙湾的黄河决口。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.780540+00:00",
+        "field_path": "description",
+        "id": "4a65efab-1724-53e6-9aeb-47b69dda3956",
+        "note": "原文：夏四月戊子，築沙灣決口；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64",
+        "status": "published",
+        "subject_id": "6ec7581b-7186-5627-8854-b8cc8f990031",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "66e839b6-e498-51e5-895f-b418f770a0a1"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001653；景泰四年四月戊子",
+        "claim_text": "原历景泰四年四月戊子。DDBC历表换算所据为1453-05-18至1453-05-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.824358+00:00",
+        "field_path": "time_original",
+        "id": "66e839b6-e498-51e5-895f-b418f770a0a1",
+        "note": "原文：夏四月戊子，築沙灣決口；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64",
+        "status": "published",
+        "subject_id": "6ec7581b-7186-5627-8854-b8cc8f990031",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b0f9dc5c-7f00-5ae9-bf04-ab63e5e02145"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001653；景泰四年四月",
+        "claim_text": "景泰四年四月，朝廷从南京粮仓调运粮食，赈济徐州。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.871612+00:00",
+        "field_path": "description",
+        "id": "b0f9dc5c-7f00-5ae9-bf04-ab63e5e02145",
+        "note": "原文：運南京倉粟振徐州；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64",
+        "status": "published",
+        "subject_id": "969e81ce-703a-5e8f-a78d-4e1c8bdfe93b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "002deec6-1dc3-5c28-87c9-8a21f136360f"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001653；景泰四年四月",
+        "claim_text": "原历景泰四年四月。DDBC历表换算所据为1453-05-18至1453-06-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.931376+00:00",
+        "field_path": "time_original",
+        "id": "002deec6-1dc3-5c28-87c9-8a21f136360f",
+        "note": "原文：運南京倉粟振徐州；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64",
+        "status": "published",
+        "subject_id": "969e81ce-703a-5e8f-a78d-4e1c8bdfe93b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5d16f641-e57e-529d-adaf-3518ea369300"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月丁巳",
+        "claim_text": "景泰四年五月丁巳，朝廷开徐州、淮安的粮仓，发放粮食赈济饥民。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:47.977383+00:00",
+        "field_path": "description",
+        "id": "5d16f641-e57e-529d-adaf-3518ea369300",
+        "note": "原文：五月丁巳，發徐、淮倉振饑民；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "3daa48c4-3d22-5787-818d-20d465c3b40c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "43f41bf2-3572-58d6-92b3-70be87d776d9"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月丁巳",
+        "claim_text": "原历景泰四年五月丁巳。DDBC历表换算所据为1453-06-16至1453-06-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.021557+00:00",
+        "field_path": "time_original",
+        "id": "43f41bf2-3572-58d6-92b3-70be87d776d9",
+        "note": "原文：五月丁巳，發徐、淮倉振饑民；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "3daa48c4-3d22-5787-818d-20d465c3b40c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "90d09b5c-7a5c-54db-a2f8-d963e2eeec90"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月甲戌",
+        "claim_text": "景泰四年五月甲戌，徐州再次发生洪水，民间饥荒加重。朝廷调支运和盐课储粮赈济。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.064981+00:00",
+        "field_path": "description",
+        "id": "90d09b5c-7a5c-54db-a2f8-d963e2eeec90",
+        "note": "原文：甲戌，徐州復大水，民益饑。發支運及鹽課糧振之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "983bbf33-9e29-57b9-a393-d1c309263d43",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d7953bfc-a0b2-5a26-b813-4a0500704dfe"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月甲戌",
+        "claim_text": "原历景泰四年五月甲戌。DDBC历表换算所据为1453-07-03至1453-07-03，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.111423+00:00",
+        "field_path": "time_original",
+        "id": "d7953bfc-a0b2-5a26-b813-4a0500704dfe",
+        "note": "原文：甲戌，徐州復大水，民益饑。發支運及鹽課糧振之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "983bbf33-9e29-57b9-a393-d1c309263d43",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6b99277a-fba4-56fc-99f6-9357cd2808fc"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月丁丑",
+        "claim_text": "景泰四年五月丁丑，朝廷调发淮安粮仓的存粮，赈济凤阳。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.144607+00:00",
+        "field_path": "description",
+        "id": "6b99277a-fba4-56fc-99f6-9357cd2808fc",
+        "note": "原文：丁丑，發淮安倉振鳳陽；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "dddd3e0e-d634-57da-a0cf-bd71309325d2",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1dc3232b-b108-5c74-b197-4d48dd429ca4"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月丁丑",
+        "claim_text": "原历景泰四年五月丁丑。DDBC历表换算所据为1453-07-06至1453-07-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.181621+00:00",
+        "field_path": "time_original",
+        "id": "1dc3232b-b108-5c74-b197-4d48dd429ca4",
+        "note": "原文：丁丑，發淮安倉振鳳陽；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "dddd3e0e-d634-57da-a0cf-bd71309325d2",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "443f871c-8385-55f3-a9e9-48fc84948440"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月乙酉",
+        "claim_text": "景泰四年五月乙酉，黄河在沙湾再次决口。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.224387+00:00",
+        "field_path": "description",
+        "id": "443f871c-8385-55f3-a9e9-48fc84948440",
+        "note": "原文：乙酉，沙灣河復決；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "8f0c6b2d-98a5-57b6-a019-921459345e6b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "67cde0f8-6421-5a21-be40-6da616a1ec39"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月乙酉",
+        "claim_text": "原历景泰四年五月乙酉。DDBC历表换算所据为1453-07-14至1453-07-14，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.271479+00:00",
+        "field_path": "time_original",
+        "id": "67cde0f8-6421-5a21-be40-6da616a1ec39",
+        "note": "原文：乙酉，沙灣河復決；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "8f0c6b2d-98a5-57b6-a019-921459345e6b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8f34b6f1-f02b-5a35-b6f4-231f7610d7ec"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月壬辰",
+        "claim_text": "何文渊被下狱并奉命退休。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.418894+00:00",
+        "field_path": "description",
+        "id": "8f34b6f1-f02b-5a35-b6f4-231f7610d7ec",
+        "note": "原文：六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "27355cff-bfac-5145-9909-8afd7fac7e16",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cbb534fb-97dc-51fe-951e-c60416f90e2c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月壬辰",
+        "claim_text": "林聪上奏涉及何文渊。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.464546+00:00",
+        "field_path": "description",
+        "id": "cbb534fb-97dc-51fe-951e-c60416f90e2c",
+        "note": "原文：六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "ca5f4f12-f595-598a-b3e3-ff0f69ba7def",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9a86842d-2946-5017-8e89-80dd5af9b6f3"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月壬辰",
+        "claim_text": "景泰四年六月壬辰，吏部尚书何文渊因给事中林聪的奏言被下狱，随后朝廷命他退休。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.501301+00:00",
+        "field_path": "description",
+        "id": "9a86842d-2946-5017-8e89-80dd5af9b6f3",
+        "note": "原文：六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕；核对说明：七卿年表和本纪同记何文渊景泰四年六月下狱并奉命退休，本纪补壬辰与林聪奏言。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "ab3de641-5af5-5dd0-a769-82387053d6da",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b692c4fb-551b-52c5-bfe3-648d93793a8c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月壬辰",
+        "claim_text": "原历景泰四年六月壬辰。DDBC历表换算所据为1453-07-21至1453-07-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.571279+00:00",
+        "field_path": "time_original",
+        "id": "b692c4fb-551b-52c5-bfe3-648d93793a8c",
+        "note": "原文：六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕；核对说明：七卿年表和本纪同记何文渊景泰四年六月下狱并奉命退休，本纪补壬辰与林聪奏言。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "ab3de641-5af5-5dd0-a769-82387053d6da",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0d4f7d2e-7a09-5c66-9ab1-aa8bc06d6e03"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月壬辰",
+        "claim_text": "被下狱并奉命退休",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.617565+00:00",
+        "field_path": "role",
+        "id": "0d4f7d2e-7a09-5c66-9ab1-aa8bc06d6e03",
+        "note": "原文：六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "3d027a78-b4ad-5f5d-862c-ad438e196a29",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "328406ee-4d05-5794-beac-310ede474480"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月壬辰",
+        "claim_text": "上奏涉及何文渊",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.661355+00:00",
+        "field_path": "role",
+        "id": "328406ee-4d05-5794-beac-310ede474480",
+        "note": "原文：六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "c64c04fd-92b4-5471-8bc8-131c4fddfa1f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "66305c36-4018-562d-b7ce-cc85dca3c4e0"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月辛亥",
+        "claim_text": "景泰四年六月辛亥，明廷命人收殓并安葬留在土木、大同和紫荆关的遗骸。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.704665+00:00",
+        "field_path": "description",
+        "id": "66305c36-4018-562d-b7ce-cc85dca3c4e0",
+        "note": "原文：辛亥，瘞土木、大同、紫荊關暴骸；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "62cf2d78-47f4-56f4-a079-ad39c5ad412b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3b53b0bc-0ae0-5ce7-aaef-3dccc1a718d4"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655；景泰四年六月辛亥",
+        "claim_text": "原历景泰四年六月辛亥。DDBC历表换算所据为1453-08-09至1453-08-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.742590+00:00",
+        "field_path": "time_original",
+        "id": "3b53b0bc-0ae0-5ce7-aaef-3dccc1a718d4",
+        "note": "原文：辛亥，瘞土木、大同、紫荊關暴骸；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "status": "published",
+        "subject_id": "62cf2d78-47f4-56f4-a079-ad39c5ad412b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bca11239-eab9-5a73-a2a1-1e5b4bf4b833"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001656；景泰四年七月庚辰",
+        "claim_text": "景泰四年七月庚辰，朝廷下令暂停各项非紧急工役。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.784371+00:00",
+        "field_path": "description",
+        "id": "bca11239-eab9-5a73-a2a1-1e5b4bf4b833",
+        "note": "原文：秋七月庚辰，停諸不急工役；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce",
+        "status": "published",
+        "subject_id": "016d44cf-19bd-5a96-902a-0dacfd6a33ca",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "35ba0b69-ef4b-5de4-9765-8d3332eed5d0"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001656；景泰四年七月庚辰",
+        "claim_text": "原历景泰四年七月庚辰。DDBC历表换算所据为1453-09-07至1453-09-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.821365+00:00",
+        "field_path": "time_original",
+        "id": "35ba0b69-ef4b-5de4-9765-8d3332eed5d0",
+        "note": "原文：秋七月庚辰，停諸不急工役；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce",
+        "status": "published",
+        "subject_id": "016d44cf-19bd-5a96-902a-0dacfd6a33ca",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5db9fa54-915a-5c44-ae4d-e198404d54e1"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657；景泰四年八月己丑",
+        "claim_text": "景泰四年八月己丑，朝廷赈济河南的饥民。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:48.864421+00:00",
+        "field_path": "description",
+        "id": "5db9fa54-915a-5c44-ae4d-e198404d54e1",
+        "note": "原文：八月己丑，振河南饑；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "status": "published",
+        "subject_id": "492ec4ce-2fd7-539f-b550-4f98e1c59ddb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "33d3d68a-55bc-5a8e-89b4-bc5bda1c8191"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657；景泰四年八月己丑",
+        "claim_text": "原历景泰四年八月己丑。DDBC历表换算所据为1453-09-16至1453-09-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:49.878652+00:00",
+        "field_path": "time_original",
+        "id": "33d3d68a-55bc-5a8e-89b4-bc5bda1c8191",
+        "note": "原文：八月己丑，振河南饑；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "status": "published",
+        "subject_id": "492ec4ce-2fd7-539f-b550-4f98e1c59ddb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0e607284-eab0-5eae-a2e9-5d2d311ee4f6"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657；景泰四年八月甲午",
+        "claim_text": "也先自立为可汗。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:49.932815+00:00",
+        "field_path": "description",
+        "id": "0e607284-eab0-5eae-a2e9-5d2d311ee4f6",
+        "note": "原文：甲午，也先自立為可汗；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "status": "published",
+        "subject_id": "d9af0d41-e6b4-5de2-9de3-32e0f8826f3c",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6afe5b05-963d-577d-b5f7-5ec675d03732"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657；景泰四年八月甲午",
+        "claim_text": "景泰四年八月甲午，《明史》本纪记瓦剌太师也先自立为可汗。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:49.968778+00:00",
+        "field_path": "description",
+        "id": "6afe5b05-963d-577d-b5f7-5ec675d03732",
+        "note": "原文：甲午，也先自立為可汗；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "status": "published",
+        "subject_id": "b7732179-3465-5c21-b465-dbb7fed1abad",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f0dba5ea-8f8a-51d9-a4a9-8ea48667c545"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657；景泰四年八月甲午",
+        "claim_text": "原历景泰四年八月甲午。DDBC历表换算所据为1453-09-21至1453-09-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.009630+00:00",
+        "field_path": "time_original",
+        "id": "f0dba5ea-8f8a-51d9-a4a9-8ea48667c545",
+        "note": "原文：甲午，也先自立為可汗；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "status": "published",
+        "subject_id": "b7732179-3465-5c21-b465-dbb7fed1abad",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fd35b020-09f2-56fc-bc8a-ca7042073c2d"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657；景泰四年八月甲午",
+        "claim_text": "自立为可汗",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.046445+00:00",
+        "field_path": "role",
+        "id": "fd35b020-09f2-56fc-bc8a-ca7042073c2d",
+        "note": "原文：甲午，也先自立為可汗；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "status": "published",
+        "subject_id": "e46ee87f-3be2-5ce2-8014-4926cd8130ed",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "750da0a7-bab2-55c3-9934-5f6b65ee6b32"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月庚寅",
+        "claim_text": "景泰四年十月庚寅，朝廷下诏，命各地镇守官和巡抚督促耕作及蚕桑生产。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.086640+00:00",
+        "field_path": "description",
+        "id": "750da0a7-bab2-55c3-9934-5f6b65ee6b32",
+        "note": "原文：冬十月庚寅，詔天下鎮守、巡撫官督課農桑；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "d251fe05-9b0a-5862-981f-d17c92734c99",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5c394059-bf83-5fae-8613-d70f1c4ed665"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月庚寅",
+        "claim_text": "原历景泰四年十月庚寅。DDBC历表换算所据为1453-11-16至1453-11-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.121522+00:00",
+        "field_path": "time_original",
+        "id": "5c394059-bf83-5fae-8613-d70f1c4ed665",
+        "note": "原文：冬十月庚寅，詔天下鎮守、巡撫官督課農桑；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "d251fe05-9b0a-5862-981f-d17c92734c99",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3553f520-c746-5e53-ba37-f8e691e1aaea"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月甲午",
+        "claim_text": "徐有贞受命治理沙湾河患。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.166693+00:00",
+        "field_path": "description",
+        "id": "3553f520-c746-5e53-ba37-f8e691e1aaea",
+        "note": "原文：甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "a2c2c258-40a6-5fa1-b82d-a741f40d91fb",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "86f83a2d-c00c-5a78-ba9e-6da587bb1abe"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月甲午",
+        "claim_text": "景泰四年十月甲午，朝廷任命谕德徐有贞为左佥都御史，派他治理沙湾黄河决口。《英宗实录》作右佥都御史，卷末校记保留两种写法。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.206453+00:00",
+        "field_path": "description",
+        "id": "86f83a2d-c00c-5a78-ba9e-6da587bb1abe",
+        "note": "原文：甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "22d2224c-bda5-539a-b135-649b4a8012c8"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月甲午",
+        "claim_text": "原历景泰四年十月甲午。DDBC历表换算所据为1453-11-20至1453-11-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.246794+00:00",
+        "field_path": "time_original",
+        "id": "22d2224c-bda5-539a-b135-649b4a8012c8",
+        "note": "原文：甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7b2ee33f-e5c1-547d-aeff-ac29fbd02c0c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月甲午",
+        "claim_text": "受命治理沙湾河患",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.286536+00:00",
+        "field_path": "role",
+        "id": "7b2ee33f-e5c1-547d-aeff-ac29fbd02c0c",
+        "note": "原文：甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "8bb0c23b-4376-5af1-80a4-469c036cd263",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "55c9e1c0-c685-55cd-8120-42f6f93bc289"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月戊戌",
+        "claim_text": "景泰四年十月戊戌，本纪记也先派遣使者到明朝。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.344454+00:00",
+        "field_path": "description",
+        "id": "55c9e1c0-c685-55cd-8120-42f6f93bc289",
+        "note": "原文：戊戌，也先遣使來；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "ced92ec5-2583-53fb-9655-4c360c80d041",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "30b5d389-504d-556d-b14d-571912f07ff9"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月戊戌",
+        "claim_text": "原历景泰四年十月戊戌。DDBC历表换算所据为1453-11-24至1453-11-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.396569+00:00",
+        "field_path": "time_original",
+        "id": "30b5d389-504d-556d-b14d-571912f07ff9",
+        "note": "原文：戊戌，也先遣使來；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "ced92ec5-2583-53fb-9655-4c360c80d041",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6c8a24ce-0423-58c3-99ce-a7fb8e2f4ce6"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658；景泰四年十月戊戌",
+        "claim_text": "派遣使者到明朝",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.436904+00:00",
+        "field_path": "role",
+        "id": "6c8a24ce-0423-58c3-99ce-a7fb8e2f4ce6",
+        "note": "原文：戊戌，也先遣使來；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "status": "published",
+        "subject_id": "a8dc38b4-924b-5349-a3d6-d9399c443495",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7d87fbe1-2571-5533-a753-46fb2032d684"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001659；景泰四年十一月辛未",
+        "claim_text": "朱见济以皇太子身份去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.473370+00:00",
+        "field_path": "description",
+        "id": "7d87fbe1-2571-5533-a753-46fb2032d684",
+        "note": "原文：十一月辛未，皇太子見濟薨；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57",
+        "status": "published",
+        "subject_id": "7f573a8b-cd4b-5a6e-a3ee-4de70f6bc670",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bca168f6-0e77-566c-a841-8480f875dec0"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001659；景泰四年十一月辛未",
+        "claim_text": "景泰四年十一月辛未，皇太子朱见济去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.516987+00:00",
+        "field_path": "description",
+        "id": "bca168f6-0e77-566c-a841-8480f875dec0",
+        "note": "原文：十一月辛未，皇太子見濟薨；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57",
+        "status": "published",
+        "subject_id": "030a3718-78d3-551e-b1be-b31948b8f3b2",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "25102e7d-61d9-5839-960f-c14e4bee796a"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001659；景泰四年十一月辛未",
+        "claim_text": "原历景泰四年十一月辛未。DDBC历表换算所据为1453-12-27至1453-12-27，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.553554+00:00",
+        "field_path": "time_original",
+        "id": "25102e7d-61d9-5839-960f-c14e4bee796a",
+        "note": "原文：十一月辛未，皇太子見濟薨；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57",
+        "status": "published",
+        "subject_id": "030a3718-78d3-551e-b1be-b31948b8f3b2",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "03c2ae34-f0c1-5bb8-adc6-bf1e6be6aa6f"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001659；景泰四年十一月辛未",
+        "claim_text": "以皇太子身份去世",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.596298+00:00",
+        "field_path": "role",
+        "id": "03c2ae34-f0c1-5bb8-adc6-bf1e6be6aa6f",
+        "note": "原文：十一月辛未，皇太子見濟薨；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57",
+        "status": "published",
+        "subject_id": "f5fbe011-3a47-5906-8a77-6cbec786d079",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4811b15c-e690-5567-b818-db2ca7cdc00c"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001660；景泰四年十二月乙未",
+        "claim_text": "景泰四年十二月乙未，朝廷免除山东受灾地区应缴的税粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.636600+00:00",
+        "field_path": "description",
+        "id": "4811b15c-e690-5567-b818-db2ca7cdc00c",
+        "note": "原文：十二月乙未，免山東被災稅糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9",
+        "status": "published",
+        "subject_id": "7a15452b-6e5c-5ef6-8fc9-3fe6c18c4180",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6a5ca95e-840d-59b2-a365-0e8a5df4ece9"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001660；景泰四年十二月乙未",
+        "claim_text": "原历景泰四年十二月乙未。DDBC历表换算所据为1454-01-20至1454-01-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.676346+00:00",
+        "field_path": "time_original",
+        "id": "6a5ca95e-840d-59b2-a365-0e8a5df4ece9",
+        "note": "原文：十二月乙未，免山東被災稅糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9",
+        "status": "published",
+        "subject_id": "7a15452b-6e5c-5ef6-8fc9-3fe6c18c4180",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "15972150-c6d7-5dc8-a71f-5cd30410c0f0"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001660；景泰四年十二月乙巳",
+        "claim_text": "景泰四年十二月乙巳，朝廷赏赐边防军士。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.713356+00:00",
+        "field_path": "description",
+        "id": "15972150-c6d7-5dc8-a71f-5cd30410c0f0",
+        "note": "原文：乙巳，賚邊軍；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9",
+        "status": "published",
+        "subject_id": "a94b3d1f-bca4-56f0-9005-dabfee38d4ac",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1c28e880-688f-59bd-8342-123c55a6ed64"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001660；景泰四年十二月乙巳",
+        "claim_text": "原历景泰四年十二月乙巳。DDBC历表换算所据为1454-01-30至1454-01-30，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.756512+00:00",
+        "field_path": "time_original",
+        "id": "1c28e880-688f-59bd-8342-123c55a6ed64",
+        "note": "原文：乙巳，賚邊軍；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9",
+        "status": "published",
+        "subject_id": "a94b3d1f-bca4-56f0-9005-dabfee38d4ac",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "96ab8b68-2f76-505d-86d9-7f5deb86b987"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001661；景泰四年",
+        "claim_text": "景泰四年，琉球中山、安南、爪哇、日本、占城、哈密和瓦剌入贡。 按原历纪年，事情发生在公元1453至1454年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.791579+00:00",
+        "field_path": "description",
+        "id": "96ab8b68-2f76-505d-86d9-7f5deb86b987",
+        "note": "原文：是年，琉球中山、安南、爪哇、日本、占城、哈密、瓦剌入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "6ccc918e-f9ce-52ee-8d66-83438ba48179",
+        "status": "published",
+        "subject_id": "842c9bb4-e2b1-5bd0-a0f2-60f8a112b184",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e0496a79-e2c8-577c-887e-03b0bf1da911"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001661；景泰四年",
+        "claim_text": "原历景泰四年。DDBC历表换算所据为1453-02-18至1454-02-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.826617+00:00",
+        "field_path": "time_original",
+        "id": "e0496a79-e2c8-577c-887e-03b0bf1da911",
+        "note": "原文：是年，琉球中山、安南、爪哇、日本、占城、哈密、瓦剌入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "6ccc918e-f9ce-52ee-8d66-83438ba48179",
+        "status": "published",
+        "subject_id": "842c9bb4-e2b1-5bd0-a0f2-60f8a112b184",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8110110c-5f5e-552e-b3de-d2ec8923a14e"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月己巳（本纪所载，校记指出合并了奔丧和还任）",
+        "claim_text": "本纪在景泰四年五月己巳写作王文起复。卷末校记指出，当日王文因母亲去世回乡守丧，九月甲寅才起复。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.864573+00:00",
+        "field_path": "description",
+        "id": "8110110c-5f5e-552e-b3de-d2ec8923a14e",
+        "note": "原文：己巳，王文起復[3]。；核对说明：同书宰辅年表与卷末校记均区分五月丁忧与九月起复。保存本纪异文于原条，沿用已核九月时点。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2906b350-790b-51a7-a34d-7cee594582d8"
+      },
+      "row": {
+        "citation": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654；景泰四年五月己巳（本纪所载，校记指出合并了奔丧和还任）",
+        "claim_text": "同书宰辅年表与卷末校记均区分五月丁忧与九月起复。保存本纪异文于原条，沿用已核九月时点。",
+        "confidence": null,
+        "created_at": "2026-11-18T18:33:50.904394+00:00",
+        "field_path": "time_original",
+        "id": "2906b350-790b-51a7-a34d-7cee594582d8",
+        "note": "原文：己巳，王文起復[3]。；核对说明：同书宰辅年表与卷末校记均区分五月丁忧与九月起复。保存本纪异文于原条，沿用已核九月时点。",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "status": "published",
+        "subject_id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "907e440e-c855-5fad-9e72-4f1f4987ef13"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.515517+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "907e440e-c855-5fad-9e72-4f1f4987ef13",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001650",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001650",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001650/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "223e92ef5a152fc63767b3a718298797a086aee4c4d1545b97b67feaf247dcda",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13"
+      },
+      "row": {
+        "archive_blob_sha256": "64d77e2db6d85c268ebb5d496907d9ed280edb064a046e73a7a85dfa0669a3ed",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001650/source.txt",
+        "archive_url_sha256": "223e92ef5a152fc63767b3a718298797a086aee4c4d1545b97b67feaf247dcda",
+        "content": "四年春正月辛未，大祀天地於南郊。",
+        "content_sha256": "64d77e2db6d85c268ebb5d496907d9ed280edb064a046e73a7a85dfa0669a3ed",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "907e440e-c855-5fad-9e72-4f1f4987ef13"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001650"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77626,
+        "char_start": 77610,
+        "content": "四年春正月辛未，大祀天地於南郊。",
+        "content_sha256": "64d77e2db6d85c268ebb5d496907d9ed280edb064a046e73a7a85dfa0669a3ed",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001650",
+        "kind": "body",
+        "ordinal": 1637,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "2ae93690-ec5a-51b3-96b3-73bcb9442710"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.555590+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "2ae93690-ec5a-51b3-96b3-73bcb9442710",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001651",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001651",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001651/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5b9ff7466d92457754c2e119e349694e5403638c11d08c17b071f721a3bff7ea",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710"
+      },
+      "row": {
+        "archive_blob_sha256": "8da663c73218adb1c61cf5f0318ef12d51619d9b12100ab2353671ff488754e0",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001651/source.txt",
+        "archive_url_sha256": "5b9ff7466d92457754c2e119e349694e5403638c11d08c17b071f721a3bff7ea",
+        "content": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之。庚戌，免江西去年被災秋糧。",
+        "content_sha256": "8da663c73218adb1c61cf5f0318ef12d51619d9b12100ab2353671ff488754e0",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "2ae93690-ec5a-51b3-96b3-73bcb9442710"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001651"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77664,
+        "char_start": 77628,
+        "content": "二月戊子，五開、清浪諸苗復叛，梁珤、王來討之。庚戌，免江西去年被災秋糧。",
+        "content_sha256": "8da663c73218adb1c61cf5f0318ef12d51619d9b12100ab2353671ff488754e0",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001651",
+        "kind": "body",
+        "ordinal": 1638,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "73230cfa-cdae-5443-916c-eb94077c1d9b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.615749+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "73230cfa-cdae-5443-916c-eb94077c1d9b",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001652",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001652",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001652/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "508e78831b1a12f1b6e151b0636a1a2d7af166a8ffe40bee7cd36fa7fdd26605",
+        "source_id": "73230cfa-cdae-5443-916c-eb94077c1d9b"
+      },
+      "row": {
+        "archive_blob_sha256": "692ea4115a31f64eee666dbb6811fc6324fc2a9a3326ccc09bcf35b66e4529f7",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001652/source.txt",
+        "archive_url_sha256": "508e78831b1a12f1b6e151b0636a1a2d7af166a8ffe40bee7cd36fa7fdd26605",
+        "content": "三月戊寅，開建寧銀場。",
+        "content_sha256": "692ea4115a31f64eee666dbb6811fc6324fc2a9a3326ccc09bcf35b66e4529f7",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "73230cfa-cdae-5443-916c-eb94077c1d9b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001652"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77677,
+        "char_start": 77666,
+        "content": "三月戊寅，開建寧銀場。",
+        "content_sha256": "692ea4115a31f64eee666dbb6811fc6324fc2a9a3326ccc09bcf35b66e4529f7",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001652",
+        "kind": "body",
+        "ordinal": 1639,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3da49deb-495c-5509-9082-a5c38191ce64"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.655518+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3da49deb-495c-5509-9082-a5c38191ce64",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001653",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001653",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001653/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "389e734bec524b7be6c4e50543d00087928024a9a15dd372c27c10a7748d0662",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64"
+      },
+      "row": {
+        "archive_blob_sha256": "55505fb24b090e9be06e6e6b33db4f9b461c6169e80ac827e1092e4fb0f925ac",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001653/source.txt",
+        "archive_url_sha256": "389e734bec524b7be6c4e50543d00087928024a9a15dd372c27c10a7748d0662",
+        "content": "夏四月戊子，築沙灣決口。運南京倉粟振徐州。",
+        "content_sha256": "55505fb24b090e9be06e6e6b33db4f9b461c6169e80ac827e1092e4fb0f925ac",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "3da49deb-495c-5509-9082-a5c38191ce64"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001653"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77700,
+        "char_start": 77679,
+        "content": "夏四月戊子，築沙灣決口。運南京倉粟振徐州。",
+        "content_sha256": "55505fb24b090e9be06e6e6b33db4f9b461c6169e80ac827e1092e4fb0f925ac",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001653",
+        "kind": "body",
+        "ordinal": 1640,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.693100+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001654",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001654",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001654/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "f8cc36f94f54d7544a998930acf63a294845572bd527fa3a9e71a881f8dd18cc",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756"
+      },
+      "row": {
+        "archive_blob_sha256": "ef93265feb24ed762db938d89936a97319c448af642eb087d269933548fef64b",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001654/source.txt",
+        "archive_url_sha256": "f8cc36f94f54d7544a998930acf63a294845572bd527fa3a9e71a881f8dd18cc",
+        "content": "五月丁巳，發徐、淮倉振饑民。己巳，王文起復[3]。甲戌，徐州復大水，民益饑。發支運及鹽課糧振之。丁丑，發淮安倉振鳳陽。乙酉，沙灣河復決。",
+        "content_sha256": "ef93265feb24ed762db938d89936a97319c448af642eb087d269933548fef64b",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "1f40bf4d-0847-52ea-ba4d-1d2207f94756"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001654"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77770,
+        "char_start": 77702,
+        "content": "五月丁巳，發徐、淮倉振饑民。己巳，王文起復[3]。甲戌，徐州復大水，民益饑。發支運及鹽課糧振之。丁丑，發淮安倉振鳳陽。乙酉，沙灣河復決。",
+        "content_sha256": "ef93265feb24ed762db938d89936a97319c448af642eb087d269933548fef64b",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001654",
+        "kind": "body",
+        "ordinal": 1641,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "718e0a7d-d972-5c55-9669-154b27129813"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.735812+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "718e0a7d-d972-5c55-9669-154b27129813",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001655",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001655",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001655/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "7e33ca513a5bb3f6f1d587afa13f1ee26d8eb3abb74b12533b75316074dc9165",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813"
+      },
+      "row": {
+        "archive_blob_sha256": "4f4199b957b86cf639535c241f9f9bab2de02a9184c72869c82ddbfb84459db9",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001655/source.txt",
+        "archive_url_sha256": "7e33ca513a5bb3f6f1d587afa13f1ee26d8eb3abb74b12533b75316074dc9165",
+        "content": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕。辛亥，瘞土木、大同、紫荊關暴骸。",
+        "content_sha256": "4f4199b957b86cf639535c241f9f9bab2de02a9184c72869c82ddbfb84459db9",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "718e0a7d-d972-5c55-9669-154b27129813"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001655"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77815,
+        "char_start": 77772,
+        "content": "六月壬辰，吏部尚書何文淵以給事中林聰言下獄，尋令致仕。辛亥，瘞土木、大同、紫荊關暴骸。",
+        "content_sha256": "4f4199b957b86cf639535c241f9f9bab2de02a9184c72869c82ddbfb84459db9",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001655",
+        "kind": "body",
+        "ordinal": 1642,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.795528+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001656",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001656",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001656/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5cab7dee43a4ec7be5a570786c645f887fb44a8fb27e0c654237cc5db5450bd0",
+        "source_id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce"
+      },
+      "row": {
+        "archive_blob_sha256": "2186fdcb3906464deddca9b3c329cafe127d2085387e84fe9057a1d080cf110d",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001656/source.txt",
+        "archive_url_sha256": "5cab7dee43a4ec7be5a570786c645f887fb44a8fb27e0c654237cc5db5450bd0",
+        "content": "秋七月庚辰，停諸不急工役。",
+        "content_sha256": "2186fdcb3906464deddca9b3c329cafe127d2085387e84fe9057a1d080cf110d",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001656"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77830,
+        "char_start": 77817,
+        "content": "秋七月庚辰，停諸不急工役。",
+        "content_sha256": "2186fdcb3906464deddca9b3c329cafe127d2085387e84fe9057a1d080cf110d",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001656",
+        "kind": "body",
+        "ordinal": 1643,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.865894+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001657",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001657",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001657/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "74729fc869f4d00df69524e3ad5fe859b2b4a98938435bd8bc3c64c49670f0d9",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9"
+      },
+      "row": {
+        "archive_blob_sha256": "3f883aafc3c009a506faaa7d0692ac5c5cc64e8088ae9e2ccffd86e39b5eff89",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001657/source.txt",
+        "archive_url_sha256": "74729fc869f4d00df69524e3ad5fe859b2b4a98938435bd8bc3c64c49670f0d9",
+        "content": "八月己丑，振河南饑。甲午，也先自立為可汗。",
+        "content_sha256": "3f883aafc3c009a506faaa7d0692ac5c5cc64e8088ae9e2ccffd86e39b5eff89",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001657"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77853,
+        "char_start": 77832,
+        "content": "八月己丑，振河南饑。甲午，也先自立為可汗。",
+        "content_sha256": "3f883aafc3c009a506faaa7d0692ac5c5cc64e8088ae9e2ccffd86e39b5eff89",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001657",
+        "kind": "body",
+        "ordinal": 1644,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "f460d20d-d938-59ff-93c7-af143dfdd786"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.905500+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "f460d20d-d938-59ff-93c7-af143dfdd786",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001658",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001658",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001658/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "3b1ef94451d8cddbaeda52005813979b452819e35bb6b42a97853d29f181a394",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786"
+      },
+      "row": {
+        "archive_blob_sha256": "1fda299446026da0b2b9971810bf24181ed957ad02d5fab9b964e9b41e8d6ba3",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001658/source.txt",
+        "archive_url_sha256": "3b1ef94451d8cddbaeda52005813979b452819e35bb6b42a97853d29f181a394",
+        "content": "冬十月庚寅，詔天下鎮守、巡撫官督課農桑。甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河。戊戌，也先遣使來。",
+        "content_sha256": "1fda299446026da0b2b9971810bf24181ed957ad02d5fab9b964e9b41e8d6ba3",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "f460d20d-d938-59ff-93c7-af143dfdd786"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001658"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77908,
+        "char_start": 77855,
+        "content": "冬十月庚寅，詔天下鎮守、巡撫官督課農桑。甲午，諭德徐有貞為左僉都御史[4]，治沙灣決河。戊戌，也先遣使來。",
+        "content_sha256": "1fda299446026da0b2b9971810bf24181ed957ad02d5fab9b964e9b41e8d6ba3",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001658",
+        "kind": "body",
+        "ordinal": 1645,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.940675+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001659",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001659",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001659/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "631ea1d087b26747f8bf538e4fc545beee33019c432fb21092da287af03890ab",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57"
+      },
+      "row": {
+        "archive_blob_sha256": "f8d7ae3026178f13e4a9e267cf137bed425da33ca0a01065f6aef4f5ae611aef",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001659/source.txt",
+        "archive_url_sha256": "631ea1d087b26747f8bf538e4fc545beee33019c432fb21092da287af03890ab",
+        "content": "十一月辛未，皇太子見濟薨。",
+        "content_sha256": "f8d7ae3026178f13e4a9e267cf137bed425da33ca0a01065f6aef4f5ae611aef",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001659"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77923,
+        "char_start": 77910,
+        "content": "十一月辛未，皇太子見濟薨。",
+        "content_sha256": "f8d7ae3026178f13e4a9e267cf137bed425da33ca0a01065f6aef4f5ae611aef",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001659",
+        "kind": "body",
+        "ordinal": 1646,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:42.977720+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001660",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001660",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001660/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "7d94968975783f2d59b930cae60920dfda3729f741562648c4db623cddbcaa08",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9"
+      },
+      "row": {
+        "archive_blob_sha256": "474fbe90996a0598969e2771452c19bdf272fa4c5baf48d0558c236e68210a82",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001660/source.txt",
+        "archive_url_sha256": "7d94968975783f2d59b930cae60920dfda3729f741562648c4db623cddbcaa08",
+        "content": "十二月乙未，免山東被災稅糧。乙巳，賚邊軍。",
+        "content_sha256": "474fbe90996a0598969e2771452c19bdf272fa4c5baf48d0558c236e68210a82",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "b75c0784-ea0a-5ad4-8216-bb80f736f6c9"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001660"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77946,
+        "char_start": 77925,
+        "content": "十二月乙未，免山東被災稅糧。乙巳，賚邊軍。",
+        "content_sha256": "474fbe90996a0598969e2771452c19bdf272fa4c5baf48d0558c236e68210a82",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001660",
+        "kind": "body",
+        "ordinal": 1647,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "6ccc918e-f9ce-52ee-8d66-83438ba48179"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T18:33:43.015259+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "6ccc918e-f9ce-52ee-8d66-83438ba48179",
+        "note": "《明史》卷11·本纪第十一·景帝·mingshi-2f603db3d81e-p001661",
+        "source_type": "primary",
+        "title": "明史·卷11·景帝·mingshi-2f603db3d81e-p001661",
+        "url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001661/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "0b458bc3792bde3175d008199c15694cacca90076ca553d896cb727c186dcb3a",
+        "source_id": "6ccc918e-f9ce-52ee-8d66-83438ba48179"
+      },
+      "row": {
+        "archive_blob_sha256": "a3688db93c0a144ad88078cd4785c21a3e0ef294390bf5b872b0f4102a40163a",
+        "archive_commit": "224055f07dbb0b24359a692aa0803da939c75e76",
+        "archive_url": "https://github.com/greed-216/histree/blob/224055f07dbb0b24359a692aa0803da939c75e76/content/books/mingshi/vol-011/from-start/part-05/sources/mingshi-2f603db3d81e-p001661/source.txt",
+        "archive_url_sha256": "0b458bc3792bde3175d008199c15694cacca90076ca553d896cb727c186dcb3a",
+        "content": "是年，琉球中山、安南、爪哇、日本、占城、哈密、瓦剌入貢。",
+        "content_sha256": "a3688db93c0a144ad88078cd4785c21a3e0ef294390bf5b872b0f4102a40163a",
+        "created_at": "2026-11-18T18:33:55.008616+00:00",
+        "source_id": "6ccc918e-f9ce-52ee-8d66-83438ba48179"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001661"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 77976,
+        "char_start": 77948,
+        "content": "是年，琉球中山、安南、爪哇、日本、占城、哈密、瓦剌入貢。",
+        "content_sha256": "a3688db93c0a144ad88078cd4785c21a3e0ef294390bf5b872b0f4102a40163a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001661",
+        "kind": "body",
+        "ordinal": 1648,
+        "section_id": "mingshi-2f603db3d81e-s0012"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "8fd16dd5-08e0-5174-bf76-89137a14e53b"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:43.724492+00:00",
+        "description": "景泰四年正月辛未，明景帝朱祁钰在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "8fd16dd5-08e0-5174-bf76-89137a14e53b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年正月辛未",
+        "title": "明景帝在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "fad91e91-b4c9-516c-bb95-cf77d65ac038"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:43.756630+00:00",
+        "description": "景泰四年二月戊子，本纪记五开、清浪一带再次发生苗民起事，梁珤、王来率军征讨。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "fad91e91-b4c9-516c-bb95-cf77d65ac038",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年二月戊子",
+        "title": "五开、清浪等地再有苗民起事，梁珤、王来征讨"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a7b82370-0496-5404-8518-5742fc935573"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:43.797955+00:00",
+        "description": "景泰四年二月庚戌，朝廷免除江西上年受灾地区应缴的秋粮。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "a7b82370-0496-5404-8518-5742fc935573",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年二月庚戌",
+        "title": "明廷免除江西上年灾区的秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "011fa683-a1e7-5c9d-92ce-a4bc41cc8588"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:44.764371+00:00",
+        "description": "景泰四年三月戊寅，明廷在建宁开设银场。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "011fa683-a1e7-5c9d-92ce-a4bc41cc8588",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年三月戊寅",
+        "title": "明廷在建宁开设银场"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6ec7581b-7186-5627-8854-b8cc8f990031"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:44.828432+00:00",
+        "description": "景泰四年四月戊子，明廷组织修筑沙湾的黄河决口。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "6ec7581b-7186-5627-8854-b8cc8f990031",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年四月戊子",
+        "title": "明廷修筑沙湾黄河决口"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "969e81ce-703a-5e8f-a78d-4e1c8bdfe93b"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:44.863501+00:00",
+        "description": "景泰四年四月，朝廷从南京粮仓调运粮食，赈济徐州。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "969e81ce-703a-5e8f-a78d-4e1c8bdfe93b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年四月",
+        "title": "明廷调运南京仓粮赈济徐州"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "3daa48c4-3d22-5787-818d-20d465c3b40c"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:44.916595+00:00",
+        "description": "景泰四年五月丁巳，朝廷开徐州、淮安的粮仓，发放粮食赈济饥民。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "3daa48c4-3d22-5787-818d-20d465c3b40c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年五月丁巳",
+        "title": "明廷发放徐州、淮安仓粮赈济饥民"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "983bbf33-9e29-57b9-a393-d1c309263d43"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:44.960331+00:00",
+        "description": "景泰四年五月甲戌，徐州再次发生洪水，民间饥荒加重。朝廷调支运和盐课储粮赈济。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "983bbf33-9e29-57b9-a393-d1c309263d43",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年五月甲戌",
+        "title": "徐州再发洪水，明廷调运粮食赈济饥民"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "dddd3e0e-d634-57da-a0cf-bd71309325d2"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.011598+00:00",
+        "description": "景泰四年五月丁丑，朝廷调发淮安粮仓的存粮，赈济凤阳。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "dddd3e0e-d634-57da-a0cf-bd71309325d2",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年五月丁丑",
+        "title": "明廷发放淮安仓粮赈济凤阳"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8f0c6b2d-98a5-57b6-a019-921459345e6b"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.048398+00:00",
+        "description": "景泰四年五月乙酉，黄河在沙湾再次决口。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "8f0c6b2d-98a5-57b6-a019-921459345e6b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年五月乙酉",
+        "title": "黄河在沙湾再次决口"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ab3de641-5af5-5dd0-a769-82387053d6da"
+      },
+      "row": {
+        "created_at": "2026-11-18T04:10:49.218027+00:00",
+        "description": "景泰4年（年号对照1453年）六月，何文渊被投入监狱，随后获释，获准退休。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "ab3de641-5af5-5dd0-a769-82387053d6da",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰4年（年号对照1453年）六月；公元年核为1453年。",
+        "title": "何文渊被投入监狱，随后获释，获准退休"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "62cf2d78-47f4-56f4-a079-ad39c5ad412b"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.090497+00:00",
+        "description": "景泰四年六月辛亥，明廷命人收殓并安葬留在土木、大同和紫荆关的遗骸。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "62cf2d78-47f4-56f4-a079-ad39c5ad412b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年六月辛亥",
+        "title": "明廷安葬土木、大同和紫荆关暴露的遗骸"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "016d44cf-19bd-5a96-902a-0dacfd6a33ca"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.131357+00:00",
+        "description": "景泰四年七月庚辰，朝廷下令暂停各项非紧急工役。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "016d44cf-19bd-5a96-902a-0dacfd6a33ca",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年七月庚辰",
+        "title": "明廷暂停各项非紧急工役"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "492ec4ce-2fd7-539f-b550-4f98e1c59ddb"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.165462+00:00",
+        "description": "景泰四年八月己丑，朝廷赈济河南的饥民。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "492ec4ce-2fd7-539f-b550-4f98e1c59ddb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年八月己丑",
+        "title": "明廷赈济河南饥民"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b7732179-3465-5c21-b465-dbb7fed1abad"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.204430+00:00",
+        "description": "景泰四年八月甲午，《明史》本纪记瓦剌太师也先自立为可汗。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "b7732179-3465-5c21-b465-dbb7fed1abad",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年八月甲午",
+        "title": "也先自立为可汗"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d251fe05-9b0a-5862-981f-d17c92734c99"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.250489+00:00",
+        "description": "景泰四年十月庚寅，朝廷下诏，命各地镇守官和巡抚督促耕作及蚕桑生产。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "d251fe05-9b0a-5862-981f-d17c92734c99",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十月庚寅",
+        "title": "明廷命各地镇守、巡抚官督促农桑"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.301638+00:00",
+        "description": "景泰四年十月甲午，朝廷任命谕德徐有贞为左佥都御史，派他治理沙湾黄河决口。《英宗实录》作右佥都御史，卷末校记保留两种写法。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "05cfb0e1-cd17-5cfc-ab23-f31fd4191813",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十月甲午",
+        "title": "徐有贞受命治理沙湾河患"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ced92ec5-2583-53fb-9655-4c360c80d041"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.351528+00:00",
+        "description": "景泰四年十月戊戌，本纪记也先派遣使者到明朝。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "ced92ec5-2583-53fb-9655-4c360c80d041",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十月戊戌",
+        "title": "也先派使者到明朝"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "030a3718-78d3-551e-b1be-b31948b8f3b2"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.390353+00:00",
+        "description": "景泰四年十一月辛未，皇太子朱见济去世。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "030a3718-78d3-551e-b1be-b31948b8f3b2",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十一月辛未",
+        "title": "皇太子朱见济去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7a15452b-6e5c-5ef6-8fc9-3fe6c18c4180"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.431584+00:00",
+        "description": "景泰四年十二月乙未，朝廷免除山东受灾地区应缴的税粮。",
+        "dynasty": "明",
+        "end_year": 1454,
+        "id": "7a15452b-6e5c-5ef6-8fc9-3fe6c18c4180",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1454,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十二月乙未",
+        "title": "明廷豁免山东灾区税粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a94b3d1f-bca4-56f0-9005-dabfee38d4ac"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.471453+00:00",
+        "description": "景泰四年十二月乙巳，朝廷赏赐边防军士。",
+        "dynasty": "明",
+        "end_year": 1454,
+        "id": "a94b3d1f-bca4-56f0-9005-dabfee38d4ac",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1454,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年十二月乙巳",
+        "title": "明廷赏赐边防军士"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "842c9bb4-e2b1-5bd0-a0f2-60f8a112b184"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:33:45.511702+00:00",
+        "description": "景泰四年，琉球中山、安南、爪哇、日本、占城、哈密和瓦剌入贡。 按原历纪年，事情发生在公元1453至1454年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "842c9bb4-e2b1-5bd0-a0f2-60f8a112b184",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰四年",
+        "title": "本纪汇记景泰四年多地入贡"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d07995e7-af04-5f65-8f47-2e7481a07f51"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:35.043719+00:00",
+        "description": "景泰4年（1453年）九月，王文恢复任职。",
+        "dynasty": "明",
+        "end_year": 1453,
+        "id": "d07995e7-af04-5f65-8f47-2e7481a07f51",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1453,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰4年（1453年）九月",
+        "title": "王文恢复任职"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v109_p018338_a04",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    }
+  ],
+  "source_locations": {
+    "1f40bf4d-0847-52ea-ba4d-1d2207f94756": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001654",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "288f669d-4a0a-5ecf-9fc8-47d50e18b8ce": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001656",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "2ae93690-ec5a-51b3-96b3-73bcb9442710": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001651",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "3da49deb-495c-5509-9082-a5c38191ce64": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001653",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "3f9a86c8-0f25-5f3a-ad58-f32d8f75af57": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001659",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "4d5fbaf8-01f4-5e86-8f39-5d34b148e3b9": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001657",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "6ccc918e-f9ce-52ee-8d66-83438ba48179": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001661",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "718e0a7d-d972-5c55-9669-154b27129813": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001655",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "73230cfa-cdae-5443-916c-eb94077c1d9b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001652",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "907e440e-c855-5fad-9e72-4f1f4987ef13": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001650",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "b75c0784-ea0a-5ad4-8216-bb80f736f6c9": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001660",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    },
+    "f460d20d-d938-59ff-93c7-af143dfdd786": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001658",
+      "section_id": "mingshi-2f603db3d81e-s0012",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 11
+}

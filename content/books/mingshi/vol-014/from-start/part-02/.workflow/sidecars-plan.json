@@ -1,0 +1,4217 @@
+{
+  "batch_dir": "content/books/mingshi/vol-014/from-start/part-02",
+  "batch_key": "mingshi-v014-from-start-02",
+  "batch_sha256": "a7620b620b2f12d239e80020073210d7cf7306af64f6657fb89f2c23762dfe8a",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001951",
+    "mingshi-2f603db3d81e-p001960"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "d8ef21f4-49ee-56db-b360-fd891d10e755",
+        "note_sha256": "263c694b522ed57bf0564a1e48a586ba0f4e0294ebf3e14d2c97e5fa65d66ea9",
+        "quote_text": "十四年春正月甲戌，大祀天地於南郊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "03f784c1-551a-563b-941e-d774219fcebd",
+        "note_sha256": "7600663fe6cfe21179c4dd698ee538d3f96a615cc62991ef201fa1ca18faecc8",
+        "quote_text": "十四年春正月甲戌，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "dc006ea6-72bf-5608-9978-9470534d7eb5",
+        "note_sha256": "88ba9ec8b96ac25e1221e5c645cf9b23f04806837120af48c7c7fa59f570781f",
+        "quote_text": "十四年春正月甲戌，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "1cc5f576-d1d1-5b7c-b719-79944d15b486",
+        "note_sha256": "1b96ebb0b13186234184d8d02970a4c25db101e453853f251ffe2d3160df9239",
+        "quote_text": "十四年春正月甲戌，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "6e8948d7-1de0-531a-aad1-5fd2b90181bd",
+        "note_sha256": "7d3214932d554bcf667f799fb76cd792865135803c5f7a4f651ec030e4d79ed1",
+        "quote_text": "三月戊辰，免浙江被災秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5797eeb5-aad2-5e91-b41a-c022da4da6b3",
+        "note_sha256": "bce0aa54338e7aed445b2586cc7f45e7b25e8d46e38438513ceb5cf9e2c53090",
+        "quote_text": "三月戊辰，免浙江被災秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "aaa98457-da84-5450-b3e9-1010e68ec5af",
+        "note_sha256": "301c43028e4c82b0d0027e73396480131ba44c3494f3e48eb2d3bca5ec357fdc",
+        "quote_text": "己卯，賜曾彥等進士及第、出身有差",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e623759-b8a6-59ab-ab95-538bc486cbd0",
+        "note_sha256": "7aecab396063ee8f9d45929b4a0c7b221a3929f57716095a3e5923be50013de8",
+        "quote_text": "己卯，賜曾彥等進士及第、出身有差",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c4c6d55c-93ce-5af7-a634-b55f2452c246",
+        "note_sha256": "d688d969fb0b3d29186a7962f7215614afdf80d4f5f222e900693f6452f96f90",
+        "quote_text": "辛巳，罷烏撒衞銀場",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8171e98e-8b26-5a2a-a478-d99c0f1d2d50",
+        "note_sha256": "5b94d98016f5dcf5321d2bdff9219424e9f5a2a1d43ebdc1eac6844f06da00fb",
+        "quote_text": "辛巳，罷烏撒衞銀場",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5c2982eb-3c0d-51e4-8526-d7a0bfe1f504",
+        "note_sha256": "2e3399404d4efd3d08a5720e31f03302f49fe9a61d0aa7c615b9a11f330e39a9",
+        "quote_text": "丙戌，復開遼東馬市",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5af035bc-3010-5977-a768-57826406e0f2",
+        "note_sha256": "b316a82a8c5be5bcf6931ce79203e4e4c530ed9f30fb3f16ff74fb12fce2603d",
+        "quote_text": "丙戌，復開遼東馬市",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "72eab9c4-af79-55c9-9c1e-95958ca7d859",
+        "note_sha256": "116955c43050d8df4f198a0e64f8ca4ec8b24519b31ae6e487f4085a014163e2",
+        "quote_text": "丁亥，以浙江饑罷採花木",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d8fe75ac-a91a-5e66-9631-0816f86fddcc",
+        "note_sha256": "8961d5a75275ed2ac8ec8bb963af894a664fbfaa6ccb4977131c9534902d076e",
+        "quote_text": "丁亥，以浙江饑罷採花木",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c7fff8d1-cc91-55a0-b0af-0af1c7ffe981",
+        "note_sha256": "70138e1dd49f09fe4df5eb5a845f438892a24cde62bd10e91b70fc444562b81d",
+        "quote_text": "夏四月丁酉，免南畿、山東被災秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "604447b6-5b88-5d1d-99b1-dc62c7e6af9a",
+        "note_sha256": "7c0b6a9e8409438b182306b0824c6810b2278aea5c9599aded043c50909ba0fa",
+        "quote_text": "夏四月丁酉，免南畿、山東被災秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "17543f78-c632-5ed7-b92b-f39b7ee16496",
+        "note_sha256": "e1eec7046501132f8f68eb83d69f6ce75feca672d91ef7f812443485afcdb199",
+        "quote_text": "六月癸卯，太監汪直行遼東邊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8e6b7fb7-fc0c-55f0-94f4-707c3e8daa1d",
+        "note_sha256": "cec84d286f92f7fbd969785641eb36ceb65ae467658288147a346a2716d7acc6",
+        "quote_text": "六月癸卯，太監汪直行遼東邊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "f61adb55-ba7f-59ac-b1b7-3ca4240f5584",
+        "note_sha256": "b31436524c665b984bd82d75af3275c1c255f54409ab04a6b4de5f3bbc7841da",
+        "quote_text": "六月癸卯，太監汪直行遼東邊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "15311348-e35e-5576-b9ba-d680aa614998",
+        "note_sha256": "6e49864a5fd15ab11f864b5dc70a4962e9ac4d18837916ed6469175ccf441fe2",
+        "quote_text": "六月癸卯，太監汪直行遼東邊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "a98d72c6-5f19-5e95-9f94-c6f583126beb",
+        "note_sha256": "74eb6e8752ea7a05270d97fc0f3cfc6bc523f816f439e59010f639d7135fa583",
+        "quote_text": "秋七月丁丑，遣使振畿南、山東饑",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "f4a058a7-29b5-52e9-a468-285304aeb88e",
+        "note_sha256": "2d14d1395f5c021f96a3bf6ca3c846a9552d84566f39c6a4df3e66e269507d0e",
+        "quote_text": "秋七月丁丑，遣使振畿南、山東饑",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "8ed49451-66fb-5b7b-8bd2-b7d609613e12",
+        "note_sha256": "6e2303a82c8be73c21966b4ad30851c435371ed93c61d0987e5b437237e476e4",
+        "quote_text": "八月癸巳，以直隸、山東災傷，詔六部條卹民事宜",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0d731049-feda-5de0-84db-9f1b9c538675",
+        "note_sha256": "990e166efd5a7f75476903594185f41db0d1acac781705f33fd2cef4577443cc",
+        "quote_text": "八月癸巳，以直隸、山東災傷，詔六部條卹民事宜",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8f8ba954-d50b-550c-9972-8b109c06229c",
+        "note_sha256": "601ed5ed8e3bd9aa52c770f1e2e50166ad7bf41008699c2163e86234433c1503",
+        "quote_text": "南京刑部侍郎金紳巡視江西水災",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8526327f-d74d-5f41-8c09-11eca30ab863",
+        "note_sha256": "c74e3599eb600bba946f0f8af33aada33c0b65fca9ea4ed2e12bb044a200ae8d",
+        "quote_text": "南京刑部侍郎金紳巡視江西水災",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a7ba5703-0853-5d42-9f2f-7a2ce9bd7d08",
+        "note_sha256": "769698a07af0dee39b077baff9bf4ac1b0a0833f1d6cf82cbe5b99ca84f67b97",
+        "quote_text": "庚戌，免湖廣被災秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "eea26cf6-d774-5182-b334-11cdfb515656",
+        "note_sha256": "390526141d3f64c27a491bb5e2975ee31ba3036b9326c35d3671e3bad5d8b0c4",
+        "quote_text": "庚戌，免湖廣被災秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dff3da95-2d91-5dea-9759-29e7b49a3741",
+        "note_sha256": "72e5c4e2f10467003f970ae47b347390522e424495e10befdb37a4b660f853b4",
+        "quote_text": "甲寅，下巡撫蘇、松副都御史牟俸於錦衣衞獄，謫戍",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dac000c7-086b-5250-b797-dc192308988e",
+        "note_sha256": "c6de96e6ab5c20a1f75afb6ffe965a74158eacc05a9f3cf0075ce3ff9272598c",
+        "quote_text": "甲寅，下巡撫蘇、松副都御史牟俸於錦衣衞獄，謫戍",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e5abc16f-d6b3-59d4-8aff-c671b2d04e71",
+        "note_sha256": "3fb657783235c33f697e520ab854d39f008da93a3500ea066755858d9aa68e74",
+        "quote_text": "十二月甲午，免畿內被災秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "595e6e58-640e-596c-bb72-066c76651e28",
+        "note_sha256": "ff8462719815d6916328659b8c5ec1fac21145887ce403ab7fdc09800adc1927",
+        "quote_text": "十二月甲午，免畿內被災秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c69e7348-3b60-5110-a8e4-c6c9549ab8fa",
+        "note_sha256": "f6d2b9a0ab07416a9373310e2b707129007b4b8299363fc58306675af8784a17",
+        "quote_text": "是年，占城、烏斯藏、撒馬兒罕入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1383e992-6526-5a7b-83c7-598f7cf74d20",
+        "note_sha256": "14198f2c7e834c29d02cab315c068d6a4aff44a8e41a4c17d77ce6e93a469b36",
+        "quote_text": "是年，占城、烏斯藏、撒馬兒罕入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f880270b-77d5-521b-a3f1-708688b54ce9",
+        "note_sha256": "d8a9038222b0a587f496a2d9cd0f159655d6eb2d0066e38094d9181eb8020158",
+        "quote_text": "十五年春正月丁卯，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "2fca9468-c911-5c50-af25-e14064b361ba",
+        "note_sha256": "21a5867cacb45f1a3afd60ebf12b0942e10967aaa74710284c3c561aeb5c0058",
+        "quote_text": "十五年春正月丁卯，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e7369ab9-0969-503c-9ce0-00c819489897",
+        "note_sha256": "c70f9b9e5492f6be018009290b31779141c6ec3e12ec30ef78c98e30fa6afb74",
+        "quote_text": "十五年春正月丁卯，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "dadb3f49-2b80-5c75-856f-65948f2c75bd",
+        "note_sha256": "eb80fd80f8b19660fa36a529b89dea6674a92589679c2e42d76f77571290c1a3",
+        "quote_text": "辛巳，振山東饑，免秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "3948b561-a522-5e4b-94a7-330c399e5d49",
+        "note_sha256": "c08b5257751bd30c935f219769500ca0ab3e2dcf6327b140a19f3a02da8adfe2",
+        "quote_text": "辛巳，振山東饑，免秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "10f1497c-cbaa-5a4d-8045-dafe3d44476f",
+        "note_sha256": "166349cacbc2cede90f3ed5e4977ac10e2b0bdbc4c662a57a53000b8a112172b",
+        "quote_text": "二月，免湖廣被災秋糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f058f653-ec90-5130-ab01-aea5a08b321d",
+        "note_sha256": "e04c387ed00cea2c64f3f48b870730598481637208a35f830226b19d59672112",
+        "quote_text": "二月，免湖廣被災秋糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a03b724e-89bc-55ef-8317-3558c84a5fd4",
+        "note_sha256": "110b6e6b4dec8f18fe620d89b1587344873f2ee99ed76917b8d6199ab31ea2bd",
+        "quote_text": "甲寅，詔修開國勳臣墓，無後者置守塚一人",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "59fefbc4-e2d3-5e71-b659-fa3e64b5536b",
+        "note_sha256": "92280adeea1b25f961b48615e4db2acd87d5265a71aca176423696103fb55c23",
+        "quote_text": "甲寅，詔修開國勳臣墓，無後者置守塚一人",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ccf49290-a674-51f9-86b3-e8bbac916cb4",
+        "note_sha256": "ac7e8a2fc40ca884beb9ca0d6b73a6592ae4483ecd5413bd9728940365b3b5bc",
+        "quote_text": "夏四月丙午，免南畿被災稅糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ceb44da4-b73a-5ee9-8512-5e2deccc89ee",
+        "note_sha256": "74c3bcbec9525114a80a5d1c3fd26fa8b98ea10d4da93347b2fccce4ad5d5f2b",
+        "quote_text": "夏四月丙午，免南畿被災稅糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4d54df21-55bc-5f0f-8af8-289bbdbdd15b",
+        "note_sha256": "01ebe8929905cbce061d9408104a6f2088b40b6cbd856eb4e3e29d362eae9eae",
+        "quote_text": "壬子，下駙馬都尉馬誠於錦衣衞獄",
+        "review_note": "卷121公主传记宜兴公主下嫁马诚，与本纪驸马都尉身份相合。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a2dca2f4-4dc1-5845-8106-207e1969e9da",
+        "note_sha256": "aa86772e2a17086dcd9b82c2054dff3ae2e53570e90c4d0d1572e3a6f4898b59",
+        "quote_text": "壬子，下駙馬都尉馬誠於錦衣衞獄",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8458b95b-242e-5673-a8c3-92f02c975677",
+        "note_sha256": "d07cb485c83a1403ce77451551624d1bec45bd7630d5625b91a2e6a48104b070",
+        "quote_text": "壬子，下駙馬都尉馬誠於錦衣衞獄",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "48403fd5-c40e-5f31-b841-969f79ef44c0",
+        "note_sha256": "f361077fca33cd64c2f0cb93aeac395162c2b603533f216cf2f4ca1ea16a8d66",
+        "quote_text": "壬子，下駙馬都尉馬誠於錦衣衞獄",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e9147a4-14b7-57db-9b08-ae8fe5d790ed",
+        "note_sha256": "9d39721e9bb53ef19dd78b52b60715c5a257f946c776749a42cfa811310d6624",
+        "quote_text": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "56e43cf2-f442-5bf7-932d-fd41befafd9b",
+        "note_sha256": "ec272dad7fffecb93016ce2822b281f5b8876082a041698adcd09d1563d134bc",
+        "quote_text": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f30163c4-212d-5234-bdb1-74ce74945273",
+        "note_sha256": "f7fdcead4ac330f57374d39553c454930c4cdd5ccdcf0370d3eb133fd424a28a",
+        "quote_text": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "74702ff6-169d-5a21-91f1-98c2a29a959d",
+        "note_sha256": "ac629b923f56c4958933b7072b49da0aecc8ca026f38b937dfb61a44f319c1b6",
+        "quote_text": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "687ce06c-8ee7-589e-b11b-f4df34b30bb2",
+        "note_sha256": "ac629b923f56c4958933b7072b49da0aecc8ca026f38b937dfb61a44f319c1b6",
+        "quote_text": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4de23725-df9f-5a46-8eb3-6d82ac777768",
+        "note_sha256": "54aeadd68ae57bcf39c9e0f3236afe8e88f3dd8088a18cd38bcfbb016c6f3d27",
+        "quote_text": "癸酉，以馬文升、牟俸事，杖給事中李俊、御史王濬五十六人於闕下",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "421b7f0c-f556-5bf3-b372-030a006d0d68",
+        "note_sha256": "f7868b60836f91aeed23aca4bbf9f94d13e0c7f6c9852d708660188c1efb7898",
+        "quote_text": "癸酉，以馬文升、牟俸事，杖給事中李俊、御史王濬五十六人於闕下",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0c2950e8-df9e-5727-961a-b4f1cb1ae86b",
+        "note_sha256": "617c11049b8b20cc41c5c67cb1d713f8a8d02a3491f7a0981aab227b68f4638f",
+        "quote_text": "己卯，免湖廣、河南被災稅糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9fcb6766-bdaf-5ece-ad59-b737c6aadcf8",
+        "note_sha256": "6b308a37a116b4a4bacd69e7b258d7bcc6116a5357281bfb04cb2a8d287123aa",
+        "quote_text": "己卯，免湖廣、河南被災稅糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "32380152-29d8-561a-8d28-94c0226defe8",
+        "note_sha256": "8cba17328af594580027346ec73f82da47b30103a9664e1a83c059cccb4f109d",
+        "quote_text": "秋七月癸酉，汪直行大同、宣府邊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "04fb1566-773d-53a1-ab6b-eba3a4076e5a",
+        "note_sha256": "f0cf171fb51b80a1b7d81d7266aae99e886a6f7b9a81c14ecea7c155a05a2697",
+        "quote_text": "秋七月癸酉，汪直行大同、宣府邊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "23c97f96-5c40-501d-8bfe-4c3a75556fd4",
+        "note_sha256": "308800a335e15fbebbd7934ed7f40c8d6425c8c1b75eef0968d3ed7ae240af3f",
+        "quote_text": "秋七月癸酉，汪直行大同、宣府邊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e267a033-9a45-5a0d-899d-91992facef3f",
+        "note_sha256": "3eda5dbadc1ceb8e50a1248392c885347772c735e176077e513eee5199679771",
+        "quote_text": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "09057c21-a893-5559-a9e6-73f34cda0ee6",
+        "note_sha256": "2cecb32a4c67701931115ceefd7773b5840a338b874a4be197426d33fa047a31",
+        "quote_text": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dac0c8bb-4539-5351-9a1e-79fd5f0e3858",
+        "note_sha256": "1b27d8ba74c54329c93ced607b83a9096e049c943f6eb2c3b684950e2f2ce1d8",
+        "quote_text": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "78bbc83c-957f-5be2-ad8e-e9c1519cb790",
+        "note_sha256": "99d27f838dac228f66ba725887853563001e7ddcc171ce3bc7046e04dadcf791",
+        "quote_text": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5949925a-2943-5cfd-92ca-1fef0cecd34a",
+        "note_sha256": "99d27f838dac228f66ba725887853563001e7ddcc171ce3bc7046e04dadcf791",
+        "quote_text": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "51178a95-a618-515f-91bb-6f944a5484da",
+        "note_sha256": "b3492626fa6fd02fb03ec200c309864721d6882ee3c9a83dca18962a277f317c",
+        "quote_text": "十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c4bfb4cd-2b20-5c42-b374-42b3d5742aa3",
+        "note_sha256": "cc4ce528cf9396e94ce535bf02792c8f23dd33d201e605588bfaa2f4c776f128",
+        "quote_text": "十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8b58302a-f445-50c6-a43f-9107c29f32ab",
+        "note_sha256": "d4cb4bbcd3c55fdd664e583e7c438969477516c585893643976f2c9cf080890c",
+        "quote_text": "十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5bf56687-7218-55be-9b54-8555eb9f6a7c",
+        "note_sha256": "d4cb4bbcd3c55fdd664e583e7c438969477516c585893643976f2c9cf080890c",
+        "quote_text": "十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "88254d92-c1af-593c-aae0-c7b259c76a12",
+        "note_sha256": "514b9528c37befe70d6ad87976ea3ab70696516908b3e40667ba8917e6db2a10",
+        "quote_text": "是月，免四川、江西被災稅糧",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ea8d5f0b-7753-5df8-9a69-6136c9f0cd9d",
+        "note_sha256": "9930e40d927810281769d9db8b62b20fd616986686153fe3de1c9099a7fbbd53",
+        "quote_text": "是月，免四川、江西被災稅糧",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b80a920a-3eb8-5314-9890-c8ca3b59272c",
+        "note_sha256": "0446b5cb44739c92b36d49141bc07bce4351cf12fa6cad29c961167232817ad1",
+        "quote_text": "是年，琉球、安南、烏斯藏入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9956f462-299d-58ab-a877-8a989959b8d2",
+        "note_sha256": "91acaa3b782d9bc4acf35a3844c5193b937e19b0ca00728e67e55458c3397da3",
+        "quote_text": "是年，琉球、安南、烏斯藏入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历成化十四年正月甲戌。DDBC历表换算所据为1478-02-22至1478-02-22，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001952的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "dc006ea6-72bf-5608-9978-9470534d7eb5",
+        "claim_sha256": "e81274848601b8ad74dc9d0c80132437c4b0041b95df950b84295c5cd4d5bb1d",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "7e9b4801-124d-527c-b425-8b0660650c9b",
+        "id": "6c2e53ff-32a4-55db-b179-192779d2b18e",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年三月戊辰。DDBC历表换算所据为1478-04-17至1478-04-17，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001953的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5797eeb5-aad2-5e91-b41a-c022da4da6b3",
+        "claim_sha256": "26d11c04df01d852283548b068354e27593fafe8105053e23772b7a0663a9511",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "884de83b-e6a8-5009-90f8-c1c307dbf5c4",
+        "id": "e0795532-10c4-5e80-aaa7-ca7ee03ff4e9",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年三月己卯。DDBC历表换算所据为1478-04-28至1478-04-28，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001953的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1e623759-b8a6-59ab-ab95-538bc486cbd0",
+        "claim_sha256": "e74cf3f7116489b03eff1a14a4fb638862e48a760f368d38bddf3ea74464c782",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "4ad9bea6-e374-5105-a360-ef0a5c3decc4",
+        "id": "f7f37aad-b5df-5a02-8674-0ceeabc95100",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年三月辛巳。DDBC历表换算所据为1478-04-30至1478-04-30，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001953的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "8171e98e-8b26-5a2a-a478-d99c0f1d2d50",
+        "claim_sha256": "85ae1efe9e0f4c655dcbe8b66602beb3cf58e971db3099c11ce1ed38e2147c71",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "515066e4-dcb7-55c3-8eac-0014c10fe646",
+        "id": "98a972d6-f9c1-5245-8fa9-b71cb9ecc61b",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年三月丙戌。DDBC历表换算所据为1478-05-05至1478-05-05，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001953的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5af035bc-3010-5977-a768-57826406e0f2",
+        "claim_sha256": "f7fe1b91410eba2e21ef89ebb3a4dc5cbc3eeba9fb7aeadb5af5f10a36ee140f",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "b383ff88-0837-5171-87c9-5f72327ac357",
+        "id": "a56a28f3-7fda-5eca-ad37-3ff74ade01f2",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年三月丁亥。DDBC历表换算所据为1478-05-06至1478-05-06，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001953的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d8fe75ac-a91a-5e66-9631-0816f86fddcc",
+        "claim_sha256": "1335625120d654f0e13c0b8a28af2b05f3d96692992c529490e938fe33d948ab",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "3445b2d4-d415-5be0-b206-19b34b475fde",
+        "id": "4e3da914-0619-5495-9b1d-5906c015eeba",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年四月丁酉。DDBC历表换算所据为1478-05-16至1478-05-16，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001954的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "604447b6-5b88-5d1d-99b1-dc62c7e6af9a",
+        "claim_sha256": "218c0cbcfb94dda51f47cc84ce676c5b33c87940078cfb5edff954c3281b9030",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "9a8353de-ffb3-5d6d-b5ae-aad7b6af8770",
+        "id": "87344f56-2e34-5999-af8d-045e05c68934",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年六月癸卯。DDBC历表换算所据为1478-07-21至1478-07-21，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001955的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f61adb55-ba7f-59ac-b1b7-3ca4240f5584",
+        "claim_sha256": "e1a277d09fd11b634d64b15095194d3bb3ff2d30218728d4c1cd54e03d33303c",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "aad11e4b-1211-5f92-aafa-bb1a37e3a44b",
+        "id": "c27a6f43-0262-5889-a5a9-cbf60867adcb",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年七月丁丑。DDBC历表换算所据为1478-08-24至1478-08-24，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001956的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f4a058a7-29b5-52e9-a468-285304aeb88e",
+        "claim_sha256": "fe88777a9cd13b1e0c222cf541afc6b562231b8c6783c590f0e2f57abb357af6",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "67d8117a-1870-58a5-a55b-f12871fc0b76",
+        "id": "c3ffbbea-6c03-5f2b-b9c2-7827f80e514d",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年八月癸巳。DDBC历表换算所据为1478-09-09至1478-09-09，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001957的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "0d731049-feda-5de0-84db-9f1b9c538675",
+        "claim_sha256": "39e3b47ed270cd418ad21da868e7a444f5770556cbfe41bd17d1cd44093e36b6",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "0fbfa9a9-f7dd-57b2-becc-f439ccc27837",
+        "id": "40bd3aeb-ce84-522d-b1f7-42adb3f1afa0",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年八月。DDBC历表换算所据为1478-09-06至1478-10-04，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001957的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "8526327f-d74d-5f41-8c09-11eca30ab863",
+        "claim_sha256": "57c70f29ed88bf74b496496f3fe051b0a716bd263a76676aa8edeca7eabf9924",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "2c19849a-5b66-54e1-8b29-83ff17b6030f",
+        "id": "20dc3109-e324-5d28-a277-4ffddb983847",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年八月庚戌。DDBC历表换算所据为1478-09-26至1478-09-26，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001957的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "eea26cf6-d774-5182-b334-11cdfb515656",
+        "claim_sha256": "53570a5faf77fddbd19ab880d5bfc4d786fe05633ed0418aaf06435e5b3695f4",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "1946d946-8dbd-586a-9985-8023fc9a3dfd",
+        "id": "fbe7c0ce-f0c6-5860-b5b4-5682f73baa62",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年八月甲寅。DDBC历表换算所据为1478-09-30至1478-09-30，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001957的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "dac000c7-086b-5250-b797-dc192308988e",
+        "claim_sha256": "59a228a54d8edfce15be2ed9edf1de45a89e2a620fab5ba68859aa07ab2e3a37",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "47ca9f56-0d25-5a62-82f5-859a148677ea",
+        "id": "53e2467e-7a07-5388-93b0-051954155a68",
+        "latest_year": 1478,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年十二月甲午。DDBC历表换算所据为1479-01-08至1479-01-08，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001958的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "595e6e58-640e-596c-bb72-066c76651e28",
+        "claim_sha256": "f15342f2eec2636c87b1e4f83cd6a05bf9dd4fd0506587c73fef6930f4195200",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "d6b9f538-d725-5fb5-9b03-2f0209bc5375",
+        "id": "86c3c299-0d22-52dd-9e7f-1529f022a1a5",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十四年。DDBC历表换算所据为1478-02-12至1479-01-31，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001959的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1383e992-6526-5a7b-83c7-598f7cf74d20",
+        "claim_sha256": "3e50d30ef524f3e872c8cd8fb929c21c421f87cc905de408197f7dc69eb7e52c",
+        "earliest_year": 1478,
+        "era_key": null,
+        "event_id": "f7b40609-8e21-58d1-9439-b93e93a864ce",
+        "id": "c044a32c-9238-51a2-89f6-60611fae64c6",
+        "latest_year": 1479,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年正月丁卯。DDBC历表换算所据为1479-02-10至1479-02-10，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001961的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "2fca9468-c911-5c50-af25-e14064b361ba",
+        "claim_sha256": "25571c3e01a00ced1473269d8cd633d19de819019c0aba2ee95eca4585877d63",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "37b0d455-38e1-586f-b3c0-1bb0072e1766",
+        "id": "50518f8b-5a81-551e-a397-8807fdb4741e",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年正月辛巳。DDBC历表换算所据为1479-02-24至1479-02-24，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001961的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3948b561-a522-5e4b-94a7-330c399e5d49",
+        "claim_sha256": "4775609155166d957541f8b0a7e6f5e19ddf8b72f6b74cd6d2427bcb9f0754a4",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "e22c9d28-2b5a-5427-b2b6-8bf8065650c0",
+        "id": "4151594c-05ab-5f62-82d2-f1e4318c5fd3",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年二月。DDBC历表换算所据为1479-03-03至1479-03-31，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001962的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f058f653-ec90-5130-ab01-aea5a08b321d",
+        "claim_sha256": "a278d0d3eb7a0c1b4d3c28cf0090becb69f0e57f482b7caf10074fb6bf4a55de",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "85bdaccd-8553-5f60-9c3f-81d06b1b7b7e",
+        "id": "bdf4cd17-739b-5724-8e83-8f88e61c34dc",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年二月甲寅。DDBC历表换算所据为1479-03-29至1479-03-29，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001962的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "59fefbc4-e2d3-5e71-b659-fa3e64b5536b",
+        "claim_sha256": "553d4b6f2e7bb0991d6fb49c72a29637c1fc0f16e5811e0d55eabb3e6a29ac51",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "9af1493b-a7c9-5e33-a7a5-af8919d2950d",
+        "id": "c95f2904-6823-5142-8488-5cbc61c8994e",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年四月丙午。DDBC历表换算所据为1479-05-20至1479-05-20，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001963的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "ceb44da4-b73a-5ee9-8512-5e2deccc89ee",
+        "claim_sha256": "98c15a09c6b2f805384baea7d8b07b5c2c6d850ef9b4ce24d0baf146cbf021de",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "0e2a5fb3-a3da-5928-af14-6ef79033f31b",
+        "id": "5314ccd1-e46f-5d6e-bf29-5fde0b19e162",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年四月壬子。DDBC历表换算所据为1479-05-26至1479-05-26，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001963的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "8458b95b-242e-5673-a8c3-92f02c975677",
+        "claim_sha256": "0a80a4326c4f91f541dfc6db50a1162df827e2237cb6e5503d1fada1975c3aaf",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "a3c43f54-de7a-52c4-9401-84e55392059a",
+        "id": "cdac3207-5b20-517f-8f56-cb5020ac1ad6",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年五月壬戌。DDBC历表换算所据为1479-06-05至1479-06-05，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001964的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f30163c4-212d-5234-bdb1-74ce74945273",
+        "claim_sha256": "b91479be2452b8afa071bf095cfd28bc77a8a4a4bc7e1e0024fef866a4bcdcb0",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "976af27c-a2f8-5cc6-bfa3-88204e6cd7c1",
+        "id": "70c7f4e5-97e1-5f02-a098-85a1cc57bac9",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年五月癸酉。DDBC历表换算所据为1479-06-16至1479-06-16，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001964的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "421b7f0c-f556-5bf3-b372-030a006d0d68",
+        "claim_sha256": "3101553c67f65cc5e5801034bbf6670d61c8cda6a669c932feade2c0041b13fb",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "1bb2f7f1-c9b1-585a-bbb8-652a7a42edb3",
+        "id": "d60db776-398c-53d3-8dcc-b1c60a91ce2f",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年五月己卯。DDBC历表换算所据为1479-06-22至1479-06-22，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001964的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9fcb6766-bdaf-5ece-ad59-b737c6aadcf8",
+        "claim_sha256": "2f9c357231e3d3e75da5869d98647a5848bcfd1b508390218a7b9d65f726e5e8",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "57484d6c-7d0d-5e65-bbec-24ece4930bad",
+        "id": "eaa337d9-79f3-5f89-8595-6324152c3bad",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年七月癸酉。DDBC历表换算所据为1479-08-15至1479-08-15，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001965的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "04fb1566-773d-53a1-ab6b-eba3a4076e5a",
+        "claim_sha256": "83ec8fdd88ed6c9580580fbdcc04a72412258be1ad9f77a54866871e49bf8511",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "b2863af4-43ac-568e-a737-d1f2b879b9c8",
+        "id": "ce85517d-427c-59aa-a39e-cd58c45a5404",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年十月丁亥。DDBC历表换算所据为1479-10-28至1479-10-28，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001966的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "dac0c8bb-4539-5351-9a1e-79fd5f0e3858",
+        "claim_sha256": "679036647c162eb31e6875a0263aea21b20bf01304f2cb02b24fbe0626392fc9",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "c0734f32-5c8b-5f71-982a-e1af10d69c5c",
+        "id": "3bd23eb7-7a6b-5c02-bb14-6cfa8a295e0c",
+        "latest_year": 1479,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年十二月辛未。DDBC历表换算所据为1480-02-09至1480-02-09，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001967的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c4bfb4cd-2b20-5c42-b374-42b3d5742aa3",
+        "claim_sha256": "4b5b2c993fd92ca17b7ac604f51bcd6c0863c94a51a081261c47064761b8228a",
+        "earliest_year": 1480,
+        "era_key": null,
+        "event_id": "32d52f12-095b-5059-8942-98647df1bbd1",
+        "id": "d4224f7c-0e4b-5e33-a1dc-e46132e0fe97",
+        "latest_year": 1480,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年十二月。DDBC历表换算所据为1480-01-21至1480-02-19，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001967的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "ea8d5f0b-7753-5df8-9a69-6136c9f0cd9d",
+        "claim_sha256": "cef04ab7643c5107a62d762381e4b02288ea8b060c52f66ff1fdfa52e363f577",
+        "earliest_year": 1480,
+        "era_key": null,
+        "event_id": "35d82428-ca51-5958-b137-2f9777840913",
+        "id": "5fae09a7-3614-5a84-9864-eac41e33e782",
+        "latest_year": 1480,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化十五年。DDBC历表换算所据为1479-02-01至1480-02-19，据此核对公元发生年份。 卷十四mingshi-2f603db3d81e-p001968的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9956f462-299d-58ab-a877-8a989959b8d2",
+        "claim_sha256": "d6671783704a4a71e9d741dc652cd57733c8c3cf5d468ce7b641d8fd80903818",
+        "earliest_year": 1479,
+        "era_key": null,
+        "event_id": "01a925a8-bd13-53bf-be3f-5e2fa2846100",
+        "id": "6c1db489-bb6a-58d5-985a-0a35d148f2b4",
+        "latest_year": 1480,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "04d80275fbf22db2f649034ddd33a75657b002c9455c1b1560097bd2c865c635",
+        "paragraph_id": "mingshi-2f603db3d81e-p001952",
+        "snapshot_sha256": "1c62b3b42d6459b24fccdbe5f99daeec22a9a9b5431ed6d0b19514e11c0e3558",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b"
+      },
+      {
+        "archive_url_sha256": "182645ffca5c7eaf9bc653ade6ef863448c458d94ff8ed0a9a504bda22abf54b",
+        "paragraph_id": "mingshi-2f603db3d81e-p001953",
+        "snapshot_sha256": "571c4f8f8de923c20f847fd5e76c39a6b9cf6d40466b6e8eb0b1080c7ddeb904",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460"
+      },
+      {
+        "archive_url_sha256": "7a9658b506a812939a8ee1b897c02e60b9a136ffe8f080a18bdc5a95f5035199",
+        "paragraph_id": "mingshi-2f603db3d81e-p001954",
+        "snapshot_sha256": "207fcef55caaef136c04644e32129e6ed2974435ae8a0e7c8b9bac14a5eda780",
+        "source_id": "be334ec3-a043-507a-832b-d0aba0e72943"
+      },
+      {
+        "archive_url_sha256": "5a4be86dc5fd848d66e434b1de7c4d59a056e38a0a9649554aff72307a4c7fc2",
+        "paragraph_id": "mingshi-2f603db3d81e-p001955",
+        "snapshot_sha256": "70fdc02ec75f0a9cdea4c090236ef486bcb382951436d540343e0df427dbd6cb",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2"
+      },
+      {
+        "archive_url_sha256": "fce7628c9282cbc768a1c459ac5d10ed7b3e7080799e82ec2aa2d3ec03d44557",
+        "paragraph_id": "mingshi-2f603db3d81e-p001956",
+        "snapshot_sha256": "934496c8ecb402f7c1fff576ff9791639808c52a427f7f3f7086d8f0d31821a1",
+        "source_id": "1e561f21-0c02-531d-81cc-a1b768f590d2"
+      },
+      {
+        "archive_url_sha256": "1d186d77c4c739f01ca93cbad8e9d4bd3c73fdf79c3be1e455037e2c28e6ae75",
+        "paragraph_id": "mingshi-2f603db3d81e-p001957",
+        "snapshot_sha256": "4be1e53b36b1b9f778c72aa21b48ca478db460a384e4be6e536047d1bac723e7",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15"
+      },
+      {
+        "archive_url_sha256": "274bdd2988d061f9e19304dc6c878ca8bba9ffb1f82913ce84056e8d40779ba9",
+        "paragraph_id": "mingshi-2f603db3d81e-p001958",
+        "snapshot_sha256": "57f5148d13b322457eea40e8bda1cdea266e2f558fac75ff5f9219cee9571d93",
+        "source_id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845"
+      },
+      {
+        "archive_url_sha256": "7622703e14cc04a16b1739b68959e786f1f96bbcbd568a8dda3ae2dc5e607a2e",
+        "paragraph_id": "mingshi-2f603db3d81e-p001959",
+        "snapshot_sha256": "5db48731cdfbfa9147669f7c22f5295f1d6198fd543f8b09643111f46faeb231",
+        "source_id": "57a8f15f-60a7-5e86-8d31-058920997c9f"
+      },
+      {
+        "archive_url_sha256": "f447f65637461d298b22678f23999e4505d796e58cdbee8c2a678eddb50f392f",
+        "paragraph_id": "mingshi-2f603db3d81e-p001961",
+        "snapshot_sha256": "ffd43b213a159beda9c8f14970212e1f953fb93e037bc8717e7267be731cd2e8",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014"
+      },
+      {
+        "archive_url_sha256": "09112e27f339fa9e0190ab52502dea97298ee2c481ab125c1e8c5a6f53646d30",
+        "paragraph_id": "mingshi-2f603db3d81e-p001962",
+        "snapshot_sha256": "553ff1351d21f12255225458aa813fd68cec774e16b66c0ed4d31ae695ea296c",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78"
+      },
+      {
+        "archive_url_sha256": "5a556ca3cace23b567f350fd06c927d2a088f5711027f625f0bc592f011d8a8c",
+        "paragraph_id": "mingshi-2f603db3d81e-p001963",
+        "snapshot_sha256": "4787ca796233ac46ff541d060c5df9dcfb89fc266cc8793f6a1faf1cf69a1ec6",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c"
+      },
+      {
+        "archive_url_sha256": "33b3898bcd7db1bc6725677a252c92575e0dc0c50ba0f4ac2caac6246e5806dc",
+        "paragraph_id": "mingshi-2f603db3d81e-p001964",
+        "snapshot_sha256": "b8263ca041c3825b3196c511528b6ac0840735f4c3e36aed279fc42083c0216c",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d"
+      },
+      {
+        "archive_url_sha256": "d8a96c76eec032437c504c181319d77f8ae402a0c8eb049c88416a7edef05a6d",
+        "paragraph_id": "mingshi-2f603db3d81e-p001965",
+        "snapshot_sha256": "91e060f710b7daef1b463bfe78280e45d47e3c2aecaa7cf9ec044053f5fd751d",
+        "source_id": "57d74b37-4add-5152-8437-5e9e83c91c82"
+      },
+      {
+        "archive_url_sha256": "eb362b24df99cab4b4b2c7dc0ec1bb79f0eb5ff07641363b26f8b557ff2c6b81",
+        "paragraph_id": "mingshi-2f603db3d81e-p001966",
+        "snapshot_sha256": "88821876b4c9a825d71876b1adfe949f40c889ac8bf12a5a034c0ac2e11f0713",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19"
+      },
+      {
+        "archive_url_sha256": "fa5233c2ca3f138537d326af3a4d910e393ec277b61efd84cd5d5762b62a5e12",
+        "paragraph_id": "mingshi-2f603db3d81e-p001967",
+        "snapshot_sha256": "fce60192ec1c8a39108cc2f160e66d9ed09da28973eb53009c1bb7ef0b1b1d73",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b"
+      },
+      {
+        "archive_url_sha256": "f8561a4882eceddc072567537f7d985b19a8e1b7e8cc5219632b080a1122dbef",
+        "paragraph_id": "mingshi-2f603db3d81e-p001968",
+        "snapshot_sha256": "212eb70bf8c2eca6c1d577a841a77f863a091817c3a66ee9d98a67092c30759b",
+        "source_id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-014/from-start/part-02/content-batch.json": "a7620b620b2f12d239e80020073210d7cf7306af64f6657fb89f2c23762dfe8a",
+    "content/books/mingshi/vol-014/from-start/part-02/curation.json": "ee14548ec25157536a9ddf9e82bb1b66cf9a9e27762577361fefd9d38954ddbe",
+    "content/books/mingshi/vol-014/from-start/part-02/packet.json": "22674b4391d77954c6f33a691691d0dc4fdec12b9259b9efa7b156563995d20e",
+    "content/books/mingshi/vol-014/from-start/part-02/publication-mysql.json": "afad727e898d59e7f2862968d25f61253fa6b5f42357876351e76f8dff90bd32",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/manifest.json": "86af14156a6ae241b88f5cf185012ec41786c7313d531f8f6c2572521f9c48b9",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001951/source.txt": "03571c237b6c8cd0ca25c809f1937759c20bf7ece54ca120dc626ca8ccd487ac",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001952/source.txt": "1c62b3b42d6459b24fccdbe5f99daeec22a9a9b5431ed6d0b19514e11c0e3558",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001953/source.txt": "571c4f8f8de923c20f847fd5e76c39a6b9cf6d40466b6e8eb0b1080c7ddeb904",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001954/source.txt": "207fcef55caaef136c04644e32129e6ed2974435ae8a0e7c8b9bac14a5eda780",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001955/source.txt": "70fdc02ec75f0a9cdea4c090236ef486bcb382951436d540343e0df427dbd6cb",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001956/source.txt": "934496c8ecb402f7c1fff576ff9791639808c52a427f7f3f7086d8f0d31821a1",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001957/source.txt": "4be1e53b36b1b9f778c72aa21b48ca478db460a384e4be6e536047d1bac723e7",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001958/source.txt": "57f5148d13b322457eea40e8bda1cdea266e2f558fac75ff5f9219cee9571d93",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001959/source.txt": "5db48731cdfbfa9147669f7c22f5295f1d6198fd543f8b09643111f46faeb231",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001960/source.txt": "3ba0e6b60216554a2b15fdc61e66242f7f8c51ea71e096a579fda1d352306c1b",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001961/source.txt": "ffd43b213a159beda9c8f14970212e1f953fb93e037bc8717e7267be731cd2e8",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001962/source.txt": "553ff1351d21f12255225458aa813fd68cec774e16b66c0ed4d31ae695ea296c",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001963/source.txt": "4787ca796233ac46ff541d060c5df9dcfb89fc266cc8793f6a1faf1cf69a1ec6",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001964/source.txt": "b8263ca041c3825b3196c511528b6ac0840735f4c3e36aed279fc42083c0216c",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001965/source.txt": "91e060f710b7daef1b463bfe78280e45d47e3c2aecaa7cf9ec044053f5fd751d",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001966/source.txt": "88821876b4c9a825d71876b1adfe949f40c889ac8bf12a5a034c0ac2e11f0713",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001967/source.txt": "fce60192ec1c8a39108cc2f160e66d9ed09da28973eb53009c1bb7ef0b1b1d73",
+    "content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001968/source.txt": "212eb70bf8c2eca6c1d577a841a77f863a091817c3a66ee9d98a67092c30759b",
+    "content/books/mingshi/vol-014/from-start/part-02/sql/key-map.json": "00cf1ba515d5d31274eacd9f64faddd6bfcfd6c9fa2684e5563d4cae876c9af2",
+    "content/books/mingshi/vol-014/from-start/part-02/time-review.json": "5ecd51707f6f7df1471a4b090c39d99e1795ce7a206a55cec4871464021ef54f"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "d8ef21f4-49ee-56db-b360-fd891d10e755"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001952；成化十四年正月甲戌",
+        "claim_text": "朱见深主持祭祀。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:47.737326+00:00",
+        "field_path": "description",
+        "id": "d8ef21f4-49ee-56db-b360-fd891d10e755",
+        "note": "原文：十四年春正月甲戌，大祀天地於南郊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b",
+        "status": "published",
+        "subject_id": "71fde383-1de5-538d-bb25-2cc9e4cc7d1c",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "03f784c1-551a-563b-941e-d774219fcebd"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001952；成化十四年正月甲戌",
+        "claim_text": "成化十四年正月甲戌，明宪宗朱见深在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:47.789197+00:00",
+        "field_path": "description",
+        "id": "03f784c1-551a-563b-941e-d774219fcebd",
+        "note": "原文：十四年春正月甲戌，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b",
+        "status": "published",
+        "subject_id": "7e9b4801-124d-527c-b425-8b0660650c9b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dc006ea6-72bf-5608-9978-9470534d7eb5"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001952；成化十四年正月甲戌",
+        "claim_text": "原历成化十四年正月甲戌。DDBC历表换算所据为1478-02-22至1478-02-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:47.839266+00:00",
+        "field_path": "time_original",
+        "id": "dc006ea6-72bf-5608-9978-9470534d7eb5",
+        "note": "原文：十四年春正月甲戌，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b",
+        "status": "published",
+        "subject_id": "7e9b4801-124d-527c-b425-8b0660650c9b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1cc5f576-d1d1-5b7c-b719-79944d15b486"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001952；成化十四年正月甲戌",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:47.889197+00:00",
+        "field_path": "role",
+        "id": "1cc5f576-d1d1-5b7c-b719-79944d15b486",
+        "note": "原文：十四年春正月甲戌，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b",
+        "status": "published",
+        "subject_id": "91d9afa9-2371-59ca-b275-502c7c768e20",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6e8948d7-1de0-531a-aad1-5fd2b90181bd"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月戊辰",
+        "claim_text": "成化十四年三月戊辰，朝廷免除浙江受灾地区的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:47.937288+00:00",
+        "field_path": "description",
+        "id": "6e8948d7-1de0-531a-aad1-5fd2b90181bd",
+        "note": "原文：三月戊辰，免浙江被災秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "884de83b-e6a8-5009-90f8-c1c307dbf5c4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5797eeb5-aad2-5e91-b41a-c022da4da6b3"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月戊辰",
+        "claim_text": "原历成化十四年三月戊辰。DDBC历表换算所据为1478-04-17至1478-04-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:47.975507+00:00",
+        "field_path": "time_original",
+        "id": "5797eeb5-aad2-5e91-b41a-c022da4da6b3",
+        "note": "原文：三月戊辰，免浙江被災秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "884de83b-e6a8-5009-90f8-c1c307dbf5c4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "aaa98457-da84-5450-b3e9-1010e68ec5af"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月己卯",
+        "claim_text": "成化十四年三月己卯，朝廷赐曾彦等人进士及第或进士出身，名次、等第各有差别。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.009438+00:00",
+        "field_path": "description",
+        "id": "aaa98457-da84-5450-b3e9-1010e68ec5af",
+        "note": "原文：己卯，賜曾彥等進士及第、出身有差；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "4ad9bea6-e374-5105-a360-ef0a5c3decc4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e623759-b8a6-59ab-ab95-538bc486cbd0"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月己卯",
+        "claim_text": "原历成化十四年三月己卯。DDBC历表换算所据为1478-04-28至1478-04-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.047193+00:00",
+        "field_path": "time_original",
+        "id": "1e623759-b8a6-59ab-ab95-538bc486cbd0",
+        "note": "原文：己卯，賜曾彥等進士及第、出身有差；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "4ad9bea6-e374-5105-a360-ef0a5c3decc4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c4c6d55c-93ce-5af7-a634-b55f2452c246"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月辛巳",
+        "claim_text": "成化十四年三月辛巳，朝廷停办乌撒卫的银场。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.099556+00:00",
+        "field_path": "description",
+        "id": "c4c6d55c-93ce-5af7-a634-b55f2452c246",
+        "note": "原文：辛巳，罷烏撒衞銀場；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "515066e4-dcb7-55c3-8eac-0014c10fe646",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8171e98e-8b26-5a2a-a478-d99c0f1d2d50"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月辛巳",
+        "claim_text": "原历成化十四年三月辛巳。DDBC历表换算所据为1478-04-30至1478-04-30，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.158077+00:00",
+        "field_path": "time_original",
+        "id": "8171e98e-8b26-5a2a-a478-d99c0f1d2d50",
+        "note": "原文：辛巳，罷烏撒衞銀場；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "515066e4-dcb7-55c3-8eac-0014c10fe646",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5c2982eb-3c0d-51e4-8526-d7a0bfe1f504"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月丙戌",
+        "claim_text": "成化十四年三月丙戌，朝廷重新开放辽东马市。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.196444+00:00",
+        "field_path": "description",
+        "id": "5c2982eb-3c0d-51e4-8526-d7a0bfe1f504",
+        "note": "原文：丙戌，復開遼東馬市；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "b383ff88-0837-5171-87c9-5f72327ac357",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5af035bc-3010-5977-a768-57826406e0f2"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月丙戌",
+        "claim_text": "原历成化十四年三月丙戌。DDBC历表换算所据为1478-05-05至1478-05-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.239280+00:00",
+        "field_path": "time_original",
+        "id": "5af035bc-3010-5977-a768-57826406e0f2",
+        "note": "原文：丙戌，復開遼東馬市；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "b383ff88-0837-5171-87c9-5f72327ac357",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "72eab9c4-af79-55c9-9c1e-95958ca7d859"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月丁亥",
+        "claim_text": "成化十四年三月丁亥，朝廷因浙江发生饥荒，停止征采花木。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.282679+00:00",
+        "field_path": "description",
+        "id": "72eab9c4-af79-55c9-9c1e-95958ca7d859",
+        "note": "原文：丁亥，以浙江饑罷採花木；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "3445b2d4-d415-5be0-b206-19b34b475fde",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d8fe75ac-a91a-5e66-9631-0816f86fddcc"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953；成化十四年三月丁亥",
+        "claim_text": "原历成化十四年三月丁亥。DDBC历表换算所据为1478-05-06至1478-05-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.329426+00:00",
+        "field_path": "time_original",
+        "id": "d8fe75ac-a91a-5e66-9631-0816f86fddcc",
+        "note": "原文：丁亥，以浙江饑罷採花木；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "status": "published",
+        "subject_id": "3445b2d4-d415-5be0-b206-19b34b475fde",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c7fff8d1-cc91-55a0-b0af-0af1c7ffe981"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001954；成化十四年四月丁酉",
+        "claim_text": "成化十四年四月丁酉，朝廷免除南直隶、山东受灾地区的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.379450+00:00",
+        "field_path": "description",
+        "id": "c7fff8d1-cc91-55a0-b0af-0af1c7ffe981",
+        "note": "原文：夏四月丁酉，免南畿、山東被災秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "be334ec3-a043-507a-832b-d0aba0e72943",
+        "status": "published",
+        "subject_id": "9a8353de-ffb3-5d6d-b5ae-aad7b6af8770",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "604447b6-5b88-5d1d-99b1-dc62c7e6af9a"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001954；成化十四年四月丁酉",
+        "claim_text": "原历成化十四年四月丁酉。DDBC历表换算所据为1478-05-16至1478-05-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.417613+00:00",
+        "field_path": "time_original",
+        "id": "604447b6-5b88-5d1d-99b1-dc62c7e6af9a",
+        "note": "原文：夏四月丁酉，免南畿、山東被災秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "be334ec3-a043-507a-832b-d0aba0e72943",
+        "status": "published",
+        "subject_id": "9a8353de-ffb3-5d6d-b5ae-aad7b6af8770",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "17543f78-c632-5ed7-b92b-f39b7ee16496"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001955；成化十四年六月癸卯",
+        "claim_text": "汪直巡行辽东边境。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.469576+00:00",
+        "field_path": "description",
+        "id": "17543f78-c632-5ed7-b92b-f39b7ee16496",
+        "note": "原文：六月癸卯，太監汪直行遼東邊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2",
+        "status": "published",
+        "subject_id": "284867aa-f4a4-54ae-b100-37c947e53eb0",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8e6b7fb7-fc0c-55f0-94f4-707c3e8daa1d"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001955；成化十四年六月癸卯",
+        "claim_text": "成化十四年六月癸卯，太监汪直巡行辽东边境。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.517761+00:00",
+        "field_path": "description",
+        "id": "8e6b7fb7-fc0c-55f0-94f4-707c3e8daa1d",
+        "note": "原文：六月癸卯，太監汪直行遼東邊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2",
+        "status": "published",
+        "subject_id": "aad11e4b-1211-5f92-aafa-bb1a37e3a44b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f61adb55-ba7f-59ac-b1b7-3ca4240f5584"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001955；成化十四年六月癸卯",
+        "claim_text": "原历成化十四年六月癸卯。DDBC历表换算所据为1478-07-21至1478-07-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.559775+00:00",
+        "field_path": "time_original",
+        "id": "f61adb55-ba7f-59ac-b1b7-3ca4240f5584",
+        "note": "原文：六月癸卯，太監汪直行遼東邊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2",
+        "status": "published",
+        "subject_id": "aad11e4b-1211-5f92-aafa-bb1a37e3a44b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "15311348-e35e-5576-b9ba-d680aa614998"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001955；成化十四年六月癸卯",
+        "claim_text": "巡行辽东边境",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.609383+00:00",
+        "field_path": "role",
+        "id": "15311348-e35e-5576-b9ba-d680aa614998",
+        "note": "原文：六月癸卯，太監汪直行遼東邊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2",
+        "status": "published",
+        "subject_id": "a63c4bcd-b125-5a45-b02d-0dd0e6b7ca03",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a98d72c6-5f19-5e95-9f94-c6f583126beb"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001956；成化十四年七月丁丑",
+        "claim_text": "成化十四年七月丁丑，朝廷派使者赈济畿南和山东的饥民。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.657513+00:00",
+        "field_path": "description",
+        "id": "a98d72c6-5f19-5e95-9f94-c6f583126beb",
+        "note": "原文：秋七月丁丑，遣使振畿南、山東饑；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1e561f21-0c02-531d-81cc-a1b768f590d2",
+        "status": "published",
+        "subject_id": "67d8117a-1870-58a5-a55b-f12871fc0b76",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f4a058a7-29b5-52e9-a468-285304aeb88e"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001956；成化十四年七月丁丑",
+        "claim_text": "原历成化十四年七月丁丑。DDBC历表换算所据为1478-08-24至1478-08-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.696241+00:00",
+        "field_path": "time_original",
+        "id": "f4a058a7-29b5-52e9-a468-285304aeb88e",
+        "note": "原文：秋七月丁丑，遣使振畿南、山東饑；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1e561f21-0c02-531d-81cc-a1b768f590d2",
+        "status": "published",
+        "subject_id": "67d8117a-1870-58a5-a55b-f12871fc0b76",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8ed49451-66fb-5b7b-8bd2-b7d609613e12"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月癸巳",
+        "claim_text": "成化十四年八月癸巳，朝廷因直隶、山东受灾，下诏命六部逐条拟定抚恤灾民的办法。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.739706+00:00",
+        "field_path": "description",
+        "id": "8ed49451-66fb-5b7b-8bd2-b7d609613e12",
+        "note": "原文：八月癸巳，以直隸、山東災傷，詔六部條卹民事宜；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "0fbfa9a9-f7dd-57b2-becc-f439ccc27837",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0d731049-feda-5de0-84db-9f1b9c538675"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月癸巳",
+        "claim_text": "原历成化十四年八月癸巳。DDBC历表换算所据为1478-09-09至1478-09-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.779413+00:00",
+        "field_path": "time_original",
+        "id": "0d731049-feda-5de0-84db-9f1b9c538675",
+        "note": "原文：八月癸巳，以直隸、山東災傷，詔六部條卹民事宜；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "0fbfa9a9-f7dd-57b2-becc-f439ccc27837",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8f8ba954-d50b-550c-9972-8b109c06229c"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月",
+        "claim_text": "成化十四年八月，南京刑部侍郎金绅巡查江西的水灾灾情。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.809561+00:00",
+        "field_path": "description",
+        "id": "8f8ba954-d50b-550c-9972-8b109c06229c",
+        "note": "原文：南京刑部侍郎金紳巡視江西水災；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "2c19849a-5b66-54e1-8b29-83ff17b6030f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8526327f-d74d-5f41-8c09-11eca30ab863"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月",
+        "claim_text": "原历成化十四年八月。DDBC历表换算所据为1478-09-06至1478-10-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.849735+00:00",
+        "field_path": "time_original",
+        "id": "8526327f-d74d-5f41-8c09-11eca30ab863",
+        "note": "原文：南京刑部侍郎金紳巡視江西水災；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "2c19849a-5b66-54e1-8b29-83ff17b6030f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a7ba5703-0853-5d42-9f2f-7a2ce9bd7d08"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月庚戌",
+        "claim_text": "成化十四年八月庚戌，朝廷免除湖广受灾地区的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.889346+00:00",
+        "field_path": "description",
+        "id": "a7ba5703-0853-5d42-9f2f-7a2ce9bd7d08",
+        "note": "原文：庚戌，免湖廣被災秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "1946d946-8dbd-586a-9985-8023fc9a3dfd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "eea26cf6-d774-5182-b334-11cdfb515656"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月庚戌",
+        "claim_text": "原历成化十四年八月庚戌。DDBC历表换算所据为1478-09-26至1478-09-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.929568+00:00",
+        "field_path": "time_original",
+        "id": "eea26cf6-d774-5182-b334-11cdfb515656",
+        "note": "原文：庚戌，免湖廣被災秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "1946d946-8dbd-586a-9985-8023fc9a3dfd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dff3da95-2d91-5dea-9759-29e7b49a3741"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月甲寅",
+        "claim_text": "成化十四年八月甲寅条记，巡抚苏州、松江的副都御史牟俸被关入锦衣卫监狱，后被贬谪戍边。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:48.967384+00:00",
+        "field_path": "description",
+        "id": "dff3da95-2d91-5dea-9759-29e7b49a3741",
+        "note": "原文：甲寅，下巡撫蘇、松副都御史牟俸於錦衣衞獄，謫戍；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "47ca9f56-0d25-5a62-82f5-859a148677ea",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dac000c7-086b-5250-b797-dc192308988e"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957；成化十四年八月甲寅",
+        "claim_text": "原历成化十四年八月甲寅。DDBC历表换算所据为1478-09-30至1478-09-30，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.009348+00:00",
+        "field_path": "time_original",
+        "id": "dac000c7-086b-5250-b797-dc192308988e",
+        "note": "原文：甲寅，下巡撫蘇、松副都御史牟俸於錦衣衞獄，謫戍；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "status": "published",
+        "subject_id": "47ca9f56-0d25-5a62-82f5-859a148677ea",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e5abc16f-d6b3-59d4-8aff-c671b2d04e71"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001958；成化十四年十二月甲午",
+        "claim_text": "成化十四年十二月甲午，朝廷免除京畿受灾地区的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.047630+00:00",
+        "field_path": "description",
+        "id": "e5abc16f-d6b3-59d4-8aff-c671b2d04e71",
+        "note": "原文：十二月甲午，免畿內被災秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845",
+        "status": "published",
+        "subject_id": "d6b9f538-d725-5fb5-9b03-2f0209bc5375",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "595e6e58-640e-596c-bb72-066c76651e28"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001958；成化十四年十二月甲午",
+        "claim_text": "原历成化十四年十二月甲午。DDBC历表换算所据为1479-01-08至1479-01-08，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.090361+00:00",
+        "field_path": "time_original",
+        "id": "595e6e58-640e-596c-bb72-066c76651e28",
+        "note": "原文：十二月甲午，免畿內被災秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845",
+        "status": "published",
+        "subject_id": "d6b9f538-d725-5fb5-9b03-2f0209bc5375",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c69e7348-3b60-5110-a8e4-c6c9549ab8fa"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001959；成化十四年",
+        "claim_text": "成化十四年，占城、乌斯藏和撒马儿罕向明廷进贡。 按原历纪年，事情发生在公元1478至1479年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.127397+00:00",
+        "field_path": "description",
+        "id": "c69e7348-3b60-5110-a8e4-c6c9549ab8fa",
+        "note": "原文：是年，占城、烏斯藏、撒馬兒罕入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "57a8f15f-60a7-5e86-8d31-058920997c9f",
+        "status": "published",
+        "subject_id": "f7b40609-8e21-58d1-9439-b93e93a864ce",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1383e992-6526-5a7b-83c7-598f7cf74d20"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001959；成化十四年",
+        "claim_text": "原历成化十四年。DDBC历表换算所据为1478-02-12至1479-01-31，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.169536+00:00",
+        "field_path": "time_original",
+        "id": "1383e992-6526-5a7b-83c7-598f7cf74d20",
+        "note": "原文：是年，占城、烏斯藏、撒馬兒罕入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "57a8f15f-60a7-5e86-8d31-058920997c9f",
+        "status": "published",
+        "subject_id": "f7b40609-8e21-58d1-9439-b93e93a864ce",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f880270b-77d5-521b-a3f1-708688b54ce9"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001961；成化十五年正月丁卯",
+        "claim_text": "成化十五年正月丁卯，明宪宗朱见深在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.209600+00:00",
+        "field_path": "description",
+        "id": "f880270b-77d5-521b-a3f1-708688b54ce9",
+        "note": "原文：十五年春正月丁卯，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014",
+        "status": "published",
+        "subject_id": "37b0d455-38e1-586f-b3c0-1bb0072e1766",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2fca9468-c911-5c50-af25-e14064b361ba"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001961；成化十五年正月丁卯",
+        "claim_text": "原历成化十五年正月丁卯。DDBC历表换算所据为1479-02-10至1479-02-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.249280+00:00",
+        "field_path": "time_original",
+        "id": "2fca9468-c911-5c50-af25-e14064b361ba",
+        "note": "原文：十五年春正月丁卯，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014",
+        "status": "published",
+        "subject_id": "37b0d455-38e1-586f-b3c0-1bb0072e1766",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e7369ab9-0969-503c-9ce0-00c819489897"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001961；成化十五年正月丁卯",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.289451+00:00",
+        "field_path": "role",
+        "id": "e7369ab9-0969-503c-9ce0-00c819489897",
+        "note": "原文：十五年春正月丁卯，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014",
+        "status": "published",
+        "subject_id": "1de5f717-81f1-5d6f-a8d7-ccf7db2472c9",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dadb3f49-2b80-5c75-856f-65948f2c75bd"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001961；成化十五年正月辛巳",
+        "claim_text": "成化十五年正月辛巳，朝廷赈济山东饥民，并免除应缴的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.329534+00:00",
+        "field_path": "description",
+        "id": "dadb3f49-2b80-5c75-856f-65948f2c75bd",
+        "note": "原文：辛巳，振山東饑，免秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014",
+        "status": "published",
+        "subject_id": "e22c9d28-2b5a-5427-b2b6-8bf8065650c0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3948b561-a522-5e4b-94a7-330c399e5d49"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001961；成化十五年正月辛巳",
+        "claim_text": "原历成化十五年正月辛巳。DDBC历表换算所据为1479-02-24至1479-02-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.369287+00:00",
+        "field_path": "time_original",
+        "id": "3948b561-a522-5e4b-94a7-330c399e5d49",
+        "note": "原文：辛巳，振山東饑，免秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014",
+        "status": "published",
+        "subject_id": "e22c9d28-2b5a-5427-b2b6-8bf8065650c0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "10f1497c-cbaa-5a4d-8045-dafe3d44476f"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001962；成化十五年二月",
+        "claim_text": "成化十五年二月，朝廷免除湖广受灾地区的秋粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.409343+00:00",
+        "field_path": "description",
+        "id": "10f1497c-cbaa-5a4d-8045-dafe3d44476f",
+        "note": "原文：二月，免湖廣被災秋糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78",
+        "status": "published",
+        "subject_id": "85bdaccd-8553-5f60-9c3f-81d06b1b7b7e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f058f653-ec90-5130-ab01-aea5a08b321d"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001962；成化十五年二月",
+        "claim_text": "原历成化十五年二月。DDBC历表换算所据为1479-03-03至1479-03-31，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.454707+00:00",
+        "field_path": "time_original",
+        "id": "f058f653-ec90-5130-ab01-aea5a08b321d",
+        "note": "原文：二月，免湖廣被災秋糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78",
+        "status": "published",
+        "subject_id": "85bdaccd-8553-5f60-9c3f-81d06b1b7b7e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a03b724e-89bc-55ef-8317-3558c84a5fd4"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001962；成化十五年二月甲寅",
+        "claim_text": "成化十五年二月甲寅，朝廷下诏修整开国功臣的坟墓，对没有后人的功臣各安排一人守墓。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.494676+00:00",
+        "field_path": "description",
+        "id": "a03b724e-89bc-55ef-8317-3558c84a5fd4",
+        "note": "原文：甲寅，詔修開國勳臣墓，無後者置守塚一人；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78",
+        "status": "published",
+        "subject_id": "9af1493b-a7c9-5e33-a7a5-af8919d2950d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "59fefbc4-e2d3-5e71-b659-fa3e64b5536b"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001962；成化十五年二月甲寅",
+        "claim_text": "原历成化十五年二月甲寅。DDBC历表换算所据为1479-03-29至1479-03-29，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.534707+00:00",
+        "field_path": "time_original",
+        "id": "59fefbc4-e2d3-5e71-b659-fa3e64b5536b",
+        "note": "原文：甲寅，詔修開國勳臣墓，無後者置守塚一人；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78",
+        "status": "published",
+        "subject_id": "9af1493b-a7c9-5e33-a7a5-af8919d2950d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ccf49290-a674-51f9-86b3-e8bbac916cb4"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963；成化十五年四月丙午",
+        "claim_text": "成化十五年四月丙午，朝廷免除南直隶受灾地区的税粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.574274+00:00",
+        "field_path": "description",
+        "id": "ccf49290-a674-51f9-86b3-e8bbac916cb4",
+        "note": "原文：夏四月丙午，免南畿被災稅糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "status": "published",
+        "subject_id": "0e2a5fb3-a3da-5928-af14-6ef79033f31b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ceb44da4-b73a-5ee9-8512-5e2deccc89ee"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963；成化十五年四月丙午",
+        "claim_text": "原历成化十五年四月丙午。DDBC历表换算所据为1479-05-20至1479-05-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.614315+00:00",
+        "field_path": "time_original",
+        "id": "ceb44da4-b73a-5ee9-8512-5e2deccc89ee",
+        "note": "原文：夏四月丙午，免南畿被災稅糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "status": "published",
+        "subject_id": "0e2a5fb3-a3da-5928-af14-6ef79033f31b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4d54df21-55bc-5f0f-8af8-289bbdbdd15b"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963；成化十五年四月壬子",
+        "claim_text": "马诚以驸马都尉身份被下狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.654820+00:00",
+        "field_path": "description",
+        "id": "4d54df21-55bc-5f0f-8af8-289bbdbdd15b",
+        "note": "原文：壬子，下駙馬都尉馬誠於錦衣衞獄；核对说明：卷121公主传记宜兴公主下嫁马诚，与本纪驸马都尉身份相合。",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "status": "published",
+        "subject_id": "9408dcbf-42d2-5f39-aedb-fcfa980e74d9",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a2dca2f4-4dc1-5845-8106-207e1969e9da"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963；成化十五年四月壬子",
+        "claim_text": "成化十五年四月壬子，朝廷将驸马都尉马诚关入锦衣卫监狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.694420+00:00",
+        "field_path": "description",
+        "id": "a2dca2f4-4dc1-5845-8106-207e1969e9da",
+        "note": "原文：壬子，下駙馬都尉馬誠於錦衣衞獄；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "status": "published",
+        "subject_id": "a3c43f54-de7a-52c4-9401-84e55392059a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8458b95b-242e-5673-a8c3-92f02c975677"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963；成化十五年四月壬子",
+        "claim_text": "原历成化十五年四月壬子。DDBC历表换算所据为1479-05-26至1479-05-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.734480+00:00",
+        "field_path": "time_original",
+        "id": "8458b95b-242e-5673-a8c3-92f02c975677",
+        "note": "原文：壬子，下駙馬都尉馬誠於錦衣衞獄；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "status": "published",
+        "subject_id": "a3c43f54-de7a-52c4-9401-84e55392059a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "48403fd5-c40e-5f31-b841-969f79ef44c0"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963；成化十五年四月壬子",
+        "claim_text": "以驸马都尉身份被下狱",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.779684+00:00",
+        "field_path": "role",
+        "id": "48403fd5-c40e-5f31-b841-969f79ef44c0",
+        "note": "原文：壬子，下駙馬都尉馬誠於錦衣衞獄；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "status": "published",
+        "subject_id": "ecc8c3b7-91b0-5776-84c8-c4f09b5059c3",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e9147a4-14b7-57db-9b08-ae8fe5d790ed"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月壬戌",
+        "claim_text": "马文升遭弹劾、关押和谪戍。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.829218+00:00",
+        "field_path": "description",
+        "id": "1e9147a4-14b7-57db-9b08-ae8fe5d790ed",
+        "note": "原文：五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "e86f510c-3e01-570c-b80a-f70587d82c64",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "56e43cf2-f442-5bf7-932d-fd41befafd9b"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月壬戌",
+        "claim_text": "成化十五年五月壬戌条记，汪直弹劾侍郎马文升，朝廷将马文升关押，后将他贬谪戍边。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.879633+00:00",
+        "field_path": "description",
+        "id": "56e43cf2-f442-5bf7-932d-fd41befafd9b",
+        "note": "原文：五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "976af27c-a2f8-5cc6-bfa3-88204e6cd7c1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f30163c4-212d-5234-bdb1-74ce74945273"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月壬戌",
+        "claim_text": "原历成化十五年五月壬戌。DDBC历表换算所据为1479-06-05至1479-06-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.929446+00:00",
+        "field_path": "time_original",
+        "id": "f30163c4-212d-5234-bdb1-74ce74945273",
+        "note": "原文：五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "976af27c-a2f8-5cc6-bfa3-88204e6cd7c1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "74702ff6-169d-5a21-91f1-98c2a29a959d"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月壬戌",
+        "claim_text": "弹劾侍郎马文升",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:49.979340+00:00",
+        "field_path": "role",
+        "id": "74702ff6-169d-5a21-91f1-98c2a29a959d",
+        "note": "原文：五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "6a672016-7928-5b98-bd8f-0cf2e75c4c84",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "687ce06c-8ee7-589e-b11b-f4df34b30bb2"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月壬戌",
+        "claim_text": "遭弹劾、关押和谪戍",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.029360+00:00",
+        "field_path": "role",
+        "id": "687ce06c-8ee7-589e-b11b-f4df34b30bb2",
+        "note": "原文：五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "bfb4b07b-5dd6-5050-8329-c6476293d640",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4de23725-df9f-5a46-8eb3-6d82ac777768"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月癸酉",
+        "claim_text": "成化十五年五月癸酉，朝廷因马文升、牟俸之事，在宫阙前杖责给事中李俊、御史王濬等五十六人。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.067215+00:00",
+        "field_path": "description",
+        "id": "4de23725-df9f-5a46-8eb3-6d82ac777768",
+        "note": "原文：癸酉，以馬文升、牟俸事，杖給事中李俊、御史王濬五十六人於闕下；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "1bb2f7f1-c9b1-585a-bbb8-652a7a42edb3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "421b7f0c-f556-5bf3-b372-030a006d0d68"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月癸酉",
+        "claim_text": "原历成化十五年五月癸酉。DDBC历表换算所据为1479-06-16至1479-06-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.119594+00:00",
+        "field_path": "time_original",
+        "id": "421b7f0c-f556-5bf3-b372-030a006d0d68",
+        "note": "原文：癸酉，以馬文升、牟俸事，杖給事中李俊、御史王濬五十六人於闕下；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "1bb2f7f1-c9b1-585a-bbb8-652a7a42edb3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0c2950e8-df9e-5727-961a-b4f1cb1ae86b"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月己卯",
+        "claim_text": "成化十五年五月己卯，朝廷免除湖广、河南受灾地区的税粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.169739+00:00",
+        "field_path": "description",
+        "id": "0c2950e8-df9e-5727-961a-b4f1cb1ae86b",
+        "note": "原文：己卯，免湖廣、河南被災稅糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "57484d6c-7d0d-5e65-bbec-24ece4930bad",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9fcb6766-bdaf-5ece-ad59-b737c6aadcf8"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964；成化十五年五月己卯",
+        "claim_text": "原历成化十五年五月己卯。DDBC历表换算所据为1479-06-22至1479-06-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.219294+00:00",
+        "field_path": "time_original",
+        "id": "9fcb6766-bdaf-5ece-ad59-b737c6aadcf8",
+        "note": "原文：己卯，免湖廣、河南被災稅糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "status": "published",
+        "subject_id": "57484d6c-7d0d-5e65-bbec-24ece4930bad",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "32380152-29d8-561a-8d28-94c0226defe8"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001965；成化十五年七月癸酉",
+        "claim_text": "成化十五年七月癸酉，汪直巡行大同、宣府边境。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.269236+00:00",
+        "field_path": "description",
+        "id": "32380152-29d8-561a-8d28-94c0226defe8",
+        "note": "原文：秋七月癸酉，汪直行大同、宣府邊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "57d74b37-4add-5152-8437-5e9e83c91c82",
+        "status": "published",
+        "subject_id": "b2863af4-43ac-568e-a737-d1f2b879b9c8",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "04fb1566-773d-53a1-ab6b-eba3a4076e5a"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001965；成化十五年七月癸酉",
+        "claim_text": "原历成化十五年七月癸酉。DDBC历表换算所据为1479-08-15至1479-08-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.319348+00:00",
+        "field_path": "time_original",
+        "id": "04fb1566-773d-53a1-ab6b-eba3a4076e5a",
+        "note": "原文：秋七月癸酉，汪直行大同、宣府邊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "57d74b37-4add-5152-8437-5e9e83c91c82",
+        "status": "published",
+        "subject_id": "b2863af4-43ac-568e-a737-d1f2b879b9c8",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "23c97f96-5c40-501d-8bfe-4c3a75556fd4"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001965；成化十五年七月癸酉",
+        "claim_text": "巡行大同、宣府边境",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.356561+00:00",
+        "field_path": "role",
+        "id": "23c97f96-5c40-501d-8bfe-4c3a75556fd4",
+        "note": "原文：秋七月癸酉，汪直行大同、宣府邊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "57d74b37-4add-5152-8437-5e9e83c91c82",
+        "status": "published",
+        "subject_id": "baf097a7-ec24-56bc-bdb9-7127a6ef73c3",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e267a033-9a45-5a0d-899d-91992facef3f"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001966；成化十五年十月丁亥",
+        "claim_text": "朱永奉命统兵。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.399520+00:00",
+        "field_path": "description",
+        "id": "e267a033-9a45-5a0d-899d-91992facef3f",
+        "note": "原文：冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19",
+        "status": "published",
+        "subject_id": "ae57a93c-662c-5661-bac1-1efb9b8c3a63",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "09057c21-a893-5559-a9e6-73f34cda0ee6"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001966；成化十五年十月丁亥",
+        "claim_text": "成化十五年十月丁亥，朝廷任命抚宁侯朱永担任靖虏将军、总兵官，命汪直监军，出兵抵御伏当加所部。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.449579+00:00",
+        "field_path": "description",
+        "id": "09057c21-a893-5559-a9e6-73f34cda0ee6",
+        "note": "原文：冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19",
+        "status": "published",
+        "subject_id": "c0734f32-5c8b-5f71-982a-e1af10d69c5c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dac0c8bb-4539-5351-9a1e-79fd5f0e3858"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001966；成化十五年十月丁亥",
+        "claim_text": "原历成化十五年十月丁亥。DDBC历表换算所据为1479-10-28至1479-10-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.486767+00:00",
+        "field_path": "time_original",
+        "id": "dac0c8bb-4539-5351-9a1e-79fd5f0e3858",
+        "note": "原文：冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19",
+        "status": "published",
+        "subject_id": "c0734f32-5c8b-5f71-982a-e1af10d69c5c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "78bbc83c-957f-5be2-ad8e-e9c1519cb790"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001966；成化十五年十月丁亥",
+        "claim_text": "奉命统兵",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.544267+00:00",
+        "field_path": "role",
+        "id": "78bbc83c-957f-5be2-ad8e-e9c1519cb790",
+        "note": "原文：冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19",
+        "status": "published",
+        "subject_id": "68697723-5c98-549c-b310-d012ae0d5ada",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5949925a-2943-5cfd-92ca-1fef0cecd34a"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001966；成化十五年十月丁亥",
+        "claim_text": "奉命监军",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.589597+00:00",
+        "field_path": "role",
+        "id": "5949925a-2943-5cfd-92ca-1fef0cecd34a",
+        "note": "原文：冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19",
+        "status": "published",
+        "subject_id": "870be235-e3cd-5829-b7d1-59c07d16d732",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "51178a95-a618-515f-91bb-6f944a5484da"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967；成化十五年十二月辛未",
+        "claim_text": "成化十五年十二月辛未，朝廷论功封朱永为保国公，增加汪直的年俸，并升赏有功人员二千六百余人。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.640530+00:00",
+        "field_path": "description",
+        "id": "51178a95-a618-515f-91bb-6f944a5484da",
+        "note": "原文：十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "status": "published",
+        "subject_id": "32d52f12-095b-5059-8942-98647df1bbd1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c4bfb4cd-2b20-5c42-b374-42b3d5742aa3"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967；成化十五年十二月辛未",
+        "claim_text": "原历成化十五年十二月辛未。DDBC历表换算所据为1480-02-09至1480-02-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.678233+00:00",
+        "field_path": "time_original",
+        "id": "c4bfb4cd-2b20-5c42-b374-42b3d5742aa3",
+        "note": "原文：十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "status": "published",
+        "subject_id": "32d52f12-095b-5059-8942-98647df1bbd1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8b58302a-f445-50c6-a43f-9107c29f32ab"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967；成化十五年十二月辛未",
+        "claim_text": "论功封保国公",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.714458+00:00",
+        "field_path": "role",
+        "id": "8b58302a-f445-50c6-a43f-9107c29f32ab",
+        "note": "原文：十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "status": "published",
+        "subject_id": "0ad73695-a0bc-5a0d-a1f0-8b5d7455c696",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5bf56687-7218-55be-9b54-8555eb9f6a7c"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967；成化十五年十二月辛未",
+        "claim_text": "论功增加年俸",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.749420+00:00",
+        "field_path": "role",
+        "id": "5bf56687-7218-55be-9b54-8555eb9f6a7c",
+        "note": "原文：十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "status": "published",
+        "subject_id": "3ae3ab05-9163-5efe-80dd-ddab60f762b0",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "88254d92-c1af-593c-aae0-c7b259c76a12"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967；成化十五年十二月",
+        "claim_text": "成化十五年十二月，朝廷免除四川、江西受灾地区的税粮。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.797585+00:00",
+        "field_path": "description",
+        "id": "88254d92-c1af-593c-aae0-c7b259c76a12",
+        "note": "原文：是月，免四川、江西被災稅糧；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "status": "published",
+        "subject_id": "35d82428-ca51-5958-b137-2f9777840913",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ea8d5f0b-7753-5df8-9a69-6136c9f0cd9d"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967；成化十五年十二月",
+        "claim_text": "原历成化十五年十二月。DDBC历表换算所据为1480-01-21至1480-02-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.837690+00:00",
+        "field_path": "time_original",
+        "id": "ea8d5f0b-7753-5df8-9a69-6136c9f0cd9d",
+        "note": "原文：是月，免四川、江西被災稅糧；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "status": "published",
+        "subject_id": "35d82428-ca51-5958-b137-2f9777840913",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b80a920a-3eb8-5314-9890-c8ca3b59272c"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001968；成化十五年",
+        "claim_text": "成化十五年，琉球、安南和乌斯藏向明廷进贡。 按原历纪年，事情发生在公元1479至1480年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.869288+00:00",
+        "field_path": "description",
+        "id": "b80a920a-3eb8-5314-9890-c8ca3b59272c",
+        "note": "原文：是年，琉球、安南、烏斯藏入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b",
+        "status": "published",
+        "subject_id": "01a925a8-bd13-53bf-be3f-5e2fa2846100",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9956f462-299d-58ab-a877-8a989959b8d2"
+      },
+      "row": {
+        "citation": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001968；成化十五年",
+        "claim_text": "原历成化十五年。DDBC历表换算所据为1479-02-01至1480-02-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T20:06:50.919645+00:00",
+        "field_path": "time_original",
+        "id": "9956f462-299d-58ab-a877-8a989959b8d2",
+        "note": "原文：是年，琉球、安南、烏斯藏入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b",
+        "status": "published",
+        "subject_id": "01a925a8-bd13-53bf-be3f-5e2fa2846100",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cd10cb11-b19a-508d-a186-e70eb9ee046b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:39.954522+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "cd10cb11-b19a-508d-a186-e70eb9ee046b",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001952",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001952",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001952/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "04d80275fbf22db2f649034ddd33a75657b002c9455c1b1560097bd2c865c635",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b"
+      },
+      "row": {
+        "archive_blob_sha256": "1c62b3b42d6459b24fccdbe5f99daeec22a9a9b5431ed6d0b19514e11c0e3558",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001952/source.txt",
+        "archive_url_sha256": "04d80275fbf22db2f649034ddd33a75657b002c9455c1b1560097bd2c865c635",
+        "content": "十四年春正月甲戌，大祀天地於南郊。",
+        "content_sha256": "1c62b3b42d6459b24fccdbe5f99daeec22a9a9b5431ed6d0b19514e11c0e3558",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "cd10cb11-b19a-508d-a186-e70eb9ee046b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001952"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87737,
+        "char_start": 87720,
+        "content": "十四年春正月甲戌，大祀天地於南郊。",
+        "content_sha256": "1c62b3b42d6459b24fccdbe5f99daeec22a9a9b5431ed6d0b19514e11c0e3558",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001952",
+        "kind": "body",
+        "ordinal": 1936,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:39.995396+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001953",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001953",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001953/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "182645ffca5c7eaf9bc653ade6ef863448c458d94ff8ed0a9a504bda22abf54b",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460"
+      },
+      "row": {
+        "archive_blob_sha256": "571c4f8f8de923c20f847fd5e76c39a6b9cf6d40466b6e8eb0b1080c7ddeb904",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001953/source.txt",
+        "archive_url_sha256": "182645ffca5c7eaf9bc653ade6ef863448c458d94ff8ed0a9a504bda22abf54b",
+        "content": "三月戊辰，免浙江被災秋糧。己卯，賜曾彥等進士及第、出身有差。辛巳，罷烏撒衞銀場。丙戌，復開遼東馬市。丁亥，以浙江饑罷採花木。",
+        "content_sha256": "571c4f8f8de923c20f847fd5e76c39a6b9cf6d40466b6e8eb0b1080c7ddeb904",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "56a9a25e-7f3d-517a-a1ef-8ef9b5487460"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001953"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87801,
+        "char_start": 87739,
+        "content": "三月戊辰，免浙江被災秋糧。己卯，賜曾彥等進士及第、出身有差。辛巳，罷烏撒衞銀場。丙戌，復開遼東馬市。丁亥，以浙江饑罷採花木。",
+        "content_sha256": "571c4f8f8de923c20f847fd5e76c39a6b9cf6d40466b6e8eb0b1080c7ddeb904",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001953",
+        "kind": "body",
+        "ordinal": 1937,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "be334ec3-a043-507a-832b-d0aba0e72943"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.040578+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "be334ec3-a043-507a-832b-d0aba0e72943",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001954",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001954",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001954/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "7a9658b506a812939a8ee1b897c02e60b9a136ffe8f080a18bdc5a95f5035199",
+        "source_id": "be334ec3-a043-507a-832b-d0aba0e72943"
+      },
+      "row": {
+        "archive_blob_sha256": "207fcef55caaef136c04644e32129e6ed2974435ae8a0e7c8b9bac14a5eda780",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001954/source.txt",
+        "archive_url_sha256": "7a9658b506a812939a8ee1b897c02e60b9a136ffe8f080a18bdc5a95f5035199",
+        "content": "夏四月丁酉，免南畿、山東被災秋糧。",
+        "content_sha256": "207fcef55caaef136c04644e32129e6ed2974435ae8a0e7c8b9bac14a5eda780",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "be334ec3-a043-507a-832b-d0aba0e72943"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001954"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87820,
+        "char_start": 87803,
+        "content": "夏四月丁酉，免南畿、山東被災秋糧。",
+        "content_sha256": "207fcef55caaef136c04644e32129e6ed2974435ae8a0e7c8b9bac14a5eda780",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001954",
+        "kind": "body",
+        "ordinal": 1938,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "090943b5-328c-52a2-9e85-1dcaca30d8d2"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.080520+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "090943b5-328c-52a2-9e85-1dcaca30d8d2",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001955",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001955",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001955/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5a4be86dc5fd848d66e434b1de7c4d59a056e38a0a9649554aff72307a4c7fc2",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2"
+      },
+      "row": {
+        "archive_blob_sha256": "70fdc02ec75f0a9cdea4c090236ef486bcb382951436d540343e0df427dbd6cb",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001955/source.txt",
+        "archive_url_sha256": "5a4be86dc5fd848d66e434b1de7c4d59a056e38a0a9649554aff72307a4c7fc2",
+        "content": "六月癸卯，太監汪直行遼東邊。",
+        "content_sha256": "70fdc02ec75f0a9cdea4c090236ef486bcb382951436d540343e0df427dbd6cb",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "090943b5-328c-52a2-9e85-1dcaca30d8d2"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001955"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87836,
+        "char_start": 87822,
+        "content": "六月癸卯，太監汪直行遼東邊。",
+        "content_sha256": "70fdc02ec75f0a9cdea4c090236ef486bcb382951436d540343e0df427dbd6cb",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001955",
+        "kind": "body",
+        "ordinal": 1939,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "1e561f21-0c02-531d-81cc-a1b768f590d2"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.125742+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "1e561f21-0c02-531d-81cc-a1b768f590d2",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001956",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001956",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001956/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "fce7628c9282cbc768a1c459ac5d10ed7b3e7080799e82ec2aa2d3ec03d44557",
+        "source_id": "1e561f21-0c02-531d-81cc-a1b768f590d2"
+      },
+      "row": {
+        "archive_blob_sha256": "934496c8ecb402f7c1fff576ff9791639808c52a427f7f3f7086d8f0d31821a1",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001956/source.txt",
+        "archive_url_sha256": "fce7628c9282cbc768a1c459ac5d10ed7b3e7080799e82ec2aa2d3ec03d44557",
+        "content": "秋七月丁丑，遣使振畿南、山東饑。",
+        "content_sha256": "934496c8ecb402f7c1fff576ff9791639808c52a427f7f3f7086d8f0d31821a1",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "1e561f21-0c02-531d-81cc-a1b768f590d2"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001956"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87854,
+        "char_start": 87838,
+        "content": "秋七月丁丑，遣使振畿南、山東饑。",
+        "content_sha256": "934496c8ecb402f7c1fff576ff9791639808c52a427f7f3f7086d8f0d31821a1",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001956",
+        "kind": "body",
+        "ordinal": 1940,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "dd294ad6-e0d4-50de-8342-c654b5c52a15"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.165251+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "dd294ad6-e0d4-50de-8342-c654b5c52a15",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001957",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001957",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001957/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "1d186d77c4c739f01ca93cbad8e9d4bd3c73fdf79c3be1e455037e2c28e6ae75",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15"
+      },
+      "row": {
+        "archive_blob_sha256": "4be1e53b36b1b9f778c72aa21b48ca478db460a384e4be6e536047d1bac723e7",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001957/source.txt",
+        "archive_url_sha256": "1d186d77c4c739f01ca93cbad8e9d4bd3c73fdf79c3be1e455037e2c28e6ae75",
+        "content": "八月癸巳，以直隸、山東災傷，詔六部條卹民事宜。南京刑部侍郎金紳巡視江西水災。庚戌，免湖廣被災秋糧。甲寅，下巡撫蘇、松副都御史牟俸於錦衣衞獄，謫戍。",
+        "content_sha256": "4be1e53b36b1b9f778c72aa21b48ca478db460a384e4be6e536047d1bac723e7",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "dd294ad6-e0d4-50de-8342-c654b5c52a15"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001957"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87929,
+        "char_start": 87856,
+        "content": "八月癸巳，以直隸、山東災傷，詔六部條卹民事宜。南京刑部侍郎金紳巡視江西水災。庚戌，免湖廣被災秋糧。甲寅，下巡撫蘇、松副都御史牟俸於錦衣衞獄，謫戍。",
+        "content_sha256": "4be1e53b36b1b9f778c72aa21b48ca478db460a384e4be6e536047d1bac723e7",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001957",
+        "kind": "body",
+        "ordinal": 1941,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.205259+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001958",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001958",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001958/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "274bdd2988d061f9e19304dc6c878ca8bba9ffb1f82913ce84056e8d40779ba9",
+        "source_id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845"
+      },
+      "row": {
+        "archive_blob_sha256": "57f5148d13b322457eea40e8bda1cdea266e2f558fac75ff5f9219cee9571d93",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001958/source.txt",
+        "archive_url_sha256": "274bdd2988d061f9e19304dc6c878ca8bba9ffb1f82913ce84056e8d40779ba9",
+        "content": "十二月甲午，免畿內被災秋糧。",
+        "content_sha256": "57f5148d13b322457eea40e8bda1cdea266e2f558fac75ff5f9219cee9571d93",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "b3c9fba0-b5b7-56c2-ad20-da86003b5845"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001958"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87945,
+        "char_start": 87931,
+        "content": "十二月甲午，免畿內被災秋糧。",
+        "content_sha256": "57f5148d13b322457eea40e8bda1cdea266e2f558fac75ff5f9219cee9571d93",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001958",
+        "kind": "body",
+        "ordinal": 1942,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "57a8f15f-60a7-5e86-8d31-058920997c9f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.245340+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "57a8f15f-60a7-5e86-8d31-058920997c9f",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001959",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001959",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001959/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "7622703e14cc04a16b1739b68959e786f1f96bbcbd568a8dda3ae2dc5e607a2e",
+        "source_id": "57a8f15f-60a7-5e86-8d31-058920997c9f"
+      },
+      "row": {
+        "archive_blob_sha256": "5db48731cdfbfa9147669f7c22f5295f1d6198fd543f8b09643111f46faeb231",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001959/source.txt",
+        "archive_url_sha256": "7622703e14cc04a16b1739b68959e786f1f96bbcbd568a8dda3ae2dc5e607a2e",
+        "content": "是年，占城、烏斯藏、撒馬兒罕入貢。",
+        "content_sha256": "5db48731cdfbfa9147669f7c22f5295f1d6198fd543f8b09643111f46faeb231",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "57a8f15f-60a7-5e86-8d31-058920997c9f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001959"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 87964,
+        "char_start": 87947,
+        "content": "是年，占城、烏斯藏、撒馬兒罕入貢。",
+        "content_sha256": "5db48731cdfbfa9147669f7c22f5295f1d6198fd543f8b09643111f46faeb231",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001959",
+        "kind": "body",
+        "ordinal": 1943,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.320647+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001961",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001961",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001961/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "f447f65637461d298b22678f23999e4505d796e58cdbee8c2a678eddb50f392f",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014"
+      },
+      "row": {
+        "archive_blob_sha256": "ffd43b213a159beda9c8f14970212e1f953fb93e037bc8717e7267be731cd2e8",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001961/source.txt",
+        "archive_url_sha256": "f447f65637461d298b22678f23999e4505d796e58cdbee8c2a678eddb50f392f",
+        "content": "十五年春正月丁卯，大祀天地於南郊。辛巳，振山東饑，免秋糧。",
+        "content_sha256": "ffd43b213a159beda9c8f14970212e1f953fb93e037bc8717e7267be731cd2e8",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "aae2eb6b-6fa4-59f1-aba1-57923ec08014"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001961"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88002,
+        "char_start": 87973,
+        "content": "十五年春正月丁卯，大祀天地於南郊。辛巳，振山東饑，免秋糧。",
+        "content_sha256": "ffd43b213a159beda9c8f14970212e1f953fb93e037bc8717e7267be731cd2e8",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001961",
+        "kind": "body",
+        "ordinal": 1945,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.368644+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001962",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001962",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001962/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "09112e27f339fa9e0190ab52502dea97298ee2c481ab125c1e8c5a6f53646d30",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78"
+      },
+      "row": {
+        "archive_blob_sha256": "553ff1351d21f12255225458aa813fd68cec774e16b66c0ed4d31ae695ea296c",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001962/source.txt",
+        "archive_url_sha256": "09112e27f339fa9e0190ab52502dea97298ee2c481ab125c1e8c5a6f53646d30",
+        "content": "二月，免湖廣被災秋糧。甲寅，詔修開國勳臣墓，無後者置守塚一人。",
+        "content_sha256": "553ff1351d21f12255225458aa813fd68cec774e16b66c0ed4d31ae695ea296c",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "58e5dfa2-a23a-5f12-917a-5fa0b2153c78"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001962"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88035,
+        "char_start": 88004,
+        "content": "二月，免湖廣被災秋糧。甲寅，詔修開國勳臣墓，無後者置守塚一人。",
+        "content_sha256": "553ff1351d21f12255225458aa813fd68cec774e16b66c0ed4d31ae695ea296c",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001962",
+        "kind": "body",
+        "ordinal": 1946,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "27edf607-7e00-5ad6-863e-02c7e14f063c"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.406282+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "27edf607-7e00-5ad6-863e-02c7e14f063c",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001963",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001963",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001963/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5a556ca3cace23b567f350fd06c927d2a088f5711027f625f0bc592f011d8a8c",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c"
+      },
+      "row": {
+        "archive_blob_sha256": "4787ca796233ac46ff541d060c5df9dcfb89fc266cc8793f6a1faf1cf69a1ec6",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001963/source.txt",
+        "archive_url_sha256": "5a556ca3cace23b567f350fd06c927d2a088f5711027f625f0bc592f011d8a8c",
+        "content": "夏四月丙午，免南畿被災稅糧。壬子，下駙馬都尉馬誠於錦衣衞獄。",
+        "content_sha256": "4787ca796233ac46ff541d060c5df9dcfb89fc266cc8793f6a1faf1cf69a1ec6",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "27edf607-7e00-5ad6-863e-02c7e14f063c"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001963"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88067,
+        "char_start": 88037,
+        "content": "夏四月丙午，免南畿被災稅糧。壬子，下駙馬都尉馬誠於錦衣衞獄。",
+        "content_sha256": "4787ca796233ac46ff541d060c5df9dcfb89fc266cc8793f6a1faf1cf69a1ec6",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001963",
+        "kind": "body",
+        "ordinal": 1947,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.450535+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001964",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001964",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001964/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "33b3898bcd7db1bc6725677a252c92575e0dc0c50ba0f4ac2caac6246e5806dc",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d"
+      },
+      "row": {
+        "archive_blob_sha256": "b8263ca041c3825b3196c511528b6ac0840735f4c3e36aed279fc42083c0216c",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001964/source.txt",
+        "archive_url_sha256": "33b3898bcd7db1bc6725677a252c92575e0dc0c50ba0f4ac2caac6246e5806dc",
+        "content": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍。癸酉，以馬文升、牟俸事，杖給事中李俊、御史王濬五十六人於闕下。己卯，免湖廣、河南被災稅糧。",
+        "content_sha256": "b8263ca041c3825b3196c511528b6ac0840735f4c3e36aed279fc42083c0216c",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "a4852247-43fc-5e63-84c5-25bbb63f8d2d"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001964"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88136,
+        "char_start": 88069,
+        "content": "五月壬戌，汪直劾侍郎馬文升，下文升獄，謫戍。癸酉，以馬文升、牟俸事，杖給事中李俊、御史王濬五十六人於闕下。己卯，免湖廣、河南被災稅糧。",
+        "content_sha256": "b8263ca041c3825b3196c511528b6ac0840735f4c3e36aed279fc42083c0216c",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001964",
+        "kind": "body",
+        "ordinal": 1948,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "57d74b37-4add-5152-8437-5e9e83c91c82"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.500328+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "57d74b37-4add-5152-8437-5e9e83c91c82",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001965",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001965",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001965/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "d8a96c76eec032437c504c181319d77f8ae402a0c8eb049c88416a7edef05a6d",
+        "source_id": "57d74b37-4add-5152-8437-5e9e83c91c82"
+      },
+      "row": {
+        "archive_blob_sha256": "91e060f710b7daef1b463bfe78280e45d47e3c2aecaa7cf9ec044053f5fd751d",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001965/source.txt",
+        "archive_url_sha256": "d8a96c76eec032437c504c181319d77f8ae402a0c8eb049c88416a7edef05a6d",
+        "content": "秋七月癸酉，汪直行大同、宣府邊。",
+        "content_sha256": "91e060f710b7daef1b463bfe78280e45d47e3c2aecaa7cf9ec044053f5fd751d",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "57d74b37-4add-5152-8437-5e9e83c91c82"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001965"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88154,
+        "char_start": 88138,
+        "content": "秋七月癸酉，汪直行大同、宣府邊。",
+        "content_sha256": "91e060f710b7daef1b463bfe78280e45d47e3c2aecaa7cf9ec044053f5fd751d",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001965",
+        "kind": "body",
+        "ordinal": 1949,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.565571+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001966",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001966",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001966/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "eb362b24df99cab4b4b2c7dc0ec1bb79f0eb5ff07641363b26f8b557ff2c6b81",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19"
+      },
+      "row": {
+        "archive_blob_sha256": "88821876b4c9a825d71876b1adfe949f40c889ac8bf12a5a034c0ac2e11f0713",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001966/source.txt",
+        "archive_url_sha256": "eb362b24df99cab4b4b2c7dc0ec1bb79f0eb5ff07641363b26f8b557ff2c6b81",
+        "content": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加。",
+        "content_sha256": "88821876b4c9a825d71876b1adfe949f40c889ac8bf12a5a034c0ac2e11f0713",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "90bc2e06-19cb-5b76-a7a7-31c6742bbc19"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001966"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88188,
+        "char_start": 88156,
+        "content": "冬十月丁亥，撫寧侯朱永為靖虜將軍，充總兵官，汪直監軍，禦伏當加。",
+        "content_sha256": "88821876b4c9a825d71876b1adfe949f40c889ac8bf12a5a034c0ac2e11f0713",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001966",
+        "kind": "body",
+        "ordinal": 1950,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.611634+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001967",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001967",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001967/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "fa5233c2ca3f138537d326af3a4d910e393ec277b61efd84cd5d5762b62a5e12",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b"
+      },
+      "row": {
+        "archive_blob_sha256": "fce60192ec1c8a39108cc2f160e66d9ed09da28973eb53009c1bb7ef0b1b1d73",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001967/source.txt",
+        "archive_url_sha256": "fa5233c2ca3f138537d326af3a4d910e393ec277b61efd84cd5d5762b62a5e12",
+        "content": "十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人。是月，免四川、江西被災稅糧。",
+        "content_sha256": "fce60192ec1c8a39108cc2f160e66d9ed09da28973eb53009c1bb7ef0b1b1d73",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "67d2cef4-9a3d-53ed-8891-3c9920f52c1b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001967"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88235,
+        "char_start": 88190,
+        "content": "十二月辛未，論功封朱永保國公，加汪直歲祿，陞賞者二千六百餘人。是月，免四川、江西被災稅糧。",
+        "content_sha256": "fce60192ec1c8a39108cc2f160e66d9ed09da28973eb53009c1bb7ef0b1b1d73",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001967",
+        "kind": "body",
+        "ordinal": 1951,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T20:06:40.651583+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b",
+        "note": "《明史》卷14·本纪第十四·宪宗二·mingshi-2f603db3d81e-p001968",
+        "source_type": "primary",
+        "title": "明史·卷14·宪宗二·mingshi-2f603db3d81e-p001968",
+        "url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001968/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "f8561a4882eceddc072567537f7d985b19a8e1b7e8cc5219632b080a1122dbef",
+        "source_id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b"
+      },
+      "row": {
+        "archive_blob_sha256": "212eb70bf8c2eca6c1d577a841a77f863a091817c3a66ee9d98a67092c30759b",
+        "archive_commit": "d94294fe8adfeef14ece46a826f704a1c7f943f7",
+        "archive_url": "https://github.com/greed-216/histree/blob/d94294fe8adfeef14ece46a826f704a1c7f943f7/content/books/mingshi/vol-014/from-start/part-02/sources/mingshi-2f603db3d81e-p001968/source.txt",
+        "archive_url_sha256": "f8561a4882eceddc072567537f7d985b19a8e1b7e8cc5219632b080a1122dbef",
+        "content": "是年，琉球、安南、烏斯藏入貢。",
+        "content_sha256": "212eb70bf8c2eca6c1d577a841a77f863a091817c3a66ee9d98a67092c30759b",
+        "created_at": "2026-11-18T20:06:55.354436+00:00",
+        "source_id": "dd9a5968-77b6-5c00-973a-c47ebb5e409b"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001968"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 88252,
+        "char_start": 88237,
+        "content": "是年，琉球、安南、烏斯藏入貢。",
+        "content_sha256": "212eb70bf8c2eca6c1d577a841a77f863a091817c3a66ee9d98a67092c30759b",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001968",
+        "kind": "body",
+        "ordinal": 1952,
+        "section_id": "mingshi-2f603db3d81e-s0015"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "7e9b4801-124d-527c-b425-8b0660650c9b"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.004681+00:00",
+        "description": "成化十四年正月甲戌，明宪宗朱见深在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "7e9b4801-124d-527c-b425-8b0660650c9b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年正月甲戌",
+        "title": "明宪宗在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "884de83b-e6a8-5009-90f8-c1c307dbf5c4"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.047515+00:00",
+        "description": "成化十四年三月戊辰，朝廷免除浙江受灾地区的秋粮。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "884de83b-e6a8-5009-90f8-c1c307dbf5c4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年三月戊辰",
+        "title": "明廷豁免浙江灾区秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "4ad9bea6-e374-5105-a360-ef0a5c3decc4"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.093628+00:00",
+        "description": "成化十四年三月己卯，朝廷赐曾彦等人进士及第或进士出身，名次、等第各有差别。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "4ad9bea6-e374-5105-a360-ef0a5c3decc4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年三月己卯",
+        "title": "明廷赐曾彦等进士及第、出身"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "515066e4-dcb7-55c3-8eac-0014c10fe646"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.136553+00:00",
+        "description": "成化十四年三月辛巳，朝廷停办乌撒卫的银场。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "515066e4-dcb7-55c3-8eac-0014c10fe646",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年三月辛巳",
+        "title": "明廷停办乌撒卫银场"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b383ff88-0837-5171-87c9-5f72327ac357"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.183197+00:00",
+        "description": "成化十四年三月丙戌，朝廷重新开放辽东马市。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "b383ff88-0837-5171-87c9-5f72327ac357",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年三月丙戌",
+        "title": "明廷重新开放辽东马市"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "3445b2d4-d415-5be0-b206-19b34b475fde"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.223268+00:00",
+        "description": "成化十四年三月丁亥，朝廷因浙江发生饥荒，停止征采花木。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "3445b2d4-d415-5be0-b206-19b34b475fde",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年三月丁亥",
+        "title": "明廷因浙江饥荒停止征采花木"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "9a8353de-ffb3-5d6d-b5ae-aad7b6af8770"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.263625+00:00",
+        "description": "成化十四年四月丁酉，朝廷免除南直隶、山东受灾地区的秋粮。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "9a8353de-ffb3-5d6d-b5ae-aad7b6af8770",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年四月丁酉",
+        "title": "明廷豁免南直隶、山东灾区秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "aad11e4b-1211-5f92-aafa-bb1a37e3a44b"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.303245+00:00",
+        "description": "成化十四年六月癸卯，太监汪直巡行辽东边境。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "aad11e4b-1211-5f92-aafa-bb1a37e3a44b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年六月癸卯",
+        "title": "太监汪直巡行辽东边境"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "67d8117a-1870-58a5-a55b-f12871fc0b76"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.343200+00:00",
+        "description": "成化十四年七月丁丑，朝廷派使者赈济畿南和山东的饥民。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "67d8117a-1870-58a5-a55b-f12871fc0b76",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年七月丁丑",
+        "title": "明廷派使者赈济畿南和山东饥民"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0fbfa9a9-f7dd-57b2-becc-f439ccc27837"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.383243+00:00",
+        "description": "成化十四年八月癸巳，朝廷因直隶、山东受灾，下诏命六部逐条拟定抚恤灾民的办法。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "0fbfa9a9-f7dd-57b2-becc-f439ccc27837",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年八月癸巳",
+        "title": "明廷命六部拟定救助直隶和山东灾民的办法"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "2c19849a-5b66-54e1-8b29-83ff17b6030f"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.423337+00:00",
+        "description": "成化十四年八月，南京刑部侍郎金绅巡查江西的水灾灾情。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "2c19849a-5b66-54e1-8b29-83ff17b6030f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年八月",
+        "title": "南京刑部侍郎金绅赴江西查看水灾"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1946d946-8dbd-586a-9985-8023fc9a3dfd"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.463472+00:00",
+        "description": "成化十四年八月庚戌，朝廷免除湖广受灾地区的秋粮。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "1946d946-8dbd-586a-9985-8023fc9a3dfd",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年八月庚戌",
+        "title": "明廷豁免湖广灾区秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "47ca9f56-0d25-5a62-82f5-859a148677ea"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.503071+00:00",
+        "description": "成化十四年八月甲寅条记，巡抚苏州、松江的副都御史牟俸被关入锦衣卫监狱，后被贬谪戍边。",
+        "dynasty": "明",
+        "end_year": 1478,
+        "id": "47ca9f56-0d25-5a62-82f5-859a148677ea",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1478,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年八月甲寅",
+        "title": "巡抚苏松的牟俸被下狱，后被谪戍"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d6b9f538-d725-5fb5-9b03-2f0209bc5375"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.563618+00:00",
+        "description": "成化十四年十二月甲午，朝廷免除京畿受灾地区的秋粮。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "d6b9f538-d725-5fb5-9b03-2f0209bc5375",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年十二月甲午",
+        "title": "明廷豁免京畿灾区秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "f7b40609-8e21-58d1-9439-b93e93a864ce"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.603851+00:00",
+        "description": "成化十四年，占城、乌斯藏和撒马儿罕向明廷进贡。 按原历纪年，事情发生在公元1478至1479年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "f7b40609-8e21-58d1-9439-b93e93a864ce",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十四年",
+        "title": "本纪汇记成化十四年多地入贡"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "37b0d455-38e1-586f-b3c0-1bb0072e1766"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.653331+00:00",
+        "description": "成化十五年正月丁卯，明宪宗朱见深在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "37b0d455-38e1-586f-b3c0-1bb0072e1766",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年正月丁卯",
+        "title": "明宪宗在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e22c9d28-2b5a-5427-b2b6-8bf8065650c0"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.693576+00:00",
+        "description": "成化十五年正月辛巳，朝廷赈济山东饥民，并免除应缴的秋粮。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "e22c9d28-2b5a-5427-b2b6-8bf8065650c0",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年正月辛巳",
+        "title": "明廷赈济山东饥民并免除秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "85bdaccd-8553-5f60-9c3f-81d06b1b7b7e"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.736269+00:00",
+        "description": "成化十五年二月，朝廷免除湖广受灾地区的秋粮。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "85bdaccd-8553-5f60-9c3f-81d06b1b7b7e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年二月",
+        "title": "明廷豁免湖广灾区秋粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "9af1493b-a7c9-5e33-a7a5-af8919d2950d"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.776352+00:00",
+        "description": "成化十五年二月甲寅，朝廷下诏修整开国功臣的坟墓，对没有后人的功臣各安排一人守墓。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "9af1493b-a7c9-5e33-a7a5-af8919d2950d",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年二月甲寅",
+        "title": "明廷命修开国功臣墓，为无后者安排守墓人"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0e2a5fb3-a3da-5928-af14-6ef79033f31b"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.816809+00:00",
+        "description": "成化十五年四月丙午，朝廷免除南直隶受灾地区的税粮。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "0e2a5fb3-a3da-5928-af14-6ef79033f31b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年四月丙午",
+        "title": "明廷豁免南直隶灾区税粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a3c43f54-de7a-52c4-9401-84e55392059a"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.856171+00:00",
+        "description": "成化十五年四月壬子，朝廷将驸马都尉马诚关入锦衣卫监狱。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "a3c43f54-de7a-52c4-9401-84e55392059a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年四月壬子",
+        "title": "驸马都尉马诚被关入锦衣卫监狱"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "976af27c-a2f8-5cc6-bfa3-88204e6cd7c1"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.896388+00:00",
+        "description": "成化十五年五月壬戌条记，汪直弹劾侍郎马文升，朝廷将马文升关押，后将他贬谪戍边。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "976af27c-a2f8-5cc6-bfa3-88204e6cd7c1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年五月壬戌",
+        "title": "汪直弹劾马文升，马文升被下狱并谪戍"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1bb2f7f1-c9b1-585a-bbb8-652a7a42edb3"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.937039+00:00",
+        "description": "成化十五年五月癸酉，朝廷因马文升、牟俸之事，在宫阙前杖责给事中李俊、御史王濬等五十六人。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "1bb2f7f1-c9b1-585a-bbb8-652a7a42edb3",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年五月癸酉",
+        "title": "明廷因马文升和牟俸案在宫阙前杖责五十六人"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "57484d6c-7d0d-5e65-bbec-24ece4930bad"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:43.976541+00:00",
+        "description": "成化十五年五月己卯，朝廷免除湖广、河南受灾地区的税粮。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "57484d6c-7d0d-5e65-bbec-24ece4930bad",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年五月己卯",
+        "title": "明廷豁免湖广和河南灾区税粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b2863af4-43ac-568e-a737-d1f2b879b9c8"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:44.021369+00:00",
+        "description": "成化十五年七月癸酉，汪直巡行大同、宣府边境。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "b2863af4-43ac-568e-a737-d1f2b879b9c8",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年七月癸酉",
+        "title": "汪直巡行大同、宣府边境"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c0734f32-5c8b-5f71-982a-e1af10d69c5c"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:44.061163+00:00",
+        "description": "成化十五年十月丁亥，朝廷任命抚宁侯朱永担任靖虏将军、总兵官，命汪直监军，出兵抵御伏当加所部。",
+        "dynasty": "明",
+        "end_year": 1479,
+        "id": "c0734f32-5c8b-5f71-982a-e1af10d69c5c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1479,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年十月丁亥",
+        "title": "明廷命朱永统军、汪直监军，抵御伏当加"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "32d52f12-095b-5059-8942-98647df1bbd1"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:44.101167+00:00",
+        "description": "成化十五年十二月辛未，朝廷论功封朱永为保国公，增加汪直的年俸，并升赏有功人员二千六百余人。",
+        "dynasty": "明",
+        "end_year": 1480,
+        "id": "32d52f12-095b-5059-8942-98647df1bbd1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1480,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年十二月辛未",
+        "title": "明廷封朱永为保国公、加汪直年俸并奖赏有功人员"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "35d82428-ca51-5958-b137-2f9777840913"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:44.141578+00:00",
+        "description": "成化十五年十二月，朝廷免除四川、江西受灾地区的税粮。",
+        "dynasty": "明",
+        "end_year": 1480,
+        "id": "35d82428-ca51-5958-b137-2f9777840913",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1480,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年十二月",
+        "title": "明廷豁免四川和江西灾区税粮"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "01a925a8-bd13-53bf-be3f-5e2fa2846100"
+      },
+      "row": {
+        "created_at": "2026-11-18T20:06:44.191666+00:00",
+        "description": "成化十五年，琉球、安南和乌斯藏向明廷进贡。 按原历纪年，事情发生在公元1479至1480年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "01a925a8-bd13-53bf-be3f-5e2fa2846100",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化十五年",
+        "title": "本纪汇记成化十五年多地入贡"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "090943b5-328c-52a2-9e85-1dcaca30d8d2": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001955",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "1e561f21-0c02-531d-81cc-a1b768f590d2": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001956",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "27edf607-7e00-5ad6-863e-02c7e14f063c": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001963",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "56a9a25e-7f3d-517a-a1ef-8ef9b5487460": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001953",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "57a8f15f-60a7-5e86-8d31-058920997c9f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001959",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "57d74b37-4add-5152-8437-5e9e83c91c82": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001965",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "58e5dfa2-a23a-5f12-917a-5fa0b2153c78": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001962",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "67d2cef4-9a3d-53ed-8891-3c9920f52c1b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001967",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "90bc2e06-19cb-5b76-a7a7-31c6742bbc19": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001966",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "a4852247-43fc-5e63-84c5-25bbb63f8d2d": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001964",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "aae2eb6b-6fa4-59f1-aba1-57923ec08014": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001961",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "b3c9fba0-b5b7-56c2-ad20-da86003b5845": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001958",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "be334ec3-a043-507a-832b-d0aba0e72943": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001954",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "cd10cb11-b19a-508d-a186-e70eb9ee046b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001952",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "dd294ad6-e0d4-50de-8342-c654b5c52a15": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001957",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    },
+    "dd9a5968-77b6-5c00-973a-c47ebb5e409b": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001968",
+      "section_id": "mingshi-2f603db3d81e-s0015",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 14
+}

@@ -1,0 +1,172 @@
+{
+  "kind": "reviewed_history_correction",
+  "state": "draft_not_applied",
+  "book_key": "mingshi",
+  "volume": 16,
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "protected_paths": {
+    "content/books/mingshi/vol-016/from-start/part-04/content-batch.json": "929920bcdc6a2c9815fa2905ccf8e1d7680816724f0881442f6ad3e87ce770d6",
+    "content/books/mingshi/vol-016/from-start/part-04/calendar-review.json": "a50553c74367931dad18caf8100a60b6ae1f517185e73a86e001a4ac3f4b74c3",
+    "content/books/mingshi/vol-016/from-start/part-04/publication-mysql.json": "3181ebde800fd74c116ff1424497f37df8655ca8d6a748c26d3fd9cd2b8aa96b",
+    "content/books/mingshi/vol-016/from-start/part-04/.workflow/sidecars-receipt.json": "250dc9670866444c74308b5fc31e8882196124fe2c8dded2336dc169505d8677",
+    "content/books/mingshi/vol-016/from-start/part-04/sources/manifest.json": "a88c63168351f70a89ea134af1ce6be659e7d08c759576d21cc8b9b2f32ed359",
+    "content/revisions/2026-11-18-mingshi-v109-calendar-years/plan.json": "8d7b2449bd5d2179e4069cae847db83f15dfe7922724d136f5ab36b14b4a50e1",
+    "content/revisions/2026-11-18-mingshi-v109-calendar-years/publication-mysql.json": "dc799ae5cc64193ca2fa524a9d8becdfe1be879baf7d13e76e7e57f5df0471d4",
+    "content/books/mingshi/vol-016/from-start/part-04/sources/mingshi-2f603db3d81e-p002342/source.txt": "56546e682c7521e66fa78828f3bf45b240ebf51dfd77cb6e7137b496847378c0"
+  },
+  "source_bindings": [
+    {
+      "raw_path": "content/books/mingshi/vol-016/from-start/part-04/sources/mingshi-2f603db3d81e-p002342/source.txt",
+      "raw_sha256": "56546e682c7521e66fa78828f3bf45b240ebf51dfd77cb6e7137b496847378c0",
+      "quote": "十二月癸巳，禮部尚書費宏兼文淵閣大學士，預機務"
+    }
+  ],
+  "updates": [
+    {
+      "table": "event",
+      "id": "7af2186c-2ae0-529f-b6c6-fd3129259cac",
+      "full_before": {
+        "created_at": "2026-11-17T10:09:40.643047+00:00",
+        "description": "正德6年（年号对照1511年）十二月，费宏升任礼部尚书，兼文渊阁大学士并入阁。按原历月份核对，本项发生在公元1511年至1512年之间，具体日未载。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "7af2186c-2ae0-529f-b6c6-fd3129259cac",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "正德6年（年号对照1511年）十二月；原历月份对应延伸格里历1511-12-30至1512-01-28；原文未记具体日，故本项记为公元1511年至1512年之间，不把整月的月首当成行动日期。",
+        "title": "费宏升任礼部尚书，兼文渊阁大学士并入阁"
+      },
+      "before": {
+        "start_year": null,
+        "end_year": null,
+        "time_original": "正德6年（年号对照1511年）十二月；原历月份对应延伸格里历1511-12-30至1512-01-28；原文未记具体日，故本项记为公元1511年至1512年之间，不把整月的月首当成行动日期。",
+        "description": "正德6年（年号对照1511年）十二月，费宏升任礼部尚书，兼文渊阁大学士并入阁。按原历月份核对，本项发生在公元1511年至1512年之间，具体日未载。"
+      },
+      "after": {
+        "start_year": 1512,
+        "end_year": 1512,
+        "time_original": "正德六年十二月癸巳（公元1512年1月15日，延伸格里历）",
+        "description": "正德六年十二月癸巳，礼部尚书费宏兼任文渊阁大学士，入阁参与政务。按原历干支换算，为公元1512年1月15日。"
+      }
+    }
+  ],
+  "inserts": {},
+  "new_people": [],
+  "reason": "卷十六《武宗》记正德六年十二月癸巳，费宏以礼部尚书兼文渊阁大学士入阁。宰辅年表同载其任命，原来只据月界保留1511至1512年。现据本纪干支核定为公元1512年1月15日。",
+  "protected_rows": [
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "577e4480-6b2a-5407-91f7-c77753c25282"
+      },
+      "full_before": {
+        "citation": "《明史》卷16·本纪第十六·武宗·mingshi-2f603db3d81e-p002342；正德六年十二月癸巳",
+        "claim_text": "正德六年十二月癸巳，礼部尚书费宏兼任文渊阁大学士，入阁参与政务。",
+        "confidence": null,
+        "created_at": "2026-11-18T21:06:16.869823+00:00",
+        "field_path": "description",
+        "id": "577e4480-6b2a-5407-91f7-c77753c25282",
+        "note": "原文：十二月癸巳，禮部尚書費宏兼文淵閣大學士，預機務；核对说明：宰辅年表和本纪均记正德六年十二月费宏兼文渊阁大学士参与政务。本纪补癸巳，核为1512年1月15日。",
+        "source_id": "e1e7eab5-795e-525a-935a-61bd7b15453f",
+        "status": "published",
+        "subject_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "membership_guards": [
+    {
+      "table": "fact_claim",
+      "any_of": [
+        {
+          "subject_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+        }
+      ],
+      "expected_ids": [
+        "39032acf-3d23-51ce-8616-afec7a6f0cc6",
+        "45c25f6c-d703-56bf-abd5-81503aac5309",
+        "577e4480-6b2a-5407-91f7-c77753c25282",
+        "7159eff2-28bc-5d78-925d-a92d832b50ed",
+        "97baca2c-d548-5e92-9879-41e68bdc9246",
+        "df866695-a325-5271-b799-b15514017ee1"
+      ]
+    },
+    {
+      "table": "person_event",
+      "any_of": [
+        {
+          "event_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+        }
+      ],
+      "expected_ids": [
+        "aa3bf2e5-3367-55e5-b0fa-1ccc3dfd8822"
+      ]
+    },
+    {
+      "table": "event_dating",
+      "any_of": [
+        {
+          "event_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+        }
+      ],
+      "expected_ids": [
+        "13cdc163-118f-5d2c-b95f-fce16dc9bb05",
+        "6a86474f-e7bf-5883-9b34-9cb5d04ff617",
+        "dc5ec205-c02b-5500-895d-aa5492450337"
+      ]
+    }
+  ],
+  "invariants_after": [
+    {
+      "table": "fact_claim",
+      "any_of": [
+        {
+          "subject_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+        }
+      ],
+      "expected_ids": [
+        "39032acf-3d23-51ce-8616-afec7a6f0cc6",
+        "45c25f6c-d703-56bf-abd5-81503aac5309",
+        "577e4480-6b2a-5407-91f7-c77753c25282",
+        "7159eff2-28bc-5d78-925d-a92d832b50ed",
+        "97baca2c-d548-5e92-9879-41e68bdc9246",
+        "df866695-a325-5271-b799-b15514017ee1"
+      ]
+    },
+    {
+      "table": "person_event",
+      "any_of": [
+        {
+          "event_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+        }
+      ],
+      "expected_ids": [
+        "aa3bf2e5-3367-55e5-b0fa-1ccc3dfd8822"
+      ]
+    },
+    {
+      "table": "event_dating",
+      "any_of": [
+        {
+          "event_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+        }
+      ],
+      "expected_ids": [
+        "13cdc163-118f-5d2c-b95f-fce16dc9bb05",
+        "6a86474f-e7bf-5883-9b34-9cb5d04ff617",
+        "dc5ec205-c02b-5500-895d-aa5492450337"
+      ]
+    }
+  ]
+}

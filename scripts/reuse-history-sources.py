@@ -164,6 +164,7 @@ def legacy_ming_supplement_note(source,manifest,paragraph,packet,chapter):
         (109, 10, 'mingshi-2f603db3d81e-p001427', '英宗前纪'): '《明史》卷10·英宗身份',
         (109, 11, 'mingshi-2f603db3d81e-p001599', '景帝'): '《明史》卷11·景皇帝身份',
         (109, 13, 'mingshi-2f603db3d81e-p001811', '宪宗一'): '《明史》卷13·宪宗身份',
+        (109, 17, 'mingshi-2f603db3d81e-p002463', '世宗一'): '《明史》卷17·世宗身份',
     }
     archived_title = descriptive_titles.get((packet.get('volume'), paragraph.get('volume_candidate'),
                                               paragraph['id'], chapter))

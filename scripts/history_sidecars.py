@@ -203,7 +203,7 @@ def authored_assertions(item, manifest):
 
 
 def revised_event_baseline(root, batch_dir, batch, ids, reused, target, files):
-    """Resolve an archived date correction without changing either published batch."""
+    """Resolve a verified event correction while retaining the original published batches."""
     root, batch_dir = root.resolve(), batch_dir.resolve()
     path = batch_dir/'.workflow/reused-event-revisions.json'
     if not path.is_file():
@@ -245,7 +245,7 @@ def revised_event_baseline(root, batch_dir, batch, ids, reused, target, files):
                     'Event revision does not start at the archived reused values')
             changed = set(change['after'])
             require(changed and changed == set(change['before'])
-                    and changed <= {'start_year', 'end_year', 'time_original', 'description'}
+                    and changed <= {'start_year', 'end_year', 'time_original', 'title', 'description'}
                     and all(change['before'][field] == before[field] for field in changed)
                     and after[0] == dict(before, **change['after']),
                     'Event revision readback differs from the guarded change')

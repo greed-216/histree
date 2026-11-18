@@ -203,6 +203,64 @@ class SourceTests(unittest.TestCase):
     def test_claimed_normalized_heading_internal_space_difference_is_rejected(self):
         self.add_normalized_heading_fixture(used=True)
         with self.assertRaisesRegex(ValueError,'snapshot text differ'):S.load_bundle(self.root,self.b)
+    def identity_heading_fixture(self):
+        pid,sid=self.add_normalized_heading_fixture(used=True)
+        batch=json.loads((self.b/'content-batch.json').read_bytes());ids=json.loads((self.b/'sql/key-map.json').read_bytes());cur=json.loads((self.b/'curation.json').read_bytes())
+        key='person_heading';ids[key]=U(key);person=dict(key=key,name='结构标题',description='卷题姓名依据')
+        batch['people'].append(person);claim=batch['claims'][-1];claim.update(subject_table='person',subject_key=key,field_path='biography')
+        cur['items'].append(dict(group='people',row=person,evidence=[dict(paragraph_id=pid,field='biography',text=claim['claim_text'],quote='结构 标题')]))
+        for name,obj in [('content-batch.json',batch),('curation.json',cur),('sql/key-map.json',ids)]: (self.b/name).write_bytes(S.dump(obj))
+        digest=S.sha((self.b/'content-batch.json').read_bytes())
+        for name in ['publication-mysql.json','time-review.json']:
+            obj=json.loads((self.b/name).read_bytes());obj['batch_sha256']=digest;(self.b/name).write_bytes(S.dump(obj))
+        source=batch['sources'][-1];raw='结构 标题';url=source['url'];self.rows['source'].append(dict(id=sid,**{k:v for k,v in source.items() if k!='key'}))
+        self.rows['source_text'].append(dict(source_id=sid,archive_url_sha256=S.sha(url.encode()),archive_url=url,content=raw,content_sha256=S.sha(raw.encode()),archive_blob_sha256=S.sha(raw.encode()),archive_commit='a'*40))
+        self.rows['fact_claim'].append(S.normalized_claim(claim,ids))
+        return pid,sid
+    def test_identity_heading_keeps_exact_source_without_false_body_link(self):
+        pid,sid=self.identity_heading_fixture();bundle=S.load_bundle(self.root,self.b);db=FakeDatabase(self.rows);plan=S.prepare(bundle,db);S.guard_plan(plan,self.root,db)
+        self.assertEqual(bundle['reference_only_headings'],[pid])
+        self.assertNotIn(sid,plan['source_locations'])
+        self.assertNotIn(sid,{r['source_id'] for r in plan['inserts']['library_source_link']})
+        self.assertTrue(any(r['quote_text']=='结构 标题' for r in plan['inserts']['claim_structure']))
+        self.assertEqual(len(plan['inserts']['event_dating']),len(self.plan['inserts']['event_dating']))
+        forged=copy.deepcopy(plan);forged['source_locations'][sid]=dict(paragraph_id=pid)
+        with self.assertRaisesRegex(ValueError,'body location'):S.guard_plan(forged,self.root,db)
+        self.rows['source_text'][-1]['content']='结构标题'
+        with self.assertRaisesRegex(ValueError,'source_text differs'):S.prepare(bundle,FakeDatabase(self.rows))
+    def test_identity_heading_never_allows_changed_letters_navigation_or_dates(self):
+        raw='佀 鍾';base=dict(kind='heading',flags=['not_historical_body'],text='佀鍾');claim=dict(subject_table='person',field_path='biography')
+        self.assertTrue(S.identity_heading_reference(raw,base,[claim]))
+        self.assertFalse(S.identity_heading_reference(raw,dict(base,text='似鍾'),[claim]))
+        self.assertFalse(S.identity_heading_reference(raw,dict(base,flags=['not_historical_body','editorial_navigation_heading']),[claim]))
+        self.assertFalse(S.identity_heading_reference(raw,base,[dict(claim,field_path='birth_year')]))
+        self.assertFalse(S.identity_heading_reference(raw,base,[dict(subject_table='event',field_path='description')]))
+        self.assertFalse(S.identity_heading_reference(raw,dict(base,kind='body'),[claim]))
+    def test_identity_heading_requires_authored_evidence_and_public_raw_text(self):
+        pid,sid=self.identity_heading_fixture();bundle=S.load_bundle(self.root,self.b);plan=S.prepare(bundle,FakeDatabase(self.rows));structures={r['claim_id']:r for r in plan['inserts']['claim_structure']}
+        def getter(url):
+            if '/sources/' in url:
+                return copy.deepcopy(next(t for t in self.rows['source_text'] if t['source_id']==sid))
+            if '/entry/' in url:
+                eid=url.rsplit('/',1)[1];event=copy.deepcopy(next(r for r in self.rows['event'] if r['id']==eid));event['type']='event';event['datings']=[{**{k:v for k,v in d.items() if k not in ('claim_sha256','precision_kind')},'precision':d['precision_kind']} for d in plan['inserts']['event_dating'] if d['event_id']==eid];return event
+            from urllib.parse import parse_qs,urlsplit
+            requested=parse_qs(urlsplit(url).query)['ids'][0].split(',');items=[]
+            for c in self.rows['fact_claim']:
+                if c['id'] not in requested:continue
+                row=copy.deepcopy(c);st=structures[c['id']];row['evidence']=dict(origin='structured',quote=st['quote_text'],review=st['review_note'],review_state=st['review_state'])
+                if c['source_id'] in plan['source_locations']:row['evidence']['location']=plan['source_locations'][c['source_id']]
+                items.append(row)
+            return dict(items=items,has_more=False)
+        result=S.verify_public(plan,'https://offline.test/api/v1',getter)
+        self.assertEqual(result['identity_heading_claims_with_exact_text'],1)
+        self.assertEqual(result['claims_with_original_locations'],len(self.plan['inserts']['claim_structure']))
+        def bad_raw(url):
+            result=getter(url)
+            if '/sources/' in url:result['content']='结构标题'
+            return result
+        with self.assertRaisesRegex(ValueError,'exact text'):S.verify_public(plan,'https://offline.test/api/v1',bad_raw)
+        cur=json.loads((self.b/'curation.json').read_bytes());cur['items'][-1]['evidence']=[];(self.b/'curation.json').write_bytes(S.dump(cur))
+        with self.assertRaisesRegex(ValueError,'authored person evidence'):S.load_bundle(self.root,self.b)
     def test_unflagged_heading_gets_no_structural_normalization_exception(self):
         self.add_normalized_heading_fixture(flags=[])
         with self.assertRaisesRegex(ValueError,'snapshot text differ'):S.load_bundle(self.root,self.b)

@@ -1,0 +1,15 @@
+{
+  "previous_freeze_sha256": "7ddb8041fd9379e31197164dd386eda202855a0ed13a75ed0630c2a3b30bf95c",
+  "ci_verified": true,
+  "ci_scope": "History source-and-search and native MySQL sidecar regressions; both jobs passed at the exact reviewed engine commit.",
+  "reviewed_commit_sha256": "d1926071d5ec36c7f906cf288b94e3eb628afd91",
+  "ci_url": "https://github.com/greed-216/histree/actions/runs/44239197368",
+  "changes": [
+    {
+      "path": "scripts/history_sidecars.py",
+      "before_sha256": "d5663529e2c57a55b10277372b13208799fb80c9838a2ab0732b0bae502f6aa9",
+      "after_sha256": "42468e30b6d099c5e8b86c65c933dc4eaf555586748c5ba0248b14427d00defd",
+      "reason": "仅原卷题的人物姓名、别名或身份引文可保存为独立精确原文引用；逐字快照和原校核不变，不将去除排版空格的标题错误关联正文，不将标题作为事件或日期。51项离线与真实MySQL回归通过。"
+    }
+  ]
+}

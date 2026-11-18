@@ -34,10 +34,10 @@ PEOPLE = [UID('person'), UID('unrelated-sentinel')]
 PERSON_KEY = 'person_mysql_sidecars_fixture'
 EVENT_KEYS = ['event_many', 'event_range', 'event_inherited']
 EVENT_IDS = [UID(key) for key in EVENT_KEYS]
-SOURCE_IDS = [UID('source' + str(i)) for i in range(1, 5)]
-CLAIM_KEYS = ['person_fact', 'many_first', 'many_second', 'range_fact', 'inherited_fact']
+SOURCE_IDS = [UID('source' + str(i)) for i in range(1, 6)]
+CLAIM_KEYS = ['person_fact', 'many_first', 'many_second', 'range_fact', 'inherited_fact', 'heading_identity']
 CLAIM_IDS = [UID(key) for key in CLAIM_KEYS]
-PARAGRAPHS = [BOOK + '-p' + str(i).zfill(6) for i in range(1, 5)]
+PARAGRAPHS = [BOOK + '-p' + str(i).zfill(6) for i in range(1, 6)]
 TABLE_KEYS = {
     'person': ('id',), 'event': ('id',), 'source': ('id',),
     'fact_claim': ('id',), 'source_text': ('source_id', 'archive_url_sha256'),
@@ -113,8 +113,8 @@ def fixtures(root, target_fingerprint):
     directory = root / 'content/books' / BOOK / 'vol-037/from-start/part-01'
     directory.mkdir(parents=True)
     envfile = root / 'local-test-only.env'
-    raw_texts = ['\n甲于九百年作甲事。\n', '次年，甲再作乙事。', '九百二年至九百五年之间，甲居此。', '合成 结构 标题']
-    display = [raw_texts[0].strip(), raw_texts[1], raw_texts[2], '合成结构标题']
+    raw_texts = ['\n甲于九百年作甲事。\n', '次年，甲再作乙事。', '九百二年至九百五年之间，甲居此。', '合成 结构 标题', '佀 鍾']
+    display = [raw_texts[0].strip(), raw_texts[1], raw_texts[2], '合成结构标题', '佀鍾']
     bottom = ''.join(raw_texts)
     source_file = 'resources/mysql-sidecars-fixture.txt'
     (root/'resources').mkdir(); (root/source_file).write_text(bottom)
@@ -129,7 +129,7 @@ def fixtures(root, target_fingerprint):
                        char_end=offset+len(raw), raw_excerpt_sha256=digest)
         para = dict(id=pid, book_key=BOOK, source_version=VERSION, section_id=SECTION,
                     volume_candidate=VOLUME, kind='body' if index<4 else 'heading',
-                    flags=[] if index<4 else ['editorial_navigation_heading','not_historical_body'],
+                    flags=[] if index<4 else ['editorial_navigation_heading','not_historical_body'] if index==4 else ['not_historical_body'],
                     text=text, locator=locator)
         paras.append(para); offset += len(raw)
         source = dict(key=sk,title='合成来源'+str(index),source_type='primary',url=url); sources.append(source)
@@ -158,9 +158,10 @@ def fixtures(root, target_fingerprint):
                  ('many_first','event',EVENT_KEYS[0],1,'description','甲在九百年作甲事。'),
                  ('many_second','event',EVENT_KEYS[0],2,'description','甲在次年作乙事。'),
                  ('range_fact','event',EVENT_KEYS[1],3,'time_original','九百二年至九百五年之间'),
-                 ('inherited_fact','event',EVENT_KEYS[2],3,'description','本段作为旧事件补证。')]
+                 ('inherited_fact','event',EVENT_KEYS[2],3,'description','本段作为旧事件补证。'),
+                 ('heading_identity','person',PERSON_KEY,5,'biography','卷题的原字姓名依据。')]
     for key, table, subject, index, field, text in definitions:
-        ids[key]=UID(key);quote=display[index-1]
+        ids[key]=UID(key);quote=raw_texts[index-1] if index==5 else display[index-1]
         c=dict(key=key,subject_table=table,subject_key=subject,source_key='source'+str(index),
                field_path=field,claim_text=text,citation='合成测试卷37，'+PARAGRAPHS[index-1],
                note='原文：'+quote+'；核对说明：合成样本，逐字绑定。',status='draft');claims.append(c)
@@ -169,7 +170,7 @@ def fixtures(root, target_fingerprint):
     batch=dict(format_version=1,batch_key='native-sidecars-fixture-v1',people=[person_row],events=event_rows,
                person_events=[],person_relationships=[],event_causalities=[],topics=[],sources=sources,claims=claims)
     items=[dict(group='events',row=row,evidence=evidence[row['key']],temporal_review=review) for row,review in zip(event_rows,reviews)]
-    items.insert(0,dict(group='people',row=person_row,evidence=[dict(paragraph_id=PARAGRAPHS[0],field='description',text='甲曾作事。',quote=display[0])]))
+    items.insert(0,dict(group='people',row=person_row,evidence=[dict(paragraph_id=PARAGRAPHS[0],field='description',text='甲曾作事。',quote=display[0]),dict(paragraph_id=PARAGRAPHS[4],field='biography',text='卷题的原字姓名依据。',quote=raw_texts[4])]))
     def write(name,value):
         p=directory/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(S.dump(value))
     write('content-batch.json',batch)
@@ -181,7 +182,7 @@ def fixtures(root, target_fingerprint):
     write('publication-mysql.json',dict(backend='mysql',verified=True,target_fingerprint=target_fingerprint,batch_sha256=digest))
     write('time-review.json',dict(batch_sha256=digest,events=[dict(key=k,**r) for k,r in zip(EVENT_KEYS,reviews)]))
     seed={
-        'library_book':[dict(book_key=BOOK,title='合成侧表测试书',source_version=VERSION,sort_order=0,section_count=1,paragraph_count=4,dataset_sha256=bottom_sha,metadata='{}',status='available')],
+        'library_book':[dict(book_key=BOOK,title='合成侧表测试书',source_version=VERSION,sort_order=0,section_count=1,paragraph_count=5,dataset_sha256=bottom_sha,metadata='{}',status='available')],
         'library_asset':[dict(id=ASSET,source_file=source_file,source_sha256=bottom_sha)],
         'library_section':[dict(id=SECTION,book_key=BOOK,sort_order=0,title='卷37',volume=VOLUME,kind='volume',has_issues=0,metadata='{}')],
         'library_paragraph':library,
@@ -252,9 +253,10 @@ def run(env):
                 (workflow/'freeze.json').write_bytes(S.dump(dict(target_fingerprint=fp,online_check_sha256=S.sha((workflow/'online-check.json').read_bytes()),files={n:S.sha((directory/n).read_bytes()) for n in ['content-batch.json','curation.json']})))
                 bundle=S.load_bundle(root,directory)
                 plan=S.prepare(bundle,readonly);counts=S.guard_plan(plan,root,readonly)
-                assert {t:v['new'] for t,v in counts.items()}==dict(event_dating=3,claim_structure=5,library_source_link=3)
+                assert {t:v['new'] for t,v in counts.items()}==dict(event_dating=3,claim_structure=6,library_source_link=3)
                 assert count_sidecars(readonly)==dict(event_dating=0,claim_structure=0,library_source_link=0)
                 assert len(plan['skipped_independent_dates'])==1 and plan['excluded_structural_headings']==[PARAGRAPHS[3]]
+                assert plan['reference_only_headings']==[PARAGRAPHS[4]] and SOURCE_IDS[4] not in plan['source_locations']
                 readonly.connection.rollback();checks+=1
             finally:readonly.connection.close()
             db=S.Database(root,envfile,writable=True);connection_identity(db.connection,env);db.assert_publish_lock()
@@ -277,7 +279,7 @@ def run(env):
                 assert db.store.read('person','r.id=%s',[PEOPLE[1]],'*','r.id',1,0)[0]==outside_before
                 checks+=1
             first=S.apply_plan(plan,root,db)
-            assert first['actual_inserted']==dict(event_dating=3,claim_structure=5,library_source_link=3)
+            assert first['actual_inserted']==dict(event_dating=3,claim_structure=6,library_source_link=3)
             assert count_sidecars(db)==first['actual_inserted'];checks+=1
             second=S.apply_plan(plan,root,db)
             assert all(n==0 for n in second['actual_inserted'].values())
@@ -296,7 +298,7 @@ def run(env):
             for row in plan['inserts']['claim_structure']:
                 actual=db.get('claim_structure',dict(claim_id=row['claim_id']))
                 assert all(actual[k]==v for k,v in row.items())
-                assert actual['review_state']=='recorded' and actual['quote_text'] in ''.join(p['text'] for p in bundle['paras'].values())
+                assert actual['review_state']=='recorded' and any(actual['quote_text'] in raw.decode('utf-8') for raw in bundle['snapshots'].values())
             for link in plan['inserts']['library_source_link']:
                 actual=db.get('library_source_link',{k:link[k] for k in S.IDENTITY['library_source_link']})
                 assert actual==link
@@ -306,6 +308,8 @@ def run(env):
                 assert book['source_version']==VERSION and para['book_key']==BOOK
                 assert (para['char_start'],para['char_end'])==(bundle['paras'][para['id']]['locator']['char_start'],bundle['paras'][para['id']]['locator']['char_end'])
             assert PARAGRAPHS[3] not in {r['paragraph_id'] for r in plan['inserts']['library_source_link']};checks+=1
+            assert SOURCE_IDS[4] not in {r['source_id'] for r in plan['inserts']['library_source_link']}
+            assert db.get('claim_structure',dict(claim_id=UID('heading_identity')))['quote_text']=='佀 鍾';checks+=1
             first_link=next(r for r in plan['inserts']['library_source_link'] if r['paragraph_id']==PARAGRAPHS[0])
             assert first_link['snapshot_sha256']!=db.get('library_paragraph',dict(id=PARAGRAPHS[0]))['content_sha256'];checks+=1
             # A provenance-only package publishes real source links without inventing claims.

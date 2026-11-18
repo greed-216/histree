@@ -1,0 +1,4908 @@
+{
+  "batch_dir": "content/books/mingshi/vol-005/from-start/part-01",
+  "batch_key": "mingshi-v005-from-start-01",
+  "batch_sha256": "cfcda8c48ee1d80b3a26ed14e88f0e585e7dba83a6049343f4f3b9f8ca834dbb",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "60688f08fe64d3aaeaa9a6fa391e7893fe27689f6e24475a15af65198584599b",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p000939",
+    "mingshi-2f603db3d81e-p000940",
+    "mingshi-2f603db3d81e-p000942",
+    "mingshi-2f603db3d81e-p000944"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "60688f08fe64d3aaeaa9a6fa391e7893fe27689f6e24475a15af65198584599b",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "ed9efbeb-4975-5653-aa9a-65f9c76b28a4",
+        "note_sha256": "bfaee267423731e80b6dea620e27c3177dcba569f76a84508c0f999328ed716d",
+        "quote_text": "洪武三年，封燕王。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cfb33095-b4cc-57b9-a7fd-5005e430a7fd",
+        "note_sha256": "94301d1e037743f99805accfd0afffb019498ecf75ca43fab5e3a7191d011806",
+        "quote_text": "成祖啟天弘道高明肇運聖武神功純仁至孝文皇帝諱棣，太祖第四子也。母孝慈高皇后。",
+        "review_note": "保留卷首家世原称。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e5b98552-c6bc-599e-8dac-4866eb558914",
+        "note_sha256": "5a5a0703c8daa3a2319ab89b4bcc6a352085e0afdf07a7869b70ebc74475eb79",
+        "quote_text": "洪武三年，封燕王。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5701839f-c159-572e-a5a9-3a700cc2c278",
+        "note_sha256": "5a5a0703c8daa3a2319ab89b4bcc6a352085e0afdf07a7869b70ebc74475eb79",
+        "quote_text": "洪武三年，封燕王。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b96548f0-e7f0-56a7-ab54-f659092e4bd9",
+        "note_sha256": "3af67bb73b7175f858f1d7f40e42c0e56f57cad27c35fd8ef2921c96e01bcc62",
+        "quote_text": "洪武三年，封燕王。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "29445ac2-9a00-551c-9fa6-2163b4194d5c",
+        "note_sha256": "dc3ede134c390ab5356f802196a05e1cba77d8459082130b909a2b1d8b6384f0",
+        "quote_text": "十三年，之藩北平。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "342b2893-6ece-5d52-bc2a-cd508d08dc20",
+        "note_sha256": "dc3ede134c390ab5356f802196a05e1cba77d8459082130b909a2b1d8b6384f0",
+        "quote_text": "十三年，之藩北平。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "65ce6bce-a642-5806-a409-e634de3ae244",
+        "note_sha256": "42633f5b6a055791ff86f4c5ae4994032d2ee1d586ef56ed8c4159b0a300d01c",
+        "quote_text": "十三年，之藩北平。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "398fe7d6-86c3-5577-8418-f42ceb9bf21d",
+        "note_sha256": "f43ec48539ce8e6816977a70f35bb757b54303aa1a778d06275e736352bb8f21",
+        "quote_text": "二十三年，同晉王討乃兒不花。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "07e3823a-6724-52c6-b815-5d5a299587c6",
+        "note_sha256": "f43ec48539ce8e6816977a70f35bb757b54303aa1a778d06275e736352bb8f21",
+        "quote_text": "二十三年，同晉王討乃兒不花。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b54cfbb3-4609-56bf-9585-f3ce4647251b",
+        "note_sha256": "72d17d9b22fdda1a7c4ed107a6dd8849ee8978e9f3471f11124190dc57643795",
+        "quote_text": "二十三年，同晉王討乃兒不花。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "da7a9368-312b-528c-b574-d86cbbae3049",
+        "note_sha256": "ed836ed5ba239c3d1b20bbb3c538d1a40ff2b2910ee278c2b4680062bb891438",
+        "quote_text": "晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6b742cb5-0a5e-5926-a92c-7fc3b4bca4c8",
+        "note_sha256": "ed836ed5ba239c3d1b20bbb3c538d1a40ff2b2910ee278c2b4680062bb891438",
+        "quote_text": "晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7834ed39-bd28-5094-8698-d4606456ff0c",
+        "note_sha256": "cb4d3eb6953c2fb41252e8644ec0b3145e937087a171f2a78d30d43c7b4ce785",
+        "quote_text": "晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f122e6af-2ae4-5741-88bb-22edf82e35a1",
+        "note_sha256": "8ae5bc1bf92eb793febb7304cd0159ec1999d3c4d954492408a83cbaec27e2b1",
+        "quote_text": "三十一年閏五月，太祖崩",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8554b0fa-14b9-557d-82db-9047e68982d9",
+        "note_sha256": "b3ba8bd1de24ee25f5329cf315ab61de1ecf09f41cc62e1aac284e4266320f17",
+        "quote_text": "三十一年閏五月，太祖崩",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a0f4cbd7-ee93-583b-a1ea-f8ae3efb4c76",
+        "note_sha256": "b3ba8bd1de24ee25f5329cf315ab61de1ecf09f41cc62e1aac284e4266320f17",
+        "quote_text": "三十一年閏五月，太祖崩",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "19dfca39-d503-5258-886e-eaba0ba1dc18",
+        "note_sha256": "428282ad116b58887786d52a52eeb1a4be1e5779a5244b23e8441245bf65fc0b",
+        "quote_text": "三十一年閏五月，太祖崩",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9d769040-726b-528d-9ed4-10ed595c6bb7",
+        "note_sha256": "d3477cef3bc848597994bfaa39d32fa6f0b6b70704bf61b6bd03ed221756e92a",
+        "quote_text": "皇太孫即位",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "62296289-7c2a-516e-9bdb-a968662d9fe0",
+        "note_sha256": "96945772bb1051f566b1ec596a73ae709160ae504a8859ceddc1e54ea7fc66a8",
+        "quote_text": "皇太孫即位",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "324e9be0-b34d-5900-b0a9-79df25099837",
+        "note_sha256": "96945772bb1051f566b1ec596a73ae709160ae504a8859ceddc1e54ea7fc66a8",
+        "quote_text": "皇太孫即位",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f4dae81d-56a2-5375-940c-18eac69ab73b",
+        "note_sha256": "b19d4680e49dbf0d54fa350a04feb7978dede511f83d6de7bd5c73321c818c1e",
+        "quote_text": "皇太孫即位",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8b4db0cc-be83-5aa9-b6b5-814ffde00d35",
+        "note_sha256": "0ac6cab8ef669a3fcc7806548be95c18ba0876e2d61d4655958617e074e0ca6b",
+        "quote_text": "遺詔諸王臨國中，毋得至京師。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d4d5edf5-4c2f-5043-9072-fcd62b196b0c",
+        "note_sha256": "0ac6cab8ef669a3fcc7806548be95c18ba0876e2d61d4655958617e074e0ca6b",
+        "quote_text": "遺詔諸王臨國中，毋得至京師。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "17204c7d-50c5-5d3f-9ba5-39f271283bda",
+        "note_sha256": "19ea420677c4521fb2853f0f148b6fac2e21ac140fa5425c9127628a6c931496",
+        "quote_text": "遺詔諸王臨國中，毋得至京師。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "feb4547b-6ca8-52c2-a307-cb477a1f0dfc",
+        "note_sha256": "7182e6beaed32c78880defb6cd3901e493e722ece40ffa70454693a99191c343",
+        "quote_text": "王自北平入奔喪，聞詔乃止。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "47a363c2-36e3-5e96-9823-efe0918d7d58",
+        "note_sha256": "1550c98f0bd6b4dba32bf902c46d6e0ec406434a999297b9ea4320f1dfe284a8",
+        "quote_text": "王自北平入奔喪，聞詔乃止。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "76146b0a-9f3c-5da2-b78a-90afa041ee13",
+        "note_sha256": "38c18c2c7993ec8ed30b391a0e0f3cd7d738e1fed369058ed4843d57eb11677d",
+        "quote_text": "王自北平入奔喪，聞詔乃止。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "550e9304-7f24-5d31-b371-476fc2761ec7",
+        "note_sha256": "6b495eec19dde98b5a096df8c95b4219d00ca328b95d1dd8f52afb3440551238",
+        "quote_text": "乃先廢周王橚，欲以牽引燕。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1baf5117-c446-5f6d-b065-c08351a7ec2b",
+        "note_sha256": "6b495eec19dde98b5a096df8c95b4219d00ca328b95d1dd8f52afb3440551238",
+        "quote_text": "乃先廢周王橚，欲以牽引燕。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fce3e986-6506-5ae7-9e26-a461ea179882",
+        "note_sha256": "1e8c37044f7d4994eb8cfd24efb6f3eac8aa4cb1fbc863a971138388c4298b3d",
+        "quote_text": "燕山百戶倪諒告變，逮官校於諒、周鐸等伏誅。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "862a470b-4e9a-540e-b674-ce4d0ad6ffc9",
+        "note_sha256": "1e8c37044f7d4994eb8cfd24efb6f3eac8aa4cb1fbc863a971138388c4298b3d",
+        "quote_text": "燕山百戶倪諒告變，逮官校於諒、周鐸等伏誅。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "baf71254-59a2-5406-9962-8123e9d84bc9",
+        "note_sha256": "85852011f20c4f043c2c903ecafc01564575c449bf125a77d6807d236fd70ef5",
+        "quote_text": "下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0acc3e02-1cbd-5c2a-b809-42f7eb610b8f",
+        "note_sha256": "85852011f20c4f043c2c903ecafc01564575c449bf125a77d6807d236fd70ef5",
+        "quote_text": "下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e265a6d1-36b4-5297-9994-640080594279",
+        "note_sha256": "884ddb17304cb2a6c5355695a81b3dcd94b675933acd49417bc8aa7c94a48cbb",
+        "quote_text": "下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e1cd388b-6b9f-5444-b838-e559738fe25d",
+        "note_sha256": "7354a1dc751aff93d2ccdba61db6aa008a95fbb63de269d5fedda3574f035a0e",
+        "quote_text": "都指揮使謝貴、布政使張昺以兵守王宮。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c20c44c2-68bc-5de3-a6f5-a612da64aaad",
+        "note_sha256": "fc0a4c81be948218d5c1a1774faaabc9b87ee6dc2e6d0ace053bcfd9742deef3",
+        "quote_text": "都指揮使謝貴、布政使張昺以兵守王宮。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "54d4e2e0-f221-5d54-a5df-f01f3c030fd4",
+        "note_sha256": "10adc2889092edc75e26eec106b8a714f465de9bc3383b2f763b221cd203f0c9",
+        "quote_text": "王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "648c4fb8-7510-56e6-9474-78c757faeb0e",
+        "note_sha256": "fa5a5578b7f9e4f11cbf1aee3c6fff2ba9c9ad1de2ab67138533aa9b155be79c",
+        "quote_text": "王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "daf7d068-4ef9-532e-bbd5-c12c3d5422cb",
+        "note_sha256": "1385aa83e1d59cc0856bb9f97551793ecdc20fc9ce78327f25ade27e1474b2c7",
+        "quote_text": "王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "169b7d5a-4368-5235-a8b2-f6a455b0ef2e",
+        "note_sha256": "2fa7cfac8c30255dce0464f2224931e4a918525ba67418c116a248752e4a4303",
+        "quote_text": "癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0564a021-2d4d-5ad3-8e61-62d27277a827",
+        "note_sha256": "2fa7cfac8c30255dce0464f2224931e4a918525ba67418c116a248752e4a4303",
+        "quote_text": "癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "822e0024-efb9-5aa8-891a-ddf17c65eeec",
+        "note_sha256": "ac28e08d3c6bd905e7c2c8f96f109eb9736cbf4892c5de718d027f51fbb6c00e",
+        "quote_text": "癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bf411315-21d9-5171-8f53-b6625ed9f859",
+        "note_sha256": "671d5d5f392239a604b579ab2aa157a5ffc81a5a01bb78e555306fe5e1db1987",
+        "quote_text": "上書天子指泰、子澄為奸臣，幷援祖訓",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5713ea91-274a-5b14-8b17-b41da0ce0bfe",
+        "note_sha256": "138a66f68cd187172f80206657294278e95513e3c72be1364f8d1e453d268581",
+        "quote_text": "上書天子指泰、子澄為奸臣，幷援祖訓",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "78e95c56-8758-53e3-9d97-57925f017ea9",
+        "note_sha256": "df0b5f9dc6923a71124667f7ce878df1d6701daf7034301a718cd1f225addb56",
+        "quote_text": "上書天子指泰、子澄為奸臣，幷援祖訓",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "55bf0145-0fb8-5fd2-9d7e-a2c730abbd13",
+        "note_sha256": "23e1b51a3a288a757683eec1d6deaa17b7f78160e41ef85fa7705a0c28e1078c",
+        "quote_text": "拔居庸關",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "81878849-d887-5677-94fa-4e76506c897b",
+        "note_sha256": "23e1b51a3a288a757683eec1d6deaa17b7f78160e41ef85fa7705a0c28e1078c",
+        "quote_text": "拔居庸關",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "db5143b2-f34b-570e-ab95-51ba49b7739b",
+        "note_sha256": "9e8119fdbd18d08ae7dd80b7a9a8e79a4e085bf5a8bc0eec5abb8e0fb000a48d",
+        "quote_text": "破懷來，執宋忠",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "54181dd9-b34b-5fb7-96ef-a03e39c34a4e",
+        "note_sha256": "9e8119fdbd18d08ae7dd80b7a9a8e79a4e085bf5a8bc0eec5abb8e0fb000a48d",
+        "quote_text": "破懷來，執宋忠",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2a05b9cb-9103-5c28-85ac-ef747aaf6b3d",
+        "note_sha256": "e7997e27aee11403e8743d8069780ce86994039e395a10098f8c032927951147",
+        "quote_text": "取密雲，克遵化，降永平。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "de31b374-fe3b-5e4c-9136-80c4cc7038b6",
+        "note_sha256": "e7997e27aee11403e8743d8069780ce86994039e395a10098f8c032927951147",
+        "quote_text": "取密雲，克遵化，降永平。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ab9aaba6-b564-5671-8be9-7cb5e6f633b2",
+        "note_sha256": "34a7877f756ee36d00ed94ac2fa5feca6d5c7a0168dfcc1c04bb3f24e1b65832",
+        "quote_text": "八月，天子以耿炳文為大將軍，帥師致討。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f733a047-8c6d-579f-b47d-6dcf1e6cb5e5",
+        "note_sha256": "af94f877ec51d1ca565bcc05fbd6d7a1a23b83b8b114da4051994ff9220be156",
+        "quote_text": "八月，天子以耿炳文為大將軍，帥師致討。",
+        "review_note": "卷四记任将于建文元年七月，卷五八月条回叙此事。同一任命沿用事件编号，保留两卷原文叙事的月份。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "464a3905-8fb2-51c2-b0c6-cda4ab3d8a54",
+        "note_sha256": "af94f877ec51d1ca565bcc05fbd6d7a1a23b83b8b114da4051994ff9220be156",
+        "quote_text": "八月，天子以耿炳文為大將軍，帥師致討。",
+        "review_note": "卷四记任将于建文元年七月，卷五八月条回叙此事。同一任命沿用事件编号，保留两卷原文叙事的月份。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b4c1378d-63c6-542c-944e-6cc65c98187d",
+        "note_sha256": "545f2d0d64ee7e55909c35aee0bedd7d96a0961ebe39991fdcf219ac6aa9f172",
+        "quote_text": "八月，天子以耿炳文為大將軍，帥師致討。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f1179765-fe9c-544a-b0e3-db3cc4317deb",
+        "note_sha256": "af8fc627e37837105a7f59ebb6a40da475ba8daeb3861c4760cec67919c6ae4a",
+        "quote_text": "己酉，師至真定，前鋒抵雄縣。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "51b24609-e369-5d98-b86a-c3d57a9a058a",
+        "note_sha256": "af8fc627e37837105a7f59ebb6a40da475ba8daeb3861c4760cec67919c6ae4a",
+        "quote_text": "己酉，師至真定，前鋒抵雄縣。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3de92c4a-0417-5391-ace7-1146b7d5d39c",
+        "note_sha256": "acc1d253d40e77bfd56823123f77a3b2a20859b300310a61bbd46204abf8865d",
+        "quote_text": "己酉，師至真定，前鋒抵雄縣。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d312fad1-8933-5bea-b757-3330b0b9024a",
+        "note_sha256": "be1281f660a4577a64ad29ceea7fc8afc41e1a212940258aa3779d18f7389c65",
+        "quote_text": "壬子，王夜渡白溝河，圍雄，拔其城，屠之。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1918feb1-fef1-5aa1-b06b-480009bf8aea",
+        "note_sha256": "be1281f660a4577a64ad29ceea7fc8afc41e1a212940258aa3779d18f7389c65",
+        "quote_text": "壬子，王夜渡白溝河，圍雄，拔其城，屠之。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e557c28-58a3-5872-a6c4-a045f4ff375d",
+        "note_sha256": "0fe949cdadd492157dbb864a957defcf102b485c79dbccd8010eea6ab4612175",
+        "quote_text": "甲寅，都指揮潘忠、楊松自鄚州來援，伏兵擒之，遂據鄚州，還駐白溝。",
+        "review_note": "保存卷五分日记载，同一战事沿用卷四所录编号。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "acf07384-be8a-54c8-a0f9-36925ba115c8",
+        "note_sha256": "53ce1ba3e6d9c0ea5aa44df88ad4e2f87cf00e3a7f247af59256d969933e5960",
+        "quote_text": "壬子，王夜渡白溝河，圍雄，拔其城，屠之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5cbdeb74-cc73-5efe-bd26-fa3f36858879",
+        "note_sha256": "57274a7aa39878ee6ed819b248e0032733b86b9143faf6b257e3282a85b91e4b",
+        "quote_text": "壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ad63fe9f-cd43-5014-b2c2-7ad03dc38a87",
+        "note_sha256": "57274a7aa39878ee6ed819b248e0032733b86b9143faf6b257e3282a85b91e4b",
+        "quote_text": "壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7eb76701-0275-5d5d-aa0e-966b1ead3a45",
+        "note_sha256": "d3bbed12328e8d6f8f01b55c5a78f645d2a322ea16da8c516774e6c6c6c19154",
+        "quote_text": "壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "af44ad88-718f-5960-b1fe-b36bdd780d70",
+        "note_sha256": "d3bbed12328e8d6f8f01b55c5a78f645d2a322ea16da8c516774e6c6c6c19154",
+        "quote_text": "壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bb67f96d-1c5a-5e1d-b223-f393096af1f6",
+        "note_sha256": "266f5bb9ba4f740e420913d8e39ba6640ee1edfabbc68ce5fafb083f4615e7cc",
+        "quote_text": "天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "316cf8d7-8978-5750-a8af-21d3533d4184",
+        "note_sha256": "060481ab11f12384e741669da0bb3dfdccf94dfcd551db4098abba3e5aff3219",
+        "quote_text": "天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a5aa268a-36e5-5819-810c-07aea0e1a26d",
+        "note_sha256": "060481ab11f12384e741669da0bb3dfdccf94dfcd551db4098abba3e5aff3219",
+        "quote_text": "天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b20ae3bc-a854-5437-8d51-bb3fb19b0c1d",
+        "note_sha256": "5a341f505a7741a8cb18069b79e88f36778e0fba9150ad725845dc0b9c9812ff",
+        "quote_text": "天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "df2ff6a2-d99f-504b-a9e9-34d9159f060d",
+        "note_sha256": "5a341f505a7741a8cb18069b79e88f36778e0fba9150ad725845dc0b9c9812ff",
+        "quote_text": "天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f75bf6cf-0a85-5d89-a124-5df679a8fadb",
+        "note_sha256": "4ebeea3e0f42ed74a59bd214c18b0579d94c7f0bfa00a06ce392e345f60bd067",
+        "quote_text": "戊辰，江陰侯吳高以遼東兵圍永平。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4870b18a-df2e-5aed-b4f8-b75aec56afd1",
+        "note_sha256": "4ebeea3e0f42ed74a59bd214c18b0579d94c7f0bfa00a06ce392e345f60bd067",
+        "quote_text": "戊辰，江陰侯吳高以遼東兵圍永平。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e4f8068-ea5c-51c0-ac08-d5ea79320a75",
+        "note_sha256": "e3e0e0921ed2de5742511411f5e3d25dd963d5805e88a87e194db9b1bb113c7b",
+        "quote_text": "戊寅，景隆合兵五十萬，進營河間。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3dc89bdf-46b6-5c36-9b41-3585281fb4b7",
+        "note_sha256": "e3e0e0921ed2de5742511411f5e3d25dd963d5805e88a87e194db9b1bb113c7b",
+        "quote_text": "戊寅，景隆合兵五十萬，進營河間。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f8a4cef0-7ba8-5e57-be37-eec7738c4714",
+        "note_sha256": "934262bbf11d6f7543d180e0ebcd5e6fb138e7ebef2b5118341bb556daf6496e",
+        "quote_text": "丙戌，燕師援永平。壬辰，吳高聞王至，果走，追擊敗之。遂北趨大寧。",
+        "review_note": "保留与卷四不同的叙事细目，对应同一救援及撤退。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ab6f2899-6291-528a-9963-2497824a647f",
+        "note_sha256": "4d4be4ebc4b121c63ebf937d629306d1ab5c0d57c115dac2c58b888a40215b03",
+        "quote_text": "戊寅，景隆合兵五十萬，進營河間。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3658842f-8a08-585d-9f54-334ce8c5a3bb",
+        "note_sha256": "3034a7b65eb5fac6d304e66f6159b44143e0d089a5350664e95d032a5234262f",
+        "quote_text": "冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "def007a7-faae-5a2b-ae64-e04c006d696e",
+        "note_sha256": "3034a7b65eb5fac6d304e66f6159b44143e0d089a5350664e95d032a5234262f",
+        "quote_text": "冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0a3a3b06-a56a-549d-a926-808d11ce40fe",
+        "note_sha256": "b8537821e601e3d883369194a3bef1c3d8bcca38790f8262747ef718aa20798e",
+        "quote_text": "冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1dbf3ab5-cceb-5563-8ff6-a58d1dc69afc",
+        "note_sha256": "9935d05d8e5d6e26a283bfba8f44f62a792b2ef7da5c038d6ba7ef99f594a2f9",
+        "quote_text": "乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4e74f2f6-866e-5b92-9383-94f3bd828d46",
+        "note_sha256": "b1d13d8c6459f2334077c57415e849a30957556d6e16cdd4a490e855b7c84767",
+        "quote_text": "乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1b70f46e-7bf3-58aa-a056-36506df7d2f4",
+        "note_sha256": "b6d0edd22b9fbe01fdaf280d4d4fd88df296a51752e139cbbe05f8e6fa08b89b",
+        "quote_text": "乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "055da044-c2c3-56cf-bed6-3b01606d46f4",
+        "note_sha256": "d651f7b947d1353b6e80ff5295159841164a67fbeb72c1c0712108154ae54b6b",
+        "quote_text": "丁巳，入松亭關。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9550d316-ea5b-537a-846d-0257c89e1041",
+        "note_sha256": "49b16609c44056d47c5becb40ac95ef0b0284a1c6768e04ba58114ccffe81022",
+        "quote_text": "丁巳，入松亭關。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "32c8fbbd-b300-535f-a77f-9a90113770f0",
+        "note_sha256": "50e349434791acb9c3fe24f1c7308f394c3d300753e466cb77e1fc00a0fa0637",
+        "quote_text": "景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e00f1d7f-8f9a-59db-99b9-5721e87b3df7",
+        "note_sha256": "50e349434791acb9c3fe24f1c7308f394c3d300753e466cb77e1fc00a0fa0637",
+        "quote_text": "景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "09bec7e0-d1ea-5933-8084-72161157a307",
+        "note_sha256": "089eed98f773c71f2647b239c5a3ec30a4715e458a768d0c172578f5b28c32c4",
+        "quote_text": "景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "aa0ae6a4-f2f7-57da-8c49-f7ae592df70c",
+        "note_sha256": "3a05c18c24aee9be4d8ab4a1b28cc5ac1883733e9e917d5bc6b5466c830dc2cc",
+        "quote_text": "庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6ad6759d-7948-5fdd-86ac-62c25ea781c6",
+        "note_sha256": "17a1dbeda92634adf6f9dd25e346b823977ad16c000459be435d4f56ce0faa45",
+        "quote_text": "庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3ae3af47-047c-5653-885e-91a7528fa22d",
+        "note_sha256": "e527f9b9361c744b99f8142149984be6d8bcb4e9c480e6ffc07eb5b94293e8e3",
+        "quote_text": "庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fea0ff04-87e8-5d8a-a8b3-7ec7290f7050",
+        "note_sha256": "0874d61a626dc41d23a277128e35cb627d941594bad8a17f2b48b7c3b25827e3",
+        "quote_text": "景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ea3a77ad-9037-551b-a221-a75880ea6941",
+        "note_sha256": "8b0d39226f303059c38a9c3d3c65c2bde418e2c50f7c3ac922f5fdaea6406143",
+        "quote_text": "景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f5a63a69-1c87-5bff-a7c8-2bf2549fd56d",
+        "note_sha256": "0f00be09f221526c7fe46d53d95e7792baf0f0ba827c2e98044e54ef38fac42e",
+        "quote_text": "景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e66d55cb-5c03-57e3-a780-bfefff6df108",
+        "note_sha256": "0f00be09f221526c7fe46d53d95e7792baf0f0ba827c2e98044e54ef38fac42e",
+        "quote_text": "景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b79813a2-1f69-5193-bf17-81b2e6daf87e",
+        "note_sha256": "02202648c46bf35fb8e9d552331f0c3e4fb64d2e523564fc27d54e9c7876ef0c",
+        "quote_text": "辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fee75074-76ad-59d4-b1a1-2df5f2874607",
+        "note_sha256": "02202648c46bf35fb8e9d552331f0c3e4fb64d2e523564fc27d54e9c7876ef0c",
+        "quote_text": "辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "34560770-ab32-5790-bb48-9ca4398d8b38",
+        "note_sha256": "bb2d2612048e7c0de7a6ba930d5bccf1853685671b57a8ee71b6b6c7de925846",
+        "quote_text": "辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "862eab32-df35-52d7-b901-fa7b91edd64c",
+        "note_sha256": "bb2d2612048e7c0de7a6ba930d5bccf1853685671b57a8ee71b6b6c7de925846",
+        "quote_text": "辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "06b046df-2891-5818-b6cd-593944953275",
+        "note_sha256": "1d35552dce74b698a8af9cdd195a2f1e88fed94ec36df93ffff75c335de54012",
+        "quote_text": "乙亥，復上書自訴。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d6903995-e2be-5f19-b180-f5662aa9472e",
+        "note_sha256": "1d35552dce74b698a8af9cdd195a2f1e88fed94ec36df93ffff75c335de54012",
+        "quote_text": "乙亥，復上書自訴。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "af83f0e0-a6ee-5079-82a5-503bef628616",
+        "note_sha256": "083f7b206adfb872bb6f6812316edf1d33a7cbe8cfa554572eba04c1b022534e",
+        "quote_text": "乙亥，復上書自訴。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ad48fa7e-6997-5421-8add-04558750ccc5",
+        "note_sha256": "a10dd583883e37368b72492d7e76a45c36a9007e3ba41c4ba250be637fa4de26",
+        "quote_text": "十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "10d261c5-3ffd-56da-9341-2f853a848837",
+        "note_sha256": "75afc5dc231502caeb710fd9be89fe742420b5bbf95b844fe0d5ff3130c05706",
+        "quote_text": "十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "51c3939d-ef26-5c40-8cc9-b498e27fc956",
+        "note_sha256": "e0e12a5152ec1bf04b90f4a71f212aabbadac978a202606feab737dcf6c19cc9",
+        "quote_text": "十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "daecd79f-5c64-528b-b21d-8f70d848099d",
+        "note_sha256": "e0e12a5152ec1bf04b90f4a71f212aabbadac978a202606feab737dcf6c19cc9",
+        "quote_text": "十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6701ecc9-b6d8-51f0-b406-b57d9fd916c8",
+        "note_sha256": "9ed02b17c85f31c454465695689cc4a04ae98729254209321f142f03ffcd70f4",
+        "quote_text": "庚申，降廣昌。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7b938fa6-3479-59ef-a92b-602a63d70dab",
+        "note_sha256": "b8cd72be6884a7d7b1426538ff2b01ab69c907979c60f3cfc5f61cae6af82c35",
+        "quote_text": "庚申，降廣昌。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ef32948d-cf35-59e7-ba74-f444a5f738fd",
+        "note_sha256": "6bb43138087d6e4078cef7a12571b4d4311c12b5e1e013a39f5c6bca2d2611de",
+        "quote_text": "成祖啟天弘道高明肇運聖武神功純仁至孝文皇帝諱棣，太祖第四子也。母孝慈高皇后。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "claim_id": "a0f4cbd7-ee93-583b-a1ea-f8ae3efb4c76",
+        "claim_sha256": "2c394fa810f86590028e81902fa6246321be9d2bce8b586b229ab29d5370083f",
+        "earliest_year": 1398,
+        "era_key": null,
+        "event_id": "987e40aa-7934-5658-aacb-99979d5064e0",
+        "id": "aca0665a-e8bf-5e0b-aa7e-38d6b14e8f43",
+        "latest_year": 1398,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "claim_id": "324e9be0-b34d-5900-b0a9-79df25099837",
+        "claim_sha256": "1b6017211e7eebe3aa468f2569e062d9730a97f9878e536513c82a2fd4d37939",
+        "earliest_year": 1398,
+        "era_key": null,
+        "event_id": "c5e84608-ece6-5772-978f-41f88cebe620",
+        "id": "006b4718-7ae3-50e7-9fc9-6a96da8369b4",
+        "latest_year": 1398,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "claim_id": "d4d5edf5-4c2f-5043-9072-fcd62b196b0c",
+        "claim_sha256": "87fb2c349302f2b9c529b49b73268a1a7d4a4a91c844d2d4267a85ea266f1d09",
+        "earliest_year": 1398,
+        "era_key": null,
+        "event_id": "d4102381-df1a-58e5-9c7b-e969fb79a48f",
+        "id": "9339b035-8f91-5e30-a6e8-a213c75529e5",
+        "latest_year": 1398,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000943的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "47a363c2-36e3-5e96-9823-efe0918d7d58",
+        "claim_sha256": "08138e629f95adc9cb4c4ea354c5d366eef0d0605716bee9487252d313e13285",
+        "earliest_year": 1398,
+        "era_key": null,
+        "event_id": "72c4984e-3fd3-59e1-b25f-e8f90cdab9ff",
+        "id": "8835ff25-8318-52a4-b9fd-a0773ffe9b6d",
+        "latest_year": 1398,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历洪武三十一年八月。DDBC历表换算所据为1398-09-19至1398-10-17，据此核对公元发生年份。",
+        "claim_id": "1baf5117-c446-5f6d-b065-c08351a7ec2b",
+        "claim_sha256": "e78e7b234ba20eeb1195e97bc543a03cf591bb118858e741b0ca5e751785949b",
+        "earliest_year": 1398,
+        "era_key": null,
+        "event_id": "85936d8a-d261-5893-9157-c548c100bbb4",
+        "id": "afc47a25-0d1c-5a30-87d3-c1dc3e6d2958",
+        "latest_year": 1398,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。",
+        "claim_id": "862a470b-4e9a-540e-b674-ce4d0ad6ffc9",
+        "claim_sha256": "cc8dfead4f945be58e529e3f732bf472186e0cc9c75c78e90468bc76272293a1",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "440088a2-8ac9-588e-bc38-679eeb5379ae",
+        "id": "49543035-2135-57a2-898b-1b88d1026ce5",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。",
+        "claim_id": "0acc3e02-1cbd-5c2a-b809-42f7eb610b8f",
+        "claim_sha256": "7cc2d5b47727ca70ae79096d939f181ec22142316a84f91d1408c2fc7f0de7e9",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "6af09465-b74a-5405-9644-963a847328e0",
+        "id": "e543a6ab-9cd1-5912-83da-690b33a270a5",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000945的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c20c44c2-68bc-5de3-a6f5-a612da64aaad",
+        "claim_sha256": "4aa0d7296f20195615cfcd657eadededc2614e6750f90ee804d95072e828e8e5",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "e59283c3-002a-52fb-a779-fb1ec351ef45",
+        "id": "01b9e24a-b3d9-5831-a006-890a79b4a6bb",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000945的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "648c4fb8-7510-56e6-9474-78c757faeb0e",
+        "claim_sha256": "713456a296c30b72ac0e54d145046b731d48dbee6040ea468104ae7f886ffd71",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "46559245-26a7-52ff-a8e3-defc7da9b0cf",
+        "id": "a1d59571-9452-52ed-a7a8-62027252cd5e",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年七月癸酉。DDBC历表换算所据为1399-08-14至1399-08-14，据此核对公元发生年份。",
+        "claim_id": "0564a021-2d4d-5ad3-8e61-62d27277a827",
+        "claim_sha256": "5584da622f5904bbdcdd33e94695a970cdd86ce443ef29f9e4f3c746e22ef19d",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "6f782c37-bbaf-54bf-865c-76e1296fb768",
+        "id": "6bb95b6b-62e3-5c37-95bb-96c553d7d650",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000946的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5713ea91-274a-5b14-8b17-b41da0ce0bfe",
+        "claim_sha256": "4b2736a2929bf153a773e8503c843d4294eb083719bcd8f044c3981000b3c1d7",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "e83d302d-1617-5b2b-9dab-dda16be7748a",
+        "id": "c8fc7c53-f59e-5adc-9072-24d891ac4aba",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "claim_id": "81878849-d887-5677-94fa-4e76506c897b",
+        "claim_sha256": "2bba588ca92814f751609128175731aed34a722fb97fc25120cfe7c0f4947d24",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "5d999860-cf3c-5622-a33e-4b1ea47bd314",
+        "id": "e63d9f31-2653-55c2-8a12-cf79302a972d",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "claim_id": "54181dd9-b34b-5fb7-96ef-a03e39c34a4e",
+        "claim_sha256": "95002b3774587ce066d5c78a60a6ddde42c1e67ab9bad6518e9494185b382d23",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "fd44a270-0fdc-5fbe-ab1d-baa428c67572",
+        "id": "8c917951-58cd-57ab-8fcc-dd68df369004",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "claim_id": "de31b374-fe3b-5e4c-9136-80c4cc7038b6",
+        "claim_sha256": "647563a1c38c90fafdcc70aa645a1815f505d747cafa49e827d01b0b1fc16187",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "f940c316-65fc-5c3f-88d9-cd1d2b59f57a",
+        "id": "3485090c-b161-53a1-89a3-3aeba32c3ab2",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年八月己酉。DDBC历表换算所据为1399-09-19至1399-09-19，据此核对公元发生年份。",
+        "claim_id": "51b24609-e369-5d98-b86a-c3d57a9a058a",
+        "claim_sha256": "814bc7120a495248f4c7a860bb88c1480c51ad5b71a86fbcd1a744b56a1bf3b8",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "78987151-7af0-5ae3-b077-ea5f6cafa521",
+        "id": "0d5d8d4b-588c-504e-ad38-7a91766574d3",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年八月壬子。DDBC历表换算所据为1399-09-22至1399-09-22，据此核对公元发生年份。",
+        "claim_id": "1918feb1-fef1-5aa1-b06b-480009bf8aea",
+        "claim_sha256": "756e5786f271b55912c9aec1244eae9828a7b43b7660070072d46d7318cdd1b0",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "c6db34be-1557-5c7d-a9d2-34922fe89676",
+        "id": "5fe305d2-31be-5d4f-9b52-8f526e24c229",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年八月壬戌。DDBC历表换算所据为1399-10-02至1399-10-02，据此核对公元发生年份。",
+        "claim_id": "ad63fe9f-cd43-5014-b2c2-7ad03dc38a87",
+        "claim_sha256": "a1d21e0caea107d255088d8ef1732b4774a7f386fdc0518a2ecf4196e87deb4a",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "84637b58-d6ed-5727-babf-6915e83b47e7",
+        "id": "7905ad82-478f-534f-98be-8771a1ccd271",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年八月。DDBC历表换算所据为1399-09-08至1399-10-07，据此核对公元发生年份。",
+        "claim_id": "a5aa268a-36e5-5819-810c-07aea0e1a26d",
+        "claim_sha256": "dcb8e80e4e27254b1b0c5cb2e42182f58dfa0803ed642008b3ee6120fd32b518",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "5e970819-caa0-523e-b3ae-e08fd7317fcf",
+        "id": "fac7f531-474d-578d-afb5-a8b1ab847aa1",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年九月戊辰。DDBC历表换算所据为1399-10-08至1399-10-08，据此核对公元发生年份。",
+        "claim_id": "4870b18a-df2e-5aed-b4f8-b75aec56afd1",
+        "claim_sha256": "b4b5100a92463984637c017ba3936b77a044ffab20f90ac75d69e83fcbe4d73e",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "a1595ab7-7201-5ce8-adb0-56a64865fdb5",
+        "id": "ee360e05-ce5f-56b3-af21-13de05f87e3b",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年九月戊寅。DDBC历表换算所据为1399-10-18至1399-10-18，据此核对公元发生年份。",
+        "claim_id": "3dc89bdf-46b6-5c36-9b41-3585281fb4b7",
+        "claim_sha256": "90736e353a51bb82f1d944f64b9239d171cbb359fd10c91fea1405ef2b4cb802",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "e1573e34-f13d-5a20-bb21-6f0decfd75d7",
+        "id": "0539aee5-abe0-50b5-bbb1-430f3055d097",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十月壬寅。DDBC历表换算所据为1399-11-11至1399-11-11，据此核对公元发生年份。",
+        "claim_id": "def007a7-faae-5a2b-ae64-e04c006d696e",
+        "claim_sha256": "5d6a1bf9a88d2459b13bcffc1b8d64177bee9b1a96dc35c785d1b58a5415e61e",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "66f520c1-67b5-5c84-bffa-ff51a8c55be6",
+        "id": "e18af6f0-b544-59ee-9941-01ea075a594b",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十月乙卯。DDBC历表换算所据为1399-11-24至1399-11-24，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000949的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "4e74f2f6-866e-5b92-9383-94f3bd828d46",
+        "claim_sha256": "c9d75bc50251b273255e864f7053ddb985841c9d72ef63713b5190205573c387",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "a601c4be-35a1-5a5e-b1c0-f6ab7e2a98a4",
+        "id": "20f4dfa0-2b5a-5b6a-9fa4-1beef56410f4",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十月丁巳。DDBC历表换算所据为1399-11-26至1399-11-26，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000949的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9550d316-ea5b-537a-846d-0257c89e1041",
+        "claim_sha256": "85a52d79bb9aa2d0620214f18e94eaf8de9f25cd8a692b9c01da6bd38352fb76",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "39610054-3f91-50b9-8ccb-4295d04f25db",
+        "id": "962bcbb3-9e76-5ec1-b8a7-e96d6829e8ce",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十月。DDBC历表换算所据为1399-11-06至1399-12-05，据此核对公元发生年份。",
+        "claim_id": "e00f1d7f-8f9a-59db-99b9-5721e87b3df7",
+        "claim_sha256": "04b6db0a7995ea29fa77d966f7f5ead207d0cb8fc08a02382c0c41300dd3ccd4",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "58a4e28e-a087-5583-acaf-64ca0ccc71f8",
+        "id": "acb32287-9615-5e2e-a290-d0448532a721",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十一月庚午。DDBC历表换算所据为1399-12-09至1399-12-09，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000950的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "6ad6759d-7948-5fdd-86ac-62c25ea781c6",
+        "claim_sha256": "76d140322c0bc7cca4fd07abc4862418e327a1ebbfe34f58465037edd5a7c4b7",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "be5761f7-d773-5886-9b3d-71e478774a98",
+        "id": "35f78cb0-45e9-5a82-8f30-3f331c51ad38",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十一月。DDBC历表换算所据为1399-12-06至1400-01-04，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000950的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "ea3a77ad-9037-551b-a221-a75880ea6941",
+        "claim_sha256": "2376a416e81d60587d501d5c96ab4aae0f90b34282743861d14537c103b5a375",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "f229412f-5609-5cd4-9d76-3630b04bd5fb",
+        "id": "759b2583-d8aa-53c2-8739-32568ff3908d",
+        "latest_year": 1400,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十一月辛未。DDBC历表换算所据为1399-12-10至1399-12-10，据此核对公元发生年份。",
+        "claim_id": "fee75074-76ad-59d4-b1a1-2df5f2874607",
+        "claim_sha256": "5912ffc9b0865ad7f24298759c2e7584feb462238c92ce1508b029cebd324d27",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "54f7c30b-58b0-5b1a-b972-379c86a6da17",
+        "id": "b0c826b6-2bfb-53a1-9db8-4eaee06cc288",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十一月乙亥。DDBC历表换算所据为1399-12-14至1399-12-14，据此核对公元发生年份。",
+        "claim_id": "d6903995-e2be-5f19-b180-f5662aa9472e",
+        "claim_sha256": "33629096bfc9c8738f9e802f9c50558262739685964684e2b0d2d840420a9f88",
+        "earliest_year": 1399,
+        "era_key": null,
+        "event_id": "1be1aaaa-6e36-5407-9c55-782ac5915eae",
+        "id": "c7a06d92-7777-54f9-b5e6-bb94b7b6dbad",
+        "latest_year": 1399,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十二月。DDBC历表换算所据为1400-01-05至1400-02-02，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000951的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "10d261c5-3ffd-56da-9341-2f853a848837",
+        "claim_sha256": "4795e50a4093c05b8dcf39ed8e2e6af079bb74aafbfd5a82d5bd4dd1828c426c",
+        "earliest_year": 1400,
+        "era_key": null,
+        "event_id": "b90e3f55-9465-5ff5-b340-836b876427de",
+        "id": "ee2d90e9-2267-523c-baa1-b55ecf22917a",
+        "latest_year": 1400,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历建文元年十二月庚申。DDBC历表换算所据为1400-01-28至1400-01-28，据此核对公元发生年份。 卷五mingshi-2f603db3d81e-p000951的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "7b938fa6-3479-59ef-a92b-602a63d70dab",
+        "claim_sha256": "33d84c5fce19050fb357c0b7667bd4df8a0d604d89f4ab743296c5be4e15ad0a",
+        "earliest_year": 1400,
+        "era_key": null,
+        "event_id": "dd0702cc-4fb6-57bc-825d-1825dbb51bd5",
+        "id": "82b4c8ab-5154-5051-9e5b-44d56f0ab4da",
+        "latest_year": 1400,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "cbc366e39676765257581d2016c3d01f58e36dfe937c4a971cb88b2de9ccf041",
+        "paragraph_id": "mingshi-2f603db3d81e-p000941",
+        "snapshot_sha256": "45167f6d598d05aa5fba29d9a15adda346b1c28dd777721076f22e5109a820cc",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8"
+      },
+      {
+        "archive_url_sha256": "1fad402277ad39ba2ddba5d24cd9330445aae9cb53c591c3a00414c65f8a1f29",
+        "paragraph_id": "mingshi-2f603db3d81e-p000943",
+        "snapshot_sha256": "0f7e8d600a435167b8125ea3fb14d6a5a72a1808c8c0108cb65b1cb68737e15b",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912"
+      },
+      {
+        "archive_url_sha256": "89faabec768fa49f9be301e1972bae2e53ae251b95077cdd146250f1dbe982fa",
+        "paragraph_id": "mingshi-2f603db3d81e-p000945",
+        "snapshot_sha256": "18c14ce18ebc490df6c72dca4ad742edbf608b27231d86396666ced444579375",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15"
+      },
+      {
+        "archive_url_sha256": "381acd58b9dd3bd43c132b99cf53ec00349b9d9e42ded87b13dbc898667c9796",
+        "paragraph_id": "mingshi-2f603db3d81e-p000946",
+        "snapshot_sha256": "4cd7fcc34a2d61d53417a61904d721bb10ec3d4c7d065ef69c83125f7ba2c05d",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4"
+      },
+      {
+        "archive_url_sha256": "68baa1b9613b7e804dabf1cdb0dc55277644f9dc281f73c890795e9320e5da67",
+        "paragraph_id": "mingshi-2f603db3d81e-p000947",
+        "snapshot_sha256": "c24de383437e1588977df09756190b6c2770dcf6514304d357078b5d4ceeb2af",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5"
+      },
+      {
+        "archive_url_sha256": "3992fb7e7dbc136191c41753762c3b86e7fb764b598fb76106d9fd714910587e",
+        "paragraph_id": "mingshi-2f603db3d81e-p000948",
+        "snapshot_sha256": "e095e765dcaf038f5d8e6e2f6d85571bd272cb158a4d2ccdb02897f3cd943d82",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94"
+      },
+      {
+        "archive_url_sha256": "19ef278a91689496366805bbdebebea16a53e04067c1256649d1d1ed89ff4eba",
+        "paragraph_id": "mingshi-2f603db3d81e-p000949",
+        "snapshot_sha256": "90416036c163afb11fbe15db7e28676187312b1cccbd5d9c98275ea646e49d0c",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880"
+      },
+      {
+        "archive_url_sha256": "2afd62d9dc893deb5883bba74ad4844b13a20c1f17ff7fd1bfa5da296b7b7714",
+        "paragraph_id": "mingshi-2f603db3d81e-p000950",
+        "snapshot_sha256": "07ed362f063f52f133db67f31dc6efea0bf44c35d49593b9f690f34e8f7628a8",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef"
+      },
+      {
+        "archive_url_sha256": "480ed2c43808d6908a8f04c53183eaa4c8141fc4b6ccede9bf500b126e6dec9b",
+        "paragraph_id": "mingshi-2f603db3d81e-p000951",
+        "snapshot_sha256": "a4bdc816b2111590bf4720985370c5608a9f5a1d2bad0203245fb2990ae1ee89",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-005/from-start/part-01/content-batch.json": "cfcda8c48ee1d80b3a26ed14e88f0e585e7dba83a6049343f4f3b9f8ca834dbb",
+    "content/books/mingshi/vol-005/from-start/part-01/curation.json": "384018b330368fb2dd299623f9ae658c6f34c10b9d624e0ffb87d0f74fe241cb",
+    "content/books/mingshi/vol-005/from-start/part-01/packet.json": "759e7f15211f6e935a5ec07feb9eb4c041614bca580bf0eee633cb93e716ae88",
+    "content/books/mingshi/vol-005/from-start/part-01/publication-mysql.json": "a57604a72081d31690012c929a0b5624127bc8b605f28d20e0927b1549616125",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/manifest.json": "7efae12a2b3a0944adbdb6b996bfec5423bb85019ed227de9cbc0b18f13dda1f",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000939/source.txt": "0b3513a9f2872fd460305d4c98da7cd616749ef553e24c1d73b7a1b56163a85a",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000940/source.txt": "86f0cfcfcef882a13a39ce1b92c99f5b61cdedf3add6360a6b242cdc71796657",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000941/source.txt": "45167f6d598d05aa5fba29d9a15adda346b1c28dd777721076f22e5109a820cc",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000942/source.txt": "cadeba3e573aff95cf7388189fc8dc03feb74a61bc8cd3b60981ce445b4af972",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000943/source.txt": "0f7e8d600a435167b8125ea3fb14d6a5a72a1808c8c0108cb65b1cb68737e15b",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000944/source.txt": "0b489dc34f4dd299748070e8f7476994d79d94e0ef9d5de69c4e014069c80c8c",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000945/source.txt": "18c14ce18ebc490df6c72dca4ad742edbf608b27231d86396666ced444579375",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000946/source.txt": "4cd7fcc34a2d61d53417a61904d721bb10ec3d4c7d065ef69c83125f7ba2c05d",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000947/source.txt": "c24de383437e1588977df09756190b6c2770dcf6514304d357078b5d4ceeb2af",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000948/source.txt": "e095e765dcaf038f5d8e6e2f6d85571bd272cb158a4d2ccdb02897f3cd943d82",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000949/source.txt": "90416036c163afb11fbe15db7e28676187312b1cccbd5d9c98275ea646e49d0c",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000950/source.txt": "07ed362f063f52f133db67f31dc6efea0bf44c35d49593b9f690f34e8f7628a8",
+    "content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000951/source.txt": "a4bdc816b2111590bf4720985370c5608a9f5a1d2bad0203245fb2990ae1ee89",
+    "content/books/mingshi/vol-005/from-start/part-01/sql/key-map.json": "c17815b4cb4bd049c404043adcb727c7abb2ab5581793cb14b5d85ad628bccd4",
+    "content/books/mingshi/vol-005/from-start/part-01/time-review.json": "9069f465e6977d1b6e40214e0f32dc09e49ee36b8358ed55d81f6fa4c336fc22"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "ed9efbeb-4975-5653-aa9a-65f9c76b28a4"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武三年",
+        "claim_text": "朱棣获封燕王。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:23.792192+00:00",
+        "field_path": "description",
+        "id": "ed9efbeb-4975-5653-aa9a-65f9c76b28a4",
+        "note": "原文：洪武三年，封燕王。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "dd806a37-77e8-5244-96e9-4d71db81b600",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cfb33095-b4cc-57b9-a7fd-5005e430a7fd"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；卷首家世叙述",
+        "claim_text": "《成祖本纪》明载朱棣是明太祖的第四个儿子，卷首称其母为孝慈高皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:23.932536+00:00",
+        "field_path": "description",
+        "id": "cfb33095-b4cc-57b9-a7fd-5005e430a7fd",
+        "note": "原文：成祖啟天弘道高明肇運聖武神功純仁至孝文皇帝諱棣，太祖第四子也。母孝慈高皇后。；核对说明：保留卷首家世原称。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "dd806a37-77e8-5244-96e9-4d71db81b600",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e5b98552-c6bc-599e-8dac-4866eb558914"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武三年",
+        "claim_text": "《成祖本纪》记朱棣在洪武三年获封燕王。《太祖本纪》把他的册封列在四月封诸王的同一项诏令下。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:23.979827+00:00",
+        "field_path": "description",
+        "id": "e5b98552-c6bc-599e-8dac-4866eb558914",
+        "note": "原文：洪武三年，封燕王。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "b2e0ac71-16d8-5fc0-9737-0107b73b2576",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5701839f-c159-572e-a5a9-3a700cc2c278"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武三年",
+        "claim_text": "原历洪武三年。DDBC历表换算所据为1370-02-05至1371-01-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.017385+00:00",
+        "field_path": "time_original",
+        "id": "5701839f-c159-572e-a5a9-3a700cc2c278",
+        "note": "原文：洪武三年，封燕王。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "b2e0ac71-16d8-5fc0-9737-0107b73b2576",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b96548f0-e7f0-56a7-ab54-f659092e4bd9"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武三年",
+        "claim_text": "获封燕王",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.057763+00:00",
+        "field_path": "role",
+        "id": "b96548f0-e7f0-56a7-ab54-f659092e4bd9",
+        "note": "原文：洪武三年，封燕王。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "3486c6f7-851f-5baf-b16d-4f5d7865d430",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "29445ac2-9a00-551c-9fa6-2163b4194d5c"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武十三年",
+        "claim_text": "《成祖本纪》记朱棣在洪武十三年到北平就藩，卷二将此事系于三月壬寅。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.097596+00:00",
+        "field_path": "description",
+        "id": "29445ac2-9a00-551c-9fa6-2163b4194d5c",
+        "note": "原文：十三年，之藩北平。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "48180ffe-1a86-5ab1-9e26-ab05e08d3c40",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "342b2893-6ece-5d52-bc2a-cd508d08dc20"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武十三年",
+        "claim_text": "原历洪武十三年。DDBC历表换算所据为1380-02-15至1381-02-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.144393+00:00",
+        "field_path": "time_original",
+        "id": "342b2893-6ece-5d52-bc2a-cd508d08dc20",
+        "note": "原文：十三年，之藩北平。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "48180ffe-1a86-5ab1-9e26-ab05e08d3c40",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "65ce6bce-a642-5806-a409-e634de3ae244"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武十三年",
+        "claim_text": "赴北平就藩",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.185007+00:00",
+        "field_path": "role",
+        "id": "65ce6bce-a642-5806-a409-e634de3ae244",
+        "note": "原文：十三年，之藩北平。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "f225cdfe-1118-5484-be12-76d36f7b1c7f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "398fe7d6-86c3-5577-8418-f42ceb9bf21d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武二十三年",
+        "claim_text": "朱棣在洪武二十三年与晋王共同征讨乃儿不花。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.238040+00:00",
+        "field_path": "description",
+        "id": "398fe7d6-86c3-5577-8418-f42ceb9bf21d",
+        "note": "原文：二十三年，同晉王討乃兒不花。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "38f68ed4-63bf-51e1-8dfa-299f7a4d0e17",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "07e3823a-6724-52c6-b815-5d5a299587c6"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武二十三年",
+        "claim_text": "原历洪武二十三年。DDBC历表换算所据为1390-01-25至1391-02-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.274276+00:00",
+        "field_path": "time_original",
+        "id": "07e3823a-6724-52c6-b815-5d5a299587c6",
+        "note": "原文：二十三年，同晉王討乃兒不花。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "38f68ed4-63bf-51e1-8dfa-299f7a4d0e17",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b54cfbb3-4609-56bf-9585-f3ce4647251b"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武二十三年",
+        "claim_text": "与晋王率军出征",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.317266+00:00",
+        "field_path": "role",
+        "id": "b54cfbb3-4609-56bf-9585-f3ce4647251b",
+        "note": "原文：二十三年，同晉王討乃兒不花。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "b76915dc-91e1-54df-9bd0-37e2bc7188de",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "da7a9368-312b-528c-b574-d86cbbae3049"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武二十三年",
+        "claim_text": "《成祖本纪》称晋王没有继续推进，燕王朱棣日夜兼行到达迤都，取得战果后返回，朱元璋为此欣喜。卷三同事写咬住等归降。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.364941+00:00",
+        "field_path": "description",
+        "id": "da7a9368-312b-528c-b574-d86cbbae3049",
+        "note": "原文：晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "5d12f36a-e133-5860-b93f-1621fb89681c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6b742cb5-0a5e-5926-a92c-7fc3b4bca4c8"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武二十三年",
+        "claim_text": "原历洪武二十三年。DDBC历表换算所据为1390-01-25至1391-02-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.417440+00:00",
+        "field_path": "time_original",
+        "id": "6b742cb5-0a5e-5926-a92c-7fc3b4bca4c8",
+        "note": "原文：晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "5d12f36a-e133-5860-b93f-1621fb89681c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7834ed39-bd28-5094-8698-d4606456ff0c"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；洪武二十三年",
+        "claim_text": "率军趋迤都并返回",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.505380+00:00",
+        "field_path": "role",
+        "id": "7834ed39-bd28-5094-8698-d4606456ff0c",
+        "note": "原文：晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "d3eca634-871b-5862-b610-ede584ef0db2",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f122e6af-2ae4-5741-88bb-22edf82e35a1"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "朱元璋去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.600297+00:00",
+        "field_path": "description",
+        "id": "f122e6af-2ae4-5741-88bb-22edf82e35a1",
+        "note": "原文：三十一年閏五月，太祖崩；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "3d83c7c6-23fc-5e89-9e9b-b70713a0a63e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8554b0fa-14b9-557d-82db-9047e68982d9"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "《成祖本纪》记明太祖在洪武三十一年闰五月去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.657417+00:00",
+        "field_path": "description",
+        "id": "8554b0fa-14b9-557d-82db-9047e68982d9",
+        "note": "原文：三十一年閏五月，太祖崩；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "987e40aa-7934-5658-aacb-99979d5064e0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a0f4cbd7-ee93-583b-a1ea-f8ae3efb4c76"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.709769+00:00",
+        "field_path": "time_original",
+        "id": "a0f4cbd7-ee93-583b-a1ea-f8ae3efb4c76",
+        "note": "原文：三十一年閏五月，太祖崩；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "987e40aa-7934-5658-aacb-99979d5064e0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "19dfca39-d503-5258-886e-eaba0ba1dc18"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "去世",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.764938+00:00",
+        "field_path": "role",
+        "id": "19dfca39-d503-5258-886e-eaba0ba1dc18",
+        "note": "原文：三十一年閏五月，太祖崩；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "f490367b-f31e-596f-b863-bffc1e48d22a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9d769040-726b-528d-9ed4-10ed595c6bb7"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "朱允炆即位。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.834903+00:00",
+        "field_path": "description",
+        "id": "9d769040-726b-528d-9ed4-10ed595c6bb7",
+        "note": "原文：皇太孫即位；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "76ea9485-acac-508c-a6ae-e2532462c03e",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "62296289-7c2a-516e-9bdb-a968662d9fe0"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "朱元璋去世后，皇太孙朱允炆即位。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:24.978022+00:00",
+        "field_path": "description",
+        "id": "62296289-7c2a-516e-9bdb-a968662d9fe0",
+        "note": "原文：皇太孫即位；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "c5e84608-ece6-5772-978f-41f88cebe620",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "324e9be0-b34d-5900-b0a9-79df25099837"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.032628+00:00",
+        "field_path": "time_original",
+        "id": "324e9be0-b34d-5900-b0a9-79df25099837",
+        "note": "原文：皇太孫即位；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "c5e84608-ece6-5772-978f-41f88cebe620",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f4dae81d-56a2-5375-940c-18eac69ab73b"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "即位",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.154484+00:00",
+        "field_path": "role",
+        "id": "f4dae81d-56a2-5375-940c-18eac69ab73b",
+        "note": "原文：皇太孫即位；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "27d7ddc8-221d-5446-adcd-4e3c93513527",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8b4db0cc-be83-5aa9-b6b5-814ffde00d35"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "太祖遗诏规定，各藩王应在自己的封国内举哀，不要进京。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.212685+00:00",
+        "field_path": "description",
+        "id": "8b4db0cc-be83-5aa9-b6b5-814ffde00d35",
+        "note": "原文：遺詔諸王臨國中，毋得至京師。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "d4102381-df1a-58e5-9c7b-e969fb79a48f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d4d5edf5-4c2f-5043-9072-fcd62b196b0c"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.264906+00:00",
+        "field_path": "time_original",
+        "id": "d4d5edf5-4c2f-5043-9072-fcd62b196b0c",
+        "note": "原文：遺詔諸王臨國中，毋得至京師。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "d4102381-df1a-58e5-9c7b-e969fb79a48f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "17204c7d-50c5-5d3f-9ba5-39f271283bda"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "在遗诏中规定诸王举哀",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.319762+00:00",
+        "field_path": "role",
+        "id": "17204c7d-50c5-5d3f-9ba5-39f271283bda",
+        "note": "原文：遺詔諸王臨國中，毋得至京師。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "3649c575-2127-57ca-b871-bf285881c6e6",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "feb4547b-6ca8-52c2-a307-cb477a1f0dfc"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "《成祖本纪》记载，朱棣从北平动身奔丧，听到太祖遗诏后便停止进京。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.382996+00:00",
+        "field_path": "description",
+        "id": "feb4547b-6ca8-52c2-a307-cb477a1f0dfc",
+        "note": "原文：王自北平入奔喪，聞詔乃止。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "72c4984e-3fd3-59e1-b25f-e8f90cdab9ff",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "47a363c2-36e3-5e96-9823-efe0918d7d58"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "原历洪武三十一年闰五月。DDBC历表换算所据为1398-06-23至1398-07-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.429581+00:00",
+        "field_path": "time_original",
+        "id": "47a363c2-36e3-5e96-9823-efe0918d7d58",
+        "note": "原文：王自北平入奔喪，聞詔乃止。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "72c4984e-3fd3-59e1-b25f-e8f90cdab9ff",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "76146b0a-9f3c-5da2-b78a-90afa041ee13"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年闰五月",
+        "claim_text": "听遗诏后停止奔丧行程",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.509659+00:00",
+        "field_path": "role",
+        "id": "76146b0a-9f3c-5da2-b78a-90afa041ee13",
+        "note": "原文：王自北平入奔喪，聞詔乃止。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "cb655b77-59d1-59f0-ba74-f1e638bcaf47",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "550e9304-7f24-5d31-b371-476fc2761ec7"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年八月",
+        "claim_text": "《成祖本纪》记朱允炆先废周王朱橚，认为此举意在牵制燕王。卷四记周王在洪武三十一年八月被废。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.560278+00:00",
+        "field_path": "description",
+        "id": "550e9304-7f24-5d31-b371-476fc2761ec7",
+        "note": "原文：乃先廢周王橚，欲以牽引燕。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "85936d8a-d261-5893-9157-c548c100bbb4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1baf5117-c446-5f6d-b065-c08351a7ec2b"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943；洪武三十一年八月",
+        "claim_text": "原历洪武三十一年八月。DDBC历表换算所据为1398-09-19至1398-10-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.620673+00:00",
+        "field_path": "time_original",
+        "id": "1baf5117-c446-5f6d-b065-c08351a7ec2b",
+        "note": "原文：乃先廢周王橚，欲以牽引燕。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "status": "published",
+        "subject_id": "85936d8a-d261-5893-9157-c548c100bbb4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fce3e986-6506-5ae7-9e26-a461ea179882"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "燕山护卫百户倪谅告发变故，于谅、周铎等被捕并处死。本纪额外明列周铎。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.685026+00:00",
+        "field_path": "description",
+        "id": "fce3e986-6506-5ae7-9e26-a461ea179882",
+        "note": "原文：燕山百戶倪諒告變，逮官校於諒、周鐸等伏誅。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "440088a2-8ac9-588e-bc38-679eeb5379ae",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "862a470b-4e9a-540e-b674-ce4d0ad6ffc9"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.799683+00:00",
+        "field_path": "time_original",
+        "id": "862a470b-4e9a-540e-b674-ce4d0ad6ffc9",
+        "note": "原文：燕山百戶倪諒告變，逮官校於諒、周鐸等伏誅。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "440088a2-8ac9-588e-bc38-679eeb5379ae",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "baf71254-59a2-5406-9962-8123e9d84bc9"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "朝廷下诏责备燕王，并派中官逮捕燕王府官员。朱棣随后称病情严重。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.857574+00:00",
+        "field_path": "description",
+        "id": "baf71254-59a2-5406-9962-8123e9d84bc9",
+        "note": "原文：下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "6af09465-b74a-5405-9644-963a847328e0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0acc3e02-1cbd-5c2a-b809-42f7eb610b8f"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:25.904278+00:00",
+        "field_path": "time_original",
+        "id": "0acc3e02-1cbd-5c2a-b809-42f7eb610b8f",
+        "note": "原文：下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "6af09465-b74a-5405-9644-963a847328e0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e265a6d1-36b4-5297-9994-640080594279"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "遭朝廷诏责并称病",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.020076+00:00",
+        "field_path": "role",
+        "id": "e265a6d1-36b4-5297-9994-640080594279",
+        "note": "原文：下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "e418d3ab-9084-561b-a652-c96ec2b7ff9a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e1cd388b-6b9f-5444-b838-e559738fe25d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "都指挥使谢贵、布政使张昺调兵守住燕王宫。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.057524+00:00",
+        "field_path": "description",
+        "id": "e1cd388b-6b9f-5444-b838-e559738fe25d",
+        "note": "原文：都指揮使謝貴、布政使張昺以兵守王宮。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "e59283c3-002a-52fb-a779-fb1ec351ef45",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c20c44c2-68bc-5de3-a6f5-a612da64aaad"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.093232+00:00",
+        "field_path": "time_original",
+        "id": "c20c44c2-68bc-5de3-a6f5-a612da64aaad",
+        "note": "原文：都指揮使謝貴、布政使張昺以兵守王宮。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "e59283c3-002a-52fb-a779-fb1ec351ef45",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "54d4e2e0-f221-5d54-a5df-f01f3c030fd4"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "燕王朱棣与僧人道衍商议，命指挥张玉、朱能秘密带八百人进府守卫。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.144706+00:00",
+        "field_path": "description",
+        "id": "54d4e2e0-f221-5d54-a5df-f01f3c030fd4",
+        "note": "原文：王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "46559245-26a7-52ff-a8e3-defc7da9b0cf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "648c4fb8-7510-56e6-9474-78c757faeb0e"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "原历建文元年六月。DDBC历表换算所据为1399-07-12至1399-08-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.199820+00:00",
+        "field_path": "time_original",
+        "id": "648c4fb8-7510-56e6-9474-78c757faeb0e",
+        "note": "原文：王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "46559245-26a7-52ff-a8e3-defc7da9b0cf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "daf7d068-4ef9-532e-bbd5-c12c3d5422cb"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945；建文元年六月",
+        "claim_text": "与道衍商议，命人入府守卫",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.237635+00:00",
+        "field_path": "role",
+        "id": "daf7d068-4ef9-532e-bbd5-c12c3d5422cb",
+        "note": "原文：王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "status": "published",
+        "subject_id": "c8629a92-ece9-52bd-b84a-6dc55259a8e7",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "169b7d5a-4368-5235-a8b2-f6a455b0ef2e"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月癸酉",
+        "claim_text": "朱棣在端礼门安排士兵，诱谢贵和张昺进门杀死二人，接着夺取九门。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.280096+00:00",
+        "field_path": "description",
+        "id": "169b7d5a-4368-5235-a8b2-f6a455b0ef2e",
+        "note": "原文：癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "6f782c37-bbaf-54bf-865c-76e1296fb768",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0564a021-2d4d-5ad3-8e61-62d27277a827"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月癸酉",
+        "claim_text": "原历建文元年七月癸酉。DDBC历表换算所据为1399-08-14至1399-08-14，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.360113+00:00",
+        "field_path": "time_original",
+        "id": "0564a021-2d4d-5ad3-8e61-62d27277a827",
+        "note": "原文：癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "6f782c37-bbaf-54bf-865c-76e1296fb768",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "822e0024-efb9-5aa8-891a-ddf17c65eeec"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月癸酉",
+        "claim_text": "控制九门并率部起兵",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.423325+00:00",
+        "field_path": "role",
+        "id": "822e0024-efb9-5aa8-891a-ddf17c65eeec",
+        "note": "原文：癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "89e7be29-6f0e-5165-aa4d-e8d6057d8e0e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bf411315-21d9-5171-8f53-b6625ed9f859"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "朱棣向朝廷上书，指称齐泰和黄子澄是奸臣，并援引祖训所写的藩王受命讨奸。他把自己的军队称为“靖难”。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.482393+00:00",
+        "field_path": "description",
+        "id": "bf411315-21d9-5171-8f53-b6625ed9f859",
+        "note": "原文：上書天子指泰、子澄為奸臣，幷援祖訓；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "e83d302d-1617-5b2b-9dab-dda16be7748a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5713ea91-274a-5b14-8b17-b41da0ce0bfe"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.524407+00:00",
+        "field_path": "time_original",
+        "id": "5713ea91-274a-5b14-8b17-b41da0ce0bfe",
+        "note": "原文：上書天子指泰、子澄為奸臣，幷援祖訓；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "e83d302d-1617-5b2b-9dab-dda16be7748a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "78e95c56-8758-53e3-9d97-57925f017ea9"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "上书朝廷",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.572466+00:00",
+        "field_path": "role",
+        "id": "78e95c56-8758-53e3-9d97-57925f017ea9",
+        "note": "原文：上書天子指泰、子澄為奸臣，幷援祖訓；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "f8f21074-66de-5060-be9e-c44c5b0e606c",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "55bf0145-0fb8-5fd2-9d7e-a2c730abbd13"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "《成祖本纪》记燕军夺取居庸关。卷四系于七月己卯。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.624411+00:00",
+        "field_path": "description",
+        "id": "55bf0145-0fb8-5fd2-9d7e-a2c730abbd13",
+        "note": "原文：拔居庸關；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "5d999860-cf3c-5622-a33e-4b1ea47bd314",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "81878849-d887-5677-94fa-4e76506c897b"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.689421+00:00",
+        "field_path": "time_original",
+        "id": "81878849-d887-5677-94fa-4e76506c897b",
+        "note": "原文：拔居庸關；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "5d999860-cf3c-5622-a33e-4b1ea47bd314",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "db5143b2-f34b-570e-ab95-51ba49b7739b"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "《成祖本纪》记燕军攻下怀来，俘获宋忠。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.732436+00:00",
+        "field_path": "description",
+        "id": "db5143b2-f34b-570e-ab95-51ba49b7739b",
+        "note": "原文：破懷來，執宋忠；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "fd44a270-0fdc-5fbe-ab1d-baa428c67572",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "54181dd9-b34b-5fb7-96ef-a03e39c34a4e"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.792641+00:00",
+        "field_path": "time_original",
+        "id": "54181dd9-b34b-5fb7-96ef-a03e39c34a4e",
+        "note": "原文：破懷來，執宋忠；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "fd44a270-0fdc-5fbe-ab1d-baa428c67572",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2a05b9cb-9103-5c28-85ac-ef747aaf6b3d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "《成祖本纪》记燕军攻取密云与遵化，又招降永平。卷四另记通州也归附燕王。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:26.844407+00:00",
+        "field_path": "description",
+        "id": "2a05b9cb-9103-5c28-85ac-ef747aaf6b3d",
+        "note": "原文：取密雲，克遵化，降永平。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "f940c316-65fc-5c3f-88d9-cd1d2b59f57a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "de31b374-fe3b-5e4c-9136-80c4cc7038b6"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946；建文元年七月",
+        "claim_text": "原历建文元年七月。DDBC历表换算所据为1399-08-10至1399-09-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:44.240863+00:00",
+        "field_path": "time_original",
+        "id": "de31b374-fe3b-5e4c-9136-80c4cc7038b6",
+        "note": "原文：取密雲，克遵化，降永平。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "status": "published",
+        "subject_id": "f940c316-65fc-5c3f-88d9-cd1d2b59f57a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ab9aaba6-b564-5671-8be9-7cb5e6f633b2"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "耿炳文任大将军并率军讨燕。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:45.523810+00:00",
+        "field_path": "description",
+        "id": "ab9aaba6-b564-5671-8be9-7cb5e6f633b2",
+        "note": "原文：八月，天子以耿炳文為大將軍，帥師致討。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "348f31d6-f709-5dde-a5f7-f84796bfa663",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f733a047-8c6d-579f-b47d-6dcf1e6cb5e5"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "《成祖本纪》在八月条重述朝廷命耿炳文为大将军、领兵征讨燕王。卷四在七月条记任将，八月条记其进抵真定。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.096015+00:00",
+        "field_path": "description",
+        "id": "f733a047-8c6d-579f-b47d-6dcf1e6cb5e5",
+        "note": "原文：八月，天子以耿炳文為大將軍，帥師致討。；核对说明：卷四记任将于建文元年七月，卷五八月条回叙此事。同一任命沿用事件编号，保留两卷原文叙事的月份。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "c5c19900-1aeb-5eab-b199-92daa9b44dbe",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "464a3905-8fb2-51c2-b0c6-cda4ab3d8a54"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "原历建文元年八月。DDBC历表换算所据为1399-09-08至1399-10-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.206613+00:00",
+        "field_path": "time_original",
+        "id": "464a3905-8fb2-51c2-b0c6-cda4ab3d8a54",
+        "note": "原文：八月，天子以耿炳文為大將軍，帥師致討。；核对说明：卷四记任将于建文元年七月，卷五八月条回叙此事。同一任命沿用事件编号，保留两卷原文叙事的月份。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "c5c19900-1aeb-5eab-b199-92daa9b44dbe",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b4c1378d-63c6-542c-944e-6cc65c98187d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "任大将军并率军讨燕",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.411316+00:00",
+        "field_path": "role",
+        "id": "b4c1378d-63c6-542c-944e-6cc65c98187d",
+        "note": "原文：八月，天子以耿炳文為大將軍，帥師致討。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "e26dd174-7144-5c9e-86f2-1de7be0f737a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f1179765-fe9c-544a-b0e3-db3cc4317deb"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月己酉",
+        "claim_text": "《成祖本纪》记耿炳文所部于八月己酉进抵真定，前锋到达雄县。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.544355+00:00",
+        "field_path": "description",
+        "id": "f1179765-fe9c-544a-b0e3-db3cc4317deb",
+        "note": "原文：己酉，師至真定，前鋒抵雄縣。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "78987151-7af0-5ae3-b077-ea5f6cafa521",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "51b24609-e369-5d98-b86a-c3d57a9a058a"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月己酉",
+        "claim_text": "原历建文元年八月己酉。DDBC历表换算所据为1399-09-19至1399-09-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.631782+00:00",
+        "field_path": "time_original",
+        "id": "51b24609-e369-5d98-b86a-c3d57a9a058a",
+        "note": "原文：己酉，師至真定，前鋒抵雄縣。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "78987151-7af0-5ae3-b077-ea5f6cafa521",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3de92c4a-0417-5391-ace7-1146b7d5d39c"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月己酉",
+        "claim_text": "所部抵达真定",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.680733+00:00",
+        "field_path": "role",
+        "id": "3de92c4a-0417-5391-ace7-1146b7d5d39c",
+        "note": "原文：己酉，師至真定，前鋒抵雄縣。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "d2097fd4-c096-5aaf-b946-6455182febe3",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d312fad1-8933-5bea-b757-3330b0b9024a"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬子",
+        "claim_text": "《成祖本纪》记燕军夜渡白沟河，包围并攻占雄县，随后屠城。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.743759+00:00",
+        "field_path": "description",
+        "id": "d312fad1-8933-5bea-b757-3330b0b9024a",
+        "note": "原文：壬子，王夜渡白溝河，圍雄，拔其城，屠之。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "c6db34be-1557-5c7d-a9d2-34922fe89676",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1918feb1-fef1-5aa1-b06b-480009bf8aea"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬子",
+        "claim_text": "原历建文元年八月壬子。DDBC历表换算所据为1399-09-22至1399-09-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:47.910675+00:00",
+        "field_path": "time_original",
+        "id": "1918feb1-fef1-5aa1-b06b-480009bf8aea",
+        "note": "原文：壬子，王夜渡白溝河，圍雄，拔其城，屠之。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "c6db34be-1557-5c7d-a9d2-34922fe89676",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e557c28-58a3-5872-a6c4-a045f4ff375d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月甲寅，卷五另系被俘日",
+        "claim_text": "《成祖本纪》在雄县陷落后另系甲寅，记潘忠、杨松由鄚州来援、被伏兵擒获，燕军占据鄚州后回驻白沟。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:48.025657+00:00",
+        "field_path": "description",
+        "id": "1e557c28-58a3-5872-a6c4-a045f4ff375d",
+        "note": "原文：甲寅，都指揮潘忠、楊松自鄚州來援，伏兵擒之，遂據鄚州，還駐白溝。；核对说明：保存卷五分日记载，同一战事沿用卷四所录编号。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "c6db34be-1557-5c7d-a9d2-34922fe89676",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "acf07384-be8a-54c8-a0f9-36925ba115c8"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬子",
+        "claim_text": "率军渡河攻雄县",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:48.087478+00:00",
+        "field_path": "role",
+        "id": "acf07384-be8a-54c8-a0f9-36925ba115c8",
+        "note": "原文：壬子，王夜渡白溝河，圍雄，拔其城，屠之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "a24791a5-7f14-597c-a571-70a44362ae40",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5cbdeb74-cc73-5efe-bd26-fa3f36858879"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬戌",
+        "claim_text": "朱棣与张玉、谭渊等夹击耿炳文军，俘获李坚、甯忠、顾成等人。《成祖本纪》称斩首三万，围攻真定两天未克，遂撤去。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:48.162781+00:00",
+        "field_path": "description",
+        "id": "5cbdeb74-cc73-5efe-bd26-fa3f36858879",
+        "note": "原文：壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "84637b58-d6ed-5727-babf-6915e83b47e7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ad63fe9f-cd43-5014-b2c2-7ad03dc38a87"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬戌",
+        "claim_text": "原历建文元年八月壬戌。DDBC历表换算所据为1399-10-02至1399-10-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:48.216739+00:00",
+        "field_path": "time_original",
+        "id": "ad63fe9f-cd43-5014-b2c2-7ad03dc38a87",
+        "note": "原文：壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "84637b58-d6ed-5727-babf-6915e83b47e7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7eb76701-0275-5d5d-aa0e-966b1ead3a45"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬戌",
+        "claim_text": "率军攻打耿炳文并围真定",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:48.272351+00:00",
+        "field_path": "role",
+        "id": "7eb76701-0275-5d5d-aa0e-966b1ead3a45",
+        "note": "原文：壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "3923a54e-335a-53c2-8ebf-53dd6a1d409b",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "af44ad88-718f-5960-b1fe-b36bdd780d70"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月壬戌",
+        "claim_text": "所部被击败",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:48.690276+00:00",
+        "field_path": "role",
+        "id": "af44ad88-718f-5960-b1fe-b36bdd780d70",
+        "note": "原文：壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "b3aa6e8b-d5ce-58c6-9405-efe47e846a84",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bb67f96d-1c5a-5e1d-b223-f393096af1f6"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "李景隆接替耿炳文领军。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:50.845619+00:00",
+        "field_path": "description",
+        "id": "bb67f96d-1c5a-5e1d-b223-f393096af1f6",
+        "note": "原文：天子聞炳文敗，遣曹國公李景隆代領其軍。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "74bfbb9a-13ef-5b0a-8ce8-2e9f902907af",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "316cf8d7-8978-5750-a8af-21d3533d4184"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "朱允炆得知耿炳文战败，派曹国公李景隆接替耿炳文领军。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.216791+00:00",
+        "field_path": "description",
+        "id": "316cf8d7-8978-5750-a8af-21d3533d4184",
+        "note": "原文：天子聞炳文敗，遣曹國公李景隆代領其軍。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "5e970819-caa0-523e-b3ae-e08fd7317fcf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a5aa268a-36e5-5819-810c-07aea0e1a26d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "原历建文元年八月。DDBC历表换算所据为1399-09-08至1399-10-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.266879+00:00",
+        "field_path": "time_original",
+        "id": "a5aa268a-36e5-5819-810c-07aea0e1a26d",
+        "note": "原文：天子聞炳文敗，遣曹國公李景隆代領其軍。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "5e970819-caa0-523e-b3ae-e08fd7317fcf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b20ae3bc-a854-5437-8d51-bb3fb19b0c1d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "接替耿炳文领军",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.315821+00:00",
+        "field_path": "role",
+        "id": "b20ae3bc-a854-5437-8d51-bb3fb19b0c1d",
+        "note": "原文：天子聞炳文敗，遣曹國公李景隆代領其軍。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "1b0a3910-9c2c-50f2-b78e-37e569b4c3cf",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "df2ff6a2-d99f-504b-a9e9-34d9159f060d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947；建文元年八月",
+        "claim_text": "战败后由李景隆接替",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.362994+00:00",
+        "field_path": "role",
+        "id": "df2ff6a2-d99f-504b-a9e9-34d9159f060d",
+        "note": "原文：天子聞炳文敗，遣曹國公李景隆代領其軍。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "status": "published",
+        "subject_id": "c3f1b7bc-5de9-5a14-bc8f-684f2809383e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f75bf6cf-0a85-5d89-a124-5df679a8fadb"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948；建文元年九月戊辰",
+        "claim_text": "江阴侯吴高率辽东兵围攻永平。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.429048+00:00",
+        "field_path": "description",
+        "id": "f75bf6cf-0a85-5d89-a124-5df679a8fadb",
+        "note": "原文：戊辰，江陰侯吳高以遼東兵圍永平。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "status": "published",
+        "subject_id": "a1595ab7-7201-5ce8-adb0-56a64865fdb5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4870b18a-df2e-5aed-b4f8-b75aec56afd1"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948；建文元年九月戊辰",
+        "claim_text": "原历建文元年九月戊辰。DDBC历表换算所据为1399-10-08至1399-10-08，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.477812+00:00",
+        "field_path": "time_original",
+        "id": "4870b18a-df2e-5aed-b4f8-b75aec56afd1",
+        "note": "原文：戊辰，江陰侯吳高以遼東兵圍永平。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "status": "published",
+        "subject_id": "a1595ab7-7201-5ce8-adb0-56a64865fdb5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e4f8068-ea5c-51c0-ac08-d5ea79320a75"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948；建文元年九月戊寅",
+        "claim_text": "《成祖本纪》称李景隆率合计五十万兵马到河间进驻。兵数保留为本纪所载。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.525227+00:00",
+        "field_path": "description",
+        "id": "1e4f8068-ea5c-51c0-ac08-d5ea79320a75",
+        "note": "原文：戊寅，景隆合兵五十萬，進營河間。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "status": "published",
+        "subject_id": "e1573e34-f13d-5a20-bb21-6f0decfd75d7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3dc89bdf-46b6-5c36-9b41-3585281fb4b7"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948；建文元年九月戊寅",
+        "claim_text": "原历建文元年九月戊寅。DDBC历表换算所据为1399-10-18至1399-10-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.566833+00:00",
+        "field_path": "time_original",
+        "id": "3dc89bdf-46b6-5c36-9b41-3585281fb4b7",
+        "note": "原文：戊寅，景隆合兵五十萬，進營河間。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "status": "published",
+        "subject_id": "e1573e34-f13d-5a20-bb21-6f0decfd75d7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f8a4cef0-7ba8-5e57-be37-eec7738c4714"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948；建文元年九月，燕军丙戌援永平，吴高壬辰撤走",
+        "claim_text": "《成祖本纪》将燕军援永平单系丙戌；壬辰吴高获知燕王已到后撤退，燕军追击，随后前往大宁。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.606995+00:00",
+        "field_path": "description",
+        "id": "f8a4cef0-7ba8-5e57-be37-eec7738c4714",
+        "note": "原文：丙戌，燕師援永平。壬辰，吳高聞王至，果走，追擊敗之。遂北趨大寧。；核对说明：保留与卷四不同的叙事细目，对应同一救援及撤退。",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "status": "published",
+        "subject_id": "e1573e34-f13d-5a20-bb21-6f0decfd75d7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ab6f2899-6291-528a-9963-2497824a647f"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948；建文元年九月戊寅",
+        "claim_text": "率部到河间扎营",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.661333+00:00",
+        "field_path": "role",
+        "id": "ab6f2899-6291-528a-9963-2497824a647f",
+        "note": "原文：戊寅，景隆合兵五十萬，進營河間。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "status": "published",
+        "subject_id": "a70ea2cd-84aa-5234-ad7b-282de6018778",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3658842f-8a08-585d-9f54-334ce8c5a3bb"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月壬寅",
+        "claim_text": "《成祖本纪》记十月壬寅朱棣设法进入大宁，停留七日后带着宁王朱权、大宁军民和朵颜三卫士兵南下。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.718333+00:00",
+        "field_path": "description",
+        "id": "3658842f-8a08-585d-9f54-334ce8c5a3bb",
+        "note": "原文：冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "66f520c1-67b5-5c84-bffa-ff51a8c55be6",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "def007a7-faae-5a2b-ae64-e04c006d696e"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月壬寅",
+        "claim_text": "原历建文元年十月壬寅。DDBC历表换算所据为1399-11-11至1399-11-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.766051+00:00",
+        "field_path": "time_original",
+        "id": "def007a7-faae-5a2b-ae64-e04c006d696e",
+        "note": "原文：冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "66f520c1-67b5-5c84-bffa-ff51a8c55be6",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0a3a3b06-a56a-549d-a926-808d11ce40fe"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月壬寅",
+        "claim_text": "进入大宁并率众南下",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.819976+00:00",
+        "field_path": "role",
+        "id": "0a3a3b06-a56a-549d-a926-808d11ce40fe",
+        "note": "原文：冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "f8927d5c-f5c0-541e-88d8-e4d217680d18",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1dbf3ab5-cceb-5563-8ff6-a58d1dc69afc"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月乙卯",
+        "claim_text": "燕军到达会州后分设中、左、右、前、后五军，分别由张玉、朱能、李彬、徐忠、房宽统领。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.868276+00:00",
+        "field_path": "description",
+        "id": "1dbf3ab5-cceb-5563-8ff6-a58d1dc69afc",
+        "note": "原文：乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "a601c4be-35a1-5a5e-b1c0-f6ab7e2a98a4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4e74f2f6-866e-5b92-9383-94f3bd828d46"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月乙卯",
+        "claim_text": "原历建文元年十月乙卯。DDBC历表换算所据为1399-11-24至1399-11-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.910276+00:00",
+        "field_path": "time_original",
+        "id": "4e74f2f6-866e-5b92-9383-94f3bd828d46",
+        "note": "原文：乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "a601c4be-35a1-5a5e-b1c0-f6ab7e2a98a4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1b70f46e-7bf3-58aa-a056-36506df7d2f4"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月乙卯",
+        "claim_text": "将所部划分为五军",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.951119+00:00",
+        "field_path": "role",
+        "id": "1b70f46e-7bf3-58aa-a056-36506df7d2f4",
+        "note": "原文：乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "19f871b4-5574-5af2-bc5d-c40235375869",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "055da044-c2c3-56cf-bed6-3b01606d46f4"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月丁巳",
+        "claim_text": "《成祖本纪》记燕军在十月丁巳进入松亭关。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:51.989942+00:00",
+        "field_path": "description",
+        "id": "055da044-c2c3-56cf-bed6-3b01606d46f4",
+        "note": "原文：丁巳，入松亭關。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "39610054-3f91-50b9-8ccb-4295d04f25db",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9550d316-ea5b-537a-846d-0257c89e1041"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月丁巳",
+        "claim_text": "原历建文元年十月丁巳。DDBC历表换算所据为1399-11-26至1399-11-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.035120+00:00",
+        "field_path": "time_original",
+        "id": "9550d316-ea5b-537a-846d-0257c89e1041",
+        "note": "原文：丁巳，入松亭關。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "39610054-3f91-50b9-8ccb-4295d04f25db",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "32c8fbbd-b300-535f-a77f-9a90113770f0"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月",
+        "claim_text": "李景隆得知朱棣出兵大宁，率兵包围北平，在九门筑垒。燕王世子据城坚守，没有出战。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.081138+00:00",
+        "field_path": "description",
+        "id": "32c8fbbd-b300-535f-a77f-9a90113770f0",
+        "note": "原文：景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "58a4e28e-a087-5583-acaf-64ca0ccc71f8",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e00f1d7f-8f9a-59db-99b9-5721e87b3df7"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月",
+        "claim_text": "原历建文元年十月。DDBC历表换算所据为1399-11-06至1399-12-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.239731+00:00",
+        "field_path": "time_original",
+        "id": "e00f1d7f-8f9a-59db-99b9-5721e87b3df7",
+        "note": "原文：景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "58a4e28e-a087-5583-acaf-64ca0ccc71f8",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "09bec7e0-d1ea-5933-8084-72161157a307"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949；建文元年十月",
+        "claim_text": "率军包围北平",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.281857+00:00",
+        "field_path": "role",
+        "id": "09bec7e0-d1ea-5933-8084-72161157a307",
+        "note": "原文：景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "status": "published",
+        "subject_id": "7486c5ef-7fa2-5844-9438-55bb1a301a96",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "aa0ae6a4-f2f7-57da-8c49-f7ae592df70c"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月庚午",
+        "claim_text": "燕军在孤山驻扎，巡骑报告白河有流冰，难以渡过。《成祖本纪》记随后冰合，燕军渡河。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.373793+00:00",
+        "field_path": "description",
+        "id": "aa0ae6a4-f2f7-57da-8c49-f7ae592df70c",
+        "note": "原文：庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "be5761f7-d773-5886-9b3d-71e478774a98",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6ad6759d-7948-5fdd-86ac-62c25ea781c6"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月庚午",
+        "claim_text": "原历建文元年十一月庚午。DDBC历表换算所据为1399-12-09至1399-12-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.432446+00:00",
+        "field_path": "time_original",
+        "id": "6ad6759d-7948-5fdd-86ac-62c25ea781c6",
+        "note": "原文：庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "be5761f7-d773-5886-9b3d-71e478774a98",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3ae3af47-047c-5653-885e-91a7528fa22d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月庚午",
+        "claim_text": "率部渡白河",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:52.481893+00:00",
+        "field_path": "role",
+        "id": "3ae3af47-047c-5653-885e-91a7528fa22d",
+        "note": "原文：庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "fad5bd8e-cbed-5bb2-ad87-51014da1e442",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fea0ff04-87e8-5d8a-a8b3-7ec7290f7050"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月",
+        "claim_text": "李景隆派都督陈晖侦察，陈晖所部绕到燕军背后。朱棣派兵回击，本纪记陈晖军争相渡河时冰解，许多人溺亡。 按原历纪年，事情发生在公元1399至1400年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:53.082281+00:00",
+        "field_path": "description",
+        "id": "fea0ff04-87e8-5d8a-a8b3-7ec7290f7050",
+        "note": "原文：景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "f229412f-5609-5cd4-9d76-3630b04bd5fb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ea3a77ad-9037-551b-a221-a75880ea6941"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月",
+        "claim_text": "原历建文元年十一月。DDBC历表换算所据为1399-12-06至1400-01-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.382789+00:00",
+        "field_path": "time_original",
+        "id": "ea3a77ad-9037-551b-a221-a75880ea6941",
+        "note": "原文：景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "f229412f-5609-5cd4-9d76-3630b04bd5fb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f5a63a69-1c87-5bff-a7c8-2bf2549fd56d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月",
+        "claim_text": "派陈晖侦察",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.441426+00:00",
+        "field_path": "role",
+        "id": "f5a63a69-1c87-5bff-a7c8-2bf2549fd56d",
+        "note": "原文：景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "9a66739c-3fd4-5175-839b-b712ab02ebfa",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e66d55cb-5c03-57e3-a780-bfefff6df108"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月",
+        "claim_text": "分兵回击",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.524315+00:00",
+        "field_path": "role",
+        "id": "e66d55cb-5c03-57e3-a780-bfefff6df108",
+        "note": "原文：景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "a6fdaa07-dddf-52ce-ad10-ffac8cf2c55b",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b79813a2-1f69-5193-bf17-81b2e6daf87e"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月辛未",
+        "claim_text": "朱棣先率精锐骑兵攻破李景隆七座营寨，其他燕军将领随后赶到。李景隆大败撤退。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.607222+00:00",
+        "field_path": "description",
+        "id": "b79813a2-1f69-5193-bf17-81b2e6daf87e",
+        "note": "原文：辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "54f7c30b-58b0-5b1a-b972-379c86a6da17",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fee75074-76ad-59d4-b1a1-2df5f2874607"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月辛未",
+        "claim_text": "原历建文元年十一月辛未。DDBC历表换算所据为1399-12-10至1399-12-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.659445+00:00",
+        "field_path": "time_original",
+        "id": "fee75074-76ad-59d4-b1a1-2df5f2874607",
+        "note": "原文：辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "54f7c30b-58b0-5b1a-b972-379c86a6da17",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "34560770-ab32-5790-bb48-9ca4398d8b38"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月辛未",
+        "claim_text": "率军击败李景隆",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.719906+00:00",
+        "field_path": "role",
+        "id": "34560770-ab32-5790-bb48-9ca4398d8b38",
+        "note": "原文：辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "de9a77e5-2721-550e-b22a-e9f6c1486fcc",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "862eab32-df35-52d7-b901-fa7b91edd64c"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月辛未",
+        "claim_text": "战败撤退",
+        "confidence": null,
+        "created_at": "2026-11-18T13:57:54.779762+00:00",
+        "field_path": "role",
+        "id": "862eab32-df35-52d7-b901-fa7b91edd64c",
+        "note": "原文：辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "482cb993-7c4e-5fac-9f44-3e7f6c42d47d",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "06b046df-2891-5818-b6cd-593944953275"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月乙亥",
+        "claim_text": "朱棣在十一月乙亥再次上书申诉。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.389725+00:00",
+        "field_path": "description",
+        "id": "06b046df-2891-5818-b6cd-593944953275",
+        "note": "原文：乙亥，復上書自訴。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "1be1aaaa-6e36-5407-9c55-782ac5915eae",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d6903995-e2be-5f19-b180-f5662aa9472e"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月乙亥",
+        "claim_text": "原历建文元年十一月乙亥。DDBC历表换算所据为1399-12-14至1399-12-14，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.434820+00:00",
+        "field_path": "time_original",
+        "id": "d6903995-e2be-5f19-b180-f5662aa9472e",
+        "note": "原文：乙亥，復上書自訴。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "1be1aaaa-6e36-5407-9c55-782ac5915eae",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "af83f0e0-a6ee-5079-82a5-503bef628616"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950；建文元年十一月乙亥",
+        "claim_text": "再次上书",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.469871+00:00",
+        "field_path": "role",
+        "id": "af83f0e0-a6ee-5079-82a5-503bef628616",
+        "note": "原文：乙亥，復上書自訴。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "status": "published",
+        "subject_id": "90621d37-1a5b-5b90-9c1c-8b3444c619a1",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ad48fa7e-6997-5421-8add-04558750ccc5"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951；建文元年十二月",
+        "claim_text": "李景隆在德州调兵，计划次年春天大举出兵。朱棣谋划进攻大同，试图引朝廷军队赴援。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.502530+00:00",
+        "field_path": "description",
+        "id": "ad48fa7e-6997-5421-8add-04558750ccc5",
+        "note": "原文：十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "status": "published",
+        "subject_id": "b90e3f55-9465-5ff5-b340-836b876427de",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "10d261c5-3ffd-56da-9341-2f853a848837"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951；建文元年十二月",
+        "claim_text": "原历建文元年十二月。DDBC历表换算所据为1400-01-05至1400-02-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.609695+00:00",
+        "field_path": "time_original",
+        "id": "10d261c5-3ffd-56da-9341-2f853a848837",
+        "note": "原文：十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "status": "published",
+        "subject_id": "b90e3f55-9465-5ff5-b340-836b876427de",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "51c3939d-ef26-5c40-8cc9-b498e27fc956"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951；建文元年十二月",
+        "claim_text": "调兵备战",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.662252+00:00",
+        "field_path": "role",
+        "id": "51c3939d-ef26-5c40-8cc9-b498e27fc956",
+        "note": "原文：十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "status": "published",
+        "subject_id": "9a854dc1-e51f-5489-931d-b0fbfda06aef",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "daecd79f-5c64-528b-b21d-8f70d848099d"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951；建文元年十二月",
+        "claim_text": "谋攻大同",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.702580+00:00",
+        "field_path": "role",
+        "id": "daecd79f-5c64-528b-b21d-8f70d848099d",
+        "note": "原文：十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "status": "published",
+        "subject_id": "966faec6-23ea-5712-9819-f19424a60e8e",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6701ecc9-b6d8-51f0-b406-b57d9fd916c8"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951；建文元年十二月庚申",
+        "claim_text": "《成祖本纪》记燕军在十二月庚申招降广昌。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.750525+00:00",
+        "field_path": "description",
+        "id": "6701ecc9-b6d8-51f0-b406-b57d9fd916c8",
+        "note": "原文：庚申，降廣昌。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "status": "published",
+        "subject_id": "dd0702cc-4fb6-57bc-825d-1825dbb51bd5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7b938fa6-3479-59ef-a92b-602a63d70dab"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951；建文元年十二月庚申",
+        "claim_text": "原历建文元年十二月庚申。DDBC历表换算所据为1400-01-28至1400-01-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.794985+00:00",
+        "field_path": "time_original",
+        "id": "7b938fa6-3479-59ef-a92b-602a63d70dab",
+        "note": "原文：庚申，降廣昌。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "status": "published",
+        "subject_id": "dd0702cc-4fb6-57bc-825d-1825dbb51bd5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ef32948d-cf35-59e7-ba74-f444a5f738fd"
+      },
+      "row": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000941；关系见本段，保留原有时间精度",
+        "claim_text": "朱棣是朱元璋第四子。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:58:00.844505+00:00",
+        "field_path": "description",
+        "id": "ef32948d-cf35-59e7-ba74-f444a5f738fd",
+        "note": "原文：成祖啟天弘道高明肇運聖武神功純仁至孝文皇帝諱棣，太祖第四子也。母孝慈高皇后。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "status": "published",
+        "subject_id": "f1ebb7ac-1441-529f-8ac7-32231bc6992d",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-17T10:09:24.303853+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8",
+        "note": "《明史》卷五，段落 mingshi-2f603db3d81e-p000941；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "《明史》卷5·成祖燕王身份",
+        "url": "https://github.com/greed-216/histree/blob/cb439a169cc71dd4e5983450b2fd8fe1696ec89f/content/books/mingshi/vol-109/table-first/part-02/sources/mingshi-2f603db3d81e-p000941/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "cbc366e39676765257581d2016c3d01f58e36dfe937c4a971cb88b2de9ccf041",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8"
+      },
+      "row": {
+        "archive_blob_sha256": "45167f6d598d05aa5fba29d9a15adda346b1c28dd777721076f22e5109a820cc",
+        "archive_commit": "cb439a169cc71dd4e5983450b2fd8fe1696ec89f",
+        "archive_url": "https://github.com/greed-216/histree/blob/cb439a169cc71dd4e5983450b2fd8fe1696ec89f/content/books/mingshi/vol-109/table-first/part-02/sources/mingshi-2f603db3d81e-p000941/source.txt",
+        "archive_url_sha256": "cbc366e39676765257581d2016c3d01f58e36dfe937c4a971cb88b2de9ccf041",
+        "content": "成祖啟天弘道高明肇運聖武神功純仁至孝文皇帝諱棣，太祖第四子也。母孝慈高皇后。洪武三年，封燕王。十三年，之藩北平。王貌奇偉，美髭髯。智勇有大略，能推誠任人。二十三年，同晉王討乃兒不花。晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。是後屢帥諸將出征，並令王節制沿邊士馬，王威名大振。",
+        "content_sha256": "45167f6d598d05aa5fba29d9a15adda346b1c28dd777721076f22e5109a820cc",
+        "created_at": "2026-11-17T10:10:41.614934+00:00",
+        "source_id": "069715f5-522a-5fd0-bdaf-df5bf02cf0e8"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000941"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43004,
+        "char_start": 42861,
+        "content": "成祖啟天弘道高明肇運聖武神功純仁至孝文皇帝諱棣，太祖第四子也。母孝慈高皇后。洪武三年，封燕王。十三年，之藩北平。王貌奇偉，美髭髯。智勇有大略，能推誠任人。二十三年，同晉王討乃兒不花。晉王怯不敢進，王倍道趨迤都山，獲其全部而還，太祖大喜。是後屢帥諸將出征，並令王節制沿邊士馬，王威名大振。",
+        "content_sha256": "45167f6d598d05aa5fba29d9a15adda346b1c28dd777721076f22e5109a820cc",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000941",
+        "kind": "body",
+        "ordinal": 934,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.574782+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000943",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000943",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000943/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "1fad402277ad39ba2ddba5d24cd9330445aae9cb53c591c3a00414c65f8a1f29",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912"
+      },
+      "row": {
+        "archive_blob_sha256": "0f7e8d600a435167b8125ea3fb14d6a5a72a1808c8c0108cb65b1cb68737e15b",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000943/source.txt",
+        "archive_url_sha256": "1fad402277ad39ba2ddba5d24cd9330445aae9cb53c591c3a00414c65f8a1f29",
+        "content": "三十一年閏五月，太祖崩，皇太孫即位，遺詔諸王臨國中，毋得至京師。王自北平入奔喪，聞詔乃止。時諸王以尊屬擁重兵，多不法。帝納齊泰、黃子澄謀，欲因事以次削除之。憚燕王強，未發，乃先廢周王橚，欲以牽引燕。於是告訐四起，湘、代、齊、岷皆以罪廢。王內自危，佯狂稱疾。泰、子澄密勸帝除王，帝未決。",
+        "content_sha256": "0f7e8d600a435167b8125ea3fb14d6a5a72a1808c8c0108cb65b1cb68737e15b",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "706cf4f4-4abf-5b02-8a6e-4fae22a16912"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000943"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43156,
+        "char_start": 43014,
+        "content": "三十一年閏五月，太祖崩，皇太孫即位，遺詔諸王臨國中，毋得至京師。王自北平入奔喪，聞詔乃止。時諸王以尊屬擁重兵，多不法。帝納齊泰、黃子澄謀，欲因事以次削除之。憚燕王強，未發，乃先廢周王橚，欲以牽引燕。於是告訐四起，湘、代、齊、岷皆以罪廢。王內自危，佯狂稱疾。泰、子澄密勸帝除王，帝未決。",
+        "content_sha256": "0f7e8d600a435167b8125ea3fb14d6a5a72a1808c8c0108cb65b1cb68737e15b",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000943",
+        "kind": "body",
+        "ordinal": 936,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "70299045-5f17-5bb3-b5b7-929725140f15"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.704382+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "70299045-5f17-5bb3-b5b7-929725140f15",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000945",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000945",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000945/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "89faabec768fa49f9be301e1972bae2e53ae251b95077cdd146250f1dbe982fa",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15"
+      },
+      "row": {
+        "archive_blob_sha256": "18c14ce18ebc490df6c72dca4ad742edbf608b27231d86396666ced444579375",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000945/source.txt",
+        "archive_url_sha256": "89faabec768fa49f9be301e1972bae2e53ae251b95077cdd146250f1dbe982fa",
+        "content": "建文元年夏六月，燕山百戶倪諒告變，逮官校於諒、周鐸等伏誅。下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。都指揮使謝貴、布政使張昺以兵守王宮。王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。",
+        "content_sha256": "18c14ce18ebc490df6c72dca4ad742edbf608b27231d86396666ced444579375",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "70299045-5f17-5bb3-b5b7-929725140f15"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000945"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43259,
+        "char_start": 43164,
+        "content": "建文元年夏六月，燕山百戶倪諒告變，逮官校於諒、周鐸等伏誅。下詔讓王，幷遣中官逮王府僚，王遂稱疾篤。都指揮使謝貴、布政使張昺以兵守王宮。王密與僧道衍謀，令指揮張玉、朱能潛納勇士八百人入府守衞。",
+        "content_sha256": "18c14ce18ebc490df6c72dca4ad742edbf608b27231d86396666ced444579375",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000945",
+        "kind": "body",
+        "ordinal": 938,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.764374+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000946",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000946",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000946/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "381acd58b9dd3bd43c132b99cf53ec00349b9d9e42ded87b13dbc898667c9796",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4"
+      },
+      "row": {
+        "archive_blob_sha256": "4cd7fcc34a2d61d53417a61904d721bb10ec3d4c7d065ef69c83125f7ba2c05d",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000946/source.txt",
+        "archive_url_sha256": "381acd58b9dd3bd43c132b99cf53ec00349b9d9e42ded87b13dbc898667c9796",
+        "content": "秋七月癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。上書天子指泰、子澄為奸臣，幷援祖訓「朝無正臣，內有奸惡，則親王訓兵待命，天子密詔諸王統領鎮兵討平之」。書既發，遂舉兵。自署官屬，稱其師曰「靖難」。拔居庸關，破懷來，執宋忠，取密雲，克遵化，降永平。二旬眾至數萬。",
+        "content_sha256": "4cd7fcc34a2d61d53417a61904d721bb10ec3d4c7d065ef69c83125f7ba2c05d",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "15da3b1f-1c2f-5ccc-be80-44531609d9a4"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000946"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43393,
+        "char_start": 43261,
+        "content": "秋七月癸酉，匿壯士端禮門，紿貴、昺入，殺之，遂奪九門。上書天子指泰、子澄為奸臣，幷援祖訓「朝無正臣，內有奸惡，則親王訓兵待命，天子密詔諸王統領鎮兵討平之」。書既發，遂舉兵。自署官屬，稱其師曰「靖難」。拔居庸關，破懷來，執宋忠，取密雲，克遵化，降永平。二旬眾至數萬。",
+        "content_sha256": "4cd7fcc34a2d61d53417a61904d721bb10ec3d4c7d065ef69c83125f7ba2c05d",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000946",
+        "kind": "body",
+        "ordinal": 939,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.797639+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000947",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000947",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000947/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "68baa1b9613b7e804dabf1cdb0dc55277644f9dc281f73c890795e9320e5da67",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5"
+      },
+      "row": {
+        "archive_blob_sha256": "c24de383437e1588977df09756190b6c2770dcf6514304d357078b5d4ceeb2af",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000947/source.txt",
+        "archive_url_sha256": "68baa1b9613b7e804dabf1cdb0dc55277644f9dc281f73c890795e9320e5da67",
+        "content": "八月，天子以耿炳文為大將軍，帥師致討。己酉，師至真定，前鋒抵雄縣。壬子，王夜渡白溝河，圍雄，拔其城，屠之。甲寅，都指揮潘忠、楊松自鄚州來援，伏兵擒之，遂據鄚州，還駐白溝。大將軍部校張保來降，言大將軍軍三十萬，先至者十三萬，半營滹沱河南，半營河北。王懼與北軍戰，南軍且乘之也，乃縱保歸，俾揚言王帥兵且至，誘其軍盡北渡河。壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "content_sha256": "c24de383437e1588977df09756190b6c2770dcf6514304d357078b5d4ceeb2af",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "28aacf60-d1b2-5864-a388-e9ff0ee651d5"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000947"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43634,
+        "char_start": 43395,
+        "content": "八月，天子以耿炳文為大將軍，帥師致討。己酉，師至真定，前鋒抵雄縣。壬子，王夜渡白溝河，圍雄，拔其城，屠之。甲寅，都指揮潘忠、楊松自鄚州來援，伏兵擒之，遂據鄚州，還駐白溝。大將軍部校張保來降，言大將軍軍三十萬，先至者十三萬，半營滹沱河南，半營河北。王懼與北軍戰，南軍且乘之也，乃縱保歸，俾揚言王帥兵且至，誘其軍盡北渡河。壬戌，王至真定，與張玉、譚淵等夾擊炳文軍，大破之，獲其副將李堅、甯忠及都督顧成等，斬首三萬級。進圍真定，二日不下，乃引去。天子聞炳文敗，遣曹國公李景隆代領其軍。",
+        "content_sha256": "c24de383437e1588977df09756190b6c2770dcf6514304d357078b5d4ceeb2af",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000947",
+        "kind": "body",
+        "ordinal": 940,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.844266+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000948",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000948",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000948/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "3992fb7e7dbc136191c41753762c3b86e7fb764b598fb76106d9fd714910587e",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94"
+      },
+      "row": {
+        "archive_blob_sha256": "e095e765dcaf038f5d8e6e2f6d85571bd272cb158a4d2ccdb02897f3cd943d82",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000948/source.txt",
+        "archive_url_sha256": "3992fb7e7dbc136191c41753762c3b86e7fb764b598fb76106d9fd714910587e",
+        "content": "九月戊辰，江陰侯吳高以遼東兵圍永平。戊寅，景隆合兵五十萬，進營河間。王語諸將曰：「景隆色厲而中餒，聞我在必不敢遽來，不若往援永平以致其師。吳高怯不任戰，我至必走，然後還擊景隆。堅城在前，大軍在後，必成擒矣。」丙戌，燕師援永平。壬辰，吳高聞王至，果走，追擊敗之。遂北趨大寧。",
+        "content_sha256": "e095e765dcaf038f5d8e6e2f6d85571bd272cb158a4d2ccdb02897f3cd943d82",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "4665e3e3-7f2a-5cd5-81e8-545e404d2d94"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000948"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43772,
+        "char_start": 43636,
+        "content": "九月戊辰，江陰侯吳高以遼東兵圍永平。戊寅，景隆合兵五十萬，進營河間。王語諸將曰：「景隆色厲而中餒，聞我在必不敢遽來，不若往援永平以致其師。吳高怯不任戰，我至必走，然後還擊景隆。堅城在前，大軍在後，必成擒矣。」丙戌，燕師援永平。壬辰，吳高聞王至，果走，追擊敗之。遂北趨大寧。",
+        "content_sha256": "e095e765dcaf038f5d8e6e2f6d85571bd272cb158a4d2ccdb02897f3cd943d82",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000948",
+        "kind": "body",
+        "ordinal": 941,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "18013a52-685b-5427-9a91-345e7fb38880"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.917480+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "18013a52-685b-5427-9a91-345e7fb38880",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000949",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000949",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000949/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "19ef278a91689496366805bbdebebea16a53e04067c1256649d1d1ed89ff4eba",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880"
+      },
+      "row": {
+        "archive_blob_sha256": "90416036c163afb11fbe15db7e28676187312b1cccbd5d9c98275ea646e49d0c",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000949/source.txt",
+        "archive_url_sha256": "19ef278a91689496366805bbdebebea16a53e04067c1256649d1d1ed89ff4eba",
+        "content": "冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。丁巳，入松亭關。景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。",
+        "content_sha256": "90416036c163afb11fbe15db7e28676187312b1cccbd5d9c98275ea646e49d0c",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "18013a52-685b-5427-9a91-345e7fb38880"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000949"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 43930,
+        "char_start": 43774,
+        "content": "冬十月壬寅，以計入其城[1]。居七日，挾寧王權，拔大寧之眾及朵顏三衞卒俱南。乙卯，至會州。始立五軍：張玉將中軍，鄭亨、何壽副之；朱能將左軍，朱榮、李濬副之；李彬將右軍，徐理、孟善副之；徐忠將前軍，陳文、吳達副之；房寬將後軍，和允中、毛整副之。丁巳，入松亭關。景隆聞王征大寧，果引軍圍北平，築壘九門，世子堅守不戰。",
+        "content_sha256": "90416036c163afb11fbe15db7e28676187312b1cccbd5d9c98275ea646e49d0c",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000949",
+        "kind": "body",
+        "ordinal": 942,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "1e422010-cb1e-5a06-a0fe-1974741265ef"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:19.972610+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "1e422010-cb1e-5a06-a0fe-1974741265ef",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000950",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000950",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000950/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "2afd62d9dc893deb5883bba74ad4844b13a20c1f17ff7fd1bfa5da296b7b7714",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef"
+      },
+      "row": {
+        "archive_blob_sha256": "07ed362f063f52f133db67f31dc6efea0bf44c35d49593b9f690f34e8f7628a8",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000950/source.txt",
+        "archive_url_sha256": "2afd62d9dc893deb5883bba74ad4844b13a20c1f17ff7fd1bfa5da296b7b7714",
+        "content": "十一月庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。乙亥，復上書自訴。",
+        "content_sha256": "07ed362f063f52f133db67f31dc6efea0bf44c35d49593b9f690f34e8f7628a8",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "1e422010-cb1e-5a06-a0fe-1974741265ef"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000950"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 44054,
+        "char_start": 43932,
+        "content": "十一月庚午，王次孤山。邏騎還報曰白河流澌不可渡。王禱於神，至則冰合，乃濟師。景隆遣都督陳暉偵敵，道左，出王軍後。王分軍還擊之，暉眾爭渡河，冰忽解，溺死無算。辛未，與景隆戰於鄭村壩。王以精騎先破其七營，諸將繼至，景隆大敗，奔還。乙亥，復上書自訴。",
+        "content_sha256": "07ed362f063f52f133db67f31dc6efea0bf44c35d49593b9f690f34e8f7628a8",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000950",
+        "kind": "body",
+        "ordinal": 943,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T13:57:20.004746+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47",
+        "note": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000951",
+        "source_type": "primary",
+        "title": "明史·卷5·成祖一·mingshi-2f603db3d81e-p000951",
+        "url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000951/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "480ed2c43808d6908a8f04c53183eaa4c8141fc4b6ccede9bf500b126e6dec9b",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47"
+      },
+      "row": {
+        "archive_blob_sha256": "a4bdc816b2111590bf4720985370c5608a9f5a1d2bad0203245fb2990ae1ee89",
+        "archive_commit": "9e7c1ccd08023e1e2ad11de803090c8264e49910",
+        "archive_url": "https://github.com/greed-216/histree/blob/9e7c1ccd08023e1e2ad11de803090c8264e49910/content/books/mingshi/vol-005/from-start/part-01/sources/mingshi-2f603db3d81e-p000951/source.txt",
+        "archive_url_sha256": "480ed2c43808d6908a8f04c53183eaa4c8141fc4b6ccede9bf500b126e6dec9b",
+        "content": "十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同，曰：「攻大同，彼必赴救，大同苦寒，南軍脆弱，且不戰疲矣。」庚申，降廣昌。",
+        "content_sha256": "a4bdc816b2111590bf4720985370c5608a9f5a1d2bad0203245fb2990ae1ee89",
+        "created_at": "2026-11-18T13:58:02.077845+00:00",
+        "source_id": "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p000951"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 44118,
+        "char_start": 44056,
+        "content": "十二月，景隆調兵德州，期以明年春大舉。王乃謀侵大同，曰：「攻大同，彼必赴救，大同苦寒，南軍脆弱，且不戰疲矣。」庚申，降廣昌。",
+        "content_sha256": "a4bdc816b2111590bf4720985370c5608a9f5a1d2bad0203245fb2990ae1ee89",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p000951",
+        "kind": "body",
+        "ordinal": 944,
+        "section_id": "mingshi-2f603db3d81e-s0006"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "b2e0ac71-16d8-5fc0-9737-0107b73b2576"
+      },
+      "row": {
+        "created_at": "2026-11-18T11:28:59.008562+00:00",
+        "description": "四月乙丑，朱元璋封九名皇子为王，另封从孙守谦为靖江王。原文列出各人的封号。",
+        "dynasty": "明",
+        "end_year": 1370,
+        "id": "b2e0ac71-16d8-5fc0-9737-0107b73b2576",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1370,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武三年四月",
+        "title": "朱元璋册封诸王"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "48180ffe-1a86-5ab1-9e26-ab05e08d3c40"
+      },
+      "row": {
+        "created_at": "2026-11-18T12:03:41.803004+00:00",
+        "description": "燕王朱棣前往封地北平。",
+        "dynasty": "明",
+        "end_year": 1380,
+        "id": "48180ffe-1a86-5ab1-9e26-ab05e08d3c40",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1380,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武十三年三月壬寅",
+        "title": "燕王朱棣赴北平就藩"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "38f68ed4-63bf-51e1-8dfa-299f7a4d0e17"
+      },
+      "row": {
+        "created_at": "2026-11-18T12:45:00.889080+00:00",
+        "description": "晋王朱棡和燕王朱棣率军征讨元朝丞相咬住、太尉乃儿不花。征虏前将军、颍国公傅友德等受两王节制。",
+        "dynasty": "明",
+        "end_year": 1390,
+        "id": "38f68ed4-63bf-51e1-8dfa-299f7a4d0e17",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1390,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武二十三年正月丁卯",
+        "title": "晋王燕王率军北征"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5d12f36a-e133-5860-b93f-1621fb89681c"
+      },
+      "row": {
+        "created_at": "2026-11-18T12:45:01.515784+00:00",
+        "description": "燕王朱棣的部队到达迤都，咬住等人归降。",
+        "dynasty": "明",
+        "end_year": 1390,
+        "id": "5d12f36a-e133-5860-b93f-1621fb89681c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1390,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武二十三年三月癸巳",
+        "title": "燕王部队到达迤都，咬住等归降"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "987e40aa-7934-5658-aacb-99979d5064e0"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:08:33.020575+00:00",
+        "description": "朱元璋在西宫去世，本纪记年龄为七十一。",
+        "dynasty": "明",
+        "end_year": 1398,
+        "id": "987e40aa-7934-5658-aacb-99979d5064e0",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1398,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武三十一年闰五月乙酉",
+        "title": "朱元璋在西宫去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c5e84608-ece6-5772-978f-41f88cebe620"
+      },
+      "row": {
+        "created_at": "2026-11-18T04:11:18.599451+00:00",
+        "description": "洪武31年（年号对照1398年）闰五月，朱允炆即皇帝位。",
+        "dynasty": "明",
+        "end_year": 1398,
+        "id": "c5e84608-ece6-5772-978f-41f88cebe620",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1398,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武31年（年号对照1398年）闰五月；公元年核为1398年。",
+        "title": "朱允炆即皇帝位"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d4102381-df1a-58e5-9c7b-e969fb79a48f"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:08:33.220197+00:00",
+        "description": "朱元璋遗诏规定，丧祭不用金玉，孝陵山川依照原有形势。臣民哭临三天后脱去丧服，婚嫁照常。各藩王在各自封国内举哀，无须前往京师。",
+        "dynasty": "明",
+        "end_year": 1398,
+        "id": "d4102381-df1a-58e5-9c7b-e969fb79a48f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1398,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武三十一年闰五月",
+        "title": "朱元璋遗诏规定丧祭与服丧办法"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "72c4984e-3fd3-59e1-b25f-e8f90cdab9ff"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:20.980469+00:00",
+        "description": "《成祖本纪》记载，朱棣从北平动身奔丧，听到太祖遗诏后便停止进京。",
+        "dynasty": "明",
+        "end_year": 1398,
+        "id": "72c4984e-3fd3-59e1-b25f-e8f90cdab9ff",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1398,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武三十一年闰五月",
+        "title": "燕王朱棣听到遗诏后停止入京奔丧"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "85936d8a-d261-5893-9157-c548c100bbb4"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:28:34.866642+00:00",
+        "description": "周王朱橚获罪，被废为庶人，并迁往云南。",
+        "dynasty": "明",
+        "end_year": 1398,
+        "id": "85936d8a-d261-5893-9157-c548c100bbb4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1398,
+        "status": "published",
+        "tags": [],
+        "time_original": "洪武三十一年八月",
+        "title": "周王朱橚被废为庶人并迁云南"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "440088a2-8ac9-588e-bc38-679eeb5379ae"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:00.791703+00:00",
+        "description": "燕山护卫百户倪谅上报变故，燕王府旗校于谅等被处死。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "440088a2-8ac9-588e-bc38-679eeb5379ae",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年六月己酉",
+        "title": "倪谅上报变故，燕旗校于谅等被处死"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6af09465-b74a-5405-9644-963a847328e0"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:00.845544+00:00",
+        "description": "朝廷下诏责备燕王朱棣，逮捕燕王府官员。北平都指挥张信转而归附燕王。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "6af09465-b74a-5405-9644-963a847328e0",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年六月",
+        "title": "朝廷责备燕王，张信归附燕王"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e59283c3-002a-52fb-a779-fb1ec351ef45"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.032296+00:00",
+        "description": "都指挥使谢贵、布政使张昺调兵守住燕王宫。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "e59283c3-002a-52fb-a779-fb1ec351ef45",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年六月",
+        "title": "谢贵和张昺调兵守住燕王宫"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "46559245-26a7-52ff-a8e3-defc7da9b0cf"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.077421+00:00",
+        "description": "燕王朱棣与僧人道衍商议，命指挥张玉、朱能秘密带八百人进府守卫。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "46559245-26a7-52ff-a8e3-defc7da9b0cf",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年六月",
+        "title": "燕王秘密调人入府守卫"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6f782c37-bbaf-54bf-865c-76e1296fb768"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:00.888219+00:00",
+        "description": "本纪记载，七月癸酉燕王朱棣举兵反明廷，布政使张昺与都司谢贵被杀。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "6f782c37-bbaf-54bf-865c-76e1296fb768",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年七月癸酉",
+        "title": "燕王朱棣起兵，张昺和谢贵被杀"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e83d302d-1617-5b2b-9dab-dda16be7748a"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.140502+00:00",
+        "description": "朱棣向朝廷上书，指称齐泰和黄子澄是奸臣，并援引祖训所写的藩王受命讨奸。他把自己的军队称为“靖难”。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "e83d302d-1617-5b2b-9dab-dda16be7748a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年七月",
+        "title": "燕王上书援引祖训指斥齐泰黄子澄"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5d999860-cf3c-5622-a33e-4b1ea47bd314"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.086425+00:00",
+        "description": "燕军于七月己卯攻占居庸关。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "5d999860-cf3c-5622-a33e-4b1ea47bd314",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年七月己卯",
+        "title": "燕军攻下居庸关"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "fd44a270-0fdc-5fbe-ab1d-baa428c67572"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.127609+00:00",
+        "description": "燕军攻下怀来，宋忠与俞瑱被俘后身亡，彭聚与孙泰战死。永平指挥郭亮等归附燕军。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "fd44a270-0fdc-5fbe-ab1d-baa428c67572",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年七月甲申",
+        "title": "燕军攻下怀来，宋忠等身亡"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "f940c316-65fc-5c3f-88d9-cd1d2b59f57a"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:00.995202+00:00",
+        "description": "指挥马宣退往蓟州，俞瑱退往居庸。宋忠赶赴北平，得知变故后退守怀来。通州、遵化和密云相继归附燕军。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "f940c316-65fc-5c3f-88d9-cd1d2b59f57a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年七月",
+        "title": "燕军起兵后北平一带官军退守"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c5c19900-1aeb-5eab-b199-92daa9b44dbe"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.314970+00:00",
+        "description": "朝廷命长兴侯耿炳文为征虏大将军，驸马都尉李坚和都督甯忠为左右副将军，率军讨伐燕王。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "c5c19900-1aeb-5eab-b199-92daa9b44dbe",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年七月",
+        "title": "明廷命耿炳文等率军征讨燕王"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "78987151-7af0-5ae3-b077-ea5f6cafa521"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.637766+00:00",
+        "description": "耿炳文率部到真定，徐凯驻河间，潘忠和杨松驻鄚州。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "78987151-7af0-5ae3-b077-ea5f6cafa521",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年八月己酉",
+        "title": "明军进驻真定河间和鄚州"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c6db34be-1557-5c7d-a9d2-34922fe89676"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.743332+00:00",
+        "description": "燕军攻下雄县。潘忠和杨松在月漾桥交战后被俘，鄚州也失守。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "c6db34be-1557-5c7d-a9d2-34922fe89676",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年八月壬子",
+        "title": "燕军攻下雄县，潘忠和杨松在月漾桥被俘"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "84637b58-d6ed-5727-babf-6915e83b47e7"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.808051+00:00",
+        "description": "耿炳文与燕军在滹沱河北岸交战失利，李坚、甯忠和顾成被俘。耿炳文退守真定，燕军进攻未能破城，随后撤走。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "84637b58-d6ed-5727-babf-6915e83b47e7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年八月壬戌",
+        "title": "耿炳文在滹沱河北战败后退守真定"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5e970819-caa0-523e-b3ae-e08fd7317fcf"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:01.966145+00:00",
+        "description": "朝廷任命曹国公李景隆为征虏大将军，接替耿炳文。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "5e970819-caa0-523e-b3ae-e08fd7317fcf",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年八月丁卯",
+        "title": "李景隆接替耿炳文任征虏大将军"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a1595ab7-7201-5ce8-adb0-56a64865fdb5"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:02.008504+00:00",
+        "description": "吴高、耿瓛和杨文率辽东军队围攻永平。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "a1595ab7-7201-5ce8-adb0-56a64865fdb5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年九月戊辰",
+        "title": "吴高等率辽东兵围攻永平"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e1573e34-f13d-5a20-bb21-6f0decfd75d7"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:02.074941+00:00",
+        "description": "李景隆率部到达河间。燕军援救永平，吴高退守山海关。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "e1573e34-f13d-5a20-bb21-6f0decfd75d7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年九月戊寅",
+        "title": "燕军增援永平，吴高退守山海关"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "66f520c1-67b5-5c84-bffa-ff51a8c55be6"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:02.135639+00:00",
+        "description": "燕军由刘家口小路进据大宁，守将朱鉴死于此役。刘真、陈亨率兵救援，陈亨转而归附燕军。燕军带宁王朱权和朵颜三卫的军士返回北平。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "66f520c1-67b5-5c84-bffa-ff51a8c55be6",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十月",
+        "title": "燕军攻占大宁并带宁王及朵颜三卫军士返北平"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a601c4be-35a1-5a5e-b1c0-f6ab7e2a98a4"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.204540+00:00",
+        "description": "燕军到达会州后分设中、左、右、前、后五军，分别由张玉、朱能、李彬、徐忠、房宽统领。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "a601c4be-35a1-5a5e-b1c0-f6ab7e2a98a4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十月乙卯",
+        "title": "燕军在会州分设中左右前后五军"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "39610054-3f91-50b9-8ccb-4295d04f25db"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.240260+00:00",
+        "description": "《成祖本纪》记燕军在十月丁巳进入松亭关。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "39610054-3f91-50b9-8ccb-4295d04f25db",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十月丁巳",
+        "title": "燕军进入松亭关"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "58a4e28e-a087-5583-acaf-64ca0ccc71f8"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:02.219942+00:00",
+        "description": "李景隆率部围攻北平，燕军返回救援。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "58a4e28e-a087-5583-acaf-64ca0ccc71f8",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十月辛亥",
+        "title": "李景隆围攻北平，燕军回援"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "be5761f7-d773-5886-9b3d-71e478774a98"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.312638+00:00",
+        "description": "燕军在孤山驻扎，巡骑报告白河有流冰，难以渡过。《成祖本纪》记随后冰合，燕军渡河。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "be5761f7-d773-5886-9b3d-71e478774a98",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十一月庚午",
+        "title": "《成祖本纪》记燕军由孤山渡白河"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "f229412f-5609-5cd4-9d76-3630b04bd5fb"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.377264+00:00",
+        "description": "李景隆派都督陈晖侦察，陈晖所部绕到燕军背后。朱棣派兵回击，本纪记陈晖军争相渡河时冰解，许多人溺亡。 按原历纪年，事情发生在公元1399至1400年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "f229412f-5609-5cd4-9d76-3630b04bd5fb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十一月",
+        "title": "燕军分兵回击陈晖部"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "54f7c30b-58b0-5b1a-b972-379c86a6da17"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:02.345115+00:00",
+        "description": "李景隆在郑村坝与燕军作战失利，退往德州，所部溃散。",
+        "dynasty": "明",
+        "end_year": 1399,
+        "id": "54f7c30b-58b0-5b1a-b972-379c86a6da17",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1399,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十一月辛未",
+        "title": "李景隆在郑村坝战败后退往德州"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1be1aaaa-6e36-5407-9c55-782ac5915eae"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:36:02.445456+00:00",
+        "description": "燕王朱棣再次向朝廷递交书信。 按原历纪年，事情发生在公元1399至1400年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "1be1aaaa-6e36-5407-9c55-782ac5915eae",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十一月",
+        "title": "燕王朱棣再次向朝廷上书"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b90e3f55-9465-5ff5-b340-836b876427de"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.417370+00:00",
+        "description": "李景隆在德州调兵，计划次年春天大举出兵。朱棣谋划进攻大同，试图引朝廷军队赴援。",
+        "dynasty": "明",
+        "end_year": 1400,
+        "id": "b90e3f55-9465-5ff5-b340-836b876427de",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1400,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十二月",
+        "title": "李景隆在德州调兵，朱棣谋攻大同"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "dd0702cc-4fb6-57bc-825d-1825dbb51bd5"
+      },
+      "row": {
+        "created_at": "2026-11-18T13:57:21.467971+00:00",
+        "description": "《成祖本纪》记燕军在十二月庚申招降广昌。",
+        "dynasty": "明",
+        "end_year": 1400,
+        "id": "dd0702cc-4fb6-57bc-825d-1825dbb51bd5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1400,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年十二月庚申",
+        "title": "燕军招降广昌"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v002_p000513_princes",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v002_p000639_yan",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v003_p000769_north",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v003_p000771_yidu",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    },
+    {
+      "decision": "inherited",
+      "event_key": "event_mingshi_v004_p000891_geng",
+      "reason": "No explicitly authored source year/bounds; canonical date and reason prose were not parsed"
+    }
+  ],
+  "source_locations": {
+    "069715f5-522a-5fd0-bdaf-df5bf02cf0e8": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000941",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "15da3b1f-1c2f-5ccc-be80-44531609d9a4": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000946",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "18013a52-685b-5427-9a91-345e7fb38880": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000949",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "1e422010-cb1e-5a06-a0fe-1974741265ef": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000950",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "28aacf60-d1b2-5864-a388-e9ff0ee651d5": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000947",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "4665e3e3-7f2a-5cd5-81e8-545e404d2d94": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000948",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "70299045-5f17-5bb3-b5b7-929725140f15": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000945",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "706cf4f4-4abf-5b02-8a6e-4fae22a16912": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000943",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    },
+    "92ab9270-2a38-5e42-8a3e-64c3a3cd5e47": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p000951",
+      "section_id": "mingshi-2f603db3d81e-s0006",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 5
+}

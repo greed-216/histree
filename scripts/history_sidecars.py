@@ -253,6 +253,37 @@ def revised_event_baseline(root, batch_dir, batch, ids, reused, target, files):
     return revised
 
 
+def verified_withheld_source_datings(root, directory, publication, authored, reused, manifest, files):
+    """Record an editorial decision to withhold an unbound inherited assertion."""
+    path = directory / '.workflow/withheld-source-datings.json'
+    if not path.exists():
+        return {}
+    require(not path.is_symlink() and not (directory / '.workflow/freeze.json').exists(),
+            'Withheld assertions require an unfrozen published batch')
+    raw = path.read_bytes()
+    review = json.loads(raw)
+    require(review.get('format_version') == 1 and review.get('batch_sha256') == publication['batch_sha256']
+            and review.get('curation_sha256') == files[str((directory / 'curation.json').relative_to(root))],
+            'Withheld dating audit does not bind the published batch and original curation')
+    result = {}
+    for entry in review['events']:
+        key, pid, reason = (entry[field] for field in ('event_key', 'paragraph_id', 'reason'))
+        require(key in authored and key in reused and key not in result, 'Invalid withheld event key')
+        item = authored[key]
+        authored_review = item['temporal_review']
+        require(authored_review['decision'] == 'inherited', 'Only inherited datings can be withheld')
+        assertions = authored_review.get('source_dating_assertions', [])
+        require(len(assertions) == 1 and 'paragraph_id' not in assertions[0],
+                'Only an unbound independent dating can be withheld')
+        require(pid in manifest and {e['paragraph_id'] for e in item['evidence']} == {pid},
+                'Withheld dating must match the single authored evidence paragraph')
+        require(isinstance(reason, str) and reason.strip(), 'Missing withheld dating rationale')
+        result[key] = reason
+    require(bool(result), 'Empty withheld dating audit')
+    files[str(path.relative_to(root))] = sha(raw)
+    return result
+
+
 def load_bundle(root, batch_dir):
     root = root.resolve()
     batch_dir = Path(batch_dir).resolve()
@@ -365,8 +396,10 @@ def load_bundle(root, batch_dir):
         canonical_events = revised_event_baseline(root, batch_dir, batch, ids,
                                                    set(cur.get('reused_keys', [])),
                                                    publication.get('target_fingerprint'), files)
+    withheld = verified_withheld_source_datings(
+        root, batch_dir, publication, authored, set(cur.get('reused_keys', [])), manifest, files)
     return dict(root=root, batch_dir=batch_dir, batch=batch, cur=cur, packet=packet, ids=ids,
-                publication=publication, manifest=manifest, paras=paras,
+                publication=publication, manifest=manifest, paras=paras, withheld_source_datings=withheld,
                 snapshots=snapshots, files=files, sources=sources, canonical_events=canonical_events, excluded_structural_headings=excluded_structural_headings, reference_only_headings=reference_only_headings)
 
 
@@ -513,7 +546,8 @@ def _prepare_rows(bundle, db):
         expected_event = bundle.get('canonical_events', {}).get(key, batch_event)
         require(all(event.get(k) == v for k,v in expected_event.items() if k not in ('key','status')),
                 'Frozen canonical event old values differ: '+key)
-        assertions, reason = authored_assertions(item, manifest)
+        reason = bundle.get('withheld_source_datings', {}).get(key)
+        assertions, reason = ([], reason) if reason else authored_assertions(item, manifest)
         if reason:
             skipped.append(dict(event_key=key, decision=item['temporal_review']['decision'], reason=reason))
         for a in assertions:

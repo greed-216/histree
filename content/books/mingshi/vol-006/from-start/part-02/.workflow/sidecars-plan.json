@@ -1,0 +1,4007 @@
+{
+  "batch_dir": "content/books/mingshi/vol-006/from-start/part-02",
+  "batch_key": "mingshi-v006-from-start-02",
+  "batch_sha256": "837c1578c9f32969d68d9adbd5e66d98d414248248bbda447eb60f978f4e51aa",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001002"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "c46e23c341fd3f95304c99dfed6c649ff85dbf54f6e68c3cb0ccbc95abe00680",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "a0e91ce3-189a-59ad-abf3-597b14e34a4f",
+        "note_sha256": "25f78244d4ee8a3178f1251b24af51f567466c394f3828b0c0601142813af017",
+        "quote_text": "乙卯，大祀天地於南郊。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "f4927114-2340-5e5f-93e6-e80c6d3c94a4",
+        "note_sha256": "676953f1f6c44d6444edafe4b16fd89159fef7a0fc92c71eafedcfb12b6c5b52",
+        "quote_text": "乙卯，大祀天地於南郊。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "edcbfcf5-2b5f-53c4-aac3-c2289785747c",
+        "note_sha256": "f625de7e67a8ee06410edb2b31b2b82c6a7bca1f12e66156941516eb346b0566",
+        "quote_text": "己巳，召世子高熾及高陽王高煦還京師。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "cce64e20-88b3-5505-977a-421ad49bae3b",
+        "note_sha256": "f625de7e67a8ee06410edb2b31b2b82c6a7bca1f12e66156941516eb346b0566",
+        "quote_text": "己巳，召世子高熾及高陽王高煦還京師。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "6525347b-922b-53c7-9e07-7fae6f928c82",
+        "note_sha256": "cbe39967d0ff8e8dc8208e9e2b00426f886dc7fe946cd0cd291fa42fe0432c0e",
+        "quote_text": "己巳，召世子高熾及高陽王高煦還京師。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e2c38c6f-5318-5df5-ae0e-6601a903d825",
+        "note_sha256": "d0b4ecd02f570a9b77a0ecabd1a976dcf9358cdb56351bc3e1b8b6c1f03334a3",
+        "quote_text": "己巳，召世子高熾及高陽王高煦還京師。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "d28720cc-84aa-5156-948c-af3a5d4c7504",
+        "note_sha256": "a798f2c025a5359495c4b5e1ef3ed192aa9919aa585f82fd57c18615ebb7bf3b",
+        "quote_text": "己巳，召世子高熾及高陽王高煦還京師。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c6fab2f2-5905-532a-892d-2b2b595e3b37",
+        "note_sha256": "a798f2c025a5359495c4b5e1ef3ed192aa9919aa585f82fd57c18615ebb7bf3b",
+        "quote_text": "己巳，召世子高熾及高陽王高煦還京師。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "dec78220-4f4e-5a68-ba85-bedd9d3da9f3",
+        "note_sha256": "6d6764411f0cc034f0927962f5882120aff1b7a76bce69e9dfc3ceb23c53faf4",
+        "quote_text": "乙巳，賜曾棨等進士及第、出身有差。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "87c48f0c-0dda-5403-9d05-1510e301c457",
+        "note_sha256": "ddefe8c7a2960d6dbf4d37b36886d52361b4eded6480ade68aeb852bd9307b34",
+        "quote_text": "乙巳，賜曾棨等進士及第、出身有差。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cefdd190-75a4-5c8c-8af7-1a133f10b1e1",
+        "note_sha256": "850faa095f3b517dcd0d40fb182aac840262fdf1c5ad09faed2ebfa3e2e70d77",
+        "quote_text": "己酉，始選進士為翰林院庶吉士。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d95c58aa-0907-5a88-9416-5e2c6de499df",
+        "note_sha256": "5cc2f9bdf3be6117f4df9f462da87d4eeb3f4ff88ae1fba64689746dae5cc1cb",
+        "quote_text": "己酉，始選進士為翰林院庶吉士。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bacded1f-edee-5d06-a85b-b3ba17d3da74",
+        "note_sha256": "981b060a51defdafda47073988fe0921a8763cfb37c73c5c281a37924ede24e4",
+        "quote_text": "庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0280459e-6661-5963-99de-23fc9d41afe2",
+        "note_sha256": "1c47020341d9e33cb2113d97f4efacd51d902dd3d4cd6a8340143cf20da99f63",
+        "quote_text": "庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3cf84f69-56b2-537c-84d2-d53469830406",
+        "note_sha256": "d65f318b1edbe7df1a603f6170188a1add94407e024e3b199d3ef7bb8347d39b",
+        "quote_text": "庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9b44dbaa-38e8-51b9-b514-9c6510f78edd",
+        "note_sha256": "e111832b945d13b020255d5ee7dc4e1ec7ccc310e54966b91da8546d5d892523",
+        "quote_text": "庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "62e56e12-3691-55a2-a93b-88331c5e6cb1",
+        "note_sha256": "a576633e6668ae63f9aad431456423df9cac44adf671d5e364f57bd990384729",
+        "quote_text": "戊辰，改封敷惠王允𤐤甌寧王，奉懿文太子祀。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "298a138b-4791-5c94-bc96-3b0022c5dd34",
+        "note_sha256": "30328c62ecd103790c2a1f89f45401fc1382636a29f7348ed323b71401cb5fa2",
+        "quote_text": "戊辰，改封敷惠王允𤐤甌寧王，奉懿文太子祀。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "91c904b5-280b-56a2-98a7-66caf193de23",
+        "note_sha256": "958655fceb241d8eb646169662e850189669fdebc73399711ea3572d33520266",
+        "quote_text": "辛未朔，置東宮官屬。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "70b9e021-d478-5bf8-b935-780ac1ddd78c",
+        "note_sha256": "cdad36666dfca4ad13066eecc046645c28ceb8474671a980d4f50b657a0d00ae",
+        "quote_text": "辛未朔，置東宮官屬。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3669247a-f3ec-54cb-ab2c-5f7ed767f6d3",
+        "note_sha256": "df441558b5639e276e4364a0c82af0f00e67794ede93e0c2361961f23b4f8574",
+        "quote_text": "壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3e73d525-735f-5cad-a629-694c92cb8a63",
+        "note_sha256": "a8b7f18b4bed7d955b97c0ae9e07b22024f3734e6089fd0f71e4e818d7fc0a5c",
+        "quote_text": "壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8f60b628-11a9-52ed-a72d-330b7b9566b4",
+        "note_sha256": "2ddfba697e4b5dd670bdfc40ef8643248eea4dc57fa5d27536c3c168f7517cef",
+        "quote_text": "壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ec425ec0-2b79-58b6-800a-7b053d3dbc60",
+        "note_sha256": "a0df718fac6134c9aa70b28473fe35598efacb3a4b3f192195d5ee037487add9",
+        "quote_text": "壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c7c5208d-1404-542a-b2c7-2b911bf5fe26",
+        "note_sha256": "873676c6438e165ce3049938699f5b8b2f896703ccbfd692ece6ba83b37c20fb",
+        "quote_text": "甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d242f276-7ec1-5952-a409-7092f5549a54",
+        "note_sha256": "78308b65e6487e89a7a012a194dbb50c65def39abb6fa4a3f8b41124802b71b8",
+        "quote_text": "甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "18bf37f7-a860-50d2-90bf-c90a5eb41b75",
+        "note_sha256": "fff9337b0ea4b8cfeb1af22a1e95a79b0cd4f488e3b320106d3d595e70a9daed",
+        "quote_text": "甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5500c8d6-1221-5aea-9fc5-5ffad1941f18",
+        "note_sha256": "fff9337b0ea4b8cfeb1af22a1e95a79b0cd4f488e3b320106d3d595e70a9daed",
+        "quote_text": "甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0e8e5ed6-5c80-547d-8b07-fa78a44c3397",
+        "note_sha256": "fff9337b0ea4b8cfeb1af22a1e95a79b0cd4f488e3b320106d3d595e70a9daed",
+        "quote_text": "甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b4f97553-5c52-5452-bcce-7d1162ee1bf5",
+        "note_sha256": "f243fba81d0c6f9fd06a684dc12e3d8fbd7164f479ac87874841a0a7bc5e0acc",
+        "quote_text": "壬午，封汪應祖為琉球國山南王[1]。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "688e9f73-f741-588e-b542-1f40ffb8e617",
+        "note_sha256": "b2953b4e2722967a93f307a03d3d6c21d3b7952e47b0ac8cfbfcd429bcf430b7",
+        "quote_text": "壬午，封汪應祖為琉球國山南王[1]。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e5afcdf-0dff-59e7-9326-3cfd692e6caf",
+        "note_sha256": "0e34528c24bc8b57c66a01dbd3f190f4ac249ba0f594eeae3c7afe248445e3eb",
+        "quote_text": "壬寅，豐城侯李彬鎮廣東，清遠伯王友充總兵官，率舟師巡海。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3d6c15cc-a734-5e39-bf30-6beaebfea9e1",
+        "note_sha256": "c3fe8220e51fa59bc405961857ea238092c44aa7ccaa85f341941135a5abb9fd",
+        "quote_text": "壬寅，豐城侯李彬鎮廣東，清遠伯王友充總兵官，率舟師巡海。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "6c10af73-9d76-5c6e-9cfe-5af2d226c034",
+        "note_sha256": "98987332f00acff6aaf883d45be7c5a66a15250d132f0f4451d5106a08806336",
+        "quote_text": "丁亥，汰冗官。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fd3edf7a-92b9-536e-8ae6-b37555a9b419",
+        "note_sha256": "a46b34522168a79c7926e4fb702eda95c22f990e321ea4a392ca6c4218e67917",
+        "quote_text": "丁亥，汰冗官。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "203d7010-732b-5b94-b727-ee9acbc06c86",
+        "note_sha256": "74ce8bbeeeed28fbd499542d46b3d8bcf7887116f258560153b980e38a7ac4a6",
+        "quote_text": "辛卯，振松江、嘉興、蘇州、湖州饑。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d1d73a97-4ae5-5b75-9278-f8fd2fb6104e",
+        "note_sha256": "77f31518f5a3d5ecc0ee0e6ee63da092045f74c132c66f59e973c0f0ed09b4f6",
+        "quote_text": "辛卯，振松江、嘉興、蘇州、湖州饑。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f8f00c37-0eb5-5c7d-ac69-5048f017ca54",
+        "note_sha256": "42e9f88bef109a299ca983185b18a7ba7f5493f4433b14ce441d038bc6c6a98c",
+        "quote_text": "甲午，封哈密安克帖木兒為忠順王。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5a23f19c-b9d9-585a-bc45-f056a7b4b504",
+        "note_sha256": "c39b6b6f49b9ff8c1906fb692aaf48bda878769fb413414c5d0a5db66fe591ee",
+        "quote_text": "甲午，封哈密安克帖木兒為忠順王。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "98136909-09d4-5412-916e-9c6d93914b01",
+        "note_sha256": "aa1959f5ada67b9fbede693e173429c207b9b4c8840bb8d54e7d2a19ab4588d3",
+        "quote_text": "壬戌，鄱陽民進書毀先賢，杖之，毀其書。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "41127e16-5c2f-50f1-972d-96c5d21d19c8",
+        "note_sha256": "414331a4082c138c55a2d5c00db4b68d1fd03e7b62f4cb74f3bfb8232b7e4610",
+        "quote_text": "壬戌，鄱陽民進書毀先賢，杖之，毀其書。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3c5b8c76-ffdb-55e8-b2e0-6fd8347570dd",
+        "note_sha256": "a791c68a250dcc2cb314074e41c2962445c2b9b82bc95391bf76c0ea72b51a7b",
+        "quote_text": "丙寅，振江西、湖廣水災。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0a004fcc-61a6-53d7-87f3-a1ea9419d91f",
+        "note_sha256": "fafd50955f966a4619b633d4d1d85cb4895287baf7478a582d25d1500e4c787b",
+        "quote_text": "丙寅，振江西、湖廣水災。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e2acbebb-0a29-5549-bf05-fcfb63653677",
+        "note_sha256": "6d651e6386a27e2b5f597d37eed489b5997e8c6ec042183aa3826f2f5626adb7",
+        "quote_text": "丁酉，故安南國王陳日煃弟天平來奔。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "79872fee-6384-5958-ae82-24d178ba0a55",
+        "note_sha256": "ddbc98e09ef2cf5cdc507560479b0572ef152a9348fb4178ac8a59783f52c61d",
+        "quote_text": "丁酉，故安南國王陳日煃弟天平來奔。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b9c8f108-73e3-5443-9bf6-000a446b99aa",
+        "note_sha256": "cc6366127ed8ad1cd0e6cfc68c189fdf27140df1061250b326b853e278bf30da",
+        "quote_text": "丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d0cbdee6-f0bb-5d21-be1f-30eacd64ba76",
+        "note_sha256": "99e139f0df60ebf3107e1eef0330e0d600d3ab737856db3b5b04bcc12d023eca",
+        "quote_text": "丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8e7f7afc-3189-5b2b-82fb-b6eed201cfcb",
+        "note_sha256": "c902e71f3e03c61ca997150e93c74ab0cacf62892771808e719b08702cd633c2",
+        "quote_text": "丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e5065d6f-f45d-5c69-8f1b-8913213973ba",
+        "note_sha256": "5802d0a2f1408a7dedb8d7a1684a2de116f1f5d2ec618efb16a4de9175561b4e",
+        "quote_text": "丁卯，徙山西民萬戶實北京。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "29da93a6-d2ad-5783-9434-6b22ac093bce",
+        "note_sha256": "e0236690ae7c6534cc46931f57f1db1f0d68b8051624cf9bac919ce6d10ab22e",
+        "quote_text": "丁卯，徙山西民萬戶實北京。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2aa0bdac-7b38-5f0d-ba06-85dac89fcd30",
+        "note_sha256": "041c6eca82bf9a4c9dd5bed58a9ab8b4a7fc18fd306aa993e9645a104c45fa46",
+        "quote_text": "命自今御史巡行察吏毋得摭拾人言，賢否皆具實蹟以聞。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9c129e61-ba30-5f41-b656-762c9ef07b80",
+        "note_sha256": "d2f4652f9f20f927ba3ea00bd606045627616ff23cf43751c1522182ed8a3115",
+        "quote_text": "命自今御史巡行察吏毋得摭拾人言，賢否皆具實蹟以聞。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0a70328e-2d17-5638-ac62-5472fc4cb413",
+        "note_sha256": "d2d4239f16f3dd1245df20550f53c35176352818dc87d2bba61962398abeaf95",
+        "quote_text": "丁丑，河決開封。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "16b8b196-2a46-5bc4-8a30-0a5b28a123b9",
+        "note_sha256": "60d1630ba4be05e23bf67a00739f3df0b84596a0579c560b89271a72cb83afb7",
+        "quote_text": "丁丑，河決開封。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e3d365b9-ea6e-58ea-9ebc-96664564902e",
+        "note_sha256": "7cddfa5892d8dcb5e269926b2c8de1a5e093e9ce49d576aefc8784cea955f367",
+        "quote_text": "乙酉，蒲城、河津黃河清。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e2412248-1a1f-5f02-a92f-427d75b6824f",
+        "note_sha256": "c1291cd08598f03e230685b7f7ba82be5e4fb225668f71a4063317e69971a04e",
+        "quote_text": "乙酉，蒲城、河津黃河清。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fef7e8a8-9e3d-51a2-aaf7-74afe0975bbe",
+        "note_sha256": "dca27cf4c52c4b318509d31ff3f139b7d57e17f109a7669d8fc4089588ffa2da",
+        "quote_text": "是月，籍長興侯耿炳文家，炳文自殺。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8407a1d7-4d1a-5aef-bcc9-5c9934558ce5",
+        "note_sha256": "9bcf0ff08a1386b00cdd4928fd064a8d18cd42ca370c468194c35c660b95def7",
+        "quote_text": "是月，籍長興侯耿炳文家，炳文自殺。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7dfb20a8-69f7-5017-b33a-a00c11191a88",
+        "note_sha256": "cafbef47e746bd1b04a902d6ca6c4b63f54da321780b76b5c148a01224058256",
+        "quote_text": "是月，籍長興侯耿炳文家，炳文自殺。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "02cbb32c-7cdf-5a9d-b2ad-d2a206e24ad1",
+        "note_sha256": "c3dd42b8592b2f30bb47d63958ed90668608f2380a80666f6e403cdb2e0dbec7",
+        "quote_text": "是月，籍長興侯耿炳文家，炳文自殺。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5f590ec0-2c71-54cf-b187-94a6018bf896",
+        "note_sha256": "dc981cb9e4f3509e3ed33e1d5ad9f01bb81ec90b961c369906192eb8d8775df2",
+        "quote_text": "甲辰，御奉天門錄囚。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "7048e787-b3e7-541e-83b8-cc4e50cbe2f9",
+        "note_sha256": "005b4595006aa1651eef2b2584959340abd332aa64dccd95134239e2afa3066a",
+        "quote_text": "甲辰，御奉天門錄囚。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f2a40789-a893-596d-8c3a-b4f03bf01182",
+        "note_sha256": "662885ec75f8dc1908e2b7f6f2b0afcb6fd58e6d6f0b566ddba4c14b96794e03",
+        "quote_text": "甲辰，御奉天門錄囚。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dc07965c-481a-5d63-bed6-9f5bc778cb8a",
+        "note_sha256": "8743dd7e30ada659f3311f0677e4705b93f57b439bdb77b313cbce489acb3b5e",
+        "quote_text": "癸丑，京師及濟南、開封地震，敕羣臣修省。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0c9c9e50-5f40-5707-aae6-112ec0bb58c4",
+        "note_sha256": "a68241c10fd86220006cde422f6dfe683149a2c31ab0a9772dcbc6bf2e29c819",
+        "quote_text": "癸丑，京師及濟南、開封地震，敕羣臣修省。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4db53fb2-bb59-5216-a3b5-255ab6e5f9d7",
+        "note_sha256": "83e542e071c398e10e4f8b444c8eb8a2f5750045134d65ff9b9894ed5086312b",
+        "quote_text": "癸丑，京師及濟南、開封地震，敕羣臣修省。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3fb6bfe4-e342-5d80-b61c-d8f97b53a7e5",
+        "note_sha256": "0b2bd477c4d0e86a4a670aa32aade8c645559edd900b65e934000987cb769fdf",
+        "quote_text": "戊午，蠲蘇、松、嘉、湖、杭水災田租。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "79dd34b2-86f4-591d-8fd6-97ed13331bb1",
+        "note_sha256": "86b82e25cf69bdc269f5a8b05d3ad41dc52375a538dd0f2d660c6d430ea727f2",
+        "quote_text": "戊午，蠲蘇、松、嘉、湖、杭水災田租。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b4e7b7e6-e60a-516d-91cc-a3dd3c565a66",
+        "note_sha256": "fa0a5e3beb0855915f6ded9c5b2bd03bb2c43222e642ab4c8bdec23e9916b629",
+        "quote_text": "壬辰，同州、韓城黃河清。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "48740b47-951d-5107-85e8-d00666d00592",
+        "note_sha256": "93a16a446057014ffb034d78d0eb671f086ca1b9f51a18019ab25a48ef9ee5a3",
+        "quote_text": "壬辰，同州、韓城黃河清。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "63321ed8-9215-51c3-b3d4-73b7d93b0bd7",
+        "note_sha256": "68f878781a8d18650a9f18547d06a1eb14469c1a2a590d8ba145ce00dc02d62f",
+        "quote_text": "是月，下李景隆於獄。",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "21fd9877-f5bd-5b80-9529-a5915ffc052f",
+        "note_sha256": "83a1b51407a4899441e09cdcb1923938a10c49fe24bcfc16bdd298106c60501d",
+        "quote_text": "是月，下李景隆於獄。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f742fae8-9dee-5e8c-a18c-16b3b5755762",
+        "note_sha256": "27f1d41d32a4dca9dc162250ad7aa9be1aba0da93119c55861a7b4b1c3ef3dba",
+        "quote_text": "是月，下李景隆於獄。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e4d3d255-85b0-5fe2-8c81-0c671be07312",
+        "note_sha256": "4e411aa8997621aa2e20996154e5fd81f407ead5f0e11495aa21dc7e09e31452",
+        "quote_text": "是月，下李景隆於獄。",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "afb1de74-c84d-51a2-925a-80e84c2d7a79",
+        "note_sha256": "aaee0122100c702e4df448078470be6f706521d6fe910b4c2201aaf9358f433f",
+        "quote_text": "是年，占城，別失八里，琉球山北、山南，爪哇，真臘入貢。暹羅，日本，琉球中山入貢者再。",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f8b5e6ef-ad33-5884-a6fb-085613d9a5ae",
+        "note_sha256": "05c9aa4ebf7c8d1a53535d4b68aa3360f6c86a216cefeeda5eea6ce71410b579",
+        "quote_text": "是年，占城，別失八里，琉球山北、山南，爪哇，真臘入貢。暹羅，日本，琉球中山入貢者再。",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历永乐二年正月乙卯。DDBC历表换算所据为1404-03-03至1404-03-03，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001003的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f4927114-2340-5e5f-93e6-e80c6d3c94a4",
+        "claim_sha256": "59d6dd3c5466ba9f3f2d653e983471b941576dc7e32df6d6a5b3dd1fd380ed42",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "a834a611-9129-5ed2-8dc5-92d2f039bc6b",
+        "id": "af9a281e-fc63-5415-8d5c-eb6bc048426f",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年正月己巳。DDBC历表换算所据为1404-03-17至1404-03-17，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001003的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "e2c38c6f-5318-5df5-ae0e-6601a903d825",
+        "claim_sha256": "7b055509dd9aedd1ec2d9e89696525fd29529ae1569370efa83f77f81d8172a9",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "76df15a5-4905-565c-9f5a-8366647fdd3b",
+        "id": "1eebdac0-b87a-5fce-b35a-010f5fdae36c",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年三月乙巳。DDBC历表换算所据为1404-04-22至1404-04-22，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001004的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "87c48f0c-0dda-5403-9d05-1510e301c457",
+        "claim_sha256": "61f7404978daecb412e0db615db022e037e6716f8f17723d8a675635d6eb5714",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "0f8dd916-bb76-5dc8-bd8d-4d7422507606",
+        "id": "4509daaf-0d89-5b9d-93c0-999d6a1e59a8",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年三月己酉。DDBC历表换算所据为1404-04-26至1404-04-26，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001004的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d95c58aa-0907-5a88-9416-5e2c6de499df",
+        "claim_sha256": "69e3453126c2a685c2b84deae65a18325901f05cb19172e263acf570c47189ca",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "adeca193-2153-50d2-80da-e13d11820f84",
+        "id": "da6b43aa-afb8-5cd2-8abf-351510d431a4",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年三月庚戌。DDBC历表换算所据为1404-04-27至1404-04-27，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001004的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3cf84f69-56b2-537c-84d2-d53469830406",
+        "claim_sha256": "9779025b9073c03d05eddbcb67bf49accd2c5391d102928eca1316452d9eece2",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "0fec2eea-dddb-56ae-94d9-fb3c17d7840e",
+        "id": "d0ff84c7-205e-5d7e-8335-6cb2cb402c76",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年三月戊辰。DDBC历表换算所据为1404-05-15至1404-05-15，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001004的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "298a138b-4791-5c94-bc96-3b0022c5dd34",
+        "claim_sha256": "ea29e004f6020270a150be33b87637d308e38a9bdced9db47728ca36a117a9d8",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "5fc19fde-9b1f-563a-a2e7-563cf6af666c",
+        "id": "5b98ea52-20d7-5e69-b963-9e6e72b2e637",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年四月辛未朔。DDBC历表换算所据为1404-05-18至1404-05-18，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001005的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "70b9e021-d478-5bf8-b935-780ac1ddd78c",
+        "claim_sha256": "acfe8752b7aaa1e363c86954957098ae1eee3db5b48fca8ec0e6b10d32426ab1",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "8d1cebea-f121-5c52-a2ae-a450e97519c1",
+        "id": "01fbc7a1-59d4-5a99-8759-816eb3d71b64",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年四月壬申。DDBC历表换算所据为1404-05-19至1404-05-19，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001005的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "8f60b628-11a9-52ed-a72d-330b7b9566b4",
+        "claim_sha256": "61a8f9cd3851abc690aed8179060c3da474aa04aaeac8bdd5c19b2c227472400",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "2cb7bd4c-e391-574a-b0c9-617116c37c79",
+        "id": "9f28ddde-5c96-5bf0-b985-b190225e1099",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年四月甲戌。DDBC历表换算所据为1404-05-21至1404-05-21，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001005的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d242f276-7ec1-5952-a409-7092f5549a54",
+        "claim_sha256": "d4ccf9fe2ba9ec4746f83f6b93c935c5ffe809f6fb84d92a47661abd20c65df8",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "c87e8a77-7815-57c2-b44c-1f6c0b5f83ff",
+        "id": "b94297f3-af3c-5691-9647-03f9b68282ac",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年四月壬午。DDBC历表换算所据为1404-05-29至1404-05-29，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001005的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "688e9f73-f741-588e-b542-1f40ffb8e617",
+        "claim_sha256": "ace4448f2ceb5c47547a94c7ca6d28ae03bba80a1ad0d75db3782cf627c55743",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "51dad3e4-4381-5115-b051-f84a12a94521",
+        "id": "1b2807c6-cf82-5197-8cb2-f2cc6c532c8c",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年五月壬寅。DDBC历表换算所据为1404-06-18至1404-06-18，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001006的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3d6c15cc-a734-5e39-bf30-6beaebfea9e1",
+        "claim_sha256": "2b9b829761685fba4dfa546ff4438f698a5f2a1df00f4326257ace6c9ae2f53c",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "1d9c74f7-e1c3-52b9-82b6-bbde423f8ff9",
+        "id": "26f3c481-fa5d-517b-a4b9-de254f20643e",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年六月丁亥。DDBC历表换算所据为1404-08-02至1404-08-02，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001007的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "fd3edf7a-92b9-536e-8ae6-b37555a9b419",
+        "claim_sha256": "8fc148370375bd4d80a8cb1fd1453e2f793ba051159f78d337eca90c387e3f41",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "598dad24-927c-5ecc-8a98-4eb0c0067fa3",
+        "id": "500d2657-97e1-56b6-a5e4-2163b6ee7cbb",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年六月辛卯。DDBC历表换算所据为1404-08-06至1404-08-06，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001007的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d1d73a97-4ae5-5b75-9278-f8fd2fb6104e",
+        "claim_sha256": "1e6ece4c8c6ff81d841409e772ff1efea283d11946a9b5f99139c381a2415e9d",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "78352b32-91b8-566f-86aa-4d3e7987afeb",
+        "id": "f75a9f4f-ebe4-5ec2-84ea-a5f92e03e402",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年六月甲午。DDBC历表换算所据为1404-08-09至1404-08-09，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001007的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5a23f19c-b9d9-585a-bc45-f056a7b4b504",
+        "claim_sha256": "53fc5536e4b07d12662fc71ec8eadf58bfc33cd78a2159e94a1298036fcb3491",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "ba4436a2-0144-586e-9222-debd6aae5660",
+        "id": "4f3f7afd-5573-5f4f-989b-c805be2da41a",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年七月壬戌。DDBC历表换算所据为1404-09-06至1404-09-06，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001008的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "41127e16-5c2f-50f1-972d-96c5d21d19c8",
+        "claim_sha256": "6bd00e4c8fea08ddb47a95ecfa054ebed81f4abf917847c3791fda5b277501fb",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "bdcc02cd-65e7-59c6-b51d-5f1fdc329162",
+        "id": "0aa6ed9b-16c1-5b4a-8bfe-e676ce86e42f",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年七月丙寅。DDBC历表换算所据为1404-09-10至1404-09-10，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001008的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "0a004fcc-61a6-53d7-87f3-a1ea9419d91f",
+        "claim_sha256": "f74efca86fb236022bfeed5b0dcc5384167e4326acbd19e5ddea267da7fc045d",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "be6bb040-6113-5af5-afba-1918e2598837",
+        "id": "f6c67c89-5864-5116-b04a-6d24012e8ceb",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年八月丁酉。DDBC历表换算所据为1404-10-11至1404-10-11，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001009的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "79872fee-6384-5958-ae82-24d178ba0a55",
+        "claim_sha256": "440107087021d9e8223a96cd2c99fc5539dc7faf315c3fb57d4524bad521a4b9",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "00c1a03b-05e0-53cf-a819-574964368f6e",
+        "id": "bb1bc62f-d305-5bdf-93db-599b06c92aab",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年九月丙午。DDBC历表换算所据为1404-10-20至1404-10-20，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001010的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "d0cbdee6-f0bb-5d21-be1f-30eacd64ba76",
+        "claim_sha256": "27cc4f06bdd95fc3c4f2d9b22652cbe627988ef9268e7b900722c61f905668a6",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "18be64ff-cdff-5cc4-9f28-c0d792bbcf8c",
+        "id": "a4853e0b-c284-5188-85f5-3637db54efb5",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年九月丁卯。DDBC历表换算所据为1404-11-10至1404-11-10，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001010的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "29da93a6-d2ad-5783-9434-6b22ac093bce",
+        "claim_sha256": "277f7898254b1db1036118be9551e6a8d39bc750b554efa12c83c611358d73b3",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "66fc7560-af47-5419-bb9d-4fbd93614c54",
+        "id": "6f9316e6-5809-5522-b483-c4d402d99937",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年九月。DDBC历表换算所据为1404-10-13至1404-11-11，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001010的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9c129e61-ba30-5f41-b656-762c9ef07b80",
+        "claim_sha256": "30edf1b3116d21aa30fd451c35bd1bf23065b6f9ac72025098f7ef8f84eab35f",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "0d32490d-76ed-5991-b0e7-f1a05755a8b0",
+        "id": "ead37096-faa9-5628-9b62-f73bfd96da4b",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十月丁丑。DDBC历表换算所据为1404-11-20至1404-11-20，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001011的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "16b8b196-2a46-5bc4-8a30-0a5b28a123b9",
+        "claim_sha256": "04f65320b1f336fd725b8c7a50702c6ef5f9010216ff7379d7a107c96495f8bb",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "8dae553a-024c-56ae-8e81-829393ad2291",
+        "id": "200c9ef2-f526-53ab-8a9f-35c8f3203191",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十月乙酉。DDBC历表换算所据为1404-11-28至1404-11-28，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001011的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "e2412248-1a1f-5f02-a92f-427d75b6824f",
+        "claim_sha256": "1dc344a682f774b01633e94f66def9656b6b59559f3d5e4979e06f6808af83cd",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "b26a454f-c187-5a80-bc74-404743b01be1",
+        "id": "72fdb0f3-9816-58c9-8576-3b7ee0581731",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十月。DDBC历表换算所据为1404-11-12至1404-12-11，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001011的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "7dfb20a8-69f7-5017-b33a-a00c11191a88",
+        "claim_sha256": "70965479c3857c16dd82aa7d7c380af468ded003f9def45b2cac32b4dd293c5d",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "48a23c10-428e-5e98-9626-3d24ebf6ee63",
+        "id": "2a05d453-10a7-5b71-936b-11dc96f381e7",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十一月甲辰。DDBC历表换算所据为1404-12-17至1404-12-17，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001012的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "7048e787-b3e7-541e-83b8-cc4e50cbe2f9",
+        "claim_sha256": "a6887aa771b056e321d6ce0910cb36c48c10159cc837c3d6e49fd9440de19085",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "e1d16ac9-a361-540a-a9db-93e39031156c",
+        "id": "f0d0469e-7f34-58ff-8c0a-9f7d000f8b6a",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十一月癸丑。DDBC历表换算所据为1404-12-26至1404-12-26，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001012的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "0c9c9e50-5f40-5707-aae6-112ec0bb58c4",
+        "claim_sha256": "2940832ff7de2b45ef986bf977cf057598e058ad5f5fb26cac938a376f5edced",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "c903780c-dd91-5ffe-818c-7ea9c5c5b9f1",
+        "id": "af12585a-f54d-589e-aef8-b1e171ea5a0b",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十一月戊午。DDBC历表换算所据为1404-12-31至1404-12-31，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001012的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "79dd34b2-86f4-591d-8fd6-97ed13331bb1",
+        "claim_sha256": "a52740ff445b793b5f385135ca0ffffc5340159530fc663c78ba7f1f4cec0a06",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "12e0052e-5115-5715-9901-dd6059fd21e2",
+        "id": "82f96395-ae52-5984-990f-ee5dc5b7264b",
+        "latest_year": 1404,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十二月壬辰。DDBC历表换算所据为1405-02-03至1405-02-03，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001013的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "48740b47-951d-5107-85e8-d00666d00592",
+        "claim_sha256": "82583f87e852a6c278dbc2ee9b16695db0717e018e4d7ab04d9eee1fbc605a3e",
+        "earliest_year": 1405,
+        "era_key": null,
+        "event_id": "ab8584a2-c97c-57fe-997b-4e88d30272d3",
+        "id": "25dd7a01-a497-5b8f-9bc1-6432ae4b4bbb",
+        "latest_year": 1405,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年十二月。DDBC历表换算所据为1405-01-10至1405-02-08，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001013的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f742fae8-9dee-5e8c-a18c-16b3b5755762",
+        "claim_sha256": "b67c3cc001cf1b740e93bfe01b200094c383c2204c1b5f1bccf9b4bf614d5417",
+        "earliest_year": 1405,
+        "era_key": null,
+        "event_id": "5eafa16e-a747-5771-ba48-1a5bc2309eba",
+        "id": "436ad7fa-470b-5e5a-92e4-a9197ba0f658",
+        "latest_year": 1405,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历永乐二年。DDBC历表换算所据为1404-02-20至1405-02-08，据此核对公元发生年份。 卷六mingshi-2f603db3d81e-p001014的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f8b5e6ef-ad33-5884-a6fb-085613d9a5ae",
+        "claim_sha256": "286db526a51ac3199247a681d86fda3d88cecfe79e5fe588d4bfbec497f7da90",
+        "earliest_year": 1404,
+        "era_key": null,
+        "event_id": "73f593a0-e99d-5714-94b0-ec224de40017",
+        "id": "72f8a427-c90e-5beb-b4d6-36fdc3af854b",
+        "latest_year": 1405,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "b787c3fae3a69d99d30afa80f557b496daee6b1cf46c04756cdc612b2335493b",
+        "paragraph_id": "mingshi-2f603db3d81e-p001003",
+        "snapshot_sha256": "895cb4828c4fa28b698a852641c19cf345f5d88f65439bd6bf1017a29ea7f2a1",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1"
+      },
+      {
+        "archive_url_sha256": "db75b03f9111ae7525178e6a0e48eeff1a6f8a561e79794c0db16cb9aea30eb9",
+        "paragraph_id": "mingshi-2f603db3d81e-p001004",
+        "snapshot_sha256": "eda991b80359b357427c2f69093823e752a849f3778ca9bcb836de1d55c6630c",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f"
+      },
+      {
+        "archive_url_sha256": "54bec6c237cf8b08cd7f12c1293caf8ff45a9347f3825c569f684d8921ec8a3e",
+        "paragraph_id": "mingshi-2f603db3d81e-p001005",
+        "snapshot_sha256": "9609573f2f4d6e41ace18f4b396913e569383a074d05f78625d0b396c1b0d6b9",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf"
+      },
+      {
+        "archive_url_sha256": "f24bf6e35841ecaf16d657148749a18c7524b7cdd61a31df8c579d3b39124baa",
+        "paragraph_id": "mingshi-2f603db3d81e-p001006",
+        "snapshot_sha256": "b63bc220027fa6da759b4c7b3c89a912330a55bf73bb016fc6301bc0d973f8ec",
+        "source_id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3"
+      },
+      {
+        "archive_url_sha256": "0e64dcb409d4a40b7c0c4ac99cff64637a5b95cb95f9e6eb3053413fdcb9a6e0",
+        "paragraph_id": "mingshi-2f603db3d81e-p001007",
+        "snapshot_sha256": "d94e50016a83283b844bc534ec149775bb338921e0119bd6a30e84a532fb139f",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7"
+      },
+      {
+        "archive_url_sha256": "6e2e76944a7b52e0daa67370d689297e26436161999a0dc74dac8002b6fb8e9e",
+        "paragraph_id": "mingshi-2f603db3d81e-p001008",
+        "snapshot_sha256": "3a5600c92d3e39a4683fce3e8491f5810e2bb6ab39bb68c53418c804718d6c4e",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76"
+      },
+      {
+        "archive_url_sha256": "4fecaf0284647bfa80e3b615b6b7cfe083a99e2974829e45db39024ef4ed046d",
+        "paragraph_id": "mingshi-2f603db3d81e-p001009",
+        "snapshot_sha256": "dda6390326e3b7854a2f8c2df1a45391f9a1eac58794150ec207f5b2dca6ceb9",
+        "source_id": "d62d43de-4d39-519b-bdd9-e11bf202d14e"
+      },
+      {
+        "archive_url_sha256": "bfc27b58fa148e6e50c6eb9051df9c4ceaf46f4f61f9c8d6436fdc987276a267",
+        "paragraph_id": "mingshi-2f603db3d81e-p001010",
+        "snapshot_sha256": "39b624ddfe6bbd6759287db79dd6b2130f96a02908bf3775b504ca034a54dbd3",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f"
+      },
+      {
+        "archive_url_sha256": "4219d3f3309823e174305d571bf5043424e183dca128f4ce620099b204bd0326",
+        "paragraph_id": "mingshi-2f603db3d81e-p001011",
+        "snapshot_sha256": "61390359fa9b34469597df07f4b534bf56be32f8664a967c503f6a2e04daffa5",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa"
+      },
+      {
+        "archive_url_sha256": "5fb550b554c82b0a69fc4514507d39a430adbc9718926b42d9e3f851483c709d",
+        "paragraph_id": "mingshi-2f603db3d81e-p001012",
+        "snapshot_sha256": "3a1b2c4ad20957ae2acec7710a8aa2352115448ad9cf4391a549826844d3f979",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635"
+      },
+      {
+        "archive_url_sha256": "af77b46f5e78517f7a71d3fcd3ee4f177b04b80585049492a04a6f29e8db584b",
+        "paragraph_id": "mingshi-2f603db3d81e-p001013",
+        "snapshot_sha256": "0cc9b1586a3a4a3a798b8d890f7cf7e8728f1dcdaf2d3cf10d153d6aefb3ee56",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a"
+      },
+      {
+        "archive_url_sha256": "b6493f0064916cfdc316a7ae1eea65790ddfb2a43f7eec2e4b802b4510d2cbc8",
+        "paragraph_id": "mingshi-2f603db3d81e-p001014",
+        "snapshot_sha256": "14a1881df35f79fe85d0d36b7ff6d6174f67739fae6c771b28c41e30320d36bf",
+        "source_id": "9a210894-0a9c-5f76-a4e9-d541d7810a17"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-006/from-start/part-02/content-batch.json": "837c1578c9f32969d68d9adbd5e66d98d414248248bbda447eb60f978f4e51aa",
+    "content/books/mingshi/vol-006/from-start/part-02/curation.json": "7f8ee583826513dd8c00b9a8b04c92795fbcefe0fc0d4f37cd78bc7642ea07eb",
+    "content/books/mingshi/vol-006/from-start/part-02/packet.json": "2e9fdde6a648caf5d6b68d95fe7a2b7b7e6401e9947788e41179eec2e141fd88",
+    "content/books/mingshi/vol-006/from-start/part-02/publication-mysql.json": "78392e3810e522d7fb1948403581856f2f8a95c2cb74c36c8b1c56d25129aebd",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/manifest.json": "82e0eb9162285bee37a74f28f3766058abe6688af867c5bdeb94387f201afcaf",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001002/source.txt": "e6d72257920ff300ffd219272d6127b518a76a52e4d2cc4c94bf252ea3de58d7",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001003/source.txt": "895cb4828c4fa28b698a852641c19cf345f5d88f65439bd6bf1017a29ea7f2a1",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001004/source.txt": "eda991b80359b357427c2f69093823e752a849f3778ca9bcb836de1d55c6630c",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001005/source.txt": "9609573f2f4d6e41ace18f4b396913e569383a074d05f78625d0b396c1b0d6b9",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001006/source.txt": "b63bc220027fa6da759b4c7b3c89a912330a55bf73bb016fc6301bc0d973f8ec",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001007/source.txt": "d94e50016a83283b844bc534ec149775bb338921e0119bd6a30e84a532fb139f",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001008/source.txt": "3a5600c92d3e39a4683fce3e8491f5810e2bb6ab39bb68c53418c804718d6c4e",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001009/source.txt": "dda6390326e3b7854a2f8c2df1a45391f9a1eac58794150ec207f5b2dca6ceb9",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001010/source.txt": "39b624ddfe6bbd6759287db79dd6b2130f96a02908bf3775b504ca034a54dbd3",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001011/source.txt": "61390359fa9b34469597df07f4b534bf56be32f8664a967c503f6a2e04daffa5",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001012/source.txt": "3a1b2c4ad20957ae2acec7710a8aa2352115448ad9cf4391a549826844d3f979",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001013/source.txt": "0cc9b1586a3a4a3a798b8d890f7cf7e8728f1dcdaf2d3cf10d153d6aefb3ee56",
+    "content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001014/source.txt": "14a1881df35f79fe85d0d36b7ff6d6174f67739fae6c771b28c41e30320d36bf",
+    "content/books/mingshi/vol-006/from-start/part-02/sql/key-map.json": "d871a6a9df7fcbec3efee32f8ba8747dfefcabb485de506d99c849926e7ebe59",
+    "content/books/mingshi/vol-006/from-start/part-02/time-review.json": "54db43c4f31dcbe5caeb90461f87230ab19ec1b41cffdd16d513dc98a3805100"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "a0e91ce3-189a-59ad-abf3-597b14e34a4f"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月乙卯",
+        "claim_text": "明廷在南郊举行祭祀天地的大礼。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:21.738602+00:00",
+        "field_path": "description",
+        "id": "a0e91ce3-189a-59ad-abf3-597b14e34a4f",
+        "note": "原文：乙卯，大祀天地於南郊。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "a834a611-9129-5ed2-8dc5-92d2f039bc6b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f4927114-2340-5e5f-93e6-e80c6d3c94a4"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月乙卯",
+        "claim_text": "原历永乐二年正月乙卯。DDBC历表换算所据为1404-03-03至1404-03-03，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:21.842401+00:00",
+        "field_path": "time_original",
+        "id": "f4927114-2340-5e5f-93e6-e80c6d3c94a4",
+        "note": "原文：乙卯，大祀天地於南郊。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "a834a611-9129-5ed2-8dc5-92d2f039bc6b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "edcbfcf5-2b5f-53c4-aac3-c2289785747c"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月己巳",
+        "claim_text": "朱高炽奉召返回京师。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:21.997397+00:00",
+        "field_path": "description",
+        "id": "edcbfcf5-2b5f-53c4-aac3-c2289785747c",
+        "note": "原文：己巳，召世子高熾及高陽王高煦還京師。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "2dded14d-7183-56b5-9029-ca93826c1e80",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cce64e20-88b3-5505-977a-421ad49bae3b"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月己巳",
+        "claim_text": "朱高煦奉召返回京师。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.097331+00:00",
+        "field_path": "description",
+        "id": "cce64e20-88b3-5505-977a-421ad49bae3b",
+        "note": "原文：己巳，召世子高熾及高陽王高煦還京師。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "b6d6c246-3315-52c1-b7c1-e0ebc937a6ce",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6525347b-922b-53c7-9e07-7fae6f928c82"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月己巳",
+        "claim_text": "朝廷召世子朱高炽与高阳王朱高煦返回京师。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.144386+00:00",
+        "field_path": "description",
+        "id": "6525347b-922b-53c7-9e07-7fae6f928c82",
+        "note": "原文：己巳，召世子高熾及高陽王高煦還京師。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "76df15a5-4905-565c-9f5a-8366647fdd3b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e2c38c6f-5318-5df5-ae0e-6601a903d825"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月己巳",
+        "claim_text": "原历永乐二年正月己巳。DDBC历表换算所据为1404-03-17至1404-03-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.256367+00:00",
+        "field_path": "time_original",
+        "id": "e2c38c6f-5318-5df5-ae0e-6601a903d825",
+        "note": "原文：己巳，召世子高熾及高陽王高煦還京師。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "76df15a5-4905-565c-9f5a-8366647fdd3b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d28720cc-84aa-5156-948c-af3a5d4c7504"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月己巳",
+        "claim_text": "奉召返回京师",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.292054+00:00",
+        "field_path": "role",
+        "id": "d28720cc-84aa-5156-948c-af3a5d4c7504",
+        "note": "原文：己巳，召世子高熾及高陽王高煦還京師。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "73e83f96-c2d5-5c4a-951c-635f59ca33ea",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c6fab2f2-5905-532a-892d-2b2b595e3b37"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003；永乐二年正月己巳",
+        "claim_text": "奉召返回京师",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.334192+00:00",
+        "field_path": "role",
+        "id": "c6fab2f2-5905-532a-892d-2b2b595e3b37",
+        "note": "原文：己巳，召世子高熾及高陽王高煦還京師。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "status": "published",
+        "subject_id": "ac142eca-43aa-55cd-aaaa-f3a75b530167",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dec78220-4f4e-5a68-ba85-bedd9d3da9f3"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月乙巳",
+        "claim_text": "朝廷分别赐曾棨等人进士及第或出身。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.397473+00:00",
+        "field_path": "description",
+        "id": "dec78220-4f4e-5a68-ba85-bedd9d3da9f3",
+        "note": "原文：乙巳，賜曾棨等進士及第、出身有差。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "0f8dd916-bb76-5dc8-bd8d-4d7422507606",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "87c48f0c-0dda-5403-9d05-1510e301c457"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月乙巳",
+        "claim_text": "原历永乐二年三月乙巳。DDBC历表换算所据为1404-04-22至1404-04-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.443238+00:00",
+        "field_path": "time_original",
+        "id": "87c48f0c-0dda-5403-9d05-1510e301c457",
+        "note": "原文：乙巳，賜曾棨等進士及第、出身有差。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "0f8dd916-bb76-5dc8-bd8d-4d7422507606",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cefdd190-75a4-5c8c-8af7-1a133f10b1e1"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月己酉",
+        "claim_text": "本纪记载，永乐朝开始从进士中选人担任翰林院庶吉士。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.480012+00:00",
+        "field_path": "description",
+        "id": "cefdd190-75a4-5c8c-8af7-1a133f10b1e1",
+        "note": "原文：己酉，始選進士為翰林院庶吉士。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "adeca193-2153-50d2-80da-e13d11820f84",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d95c58aa-0907-5a88-9416-5e2c6de499df"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月己酉",
+        "claim_text": "原历永乐二年三月己酉。DDBC历表换算所据为1404-04-26至1404-04-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.522560+00:00",
+        "field_path": "time_original",
+        "id": "d95c58aa-0907-5a88-9416-5e2c6de499df",
+        "note": "原文：己酉，始選進士為翰林院庶吉士。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "adeca193-2153-50d2-80da-e13d11820f84",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bacded1f-edee-5d06-a85b-b3ba17d3da74"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月庚戌",
+        "claim_text": "朱棣以马周为例要求察其才后任用。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.563324+00:00",
+        "field_path": "description",
+        "id": "bacded1f-edee-5d06-a85b-b3ba17d3da74",
+        "note": "原文：庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "dd806a37-77e8-5244-96e9-4d71db81b600",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0280459e-6661-5963-99de-23fc9d41afe2"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月庚戌",
+        "claim_text": "吏部请求处罚违反规定荐举士人的千户。朱棣举马周因常何举荐而进用为例，主张确有才能便授官，否则停止任用。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.593188+00:00",
+        "field_path": "description",
+        "id": "0280459e-6661-5963-99de-23fc9d41afe2",
+        "note": "原文：庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "0fec2eea-dddb-56ae-94d9-fb3c17d7840e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3cf84f69-56b2-537c-84d2-d53469830406"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月庚戌",
+        "claim_text": "原历永乐二年三月庚戌。DDBC历表换算所据为1404-04-27至1404-04-27，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.639479+00:00",
+        "field_path": "time_original",
+        "id": "3cf84f69-56b2-537c-84d2-d53469830406",
+        "note": "原文：庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "0fec2eea-dddb-56ae-94d9-fb3c17d7840e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9b44dbaa-38e8-51b9-b514-9c6510f78edd"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月庚戌",
+        "claim_text": "以马周为例要求察其才后任用",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.802107+00:00",
+        "field_path": "role",
+        "id": "9b44dbaa-38e8-51b9-b514-9c6510f78edd",
+        "note": "原文：庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "fef70b3e-1e15-5bd9-9878-c3b53a27bfb1",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "62e56e12-3691-55a2-a93b-88331c5e6cb1"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月戊辰",
+        "claim_text": "朝廷将本纪所称敷惠王允𤐤改封为瓯宁王，命他奉祀懿文太子。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.837675+00:00",
+        "field_path": "description",
+        "id": "62e56e12-3691-55a2-a93b-88331c5e6cb1",
+        "note": "原文：戊辰，改封敷惠王允𤐤甌寧王，奉懿文太子祀。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "5fc19fde-9b1f-563a-a2e7-563cf6af666c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "298a138b-4791-5c94-bc96-3b0022c5dd34"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004；永乐二年三月戊辰",
+        "claim_text": "原历永乐二年三月戊辰。DDBC历表换算所据为1404-05-15至1404-05-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.873379+00:00",
+        "field_path": "time_original",
+        "id": "298a138b-4791-5c94-bc96-3b0022c5dd34",
+        "note": "原文：戊辰，改封敷惠王允𤐤甌寧王，奉懿文太子祀。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "status": "published",
+        "subject_id": "5fc19fde-9b1f-563a-a2e7-563cf6af666c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "91c904b5-280b-56a2-98a7-66caf193de23"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月辛未朔",
+        "claim_text": "四月初一，朝廷设置东宫官属。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.944261+00:00",
+        "field_path": "description",
+        "id": "91c904b5-280b-56a2-98a7-66caf193de23",
+        "note": "原文：辛未朔，置東宮官屬。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "8d1cebea-f121-5c52-a2ae-a450e97519c1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "70b9e021-d478-5bf8-b935-780ac1ddd78c"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月辛未朔",
+        "claim_text": "原历永乐二年四月辛未朔。DDBC历表换算所据为1404-05-18至1404-05-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:22.980586+00:00",
+        "field_path": "time_original",
+        "id": "70b9e021-d478-5bf8-b935-780ac1ddd78c",
+        "note": "原文：辛未朔，置東宮官屬。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "8d1cebea-f121-5c52-a2ae-a450e97519c1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3669247a-f3ec-54cb-ab2c-5f7ed767f6d3"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月壬申",
+        "claim_text": "原为僧人道衍，后来以太子少师身份任职，恢复姚姓并获赐名广孝。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.015237+00:00",
+        "field_path": "description",
+        "id": "3669247a-f3ec-54cb-ab2c-5f7ed767f6d3",
+        "note": "原文：壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "0d09acf5-929f-56a5-b2f3-d73f67a299fd",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3e73d525-735f-5cad-a629-694c92cb8a63"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月壬申",
+        "claim_text": "僧人道衍被任为太子少师，恢复姚姓，获赐名广孝。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.057516+00:00",
+        "field_path": "description",
+        "id": "3e73d525-735f-5cad-a629-694c92cb8a63",
+        "note": "原文：壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "2cb7bd4c-e391-574a-b0c9-617116c37c79",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8f60b628-11a9-52ed-a72d-330b7b9566b4"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月壬申",
+        "claim_text": "原历永乐二年四月壬申。DDBC历表换算所据为1404-05-19至1404-05-19，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.090168+00:00",
+        "field_path": "time_original",
+        "id": "8f60b628-11a9-52ed-a72d-330b7b9566b4",
+        "note": "原文：壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "2cb7bd4c-e391-574a-b0c9-617116c37c79",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ec425ec0-2b79-58b6-800a-7b053d3dbc60"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月壬申",
+        "claim_text": "任太子少师并获赐名",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.147454+00:00",
+        "field_path": "role",
+        "id": "ec425ec0-2b79-58b6-800a-7b053d3dbc60",
+        "note": "原文：壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "6c6c05b9-a01d-54f3-a55b-2a8ecc212f20",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c7c5208d-1404-542a-b2c7-2b911bf5fe26"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月甲戌",
+        "claim_text": "朱棣立儿子朱高炽为皇太子，同时封朱高煦为汉王、朱高燧为赵王。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.307383+00:00",
+        "field_path": "description",
+        "id": "c7c5208d-1404-542a-b2c7-2b911bf5fe26",
+        "note": "原文：甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "c87e8a77-7815-57c2-b44c-1f6c0b5f83ff",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d242f276-7ec1-5952-a409-7092f5549a54"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月甲戌",
+        "claim_text": "原历永乐二年四月甲戌。DDBC历表换算所据为1404-05-21至1404-05-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.346227+00:00",
+        "field_path": "time_original",
+        "id": "d242f276-7ec1-5952-a409-7092f5549a54",
+        "note": "原文：甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "c87e8a77-7815-57c2-b44c-1f6c0b5f83ff",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "18bf37f7-a860-50d2-90bf-c90a5eb41b75"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月甲戌",
+        "claim_text": "册立皇太子及封汉赵二王",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.392349+00:00",
+        "field_path": "role",
+        "id": "18bf37f7-a860-50d2-90bf-c90a5eb41b75",
+        "note": "原文：甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "2ded7d0e-08ec-5544-ab0e-063f1a0b7d55",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5500c8d6-1221-5aea-9fc5-5ffad1941f18"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月甲戌",
+        "claim_text": "被立为皇太子",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.467641+00:00",
+        "field_path": "role",
+        "id": "5500c8d6-1221-5aea-9fc5-5ffad1941f18",
+        "note": "原文：甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "31fc23dc-be59-5446-8771-7d01887398cc",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0e8e5ed6-5c80-547d-8b07-fa78a44c3397"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月甲戌",
+        "claim_text": "获封汉王",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.521273+00:00",
+        "field_path": "role",
+        "id": "0e8e5ed6-5c80-547d-8b07-fa78a44c3397",
+        "note": "原文：甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "41852590-0c27-5b22-9e27-ad2b1390b249",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b4f97553-5c52-5452-bcce-7d1162ee1bf5"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月壬午",
+        "claim_text": "朝廷册封本纪所作汪应祖为琉球国山南王。卷末校记指出，本书《琉球传》写作王应祖。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.578254+00:00",
+        "field_path": "description",
+        "id": "b4f97553-5c52-5452-bcce-7d1162ee1bf5",
+        "note": "原文：壬午，封汪應祖為琉球國山南王[1]。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "51dad3e4-4381-5115-b051-f84a12a94521",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "688e9f73-f741-588e-b542-1f40ffb8e617"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005；永乐二年四月壬午",
+        "claim_text": "原历永乐二年四月壬午。DDBC历表换算所据为1404-05-29至1404-05-29，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.644321+00:00",
+        "field_path": "time_original",
+        "id": "688e9f73-f741-588e-b542-1f40ffb8e617",
+        "note": "原文：壬午，封汪應祖為琉球國山南王[1]。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "status": "published",
+        "subject_id": "51dad3e4-4381-5115-b051-f84a12a94521",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e5afcdf-0dff-59e7-9326-3cfd692e6caf"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001006；永乐二年五月壬寅",
+        "claim_text": "丰城侯李彬镇守广东，清远伯王友担任总兵官，率领水军巡视海上。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.697259+00:00",
+        "field_path": "description",
+        "id": "1e5afcdf-0dff-59e7-9326-3cfd692e6caf",
+        "note": "原文：壬寅，豐城侯李彬鎮廣東，清遠伯王友充總兵官，率舟師巡海。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3",
+        "status": "published",
+        "subject_id": "1d9c74f7-e1c3-52b9-82b6-bbde423f8ff9",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3d6c15cc-a734-5e39-bf30-6beaebfea9e1"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001006；永乐二年五月壬寅",
+        "claim_text": "原历永乐二年五月壬寅。DDBC历表换算所据为1404-06-18至1404-06-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.732287+00:00",
+        "field_path": "time_original",
+        "id": "3d6c15cc-a734-5e39-bf30-6beaebfea9e1",
+        "note": "原文：壬寅，豐城侯李彬鎮廣東，清遠伯王友充總兵官，率舟師巡海。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3",
+        "status": "published",
+        "subject_id": "1d9c74f7-e1c3-52b9-82b6-bbde423f8ff9",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6c10af73-9d76-5c6e-9cfe-5af2d226c034"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007；永乐二年六月丁亥",
+        "claim_text": "朝廷下令裁减多余官员。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.832528+00:00",
+        "field_path": "description",
+        "id": "6c10af73-9d76-5c6e-9cfe-5af2d226c034",
+        "note": "原文：丁亥，汰冗官。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "status": "published",
+        "subject_id": "598dad24-927c-5ecc-8a98-4eb0c0067fa3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fd3edf7a-92b9-536e-8ae6-b37555a9b419"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007；永乐二年六月丁亥",
+        "claim_text": "原历永乐二年六月丁亥。DDBC历表换算所据为1404-08-02至1404-08-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.872163+00:00",
+        "field_path": "time_original",
+        "id": "fd3edf7a-92b9-536e-8ae6-b37555a9b419",
+        "note": "原文：丁亥，汰冗官。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "status": "published",
+        "subject_id": "598dad24-927c-5ecc-8a98-4eb0c0067fa3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "203d7010-732b-5b94-b727-ee9acbc06c86"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007；永乐二年六月辛卯",
+        "claim_text": "朝廷下令赈济松江、嘉兴、苏州和湖州的饥荒。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.914514+00:00",
+        "field_path": "description",
+        "id": "203d7010-732b-5b94-b727-ee9acbc06c86",
+        "note": "原文：辛卯，振松江、嘉興、蘇州、湖州饑。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "status": "published",
+        "subject_id": "78352b32-91b8-566f-86aa-4d3e7987afeb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d1d73a97-4ae5-5b75-9278-f8fd2fb6104e"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007；永乐二年六月辛卯",
+        "claim_text": "原历永乐二年六月辛卯。DDBC历表换算所据为1404-08-06至1404-08-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:23.958256+00:00",
+        "field_path": "time_original",
+        "id": "d1d73a97-4ae5-5b75-9278-f8fd2fb6104e",
+        "note": "原文：辛卯，振松江、嘉興、蘇州、湖州饑。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "status": "published",
+        "subject_id": "78352b32-91b8-566f-86aa-4d3e7987afeb",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f8f00c37-0eb5-5c7d-ac69-5048f017ca54"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007；永乐二年六月甲午",
+        "claim_text": "朝廷册封哈密安克帖木儿为忠顺王。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:24.007370+00:00",
+        "field_path": "description",
+        "id": "f8f00c37-0eb5-5c7d-ac69-5048f017ca54",
+        "note": "原文：甲午，封哈密安克帖木兒為忠順王。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "status": "published",
+        "subject_id": "ba4436a2-0144-586e-9222-debd6aae5660",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5a23f19c-b9d9-585a-bc45-f056a7b4b504"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007；永乐二年六月甲午",
+        "claim_text": "原历永乐二年六月甲午。DDBC历表换算所据为1404-08-09至1404-08-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:24.050796+00:00",
+        "field_path": "time_original",
+        "id": "5a23f19c-b9d9-585a-bc45-f056a7b4b504",
+        "note": "原文：甲午，封哈密安克帖木兒為忠順王。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "status": "published",
+        "subject_id": "ba4436a2-0144-586e-9222-debd6aae5660",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "98136909-09d4-5412-916e-9c6d93914b01"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001008；永乐二年七月壬戌",
+        "claim_text": "一名鄱阳人上书，本纪称其毁谤先贤。朝廷以杖刑责罚此人并毁去所上书稿。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:24.103527+00:00",
+        "field_path": "description",
+        "id": "98136909-09d4-5412-916e-9c6d93914b01",
+        "note": "原文：壬戌，鄱陽民進書毀先賢，杖之，毀其書。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76",
+        "status": "published",
+        "subject_id": "bdcc02cd-65e7-59c6-b51d-5f1fdc329162",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "41127e16-5c2f-50f1-972d-96c5d21d19c8"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001008；永乐二年七月壬戌",
+        "claim_text": "原历永乐二年七月壬戌。DDBC历表换算所据为1404-09-06至1404-09-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:24.172453+00:00",
+        "field_path": "time_original",
+        "id": "41127e16-5c2f-50f1-972d-96c5d21d19c8",
+        "note": "原文：壬戌，鄱陽民進書毀先賢，杖之，毀其書。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76",
+        "status": "published",
+        "subject_id": "bdcc02cd-65e7-59c6-b51d-5f1fdc329162",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3c5b8c76-ffdb-55e8-b2e0-6fd8347570dd"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001008；永乐二年七月丙寅",
+        "claim_text": "江西和湖广发生水灾，朝廷下令赈济。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:24.362197+00:00",
+        "field_path": "description",
+        "id": "3c5b8c76-ffdb-55e8-b2e0-6fd8347570dd",
+        "note": "原文：丙寅，振江西、湖廣水災。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76",
+        "status": "published",
+        "subject_id": "be6bb040-6113-5af5-afba-1918e2598837",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0a004fcc-61a6-53d7-87f3-a1ea9419d91f"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001008；永乐二年七月丙寅",
+        "claim_text": "原历永乐二年七月丙寅。DDBC历表换算所据为1404-09-10至1404-09-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:24.561421+00:00",
+        "field_path": "time_original",
+        "id": "0a004fcc-61a6-53d7-87f3-a1ea9419d91f",
+        "note": "原文：丙寅，振江西、湖廣水災。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76",
+        "status": "published",
+        "subject_id": "be6bb040-6113-5af5-afba-1918e2598837",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e2acbebb-0a29-5549-bf05-fcfb63653677"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001009；永乐二年八月丁酉",
+        "claim_text": "本纪记载，八月丁酉天平从安南来投，称其为故安南国王陈日煃之弟。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:25.809655+00:00",
+        "field_path": "description",
+        "id": "e2acbebb-0a29-5549-bf05-fcfb63653677",
+        "note": "原文：丁酉，故安南國王陳日煃弟天平來奔。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d62d43de-4d39-519b-bdd9-e11bf202d14e",
+        "status": "published",
+        "subject_id": "00c1a03b-05e0-53cf-a819-574964368f6e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "79872fee-6384-5958-ae82-24d178ba0a55"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001009；永乐二年八月丁酉",
+        "claim_text": "原历永乐二年八月丁酉。DDBC历表换算所据为1404-10-11至1404-10-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:25.948710+00:00",
+        "field_path": "time_original",
+        "id": "79872fee-6384-5958-ae82-24d178ba0a55",
+        "note": "原文：丁酉，故安南國王陳日煃弟天平來奔。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d62d43de-4d39-519b-bdd9-e11bf202d14e",
+        "status": "published",
+        "subject_id": "00c1a03b-05e0-53cf-a819-574964368f6e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b9c8f108-73e3-5443-9bf6-000a446b99aa"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月丙午",
+        "claim_text": "周王朱橚来朝，献上本纪所称驺虞。百官请求庆贺。朱棣说，祥瑞取决于德行，此物若真是祥瑞，更应修身反省。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:25.988229+00:00",
+        "field_path": "description",
+        "id": "b9c8f108-73e3-5443-9bf6-000a446b99aa",
+        "note": "原文：丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "18be64ff-cdff-5cc4-9f28-c0d792bbcf8c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d0cbdee6-f0bb-5d21-be1f-30eacd64ba76"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月丙午",
+        "claim_text": "原历永乐二年九月丙午。DDBC历表换算所据为1404-10-20至1404-10-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:26.089539+00:00",
+        "field_path": "time_original",
+        "id": "d0cbdee6-f0bb-5d21-be1f-30eacd64ba76",
+        "note": "原文：丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "18be64ff-cdff-5cc4-9f28-c0d792bbcf8c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8e7f7afc-3189-5b2b-82fb-b6eed201cfcb"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月丙午",
+        "claim_text": "答复百官请贺",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:27.054802+00:00",
+        "field_path": "role",
+        "id": "8e7f7afc-3189-5b2b-82fb-b6eed201cfcb",
+        "note": "原文：丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "5d174770-b2ec-5a64-97a4-1d458039e8c8",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e5065d6f-f45d-5c69-8f1b-8913213973ba"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月丁卯",
+        "claim_text": "朝廷从山西迁一万户百姓到北京。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:27.564710+00:00",
+        "field_path": "description",
+        "id": "e5065d6f-f45d-5c69-8f1b-8913213973ba",
+        "note": "原文：丁卯，徙山西民萬戶實北京。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "66fc7560-af47-5419-bb9d-4fbd93614c54",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "29da93a6-d2ad-5783-9434-6b22ac093bce"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月丁卯",
+        "claim_text": "原历永乐二年九月丁卯。DDBC历表换算所据为1404-11-10至1404-11-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:27.854351+00:00",
+        "field_path": "time_original",
+        "id": "29da93a6-d2ad-5783-9434-6b22ac093bce",
+        "note": "原文：丁卯，徙山西民萬戶實北京。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "66fc7560-af47-5419-bb9d-4fbd93614c54",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2aa0bdac-7b38-5f0d-ba06-85dac89fcd30"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月",
+        "claim_text": "朝廷命巡行御史监察官吏时避免仅凭传闻，按实际事迹报告官吏的表现。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:27.904369+00:00",
+        "field_path": "description",
+        "id": "2aa0bdac-7b38-5f0d-ba06-85dac89fcd30",
+        "note": "原文：命自今御史巡行察吏毋得摭拾人言，賢否皆具實蹟以聞。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "0d32490d-76ed-5991-b0e7-f1a05755a8b0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9c129e61-ba30-5f41-b656-762c9ef07b80"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010；永乐二年九月",
+        "claim_text": "原历永乐二年九月。DDBC历表换算所据为1404-10-13至1404-11-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.043948+00:00",
+        "field_path": "time_original",
+        "id": "9c129e61-ba30-5f41-b656-762c9ef07b80",
+        "note": "原文：命自今御史巡行察吏毋得摭拾人言，賢否皆具實蹟以聞。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "status": "published",
+        "subject_id": "0d32490d-76ed-5991-b0e7-f1a05755a8b0",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0a70328e-2d17-5638-ac62-5472fc4cb413"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月丁丑",
+        "claim_text": "本纪记载，黄河于十月丁丑在开封决口。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.094171+00:00",
+        "field_path": "description",
+        "id": "0a70328e-2d17-5638-ac62-5472fc4cb413",
+        "note": "原文：丁丑，河決開封。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "8dae553a-024c-56ae-8e81-829393ad2291",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "16b8b196-2a46-5bc4-8a30-0a5b28a123b9"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月丁丑",
+        "claim_text": "原历永乐二年十月丁丑。DDBC历表换算所据为1404-11-20至1404-11-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.124637+00:00",
+        "field_path": "time_original",
+        "id": "16b8b196-2a46-5bc4-8a30-0a5b28a123b9",
+        "note": "原文：丁丑，河決開封。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "8dae553a-024c-56ae-8e81-829393ad2291",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e3d365b9-ea6e-58ea-9ebc-96664564902e"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月乙酉",
+        "claim_text": "本纪记载，十月乙酉蒲城和河津一带的黄河水清。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.178795+00:00",
+        "field_path": "description",
+        "id": "e3d365b9-ea6e-58ea-9ebc-96664564902e",
+        "note": "原文：乙酉，蒲城、河津黃河清。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "b26a454f-c187-5a80-bc74-404743b01be1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e2412248-1a1f-5f02-a92f-427d75b6824f"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月乙酉",
+        "claim_text": "原历永乐二年十月乙酉。DDBC历表换算所据为1404-11-28至1404-11-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.223289+00:00",
+        "field_path": "time_original",
+        "id": "e2412248-1a1f-5f02-a92f-427d75b6824f",
+        "note": "原文：乙酉，蒲城、河津黃河清。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "b26a454f-c187-5a80-bc74-404743b01be1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fef7e8a8-9e3d-51a2-aaf7-74afe0975bbe"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月",
+        "claim_text": "耿炳文家产被登记查抄并自杀。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.294458+00:00",
+        "field_path": "description",
+        "id": "fef7e8a8-9e3d-51a2-aaf7-74afe0975bbe",
+        "note": "原文：是月，籍長興侯耿炳文家，炳文自殺。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "348f31d6-f709-5dde-a5f7-f84796bfa663",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8407a1d7-4d1a-5aef-bcc9-5c9934558ce5"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月",
+        "claim_text": "本纪记载，这个月朝廷登记查抄长兴侯耿炳文的家产，耿炳文自杀。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.343936+00:00",
+        "field_path": "description",
+        "id": "8407a1d7-4d1a-5aef-bcc9-5c9934558ce5",
+        "note": "原文：是月，籍長興侯耿炳文家，炳文自殺。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "48a23c10-428e-5e98-9626-3d24ebf6ee63",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7dfb20a8-69f7-5017-b33a-a00c11191a88"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月",
+        "claim_text": "原历永乐二年十月。DDBC历表换算所据为1404-11-12至1404-12-11，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.424619+00:00",
+        "field_path": "time_original",
+        "id": "7dfb20a8-69f7-5017-b33a-a00c11191a88",
+        "note": "原文：是月，籍長興侯耿炳文家，炳文自殺。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "48a23c10-428e-5e98-9626-3d24ebf6ee63",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "02cbb32c-7cdf-5a9d-b2ad-d2a206e24ad1"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011；永乐二年十月",
+        "claim_text": "家产被登记查抄并自杀",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.559564+00:00",
+        "field_path": "role",
+        "id": "02cbb32c-7cdf-5a9d-b2ad-d2a206e24ad1",
+        "note": "原文：是月，籍長興侯耿炳文家，炳文自殺。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "status": "published",
+        "subject_id": "e6f506b4-c517-57d6-a8c1-02d86c50b084",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5f590ec0-2c71-54cf-b187-94a6018bf896"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月甲辰",
+        "claim_text": "朱棣在奉天门听取囚犯案件并复查。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.594392+00:00",
+        "field_path": "description",
+        "id": "5f590ec0-2c71-54cf-b187-94a6018bf896",
+        "note": "原文：甲辰，御奉天門錄囚。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "e1d16ac9-a361-540a-a9db-93e39031156c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "7048e787-b3e7-541e-83b8-cc4e50cbe2f9"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月甲辰",
+        "claim_text": "原历永乐二年十一月甲辰。DDBC历表换算所据为1404-12-17至1404-12-17，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.799723+00:00",
+        "field_path": "time_original",
+        "id": "7048e787-b3e7-541e-83b8-cc4e50cbe2f9",
+        "note": "原文：甲辰，御奉天門錄囚。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "e1d16ac9-a361-540a-a9db-93e39031156c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f2a40789-a893-596d-8c3a-b4f03bf01182"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月甲辰",
+        "claim_text": "在奉天门复查囚案",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.893819+00:00",
+        "field_path": "role",
+        "id": "f2a40789-a893-596d-8c3a-b4f03bf01182",
+        "note": "原文：甲辰，御奉天門錄囚。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "e595f25e-d7a8-5ea9-8580-9826139ea439",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dc07965c-481a-5d63-bed6-9f5bc778cb8a"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月癸丑",
+        "claim_text": "京师、济南和开封发生地震，朱棣敕令群臣修身反省。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:28.979627+00:00",
+        "field_path": "description",
+        "id": "dc07965c-481a-5d63-bed6-9f5bc778cb8a",
+        "note": "原文：癸丑，京師及濟南、開封地震，敕羣臣修省。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "c903780c-dd91-5ffe-818c-7ea9c5c5b9f1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0c9c9e50-5f40-5707-aae6-112ec0bb58c4"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月癸丑",
+        "claim_text": "原历永乐二年十一月癸丑。DDBC历表换算所据为1404-12-26至1404-12-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:29.283992+00:00",
+        "field_path": "time_original",
+        "id": "0c9c9e50-5f40-5707-aae6-112ec0bb58c4",
+        "note": "原文：癸丑，京師及濟南、開封地震，敕羣臣修省。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "c903780c-dd91-5ffe-818c-7ea9c5c5b9f1",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4db53fb2-bb59-5216-a3b5-255ab6e5f9d7"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月癸丑",
+        "claim_text": "敕令群臣修省",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:29.353724+00:00",
+        "field_path": "role",
+        "id": "4db53fb2-bb59-5216-a3b5-255ab6e5f9d7",
+        "note": "原文：癸丑，京師及濟南、開封地震，敕羣臣修省。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "b047adac-0cf0-5698-8977-3b5372c6eb6a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3fb6bfe4-e342-5d80-b61c-d8f97b53a7e5"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月戊午",
+        "claim_text": "明廷免去苏州、松江、嘉兴、湖州和杭州受水灾地的田租。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:29.419538+00:00",
+        "field_path": "description",
+        "id": "3fb6bfe4-e342-5d80-b61c-d8f97b53a7e5",
+        "note": "原文：戊午，蠲蘇、松、嘉、湖、杭水災田租。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "12e0052e-5115-5715-9901-dd6059fd21e2",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "79dd34b2-86f4-591d-8fd6-97ed13331bb1"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012；永乐二年十一月戊午",
+        "claim_text": "原历永乐二年十一月戊午。DDBC历表换算所据为1404-12-31至1404-12-31，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.417729+00:00",
+        "field_path": "time_original",
+        "id": "79dd34b2-86f4-591d-8fd6-97ed13331bb1",
+        "note": "原文：戊午，蠲蘇、松、嘉、湖、杭水災田租。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "status": "published",
+        "subject_id": "12e0052e-5115-5715-9901-dd6059fd21e2",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b4e7b7e6-e60a-516d-91cc-a3dd3c565a66"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013；永乐二年十二月壬辰",
+        "claim_text": "本纪记载，十二月壬辰同州和韩城一带的黄河水清。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.487607+00:00",
+        "field_path": "description",
+        "id": "b4e7b7e6-e60a-516d-91cc-a3dd3c565a66",
+        "note": "原文：壬辰，同州、韓城黃河清。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "status": "published",
+        "subject_id": "ab8584a2-c97c-57fe-997b-4e88d30272d3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "48740b47-951d-5107-85e8-d00666d00592"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013；永乐二年十二月壬辰",
+        "claim_text": "原历永乐二年十二月壬辰。DDBC历表换算所据为1405-02-03至1405-02-03，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.538261+00:00",
+        "field_path": "time_original",
+        "id": "48740b47-951d-5107-85e8-d00666d00592",
+        "note": "原文：壬辰，同州、韓城黃河清。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "status": "published",
+        "subject_id": "ab8584a2-c97c-57fe-997b-4e88d30272d3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "63321ed8-9215-51c3-b3d4-73b7d93b0bd7"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013；永乐二年十二月",
+        "claim_text": "李景隆被关押入狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.667347+00:00",
+        "field_path": "description",
+        "id": "63321ed8-9215-51c3-b3d4-73b7d93b0bd7",
+        "note": "原文：是月，下李景隆於獄。；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "status": "published",
+        "subject_id": "74bfbb9a-13ef-5b0a-8ce8-2e9f902907af",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "21fd9877-f5bd-5b80-9529-a5915ffc052f"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013；永乐二年十二月",
+        "claim_text": "本纪记载，这个月朝廷将李景隆关押入狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.727125+00:00",
+        "field_path": "description",
+        "id": "21fd9877-f5bd-5b80-9529-a5915ffc052f",
+        "note": "原文：是月，下李景隆於獄。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "status": "published",
+        "subject_id": "5eafa16e-a747-5771-ba48-1a5bc2309eba",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f742fae8-9dee-5e8c-a18c-16b3b5755762"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013；永乐二年十二月",
+        "claim_text": "原历永乐二年十二月。DDBC历表换算所据为1405-01-10至1405-02-08，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.804329+00:00",
+        "field_path": "time_original",
+        "id": "f742fae8-9dee-5e8c-a18c-16b3b5755762",
+        "note": "原文：是月，下李景隆於獄。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "status": "published",
+        "subject_id": "5eafa16e-a747-5771-ba48-1a5bc2309eba",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e4d3d255-85b0-5fe2-8c81-0c671be07312"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013；永乐二年十二月",
+        "claim_text": "被关押入狱",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.837335+00:00",
+        "field_path": "role",
+        "id": "e4d3d255-85b0-5fe2-8c81-0c671be07312",
+        "note": "原文：是月，下李景隆於獄。；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "status": "published",
+        "subject_id": "93246a3b-b13f-5798-bae1-2e8b26fee384",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "afb1de74-c84d-51a2-925a-80e84c2d7a79"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001014；永乐二年",
+        "claim_text": "本纪记载，这一年占城、别失八里、琉球山北及山南、爪哇、真腊来贡。暹罗、日本及琉球中山来贡两次。 按原历纪年，事情发生在公元1404至1405年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.893077+00:00",
+        "field_path": "description",
+        "id": "afb1de74-c84d-51a2-925a-80e84c2d7a79",
+        "note": "原文：是年，占城，別失八里，琉球山北、山南，爪哇，真臘入貢。暹羅，日本，琉球中山入貢者再。；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "9a210894-0a9c-5f76-a4e9-d541d7810a17",
+        "status": "published",
+        "subject_id": "73f593a0-e99d-5714-94b0-ec224de40017",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f8b5e6ef-ad33-5884-a6fb-085613d9a5ae"
+      },
+      "row": {
+        "citation": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001014；永乐二年",
+        "claim_text": "原历永乐二年。DDBC历表换算所据为1404-02-20至1405-02-08，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:44:30.937497+00:00",
+        "field_path": "time_original",
+        "id": "f8b5e6ef-ad33-5884-a6fb-085613d9a5ae",
+        "note": "原文：是年，占城，別失八里，琉球山北、山南，爪哇，真臘入貢。暹羅，日本，琉球中山入貢者再。；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "9a210894-0a9c-5f76-a4e9-d541d7810a17",
+        "status": "published",
+        "subject_id": "73f593a0-e99d-5714-94b0-ec224de40017",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "13d8a162-fdbe-5beb-abca-24a659e999d1"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.319254+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "13d8a162-fdbe-5beb-abca-24a659e999d1",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001003",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001003",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001003/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "b787c3fae3a69d99d30afa80f557b496daee6b1cf46c04756cdc612b2335493b",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1"
+      },
+      "row": {
+        "archive_blob_sha256": "895cb4828c4fa28b698a852641c19cf345f5d88f65439bd6bf1017a29ea7f2a1",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001003/source.txt",
+        "archive_url_sha256": "b787c3fae3a69d99d30afa80f557b496daee6b1cf46c04756cdc612b2335493b",
+        "content": "二年春正月乙卯，大祀天地於南郊。己巳，召世子高熾及高陽王高煦還京師。",
+        "content_sha256": "895cb4828c4fa28b698a852641c19cf345f5d88f65439bd6bf1017a29ea7f2a1",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "13d8a162-fdbe-5beb-abca-24a659e999d1"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001003"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48214,
+        "char_start": 48180,
+        "content": "二年春正月乙卯，大祀天地於南郊。己巳，召世子高熾及高陽王高煦還京師。",
+        "content_sha256": "895cb4828c4fa28b698a852641c19cf345f5d88f65439bd6bf1017a29ea7f2a1",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001003",
+        "kind": "body",
+        "ordinal": 995,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.357109+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001004",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001004",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001004/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "db75b03f9111ae7525178e6a0e48eeff1a6f8a561e79794c0db16cb9aea30eb9",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f"
+      },
+      "row": {
+        "archive_blob_sha256": "eda991b80359b357427c2f69093823e752a849f3778ca9bcb836de1d55c6630c",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001004/source.txt",
+        "archive_url_sha256": "db75b03f9111ae7525178e6a0e48eeff1a6f8a561e79794c0db16cb9aea30eb9",
+        "content": "三月乙巳，賜曾棨等進士及第、出身有差。己酉，始選進士為翰林院庶吉士。庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」戊辰，改封敷惠王允𤐤甌寧王，奉懿文太子祀。",
+        "content_sha256": "eda991b80359b357427c2f69093823e752a849f3778ca9bcb836de1d55c6630c",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "d62809df-76f0-5d62-b5f6-604ad3bc6e1f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001004"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48314,
+        "char_start": 48216,
+        "content": "三月乙巳，賜曾棨等進士及第、出身有差。己酉，始選進士為翰林院庶吉士。庚戌，吏部請罪千戶違制薦士者，帝曰：「馬周不因常何進乎？果才，授之官，否則罷之可耳。」戊辰，改封敷惠王允𤐤甌寧王，奉懿文太子祀。",
+        "content_sha256": "eda991b80359b357427c2f69093823e752a849f3778ca9bcb836de1d55c6630c",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001004",
+        "kind": "body",
+        "ordinal": 996,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.391171+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001005",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001005",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001005/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "54bec6c237cf8b08cd7f12c1293caf8ff45a9347f3825c569f684d8921ec8a3e",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf"
+      },
+      "row": {
+        "archive_blob_sha256": "9609573f2f4d6e41ace18f4b396913e569383a074d05f78625d0b396c1b0d6b9",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001005/source.txt",
+        "archive_url_sha256": "54bec6c237cf8b08cd7f12c1293caf8ff45a9347f3825c569f684d8921ec8a3e",
+        "content": "夏四月辛未朔，置東宮官屬。壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。壬午，封汪應祖為琉球國山南王[1]。",
+        "content_sha256": "9609573f2f4d6e41ace18f4b396913e569383a074d05f78625d0b396c1b0d6b9",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001005"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48392,
+        "char_start": 48316,
+        "content": "夏四月辛未朔，置東宮官屬。壬申，僧道衍為太子少師，復其姓姚，賜名廣孝。甲戌，立子高熾為皇太子，封高煦漢王，高燧趙王。壬午，封汪應祖為琉球國山南王[1]。",
+        "content_sha256": "9609573f2f4d6e41ace18f4b396913e569383a074d05f78625d0b396c1b0d6b9",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001005",
+        "kind": "body",
+        "ordinal": 997,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.440092+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001006",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001006",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001006/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "f24bf6e35841ecaf16d657148749a18c7524b7cdd61a31df8c579d3b39124baa",
+        "source_id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3"
+      },
+      "row": {
+        "archive_blob_sha256": "b63bc220027fa6da759b4c7b3c89a912330a55bf73bb016fc6301bc0d973f8ec",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001006/source.txt",
+        "archive_url_sha256": "f24bf6e35841ecaf16d657148749a18c7524b7cdd61a31df8c579d3b39124baa",
+        "content": "五月壬寅，豐城侯李彬鎮廣東，清遠伯王友充總兵官，率舟師巡海。",
+        "content_sha256": "b63bc220027fa6da759b4c7b3c89a912330a55bf73bb016fc6301bc0d973f8ec",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001006"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48424,
+        "char_start": 48394,
+        "content": "五月壬寅，豐城侯李彬鎮廣東，清遠伯王友充總兵官，率舟師巡海。",
+        "content_sha256": "b63bc220027fa6da759b4c7b3c89a912330a55bf73bb016fc6301bc0d973f8ec",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001006",
+        "kind": "body",
+        "ordinal": 998,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.476030+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001007",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001007",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001007/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "0e64dcb409d4a40b7c0c4ac99cff64637a5b95cb95f9e6eb3053413fdcb9a6e0",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7"
+      },
+      "row": {
+        "archive_blob_sha256": "d94e50016a83283b844bc534ec149775bb338921e0119bd6a30e84a532fb139f",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001007/source.txt",
+        "archive_url_sha256": "0e64dcb409d4a40b7c0c4ac99cff64637a5b95cb95f9e6eb3053413fdcb9a6e0",
+        "content": "六月丁亥，汰冗官。辛卯，振松江、嘉興、蘇州、湖州饑。甲午，封哈密安克帖木兒為忠順王。",
+        "content_sha256": "d94e50016a83283b844bc534ec149775bb338921e0119bd6a30e84a532fb139f",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "a6fd1a98-5df2-5beb-b69b-10352ecdbce7"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001007"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48468,
+        "char_start": 48426,
+        "content": "六月丁亥，汰冗官。辛卯，振松江、嘉興、蘇州、湖州饑。甲午，封哈密安克帖木兒為忠順王。",
+        "content_sha256": "d94e50016a83283b844bc534ec149775bb338921e0119bd6a30e84a532fb139f",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001007",
+        "kind": "body",
+        "ordinal": 999,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "fa05d045-ac1f-5a85-b308-beac90739d76"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.516203+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "fa05d045-ac1f-5a85-b308-beac90739d76",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001008",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001008",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001008/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "6e2e76944a7b52e0daa67370d689297e26436161999a0dc74dac8002b6fb8e9e",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76"
+      },
+      "row": {
+        "archive_blob_sha256": "3a5600c92d3e39a4683fce3e8491f5810e2bb6ab39bb68c53418c804718d6c4e",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001008/source.txt",
+        "archive_url_sha256": "6e2e76944a7b52e0daa67370d689297e26436161999a0dc74dac8002b6fb8e9e",
+        "content": "秋七月壬戌，鄱陽民進書毀先賢，杖之，毀其書。丙寅，振江西、湖廣水災。",
+        "content_sha256": "3a5600c92d3e39a4683fce3e8491f5810e2bb6ab39bb68c53418c804718d6c4e",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "fa05d045-ac1f-5a85-b308-beac90739d76"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001008"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48504,
+        "char_start": 48470,
+        "content": "秋七月壬戌，鄱陽民進書毀先賢，杖之，毀其書。丙寅，振江西、湖廣水災。",
+        "content_sha256": "3a5600c92d3e39a4683fce3e8491f5810e2bb6ab39bb68c53418c804718d6c4e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001008",
+        "kind": "body",
+        "ordinal": 1000,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "d62d43de-4d39-519b-bdd9-e11bf202d14e"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.564454+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d62d43de-4d39-519b-bdd9-e11bf202d14e",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001009",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001009",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001009/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "4fecaf0284647bfa80e3b615b6b7cfe083a99e2974829e45db39024ef4ed046d",
+        "source_id": "d62d43de-4d39-519b-bdd9-e11bf202d14e"
+      },
+      "row": {
+        "archive_blob_sha256": "dda6390326e3b7854a2f8c2df1a45391f9a1eac58794150ec207f5b2dca6ceb9",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001009/source.txt",
+        "archive_url_sha256": "4fecaf0284647bfa80e3b615b6b7cfe083a99e2974829e45db39024ef4ed046d",
+        "content": "八月丁酉，故安南國王陳日煃弟天平來奔。",
+        "content_sha256": "dda6390326e3b7854a2f8c2df1a45391f9a1eac58794150ec207f5b2dca6ceb9",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "d62d43de-4d39-519b-bdd9-e11bf202d14e"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001009"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48525,
+        "char_start": 48506,
+        "content": "八月丁酉，故安南國王陳日煃弟天平來奔。",
+        "content_sha256": "dda6390326e3b7854a2f8c2df1a45391f9a1eac58794150ec207f5b2dca6ceb9",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001009",
+        "kind": "body",
+        "ordinal": 1001,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.683419+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001010",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001010",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001010/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "bfc27b58fa148e6e50c6eb9051df9c4ceaf46f4f61f9c8d6436fdc987276a267",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f"
+      },
+      "row": {
+        "archive_blob_sha256": "39b624ddfe6bbd6759287db79dd6b2130f96a02908bf3775b504ca034a54dbd3",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001010/source.txt",
+        "archive_url_sha256": "bfc27b58fa148e6e50c6eb9051df9c4ceaf46f4f61f9c8d6436fdc987276a267",
+        "content": "九月丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」丁卯，徙山西民萬戶實北京。命自今御史巡行察吏毋得摭拾人言，賢否皆具實蹟以聞。",
+        "content_sha256": "39b624ddfe6bbd6759287db79dd6b2130f96a02908bf3775b504ca034a54dbd3",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "b105f3ef-b22d-558c-a0ea-c8b63745db7f"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001010"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48611,
+        "char_start": 48527,
+        "content": "九月丙午，周王橚來朝，獻騶虞，百官請賀。帝曰：「瑞應依德而至，騶虞若果為祥，在朕更當修省。」丁卯，徙山西民萬戶實北京。命自今御史巡行察吏毋得摭拾人言，賢否皆具實蹟以聞。",
+        "content_sha256": "39b624ddfe6bbd6759287db79dd6b2130f96a02908bf3775b504ca034a54dbd3",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001010",
+        "kind": "body",
+        "ordinal": 1002,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.729154+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001011",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001011",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001011/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "4219d3f3309823e174305d571bf5043424e183dca128f4ce620099b204bd0326",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa"
+      },
+      "row": {
+        "archive_blob_sha256": "61390359fa9b34469597df07f4b534bf56be32f8664a967c503f6a2e04daffa5",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001011/source.txt",
+        "archive_url_sha256": "4219d3f3309823e174305d571bf5043424e183dca128f4ce620099b204bd0326",
+        "content": "冬十月丁丑，河決開封。乙酉，蒲城、河津黃河清。是月，籍長興侯耿炳文家，炳文自殺。",
+        "content_sha256": "61390359fa9b34469597df07f4b534bf56be32f8664a967c503f6a2e04daffa5",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "e39cf6de-8659-5a00-9030-bbb07f1b15fa"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001011"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48653,
+        "char_start": 48613,
+        "content": "冬十月丁丑，河決開封。乙酉，蒲城、河津黃河清。是月，籍長興侯耿炳文家，炳文自殺。",
+        "content_sha256": "61390359fa9b34469597df07f4b534bf56be32f8664a967c503f6a2e04daffa5",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001011",
+        "kind": "body",
+        "ordinal": 1003,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "98daa75e-701c-5312-8fbc-864c573a9635"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.768161+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "98daa75e-701c-5312-8fbc-864c573a9635",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001012",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001012",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001012/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "5fb550b554c82b0a69fc4514507d39a430adbc9718926b42d9e3f851483c709d",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635"
+      },
+      "row": {
+        "archive_blob_sha256": "3a1b2c4ad20957ae2acec7710a8aa2352115448ad9cf4391a549826844d3f979",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001012/source.txt",
+        "archive_url_sha256": "5fb550b554c82b0a69fc4514507d39a430adbc9718926b42d9e3f851483c709d",
+        "content": "十一月甲辰，御奉天門錄囚。癸丑，京師及濟南、開封地震，敕羣臣修省。戊午，蠲蘇、松、嘉、湖、杭水災田租。",
+        "content_sha256": "3a1b2c4ad20957ae2acec7710a8aa2352115448ad9cf4391a549826844d3f979",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "98daa75e-701c-5312-8fbc-864c573a9635"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001012"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48706,
+        "char_start": 48655,
+        "content": "十一月甲辰，御奉天門錄囚。癸丑，京師及濟南、開封地震，敕羣臣修省。戊午，蠲蘇、松、嘉、湖、杭水災田租。",
+        "content_sha256": "3a1b2c4ad20957ae2acec7710a8aa2352115448ad9cf4391a549826844d3f979",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001012",
+        "kind": "body",
+        "ordinal": 1004,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "2ee86788-da82-5f33-876e-326ca4c2f57a"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.808146+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "2ee86788-da82-5f33-876e-326ca4c2f57a",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001013",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001013",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001013/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "af77b46f5e78517f7a71d3fcd3ee4f177b04b80585049492a04a6f29e8db584b",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a"
+      },
+      "row": {
+        "archive_blob_sha256": "0cc9b1586a3a4a3a798b8d890f7cf7e8728f1dcdaf2d3cf10d153d6aefb3ee56",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001013/source.txt",
+        "archive_url_sha256": "af77b46f5e78517f7a71d3fcd3ee4f177b04b80585049492a04a6f29e8db584b",
+        "content": "十二月壬辰，同州、韓城黃河清。是月，下李景隆於獄。",
+        "content_sha256": "0cc9b1586a3a4a3a798b8d890f7cf7e8728f1dcdaf2d3cf10d153d6aefb3ee56",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "2ee86788-da82-5f33-876e-326ca4c2f57a"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001013"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48733,
+        "char_start": 48708,
+        "content": "十二月壬辰，同州、韓城黃河清。是月，下李景隆於獄。",
+        "content_sha256": "0cc9b1586a3a4a3a798b8d890f7cf7e8728f1dcdaf2d3cf10d153d6aefb3ee56",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001013",
+        "kind": "body",
+        "ordinal": 1005,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "9a210894-0a9c-5f76-a4e9-d541d7810a17"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T14:44:09.864154+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "9a210894-0a9c-5f76-a4e9-d541d7810a17",
+        "note": "《明史》卷6·本纪第六·成祖二·mingshi-2f603db3d81e-p001014",
+        "source_type": "primary",
+        "title": "明史·卷6·成祖二·mingshi-2f603db3d81e-p001014",
+        "url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001014/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "b6493f0064916cfdc316a7ae1eea65790ddfb2a43f7eec2e4b802b4510d2cbc8",
+        "source_id": "9a210894-0a9c-5f76-a4e9-d541d7810a17"
+      },
+      "row": {
+        "archive_blob_sha256": "14a1881df35f79fe85d0d36b7ff6d6174f67739fae6c771b28c41e30320d36bf",
+        "archive_commit": "c852222816b14696e1fb531f4da6f21f7cbe9c0d",
+        "archive_url": "https://github.com/greed-216/histree/blob/c852222816b14696e1fb531f4da6f21f7cbe9c0d/content/books/mingshi/vol-006/from-start/part-02/sources/mingshi-2f603db3d81e-p001014/source.txt",
+        "archive_url_sha256": "b6493f0064916cfdc316a7ae1eea65790ddfb2a43f7eec2e4b802b4510d2cbc8",
+        "content": "是年，占城，別失八里，琉球山北、山南，爪哇，真臘入貢。暹羅，日本，琉球中山入貢者再。",
+        "content_sha256": "14a1881df35f79fe85d0d36b7ff6d6174f67739fae6c771b28c41e30320d36bf",
+        "created_at": "2026-11-18T14:44:38.279391+00:00",
+        "source_id": "9a210894-0a9c-5f76-a4e9-d541d7810a17"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001014"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 48777,
+        "char_start": 48735,
+        "content": "是年，占城，別失八里，琉球山北、山南，爪哇，真臘入貢。暹羅，日本，琉球中山入貢者再。",
+        "content_sha256": "14a1881df35f79fe85d0d36b7ff6d6174f67739fae6c771b28c41e30320d36bf",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001014",
+        "kind": "body",
+        "ordinal": 1006,
+        "section_id": "mingshi-2f603db3d81e-s0007"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a834a611-9129-5ed2-8dc5-92d2f039bc6b"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.102448+00:00",
+        "description": "明廷在南郊举行祭祀天地的大礼。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "a834a611-9129-5ed2-8dc5-92d2f039bc6b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年正月乙卯",
+        "title": "明廷在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "76df15a5-4905-565c-9f5a-8366647fdd3b"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.150420+00:00",
+        "description": "朝廷召世子朱高炽与高阳王朱高煦返回京师。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "76df15a5-4905-565c-9f5a-8366647fdd3b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年正月己巳",
+        "title": "朱高炽和朱高煦奉召回京"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0f8dd916-bb76-5dc8-bd8d-4d7422507606"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.198462+00:00",
+        "description": "朝廷分别赐曾棨等人进士及第或出身。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "0f8dd916-bb76-5dc8-bd8d-4d7422507606",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年三月乙巳",
+        "title": "明廷赐曾棨等进士及第或出身"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "adeca193-2153-50d2-80da-e13d11820f84"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.296220+00:00",
+        "description": "本纪记载，永乐朝开始从进士中选人担任翰林院庶吉士。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "adeca193-2153-50d2-80da-e13d11820f84",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年三月己酉",
+        "title": "永乐朝开始选进士为翰林院庶吉士"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0fec2eea-dddb-56ae-94d9-fb3c17d7840e"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.331348+00:00",
+        "description": "吏部请求处罚违反规定荐举士人的千户。朱棣举马周因常何举荐而进用为例，主张确有才能便授官，否则停止任用。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "0fec2eea-dddb-56ae-94d9-fb3c17d7840e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年三月庚戌",
+        "title": "朱棣要求按被举荐者实际才能决定是否授官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5fc19fde-9b1f-563a-a2e7-563cf6af666c"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.423701+00:00",
+        "description": "朝廷将本纪所称敷惠王允𤐤改封为瓯宁王，命他奉祀懿文太子。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "5fc19fde-9b1f-563a-a2e7-563cf6af666c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年三月戊辰",
+        "title": "明廷改封敷惠王并命奉祀懿文太子"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8d1cebea-f121-5c52-a2ae-a450e97519c1"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.481385+00:00",
+        "description": "四月初一，朝廷设置东宫官属。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "8d1cebea-f121-5c52-a2ae-a450e97519c1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年四月辛未朔",
+        "title": "明廷设置东宫官属"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "2cb7bd4c-e391-574a-b0c9-617116c37c79"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.518148+00:00",
+        "description": "僧人道衍被任为太子少师，恢复姚姓，获赐名广孝。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "2cb7bd4c-e391-574a-b0c9-617116c37c79",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年四月壬申",
+        "title": "道衍被任为太子少师并赐名广孝"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c87e8a77-7815-57c2-b44c-1f6c0b5f83ff"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.555332+00:00",
+        "description": "朱棣立儿子朱高炽为皇太子，同时封朱高煦为汉王、朱高燧为赵王。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "c87e8a77-7815-57c2-b44c-1f6c0b5f83ff",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年四月甲戌",
+        "title": "朱棣册立朱高炽为皇太子"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "51dad3e4-4381-5115-b051-f84a12a94521"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.600329+00:00",
+        "description": "朝廷册封本纪所作汪应祖为琉球国山南王。卷末校记指出，本书《琉球传》写作王应祖。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "51dad3e4-4381-5115-b051-f84a12a94521",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年四月壬午",
+        "title": "明廷册封琉球山南王"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1d9c74f7-e1c3-52b9-82b6-bbde423f8ff9"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.643248+00:00",
+        "description": "丰城侯李彬镇守广东，清远伯王友担任总兵官，率领水军巡视海上。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "1d9c74f7-e1c3-52b9-82b6-bbde423f8ff9",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年五月壬寅",
+        "title": "李彬镇守广东，王友率水军巡海"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "598dad24-927c-5ecc-8a98-4eb0c0067fa3"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.692800+00:00",
+        "description": "朝廷下令裁减多余官员。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "598dad24-927c-5ecc-8a98-4eb0c0067fa3",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年六月丁亥",
+        "title": "明廷裁减冗官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "78352b32-91b8-566f-86aa-4d3e7987afeb"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.816116+00:00",
+        "description": "朝廷下令赈济松江、嘉兴、苏州和湖州的饥荒。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "78352b32-91b8-566f-86aa-4d3e7987afeb",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年六月辛卯",
+        "title": "明廷赈济松江嘉兴苏州湖州饥荒"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ba4436a2-0144-586e-9222-debd6aae5660"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.869187+00:00",
+        "description": "朝廷册封哈密安克帖木儿为忠顺王。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "ba4436a2-0144-586e-9222-debd6aae5660",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年六月甲午",
+        "title": "安克帖木儿获封忠顺王"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "bdcc02cd-65e7-59c6-b51d-5f1fdc329162"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.904253+00:00",
+        "description": "一名鄱阳人上书，本纪称其毁谤先贤。朝廷以杖刑责罚此人并毁去所上书稿。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "bdcc02cd-65e7-59c6-b51d-5f1fdc329162",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年七月壬戌",
+        "title": "朝廷杖责上书的鄱阳人并毁去书稿"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "be6bb040-6113-5af5-afba-1918e2598837"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.948453+00:00",
+        "description": "江西和湖广发生水灾，朝廷下令赈济。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "be6bb040-6113-5af5-afba-1918e2598837",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年七月丙寅",
+        "title": "明廷赈济江西和湖广水灾"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "00c1a03b-05e0-53cf-a819-574964368f6e"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:12.978227+00:00",
+        "description": "本纪记载，八月丁酉天平从安南来投，称其为故安南国王陈日煃之弟。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "00c1a03b-05e0-53cf-a819-574964368f6e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年八月丁酉",
+        "title": "天平从安南来投明廷"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "18be64ff-cdff-5cc4-9f28-c0d792bbcf8c"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.016583+00:00",
+        "description": "周王朱橚来朝，献上本纪所称驺虞。百官请求庆贺。朱棣说，祥瑞取决于德行，此物若真是祥瑞，更应修身反省。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "18be64ff-cdff-5cc4-9f28-c0d792bbcf8c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年九月丙午",
+        "title": "周王来朝献驺虞，朱棣答复群臣祝贺"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "66fc7560-af47-5419-bb9d-4fbd93614c54"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.055084+00:00",
+        "description": "朝廷从山西迁一万户百姓到北京。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "66fc7560-af47-5419-bb9d-4fbd93614c54",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年九月丁卯",
+        "title": "朝廷迁山西一万户民众到北京"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0d32490d-76ed-5991-b0e7-f1a05755a8b0"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.098445+00:00",
+        "description": "朝廷命巡行御史监察官吏时避免仅凭传闻，按实际事迹报告官吏的表现。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "0d32490d-76ed-5991-b0e7-f1a05755a8b0",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年九月",
+        "title": "明廷要求御史据实考察官吏"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8dae553a-024c-56ae-8e81-829393ad2291"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.134408+00:00",
+        "description": "本纪记载，黄河于十月丁丑在开封决口。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "8dae553a-024c-56ae-8e81-829393ad2291",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十月丁丑",
+        "title": "黄河在开封决口"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b26a454f-c187-5a80-bc74-404743b01be1"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.176098+00:00",
+        "description": "本纪记载，十月乙酉蒲城和河津一带的黄河水清。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "b26a454f-c187-5a80-bc74-404743b01be1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十月乙酉",
+        "title": "本纪记蒲城河津黄河水清"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "48a23c10-428e-5e98-9626-3d24ebf6ee63"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.215082+00:00",
+        "description": "本纪记载，这个月朝廷登记查抄长兴侯耿炳文的家产，耿炳文自杀。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "48a23c10-428e-5e98-9626-3d24ebf6ee63",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十月",
+        "title": "耿炳文家产被登记查抄，耿炳文自杀"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e1d16ac9-a361-540a-a9db-93e39031156c"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.353328+00:00",
+        "description": "朱棣在奉天门听取囚犯案件并复查。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "e1d16ac9-a361-540a-a9db-93e39031156c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十一月甲辰",
+        "title": "朱棣在奉天门复查囚案"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "c903780c-dd91-5ffe-818c-7ea9c5c5b9f1"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.445242+00:00",
+        "description": "京师、济南和开封发生地震，朱棣敕令群臣修身反省。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "c903780c-dd91-5ffe-818c-7ea9c5c5b9f1",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十一月癸丑",
+        "title": "京师济南开封地震，朱棣命群臣反省"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "12e0052e-5115-5715-9901-dd6059fd21e2"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.501423+00:00",
+        "description": "明廷免去苏州、松江、嘉兴、湖州和杭州受水灾地的田租。",
+        "dynasty": "明",
+        "end_year": 1404,
+        "id": "12e0052e-5115-5715-9901-dd6059fd21e2",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1404,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十一月戊午",
+        "title": "明廷免征苏松嘉湖杭水灾地区田租"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ab8584a2-c97c-57fe-997b-4e88d30272d3"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.543668+00:00",
+        "description": "本纪记载，十二月壬辰同州和韩城一带的黄河水清。",
+        "dynasty": "明",
+        "end_year": 1405,
+        "id": "ab8584a2-c97c-57fe-997b-4e88d30272d3",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1405,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十二月壬辰",
+        "title": "本纪记同州韩城黄河水清"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5eafa16e-a747-5771-ba48-1a5bc2309eba"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.591155+00:00",
+        "description": "本纪记载，这个月朝廷将李景隆关押入狱。",
+        "dynasty": "明",
+        "end_year": 1405,
+        "id": "5eafa16e-a747-5771-ba48-1a5bc2309eba",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1405,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年十二月",
+        "title": "李景隆被关押入狱"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "73f593a0-e99d-5714-94b0-ec224de40017"
+      },
+      "row": {
+        "created_at": "2026-11-18T14:44:13.641433+00:00",
+        "description": "本纪记载，这一年占城、别失八里、琉球山北及山南、爪哇、真腊来贡。暹罗、日本及琉球中山来贡两次。 按原历纪年，事情发生在公元1404至1405年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "73f593a0-e99d-5714-94b0-ec224de40017",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "永乐二年",
+        "title": "占城等地向明廷入贡"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "13d8a162-fdbe-5beb-abca-24a659e999d1": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001003",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "2ee86788-da82-5f33-876e-326ca4c2f57a": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001013",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "3af3aa67-d8e6-50d6-a6bf-9e784b46eadf": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001005",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "98daa75e-701c-5312-8fbc-864c573a9635": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001012",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "9a210894-0a9c-5f76-a4e9-d541d7810a17": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001014",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "a6fd1a98-5df2-5beb-b69b-10352ecdbce7": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001007",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "b105f3ef-b22d-558c-a0ea-c8b63745db7f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001010",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "d62809df-76f0-5d62-b5f6-604ad3bc6e1f": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001004",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "d62d43de-4d39-519b-bdd9-e11bf202d14e": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001009",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "e39cf6de-8659-5a00-9030-bbb07f1b15fa": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001011",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "f4e4dcc1-a1c0-554b-9b0e-fc34fc5701b3": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001006",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    },
+    "fa05d045-ac1f-5a85-b308-beac90739d76": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001008",
+      "section_id": "mingshi-2f603db3d81e-s0007",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 6
+}

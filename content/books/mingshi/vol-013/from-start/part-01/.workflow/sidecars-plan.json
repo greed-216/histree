@@ -1,0 +1,4428 @@
+{
+  "batch_dir": "content/books/mingshi/vol-013/from-start/part-01",
+  "batch_key": "mingshi-v013-from-start-01",
+  "batch_sha256": "6659910f0943da0297a3d738eada0e7d17feb72f02cf15cbd424d4a58c4e1f95",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001809",
+    "mingshi-2f603db3d81e-p001810",
+    "mingshi-2f603db3d81e-p001812"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "1ca5e8c4-5454-5c1e-a5e4-abd4ab47ac6e",
+        "note_sha256": "e07808ade36a8e637baab3f8bf76ff336b3deda6094475584ef8661c05656b42",
+        "quote_text": "英宗留瓦剌，皇太后命立為皇太子",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d9c5158d-8337-5bc9-b412-0b1d0e4fe2c4",
+        "note_sha256": "91f3c30d2dc5122124552b8b693e92ff415ea1e6ea8a6315b893394671434ea1",
+        "quote_text": "英宗留瓦剌，皇太后命立為皇太子",
+        "review_note": "卷十三叙英宗留瓦剌时同一次立太子，卷十、十一确定正统十四年八月己巳，保留卷十三为追述。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0b7e912b-8c61-5013-989f-46fc31e1fcd4",
+        "note_sha256": "91f3c30d2dc5122124552b8b693e92ff415ea1e6ea8a6315b893394671434ea1",
+        "quote_text": "英宗留瓦剌，皇太后命立為皇太子",
+        "review_note": "卷十三叙英宗留瓦剌时同一次立太子，卷十、十一确定正统十四年八月己巳，保留卷十三为追述。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fd012eec-d4fc-5f12-8e2a-f6098feac06f",
+        "note_sha256": "cf02deb42924fb07604331ba321fc42ed01ee9eb5b19a5c892cc827d30f1d91e",
+        "quote_text": "英宗留瓦剌，皇太后命立為皇太子",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "916ef206-ba26-5f27-937a-4949dbf99a0b",
+        "note_sha256": "6c0aeea5cd0151d6036506cdc087781f383cca535f7e6fa0a51de0619b18a21d",
+        "quote_text": "景泰三年，廢為沂王",
+        "review_note": "卷十一与卷十三均记景泰三年由太子降封沂王，卷十一明确五月甲午。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "88616f1a-ab8d-5c6f-b404-236b8e288dd1",
+        "note_sha256": "6c0aeea5cd0151d6036506cdc087781f383cca535f7e6fa0a51de0619b18a21d",
+        "quote_text": "景泰三年，廢為沂王",
+        "review_note": "卷十一与卷十三均记景泰三年由太子降封沂王，卷十一明确五月甲午。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9d126e04-db86-5234-91bd-ee2b6e96eabd",
+        "note_sha256": "1558c4917ec4a018d6ddbf4c17af5c55c91a1f7b5e61d8817211019a130a6d33",
+        "quote_text": "景泰三年，廢為沂王",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "44205536-7ca3-5ed0-aa5f-3d7cdb28a368",
+        "note_sha256": "7041ec58e0cc9ce1f9e341adc10d726974d5b17e269cbbc75ec16c72c1f978e8",
+        "quote_text": "天順元年，復立為皇太子，改名見深",
+        "review_note": "卷十三卷首追叙与卷十二三月己巳复立长子是同一任命，卷十三补改名事。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "269b5a73-6b3c-5d9c-9633-6e3e7f620523",
+        "note_sha256": "7041ec58e0cc9ce1f9e341adc10d726974d5b17e269cbbc75ec16c72c1f978e8",
+        "quote_text": "天順元年，復立為皇太子，改名見深",
+        "review_note": "卷十三卷首追叙与卷十二三月己巳复立长子是同一任命，卷十三补改名事。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "d37f4768-61af-53d3-aef8-f0c29dd1ef13",
+        "note_sha256": "2962d60dfea51ca2d0c3e9b47128379c59b7cda178580b57f5d399f234f3aeda",
+        "quote_text": "天順元年，復立為皇太子，改名見深",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0c544132-bf6a-5d18-8ae2-9a5716fbb62f",
+        "note_sha256": "5db987af69e145b5f9f5bc1ed09654080c107d494060db7390c032c3a718c76f",
+        "quote_text": "初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "20bb4bf3-56eb-5d8f-a50a-d1ae24b8fd90",
+        "note_sha256": "c8cd298a4a250c101ed9281fed4c8996cfea0fcf418d1cda0e7923f830e9976b",
+        "quote_text": "初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2f6c07ca-f69e-5604-9e5e-7210e732731c",
+        "note_sha256": "f3b86694d7386edbe6e38cf63365994f26d24a24f81277d20c0b4ed577a1e8bc",
+        "quote_text": "初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "14e82b34-15ff-5a7a-b32d-82f18084c745",
+        "note_sha256": "2df3758de603937ea17038daa43180c891d65ae2eb0384130e1b17a1c0da8954",
+        "quote_text": "天順八年正月，英宗崩",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3508a892-ad58-5f08-8002-c7b5238d922e",
+        "note_sha256": "74eeda80af898f4bbb28b0e30d47c48255abdd8470b2752df09bb2313cda5674",
+        "quote_text": "天順八年正月，英宗崩",
+        "review_note": "两卷本纪均记明英宗在天顺八年正月去世，卷十二载庚午。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "68de67f2-d036-55e7-a60b-e77bb6bc3e0e",
+        "note_sha256": "74eeda80af898f4bbb28b0e30d47c48255abdd8470b2752df09bb2313cda5674",
+        "quote_text": "天順八年正月，英宗崩",
+        "review_note": "两卷本纪均记明英宗在天顺八年正月去世，卷十二载庚午。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "ab4d2c46-b078-5741-a80c-39754e31f6c8",
+        "note_sha256": "d3c103fdb70efdcb8d279fe2db8a8a68bfcc5573d2be0029c6f504375a540445",
+        "quote_text": "天順八年正月，英宗崩",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c8de316a-80de-522e-b2c2-c352a61d1caa",
+        "note_sha256": "6d753d452b96e5af4161b768bfa66eab0e15a8ae3c50b442e3dc3f9b00cdbaf3",
+        "quote_text": "天順八年正月，英宗崩。乙亥，即皇帝位",
+        "review_note": "宰辅年表与宪宗本纪均记宪宗天顺八年正月即位，本纪补乙亥。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "759ca641-222b-5211-b212-607b2646865f",
+        "note_sha256": "6d753d452b96e5af4161b768bfa66eab0e15a8ae3c50b442e3dc3f9b00cdbaf3",
+        "quote_text": "天順八年正月，英宗崩。乙亥，即皇帝位",
+        "review_note": "宰辅年表与宪宗本纪均记宪宗天顺八年正月即位，本纪补乙亥。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "75fe3696-31ff-579c-a752-765afe7360df",
+        "note_sha256": "0854f6c1fb023d91c9cf55443bf2d0600229d82b03cb3e44e15c9d7de27bac60",
+        "quote_text": "天順八年正月，英宗崩。乙亥，即皇帝位",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c17e3aee-a0c4-55e5-87b0-bcc8cb4626f1",
+        "note_sha256": "7f48da48c39181e5b7741ae14fc7faac074ea3f80fce9b1abd051bb91b78fbfe",
+        "quote_text": "以明年為成化元年，大赦天下。免明年田租三之一",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3ad50ae3-33f8-5c3f-8082-d06d29f588e1",
+        "note_sha256": "70bf775f801175d49b369109912eb56a5c85978cc1307033d187df3d9453d852",
+        "quote_text": "以明年為成化元年，大赦天下。免明年田租三之一",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9517bfa9-5f02-5c42-8084-6efe121c59e9",
+        "note_sha256": "4479cbd36efd9102e73b94f9c5ca6a1ec3c3ef23234376c4aa8c038f0dbdc55f",
+        "quote_text": "以明年為成化元年，大赦天下。免明年田租三之一",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fba8ec8f-e95f-57a7-b152-8c2cf31abc91",
+        "note_sha256": "2d4c996ae8b5e58555b3e5471d2090de42e6034163a44490c8b09b368383c166",
+        "quote_text": "浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "878ce670-ec6c-567b-a189-c85aa824d654",
+        "note_sha256": "7b3e55d262db21f090be7137c0ce9e4cfea8cb39f4a463dbaa1798341650f07c",
+        "quote_text": "浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "e1c02ecf-ac99-50b7-8d02-84e18954ef05",
+        "note_sha256": "8a662851f04968b75c21441936c112f8e71d2456b313222af77a9bc7a30c3da3",
+        "quote_text": "浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "850d8fab-c35c-5a26-9603-1b569573c21c",
+        "note_sha256": "e946467aff6a99a91a91b05cd411adc2d0147e74a5094830449bfba06c190ff8",
+        "quote_text": "下番使者、緝事官校皆召還",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4bcdd047-f097-5f7b-aa30-91c5b09c59b4",
+        "note_sha256": "f76e5fdbf92ee8c80e0915c7c8cbf455aeb90c7b43649133d1428b6e3ecbb3f3",
+        "quote_text": "下番使者、緝事官校皆召還",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bbf482e8-6d17-5a1e-8a91-96d30909cf9f",
+        "note_sha256": "9eaf3f79b1662a738f36a0573d5788ad9aa41cb0a6cdb8742a77f35bb915a976",
+        "quote_text": "二月庚子，始以內批授官",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1479df33-ec89-5776-9154-d9059b379fe3",
+        "note_sha256": "71eaeed290c65678e6cdc60d936246dc9c1d35435aefcbd639a6b9b335eed79f",
+        "quote_text": "二月庚子，始以內批授官",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0875687c-14fa-513e-9a93-9676496da2c8",
+        "note_sha256": "8357b4e64c0db5376ee6451c78d7f9aa72f6a1451011282fd81a680017d12cc8",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2739a884-8966-59b8-94b4-45bb72e88fc0",
+        "note_sha256": "2ef6cafc9310c146d2de6acc6dd637035f0a938c806eb1c5ad41d9fe2d6d0f6f",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "18d171a7-18c8-525e-b622-a0eecc238d8a",
+        "note_sha256": "e7aa5f915dc71b06f4170fec54ac1008a171cd2728acd98ece8e75f88a0dded9",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "df6741f1-ed0e-508d-bbe9-eb8e21ef9943",
+        "note_sha256": "8cc21696314295a27ba51d366a3077fd3c42f3816da85404d8ad5dd75abaeb80",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b0e5bf7f-db6e-5744-86ba-1861ff610ab7",
+        "note_sha256": "8cc21696314295a27ba51d366a3077fd3c42f3816da85404d8ad5dd75abaeb80",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "efa0f470-3748-5e82-b6ab-137d90cab19c",
+        "note_sha256": "2c0cdee3bd2224d1381296236d521e88d0c01baf21c89d76dd53ee0b11b11cd4",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "卷113后妃传记孝肃周太后为英宗贵妃、宪宗生母，与卷十三相合。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8e46391a-54fc-5604-af69-ad17d57d346f",
+        "note_sha256": "2ef6cafc9310c146d2de6acc6dd637035f0a938c806eb1c5ad41d9fe2d6d0f6f",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c2e30634-a088-5eb7-8924-78389e201867",
+        "note_sha256": "e7aa5f915dc71b06f4170fec54ac1008a171cd2728acd98ece8e75f88a0dded9",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "29343b5c-723a-58db-a30f-5168c34acb8d",
+        "note_sha256": "8cc21696314295a27ba51d366a3077fd3c42f3816da85404d8ad5dd75abaeb80",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "34894230-0cd3-5e12-bed8-ade2a08281ae",
+        "note_sha256": "8cc21696314295a27ba51d366a3077fd3c42f3816da85404d8ad5dd75abaeb80",
+        "quote_text": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cadf5d85-3d8d-53e6-8f79-7cddfa3f7c4b",
+        "note_sha256": "4acf1f534a5bae6c2b70964feed18e1948f90a9deca64fdaeea7fb96224c5084",
+        "quote_text": "戊午，放宮人",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "56e0f477-3218-569c-b9a2-0e9167de0dbf",
+        "note_sha256": "5d62680a5fea6d233af30ca19858fd8d3693036bd72ad3724a3cdfeab6eae509",
+        "quote_text": "戊午，放宮人",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "28832ee9-b429-5e2e-83d0-d7c1971b2a09",
+        "note_sha256": "88b43c2d8987f997c01fc91dee66e23377ca8d01e80002cdd88db884615297c5",
+        "quote_text": "丙寅，毀錦衣衞新獄",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f3b517f1-c8f9-50f6-be9b-30d608e47925",
+        "note_sha256": "80137eb1013b577eb9ca0d9d13dcb18286f88ae2065c285cde9219497a5d5e83",
+        "quote_text": "丙寅，毀錦衣衞新獄",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "504494ca-8e3c-57c9-9235-d685e0540b13",
+        "note_sha256": "a68d9fe0c17137232714ba52eb5a70f39ade04bf305b674390a352de6364da2e",
+        "quote_text": "庚午，賜彭教等進士及第、出身有差",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "47be0c95-e119-5bf9-9da9-df33996d6b66",
+        "note_sha256": "2d67fa98987c45144b53e241061151bbcb9cef5cb6a7626f9fded8044067d357",
+        "quote_text": "庚午，賜彭教等進士及第、出身有差",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "08aee092-5dc4-57a4-a84e-b81f2ba1785f",
+        "note_sha256": "bb7394b463073e1c3bb80cd50772a1db907e7537e3822652a61f44d3760a2977",
+        "quote_text": "癸酉，詔內閣九卿考覈天下方面官",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "3b62964c-61b4-5b7e-8678-7ee8ecc18c6e",
+        "note_sha256": "a3ea063f8f05eace76db3e46bc9dee94c442d952dd69a8be5ef2129440bbf327",
+        "quote_text": "癸酉，詔內閣九卿考覈天下方面官",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "52beed7f-4a08-55de-9ec6-47789f0257b8",
+        "note_sha256": "7d245b21fa731c27c65e003311d47ab631ed685acd0b6f2808fa765d96b4c4fb",
+        "quote_text": "戊寅，復立團營",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "03d3d2e2-71b8-5946-8aa9-6e74bd95aa9c",
+        "note_sha256": "a2ca625e0aee6dfa9fb561f919731a233691b38b0be6e36bcc76882f6160f8ba",
+        "quote_text": "戊寅，復立團營",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "121fc46e-7d5c-5256-9dd1-fef0596197a3",
+        "note_sha256": "c1f57112de81dee031c8d00a7dc06692b4eeafd50552541e9bca3e0b9cac5db8",
+        "quote_text": "夏四月癸未朔，日當食，不見",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cd9a8364-2a97-52cd-b3d9-bdcabe056d07",
+        "note_sha256": "af579cc12d70dbce8b8cf47f44ebc945f4eb135ab31091aff5675149cc623515",
+        "quote_text": "夏四月癸未朔，日當食，不見",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "8c43892b-93a9-5f14-88b1-fa5a42846a48",
+        "note_sha256": "f30bae370355e0c6cc061ecd758c75a5201e7df2303e7e1616b9d98699d0c709",
+        "quote_text": "五月丁巳，大風雨雹，敕羣臣修省",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "05401e51-5d10-5681-bb0a-5e69c872e5c7",
+        "note_sha256": "6a7359994e4f7fab12549aa761b5efc478fe50bd338a9bd8ea0254029740ef9e",
+        "quote_text": "五月丁巳，大風雨雹，敕羣臣修省",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "97854a96-d02d-53be-a79a-288a3ef24523",
+        "note_sha256": "9f4265985411f8d2c93bb957e942ffec517e6553c044754b956ebe5331994765",
+        "quote_text": "庚申，葬睿皇帝於裕陵",
+        "review_note": "两卷本纪同记葬明英宗于裕陵；卷十三明确五月庚申，卷十二只在二月上谥后接叙葬裕陵。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b8fe60ae-5df8-5e74-bdea-56ccdffc424c",
+        "note_sha256": "9f4265985411f8d2c93bb957e942ffec517e6553c044754b956ebe5331994765",
+        "quote_text": "庚申，葬睿皇帝於裕陵",
+        "review_note": "两卷本纪同记葬明英宗于裕陵；卷十三明确五月庚申，卷十二只在二月上谥后接叙葬裕陵。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b9b2a513-9be9-551d-b921-e1d8c5e2ee27",
+        "note_sha256": "316a8fcb61731dcb25fba256058a82653a833006a6e0fe651017574b43a66736",
+        "quote_text": "庚申，葬睿皇帝於裕陵",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "621f85cf-17e3-59b5-a979-c802b9870009",
+        "note_sha256": "1cb234acff1f77314fd72479137aef77255856e03547f2a888b4f32082f787f2",
+        "quote_text": "秋七月壬申，立吳氏為皇后",
+        "review_note": "卷113后妃传明确记宪宗吴皇后在天顺八年七月册立，不久被废，与卷十三相合。与宣宗吴贤妃分立。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "d33d4799-24da-5477-866e-f3c436c3fb54",
+        "note_sha256": "c500e71d13a649ec96760d5d8d30472e728c36f9c48d56a840c5878e147b9790",
+        "quote_text": "秋七月壬申，立吳氏為皇后",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "f0fb3cf0-a962-5a64-9bb4-f8368f4285ee",
+        "note_sha256": "43d2cc09d07959f2cc14dd41782b8bf7ba84fb05c43aadab0d9fc2310f9cf17e",
+        "quote_text": "秋七月壬申，立吳氏為皇后",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c7ce0c7f-2a96-5e4e-8f55-0c252ce4ee3c",
+        "note_sha256": "985ea9d4b5df5f08307304901f067dc573d6232e020a29199e142881e8a30b05",
+        "quote_text": "秋七月壬申，立吳氏為皇后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "37d4dcc9-df83-5778-a172-0e86568991f7",
+        "note_sha256": "985ea9d4b5df5f08307304901f067dc573d6232e020a29199e142881e8a30b05",
+        "quote_text": "秋七月壬申，立吳氏為皇后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "951fbce9-992a-53fd-bfa1-f5b123aa6c22",
+        "note_sha256": "c4ed892431d0f4d0bdef395c933f6bbb577924bbd15b0522d4e1283d59256e0c",
+        "quote_text": "八月癸未，御經筵",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "9e2cb535-faf5-5e42-a29e-2057f7ad43b2",
+        "note_sha256": "f1003fc19ea0194ea8e183b6f94cbb59315174fd30082f49c2dd2a0bd5a15833",
+        "quote_text": "八月癸未，御經筵",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "4206cbe0-fdd1-56e7-a4bf-b1e49afdca3f",
+        "note_sha256": "2a4fbc6612b00aff2147bdd68f321c105276c854c94c4bb98bfde0d03eb1a9ed",
+        "quote_text": "八月癸未，御經筵",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "72434dcb-192a-579b-879e-e7b72349e8c3",
+        "note_sha256": "1e0777f5e3cb650c828c5c7f69a939ee35a7721a74f01d7cae377f8fca73f7f0",
+        "quote_text": "甲申，命儒臣日講",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b78053ac-b3e8-591c-93bd-1ceaeda4db63",
+        "note_sha256": "0473c10b69b80672f90e5a54b4907ba1e5ea5b531dccbf50c50dff763efae8f3",
+        "quote_text": "甲申，命儒臣日講",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b2ef66ae-05ac-54e8-8a1e-76c793cfac42",
+        "note_sha256": "4a50740c79cfb9dfa5f6789eede55d5faf0d99fdd03f20ce46bdb8378725bf8a",
+        "quote_text": "甲申，命儒臣日講",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "b948824c-6a44-5472-8fa5-b07c7935ff8d",
+        "note_sha256": "e2ed4de40b3f9c948bcb2809bbcbef2b8e6038dcbd3f574a5208ca16d6daf103",
+        "quote_text": "癸卯，廢皇后吳氏",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "c63ca1b1-b7fb-5b03-958a-15802612cfcb",
+        "note_sha256": "8529f67fc2b72660d44a9ef63b88f9f19860a4235bfe19998d88e200cdde7f59",
+        "quote_text": "癸卯，廢皇后吳氏",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "515d2b4f-8339-52f6-9a94-a3064a3d61b3",
+        "note_sha256": "f821df66fb49fa426d3c8e8033ed994f54b96be2fdd6182f133c40436bf338b8",
+        "quote_text": "癸卯，廢皇后吳氏",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "a304f05c-7527-545e-b2c7-e1e311fcda87",
+        "note_sha256": "f821df66fb49fa426d3c8e8033ed994f54b96be2fdd6182f133c40436bf338b8",
+        "quote_text": "癸卯，廢皇后吳氏",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "360cea1c-45f3-518b-8166-917fa5808752",
+        "note_sha256": "e50760846ea254744f81dd14c73df6ea377471b2bcfc8c0c36b221e9306b91a7",
+        "quote_text": "下太監牛玉於獄",
+        "review_note": "卷113宪宗吴皇后条记太监牛玉参与选后，吴氏被废后受到处罚，与本纪相合。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "fa32727a-9363-55ce-b03e-2823c3855a95",
+        "note_sha256": "fe07af1ef3cb1f6daefdf9542ad4cbf52841924785c97569ed4fa905792f25f8",
+        "quote_text": "下太監牛玉於獄",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2238460f-924b-51a4-9cb9-666db79b4081",
+        "note_sha256": "433b55782746600bc25d01e43eab36458952d72ae4854d34e087fb03af85400c",
+        "quote_text": "下太監牛玉於獄",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "49f9baa6-e474-581b-926b-212cf0a005e5",
+        "note_sha256": "250186e1bf54ba8f7e773aa977fa21d702833e5d731b5c4e602eb7891f3c397c",
+        "quote_text": "下太監牛玉於獄",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1e2d62ab-c469-5ea3-85a0-996e9e02a733",
+        "note_sha256": "d44929f2309882cebde5f7340b9fb2b97a3f664c8729f9725a7a71c41d46ea1c",
+        "quote_text": "冬十月壬辰，立王氏為皇后",
+        "review_note": "卷113后妃传记孝贞皇后王氏在吴氏被废后册立，时间为天顺八年十月。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e5196c72-9556-5831-80f6-01d840d10c2f",
+        "note_sha256": "b3ad924c726fe2044a68f78518cdab2a7d6a8a161482b857c38f5eee7b8ee63a",
+        "quote_text": "冬十月壬辰，立王氏為皇后",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c87bd531-553e-5abd-8de4-dc6634a1b6cd",
+        "note_sha256": "6135c3966cb6bd04ec319a3b5eb8aae961808f8324d3a6e71a77b56c47dcff00",
+        "quote_text": "冬十月壬辰，立王氏為皇后",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "a3994c1a-bb1b-588f-bf5b-7e9d76837a47",
+        "note_sha256": "2c6d681122de416b933ea3534a3124fabc4cd90a279d24e74b2c68a2d8ac21ae",
+        "quote_text": "冬十月壬辰，立王氏為皇后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "f60c3715-086f-5d6f-a81a-9efe2b499df1",
+        "note_sha256": "2c6d681122de416b933ea3534a3124fabc4cd90a279d24e74b2c68a2d8ac21ae",
+        "quote_text": "冬十月壬辰，立王氏為皇后",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "6f3ab318-e05b-5db2-93bf-9dc5cc20f57a",
+        "note_sha256": "922b74094bbd2f31eee397ba294f01b9fbdb0a5c6026212856a6c774c2703afb",
+        "quote_text": "甲辰，立武舉法",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "892bb261-db34-56ef-a134-373428e505be",
+        "note_sha256": "b2a5f5725ca0474a36ef8fda4dce242b5bed52bc36326a8afa60e0f20e1e8811",
+        "quote_text": "甲辰，立武舉法",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "105a6d19-f9ff-521a-b69a-bad86dd00890",
+        "note_sha256": "a9868e421a6a38fcfe1ba0aafa2dfd78bf54bc3acc70a3c5dc51c2781704b574",
+        "quote_text": "十二月甲辰，免京官雜犯罪",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "29aa7b5d-ea36-5ae6-9324-bd9ecb1878e9",
+        "note_sha256": "7fb07381b05ac76f5bc7335c59f40787a5d6109cc61c77f0a46ad9e4fc007ce2",
+        "quote_text": "十二月甲辰，免京官雜犯罪",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "abc56fb7-22f9-5b1f-8c39-e14af5117905",
+        "note_sha256": "91570526587d06212b5f6316cbebde8cd3b979f8016d6d0e8670990d7ed4b002",
+        "quote_text": "是年，兩畿、川、廣、荊、襄盜賊大起，道路不通",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "87c1d20b-eb27-537e-95c9-3487c1d6ef9a",
+        "note_sha256": "7f07203d32dcad8bfba116bdd966a40b4dc1e7448ea68d9a671c6b77ab979a2f",
+        "quote_text": "是年，兩畿、川、廣、荊、襄盜賊大起，道路不通",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "1fc89ceb-baba-5da6-b303-edd7a9a00169",
+        "note_sha256": "1357913a1dbebeebd7801ac0fc2988b4e47fa8494da77ade791eed6867a1c9e2",
+        "quote_text": "安南、烏斯藏入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5d9c0288-cedc-5f77-acce-0dfbde81d699",
+        "note_sha256": "55c0bb054e5323a693cbb15ff9694826d85c6a25ab5f454db43a29f063c6c498",
+        "quote_text": "安南、烏斯藏入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5e4df297-a234-5c6b-b542-96e7739b97b7",
+        "note_sha256": "460983c667e2be190b40ae3c6752f6c6ae2f2f7fa03b19c88c75a4745a0383ba",
+        "quote_text": "諱見深，英宗長子也。母貴妃周氏。初名見濬。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "0eb77939-5a56-5173-8c54-d6dc660aa4be",
+        "note_sha256": "460983c667e2be190b40ae3c6752f6c6ae2f2f7fa03b19c88c75a4745a0383ba",
+        "quote_text": "諱見深，英宗長子也。母貴妃周氏。初名見濬。",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "dc2a78c7-803e-5805-bf83-78104b5fdf66",
+        "note_sha256": "2d5f98b29d4c026e5d6eb8f3e5cd4ebe8b469c5ca8b4da45dea553d8d0b39ab0",
+        "quote_text": "秋七月壬申，立吳氏為皇后",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "2206c354-2b29-595d-a19f-4dedde492945",
+        "note_sha256": "7c9c79f19b6468633f5137785171d948825c81056009c717da140cae02837a65",
+        "quote_text": "冬十月壬辰，立王氏為皇后",
+        "review_note": "保存原文明示的关系方向及本段语境。",
+        "review_state": "recorded"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历正统十四年八月。DDBC历表换算所据为1449-08-27至1449-09-25，据此核对公元发生年份。",
+        "claim_id": "0b7e912b-8c61-5013-989f-46fc31e1fcd4",
+        "claim_sha256": "e22cd37567a5bf023c9653a4e8d7fc95950c98904c330b96572d601c1f8c6f39",
+        "earliest_year": 1449,
+        "era_key": null,
+        "event_id": "f925d2ce-3044-591c-bfc8-92130e2031e9",
+        "id": "f7b3144c-7b7e-5892-90ae-afd444357115",
+        "latest_year": 1449,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历景泰三年五月。DDBC历表换算所据为1452-05-28至1452-06-25，据此核对公元发生年份。",
+        "claim_id": "88616f1a-ab8d-5c6f-b404-236b8e288dd1",
+        "claim_sha256": "aeb96088b0f2c6c2d8f893d6ac0f4f109b51f03f757e253d2ca1d8856ba288b7",
+        "earliest_year": 1452,
+        "era_key": null,
+        "event_id": "94d0abc9-e10e-51d4-85fa-aa77f04aada5",
+        "id": "f3db4783-1841-5f9d-a2b3-eede24ff37e8",
+        "latest_year": 1452,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺元年三月。DDBC历表换算所据为1457-04-03至1457-05-02，据此核对公元发生年份。",
+        "claim_id": "269b5a73-6b3c-5d9c-9633-6e3e7f620523",
+        "claim_sha256": "00b0eeaa49fd7eb41668efeff662510773eee9531e2150c4ae86ee94e13badaf",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "a50d8de7-1dfa-57c6-b8db-aa619c2d9bf7",
+        "id": "0cba8bce-54b0-544e-a574-a8257cf0d01e",
+        "latest_year": 1457,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺元年。DDBC历表换算所据为1457-02-24至1458-01-23，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001811的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "20bb4bf3-56eb-5d8f-a50a-d1ae24b8fd90",
+        "claim_sha256": "d39a333a97f024401f5a3b44d6fb660e72ea4f47a724404b6f2cb64778d75ed2",
+        "earliest_year": 1457,
+        "era_key": null,
+        "event_id": "40387135-db7b-5005-9e3b-247adb2f9f99",
+        "id": "cce2e55c-c7d2-55c5-8a01-8685d3fc859f",
+        "latest_year": 1458,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。",
+        "claim_id": "68de67f2-d036-55e7-a60b-e77bb6bc3e0e",
+        "claim_sha256": "1a3a3f14e991a5cf5ad0301b4c1c517518c0015e84d0b9ff633680bb0271779a",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "5bdf8e1a-0acf-500d-b2e8-6a29ce39df3a",
+        "id": "56aaee7f-c546-5abc-b97b-357f2ae4f21c",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年正月乙亥。DDBC历表换算所据为1464-03-08至1464-03-08，据此核对公元发生年份。",
+        "claim_id": "759ca641-222b-5211-b212-607b2646865f",
+        "claim_sha256": "b909f77299df8fefe5048f89b22e3bd2d4c376888b2d30594413af470d416179",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "e65a10ac-60f8-5022-877a-79d06ac9de30",
+        "id": "663b1b69-3963-5ebc-b8de-d51d3c7ef081",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001813的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3ad50ae3-33f8-5c3f-8082-d06d29f588e1",
+        "claim_sha256": "e5f570435ce84243160ddac6ce766985ae71b20e622cbaef92001ce6ee48403c",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "d4f44891-c75a-5855-bcaf-6f7281e582fd",
+        "id": "209d8e0a-b58d-5fca-aad0-e367b834ec5e",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001813的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "878ce670-ec6c-567b-a189-c85aa824d654",
+        "claim_sha256": "8627189b5147cdb7f438b5a368cdb7dfbd71dc81db8e58849032b41ef8894e1a",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "f08676d0-1b36-53db-b5b3-bcb4f9fdba34",
+        "id": "7bff89f3-32a4-5a2e-94b1-ec4da9137db3",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001813的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "4bcdd047-f097-5f7b-aa30-91c5b09c59b4",
+        "claim_sha256": "ce635fc0fdefec3b87b7e203066920649036571aa9928ced8d153c2d71f598a3",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "6e143123-5d62-5045-9a37-ef9647fd5a83",
+        "id": "51b7548b-09e3-53e6-a20c-7a7d36cae1ba",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年二月庚子。DDBC历表换算所据为1464-04-02至1464-04-02，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001814的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "1479df33-ec89-5776-9154-d9059b379fe3",
+        "claim_sha256": "4741dfb04fd2569a2194adfca6cd4af6aeab4f87e6536eb69e0ec68cd362074d",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "d05c0d90-1156-5f44-aae0-bab9e200223e",
+        "id": "368d2b4b-83b6-576e-8ae6-e5c7e2ef7c43",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月甲寅朔。DDBC历表换算所据为1464-04-16至1464-04-16，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "18d171a7-18c8-525e-b622-a0eecc238d8a",
+        "claim_sha256": "54d2864862b4d9c4b9ff3968a0345540c0135a866150f008742e0159666870dd",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "10b57cf4-0f43-5eb5-83a3-be85cc9c0680",
+        "id": "ad006d7b-55ee-59c0-ab3d-10ab63aefb16",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月甲寅朔。DDBC历表换算所据为1464-04-16至1464-04-16，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c2e30634-a088-5eb7-8924-78389e201867",
+        "claim_sha256": "e014301e356c8a3fea87e032867c21e080d4f6efd6acef4485d610641026da6c",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "e227a037-2531-5b22-a13d-69e9ff92bcb3",
+        "id": "c250f5b1-a619-5055-8052-c37fcf2377f4",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月戊午。DDBC历表换算所据为1464-04-20至1464-04-20，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "56e0f477-3218-569c-b9a2-0e9167de0dbf",
+        "claim_sha256": "8a5e4a177b07ef43a0d0962e1da8396bb47aea658d15272ae8529bd178eadfcb",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "170a4d2a-0f8d-5fcf-8997-340c8e4a7cbd",
+        "id": "a3031c97-6c2e-5a9a-a1f3-f802a1fa85d6",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月丙寅。DDBC历表换算所据为1464-04-28至1464-04-28，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f3b517f1-c8f9-50f6-be9b-30d608e47925",
+        "claim_sha256": "92f53497d0a1f225bfa550607edf6766e0c5efa0198fcb1087013bafc829530d",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "6e893cd5-8e3d-5562-b7ec-76f82a87d07e",
+        "id": "4e9878a2-a8db-517c-aee4-b9f08644158a",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月庚午。DDBC历表换算所据为1464-05-02至1464-05-02，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "47be0c95-e119-5bf9-9da9-df33996d6b66",
+        "claim_sha256": "1e25aa4f4e338ed2bf19c40991f67d7dcfb673eb4cfeb0e519fcee4b4560fa78",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "da934cbc-f136-5e7e-bf7e-cd4b01a1f1e6",
+        "id": "95ab5880-5372-5a7d-b23d-214930bb6930",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月癸酉。DDBC历表换算所据为1464-05-05至1464-05-05，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "3b62964c-61b4-5b7e-8678-7ee8ecc18c6e",
+        "claim_sha256": "8aa173920520286a756e981f00c795ccf89c3c8708a2ff544805d5e826bf5db2",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "04b528e8-2519-532e-a2eb-f7f8b099a88c",
+        "id": "31ea4fd8-f8e6-5d55-aaf8-1699ae372b5f",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年三月戊寅。DDBC历表换算所据为1464-05-10至1464-05-10，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001815的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "03d3d2e2-71b8-5946-8aa9-6e74bd95aa9c",
+        "claim_sha256": "fb7912a87c5c79d97641dae954f52855b996acbd20636e31138a834aacdab7d4",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "43ae6694-c67e-5d40-91e6-c01669949e8c",
+        "id": "5944bc3e-ad23-57d5-b60b-cd0aacee313c",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年四月癸未朔。DDBC历表换算所据为1464-05-15至1464-05-15，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001816的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "cd9a8364-2a97-52cd-b3d9-bdcabe056d07",
+        "claim_sha256": "05bb6bc342c80e339906735d7d02ae3164df64def2ba1289be2cc8aa373e0c74",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "52c8ba0e-84d7-5950-9d4d-2768db1d9e51",
+        "id": "439189d6-a2f1-5765-8de6-d504b8f0ee75",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年五月丁巳。DDBC历表换算所据为1464-06-18至1464-06-18，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001817的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "05401e51-5d10-5681-bb0a-5e69c872e5c7",
+        "claim_sha256": "4b70099e7098e34489acebdaa0553cdf6daca1186e844f3de22f0b465760d91f",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "5a086d0d-6357-584f-ac5b-a60a8872a1b4",
+        "id": "623fa85a-83dd-52d1-a58a-073d4f101ca9",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年五月庚申。DDBC历表换算所据为1464-06-21至1464-06-21，据此核对公元发生年份。",
+        "claim_id": "b8fe60ae-5df8-5e74-bdea-56ccdffc424c",
+        "claim_sha256": "38fe5cc2c3b3bfb8f82dddbb20e14e10e72597159b50cf2adf0f3579e735f79c",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "aac54348-0628-5a7b-83cb-97819af70f24",
+        "id": "9b862192-279b-542e-8bc6-5d8b98f8d1a8",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年七月壬申。DDBC历表换算所据为1464-09-01至1464-09-01，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001818的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "f0fb3cf0-a962-5a64-9bb4-f8368f4285ee",
+        "claim_sha256": "5cfd9af2d25189c555c615b5e5c2b0707e6ecbf09434b0d0b6bde6f557ba0c5d",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "7157cc0d-c042-5d06-bdff-36a9e85314a3",
+        "id": "df3b5a4a-d6c6-5b65-a676-21ae7232cb16",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年八月癸未。DDBC历表换算所据为1464-09-12至1464-09-12，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001819的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "9e2cb535-faf5-5e42-a29e-2057f7ad43b2",
+        "claim_sha256": "542e8706f7a612529da8a5f430ca15bc7bc545330cc58013f01e525935390b30",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "e1c9a1cc-caa1-5d4e-bb2d-a0102af0ac10",
+        "id": "bcbd2eea-c623-579e-9b1a-53fa55a8763a",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年八月甲申。DDBC历表换算所据为1464-09-13至1464-09-13，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001819的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "b78053ac-b3e8-591c-93bd-1ceaeda4db63",
+        "claim_sha256": "35166dca8bca001ba66224e5b9137aa1a92e767ce340fd124e430657eb9ca805",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "8dfd8287-9245-5414-83d4-36bb4ad21fe5",
+        "id": "d77835c1-73fe-5c8f-a051-078356b05d5b",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年八月癸卯。DDBC历表换算所据为1464-10-02至1464-10-02，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001819的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c63ca1b1-b7fb-5b03-958a-15802612cfcb",
+        "claim_sha256": "ba77f4539fc6ca316a327c14fbff9f4722e2dd894b20b91da28737a8e017861e",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "ad34717e-7775-5626-8947-985df52a5d53",
+        "id": "519f4b33-692c-5970-8d4c-4ccbe2d17352",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年八月。DDBC历表换算所据为1464-09-11至1464-10-09，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001819的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "2238460f-924b-51a4-9cb9-666db79b4081",
+        "claim_sha256": "b400d810e9dbcac23b1e19b2a521c8bd3fc0dc9dbfb6247573b2bf0b71ab3b5f",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "25f70b10-d03d-5a2e-b859-a8f86867744e",
+        "id": "3c32481a-8c90-582a-9b10-c60dc84409c7",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年十月壬辰。DDBC历表换算所据为1464-11-20至1464-11-20，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001820的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c87bd531-553e-5abd-8de4-dc6634a1b6cd",
+        "claim_sha256": "54d4210b03281cba5a8727018df5c312c5e07de58ed1955bb6cd5298ce68ada2",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "1ce57855-0ae5-59df-8264-858e232a1775",
+        "id": "22482e88-d331-5591-8f77-b5f8db78bd0b",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年十月甲辰。DDBC历表换算所据为1464-12-02至1464-12-02，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001820的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "892bb261-db34-56ef-a134-373428e505be",
+        "claim_sha256": "d57a4076124398d859099c5736d0d46c27963222ca926705f2932a28faddc9b9",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "870ce71f-0381-5b5b-975b-d9347d73268a",
+        "id": "3d039c97-7afb-5dce-9bf6-90dee43cef7d",
+        "latest_year": 1464,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年十二月甲辰。DDBC历表换算所据为1465-01-31至1465-01-31，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001821的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "29aa7b5d-ea36-5ae6-9324-bd9ecb1878e9",
+        "claim_sha256": "a7e4a57fdb250f6df51df080c3460f6d305a61c4074d301c2c24120e99fc02e8",
+        "earliest_year": 1465,
+        "era_key": null,
+        "event_id": "8fb3f7e7-7dcb-53c6-89fe-1c67f7d2576a",
+        "id": "891bb742-bfe9-5602-8efc-676ae2257fff",
+        "latest_year": 1465,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年。DDBC历表换算所据为1464-02-16至1465-02-04，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001822的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "87c1d20b-eb27-537e-95c9-3487c1d6ef9a",
+        "claim_sha256": "85a3aaa7200d603e055c1765680cebe04c18bc0052cb3fd06b57437e6053b715",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "198c0365-fea4-5b4e-827b-4d1ab73d8013",
+        "id": "d3e42c0f-1fe4-556e-87a8-cd76f186e515",
+        "latest_year": 1465,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历天顺八年。DDBC历表换算所据为1464-02-16至1465-02-04，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001822的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "5d9c0288-cedc-5f77-acce-0dfbde81d699",
+        "claim_sha256": "e3fada0f4de2c1f2bf9199443f4ca36afb9753376bde357feb7ca5f6c5c12343",
+        "earliest_year": 1464,
+        "era_key": null,
+        "event_id": "0594eb1d-b3fd-5b44-be64-01c6357a826b",
+        "id": "41725cd1-6433-5814-b8f1-bd5621dea721",
+        "latest_year": 1465,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "a8a9d09f57097a9a21d614e565a84c084b828b3e37db613824b033823aa315b7",
+        "paragraph_id": "mingshi-2f603db3d81e-p001811",
+        "snapshot_sha256": "4ca637b04a9af1fe48b3e633e97aced70fd6830d0375b3face5a251559704442",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18"
+      },
+      {
+        "archive_url_sha256": "547f97881a8d208af5cf264a3a32fadb4d581fe1b58f55c635d006ec5e1d6251",
+        "paragraph_id": "mingshi-2f603db3d81e-p001813",
+        "snapshot_sha256": "b3312c913528e296a5b743c72590a7bf1e51f347a2a4401ac71c58f76cd45df5",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3"
+      },
+      {
+        "archive_url_sha256": "422ac34fd0c0328039eca33a3a56a44fb7e2250098a165a494df5c075bd3cc78",
+        "paragraph_id": "mingshi-2f603db3d81e-p001814",
+        "snapshot_sha256": "24afdd787ea68c3d5895bdd9b2c8db5658771d1958e6e4febad2fdba9d4f0a01",
+        "source_id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24"
+      },
+      {
+        "archive_url_sha256": "9a3a7f2bb12a1d19563414e3c1a372fcaf4ebca945513557dda66639719d57ae",
+        "paragraph_id": "mingshi-2f603db3d81e-p001815",
+        "snapshot_sha256": "42e10e5e5787ddbab151bab530c44371b67f74a730aa2dad1581a7bda3f0278c",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe"
+      },
+      {
+        "archive_url_sha256": "9d65518f118e9c83a51ec09879e1323d13efcd7858d51d843bf662fd767d6500",
+        "paragraph_id": "mingshi-2f603db3d81e-p001816",
+        "snapshot_sha256": "94d4585404f48a4093be7d1398f92393296c26648462bab1c021d1809f704f37",
+        "source_id": "faee898f-fc89-5269-ad84-e8b11a19bbe0"
+      },
+      {
+        "archive_url_sha256": "c0f5c424fe935844a34a54f80eac6e2c2569dd5cac67559ea7846b8b7258f845",
+        "paragraph_id": "mingshi-2f603db3d81e-p001817",
+        "snapshot_sha256": "a618fd3548d532a430c3df507f522bdf3e6ba87c85c2b16ac1eb14bd777c5132",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd"
+      },
+      {
+        "archive_url_sha256": "7d1049e2acb4417d5a95d1d6cda5eee3434310b140de4a0d2d84146b11a42d84",
+        "paragraph_id": "mingshi-2f603db3d81e-p001818",
+        "snapshot_sha256": "d2848ff43e30f0da84b2a710680324741da190c5e86252b17d671f787e7fafa9",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222"
+      },
+      {
+        "archive_url_sha256": "301efd4fad5b26bfb123962eddfd0d01009cd022a884de2e0c19536c23e6cc98",
+        "paragraph_id": "mingshi-2f603db3d81e-p001819",
+        "snapshot_sha256": "4944c0e080123a162e6dfcd584dd95d19ef54968c97328603eabbdbbdeb66ea2",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875"
+      },
+      {
+        "archive_url_sha256": "987dd2af4d03be576a2062d9460dd2bee6da41c9f21963424be0ee048b4f9c1b",
+        "paragraph_id": "mingshi-2f603db3d81e-p001820",
+        "snapshot_sha256": "c682d8082e83580608fa3b94fff218d4f6ffec167299dc0a7ed88ed1327f101a",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5"
+      },
+      {
+        "archive_url_sha256": "dd2eb8219cfb5917931af3a90937f6b829d1356b6b2bafca3ede016beda5dd8e",
+        "paragraph_id": "mingshi-2f603db3d81e-p001821",
+        "snapshot_sha256": "6cfb7fdd7f873e2a32d8983bf20dbffc6ce33465733f146413e0fd81964884bb",
+        "source_id": "a6b8f628-3221-5a74-96b3-20c07b2a9499"
+      },
+      {
+        "archive_url_sha256": "cfb8ea77af8e763583b87d9cf6c2a767e26cd8e447c3934a4bd9651bb6f511d0",
+        "paragraph_id": "mingshi-2f603db3d81e-p001822",
+        "snapshot_sha256": "de487e0a076fb06447bdc00a3a40fa33729b73151b914867c835ea6e86604f06",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-013/from-start/part-01/content-batch.json": "6659910f0943da0297a3d738eada0e7d17feb72f02cf15cbd424d4a58c4e1f95",
+    "content/books/mingshi/vol-013/from-start/part-01/curation.json": "c08f78c3b6f5f3343de8d1c65b9aede6146444849004cb2dc890f835034541a7",
+    "content/books/mingshi/vol-013/from-start/part-01/packet.json": "25cef339715eedc1fc4e7dcb3ce1c717fe72dece5508b9b360d1bf333a53f801",
+    "content/books/mingshi/vol-013/from-start/part-01/publication-mysql.json": "79eec7905bad3e3ef260cadc37394fa72cc7052114ce3085ce6c468c213b0ead",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/manifest.json": "e09e7afcf1c09e3558f2f6d59de195a778e0674252cf4e03b3132569492d9d0b",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001809/source.txt": "f8779ef7c990f089a0f985c26385935b334f153ebd688ab71a7c6f1f5d6513e0",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001810/source.txt": "c97c0a4e223b7cef42eeea713a2256acee96455d9ffae81d5790b770ba698017",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001811/source.txt": "4ca637b04a9af1fe48b3e633e97aced70fd6830d0375b3face5a251559704442",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001812/source.txt": "0027d3ee9164f36c7a0c71cb10bd16712a8e53ff63222bcd33d159bb291ad65e",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001813/source.txt": "b3312c913528e296a5b743c72590a7bf1e51f347a2a4401ac71c58f76cd45df5",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001814/source.txt": "24afdd787ea68c3d5895bdd9b2c8db5658771d1958e6e4febad2fdba9d4f0a01",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001815/source.txt": "42e10e5e5787ddbab151bab530c44371b67f74a730aa2dad1581a7bda3f0278c",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001816/source.txt": "94d4585404f48a4093be7d1398f92393296c26648462bab1c021d1809f704f37",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001817/source.txt": "a618fd3548d532a430c3df507f522bdf3e6ba87c85c2b16ac1eb14bd777c5132",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001818/source.txt": "d2848ff43e30f0da84b2a710680324741da190c5e86252b17d671f787e7fafa9",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001819/source.txt": "4944c0e080123a162e6dfcd584dd95d19ef54968c97328603eabbdbbdeb66ea2",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001820/source.txt": "c682d8082e83580608fa3b94fff218d4f6ffec167299dc0a7ed88ed1327f101a",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001821/source.txt": "6cfb7fdd7f873e2a32d8983bf20dbffc6ce33465733f146413e0fd81964884bb",
+    "content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001822/source.txt": "de487e0a076fb06447bdc00a3a40fa33729b73151b914867c835ea6e86604f06",
+    "content/books/mingshi/vol-013/from-start/part-01/sql/key-map.json": "0a260d3d9371053fb677d30a75324b9e78ba50b6b84d2aa2a650668e040b79de",
+    "content/books/mingshi/vol-013/from-start/part-01/time-review.json": "32ae7dbdb146492f3a3dde02497b964a80fa0ca898c3451100cf8e4829aba8d4"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "1ca5e8c4-5454-5c1e-a5e4-abd4ab47ac6e"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；正统十四年八月",
+        "claim_text": "朱见深被皇太后立为皇太子。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.547887+00:00",
+        "field_path": "description",
+        "id": "1ca5e8c4-5454-5c1e-a5e4-abd4ab47ac6e",
+        "note": "原文：英宗留瓦剌，皇太后命立為皇太子；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "71fde383-1de5-538d-bb25-2cc9e4cc7d1c",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d9c5158d-8337-5bc9-b412-0b1d0e4fe2c4"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；正统十四年八月",
+        "claim_text": "英宗被留在瓦剌期间，皇太后命立他长子朱见深为皇太子。《英宗前纪》与《景帝本纪》系在正统十四年八月己巳。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.587733+00:00",
+        "field_path": "description",
+        "id": "d9c5158d-8337-5bc9-b412-0b1d0e4fe2c4",
+        "note": "原文：英宗留瓦剌，皇太后命立為皇太子；核对说明：卷十三叙英宗留瓦剌时同一次立太子，卷十、十一确定正统十四年八月己巳，保留卷十三为追述。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "f925d2ce-3044-591c-bfc8-92130e2031e9",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0b7e912b-8c61-5013-989f-46fc31e1fcd4"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；正统十四年八月",
+        "claim_text": "原历正统十四年八月。DDBC历表换算所据为1449-08-27至1449-09-25，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.622865+00:00",
+        "field_path": "time_original",
+        "id": "0b7e912b-8c61-5013-989f-46fc31e1fcd4",
+        "note": "原文：英宗留瓦剌，皇太后命立為皇太子；核对说明：卷十三叙英宗留瓦剌时同一次立太子，卷十、十一确定正统十四年八月己巳，保留卷十三为追述。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "f925d2ce-3044-591c-bfc8-92130e2031e9",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fd012eec-d4fc-5f12-8e2a-f6098feac06f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；正统十四年八月",
+        "claim_text": "被皇太后立为皇太子",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.657783+00:00",
+        "field_path": "role",
+        "id": "fd012eec-d4fc-5f12-8e2a-f6098feac06f",
+        "note": "原文：英宗留瓦剌，皇太后命立為皇太子；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "46a91261-0c68-5f55-bdfd-d9fac599950a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "916ef206-ba26-5f27-937a-4949dbf99a0b"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；景泰三年五月",
+        "claim_text": "景泰三年，明景帝废去朱见深的皇太子身份，改封他为沂王。《景帝本纪》载这一命令在五月甲午。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.702822+00:00",
+        "field_path": "description",
+        "id": "916ef206-ba26-5f27-937a-4949dbf99a0b",
+        "note": "原文：景泰三年，廢為沂王；核对说明：卷十一与卷十三均记景泰三年由太子降封沂王，卷十一明确五月甲午。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "94d0abc9-e10e-51d4-85fa-aa77f04aada5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "88616f1a-ab8d-5c6f-b404-236b8e288dd1"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；景泰三年五月",
+        "claim_text": "原历景泰三年五月。DDBC历表换算所据为1452-05-28至1452-06-25，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.737634+00:00",
+        "field_path": "time_original",
+        "id": "88616f1a-ab8d-5c6f-b404-236b8e288dd1",
+        "note": "原文：景泰三年，廢為沂王；核对说明：卷十一与卷十三均记景泰三年由太子降封沂王，卷十一明确五月甲午。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "94d0abc9-e10e-51d4-85fa-aa77f04aada5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9d126e04-db86-5234-91bd-ee2b6e96eabd"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；景泰三年五月",
+        "claim_text": "改封为沂王",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.775686+00:00",
+        "field_path": "role",
+        "id": "9d126e04-db86-5234-91bd-ee2b6e96eabd",
+        "note": "原文：景泰三年，廢為沂王；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "b6f143df-bda2-52cf-bb10-0e55e1f12139",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "44205536-7ca3-5ed0-aa5f-3d7cdb28a368"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；天顺元年三月",
+        "claim_text": "天顺元年，明英宗复立长子为皇太子。《英宗后纪》载在三月己巳，本纪补记他由见濬改名为见深。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.807615+00:00",
+        "field_path": "description",
+        "id": "44205536-7ca3-5ed0-aa5f-3d7cdb28a368",
+        "note": "原文：天順元年，復立為皇太子，改名見深；核对说明：卷十三卷首追叙与卷十二三月己巳复立长子是同一任命，卷十三补改名事。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "a50d8de7-1dfa-57c6-b8db-aa619c2d9bf7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "269b5a73-6b3c-5d9c-9633-6e3e7f620523"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；天顺元年三月",
+        "claim_text": "原历天顺元年三月。DDBC历表换算所据为1457-04-03至1457-05-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.845646+00:00",
+        "field_path": "time_original",
+        "id": "269b5a73-6b3c-5d9c-9633-6e3e7f620523",
+        "note": "原文：天順元年，復立為皇太子，改名見深；核对说明：卷十三卷首追叙与卷十二三月己巳复立长子是同一任命，卷十三补改名事。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "a50d8de7-1dfa-57c6-b8db-aa619c2d9bf7",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d37f4768-61af-53d3-aef8-f0c29dd1ef13"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；天顺元年三月",
+        "claim_text": "恢复皇太子身份",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.885645+00:00",
+        "field_path": "role",
+        "id": "d37f4768-61af-53d3-aef8-f0c29dd1ef13",
+        "note": "原文：天順元年，復立為皇太子，改名見深；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "269720cf-2703-5b13-8063-7be08371443b",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0c544132-bf6a-5d18-8ae2-9a5716fbb62f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；天顺元年",
+        "claim_text": "《宪宗本纪》记朱见深初名见濬，天顺元年再次获立为皇太子后改名为见深。 按原历纪年，事情发生在公元1457至1458年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.935340+00:00",
+        "field_path": "description",
+        "id": "0c544132-bf6a-5d18-8ae2-9a5716fbb62f",
+        "note": "原文：初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "40387135-db7b-5005-9e3b-247adb2f9f99",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "20bb4bf3-56eb-5d8f-a50a-d1ae24b8fd90"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；天顺元年",
+        "claim_text": "原历天顺元年。DDBC历表换算所据为1457-02-24至1458-01-23，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:49.975654+00:00",
+        "field_path": "time_original",
+        "id": "20bb4bf3-56eb-5d8f-a50a-d1ae24b8fd90",
+        "note": "原文：初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "40387135-db7b-5005-9e3b-247adb2f9f99",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2f6c07ca-f69e-5604-9e5e-7210e732731c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；天顺元年",
+        "claim_text": "由见濬改名见深",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.015593+00:00",
+        "field_path": "role",
+        "id": "2f6c07ca-f69e-5604-9e5e-7210e732731c",
+        "note": "原文：初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "6a6c2ac5-200a-5afb-8f9d-f471884b46b0",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "14e82b34-15ff-5a7a-b32d-82f18084c745"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "朱祁镇以皇帝身份去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.055520+00:00",
+        "field_path": "description",
+        "id": "14e82b34-15ff-5a7a-b32d-82f18084c745",
+        "note": "原文：天順八年正月，英宗崩；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "368e5a42-621f-5c8c-88c7-f59b8bb8a5cf",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3508a892-ad58-5f08-8002-c7b5238d922e"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "明英宗朱祁镇在天顺八年正月去世。《英宗后纪》另载确切干支庚午。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.105441+00:00",
+        "field_path": "description",
+        "id": "3508a892-ad58-5f08-8002-c7b5238d922e",
+        "note": "原文：天順八年正月，英宗崩；核对说明：两卷本纪均记明英宗在天顺八年正月去世，卷十二载庚午。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "5bdf8e1a-0acf-500d-b2e8-6a29ce39df3a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "68de67f2-d036-55e7-a60b-e77bb6bc3e0e"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.150641+00:00",
+        "field_path": "time_original",
+        "id": "68de67f2-d036-55e7-a60b-e77bb6bc3e0e",
+        "note": "原文：天順八年正月，英宗崩；核对说明：两卷本纪均记明英宗在天顺八年正月去世，卷十二载庚午。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "5bdf8e1a-0acf-500d-b2e8-6a29ce39df3a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ab4d2c46-b078-5741-a80c-39754e31f6c8"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "以皇帝身份去世",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.195288+00:00",
+        "field_path": "role",
+        "id": "ab4d2c46-b078-5741-a80c-39754e31f6c8",
+        "note": "原文：天順八年正月，英宗崩；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "c9c3ecb5-5e0b-5a4c-8b0c-a2bdbcb1f1d8",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c8de316a-80de-522e-b2c2-c352a61d1caa"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月乙亥",
+        "claim_text": "天顺八年正月乙亥，明英宗去世后，皇太子朱见深即皇帝位。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.235555+00:00",
+        "field_path": "description",
+        "id": "c8de316a-80de-522e-b2c2-c352a61d1caa",
+        "note": "原文：天順八年正月，英宗崩。乙亥，即皇帝位；核对说明：宰辅年表与宪宗本纪均记宪宗天顺八年正月即位，本纪补乙亥。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "e65a10ac-60f8-5022-877a-79d06ac9de30",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "759ca641-222b-5211-b212-607b2646865f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月乙亥",
+        "claim_text": "原历天顺八年正月乙亥。DDBC历表换算所据为1464-03-08至1464-03-08，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.271685+00:00",
+        "field_path": "time_original",
+        "id": "759ca641-222b-5211-b212-607b2646865f",
+        "note": "原文：天順八年正月，英宗崩。乙亥，即皇帝位；核对说明：宰辅年表与宪宗本纪均记宪宗天顺八年正月即位，本纪补乙亥。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "e65a10ac-60f8-5022-877a-79d06ac9de30",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "75fe3696-31ff-579c-a752-765afe7360df"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月乙亥",
+        "claim_text": "即皇帝位",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.315582+00:00",
+        "field_path": "role",
+        "id": "75fe3696-31ff-579c-a752-765afe7360df",
+        "note": "原文：天順八年正月，英宗崩。乙亥，即皇帝位；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "4cd181d8-0e5f-5d72-a83f-7d57dac221da",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c17e3aee-a0c4-55e5-87b0-bcc8cb4626f1"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "天顺八年正月，明宪宗朱见深在继位后宣布次年改元成化，大赦天下，并减免次年田租的三分之一。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.352721+00:00",
+        "field_path": "description",
+        "id": "c17e3aee-a0c4-55e5-87b0-bcc8cb4626f1",
+        "note": "原文：以明年為成化元年，大赦天下。免明年田租三之一；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "d4f44891-c75a-5855-bcaf-6f7281e582fd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3ad50ae3-33f8-5c3f-8082-d06d29f588e1"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.391597+00:00",
+        "field_path": "time_original",
+        "id": "3ad50ae3-33f8-5c3f-8082-d06d29f588e1",
+        "note": "原文：以明年為成化元年，大赦天下。免明年田租三之一；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "d4f44891-c75a-5855-bcaf-6f7281e582fd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9517bfa9-5f02-5c42-8084-6efe121c59e9"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "决定次年改元并颁布赦令与减租",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.424595+00:00",
+        "field_path": "role",
+        "id": "9517bfa9-5f02-5c42-8084-6efe121c59e9",
+        "note": "原文：以明年為成化元年，大赦天下。免明年田租三之一；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "164781f4-8ea6-5ac7-a3ea-73d216e69657",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fba8ec8f-e95f-57a7-b152-8c2cf31abc91"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "天顺八年正月，明宪宗撤去浙江、江西、福建、陕西、临清的镇守内外官和各边镇守内官中超出正统时期旧制的职位。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.468192+00:00",
+        "field_path": "description",
+        "id": "fba8ec8f-e95f-57a7-b152-8c2cf31abc91",
+        "note": "原文：浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "f08676d0-1b36-53db-b5b3-bcb4f9fdba34",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "878ce670-ec6c-567b-a189-c85aa824d654"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.510439+00:00",
+        "field_path": "time_original",
+        "id": "878ce670-ec6c-567b-a189-c85aa824d654",
+        "note": "原文：浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "f08676d0-1b36-53db-b5b3-bcb4f9fdba34",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e1c02ecf-ac99-50b7-8d02-84e18954ef05"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "命撤去超出旧制的镇守官",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.550396+00:00",
+        "field_path": "role",
+        "id": "e1c02ecf-ac99-50b7-8d02-84e18954ef05",
+        "note": "原文：浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "1175669f-4196-548f-9234-974fd6102daf",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "850d8fab-c35c-5a26-9603-1b569573c21c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "天顺八年正月，朝廷命在外的下番使者和负责侦缉的官校返回。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.595516+00:00",
+        "field_path": "description",
+        "id": "850d8fab-c35c-5a26-9603-1b569573c21c",
+        "note": "原文：下番使者、緝事官校皆召還；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "6e143123-5d62-5045-9a37-ef9647fd5a83",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4bcdd047-f097-5f7b-aa30-91c5b09c59b4"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813；天顺八年正月",
+        "claim_text": "原历天顺八年正月。DDBC历表换算所据为1464-02-16至1464-03-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.635525+00:00",
+        "field_path": "time_original",
+        "id": "4bcdd047-f097-5f7b-aa30-91c5b09c59b4",
+        "note": "原文：下番使者、緝事官校皆召還；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "status": "published",
+        "subject_id": "6e143123-5d62-5045-9a37-ef9647fd5a83",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bbf482e8-6d17-5a1e-8a91-96d30909cf9f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001814；天顺八年二月庚子",
+        "claim_text": "天顺八年二月庚子，《宪宗本纪》记明廷开始通过宫中批示授予官职。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.672112+00:00",
+        "field_path": "description",
+        "id": "bbf482e8-6d17-5a1e-8a91-96d30909cf9f",
+        "note": "原文：二月庚子，始以內批授官；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24",
+        "status": "published",
+        "subject_id": "d05c0d90-1156-5f44-aae0-bab9e200223e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1479df33-ec89-5776-9154-d9059b379fe3"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001814；天顺八年二月庚子",
+        "claim_text": "原历天顺八年二月庚子。DDBC历表换算所据为1464-04-02至1464-04-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.715363+00:00",
+        "field_path": "time_original",
+        "id": "1479df33-ec89-5776-9154-d9059b379fe3",
+        "note": "原文：二月庚子，始以內批授官；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24",
+        "status": "published",
+        "subject_id": "d05c0d90-1156-5f44-aae0-bab9e200223e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0875687c-14fa-513e-9a93-9676496da2c8"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "钱氏被尊为慈懿皇太后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.755657+00:00",
+        "field_path": "description",
+        "id": "0875687c-14fa-513e-9a93-9676496da2c8",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "ba16a921-8e35-58e6-86ee-efc3cf961160",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2739a884-8966-59b8-94b4-45bb72e88fc0"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "天顺八年三月初一，明宪宗尊先帝皇后钱氏为慈懿皇太后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.792335+00:00",
+        "field_path": "description",
+        "id": "2739a884-8966-59b8-94b4-45bb72e88fc0",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "10b57cf4-0f43-5eb5-83a3-be85cc9c0680",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "18d171a7-18c8-525e-b622-a0eecc238d8a"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "原历天顺八年三月甲寅朔。DDBC历表换算所据为1464-04-16至1464-04-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.835615+00:00",
+        "field_path": "time_original",
+        "id": "18d171a7-18c8-525e-b622-a0eecc238d8a",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "10b57cf4-0f43-5eb5-83a3-be85cc9c0680",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "df6741f1-ed0e-508d-bbe9-eb8e21ef9943"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "被尊为慈懿皇太后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.875491+00:00",
+        "field_path": "role",
+        "id": "df6741f1-ed0e-508d-bbe9-eb8e21ef9943",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "b1e616ba-7571-59ff-9863-b98fc64202a3",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b0e5bf7f-db6e-5744-86ba-1861ff610ab7"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "加尊先帝皇后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.915647+00:00",
+        "field_path": "role",
+        "id": "b0e5bf7f-db6e-5744-86ba-1861ff610ab7",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "c71fc0de-9134-5215-a103-e607ffb4c60b",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "efa0f470-3748-5e82-b6ab-137d90cab19c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "周氏（明英宗孝肃睿皇后）由贵妃尊为皇太后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.955332+00:00",
+        "field_path": "description",
+        "id": "efa0f470-3748-5e82-b6ab-137d90cab19c",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：卷113后妃传记孝肃周太后为英宗贵妃、宪宗生母，与卷十三相合。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "61b476fb-fc72-5305-a67c-6fefdd833d4d",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8e46391a-54fc-5604-af69-ad17d57d346f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "天顺八年三月初一，明宪宗尊自己的生母、先帝贵妃周氏为皇太后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:50.995328+00:00",
+        "field_path": "description",
+        "id": "8e46391a-54fc-5604-af69-ad17d57d346f",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "e227a037-2531-5b22-a13d-69e9ff92bcb3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c2e30634-a088-5eb7-8924-78389e201867"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "原历天顺八年三月甲寅朔。DDBC历表换算所据为1464-04-16至1464-04-16，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.035287+00:00",
+        "field_path": "time_original",
+        "id": "c2e30634-a088-5eb7-8924-78389e201867",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "e227a037-2531-5b22-a13d-69e9ff92bcb3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "29343b5c-723a-58db-a30f-5168c34acb8d"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "由贵妃尊为皇太后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.075685+00:00",
+        "field_path": "role",
+        "id": "29343b5c-723a-58db-a30f-5168c34acb8d",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "9a8ce1f2-9844-5e0c-8c3e-4f0aa6625b3a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "34894230-0cd3-5e12-bed8-ade2a08281ae"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月甲寅朔",
+        "claim_text": "加尊生母",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.115642+00:00",
+        "field_path": "role",
+        "id": "34894230-0cd3-5e12-bed8-ade2a08281ae",
+        "note": "原文：三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "eb06b8aa-6506-511a-a684-9f5512e89334",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cadf5d85-3d8d-53e6-8f79-7cddfa3f7c4b"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月戊午",
+        "claim_text": "天顺八年三月戊午，明廷下令让宫人离宫。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.156506+00:00",
+        "field_path": "description",
+        "id": "cadf5d85-3d8d-53e6-8f79-7cddfa3f7c4b",
+        "note": "原文：戊午，放宮人；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "170a4d2a-0f8d-5fcf-8997-340c8e4a7cbd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "56e0f477-3218-569c-b9a2-0e9167de0dbf"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月戊午",
+        "claim_text": "原历天顺八年三月戊午。DDBC历表换算所据为1464-04-20至1464-04-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.205300+00:00",
+        "field_path": "time_original",
+        "id": "56e0f477-3218-569c-b9a2-0e9167de0dbf",
+        "note": "原文：戊午，放宮人；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "170a4d2a-0f8d-5fcf-8997-340c8e4a7cbd",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "28832ee9-b429-5e2e-83d0-d7c1971b2a09"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月丙寅",
+        "claim_text": "天顺八年三月丙寅，明廷拆毁锦衣卫新设的监狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.253417+00:00",
+        "field_path": "description",
+        "id": "28832ee9-b429-5e2e-83d0-d7c1971b2a09",
+        "note": "原文：丙寅，毀錦衣衞新獄；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "6e893cd5-8e3d-5562-b7ec-76f82a87d07e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f3b517f1-c8f9-50f6-be9b-30d608e47925"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月丙寅",
+        "claim_text": "原历天顺八年三月丙寅。DDBC历表换算所据为1464-04-28至1464-04-28，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.295577+00:00",
+        "field_path": "time_original",
+        "id": "f3b517f1-c8f9-50f6-be9b-30d608e47925",
+        "note": "原文：丙寅，毀錦衣衞新獄；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "6e893cd5-8e3d-5562-b7ec-76f82a87d07e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "504494ca-8e3c-57c9-9235-d685e0540b13"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月庚午",
+        "claim_text": "天顺八年三月庚午，明廷授予彭教等人不同等第的进士资格。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.345525+00:00",
+        "field_path": "description",
+        "id": "504494ca-8e3c-57c9-9235-d685e0540b13",
+        "note": "原文：庚午，賜彭教等進士及第、出身有差；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "da934cbc-f136-5e7e-bf7e-cd4b01a1f1e6",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "47be0c95-e119-5bf9-9da9-df33996d6b66"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月庚午",
+        "claim_text": "原历天顺八年三月庚午。DDBC历表换算所据为1464-05-02至1464-05-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.385431+00:00",
+        "field_path": "time_original",
+        "id": "47be0c95-e119-5bf9-9da9-df33996d6b66",
+        "note": "原文：庚午，賜彭教等進士及第、出身有差；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "da934cbc-f136-5e7e-bf7e-cd4b01a1f1e6",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "08aee092-5dc4-57a4-a84e-b81f2ba1785f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月癸酉",
+        "claim_text": "天顺八年三月癸酉，朝廷下诏，令内阁与九卿考核各地的方面官。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.425462+00:00",
+        "field_path": "description",
+        "id": "08aee092-5dc4-57a4-a84e-b81f2ba1785f",
+        "note": "原文：癸酉，詔內閣九卿考覈天下方面官；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "04b528e8-2519-532e-a2eb-f7f8b099a88c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3b62964c-61b4-5b7e-8678-7ee8ecc18c6e"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月癸酉",
+        "claim_text": "原历天顺八年三月癸酉。DDBC历表换算所据为1464-05-05至1464-05-05，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.472546+00:00",
+        "field_path": "time_original",
+        "id": "3b62964c-61b4-5b7e-8678-7ee8ecc18c6e",
+        "note": "原文：癸酉，詔內閣九卿考覈天下方面官；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "04b528e8-2519-532e-a2eb-f7f8b099a88c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "52beed7f-4a08-55de-9ec6-47789f0257b8"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月戊寅",
+        "claim_text": "天顺八年三月戊寅，明廷重新设置团营。此前英宗在天顺元年下令撤销团营。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.515340+00:00",
+        "field_path": "description",
+        "id": "52beed7f-4a08-55de-9ec6-47789f0257b8",
+        "note": "原文：戊寅，復立團營；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "43ae6694-c67e-5d40-91e6-c01669949e8c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "03d3d2e2-71b8-5946-8aa9-6e74bd95aa9c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815；天顺八年三月戊寅",
+        "claim_text": "原历天顺八年三月戊寅。DDBC历表换算所据为1464-05-10至1464-05-10，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.549747+00:00",
+        "field_path": "time_original",
+        "id": "03d3d2e2-71b8-5946-8aa9-6e74bd95aa9c",
+        "note": "原文：戊寅，復立團營；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "status": "published",
+        "subject_id": "43ae6694-c67e-5d40-91e6-c01669949e8c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "121fc46e-7d5c-5256-9dd1-fef0596197a3"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001816；天顺八年四月癸未朔",
+        "claim_text": "天顺八年四月初一，《宪宗本纪》记这一天预计有日食，但未观测到。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.584225+00:00",
+        "field_path": "description",
+        "id": "121fc46e-7d5c-5256-9dd1-fef0596197a3",
+        "note": "原文：夏四月癸未朔，日當食，不見；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "faee898f-fc89-5269-ad84-e8b11a19bbe0",
+        "status": "published",
+        "subject_id": "52c8ba0e-84d7-5950-9d4d-2768db1d9e51",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cd9a8364-2a97-52cd-b3d9-bdcabe056d07"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001816；天顺八年四月癸未朔",
+        "claim_text": "原历天顺八年四月癸未朔。DDBC历表换算所据为1464-05-15至1464-05-15，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.622352+00:00",
+        "field_path": "time_original",
+        "id": "cd9a8364-2a97-52cd-b3d9-bdcabe056d07",
+        "note": "原文：夏四月癸未朔，日當食，不見；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "faee898f-fc89-5269-ad84-e8b11a19bbe0",
+        "status": "published",
+        "subject_id": "52c8ba0e-84d7-5950-9d4d-2768db1d9e51",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "8c43892b-93a9-5f14-88b1-fa5a42846a48"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001817；天顺八年五月丁巳",
+        "claim_text": "天顺八年五月丁巳，本纪记有强风、降雨和冰雹，朝廷下敕命群臣反省政事。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.665589+00:00",
+        "field_path": "description",
+        "id": "8c43892b-93a9-5f14-88b1-fa5a42846a48",
+        "note": "原文：五月丁巳，大風雨雹，敕羣臣修省；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd",
+        "status": "published",
+        "subject_id": "5a086d0d-6357-584f-ac5b-a60a8872a1b4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "05401e51-5d10-5681-bb0a-5e69c872e5c7"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001817；天顺八年五月丁巳",
+        "claim_text": "原历天顺八年五月丁巳。DDBC历表换算所据为1464-06-18至1464-06-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.702667+00:00",
+        "field_path": "time_original",
+        "id": "05401e51-5d10-5681-bb0a-5e69c872e5c7",
+        "note": "原文：五月丁巳，大風雨雹，敕羣臣修省；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd",
+        "status": "published",
+        "subject_id": "5a086d0d-6357-584f-ac5b-a60a8872a1b4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "97854a96-d02d-53be-a79a-288a3ef24523"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001817；天顺八年五月庚申",
+        "claim_text": "天顺八年五月庚申，明廷将明英宗朱祁镇葬于裕陵。本纪以谥号称他为睿皇帝。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.737600+00:00",
+        "field_path": "description",
+        "id": "97854a96-d02d-53be-a79a-288a3ef24523",
+        "note": "原文：庚申，葬睿皇帝於裕陵；核对说明：两卷本纪同记葬明英宗于裕陵；卷十三明确五月庚申，卷十二只在二月上谥后接叙葬裕陵。",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd",
+        "status": "published",
+        "subject_id": "aac54348-0628-5a7b-83cb-97819af70f24",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b8fe60ae-5df8-5e74-bdea-56ccdffc424c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001817；天顺八年五月庚申",
+        "claim_text": "原历天顺八年五月庚申。DDBC历表换算所据为1464-06-21至1464-06-21，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.772316+00:00",
+        "field_path": "time_original",
+        "id": "b8fe60ae-5df8-5e74-bdea-56ccdffc424c",
+        "note": "原文：庚申，葬睿皇帝於裕陵；核对说明：两卷本纪同记葬明英宗于裕陵；卷十三明确五月庚申，卷十二只在二月上谥后接叙葬裕陵。",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd",
+        "status": "published",
+        "subject_id": "aac54348-0628-5a7b-83cb-97819af70f24",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b9b2a513-9be9-551d-b921-e1d8c5e2ee27"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001817；天顺八年五月庚申",
+        "claim_text": "安葬于裕陵",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.812338+00:00",
+        "field_path": "role",
+        "id": "b9b2a513-9be9-551d-b921-e1d8c5e2ee27",
+        "note": "原文：庚申，葬睿皇帝於裕陵；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd",
+        "status": "published",
+        "subject_id": "a1c7afe5-c798-5d27-a24e-7b149a823865",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "621f85cf-17e3-59b5-a979-c802b9870009"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818；天顺八年七月壬申",
+        "claim_text": "吴氏（明宪宗皇后）获立为皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.855527+00:00",
+        "field_path": "description",
+        "id": "621f85cf-17e3-59b5-a979-c802b9870009",
+        "note": "原文：秋七月壬申，立吳氏為皇后；核对说明：卷113后妃传明确记宪宗吴皇后在天顺八年七月册立，不久被废，与卷十三相合。与宣宗吴贤妃分立。",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "status": "published",
+        "subject_id": "2e67cc24-d5b4-5673-afb9-1b7a657d1a52",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d33d4799-24da-5477-866e-f3c436c3fb54"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818；天顺八年七月壬申",
+        "claim_text": "天顺八年七月壬申，明宪宗朱见深册立吴氏为皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.905431+00:00",
+        "field_path": "description",
+        "id": "d33d4799-24da-5477-866e-f3c436c3fb54",
+        "note": "原文：秋七月壬申，立吳氏為皇后；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "status": "published",
+        "subject_id": "7157cc0d-c042-5d06-bdff-36a9e85314a3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f0fb3cf0-a962-5a64-9bb4-f8368f4285ee"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818；天顺八年七月壬申",
+        "claim_text": "原历天顺八年七月壬申。DDBC历表换算所据为1464-09-01至1464-09-01，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.945453+00:00",
+        "field_path": "time_original",
+        "id": "f0fb3cf0-a962-5a64-9bb4-f8368f4285ee",
+        "note": "原文：秋七月壬申，立吳氏為皇后；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "status": "published",
+        "subject_id": "7157cc0d-c042-5d06-bdff-36a9e85314a3",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c7ce0c7f-2a96-5e4e-8f55-0c252ce4ee3c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818；天顺八年七月壬申",
+        "claim_text": "获立为皇后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:51.985340+00:00",
+        "field_path": "role",
+        "id": "c7ce0c7f-2a96-5e4e-8f55-0c252ce4ee3c",
+        "note": "原文：秋七月壬申，立吳氏為皇后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "status": "published",
+        "subject_id": "ed09c405-e35c-52e9-b283-12cc2ef69b91",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "37d4dcc9-df83-5778-a172-0e86568991f7"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818；天顺八年七月壬申",
+        "claim_text": "册立吴氏为皇后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.025266+00:00",
+        "field_path": "role",
+        "id": "37d4dcc9-df83-5778-a172-0e86568991f7",
+        "note": "原文：秋七月壬申，立吳氏為皇后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "status": "published",
+        "subject_id": "106003d8-447a-5543-bbfa-16924f5bcf7c",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "951fbce9-992a-53fd-bfa1-f5b123aa6c22"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸未",
+        "claim_text": "天顺八年八月癸未，明宪宗朱见深参加经筵，听儒臣讲解经史。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.065318+00:00",
+        "field_path": "description",
+        "id": "951fbce9-992a-53fd-bfa1-f5b123aa6c22",
+        "note": "原文：八月癸未，御經筵；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "e1c9a1cc-caa1-5d4e-bb2d-a0102af0ac10",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "9e2cb535-faf5-5e42-a29e-2057f7ad43b2"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸未",
+        "claim_text": "原历天顺八年八月癸未。DDBC历表换算所据为1464-09-12至1464-09-12，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.105931+00:00",
+        "field_path": "time_original",
+        "id": "9e2cb535-faf5-5e42-a29e-2057f7ad43b2",
+        "note": "原文：八月癸未，御經筵；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "e1c9a1cc-caa1-5d4e-bb2d-a0102af0ac10",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "4206cbe0-fdd1-56e7-a4bf-b1e49afdca3f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸未",
+        "claim_text": "参加经筵",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.145464+00:00",
+        "field_path": "role",
+        "id": "4206cbe0-fdd1-56e7-a4bf-b1e49afdca3f",
+        "note": "原文：八月癸未，御經筵；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "e6a31640-12aa-5526-8196-b94cd17f4d0d",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "72434dcb-192a-579b-879e-e7b72349e8c3"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月甲申",
+        "claim_text": "天顺八年八月甲申，明宪宗命儒臣每天进讲。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.183658+00:00",
+        "field_path": "description",
+        "id": "72434dcb-192a-579b-879e-e7b72349e8c3",
+        "note": "原文：甲申，命儒臣日講；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "8dfd8287-9245-5414-83d4-36bb4ad21fe5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b78053ac-b3e8-591c-93bd-1ceaeda4db63"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月甲申",
+        "claim_text": "原历天顺八年八月甲申。DDBC历表换算所据为1464-09-13至1464-09-13，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.222567+00:00",
+        "field_path": "time_original",
+        "id": "b78053ac-b3e8-591c-93bd-1ceaeda4db63",
+        "note": "原文：甲申，命儒臣日講；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "8dfd8287-9245-5414-83d4-36bb4ad21fe5",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b2ef66ae-05ac-54e8-8a1e-76c793cfac42"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月甲申",
+        "claim_text": "命儒臣每天进讲",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.285632+00:00",
+        "field_path": "role",
+        "id": "b2ef66ae-05ac-54e8-8a1e-76c793cfac42",
+        "note": "原文：甲申，命儒臣日講；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "112f3e91-d5cf-52e8-80e6-8a60289ce0f0",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b948824c-6a44-5472-8fa5-b07c7935ff8d"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸卯",
+        "claim_text": "天顺八年八月癸卯，明宪宗朱见深废去吴氏的皇后身份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.325654+00:00",
+        "field_path": "description",
+        "id": "b948824c-6a44-5472-8fa5-b07c7935ff8d",
+        "note": "原文：癸卯，廢皇后吳氏；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "ad34717e-7775-5626-8947-985df52a5d53",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c63ca1b1-b7fb-5b03-958a-15802612cfcb"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸卯",
+        "claim_text": "原历天顺八年八月癸卯。DDBC历表换算所据为1464-10-02至1464-10-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.365648+00:00",
+        "field_path": "time_original",
+        "id": "c63ca1b1-b7fb-5b03-958a-15802612cfcb",
+        "note": "原文：癸卯，廢皇后吳氏；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "ad34717e-7775-5626-8947-985df52a5d53",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "515d2b4f-8339-52f6-9a94-a3064a3d61b3"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸卯",
+        "claim_text": "废去皇后之位",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.405571+00:00",
+        "field_path": "role",
+        "id": "515d2b4f-8339-52f6-9a94-a3064a3d61b3",
+        "note": "原文：癸卯，廢皇后吳氏；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "e0a3e810-0356-5c1a-bebe-ad9c6f265d5d",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a304f05c-7527-545e-b2c7-e1e311fcda87"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月癸卯",
+        "claim_text": "被废去皇后之位",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.445663+00:00",
+        "field_path": "role",
+        "id": "a304f05c-7527-545e-b2c7-e1e311fcda87",
+        "note": "原文：癸卯，廢皇后吳氏；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "728a73cb-61d9-58ea-82df-e337a75dbde1",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "360cea1c-45f3-518b-8166-917fa5808752"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月",
+        "claim_text": "牛玉被明廷下狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.485720+00:00",
+        "field_path": "description",
+        "id": "360cea1c-45f3-518b-8166-917fa5808752",
+        "note": "原文：下太監牛玉於獄；核对说明：卷113宪宗吴皇后条记太监牛玉参与选后，吴氏被废后受到处罚，与本纪相合。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "13a80a31-bd61-5fb4-919d-1d337e5dc6c5",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "fa32727a-9363-55ce-b03e-2823c3855a95"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月",
+        "claim_text": "天顺八年八月，《宪宗本纪》在记废吴皇后之后，接记太监牛玉被关入监狱。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.535444+00:00",
+        "field_path": "description",
+        "id": "fa32727a-9363-55ce-b03e-2823c3855a95",
+        "note": "原文：下太監牛玉於獄；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "25f70b10-d03d-5a2e-b859-a8f86867744e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2238460f-924b-51a4-9cb9-666db79b4081"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月",
+        "claim_text": "原历天顺八年八月。DDBC历表换算所据为1464-09-11至1464-10-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.583255+00:00",
+        "field_path": "time_original",
+        "id": "2238460f-924b-51a4-9cb9-666db79b4081",
+        "note": "原文：下太監牛玉於獄；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "25f70b10-d03d-5a2e-b859-a8f86867744e",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "49f9baa6-e474-581b-926b-212cf0a005e5"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819；天顺八年八月",
+        "claim_text": "被明廷下狱",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.627299+00:00",
+        "field_path": "role",
+        "id": "49f9baa6-e474-581b-926b-212cf0a005e5",
+        "note": "原文：下太監牛玉於獄；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "status": "published",
+        "subject_id": "ff54dd04-4995-5c94-bfe3-0b8d6fecf087",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1e2d62ab-c469-5ea3-85a0-996e9e02a733"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月壬辰",
+        "claim_text": "王氏（明宪宗孝贞纯皇后）获立为皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.661231+00:00",
+        "field_path": "description",
+        "id": "1e2d62ab-c469-5ea3-85a0-996e9e02a733",
+        "note": "原文：冬十月壬辰，立王氏為皇后；核对说明：卷113后妃传记孝贞皇后王氏在吴氏被废后册立，时间为天顺八年十月。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "794baea6-21b2-5969-845c-8465ad9b18d1",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e5196c72-9556-5831-80f6-01d840d10c2f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月壬辰",
+        "claim_text": "天顺八年十月壬辰，明宪宗朱见深册立王氏为皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.695481+00:00",
+        "field_path": "description",
+        "id": "e5196c72-9556-5831-80f6-01d840d10c2f",
+        "note": "原文：冬十月壬辰，立王氏為皇后；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "1ce57855-0ae5-59df-8264-858e232a1775",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c87bd531-553e-5abd-8de4-dc6634a1b6cd"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月壬辰",
+        "claim_text": "原历天顺八年十月壬辰。DDBC历表换算所据为1464-11-20至1464-11-20，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.759811+00:00",
+        "field_path": "time_original",
+        "id": "c87bd531-553e-5abd-8de4-dc6634a1b6cd",
+        "note": "原文：冬十月壬辰，立王氏為皇后；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "1ce57855-0ae5-59df-8264-858e232a1775",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "a3994c1a-bb1b-588f-bf5b-7e9d76837a47"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月壬辰",
+        "claim_text": "获立为皇后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:52.799353+00:00",
+        "field_path": "role",
+        "id": "a3994c1a-bb1b-588f-bf5b-7e9d76837a47",
+        "note": "原文：冬十月壬辰，立王氏為皇后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "a766d6b3-25fe-57c7-ade3-4de1cb284b0f",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f60c3715-086f-5d6f-a81a-9efe2b499df1"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月壬辰",
+        "claim_text": "册立王氏为皇后",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:53.804234+00:00",
+        "field_path": "role",
+        "id": "f60c3715-086f-5d6f-a81a-9efe2b499df1",
+        "note": "原文：冬十月壬辰，立王氏為皇后；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "36571a86-512f-5ed6-b73d-b631607b8826",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "6f3ab318-e05b-5db2-93bf-9dc5cc20f57a"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月甲辰",
+        "claim_text": "天顺八年十月甲辰，明廷制定武举办法。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:53.841345+00:00",
+        "field_path": "description",
+        "id": "6f3ab318-e05b-5db2-93bf-9dc5cc20f57a",
+        "note": "原文：甲辰，立武舉法；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "870ce71f-0381-5b5b-975b-d9347d73268a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "892bb261-db34-56ef-a134-373428e505be"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；天顺八年十月甲辰",
+        "claim_text": "原历天顺八年十月甲辰。DDBC历表换算所据为1464-12-02至1464-12-02，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:53.876519+00:00",
+        "field_path": "time_original",
+        "id": "892bb261-db34-56ef-a134-373428e505be",
+        "note": "原文：甲辰，立武舉法；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "870ce71f-0381-5b5b-975b-d9347d73268a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "105a6d19-f9ff-521a-b69a-bad86dd00890"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001821；天顺八年十二月甲辰",
+        "claim_text": "天顺八年十二月甲辰，明廷免除京师官员所犯杂项罪名的处罚。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:53.943646+00:00",
+        "field_path": "description",
+        "id": "105a6d19-f9ff-521a-b69a-bad86dd00890",
+        "note": "原文：十二月甲辰，免京官雜犯罪；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a6b8f628-3221-5a74-96b3-20c07b2a9499",
+        "status": "published",
+        "subject_id": "8fb3f7e7-7dcb-53c6-89fe-1c67f7d2576a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "29aa7b5d-ea36-5ae6-9324-bd9ecb1878e9"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001821；天顺八年十二月甲辰",
+        "claim_text": "原历天顺八年十二月甲辰。DDBC历表换算所据为1465-01-31至1465-01-31，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:53.983215+00:00",
+        "field_path": "time_original",
+        "id": "29aa7b5d-ea36-5ae6-9324-bd9ecb1878e9",
+        "note": "原文：十二月甲辰，免京官雜犯罪；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a6b8f628-3221-5a74-96b3-20c07b2a9499",
+        "status": "published",
+        "subject_id": "8fb3f7e7-7dcb-53c6-89fe-1c67f7d2576a",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "abc56fb7-22f9-5b1f-8c39-e14af5117905"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001822；天顺八年",
+        "claim_text": "天顺八年，据本纪年末汇记，南北直隶、四川、两广及荆襄多地出现动乱，道路受阻。 按原历纪年，事情发生在公元1464至1465年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.021582+00:00",
+        "field_path": "description",
+        "id": "abc56fb7-22f9-5b1f-8c39-e14af5117905",
+        "note": "原文：是年，兩畿、川、廣、荊、襄盜賊大起，道路不通；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62",
+        "status": "published",
+        "subject_id": "198c0365-fea4-5b4e-827b-4d1ab73d8013",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "87c1d20b-eb27-537e-95c9-3487c1d6ef9a"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001822；天顺八年",
+        "claim_text": "原历天顺八年。DDBC历表换算所据为1464-02-16至1465-02-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.059765+00:00",
+        "field_path": "time_original",
+        "id": "87c1d20b-eb27-537e-95c9-3487c1d6ef9a",
+        "note": "原文：是年，兩畿、川、廣、荊、襄盜賊大起，道路不通；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62",
+        "status": "published",
+        "subject_id": "198c0365-fea4-5b4e-827b-4d1ab73d8013",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1fc89ceb-baba-5da6-b303-edd7a9a00169"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001822；天顺八年",
+        "claim_text": "本纪在天顺八年年末汇记，安南和乌斯藏入贡。 按原历纪年，事情发生在公元1464至1465年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.097480+00:00",
+        "field_path": "description",
+        "id": "1fc89ceb-baba-5da6-b303-edd7a9a00169",
+        "note": "原文：安南、烏斯藏入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62",
+        "status": "published",
+        "subject_id": "0594eb1d-b3fd-5b44-be64-01c6357a826b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5d9c0288-cedc-5f77-acce-0dfbde81d699"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001822；天顺八年",
+        "claim_text": "原历天顺八年。DDBC历表换算所据为1464-02-16至1465-02-04，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.132407+00:00",
+        "field_path": "time_original",
+        "id": "5d9c0288-cedc-5f77-acce-0dfbde81d699",
+        "note": "原文：安南、烏斯藏入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62",
+        "status": "published",
+        "subject_id": "0594eb1d-b3fd-5b44-be64-01c6357a826b",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5e4df297-a234-5c6b-b542-96e7739b97b7"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；关系见本段，保留原有时间精度",
+        "claim_text": "贵妃周氏是明宪宗朱见深的生母。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.166609+00:00",
+        "field_path": "description",
+        "id": "5e4df297-a234-5c6b-b542-96e7739b97b7",
+        "note": "原文：諱見深，英宗長子也。母貴妃周氏。初名見濬。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "742258ee-b438-5777-8cf1-a67a5faeada3",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "0eb77939-5a56-5173-8c54-d6dc660aa4be"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001811；关系见本段，保留原有时间精度",
+        "claim_text": "朱见深是明英宗朱祁镇的长子。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.204661+00:00",
+        "field_path": "description",
+        "id": "0eb77939-5a56-5173-8c54-d6dc660aa4be",
+        "note": "原文：諱見深，英宗長子也。母貴妃周氏。初名見濬。；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "status": "published",
+        "subject_id": "16e24a8d-cc22-5928-8a1b-c1f208c5c4cd",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "dc2a78c7-803e-5805-bf83-78104b5fdf66"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818；关系见本段，保留原有时间精度",
+        "claim_text": "明宪宗册立吴氏为皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.243571+00:00",
+        "field_path": "description",
+        "id": "dc2a78c7-803e-5805-bf83-78104b5fdf66",
+        "note": "原文：秋七月壬申，立吳氏為皇后；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "status": "published",
+        "subject_id": "db25b349-5a83-5544-8a56-c0ca15fc23ff",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2206c354-2b29-595d-a19f-4dedde492945"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820；关系见本段，保留原有时间精度",
+        "claim_text": "明宪宗册立王氏为皇后。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:32:54.275016+00:00",
+        "field_path": "description",
+        "id": "2206c354-2b29-595d-a19f-4dedde492945",
+        "note": "原文：冬十月壬辰，立王氏為皇后；核对说明：保存原文明示的关系方向及本段语境。",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "status": "published",
+        "subject_id": "0eec03a9-dd6f-5bff-a298-619e189c7612",
+        "subject_table": "person_relationship"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-17T10:09:24.538589+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18",
+        "note": "《明史》卷十三，段落 mingshi-2f603db3d81e-p001811；EPUB电子本，纸本及异文待核",
+        "source_type": "primary",
+        "title": "《明史》卷13·宪宗身份",
+        "url": "https://github.com/greed-216/histree/blob/cb439a169cc71dd4e5983450b2fd8fe1696ec89f/content/books/mingshi/vol-109/table-first/part-02/sources/mingshi-2f603db3d81e-p001811/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "a8a9d09f57097a9a21d614e565a84c084b828b3e37db613824b033823aa315b7",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18"
+      },
+      "row": {
+        "archive_blob_sha256": "4ca637b04a9af1fe48b3e633e97aced70fd6830d0375b3face5a251559704442",
+        "archive_commit": "cb439a169cc71dd4e5983450b2fd8fe1696ec89f",
+        "archive_url": "https://github.com/greed-216/histree/blob/cb439a169cc71dd4e5983450b2fd8fe1696ec89f/content/books/mingshi/vol-109/table-first/part-02/sources/mingshi-2f603db3d81e-p001811/source.txt",
+        "archive_url_sha256": "a8a9d09f57097a9a21d614e565a84c084b828b3e37db613824b033823aa315b7",
+        "content": "憲宗繼天凝道誠明仁敬崇文肅武宏德聖孝純皇帝，諱見深，英宗長子也。母貴妃周氏。初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深。",
+        "content_sha256": "4ca637b04a9af1fe48b3e633e97aced70fd6830d0375b3face5a251559704442",
+        "created_at": "2026-11-17T10:10:41.614934+00:00",
+        "source_id": "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001811"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83364,
+        "char_start": 83278,
+        "content": "憲宗繼天凝道誠明仁敬崇文肅武宏德聖孝純皇帝，諱見深，英宗長子也。母貴妃周氏。初名見濬。英宗留瓦剌，皇太后命立為皇太子。景泰三年，廢為沂王。天順元年，復立為皇太子，改名見深。",
+        "content_sha256": "4ca637b04a9af1fe48b3e633e97aced70fd6830d0375b3face5a251559704442",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001811",
+        "kind": "body",
+        "ordinal": 1796,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.085528+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001813",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001813",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001813/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "547f97881a8d208af5cf264a3a32fadb4d581fe1b58f55c635d006ec5e1d6251",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3"
+      },
+      "row": {
+        "archive_blob_sha256": "b3312c913528e296a5b743c72590a7bf1e51f347a2a4401ac71c58f76cd45df5",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001813/source.txt",
+        "archive_url_sha256": "547f97881a8d208af5cf264a3a32fadb4d581fe1b58f55c635d006ec5e1d6251",
+        "content": "天順八年正月，英宗崩。乙亥，即皇帝位。以明年為成化元年，大赦天下。免明年田租三之一。浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之。下番使者、緝事官校皆召還。",
+        "content_sha256": "b3312c913528e296a5b743c72590a7bf1e51f347a2a4401ac71c58f76cd45df5",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "3989f8d1-a8f6-563c-90f0-1bc699d931b3"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001813"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83464,
+        "char_start": 83372,
+        "content": "天順八年正月，英宗崩。乙亥，即皇帝位。以明年為成化元年，大赦天下。免明年田租三之一。浙江、江西、福建、陝西、臨清鎮守內外官，諸邊鎮守內官，正統間所無者悉罷之。下番使者、緝事官校皆召還。",
+        "content_sha256": "b3312c913528e296a5b743c72590a7bf1e51f347a2a4401ac71c58f76cd45df5",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001813",
+        "kind": "body",
+        "ordinal": 1798,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.139407+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001814",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001814",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001814/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "422ac34fd0c0328039eca33a3a56a44fb7e2250098a165a494df5c075bd3cc78",
+        "source_id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24"
+      },
+      "row": {
+        "archive_blob_sha256": "24afdd787ea68c3d5895bdd9b2c8db5658771d1958e6e4febad2fdba9d4f0a01",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001814/source.txt",
+        "archive_url_sha256": "422ac34fd0c0328039eca33a3a56a44fb7e2250098a165a494df5c075bd3cc78",
+        "content": "二月庚子，始以內批授官。",
+        "content_sha256": "24afdd787ea68c3d5895bdd9b2c8db5658771d1958e6e4febad2fdba9d4f0a01",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001814"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83478,
+        "char_start": 83466,
+        "content": "二月庚子，始以內批授官。",
+        "content_sha256": "24afdd787ea68c3d5895bdd9b2c8db5658771d1958e6e4febad2fdba9d4f0a01",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001814",
+        "kind": "body",
+        "ordinal": 1799,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "4089fc2e-eacd-509a-9200-efffa8678cbe"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.175258+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4089fc2e-eacd-509a-9200-efffa8678cbe",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001815",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001815",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001815/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "9a3a7f2bb12a1d19563414e3c1a372fcaf4ebca945513557dda66639719d57ae",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe"
+      },
+      "row": {
+        "archive_blob_sha256": "42e10e5e5787ddbab151bab530c44371b67f74a730aa2dad1581a7bda3f0278c",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001815/source.txt",
+        "archive_url_sha256": "9a3a7f2bb12a1d19563414e3c1a372fcaf4ebca945513557dda66639719d57ae",
+        "content": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后。戊午，放宮人。丙寅，毀錦衣衞新獄。庚午，賜彭教等進士及第、出身有差。癸酉，詔內閣九卿考覈天下方面官。戊寅，復立團營。",
+        "content_sha256": "42e10e5e5787ddbab151bab530c44371b67f74a730aa2dad1581a7bda3f0278c",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "4089fc2e-eacd-509a-9200-efffa8678cbe"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001815"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83563,
+        "char_start": 83480,
+        "content": "三月甲寅朔，尊皇后為慈懿皇太后，貴妃周氏為皇太后。戊午，放宮人。丙寅，毀錦衣衞新獄。庚午，賜彭教等進士及第、出身有差。癸酉，詔內閣九卿考覈天下方面官。戊寅，復立團營。",
+        "content_sha256": "42e10e5e5787ddbab151bab530c44371b67f74a730aa2dad1581a7bda3f0278c",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001815",
+        "kind": "body",
+        "ordinal": 1800,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "faee898f-fc89-5269-ad84-e8b11a19bbe0"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.215734+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "faee898f-fc89-5269-ad84-e8b11a19bbe0",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001816",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001816",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001816/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "9d65518f118e9c83a51ec09879e1323d13efcd7858d51d843bf662fd767d6500",
+        "source_id": "faee898f-fc89-5269-ad84-e8b11a19bbe0"
+      },
+      "row": {
+        "archive_blob_sha256": "94d4585404f48a4093be7d1398f92393296c26648462bab1c021d1809f704f37",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001816/source.txt",
+        "archive_url_sha256": "9d65518f118e9c83a51ec09879e1323d13efcd7858d51d843bf662fd767d6500",
+        "content": "夏四月癸未朔，日當食，不見。",
+        "content_sha256": "94d4585404f48a4093be7d1398f92393296c26648462bab1c021d1809f704f37",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "faee898f-fc89-5269-ad84-e8b11a19bbe0"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001816"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83579,
+        "char_start": 83565,
+        "content": "夏四月癸未朔，日當食，不見。",
+        "content_sha256": "94d4585404f48a4093be7d1398f92393296c26648462bab1c021d1809f704f37",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001816",
+        "kind": "body",
+        "ordinal": 1801,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.251332+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001817",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001817",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001817/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "c0f5c424fe935844a34a54f80eac6e2c2569dd5cac67559ea7846b8b7258f845",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd"
+      },
+      "row": {
+        "archive_blob_sha256": "a618fd3548d532a430c3df507f522bdf3e6ba87c85c2b16ac1eb14bd777c5132",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001817/source.txt",
+        "archive_url_sha256": "c0f5c424fe935844a34a54f80eac6e2c2569dd5cac67559ea7846b8b7258f845",
+        "content": "五月丁巳，大風雨雹，敕羣臣修省。庚申，葬睿皇帝於裕陵。",
+        "content_sha256": "a618fd3548d532a430c3df507f522bdf3e6ba87c85c2b16ac1eb14bd777c5132",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "4ebcc125-a51e-5513-bcc0-b31731b2b8fd"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001817"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83608,
+        "char_start": 83581,
+        "content": "五月丁巳，大風雨雹，敕羣臣修省。庚申，葬睿皇帝於裕陵。",
+        "content_sha256": "a618fd3548d532a430c3df507f522bdf3e6ba87c85c2b16ac1eb14bd777c5132",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001817",
+        "kind": "body",
+        "ordinal": 1802,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "80c84337-fabe-525b-a1bb-4dde72494222"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.295592+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "80c84337-fabe-525b-a1bb-4dde72494222",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001818",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001818",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001818/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "7d1049e2acb4417d5a95d1d6cda5eee3434310b140de4a0d2d84146b11a42d84",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222"
+      },
+      "row": {
+        "archive_blob_sha256": "d2848ff43e30f0da84b2a710680324741da190c5e86252b17d671f787e7fafa9",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001818/source.txt",
+        "archive_url_sha256": "7d1049e2acb4417d5a95d1d6cda5eee3434310b140de4a0d2d84146b11a42d84",
+        "content": "秋七月壬申，立吳氏為皇后。",
+        "content_sha256": "d2848ff43e30f0da84b2a710680324741da190c5e86252b17d671f787e7fafa9",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "80c84337-fabe-525b-a1bb-4dde72494222"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001818"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83623,
+        "char_start": 83610,
+        "content": "秋七月壬申，立吳氏為皇后。",
+        "content_sha256": "d2848ff43e30f0da84b2a710680324741da190c5e86252b17d671f787e7fafa9",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001818",
+        "kind": "body",
+        "ordinal": 1803,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.335662+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001819",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001819",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001819/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "301efd4fad5b26bfb123962eddfd0d01009cd022a884de2e0c19536c23e6cc98",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875"
+      },
+      "row": {
+        "archive_blob_sha256": "4944c0e080123a162e6dfcd584dd95d19ef54968c97328603eabbdbbdeb66ea2",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001819/source.txt",
+        "archive_url_sha256": "301efd4fad5b26bfb123962eddfd0d01009cd022a884de2e0c19536c23e6cc98",
+        "content": "八月癸未，御經筵。甲申，命儒臣日講。癸卯，廢皇后吳氏。下太監牛玉於獄。",
+        "content_sha256": "4944c0e080123a162e6dfcd584dd95d19ef54968c97328603eabbdbbdeb66ea2",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "0f96f2e0-98d6-5b53-a710-6a6c32b7a875"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001819"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83660,
+        "char_start": 83625,
+        "content": "八月癸未，御經筵。甲申，命儒臣日講。癸卯，廢皇后吳氏。下太監牛玉於獄。",
+        "content_sha256": "4944c0e080123a162e6dfcd584dd95d19ef54968c97328603eabbdbbdeb66ea2",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001819",
+        "kind": "body",
+        "ordinal": 1804,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "d6b48b78-b997-569c-8dc2-517954fb28a5"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.395650+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d6b48b78-b997-569c-8dc2-517954fb28a5",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001820",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001820",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001820/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "987dd2af4d03be576a2062d9460dd2bee6da41c9f21963424be0ee048b4f9c1b",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5"
+      },
+      "row": {
+        "archive_blob_sha256": "c682d8082e83580608fa3b94fff218d4f6ffec167299dc0a7ed88ed1327f101a",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001820/source.txt",
+        "archive_url_sha256": "987dd2af4d03be576a2062d9460dd2bee6da41c9f21963424be0ee048b4f9c1b",
+        "content": "冬十月壬辰，立王氏為皇后。甲辰，立武舉法。",
+        "content_sha256": "c682d8082e83580608fa3b94fff218d4f6ffec167299dc0a7ed88ed1327f101a",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "d6b48b78-b997-569c-8dc2-517954fb28a5"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001820"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83683,
+        "char_start": 83662,
+        "content": "冬十月壬辰，立王氏為皇后。甲辰，立武舉法。",
+        "content_sha256": "c682d8082e83580608fa3b94fff218d4f6ffec167299dc0a7ed88ed1327f101a",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001820",
+        "kind": "body",
+        "ordinal": 1805,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a6b8f628-3221-5a74-96b3-20c07b2a9499"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.443325+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a6b8f628-3221-5a74-96b3-20c07b2a9499",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001821",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001821",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001821/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "dd2eb8219cfb5917931af3a90937f6b829d1356b6b2bafca3ede016beda5dd8e",
+        "source_id": "a6b8f628-3221-5a74-96b3-20c07b2a9499"
+      },
+      "row": {
+        "archive_blob_sha256": "6cfb7fdd7f873e2a32d8983bf20dbffc6ce33465733f146413e0fd81964884bb",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001821/source.txt",
+        "archive_url_sha256": "dd2eb8219cfb5917931af3a90937f6b829d1356b6b2bafca3ede016beda5dd8e",
+        "content": "十二月甲辰，免京官雜犯罪。",
+        "content_sha256": "6cfb7fdd7f873e2a32d8983bf20dbffc6ce33465733f146413e0fd81964884bb",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "a6b8f628-3221-5a74-96b3-20c07b2a9499"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001821"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83698,
+        "char_start": 83685,
+        "content": "十二月甲辰，免京官雜犯罪。",
+        "content_sha256": "6cfb7fdd7f873e2a32d8983bf20dbffc6ce33465733f146413e0fd81964884bb",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001821",
+        "kind": "body",
+        "ordinal": 1806,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "80000e44-3758-5d1d-8335-9c04ae485c62"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:32:42.485315+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "80000e44-3758-5d1d-8335-9c04ae485c62",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001822",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001822",
+        "url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001822/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "cfb8ea77af8e763583b87d9cf6c2a767e26cd8e447c3934a4bd9651bb6f511d0",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62"
+      },
+      "row": {
+        "archive_blob_sha256": "de487e0a076fb06447bdc00a3a40fa33729b73151b914867c835ea6e86604f06",
+        "archive_commit": "44c39912101acb2800ec55a68dfa0866532cc386",
+        "archive_url": "https://github.com/greed-216/histree/blob/44c39912101acb2800ec55a68dfa0866532cc386/content/books/mingshi/vol-013/from-start/part-01/sources/mingshi-2f603db3d81e-p001822/source.txt",
+        "archive_url_sha256": "cfb8ea77af8e763583b87d9cf6c2a767e26cd8e447c3934a4bd9651bb6f511d0",
+        "content": "是年，兩畿、川、廣、荊、襄盜賊大起，道路不通。安南、烏斯藏入貢。",
+        "content_sha256": "de487e0a076fb06447bdc00a3a40fa33729b73151b914867c835ea6e86604f06",
+        "created_at": "2026-11-18T19:32:59.564281+00:00",
+        "source_id": "80000e44-3758-5d1d-8335-9c04ae485c62"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001822"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 83732,
+        "char_start": 83700,
+        "content": "是年，兩畿、川、廣、荊、襄盜賊大起，道路不通。安南、烏斯藏入貢。",
+        "content_sha256": "de487e0a076fb06447bdc00a3a40fa33729b73151b914867c835ea6e86604f06",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001822",
+        "kind": "body",
+        "ordinal": 1807,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "f925d2ce-3044-591c-bfc8-92130e2031e9"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:10:56.689200+00:00",
+        "description": "正统十四年八月己巳，皇太后孙氏命立明英宗之子朱见深为皇太子。",
+        "dynasty": "明",
+        "end_year": 1449,
+        "id": "f925d2ce-3044-591c-bfc8-92130e2031e9",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1449,
+        "status": "published",
+        "tags": [],
+        "time_original": "正统十四年八月己巳",
+        "title": "皇太后命立朱见深为皇太子"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "94d0abc9-e10e-51d4-85fa-aa77f04aada5"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:31:04.097237+00:00",
+        "description": "景泰三年五月甲午，明景帝朱祁钰废去朱见深的皇太子身份，改封他为沂王。",
+        "dynasty": "明",
+        "end_year": 1452,
+        "id": "94d0abc9-e10e-51d4-85fa-aa77f04aada5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1452,
+        "status": "published",
+        "tags": [],
+        "time_original": "景泰三年五月甲午",
+        "title": "明景帝废皇太子朱见深为沂王"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "a50d8de7-1dfa-57c6-b8db-aa619c2d9bf7"
+      },
+      "row": {
+        "created_at": "2026-11-18T18:56:37.556516+00:00",
+        "description": "天顺元年三月己巳，明英宗朱祁镇重新将长子朱见深立为皇太子。",
+        "dynasty": "明",
+        "end_year": 1457,
+        "id": "a50d8de7-1dfa-57c6-b8db-aa619c2d9bf7",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1457,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺元年三月己巳",
+        "title": "明英宗恢复朱见深皇太子身份"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "40387135-db7b-5005-9e3b-247adb2f9f99"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.583367+00:00",
+        "description": "《宪宗本纪》记朱见深初名见濬，天顺元年再次获立为皇太子后改名为见深。 按原历纪年，事情发生在公元1457至1458年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "40387135-db7b-5005-9e3b-247adb2f9f99",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺元年",
+        "title": "皇太子改名朱见深"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5bdf8e1a-0acf-500d-b2e8-6a29ce39df3a"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:24:42.114532+00:00",
+        "description": "天顺八年正月庚午，明英宗朱祁镇去世。《明史》本纪记其年三十八。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "5bdf8e1a-0acf-500d-b2e8-6a29ce39df3a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年正月庚午",
+        "title": "明英宗朱祁镇去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e65a10ac-60f8-5022-877a-79d06ac9de30"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:36.508479+00:00",
+        "description": "天順8年（1464年）正月，朱见深即皇帝位。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "e65a10ac-60f8-5022-877a-79d06ac9de30",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天順8年（1464年）正月",
+        "title": "朱见深即皇帝位"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d4f44891-c75a-5855-bcaf-6f7281e582fd"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.623445+00:00",
+        "description": "天顺八年正月，明宪宗朱见深在继位后宣布次年改元成化，大赦天下，并减免次年田租的三分之一。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "d4f44891-c75a-5855-bcaf-6f7281e582fd",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年正月",
+        "title": "明宪宗命次年改元成化，颁赦并预减田租"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "f08676d0-1b36-53db-b5b3-bcb4f9fdba34"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.660206+00:00",
+        "description": "天顺八年正月，明宪宗撤去浙江、江西、福建、陕西、临清的镇守内外官和各边镇守内官中超出正统时期旧制的职位。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "f08676d0-1b36-53db-b5b3-bcb4f9fdba34",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年正月",
+        "title": "明宪宗撤销多地超出正统旧制的镇守官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6e143123-5d62-5045-9a37-ef9647fd5a83"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.695566+00:00",
+        "description": "天顺八年正月，朝廷命在外的下番使者和负责侦缉的官校返回。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "6e143123-5d62-5045-9a37-ef9647fd5a83",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年正月",
+        "title": "明廷召回出海使者和缉事官校"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "d05c0d90-1156-5f44-aae0-bab9e200223e"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.733334+00:00",
+        "description": "天顺八年二月庚子，《宪宗本纪》记明廷开始通过宫中批示授予官职。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "d05c0d90-1156-5f44-aae0-bab9e200223e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年二月庚子",
+        "title": "明廷开始用宫中批示授官"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "10b57cf4-0f43-5eb5-83a3-be85cc9c0680"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.773867+00:00",
+        "description": "天顺八年三月初一，明宪宗尊先帝皇后钱氏为慈懿皇太后。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "10b57cf4-0f43-5eb5-83a3-be85cc9c0680",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月甲寅朔",
+        "title": "明宪宗尊钱皇后为慈懿皇太后"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e227a037-2531-5b22-a13d-69e9ff92bcb3"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.813557+00:00",
+        "description": "天顺八年三月初一，明宪宗尊自己的生母、先帝贵妃周氏为皇太后。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "e227a037-2531-5b22-a13d-69e9ff92bcb3",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月甲寅朔",
+        "title": "明宪宗尊生母周贵妃为皇太后"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "170a4d2a-0f8d-5fcf-8997-340c8e4a7cbd"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.853639+00:00",
+        "description": "天顺八年三月戊午，明廷下令让宫人离宫。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "170a4d2a-0f8d-5fcf-8997-340c8e4a7cbd",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月戊午",
+        "title": "明廷下令放宫人离宫"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "6e893cd5-8e3d-5562-b7ec-76f82a87d07e"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.903581+00:00",
+        "description": "天顺八年三月丙寅，明廷拆毁锦衣卫新设的监狱。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "6e893cd5-8e3d-5562-b7ec-76f82a87d07e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月丙寅",
+        "title": "明廷拆毁锦衣卫新设的监狱"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "da934cbc-f136-5e7e-bf7e-cd4b01a1f1e6"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.940462+00:00",
+        "description": "天顺八年三月庚午，明廷授予彭教等人不同等第的进士资格。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "da934cbc-f136-5e7e-bf7e-cd4b01a1f1e6",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月庚午",
+        "title": "明廷授予彭教等人进士资格"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "04b528e8-2519-532e-a2eb-f7f8b099a88c"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:44.983377+00:00",
+        "description": "天顺八年三月癸酉，朝廷下诏，令内阁与九卿考核各地的方面官。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "04b528e8-2519-532e-a2eb-f7f8b099a88c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月癸酉",
+        "title": "明廷令内阁和九卿考核各地高级官员"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "43ae6694-c67e-5d40-91e6-c01669949e8c"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.023561+00:00",
+        "description": "天顺八年三月戊寅，明廷重新设置团营。此前英宗在天顺元年下令撤销团营。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "43ae6694-c67e-5d40-91e6-c01669949e8c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年三月戊寅",
+        "title": "明廷恢复设置团营"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "52c8ba0e-84d7-5950-9d4d-2768db1d9e51"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.063367+00:00",
+        "description": "天顺八年四月初一，《宪宗本纪》记这一天预计有日食，但未观测到。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "52c8ba0e-84d7-5950-9d4d-2768db1d9e51",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年四月癸未朔",
+        "title": "本纪记四月初一预计日食未见"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "5a086d0d-6357-584f-ac5b-a60a8872a1b4"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.113986+00:00",
+        "description": "天顺八年五月丁巳，本纪记有强风、降雨和冰雹，朝廷下敕命群臣反省政事。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "5a086d0d-6357-584f-ac5b-a60a8872a1b4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年五月丁巳",
+        "title": "大风、降雨和冰雹后，明廷下敕修省"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "aac54348-0628-5a7b-83cb-97819af70f24"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:24:42.191582+00:00",
+        "description": "《英宗后纪》在上尊谥条后记明英宗朱祁镇葬于裕陵。《宪宗本纪》记安葬的确日为天顺八年五月庚申。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "aac54348-0628-5a7b-83cb-97819af70f24",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年五月庚申",
+        "title": "明廷将明英宗朱祁镇安葬于裕陵"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7157cc0d-c042-5d06-bdff-36a9e85314a3"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.153567+00:00",
+        "description": "天顺八年七月壬申，明宪宗朱见深册立吴氏为皇后。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "7157cc0d-c042-5d06-bdff-36a9e85314a3",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年七月壬申",
+        "title": "明宪宗立吴氏为皇后"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e1c9a1cc-caa1-5d4e-bb2d-a0102af0ac10"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.193583+00:00",
+        "description": "天顺八年八月癸未，明宪宗朱见深参加经筵，听儒臣讲解经史。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "e1c9a1cc-caa1-5d4e-bb2d-a0102af0ac10",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年八月癸未",
+        "title": "明宪宗出席经筵"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8dfd8287-9245-5414-83d4-36bb4ad21fe5"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.233693+00:00",
+        "description": "天顺八年八月甲申，明宪宗命儒臣每天进讲。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "8dfd8287-9245-5414-83d4-36bb4ad21fe5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年八月甲申",
+        "title": "明宪宗命儒臣每天进讲"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ad34717e-7775-5626-8947-985df52a5d53"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.273342+00:00",
+        "description": "天顺八年八月癸卯，明宪宗朱见深废去吴氏的皇后身份。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "ad34717e-7775-5626-8947-985df52a5d53",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年八月癸卯",
+        "title": "明宪宗废去吴氏皇后之位"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "25f70b10-d03d-5a2e-b859-a8f86867744e"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.313398+00:00",
+        "description": "天顺八年八月，《宪宗本纪》在记废吴皇后之后，接记太监牛玉被关入监狱。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "25f70b10-d03d-5a2e-b859-a8f86867744e",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年八月",
+        "title": "明廷将太监牛玉关入监狱"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "1ce57855-0ae5-59df-8264-858e232a1775"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.353565+00:00",
+        "description": "天顺八年十月壬辰，明宪宗朱见深册立王氏为皇后。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "1ce57855-0ae5-59df-8264-858e232a1775",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年十月壬辰",
+        "title": "明宪宗立王氏为皇后"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "870ce71f-0381-5b5b-975b-d9347d73268a"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.401650+00:00",
+        "description": "天顺八年十月甲辰，明廷制定武举办法。",
+        "dynasty": "明",
+        "end_year": 1464,
+        "id": "870ce71f-0381-5b5b-975b-d9347d73268a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1464,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年十月甲辰",
+        "title": "明廷制定武举办法"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "8fb3f7e7-7dcb-53c6-89fe-1c67f7d2576a"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.468818+00:00",
+        "description": "天顺八年十二月甲辰，明廷免除京师官员所犯杂项罪名的处罚。",
+        "dynasty": "明",
+        "end_year": 1465,
+        "id": "8fb3f7e7-7dcb-53c6-89fe-1c67f7d2576a",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1465,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年十二月甲辰",
+        "title": "明廷赦免京官的杂犯罪"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "198c0365-fea4-5b4e-827b-4d1ab73d8013"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.505944+00:00",
+        "description": "天顺八年，据本纪年末汇记，南北直隶、四川、两广及荆襄多地出现动乱，道路受阻。 按原历纪年，事情发生在公元1464至1465年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "198c0365-fea4-5b4e-827b-4d1ab73d8013",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年",
+        "title": "本纪记两畿及川、广、荆、襄多地动乱，道路受阻"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "0594eb1d-b3fd-5b44-be64-01c6357a826b"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:32:45.543627+00:00",
+        "description": "本纪在天顺八年年末汇记，安南和乌斯藏入贡。 按原历纪年，事情发生在公元1464至1465年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "0594eb1d-b3fd-5b44-be64-01c6357a826b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "天顺八年",
+        "title": "安南和乌斯藏入贡"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "0f96f2e0-98d6-5b53-a710-6a6c32b7a875": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001819",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "3522fe3e-2d85-5b84-9ce4-f888cbbf4b18": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001811",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "3989f8d1-a8f6-563c-90f0-1bc699d931b3": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001813",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "4089fc2e-eacd-509a-9200-efffa8678cbe": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001815",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "4ebcc125-a51e-5513-bcc0-b31731b2b8fd": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001817",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "80000e44-3758-5d1d-8335-9c04ae485c62": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001822",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "80c84337-fabe-525b-a1bb-4dde72494222": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001818",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "a6b8f628-3221-5a74-96b3-20c07b2a9499": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001821",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "a7654ff5-c40f-5ac6-bd09-0fb3d8212d24": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001814",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "d6b48b78-b997-569c-8dc2-517954fb28a5": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001820",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "faee898f-fc89-5269-ad84-e8b11a19bbe0": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001816",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 13
+}

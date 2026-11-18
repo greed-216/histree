@@ -1,0 +1,433 @@
+[
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000343",
+    "status": "reviewed",
+    "note": "核对EPUB卷一导航卷界。",
+    "observations": [
+      "全站阅读用导航标题，无史实。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [],
+    "claim_keys": [],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000344",
+    "status": "reviewed",
+    "note": "核对卷题为本纪第一《太祖一》。",
+    "observations": [
+      "原卷题与后文太祖身份相接，[1]指目录校勘注。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [],
+    "claim_keys": [],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000345",
+    "status": "reviewed",
+    "note": "核对朱元璋姓名、字号、父母和家中排行。",
+    "observations": [
+      "梦中授药、诞生红光、邻里误以为火等是本纪祥瑞叙事，留原文阅读。祖先迁徙只交代顺序，未给年代。"
+    ],
+    "relationship_audit": [
+      {
+        "quote": "父世珍，始徙濠州之鍾離。生四子，太祖其季也。",
+        "person_a_key": "person_朱元璋",
+        "person_b_key": "person_朱世珍",
+        "relationship_key": "relationship_person_朱元璋_person_朱世珍_儿子",
+        "decision": "add",
+        "reason": "朱元璋是朱世珍四个儿子中最小的一个。"
+      },
+      {
+        "quote": "母陳氏。",
+        "person_a_key": "person_朱元璋",
+        "person_b_key": "person_陈氏（朱元璋母）",
+        "relationship_key": "relationship_person_朱元璋_person_陈氏（朱元璋母）_儿子",
+        "decision": "add",
+        "reason": "陈氏是朱元璋的母亲。"
+      }
+    ],
+    "subject_keys": [
+      "person_朱世珍",
+      "person_朱元璋",
+      "person_陈氏（朱元璋母）",
+      "relationship_person_朱元璋_person_朱世珍_儿子",
+      "relationship_person_朱元璋_person_陈氏（朱元璋母）_儿子"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_person_朱世珍_01",
+      "claim_mingshi-v001-from-start-01_person_陈氏（朱元璋母）_01",
+      "claim_mingshi-v001-from-start-01_relationship_person_朱元璋_person_朱世珍_儿子_01",
+      "claim_mingshi-v001-from-start-01_relationship_person_朱元璋_person_陈氏（朱元璋母）_儿子_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000346",
+    "status": "reviewed",
+    "note": "核对至正四年为下文年条。",
+    "observations": [
+      "年标题用于定位，无独立事件。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [],
+    "claim_keys": [],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000347",
+    "status": "pending_textual_review",
+    "note": "整理至正四年灾荒、葬亲、入寺与此后外出归寺。",
+    "observations": [
+      "刘福通、徐寿辉、徐州诸将及方国珍为总结其他年份的乱局，不能放入至正四年。已见《续资治通鉴》相关事件，候选的范围异同还需逐一对照。"
+    ],
+    "relationship_audit": [
+      {
+        "quote": "父母兄相繼歿",
+        "decision": "event_only",
+        "reason": "父母与朱元璋的明示亲属边已由卷首建立；此处兄长未具名，保留家人相继去世的叙述。"
+      }
+    ],
+    "subject_keys": [
+      "event_mingshi_v001_p000347_burial",
+      "event_mingshi_v001_p000347_disaster",
+      "event_mingshi_v001_p000347_monk",
+      "event_mingshi_v001_p000347_travel",
+      "participation_event_mingshi_v001_p000347_burial_person_刘继祖（朱元璋同乡）",
+      "participation_event_mingshi_v001_p000347_burial_person_朱元璋",
+      "participation_event_mingshi_v001_p000347_monk_person_朱元璋",
+      "participation_event_mingshi_v001_p000347_travel_person_朱元璋",
+      "person_刘继祖（朱元璋同乡）"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_刘继祖（朱元璋同乡）_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_disaster_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_disaster_02",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_burial_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_burial_02",
+      "claim_mingshi-v001-from-start-01_participation_event_mingshi_v001_p000347_burial_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_mingshi_v001_p000347_burial_person_刘继祖（朱元璋同乡）_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_monk_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_monk_02",
+      "claim_mingshi-v001-from-start-01_participation_event_mingshi_v001_p000347_monk_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_travel_01",
+      "claim_mingshi-v001-from-start-01_event_mingshi_v001_p000347_travel_02",
+      "claim_mingshi-v001-from-start-01_participation_event_mingshi_v001_p000347_travel_person_朱元璋_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000348",
+    "status": "reviewed",
+    "note": "核对至正十二年为濠州叙事的年界。",
+    "observations": [
+      "年标题用于定位，无独立事件。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [],
+    "claim_keys": [],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000349",
+    "status": "pending_textual_review",
+    "note": "核对郭孙起兵、朱元璋投军、任亲兵与婚姻。",
+    "observations": [
+      "卜问及形貌是入军故事的叙述，不另立可证行动。徹里不花与元末将领的异译对应待核。朱元璋在郭孙间调解，原文无逐次日期。"
+    ],
+    "relationship_audit": [
+      {
+        "quote": "子興奇其狀貌，留為親兵。",
+        "person_a_key": "person_朱元璋",
+        "person_b_key": "person_郭子兴",
+        "relationship_key": "relation_xztj_person_朱元璋_部属_person_郭子兴",
+        "decision": "reuse",
+        "reason": "朱元璋到濠州投奔郭子兴后，担任他的亲兵。"
+      },
+      {
+        "quote": "遂妻以所撫馬公女",
+        "person_a_key": "person_马氏（郭子兴养女）",
+        "person_b_key": "person_郭子兴",
+        "relationship_key": "relation_xztj_person_马氏（郭子兴养女）_养女_person_郭子兴",
+        "decision": "reuse",
+        "reason": "马公的女儿由郭子兴抚养。"
+      },
+      {
+        "quote": "所撫馬公女",
+        "person_a_key": "person_马氏（郭子兴养女）",
+        "person_b_key": "person_马公（郭子兴故交）",
+        "relationship_key": "relation_xztj_person_马氏（郭子兴养女）_女儿_person_马公（郭子兴故交）",
+        "decision": "reuse",
+        "reason": "后来的高皇后是马公的女儿。"
+      },
+      {
+        "quote": "遂妻以所撫馬公女，即高皇后也。",
+        "person_a_key": "person_马氏（郭子兴养女）",
+        "person_b_key": "person_朱元璋",
+        "relationship_key": "relation_xztj_person_马氏（郭子兴养女）_妻子_person_朱元璋",
+        "decision": "reuse",
+        "reason": "郭子兴把马氏嫁给朱元璋。"
+      }
+    ],
+    "subject_keys": [
+      "event_xztj_v210_p035291",
+      "event_xztj_v210_p035317",
+      "event_xztj_v210_p035319",
+      "participation_event_xztj_v210_p035291_person_孙德崖",
+      "participation_event_xztj_v210_p035291_person_郭子兴",
+      "participation_event_xztj_v210_p035317_person_朱元璋",
+      "participation_event_xztj_v210_p035317_person_郭子兴",
+      "participation_event_xztj_v210_p035319_person_朱元璋",
+      "participation_event_xztj_v210_p035319_person_郭子兴",
+      "participation_event_xztj_v210_p035319_person_马氏（郭子兴养女）",
+      "person_孙德崖",
+      "person_郭子兴",
+      "person_马公（郭子兴故交）",
+      "person_马氏（郭子兴养女）",
+      "relation_xztj_person_朱元璋_部属_person_郭子兴",
+      "relation_xztj_person_马氏（郭子兴养女）_养女_person_郭子兴",
+      "relation_xztj_person_马氏（郭子兴养女）_女儿_person_马公（郭子兴故交）",
+      "relation_xztj_person_马氏（郭子兴养女）_妻子_person_朱元璋"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_person_孙德崖_01",
+      "claim_mingshi-v001-from-start-01_person_马氏（郭子兴养女）_01",
+      "claim_mingshi-v001-from-start-01_person_马公（郭子兴故交）_01",
+      "claim_mingshi-v001-from-start-01_relation_xztj_person_朱元璋_部属_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_relation_xztj_person_马氏（郭子兴养女）_养女_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_relation_xztj_person_马氏（郭子兴养女）_女儿_person_马公（郭子兴故交）_01",
+      "claim_mingshi-v001-from-start-01_relation_xztj_person_马氏（郭子兴养女）_妻子_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v210_p035291_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v210_p035291_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035291_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035291_person_孙德崖_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v210_p035317_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v210_p035317_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035317_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035317_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v210_p035319_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v210_p035319_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035319_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035319_person_马氏（郭子兴养女）_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v210_p035319_person_朱元璋_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000350",
+    "status": "pending_textual_review",
+    "note": "整理徐州失守、彭赵入濠、拘押和救出郭子兴。",
+    "observations": [
+      "彭大及赵均用与旧事件参与者同一。李二逃亡后死亡须核两书所指时点及死亡证据，先保留本纪原文。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [
+      "event_xztj_v211_p035368",
+      "event_xztj_v211_p035373",
+      "event_xztj_v211_p035374",
+      "participation_event_xztj_v211_p035373_person_老彭",
+      "participation_event_xztj_v211_p035373_person_赵君用",
+      "participation_event_xztj_v211_p035374_person_孙德崖",
+      "participation_event_xztj_v211_p035374_person_朱元璋",
+      "participation_event_xztj_v211_p035374_person_老彭",
+      "participation_event_xztj_v211_p035374_person_赵君用",
+      "participation_event_xztj_v211_p035374_person_郭子兴",
+      "person_李二",
+      "person_老彭",
+      "person_赵君用"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_老彭_01",
+      "claim_mingshi-v001-from-start-01_person_赵君用_01",
+      "claim_mingshi-v001-from-start-01_person_李二_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035368_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035368_02",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035373_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035373_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035373_person_老彭_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035373_person_赵君用_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035374_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035374_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035374_person_老彭_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035374_person_赵君用_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035374_person_孙德崖_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035374_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035374_person_朱元璋_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000351",
+    "status": "reviewed",
+    "note": "核对贾鲁围濠和朱元璋、郭子兴的抵御。",
+    "observations": [
+      "同一围攻已有记录，朱与郭共同抵御据本纪补充。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [
+      "event_xztj_v211_p035386",
+      "participation_event_xztj_v211_p035386_person_朱元璋",
+      "participation_event_xztj_v211_p035386_person_贾鲁",
+      "participation_event_xztj_v211_p035386_person_郭子兴",
+      "person_贾鲁"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_贾鲁_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035386_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035386_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035386_person_贾鲁_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035386_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035386_person_郭子兴_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000352",
+    "status": "reviewed",
+    "note": "核对至正十三年为下文年条。",
+    "observations": [
+      "年标题用于定位，无独立事件。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [],
+    "claim_keys": [],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000353",
+    "status": "pending_textual_review",
+    "note": "整理濠州解围、募兵任镇抚、定远招降、横涧山夜袭和途中遇李善长。",
+    "observations": [
+      "横涧山对手在两书作张知院、缪大亨，先保留异称，不直接定为同人。攻克滁州是否为现有攻滁条目及其年份待核后另补。"
+    ],
+    "relationship_audit": [
+      {
+        "quote": "道遇定遠人李善長，與語大悅，遂與俱攻滁州，下之。",
+        "decision": "event_only",
+        "reason": "本句支持相识和同行，不独立证明幕府任命，现有任命和幕僚边仍由《续资治通鉴》原出处支持。"
+      }
+    ],
+    "subject_keys": [
+      "event_xztj_v211_p035430",
+      "event_xztj_v211_p035436",
+      "event_xztj_v211_p035437",
+      "event_xztj_v211_p035438",
+      "event_xztj_v211_p035448",
+      "participation_event_xztj_v211_p035430_person_贾鲁",
+      "participation_event_xztj_v211_p035436_person_朱元璋",
+      "participation_event_xztj_v211_p035436_person_郭子兴",
+      "participation_event_xztj_v211_p035437_person_徐达",
+      "participation_event_xztj_v211_p035437_person_朱元璋",
+      "participation_event_xztj_v211_p035437_person_汤和",
+      "participation_event_xztj_v211_p035437_person_费聚",
+      "participation_event_xztj_v211_p035438_person_朱元璋",
+      "participation_event_xztj_v211_p035448_person_朱元璋",
+      "participation_event_xztj_v211_p035448_person_李善长",
+      "person_徐达",
+      "person_李善长",
+      "person_汤和",
+      "person_费聚"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_徐达_01",
+      "claim_mingshi-v001-from-start-01_person_汤和_01",
+      "claim_mingshi-v001-from-start-01_person_费聚_01",
+      "claim_mingshi-v001-from-start-01_person_李善长_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035430_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035430_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035430_person_贾鲁_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035436_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035436_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035436_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035436_person_郭子兴_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035437_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035437_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035437_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035437_person_徐达_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035437_person_汤和_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035437_person_费聚_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035438_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035438_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035438_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035448_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035448_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035448_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035448_person_李善长_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000354",
+    "status": "reviewed",
+    "note": "核对张士诚据高邮、自称诚王。",
+    "observations": [
+      "本纪提供独立年次，已有事件叙述的其他行动沿原证据。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [
+      "event_xztj_v211_p035434",
+      "participation_event_xztj_v211_p035434_person_张士诚",
+      "person_张士诚"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_张士诚_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035434_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v211_p035434_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v211_p035434_person_张士诚_01"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000355",
+    "status": "reviewed",
+    "note": "核对至正十四年为高邮、六合之战的年界。",
+    "observations": [
+      "年标题用于定位，无独立事件。"
+    ],
+    "relationship_audit": [],
+    "subject_keys": [],
+    "claim_keys": [],
+    "publication_status": "not_published"
+  },
+  {
+    "paragraph_id": "mingshi-2f603db3d81e-p000356",
+    "status": "pending_textual_review",
+    "note": "整理脱脱高邮胜张士诚与朱元璋、耿再成解滁州危局。",
+    "observations": [
+      "脱脱后被解除兵权只能沿上下文找既有事件，不能直接套本段十月。朱元璋遣父老交涉时所称守城缘由属于当事人的说法。"
+    ],
+    "relationship_audit": [
+      {
+        "quote": "與耿再成軍瓦梁壘，救之。",
+        "decision": "event_only",
+        "reason": "双方参加本次战事，角色记入事件参与。"
+      }
+    ],
+    "subject_keys": [
+      "event_xztj_v212_p035529",
+      "event_xztj_v212_p035531",
+      "participation_event_xztj_v212_p035529_person_张士诚",
+      "participation_event_xztj_v212_p035529_person_托克托（满济勒噶台子）",
+      "participation_event_xztj_v212_p035531_person_朱元璋",
+      "participation_event_xztj_v212_p035531_person_耿再成",
+      "person_托克托（满济勒噶台子）",
+      "person_耿再成"
+    ],
+    "claim_keys": [
+      "claim_mingshi-v001-from-start-01_person_托克托（满济勒噶台子）_01",
+      "claim_mingshi-v001-from-start-01_person_耿再成_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v212_p035529_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v212_p035529_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v212_p035529_person_托克托（满济勒噶台子）_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v212_p035529_person_张士诚_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v212_p035531_01",
+      "claim_mingshi-v001-from-start-01_event_xztj_v212_p035531_02",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v212_p035531_person_朱元璋_01",
+      "claim_mingshi-v001-from-start-01_participation_event_xztj_v212_p035531_person_耿再成_01"
+    ],
+    "publication_status": "not_published"
+  }
+]

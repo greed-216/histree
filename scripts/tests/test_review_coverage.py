@@ -42,6 +42,20 @@ class ReviewCoverageTests(unittest.TestCase):
  def test_changed_batch_never_becomes_completed_coverage(self):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder);batch=self.fixture(root);batch.write_text('{}');result=MODULE.project(root);self.assertEqual(result['coverage'],[]);self.assertEqual(len(result['skipped']),1)
+ def test_multiple_parts_under_one_workflow_resolve_by_receipt_hash(self):
+  with tempfile.TemporaryDirectory() as folder:
+   root=Path(folder);batch=self.fixture(root);base=batch.parent.parent.parent
+   part=base/'part-01';batch.parent.rename(part)
+   second=base/'part-02';second.mkdir();value=b'{"sources":[],"batch":"second"}'
+   (second/'content-batch.json').write_bytes(value)
+   second_sha=hashlib.sha256(value).hexdigest()
+   (second/'publication-mysql.json').write_text(json.dumps({'verified':True,'batch_sha256':second_sha}))
+   audit=base/'completion-audit.json';data=json.loads(audit.read_text())
+   data['batches'][0]['path']='part-01';data['batches'].append({'path':'part-02','batch_sha256':second_sha})
+   audit.write_text(json.dumps(data))
+   self.assertEqual(len(MODULE.project(root)['coverage']),1)
+   (second/'content-batch.json').write_text('{}')
+   self.assertEqual(MODULE.project(root)['coverage'],[])
  def test_scope_filters_leave_other_books_and_volumes_out(self):
   with tempfile.TemporaryDirectory() as folder:
    root=Path(folder);self.fixture(root)

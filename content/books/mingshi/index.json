@@ -3,7 +3,7 @@
   "book": "明史",
   "author": "张廷玉等",
   "source_version": "2f603db3d81e",
-  "active_ingestion_workflow": "table_first_workflow",
+  "active_ingestion_workflow": "from_start_workflow",
   "table_first_workflow": {
     "progress": "content/books/mingshi/vol-109/table-first/progress.json",
     "volumes": [
@@ -19,9 +19,37 @@
     "completion_summary": "content/books/mingshi/table-first-completion.json"
   },
   "from_start_workflow": {
-    "status": "not_started",
-    "next_volume": 1,
-    "next_paragraph": "mingshi-2f603db3d81e-p000343"
+    "status": "in_progress",
+    "next_volume": 2,
+    "next_paragraph": "mingshi-2f603db3d81e-p000479",
+    "progress": "content/books/mingshi/from-start/progress.json",
+    "scope_volumes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "last_source_reviewed_volume": 1
   },
   "book_complete": false
 }

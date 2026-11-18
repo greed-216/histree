@@ -221,6 +221,41 @@ class Tests(unittest.TestCase):
         self.assertEqual(len(plan['changes']),1)
         self.assertTrue(all('/unrelated/' not in p for p in plan['scanned_verified_batches']))
 
+    def test_indexed_foreign_hosts_are_verified_and_reused(self):
+        other=self.root/'content/books/unrelated/vol-001/part-01'
+        other.parent.mkdir(parents=True)
+        self.old.rename(other)
+        pkt=self.read(other/'packet.json');pkt['book_key']='unrelated'
+        self.write(other/'packet.json',pkt)
+        plan,_,_=M.prepare(self.root,self.cur)
+        self.assertFalse(plan['changes'])
+        index=self.root/f'content/books/{self.book_key}/source-index.json'
+        self.write(index,{'claims':[{'source_key':self.key,'batch_files':[str((other/'content-batch.json').relative_to(self.root))]}]})
+        plan,before,after=M.prepare(self.root,self.cur)
+        self.assertEqual(after[0]['url'],self.source['url'])
+        self.assertEqual(after[0]['authored_claim_citation'],self.para['citation'])
+        self.assertTrue(M.apply_local(self.root,plan,before,after))
+
+    def test_legacy_supplement_title_is_bounded_to_its_original_host(self):
+        para=dict(book_key='mingshi',citation='《明史》卷一，段落 mingshi-test',id='mingshi-test')
+        source=dict(title='卷211必要身份、断句、官序及异文补证',note=para['citation'])
+        manifest=dict(purpose='scoped_identity_or_textual_check')
+        packet=dict(book_key='xu-zizhi-tongjian',volume=211,supplementary_paragraphs=[para])
+        self.assertTrue(M.legacy_supplement_title(source,manifest,para,packet))
+        self.assertFalse(M.legacy_supplement_title(source,manifest,para,dict(packet,volume=212)))
+        self.assertFalse(M.legacy_supplement_title(source,{},para,packet))
+        self.assertFalse(M.legacy_supplement_title(dict(source,note='wrong'),manifest,para,packet))
+
+    def test_legacy_ming_note_may_keep_section_citation_only_with_matching_title(self):
+        para=dict(book_key='mingshi',source_version='2f603db3d81e',id='mingshi-test',
+                  citation='《明史》卷二，段落 mingshi-test')
+        src=dict(title='明史·卷2·太祖二·洪武元年即位与任相',note=para['citation'])
+        manifest=dict(purpose='scoped_identity_or_textual_check')
+        packet=dict(book_key='mingshi',supplementary_paragraphs=[para])
+        self.assertTrue(M.legacy_ming_supplement_note(src,manifest,para,packet,'太祖二'))
+        self.assertFalse(M.legacy_ming_supplement_note(src,manifest,para,packet,'太祖三'))
+        self.assertFalse(M.legacy_ming_supplement_note(dict(src,note='wrong'),manifest,para,packet,'太祖二'))
+
     def test_bom_is_hashed_and_preserved_as_a_real_character(self):
         self.tearDown();self.bom='\ufeff';self.setUp()
         plan,before,after=M.prepare(self.root,self.cur)

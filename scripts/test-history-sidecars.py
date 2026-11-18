@@ -278,6 +278,16 @@ class SourceTests(unittest.TestCase):
             self.assertFalse(S.packet_text_matches_snapshot(raw,dict(para,**change)))
         for bad in [raw.replace('元年','元\t年'),raw.replace('元年','元 年'),raw.replace('\n','\r\n'),raw+'\ufeff','\ufeff'+raw]:
             self.assertFalse(S.packet_text_matches_snapshot(bad,para))
+    def test_ming_annotation_space_transform_does_not_relax_raw_quotes(self):
+        para = dict(id='mingshi-2f603db3d81e-p000472', book_key='mingshi',
+                    source_version='2f603db3d81e', kind='annotation', text='↑ 太祖年原作二十四。')
+        raw = '↑ 太祖年 原作二十四。'
+        self.assertTrue(S.packet_text_matches_snapshot(raw, para))
+        self.assertFalse(S.exact_text_with_structural_edges(raw, para['text']))
+        for change in [dict(kind='body'), dict(kind='table_row'), dict(source_version='other'),
+                       dict(text='↑ 太祖年原作二十五。')]:
+            self.assertFalse(S.packet_text_matches_snapshot(raw, dict(para, **change)))
+        self.assertFalse(S.packet_text_matches_snapshot(raw.replace('年 ', '年\t'), para))
     def rewrite_first_raw_fixture(self,text):
         packet=json.loads((self.b/'packet.json').read_bytes());para=packet['paragraphs'][0];pid=para['id']
         manifest=json.loads((self.b/'sources/manifest.json').read_bytes());m=next(x for x in manifest if x['paragraph_id']==pid)

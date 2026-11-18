@@ -1,0 +1,211 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 6,
+    "inserts": {},
+    "protected_rows": 4,
+    "membership_guards": 4
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "857ca945-24c9-5089-9e20-2f429a75f007"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T12:34:16.465074+00:00",
+        "description": "卷三校勘记指出，黎季犛杀害安南君主陈日焜的一句误入洪武二十二年条。《明史》卷三二一《安南传》将此事记在建文元年。卷三校勘记另引《国榷》，记为建文元年十二月，即公元1400年初。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文元年（《明史》卷321《安南传》）；《国榷》作建文元年十二月，见本纪卷三校勘记",
+        "title": "本纪校记辨明黎季犛杀害陈日焜的年代"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "31f60343-6c1d-5360-980a-ce361e5c0be9"
+      },
+      "full_after": {
+        "citation": "《明史》卷3·本纪第三·太祖三·mingshi-2f603db3d81e-p000767；洪武二十二年",
+        "claim_text": "卷三校勘记指出，黎季犛杀害安南君主陈日焜的一句误入洪武二十二年条。《明史》卷三二一《安南传》将此事记在建文元年。卷三校勘记另引《国榷》，记为建文元年十二月，即公元1400年初。",
+        "confidence": null,
+        "created_at": "2026-11-18T12:34:33.297724+00:00",
+        "field_path": "description",
+        "id": "31f60343-6c1d-5360-980a-ce361e5c0be9",
+        "note": "原文：安南黎季犛復弒其主日[3]。；核对说明：《明史》卷三校勘记判洪武二十二年此句为衍文。《安南传》系于建文元年，校记所据《国榷》系于建文元年十二月，原历该月换算为公元1400年1月5日至2月2日。",
+        "source_id": "27064539-a058-5493-a362-9c41cd1faec7",
+        "status": "published",
+        "subject_id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "31f60343-6c1d-5360-980a-ce361e5c0be9"
+      },
+      "full_after": {
+        "claim_id": "31f60343-6c1d-5360-980a-ce361e5c0be9",
+        "note_sha256": "ce8dc935273435b093e3691bb4d90afeada01c74ea339037e309315d9925bd1c",
+        "quote_text": "安南黎季犛復弒其主日[3]。",
+        "review_note": "《明史》卷三校勘记判洪武二十二年此句为衍文。《安南传》系于建文元年，校记所据《国榷》系于建文元年十二月，原历该月换算为公元1400年1月5日至2月2日。",
+        "review_state": "deferred"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "8237cdd6-ca41-5046-b86c-5b5b2426f8a1"
+      },
+      "full_after": {
+        "citation": "《明史》卷3·本纪第三·太祖三·mingshi-2f603db3d81e-p000767；洪武二十二年",
+        "claim_text": "《明史》卷三校勘记判洪武二十二年此句为衍文。《安南传》系于建文元年，校记所据《国榷》系于建文元年十二月，原历该月换算为公元1400年1月5日至2月2日。",
+        "confidence": null,
+        "created_at": "2026-11-18T12:34:33.367409+00:00",
+        "field_path": "time_original",
+        "id": "8237cdd6-ca41-5046-b86c-5b5b2426f8a1",
+        "note": "原文：安南黎季犛復弒其主日[3]。；核对说明：《明史》卷三校勘记判洪武二十二年此句为衍文。《安南传》系于建文元年，校记所据《国榷》系于建文元年十二月，原历该月换算为公元1400年1月5日至2月2日。",
+        "source_id": "27064539-a058-5493-a362-9c41cd1faec7",
+        "status": "published",
+        "subject_id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "8237cdd6-ca41-5046-b86c-5b5b2426f8a1"
+      },
+      "full_after": {
+        "claim_id": "8237cdd6-ca41-5046-b86c-5b5b2426f8a1",
+        "note_sha256": "ce8dc935273435b093e3691bb4d90afeada01c74ea339037e309315d9925bd1c",
+        "quote_text": "安南黎季犛復弒其主日[3]。",
+        "review_note": "《明史》卷三校勘记判洪武二十二年此句为衍文。《安南传》系于建文元年，校记所据《国榷》系于建文元年十二月，原历该月换算为公元1400年1月5日至2月2日。",
+        "review_state": "deferred"
+      }
+    },
+    {
+      "table": "event_dating",
+      "identity": {
+        "id": "db170871-c54f-5072-9767-b1ebfdd92a21"
+      },
+      "full_after": {
+        "id": "db170871-c54f-5072-9767-b1ebfdd92a21",
+        "event_id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "claim_id": "8237cdd6-ca41-5046-b86c-5b5b2426f8a1",
+        "claim_sha256": "b4e7b785b30ecb6ec28f4ed30958c64d117562c1ad54c7902953551d3eea0fb3",
+        "earliest_year": null,
+        "latest_year": null,
+        "precision_kind": "unknown",
+        "era_key": null,
+        "basis": "《明史》卷三校勘记判洪武二十二年此句为衍文。《安南传》系于建文元年，校记所据《国榷》系于建文元年十二月，原历该月换算为公元1400年1月5日至2月2日。",
+        "review_state": "reviewed"
+      }
+    },
+    {
+      "table": "event_dating",
+      "identity": {
+        "id": "22985207-d6a6-5ca3-b360-bcb55051e209"
+      },
+      "full_after": {
+        "id": "22985207-d6a6-5ca3-b360-bcb55051e209",
+        "event_id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "claim_id": "ce506894-518c-55db-bfd8-5c0969700278",
+        "claim_sha256": "488d2cb108699d3700711abd8dc64df3fa714d5e7737c915faf9794a237da821",
+        "earliest_year": 1400,
+        "latest_year": 1400,
+        "precision_kind": "year",
+        "era_key": null,
+        "basis": "校记指出原条衍出，转引《国榷》建文元年十二月，DDBC历表换算自1400-01-05至1400-02-02，原未载具体日。",
+        "review_state": "reviewed"
+      }
+    },
+    {
+      "table": "source",
+      "identity": {
+        "id": "27064539-a058-5493-a362-9c41cd1faec7"
+      },
+      "full_after": {
+        "author": null,
+        "created_at": "2026-11-18T12:34:11.364515+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "27064539-a058-5493-a362-9c41cd1faec7",
+        "note": "《明史》卷3·本纪第三·太祖三·mingshi-2f603db3d81e-p000767",
+        "source_type": "primary",
+        "title": "明史·卷3·太祖三·mingshi-2f603db3d81e-p000767",
+        "url": "https://github.com/greed-216/histree/blob/08fb9d1d0939f42bf5e34a4bdccff1c61f2a04b4/content/books/mingshi/vol-003/from-start/part-04/sources/mingshi-2f603db3d81e-p000767/source.txt"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "731c2710-6afb-5c9b-9f06-6333e24b097b"
+      },
+      "full_after": {
+        "citation": "《明史》卷3·本纪第三·太祖三·mingshi-2f603db3d81e-p000871；《安南传》建文元年，校记所引《国榷》建文元年十二月",
+        "claim_text": "卷三校记认定洪武二十二年条所载黎季犛弑日焜是衍文。校记列出卷321《安南传》的建文元年及《国榷》的建文元年十二月。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:08:49.150237+00:00",
+        "field_path": "description",
+        "id": "731c2710-6afb-5c9b-9f06-6333e24b097b",
+        "note": "原文：安南黎季犛復弒其主日焜 此句衍。本書卷三二一安南傳把這事繫在建文元年，國榷卷一一頁八一三把這事繫在建文元年十二月，是。；核对说明：原文、校记和《安南传》分开保留。本纪旧年条不可用于确定实际时间。",
+        "source_id": "e5e1b74c-db1e-56c1-b7af-251b9a4092a3",
+        "status": "published",
+        "subject_id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "ce506894-518c-55db-bfd8-5c0969700278"
+      },
+      "full_after": {
+        "citation": "《明史》卷3·本纪第三·太祖三·mingshi-2f603db3d81e-p000871；校记所引建文元年十二月",
+        "claim_text": "校记指出原条衍出，转引《国榷》建文元年十二月，DDBC历表换算自1400-01-05至1400-02-02，原未载具体日。",
+        "confidence": null,
+        "created_at": "2026-11-18T13:08:49.190852+00:00",
+        "field_path": "time_original",
+        "id": "ce506894-518c-55db-bfd8-5c0969700278",
+        "note": "原文：安南黎季犛復弒其主日焜 此句衍。本書卷三二一安南傳把這事繫在建文元年，國榷卷一一頁八一三把這事繫在建文元年十二月，是。；核对说明：按校记引述提供出处；不将洪武二十二年计入时间轴。",
+        "source_id": "e5e1b74c-db1e-56c1-b7af-251b9a4092a3",
+        "status": "published",
+        "subject_id": "857ca945-24c9-5089-9e20-2f429a75f007",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "50ff85faf61fe8ea952bdcbff2f1a3bd6636274fa854f2ef055d3526cf89f58a",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "50ff85faf61fe8ea952bdcbff2f1a3bd6636274fa854f2ef055d3526cf89f58a",
+    "claims": [
+      "31f60343-6c1d-5360-980a-ce361e5c0be9",
+      "8237cdd6-ca41-5046-b86c-5b5b2426f8a1"
+    ],
+    "event": "857ca945-24c9-5089-9e20-2f429a75f007",
+    "year_in_quoted_guoque": 1400,
+    "path": "/evidence/event/857ca945-24c9-5089-9e20-2f429a75f007#claim-31f60343-6c1d-5360-980a-ce361e5c0be9",
+    "checked_at": "2026-11-18T13:17:02.985Z"
+  }
+}

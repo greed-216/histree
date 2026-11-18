@@ -1,0 +1,186 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 3,
+    "inserts": {},
+    "protected_rows": 3,
+    "membership_guards": 9
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "a4bd8a3c-cf54-5e80-a5a8-821f9adc1093"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:06.773085+00:00",
+        "description": "嘉靖八年十一月庚子，明廷召桂萼回京入阁。按原历干支换算，为公元1529年12月18日。",
+        "dynasty": "明",
+        "end_year": 1529,
+        "id": "a4bd8a3c-cf54-5e80-a5a8-821f9adc1093",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1529,
+        "status": "published",
+        "tags": [],
+        "time_original": "嘉靖八年十一月庚子（公元1529年12月18日，延伸格里历）",
+        "title": "桂萼被召回恢复原职"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "5b3da3d8-66a5-564f-b83d-01e360d3b38f"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:06.935144+00:00",
+        "description": "嘉靖十年十一月丁丑，朝廷下诏召张孚敬回京入阁。次年三月抵京另有年表条目。按原历干支换算，为公元1532年1月14日。",
+        "dynasty": "明",
+        "end_year": 1532,
+        "id": "5b3da3d8-66a5-564f-b83d-01e360d3b38f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1532,
+        "status": "published",
+        "tags": [],
+        "time_original": "嘉靖十年十一月丁丑（公元1532年1月14日，延伸格里历）",
+        "title": "张璁被召回恢复原职"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "069ec8c9-7147-549d-b924-f7ac2a510fbf"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:07.773623+00:00",
+        "description": "嘉靖十七年十二月乙卯，内阁大学士李时去世。按原历干支换算，为公元1539年1月15日。",
+        "dynasty": "明",
+        "end_year": 1539,
+        "id": "069ec8c9-7147-549d-b924-f7ac2a510fbf",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1539,
+        "status": "published",
+        "tags": [],
+        "time_original": "嘉靖十七年十二月乙卯（公元1539年1月15日，延伸格里历）",
+        "title": "李时去世"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "a6f2eb78-05ed-5b57-9553-d687b6abc262"
+      },
+      "full_after": {
+        "citation": "《明史》卷17·本纪第十七·世宗一·mingshi-2f603db3d81e-p002557；嘉靖八年十一月庚子",
+        "claim_text": "嘉靖八年十一月庚子，朝廷召桂萼回京入阁。",
+        "confidence": null,
+        "created_at": "2026-11-18T21:52:18.700111+00:00",
+        "field_path": "description",
+        "id": "a6f2eb78-05ed-5b57-9553-d687b6abc262",
+        "note": "原文：召桂萼復入閣；核对说明：本纪与年表均记嘉靖八年十一月桂萼奉召复出入阁，本纪补庚子。年表单列九月复原衔而仍致仕。",
+        "source_id": "10fb3344-2518-55a7-9997-c90b0464daed",
+        "status": "published",
+        "subject_id": "a4bd8a3c-cf54-5e80-a5a8-821f9adc1093",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "dd6463ad-a91c-50c9-b1e3-063d0061adbf"
+      },
+      "full_after": {
+        "citation": "《明史》卷17·本纪第十七·世宗一·mingshi-2f603db3d81e-p002580；嘉靖十年十一月丁丑",
+        "claim_text": "嘉靖十年十一月丁丑，明世宗召张孚敬回京入阁。宰辅年表另记嘉靖十一年三月实际抵京。",
+        "confidence": null,
+        "created_at": "2026-11-18T21:58:36.604574+00:00",
+        "field_path": "description",
+        "id": "dd6463ad-a91c-50c9-b1e3-063d0061adbf",
+        "note": "原文：召張孚敬復入閣；核对说明：同为嘉靖十年十一月张孚敬奉召回阁，本纪补丁丑；翌年抵京另记。",
+        "source_id": "52839d2e-c75c-53b8-bac7-1abf6695a0f8",
+        "status": "published",
+        "subject_id": "5b3da3d8-66a5-564f-b83d-01e360d3b38f",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "98c04a36-dfdb-57c3-9a7a-3dcc80d11589"
+      },
+      "full_after": {
+        "citation": "《明史》卷17·本纪第十七·世宗一·mingshi-2f603db3d81e-p002653；嘉靖十七年十二月乙卯",
+        "claim_text": "嘉靖十七年十二月乙卯，内阁大学士李时去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T22:07:42.182134+00:00",
+        "field_path": "description",
+        "id": "98c04a36-dfdb-57c3-9a7a-3dcc80d11589",
+        "note": "原文：乙卯，李時卒；核对说明：两处同载嘉靖十七年十二月李时去世，本纪补乙卯。",
+        "source_id": "1c6607f8-3f86-56db-bb7a-a28c6e5641f9",
+        "status": "published",
+        "subject_id": "069ec8c9-7147-549d-b924-f7ac2a510fbf",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "cb396202a67520b3b1663df01b0923b0562cb26bf6c0080ec7d8324e263e05ed",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "cb396202a67520b3b1663df01b0923b0562cb26bf6c0080ec7d8324e263e05ed",
+    "observations": [
+      {
+        "event_id": "a4bd8a3c-cf54-5e80-a5a8-821f9adc1093",
+        "claim_id": "a6f2eb78-05ed-5b57-9553-d687b6abc262",
+        "year": 1529,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      },
+      {
+        "event_id": "5b3da3d8-66a5-564f-b83d-01e360d3b38f",
+        "claim_id": "dd6463ad-a91c-50c9-b1e3-063d0061adbf",
+        "year": 1532,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      },
+      {
+        "event_id": "069ec8c9-7147-549d-b924-f7ac2a510fbf",
+        "claim_id": "98c04a36-dfdb-57c3-9a7a-3dcc80d11589",
+        "year": 1539,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      }
+    ],
+    "checked_at": "2026-11-18T22:09:13.056Z"
+  }
+}

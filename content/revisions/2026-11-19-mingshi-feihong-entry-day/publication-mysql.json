@@ -1,0 +1,74 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 1,
+    "inserts": {},
+    "protected_rows": 1,
+    "membership_guards": 3
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "7af2186c-2ae0-529f-b6c6-fd3129259cac"
+      },
+      "full_after": {
+        "created_at": "2026-11-17T10:09:40.643047+00:00",
+        "description": "正德六年十二月癸巳，礼部尚书费宏兼任文渊阁大学士，入阁参与政务。按原历干支换算，为公元1512年1月15日。",
+        "dynasty": "明",
+        "end_year": 1512,
+        "id": "7af2186c-2ae0-529f-b6c6-fd3129259cac",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1512,
+        "status": "published",
+        "tags": [],
+        "time_original": "正德六年十二月癸巳（公元1512年1月15日，延伸格里历）",
+        "title": "费宏升任礼部尚书，兼文渊阁大学士并入阁"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "577e4480-6b2a-5407-91f7-c77753c25282"
+      },
+      "full_after": {
+        "citation": "《明史》卷16·本纪第十六·武宗·mingshi-2f603db3d81e-p002342；正德六年十二月癸巳",
+        "claim_text": "正德六年十二月癸巳，礼部尚书费宏兼任文渊阁大学士，入阁参与政务。",
+        "confidence": null,
+        "created_at": "2026-11-18T21:06:16.869823+00:00",
+        "field_path": "description",
+        "id": "577e4480-6b2a-5407-91f7-c77753c25282",
+        "note": "原文：十二月癸巳，禮部尚書費宏兼文淵閣大學士，預機務；核对说明：宰辅年表和本纪均记正德六年十二月费宏兼文渊阁大学士参与政务。本纪补癸巳，核为1512年1月15日。",
+        "source_id": "e1e7eab5-795e-525a-935a-61bd7b15453f",
+        "status": "published",
+        "subject_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "3adba51b461e47dd4857d5b2b44ce810435be64402ec721f5f992fc2bf19550b",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "3adba51b461e47dd4857d5b2b44ce810435be64402ec721f5f992fc2bf19550b",
+    "event_id": "7af2186c-2ae0-529f-b6c6-fd3129259cac",
+    "claim_id": "577e4480-6b2a-5407-91f7-c77753c25282",
+    "year": 1512,
+    "source_quote_verified": true,
+    "year_timeline_verified": true,
+    "checked_at": "2026-11-18T21:13:12.010Z"
+  }
+}

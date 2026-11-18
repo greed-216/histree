@@ -102,4 +102,29 @@ describe('Reading layout is independent of immutable text and evidence', () => {
     expect(verifiedTableContexts(ming, [id], [source], 'other')).toEqual({});
     expect(readingLayout('mingshi', 'different')).toBeNull();
   });
+  it('preserves seven-office positions after missing EPUB empty cells', () => {
+    const ming = readingLayout('mingshi', '2f603db3d81e')!;
+    const source = {
+      id: 'mingshi-2f603db3d81e-p019148',
+      kind: 'table_row',
+      content:
+        '李冕七月，侍郎試。十月為江西布政司試參政。\t趙本去年十一月任，以後無考。\t呂宗藝去年十一月任，以後無考。\t薛祥二月任。\t安然正月任，五月致仕。',
+    };
+    const row = readingRow(source, ming, 'mingshi-2f603db3d81e-s0112');
+    expect(row).toMatchObject({ columns: 8, calendar_year: 1380 });
+    expect(
+      ming.tables[ming.paragraphs[source.id].table_id].rows[
+        ming.paragraphs[source.id].row_index
+      ].map((cell) => cell[0]),
+    ).toEqual([3, 4, 5, 6, 7]);
+    expect(
+      readingRow(
+        { ...source, content: source.content.replace('趙本', '趙某') },
+        ming,
+      ),
+    ).toBeUndefined();
+    expect(
+      readingRow(source, ming, 'mingshi-2f603db3d81e-s0113'),
+    ).toBeUndefined();
+  });
 });

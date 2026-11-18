@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import type { LibraryDivision, LibraryTableRow } from '@histree/shared-types';
 import shiji from '../../data/shiji-reading-layout.json';
 import mingshi from '../../data/mingshi-reading-layout.json';
+import mingshiOffices from '../../data/mingshi-office-reading-layout.json';
 
 type Paragraph = Record<string, unknown>;
 type Table = {
@@ -53,7 +54,14 @@ type Layout = {
     }
   >;
 };
-const layouts = [shiji, mingshi] as unknown as Layout[];
+const layouts = [
+  shiji,
+  {
+    ...mingshi,
+    tables: { ...mingshi.tables, ...mingshiOffices.tables },
+    paragraphs: { ...mingshi.paragraphs, ...mingshiOffices.paragraphs },
+  },
+] as unknown as Layout[];
 
 export function readingAnnotations(
   p: Paragraph,

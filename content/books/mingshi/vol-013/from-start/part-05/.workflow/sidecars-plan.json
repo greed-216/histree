@@ -1,0 +1,1686 @@
+{
+  "batch_dir": "content/books/mingshi/vol-013/from-start/part-05",
+  "batch_key": "mingshi-v013-from-start-05",
+  "batch_sha256": "37b9067dbbf75ebcb2645c05e9214f55e86e80417382a27d11392e437b9ac3db",
+  "book_key": "mingshi",
+  "bulk_execution": {
+    "batch_size": 100,
+    "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+    "mode": "bounded-materialized-phases"
+  },
+  "constraints": {
+    "canonical_updates": false,
+    "claim_structure_review_state": "recorded/deferred: actual schema enum",
+    "ddl": false,
+    "event_dating_review_state": "reviewed"
+  },
+  "excluded_structural_headings": [
+    "mingshi-2f603db3d81e-p001857"
+  ],
+  "format_version": 1,
+  "implementation_sha256": "f588e309762101436779f1f524a5e438512bc67428228db1d70626312ae4b755",
+  "inserts": {
+    "claim_structure": [
+      {
+        "claim_id": "046e7d1d-080d-5442-92de-85076b9bd8f6",
+        "note_sha256": "cd746fb00f82ea6df601a1a4b87e4bdb1acda9e4a1490b3c87201a88d7aba11e",
+        "quote_text": "五年春正月乙丑，大祀天地於南郊",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b58b0145-9b04-555d-87f4-ebac9ea2b055",
+        "note_sha256": "647b5acfaf62d2c46e08e7f4ac902a6b5ada49401f3d693dbfb066b590334e46",
+        "quote_text": "五年春正月乙丑，大祀天地於南郊",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b6dea3ec-bca1-50f7-b34d-58aef1d2f65c",
+        "note_sha256": "a8aaaa4ff9cc03a064bf40b1c249029d5252b67f8bd4c877dcd1e2206a4a6f25",
+        "quote_text": "五年春正月乙丑，大祀天地於南郊",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "46c34d48-2f90-52a9-a7de-8ff612f1093f",
+        "note_sha256": "fee1333ab0cc4ac51339d99bc8ab04916b647f4ed0fb0cf7786e2511329cf952",
+        "quote_text": "五年春正月乙丑，大祀天地於南郊",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c07d450a-7b2e-53b7-94fd-fdc35d3fce55",
+        "note_sha256": "5cab1446d1cdb4467b2ca1c3fb1e6d3f452d1222409dd5d63aedf173bf34fa28",
+        "quote_text": "三月辛丑，賜張昇等進士及第、出身有差",
+        "review_note": "卷184张昇传记其在成化五年考中进士第一，后来历任翰林修撰、礼部尚书。保留昇字。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "bd829d71-d616-5667-864c-0ee2b19646dc",
+        "note_sha256": "fa1273d69f9dbc0c39c1092dbe424eecdcd036ce29bb6c6adbfca7051cbb0a1e",
+        "quote_text": "三月辛丑，賜張昇等進士及第、出身有差",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cd868236-4066-5858-a898-620a0d74f542",
+        "note_sha256": "69f92260fa6e235709582349bc41b61ee6eff5caf7558ab32692b38ca050b928",
+        "quote_text": "三月辛丑，賜張昇等進士及第、出身有差",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "2e4e9211-92f4-56a8-a57c-e8c21497f5b3",
+        "note_sha256": "445becbd99f6494064febf1cdc3540e40f930fbb137a78fc8e3b99b117f321bc",
+        "quote_text": "三月辛丑，賜張昇等進士及第、出身有差",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "49bafa73-2ff1-5999-bd15-7236265bfbe7",
+        "note_sha256": "97245b8585ef059823233894c386ab98d802da1accc99a63ba819b3391e2a6d2",
+        "quote_text": "夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "84e9e677-9596-5e75-9e34-2eb2d62e3db7",
+        "note_sha256": "3ee52b30a892fe38a8559748682281ed8d15cc2342d5b9fb78722a036b43c1aa",
+        "quote_text": "夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務",
+        "review_note": "本纪和宰辅年表均记成化五年五月万安以礼部侍郎兼翰林学士入阁。本纪补辛丑、参与机务，年表明记左侍郎。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "52b22cd2-d691-542e-8b0b-dced67dba6ad",
+        "note_sha256": "3ee52b30a892fe38a8559748682281ed8d15cc2342d5b9fb78722a036b43c1aa",
+        "quote_text": "夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務",
+        "review_note": "本纪和宰辅年表均记成化五年五月万安以礼部侍郎兼翰林学士入阁。本纪补辛丑、参与机务，年表明记左侍郎。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "09b20253-62ae-57a7-b33f-618584b4bf60",
+        "note_sha256": "e3e5f1f8097a199cde61f3a4ae9d998d5449db8b639a8d74ff92c5019cbba5e8",
+        "quote_text": "夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "d0943090-3c0c-57e9-b872-44d70dba93d4",
+        "note_sha256": "ef8acdb89925a5f91b8f3bcd812286b84923a73e833c1f36d226c609115a2515",
+        "quote_text": "六月癸丑朔，日有食之",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b9da0248-ff18-5afe-b435-872efe9a125c",
+        "note_sha256": "0a41d5d225a4f893ed57a9788f170991549d91c14f808e2b570c89799c92d789",
+        "quote_text": "六月癸丑朔，日有食之",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "1a352cdd-0957-504d-8a62-e0916fc8915b",
+        "note_sha256": "f8658f6442a5c7b5f43e7108e1cf9118c377420db28bdf2f2bd16f3b02323c43",
+        "quote_text": "辛酉，錄囚",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c029268c-2d37-58c1-b0c3-b872e3feabf1",
+        "note_sha256": "1910cfec5c4826ef6d50793b15deba3f6984a9f4687390447275606161afb51d",
+        "quote_text": "辛酉，錄囚",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e3428f67-6c4e-5c2c-900c-5400f90338de",
+        "note_sha256": "0e7a6f706dfa36a4a2baf6b65a564af0b57600700015715090ed351fedcfa050",
+        "quote_text": "秋八月辛酉，劉定之卒",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "98e321b1-07c2-51ec-ad1f-5f3eb08c038d",
+        "note_sha256": "0feb5fb74b0bdf527d8d42e1d9af9392b8990333355686078c1b79630f21ae8c",
+        "quote_text": "秋八月辛酉，劉定之卒",
+        "review_note": "本纪和宰辅年表均记成化五年八月刘定之去世。本纪补辛酉。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "13f3b7a4-81e4-5e79-9072-5829ef8a39e8",
+        "note_sha256": "0feb5fb74b0bdf527d8d42e1d9af9392b8990333355686078c1b79630f21ae8c",
+        "quote_text": "秋八月辛酉，劉定之卒",
+        "review_note": "本纪和宰辅年表均记成化五年八月刘定之去世。本纪补辛酉。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "21ced9f5-1ade-5040-a585-369ca3850c83",
+        "note_sha256": "789daab6c048f2105c2130b2d21118d9616b99c003ea139ba43854cf1c948292",
+        "quote_text": "秋八月辛酉，劉定之卒",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "b4c71712-ecd5-5695-ae57-e5dd71ab9aff",
+        "note_sha256": "3a3daa13b6e94297f4ab119bfb07258f3fb350c3fab4b76814ef4e0cbaf7f9ad",
+        "quote_text": "冬十一月乙未，毛里孩犯延綏",
+        "review_note": "按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "15a10f8c-0397-50d7-9e6d-17e17333e2ca",
+        "note_sha256": "aef3d9026d7ff5e04815058df82025a6657545bd73dbbd68cca37feb04191795",
+        "quote_text": "冬十一月乙未，毛里孩犯延綏",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "ca2c60bf-b90e-540c-9ba5-d660e99a81a8",
+        "note_sha256": "4bb8c9c9c58cd247ccba801eb9086c21e8959f1b882835446db06d365736da4b",
+        "quote_text": "冬十一月乙未，毛里孩犯延綏",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "e66ebe88-f42a-53b1-adfb-b77101574939",
+        "note_sha256": "42c56f075d14cb864f364dcafd4a09ab57c63206d7de7e9e0d1b9f3af7e0a584",
+        "quote_text": "冬十一月乙未，毛里孩犯延綏",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "recorded"
+      },
+      {
+        "claim_id": "c1bba571-0a04-593f-b0f8-c55167a51aa2",
+        "note_sha256": "e1711bf274d77ee661fe9845e4d1155556dbb898ebe71a23f0e7d4343c5f81fa",
+        "quote_text": "是年冬，阿羅出入居河套",
+        "review_note": "卷327鞑靼传及校记指阿罗出为进据河套的部领，斡罗出为同一人的异文。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "f5d627af-07cc-59f0-a0ca-c14c2de96e62",
+        "note_sha256": "ffabc8b7c2e0367eae0c081f7fd3cc6948ed371ab7d97f1495170880fb1f3b6c",
+        "quote_text": "是年冬，阿羅出入居河套",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "27c616b7-be4a-5c94-a2fa-ab8627fa68a3",
+        "note_sha256": "19196e0dbb93c5d044ad5e19dc8fd91b56626f98d6f1a89e5b874439b6a33f4a",
+        "quote_text": "是年冬，阿羅出入居河套",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "5af8bcab-dc61-5b26-aa39-d53eb278bc73",
+        "note_sha256": "388f3c4e6fbe6482ce16902460780d257fe177a56aa87094f844fcf59e55da09",
+        "quote_text": "是年冬，阿羅出入居河套",
+        "review_note": "只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "523684a0-1748-5200-a08d-4f8c1fc6bc90",
+        "note_sha256": "7d7483c97c12554f45850a10359f87dc7a481bd3cd3132ed85e65585139b5c21",
+        "quote_text": "琉球、哈密、烏斯藏、滿剌加、安南、土魯番入貢",
+        "review_note": "该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "review_state": "deferred"
+      },
+      {
+        "claim_id": "cef8507e-00fd-549a-a450-9f738ea575e5",
+        "note_sha256": "a3925a09bc2b5c0013f672322bdf16c8bd9eb4a19ae6d75ac553f2ecc0683baa",
+        "quote_text": "琉球、哈密、烏斯藏、滿剌加、安南、土魯番入貢",
+        "review_note": "原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "review_state": "deferred"
+      }
+    ],
+    "event_dating": [
+      {
+        "basis": "原历成化五年正月乙丑。DDBC历表换算所据为1469-01-31至1469-01-31，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001858的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "b6dea3ec-bca1-50f7-b34d-58aef1d2f65c",
+        "claim_sha256": "8609ae3ab1a3eda6a4403da6d489156114192e41afae024f1d139c97540fdde1",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "67b9866c-08ed-5049-a973-4ecf72e709a4",
+        "id": "8cbbb45a-f1e7-59ad-9ede-f61fb87c1334",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年三月辛丑。DDBC历表换算所据为1469-05-07至1469-05-07，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001859的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "cd868236-4066-5858-a898-620a0d74f542",
+        "claim_sha256": "79140db6e6200eebd40278663de56b55db8c368844c4a656965a9ca0a4f32a3b",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "bb567f8a-c0ce-56b2-bb93-6c681dbdbc0c",
+        "id": "f6a66c3a-b3ef-535d-a2cd-0da9e6056c61",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年五月辛丑。DDBC历表换算所据为1469-07-06至1469-07-06，据此核对公元发生年份。",
+        "claim_id": "52b22cd2-d691-542e-8b0b-dced67dba6ad",
+        "claim_sha256": "5d6b0db7905e818678a5b389606518ed50872e0de0adaa2e6b304ec334936a40",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "eb16cc1d-379d-5236-b0b5-7b1441db0ef4",
+        "id": "3622f748-842c-538a-a5f6-6bc37f9209f8",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年六月癸丑朔。DDBC历表换算所据为1469-07-18至1469-07-18，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001861的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "b9da0248-ff18-5afe-b435-872efe9a125c",
+        "claim_sha256": "8f7454cd1ae29c55d745ca1ffc9ec60c666adacb03f05b24190b07c113532226",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "e7cb5c5d-35d5-51ff-85bb-cc451046ccbf",
+        "id": "6ef0df30-986c-540f-bade-cd4111e4f2d7",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年六月辛酉。DDBC历表换算所据为1469-07-26至1469-07-26，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001861的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "c029268c-2d37-58c1-b0c3-b872e3feabf1",
+        "claim_sha256": "f26e4cfeedf0e748126d06c4dbc1f8421c7f18cd90be95ba0c2d39d07aa3963d",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "611b70ce-31b7-5909-991e-7b75a7e5fe50",
+        "id": "6553c728-973f-55bc-a97f-ede9696763b3",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年八月辛酉。DDBC历表换算所据为1469-09-24至1469-09-24，据此核对公元发生年份。",
+        "claim_id": "13f3b7a4-81e4-5e79-9072-5829ef8a39e8",
+        "claim_sha256": "aec9c6e2592bd870e5611b0b9be8455db4947bf1a0598257edca607346101aa9",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "7a59da0d-1b4a-58f6-9e51-113fa2a59a3f",
+        "id": "1bd563e6-12da-5196-bc37-e82335f5174a",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年十一月乙未。DDBC历表换算所据为1469-12-27至1469-12-27，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001863的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "ca2c60bf-b90e-540c-9ba5-d660e99a81a8",
+        "claim_sha256": "cfafed966440d4227f52096a1f2e532018c0ba6344a11a4b0364d710e3b8875e",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "b73a1875-0413-5c3f-9da3-ba28b6514079",
+        "id": "dbf9d866-1f30-587b-8273-80dfb4361936",
+        "latest_year": 1469,
+        "precision_kind": "year",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年冬。DDBC历表换算所据为1469-11-13至1470-02-09，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001864的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "27c616b7-be4a-5c94-a2fa-ab8627fa68a3",
+        "claim_sha256": "db51b0861fd0abbe6447c3ae05db3b250e904b512da8455a772aaf7454c5a5da",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "ce87505a-5c96-5609-b264-5a61f65f352d",
+        "id": "a04eedb8-23f7-5c5c-963c-2fe0d0d4f292",
+        "latest_year": 1470,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      },
+      {
+        "basis": "原历成化五年。DDBC历表换算所据为1469-01-22至1470-02-09，据此核对公元发生年份。 卷十三mingshi-2f603db3d81e-p001864的年条与前后段相对次序；用DDBC中国历表2012-02，JDN换算延伸格里历核公元年。",
+        "claim_id": "cef8507e-00fd-549a-a450-9f738ea575e5",
+        "claim_sha256": "d563f285fee2d8f64b18efc9bbf2d0b1d68d1492bddd5883d7527a4594a86ab0",
+        "earliest_year": 1469,
+        "era_key": null,
+        "event_id": "602353e7-26a9-5216-ba3b-f0bfbcf5dcdf",
+        "id": "0d39725a-c9ac-5819-a540-986d540a2bca",
+        "latest_year": 1470,
+        "precision_kind": "range",
+        "review_state": "reviewed"
+      }
+    ],
+    "library_source_link": [
+      {
+        "archive_url_sha256": "642b9d60a6de2436a87dd7078543b2cdcddd16482da871009a398be0e4c624bf",
+        "paragraph_id": "mingshi-2f603db3d81e-p001858",
+        "snapshot_sha256": "9731c9ef1ff946c7349b828afeaeab139850887d003222cea527bf24c8d8d9a6",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8"
+      },
+      {
+        "archive_url_sha256": "27dfdc71b89098e65a61fc26e79c89c26fd0b88f47dee50bdfa0bc785ff15d43",
+        "paragraph_id": "mingshi-2f603db3d81e-p001859",
+        "snapshot_sha256": "0abe874257af7e960a771424bc9c23f594a517a0cc6fccc602e324bd92b7d194",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54"
+      },
+      {
+        "archive_url_sha256": "ecfb73e54df70e8122331f8968e89c23012cc5bd4277e7e8e21bba47123af56a",
+        "paragraph_id": "mingshi-2f603db3d81e-p001860",
+        "snapshot_sha256": "a90b3efb2fe93bc6dfd1b241abc59bbe6d787d24dfaaf60725bfb9f542b83aa3",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d"
+      },
+      {
+        "archive_url_sha256": "6566338194a9cf2a3725648df502cf527f4798ce827af5f406ba8d6264764d71",
+        "paragraph_id": "mingshi-2f603db3d81e-p001861",
+        "snapshot_sha256": "129caf88e346095685f554023a6d488fd39830ef864153ab286e07d4a7a5092e",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881"
+      },
+      {
+        "archive_url_sha256": "d3b437d3bfc2469b68515625d0dd8bdf5c40078802b29dfad665e1db1c8fd7e5",
+        "paragraph_id": "mingshi-2f603db3d81e-p001862",
+        "snapshot_sha256": "d4fa3bea5630dbff126a8c947b2d6ae6a136b76b9d73c861847770ea491997c3",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d"
+      },
+      {
+        "archive_url_sha256": "2bb3b098a0a7b5f992efd6cc6374a8f3044d0a7ce971aeeb3b8f8f04486aec78",
+        "paragraph_id": "mingshi-2f603db3d81e-p001863",
+        "snapshot_sha256": "7df42d08cdd78e7b0a0c5758c0d919e73bcd776d8ad7b5940a2890a3beb1a86f",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16"
+      },
+      {
+        "archive_url_sha256": "43b0cef3875a07f8c472898644b8b9c631bb151fe084fe98d2c4c56069587c14",
+        "paragraph_id": "mingshi-2f603db3d81e-p001864",
+        "snapshot_sha256": "068381dcb7201ca6070a411e16c24bee547724584d8af1ce29aa32e01a2c3747",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144"
+      }
+    ]
+  },
+  "kind": "history_source_scoped_sidecars",
+  "protected_paths": {
+    "content/books/mingshi/vol-013/from-start/part-05/content-batch.json": "37b9067dbbf75ebcb2645c05e9214f55e86e80417382a27d11392e437b9ac3db",
+    "content/books/mingshi/vol-013/from-start/part-05/curation.json": "fcb36a846aa3a95e839d94175cb7092ab0e265609661879f2248e6501e95d550",
+    "content/books/mingshi/vol-013/from-start/part-05/packet.json": "482e3f9991548802cdc4697a00b14c8df3af2e3b16d04827adac362f8d743b98",
+    "content/books/mingshi/vol-013/from-start/part-05/publication-mysql.json": "9d3682ad96a1bafeedf59ad402535e071b336a8eb5d27ead6ca066dd018c655c",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/manifest.json": "e14ee2e32c90c6d249ecab9c3c9a2c7800868129a067c2d8de0ad2fafd1643de",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001857/source.txt": "f74d65c5b6dd5d99180f75146925f9d40768a1238dccd18b3ca464000f31084c",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001858/source.txt": "9731c9ef1ff946c7349b828afeaeab139850887d003222cea527bf24c8d8d9a6",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001859/source.txt": "0abe874257af7e960a771424bc9c23f594a517a0cc6fccc602e324bd92b7d194",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001860/source.txt": "a90b3efb2fe93bc6dfd1b241abc59bbe6d787d24dfaaf60725bfb9f542b83aa3",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001861/source.txt": "129caf88e346095685f554023a6d488fd39830ef864153ab286e07d4a7a5092e",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001862/source.txt": "d4fa3bea5630dbff126a8c947b2d6ae6a136b76b9d73c861847770ea491997c3",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001863/source.txt": "7df42d08cdd78e7b0a0c5758c0d919e73bcd776d8ad7b5940a2890a3beb1a86f",
+    "content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001864/source.txt": "068381dcb7201ca6070a411e16c24bee547724584d8af1ce29aa32e01a2c3747",
+    "content/books/mingshi/vol-013/from-start/part-05/sql/key-map.json": "9f94e9afa69157e909ef936f571be479d973afe86e1fe7003ed693544d22c8ac",
+    "content/books/mingshi/vol-013/from-start/part-05/time-review.json": "21dc75ef6380c1aa9c3e7b6395587dc6e526ea159133aca43eb4720f47d4f420"
+  },
+  "protected_rows": [
+    {
+      "identity": {
+        "id": "046e7d1d-080d-5442-92de-85076b9bd8f6"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001858；成化五年正月乙丑",
+        "claim_text": "朱见深主持祭祀。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.073541+00:00",
+        "field_path": "description",
+        "id": "046e7d1d-080d-5442-92de-85076b9bd8f6",
+        "note": "原文：五年春正月乙丑，大祀天地於南郊；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8",
+        "status": "published",
+        "subject_id": "71fde383-1de5-538d-bb25-2cc9e4cc7d1c",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b58b0145-9b04-555d-87f4-ebac9ea2b055"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001858；成化五年正月乙丑",
+        "claim_text": "成化五年正月乙丑，明宪宗朱见深在南郊举行祭祀天地的大典。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.113675+00:00",
+        "field_path": "description",
+        "id": "b58b0145-9b04-555d-87f4-ebac9ea2b055",
+        "note": "原文：五年春正月乙丑，大祀天地於南郊；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8",
+        "status": "published",
+        "subject_id": "67b9866c-08ed-5049-a973-4ecf72e709a4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b6dea3ec-bca1-50f7-b34d-58aef1d2f65c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001858；成化五年正月乙丑",
+        "claim_text": "原历成化五年正月乙丑。DDBC历表换算所据为1469-01-31至1469-01-31，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.153383+00:00",
+        "field_path": "time_original",
+        "id": "b6dea3ec-bca1-50f7-b34d-58aef1d2f65c",
+        "note": "原文：五年春正月乙丑，大祀天地於南郊；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8",
+        "status": "published",
+        "subject_id": "67b9866c-08ed-5049-a973-4ecf72e709a4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "46c34d48-2f90-52a9-a7de-8ff612f1093f"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001858；成化五年正月乙丑",
+        "claim_text": "主持祭祀",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.188805+00:00",
+        "field_path": "role",
+        "id": "46c34d48-2f90-52a9-a7de-8ff612f1093f",
+        "note": "原文：五年春正月乙丑，大祀天地於南郊；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8",
+        "status": "published",
+        "subject_id": "46b8c25e-8ae6-5df8-a173-d313bd146cd4",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c07d450a-7b2e-53b7-94fd-fdc35d3fce55"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001859；成化五年三月辛丑",
+        "claim_text": "张昇获赐进士及第。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.223760+00:00",
+        "field_path": "description",
+        "id": "c07d450a-7b2e-53b7-94fd-fdc35d3fce55",
+        "note": "原文：三月辛丑，賜張昇等進士及第、出身有差；核对说明：卷184张昇传记其在成化五年考中进士第一，后来历任翰林修撰、礼部尚书。保留昇字。",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54",
+        "status": "published",
+        "subject_id": "7b0d086d-d6ec-506e-81d7-1ceb87f7a853",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "bd829d71-d616-5667-864c-0ee2b19646dc"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001859；成化五年三月辛丑",
+        "claim_text": "成化五年三月辛丑，朝廷赐张昇等人进士及第或进士出身，名次、等第各有差别。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.258752+00:00",
+        "field_path": "description",
+        "id": "bd829d71-d616-5667-864c-0ee2b19646dc",
+        "note": "原文：三月辛丑，賜張昇等進士及第、出身有差；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54",
+        "status": "published",
+        "subject_id": "bb567f8a-c0ce-56b2-bb93-6c681dbdbc0c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cd868236-4066-5858-a898-620a0d74f542"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001859；成化五年三月辛丑",
+        "claim_text": "原历成化五年三月辛丑。DDBC历表换算所据为1469-05-07至1469-05-07，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.293699+00:00",
+        "field_path": "time_original",
+        "id": "cd868236-4066-5858-a898-620a0d74f542",
+        "note": "原文：三月辛丑，賜張昇等進士及第、出身有差；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54",
+        "status": "published",
+        "subject_id": "bb567f8a-c0ce-56b2-bb93-6c681dbdbc0c",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "2e4e9211-92f4-56a8-a57c-e8c21497f5b3"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001859；成化五年三月辛丑",
+        "claim_text": "获赐进士及第",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.333407+00:00",
+        "field_path": "role",
+        "id": "2e4e9211-92f4-56a8-a57c-e8c21497f5b3",
+        "note": "原文：三月辛丑，賜張昇等進士及第、出身有差；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54",
+        "status": "published",
+        "subject_id": "a5e23426-280f-5c99-b237-4023a72dbf05",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "49bafa73-2ff1-5999-bd15-7236265bfbe7"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001860；成化五年五月辛丑",
+        "claim_text": "万安奉命入阁参与政务。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.373641+00:00",
+        "field_path": "description",
+        "id": "49bafa73-2ff1-5999-bd15-7236265bfbe7",
+        "note": "原文：夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d",
+        "status": "published",
+        "subject_id": "b16e4c8d-4346-59b3-a7c7-2b0bfb86bd60",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "84e9e677-9596-5e75-9e34-2eb2d62e3db7"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001860；成化五年五月辛丑",
+        "claim_text": "成化五年五月辛丑，朝廷命礼部侍郎万安兼任翰林院学士，入内阁参与政务。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.408543+00:00",
+        "field_path": "description",
+        "id": "84e9e677-9596-5e75-9e34-2eb2d62e3db7",
+        "note": "原文：夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務；核对说明：本纪和宰辅年表均记成化五年五月万安以礼部侍郎兼翰林学士入阁。本纪补辛丑、参与机务，年表明记左侍郎。",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d",
+        "status": "published",
+        "subject_id": "eb16cc1d-379d-5236-b0b5-7b1441db0ef4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "52b22cd2-d691-542e-8b0b-dced67dba6ad"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001860；成化五年五月辛丑",
+        "claim_text": "原历成化五年五月辛丑。DDBC历表换算所据为1469-07-06至1469-07-06，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.443494+00:00",
+        "field_path": "time_original",
+        "id": "52b22cd2-d691-542e-8b0b-dced67dba6ad",
+        "note": "原文：夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務；核对说明：本纪和宰辅年表均记成化五年五月万安以礼部侍郎兼翰林学士入阁。本纪补辛丑、参与机务，年表明记左侍郎。",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d",
+        "status": "published",
+        "subject_id": "eb16cc1d-379d-5236-b0b5-7b1441db0ef4",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "09b20253-62ae-57a7-b33f-618584b4bf60"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001860；成化五年五月辛丑",
+        "claim_text": "奉命入阁参与政务",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.483678+00:00",
+        "field_path": "role",
+        "id": "09b20253-62ae-57a7-b33f-618584b4bf60",
+        "note": "原文：夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d",
+        "status": "published",
+        "subject_id": "cd8aaf64-1d99-55ec-ac3e-b546f53111bf",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d0943090-3c0c-57e9-b872-44d70dba93d4"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001861；成化五年六月癸丑朔",
+        "claim_text": "成化五年六月初一癸丑，发生日食。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.519052+00:00",
+        "field_path": "description",
+        "id": "d0943090-3c0c-57e9-b872-44d70dba93d4",
+        "note": "原文：六月癸丑朔，日有食之；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881",
+        "status": "published",
+        "subject_id": "e7cb5c5d-35d5-51ff-85bb-cc451046ccbf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b9da0248-ff18-5afe-b435-872efe9a125c"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001861；成化五年六月癸丑朔",
+        "claim_text": "原历成化五年六月癸丑朔。DDBC历表换算所据为1469-07-18至1469-07-18，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.553534+00:00",
+        "field_path": "time_original",
+        "id": "b9da0248-ff18-5afe-b435-872efe9a125c",
+        "note": "原文：六月癸丑朔，日有食之；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881",
+        "status": "published",
+        "subject_id": "e7cb5c5d-35d5-51ff-85bb-cc451046ccbf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "1a352cdd-0957-504d-8a62-e0916fc8915b"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001861；成化五年六月辛酉",
+        "claim_text": "成化五年六月辛酉，朝廷复核在押人员的案件。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.588480+00:00",
+        "field_path": "description",
+        "id": "1a352cdd-0957-504d-8a62-e0916fc8915b",
+        "note": "原文：辛酉，錄囚；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881",
+        "status": "published",
+        "subject_id": "611b70ce-31b7-5909-991e-7b75a7e5fe50",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c029268c-2d37-58c1-b0c3-b872e3feabf1"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001861；成化五年六月辛酉",
+        "claim_text": "原历成化五年六月辛酉。DDBC历表换算所据为1469-07-26至1469-07-26，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.633343+00:00",
+        "field_path": "time_original",
+        "id": "c029268c-2d37-58c1-b0c3-b872e3feabf1",
+        "note": "原文：辛酉，錄囚；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881",
+        "status": "published",
+        "subject_id": "611b70ce-31b7-5909-991e-7b75a7e5fe50",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e3428f67-6c4e-5c2c-900c-5400f90338de"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001862；成化五年八月辛酉",
+        "claim_text": "刘定之去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.668776+00:00",
+        "field_path": "description",
+        "id": "e3428f67-6c4e-5c2c-900c-5400f90338de",
+        "note": "原文：秋八月辛酉，劉定之卒；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d",
+        "status": "published",
+        "subject_id": "d1eeef0f-1c3e-5344-b95f-809287ee7885",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "98e321b1-07c2-51ec-ad1f-5f3eb08c038d"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001862；成化五年八月辛酉",
+        "claim_text": "成化五年八月辛酉，刘定之去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.708464+00:00",
+        "field_path": "description",
+        "id": "98e321b1-07c2-51ec-ad1f-5f3eb08c038d",
+        "note": "原文：秋八月辛酉，劉定之卒；核对说明：本纪和宰辅年表均记成化五年八月刘定之去世。本纪补辛酉。",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d",
+        "status": "published",
+        "subject_id": "7a59da0d-1b4a-58f6-9e51-113fa2a59a3f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "13f3b7a4-81e4-5e79-9072-5829ef8a39e8"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001862；成化五年八月辛酉",
+        "claim_text": "原历成化五年八月辛酉。DDBC历表换算所据为1469-09-24至1469-09-24，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.743909+00:00",
+        "field_path": "time_original",
+        "id": "13f3b7a4-81e4-5e79-9072-5829ef8a39e8",
+        "note": "原文：秋八月辛酉，劉定之卒；核对说明：本纪和宰辅年表均记成化五年八月刘定之去世。本纪补辛酉。",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d",
+        "status": "published",
+        "subject_id": "7a59da0d-1b4a-58f6-9e51-113fa2a59a3f",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "21ced9f5-1ade-5040-a585-369ca3850c83"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001862；成化五年八月辛酉",
+        "claim_text": "去世",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.781701+00:00",
+        "field_path": "role",
+        "id": "21ced9f5-1ade-5040-a585-369ca3850c83",
+        "note": "原文：秋八月辛酉，劉定之卒；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d",
+        "status": "published",
+        "subject_id": "88fd24ad-dbd0-5ae4-8bd8-26a094e4aa80",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "b4c71712-ecd5-5695-ae57-e5dd71ab9aff"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001863；成化五年十一月乙未",
+        "claim_text": "毛里孩所部进攻延绥。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.818616+00:00",
+        "field_path": "description",
+        "id": "b4c71712-ecd5-5695-ae57-e5dd71ab9aff",
+        "note": "原文：冬十一月乙未，毛里孩犯延綏；核对说明：按该段身份、官职、人物关系和相邻记载对照规范人物。原字保存在引文中。",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16",
+        "status": "published",
+        "subject_id": "0bad16ac-862f-5d87-9209-576fec09ca75",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "15a10f8c-0397-50d7-9e6d-17e17333e2ca"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001863；成化五年十一月乙未",
+        "claim_text": "成化五年十一月乙未，毛里孩所部进攻延绥。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.869639+00:00",
+        "field_path": "description",
+        "id": "15a10f8c-0397-50d7-9e6d-17e17333e2ca",
+        "note": "原文：冬十一月乙未，毛里孩犯延綏；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16",
+        "status": "published",
+        "subject_id": "b73a1875-0413-5c3f-9da3-ba28b6514079",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "ca2c60bf-b90e-540c-9ba5-d660e99a81a8"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001863；成化五年十一月乙未",
+        "claim_text": "原历成化五年十一月乙未。DDBC历表换算所据为1469-12-27至1469-12-27，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.902718+00:00",
+        "field_path": "time_original",
+        "id": "ca2c60bf-b90e-540c-9ba5-d660e99a81a8",
+        "note": "原文：冬十一月乙未，毛里孩犯延綏；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16",
+        "status": "published",
+        "subject_id": "b73a1875-0413-5c3f-9da3-ba28b6514079",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "e66ebe88-f42a-53b1-adfb-b77101574939"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001863；成化五年十一月乙未",
+        "claim_text": "所部进攻延绥",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.949547+00:00",
+        "field_path": "role",
+        "id": "e66ebe88-f42a-53b1-adfb-b77101574939",
+        "note": "原文：冬十一月乙未，毛里孩犯延綏；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16",
+        "status": "published",
+        "subject_id": "85450583-3667-55ca-975f-a4e79441f8c5",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "c1bba571-0a04-593f-b0f8-c55167a51aa2"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864；成化五年",
+        "claim_text": "阿罗出率部进入河套驻牧。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:24.989672+00:00",
+        "field_path": "description",
+        "id": "c1bba571-0a04-593f-b0f8-c55167a51aa2",
+        "note": "原文：是年冬，阿羅出入居河套；核对说明：卷327鞑靼传及校记指阿罗出为进据河套的部领，斡罗出为同一人的异文。",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "status": "published",
+        "subject_id": "98f7d36d-6aa0-541b-b48e-88afb752e7f8",
+        "subject_table": "person"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "f5d627af-07cc-59f0-a0ca-c14c2de96e62"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864；成化五年冬",
+        "claim_text": "成化五年冬，阿罗出所部进入河套居住。 按原历纪年，事情发生在公元1469至1470年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:25.064736+00:00",
+        "field_path": "description",
+        "id": "f5d627af-07cc-59f0-a0ca-c14c2de96e62",
+        "note": "原文：是年冬，阿羅出入居河套；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "status": "published",
+        "subject_id": "ce87505a-5c96-5609-b264-5a61f65f352d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "27c616b7-be4a-5c94-a2fa-ab8627fa68a3"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864；成化五年冬",
+        "claim_text": "原历成化五年冬。DDBC历表换算所据为1469-11-13至1470-02-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:25.109601+00:00",
+        "field_path": "time_original",
+        "id": "27c616b7-be4a-5c94-a2fa-ab8627fa68a3",
+        "note": "原文：是年冬，阿羅出入居河套；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "status": "published",
+        "subject_id": "ce87505a-5c96-5609-b264-5a61f65f352d",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "5af8bcab-dc61-5b26-aa39-d53eb278bc73"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864；成化五年冬",
+        "claim_text": "率部进入河套驻牧",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:25.149798+00:00",
+        "field_path": "role",
+        "id": "5af8bcab-dc61-5b26-aa39-d53eb278bc73",
+        "note": "原文：是年冬，阿羅出入居河套；核对说明：只采用本段明确参与者和行动角色，既有连接按稳定编号复用。",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "status": "published",
+        "subject_id": "e2a102bc-cf59-57ef-b391-68b84afe745a",
+        "subject_table": "person_event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "523684a0-1748-5200-a08d-4f8c1fc6bc90"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864；成化五年",
+        "claim_text": "成化五年，琉球、哈密、乌斯藏、满剌加、安南和土鲁番向明廷进贡。 按原历纪年，事情发生在公元1469至1470年之间。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:25.186614+00:00",
+        "field_path": "description",
+        "id": "523684a0-1748-5200-a08d-4f8c1fc6bc90",
+        "note": "原文：琉球、哈密、烏斯藏、滿剌加、安南、土魯番入貢；核对说明：该摘录逐字支持所列行动及其阶段；时间取本段及相邻年条。",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "status": "published",
+        "subject_id": "602353e7-26a9-5216-ba3b-f0bfbcf5dcdf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "cef8507e-00fd-549a-a450-9f738ea575e5"
+      },
+      "row": {
+        "citation": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864；成化五年",
+        "claim_text": "原历成化五年。DDBC历表换算所据为1469-01-22至1470-02-09，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T19:44:25.229643+00:00",
+        "field_path": "time_original",
+        "id": "cef8507e-00fd-549a-a450-9f738ea575e5",
+        "note": "原文：琉球、哈密、烏斯藏、滿剌加、安南、土魯番入貢；核对说明：原历纪年按本段及相邻年条核对，史料未载的具体日保留为空。",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "status": "published",
+        "subject_id": "602353e7-26a9-5216-ba3b-f0bfbcf5dcdf",
+        "subject_table": "event"
+      },
+      "table": "fact_claim"
+    },
+    {
+      "identity": {
+        "id": "d33179a0-d204-5970-adb5-32f31d6a72e8"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:20.885593+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "d33179a0-d204-5970-adb5-32f31d6a72e8",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001858",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001858",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001858/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "642b9d60a6de2436a87dd7078543b2cdcddd16482da871009a398be0e4c624bf",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8"
+      },
+      "row": {
+        "archive_blob_sha256": "9731c9ef1ff946c7349b828afeaeab139850887d003222cea527bf24c8d8d9a6",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001858/source.txt",
+        "archive_url_sha256": "642b9d60a6de2436a87dd7078543b2cdcddd16482da871009a398be0e4c624bf",
+        "content": "五年春正月乙丑，大祀天地於南郊。",
+        "content_sha256": "9731c9ef1ff946c7349b828afeaeab139850887d003222cea527bf24c8d8d9a6",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "d33179a0-d204-5970-adb5-32f31d6a72e8"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001858"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 84968,
+        "char_start": 84952,
+        "content": "五年春正月乙丑，大祀天地於南郊。",
+        "content_sha256": "9731c9ef1ff946c7349b828afeaeab139850887d003222cea527bf24c8d8d9a6",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001858",
+        "kind": "body",
+        "ordinal": 1843,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "book_key": "mingshi"
+      },
+      "row": {
+        "book_key": "mingshi",
+        "dataset_sha256": "d6c4ff9bdf07b3af0dee187dd5e33631f2fe8b53d54958643043ded964de067d",
+        "metadata": {
+          "inputs": [
+            {
+              "conversion_manifest": "resources/derived/epub-txt/24明史/manifest.json",
+              "mapped_source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+              "mapped_source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d",
+              "source_file": "resources/originals/twenty-four-histories/backup/明史.epub",
+              "source_sha256": "76031481c3838035563b196ee1ec87017f4074417cd84e410af3f6646d0a7d42"
+            }
+          ],
+          "paragraph_sha256": "7b783e3b71ce6ab3f495168d7beec9351452504c1bbddd3174fc145ab12b8b00",
+          "sections_sha256": "7df3be1e7fb371ac99364368882ca4f9d556a6cea489a75e2144f74fe39f56b5"
+        },
+        "paragraph_count": 35165,
+        "section_count": 333,
+        "sort_order": 23,
+        "source_version": "2f603db3d81e",
+        "status": "available",
+        "title": "明史"
+      },
+      "table": "library_book"
+    },
+    {
+      "identity": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431"
+      },
+      "row": {
+        "id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "source_file": "resources/originals/twenty-four-histories/24明史-EPUB全文.txt",
+        "source_sha256": "08da1c52b7617dd66eb7ef6681297d4218cc1a40d53ab1f5d9d4554d4d25360d"
+      },
+      "table": "library_asset"
+    },
+    {
+      "identity": {
+        "id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:20.924758+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001859",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001859",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001859/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "27dfdc71b89098e65a61fc26e79c89c26fd0b88f47dee50bdfa0bc785ff15d43",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54"
+      },
+      "row": {
+        "archive_blob_sha256": "0abe874257af7e960a771424bc9c23f594a517a0cc6fccc602e324bd92b7d194",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001859/source.txt",
+        "archive_url_sha256": "27dfdc71b89098e65a61fc26e79c89c26fd0b88f47dee50bdfa0bc785ff15d43",
+        "content": "三月辛丑，賜張昇等進士及第、出身有差。",
+        "content_sha256": "0abe874257af7e960a771424bc9c23f594a517a0cc6fccc602e324bd92b7d194",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "5d20ad93-9f92-54ff-8eee-d6bd1af57c54"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001859"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 84989,
+        "char_start": 84970,
+        "content": "三月辛丑，賜張昇等進士及第、出身有差。",
+        "content_sha256": "0abe874257af7e960a771424bc9c23f594a517a0cc6fccc602e324bd92b7d194",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001859",
+        "kind": "body",
+        "ordinal": 1844,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "f0dd8bba-085a-567a-ae74-950ad09c708d"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:20.965422+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "f0dd8bba-085a-567a-ae74-950ad09c708d",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001860",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001860",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001860/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "ecfb73e54df70e8122331f8968e89c23012cc5bd4277e7e8e21bba47123af56a",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d"
+      },
+      "row": {
+        "archive_blob_sha256": "a90b3efb2fe93bc6dfd1b241abc59bbe6d787d24dfaaf60725bfb9f542b83aa3",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001860/source.txt",
+        "archive_url_sha256": "ecfb73e54df70e8122331f8968e89c23012cc5bd4277e7e8e21bba47123af56a",
+        "content": "夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務。",
+        "content_sha256": "a90b3efb2fe93bc6dfd1b241abc59bbe6d787d24dfaaf60725bfb9f542b83aa3",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "f0dd8bba-085a-567a-ae74-950ad09c708d"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001860"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 85016,
+        "char_start": 84991,
+        "content": "夏五月辛丑，禮部侍郎萬安兼翰林院學士，入閣預機務。",
+        "content_sha256": "a90b3efb2fe93bc6dfd1b241abc59bbe6d787d24dfaaf60725bfb9f542b83aa3",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001860",
+        "kind": "body",
+        "ordinal": 1845,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "a701630c-584c-5a8a-bdcd-9d7c7c118881"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:21.015497+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "a701630c-584c-5a8a-bdcd-9d7c7c118881",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001861",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001861",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001861/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "6566338194a9cf2a3725648df502cf527f4798ce827af5f406ba8d6264764d71",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881"
+      },
+      "row": {
+        "archive_blob_sha256": "129caf88e346095685f554023a6d488fd39830ef864153ab286e07d4a7a5092e",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001861/source.txt",
+        "archive_url_sha256": "6566338194a9cf2a3725648df502cf527f4798ce827af5f406ba8d6264764d71",
+        "content": "六月癸丑朔，日有食之。辛酉，錄囚。",
+        "content_sha256": "129caf88e346095685f554023a6d488fd39830ef864153ab286e07d4a7a5092e",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "a701630c-584c-5a8a-bdcd-9d7c7c118881"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001861"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 85035,
+        "char_start": 85018,
+        "content": "六月癸丑朔，日有食之。辛酉，錄囚。",
+        "content_sha256": "129caf88e346095685f554023a6d488fd39830ef864153ab286e07d4a7a5092e",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001861",
+        "kind": "body",
+        "ordinal": 1846,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "856ce6f4-7bf8-5851-8657-6c3262c9764d"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:21.055655+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "856ce6f4-7bf8-5851-8657-6c3262c9764d",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001862",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001862",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001862/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "d3b437d3bfc2469b68515625d0dd8bdf5c40078802b29dfad665e1db1c8fd7e5",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d"
+      },
+      "row": {
+        "archive_blob_sha256": "d4fa3bea5630dbff126a8c947b2d6ae6a136b76b9d73c861847770ea491997c3",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001862/source.txt",
+        "archive_url_sha256": "d3b437d3bfc2469b68515625d0dd8bdf5c40078802b29dfad665e1db1c8fd7e5",
+        "content": "秋八月辛酉，劉定之卒。",
+        "content_sha256": "d4fa3bea5630dbff126a8c947b2d6ae6a136b76b9d73c861847770ea491997c3",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "856ce6f4-7bf8-5851-8657-6c3262c9764d"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001862"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 85048,
+        "char_start": 85037,
+        "content": "秋八月辛酉，劉定之卒。",
+        "content_sha256": "d4fa3bea5630dbff126a8c947b2d6ae6a136b76b9d73c861847770ea491997c3",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001862",
+        "kind": "body",
+        "ordinal": 1847,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "399fcc22-b827-5d40-9bed-a9ccf4258c16"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:21.095825+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "399fcc22-b827-5d40-9bed-a9ccf4258c16",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001863",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001863",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001863/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "2bb3b098a0a7b5f992efd6cc6374a8f3044d0a7ce971aeeb3b8f8f04486aec78",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16"
+      },
+      "row": {
+        "archive_blob_sha256": "7df42d08cdd78e7b0a0c5758c0d919e73bcd776d8ad7b5940a2890a3beb1a86f",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001863/source.txt",
+        "archive_url_sha256": "2bb3b098a0a7b5f992efd6cc6374a8f3044d0a7ce971aeeb3b8f8f04486aec78",
+        "content": "冬十一月乙未，毛里孩犯延綏。",
+        "content_sha256": "7df42d08cdd78e7b0a0c5758c0d919e73bcd776d8ad7b5940a2890a3beb1a86f",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "399fcc22-b827-5d40-9bed-a9ccf4258c16"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001863"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 85064,
+        "char_start": 85050,
+        "content": "冬十一月乙未，毛里孩犯延綏。",
+        "content_sha256": "7df42d08cdd78e7b0a0c5758c0d919e73bcd776d8ad7b5940a2890a3beb1a86f",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001863",
+        "kind": "body",
+        "ordinal": 1848,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "1762f5bc-5da9-5551-9f67-ff1a76c81144"
+      },
+      "row": {
+        "author": null,
+        "created_at": "2026-11-18T19:44:21.135485+00:00",
+        "edition": "选定电子TXT逐字快照；已核本次上下文，纸本及异文未全面校核。",
+        "id": "1762f5bc-5da9-5551-9f67-ff1a76c81144",
+        "note": "《明史》卷13·本纪第十三·宪宗一·mingshi-2f603db3d81e-p001864",
+        "source_type": "primary",
+        "title": "明史·卷13·宪宗一·mingshi-2f603db3d81e-p001864",
+        "url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001864/source.txt"
+      },
+      "table": "source"
+    },
+    {
+      "identity": {
+        "archive_url_sha256": "43b0cef3875a07f8c472898644b8b9c631bb151fe084fe98d2c4c56069587c14",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144"
+      },
+      "row": {
+        "archive_blob_sha256": "068381dcb7201ca6070a411e16c24bee547724584d8af1ce29aa32e01a2c3747",
+        "archive_commit": "08b54605a9204163561f827705b8c585d04a0708",
+        "archive_url": "https://github.com/greed-216/histree/blob/08b54605a9204163561f827705b8c585d04a0708/content/books/mingshi/vol-013/from-start/part-05/sources/mingshi-2f603db3d81e-p001864/source.txt",
+        "archive_url_sha256": "43b0cef3875a07f8c472898644b8b9c631bb151fe084fe98d2c4c56069587c14",
+        "content": "是年冬，阿羅出入居河套。琉球、哈密、烏斯藏、滿剌加、安南、土魯番入貢。",
+        "content_sha256": "068381dcb7201ca6070a411e16c24bee547724584d8af1ce29aa32e01a2c3747",
+        "created_at": "2026-11-18T19:44:26.611688+00:00",
+        "source_id": "1762f5bc-5da9-5551-9f67-ff1a76c81144"
+      },
+      "table": "source_text"
+    },
+    {
+      "identity": {
+        "id": "mingshi-2f603db3d81e-p001864"
+      },
+      "row": {
+        "asset_id": "b6837f7f8cfb4545c9529586737e383d322db9f77518c8a11334400a7ae2d431",
+        "book_key": "mingshi",
+        "char_end": 85101,
+        "char_start": 85066,
+        "content": "是年冬，阿羅出入居河套。琉球、哈密、烏斯藏、滿剌加、安南、土魯番入貢。",
+        "content_sha256": "068381dcb7201ca6070a411e16c24bee547724584d8af1ce29aa32e01a2c3747",
+        "flags": [],
+        "id": "mingshi-2f603db3d81e-p001864",
+        "kind": "body",
+        "ordinal": 1849,
+        "section_id": "mingshi-2f603db3d81e-s0014"
+      },
+      "table": "library_paragraph"
+    },
+    {
+      "identity": {
+        "id": "67b9866c-08ed-5049-a973-4ecf72e709a4"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:21.927478+00:00",
+        "description": "成化五年正月乙丑，明宪宗朱见深在南郊举行祭祀天地的大典。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "67b9866c-08ed-5049-a973-4ecf72e709a4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年正月乙丑",
+        "title": "明宪宗在南郊祭祀天地"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "bb567f8a-c0ce-56b2-bb93-6c681dbdbc0c"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:21.965736+00:00",
+        "description": "成化五年三月辛丑，朝廷赐张昇等人进士及第或进士出身，名次、等第各有差别。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "bb567f8a-c0ce-56b2-bb93-6c681dbdbc0c",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年三月辛丑",
+        "title": "明廷赐张昇等进士及第、出身"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "eb16cc1d-379d-5236-b0b5-7b1441db0ef4"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:37.149795+00:00",
+        "description": "成化5年（1469年）五月，万安以礼部左侍郎兼翰林学士身份入阁。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "eb16cc1d-379d-5236-b0b5-7b1441db0ef4",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化5年（1469年）五月",
+        "title": "万安以礼部左侍郎兼翰林学士身份入阁"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "e7cb5c5d-35d5-51ff-85bb-cc451046ccbf"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:22.018629+00:00",
+        "description": "成化五年六月初一癸丑，发生日食。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "e7cb5c5d-35d5-51ff-85bb-cc451046ccbf",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年六月癸丑朔",
+        "title": "成化五年六月初一发生日食"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "611b70ce-31b7-5909-991e-7b75a7e5fe50"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:22.075788+00:00",
+        "description": "成化五年六月辛酉，朝廷复核在押人员的案件。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "611b70ce-31b7-5909-991e-7b75a7e5fe50",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年六月辛酉",
+        "title": "明廷复核在押人员案件"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "7a59da0d-1b4a-58f6-9e51-113fa2a59a3f"
+      },
+      "row": {
+        "created_at": "2026-11-17T10:09:37.119731+00:00",
+        "description": "成化5年（1469年）八月，刘定之去世。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "7a59da0d-1b4a-58f6-9e51-113fa2a59a3f",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化5年（1469年）八月",
+        "title": "刘定之去世"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "b73a1875-0413-5c3f-9da3-ba28b6514079"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:22.109419+00:00",
+        "description": "成化五年十一月乙未，毛里孩所部进攻延绥。",
+        "dynasty": "明",
+        "end_year": 1469,
+        "id": "b73a1875-0413-5c3f-9da3-ba28b6514079",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1469,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年十一月乙未",
+        "title": "毛里孩所部进攻延绥"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "ce87505a-5c96-5609-b264-5a61f65f352d"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:22.155341+00:00",
+        "description": "成化五年冬，阿罗出所部进入河套居住。 按原历纪年，事情发生在公元1469至1470年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "ce87505a-5c96-5609-b264-5a61f65f352d",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年冬",
+        "title": "阿罗出率部进入河套驻牧"
+      },
+      "table": "event"
+    },
+    {
+      "identity": {
+        "id": "602353e7-26a9-5216-ba3b-f0bfbcf5dcdf"
+      },
+      "row": {
+        "created_at": "2026-11-18T19:44:22.195519+00:00",
+        "description": "成化五年，琉球、哈密、乌斯藏、满剌加、安南和土鲁番向明廷进贡。 按原历纪年，事情发生在公元1469至1470年之间。",
+        "dynasty": "明",
+        "end_year": null,
+        "id": "602353e7-26a9-5216-ba3b-f0bfbcf5dcdf",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": null,
+        "status": "published",
+        "tags": [],
+        "time_original": "成化五年",
+        "title": "本纪汇记成化五年多地入贡"
+      },
+      "table": "event"
+    }
+  ],
+  "reference_only_headings": [],
+  "reference_only_sources": {},
+  "skipped_independent_dates": [],
+  "source_locations": {
+    "1762f5bc-5da9-5551-9f67-ff1a76c81144": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001864",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "399fcc22-b827-5d40-9bed-a9ccf4258c16": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001863",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "5d20ad93-9f92-54ff-8eee-d6bd1af57c54": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001859",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "856ce6f4-7bf8-5851-8657-6c3262c9764d": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001862",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "a701630c-584c-5a8a-bdcd-9d7c7c118881": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001861",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "d33179a0-d204-5970-adb5-32f31d6a72e8": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001858",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    },
+    "f0dd8bba-085a-567a-ae74-950ad09c708d": {
+      "book_key": "mingshi",
+      "paragraph_id": "mingshi-2f603db3d81e-p001860",
+      "section_id": "mingshi-2f603db3d81e-s0014",
+      "source_version": "2f603db3d81e"
+    }
+  },
+  "source_version": "2f603db3d81e",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "volume": 13
+}

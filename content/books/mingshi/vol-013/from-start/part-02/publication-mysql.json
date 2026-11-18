@@ -1,0 +1,118 @@
+{
+  "batch_sha256": "9c9309ef2de6b98ec27ef2a40ae68b02c052771509cf2a262c2181a9293d5a86",
+  "stages": [
+    {
+      "stage": "preflight_checked",
+      "at": "2026-11-18T19:35:23.353975+00:00"
+    },
+    {
+      "stage": "drafts_verified_source",
+      "at": "2026-11-18T19:35:24.244070+00:00"
+    },
+    {
+      "stage": "drafts_verified_person",
+      "at": "2026-11-18T19:35:24.629616+00:00"
+    },
+    {
+      "stage": "drafts_verified_event",
+      "at": "2026-11-18T19:35:26.560244+00:00"
+    },
+    {
+      "stage": "drafts_verified_person_relationship",
+      "at": "2026-11-18T19:35:26.561729+00:00"
+    },
+    {
+      "stage": "drafts_verified_person_event",
+      "at": "2026-11-18T19:35:28.892073+00:00"
+    },
+    {
+      "stage": "drafts_verified_fact_claim",
+      "at": "2026-11-18T19:35:38.845130+00:00"
+    },
+    {
+      "stage": "source_texts_verified",
+      "at": "2026-11-18T19:35:39.048010+00:00"
+    },
+    {
+      "stage": "published_source",
+      "at": "2026-11-18T19:35:39.049853+00:00"
+    },
+    {
+      "stage": "published_person",
+      "at": "2026-11-18T19:35:39.277583+00:00"
+    },
+    {
+      "stage": "published_event",
+      "at": "2026-11-18T19:35:40.174089+00:00"
+    },
+    {
+      "stage": "published_person_relationship",
+      "at": "2026-11-18T19:35:40.176939+00:00"
+    },
+    {
+      "stage": "published_person_event",
+      "at": "2026-11-18T19:35:40.803720+00:00"
+    },
+    {
+      "stage": "published_fact_claim",
+      "at": "2026-11-18T19:35:44.169697+00:00"
+    },
+    {
+      "stage": "anonymous_readback_verified",
+      "at": "2026-11-18T19:35:53.013925+00:00"
+    }
+  ],
+  "source_only_evidence": false,
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "backend": "mysql",
+  "initial_counts": {
+    "source": {
+      "new": 9,
+      "reused": 0
+    },
+    "person": {
+      "new": 3,
+      "reused": 3
+    },
+    "event": {
+      "new": 17,
+      "reused": 0
+    },
+    "person_relationship": {
+      "new": 0,
+      "reused": 0
+    },
+    "person_event": {
+      "new": 11,
+      "reused": 0
+    },
+    "fact_claim": {
+      "new": 51,
+      "reused": 0
+    },
+    "source_text": {
+      "table_exists": true,
+      "new": 8,
+      "reused": 0
+    }
+  },
+  "source_text_visibility": {
+    "0083f07e-3f0b-5a26-b15f-c2559055b34d": "visible_verified",
+    "10d27298-7d39-5e11-8995-b64f8a05e713": "visible_verified",
+    "229998fe-6ab3-5a9b-88db-a965f2cd61bd": "visible_verified",
+    "6ba903cc-b9d9-52a9-9a75-d46137904e83": "visible_verified",
+    "6e435254-5679-5a65-8df1-19741906b56f": "visible_verified",
+    "b182c56d-23f0-5c77-b717-e038b7ed1f01": "visible_verified",
+    "bf3de9a9-847c-55e5-b158-a859bae5df9b": "visible_verified",
+    "cbc25c0c-a00c-5952-9487-295bd97e2e7c": "visible_verified"
+  },
+  "public_counts": {
+    "source": 9,
+    "person": 6,
+    "event": 17,
+    "person_relationship": 0,
+    "person_event": 11,
+    "fact_claim": 51
+  },
+  "verified": true
+}

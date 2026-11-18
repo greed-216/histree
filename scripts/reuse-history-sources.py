@@ -156,11 +156,14 @@ def legacy_supplement_title(source,manifest,paragraph,packet):
 
 
 def legacy_ming_supplement_note(source,manifest,paragraph,packet,chapter):
-    # One early Taizu-era identity comparison used a specific title for Chengzu's opening.
+    # The chancellors table published these two comparisons with descriptive titles.
+    chengzu_source_titles = {
+        'mingshi-2f603db3d81e-p000941': '《明史》卷5·成祖燕王身份',
+        'mingshi-2f603db3d81e-p000976': '《明史》卷5·成祖本纪六月即位，与年表月份异文对照',
+    }
     chengzu_identity = (
-        chapter == '成祖一' and paragraph['id'] == 'mingshi-2f603db3d81e-p000941'
-        and paragraph.get('volume_candidate') == 5 and packet['volume'] == 109
-        and source['title'] == '《明史》卷5·成祖燕王身份'
+        chapter == '成祖一' and paragraph.get('volume_candidate') == 5 and packet['volume'] == 109
+        and source['title'] == chengzu_source_titles.get(paragraph['id'])
     )
     return (paragraph['book_key']=='mingshi' and paragraph['source_version']=='2f603db3d81e'
             and packet['book_key']=='mingshi'

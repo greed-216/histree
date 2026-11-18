@@ -273,6 +273,18 @@ class Tests(unittest.TestCase):
         self.assertFalse(check(src,manifest,para,dict(packet,volume=111),'成祖一'))
         self.assertFalse(check(dict(src,note='wrong'),manifest,para,packet,'成祖一'))
 
+    def test_chengzu_accession_comparison_title_remains_scoped(self):
+        pid='mingshi-2f603db3d81e-p000976'
+        para=dict(id=pid,book_key='mingshi',source_version='2f603db3d81e',volume_candidate=5,
+                  citation=f'《明史》卷五，段落 {pid}')
+        packet=dict(book_key='mingshi',volume=109,supplementary_paragraphs=[para])
+        manifest=dict(purpose='scoped_identity_or_textual_check')
+        src=dict(title='《明史》卷5·成祖本纪六月即位，与年表月份异文对照',note=para['citation'])
+        check=M.legacy_ming_supplement_note
+        self.assertTrue(check(src,manifest,para,packet,'成祖一'))
+        self.assertFalse(check(dict(src,title='《明史》卷5·成祖燕王身份'),manifest,para,packet,'成祖一'))
+        self.assertFalse(check(src,manifest,para,dict(packet,supplementary_paragraphs=[]),'成祖一'))
+
     def test_legacy_ming_note_may_keep_section_citation_only_with_matching_title(self):
         para=dict(book_key='mingshi',source_version='2f603db3d81e',id='mingshi-test',
                   citation='《明史》卷二，段落 mingshi-test')

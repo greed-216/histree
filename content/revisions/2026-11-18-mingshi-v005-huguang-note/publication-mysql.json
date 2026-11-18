@@ -1,0 +1,88 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 2,
+    "inserts": {},
+    "protected_rows": 1,
+    "membership_guards": 3
+  },
+  "after_rows": [
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+      },
+      "full_after": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000978；建文四年",
+        "claim_text": "《成祖本纪》在解缙、黄淮八月壬子入直之后写“寻命”，只交代先后。卷109《宰辅年表》另将胡广入直记在建文四年九月。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:10:46.610283+00:00",
+        "field_path": "time_original",
+        "id": "8f573e31-21be-5c80-a0af-6ac2654a6508",
+        "note": "原文：尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。；核对说明：《成祖本纪》在解缙、黄淮八月壬子入直之后写“寻命”，只交代先后。卷109《宰辅年表》另将胡广入直记在建文四年九月。",
+        "source_id": "a906b454-a2bb-576d-9379-1bd98d76d312",
+        "status": "published",
+        "subject_id": "45622bd2-8ace-5fa6-bcce-97b994520dc5",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "identity": {
+        "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+      },
+      "full_after": {
+        "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508",
+        "note_sha256": "f905378d0d022cf9bbe131a0896470edb8ba0ffb19e541f15ebd144ea9b14e28",
+        "quote_text": "尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。",
+        "review_note": "《成祖本纪》在解缙、黄淮八月壬子入直之后写“寻命”，只交代先后。卷109《宰辅年表》另将胡广入直记在建文四年九月。",
+        "review_state": "deferred"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "45622bd2-8ace-5fa6-bcce-97b994520dc5"
+      },
+      "full_after": {
+        "created_at": "2026-11-17T10:09:30.083257+00:00",
+        "description": "建文4年（1402年）九月，胡广以翰林侍讲身份入直文渊阁。",
+        "dynasty": "明",
+        "end_year": 1402,
+        "id": "45622bd2-8ace-5fa6-bcce-97b994520dc5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1402,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文4年（1402年）九月",
+        "title": "胡广以翰林侍讲身份入直文渊阁"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "fd5b8a2f9b14aee65cb89eede8d8a1b2939e6f2bfefea98b1c7d53653e0dda95",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "fd5b8a2f9b14aee65cb89eede8d8a1b2939e6f2bfefea98b1c7d53653e0dda95",
+    "claims": [
+      "8f573e31-21be-5c80-a0af-6ac2654a6508"
+    ],
+    "event": "45622bd2-8ace-5fa6-bcce-97b994520dc5",
+    "year": 1402,
+    "path": "/evidence/event/45622bd2-8ace-5fa6-bcce-97b994520dc5#claim-8f573e31-21be-5c80-a0af-6ac2654a6508",
+    "checked_at": "2026-11-18T14:30:54.973Z"
+  }
+}

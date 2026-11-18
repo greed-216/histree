@@ -139,6 +139,29 @@ class SourceTests(unittest.TestCase):
     def test_new_event_cannot_use_online_row_to_bypass_frozen_batch(self):
         self.frozen_reuse_fixture(reused=False)
         with self.assertRaisesRegex(ValueError,'Frozen canonical event old values differ'):S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))
+    def test_unbound_inherited_dating_can_only_be_withheld_with_scoped_review(self):
+        directory = self.b
+        path = directory / '.workflow/withheld-source-datings.json'
+        path.parent.mkdir(exist_ok=True)
+        rel = str((directory / 'curation.json').relative_to(self.root))
+        files = {rel: '1' * 64}
+        audit = dict(format_version=1, batch_sha256='2' * 64, curation_sha256=files[rel],
+                     events=[dict(event_key='event', paragraph_id='pid', reason='Only relative wording.')])
+        path.write_text(json.dumps(audit))
+        authored = {'event':dict(evidence=[dict(paragraph_id='pid')], temporal_review=dict(
+            decision='inherited', source_dating_assertions=[dict(decision='exact', year=1402)]))}
+        publication = dict(batch_sha256=audit['batch_sha256'])
+        args = (self.root, directory, publication, authored, {'event'}, {'pid': {}}, files)
+        self.assertEqual(S.verified_withheld_source_datings(*args), {'event':'Only relative wording.'})
+        self.assertEqual(files[str(path.relative_to(self.root))], S.sha(path.read_bytes()))
+        authored['event']['temporal_review']['source_dating_assertions'][0]['paragraph_id'] = 'pid'
+        with self.assertRaisesRegex(ValueError, 'Only an unbound'):
+            S.verified_withheld_source_datings(*args)
+        audit['curation_sha256'] = '3' * 64
+        path.write_text(json.dumps(audit))
+        with self.assertRaisesRegex(ValueError, 'published batch and original curation'):
+            S.verified_withheld_source_datings(*args)
+
     def test_reused_event_rejects_live_drift_after_frozen_snapshot(self):
         self.frozen_reuse_fixture();self.rows['event'][0]['time_original']='再次变化'
         with self.assertRaisesRegex(ValueError,'Frozen canonical event old values differ'):S.prepare(S.load_bundle(self.root,self.b),FakeDatabase(self.rows))

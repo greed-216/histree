@@ -1,0 +1,157 @@
+{
+  "kind": "reviewed_history_correction",
+  "state": "draft_not_applied",
+  "book_key": "mingshi",
+  "volume": 5,
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "protected_paths": {
+    "content/books/mingshi/vol-005/from-start/part-03/content-batch.json": "628a19b3b966e96b9fd9bdb1f6862e6164b4d4b7456dc8eaf0b2b6da44980619",
+    "content/books/mingshi/vol-005/from-start/part-03/.workflow/withheld-source-datings.json": "09eb8002caf45433ebfde92dffb0997083750dfb1a5553a40f60e5877e66d906",
+    "content/books/mingshi/vol-005/from-start/part-03/.workflow/sidecars-receipt.json": "790e47a51f4a39112597ca9c28a3c65ffcd6a27a8839bd2c14dee2a4a425fed2",
+    "content/books/mingshi/vol-005/from-start/part-03/sources/mingshi-2f603db3d81e-p000978/source.txt": "96691ba9dd7c2561784f152ee9a0af5d0bf93ca4422e370c1bef087014c91de8"
+  },
+  "source_bindings": [
+    {
+      "raw_path": "content/books/mingshi/vol-005/from-start/part-03/sources/mingshi-2f603db3d81e-p000978/source.txt",
+      "raw_sha256": "96691ba9dd7c2561784f152ee9a0af5d0bf93ca4422e370c1bef087014c91de8",
+      "quote": "尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。"
+    }
+  ],
+  "updates": [
+    {
+      "table": "fact_claim",
+      "id": "8f573e31-21be-5c80-a0af-6ac2654a6508",
+      "full_before": {
+        "citation": "《明史》卷5·本纪第五·成祖一·mingshi-2f603db3d81e-p000978；建文四年",
+        "claim_text": "原历建文四年。DDBC历表换算所据为1402-02-11至1402-07-22，据此核对公元发生年份。",
+        "confidence": null,
+        "created_at": "2026-11-18T14:10:46.610283+00:00",
+        "field_path": "time_original",
+        "id": "8f573e31-21be-5c80-a0af-6ac2654a6508",
+        "note": "原文：尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "source_id": "a906b454-a2bb-576d-9379-1bd98d76d312",
+        "status": "published",
+        "subject_id": "45622bd2-8ace-5fa6-bcce-97b994520dc5",
+        "subject_table": "event"
+      },
+      "before": {
+        "claim_text": "原历建文四年。DDBC历表换算所据为1402-02-11至1402-07-22，据此核对公元发生年份。",
+        "note": "原文：尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。；核对说明：同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。"
+      },
+      "after": {
+        "claim_text": "《成祖本纪》在解缙、黄淮八月壬子入直之后写“寻命”，只交代先后。卷109《宰辅年表》另将胡广入直记在建文四年九月。",
+        "note": "原文：尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。；核对说明：《成祖本纪》在解缙、黄淮八月壬子入直之后写“寻命”，只交代先后。卷109《宰辅年表》另将胡广入直记在建文四年九月。"
+      }
+    },
+    {
+      "table": "claim_structure",
+      "id": "8f573e31-21be-5c80-a0af-6ac2654a6508",
+      "full_before": {
+        "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508",
+        "note_sha256": "77436821ca844f6a49171bfaebea0b266e63142350920b7765cc770242a46b5d",
+        "quote_text": "尋命侍讀胡廣，修撰楊榮，編修楊士奇，檢討金幼孜、胡儼同入直，並預機務。",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。",
+        "review_state": "deferred"
+      },
+      "before": {
+        "note_sha256": "77436821ca844f6a49171bfaebea0b266e63142350920b7765cc770242a46b5d",
+        "review_note": "同一行动的跨卷记载采用稳定事件编号，新引文保存《成祖本纪》的视角与日期。"
+      },
+      "after": {
+        "note_sha256": "f905378d0d022cf9bbe131a0896470edb8ba0ffb19e541f15ebd144ea9b14e28",
+        "review_note": "《成祖本纪》在解缙、黄淮八月壬子入直之后写“寻命”，只交代先后。卷109《宰辅年表》另将胡广入直记在建文四年九月。"
+      }
+    }
+  ],
+  "inserts": {},
+  "protected_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "45622bd2-8ace-5fa6-bcce-97b994520dc5"
+      },
+      "full_before": {
+        "created_at": "2026-11-17T10:09:30.083257+00:00",
+        "description": "建文4年（1402年）九月，胡广以翰林侍讲身份入直文渊阁。",
+        "dynasty": "明",
+        "end_year": 1402,
+        "id": "45622bd2-8ace-5fa6-bcce-97b994520dc5",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1402,
+        "status": "published",
+        "tags": [],
+        "time_original": "建文4年（1402年）九月",
+        "title": "胡广以翰林侍讲身份入直文渊阁"
+      }
+    }
+  ],
+  "membership_guards": [
+    {
+      "table": "event_dating",
+      "any_of": [
+        {
+          "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+        }
+      ],
+      "expected_ids": []
+    },
+    {
+      "table": "claim_relation",
+      "any_of": [
+        {
+          "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+        }
+      ],
+      "expected_ids": []
+    },
+    {
+      "table": "claim_relation",
+      "any_of": [
+        {
+          "related_claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+        }
+      ],
+      "expected_ids": []
+    }
+  ],
+  "invariants_after": [
+    {
+      "table": "event_dating",
+      "any_of": [
+        {
+          "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+        }
+      ],
+      "expected_ids": []
+    },
+    {
+      "table": "claim_relation",
+      "any_of": [
+        {
+          "claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+        }
+      ],
+      "expected_ids": []
+    },
+    {
+      "table": "claim_relation",
+      "any_of": [
+        {
+          "related_claim_id": "8f573e31-21be-5c80-a0af-6ac2654a6508"
+        }
+      ],
+      "expected_ids": []
+    }
+  ],
+  "new_people": [],
+  "reason": "记胡广入直的卷五原文只载先后。更正把它系于建文年号期间的公元区间说明，保留卷109九月时间。"
+}

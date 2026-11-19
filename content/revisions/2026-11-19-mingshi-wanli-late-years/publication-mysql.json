@@ -1,0 +1,132 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 2,
+    "inserts": {},
+    "protected_rows": 2,
+    "membership_guards": 6
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "82021300-bef0-558d-ba91-ef72ac37787b"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:22.939274+00:00",
+        "description": "万历三十五年十一月壬子，于慎行去世。《宰辅年表》记他在同一农历月实际入阁，不久去世。入阁之日待考。卒日按原历干支换算，为公元1608年1月10日。",
+        "dynasty": "明",
+        "end_year": 1608,
+        "id": "82021300-bef0-558d-ba91-ef72ac37787b",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1608,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历三十五年十一月壬子（公元1608年1月10日，延伸格里历）",
+        "title": "于慎行去世"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "4c85692c-5672-5cdd-becc-719664185e29"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:23.077925+00:00",
+        "description": "万历三十六年十一月壬子，朱赓去世。卒日按原历干支换算，为公元1609年1月4日。",
+        "dynasty": "明",
+        "end_year": 1609,
+        "id": "4c85692c-5672-5cdd-becc-719664185e29",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1609,
+        "status": "published",
+        "tags": [],
+        "time_original": "万历三十六年十一月壬子（公元1609年1月4日，延伸格里历）",
+        "title": "朱赓去世"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "e17e18e6-222b-535c-952e-3de0b30d3bc9"
+      },
+      "full_after": {
+        "citation": "《明史》卷21·本纪第二十一·神宗二·mingshi-2f603db3d81e-p003387；万历三十五年十一月壬子",
+        "claim_text": "万历三十五年十一月壬子，于慎行去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:54:06.172703+00:00",
+        "field_path": "description",
+        "id": "e17e18e6-222b-535c-952e-3de0b30d3bc9",
+        "note": "原文：壬子，于慎行卒；核对说明：年表连记万历三十五年十一月于慎行入阁及未久去世，本纪十一月壬子是其去世日；按同案补死亡日期，保留到任阶段。",
+        "source_id": "82af089f-ecb0-5b54-b1ea-8a5329cc376e",
+        "status": "published",
+        "subject_id": "82021300-bef0-558d-ba91-ef72ac37787b",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "9bfa8daf-ad87-5f93-9810-1949f499ec81"
+      },
+      "full_after": {
+        "citation": "《明史》卷21·本纪第二十一·神宗二·mingshi-2f603db3d81e-p003397；万历三十六年十一月壬子",
+        "claim_text": "万历三十六年十一月壬子，朱赓去世。",
+        "confidence": null,
+        "created_at": "2026-11-18T23:54:07.167729+00:00",
+        "field_path": "description",
+        "id": "9bfa8daf-ad87-5f93-9810-1949f499ec81",
+        "note": "原文：壬子，朱賡卒；核对说明：宰辅年表与本纪同记万历三十六年十一月朱赓去世，本纪补壬子。",
+        "source_id": "e9fa23b5-d76c-5e43-b3a5-8ff816bd25d8",
+        "status": "published",
+        "subject_id": "4c85692c-5672-5cdd-becc-719664185e29",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "538ee61f12b9de771256efacc2092aeb48694f24933719795bdf466fe23162eb",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "538ee61f12b9de771256efacc2092aeb48694f24933719795bdf466fe23162eb",
+    "observations": [
+      {
+        "event_id": "82021300-bef0-558d-ba91-ef72ac37787b",
+        "claim_id": "e17e18e6-222b-535c-952e-3de0b30d3bc9",
+        "year": 1608,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      },
+      {
+        "event_id": "4c85692c-5672-5cdd-becc-719664185e29",
+        "claim_id": "9bfa8daf-ad87-5f93-9810-1949f499ec81",
+        "year": 1609,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      }
+    ],
+    "checked_at": "2026-11-19T00:00:40.551Z"
+  }
+}

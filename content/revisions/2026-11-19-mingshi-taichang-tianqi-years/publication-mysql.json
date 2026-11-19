@@ -1,0 +1,132 @@
+{
+  "status": "verified",
+  "target_fingerprint": "b37538fa559e3a6000b04cf1ad42076202358b5075648a34eb74dd9aa4a4d6dd",
+  "counts": {
+    "updates": 2,
+    "inserts": {},
+    "protected_rows": 2,
+    "membership_guards": 6
+  },
+  "after_rows": [
+    {
+      "table": "event",
+      "identity": {
+        "id": "139b0b55-4812-5c23-ba54-e333f73badcf"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:23.529196+00:00",
+        "description": "泰昌元年十二月辛酉，方从哲获准退休。按原历干支换算，为公元1621年1月10日。",
+        "dynasty": "明",
+        "end_year": 1621,
+        "id": "139b0b55-4812-5c23-ba54-e333f73badcf",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1621,
+        "status": "published",
+        "tags": [],
+        "time_original": "泰昌元年十二月辛酉（公元1621年1月10日，延伸格里历）",
+        "title": "方从哲获准退休"
+      }
+    },
+    {
+      "table": "event",
+      "identity": {
+        "id": "294fd4dc-8e1c-5e69-98a9-e4d583e36070"
+      },
+      "full_after": {
+        "created_at": "2026-11-18T03:55:30.139103+00:00",
+        "description": "天启四年十一月己巳，韩爌获准退休。按原历干支换算，为公元1624年12月28日。",
+        "dynasty": "明",
+        "end_year": 1624,
+        "id": "294fd4dc-8e1c-5e69-98a9-e4d583e36070",
+        "image_url": null,
+        "impact_level": null,
+        "location_lat": null,
+        "location_lng": null,
+        "location_modern_name": null,
+        "location_name": null,
+        "location_note": null,
+        "location_precision": "unknown",
+        "phases": [],
+        "references": [],
+        "start_year": 1624,
+        "status": "published",
+        "tags": [],
+        "time_original": "天启四年十一月己巳（公元1624年12月28日，延伸格里历）",
+        "title": "韩爌获准退休"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "f483226d-6235-576d-a278-d7c3f23e1a5c"
+      },
+      "full_after": {
+        "citation": "《明史》卷22·本纪第二十二·熹宗·mingshi-2f603db3d81e-p003518；泰昌元年（追改）十二月辛酉",
+        "claim_text": "十二月辛酉，方从哲致仕。",
+        "confidence": null,
+        "created_at": "2026-11-19T00:07:55.487678+00:00",
+        "field_path": "description",
+        "id": "f483226d-6235-576d-a278-d7c3f23e1a5c",
+        "note": "原文：辛酉，方從哲致仕；核对说明：《宰辅年表二》仅列泰昌年十二月，卷22补辛酉。",
+        "source_id": "379fb98a-e129-5c15-a15a-55cfd9fde9db",
+        "status": "published",
+        "subject_id": "139b0b55-4812-5c23-ba54-e333f73badcf",
+        "subject_table": "event"
+      }
+    },
+    {
+      "table": "fact_claim",
+      "identity": {
+        "id": "c100a524-1e04-5bfc-b84d-08625a8e60e1"
+      },
+      "full_after": {
+        "citation": "《明史》卷22·本纪第二十二·熹宗·mingshi-2f603db3d81e-p003566；天启四年十一月己巳",
+        "claim_text": "十一月己巳，韩爌致仕。",
+        "confidence": null,
+        "created_at": "2026-11-19T00:16:11.053015+00:00",
+        "field_path": "description",
+        "id": "c100a524-1e04-5bfc-b84d-08625a8e60e1",
+        "note": "原文：己巳，韓爌致仕；核对说明：年表、本纪均载韩爌十一月致仕，本纪记己巳。",
+        "source_id": "5519e8ac-e625-5834-852a-7d51311bc00c",
+        "status": "published",
+        "subject_id": "294fd4dc-8e1c-5e69-98a9-e4d583e36070",
+        "subject_table": "event"
+      }
+    }
+  ],
+  "new_people": [],
+  "plan_sha256": "feb4107fcd4d62f2411009b932239924576887d2a9a67799066eda99cb801af8",
+  "verified": true,
+  "anonymous_readback_verified": true,
+  "web_ui_verified": true,
+  "acceptance": {
+    "verified": true,
+    "plan_sha256": "feb4107fcd4d62f2411009b932239924576887d2a9a67799066eda99cb801af8",
+    "observations": [
+      {
+        "event_id": "139b0b55-4812-5c23-ba54-e333f73badcf",
+        "claim_id": "f483226d-6235-576d-a278-d7c3f23e1a5c",
+        "year": 1621,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      },
+      {
+        "event_id": "294fd4dc-8e1c-5e69-98a9-e4d583e36070",
+        "claim_id": "c100a524-1e04-5bfc-b84d-08625a8e60e1",
+        "year": 1624,
+        "source_quote_verified": true,
+        "year_timeline_verified": true
+      }
+    ],
+    "checked_at": "2026-11-19T00:19:58.219Z"
+  }
+}
